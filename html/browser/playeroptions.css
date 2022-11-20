@@ -1,0 +1,24 @@
+.job {
+  display: block;
+  width: 173px;
+}
+
+.command {
+  font-weight: bold;
+}
+
+.priority {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.nopositions {
+  font-style: italic;
+}
+
+.backgroundimg{
+	min-width: 60%;
+	min-height: 60%;
+	max-width: 60%;
+	max-height: 60%;
+}

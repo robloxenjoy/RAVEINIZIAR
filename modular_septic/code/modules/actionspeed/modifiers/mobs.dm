@@ -1,0 +1,2 @@
+/datum/actionspeed_modifier/shock_stage
+	multiplicative_slowdown = SHOCK_STAGE_ACTIONSPEED

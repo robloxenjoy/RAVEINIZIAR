@@ -1,0 +1,42 @@
+{
+	"version": 1,
+	"map_name": "Baluarte",
+	"map_path": "_septic/map_files/Baluarte",
+	"map_file": [
+		"BaluarteZ3.dmm",
+		"BaluarteZ2.dmm",
+		"BaluarteZ1.dmm"
+	],
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"surface_ruin_levels": 3,
+	"surface_empty_levels": 0,
+	"cave_ruin_levels": 6,
+	"cave_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_baluarte",
+		"emergency": "emergency_baluarte"
+	},
+	"traits": [
+		{
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/floor/plating/asteroid/snow/nevado_surface"
+		},
+		{
+			"Down": -1,
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace"
+		},
+		{
+			"Down": -1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace"
+		}
+	],
+	"minetype": "none"
+}

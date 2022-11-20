@@ -1,0 +1,58 @@
+{
+    "version": 1,
+    "map_name": "Thug Breaker",
+    "map_path": "_septic/map_files/Breaker",
+    "map_file": [
+        "BreakerZ4.dmm",
+        "BreakerZ3.dmm",
+        "BreakerZ2.dmm",
+        "BreakerZ1.dmm"
+    ],
+	"station_name": "The Abandoned Warehouse",
+	"combat_map": true,
+    "everyone_is_fucking_naked": true,
+    "respawn_allowed": true,
+    "overflow_role": "Gakster Scavenger",
+    "space_ruin_levels": 0,
+    "space_empty_levels": 0,
+    "surface_ruin_levels": 0,
+    "surface_empty_levels": 0,
+    "cave_ruin_levels": 0,
+    "cave_empty_levels": 0,
+    "shuttles": {
+        "cargo": "cargo_baluarte",
+        "emergency": "emergency_baluarte"
+    },
+    "traits": [
+        {
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+			"Baseturf": "/turf/open/openspace"
+        },
+        {
+            "Down": -1,
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        },
+        {
+            "Down": -1,
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/floor/grass"
+        },
+        {
+            "Down": -1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        }
+    ],
+	"dynamic_forced_roundstart_rulesets": [
+		"/datum/dynamic_ruleset/roundstart/efn"
+	],
+    "minetype": "none"
+}

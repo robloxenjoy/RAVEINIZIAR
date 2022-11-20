@@ -1,0 +1,34 @@
+"a" = (/turf/closed/indestructible/syndicate,/area/space)
+"e" = (/obj/structure/chair/comfy/black{dir = 4},/obj/effect/turf_decal/siding/wideplating/dark{dir = 1},/turf/open/floor/iron/vaporwave,/area/space)
+"h" = (/obj/structure/table/reinforced/plastitaniumglass,/obj/item/clothing/glasses/sunglasses/big{name = "aesthetic sunglasses"},/obj/effect/turf_decal/siding/wideplating/dark{dir = 4},/turf/open/floor/iron/vaporwave,/area/space)
+"i" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/shutters/preopen{id = shuttle3},/turf/open/floor/iron/solarpanel,/area/space)
+"j" = (/obj/structure/safe/floor{tumblers = list(13, 37)},/obj/item/gun/ballistic/shotgun/bolas,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/obj/item/ammo_casing/shotgun/bolas/buckshot,/turf/open/floor/iron/vaporwave,/area/space)
+"l" = (/obj/machinery/button/door/directional/west{id = shuttle1},/obj/structure/lattice,/turf/open/floor/plating,/area/space)
+"n" = (/obj/structure/chair/comfy/black{dir = 8},/obj/structure/lattice,/turf/open/floor/plating,/area/space)
+"o" = (/obj/effect/turf_decal/siding/wideplating/dark{dir = 8},/turf/open/floor/iron/vaporwave,/area/space)
+"p" = (/obj/structure/lattice,/turf/open/floor/plating,/area/space)
+"r" = (/obj/item/statuebust{force = 20},/obj/effect/turf_decal/siding/wideplating/dark{dir = 10},/turf/open/floor/iron/vaporwave,/area/space)
+"s" = (/obj/effect/turf_decal/siding/wideplating/dark{dir = 6},/turf/open/floor/iron/vaporwave,/area/space)
+"t" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/shutters/preopen{id = shuttle2},/turf/open/floor/iron/solarpanel,/area/space)
+"y" = (/obj/structure/chair/comfy/black{dir = 4},/turf/open/floor/iron/vaporwave,/area/space)
+"z" = (/obj/effect/turf_decal/siding/wideplating/dark{dir = 4},/turf/open/floor/iron/vaporwave,/area/space)
+"G" = (/obj/structure/table/reinforced/plastitaniumglass,/obj/item/taperecorder,/obj/effect/turf_decal/siding/wideplating/dark{dir = 5},/turf/open/floor/iron/vaporwave,/area/space)
+"J" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/shutters/preopen{id = shuttle1},/turf/open/floor/iron/solarpanel,/area/space)
+"K" = (/turf/template_noop,/area/space)
+"L" = (/obj/effect/turf_decal/siding/wideplating/dark,/turf/open/floor/iron/vaporwave,/area/space)
+"N" = (/obj/machinery/door/airlock/maintenance,/obj/docking_port/mobile/pod{dir = 2; port_direction = 2},/turf/open/floor/iron/solarpanel,/area/space)
+"T" = (/obj/machinery/button/door/directional/south{id = shuttle2},/obj/structure/lattice,/turf/open/floor/plating,/area/space)
+"V" = (/obj/effect/turf_decal/siding/wideplating/dark{dir = 9},/turf/open/floor/iron/vaporwave,/area/space)
+"X" = (/obj/machinery/button/door/directional/east{id = shuttle3},/obj/structure/lattice,/turf/open/floor/plating,/area/space)
+
+(1,1,1) = {"
+KKaNaKK
+aaapaaa
+alpppXa
+JpVeGni
+Jpoyhni
+Jpojzpi
+JprLspi
+aTppppa
+aatttaa
+"}

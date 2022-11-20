@@ -1,0 +1,31 @@
+## Septic exclusive configuration goes here
+
+## Enable/disable FoV
+USE_FIELD_OF_VISION
+
+## Whether or not to forcefully disable atmos
+DISABLE_ATMOS
+
+## Speed buff from sprinting
+SPRINT_SPEED 1
+
+## Stamina cost per tile while sprinting
+SPRINT_STAMINA_COST 2
+
+## Fatigue cost per tile while sprinting
+SPRINT_FATIGUE_COST 2
+
+## Enables the GeoIP subsystem when you give it an ipstack.com API key
+# IPSTACK_API_KEY
+
+## Server hub tagline
+# SERVERTAGLINE Fuck
+
+## Basically tagline 2: Electric boogaloo
+# FLUFFTAGLINE Fuck
+
+## If this is set and someone gets caught by the panic bunker fail, this opens on their browser
+BUNKERTROLL https://cdn.discordapp.com/attachments/857026569670623253/857049663936659496/bemvindo.png
+
+## If this is set and someone gets caught by IsBanned, this opens on their browser
+BANTROLL https://cdn.discordapp.com/attachments/857026569670623253/857049700930945085/banido.png

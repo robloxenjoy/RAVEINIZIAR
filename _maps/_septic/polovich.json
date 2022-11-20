@@ -1,0 +1,69 @@
+{
+    "version": 1,
+    "map_name": "Polovich Blackin",
+    "map_path": "_septic/map_files/Polovich",
+    "map_file": [
+	"PolovichZ6.dmm",
+        "PolovichZ5.dmm",
+        "PolovichZ4.dmm",
+        "PolovichZ3.dmm",
+        "PolovichZ2.dmm",
+        "PolovichZ1.dmm"
+    ],
+	"station_name": "Polovich",
+    "respawn_allowed": true,
+    "overflow_role": "Venturer",
+    "space_ruin_levels": 0,
+    "space_empty_levels": 0,
+    "surface_ruin_levels": 0,
+    "surface_empty_levels": 0,
+    "cave_ruin_levels": 0,
+    "cave_empty_levels": 0,
+    "shuttles": {
+        "cargo": "cargo_baluarte",
+        "emergency": "emergency_efn"
+    },
+    "traits": [
+        {
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        },
+        {
+            "Down": -1,
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        },
+        {
+            "Down": -1,
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        },
+		{
+            "Down": -1,
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        },
+		{
+            "Down": -1,
+            "Up": 1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        },
+        {
+            "Down": -1,
+            "Station": true,
+            "Gravity": true,
+            "Baseturf": "/turf/open/openspace"
+        }
+    ],
+    "minetype": "none"
+}

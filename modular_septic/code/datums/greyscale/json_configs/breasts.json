@@ -1,0 +1,50 @@
+{
+	"breasts_pair_0": [
+		{
+			"type": "icon_state",
+			"icon_state": "breasts_pair_0",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"breasts_pair_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "breasts_pair_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"breasts_pair_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "breasts_pair_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"breasts_pair_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "breasts_pair_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"breasts_pair_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "breasts_pair_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"breasts_pair_5": [
+		{
+			"type": "icon_state",
+			"icon_state": "breasts_pair_5",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	]
+}

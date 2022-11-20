@@ -1,0 +1,1 @@
+GLOBAL_LIST_EMPTY(hacking_actions_by_key)

@@ -1,0 +1,39 @@
+{
+	"Dynamic": {},
+	"Roundstart": {
+		"Traitors": {
+			"weight": 10,
+			"cost": 8,
+			"scaling_cost": 6,
+			"required_candidates": 1,
+			"minimum_required_age": 0,
+			"requirements": [
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10,
+				10
+			],
+			"antag_cap": {
+				"denominator": 24
+			},
+			"protected_roles": [
+			],
+			"restricted_roles": [
+				"Cyborg",
+				"AI"
+			]
+		}
+	},
+
+	"Latejoin": {
+		"Syndicate Infiltrator": {
+			"weight": 10
+		}
+	}
+}

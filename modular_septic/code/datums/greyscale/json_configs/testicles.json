@@ -1,0 +1,74 @@
+{
+	"testicles_single_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_single_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_single_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_single_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_single_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_single_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_internal_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_internal_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_internal_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_internal_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_internal_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_internal_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_pair_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_pair_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_pair_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_pair_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"testicles_pair_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "testicles_pair_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	]
+}

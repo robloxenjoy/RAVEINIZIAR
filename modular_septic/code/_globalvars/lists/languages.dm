@@ -1,0 +1,4 @@
+GLOBAL_LIST_EMPTY(name_to_language_datum)
+GLOBAL_LIST_EMPTY(species_to_learnable_languages)
+GLOBAL_LIST_EMPTY(species_to_necessary_languages)
+GLOBAL_LIST_EMPTY(species_to_default_languages)

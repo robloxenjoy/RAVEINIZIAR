@@ -1,0 +1,467 @@
+@use 'sass:color';
+@use 'sass:map';
+@use '../components/Button.scss';
+@use '../colors.scss';
+
+$department_map: (
+  'Assistant': colors.$grey,
+  'Captain': colors.fg(colors.$blue),
+  'Command': colors.$yellow,
+  'Security': colors.$red,
+  'Engineering': #f1a839,
+  'Medical': colors.$teal,
+  'Misc': colors.$white,
+  'Science': colors.fg(colors.$purple),
+  'Cargo': colors.$brown,
+  'Service': colors.$green,
+  'Silicon': colors.$pink,
+  'Nobility': colors.$blue,
+  'Bourgeouis': colors.$yellow,
+  'Proletariat': colors.$green,
+  'Unpeople': colors.$brown,
+);
+
+.PreferencesMenu {
+  &__Antags {
+    &__antagSelection {
+      $antagonist_bottom_padding: 10px;
+
+      margin-bottom: -$antagonist_bottom_padding;
+
+      @mixin animate-hover {
+        .antagonist-icon-parent .antagonist-icon {
+          &:hover {
+            transform: scale(1.3);
+            transition: transform 1s ease-out;
+          }
+        }
+      }
+
+      &__antagonist {
+        padding-bottom: $antagonist_bottom_padding;
+        padding-right: 20px;
+
+        .antagonist-icon-parent {
+          border-style: solid;
+          border-radius: 50%;
+          border-width: 4px;
+          box-sizing: content-box;
+          overflow: hidden;
+          position: relative;
+
+          height: 96px;
+          width: 96px;
+
+          .antagonist-icon {
+            border-radius: 50%;
+            -ms-interpolation-mode: nearest-neighbor;
+            overflow: hidden;
+            transition: transform 0.1s ease-in;
+          }
+        }
+
+        &--off {
+          @include animate-hover;
+
+          .antagonist-icon-parent {
+            border-color: colors.$red;
+
+            .antagonist-icon {
+              opacity: 0.5;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        &--on {
+          @include animate-hover;
+
+          .antagonist-icon-parent {
+            border-color: colors.$green;
+          }
+        }
+
+        &--banned {
+          .antagonist-icon-parent {
+            border-color: colors.$grey;
+          }
+
+          .antagonist-icon {
+            opacity: 0.5;
+          }
+        }
+
+        .antagonist-banned-slash {
+          background: colors.$grey;
+
+          width: 100%;
+          height: 3px;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-50%) translateX(-50%) rotate(35deg);
+
+          opacity: 0.8;
+        }
+
+        .antagonist-days-left {
+          text-align: center;
+          text-shadow: 1px 1px 1px #222;
+
+          width: 100%;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-50%) translateX(-50%);
+        }
+      }
+    }
+  }
+
+  &__papericonbox {
+    border: 3px dotted rgba(90, 76, 76, 0.7);
+  }
+
+  &__papersplease {
+    font-family: "Courier New";
+    color: rgb(69, 55, 52);
+    background: rgb(237, 224, 216);
+    padding-left: 8px;
+    padding-right: 12px;
+    &__guttervertical {
+      font-family: "Courier New";
+      color: rgb(237, 224, 216);
+      background-image: linear-gradient(
+        to bottom,
+        rgb(69, 55, 52) 33.33%,
+        #111111 33.33%,
+        #111111 50%,
+        rgb(69, 55, 52) 50%,
+        rgb(69, 55, 52) 83.33%,
+        #111111 83.33%,
+        #111111 100%
+      );
+      background-size: 120.00px 120.00px;
+      border-bottom: 8px solid rgb(60, 45, 45);
+    }
+    &__gutterhorizontal {
+      font-family: "Courier New";
+      color: rgb(237, 224, 216);
+      background-image: linear-gradient(
+        to right,
+        rgb(69, 55, 52) 33.33%,
+        #111111 33.33%,
+        #111111 50%,
+        rgb(69, 55, 52) 50%,
+        rgb(69, 55, 52) 83.33%,
+        #111111 83.33%,
+        #111111 100%
+      );
+      background-size: 120.00px 120.00px;
+      border-left: 8px solid rgb(60, 45, 45);
+    }
+    &__dotted {
+      font-family: "Courier New";
+      color: rgb(69, 55, 52);
+      background: rgb(237, 224, 216);
+      padding-top: 8px;
+      padding-left: 8px;
+      padding-right: 12px;
+      border: 4px dotted rgba(90, 76, 76, 0.7);
+    }
+    &__center {
+      font-family: "Courier New";
+      color: rgb(69, 55, 52);
+      background: rgb(237, 224, 216);
+      padding-left: 8px;
+      padding-right: 12px;
+      border-left: 8px solid rgb(162, 148, 145);
+      border-right: 4px solid rgb(162, 148, 145);
+      border-bottom: 8px solid rgb(162, 148, 145);
+    }
+    &__centerbottomless {
+      font-family: "Courier New";
+      color: rgb(69, 55, 52);
+      background: rgb(237, 224, 216);
+      padding-left: 8px;
+      padding-right: 12px;
+      border-left: 8px solid rgb(162, 148, 145);
+      border-right: 4px solid rgb(162, 148, 145);
+    }
+    &__left {
+      font-family: "Courier New";
+      color: rgb(69, 55, 52);
+      background: rgb(237, 224, 216);
+      padding-left: 8px;
+      padding-right: 12px;
+      border-left: 8px solid rgb(162, 148, 145);
+      border-bottom: 8px solid rgb(162, 148, 145);
+    }
+    &__leftbottomless {
+      font-family: "Courier New";
+      color: rgb(69, 55, 52);
+      background: rgb(237, 224, 216);
+      padding-left: 8px;
+      padding-right: 12px;
+      border-left: 8px solid rgb(162, 148, 145);
+    }
+    &__right {
+      font-family: "Courier New";
+      color: rgb(69, 55, 52);
+      background: rgb(237, 224, 216);
+      padding-left: 8px;
+      padding-right: 12px;
+      border-right: 2px solid rgb(162, 148, 145);
+      border-bottom: 8px solid rgb(162, 148, 145);
+    }
+    &__header {
+      font-family: "Courier New";
+      color: rgb(69, 55, 52);
+      background: rgb(237, 224, 216);
+      border-radius: 3px 3px 0 0;
+      &__dotted {
+        font-family: "Courier New";
+        color: rgb(69, 55, 52);
+        background: rgba(162, 148, 147, 0.5);
+        border-radius: 0 0 0 0;
+        border: 4px dotted rgba(90, 76, 76, 0.7);
+        font-size: 400%;
+        font-weight: bold;
+      }
+      &__center {
+        font-family: "Courier New";
+        color: rgb(69, 55, 52);
+        background: rgb(237, 224, 216);
+        border-left: 8px solid rgb(162, 148, 145);
+        border-right: 4px solid rgb(162, 148, 145);
+        border-radius: 3px 0 0 0;
+      }
+      &__centernoradius {
+        font-family: "Courier New";
+        color: rgb(69, 55, 52);
+        background: rgb(237, 224, 216);
+        border-left: 8px solid rgb(162, 148, 145);
+        border-right: 4px solid rgb(162, 148, 145);
+      }
+      &__left {
+        font-family: "Courier New";
+        color: rgb(69, 55, 52);
+        background: rgb(237, 224, 216);
+        border-left: 8px solid rgb(162, 148, 145);
+        border-radius: 3px 0 0 0;
+      }
+      &__leftnoradius {
+        font-family: "Courier New";
+        color: rgb(69, 55, 52);
+        background: rgb(237, 224, 216);
+        border-left: 8px solid rgb(162, 148, 145);
+      }
+      &__right {
+        font-family: "Courier New";
+        color: rgb(69, 55, 52);
+        background: rgb(237, 224, 216);
+        border-right: 2px solid rgb(162, 148, 145);
+        border-radius: 0 3px 0 0;
+      }
+      &__title {
+        font-family: "Courier New";
+        color: rgb(69, 55, 52);
+        background: rgba(162, 148, 147, 0.5);
+        padding-top: 8px;
+        border-radius: 0 0 0 0;
+        border-bottom: 4px dotted rgba(90, 76, 76, 0.7);
+        font-size: 400%;
+        font-weight: bold;
+      }
+    }
+  }
+  &__ribbon {
+    width: 0px;
+    background-color: transparent;
+    position: absolute;
+    top: -5px;
+    right: 30px;
+    border: solid 15px #B13A22;
+    border-top: solid 30px #B13A22;
+    border-bottom: solid 15px transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    transition: border 0.2s;
+  }
+  &__ribbon:hover {
+    border-top: solid 45px #B13A22;
+  }
+  &__ribbon:active {
+      /*
+      ---- Transform stretch: ----
+      (Less pretty)
+
+      transform: translate(0, 20px)
+                 scale(0.8, 1.4);
+
+
+      ---- width/height adjust stretch: ----
+      (More choppy)
+
+      height: 180px;
+      border-left: solid 10px #B13A22;
+      border-right: solid 10px #B13A22;
+      right: 25px;
+      */
+
+      border-color: #A13A22;
+      border-bottom-color: transparent;
+  }
+
+  &__Jobs {
+    > * {
+      flex: 1;
+    }
+
+    &__joblessdropdown {
+      background: rgba(162, 148, 147, 0.5);
+    }
+
+    &__departments {
+      @each $department-name, $color-value in $department_map {
+        &--#{$department-name} {
+          &.head {
+            background: rgb(152, 138, 137);
+
+            .job-name {
+              border-right: 2px solid $color-value;
+              font-weight: bold;
+            }
+          }
+
+          .job-name {
+            border-right: 2px dotted colors.fg($color-value);
+          }
+
+          color: rgb(230, 219, 214);
+          background: rgb(162, 148, 147);
+          font-family: "Tahoma";
+          border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+          border-left: 2px solid rgba(0, 0, 0, 0.3);
+          border-right: 2px solid rgba(0, 0, 0, 0.3);
+
+          > * {
+            height: calc(100% + 0.2em);
+            padding-bottom: 0.2em;
+          }
+
+          &:first-child {
+            border-top: 2px solid rgba(0, 0, 0, 0.3);
+          }
+
+          .options {
+            background: rgba(233, 218, 199, 1);
+            height: 100%;
+          }
+        }
+
+        &--Captain {
+          border: 3px solid rgba(200, 200, 0, 1);
+
+          &:first-child {
+            border-top: 3px solid rgba(200, 200, 0, 1);
+          }
+
+          .job-name {
+            font-size: 17px;
+          }
+        }
+      }
+
+      &__priority {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+
+        &--off::after {
+          content: "";
+
+          background: rgba(0, 0, 0, 0.2);
+          display: block;
+          height: 80%;
+          left: 50%;
+          position: relative;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%) rotate(40deg);
+          width: 2px;
+        }
+      }
+      &__attributebutton {
+        border: 2px solid rgba(0, 0, 0, 0.3);
+
+        &--off::after {
+          content: "";
+
+          background: rgba(0, 0, 0, 0.2);
+          display: block;
+          height: 80%;
+          left: 50%;
+          position: relative;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%) rotate(40deg);
+          width: 2px;
+        }
+      }
+    }
+
+    &__PriorityHeader {
+      font-weight: bold;
+      transform:
+        translateX(-4px)
+        translateY(-8px)
+        rotate(315deg);
+      white-space: nowrap;
+      width: 19px;
+    }
+  }
+
+  &__Quirks {
+    &__QuirkList {
+      background-color: colors.$light-grey;
+      height: calc(90vh - 170px);
+      min-height: 100%;
+      overflow-y: scroll;
+
+      &__quirk {
+        background-color: colors.$white;
+        border-bottom: 1px solid black;
+        color: #111;
+        transition: background-color 0.1s ease-in;
+
+        $quality_map: (
+          "positive": colors.$green,
+          "neutral": colors.$white,
+          "negative": colors.$red,
+        );
+
+        @each $quality, $color-value in $quality_map {
+          &--#{$quality} {
+            background-color: $color-value;
+            transition: background-color 0.1s ease-in;
+          }
+        }
+
+        &:hover {
+          background-color: colors.$grey;
+          transition: background-color 0.1s ease-out;
+
+          @each $quality, $color-value in $quality_map {
+            .PreferencesMenu__Quirks__QuirkList__quirk--#{$quality} {
+              background-color: color.scale($color-value, $lightness: -25%);
+              transition: background-color 0.1s ease-out;
+            }
+          }
+        }
+      }
+    }
+  }
+}

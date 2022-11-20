@@ -1,0 +1,25 @@
+"a" = (/turf/closed/wall,/area/shuttle/supply)
+"c" = (/turf/open/floor/iron/dark,/area/shuttle/supply)
+"e" = (/obj/machinery/door/airlock/maintenance{name = "supply train"; req_access_txt = "31"},/obj/docking_port/mobile/supply{dheight = 1; dir = 4; dwidth = 7; height = 5; name = "baluarte supply shuttle"; width = 14},/turf/open/floor/iron/dark,/area/shuttle/supply)
+"q" = (/obj/machinery/button/door/directional/west{id = "QMLoaddoor"; name = "Loading Doors"; req_access_txt = "31"},/turf/open/floor/iron/dark,/area/shuttle/supply)
+"y" = (/obj/machinery/door/poddoor{id = "QMLoaddoor"; name = "supply dock loading door"},/obj/machinery/conveyor{dir = 4; id = "QMLoad"},/turf/open/floor/iron/dark,/area/shuttle/supply)
+"I" = (/obj/machinery/door/airlock/maintenance{name = "supply train"; req_access_txt = "31"},/turf/open/floor/iron/dark,/area/shuttle/supply)
+"S" = (/obj/machinery/door/poddoor{id = "QMLoaddoor2"; name = "supply dock loading door"},/obj/machinery/conveyor{dir = 8; id = "QMLoad2"},/turf/open/floor/iron/dark,/area/shuttle/supply)
+"Z" = (/obj/machinery/button/door/directional/west{id = "QMLoaddoor2"; name = "Unloading Doors"; req_access_txt = "31"},/turf/open/floor/iron/dark,/area/shuttle/supply)
+
+(1,1,1) = {"
+aaaaa
+accca
+accca
+aZcca
+Sccca
+Iccca
+accca
+eccca
+yccca
+aqcca
+accca
+accca
+accca
+aaaaa
+"}

@@ -1,0 +1,1 @@
+GLOBAL_LIST_EMPTY(species_to_available_birthsigns)

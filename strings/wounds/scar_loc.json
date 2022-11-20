@@ -1,0 +1,127 @@
+{
+	"": [
+		"general area"
+	],
+
+	"head": [
+		"nose",
+		"entire face",
+		"forehead",
+	],
+
+	"l_eye": [
+		"left eyebrow",
+	],
+
+	"r_eye": [
+		"right eyebrow",
+	],
+	
+	"jaw": [
+		"@pick(left_right)cheekbone",
+		"@pick(left_right)mandible",
+		"jawline",
+	],
+	
+	"throat": [
+		"neck",
+		"throat",
+	],
+
+	"chest": [
+		"upper chest",
+		"upper abdomen",
+		"upper back",
+		"collarbone",
+	],
+
+	"groin": [
+		"@pick(free_move)@pick(left_right) hip",
+		"perineum",
+		"midsection",
+		"collarbone",
+		"belly",
+		"lower abdomen",
+		"lower back",
+	],
+	
+	"l_arm": [
+		"@pick(inner_outer)left forearm",
+		"left elbow",
+		"left bicep",
+		"left shoulder",
+	],
+	
+	"l_hand": [
+		"@pick(inner_outer)left wrist",
+		"left @pick(inner_back) palm",
+	],
+
+	"r_arm": [
+		"@pick(inner_outer)right forearm",
+		"right elbow",
+		"right bicep",
+		"right shoulder",
+	],
+	
+	"r_hand": [
+		"@pick(inner_outer)right wrist",
+		"right @pick(inner_back) palm",
+	],
+
+	"l_leg": [
+		"@pick(inner_outer)left thigh",
+		"@pick(free_move)left calf",
+		"left kneecap",
+		"@pick(free_move)left shin"
+	],
+	
+	"l_foot": [
+		"left ankle",
+		"left heel",
+		"left sole",
+	],
+	
+	"r_leg": [
+		"@pick(inner_outer)right thigh",
+		"@pick(free_move)right calf",
+		"right kneecap",
+		"@pick(free_move)right shin"
+	],
+
+
+	"r_foot": [
+		"right ankle",
+		"right heel",
+		"right sole",
+	],
+	
+	"inner_outer" : [
+		"inner ",
+		"outer ",
+		"",
+		""
+	],
+	"inner_back" : [
+		"inner",
+		"back",
+	],
+	"upper_lower" : [
+		"upper ",
+		"lower ",
+		"",
+		""
+	],
+	"free_move" : [
+		"inner ",
+		"outer ",
+		"upper ",
+		"lower ",
+		"",
+		""
+	],
+	"left_right" : [
+		"left ",
+		"right "
+	],
+}

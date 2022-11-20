@@ -1,0 +1,5 @@
+/datum/reagents/proc/replace_reagent(replaced_reagent, replacement)
+	var/amount = get_reagent_amount(replaced_reagent)
+	if(amount)
+		del_reagent(replaced_reagent)
+		add_reagent(replacement, amount)

@@ -1,0 +1,33 @@
+@use '../base.scss';
+@use '../colors.scss';
+@use '../functions.scss';
+
+.Namebox {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 140%;
+  color: white;
+  &__Hacked {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 140%;
+    color: #ffd1d1;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -1px 0 0 #75fa69;
+    color: #ffd1d1;
+  }
+  to {
+    text-shadow: 1px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    color: #fcb3b3;
+  }
+}

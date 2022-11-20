@@ -1,0 +1,2 @@
+GLOBAL_LIST_EMPTY(dna_mutant_bodypart_blocks)
+GLOBAL_LIST_EMPTY(dna_body_marking_blocks)

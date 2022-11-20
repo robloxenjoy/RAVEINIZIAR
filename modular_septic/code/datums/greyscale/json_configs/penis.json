@@ -1,0 +1,354 @@
+{
+	"penis_human_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_human_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_human_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_human_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_human_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_human_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_human_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_human_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotted_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotted_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotted_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotted_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotted_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotted_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotted_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotted_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tapered_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tapered_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tapered_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tapered_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tapered_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tapered_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tapered_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tapered_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_blunt_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_blunt_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_blunt_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_blunt_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_blunt_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_blunt_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_blunt_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_blunt_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_flared_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_flared_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_flared_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_flared_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_flared_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_flared_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_flared_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_flared_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbknot_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbknot_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbknot_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbknot_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbknot_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbknot_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbknot_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbknot_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbed_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbed_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbed_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbed_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbed_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbed_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_barbed_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_barbed_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotrib_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotrib_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotrib_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotrib_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotrib_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotrib_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_knotrib_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_knotrib_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tentacle_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tentacle_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tentacle_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tentacle_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tentacle_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tentacle_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_tentacle_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_tentacle_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemi_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemi_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemi_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemi_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemi_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemi_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemi_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemi_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemiknot_1": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemiknot_1",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemiknot_2": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemiknot_2",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemiknot_3": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemiknot_3",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	],
+	"penis_hemiknot_4": [
+		{
+			"type": "icon_state",
+			"icon_state": "penis_hemiknot_4",
+			"blend_mode": "overlay",
+			"color_ids": [ 1 ]
+		}
+	]
+}
