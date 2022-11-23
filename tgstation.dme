@@ -4094,6 +4094,7 @@
 #include "modular_pod\code\modules\outdoor_effects\code\modules\sunlight\sunlight_object.dm"
 #include "modular_pod\code\modules\torches\torches.dm"
 #include "modular_pod\code\test\raper.dm"
+#include "modular_pod\code\things\advice.dm"
 #include "modular_septic\code\__HELPERS\attributes.dm"
 #include "modular_septic\code\__HELPERS\bartering.dm"
 #include "modular_septic\code\__HELPERS\blockers.dm"
