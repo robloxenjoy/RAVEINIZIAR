@@ -344,8 +344,21 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	to_chat(src, span_interface("All of your adminverbs are now visible."), confidential = TRUE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/client/proc/SetRespawnRate()
+	set name = "Set Respawn Rate"
+	set category = "Admin"
 
+	var/newrespawnrate = input(usr, "Input new respawn rate in minutes", "PODPOL") as num|null
 
+	if(!newrespawnrate)
+		return
+
+	world << "<font color='red'><b>Respawn rate has been changed by admin from [round(CONFIG_GET(number/respawn_timer)/600)] min to [newrespawnrate] min!</b></font color>"
+
+	log_admin("[key_name(usr)] changed respawn rate from [round(CONFIG_GET(number/respawn_timer)/600)] to [newrespawnrate].")
+	message_admins("[key_name_admin(usr)] changed respawn rate from [round(CONFIG_GET(number/respawn_timer)/600)] to [newrespawnrate].")
+
+	CONFIG_SET(number/respawn_timer, round(newrespawnrate * 600))
 
 /client/proc/admin_ghost()
 	set category = "Admin.Game"

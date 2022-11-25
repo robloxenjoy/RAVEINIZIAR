@@ -15,12 +15,12 @@
 	alpha = 180
 
 /mob/proc/send_to_kyrilka()
-	if(istype(src, /mob/living/carbon/human/dead) || !stat)
+	if(istype(src, /mob/living/carbon/human/dead) || stat != DEAD)
 		return
-	var/obj/effect/landmark/kyrilka/K = locate() in world
+	var/obj/effect/landmark/tendance/K = locate() in world
 	var/mob/living/carbon/human/dead/character = new(K.loc)
 
-	client.prefs.copy_to(character)
+	client.prefs.safe_transfer_prefs_to(character)
 	character.dna.update_dna_identity()
 	if(mind)
 		mind.active = 0
@@ -31,7 +31,3 @@
 	character.timeofdeath = timeofdeath
 	character.key = key
 //	character.client.set_macros()
-	var/obj/uniform = pick(GLOB.available_uniform)
-	character.equip_to_slot_or_del(new uniform.type(character), slot_w_uniform, 0)
-	character.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots/warm(character), slot_shoes, 0)
-	character.equip_to_slot_or_del(new /obj/item/clothing/gloves/fingerless(character), slot_gloves, 0)

@@ -90,6 +90,11 @@
 
 /datum/config_entry/flag/allow_latejoin_antagonists // If late-joining players can be traitor/changeling
 
+/datum/config_entry/number/respawn_timer
+	config_entry_value = 18000
+	integer = FALSE
+	min_val = 0
+
 /datum/config_entry/number/shuttle_refuel_delay
 	default = 12000
 	integer = FALSE

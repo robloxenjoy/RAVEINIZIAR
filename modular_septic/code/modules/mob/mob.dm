@@ -5,6 +5,7 @@
 	var/examine_cursor_icon_combat = 'modular_septic/icons/effects/mouse_pointers/combat_examine.dmi'
 	/// Type of frill blocker we use
 	var/frill_blocker
+	var/timeofdeath = 0 //for tendance shit
 
 /mob/Initialize(mapload)
 	. = ..()

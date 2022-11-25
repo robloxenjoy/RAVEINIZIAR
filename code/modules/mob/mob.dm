@@ -731,13 +731,17 @@
 	if (CONFIG_GET(flag/norespawn) && (!check_rights_for(usr.client, R_ADMIN) || tgui_alert(usr, "Respawn configs disabled. Do you want to use your permissions to circumvent it?", "Respawn", list("Yes", "No")) != "Yes"))
 		return
 
-	if ((stat != DEAD || !( SSticker )))
+	if ((stat != DEAD || !( SSticker )) && !istype(src, /mob/living/carbon/human/dead)
 		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
 
+		if (timeofdeath + CONFIG_GET(number/respawn_timer) > world.time)
+			to_chat(usr, "<span class='boldnotice'>Will be able join the dream in around [max(1, round((timeofdeath + CONFIG_GET(number/respawn_timer) - world.time)/600))] min!</span>")
+			return
+
 	log_game("[key_name(usr)] used the respawn button.")
 
-	to_chat(usr, span_boldnotice("Please roleplay correctly!"))
+	to_chat(usr, span_boldnotice("Please play like retard!"))
 
 	if(!client)
 		log_game("[key_name(usr)] respawn failed due to disconnect.")

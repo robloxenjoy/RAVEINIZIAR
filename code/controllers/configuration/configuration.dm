@@ -20,6 +20,7 @@
 
 	var/motd
 	var/policy
+	var/respawn_timer = 2400
 
 	/// If the configuration is loaded
 	var/loaded = FALSE
