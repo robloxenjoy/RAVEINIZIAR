@@ -877,15 +877,8 @@
 					var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 					if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 						user.changeNext_move(0)
-//						var/obj/item/bodypart/grasped_part = target.get_bodypart(check_zone(user.zone_selected))
-//						target.get_bodypart(ran_zone(user.affecting, 0))
 						user.visible_message(span_pinkdang("[weapon] of [target] is stuck in [user]!"),span_pinkdang("[weapon] of [target] is stuck in your [affected]."), span_hear("You hear the sound of flesh."))
 						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE, target_zone = affected, grabsound = FALSE, silent = TRUE)
-//						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE)
-//						grasped_part?.affected == target
-//						if(wound_messages)
-//							SEND_SIGNAL(target, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_pinkdang(" [weapon] of [user] is stuck in [target]!"))
-//						user.visible_message(span_pinkdang("[weapon] of [target] is stuck in [user]!"),span_pinkdang("[weapon] of [target] is stuck in your [affected]."), span_hear("You hear the sound of flesh."))
 						playsound(get_turf(target), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
 						return TRUE
 					else
