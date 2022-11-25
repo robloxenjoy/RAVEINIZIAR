@@ -51,8 +51,8 @@
 	area_flags = NO_ALERTS
 	ambientsounds = list('modular_pod/sound/ambi_sounds/borne.ogg', 'modular_pod/sound/ambi_sounds/buffmfffpampam.ogg', 'modular_pod/sound/ambi_sounds/BOOOM.ogg')
 	droning_sound = DRONING_FOREST
-	min_ambience_cooldown = 20 SECONDS
-	max_ambience_cooldown = 30 SECONDS
+	min_ambience_cooldown = 30 SECONDS
+	max_ambience_cooldown = 50 SECONDS
 
 /area/maintenance/polovich/forest/rain
 //	base_lighting_alpha = 255
