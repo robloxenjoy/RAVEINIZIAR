@@ -254,7 +254,7 @@
 	update_grab_mode()
 
 /// Displays the initial grabbing message
-/obj/item/grab/proc/display_grab_message(biting_grab = FALSE, target_zone, silent = FALSE, grabsound = TRUE)
+/obj/item/grab/proc/display_grab_message(biting_grab = FALSE, target_zone, grabsound = TRUE, silent = FALSE)
 	if(!silent)
 		if(grabsound)
 			if(biting_grab)
@@ -274,21 +274,22 @@
 							vision_distance = COMBAT_MESSAGE_RANGE)
 	else
 		if(!silent)
-			if(biting_grab)
-				victim.visible_message(span_danger("<b>[owner]</b> bites <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"),\
-										span_userdanger("I am bitten [grasped_part ? "on my [grasped_part.name] " : ""]by <b>[owner]</b>!"), \
-										span_warning("I hear a gnawing sound."),\
-										vision_distance = COMBAT_MESSAGE_RANGE, \
-										ignored_mobs = owner)
-				to_chat(owner, span_userdanger("I bite <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"))
-			else
-				victim.visible_message(span_danger("<b>[owner]</b> grasps <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"),\
-										span_userdanger("I am grasped [grasped_part ? "on my [grasped_part.name] " : ""]by <b>[owner]</b>!"), \
-										span_warning("I hear a shuffling sound."),\
-										vision_distance = COMBAT_MESSAGE_RANGE, \
-										ignored_mobs = owner)
-				to_chat(owner, span_userdanger("I grab <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"))
-		return TRUE
+			if(grabsound)
+				if(biting_grab)
+					victim.visible_message(span_danger("<b>[owner]</b> bites <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"),\
+											span_userdanger("I am bitten [grasped_part ? "on my [grasped_part.name] " : ""]by <b>[owner]</b>!"), \
+											span_warning("I hear a gnawing sound."),\
+											vision_distance = COMBAT_MESSAGE_RANGE, \
+											ignored_mobs = owner)
+					to_chat(owner, span_userdanger("I bite <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"))
+				else
+					victim.visible_message(span_danger("<b>[owner]</b> grasps <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"),\
+											span_userdanger("I am grasped [grasped_part ? "on my [grasped_part.name] " : ""]by <b>[owner]</b>!"), \
+											span_warning("I hear a shuffling sound."),\
+											vision_distance = COMBAT_MESSAGE_RANGE, \
+											ignored_mobs = owner)
+					to_chat(owner, span_userdanger("I grab <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"))
+			return TRUE
 
 /// Creates the hud object we are tied to
 /obj/item/grab/proc/create_hud_object()

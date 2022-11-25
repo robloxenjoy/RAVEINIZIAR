@@ -881,7 +881,7 @@
 //						var/obj/item/bodypart/grasped_part = target.get_bodypart(check_zone(user.zone_selected))
 //						target.get_bodypart(ran_zone(user.affecting, 0))
 						user.visible_message(span_pinkdang("[weapon] of [target] is stuck in [user]!"),span_pinkdang("[weapon] of [target] is stuck in your [affected]."), span_hear("You hear the sound of flesh."))
-						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE, target_zone = affected, silent = TRUE, grabsound = FALSE)
+						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE, target_zone = affected, grabsound = FALSE, silent = TRUE)
 //						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE)
 //						grasped_part?.affected == target
 //						if(wound_messages)
