@@ -64,6 +64,7 @@
 								edge_protection = 0, \
 								subarmor_flags = NONE, \
 								attack_direction = null, \
+								twist_damage = 0, \
 								wound_messages = TRUE)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, \
 											damagetype, \
@@ -80,6 +81,7 @@
 											edge_protection, \
 											subarmor_flags, \
 											attack_direction, \
+											twist_damage, \
 											wound_messages)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && (hit_percent <= 0)) )
@@ -111,6 +113,7 @@
 									edge_protection = edge_protection, \
 									subarmor_flags = subarmor_flags, \
 									attack_direction = attack_direction, \
+									twist_damage = twist_damage, \
 									wound_messages = wound_messages))
 					update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
@@ -128,6 +131,7 @@
 									edge_protection = edge_protection, \
 									subarmor_flags = subarmor_flags, \
 									attack_direction = attack_direction, \
+									twist_damage = twist_damage, \
 									wound_messages = wound_messages))
 					update_damage_overlays()
 			else
@@ -151,6 +155,7 @@
 									edge_protection = edge_protection, \
 									subarmor_flags = subarmor_flags, \
 									attack_direction = attack_direction, \
+									twist_damage = twist_damage, \
 									wound_messages = wound_messages))
 					update_damage_overlays()
 			else

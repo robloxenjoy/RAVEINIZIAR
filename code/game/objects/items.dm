@@ -159,6 +159,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	///Does it embed and if yes, what kind of embed
 	var/list/embedding
+	///Damage when you twist embedded weapon
+	var/twist_damage = 0
 
 	///for flags such as [GLASSESCOVERSEYES]
 	var/flags_cover = 0
@@ -813,6 +815,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 ///Returns the sharpness of src. If you want to get the sharpness of an item use this.
 /obj/item/proc/get_sharpness()
 	return sharpness
+
+/obj/item/proc/get_twist_damage()
+	return twist_damage
 
 /obj/item/proc/get_dismember_sound()
 	if(damtype == BURN)

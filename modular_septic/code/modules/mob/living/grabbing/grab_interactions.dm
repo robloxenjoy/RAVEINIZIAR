@@ -346,25 +346,24 @@
 	playsound(victim, owner.dna.species.bite_sound, 75, FALSE)
 	return TRUE
 
-/obj/item/grab/proc/twist_embedded()
+/obj/item/grab/proc/twist_embedded(obj/item/weapon)
 	//Wtf?
 	if(!grasped_part || !LAZYACCESS(grasped_part.embedded_objects, 1))
 		return FALSE
-//	SEND_SIGNAL(victim, COMSIG_CARBON_EMBED_RIP, grasped_part.embedded_objects[1], grasped_part, owner)
 	var/mob/living/carbon/carbon_victim = victim
 	var/epic_success = DICE_FAILURE
 	var/modifier = 0
-	if(victim.combat_mode && (GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH) > GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)))
+	if(victim.combat_mode && (GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE) > GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)))
 		modifier -= 2
 	epic_success = owner.diceroll(GET_MOB_SKILL_VALUE(owner, SKILL_WRESTLING)+modifier, context = DICE_CONTEXT_PHYSICAL)
 	if(owner == victim)
 		epic_success = max(epic_success, DICE_SUCCESS)
 	if(epic_success >= DICE_SUCCESS)
-		var/damage = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)
+		var/damage = weapon.get_twist_damage(owner, GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH))
 		var/deal_wound_bonus = 5
 		if(epic_success >= DICE_SUCCESS)
 			deal_wound_bonus += 5
-		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = SHARP_POINTY)
+		grasped_part.apply_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = weapon.get_sharpness())
 		if(owner != victim)
 			victim.visible_message(span_pinkdang("[owner] twists [grasped_part.embedded_objects[1]] in [victim]'s [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_pinkdang("[owner] twists [grasped_part.embedded_objects[1]] in my [grasped_part.name]![carbon_victim.wound_message]"), \
@@ -388,9 +387,11 @@
 			victim.visible_message(span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in [owner.p_their()] [grasped_part.name]!"), \
 							span_pinkdang("I try to twist [grasped_part.embedded_objects[1]] in my [grasped_part.name]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
-	owner.changeNext_move(CLICK_CD_CLING)
-	owner.adjustFatigueLoss(10)
+	owner.changeNext_move(weapon.attack_delay)
+	owner.adjustFatigueLoss(weapon.attack_fatigue_cost)
+	weapon.damageItem("SOFT")
 	playsound(victim, 'modular_septic/sound/gore/twisting.ogg', 80, FALSE)
+	sound_hint()
 	return TRUE
 
 /obj/item/grab/proc/pull_embedded()

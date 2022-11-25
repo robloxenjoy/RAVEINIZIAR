@@ -14,6 +14,7 @@
 									edge_protection = 0, \
 									subarmor_flags = NONE, \
 									attack_direction = null, \
+									twist_damage = 0 , \
 									wound_messages = TRUE)
 	return dna.species.apply_damage(src, \
 									damage, \
@@ -31,6 +32,7 @@
 									edge_protection, \
 									subarmor_flags, \
 									attack_direction, \
+									twist_damage, \
 									wound_messages)
 
 /datum/species/apply_damage(mob/living/carbon/human/victim, \
@@ -49,6 +51,7 @@
 							edge_protection = 0, \
 							subarmor_flags = NONE, \
 							attack_direction = null, \
+							twist_damage = 0, \
 							wound_messages = TRUE)
 	// make sure putting wound_bonus here doesn't screw up other signals or uses for this signal
 	SEND_SIGNAL(victim, COMSIG_MOB_APPLY_DAMAGE, damage, \
@@ -63,6 +66,7 @@
 											edge_protection, \
 											subarmor_flags, \
 											attack_direction, \
+											twist_damage, \
 											wound_messages)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-victim.physiology.damage_resistance))/100
@@ -95,6 +99,7 @@
 								edge_protection = edge_protection, \
 								subarmor_flags = subarmor_flags, \
 								attack_direction = attack_direction, \
+								twist_damage = twist_damage, \
 								wound_messages = wound_messages))
 					victim.update_damage_overlays()
 			else//no bodypart, we deal damage with a more general method.
@@ -114,6 +119,7 @@
 								edge_protection = edge_protection, \
 								subarmor_flags = subarmor_flags, \
 								attack_direction = attack_direction, \
+								twist_damage = twist_damage, \
 								wound_messages = wound_messages))
 					victim.update_damage_overlays()
 			else
