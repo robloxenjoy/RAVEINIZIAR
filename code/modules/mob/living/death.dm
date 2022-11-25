@@ -104,7 +104,7 @@
 	unset_machine()
 	timeofdeath = world.time
 	if(client)
-		client.screen_fade()
+		client.screen_end()
 	tod = station_time_timestamp()
 	var/turf/T = get_turf(src)
 	if(mind && mind.name && mind.active && !istype(T.loc, /area/ctf))
