@@ -754,11 +754,10 @@
 					mob/living/carbon/human/target, \
 					datum/martial_art/attacker_style, \
 					list/modifiers, \
-					target_zone , \
 					biting_grab = FALSE, \
 					forced = FALSE, \
-					silent = FALSE, \
-					grabsound = TRUE)
+					grabsound = TRUE, \
+					silent = FALSE)
 	if(target.check_block())
 		target.visible_message(span_warning("<b>[target]</b> blocks <b>[user]</b>'s [biting_grab ? "bite" : "grab"]!"), \
 						span_userdanger("I block <b>[user]</b>'s [biting_grab ? "bite" : "grab"]!"), \
@@ -770,7 +769,7 @@
 		return FALSE
 	if(attacker_style?.grab_act(user, target) == MARTIAL_ATTACK_SUCCESS)
 		return TRUE
-	target.grabbedby(user, FALSE, biting_grab, forced)
+	target.grabbedby(user, FALSE, biting_grab, forced, grabsound, silent)
 	return TRUE
 
 /datum/species/proc/spec_attack_foot(mob/living/carbon/human/user, \
@@ -802,7 +801,7 @@
 		attacker_style = user.mind.martial_art
 
 	SEND_SIGNAL(user, COMSIG_MOB_ATTACK_JAW, user, victim, attacker_style)
-	return grab(user, victim, attacker_style, modifiers, biting_grab = TRUE, forced = FALSE)
+	return grab(user, victim, attacker_style, modifiers, biting_grab = TRUE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 
 //Weapon can be an attack effect instead
 /datum/species/proc/post_hit_effects(mob/living/carbon/human/victim, \

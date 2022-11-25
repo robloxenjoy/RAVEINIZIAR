@@ -72,7 +72,7 @@
 
 		set_pull_offsets(M, state)
 
-/mob/living/grabbedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, obj/item/bodypart/target_zone, grabsound = TRUE, silent = FALSE)
+/mob/living/grabbedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 	if(user == src)
 		attempt_self_grab(biting_grab)
 		return FALSE
@@ -89,9 +89,9 @@
 	if((user.grab_state >= GRAB_PASSIVE) && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("I don't want to risk hurting <b>[src]</b>!"))
 		return FALSE
-	grippedby(user, instant, biting_grab, forced, target_zone, grabsound, silent)
+	grippedby(user, instant, biting_grab, forced, grabsound, silent)
 
-/mob/living/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE,  obj/item/bodypart/target_zone, grabsound = TRUE, silent = FALSE)
+/mob/living/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 	// We need to be pulled
 	if(src != user)
 		if(!user.pulling || (user.pulling != src))

@@ -1,4 +1,4 @@
-/mob/living/carbon/attempt_self_grab(biting_grab = FALSE, forced = FALSE, silent = FALSE, grabsound = TRUE, obj/item/bodypart/target_zone)
+/mob/living/carbon/attempt_self_grab(biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 	if(!biting_grab)
 		var/obj/item/bodypart/hand = get_active_hand()
 		if(hand && (zone_selected in list(hand.body_zone, hand.parent_body_zone)))
@@ -9,9 +9,9 @@
 		if(jaw && !(zone_selected in LIMB_BODYPARTS))
 			to_chat(src, span_warning("I can't bite my [parse_zone(zone_selected)] with my [jaw.name]!"))
 			return
-	return grippedby(src, TRUE, biting_grab, forced)
+	return grippedby(src, TRUE, biting_grab, forced, TRUE, FALSE)
 
-/mob/living/carbon/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, obj/item/bodypart/target_zone, grabsound = TRUE, silent = FALSE)
+/mob/living/carbon/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 	// We need to be pulled
 	if(src != user)
 		if(!user.pulling || (user.pulling != src))
@@ -79,7 +79,7 @@
 	active_grab.registergrab(src, user, affected, instant, biting_grab, forced)
 	for(var/obj/item/grab/grabber in (user.held_items | user.get_item_by_slot(ITEM_SLOT_MASK)))
 		grabber.update_grab_mode()
-	active_grab.display_grab_message(FALSE, biting_grab, target_zone, silent, grabsound)
+	active_grab.display_grab_message(FALSE, biting_grab, grabsound, silent)
 
 /mob/living/carbon/resist_grab(moving_resist)
 	. = TRUE

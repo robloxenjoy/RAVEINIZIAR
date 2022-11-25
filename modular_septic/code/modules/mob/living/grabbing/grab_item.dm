@@ -214,7 +214,7 @@
 	update_hud()
 
 /// Registers signals and variables and stuff
-/obj/item/grab/proc/registergrab(mob/new_victim, mob/new_owner, obj/item/bodypart/target_zone, instant = FALSE, biting_grab = FALSE, forced = FALSE, silent = FALSE, grabsound = TRUE)
+/obj/item/grab/proc/registergrab(mob/new_victim, mob/new_owner, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 	if(!new_victim || !new_owner)
 		return
 	owner = new_owner
@@ -254,7 +254,7 @@
 	update_grab_mode()
 
 /// Displays the initial grabbing message
-/obj/item/grab/proc/display_grab_message(biting_grab = FALSE, target_zone, grabsound = TRUE, silent = FALSE)
+/obj/item/grab/proc/display_grab_message(biting_grab = FALSE, grabsound = TRUE, silent = FALSE)
 	if(!silent)
 		if(grabsound)
 			if(biting_grab)
@@ -264,14 +264,15 @@
 	/// The owner always has to be a carbon - Thus selfgrab always has a bodypart being grasped
 	if(owner == victim)
 		if(!silent)
-			if(biting_grab)
-				victim.visible_message(span_danger("<b>[owner]</b> bites [owner.p_their()] [grasped_part.name]!"), \
-							span_userdanger("I bite my [grasped_part.name]!"), \
-							vision_distance = COMBAT_MESSAGE_RANGE)
-			else
-				victim.visible_message(span_danger("<b>[owner]</b> grasps [owner.p_their()] [grasped_part.name]."), \
-							span_userdanger("I grab hold of my [grasped_part.name] tightly."), \
-							vision_distance = COMBAT_MESSAGE_RANGE)
+			if(grabsound)
+				if(biting_grab)
+					victim.visible_message(span_danger("<b>[owner]</b> bites [owner.p_their()] [grasped_part.name]!"), \
+								span_userdanger("I bite my [grasped_part.name]!"), \
+								vision_distance = COMBAT_MESSAGE_RANGE)
+				else
+					victim.visible_message(span_danger("<b>[owner]</b> grasps [owner.p_their()] [grasped_part.name]."), \
+								span_userdanger("I grab hold of my [grasped_part.name] tightly."), \
+								vision_distance = COMBAT_MESSAGE_RANGE)
 	else
 		if(!silent)
 			if(grabsound)
