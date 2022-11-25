@@ -225,16 +225,12 @@
 				if(faction_check && !attack_same)
 					return FALSE
 				if(L.stat > stat_attack)
-					enemies -= L
 					return FALSE
 				if(L in friends)
 					return FALSE
 			else
 				if((faction_check && !attack_same) || L.stat)
-					enemies -= L
 					return FALSE
-				if (L in enemies)
-					return TRUE
 			return TRUE
 
 		if(ismecha(the_target))

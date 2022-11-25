@@ -78,7 +78,7 @@
 			if(!mob)
 				if(ismob(eye))
 					mob = eye
-			var/obj/screen/text = new()
+			var/atom/movable/screen/text = new()
 			text.screen_loc = "4:-14, 7"
 			text.maptext_height = 320
 			text.maptext_width = 320

@@ -1,10 +1,9 @@
 /obj/effect/landmark/tendance
 	name = "landmark"
-	icon = 'icons/mob/screen_gen.dmi'
+	icon = 'modular_septic/icons/hud/screen_gen.dmi'
 	icon_state = "tend"
 	invisibility = 101
 	anchored = 1
-	unacidable = 1
 
 /area/maintenance/polovich/tendance
 	name = "tendance"
@@ -26,8 +25,6 @@
 		mind.active = 0
 		mind.transfer_to(character)
 
-	character.clients_names = clients_names.Copy()
-	character.clients_names[character] = clients_names[src]
 	character.timeofdeath = timeofdeath
 	character.key = key
 //	character.client.set_macros()

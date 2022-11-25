@@ -731,7 +731,7 @@
 	if (CONFIG_GET(flag/norespawn) && (!check_rights_for(usr.client, R_ADMIN) || tgui_alert(usr, "Respawn configs disabled. Do you want to use your permissions to circumvent it?", "Respawn", list("Yes", "No")) != "Yes"))
 		return
 
-	if ((stat != DEAD || !( SSticker )) && !istype(src, /mob/living/carbon/human/dead)
+	if ((stat != DEAD || !( SSticker )) && !istype(src, /mob/living/carbon/human/dead))
 		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
 
