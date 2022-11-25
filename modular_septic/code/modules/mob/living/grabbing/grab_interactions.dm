@@ -363,7 +363,7 @@
 		var/deal_wound_bonus = 5
 		if(epic_success >= DICE_SUCCESS)
 			deal_wound_bonus += 5
-		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = weapon.get_sharpness())
+		grasped_part.apply_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = weapon.get_sharpness())
 		if(owner != victim)
 			victim.visible_message(span_pinkdang("[owner] twists [grasped_part.embedded_objects[1]] in [victim]'s [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_pinkdang("[owner] twists [grasped_part.embedded_objects[1]] in my [grasped_part.name]![carbon_victim.wound_message]"), \
