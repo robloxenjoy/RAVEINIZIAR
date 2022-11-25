@@ -29,6 +29,7 @@
 	move_to_delay = 1.2
 	deathmessage = "painfully collapses."
 	obj_damage = 40
+	harm_intent_damage = 15
 	melee_damage_lower = 13
 	melee_damage_upper = 20
 	limb_destroyer = 1
