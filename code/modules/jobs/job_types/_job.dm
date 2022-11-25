@@ -224,6 +224,7 @@
 
 /datum/job/proc/radio_help_message(mob/M)
 	to_chat(M, "<b>Hrumka begins to dream...</b>")
+	send_tip_of_the_round(M)
 
 /datum/outfit/job
 	name = "Standard Gear"

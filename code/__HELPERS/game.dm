@@ -619,8 +619,10 @@
 		var/list/memetips = world.file2list("strings/sillytips.txt")
 		if(randomtips.len && prob(95))
 			message = pick(randomtips)
-		else if(memetips.len)
-			message = pick(memetips)
+//		if(randomtips.len)
+//			m = pick(randomtips)
+//		else if(memetips.len)
+//			message = pick(memetips)
 
 	if(!message)
 		return
@@ -628,4 +630,4 @@
 		message = html_encode(message)
 	else
 		message = copytext(message, 2)
-	to_chat(target, span_purple("<span class='oocplain'><b>Tip of the round: </b>[message]</span>"))
+	to_chat(target, span_purple("<span class='oocplain'><b>Interesting: </b>[message]</span>"))
