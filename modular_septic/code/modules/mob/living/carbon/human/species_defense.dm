@@ -878,7 +878,7 @@
 					if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 						user.changeNext_move(0)
 						user.visible_message(span_pinkdang("[weapon] of [target] is stuck in [user]!"),span_pinkdang("[weapon] of [target] is stuck in your [affected]."), span_hear("You hear the sound of flesh."))
-						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE, target_zone = affected, grabsound = FALSE, silent = TRUE)
+						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE)
 						playsound(get_turf(target), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
 						return TRUE
 					else
