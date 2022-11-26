@@ -864,7 +864,7 @@
 	var/max_g = 255
 	var/max_b = 255
 
-/turf/open/floor/plating/polovich/experimental/Initialize(mapload)
+/turf/open/floor/plating/polovich/temnoo/experimental/Initialize(mapload)
 	color = rgb(rand(min_r, max_r), rand(min_g, max_g), rand(min_b, max_b))
 /*
 /turf/open/floor/plating/polovich/experimental/New()
