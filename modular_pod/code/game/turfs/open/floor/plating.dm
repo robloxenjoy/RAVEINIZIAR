@@ -848,7 +848,7 @@
 	. = ..()
 	dir = rand(0,8)
 
-/turf/open/floor/plating/polovich/experimental
+/turf/open/floor/plating/polovich/temnoo/experimental
 	name = "Tendance Stone"
 	icon_state = "verycoolstone"
 	icon = 'modular_pod/icons/turf/floors.dmi'
