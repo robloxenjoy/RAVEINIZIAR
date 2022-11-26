@@ -226,7 +226,7 @@
 	to_chat(M, "<b>Hrumka begins to dream...</b>")
 	var/list/tips
 	tips = world.file2list("strings/tips.txt")
-	var/message = tips
+	var/message = pick(tips)
 	send_tip_of_the_round(M, message)
 
 /datum/outfit/job
