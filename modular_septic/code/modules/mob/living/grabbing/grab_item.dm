@@ -214,7 +214,7 @@
 	update_hud()
 
 /// Registers signals and variables and stuff
-/obj/item/grab/proc/registergrab(mob/new_victim, mob/new_owner, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
+/obj/item/grab/proc/registergrab(mob/new_victim, mob/new_owner, obj/item/bodypart/new_part, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 	if(!new_victim || !new_owner)
 		return
 	owner = new_owner
@@ -232,10 +232,10 @@
 	grasped_zone = new_owner.zone_selected
 	if(grasped_zone in list(BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_R_EYE))
 		victim.become_blind("grab_[grasped_zone]")
-	if(!biting_grab && (grasped_zone == BODY_ZONE_HEAD) && !LAZYLEN(target_zone.embedded_objects))
-		target_zone = victim.get_bodypart(BODY_ZONE_PRECISE_NECK)
-	if(target_zone)
-		grasped_part = target_zone
+	if(!biting_grab && (grasped_zone == BODY_ZONE_HEAD) && !LAZYLEN(new_part.embedded_objects))
+		new_part = victim.get_bodypart(BODY_ZONE_PRECISE_NECK)
+	if(new_part)
+		grasped_part = new_part
 		LAZYADD(grasped_part.grasped_by, src)
 		RegisterSignal(grasped_part, COMSIG_PARENT_QDELETING, .proc/qdel_void)
 		// Bloody hands if the part is bleeding
@@ -250,6 +250,8 @@
 	bite_grab = biting_grab
 	if(bite_grab)
 		ADD_TRAIT(victim, TRAIT_BITTEN, WEAKREF(owner))
+	else
+		slot_flags = NONE
 	create_hud_object()
 	update_grab_mode()
 
