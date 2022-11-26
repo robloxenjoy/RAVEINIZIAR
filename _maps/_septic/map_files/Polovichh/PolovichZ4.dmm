@@ -161,7 +161,7 @@
 "de" = (/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest)
 "df" = (/turf/open/floor/plating/polovich/bonefloor,/area/maintenance/polovich/forest)
 "dg" = (/obj/structure/barricade/flora/crystal/blue,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/mountain,/turf/open/floor/plating/polovich/evilevil,/area/maintenance/polovich/forest)
-"dh" = (/obj/structure/healingfountain,/turf/open/floor/plating/polovich/kapec/ba,/area/maintenance/polovich/forest)
+"dh" = (/obj/structure/fluff/gutted_statue,/turf/open/floor/plating/polovich/kapec/ba,/area/maintenance/polovich/forest)
 "di" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/krutoplitka,/area/maintenance/polovich/forest)
 "dj" = (/obj/structure/flora/ausbushes/crystal,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/mountain,/turf/open/floor/plating/polovich/evilevil,/area/maintenance/polovich/forest)
 "dk" = (/turf/open/floor/plating/polovich/red,/area/maintenance/polovich/forest)
