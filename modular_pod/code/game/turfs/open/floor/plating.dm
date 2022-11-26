@@ -167,7 +167,7 @@
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
 
-/turf/open/floor/plating/polovich/temnoo/Initialize()
+/turf/open/floor/plating/polovich/temnoo/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -177,7 +177,7 @@
 	icon_state = "asfalt2"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 
-/turf/open/floor/plating/polovich/temnoo/two/Initialize()
+/turf/open/floor/plating/polovich/temnoo/two/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -370,7 +370,7 @@
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	slowdown = 2
 
-/turf/open/floor/plating/polovich/dirt/dark/Initialize()
+/turf/open/floor/plating/polovich/dirt/dark/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -459,7 +459,7 @@
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 2
 
-/turf/open/floor/plating/polovich/greengryaz/Initialize()
+/turf/open/floor/plating/polovich/greengryaz/Initialize(mapload)
 	. = ..()
 	dir = rand(0,8)
 
@@ -480,7 +480,7 @@
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 2
 
-/turf/open/floor/plating/polovich/bluedirty/Initialize()
+/turf/open/floor/plating/polovich/bluedirty/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -495,7 +495,7 @@
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 2
 
-/turf/open/floor/plating/polovich/greendirtevil/Initialize()
+/turf/open/floor/plating/polovich/greendirtevil/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -510,7 +510,7 @@
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 2
 
-/turf/open/floor/plating/polovich/lightblue/Initialize()
+/turf/open/floor/plating/polovich/lightblue/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -525,7 +525,7 @@
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
 
-/turf/open/floor/plating/polovich/woodennewblue/Initialize()
+/turf/open/floor/plating/polovich/woodennewblue/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -676,7 +676,7 @@
 	heavyfootstep = FOOTSTEP_MEAT
 	slowdown = 3
 
-/turf/open/floor/plating/polovich/warlocksticky/Initialize()
+/turf/open/floor/plating/polovich/warlocksticky/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -690,7 +690,7 @@
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
 
-/turf/open/floor/plating/polovich/slush/Initialize()
+/turf/open/floor/plating/polovich/slush/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -704,7 +704,7 @@
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
 
-/turf/open/floor/plating/polovich/slush/mud/Initialize()
+/turf/open/floor/plating/polovich/slush/mud/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -718,7 +718,7 @@
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
 
-/turf/open/floor/plating/polovich/slush/mudd/Initialize()
+/turf/open/floor/plating/polovich/slush/mudd/Initialize(mapload)
 	. = ..()
 	dir = rand(0,8)
 
@@ -733,7 +733,7 @@
 	heavyfootstep = FOOTSTEP_MEAT
 	slowdown = 3
 
-/turf/open/floor/plating/polovich/evilevil/Initialize()
+/turf/open/floor/plating/polovich/evilevil/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -767,9 +767,9 @@
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
 
-/turf/open/floor/plating/polovich/rockedar/Initialize()
+/turf/open/floor/plating/polovich/rockedar/Initialize(mapload)
 	. = ..()
-	dir = rand(0,8)
+	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/rockedarr
 	name = "Stone Floor"
@@ -816,7 +816,7 @@
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
 
-/turf/open/floor/plating/polovich/stonestonestone/two/Initialize()
+/turf/open/floor/plating/polovich/stonestonestone/two/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -830,7 +830,7 @@
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
 
-/turf/open/floor/plating/polovich/stonestonestone/three/Initialize()
+/turf/open/floor/plating/polovich/stonestonestone/three/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -844,19 +844,19 @@
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
 
-/turf/open/floor/plating/polovich/stonestonestone/evilstoney/Initialize()
+/turf/open/floor/plating/polovich/stonestonestone/evilstoney/Initialize(mapload)
 	. = ..()
 	dir = rand(0,8)
 
 /turf/open/floor/plating/polovich/experimental
-	name = "Experiment Stone"
+	name = "Tendance Stone"
 	icon_state = "verycoolstone"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
-	var/flickering_floor = 0
+//	var/flickering_floor = 0
 	var/min_r = 0
 	var/min_g = 0
 	var/min_b = 0
@@ -864,7 +864,7 @@
 	var/max_g = 255
 	var/max_b = 255
 
-/turf/open/floor/plating/polovich/experimental/Initialize(Mapload)
+/turf/open/floor/plating/polovich/experimental/Initialize(mapload)
 	color = rgb(rand(min_r, max_r), rand(min_g, max_g), rand(min_b, max_b))
 /*
 /turf/open/floor/plating/polovich/experimental/New()

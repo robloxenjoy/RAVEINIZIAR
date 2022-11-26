@@ -343,7 +343,7 @@
 		if(INTENT_DISARM)
 			disarm(user, victim, attacker_style, modifiers)
 		if(INTENT_GRAB)
-			grab(user, victim, attacker_style, modifiers, biting_grab = FALSE, forced = FALSE, silent = FALSE, grabsound = TRUE)
+			grab(user, victim, attacker_style, modifiers, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
 		if(INTENT_HARM)
 			harm(user, victim, attacker_style, modifiers, SPECIAL_ATK_NONE)
 		else
