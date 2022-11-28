@@ -79,7 +79,7 @@
 	active_grab.registergrab(src, user, affected, instant, biting_grab, forced)
 	for(var/obj/item/grab/grabber in (user.held_items | user.get_item_by_slot(ITEM_SLOT_MASK)))
 		grabber.update_grab_mode()
-	active_grab.display_grab_message(FALSE, biting_grab, grabsound, silent)
+	active_grab.display_grab_message(biting_grab, grabsound, silent)
 
 /mob/living/carbon/resist_grab(moving_resist)
 	. = TRUE
