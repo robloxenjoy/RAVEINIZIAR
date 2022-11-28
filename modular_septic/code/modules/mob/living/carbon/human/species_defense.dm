@@ -872,8 +872,8 @@
 		var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 		if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 			user.changeNext_move(0)
-			victim.visible_message(span_pinkdang("[user]'s [weapon]  get[weapon.p_s()] stuck in my [affected]!"), \
-								span_pinkdang("[user]'s [weapon] get[weapon.p_s()] stuck in [victim]'s [affected]!"), \
+			victim.visible_message(span_pinkdang("[user]'s [weapon] get[weapon.p_s()] stuck in [victim]'s [affected]!"), \
+								span_pinkdang("[user]'s [weapon]  get[weapon.p_s()] stuck in my [affected]!"), \
 								span_hear("I hear the sound of flesh being penetrated."))
 			victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
 			playsound(get_turf(victim), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
