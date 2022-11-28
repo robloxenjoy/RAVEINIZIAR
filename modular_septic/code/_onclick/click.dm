@@ -140,7 +140,7 @@
 	var/obj/item/flipper = A
 	if(!isliving(usr) || usr.incapacitated() || !usr.is_holding(flipper))
 		return
-	if(flipper.loc && SEND_SIGNAL(flipper.loc, COMSIG_CONTAINS_STORAGE))
+	if(flipper.loc && !ismob(flipper.loc) && SEND_SIGNAL(flipper.loc, COMSIG_CONTAINS_STORAGE))
 		return
 	var/old_width = flipper.tetris_width
 	var/old_height = flipper.tetris_height
