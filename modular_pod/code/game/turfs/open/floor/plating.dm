@@ -689,6 +689,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 4
 
 /turf/open/floor/plating/polovich/slush/Initialize(mapload)
 	. = ..()
@@ -703,6 +704,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 4
 
 /turf/open/floor/plating/polovich/slush/mud/Initialize(mapload)
 	. = ..()
@@ -717,6 +719,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 4
 
 /turf/open/floor/plating/polovich/slush/mudd/Initialize(mapload)
 	. = ..()
