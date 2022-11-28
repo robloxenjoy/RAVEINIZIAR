@@ -51,7 +51,6 @@
 
 /obj/structure/flora/tree/pine/Initialize(mapload)
 	. = ..()
-
 	if(islist(icon_states?.len))
 		icon_state = pick(icon_states)
 
@@ -145,8 +144,8 @@
 	anchored = TRUE
 
 /obj/structure/flora/tree/dead/Initialize(mapload)
-	icon_state = "tree_[rand(1, 6)]"
 	. = ..()
+	icon_state = "tree_[rand(1, 6)]"
 
 /obj/structure/flora/tree/jungle
 	name = "tree"
@@ -157,8 +156,8 @@
 	pixel_y = -20
 
 /obj/structure/flora/tree/jungle/Initialize(mapload)
-	icon_state = "[icon_state][rand(1, 6)]"
 	. = ..()
+	icon_state = "[icon_state][rand(1, 6)]"
 
 /obj/structure/flora/tree/jungle/small
 	pixel_y = 0
@@ -176,23 +175,22 @@
 	icon_state = "snowgrass1bb"
 
 /obj/structure/flora/grass/brown/Initialize(mapload)
-	icon_state = "snowgrass[rand(1, 3)]bb"
 	. = ..()
-
+	icon_state = "snowgrass[rand(1, 3)]bb"
 
 /obj/structure/flora/grass/green
 	icon_state = "snowgrass1gb"
 
 /obj/structure/flora/grass/green/Initialize(mapload)
-	icon_state = "snowgrass[rand(1, 3)]gb"
 	. = ..()
+	icon_state = "snowgrass[rand(1, 3)]gb"
 
 /obj/structure/flora/grass/both
 	icon_state = "snowgrassall1"
 
 /obj/structure/flora/grass/both/Initialize(mapload)
-	icon_state = "snowgrassall[rand(1, 3)]"
 	. = ..()
+	icon_state = "snowgrassall[rand(1, 3)]"
 
 
 //bushes
@@ -204,8 +202,8 @@
 	anchored = TRUE
 
 /obj/structure/flora/bush/Initialize(mapload)
-	icon_state = "snowbush[rand(1, 6)]"
 	. = ..()
+	icon_state = "snowbush[rand(1, 6)]"
 
 //newbushes
 
@@ -216,9 +214,9 @@
 	icon_state = "firstbush_1"
 
 /obj/structure/flora/ausbushes/Initialize(mapload)
+	. = ..()
 	if(icon_state == "firstbush_1")
 		icon_state = "firstbush_[rand(1, 4)]"
-	. = ..()
 
 /obj/structure/flora/ausbushes/crystal
 	name = "Overcrystal Bush"
@@ -241,6 +239,7 @@
 
 /obj/structure/flora/ausbushes/crystal/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
+
 	if(!isturf(loc) || !isliving(AM))
 		return
 	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
@@ -253,32 +252,32 @@
 	resistance_flags = FLAMMABLE
 	density = 0
 	anchored = 1
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/flora/ausbushes/root/Initialize(mapload)
 	. = ..()
 	update_appearance()
+	icon_state = "root_[rand(1, 3)]"
+
+/obj/structure/flora/ausbushes/root/ComponentInitialize()
+	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/shag,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-	icon_state = "root_[rand(1, 3)]"
-
-/obj/structure/flora/ausbushes/root/proc/shag(datum/source, atom/movable/AM)
+/obj/structure/flora/ausbushes/root/proc/shag(datum/source, mob/living/arrived)
 	SIGNAL_HANDLER
-	if(!isturf(loc) || !isliving(AM))
+
+	if(!isturf(loc) || !istype(arrived))
 		return
 	if(prob(50))
-		AM.visible_message(span_warning("[AM] stumbles on the root."), span_warning("You stumble on the root."))
+		arrived.visible_message(span_warning("[arrived] stumbles on the root."), \
+								span_warning("I stumble on the root."))
 		sound_hint()
-		var/mob/living/user = AM
-		var/diceroll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
+		var/diceroll = arrived.diceroll(GET_MOB_ATTRIBUTE_VALUE(arrived, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
 		if(diceroll <= DICE_FAILURE)
-			user.Stumble(3 SECONDS)
-
-/obj/structure/flora/ausbushes/root/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item))
-		return
+			arrived.Stumble(3 SECONDS)
 
 /obj/structure/flora/ausbushes/crystal/dark
 	name = "Blackness Bush"
@@ -292,78 +291,63 @@
 	opacity = 0
 	var/berry_type = null
 	var/berries = 0
-/*
-	var/time_between_uses = 1000
-	var/last_process = 0
-*/
 
 /obj/structure/flora/ausbushes/crystal/dark/Initialize()
+	. = ..()
 	berry_type = pick("red", "blue", "redd", "bluee", "purple")
 	grow_berries()
 
 /obj/structure/flora/ausbushes/crystal/dark/proc/grow_berries()
-	if(!berry_type || berries)
+	if(QDELETED(src) || !berry_type || (berries > 0))
 		return
-//	overlays += "[berry_type]_berries"
-//	add_overlay("[berry_type]_berries")
-	berries = 1
-/*
+	update_appearance()
+	berries++
+
 /obj/structure/flora/ausbushes/crystal/dark/update_overlays()
 	. = ..()
-	if(berry_type && berries)
+	if(berry_type && (berries > 0))
 		. += "[berry_type]_berries"
-*/
+
 /obj/structure/flora/ausbushes/crystal/dark/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
 	if(user.a_intent != INTENT_GRAB)
 		return
-/*
-	if(last_process + time_between_uses > world.time)
-		user.changeNext_move(CLICK_CD_MELEE)
-		user.Stun(1 SECONDS)
-		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
-		to_chat(user, span_notice("Looks like there are no more gule berries left."))
-		return
-*/
-	user.visible_message(span_notice("[user] begins to search for berries."),span_notice("You begin to search for berries."), span_hear("You hear the sound of shag."))
+
+	user.visible_message(span_notice("<b>[user]</b> begins to search for berries."), \
+						span_notice("I begin to search for berries."), \
+						span_hear("I hear the sound of shag."))
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
-	if(do_after(user, 70, target = src))
-		if(!berries)
-			to_chat(user, "<span class='notice'>No berries.</span>")
-			user.Immobilize(1 SECONDS)
-			user.changeNext_move(CLICK_CD_MELEE)
-			playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
-			return
-		to_chat(user, span_notice("You pick berry."))
-		user.changeNext_move(CLICK_CD_MELEE)
+	if(!do_after(user, 70, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		return
+	if(!berries)
+		to_chat(user, span_notice("No berries."))
 		user.Immobilize(1 SECONDS)
+		user.changeNext_move(CLICK_CD_MELEE)
 		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
-//	new /obj/item/food/berries/bluecherries(get_turf(src), 1)
-//		var/obj/item/food/berries/redcherrie/M = new (get_turf(src))
-//		user.put_in_active_hand(M)
-		var/berr
-		switch(berry_type)
-			if("red")
-				berr = new /obj/item/food/berries/redcherrie //(get_turf(src), 1)
-			if("blue")
-				berr = new /obj/item/food/grown/bluecherries //(get_turf(src), 1)
-			if("redd")
-				berr = new /obj/item/food/berries/redcherrie/lie //= new (get_turf(src), 1)
-//				berr = new /obj/item/food/berries/redcherrie/lie
-			if("bluee")
-				berr = new /obj/item/food/grown/bluecherries/lie //= new (get_turf(src), 1)
-			if("purple")
-				berr = new /obj/item/food/berries/leancherrie //= new (get_turf(src), 1)
-		user.put_in_active_hand(berr)
-//		overlays -= "[berry_type]_berries"
-//		cut_overlay("[berry_type]_berries")
-		berries = 0
-//		update_appearance()
-//		spawn(1000)
-		addtimer(CALLBACK(src, .proc/grow_berries), 130 SECONDS)
+		return
+	to_chat(user, span_notice("You pick berry."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.Immobilize(1 SECONDS)
+	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	var/obj/item/berry
+	switch(berry_type)
+		if("red")
+			berry = new /obj/item/food/berries/redcherrie(loc)
+		if("blue")
+			berry = new /obj/item/food/grown/bluecherries(loc)
+		if("redd")
+			berry = new /obj/item/food/berries/redcherrie/lie(loc)
+		if("bluee")
+			berry = new /obj/item/food/grown/bluecherries/lie(loc)
+		if("purple")
+			berry = new /obj/item/food/berries/leancherrie(loc)
+	user.put_in_active_hand(berry)
+	berries--
+	addtimer(CALLBACK(src, .proc/grow_berries), 130 SECONDS)
 
 /obj/structure/flora/ausbushes/zarosli/sliz
 	name = "Slime Thickets"
@@ -374,8 +358,8 @@
 	plane = ABOVE_GAME_PLANE
 	resistance_flags = FLAMMABLE
 	density = 0
-	anchored = 1
-	opacity = 1
+	anchored = TRUE
+	opacity = TRUE
 
 /obj/structure/flora/ausbushes/zarosli/midnight
 	name = "Midnightberry Thickets"
@@ -386,25 +370,25 @@
 	plane = ABOVE_GAME_PLANE
 	resistance_flags = FLAMMABLE
 	density = 0
-	anchored = 1
-	opacity = 1
-	var/time_between_uses = 500
-	var/last_process = 0
+	anchored = TRUE
+	opacity = TRUE
 
 /obj/structure/flora/ausbushes/zarosli/Initialize(mapload)
 	. = ..()
 	update_appearance()
+
+/obj/structure/flora/ausbushes/zarosli/ComponentInitialize()
+	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/shag,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-
 /obj/structure/flora/ausbushes/zarosli/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
-	if(!isturf(loc) || !isliving(AM))
+	if(!isliving(AM))
 		return
-	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
+	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
 
 /obj/structure/flora/ausbushes/zarosli/midnight/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
@@ -412,126 +396,119 @@
 		return
 	if(user.a_intent != INTENT_GRAB)
 		return
-	if(do_after(user, 100, target = src))
-		if(last_process + time_between_uses > world.time)
-			user.changeNext_move(CLICK_CD_MELEE)
-			user.Immobilize(1 SECONDS)
-			playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
-			to_chat(user, span_notice("Looks like there are no more midnightberries left."))
-			return
-		last_process = world.time
-		to_chat(user, span_notice("You pick pesky midnightberry."))
-		user.changeNext_move(CLICK_CD_MELEE)
-		user.Immobilize(1 SECONDS)
-		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
-//	new /obj/item/food/berries/bluecherries(get_turf(src), 1)
-		var/obj/item/food/grown/bluecherries/M = new (get_turf(src), 1)
-		user.put_in_active_hand(M)
+	if(!do_after(user, 10 SECONDS, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		return
+	to_chat(user, span_notice("You pick pesky midnightberry."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.Immobilize(1 SECONDS)
+	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	user.put_in_active_hand(new /obj/item/food/grown/bluecherries(loc))
 
 /obj/structure/flora/ausbushes/reedbush
 	icon_state = "reedbush_1"
 
 /obj/structure/flora/ausbushes/reedbush/Initialize(mapload)
-	icon_state = "reedbush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "reedbush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/leafybush
 	icon_state = "leafybush_1"
 
 /obj/structure/flora/ausbushes/leafybush/Initialize(mapload)
-	icon_state = "leafybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "leafybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/palebush
 	icon_state = "palebush_1"
 
 /obj/structure/flora/ausbushes/palebush/Initialize(mapload)
-	icon_state = "palebush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "palebush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/stalkybush
 	icon_state = "stalkybush_1"
 
 /obj/structure/flora/ausbushes/stalkybush/Initialize(mapload)
-	icon_state = "stalkybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "stalkybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/grassybush
 	icon_state = "grassybush_1"
 
 /obj/structure/flora/ausbushes/grassybush/Initialize(mapload)
-	icon_state = "grassybush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "grassybush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/fernybush
 	icon_state = "fernybush_1"
 
 /obj/structure/flora/ausbushes/fernybush/Initialize(mapload)
-	icon_state = "fernybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "fernybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/sunnybush
 	icon_state = "sunnybush_1"
 
 /obj/structure/flora/ausbushes/sunnybush/Initialize(mapload)
-	icon_state = "sunnybush_[rand(1, 3)]"
 	. = ..()
+	icon_state = "sunnybush_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/genericbush
 	icon_state = "genericbush_1"
 
 /obj/structure/flora/ausbushes/genericbush/Initialize(mapload)
-	icon_state = "genericbush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "genericbush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/pointybush
 	icon_state = "pointybush_1"
 
 /obj/structure/flora/ausbushes/pointybush/Initialize(mapload)
-	icon_state = "pointybush_[rand(1, 4)]"
 	. = ..()
+	icon_state = "pointybush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/lavendergrass
 	icon_state = "lavendergrass_1"
 
 /obj/structure/flora/ausbushes/lavendergrass/Initialize(mapload)
-	icon_state = "lavendergrass_[rand(1, 4)]"
 	. = ..()
+	icon_state = "lavendergrass_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/ywflowers
 	icon_state = "ywflowers_1"
 
 /obj/structure/flora/ausbushes/ywflowers/Initialize(mapload)
-	icon_state = "ywflowers_[rand(1, 3)]"
 	. = ..()
+	icon_state = "ywflowers_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/brflowers
 	icon_state = "brflowers_1"
 
 /obj/structure/flora/ausbushes/brflowers/Initialize(mapload)
-	icon_state = "brflowers_[rand(1, 3)]"
 	. = ..()
+	icon_state = "brflowers_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/ppflowers
 	icon_state = "ppflowers_1"
 
 /obj/structure/flora/ausbushes/ppflowers/Initialize(mapload)
-	icon_state = "ppflowers_[rand(1, 3)]"
 	. = ..()
+	icon_state = "ppflowers_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/sparsegrass
 	icon_state = "sparsegrass_1"
 
 /obj/structure/flora/ausbushes/sparsegrass/Initialize(mapload)
-	icon_state = "sparsegrass_[rand(1, 3)]"
 	. = ..()
+	icon_state = "sparsegrass_[rand(1, 3)]"
 
 /obj/structure/flora/ausbushes/fullgrass
 	icon_state = "fullgrass_1"
 
 /obj/structure/flora/ausbushes/fullgrass/Initialize(mapload)
-	icon_state = "fullgrass_[rand(1, 3)]"
 	. = ..()
+	icon_state = "fullgrass_[rand(1, 3)]"
 
 /obj/item/kirbyplants
 	name = "potted plant"

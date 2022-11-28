@@ -17,7 +17,7 @@
 #define MINIMUM_USEFUL_LIGHT_RANGE 1.4
 
 /// type of falloff to use for lighting; 1 for circular, 2 for square
-#define LIGHTING_FALLOFF        1
+#define LIGHTING_FALLOFF        2
 /// use lambertian shading for light sources
 #define LIGHTING_LAMBERTIAN     0
 /// height off the ground of light sources on the pseudo-z-axis, you should probably leave this alone
