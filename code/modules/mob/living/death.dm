@@ -69,6 +69,7 @@
  * * gibbed - Was the mob gibbed?
 */
 
+/*
 /client/proc/screen_end()
 	if(mob)
 		mob.clear_fullscreen("brute", 50)
@@ -98,13 +99,16 @@
 						mob.send_to_kyrilka()
 				else
 					mob.send_to_kyrilka()
+*/
 
 /mob/living/proc/death(gibbed)
 	set_stat(DEAD)
 	unset_machine()
+/*
 	timeofdeath = world.time
 	if(client)
 		client.screen_end()
+*/
 	tod = station_time_timestamp()
 	var/turf/T = get_turf(src)
 	if(mind && mind.name && mind.active && !istype(T.loc, /area/ctf))

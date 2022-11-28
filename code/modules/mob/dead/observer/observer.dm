@@ -279,7 +279,7 @@ Works together with spawning an observer, noted above.
 
 /mob/proc/ghostize(can_reenter_corpse = TRUE)
 	if(key && (key[1] != "@"))
-		if(HAS_TRAIT(src, TRAIT_CORPSELOCKED) && can_reenter_corpse && timeofdeath + 150 > world.time) //If you can re-enter the corpse you can't leave when corpselocked
+		if(HAS_TRAIT(src, TRAIT_CORPSELOCKED) && can_reenter_corpse) //If you can re-enter the corpse you can't leave when corpselocked
 			return
 		stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now
 		close_peeper(src)
@@ -288,7 +288,6 @@ Works together with spawning an observer, noted above.
 		ghost.can_reenter_corpse = can_reenter_corpse
 		ghost.key = key
 		ghost.client?.init_verbs()
-		ghost.timeofdeath = timeofdeath
 		if(!can_reenter_corpse)// Disassociates observer mind from the body mind
 			ghost.mind = null
 		return ghost
@@ -315,7 +314,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/response = tgui_alert(usr, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst still alive you may not play again this round! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?",list("Ghost","Stay in body"))
 	if(response != "Ghost")
 		return FALSE//didn't want to ghost after-all
-	src.timeofdeath = world.time
 	ghostize(FALSE) // FALSE parameter is so we can never re-enter our body. U ded.
 	return TRUE
 
@@ -327,7 +325,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/response = tgui_alert(usr, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst still alive you may not play again this round! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?",list("Ghost","Stay in body"))
 	if(response != "Ghost")
 		return
-//	src.timeofdeath = world.time
 	ghostize(FALSE)
 
 /mob/dead/observer/Move(NewLoc, direct, glide_size_override = 32)
