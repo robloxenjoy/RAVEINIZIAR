@@ -864,7 +864,7 @@
 						intended_zone = BODY_ZONE_CHEST, \
 						wound_messages = TRUE, \
 						list/modifiers)
-	if(!weapon || !length(weapon.embedding))
+	if(!istype(weapon) || !length(weapon.embedding))
 		return FALSE
 	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL)
 	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL)
