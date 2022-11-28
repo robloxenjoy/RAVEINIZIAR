@@ -274,7 +274,7 @@
 		arrived.visible_message(span_warning("[arrived] stumbles on the root."), \
 								span_warning("I stumble on the root."))
 		sound_hint()
-		var/diceroll = arrived.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
+		var/diceroll = arrived.diceroll(GET_MOB_ATTRIBUTE_VALUE(arrived, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
 		if(diceroll <= DICE_FAILURE)
 			arrived.Stumble(3 SECONDS)
 
