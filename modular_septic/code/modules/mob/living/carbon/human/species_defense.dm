@@ -272,8 +272,6 @@
 					subarmor_flags = subarmor_flags)
 		victim.damage_armor(damage+weapon.armor_damage_modifier, MELEE, weapon.damtype, sharpness, def_zone)
 		post_hit_effects(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
-		stunning(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
-		embed(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
 	user.sound_hint()
 	victim.sound_hint()
 	victim.send_item_attack_message(weapon, user, hit_area, affecting)
@@ -716,8 +714,6 @@
 	target.apply_damage(attack_damage*1.5, STAMINA, affecting)
 	target.damage_armor(attack_damage+attack_armor_damage, MELEE, user.dna.species.attack_type, attack_sharpness, affecting)
 	post_hit_effects(target, user, affecting, attack_effect, attack_damage, MELEE, user.dna.species.attack_type, NONE, def_zone, intended_zone, modifiers)
-	stunning(target, user, affecting, attack_effect, attack_damage, MELEE, user.dna.species.attack_type, NONE, def_zone, intended_zone, modifiers)
-	embed(target, user, affecting, attack_effect, attack_damage, MELEE, user.dna.species.attack_type, NONE, def_zone, intended_zone, modifiers)
 	if(def_zone == intended_zone)
 		if(user != target)
 			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] <b>[target]</b>'s [hit_area]![target.wound_message]"), \
@@ -833,19 +829,21 @@
 									spin = FALSE, \
 									force = victim.move_force, \
 									callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
+	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	return TRUE
 
 /datum/species/proc/stunning(mob/living/carbon/human/victim, \
-									mob/living/carbon/human/user, \
-									obj/item/bodypart/affected, \
-									obj/item/weapon, \
-									damage = 0, \
-									damage_flag = MELEE, \
-									damage_type = BRUTE, \
-									sharpness = NONE,
-									def_zone = BODY_ZONE_CHEST, \
-									intended_zone = BODY_ZONE_CHEST, \
-									list/modifiers)
+							mob/living/carbon/human/user, \
+							obj/item/bodypart/affected, \
+							obj/item/weapon, \
+							damage = 0, \
+							damage_flag = MELEE, \
+							damage_type = BRUTE, \
+							sharpness = NONE,
+							def_zone = BODY_ZONE_CHEST, \
+							intended_zone = BODY_ZONE_CHEST, \
+							list/modifiers)
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
 	if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 		if(victim_end >= 3)
@@ -854,33 +852,31 @@
 			victim.Immobilize(0.5 SECONDS)
 	return TRUE
 
-/datum/species/proc/embed(mob/living/carbon/human/user, \
-									mob/living/carbon/human/target, \
-									obj/item/bodypart/affected, \
-									obj/item/weapon, \
-									damage = 0, \
-									damage_flag = MELEE, \
-									damage_type = BRUTE, \
-									sharpness = NONE, \
-									def_zone = BODY_ZONE_CHEST, \
-									intended_zone = BODY_ZONE_CHEST, \
-									wound_messages = TRUE, \
-									list/modifiers)
-	if(!weapon)
+/datum/species/proc/embedding(mob/living/carbon/human/victim, \
+						mob/living/carbon/human/user, \
+						obj/item/bodypart/affected, \
+						obj/item/weapon, \
+						damage = 0, \
+						damage_flag = MELEE, \
+						damage_type = BRUTE, \
+						sharpness = NONE, \
+						def_zone = BODY_ZONE_CHEST, \
+						intended_zone = BODY_ZONE_CHEST, \
+						wound_messages = TRUE, \
+						list/modifiers)
+	if(!weapon || !length(weapon.embedding))
 		return FALSE
-	if(attack_sharpness)
+	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL)
+	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL)
+	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
+		var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
+		if(embed_attempt & COMPONENT_EMBED_SUCCESS)
+			user.changeNext_move(0)
+			victim.visible_message(span_pinkdang("[user]'s [weapon] get[weapon.p_s()] stuck in [victim]'s [affected]!"), \
+								span_pinkdang("[user]'s [weapon]  get[weapon.p_s()] stuck in my [affected]!"), \
+								span_hear("I hear the sound of flesh being penetrated."))
+			victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
+			playsound(get_turf(victim), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
+			return TRUE
 		return FALSE
-	if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) > DICE_FAILURE)
-		if(target.diceroll(GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
-			if(weapon.sharpness & SHARP_EDGED|SHARP_POINTY)
-				if(length(weapon.embedding))
-					var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
-					if(embed_attempt & COMPONENT_EMBED_SUCCESS)
-						user.changeNext_move(0)
-						user.visible_message(span_pinkdang("[weapon] of [target] is stuck in [user]!"),span_pinkdang("[weapon] of [target] is stuck in your [affected]."), span_hear("You hear the sound of flesh."))
-						user.grabbedby(target, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE)
-						playsound(get_turf(target), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
-						return TRUE
-					else
-						return FALSE
 	return FALSE

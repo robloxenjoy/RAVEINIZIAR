@@ -11,7 +11,7 @@
 			return
 	return grippedby(src, TRUE, biting_grab, forced, TRUE, FALSE)
 
-/mob/living/carbon/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
+/mob/living/carbon/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE, forced_zone)
 	// We need to be pulled
 	if(src != user)
 		if(!user.pulling || (user.pulling != src))
@@ -33,7 +33,7 @@
 		else if(active_grab)
 			to_chat(user, span_warning("My hand is busy holding [active_grab]!"))
 			return
-	var/obj/item/bodypart/affected = get_bodypart_nostump(check_zone(user.zone_selected))
+	var/obj/item/bodypart/affected = get_bodypart_nostump(check_zone(forced_zone ? forced_zone : user.zone_selected))
 	if(!affected)
 		to_chat(user, span_warning("[p_they(TRUE)] do[p_es()]n't have a [parse_zone(user.zone_selected)]!"))
 		return
