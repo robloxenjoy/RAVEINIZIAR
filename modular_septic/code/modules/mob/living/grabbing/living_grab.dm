@@ -71,6 +71,9 @@
 		set_pull_offsets(M, state)
 
 /mob/living/grabbedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE, forced_zone)
+	//unconscious users cant grab
+	if(user.stat >= UNCONSCIOUS)
+		return FALSE
 	if(user == src)
 		attempt_self_grab(biting_grab)
 		return FALSE
