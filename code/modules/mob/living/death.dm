@@ -82,7 +82,7 @@
 			text.screen_loc = "4:-14, 7"
 			text.maptext_height = 320
 			text.maptext_width = 320
-			text.maptext = "<span style='font-family: Wingdings; font-size: 24px; color: red;'><b>Based on Serotiy Void's memories, you seem to have died at that very moment...</b></span>"
+			text.maptext = "<span style='font-family: Wingdings; font-size: 24px; color: red;'><b>Based on Serotiy Void's memories, you seem to have died at THIS moment...</b></span>"
 			text.alpha = 0
 			screen.Add(text)
 			animate(text, alpha = 255, 100)
