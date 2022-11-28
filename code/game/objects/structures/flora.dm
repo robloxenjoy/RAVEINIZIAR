@@ -252,6 +252,7 @@
 	resistance_flags = FLAMMABLE
 	density = 0
 	anchored = 1
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/flora/ausbushes/root/Initialize(mapload)
 	. = ..()
