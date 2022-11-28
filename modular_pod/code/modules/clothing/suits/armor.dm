@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/armor/vest/infiltrator
+/obj/item/clothing/suit/armor/vest/leatherbreast
 	name = "Leather Breast-armor"
 	desc = "This will help you survive."
 	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'

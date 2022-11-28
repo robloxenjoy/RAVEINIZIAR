@@ -29,7 +29,7 @@
 			user.visible_message(span_notice("[user] cuts [src] with the [W]."),span_notice("You cut [src] with the [W]."), span_hear("You hear the sound of cutting."))
 			user.changeNext_move(CLICK_CD_MELEE)
 			user.adjustFatigueLoss(W.attack_fatigue_cost)
-			playsound(get_turf(src), 'sound/weapons/bladeslice', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100 , FALSE, FALSE)
 			for(var/i=1 to smallskin_amount)
 				new /obj/item/skin/human/small(get_turf(src))
 			qdel(src)
@@ -43,8 +43,8 @@
 /obj/item/skin/human/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(istype(W, /obj/item/grown/log/tree/evil/logg))
 		user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
-		var/time = 12 SECONDS 
-		time -= (GET_MOB_SKILL_VALUE(owner, SKILL_MASONRY) * 0.75 SECONDS)
+		var/time = 12 SECONDS
+		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
 			if(user.zone_selected == BODY_ZONE_CHEST)
 				user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))

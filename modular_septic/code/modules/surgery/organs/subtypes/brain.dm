@@ -441,7 +441,6 @@
 	brainmob = new(src)
 	brainmob.name = transferer.real_name
 	brainmob.real_name = transferer.real_name
-	brainmob.timeofhostdeath = transferer.timeofdeath
 	brainmob.suiciding = suicided
 	if(transferer.has_dna())
 		var/mob/living/carbon/carbon_transferer = transferer
