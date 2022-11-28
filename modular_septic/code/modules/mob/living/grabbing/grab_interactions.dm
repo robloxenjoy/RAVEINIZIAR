@@ -350,7 +350,6 @@
 	//Wtf?
 	if(!grasped_part || !LAZYACCESS(grasped_part.embedded_objects, 1))
 		return FALSE
-//	SEND_SIGNAL(victim, COMSIG_CARBON_EMBED_RIP, grasped_part.embedded_objects[1], grasped_part, owner)
 	var/mob/living/carbon/carbon_victim = victim
 	var/epic_success = DICE_FAILURE
 	var/modifier = 0
@@ -398,6 +397,4 @@
 	if(!grasped_part || !LAZYACCESS(grasped_part.embedded_objects, 1))
 		return FALSE
 	SEND_SIGNAL(victim, COMSIG_CARBON_EMBED_RIP, grasped_part.embedded_objects[1], grasped_part, owner)
-//	var/mob/living/carbon/carbon_victim = victim
-//	playsound(carbon_victim, 'modular_septic/sound/gore/pullout.ogg', 80, 0)
 	return TRUE

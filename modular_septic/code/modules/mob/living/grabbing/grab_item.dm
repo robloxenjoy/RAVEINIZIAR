@@ -257,12 +257,11 @@
 
 /// Displays the initial grabbing message
 /obj/item/grab/proc/display_grab_message(biting_grab = FALSE, grabsound = TRUE, silent = FALSE)
-	if(!silent)
-		if(grabsound)
-			if(biting_grab)
-				playsound(victim, owner.dna.species.bite_sound, 75, FALSE)
-			else
-				playsound(victim, 'modular_septic/sound/attack/grapple.wav', 75, FALSE)
+	if(!silent && grabsound)
+		if(biting_grab)
+			playsound(victim, owner.dna.species.bite_sound, 75, FALSE)
+		else
+			playsound(victim, 'modular_septic/sound/attack/grapple.wav', 75, FALSE)
 	/// The owner always has to be a carbon - Thus selfgrab always has a bodypart being grasped
 	if(owner == victim)
 		if(!silent)

@@ -67,12 +67,10 @@
 				var/datum/disease/D = thing
 				if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
 					ContactContractDisease(D)
-
 			update_pull_movespeed()
-
 		set_pull_offsets(M, state)
 
-/mob/living/grabbedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
+/mob/living/grabbedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE, forced_zone)
 	if(user == src)
 		attempt_self_grab(biting_grab)
 		return FALSE
@@ -89,13 +87,12 @@
 	if((user.grab_state >= GRAB_PASSIVE) && HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("I don't want to risk hurting <b>[src]</b>!"))
 		return FALSE
-	grippedby(user, instant, biting_grab, forced, grabsound, silent)
+	grippedby(user, instant, biting_grab, forced, grabsound, silent, forced_zone)
 
-/mob/living/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE)
+/mob/living/grippedby(mob/living/carbon/user, instant = FALSE, biting_grab = FALSE, forced = FALSE, grabsound = TRUE, silent = FALSE, forced_zone)
 	// We need to be pulled
-	if(src != user)
-		if(!user.pulling || (user.pulling != src))
-			return
+	if(src != user && (!user.pulling || (user.pulling != src)))
+		return
 	var/obj/item/grab/active_grab = user.get_active_held_item()
 	if(active_grab)
 		return
