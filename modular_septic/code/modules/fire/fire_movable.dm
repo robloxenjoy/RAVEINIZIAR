@@ -20,6 +20,7 @@
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
+	var/datum/looping_sound/fire/soundloop
 
 /atom/movable/fire/Initialize(mapload, power)
 	. = ..()
@@ -32,13 +33,15 @@
 	if(power)
 		fire_power = min(TURF_FIRE_MAX_POWER, power)
 	update_fire_state()
-	playsound(loc, 'modular_septic/sound/effects/fire/fire_start.wav', 40, TRUE)
+	playsound(loc, 'modular_septic/sound/effects/fire/fire_start.wav', 50, TRUE)
+	soundloop = new(src, FALSE)
 
 /atom/movable/fire/Destroy()
 	var/turf/turf_loc = get_turf(src)
 	RemoveElement(/datum/element/connect_loc, src, loc_connections)
 	turf_loc?.turf_fire = null
 	SSturf_fire.fires -= src
+	soundloop.stop()
 	return ..()
 
 /atom/movable/fire/process(delta_time)
@@ -87,6 +90,7 @@
 				var/turf/god_of_hellfire = pick(arthur_brown)
 				god_of_hellfire.ignite_turf_fire(CEILING(fire_power/2, 1))
 		update_fire_state()
+	soundloop.start()
 
 /atom/movable/fire/proc/process_waste()
 	if(isclosedturf(loc))
