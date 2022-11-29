@@ -148,6 +148,22 @@ SUBSYSTEM_DEF(outdoor_effects)
 		next_step_datum = time_cycle_steps[1]
 
 	current_step_datum = new_step
+	var/mob/living/user = usr
+	var/area/area = get_area(user)
+	if(istype(area, /area/maintenance/polovich/forest))
+		if(istype(current_step_datum, /datum/time_of_day/midnight))
+			area.droning_sound = DRONING_PURENIGHT
+		else if(istype(current_step_datum, /datum/time_of_day/night))
+			area.droning_sound = DRONING_PURENIGHT
+		else if(istype(current_step_datum, /datum/time_of_day/dusk))
+			area.droning_sound = DRONING_PURENIGHT
+		else if(istype(current_step_datum, /datum/time_of_day/dawn))
+			area.droning_sound = DRONING_PURENIGHT
+		else if(istype(current_step_datum, /datum/time_of_day/dawndawn))
+			area.droning_sound = DRONING_PURENIGHT
+		else
+			area.droning_sound = DRONING_FOREST
+	SSdroning.play_area_sound(area, user)
 
 	// If the next start time is less than the current start time (i.e 10 PM vs 5 AM) then set our NextDay value
 	if(next_step_datum.start <= current_step_datum.start)
