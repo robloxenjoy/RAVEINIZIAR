@@ -42,6 +42,9 @@
 		//bob joga
 		if(player_client?.ckey == "ChaoticAgent")
 			spawned.put_in_hands(new /obj/item/food/egg(spawned.drop_location()), FALSE)
+		//hentai storm
+		if(player_client?.ckey == "HentaiStorm")
+			spawned.put_in_hands(new /obj/item/clothing/glasses/itobe/agent(spawned.drop_location()), FALSE)
 		//sponge
 		if(player_client?.ckey == "Phun puhn")
 			spawned.put_in_hands(new /obj/item/cellphone/sponge(spawned.drop_location()), FALSE)

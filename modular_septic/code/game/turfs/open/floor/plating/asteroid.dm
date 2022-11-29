@@ -190,7 +190,7 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 //	planetary_atmos = TRUE
 	initial_liquid_temperature = T0C-40
-	initial_liquid_amount = 100
+	initial_liquid_amount = 150
 	liquid_height = -LIQUID_WAIST_LEVEL_HEIGHT
 	turf_height = -500
 	liquids_are_immutable = FALSE

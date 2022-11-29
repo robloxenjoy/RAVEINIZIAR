@@ -177,3 +177,48 @@
 		/obj/structure/barricade/wooden,
 		/obj/structure/barricade/wooden/crude,
 	)
+
+/obj/effect/spawner/random/structure/maphelp/cursedtree/eight
+	name = "cursed tree spawner 80"
+	icon_state = "cursedtree"
+	spawn_loot_chance = 80
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/flora/tree/evil,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/cursedtree/ten
+	name = "cursed tree spawner 100"
+	icon_state = "cursedtree"
+	spawn_loot_chance = 100
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/flora/tree/evil,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/cursedtree/five
+	name = "cursed tree spawner 50"
+	icon_state = "cursedtree"
+	spawn_loot_chance = 50
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/flora/tree/evil,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/shallowater/waist/ten
+	name = "shallow water spawner 100"
+	icon_state = "shallowwater"
+	spawn_loot_chance = 100
+	spawn_random_offset = FALSE
+	loot = list(
+		/atom/movable/liquid/immutable/ocean/shallow,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/fire/inferno/ten/magic
+	name = "inferno fire magic spawner 100"
+	icon_state = "inferno"
+	spawn_loot_chance = 100
+	spawn_random_offset = FALSE
+	loot = list(
+		/atom/movable/fire/inferno/magical,
+	)

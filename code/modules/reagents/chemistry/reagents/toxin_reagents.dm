@@ -27,7 +27,7 @@
 /datum/reagent/toxin/badwater/shallow
 	name = "Dirty Water"
 	description = "Bad."
-	color = "#d6dc76" // rgb: 207, 54, 0
+	color = "#92dc76" // rgb: 207, 54, 0
 	taste_description = "not tasty water"
 	taste_mult = 1.5
 	liquid_evaporation_rate = 10
