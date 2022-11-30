@@ -275,10 +275,9 @@
 	desc = "hello."
 	icon_state = "trap-lynx"
 	sparks = FALSE 
+	charges = 0
 
 /obj/structure/trap/lynx/trap_effect(mob/living/L)
-//	to_chat(L, span_danger("<B>With a crack, the hostile constructs come out of hiding, stunning you!</B>"))
 	L.visible_message(span_notice("The lynx is attacking [L]!"),span_notice("Lynx attacking you!"), span_hear("You hear the sound of combat."))
 	L.Paralyze(10)
 	new /mob/living/simple_animal/hostile/caracal(loc)
-//	QDEL_IN(src, 30)

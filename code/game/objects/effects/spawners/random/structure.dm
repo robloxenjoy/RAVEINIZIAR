@@ -211,7 +211,7 @@
 	spawn_loot_chance = 100
 	spawn_random_offset = FALSE
 	loot = list(
-		/atom/movable/liquid/immutable/ocean/shallow,
+		/atom/movable/liquid/immutable/ocean/shallow = 100,
 	)
 
 /obj/effect/spawner/random/structure/maphelp/fire/inferno/ten/magic

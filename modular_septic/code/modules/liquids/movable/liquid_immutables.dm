@@ -25,4 +25,4 @@
 	total_reagents = 300
 	vaporizes = FALSE
 	liquid_height = -(ONE_LIQUIDS_HEIGHT*4)
-	reagent_list = list(/datum/reagent/toxin/badwater/shallow)
+	reagent_list = list(/datum/reagent/toxin/badwater/shallow = 10)
