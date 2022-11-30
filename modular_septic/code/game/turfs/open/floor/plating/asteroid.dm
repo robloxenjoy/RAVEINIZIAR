@@ -188,7 +188,9 @@
 /turf/open/floor/plating/asteroid/snow/river/nevado_surface/acid
 	name = "infernal river of dissolution"
 	desc = "Ah, an acid bath. Delicious."
-	initial_liquid = /datum/reagent/toxin/piranha_solution
+	initial_liquid_list = list(
+		/datum/reagent/toxin/piranha_solution = 500,
+	)
 	liquids_are_immutable = FALSE
 
 /turf/open/floor/plating/asteroid/nevado_caves
