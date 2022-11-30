@@ -409,6 +409,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 /obj/item/shard/crystal/examine(mob/user)
 	. = ..()
 	if(current_atk_mode)
+		var/attack_text = current_atk_mode == slashh ? "slash" : "stab"
 		. += span_info("It's currently ready to [current_atk_mode]")
 
 /obj/item/shard/crystal/attack_self(mob/user, modifiers)
