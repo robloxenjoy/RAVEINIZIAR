@@ -1,5 +1,6 @@
 /atom/movable/liquid/immutable
 	immutable = TRUE
+	vaporizes = FALSE
 
 /atom/movable/liquid/immutable/ocean
 	icon_state = "ocean"
@@ -21,8 +22,22 @@
 	temperature = T0C-10
 
 /atom/movable/liquid/immutable/ocean/shallow
-	temperature = T0C-20
-	total_reagents = 300
+	temperature = T0C
 	vaporizes = FALSE
-	liquid_height = -(ONE_LIQUIDS_HEIGHT*4)
-	reagent_list = list(/datum/reagent/toxin/badwater/shallow = 10)
+	starting_mixture = list(
+		/datum/reagent/toxin/badwater/shallow = 400,
+	)
+
+/atom/movable/liquid/immutable/ocean/shallow/deep
+	temperature = T0C-10
+	vaporizes = FALSE
+	starting_mixture = list(
+		/datum/reagent/toxin/badwater/shallow = 400,
+	)
+
+/atom/movable/liquid/immutable/ocean/shallow/verydeep
+	temperature = T0C-20
+	vaporizes = FALSE
+	starting_mixture = list(
+		/datum/reagent/toxin/badwater/shallow = 400,
+	)
