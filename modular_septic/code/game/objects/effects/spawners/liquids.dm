@@ -18,3 +18,12 @@
 		else if(LAZYLEN(liquid_list))
 			our_turf.add_liquid_list(liquid_list, liquid_no_react, liquid_temperature)
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/spawner/liquid/shallow
+	name = "shallow liquid spawner"
+	liquid_list = list(
+		/datum/reagent/toxin/badwater/shallow = 10,
+	)
+	liquid_no_react = FALSE
+	liquid_temperature = T0C-10
+	liquids_are_immutable = FALSE
