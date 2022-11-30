@@ -1,21 +1,17 @@
 /mob/living/carbon/human/getarmor(def_zone, type)
 	var/armorval = 0
 	var/organnum = 0
-
+	//If a specific bodypart is targetted, check how that bodypart is protected and return the value.
 	if(def_zone)
 		if(isbodypart(def_zone))
-			var/obj/item/bodypart/bp = def_zone
-			if(bp)
-				return checkarmor(def_zone, type)
+			return checkarmor(def_zone, type)
 		var/obj/item/bodypart/affecting = get_bodypart(check_zone(def_zone))
 		if(affecting)
 			return checkarmor(affecting, type)
-		//If a specific bodypart is targetted, check how that bodypart is protected and return the value.
 
 	//If you don't specify a bodypart, it checks ALL your bodyparts for protection, and averages out the values
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
-		armorval += checkarmor(BP, type)
+	for(var/obj/item/bodypart/bodypart as anything in bodyparts)
+		armorval += checkarmor(bodypart, type)
 		organnum++
 	return (armorval/max(organnum, 1))
 

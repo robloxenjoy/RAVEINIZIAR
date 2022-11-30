@@ -13,6 +13,47 @@
 	novariants = FALSE
 	merge_type = /obj/item/stack/sheet/animalhide/human
 
+/obj/item/skin/human
+	name = "Human Leather"
+	desc = "It's creepy."
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "bigskin"
+	var/smallskin_amount = 5
+
+/obj/item/skin/human/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(W.get_sharpness() && W.force > 0)
+		if(W.hitsound)
+			playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
+		user.visible_message(span_notice("[user] begins to cut [src] with [W]."),span_notice("You begin to cut [src] with [W]."), span_hear("You hear the sound of cutting."))
+		if(do_after(user, 700/W.force, target = src))
+			user.visible_message(span_notice("[user] cuts [src] with the [W]."),span_notice("You cut [src] with the [W]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(CLICK_CD_MELEE)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100 , FALSE, FALSE)
+			for(var/i=1 to smallskin_amount)
+				new /obj/item/skin/human/small(get_turf(src))
+			qdel(src)
+
+/obj/item/skin/human/small
+	name = "Human Leather"
+	desc = "A piece of human leather."
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "sheet-hide"
+
+/obj/item/skin/human/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/grown/log/tree/evil/logg))
+		user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
+		var/time = 12 SECONDS
+		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+		if(do_after(user, time, target = src))
+			if(user.zone_selected == BODY_ZONE_CHEST)
+				user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+				user.changeNext_move(CLICK_CD_MELEE)
+				user.adjustFatigueLoss(10)
+//			playsound(get_turf(src), 'sound/weapons/bladeslice', 100 , FALSE, FALSE)
+				new /obj/item/clothing/suit/armor/vest/leatherbreast(get_turf(src))
+				qdel(src)
+/*
 GLOBAL_LIST_INIT(human_recipes, list( \
 	new/datum/stack_recipe("bloated human costume", /obj/item/clothing/suit/hooded/bloated_human, 5), \
 	new/datum/stack_recipe("human skin hat", /obj/item/clothing/head/human_leather, 1), \
@@ -21,6 +62,7 @@ GLOBAL_LIST_INIT(human_recipes, list( \
 /obj/item/stack/sheet/animalhide/human/get_main_recipes()
 	. = ..()
 	. += GLOB.human_recipes
+*/
 
 /obj/item/stack/sheet/animalhide/generic
 	name = "skin"

@@ -69,8 +69,8 @@
 
 // Engineering skills
 /datum/attribute/skill/masonry
-	name = "Masonry"
-	desc = "Ability to create infrastructure, structure and furniture out of various materials."
+	name = "Crafting"
+	desc = "Ability to create something."
 	icon_state = "smithing"
 	category = SKILL_CATEGORY_ENGINEERING
 	governing_attribute = STAT_INTELLIGENCE

@@ -190,10 +190,6 @@
 	phobia_type = "birds"
 	random_gain = FALSE
 
-/datum/brain_trauma/mild/phobia/falling
-	phobia_type = "falling"
-	random_gain = FALSE
-
 /datum/brain_trauma/mild/phobia/anime
 	phobia_type = "anime"
 	random_gain = FALSE

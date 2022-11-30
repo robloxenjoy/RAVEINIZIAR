@@ -440,13 +440,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 			hitsound = stabb_hitsound
 			current_atk_mode = stabb
 			sharpness = SHARP_POINTY
-			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 55, "fall_chance" = 0.5)
+			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 45, "fall_chance" = 0.5)
 		if(stabb)
 			to_chat(user, span_notice("I'm now slicing them with the harshed side of the [src]."))
 			hitsound = slashh_hitsound
 			current_atk_mode = slashh
 			sharpness = SHARP_EDGED
-			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 40, "fall_chance" = 0.5)
+			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 30, "fall_chance" = 0.5)
 
 /obj/item/shard/crystal/green
 	name = "Green Crystal Shard"

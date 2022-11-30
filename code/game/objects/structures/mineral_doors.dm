@@ -370,6 +370,7 @@
 /obj/machinery/door/unpowered/podpol
 	name = "Wooden Door"
 	icon_state = "wood"
+	icon = 'icons/obj/doors/mineral_doors.dmi'
 //	sheetType = /obj/item/stack/sheet/mineral/wood
 	resistance_flags = FLAMMABLE
 	max_integrity = 200

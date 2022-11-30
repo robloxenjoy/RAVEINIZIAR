@@ -9,7 +9,6 @@ GLOBAL_LIST_INIT(phobia_types, sort_list(list(
 	"birds",
 	"clowns",
 	"doctors",
-	"falling",
 	"greytide",
 	"guns",
 	"insects",
@@ -32,7 +31,6 @@ GLOBAL_LIST_INIT(phobia_regexes, list(
 	"clowns" = construct_phobia_regex("clowns"),
 	"conspiracies" = construct_phobia_regex("conspiracies"),
 	"doctors" = construct_phobia_regex("doctors"),
-	"falling" = construct_phobia_regex("falling"),
 	"greytide" = construct_phobia_regex("greytide"),
 	"guns" = construct_phobia_regex("guns"),
 	"insects" = construct_phobia_regex("insects"),
@@ -254,9 +252,7 @@ GLOBAL_LIST_INIT(phobia_turfs, list(
 	"space" = typecacheof(list(/turf/open/space, /turf/open/floor/holofloor/space, /turf/open/floor/fakespace)),
 	"the supernatural" = typecacheof(list(/turf/open/floor/cult, /turf/closed/wall/mineral/cult)),
 	"aliens" = typecacheof(list(/turf/open/floor/plating/abductor, /turf/open/floor/plating/abductor2,
-		/turf/open/floor/mineral/abductor, /turf/closed/wall/mineral/abductor
-	)),
-	"falling" = typecacheof(list(/turf/open/chasm, /turf/open/floor/fakepit, /turf/open/openspace)),
+		/turf/open/floor/mineral/abductor, /turf/closed/wall/mineral/abductor)),
 ))
 
 GLOBAL_LIST_INIT(phobia_species, list(

@@ -353,7 +353,7 @@
 	var/mob/living/carbon/carbon_victim = victim
 	var/epic_success = DICE_FAILURE
 	var/modifier = 0
-	if(victim.combat_mode && (GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH) > GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)))
+	if(victim.combat_mode && (GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE) > GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)))
 		modifier -= 2
 	epic_success = owner.diceroll(GET_MOB_SKILL_VALUE(owner, SKILL_WRESTLING)+modifier, context = DICE_CONTEXT_PHYSICAL)
 	if(owner == victim)

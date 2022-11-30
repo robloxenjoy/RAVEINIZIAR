@@ -14,15 +14,13 @@
 /obj/item/shit/Initialize()
 	. = ..()
 	icon_state = "[base_icon_state][rand(1, 6)]"
-	var/turf/shittturf = get_turf(src)
-	if(istype(shittturf))
-		shittturf.pollute_turf(/datum/pollutant/shit, 45, 2 MINUTES)
 	AddComponent(/datum/component/edible, \
 		initial_reagents = list(/datum/reagent/consumable/shit = 15), \
 		foodtypes = TOXIC|GROSS|SEWAGE, \
 		volume = 115, \
 		after_eat = CALLBACK(src, .proc/on_eat_from))
 	AddElement(/datum/element/connect_loc, crossed_connections)
+	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 30)
 
 /obj/item/shit/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()

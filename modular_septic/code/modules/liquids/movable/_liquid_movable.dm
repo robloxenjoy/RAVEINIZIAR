@@ -32,6 +32,7 @@
 	var/no_effects = FALSE
 	var/fire_state = LIQUID_FIRE_STATE_NONE
 	var/liquid_state = LIQUID_STATE_PUDDLE
+	var/vaporizes = 1
 
 	var/list/starting_mixture
 	var/list/reagent_list = list()
@@ -237,7 +238,7 @@
 			set_color_from_reagents()
 
 /atom/movable/liquid/proc/process_evaporation()
-	if(immutable)
+	if(immutable || !vaporizes)
 		SSliquids.evaporation_queue -= my_turf
 		return
 	//We're in a group. dont try and evaporate

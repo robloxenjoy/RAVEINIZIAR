@@ -69,6 +69,7 @@
  * * gibbed - Was the mob gibbed?
 */
 
+/*
 /client/proc/screen_end()
 	if(mob)
 		mob.clear_fullscreen("brute", 50)
@@ -82,7 +83,7 @@
 			text.screen_loc = "4:-14, 7"
 			text.maptext_height = 320
 			text.maptext_width = 320
-			text.maptext = "<span style='font-family: Wingdings; font-size: 24px; color: red;'><b>Based on Serotiy Void's memories, you seem to have died at that very moment...</b></span>"
+			text.maptext = "<span style='font-family: Wingdings; font-size: 24px; color: red;'><b>Based on Serotiy Void's memories, you seem to have died at THIS moment...</b></span>"
 			text.alpha = 0
 			screen.Add(text)
 			animate(text, alpha = 255, 100)
@@ -98,13 +99,16 @@
 						mob.send_to_kyrilka()
 				else
 					mob.send_to_kyrilka()
+*/
 
 /mob/living/proc/death(gibbed)
 	set_stat(DEAD)
 	unset_machine()
+/*
 	timeofdeath = world.time
 	if(client)
 		client.screen_end()
+*/
 	tod = station_time_timestamp()
 	var/turf/T = get_turf(src)
 	if(mind && mind.name && mind.active && !istype(T.loc, /area/ctf))

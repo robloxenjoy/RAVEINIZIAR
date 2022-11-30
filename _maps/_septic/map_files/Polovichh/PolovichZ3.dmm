@@ -32,7 +32,7 @@
 "F" = (/turf/closed/wall/mineral/wood/alt,/area/maintenance/polovich/forest)
 "G" = (/turf/open/floor/plating/polovich/greenstone{dir = 6},/area/maintenance/polovich/forest)
 "H" = (/turf/open/floor/plating/polovich/greenstone{dir = 8},/area/maintenance/polovich/forest)
-"I" = (/obj/structure/mineral_door/wood,/turf/open/floor/plating/polovich/bronzefloor,/area/maintenance/polovich/forest)
+"I" = (/obj/machinery/door/unpowered/podpol,/turf/open/floor/plating/polovich/bronzefloor,/area/maintenance/polovich/forest)
 "J" = (/turf/open/floor/plating/polovich/rockydarkness,/area/maintenance/polovich/forest)
 "K" = (/turf/open/floor/plating/polovich/woodens,/area/maintenance/polovich/forest)
 "L" = (/turf/open/floor/plating/polovich/woodennew,/area/maintenance/polovich/forest)

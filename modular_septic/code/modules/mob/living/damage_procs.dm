@@ -15,11 +15,10 @@
 						reduced = 0, \
 						edge_protection = 0, \
 						subarmor_flags = NONE, \
-						atom/used_weapon)
+						attack_direction = null, \
+						wound_messages = TRUE)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
-	if(istype(get_area(src), /area/maintenance/polovich/tendance))
-		return
 	if(!damage || (!forced && (hit_percent <= 0)) )
 		return FALSE
 	var/damage_amount =  forced ? damage : max(0, (damage * hit_percent) - reduced)

@@ -21,7 +21,8 @@
 	temperature = T0C-10
 
 /atom/movable/liquid/immutable/ocean/shallow
-	temperature = T0C-40
-	total_reagents = 1000
+	temperature = T0C-20
+	total_reagents = 300
+	vaporizes = FALSE
 	liquid_height = -(ONE_LIQUIDS_HEIGHT*4)
 	reagent_list = list(/datum/reagent/toxin/badwater/shallow)
