@@ -92,7 +92,7 @@
 				var/turf/god_of_hellfire = pick(arthur_brown)
 				god_of_hellfire.ignite_turf_fire(CEILING(fire_power/2, 1))
 		update_fire_state()
-	if(magical)
+	else
 		soundloop.start()
 
 /atom/movable/fire/proc/process_waste()
