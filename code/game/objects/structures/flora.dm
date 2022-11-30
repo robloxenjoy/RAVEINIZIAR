@@ -297,15 +297,9 @@
 	berry_type = pick("red", "blue", "redd", "bluee", "purple")
 	grow_berries()
 
-/obj/structure/flora/ausbushes/crystal/dark/proc/grow_berries()
-	if(QDELETED(src) || !berry_type || (berries > 0))
-		return
-	update_appearance()
-	berries++
-
 /obj/structure/flora/ausbushes/crystal/dark/update_overlays()
 	. = ..()
-	if(berry_type && (berries > 0))
+	if((berries > 0) && berry_type)
 		. += "[berry_type]_berries"
 
 /obj/structure/flora/ausbushes/crystal/dark/attack_hand(mob/living/user, list/modifiers)
@@ -329,7 +323,7 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
 		return
-	to_chat(user, span_notice("You pick berry."))
+	to_chat(user, span_notice("I pick berry."))
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.Immobilize(1 SECONDS)
 	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
@@ -348,6 +342,12 @@
 	user.put_in_active_hand(berry)
 	berries--
 	addtimer(CALLBACK(src, .proc/grow_berries), 130 SECONDS)
+
+/obj/structure/flora/ausbushes/crystal/dark/proc/grow_berries()
+	if(QDELETED(src) || !berry_type || (berries > 0))
+		return
+	berries++
+	update_appearance()
 
 /obj/structure/flora/ausbushes/zarosli/sliz
 	name = "Slime Thickets"
