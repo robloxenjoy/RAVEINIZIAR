@@ -341,6 +341,7 @@
 			berry = new /obj/item/food/berries/leancherrie(loc)
 	user.put_in_active_hand(berry)
 	berries--
+	update_appearance()
 	addtimer(CALLBACK(src, .proc/grow_berries), 130 SECONDS)
 
 /obj/structure/flora/ausbushes/crystal/dark/proc/grow_berries()
