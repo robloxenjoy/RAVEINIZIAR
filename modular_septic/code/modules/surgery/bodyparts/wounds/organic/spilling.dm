@@ -101,11 +101,11 @@
 	if(new_limb.spilled)
 		return FALSE
 	// Limb not mangled
-	if(new_limb.get_mangled_state() != BODYPART_MANGLED_FLESH)
+	if((new_limb.get_mangled_state() != BODYPART_MANGLED_FLESH) && (new_limb.get_mangled_state() != BODYPART_MANGLED_BOTH))
 		return FALSE
 	var/gaping_wound = FALSE
 	for(var/datum/injury/injury as anything in new_limb.injuries)
-		if(injury.get_bleed_rate() && (injury.damage_per_injury() >= 30))
+		if(injury.get_bleed_rate() && (injury.damage_per_injury() >= 20))
 			gaping_wound = TRUE
 			break
 	// No sufficiently open wound
