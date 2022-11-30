@@ -88,7 +88,7 @@
 	name = "Gut Spill"
 	viable_zones = list(BODY_ZONE_PRECISE_VITALS)
 	severity = WOUND_SEVERITY_CRITICAL
-	threshold_minimum = 30
+	threshold_minimum = 25
 
 /datum/wound/spill/gut/can_afflict(obj/item/bodypart/new_limb, datum/wound/old_wound)
 	. = ..()
