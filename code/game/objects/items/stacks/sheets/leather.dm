@@ -40,7 +40,7 @@
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "sheet-hide"
 
-/obj/item/skin/human/attackby(obj/item/W, mob/living/carbon/user, params)
+/obj/item/skin/human/small/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(istype(W, /obj/item/grown/log/tree/evil/logg))
 		user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
 		var/time = 12 SECONDS
