@@ -346,24 +346,25 @@
 	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
 	if(check_shields(user, damage, "the [user.name]", MELEE_ATTACK, user.armour_penetration))
 		return FALSE
-	var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 	if(!dam_zone) //Dismemberment successful
 		return TRUE
 	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
 	var/armor = run_armor_check(affecting, BRUTE, armour_penetration = user.armour_penetration)
-//	apply_damage(damage, user.melee_damage_type, affecting, armor, wound_bonus = user.wound_bonus, bare_wound_bonus = user.bare_wound_bonus, sharpness = user.sharpness)
 	var/attack_direction = get_dir(user, src)
 	var/subarmor = run_subarmor_check(affecting, BRUTE, armour_penetration = user.subtractible_armour_penetration, sharpness = user.sharpness)
 	var/subarmor_flags = get_subarmor_flags(affecting)
 	var/edge_protection = get_edge_protection(affecting)
-	apply_damage(damage, user.melee_damage_type, affecting, armor, \
+	apply_damage(damage, \
+				user.melee_damage_type, \
+				affecting.body_zone, \
+				armor, \
 				wound_bonus = user.wound_bonus, bare_wound_bonus = user.bare_wound_bonus, \
 				sharpness = user.sharpness, attack_direction = attack_direction, \
 				subarmor_flags = subarmor_flags, edge_protection = edge_protection, \
 				reduced = subarmor)
-	//MOJAVE EDIT END
 
 /mob/living/carbon/human/attack_animal(mob/living/simple_animal/user, list/modifiers)
 	. = ..()
@@ -372,19 +373,21 @@
 	var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
 	if(check_shields(user, damage, "the [user.name]", MELEE_ATTACK, user.armour_penetration))
 		return FALSE
-	var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	var/dam_zone = dismembering_strike(user, pick(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 	if(!dam_zone) //Dismemberment successful
 		return TRUE
 	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
-	var/armor = run_armor_check(affecting, BRUTE, armour_penetration = user.armour_penetration)
-//apply_damage(damage, user.melee_damage_type, affecting, armor, wound_bonus = user.wound_bonus, bare_wound_bonus = user.bare_wound_bonus, sharpness = user.sharpness)
 	var/attack_direction = get_dir(user, src)
+	var/armor = run_armor_check(affecting, BRUTE, armour_penetration = user.armour_penetration)
 	var/subarmor = run_subarmor_check(affecting, BRUTE, armour_penetration = user.subtractible_armour_penetration, sharpness = user.sharpness)
 	var/subarmor_flags = get_subarmor_flags(affecting)
 	var/edge_protection = get_edge_protection(affecting)
-	apply_damage(damage, user.melee_damage_type, affecting, armor, \
+	apply_damage(damage, \
+				user.melee_damage_type, \
+				affecting.body_zone, \
+				armor, \
 				wound_bonus = user.wound_bonus, bare_wound_bonus = user.bare_wound_bonus, \
 				sharpness = user.sharpness, attack_direction = attack_direction, \
 				subarmor_flags = subarmor_flags, edge_protection = edge_protection, \
