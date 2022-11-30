@@ -249,9 +249,8 @@
 		affecting = get_bodypart(ran_zone(dam_zone))
 	else
 		var/list/things_to_ruin = shuffle(bodyparts.Copy())
-		for(var/B in things_to_ruin)
-			var/obj/item/bodypart/bodypart = B
-			if(bodypart.body_zone == BODY_ZONE_HEAD || bodypart.body_zone == BODY_ZONE_CHEST)
+		for(var/obj/item/bodypart/bodypart as anything in things_to_ruin)
+			if(!(bodypart.body_zone in LIMB_BODYPARTS))
 				continue
 			if(!affecting || ((affecting.get_damage() / affecting.max_damage) < (bodypart.get_damage() / bodypart.max_damage)))
 				affecting = bodypart

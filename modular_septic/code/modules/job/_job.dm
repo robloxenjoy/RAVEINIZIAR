@@ -40,20 +40,20 @@
 		if(player_client?.ckey == "shyshadow")
 			spawned.put_in_hands(new /obj/item/reagent_containers/glass/bottle/lean(spawned.drop_location()), FALSE)
 		//bob joga
-		if(player_client?.ckey == "ChaoticAgent")
+		if(player_client?.ckey == "chaoticagent")
 			spawned.put_in_hands(new /obj/item/food/egg(spawned.drop_location()), FALSE)
 		//hentai storm
-		if(player_client?.ckey == "HentaiStorm")
+		if(player_client?.ckey == "hentaistorm")
 			spawned.put_in_hands(new /obj/item/clothing/glasses/itobe/agent(spawned.drop_location()), FALSE)
 		//sponge
-		if(player_client?.ckey == "Phun puhn")
+		if(player_client?.ckey == "phun phun")
 			spawned.put_in_hands(new /obj/item/cellphone/sponge(spawned.drop_location()), FALSE)
 		//thug hunter equipment
-		if(player_client?.ckey == "Glennerbean")
+		if(player_client?.ckey == "glennerbean")
 			spawned.put_in_hands(new /obj/item/gun/ballistic/automatic/pistol/remis/glock17(spawned.drop_location()), FALSE)
 			spawned.put_in_hands(new /obj/item/ammo_box/magazine/glock9mm(spawned.drop_location()), FALSE)
 		//mugmoment
-		if(player_client?.ckey == "GarfieldLives")
+		if(player_client?.ckey == "garfieldlives")
 			spawned.put_in_hands(new /obj/item/reagent_containers/food/drinks/soda_cans/mug(spawned.drop_location()), FALSE)
 		if(SSmapping.config?.everyone_is_fucking_naked)
 			incinerate_inventory(spawned)

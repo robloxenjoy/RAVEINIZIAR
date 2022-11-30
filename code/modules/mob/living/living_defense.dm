@@ -254,7 +254,6 @@
 
 	if(user.attack_sound)
 		playsound(loc, user.attack_sound, 50, TRUE, TRUE)
-//	user.do_attack_animation(src)
 	visible_message(span_danger("\The [user] [user.attack_verb_continuous] [src]!"), \
 					span_userdanger("\The [user] [user.attack_verb_continuous] you!"), null, COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_danger("You [user.attack_verb_simple] [src]!"))
