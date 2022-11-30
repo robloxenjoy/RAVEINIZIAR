@@ -3,12 +3,18 @@
 	var/list/liquid_list = list(
 		/datum/reagent/water = 10,
 	)
-	var/no_react = FALSE
+	var/liquid_no_react = FALSE
 	var/liquid_temperature = T20C
+	var/liquids_are_immutable = FALSE
 
 /obj/effect/spawner/liquid/Initialize(mapload)
 	. = ..()
 	var/turf/our_turf = get_turf(src)
 	if(our_turf)
-		our_turf.add_liquid_list(liquid_list, no_react, liquid_temperature)
+		if(liquids_are_immutable)
+			var/atom/movable/liquid/liquidation = SSliquids.get_immutable(liquid_list)
+			if(liquidation)
+				liquidation.add_turf(src)
+		else if(LAZYLEN(liquid_list))
+			our_turf.add_liquid_list(liquid_list, liquid_no_react, liquid_temperature)
 	return INITIALIZE_HINT_QDEL
