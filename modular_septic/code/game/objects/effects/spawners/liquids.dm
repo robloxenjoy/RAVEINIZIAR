@@ -28,3 +28,4 @@
 	liquid_no_react = FALSE
 	liquid_temperature = T0C-10
 	liquids_are_immutable = FALSE
+	liquids_vaporize = FALSE
