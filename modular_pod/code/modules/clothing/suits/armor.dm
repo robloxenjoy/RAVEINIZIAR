@@ -3,6 +3,8 @@
 	desc = "This will help you survive."
 	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
 	icon_state = "leathervest"
 	worn_icon_state = "leathervest"
 	inhand_icon_state = "infiltrator"
