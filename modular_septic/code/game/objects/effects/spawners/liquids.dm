@@ -6,6 +6,7 @@
 	var/liquid_no_react = FALSE
 	var/liquid_temperature = T20C
 	var/liquids_are_immutable = FALSE
+	var/liquids_vaporize = TRUE
 
 /obj/effect/spawner/liquid/Initialize(mapload)
 	. = ..()
