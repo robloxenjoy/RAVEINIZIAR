@@ -1,5 +1,7 @@
 /obj/effect/spawner/liquid
 	name = "liquid spawner"
+	icon = 'modular_septic/icons/obj/structures/tall/structures_spawners.dmi'
+	icon_state = "liquid_spawner"
 	var/list/liquid_list = list(
 		/datum/reagent/water = 10,
 	)
