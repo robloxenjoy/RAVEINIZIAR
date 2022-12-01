@@ -27,6 +27,7 @@
 	)
 	var/initial_liquid_temperature = T0C-10
 	var/initial_liquid_no_react = FALSE
+	var/liquids_vaporize = TRUE
 	var/liquids_are_immutable = FALSE
 
 /turf/open/floor/plating/asteroid/snow/river/Initialize(mapload)
@@ -36,7 +37,7 @@
 		if(liquidation)
 			liquidation.add_turf(src)
 	else if(!liquids && LAZYLEN(initial_liquid_list))
-		add_liquid_list(initial_liquid_list, initial_liquid_no_react, initial_liquid_temperature)
+		add_liquid_list(initial_liquid_list, initial_liquid_no_react, initial_liquid_temperature, liquids_vaporize)
 	initial_liquid_list = null
 
 /turf/open/floor/plating/asteroid/snow/river/baluarte
