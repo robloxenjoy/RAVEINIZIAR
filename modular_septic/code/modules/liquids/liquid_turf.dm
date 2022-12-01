@@ -103,12 +103,13 @@
 		add_liquid_list(compiled_list, no_react, giver.chem_temp)
 
 //More efficient than add_liquid for multiples
-/turf/proc/add_liquid_list(list/reagent_list, no_react = FALSE, chem_temp = 300)
+/turf/proc/add_liquid_list(list/reagent_list, no_react = FALSE, chem_temp = 300, vaporizes = TRUE)
 	if(!liquids)
 		liquids = new(src)
 	if(liquids.immutable)
 		return
 
+	liquids.vaporizes = vaporizes
 	var/prev_total_reagents = liquids.total_reagents
 	var/prev_thermal_energy = prev_total_reagents * liquids.temperature
 
@@ -118,8 +119,8 @@
 		liquids.reagent_list[reagent] += reagent_list[reagent]
 		liquids.total_reagents += reagent_list[reagent]
 
-	var/recieved_thermal_energy = (liquids.total_reagents - prev_total_reagents) * chem_temp
-	liquids.temperature = (recieved_thermal_energy + prev_thermal_energy) / liquids.total_reagents
+	var/received_thermal_energy = (liquids.total_reagents - prev_total_reagents) * chem_temp
+	liquids.temperature = (received_thermal_energy + prev_thermal_energy) / liquids.total_reagents
 
 	if(!no_react)
 		//We do react so, make a simulation
@@ -151,7 +152,7 @@
 	if(liquids_group)
 		liquids_group.dirty = TRUE
 
-/turf/proc/add_liquid(reagent, amount, no_react = FALSE, chem_temp = 300)
+/turf/proc/add_liquid(reagent, amount, no_react = FALSE, chem_temp = 300, vaporizes = TRUE)
 	if(amount <= 0)
 		return
 	if(!liquids)
@@ -159,6 +160,7 @@
 	if(liquids.immutable)
 		return
 
+	liquids.vaporizes = vaporizes
 	var/prev_thermal_energy = liquids.total_reagents * liquids.temperature
 
 	if(!liquids.reagent_list[reagent])
