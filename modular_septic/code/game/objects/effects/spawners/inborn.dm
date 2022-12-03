@@ -63,3 +63,31 @@
 		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
 		babble.volume = BABBLE_DEFAULT_VOLUME
 		babble.duration = BABBLE_DEFAULT_DURATION
+
+/obj/effect/mob_spawn/human/weakwillet
+	name = "weak willet spawner"
+	desc = "wow this is fantastic!"
+	random = TRUE
+	icon = 'icons/obj/lavaland/survival_pod.dmi'
+	icon_state = "bed"
+	mob_name = "a black criminal"
+	roundstart = FALSE
+	death = FALSE
+	anchored = TRUE
+	density = FALSE
+	show_flavour = FALSE
+	outfit = /datum/outfit/inborn
+	mob_species = /datum/species/weakwillet
+	uses = 500
+
+/obj/effect/mob_spawn/human/weakwillet/special(mob/living/new_spawn)
+	. = ..()
+	new_spawn.fully_replace_character_name(new_spawn.real_name, "Weak Willet")
+	new_spawn.mind.add_antag_datum(/datum/antagonist/inborn)
+	var/datum/component/babble/babble = new_spawn.GetComponent(/datum/component/babble)
+	if(!babble)
+		new_spawn.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
+	else
+		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+		babble.volume = BABBLE_DEFAULT_VOLUME
+		babble.duration = BABBLE_DEFAULT_DURATION
