@@ -724,6 +724,8 @@
  *
  * Only works if flag/norespawn is allowed in config
  */
+
+ /*
 /mob/verb/abandon_mob()
 	set name = "Respawn"
 	set category = "OOC"
@@ -755,7 +757,7 @@
 		return
 
 	M.key = key
-
+*/
 
 /**
  * Sometimes helps if the user is stuck in another perspective or camera
