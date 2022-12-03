@@ -32,7 +32,7 @@
 /datum/pollutant/urine
 	name = "Urine"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
-	smell_intensity = 1
+	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
 	scent = "stale urine"
 	color = "#fcbc2c"

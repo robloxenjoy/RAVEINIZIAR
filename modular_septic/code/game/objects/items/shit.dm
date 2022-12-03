@@ -47,7 +47,7 @@
 	random_dysentery.try_infect(eater)
 	//shit on face, yum
 	if(ishuman(eater))
-		AddComponent(eater, /datum/component/creamed/shit)
+		eater.AddComponent(datum/component/creamed/shit)
 		if(prob(30))
 			eater.gain_extra_effort(1, FALSE)
 

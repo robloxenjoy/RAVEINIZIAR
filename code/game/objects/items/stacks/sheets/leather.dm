@@ -20,6 +20,10 @@
 	icon_state = "bigskin"
 	var/smallskin_amount = 5
 
+/obj/item/shit/Initialize()
+	. = ..()
+	AddElement(/datum/element/pollution_emitter, /datum/pollutant/metallic_scent, 25)
+
 /obj/item/skin/human/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(W.get_sharpness() && W.force > 0)
 		if(W.hitsound)
