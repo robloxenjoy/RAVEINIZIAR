@@ -1,6 +1,6 @@
 /obj/structure/closet/crate
-	name = "crate"
-	desc = "A rectangular steel crate."
+	name = "Steel Crate"
+	desc = "A steel crate."
 	icon = 'icons/obj/crates.dmi'
 	icon_state = "crate"
 	req_access = null

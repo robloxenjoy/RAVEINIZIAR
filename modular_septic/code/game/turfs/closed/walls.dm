@@ -48,12 +48,15 @@
 	base_icon_state = "wood_wall"
 	resistance_flags = FLAMMABLE
 
-/turf/closed/wall/mineral/bluegreen
+/turf/closed/wall/bluegreen
 	icon = 'modular_septic/icons/turf/tall/walls/woodbluegreen.dmi'
 	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/woodbluegreen_frill.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	resistance_flags = FLAMMABLE
+
+/turf/closed/wall/bluegreen/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,4)].ogg"
 
 /turf/closed/wall/mineral/wood/alt
 	icon = 'modular_septic/icons/turf/tall/walls/wood_victorian.dmi'

@@ -5,7 +5,7 @@
 	invisibility = 101
 	anchored = 1
 
-/area/maintenance/spawned
+/area/medical/spawned
 	name = "spawned"
 	ambientsounds = list('modular_pod/sound/ambi_sounds/borne.ogg', 'modular_pod/sound/ambi_sounds/buffmfffpampam.ogg', 'modular_pod/sound/ambi_sounds/BOOOM.ogg')
 	droning_sound = DRONING_FOREST

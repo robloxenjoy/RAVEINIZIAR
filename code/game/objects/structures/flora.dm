@@ -20,11 +20,13 @@
 				if(W.hitsound)
 					playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
 				user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
+				sound_hint()
 				if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
 					user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 					user.changeNext_move(CLICK_CD_MELEE)
 					user.adjustFatigueLoss(W.attack_fatigue_cost)
 					playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
+					sound_hint()
 //					user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 					for(var/i=1 to log_amount)
 						new /obj/item/grown/log/tree/evil(get_turf(src))
@@ -243,7 +245,7 @@
 	if(!isturf(loc) || !isliving(AM))
 		return
 	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
-
+/*
 /obj/structure/flora/ausbushes/root
 	name = "Tree Root"
 	desc = "Root of the tree."
@@ -278,7 +280,7 @@
 		var/diceroll = arrived.diceroll(GET_MOB_ATTRIBUTE_VALUE(arrived, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
 		if(diceroll <= DICE_FAILURE)
 			arrived.Stumble(3 SECONDS)
-
+*/
 /obj/structure/flora/ausbushes/crystal/dark
 	name = "Blackness Bush"
 	desc = "Bush of blackness. This bush is chaotic."
@@ -322,11 +324,13 @@
 		user.Immobilize(1 SECONDS)
 		user.changeNext_move(CLICK_CD_MELEE)
 		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		sound_hint()
 		return
 	to_chat(user, span_notice("I pick berry."))
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.Immobilize(1 SECONDS)
 	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	sound_hint()
 	var/obj/item/berry
 	switch(berry_type)
 		if("red")
@@ -370,7 +374,9 @@
 	layer = ABOVE_MOB_LAYER
 	plane = ABOVE_GAME_PLANE
 	resistance_flags = FLAMMABLE
-	density = 0
+	var/time_between_uses = 500
+	var/last_process = 0
+	density = FALSE
 	anchored = TRUE
 	opacity = TRUE
 
@@ -400,7 +406,16 @@
 	if(!do_after(user, 10 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
 		return
+	if(last_process + time_between_uses > world.time)
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.Immobilize(1 SECONDS)
+		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		to_chat(user, span_notice("Looks like there are no more midnightberries left."))
+		sound_hint()
+		return
+	last_process = world.time
 	to_chat(user, span_notice("You pick pesky midnightberry."))
+	sound_hint()
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.Immobilize(1 SECONDS)
 	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
