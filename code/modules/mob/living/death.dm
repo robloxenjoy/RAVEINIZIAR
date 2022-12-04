@@ -99,7 +99,6 @@
 				else
 					mob.send_to_kyrilka()
 
-
 /mob/living/proc/death(gibbed)
 	set_stat(DEAD)
 	unset_machine()
