@@ -20,7 +20,7 @@
 	icon_state = "bigskin"
 	var/smallskin_amount = 5
 
-/obj/item/shit/Initialize()
+/obj/item/skin/human/Initialize()
 	. = ..()
 	AddElement(/datum/element/pollution_emitter, /datum/pollutant/metallic_scent, 25)
 
