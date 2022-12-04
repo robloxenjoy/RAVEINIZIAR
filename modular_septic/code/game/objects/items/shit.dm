@@ -79,7 +79,7 @@
 	icon_state = "halyabegg"
 	carry_weight = 700 GRAMS
 
-/obj/item/shit/Initialize()
+/obj/item/halyabegg/Initialize()
 	. = ..()
 	AddComponent(/datum/component/edible, \
 		initial_reagents = list(/datum/reagent/consumable/shit = 15), \
@@ -87,7 +87,7 @@
 		volume = 115, \
 		after_eat = CALLBACK(src, .proc/on_eat_fromm))
 
-/obj/item/shit/proc/on_eat_fromm(mob/living/carbon/eater, mob/living/feeder)
+/obj/item/halyabegg/proc/on_eat_fromm(mob/living/carbon/eater, mob/living/feeder)
 	if(!istype(eater, /mob/living/carbon/human/species/weakwillet))
 		return
 	if(eater.can_heartattack())

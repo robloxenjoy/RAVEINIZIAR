@@ -40,5 +40,5 @@
 		mind.transfer_to(character)
 
 //	character.timeofdeath = timeofdeath
-//	character.key = key
+	character.key = key
 //	character.client.set_macros()

@@ -25,7 +25,7 @@
 	temperature = T0C-10
 	vaporizes = FALSE
 	starting_mixture = list(
-		/datum/reagent/toxin/badwater/shallow = 250,
+		/datum/reagent/toxin/badwater/shallow = 100,
 	)
 
 /atom/movable/liquid/immutable/ocean/shallow/deep

@@ -584,17 +584,15 @@
 		return
 	if(isliving(arrived))
 		if(prob(50))
-			rooted()
-
-/turf/open/floor/plating/polovich/roots/proc/rooted(datum/source, mob/living/arrived)
-	arrived.visible_message(span_warning("[arrived] stumbles on the root."), \
-							span_warning("I stumble on the root."))
-	sound_hint()
-	var/diceroll = arrived.diceroll(GET_MOB_ATTRIBUTE_VALUE(arrived, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
-	if(diceroll <= DICE_FAILURE)
-		arrived.Stumble(3 SECONDS)
-		arrived.visible_message(span_warning("[arrived] poorly stumbles on the root!"), \
-								span_warning("I poorly stumble on the root!"))
+			var/mob/living/stumbleguy = arrived
+			stumbleguy.visible_message(span_warning("[stumbleguy] stumbles on the root."), \
+						span_warning("I stumble on the root."))
+			sound_hint()
+			var/diceroll = stumbleguy.diceroll(GET_MOB_ATTRIBUTE_VALUE(stumbleguy, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
+			if(diceroll <= DICE_FAILURE)
+				stumbleguy.Stumble(3 SECONDS)
+				stumbleguy.visible_message(span_warning("[stumbleguy] poorly stumbles on the root!"), \
+										span_warning("I poorly stumble on the root!"))
 
 /turf/open/floor/plating/polovich/greenishe2
 	name = "Wooden Floor"

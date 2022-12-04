@@ -49,7 +49,7 @@
 
 	if(brainmob)
 		if(C.key)
-			C.ghostize()
+			C.send_to_kyrilka()
 
 		if(brainmob.mind)
 			brainmob.mind.transfer_to(C)
