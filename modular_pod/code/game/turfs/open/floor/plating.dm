@@ -70,6 +70,10 @@
 		W.damageItem("SOFT")
 		playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
 		sound_hint()
+		if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
+			if(prob(W.force))
+				var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
+				new /atom/movable/fire(firefloor, 21)
 
 /turf/open/floor/plating/polovich/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
@@ -381,11 +385,19 @@
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	slowdown = 2
 
+/turf/open/floor/plating/polovich/dirt/dark/bright/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/dirt/dark/animated
 	name = "Black Dirt"
 	desc = "This is darkly."
 	icon_state = "blackgryaz3"
 	icon = 'modular_pod/icons/turf/floors.dmi'
+
+/turf/open/floor/plating/polovich/dirt/dark/animated/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/bonefloor
 	name = "Bone Floor"
