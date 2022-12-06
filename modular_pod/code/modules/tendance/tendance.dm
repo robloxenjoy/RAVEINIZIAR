@@ -35,6 +35,7 @@
 
 	client.prefs.safe_transfer_prefs_to(character)
 	character.dna.update_dna_identity()
+	character.fully_replace_character_name(character.real_name, "Weak Willet")
 	if(mind)
 		mind.active = 0
 		mind.transfer_to(character)

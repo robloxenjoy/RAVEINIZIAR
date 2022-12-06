@@ -30,8 +30,8 @@
 //					user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 					for(var/i=1 to log_amount)
 						new /obj/item/grown/log/tree/evil(get_turf(src))
-					var/obj/structure/flora/stump/S = new(loc)
-					S.name = "[name] stump"
+//					var/obj/structure/flora/stump/S = new(loc)
+//					S.name = "[name] stump"
 					qdel(src)
 	else
 		return ..()
