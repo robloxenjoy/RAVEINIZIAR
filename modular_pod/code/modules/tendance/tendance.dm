@@ -33,7 +33,7 @@
 	var/obj/effect/landmark/tendance/K = locate() in world
 	var/mob/living/carbon/human/species/weakwillet/character = new(K.loc)
 
-	client.prefs.safe_transfer_prefs_to(character)
+//	client.prefs.safe_transfer_prefs_to(character)
 //	character.dna.update_dna_identity()
 	character.fully_replace_character_name(character.real_name, "Weak Willet")
 	if(mind)

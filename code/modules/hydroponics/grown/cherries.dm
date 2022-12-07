@@ -70,7 +70,7 @@
 	. = ..()
 	if(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) > ATTRIBUTE_MIDDLING)
 		if(prob(70))
-			. += "<span class='warning'>It's a wrong berry.</span>"
+			. += "<span class='warning'>It's a wrong berry...</span>"
 
 //Cherry Bulbs
 /obj/item/seeds/cherry/bulb
