@@ -1,6 +1,6 @@
 //floppa
 /mob/living/simple_animal/hostile/caracal
-	name = "lynx"
+	name = "Lynx"
 	desc = "Run from this cute creature!"
 	icon = 'modular_septic/icons/mob/floppa.dmi'
 	icon_state = "caracal"
@@ -30,7 +30,7 @@
 	aggro_vision_range = 9
 	maxHealth = 60
 	health = 60
-	speed = 2
+	speed = 3
 	see_in_dark = 3
 	move_to_delay = 1.2
 	deathmessage = "painfully collapses."
