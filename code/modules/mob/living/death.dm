@@ -72,6 +72,8 @@
 /client/proc/screen_end()
 	if(mob)
 		mob.clear_fullscreen("brute", 50)
+		if(istype(mob, /mob/dead/observer))
+			mob.send_naxyu()
 		animate(src, color = "#000000", time = 20)
 		mob.add_client_colour(/datum/client_colour/full_black)
 		spawn(50)
@@ -92,12 +94,12 @@
 				if(!istype(mob, /mob/dead))
 					if(ishuman(mob))
 						var/mob/living/carbon/human/H = mob
-						H.send_to_kyrilka()
+						H.send_naxyu()
 						return
 					spawn(1510)
-						mob.send_to_kyrilka()
+						mob.send_naxyu()
 				else
-					mob.send_to_kyrilka()
+					mob.send_naxyu()
 
 /mob/living/proc/death(gibbed)
 	set_stat(DEAD)

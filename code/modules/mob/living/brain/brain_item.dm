@@ -49,7 +49,7 @@
 /*
 	if(brainmob)
 		if(C.key)
-			C.send_to_kyrilka()
+			C.send_naxyu()
 */
 		if(brainmob.mind)
 			brainmob.mind.transfer_to(C)

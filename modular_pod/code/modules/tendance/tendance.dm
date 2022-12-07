@@ -27,7 +27,7 @@
 	ambientsounds = list('modular_pod/sound/ambi_sounds/borne.ogg', 'modular_pod/sound/ambi_sounds/buffmfffpampam.ogg', 'modular_pod/sound/ambi_sounds/BOOOM.ogg')
 	droning_sound = DRONING_EVIL
 
-/mob/proc/send_to_kyrilka()
+/mob/proc/send_naxyu()
 	if(stat != DEAD)
 		return
 	var/obj/effect/landmark/tendance/K = locate() in world

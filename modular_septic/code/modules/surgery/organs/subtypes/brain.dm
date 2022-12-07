@@ -58,7 +58,7 @@
 /*
 	if(brainmob)
 		if(new_owner.key)
-			new_owner.send_to_kyrilka()
+			new_owner.send_naxyu()
 */
 		if(brainmob.mind)
 			brainmob.mind.transfer_to(new_owner)
