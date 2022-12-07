@@ -55,11 +55,11 @@
 			to_chat(brainmob, span_danger("I can't feel my body! I'm still just a brain!"))
 		forceMove(new_owner)
 		return
-
+/*
 	if(brainmob)
 		if(new_owner.key)
 			new_owner.send_to_kyrilka()
-
+*/
 		if(brainmob.mind)
 			brainmob.mind.transfer_to(new_owner)
 		else
