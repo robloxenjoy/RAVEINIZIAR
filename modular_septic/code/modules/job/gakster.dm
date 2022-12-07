@@ -129,7 +129,7 @@
 //	)
 //	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
-
+/*
 /datum/job/aktliver
 	title = "Akt Liver"
 	department_head = list("Head of Personnel")
@@ -166,7 +166,6 @@
 //	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
 
-/*
 /datum/job/evilwarlock
 	title = "Evil Warlock"
 	department_head = list("Head of Personnel")

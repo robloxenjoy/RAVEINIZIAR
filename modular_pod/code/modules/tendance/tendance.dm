@@ -36,6 +36,17 @@
 //	client.prefs.safe_transfer_prefs_to(character)
 //	character.dna.update_dna_identity()
 	character.fully_replace_character_name(character.real_name, "Weak Willet")
+	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
+	character.mind.add_antag_datum(/datum/antagonist/inborn)
+	character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+	var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
+	if(!babble)
+		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
+	else
+		character.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+		character.volume = BABBLE_DEFAULT_VOLUME
+		character.duration = BABBLE_DEFAULT_DURATION
+
 	if(mind)
 		mind.active = 0
 		mind.transfer_to(character)

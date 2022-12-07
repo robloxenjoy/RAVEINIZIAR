@@ -305,7 +305,7 @@
 	footstep = FOOTSTEP_MEAT
 	mood_turf_mes = "<span class='bloody'>Is this floor alive?!</span>\n"
 	mood_bonus_turf = -1
-	slowdown = 3
+	slowdown = 2
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
@@ -317,7 +317,7 @@
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	mood_turf_mes = "<span class='bloody'>Is this floor alive?!</span>\n"
 	mood_bonus_turf = -1
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/bluee
 	name = "Blue Floor"
@@ -355,7 +355,7 @@
 	icon_state = "gryazwhite"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_SAND
-	slowdown = 2
+	slowdown = 1
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
@@ -365,14 +365,14 @@
 	desc = "This is good!"
 	icon_state = "gryazblue"
 	icon = 'modular_pod/icons/turf/floors.dmi'
-	slowdown = -2
+	slowdown = -1
 
 /turf/open/floor/plating/polovich/dirt/dark
 	name = "Black Dirt"
 	desc = "This is darkly."
 	icon_state = "blackgryaz"
 	icon = 'modular_pod/icons/turf/floors.dmi'
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/dirt/dark/Initialize(mapload)
 	. = ..()
@@ -383,7 +383,7 @@
 	desc = "This is funny."
 	icon_state = "blackgryaz2"
 	icon = 'modular_pod/icons/turf/floors.dmi'
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/dirt/dark/bright/Initialize(mapload)
 	. = ..()
@@ -469,7 +469,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/greengryaz/Initialize(mapload)
 	. = ..()
@@ -490,7 +490,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/bluedirty/Initialize(mapload)
 	. = ..()
@@ -505,7 +505,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/greendirtevil/Initialize(mapload)
 	. = ..()
@@ -520,7 +520,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/lightblue/Initialize(mapload)
 	. = ..()
@@ -717,7 +717,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 3
+	slowdown = 2
 
 /turf/open/floor/plating/polovich/warlocksticky/Initialize(mapload)
 	. = ..()
@@ -732,7 +732,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 4
+	slowdown = 3
 
 /turf/open/floor/plating/polovich/slush/Initialize(mapload)
 	. = ..()
@@ -747,7 +747,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 4
+	slowdown = 3
 
 /turf/open/floor/plating/polovich/slush/mud/Initialize(mapload)
 	. = ..()
@@ -762,7 +762,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 4
+	slowdown = 3
 
 /turf/open/floor/plating/polovich/slush/mudd/Initialize(mapload)
 	. = ..()
@@ -777,7 +777,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 3
+	slowdown = 2
 
 /turf/open/floor/plating/polovich/evilevil/Initialize(mapload)
 	. = ..()
@@ -840,7 +840,7 @@
 /*
 	mood_turf_mes = "<span class='bloody'>Is this floor - EVIL!</span>\n"
 	mood_bonus_turf = -2
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/stonestonestone
 	name = "Stone Floor"
