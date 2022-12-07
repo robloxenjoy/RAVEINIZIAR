@@ -196,7 +196,7 @@
 	name = "flame trap"
 	desc = "A trap that will set you ablaze. You'd better avoid it."
 	icon_state = "trap-fire"
-	sparks = FALSE 
+	sparks = FALSE
 
 /obj/structure/trap/fire/trap_effect(mob/living/L)
 	to_chat(L, span_danger("<B>Pox Harve!</B>"))
@@ -212,13 +212,13 @@
 		return
 	to_chat(L, span_danger("<B>Pox Harve!</B>"))
 	L.Paralyze(20)
-	new /obj/effect/hotspot(get_turf(src))	
+	new /obj/effect/hotspot(get_turf(src))
 
 /obj/structure/trap/chill
 	name = "frost trap"
 	desc = "A trap that will chill you to the bone. You'd better avoid it."
 	icon_state = "trap-frost"
-	sparks = FALSE 
+	sparks = FALSE
 
 /obj/structure/trap/chill/trap_effect(mob/living/L)
 	to_chat(L, span_danger("<B>You're frozen solid!</B>"))
@@ -274,10 +274,10 @@
 	name = "nothing"
 	desc = "hello."
 	icon_state = "trap-lynx"
-	sparks = FALSE 
-	charges = 0
+	sparks = FALSE
+	charges = 1
 
 /obj/structure/trap/lynx/trap_effect(mob/living/L)
 	L.visible_message(span_notice("The lynx is attacking [L]!"),span_notice("Lynx attacking you!"), span_hear("You hear the sound of combat."))
-	L.Paralyze(10)
+	L.Paralyze(8)
 	new /mob/living/simple_animal/hostile/caracal(loc)
