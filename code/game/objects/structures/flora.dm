@@ -7,7 +7,7 @@
 /obj/structure/flora/tree
 	name = "tree"
 	desc = "A large tree."
-	density = FALSE
+	density = TRUE
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
@@ -60,7 +60,7 @@
 	desc = "It has become so evil!"
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "treevil_1"
-	density = TRUE
+//	density = TRUE
 	opacity = TRUE
 	log_amount = 3
 

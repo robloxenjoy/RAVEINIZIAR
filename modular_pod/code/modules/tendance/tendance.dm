@@ -35,7 +35,7 @@
 
 //	client.prefs.safe_transfer_prefs_to(character)
 //	character.dna.update_dna_identity()
-	character.fully_replace_character_name(character.real_name, "Weak Willet")
+	character.fully_replace_character_name(character.real_name, "Particle Of Chaos")
 	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
 	character.mind.add_antag_datum(/datum/antagonist/inborn)
 	character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
