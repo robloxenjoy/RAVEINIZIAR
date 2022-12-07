@@ -111,7 +111,7 @@
 	desc = "Looks wet. It's better not to drink from here."
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	initial_liquid_list = /atom/movable/liquid/immutable/ocean/shallow
-	liquid_height = -LIQUID_ANKLES_LEVEL_HEIGHT
+	liquid_height = (-LIQUID_ANKLES_LEVEL_HEIGHT - 2)
 	liquids_are_immutable = TRUE
 	turf_height = -500
 	slowdown = 5
