@@ -28,7 +28,7 @@
 	examine_icon_state = "inborn"
 
 /datum/species/weakwillet
-	name = "WEAKWILLET"
+	name = "WEAK WILLET"
 	id = SPECIES_WEAKWILLET
 	default_color = "4B4B4B"
 	sexes = FALSE

@@ -364,7 +364,7 @@ ROUNDSTART_RACES lizard
 ## SS races
 ROUNDSTART_RACES werewolf
 ROUNDSTART_RACES werecat
-ROUNDSTART_RACES werebird
+#ROUNDSTART_RACES werebird
 
 ##-------------------------------------------------------------------------------------------
 

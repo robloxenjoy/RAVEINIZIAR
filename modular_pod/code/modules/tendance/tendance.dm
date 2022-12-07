@@ -6,7 +6,7 @@
 	anchored = 1
 
 /area/medical/spawned
-	name = "spawned"
+	name = "brat"
 	ambientsounds = list('modular_pod/sound/ambi_sounds/borne.ogg', 'modular_pod/sound/ambi_sounds/buffmfffpampam.ogg', 'modular_pod/sound/ambi_sounds/BOOOM.ogg')
 //	droning_sound = DRONING_FOREST
 //	droning_volume = 35
