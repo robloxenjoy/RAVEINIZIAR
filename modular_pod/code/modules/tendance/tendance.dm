@@ -37,7 +37,6 @@
 //	character.dna.update_dna_identity()
 	character.fully_replace_character_name(character.real_name, "Particle Of Chaos")
 	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
-	character.mind.add_antag_datum(/datum/antagonist/inborn)
 	character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
 	var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
 	if(!babble)
