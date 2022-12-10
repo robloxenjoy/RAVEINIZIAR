@@ -1,4 +1,4 @@
-//floppa
+//floppa (lynx)
 /mob/living/simple_animal/hostile/caracal
 	name = "Lynx"
 	desc = "Run from this cute creature!"
@@ -9,7 +9,7 @@
 	speak_chance = 3
 	speak = list("Flop.", "Meow.", "HSSS")
 	emote_hear = list("meows!", "hisses.", "purrs.")
-	emote_taunt = list("stares ferociously", "strongly hisses")
+	emote_taunt = list("stares ferociously", "angry hisses")
 	emote_see = list("shows their fangs!", "wags their tail.", "flop their ears!")
 	gender = MALE
 	attack_verb_continuous = "claws"
@@ -28,11 +28,11 @@
 	taunt_chance = 85
 	vision_range = 9
 	aggro_vision_range = 9
-	maxHealth = 60
-	health = 60
+	maxHealth = 40
+	health = 40
 	speed = 3
-	see_in_dark = 3
-	move_to_delay = 1.2
+	see_in_dark = 4
+	move_to_delay = 1.1
 	deathmessage = "painfully collapses."
 
 	obj_damage = 40

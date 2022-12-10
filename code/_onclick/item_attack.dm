@@ -264,6 +264,10 @@
 	if(!attack_threshold_check(I.force, I.damtype, MELEE, FALSE))
 		playsound(loc, 'sound/weapons/tap.ogg', I.get_clamped_volume(), TRUE, -1)
 	else
+		user.changeNext_move(I.attack_delay)
+		user.adjustFatigueLoss(I.attack_fatigue_cost)
+		I.damageItem("SOFT")
+		sound_hint()
 		return ..()
 
 /mob/living/basic/attacked_by(obj/item/I, mob/living/user)
