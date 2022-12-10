@@ -43,9 +43,9 @@
 	if(!babble)
 		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
 	else
-		character.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
-		character.volume = BABBLE_DEFAULT_VOLUME
-		character.duration = BABBLE_DEFAULT_DURATION
+		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+		babble.volume = BABBLE_DEFAULT_VOLUME
+		babble.duration = BABBLE_DEFAULT_DURATION
 
 	if(mind)
 		mind.active = 0
