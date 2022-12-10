@@ -279,5 +279,6 @@
 
 /obj/structure/trap/lynx/trap_effect(mob/living/L)
 	L.visible_message(span_notice("The lynx is attacking [L]!"),span_notice("Lynx attacking you!"), span_hear("You hear the sound of combat."))
-	L.Paralyze(8)
+	if(prob(50))
+		L.Immobilize(2 SECONDS)
 	new /mob/living/simple_animal/hostile/caracal(loc)

@@ -42,7 +42,6 @@
 	wound_bonus = 2
 	bare_wound_bonus = 15
 	sharpness = SHARP_EDGED
-	limb_destroyer = TRUE
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
