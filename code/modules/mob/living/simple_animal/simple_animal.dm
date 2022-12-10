@@ -734,8 +734,3 @@
 		hunted = null
 		COOLDOWN_START(src, emote_cooldown, 1 MINUTES)
 		return
-
-/mob/living/simple_animal/attackby(obj/item/item, mob/user, params)
-	user.changeNext_move(item.attack_delay)
-	user.adjustFatigueLoss(item.attack_fatigue_cost)
-	item.damageItem("SOFT")
