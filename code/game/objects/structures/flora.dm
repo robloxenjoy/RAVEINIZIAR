@@ -64,7 +64,7 @@
 	opacity = TRUE
 	log_amount = 3
 
-/obj/structure/flora/tree/evil/Initialize(mapload)
+/obj/structure/flora/tree/evil/Initialize()
 	icon_state = pick("treevil_1", "treevil_2", "treevil_3", "treevil_4")
 
 /obj/structure/flora/tree/veva

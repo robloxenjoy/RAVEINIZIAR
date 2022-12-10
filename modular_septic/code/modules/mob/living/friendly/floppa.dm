@@ -1,5 +1,5 @@
 //floppa (lynx)
-/mob/living/simple_animal/hostile/caracal
+/mob/living/simple_animal/hostile/podozl/caracal
 	name = "Lynx"
 	desc = "Run from this cute creature!"
 	icon = 'modular_septic/icons/mob/floppa.dmi'
