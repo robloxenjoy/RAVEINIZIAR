@@ -212,13 +212,13 @@
 	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(required_status)
 	if(!parts.len)
 		return
-	if(check_armor)
 	var/obj/item/bodypart/picked = pick(parts)
 	var/armor = 0
 	if(check_armor)
-		var/armor_type = (brute ? MELEE : (burn ? FIRE : (stamina ? BULLET) ) )
+		var/armor_type = (brute ? MELEE : (burn ? FIRE : (stamina ? BULLET: null) ) )
 		if(armor_type)
 			armor = run_armor_check(picked, armor_type)
+
 	if(picked.receive_damage(brute, \
 							burn, \
 							stamina, \
