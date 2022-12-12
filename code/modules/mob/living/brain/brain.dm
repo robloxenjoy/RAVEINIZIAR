@@ -19,17 +19,10 @@
 		ADD_TRAIT(src, TRAIT_IMMOBILIZED, BRAIN_UNAIDED)
 		ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, BRAIN_UNAIDED)
 
-
-/mob/living/brain/proc/create_dna()
-	stored_dna = new /datum/dna/stored(src)
-	if(!stored_dna.species)
-		var/rando_race = pick(get_selectable_species())
-		stored_dna.species = new rando_race()
-
 /mob/living/brain/Destroy()
 	if(key) //If there is a mob connected to this thing. Have to check key twice to avoid false death reporting.
-		if(stat!=DEAD) //If not dead.
-			death(1) //Brains can die again. AND THEY SHOULD AHA HA HA HA HA HA
+		if(stat != DEAD) //If not dead, somehow
+			death(TRUE) //Brains can die again. AND THEY SHOULD AHA HA HA HA HA HA
 		if(mind) //You aren't allowed to return to brains that don't exist
 			mind.set_current(null)
 //		send_naxyu() //Ghostize checks for key so nothing else is necessary.
@@ -37,6 +30,17 @@
 	QDEL_NULL(stored_dna)
 	return ..()
 
+/mob/living/brain/mode()
+	if(stat == DEAD)
+		send_to_naxyu()
+		return
+	return ..()
+
+/mob/living/brain/swap_hand()
+	if(stat == DEAD)
+		send_to_naxyu()
+		return
+	return ..()
 
 /mob/living/brain/ex_act() //you cant blow up brainmobs because it makes transfer_to() freak out when borgs blow up.
 	return FALSE
@@ -89,14 +93,20 @@
 	if (client && ranged_ability?.ranged_mousepointer)
 		client.mouse_pointer_icon = ranged_ability.ranged_mousepointer
 
-/mob/living/brain/proc/get_traumas()
-	. = list()
-	if(istype(loc, /obj/item/organ/brain))
-		var/obj/item/organ/brain/B = loc
-		. = B.traumas
-
 /mob/living/brain/get_policy_keywords()
 	. = ..()
 
 	if(container)
 		. += "[container.type]"
+
+/mob/living/brain/proc/create_dna()
+	stored_dna = new /datum/dna/stored(src)
+	if(!stored_dna.species)
+		var/rando_race = pick(get_selectable_species())
+		stored_dna.species = new rando_race()
+
+/mob/living/brain/proc/get_traumas()
+	. = list()
+	if(istype(loc, /obj/item/organ/brain))
+		var/obj/item/organ/brain/B = loc
+		. = B.traumas
