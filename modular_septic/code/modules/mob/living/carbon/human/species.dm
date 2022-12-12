@@ -273,7 +273,7 @@
 	var/cold_damage_limit = bodytemp_cold_damage_limit + (is_hulk ? BODYTEMP_HULK_COLD_DAMAGE_LIMIT_MODIFIER : 0)
 	// Apply some burn damage to the body
 	if(humi.coretemperature > bodytemp_heat_damage_limit && !HAS_TRAIT(humi, TRAIT_RESISTHEAT))
-		var/damage_mod = coldmod * humi.physiology.burn_mod * (humi.on_fire ? 2 : 1)
+		var/damage_mod = heatmod * humi.physiology.heat_mod * (humi.on_fire ? 2 : 1)
 		switch(humi.coretemperature - bodytemp_heat_damage_limit)
 			if(0 to 50)
 				humi.take_bodypart_damage(burn = HEAT_DAMAGE_LEVEL_1 * damage_mod * delta_time)
