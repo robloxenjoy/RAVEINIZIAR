@@ -33,7 +33,7 @@
 /obj/machinery/gibber/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Outputting <b>[meat_produced]</b> meat slab(s) after <b>[gibtime*0.1]</b> seconds of processing.")
+		. += span_notice("It wants to give you skins.")
 		for(var/obj/item/stock_parts/manipulator/M in component_parts)
 			if(M.rating >= 2)
 				. += span_notice("Gormabalama has been upgraded to process inorganic materials.")
@@ -139,7 +139,8 @@
 	if(operating)
 		return
 	if(!occupant)
-		audible_message(span_hear("You hear a loud strange sound."))
+		audible_message(span_hear("You hear a strange sound."))
+		//need add sound
 		return
 
 	use_power(1000)
@@ -199,7 +200,7 @@
 
 	log_combat(user, occupant, "gibbed")
 	mob_occupant.death(1)
-	mob_occupant.ghostize()
+//	mob_occupant.send_naxyu()
 	set_occupant(null)
 	qdel(mob_occupant)
 	addtimer(CALLBACK(src, .proc/make_meat, skin, allmeat, meat_produced, gibtype, diseases), gibtime)

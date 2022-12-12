@@ -1,4 +1,4 @@
-/datum/element/embed/tryForceEmbed(obj/item/embedder, atom/target, hit_zone, forced = FALSE, silent = FALSE)
+/datum/element/embed/tryForceEmbed(obj/item/embedder, atom/target, hit_zone, forced = FALSE, should = TRUE, silent = FALSE)
 	var/obj/item/bodypart/limb
 	var/mob/living/carbon/limb_owner
 
@@ -15,13 +15,14 @@
 		hit_zone = limb.body_zone
 		limb_owner = limb.owner
 
-	return checkEmbed(embedder, limb_owner, hit_zone, forced = TRUE, silent = TRUE)
+	return checkEmbed(embedder, limb_owner, hit_zone, forced = TRUE, should = TRUE, silent = TRUE)
 
 /datum/element/embed/checkEmbed(obj/item/weapon, \
 							mob/living/carbon/victim, \
 							hit_zone, \
 							datum/thrownthing/throwingdatum, \
 							forced = FALSE, \
+							should = FALSE, \
 							silent = FALSE)
 	if(!istype(victim) || HAS_TRAIT(victim, TRAIT_PIERCEIMMUNE))
 		return COMPONENT_EMBED_FAILURE
@@ -45,14 +46,14 @@
 		edge_protection = max(0, edge_protection - weapon.edge_protection_penetration)
 		if(edge_protection)
 			actual_chance -= edge_protection
-			if(!forced && (actual_chance <= 0))
+			if(!should && (actual_chance <= 0))
 				if(!silent)
 					victim.visible_message(span_danger("[weapon] bounces off <b>[victim]</b>'s armor, unable to embed!"), \
 										span_notice("[weapon] bounces off my armor, unable to embed!"), \
 										vision_distance = COMBAT_MESSAGE_RANGE)
 				return (COMPONENT_EMBED_FAILURE | COMPONENT_EMBED_STOPPED_BY_ARMOR)
 
-	if(!forced && !prob(actual_chance))
+	if(!should && !prob(actual_chance))
 		return (!harmless && edge_protection ? (COMPONENT_EMBED_FAILURE | COMPONENT_EMBED_STOPPED_BY_ARMOR) : COMPONENT_EMBED_FAILURE)
 
 	var/obj/item/bodypart/limb = victim.get_bodypart(hit_zone)
@@ -109,7 +110,7 @@
 	payload.updateEmbedding()
 
 	// at this point we've created our shrapnel baby and set them up to embed in the target, we can now die in peace as they handle their embed try on their own
-	var/embed_attempt = payload.tryEmbed(limb, FALSE, TRUE)
+	var/embed_attempt = payload.tryEmbed(limb, FALSE, FALSE, TRUE)
 	if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 		SEND_SIGNAL(projectile, COMSIG_PELLET_CLOUD_EMBEDDED, limb)
 	else if(embed_attempt & COMPONENT_EMBED_FAILURE)

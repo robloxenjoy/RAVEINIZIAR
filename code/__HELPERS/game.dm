@@ -630,4 +630,4 @@
 		message = html_encode(message)
 	else
 		message = copytext(message, 2)
-	to_chat(target, span_purple("<span class='oocplain'><b>Interesting: </b>[message]</span>"))
+	to_chat(target, span_purple("<span class='oocplain'><b>Hrumka pronounces: </b>[message]</span>"))

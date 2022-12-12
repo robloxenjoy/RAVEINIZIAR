@@ -6,7 +6,7 @@
 /datum/cultural_info/birthsign/warrior
 	name = "The Warrior"
 	patron_saint = "St. Joan of Arc"
-	favored_profession = "Ordinator"
+	favored_profession = "Bohdatir"
 	description = "Courageous, fierce, and morally inflexible - Those born under the sign of the warrior cannot ever \
 		accept defeat in the face of injustice. Although easy to anger, they are rarely cruel; When they hurt someone, \
 		it is never in their intention to do so - It is always a crime of passion. Friends of the warrior can always \
@@ -18,7 +18,7 @@
 /datum/cultural_info/birthsign/mage
 	name = "The Mage"
 	patron_saint = "St. Thomas of Aquino"
-	favored_profession = "Technologist"
+	favored_profession = "Chaot"
 	description = "Wise beyond his years, the mage is always dedicated to improving his craft. Often introspective and \
 		withdrawn, the mage will often lose himself in his research. Trying to anger him is a fool's errand, as his stoic \
 		nature cares little for what he cannot control. The mage is exceptionally honest, and cannot bare the thought of \

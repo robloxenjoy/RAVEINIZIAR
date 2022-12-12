@@ -2,6 +2,9 @@
 	combat_music = 'modular_septic/sound/music/combat/deathmatch/inborn.ogg'
 	show_to_ghosts = TRUE
 
+/datum/antagonist/inborn/greet()
+	to_chat(owner, span_notice("You are weak willet. You need create pure chaos... Also, you can find egg of halyab and eat this, for rebirth."))
+
 /datum/antagonist/inborn/on_gain()
 	. = ..()
 	if(combat_music)

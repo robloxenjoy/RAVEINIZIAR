@@ -2,3 +2,4 @@
 #define ROLE_DENOMINATOR "Denominator"
 #define ROLE_DENOMINATOR_SHOTGUNNER "Denominator shotgunner"
 #define ROLE_INBORN "Creatura"
+#define ROLE_WEAKWILLET "Weak Willet"

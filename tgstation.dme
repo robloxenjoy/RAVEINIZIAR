@@ -4093,6 +4093,7 @@
 #include "modular_pod\code\modules\outdoor_effects\code\modules\admin\verbs\adminevents.dm"
 #include "modular_pod\code\modules\outdoor_effects\code\modules\particool\particool.dm"
 #include "modular_pod\code\modules\outdoor_effects\code\modules\sunlight\sunlight_object.dm"
+#include "modular_pod\code\modules\tendance\tendance.dm"
 #include "modular_pod\code\modules\torches\torches.dm"
 #include "modular_pod\code\test\raper.dm"
 #include "modular_pod\code\things\advice.dm"

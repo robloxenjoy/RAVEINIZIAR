@@ -35,11 +35,8 @@ export const SepticShockCredits = (props, context) => {
           <Stack.Item>
             <Section title="Special thanks">
               <LabeledList>
-                <LabeledList.Item label="The whole Podpol">
+                <LabeledList.Item label="The whole Podpol, Bobstation">
                   Cool guys, without them this server would not exist.
-                </LabeledList.Item>
-                <LabeledList.Item label="Kocmoc">
-                  :3
                 </LabeledList.Item>
                 <LabeledList.Item label="/TG/ Station">
                   Providing a base for this server.

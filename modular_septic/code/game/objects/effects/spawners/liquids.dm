@@ -1,5 +1,7 @@
 /obj/effect/spawner/liquid
 	name = "liquid spawner"
+	icon = 'modular_septic/icons/obj/structures/tall/structures_spawners.dmi'
+	icon_state = "liquid_spawner"
 	var/list/liquid_list = list(
 		/datum/reagent/water = 10,
 	)
@@ -19,3 +21,13 @@
 		else if(LAZYLEN(liquid_list))
 			our_turf.add_liquid_list(liquid_list, liquid_no_react, liquid_temperature)
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/spawner/liquid/shallow
+	name = "shallow liquid spawner"
+	liquid_list = list(
+		/datum/reagent/toxin/badwater/shallow = 100,
+	)
+	liquid_no_react = FALSE
+	liquid_temperature = T0C-10
+	liquids_are_immutable = FALSE
+	liquids_vaporize = FALSE

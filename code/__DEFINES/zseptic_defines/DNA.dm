@@ -109,6 +109,7 @@
 #define SPECIES_SYNTHHUMAN "synthhuman"
 #define SPECIES_IPC "ipc"
 #define SPECIES_INBORN "nagger"
+#define SPECIES_WEAKWILLET "weakwillet"
 #define SPECIES_DENOMINATOR "combiners"
 
 // ~body types

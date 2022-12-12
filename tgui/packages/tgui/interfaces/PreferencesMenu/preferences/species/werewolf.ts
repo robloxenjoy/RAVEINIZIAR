@@ -1,7 +1,7 @@
 import { Species } from "./base";
 
 const Shibu: Species = {
-  description: "The Shibu are natives to Nevado, most resembling old Earth canines.",
+  description: "The Shibu are most resembling old Earth canines.",
   features: {
     good: [{
       icon: "grin-tongue",

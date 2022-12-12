@@ -1266,7 +1266,7 @@
 			organ_damage_minimum *= 0.5
 		// Slashing damage is *slightly* more likely to damage internal organs
 		if(WOUND_SLASH)
-			organ_damage_minimum *= 0.75
+			organ_damage_minimum *= 0.50
 		// Burn damage is unlikely to damage organs
 		if(WOUND_BURN)
 			organ_damage_minimum *= 1.5

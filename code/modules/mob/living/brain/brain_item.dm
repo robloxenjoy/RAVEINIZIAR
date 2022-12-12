@@ -46,11 +46,11 @@
 		forceMove(C)
 		C.update_hair()
 		return
-
+/*
 	if(brainmob)
 		if(C.key)
-			C.ghostize()
-
+			C.send_naxyu()
+*/
 		if(brainmob.mind)
 			brainmob.mind.transfer_to(C)
 		else

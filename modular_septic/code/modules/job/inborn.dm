@@ -1,5 +1,8 @@
 /datum/job/inborn
 	title = ROLE_INBORN
+
+/datum/job/weakwillet
+	title = ROLE_WEAKWILLET
 /*
 /datum/job/venturer
 	title = ROLE_VENTURER

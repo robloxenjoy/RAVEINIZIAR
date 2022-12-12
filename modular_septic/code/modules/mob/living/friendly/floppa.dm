@@ -1,6 +1,6 @@
-//floppa
-/mob/living/simple_animal/hostile/caracal
-	name = "lynx"
+//floppa (lynx)
+/mob/living/simple_animal/hostile/podozl/caracal
+	name = "Lynx"
 	desc = "Run from this cute creature!"
 	icon = 'modular_septic/icons/mob/floppa.dmi'
 	icon_state = "caracal"
@@ -9,7 +9,7 @@
 	speak_chance = 3
 	speak = list("Flop.", "Meow.", "HSSS")
 	emote_hear = list("meows!", "hisses.", "purrs.")
-	emote_taunt = list("stares ferociously", "strongly hisses")
+	emote_taunt = list("stares ferociously", "angry hisses")
 	emote_see = list("shows their fangs!", "wags their tail.", "flop their ears!")
 	gender = MALE
 	attack_verb_continuous = "claws"
@@ -28,11 +28,11 @@
 	taunt_chance = 85
 	vision_range = 9
 	aggro_vision_range = 9
-	maxHealth = 60
-	health = 60
-	speed = 2
-	see_in_dark = 3
-	move_to_delay = 1.2
+	maxHealth = 40
+	health = 40
+	speed = 3
+	see_in_dark = 4
+	move_to_delay = 1.1
 	deathmessage = "painfully collapses."
 
 	obj_damage = 40
@@ -42,7 +42,6 @@
 	wound_bonus = 2
 	bare_wound_bonus = 15
 	sharpness = SHARP_EDGED
-	limb_destroyer = TRUE
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 

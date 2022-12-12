@@ -47,7 +47,7 @@
 	random_dysentery.try_infect(eater)
 	//shit on face, yum
 	if(ishuman(eater))
-		AddComponent(eater, /datum/component/creamed/shit)
+		eater.AddComponent(/datum/component/creamed/shit)
 		if(prob(30))
 			eater.gain_extra_effort(1, FALSE)
 
@@ -71,3 +71,28 @@
 	playsound(src, 'modular_septic/sound/effects/step_on_shit.ogg',  60, 0, 0)
 	for(var/obj/effect/decal/cleanable/blood/splatter in shitted_on)
 		splatter.on_entered(splatter, movable)
+
+/obj/item/halyabegg
+	name = "Halyab Egg"
+	desc = "So beautiful!"
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "halyabegg"
+	carry_weight = 700 GRAMS
+
+/obj/item/halyabegg/Initialize()
+	. = ..()
+	AddComponent(/datum/component/edible, \
+		initial_reagents = list(/datum/reagent/consumable/shit = 15), \
+		foodtypes = BREAKFAST, \
+		volume = 115, \
+		after_eat = CALLBACK(src, .proc/on_eat_fromm))
+
+/obj/item/halyabegg/proc/on_eat_fromm(mob/living/carbon/eater, mob/living/feeder)
+	if(!istype(eater, /mob/living/carbon/human/species/weakwillet))
+		return
+	if(eater.can_heartattack())
+		eater.set_heartattack(TRUE)
+		var/mob/dead/new_player/M = new /mob/dead/new_player()
+//		var/mob/dead/new_player/NP = new()
+		M.ckey = eater.ckey
+//	qdel(eater)

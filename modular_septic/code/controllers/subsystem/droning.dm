@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(droning)
 	//Same ambience, don't bother
 	if(last_droning ~= new_droning)
 		return
-	if(istype(area_entered, /area/maintenance/polovich/forest))
+	if((istype(area_entered, /area/maintenance/polovich/forest)) || (istype(area_entered, /area/medical/spawned)))
 //		if(SSoutdoor_effects.current_step_datum == /datum/time_of_day/midnight || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dusk || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dawn)
 //		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
 		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight))

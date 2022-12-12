@@ -40,19 +40,20 @@
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "sheet-hide"
 
-/obj/item/skin/human/attackby(obj/item/W, mob/living/carbon/user, params)
+/obj/item/skin/human/small/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(istype(W, /obj/item/grown/log/tree/evil/logg))
 		user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
-		var/time = 12 SECONDS
+		var/time = 13 SECONDS
 		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
 			if(user.zone_selected == BODY_ZONE_CHEST)
 				user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
 				user.changeNext_move(CLICK_CD_MELEE)
 				user.adjustFatigueLoss(10)
-//			playsound(get_turf(src), 'sound/weapons/bladeslice', 100 , FALSE, FALSE)
+//				playsound(get_turf(src), '', 100 , FALSE, FALSE)
 				new /obj/item/clothing/suit/armor/vest/leatherbreast(get_turf(src))
 				qdel(src)
+				qdel(W)
 /*
 GLOBAL_LIST_INIT(human_recipes, list( \
 	new/datum/stack_recipe("bloated human costume", /obj/item/clothing/suit/hooded/bloated_human, 5), \

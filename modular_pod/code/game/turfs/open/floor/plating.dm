@@ -70,6 +70,10 @@
 		W.damageItem("SOFT")
 		playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
 		sound_hint()
+		if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
+			if(prob(W.force))
+				var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
+				new /atom/movable/fire(firefloor, 21)
 
 /turf/open/floor/plating/polovich/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
@@ -301,7 +305,7 @@
 	footstep = FOOTSTEP_MEAT
 	mood_turf_mes = "<span class='bloody'>Is this floor alive?!</span>\n"
 	mood_bonus_turf = -1
-	slowdown = 3
+	slowdown = 2
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
@@ -313,7 +317,7 @@
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	mood_turf_mes = "<span class='bloody'>Is this floor alive?!</span>\n"
 	mood_bonus_turf = -1
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/bluee
 	name = "Blue Floor"
@@ -351,7 +355,7 @@
 	icon_state = "gryazwhite"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_SAND
-	slowdown = 2
+	slowdown = 1
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
@@ -361,14 +365,14 @@
 	desc = "This is good!"
 	icon_state = "gryazblue"
 	icon = 'modular_pod/icons/turf/floors.dmi'
-	slowdown = -2
+	slowdown = -1
 
 /turf/open/floor/plating/polovich/dirt/dark
 	name = "Black Dirt"
 	desc = "This is darkly."
 	icon_state = "blackgryaz"
 	icon = 'modular_pod/icons/turf/floors.dmi'
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/dirt/dark/Initialize(mapload)
 	. = ..()
@@ -379,13 +383,21 @@
 	desc = "This is funny."
 	icon_state = "blackgryaz2"
 	icon = 'modular_pod/icons/turf/floors.dmi'
-	slowdown = 2
+	slowdown = 1
+
+/turf/open/floor/plating/polovich/dirt/dark/bright/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/dirt/dark/animated
 	name = "Black Dirt"
 	desc = "This is darkly."
 	icon_state = "blackgryaz3"
 	icon = 'modular_pod/icons/turf/floors.dmi'
+
+/turf/open/floor/plating/polovich/dirt/dark/animated/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/bonefloor
 	name = "Bone Floor"
@@ -457,7 +469,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/greengryaz/Initialize(mapload)
 	. = ..()
@@ -478,7 +490,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/bluedirty/Initialize(mapload)
 	. = ..()
@@ -493,7 +505,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/greendirtevil/Initialize(mapload)
 	. = ..()
@@ -508,7 +520,7 @@
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/lightblue/Initialize(mapload)
 	. = ..()
@@ -550,6 +562,37 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/roots
+	name = "Roots"
+	desc = "Don't stumble!"
+	icon_state = "roots"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/roots/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/roots/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	. = ..()
+	if(.)
+		return
+	if(isliving(arrived))
+		if(prob(50))
+			var/mob/living/stumbleguy = arrived
+			stumbleguy.visible_message(span_warning("[stumbleguy] stumbles on the root."), \
+						span_warning("I stumble on the root."))
+			sound_hint()
+			var/diceroll = stumbleguy.diceroll(GET_MOB_ATTRIBUTE_VALUE(stumbleguy, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
+			if(diceroll <= DICE_FAILURE)
+				stumbleguy.Stumble(3 SECONDS)
+				stumbleguy.visible_message(span_warning("[stumbleguy] poorly stumbles on the root!"), \
+										span_warning("I poorly stumble on the root!"))
 
 /turf/open/floor/plating/polovich/greenishe2
 	name = "Wooden Floor"
@@ -674,7 +717,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 3
+	slowdown = 2
 
 /turf/open/floor/plating/polovich/warlocksticky/Initialize(mapload)
 	. = ..()
@@ -689,7 +732,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 4
+	slowdown = 3
 
 /turf/open/floor/plating/polovich/slush/Initialize(mapload)
 	. = ..()
@@ -704,7 +747,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 4
+	slowdown = 3
 
 /turf/open/floor/plating/polovich/slush/mud/Initialize(mapload)
 	. = ..()
@@ -719,7 +762,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 4
+	slowdown = 3
 
 /turf/open/floor/plating/polovich/slush/mudd/Initialize(mapload)
 	. = ..()
@@ -734,7 +777,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
-	slowdown = 3
+	slowdown = 2
 
 /turf/open/floor/plating/polovich/evilevil/Initialize(mapload)
 	. = ..()
@@ -797,7 +840,7 @@
 /*
 	mood_turf_mes = "<span class='bloody'>Is this floor - EVIL!</span>\n"
 	mood_bonus_turf = -2
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/stonestonestone
 	name = "Stone Floor"

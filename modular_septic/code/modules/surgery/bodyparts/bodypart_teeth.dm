@@ -64,6 +64,10 @@
 			teeth_mod.add_speech_modifier(owner)
 	. = drop
 	if(.)
-		owner.Stun(2 SECONDS)
+		var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+		if(diceroll == DICE_FAILURE)
+			owner.Stun(1 SECONDS)
+		if(diceroll == DICE_CRIT_FAILURE)
+			owner.Stun(2 SECONDS)
 		if(body_zone == BODY_ZONE_PRECISE_MOUTH)
 			owner.AddComponent(/datum/component/creamed/blood)

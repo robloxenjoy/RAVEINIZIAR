@@ -34,12 +34,14 @@
 	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/pink_crazy_frill.dmi'
 	icon_state = "pink_crazy-0"
 	base_icon_state = "pink_crazy"
+	desc = "Strange wall."
 
 /turf/closed/wall/darkrock
 	icon = 'modular_septic/icons/turf/tall/walls/rockcoolnew.dmi'
 	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/rockcoolnew_frill.dmi'
 	icon_state = "wood_wall-0"
 	base_icon_state = "wood_wall"
+	desc = "So dark and evil!"
 
 /turf/closed/wall/mineral/wood
 	icon = 'modular_septic/icons/turf/tall/walls/wood.dmi'
@@ -47,13 +49,18 @@
 	icon_state = "wood_wall-0"
 	base_icon_state = "wood_wall"
 	resistance_flags = FLAMMABLE
+	desc = "Just wood wall."
 
-/turf/closed/wall/mineral/bluegreen
+/turf/closed/wall/bluegreen
 	icon = 'modular_septic/icons/turf/tall/walls/woodbluegreen.dmi'
 	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/woodbluegreen_frill.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	resistance_flags = FLAMMABLE
+	desc = "Interesting wood wall."
+
+/turf/closed/wall/bluegreen/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,4)].ogg"
 
 /turf/closed/wall/mineral/wood/alt
 	icon = 'modular_septic/icons/turf/tall/walls/wood_victorian.dmi'
@@ -61,6 +68,7 @@
 	icon_state = "wood_wall-0"
 	base_icon_state = "wood_wall"
 	resistance_flags = FLAMMABLE
+	desc = "Just wood wall."
 
 /turf/closed/wall/mineral/wood/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,4)].ogg"

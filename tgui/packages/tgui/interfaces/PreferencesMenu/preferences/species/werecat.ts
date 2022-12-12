@@ -1,7 +1,7 @@
 import { Species } from "./base";
 
 const Perluni: Species = {
-  description: "The Perluni are natives to Nevado, most resembling old Earth felines.",
+  description: "The Perluni are most resembling old Earth felines.",
   features: {
     good: [{
       icon: "grin-tongue",

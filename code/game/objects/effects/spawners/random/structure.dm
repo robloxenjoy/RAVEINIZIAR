@@ -187,15 +187,6 @@
 		/obj/structure/flora/tree/evil,
 	)
 
-/obj/effect/spawner/random/structure/maphelp/cursedtree/ten
-	name = "cursed tree spawner 100"
-	icon_state = "cursedtree"
-	spawn_loot_chance = 100
-	spawn_random_offset = FALSE
-	loot = list(
-		/obj/structure/flora/tree/evil,
-	)
-
 /obj/effect/spawner/random/structure/maphelp/cursedtree/five
 	name = "cursed tree spawner 50"
 	icon_state = "cursedtree"
@@ -203,6 +194,34 @@
 	spawn_random_offset = FALSE
 	loot = list(
 		/obj/structure/flora/tree/evil,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/lynx/one
+	name = "lynx spawner 50"
+	icon_state = "lynx"
+	spawn_loot_chance = 10
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/trap/lynx,
+	)
+
+
+/obj/effect/spawner/random/structure/maphelp/lynx/five
+	name = "lynx spawner 50"
+	icon_state = "lynx"
+	spawn_loot_chance = 50
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/trap/lynx,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/lynx/eight
+	name = "lynx spawner 80"
+	icon_state = "lynx"
+	spawn_loot_chance = 80
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/trap/lynx,
 	)
 
 /obj/effect/spawner/random/structure/maphelp/shallowater/waist/ten

@@ -111,9 +111,9 @@
 	desc = "Looks wet. It's better not to drink from here."
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	initial_liquid_list = /atom/movable/liquid/immutable/ocean/shallow
-	liquid_height = -LIQUID_SHOULDERS_LEVEL_HEIGHT
-	turf_height = -TURF_HEIGHT_BLOCK_THRESHOLD
+	liquid_height = (-LIQUID_ANKLES_LEVEL_HEIGHT - 2)
 	liquids_are_immutable = TRUE
+	turf_height = -500
 	slowdown = 5
 	icon = 'modular_septic/icons/turf/floors/water.dmi'
 	icon_state = "riverwater"
@@ -146,7 +146,7 @@
 	desc = "Looks wet."
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
 	initial_liquid_list = list(
-		/datum/reagent/toxin/badwater/shallow = 150,
+		/datum/reagent/toxin/badwater/shallow = 100,
 	)
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	initial_liquid_temperature = T0C-40
