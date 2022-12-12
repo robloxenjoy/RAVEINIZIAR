@@ -212,8 +212,20 @@
 	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(required_status)
 	if(!parts.len)
 		return
+	if(check_armor)
 	var/obj/item/bodypart/picked = pick(parts)
-	if(picked.receive_damage(brute, burn, stamina,check_armor ? run_armor_check(picked, (brute ? MELEE : burn ? FIRE : stamina ? BULLET : null)) : FALSE, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
+	var/armor = 0
+	if(check_armor)
+		var/armor_type = (brute ? MELEE : (burn ? FIRE : (stamina ? BULLET) ) )
+		if(armor_type)
+			armor = run_armor_check(picked, armor_type)
+	if(picked.receive_damage(brute, \
+							burn, \
+							stamina, \
+							blocked = armor, \
+							wound_bonus = wound_bonus, \
+							bare_wound_bonus = bare_wound_bonus, \
+							sharpness = sharpness))
 		update_damage_overlays()
 
 ///Heal MANY bodyparts, in random order
