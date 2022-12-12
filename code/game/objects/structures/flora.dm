@@ -60,12 +60,19 @@
 	desc = "It has become so evil!"
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "treevil_1"
-//	density = TRUE
-	opacity = TRUE
 	log_amount = 3
+	layer = ABOVE_MOB_LAYER
+	plane = ABOVE_GAME_PLANE
+	density = 1
+	anchored = 1
+	opacity = 1
+	var/list/icon_states = list("treevil_1", "treevil_2", "treevil_3", "treevil_4")
 
-/obj/structure/flora/tree/evil/Initialize()
-	icon_state = pick("treevil_1", "treevil_2", "treevil_3", "treevil_4")
+/obj/structure/flora/tree/evil/Initialize(mapload)
+	. = ..()
+
+	if(islist(icon_states?.len))
+		icon_state = pick(icon_states)
 
 /obj/structure/flora/tree/veva
 	name = "Spirited Tree"
