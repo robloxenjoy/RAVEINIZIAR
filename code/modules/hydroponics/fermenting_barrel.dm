@@ -110,7 +110,6 @@
 	if(reagents.total_volume < 5)
 		to_chat(user, span_warning("The barrel has no more contents left!"))
 		return
-	reagents.transfer_to(user, reagents.total_volume, transfered_by = user)
 	reagents.expose(user, TOUCH, 5 / max(reagents.total_volume, 5))
 	visible_message(span_notice("[user] drinks from the barrel"))
 	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), TRUE)
