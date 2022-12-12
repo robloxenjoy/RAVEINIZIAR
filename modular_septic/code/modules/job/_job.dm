@@ -30,6 +30,7 @@
 		assign_attributes(spawned, player_client)
 	if(ishuman(spawned))
 		var/mob/living/carbon/human/spawned_human = spawned
+		spawned.a_intent = INTENT_GRAB
 		//lemun
 		if(player_client?.ckey == "ltkoepple")
 			spawned.put_in_hands(new /obj/item/food/grown/citrus/lemon(spawned.drop_location()), FALSE)
