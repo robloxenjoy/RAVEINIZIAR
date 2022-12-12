@@ -30,6 +30,7 @@
 		assign_attributes(spawned, player_client)
 	if(ishuman(spawned))
 		var/mob/living/carbon/human/spawned_human = spawned
+		var/old_intent = spawned.a_intent
 		spawned.a_intent = INTENT_GRAB
 		//lemun
 		if(player_client?.ckey == "ltkoepple")
@@ -61,6 +62,7 @@
 		else
 			if(locate(/obj/effect/landmark/start/generic) in get_turf(spawned))
 				put_stuff_in_spawn_closet(spawned)
+		spawned.a_intent = old_intent
 		spawned.gain_extra_effort(1, TRUE)
 		if(prob(30))
 			spawned_human.gain_trauma(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_BASIC)
