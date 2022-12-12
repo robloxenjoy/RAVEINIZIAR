@@ -725,8 +725,8 @@
 */
 /obj/structure/barricade/flora/crystal/purple
 	icon_state = "purplecrystal"
-	name = "Purple Crystal"
-	desc = "Purple сrystal."
+	name = "Pink Crystal"
+	desc = "Pink сrystal."
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	max_integrity = 50

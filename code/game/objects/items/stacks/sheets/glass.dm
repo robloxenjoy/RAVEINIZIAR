@@ -441,13 +441,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 			hitsound = stabb_hitsound
 			current_atk_mode = stabb
 			sharpness = SHARP_POINTY
-			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 45, "fall_chance" = 0.5)
+			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.3)
 		if(stabb)
 			to_chat(user, span_notice("I'm now slicing them with the harshed side of the [src]."))
 			hitsound = slashh_hitsound
 			current_atk_mode = slashh
 			sharpness = SHARP_EDGED
-			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 30, "fall_chance" = 0.5)
+			embedding = list("pain_mult" = 4, "rip_time" = 3, "embed_chance" = 30, "jostle_chance" = 3, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 8, "fall_chance" = 0.4)
 
 /obj/item/shard/crystal/green
 	name = "Green Crystal Shard"
@@ -486,8 +486,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 //	weld_material = /obj/item/stack/sheet/plasmaglass
 
 /obj/item/shard/crystal/purple
-	name = "Purple Crystal Shard"
-	desc = "A nasty looking shard of purple crystal."
+	name = "Pink Crystal Shard"
+	desc = "A nasty looking shard of pink crystal."
 	icon_state = "purple"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "purple"

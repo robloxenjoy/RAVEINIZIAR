@@ -254,7 +254,7 @@
 	foodtype = NONE
 
 /obj/item/reagent_containers/food/drinks/bottle/holywater/hell
-	desc = "A flask of holy water...it's been sitting in the Necropolis a while though."
+	desc = "A flask of holy water."
 	list_reagents = list(/datum/reagent/hellwater = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
@@ -607,7 +607,7 @@
 
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/bottle/molotov
-	name = "molotov cocktail"
+	name = "Molotov Cocktail"
 	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by rioters and revolutionaries. Light and toss."
 	icon_state = "vodkabottle"
 	list_reagents = list()
@@ -636,12 +636,12 @@
 	if(firestarter && active)
 		hit_atom.fire_act()
 		new /obj/effect/hotspot(get_turf(hit_atom))
+		new /atom/movable/fire(get_turf(hit_atom), 23)
 	..()
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
 	if(I.get_temperature() && !active)
 		active = TRUE
-		log_bomber(user, "has primed a", src, "for detonation")
 
 		to_chat(user, span_info("You light [src] on fire."))
 		add_overlay(custom_fire_overlay ? custom_fire_overlay : GLOB.fire_overlay)
