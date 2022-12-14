@@ -297,6 +297,7 @@
 	owner.adjustFatigueLoss(5)
 	owner.changeNext_move(CLICK_CD_WRENCH)
 	carbon_victim.gut_cut()
+	qdel(gut_rope)
 	update_grab_mode()
 	return TRUE
 
