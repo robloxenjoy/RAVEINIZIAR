@@ -157,7 +157,7 @@
 	tetris_height = 64
 	durability = 100
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
 
 /obj/item/grown/log/tree/evil/logg/update_name()
 	. = ..()
