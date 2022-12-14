@@ -62,6 +62,7 @@
 	seed = /obj/item/seeds/cherry/blue
 	name = "Blood Darner"
 	desc = "Perhaps you should eat it?"
+	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "mushroomblood"
 	base_icon_state = "mushroomblood"
 	grind_results = list(/datum/reagent/consumable/nutriment = 1)
