@@ -79,6 +79,8 @@
 //maximum amount of cable in a coil
 #define MAXCOIL 30
 
+#define MAXLOG 5
+
 //tablecrafting defines
 #define CAT_NONE ""
 #define CAT_WEAPONRY "Weaponry"

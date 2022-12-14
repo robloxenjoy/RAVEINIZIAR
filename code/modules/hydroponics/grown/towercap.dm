@@ -136,6 +136,9 @@
 	name = "Evil Wood Log"
 	desc = "It's cursed, warlocks is bad! Also, it's chopped."
 	icon_state = "evilog"
+	max_amount = MAXLOG
+	amount = 1
+	merge_type = /obj/item/grown/log/tree/evil/logg
 	min_force = 4
 	force = 8
 	min_force_strength = 1
@@ -151,6 +154,18 @@
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
+/obj/item/grown/log/tree/evil/logg/update_name()
+	. = ..()
+	name = "Log [(amount < 2) ? "Unit" : "Pile"]"
+
+/obj/item/grown/log/tree/evil/logg/update_desc()
+	. = ..()
+	desc = "A [(amount < 2) ? "unit" : "pile"] of wood. It's cursed, warlocks is bad! Also, it's chopped."
+/*
+/obj/item/grown/log/tree/evil/logg/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state][amount < 3 ? amount : ""]"
+*/
 /obj/item/grown/log/tree/evil/logg/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(W.get_sharpness() && W.force > 5)
 		if(W.hitsound)
@@ -163,6 +178,12 @@
 			playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 			new /obj/item/melee/bita/evil(get_turf(src))
 			qdel(src)
+
+/obj/item/grown/log/tree/evil/logg/three
+	amount = 3
+
+/obj/item/grown/log/tree/evil/logg/five
+	amount = 5
 
 /obj/item/grown/log/steel
 	seed = /obj/item/seeds/tower/steel
