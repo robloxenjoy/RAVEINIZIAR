@@ -156,7 +156,7 @@
 			user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
 			user.changeNext_move(CLICK_CD_MELEE)
 			user.adjustFatigueLoss(W.attack_fatigue_cost)
-			playsound(get_turf(src), 'sound/effects/drova.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 			new /obj/item/melee/bita/evil(get_turf(src))
 			qdel(src)
 

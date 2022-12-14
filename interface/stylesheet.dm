@@ -80,6 +80,13 @@ h1.alert, h2.alert		{color: #000000;}
 		100% {color: #D5AD6D;text-shadow: 0 0 3px #D5AD6D;}
 }
 
+.achievementinteresting	{color: #880000; text-shadow: 0 0 3px #882e00; font-weight: bold; font-size: 120%; animation: interesting 500ms infinite;}
+	@keyframes interesting {
+		0% {color: #880000; text-shadow: 0 0 3px #882e00;}
+		50% {color: #000088;text-shadow: 0 0 9px #002e88;}
+		100% {color: #008800;text-shadow: 0 0 3px #2b882b;}
+}
+
 .achievementgood		{color: #7cdd7c; text-shadow: 0 0 3px #7cdd7c; font-weight: bold;font-size: 125%;}
 
 .achievementneutral		{color: #9fffdf; text-shadow: 0 0 3px #9fffdf; font-weight: bold; font-size: 125%;}

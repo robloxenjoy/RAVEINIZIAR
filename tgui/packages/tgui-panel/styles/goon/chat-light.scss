@@ -477,6 +477,31 @@ h1.alert, h2.alert {
   }
 }
 
+.achievementinteresting {
+  color: #880000;
+  text-shadow: 0 0 3px #882e00;
+  font-weight: bold;
+  font-size: 120%;
+  animation: rare 500ms infinite;
+}
+
+@keyframes interesting {
+  0% {
+    color: #880000;
+    text-shadow: 0 0 3px #882e00;
+  }
+
+  50% {
+    color: #000088;
+    text-shadow: 0 0 9px #002e88;
+  }
+
+  100% {
+    color: #008800;
+    text-shadow: 0 0 3px #2b882b;
+  }
+}
+
 .achievementgood {
   color: #7cdd7c;
   text-shadow: 0 0 3px #7cdd7c;

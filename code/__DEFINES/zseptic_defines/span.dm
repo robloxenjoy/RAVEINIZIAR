@@ -25,6 +25,7 @@
 #define span_pinkdang(str) ("<span class='pinkdang'>" + str + "</span>")
 #define span_emote(str) ("<span class='emote'>" + str + "</span>")
 #define span_achievementrare(str) ("<span class='achievementrare'>" + str + "</span>")
+#define span_achievementinteresting(str) ("<span class='achievementinteresting'>" + str + "</span>")
 #define span_achievementgood(str) ("<span class='achievementgood'>" + str + "</span>")
 #define span_achievementneutral(str) ("<span class='achievementneutral'>" + str + "</span>")
 #define span_achievementbad(str) ("<span class='achievementbad'>" + str + "</span>")
