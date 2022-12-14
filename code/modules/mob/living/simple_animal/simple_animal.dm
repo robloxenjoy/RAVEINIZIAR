@@ -228,18 +228,13 @@
 	walk(src, 0)
 	return ..()
 
-/mob/living/simple_animal/attackby(obj/item/O, mob/living/carbon/user, params)
+/mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
 	. = ..()
 	user.changeNext_move(O.attack_delay)
 	user.adjustFatigueLoss(O.attack_fatigue_cost)
 	O.damageItem("SOFT")
 
 /mob/living/simple_animal/attack_hand(mob/living/carbon/user, list/modifiers)
-	. = ..()
-	user.changeNext_move(CLICK_CD_MELEE)
-	user.adjustFatigueLoss(5)
-
-/mob/living/simple_animal/attack_hand_secondary(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.adjustFatigueLoss(5)
