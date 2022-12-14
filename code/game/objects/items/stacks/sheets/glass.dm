@@ -404,6 +404,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	tetris_height = 32
 	skill_melee = SKILL_KNIFE
 	sharpness = SHARP_EDGED
+	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
 	var/slashh_hitsound = list('sound/weapons/bladeslice.ogg')
 	var/stabb_hitsound = list('modular_septic/sound/weapons/melee/sharp_stab1.ogg', 'modular_septic/sound/weapons/melee/sharp_stab2.ogg')
 //	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')

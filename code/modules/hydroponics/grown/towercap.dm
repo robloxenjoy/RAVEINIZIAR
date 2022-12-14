@@ -106,6 +106,8 @@
 	attack_delay = 25
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
+	havedurability = 1
+	durability = 200
 	var/logs_amount = 3
 
 /obj/item/grown/log/tree/evil/attackby(obj/item/W, mob/living/carbon/user, params)
@@ -144,6 +146,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tetris_width = 32
 	tetris_height = 64
+	durability = 100
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
