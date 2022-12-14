@@ -104,6 +104,8 @@
 	skill_melee = SKILL_IMPACT_WEAPON_TWOHANDED
 	w_class = WEIGHT_CLASS_BULKY
 	attack_delay = 25
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	var/logs_amount = 3
 
 /obj/item/grown/log/tree/evil/attackby(obj/item/W, mob/living/carbon/user, params)
@@ -140,6 +142,10 @@
 	carry_weight = 1 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
 	w_class = WEIGHT_CLASS_NORMAL
+	tetris_width = 32
+	tetris_height = 64
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
 /obj/item/grown/log/tree/evil/logg/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(W.get_sharpness() && W.force > 5)

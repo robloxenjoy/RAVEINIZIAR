@@ -80,6 +80,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	///Whether or not we use stealthy audio levels for this item's attack sounds
 	var/stealthy_audio = FALSE
 	//durability of item
+	var/havedurability = 0
 	var/durability = 150
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
@@ -233,7 +234,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(damtype == BRUTE)
 			hitsound = "swing_hit"
 
-	durability = rand(100,150)
+	if(havedurability)
+		if(!durability)
+			durability = rand(100,150)
+
 	add_weapon_description()
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_ITEM, src)
@@ -385,7 +389,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(durability <= 0)
 		durability = 0
 		playsound(src.loc, 'sound/effects/break_stone.ogg', 100, TRUE)
-		src.visible_message(span_notice("[src] breaks."),span_notice("[src] breaks."), span_hear("You hear the sound of breaking."))
+		src.visible_message(span_notice("[src] breaks."), span_notice("[src] breaks."), span_hear("You hear the sound of breaking."))
 		qdel(src)
 
 /obj/item/interact(mob/user)

@@ -72,6 +72,13 @@
 		if(prob(70))
 			. += "<span class='warning'>It's a wrong berry...</span>"
 
+/obj/item/food/grown/bluecherries/super
+	name = "Midnightberry"
+	desc = "Delicious Berry."
+	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 1)
+	food_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/medicine/c2/penthrite/onesebasta = 6)
+	bite_consumption = 7
+
 //Cherry Bulbs
 /obj/item/seeds/cherry/bulb
 	name = "pack of cherry bulb pits"

@@ -389,6 +389,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 
 /obj/item/shard/crystal
 	var/current_atk_mode = slashh
+	havedurability = 1
+	durability = 50
 	force = 8
 	throwforce = 11
 	wound_bonus = 3
