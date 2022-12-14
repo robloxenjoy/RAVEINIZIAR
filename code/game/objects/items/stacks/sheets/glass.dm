@@ -392,7 +392,6 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	havedurability = 1
 	durability = 50
 	force = 8
-	throwforce = 11
 	wound_bonus = 3
 	bare_wound_bonus = 15
 	min_force_strength = 1
@@ -400,6 +399,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	min_throwforce = 9
 	min_throwforce_strength = 8
 	throwforce_strength = 1.1
+	throwforce = 12
 	tetris_width = 32
 	tetris_height = 32
 	skill_melee = SKILL_KNIFE

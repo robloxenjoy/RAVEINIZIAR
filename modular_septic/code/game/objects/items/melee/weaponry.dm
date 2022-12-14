@@ -125,6 +125,10 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
+#define slash 1
+#define stab 2
+#define bash 3
+
 /obj/item/changeable_attacks
 	name = "a fucked up retarded weapon"
 	desc = "report thgis to a retard dev if you see it"
@@ -155,10 +159,6 @@
 		to_chat(user, span_warning("There's no other ways to attack with this weapon."))
 		return
 	user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
-
-#define slash 1
-#define stab 2
-#define bash 3
 
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"
@@ -410,8 +410,8 @@
 	inhand_icon_state = "steelaxe"
 	current_atk_mode = slash
 	slash_hitsound = list('modular_septic/sound/weapons/melee/hitweapon.ogg', 'modular_septic/sound/weapons/melee/hitweapon2.ogg')
-	pickup_sound = 'modular_septic/sound/weapons/melee/pickupweapon.ogg'
-	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.ogg', 'modular_septic/sound/weapons/melee/missweapon2.ogg')
+	pickup_sound = 'modular_septic/sound/weapons/melee/pickupweapon.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.wav', 'modular_septic/sound/weapons/melee/missweapon2.wav')
 	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.wav'
 	embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
 	min_force = 15
@@ -436,7 +436,7 @@
 	havedurability = 1
 	tetris_width = 32
 	tetris_height = 96
-	slot_flags = SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/changeable_attacks/axe/small/steel/swap_intents(mob/user)
 	. = ..()

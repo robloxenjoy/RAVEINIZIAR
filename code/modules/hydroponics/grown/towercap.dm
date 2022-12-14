@@ -104,8 +104,10 @@
 	skill_melee = SKILL_IMPACT_WEAPON_TWOHANDED
 	w_class = WEIGHT_CLASS_BULKY
 	attack_delay = 25
+	throw_speed = 2
+	throw_range = 5
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
 	havedurability = 1
 	durability = 200
 	slowdown = 1
@@ -124,15 +126,14 @@
 				playsound(get_turf(src), 'sound/effects/drova.ogg', 100 , FALSE, FALSE)
 //				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 				for(var/i=1 to logs_amount)
-					new /obj/item/grown/log/tree/evil/logg(get_turf(src))
+					new /obj/item/stack/grown/log/tree/evil/logg(get_turf(src))
 //				var/obj/structure/flora/stump/S = new(loc)
 //				S.name = "[name] stump"
 				qdel(src)
 	else
 		return ..()
 
-/obj/item/grown/log/tree/evil/logg
-	seed = null
+/obj/item/stack/grown/log/tree/evil/logg
 	name = "Evil Wood Log"
 	desc = "It's cursed, warlocks is bad! Also, it's chopped."
 	icon_state = "evilog"
@@ -145,6 +146,10 @@
 	force_strength = 1.5
 	wound_bonus = 3
 	bare_wound_bonus = 5
+	throw_speed = 2
+	throw_range = 8
+	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
+	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
 	carry_weight = 1 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
 	w_class = WEIGHT_CLASS_NORMAL
