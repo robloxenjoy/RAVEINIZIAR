@@ -296,6 +296,7 @@
 	var/mob/living/carbon/carbon_victim = victim
 	owner.adjustFatigueLoss(5)
 	owner.changeNext_move(CLICK_CD_WRENCH)
+	playsound(victim, 'modular_pod/sound/eff/outshit.wav', 80, FALSE)
 	qdel(gut_rope)
 	carbon_victim.gut_cut()
 	update_grab_mode()
