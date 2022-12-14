@@ -53,13 +53,13 @@
 	graft_gene = /datum/plant_gene/trait/plant_type/fungal_metabolism
 
 /obj/item/food/grown/mushroom/amanita
-	seed = /obj/item/seeds/amanita
+	seed = null
 	name = "fly amanita"
 	desc = "<I>Amanita Muscaria</I>: Learn poisonous mushrooms by heart. Only pick mushrooms you know."
 	icon_state = "amanita"
 
 /obj/item/food/grown/mushroom/blood
-//	seed = /obj/item/seeds/amanita
+	seed = /obj/item/seeds/cherry/blue
 	name = "Blood Darner"
 	desc = "Perhaps you should eat it?"
 	icon_state = "mushroomblood"
