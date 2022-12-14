@@ -59,6 +59,8 @@
 #define TRAIT_EFFORT_ACTIVE "effort_active"
 /// I LOVE LEAAANNN!
 #define TRAIT_LEAN "leaned"
+/// Crazy mushroom!
+#define TRAIT_BLOODARN "bloodarn"
 /// Currently dancing!
 #define TRAIT_DANCING "dancing"
 /// Currently a stupid schizophrenic gakster!

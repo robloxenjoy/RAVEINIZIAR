@@ -136,7 +136,7 @@
 	var/stab_hitsound = list('modular_septic/sound/weapons/melee/sharp_stab1.ogg', 'modular_septic/sound/weapons/melee/sharp_stab2.ogg')
 	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
 	var/current_atk_mode = null
-/*
+
 /obj/item/changeable_attacks/examine(mob/user)
 	. = ..()
 	if(current_atk_mode)
@@ -147,7 +147,7 @@
 			. += span_info("It's currently ready to stab.")
 		else if (current_atk_mode == bash)
 			. += span_info("It's currently ready to bash.")
-*/
+
 /obj/item/changeable_attacks/attack_self(mob/user, modifiers)
 	. = ..()
 	swap_intents(user)
@@ -440,7 +440,7 @@
 	tetris_height = 96
 	slot_flags = ITEM_SLOT_BELT
 
-/obj/item/changeable_attacks/axe/small/steel/swap_intents(mob/user)
+/obj/item/changeable_attacks/slashbash/axe/small/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
 		if(slash)

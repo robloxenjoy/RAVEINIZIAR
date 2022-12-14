@@ -50,7 +50,7 @@
 	desc = "Delicious and healthy berry."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "midnightberry"
-	bite_consumption_mod = 2
+	bite_consumption_mod = 3
 	bite_consumption = 6
 	eat_time = 2
 	foodtypes = FRUIT
@@ -65,6 +65,7 @@
 	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 1)
 	food_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/toxin/lexorin = 6)
 	bite_consumption = 7
+	bite_consumption_mod = 5
 
 /obj/item/food/grown/bluecherries/lie/examine(mob/user)
 	. = ..()
@@ -78,6 +79,7 @@
 	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 1)
 	food_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/medicine/c2/penthrite/onesebasta = 6)
 	bite_consumption = 7
+	bite_consumption_mod = 5
 
 //Cherry Bulbs
 /obj/item/seeds/cherry/bulb

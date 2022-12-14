@@ -58,6 +58,24 @@
 	desc = "<I>Amanita Muscaria</I>: Learn poisonous mushrooms by heart. Only pick mushrooms you know."
 	icon_state = "amanita"
 
+/obj/item/food/grown/mushroom/blood
+//	seed = /obj/item/seeds/amanita
+	name = "Blood Darner"
+	desc = "Perhaps you should eat it?"
+	icon_state = "mushroomblood"
+	base_icon_state = "mushroomblood"
+	grind_results = list(/datum/reagent/consumable/nutriment = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/drug/mushroomhallucinogen = 6)
+	bite_consumption = 7
+	var/world_icon = 'modular_pod/icons/obj/items/berry.dmi'
+	var/icon_state_variation = 3
+
+/obj/item/food/grown/mushroom/blood/Initialize(mapload)
+	. = ..()
+	if(icon_state_variation)
+		icon_state = "[base_icon_state][rand(1, icon_state_variation)]"
+	AddElement(/datum/element/world_icon, null, icon, world_icon)
+
 // Destroying Angel
 /obj/item/seeds/angel
 	name = "pack of destroying angel mycelium"

@@ -439,8 +439,8 @@
 	name = "Mushroom Hallucinogen"
 	description = "A strong hallucinogenic drug derived from certain species of mushroom."
 	color = "#E700E7" // rgb: 231, 0, 231
-	metabolization_rate = 0.2 * REAGENTS_METABOLISM
-	taste_description = "mushroom"
+	metabolization_rate = 0.40 * REAGENTS_METABOLISM
+	taste_description = "darner"
 	ph = 11
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	addiction_types = list(/datum/addiction/hallucinogens = 12)
@@ -460,7 +460,7 @@
 		if (10 to INFINITY)
 			psychonaut.Jitter(20 * REM * delta_time)
 			if(DT_PROB(16, delta_time))
-				psychonaut.emote(pick("twitch","giggle"))
+				psychonaut.emote(pick("laugh","giggle"))
 	..()
 
 /datum/reagent/drug/mushroomhallucinogen/on_mob_metabolize(mob/living/psychonaut)
@@ -480,14 +480,26 @@
 
 	for(var/filter in game_plane_master_controller.get_filters("rainbow"))
 		animate(filter, color = col_filter_identity, time = 0 SECONDS, loop = -1, flags = ANIMATION_PARALLEL)
-		animate(color = col_filter_green, time = 4 SECONDS)
-		animate(color = col_filter_blue, time = 4 SECONDS)
-		animate(color = col_filter_red, time = 4 SECONDS)
+		animate(color = col_filter_green, time = 1 SECONDS)
+		animate(color = col_filter_blue, time = 1 SECONDS)
+		animate(color = col_filter_red, time = 1 SECONDS)
 
-	game_plane_master_controller.add_filter("psilocybin_wave", 1, list("type" = "wave", "size" = 2, "x" = 32, "y" = 32))
+	game_plane_master_controller.add_filter("light", 1, list("type" = "bloom", "color" = COLOR_RED_LIGHT, "size" = 1, "offset" = 0, "alpha" = 100))
 
-	for(var/filter in game_plane_master_controller.get_filters("psilocybin_wave"))
+	for(var/filter in game_plane_master_controller.get_filters("light"))
 		animate(filter, time = 64 SECONDS, loop = -1, easing = LINEAR_EASING, offset = 32, flags = ANIMATION_PARALLEL)
+
+	var/atom/movable/screen/fullscreen/fuuuck/crazy
+	crazy = psychonaut.overlay_fullscreen("fuuuck", /atom/movable/screen/fullscreen/fuuuck)
+
+	var/feel = pick("I am scared. I am happy.", "I. They. She. Thoughts. I. They. It.", "POWER. OV. POWER.", "BEAUTIFUL. TERRIBLE.", "KONDOLE.")
+	if(DT_PROB(2.5, delta_time))
+		to_chat(psychonaut, span_horny("[feel]"))
+
+	ADD_TRAIT(psychonaut, TRAIT_BLOODARN, name)
+	psychonaut.attributes?.add_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
+	SSdroning.area_entered(get_area(psychonaut), psychonaut?.client)
+	to_chat(psychonaut, span_horny(span_big("I am fucked!")))
 
 /datum/reagent/drug/mushroomhallucinogen/on_mob_end_metabolize(mob/living/psychonaut)
 	. = ..()
@@ -495,7 +507,12 @@
 		return
 	var/atom/movable/plane_master_controller/game_plane_master_controller = psychonaut.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("rainbow")
-	game_plane_master_controller.remove_filter("psilocybin_wave")
+	game_plane_master_controller.remove_filter("light")
+	psychonaut.clear_fullscreen("fuuuck")
+	crazy = null
+	REMOVE_TRAIT(psychonaut, TRAIT_BLOODARN, name)
+	psychonaut.attributes?.remove_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
+	SSdroning.play_area_sound(get_area(psychonaut), psychonaut?.client)
 
 /datum/reagent/drug/blastoff
 	name = "bLaSToFF"

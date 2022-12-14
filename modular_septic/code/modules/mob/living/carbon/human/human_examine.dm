@@ -165,6 +165,8 @@
 			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
 		if(HAS_TRAIT(src, TRAIT_FLUORIDE_STARE))
 			. += "<span class='animated'>[t_He] [t_has] a vacant, fluoridated stare.</B></span>"
+		if(HAS_TRAIT(src, TRAIT_BLOODARN))
+			. += "<span class='warning'>[t_He] [t_has] a large pupils. Mysteriously.</B></span>"
 		if(HAS_TRAIT(src, TRAIT_HORROR_STARE))
 			. += "<span class='animated'>[t_He] [t_has] a deep, horror stare.</B></span>"
 

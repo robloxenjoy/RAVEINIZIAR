@@ -138,6 +138,7 @@
 /obj/item/stack/grown/log/tree/evil/logg
 	name = "Evil Wood Log"
 	desc = "It's cursed, warlocks is bad! Also, it's chopped."
+	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "evilog"
 	base_icon_state = "evilog"
 	max_amount = MAXLOG
