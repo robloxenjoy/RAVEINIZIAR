@@ -70,12 +70,10 @@
 	density = 1
 	anchored = 1
 	opacity = 1
-	var/list/icon_statess = list("treevil_1", "treevil_2", "treevil_3", "treevil_4")
 
 /obj/structure/flora/tree/evil/Initialize(mapload)
 	. = ..()
-	if(islist(icon_statess?.len))
-		icon_state = pick(icon_statess)
+	icon_state = pick("treevil_1", "treevil_2", "treevil_3", "treevil_4")
 
 /obj/structure/flora/tree/veva
 	name = "Spirited Tree"
