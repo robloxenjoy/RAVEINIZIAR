@@ -25,7 +25,7 @@
 	inhand_icon_state = "soldat"
 	armor_broken_sound = "light"
 	armor_damaged_sound = "light"
-	armor = list(MELEE = 5, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 10, ACID = 10, WOUND = 5)
+	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 3)
 	carry_weight = 400 GRAMS
 	can_adjust = FALSE
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS

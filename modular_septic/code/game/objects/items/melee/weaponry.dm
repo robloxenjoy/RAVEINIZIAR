@@ -125,6 +125,10 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
+#define slash 1
+#define stab 2
+#define bash 3
+
 /obj/item/changeable_attacks
 	name = "a fucked up retarded weapon"
 	desc = "report thgis to a retard dev if you see it"
@@ -136,7 +140,13 @@
 /obj/item/changeable_attacks/examine(mob/user)
 	. = ..()
 	if(current_atk_mode)
-		. += span_info("It's currently ready to [current_atk_mode]")
+//		var/attack_text = current_atk_mode
+		if(current_atk_mode == slash)
+			. += span_info("It's currently ready to slash.")
+		else if (current_atk_mode == stab)
+			. += span_info("It's currently ready to stab.")
+		else if (current_atk_mode == bash)
+			. += span_info("It's currently ready to bash.")
 
 /obj/item/changeable_attacks/attack_self(mob/user, modifiers)
 	. = ..()
@@ -151,10 +161,6 @@
 		to_chat(user, span_warning("There's no other ways to attack with this weapon."))
 		return
 	user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
-
-#define slash 1
-#define stab 2
-#define bash 3
 
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"
@@ -329,9 +335,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_EDGED
 	skill_melee = SKILL_POLEARM
-	carry_weight = 3 KILOGRAMS
+	carry_weight = 4 KILOGRAMS
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	attack_delay = 25
 	tetris_width = 32
 	tetris_height = 96
 	slot_flags = null
@@ -394,6 +399,88 @@
 			throwforce = 17
 			attack_delay = 40
 			attack_fatigue_cost = 10
+			current_atk_mode = slash
+			sharpness = SHARP_EDGED
+
+/obj/item/changeable_attacks/slashbash/axe/small/steel
+	name = "Steel Axe"
+	desc = "Steel axe. Not bad."
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
+	icon_state = "steelaxe"
+	inhand_icon_state = "steelaxe"
+	current_atk_mode = slash
+	slash_hitsound = list('modular_septic/sound/weapons/melee/hitweapon.ogg', 'modular_septic/sound/weapons/melee/hitweapon2.ogg')
+	pickup_sound = 'modular_septic/sound/weapons/melee/pickupweapon.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.wav', 'modular_septic/sound/weapons/melee/missweapon2.wav')
+	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.wav'
+	embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
+	min_force = 15
+	force = 20
+	min_force_strength = 1.5
+	wound_bonus = 13
+	bare_wound_bonus = 5
+	force_strength = 4
+	min_throwforce = 19
+	min_throwforce_strength = 12
+	throwforce_strength = 3
+	throwforce = 20
+	parrying_modifier = 0.3
+	armor_damage_modifier = 0.5
+	attack_fatigue_cost = 9
+	attack_delay = 30
+	w_class = WEIGHT_CLASS_NORMAL
+	sharpness = SHARP_EDGED
+	skill_melee = SKILL_IMPACT_WEAPON
+	carry_weight = 3 KILOGRAMS
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	havedurability = 1
+	tetris_width = 32
+	tetris_height = 96
+	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/changeable_attacks/axe/small/steel/swap_intents(mob/user)
+	. = ..()
+	switch(current_atk_mode)
+		if(slash)
+			to_chat(user, span_notice("I'm now bashing them with steel back of the [src]."))
+			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
+			hitsound = bash_hitsound
+			embedding = null
+			min_force = 9
+			force = 12
+			min_force_strength = 0.70
+			force_strength = 1.65
+			wound_bonus = 10
+			bare_wound_bonus = 2
+			attack_fatigue_cost = 8
+			min_throwforce = 14
+			min_throwforce_strength = 9
+			throwforce_strength = 2
+			throwforce = 16
+			attack_delay = 20
+			armor_damage_modifier = 0.4
+			current_atk_mode = bash
+			sharpness = NONE
+		if(bash)
+			to_chat(user, span_notice("I'm now chop them with steel blade of the [src]."))
+			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
+			hitsound = slash_hitsound
+			embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
+			min_force = 15
+			force = 20
+			min_force_strength = 1.5
+			force_strength = 4
+			wound_bonus = 13
+			bare_wound_bonus = 5
+			armor_damage_modifier = 0.5
+			min_throwforce = 19
+			min_throwforce_strength = 12
+			throwforce_strength = 3
+			throwforce = 20
+			attack_delay = 20
+			attack_fatigue_cost = 9
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
 

@@ -15,8 +15,8 @@
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/food/berries/bluecherries
-	name = "Midnightberry"
-	desc = "Delicious berry."
+	name = "Blue berry"
+	desc = "Delicious berry. (ravein, it's other berry)."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "midnightberry"
 //	bite_consumption_mod = 2

@@ -17,14 +17,18 @@
 		if(W.get_sharpness() && W.force > 0)
 			if(!istype(W, /obj/item/shard))
 				if(W.hitsound)
-					playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
+					playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
 				user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
+				user.changeNext_move(W.attack_delay)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				W.damageItem("SOFT")
 				sound_hint()
 				if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
 					user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
-					user.changeNext_move(CLICK_CD_MELEE)
+					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(W.attack_fatigue_cost)
-					playsound(get_turf(src), 'sound/effects/meteorimpact.ogg', 100 , FALSE, FALSE)
+					W.damageItem("MEDIUM")
+					playsound(get_turf(src), 'modular_septic/sound/effects/fallheavy.ogg', 100 , FALSE, FALSE)
 					sound_hint()
 //					user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 					for(var/i=1 to log_amount)
@@ -66,13 +70,12 @@
 	density = 1
 	anchored = 1
 	opacity = 1
-	var/list/icon_states = list("treevil_1", "treevil_2", "treevil_3", "treevil_4")
+	var/list/icon_statess = list("treevil_1", "treevil_2", "treevil_3", "treevil_4")
 
 /obj/structure/flora/tree/evil/Initialize(mapload)
 	. = ..()
-
-	if(islist(icon_states?.len))
-		icon_state = pick(icon_states)
+	if(islist(icon_statess?.len))
+		icon_state = pick(icon_statess)
 
 /obj/structure/flora/tree/veva
 	name = "Spirited Tree"
@@ -302,7 +305,7 @@
 
 /obj/structure/flora/ausbushes/crystal/dark/Initialize()
 	. = ..()
-	berry_type = pick("red", "blue", "redd", "bluee", "purple")
+	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee")
 	grow_berries()
 
 /obj/structure/flora/ausbushes/crystal/dark/update_overlays()
@@ -347,6 +350,8 @@
 			berry = new /obj/item/food/berries/redcherrie/lie(loc)
 		if("bluee")
 			berry = new /obj/item/food/grown/bluecherries/lie(loc)
+		if("blueee")
+			berry = new /obj/item/food/grown/bluecherries/super(loc)
 		if("purple")
 			berry = new /obj/item/food/berries/leancherrie(loc)
 	user.put_in_active_hand(berry)
@@ -726,8 +731,8 @@
 */
 /obj/structure/barricade/flora/crystal/purple
 	icon_state = "purplecrystal"
-	name = "Purple Crystal"
-	desc = "Purple сrystal."
+	name = "Pink Crystal"
+	desc = "Pink сrystal."
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	max_integrity = 50

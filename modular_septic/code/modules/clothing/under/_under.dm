@@ -31,6 +31,8 @@
 	max_integrity = 85
 	integrity_failure = 0.05
 	limb_integrity = 40
+	has_sensor = NO_SENSORS
+	random_sensor = FALSE
 	var/sleeve_wording = "sleeve"
 	var/sleeve_rip_delay = 1 SECONDS
 	var/sleeves = ARM_RIGHT|ARM_LEFT|LEG_RIGHT|LEG_LEFT

@@ -279,7 +279,7 @@
 /******ORGAN******/
 /*Suffix: -il*/
 
-//penthrite -> minoxidil
+//penthrite -> trekhin
 /datum/reagent/medicine/c2/penthrite
 	name = "Trekhin"
 	description = "Trekhin is used as a blood pressure reducer, as well as healing organ damage over time."
@@ -311,6 +311,42 @@
 	if(LAZYLEN(damaged_organs))
 		var/obj/item/organ/organ = pick(damaged_organs)
 		organ.applyOrganDamage(-2 * 0.5 * delta_time)
+	return TRUE
+
+/datum/reagent/medicine/c2/penthrite/onesebasta
+	name = "Trekhin 1-S"
+	description = "Trekhin 1-S is used as a blood pressure reducer, as well as healing organ damage over time. Also, it improves your ENDurance."
+	color = "#fff48c8e"
+	ph = 3.8
+	reagent_state = LIQUID
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	metabolization_rate = REAGENTS_METABOLISM
+	overdose_threshold = 0
+	taste_description = "sour"
+	failed_chem = null
+	inverse_chem = null
+	impure_chem = null
+
+/datum/reagent/medicine/c2/penthrite/onesebasta/on_mob_metabolize(mob/living/L)
+	. = ..()
+	L.add_chem_effect(CE_PULSE, -1, "[type]")
+	L.attributes?.add_attribute_modifier(/datum/attribute_modifier/midnightberrymoment, TRUE)
+	to_chat(L, span_achievementrare("I'm getting healthier!"))
+
+/datum/reagent/medicine/c2/penthrite/onesebasta/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	L.remove_chem_effect(CE_PULSE, "[type]")
+	L.attributes?.remove_attribute_modifier(/datum/attribute_modifier/midnightberrymoment, TRUE)
+
+/datum/reagent/medicine/c2/penthrite/onesebasta/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	var/list/damaged_organs = list()
+	for(var/obj/item/organ/organ as anything in M.internal_organs)
+		if(organ.damage && !CHECK_BITFIELD(organ.organ_flags, ORGAN_NO_VIOLENT_DAMAGE))
+			damaged_organs += organ
+	if(LAZYLEN(damaged_organs))
+		var/obj/item/organ/organ = pick(damaged_organs)
+		organ.applyOrganDamage(-3 * 0.5 * delta_time)
 	return TRUE
 
 /******RADIATION******/

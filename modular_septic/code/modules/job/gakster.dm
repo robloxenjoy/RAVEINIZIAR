@@ -68,13 +68,17 @@
 //	rpg_title = "Adventurer"
 	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
 
+/datum/outfit/venturer/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(10))
+		belt = /obj/item/changeable_attacks/slashbash/axe/small/steel
+		to_chat(H, span_achievementinteresting("I'm a woodcutter!"))
 
 /datum/outfit/venturer
 	name = "Venturer Uniform"
 
 	uniform = /obj/item/clothing/under/venturerclassic
-	r_hand = /obj/item/shard/crystal/blue
-//	r_pocket = /obj/item/shit
+	r_pocket = /obj/item/shard/crystal/blue
 //	id = /obj/item/cellphone
 //	belt = /obj/item/crowbar
 //	l_pocket = /obj/item/simcard
@@ -117,8 +121,7 @@
 
 	uniform = /obj/item/clothing/under/venturerclassic
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/chaotic
-//	r_hand = /obj/item/shard/crystal/blue
-//	r_pocket = /obj/item/shit
+	r_pocket = /obj/item/shard/crystal/green
 //	id = /obj/item/cellphone
 //	belt = /obj/item/crowbar
 //	l_pocket = /obj/item/simcard
@@ -153,7 +156,7 @@
 	name = "Akt Liver Uniform"
 
 	uniform = /obj/item/clothing/under/venturerclassic
-	r_hand = /obj/item/shard/crystal/blue
+	r_pocket = /obj/item/shard/crystal/blue
 //	r_pocket = /obj/item/shit
 //	id = /obj/item/cellphone
 //	belt = /obj/item/crowbar
