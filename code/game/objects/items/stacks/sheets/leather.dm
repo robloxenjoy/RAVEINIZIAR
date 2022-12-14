@@ -29,6 +29,7 @@
 			user.visible_message(span_notice("[user] cuts [src] with the [W]."),span_notice("You cut [src] with the [W]."), span_hear("You hear the sound of cutting."))
 			user.changeNext_move(CLICK_CD_MELEE)
 			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			sound_hint()
 			playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100 , FALSE, FALSE)
 			for(var/i=1 to smallskin_amount)
 				new /obj/item/skin/human/small(get_turf(src))
