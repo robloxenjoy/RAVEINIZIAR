@@ -376,8 +376,8 @@
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
 	var/attack_direction = get_dir(user, src)
-	var/armor = run_armor_check(affecting, BRUTE, armour_penetration = user.armour_penetration)
-	var/subarmor = run_subarmor_check(affecting, BRUTE, armour_penetration = user.subtractible_armour_penetration, sharpness = user.sharpness)
+	var/armor = run_armor_check(affecting, MELEE, armour_penetration = user.armour_penetration)
+	var/subarmor = run_subarmor_check(affecting, MELEE, armour_penetration = user.subtractible_armour_penetration, sharpness = user.sharpness)
 	var/subarmor_flags = get_subarmor_flags(affecting)
 	var/edge_protection = get_edge_protection(affecting)
 	apply_damage(damage, \
