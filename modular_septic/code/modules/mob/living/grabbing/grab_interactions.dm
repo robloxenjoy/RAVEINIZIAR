@@ -296,6 +296,7 @@
 	var/mob/living/carbon/carbon_victim = victim
 	owner.adjustFatigueLoss(5)
 	owner.changeNext_move(CLICK_CD_WRENCH)
+	qdel(gut_rope)
 	carbon_victim.gut_cut()
 	update_grab_mode()
 	return TRUE
