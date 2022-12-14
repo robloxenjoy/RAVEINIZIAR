@@ -140,11 +140,13 @@
 /obj/item/changeable_attacks/examine(mob/user)
 	. = ..()
 	if(current_atk_mode)
-		. += span_info("It's currently ready to [current_atk_mode]")
-	var/attack_text_slashbash = current_atk_mode == slash ? "slash" : "bash"
-	if(istype(/obj/item/changeable_attacks/slashbash))
-		if(current_atk_mode)
-			. += span_info("It's currently ready to [attack_text_slashbash]")
+//		var/attack_text = current_atk_mode
+		if(current_atk_mode == slash)
+			. += span_info("It's currently ready to slash.")
+		else if (current_atk_mode == stab)
+			. += span_info("It's currently ready to stab.")
+		else if (current_atk_mode == bash)
+			. += span_info("It's currently ready to bash.")
 
 /obj/item/changeable_attacks/attack_self(mob/user, modifiers)
 	. = ..()

@@ -228,7 +228,7 @@
 	walk(src, 0)
 	return ..()
 
-/mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
+/mob/living/simple_animal/attackby(obj/item/O, mob/living/carbon/user, params)
 	. = ..()
 	user.changeNext_move(O.attack_delay)
 	user.adjustFatigueLoss(O.attack_fatigue_cost)
