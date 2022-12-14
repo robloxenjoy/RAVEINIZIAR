@@ -28,11 +28,11 @@
 			modifier -= 5
 	var/list/diceroll = diceroll(attribute_modifier+modifier, context = DICE_CONTEXT_MENTAL, return_flags = RETURN_DICE_BOTH)
 	//Got out scott free!
-	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_SUCCESS) >= DICE_SUCCESS)
+	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_SUCCESS) == DICE_CRIT_SUCCESS)
 		return
 	//Oof!
 	if(wound_messages)
-		SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" Knock-down!"))
+		SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" Major Wound!"))
 	var/vomiting = FALSE
 	switch(body_zone)
 		if(BODY_ZONE_PRECISE_NECK, BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE)
@@ -76,9 +76,12 @@
 				Stumble(10 SECONDS)
 				if(wound_messages)
 					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] gelding blowed!"))
-	KnockToFloor(4 SECONDS)
+	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_SUCCESS) == DICE_SUCCESS)
+		KnockToFloor(5 SECONDS)
+	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_SUCCESS) <= DICE_SUCCESS)
+		KnockToFloor(7 SECONDS)
 	//OW!
-	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_DIFFERENCE) >= 5)
+	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_DIFFERENCE) >= 1)
 		//vomit with blood
 		if(vomiting && (stat < DEAD))
 			vomit(10, TRUE, FALSE)

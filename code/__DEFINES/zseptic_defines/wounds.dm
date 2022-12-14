@@ -104,8 +104,7 @@ GLOBAL_LIST_INIT(global_wound_types, list(\
 	WOUND_NERVE = list(/datum/wound/nerve/dissect, /datum/wound/nerve/tear),
 	WOUND_TEETH = list(/datum/wound/teeth),
 	WOUND_DIGITS = list(/datum/wound/digits),
-	WOUND_SPILL = list(/datum/wound/spill/brain, /datum/wound/spill/gut, /datum/wound/spill/eyes),
-))
+	WOUND_SPILL = list(/datum/wound/spill/brain, /datum/wound/spill/gut, /datum/wound/spill/eyes)))
 
 // every single type of wound that can be rolled naturally, in case you need to pull a random one
 GLOBAL_LIST_INIT(global_all_wound_types, \

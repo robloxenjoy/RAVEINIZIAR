@@ -463,7 +463,7 @@
 				psychonaut.emote(pick("laugh","giggle"))
 	..()
 
-/datum/reagent/drug/mushroomhallucinogen/on_mob_metabolize(mob/living/psychonaut)
+/datum/reagent/drug/mushroomhallucinogen/on_mob_metabolize(mob/living/psychonaut, delta_time)
 	. = ..()
 
 	if(!psychonaut.hud_used)
@@ -489,8 +489,7 @@
 	for(var/filter in game_plane_master_controller.get_filters("light"))
 		animate(filter, time = 64 SECONDS, loop = -1, easing = LINEAR_EASING, offset = 32, flags = ANIMATION_PARALLEL)
 
-	var/atom/movable/screen/fullscreen/fuuuck/crazy
-	crazy = psychonaut.overlay_fullscreen("fuuuck", /atom/movable/screen/fullscreen/fuuuck)
+	psychonaut.overlay_fullscreen("fuuuck", /atom/movable/screen/fullscreen/fuuuck)
 
 	var/feel = pick("I am scared. I am happy.", "I. They. She. Thoughts. I. They. It.", "POWER. OV. POWER.", "BEAUTIFUL. TERRIBLE.", "KONDOLE.")
 	if(DT_PROB(2.5, delta_time))
@@ -509,7 +508,6 @@
 	game_plane_master_controller.remove_filter("rainbow")
 	game_plane_master_controller.remove_filter("light")
 	psychonaut.clear_fullscreen("fuuuck")
-	crazy = null
 	REMOVE_TRAIT(psychonaut, TRAIT_BLOODARN, name)
 	psychonaut.attributes?.remove_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
 	SSdroning.play_area_sound(get_area(psychonaut), psychonaut?.client)
