@@ -123,6 +123,8 @@
 				user.visible_message(span_notice("[user] chopped [src] with the [W]."),span_notice("You chopped [src] with the [W]."), span_hear("You hear the sound of a chopping. Chop chop!"))
 				user.changeNext_move(CLICK_CD_MELEE)
 				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				W.damageItem("MEDIUM")
+				sound_hint()
 				playsound(get_turf(src), 'sound/effects/drova.ogg', 100 , FALSE, FALSE)
 //				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
 				for(var/i=1 to logs_amount)
@@ -140,6 +142,7 @@
 	max_amount = MAXLOG
 	amount = 1
 	merge_type = /obj/item/stack/grown/log/tree/evil/logg
+	novariants = FALSE
 	min_force = 4
 	force = 8
 	min_force_strength = 1
@@ -180,6 +183,8 @@
 			user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
 			user.changeNext_move(CLICK_CD_MELEE)
 			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			W.damageItem("SOFT")
+			sound_hint()
 			playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 			new /obj/item/melee/bita/evil(get_turf(src))
 			qdel(src)

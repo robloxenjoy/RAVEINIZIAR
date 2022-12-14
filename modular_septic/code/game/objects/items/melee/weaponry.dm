@@ -136,7 +136,7 @@
 	var/stab_hitsound = list('modular_septic/sound/weapons/melee/sharp_stab1.ogg', 'modular_septic/sound/weapons/melee/sharp_stab2.ogg')
 	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
 	var/current_atk_mode = null
-
+/*
 /obj/item/changeable_attacks/examine(mob/user)
 	. = ..()
 	if(current_atk_mode)
@@ -147,7 +147,7 @@
 			. += span_info("It's currently ready to stab.")
 		else if (current_atk_mode == bash)
 			. += span_info("It's currently ready to bash.")
-
+*/
 /obj/item/changeable_attacks/attack_self(mob/user, modifiers)
 	. = ..()
 	swap_intents(user)
@@ -406,8 +406,8 @@
 	name = "Steel Axe"
 	desc = "Steel axe. Not bad."
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
-	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
-	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/items_and_weapons_lefthand.dmi'
 	icon_state = "steelaxe"
 	inhand_icon_state = "steelaxe"
 	current_atk_mode = slash

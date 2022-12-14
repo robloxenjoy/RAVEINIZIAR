@@ -156,9 +156,6 @@
 	if(hand_index == null || (!forced && !can_put_in_hand(I, hand_index)))
 		return FALSE
 
-	if(a_intent != INTENT_GRAB)
-		return FALSE
-
 	if(isturf(I.loc) && !ignore_anim)
 		I.do_pickup_animation(src)
 	if(get_item_for_held_index(hand_index))
