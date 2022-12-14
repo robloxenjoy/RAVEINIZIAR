@@ -484,11 +484,6 @@
 		animate(color = col_filter_blue, time = 1 SECONDS)
 		animate(color = col_filter_red, time = 1 SECONDS)
 
-	game_plane_master_controller.add_filter("light", 1, list("type" = "bloom", "color" = COLOR_RED_LIGHT, "size" = 1, "offset" = 0, "alpha" = 100))
-
-	for(var/filter in game_plane_master_controller.get_filters("light"))
-		animate(filter, time = 64 SECONDS, loop = -1, easing = LINEAR_EASING, offset = 32, flags = ANIMATION_PARALLEL)
-
 	psychonaut.overlay_fullscreen("fuuuck", /atom/movable/screen/fullscreen/fuuuck)
 
 	var/feel = pick("I am scared. I am happy.", "I. They. She. Thoughts. I. They. It.", "POWER. OV. POWER.", "BEAUTIFUL. TERRIBLE.", "KONDOLE.")
@@ -506,7 +501,6 @@
 		return
 	var/atom/movable/plane_master_controller/game_plane_master_controller = psychonaut.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("rainbow")
-	game_plane_master_controller.remove_filter("light")
 	psychonaut.clear_fullscreen("fuuuck")
 	REMOVE_TRAIT(psychonaut, TRAIT_BLOODARN, name)
 	psychonaut.attributes?.remove_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
