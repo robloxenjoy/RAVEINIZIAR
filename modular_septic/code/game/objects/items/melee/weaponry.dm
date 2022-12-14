@@ -162,6 +162,10 @@
 		return
 	user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
 
+/obj/item/changeable_attacks/Initialize(mapload)
+	. = ..()
+	swap_intents()
+
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"
 	desc = "A Nice Sword."

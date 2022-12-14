@@ -14,7 +14,7 @@
 
 /obj/structure/flora/tree/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
-		if(W.get_sharpness() && W.force > 0)
+		if(W.get_sharpness() && W.force > 5)
 			if(!istype(W, /obj/item/shard))
 				if(W.hitsound)
 					playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
@@ -27,7 +27,7 @@
 					user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(W.attack_fatigue_cost)
-					W.damageItem("MEDIUM")
+					W.damageItem("HARD")
 					playsound(get_turf(src), 'modular_septic/sound/effects/fallheavy.ogg', 100 , FALSE, FALSE)
 					sound_hint()
 //					user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
