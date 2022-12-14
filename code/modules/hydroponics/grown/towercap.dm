@@ -96,6 +96,7 @@
 	icon_state = "evilstub"
 	min_force = 7
 	force = 13
+	throwforce = 13
 	min_force_strength = 1.2
 	force_strength = 1.6
 	wound_bonus = 6
@@ -147,6 +148,7 @@
 	novariants = TRUE
 	min_force = 4
 	force = 8
+	throwforce = 8
 	min_force_strength = 1
 	force_strength = 1.5
 	wound_bonus = 3
