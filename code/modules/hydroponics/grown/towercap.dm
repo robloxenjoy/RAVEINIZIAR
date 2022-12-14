@@ -139,6 +139,7 @@
 	name = "Evil Wood Log"
 	desc = "It's cursed, warlocks is bad! Also, it's chopped."
 	icon_state = "evilog"
+	base_icon_state = "evilog"
 	max_amount = MAXLOG
 	amount = 1
 	merge_type = /obj/item/stack/grown/log/tree/evil/logg
