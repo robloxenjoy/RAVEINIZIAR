@@ -144,7 +144,7 @@
 	max_amount = MAXLOG
 	amount = 1
 	merge_type = /obj/item/stack/grown/log/tree/evil/logg
-	novariants = FALSE
+	novariants = TRUE
 	min_force = 4
 	force = 8
 	min_force_strength = 1
