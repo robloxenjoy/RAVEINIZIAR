@@ -108,6 +108,7 @@
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	havedurability = 1
 	durability = 200
+	slowdown = 1
 	var/logs_amount = 3
 
 /obj/item/grown/log/tree/evil/attackby(obj/item/W, mob/living/carbon/user, params)
