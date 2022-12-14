@@ -230,9 +230,9 @@
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
 	. = ..()
-	user.changeNext_move(O.attack_delay)
-	user.adjustFatigueLoss(O.attack_fatigue_cost)
-	O.damageItem("SOFT")
+	user.changeNext_move(I.attack_delay)
+	user.adjustFatigueLoss(I.attack_fatigue_cost)
+	I.damageItem("SOFT")
 
 /mob/living/simple_animal/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
