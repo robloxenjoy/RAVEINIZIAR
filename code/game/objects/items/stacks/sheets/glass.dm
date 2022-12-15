@@ -389,8 +389,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 
 /obj/item/shard/crystal
 	var/current_atk_mode = slashh
-	worn_icon_state = null
-	worn_icon = null
+	worn_icon_state = "shard"
+//	worn_icon = 'icons/mob/clothing/belt.dmi'
 	havedurability = 1
 	durability = 50
 	force = 8
