@@ -439,7 +439,7 @@
 	name = "Mushroom Hallucinogen"
 	description = "A strong hallucinogenic drug derived from certain species of mushroom."
 	color = "#E700E7" // rgb: 231, 0, 231
-	metabolization_rate = 0.40 * REAGENTS_METABOLISM
+	metabolization_rate = REAGENTS_METABOLISM
 	taste_description = "darner"
 	ph = 11
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED

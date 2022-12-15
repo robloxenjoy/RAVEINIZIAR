@@ -69,6 +69,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/drug/mushroomhallucinogen = 6)
 	bite_consumption = 7
 	var/world_icon = 'modular_pod/icons/obj/items/berry.dmi'
+	var/world_icon_state = "mushroomblood"
 	var/icon_state_variation = 3
 
 /obj/item/food/grown/mushroom/blood/Initialize(mapload)
