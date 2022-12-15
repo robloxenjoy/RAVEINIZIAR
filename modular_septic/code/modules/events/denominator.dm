@@ -104,6 +104,71 @@
 	/// Message that occurs when the door is closed.
 	var/close_message = "The door buzzes, and slides closed."
 
+/obj/machinery/door/keycard/denominator/chaot
+	name = "Chaot Airlock"
+	desc = "Maybe I need a seal for this smooth stone door."
+	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/secretdoor.dmi'
+	icon_state = "boor_closed"
+	base_icon_state = "boor"
+	explosion_block = 0
+	heat_proof = TRUE
+	max_integrity = 600
+	armor = list(MELEE = 95, BULLET = 95, LASER = 95, ENERGY = 95, BOMB = 20, BIO = 95, FIRE = 95, ACID = 95)
+	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
+	damage_deflection = 70
+	puzzle_id = "chaot"
+	open_message = "The door moves with a stone sound, and opens."
+	close_message = "The door moves with a stone sound, and closes."
+
+/obj/machinery/door/keycard/denominator/chaot/attackby(obj/item/I, mob/user, params)
+	if(istype(I,/obj/item/keycard))
+		var/obj/item/keycard/key = I
+		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
+			to_chat(user, span_notice("[open_message]"))
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
+			sleep(2)
+			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			open()
+			return
+		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
+			to_chat(user, span_notice("[close_message]"))
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
+			sleep(2)
+			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			close()
+			return
+		else
+			to_chat(user, span_notice("[src] makes strange sound. Not that key..."))
+			playsound(src, 'modular_septic/sound/effects/card_declined_horror.wav', 60, FALSE, 1)
+			return
+
+/obj/item/keycard/chaot
+	name = "Violet Seal"
+	desc = "Chaot stone seal."
+	icon = 'modular_septic/icons/obj/items/keys.dmi'
+	icon_state = "chaotseal"
+	puzzle_id = "chaot"
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	havedurability = 1
+	durability = 150
+	carry_weight = 1 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	w_class = WEIGHT_CLASS_NORMAL
+	min_force = 6
+	force = 10
+	throwforce = 9
+	min_force_strength = 1
+	force_strength = 1.5
+	wound_bonus = 3
+	bare_wound_bonus = 4
+	throw_speed = 2
+	throw_range = 7
+	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
+	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
+	tetris_width = 32
+	tetris_height = 64
+
 /obj/machinery/door/keycard/denominator/inborn
 	name = "yellow airlock"
 	desc = "This door only opens when a keycard is swiped. It looks like It's been heavily armored."

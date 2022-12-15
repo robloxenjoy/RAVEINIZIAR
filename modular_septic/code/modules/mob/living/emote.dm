@@ -145,7 +145,7 @@
 				return "modular_septic/sound/emotes/agony_female[rand(1,8)].ogg"
 		else
 			if(user.gender != FEMALE)
-				return "modular_septic/sound/emotes/pain_scream_male[rand(1,3)].ogg"
+				return "modular_septic/sound/emotes/pain_scream_male[rand(1,3)].wav"
 			else
 				return "modular_septic/sound/emotes/pain_scream_female[rand(1,7)].ogg"
 	else
@@ -180,7 +180,7 @@
 
 /datum/emote/living/deathrattle/get_sound(mob/living/user)
 	if(ishuman(user))
-		return "modular_septic/sound/emotes/deathgasp.ogg"
+		return "modular_septic/sound/emotes/deathgasp.wav"
 	else
 		return ..()
 
@@ -204,7 +204,7 @@
 // Fuck it deathgasp does the same sound
 /datum/emote/living/deathgasp/get_sound(mob/living/user)
 	if(ishuman(user))
-		return "modular_septic/sound/emotes/deathgasp.ogg"
+		return "modular_septic/sound/emotes/deathgasp.wav"
 	else
 		return ..()
 
@@ -299,9 +299,9 @@
 /datum/emote/living/sag/get_sound(mob/living/user)
 	if(ishuman(user))
 		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/deathgasp.ogg"
+			return "modular_septic/sound/emotes/deathgasp.wav"
 		else
-			return "modular_septic/sound/emotes/deathgasp.ogg"
+			return "modular_septic/sound/emotes/deathgasp.wav"
 	else
 		return ..()
 
