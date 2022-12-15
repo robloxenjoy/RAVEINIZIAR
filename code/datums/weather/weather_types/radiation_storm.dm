@@ -47,14 +47,13 @@
 
 	H.random_mutate_unique_identity()
 	H.random_mutate_unique_features()
-	/* SEPTIC EDIT REMOVAL
+
 	if(prob(50))
 		if(prob(90))
 			H.easy_random_mutate(NEGATIVE+MINOR_NEGATIVE)
 		else
 			H.easy_random_mutate(POSITIVE)
 		H.domutcheck()
-	*/
 
 
 /datum/weather/rad_storm/end()
