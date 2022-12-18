@@ -64,19 +64,13 @@
 	desc = "Perhaps you should eat it?"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "mushroomblood"
-	base_icon_state = "mushroomblood"
 	grind_results = list(/datum/reagent/consumable/nutriment = 1)
 	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/drug/mushroomhallucinogen = 6)
 	bite_consumption = 7
-	var/world_icon = 'modular_pod/icons/obj/items/berry.dmi'
-	var/world_icon_state = "mushroomblood"
-	var/icon_state_variation = 3
 
-/obj/item/food/grown/mushroom/blood/Initialize(mapload)
+/obj/item/food/grown/mushroom/blood/Initialize()
 	. = ..()
-	if(icon_state_variation)
-		icon_state = "[base_icon_state][rand(1, icon_state_variation)]"
-	AddElement(/datum/element/world_icon, null, icon, world_icon)
+	AddElement(/datum/element/world_icon, null, icon, 'modular_pod/icons/obj/items/berry.dmi')
 
 // Destroying Angel
 /obj/item/seeds/angel
