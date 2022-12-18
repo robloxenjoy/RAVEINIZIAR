@@ -231,3 +231,17 @@
 		/obj/item/storage/box/lights/mixed,
 		/obj/item/storage/box/lights/bulbs,
 	)
+
+/obj/effect/spawner/random/trash/mushroomblood/five
+	name = "blood darner spawner 50"
+	icon_state = "trash_bin"
+	loot = list(
+		/obj/item/food/grown/mushroom/blood,
+	)
+
+/obj/effect/spawner/random/trash/mushroomblood/ten
+	name = "blood darner spawner 100"
+	icon_state = "trash_bin"
+	loot = list(
+		/obj/item/food/grown/mushroom/blood,
+	)
