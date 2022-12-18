@@ -82,11 +82,12 @@
 	qdel(src)
 	return TRUE
 
-/obj/item/clothing/gloves/wrist/wrist_r
+/obj/item/clothing/gloves/wrist
 	name = "Wrist"
 	gender = PLURAL
 	w_class = WEIGHT_CLASS_SMALL
-	icon = 'icons/obj/clothing/gloves.dmi'
+	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
+	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'
 	siemens_coefficient = 0.5
 	body_parts_covered = HAND_RIGHT
 	slot_flags = ITEM_SLOT_RWRIST|ITEM_SLOT_LWRIST
@@ -96,9 +97,6 @@
 	strip_delay = 20
 	equip_delay_other = 40
 
-/obj/item/clothing/gloves/wrist/wrist_l
-	name = "Cool"
-
 /obj/item/clothing/gloves/wrist/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, .proc/on_glove_equip)
@@ -107,6 +105,39 @@
 	SIGNAL_HANDLER
 
 	if(slot == ITEM_SLOT_RWRIST)
+		worn_icon_state = "[initial(worn_icon_state)]_r
 		body_parts_covered = HAND_RIGHT
 	else
+		worn_icon_state = "[initial(worn_icon_state)]_l
 		body_parts_covered = HAND_LEFT
+
+/obj/item/clothing/gloves/wrist/leather
+	name = "Leather Brace"
+	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
+	icon_state = "leatherwrist"
+	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'
+	worn_icon_state = "leatherwrist"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	max_integrity = 100
+	integrity_failure = 0.1
+	limb_integrity = 90
+	repairable_by = /obj/item/stack/ballistic
+	carry_weight = 800 GRAMS
+	armor = null
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 24, \
+				CRUSHING = 5, \
+				CUTTING = 20, \
+				PIERCING = 24, \
+				IMPALING = 5, \
+				LASER = 5, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 2, \
+				ACID = 2, \
+				MAGIC = 0, \
+				WOUND = 5, \
+				ORGAN = 3)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
