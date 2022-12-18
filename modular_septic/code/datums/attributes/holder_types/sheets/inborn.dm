@@ -43,9 +43,9 @@
 /datum/attribute_holder/sheet/job/weakwillet
     attribute_variance = list(
 		STAT_STRENGTH = list(-3, 1),
-		STAT_ENDURANCE = list(-4, -1),
+		STAT_ENDURANCE = list(-2, 1),
 		STAT_DEXTERITY = list(-1, 2),
-		STAT_INTELLIGENCE = list(-4, 0),
+		STAT_INTELLIGENCE = list(-3, 0),
 		SKILL_BRAWLING = list(1, 2),
 		SKILL_WRESTLING = list(0, 1),
 		SKILL_IMPACT_WEAPON = list(0, 2),

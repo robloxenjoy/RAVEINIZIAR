@@ -806,7 +806,7 @@
 		SKILL_PISTOL = list(-1, 1),
 		SKILL_RAPIER = list(-1, 1),
 		SKILL_SHORTSWORD = list(-1, 1),
-		SKILL_THROWING = list(-1, 2),
+		SKILL_THROWING = list(5, 8),
 		SKILL_PICKPOCKET = list(-3, 2),
 		SKILL_LOCKPICKING = list(-2, 2),
 		SKILL_SCIENCE = list(-2, 0),
@@ -820,13 +820,151 @@
 		SKILL_PISTOL = 0,
 		SKILL_RAPIER = 0,
 		SKILL_SHORTSWORD = 0,
-		SKILL_THROWING = -3,
+		SKILL_THROWING = 3,
 		SKILL_PICKPOCKET = -2,
 		SKILL_LOCKPICKING = -2,
 		SKILL_SCIENCE = -3,
 		SKILL_ACROBATICS = -3,
 	)
 
+//village owner
+/datum/attribute_holder/sheet/job/venturervillageowner
+	attribute_variance = list(
+		STAT_STRENGTH = list(-1, 2),
+		STAT_ENDURANCE = list(-1, 2),
+		STAT_DEXTERITY = list(-1, 2),
+		STAT_INTELLIGENCE = list(0, 2),
+		SKILL_BRAWLING = list(-1, 1),
+		SKILL_WRESTLING = list(-1, 1),
+		SKILL_SMG = list(-1, 1),
+		SKILL_PISTOL = list(-1, 1),
+		SKILL_RAPIER = list(-1, 1),
+		SKILL_SHORTSWORD = list(-1, 1),
+		SKILL_THROWING = list(5, 8),
+		SKILL_PICKPOCKET = list(-1, 4),
+		SKILL_LOCKPICKING = list(-2, 2),
+		SKILL_SCIENCE = list(-2, 0),
+		SKILL_ACROBATICS = list(2, 3),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 0,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
+//gardener
+/datum/attribute_holder/sheet/job/venturergardener
+	attribute_variance = list(
+		STAT_STRENGTH = list(-1, 2),
+		STAT_ENDURANCE = list(0, 5),
+		STAT_DEXTERITY = list(-1, 2),
+		STAT_INTELLIGENCE = list(0, 2),
+		SKILL_AGRICULTURE = list(10, 11)
+		SKILL_BRAWLING = list(-1, 1),
+		SKILL_WRESTLING = list(-1, 1),
+		SKILL_SMG = list(-1, 1),
+		SKILL_PISTOL = list(-1, 1),
+		SKILL_RAPIER = list(-1, 1),
+		SKILL_SHORTSWORD = list(-1, 1),
+		SKILL_THROWING = list(5, 8),
+		SKILL_PICKPOCKET = list(-1, 2),
+		SKILL_LOCKPICKING = list(-2, 2),
+		SKILL_SCIENCE = list(-2, 0),
+		SKILL_ACROBATICS = list(2, 3),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 0,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
+//true venturer
+/datum/attribute_holder/sheet/job/venturertrue
+	attribute_variance = list(
+		STAT_STRENGTH = list(-1, 3),
+		STAT_ENDURANCE = list(-1, 3),
+		STAT_DEXTERITY = list(-1, 3),
+		STAT_INTELLIGENCE = list(-1, 1),
+		SKILL_BRAWLING = list(-1, 3),
+		SKILL_WRESTLING = list(-1, 3),
+		SKILL_SMG = list(-1, 1),
+		SKILL_PISTOL = list(-1, 1),
+		SKILL_RAPIER = list(-1, 1),
+		SKILL_SHORTSWORD = list(-1, 1),
+		SKILL_THROWING = list(5, 8),
+		SKILL_PICKPOCKET = list(-3, 2),
+		SKILL_LOCKPICKING = list(-2, 2),
+		SKILL_SCIENCE = list(-2, 0),
+		SKILL_ACROBATICS = list(2, 5),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 0,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
+//meat warrior
+/datum/attribute_holder/sheet/job/venturermeatwarrior
+	attribute_variance = list(
+		STAT_STRENGTH = list(0, 3),
+		STAT_ENDURANCE = list(1, 3),
+		STAT_DEXTERITY = list(-2, 3),
+		STAT_INTELLIGENCE = list(-3, 1),
+		SKILL_BRAWLING = list(-1, 5),
+		SKILL_WRESTLING = list(-1, 5),
+		SKILL_SMG = list(-1, 1),
+		SKILL_PISTOL = list(-1, 1),
+		SKILL_RAPIER = list(-1, 1),
+		SKILL_SHORTSWORD = list(1, 5),
+		SKILL_THROWING = list(6, 8),
+		SKILL_PICKPOCKET = list(-3, 2),
+		SKILL_LOCKPICKING = list(-2, 2),
+		SKILL_SCIENCE = list(-2, 0),
+		SKILL_ACROBATICS = list(2, 5),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 0,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
+// chaot
 /datum/attribute_holder/sheet/job/chaot
 	attribute_variance = list(
 		STAT_STRENGTH = list(-1, 2),
@@ -840,7 +978,7 @@
 		SKILL_RIFLE = list(-1, 4),
 //		SKILL_RAPIER = list(-1, 1),
 		SKILL_SHORTSWORD = list(-1, 1),
-		SKILL_THROWING = list(-1, 2),
+		SKILL_THROWING = list(5, 8),
 		SKILL_PICKPOCKET = list(-3, 2),
 		SKILL_LOCKPICKING = list(-2, 2),
 		SKILL_SCIENCE = list(-2, 2),
@@ -854,75 +992,7 @@
 		SKILL_PISTOL = 0,
 		SKILL_RAPIER = 0,
 		SKILL_SHORTSWORD = 0,
-		SKILL_THROWING = -3,
-		SKILL_PICKPOCKET = -2,
-		SKILL_LOCKPICKING = -2,
-		SKILL_SCIENCE = -3,
-		SKILL_ACROBATICS = -2,
-	)
-
-/datum/attribute_holder/sheet/job/liver
-	attribute_variance = list(
-		STAT_STRENGTH = list(-1, 2),
-		STAT_ENDURANCE = list(-1, 1),
-		STAT_DEXTERITY = list(-1, 1),
-		STAT_INTELLIGENCE = list(-1, 5),
-		SKILL_BRAWLING = list(-1, 1),
-		SKILL_WRESTLING = list(-1, 1),
-		SKILL_SMG = list(-1, 1),
-		SKILL_PISTOL = list(-1, 1),
-		SKILL_RIFLE = list(-1, 4),
-//		SKILL_RAPIER = list(-1, 1),
-		SKILL_SHORTSWORD = list(-1, 1),
-		SKILL_THROWING = list(-1, 2),
-		SKILL_PICKPOCKET = list(-3, 2),
-		SKILL_LOCKPICKING = list(-2, 2),
-		SKILL_SCIENCE = list(-2, 2),
-		SKILL_ACROBATICS = list(-2, 1),
-	)
-	raw_attribute_list = list(
-		SKILL_BRAWLING = -1,
-		SKILL_WRESTLING = -1,
-		SKILL_IMPACT_WEAPON = 0,
-		SKILL_SMG = 0,
-		SKILL_PISTOL = 0,
-		SKILL_RAPIER = 0,
-		SKILL_SHORTSWORD = 0,
-		SKILL_THROWING = -3,
-		SKILL_PICKPOCKET = -2,
-		SKILL_LOCKPICKING = -2,
-		SKILL_SCIENCE = -3,
-		SKILL_ACROBATICS = -2,
-	)
-
-/datum/attribute_holder/sheet/job/aktcontrol
-	attribute_variance = list(
-		STAT_STRENGTH = list(-1, 2),
-		STAT_ENDURANCE = list(-1, 1),
-		STAT_DEXTERITY = list(-1, 1),
-		STAT_INTELLIGENCE = list(-1, 5),
-		SKILL_BRAWLING = list(-1, 1),
-		SKILL_WRESTLING = list(-1, 1),
-		SKILL_SMG = list(-1, 1),
-		SKILL_PISTOL = list(-1, 1),
-		SKILL_RIFLE = list(-1, 4),
-//		SKILL_RAPIER = list(-1, 1),
-		SKILL_SHORTSWORD = list(-1, 1),
-		SKILL_THROWING = list(-1, 2),
-		SKILL_PICKPOCKET = list(-3, 2),
-		SKILL_LOCKPICKING = list(-2, 2),
-		SKILL_SCIENCE = list(-2, 2),
-		SKILL_ACROBATICS = list(-2, 1),
-	)
-	raw_attribute_list = list(
-		SKILL_BRAWLING = -1,
-		SKILL_WRESTLING = -1,
-		SKILL_IMPACT_WEAPON = 0,
-		SKILL_SMG = 0,
-		SKILL_PISTOL = 0,
-		SKILL_RAPIER = 0,
-		SKILL_SHORTSWORD = 0,
-		SKILL_THROWING = -3,
+		SKILL_THROWING = 3,
 		SKILL_PICKPOCKET = -2,
 		SKILL_LOCKPICKING = -2,
 		SKILL_SCIENCE = -3,

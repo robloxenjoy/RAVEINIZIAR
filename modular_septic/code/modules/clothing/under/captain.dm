@@ -2,7 +2,7 @@
 	carry_weight = 1.2 KILOGRAMS
 
 /obj/item/clothing/under/rank/captain/zoomtech
-	name = "ZoomTech royal jumpsuit"
+	name = "Royal Jumpsuit"
 	desc = "A tight fitting orange and grey jumpsuit. You'd expect better for a king..."
 	icon = 'modular_septic/icons/obj/clothing/under/captain.dmi'
 	icon_state = "zcap_under"

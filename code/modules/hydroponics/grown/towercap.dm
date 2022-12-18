@@ -179,19 +179,20 @@
 	icon_state = "[base_icon_state][amount < 3 ? amount : ""]"
 */
 /obj/item/stack/grown/log/tree/evil/logg/attackby(obj/item/W, mob/living/carbon/user, params)
-	if(W.get_sharpness() && W.force > 5)
-		if(W.hitsound)
-			playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
-		user.visible_message(span_notice("[user] begins to sawing [src] with [W]."),span_notice("You begin to sawing [src] with [W]."), span_hear("You hear the sound of sawing."))
-		if(do_after(user, 500/W.force, target = src))
-			user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
-			user.changeNext_move(W.attack_delay)
-			user.adjustFatigueLoss(W.attack_fatigue_cost)
-			W.damageItem("SOFT")
-			sound_hint()
-			playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
-			new /obj/item/melee/bita/evil(get_turf(src))
-			qdel(src)
+	if(src.amount == 1)
+		if(W.get_sharpness() && W.force > 5)
+			if(W.hitsound)
+				playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
+			user.visible_message(span_notice("[user] begins to sawing [src] with [W]."),span_notice("You begin to sawing [src] with [W]."), span_hear("You hear the sound of sawing."))
+			if(do_after(user, 500/W.force, target = src))
+				user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
+				user.changeNext_move(W.attack_delay)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				W.damageItem("SOFT")
+				sound_hint()
+				playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
+				new /obj/item/melee/bita/evil(get_turf(src))
+				qdel(src)
 
 /obj/item/stack/grown/log/tree/evil/logg/three
 	amount = 3

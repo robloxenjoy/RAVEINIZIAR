@@ -92,6 +92,6 @@
 		return
 	if(eater.can_heartattack())
 		eater.set_heartattack(TRUE)
-		eater.send_naxyu()
-//		var/mob/dead/new_player/M = new /mob/dead/new_player()
-//		M.ckey = eater.ckey
+//		eater.send_naxyu()
+		var/mob/dead/new_player/M = new /mob/dead/new_player()
+		M.ckey = eater.ckey

@@ -1,6 +1,6 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
-	name = "\proper ZoomTech aviators"
-	desc = "Fancy golden aviators to release your inner golden shower."
+	name = "\proper Expensive Aviators"
+	desc = "Fancy aviators to release your inner golden shower."
 	icon = 'modular_septic/icons/obj/clothing/glasses.dmi'
 	icon_state = "gloopshades"
 	worn_icon = 'modular_septic/icons/mob/clothing/eyes.dmi'
