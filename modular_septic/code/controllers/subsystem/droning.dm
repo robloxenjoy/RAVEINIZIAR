@@ -25,8 +25,8 @@ SUBSYSTEM_DEF(droning)
 		return
 	if(HAS_TRAIT(entering.mob, TRAIT_LEAN) || (HAS_TRAIT(entering.mob, TRAIT_BLOODARN) && !area_entered.droning_sound))
 		//just kill the previous droning sound
+		transition(entering)
 		kill_droning(entering)
-//		transition(entering)
 		return
 	var/list/last_droning = list()
 	last_droning |= entering.last_droning_sound
@@ -61,8 +61,8 @@ SUBSYSTEM_DEF(droning)
 		return
 	if(LAZYLEN(area_player.droning_sound) && (listener.prefs.toggles & SOUND_SHIP_AMBIENCE))
 		//kill the previous droning sound
+		transition(entering)
 		kill_droning(listener)
-//		transition(listener)
 //		if(sound_trans.volume > 0)
 //		if(droning_sound.volume <= 0)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
@@ -97,16 +97,12 @@ SUBSYSTEM_DEF(droning)
 	SEND_SOUND(victim, sound_killer)
 	victim.droning_sound = null
 	victim.last_droning_sound = null
-/*
-/datum/controller/subsystem/droning/proc/transition(area/area_trans, client/victim)
+
+/datum/controller/subsystem/droning/proc/transition(client/victim)
 	if(!victim?.droning_sound)
 		return
-	transition = 1
-//		transition = 1
-//	transition = 1
-//	status = SOUND_STREAM | SOUND_UPDATE
-		var/sound/sound_trans = sound()
-		sound_trans.channel = victim.droning_sound.channel
+	var/sound/sound_trans = sound()
+	sound_trans.channel = victim.droning_sound.channel
 //	SEND_SOUND(victim, sound_killer)
 //	victim.droning_sound = null
 //	victim.last_droning_sound = null
@@ -116,8 +112,6 @@ SUBSYSTEM_DEF(droning)
 		SEND_SOUND(victim, sound_trans)
 		sleep(2.5)
 
-	transition = 0
-*/
 /datum/controller/subsystem/droning/proc/stop_droning(client/victim)
 	if(!victim?.droning_sound)
 		return

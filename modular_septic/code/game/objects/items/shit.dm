@@ -92,7 +92,6 @@
 		return
 	if(eater.can_heartattack())
 		eater.set_heartattack(TRUE)
-		var/mob/dead/new_player/M = new /mob/dead/new_player()
-//		var/mob/dead/new_player/NP = new()
-		M.ckey = eater.ckey
-//	qdel(eater)
+		eater.send_naxyu()
+//		var/mob/dead/new_player/M = new /mob/dead/new_player()
+//		M.ckey = eater.ckey

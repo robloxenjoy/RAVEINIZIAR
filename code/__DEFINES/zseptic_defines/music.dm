@@ -7,13 +7,13 @@
 #define DRONING_VILL list('modular_septic/sound/music/droning/gothic.ogg')
 
 //#define DRONING_FOREST list('modular_septic/sound/music/droning/forest.ogg')
-#define DRONING_FOREST list('modular_septic/sound/music/droning/harvestdawn.ogg')
+#define DRONING_FOREST list('modular_septic/sound/music/droning/cold sun.ogg')
 
 #define DRONING_FORESTOTHER list('modular_septic/sound/music/droning/darkenwood.ogg')
 
 #define DRONING_EVIL list('modular_septic/sound/music/droning/evil.ogg')
 
-#define DRONING_PURENIGHT list('modular_septic/sound/music/droning/night.ogg')
+#define DRONING_PURENIGHT list('modular_septic/sound/music/droning/warm moon.ogg')
 
 #define DRONING_MINING list('modular_septic/sound/music/droning/mining.ogg')
 

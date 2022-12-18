@@ -410,6 +410,7 @@
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	icon_state = "steelaxe"
 	inhand_icon_state = "steelaxe"
+	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
 	worn_icon_state = "steelaxe"
 	current_atk_mode = slash
 	slash_hitsound = list('modular_septic/sound/weapons/melee/hitweapon.ogg', 'modular_septic/sound/weapons/melee/hitweapon2.ogg')
