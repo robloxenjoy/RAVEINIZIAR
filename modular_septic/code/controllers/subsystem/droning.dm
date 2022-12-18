@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(droning)
 		return
 	if(LAZYLEN(area_player.droning_sound) && (listener.prefs.toggles & SOUND_SHIP_AMBIENCE))
 		//kill the previous droning sound
-		transition(entering)
+		transition(listener)
 		kill_droning(listener)
 //		if(sound_trans.volume > 0)
 //		if(droning_sound.volume <= 0)

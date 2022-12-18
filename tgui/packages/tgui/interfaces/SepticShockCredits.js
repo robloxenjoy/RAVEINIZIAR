@@ -20,7 +20,7 @@ export const SepticShockCredits = (props, context) => {
           <Stack.Item>
             <Section title="Developers">
               <LabeledList>
-              <LabeledList.Item label="Ravein">
+                <LabeledList.Item label="Ravein">
                   Me.
                 </LabeledList.Item>
                 <LabeledList.Item label="Bob">

@@ -59,14 +59,20 @@
 // Goonchat styles
 @include meta.load-css('./goon/chat-dark.scss');
 
-// OS13 background
+// OS13 background ----- NO!!!!!!!!!!!!
 .Layout__content {
+//  background-image: none;
+
   background-image: url('../assets/chatbg.png');
   background-size: 50%;
   background-attachment: fixed;
   background-repeat: repeat;
+
 }
+
 .topimg {
+//  background-image: none;
+
   background-image: url('../assets/chatshadow.png');
   background-size: 50%;
   position: fixed;
@@ -75,4 +81,5 @@
   left: -5px;
   top: 35px;
   width: 100%;
+
 }
