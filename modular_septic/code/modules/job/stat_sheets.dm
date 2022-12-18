@@ -105,9 +105,3 @@
 */
 /datum/job/chaot
 	attribute_sheet = /datum/attribute_holder/sheet/job/chaot
-
-/datum/job/aktliver
-	attribute_sheet = /datum/attribute_holder/sheet/job/liver
-
-/datum/job/aktcontrol
-	attribute_sheet = /datum/attribute_holder/sheet/job/aktcontrol

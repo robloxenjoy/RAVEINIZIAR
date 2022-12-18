@@ -792,7 +792,9 @@
 		SKILL_FORENSICS = -2,
 		SKILL_ACROBATICS = 0,
 	)
+
 //PODPOL
+
 //venturer classic
 /datum/attribute_holder/sheet/job/venturer
 	attribute_variance = list(
@@ -815,7 +817,7 @@
 	raw_attribute_list = list(
 		SKILL_BRAWLING = -1,
 		SKILL_WRESTLING = -1,
-		SKILL_IMPACT_WEAPON = 0,
+		SKILL_IMPACT_WEAPON = 3,
 		SKILL_SMG = 0,
 		SKILL_PISTOL = 0,
 		SKILL_RAPIER = 0,
@@ -868,7 +870,7 @@
 		STAT_ENDURANCE = list(0, 5),
 		STAT_DEXTERITY = list(-1, 2),
 		STAT_INTELLIGENCE = list(0, 2),
-		SKILL_AGRICULTURE = list(10, 11)
+		SKILL_AGRICULTURE = list(10, 11),
 		SKILL_BRAWLING = list(-1, 1),
 		SKILL_WRESTLING = list(-1, 1),
 		SKILL_SMG = list(-1, 1),
