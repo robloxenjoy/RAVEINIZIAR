@@ -89,7 +89,6 @@
 	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
 	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'
 	siemens_coefficient = 0.5
-	body_parts_covered = HAND_RIGHT
 	slot_flags = ITEM_SLOT_RWRIST|ITEM_SLOT_LWRIST
 	attack_verb_continuous = list("challenges")
 	attack_verb_simple = list("challenge")
@@ -107,7 +106,7 @@
 	if(slot == ITEM_SLOT_RWRIST)
 		worn_icon_state = "[initial(worn_icon_state)]_r"
 		body_parts_covered = HAND_RIGHT
-	else
+	if(slot == ITEM_SLOT_LWRIST)
 		worn_icon_state = "[initial(worn_icon_state)]_l"
 		body_parts_covered = HAND_LEFT
 
