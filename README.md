@@ -6,6 +6,8 @@
 
 This is the codebase for the Podpol flavoured fork of SpaceStation 13.
 
+Father is a Bobstation.
+
 Space Station 13 is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. 
 
 But you already know that! Now it's a mysterious survival server with challenging lore and more!
