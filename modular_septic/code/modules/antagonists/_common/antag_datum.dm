@@ -2,7 +2,7 @@
 	/// Greeting sound when this antagonist is applied, if any
 	var/greeting_sound = 'modular_septic/sound/villain/villain.ogg'
 	/// Combat music we give to the owner when applied
-	var/combat_music = 'modular_septic/sound/music/combat/stress.ogg'
+	var/combat_music = null
 	/// Attribute sheet we give to the owner
 	var/datum/attribute_holder/sheet/attribute_sheet
 	/// Set to true if the sheet should be copied, not added

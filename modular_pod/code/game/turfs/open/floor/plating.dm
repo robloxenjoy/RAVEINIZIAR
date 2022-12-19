@@ -594,6 +594,32 @@
 				stumbleguy.visible_message(span_warning("[stumbleguy] poorly stumbles on the root!"), \
 										span_warning("I poorly stumble on the root!"))
 
+/turf/open/floor/plating/polovich/logsgreen
+	name = "Wooden Floor"
+	desc = "This is green. Cursed."
+	icon_state = "logsgreen"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
+/turf/open/openspace/attackby(obj/item/C, mob/user, params)
+	. = ..()
+	if(!CanBuildHere())
+		return
+	if(istype(C, /obj/item/stack/grown/log/tree/evil/logg))
+		var/obj/item/stack/grown/log/tree/evil/logg/R = C
+		if(R.amount == 4)
+			to_chat(user, span_notice("You construct a floor."))
+			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
+			new /turf/open/floor/plating/polovich/logsgreen(src)
+//			qdel(src)
+		else
+			to_chat(user, span_warning("You need four logs to build a floor!"))
+		return
+
 /turf/open/floor/plating/polovich/greenishe2
 	name = "Wooden Floor"
 	desc = "This is green and dark."

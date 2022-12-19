@@ -7,6 +7,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_REDD)
 
 /turf/open/floor/carpet/redd
+	desc = "Red carpet. Fluffy."
 	icon = 'modular_septic/icons/turf/smooth/carpet_red.dmi'
 	icon_state = "carpet_red-255"
 	base_icon_state = "carpet_red"

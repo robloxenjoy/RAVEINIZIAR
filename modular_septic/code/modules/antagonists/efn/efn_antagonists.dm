@@ -1,5 +1,5 @@
 /datum/antagonist/inborn
-	combat_music = 'modular_septic/sound/music/combat/deathmatch/inborn.ogg'
+	combat_music = null
 	show_to_ghosts = TRUE
 
 /datum/antagonist/inborn/greet()
@@ -18,7 +18,7 @@
 	preview_outfit = /datum/outfit/denominator
 	antag_hud_type = ANTAG_HUD_DENOMINATOR
 	antag_hud_name = "deno"
-	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator.ogg'
+	combat_music = null
 	show_to_ghosts = TRUE
 
 /datum/antagonist/denominator/greet()
@@ -43,7 +43,7 @@
 	name = "Third Denomination Shotgunner"
 	preview_outfit = /datum/outfit/denominator/shotgunner
 	antag_hud_name = "deno_shotgunner"
-	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator_shotgunner.ogg'
+	combat_music = null
 
 /datum/antagonist/denominator/shotgunner/on_gain()
 	. = ..()

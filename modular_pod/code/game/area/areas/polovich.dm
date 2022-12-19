@@ -1,26 +1,3 @@
-/*
-/area/maintenance/liminal/deep
-	name = "Liminal Deep"
-	icon_state = "engine_sm"
-	droning_sound = DRONING_LIMINALDEEP
-	mood_message = "<span class='bloody'>This area is pretty nice!</span>\n"
-	mood_bonus = -1
-
-/area/maintenance/liminal/bunker
-	name = "Liminal Bunker"
-	icon_state = "engine_sm"
-	droning_sound = DRONING_LIMINALBUNKER
-	mood_message = "<span class='swarmer'>THIS AREA FUCKS!</span>\n"
-	mood_bonus = 3
-
-/area/maintenance/liminal/derelict
-	name = "Liminal Derelict"
-	icon_state = "engine_sm"
-	droning_sound = DRONING_LIMINALDERELICT
-	mood_message = "<span class='swarmer'>It's fucked up here.</span>\n"
-	mood_bonus = 1
-*/
-
 /area/maintenance/polovich
 	name = "Polovich"
 	droning_sound = DRONING_POLOVICHSTAN

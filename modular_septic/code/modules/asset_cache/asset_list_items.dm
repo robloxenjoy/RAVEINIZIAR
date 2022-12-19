@@ -142,15 +142,7 @@
 	. = ..()
 	if(!music_files)
 		var/list/musics = list()
-//		musics |= DRONING_CONCORDIA
-//		musics |= DRONING_AI
-//		musics |= DRONING_SPACE
-//		musics |= DRONING_MAINT
-//		musics |= DRONING_PITOFDESPAIR
 		musics |= DRONING_TAVERN
-//		musics |= DRONING_SHUTTLE
-//		musics |= DRONING_LIFT
-//		musics |= DRONING_DEFAULT
 		musics |= DRONING_COMBAT
 		musics |= DRONING_FOREST
 		musics |= DRONING_FORESTOTHER

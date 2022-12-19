@@ -105,10 +105,10 @@
 	SIGNAL_HANDLER
 
 	if(slot == ITEM_SLOT_RWRIST)
-		worn_icon_state = "[initial(worn_icon_state)]_r
+		worn_icon_state = "[initial(worn_icon_state)]_r"
 		body_parts_covered = HAND_RIGHT
 	else
-		worn_icon_state = "[initial(worn_icon_state)]_l
+		worn_icon_state = "[initial(worn_icon_state)]_l"
 		body_parts_covered = HAND_LEFT
 
 /obj/item/clothing/gloves/wrist/leather

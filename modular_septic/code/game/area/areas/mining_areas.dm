@@ -1,10 +1,3 @@
-//Nevado sounds
-/area/mine
-	droning_sound = DRONING_MINING
-//Space sounds
-/area/asteroid
-	droning_sound = DRONING_MINING
-
 //Base nevado type
 /area/nevado
 	icon_state = "mining"

@@ -30,8 +30,6 @@
 /area/hallway/streets
 	name = "\improper Streets"
 	icon_state = "hallS"
-	droning_sound = DRONING_CONCORDIA
-	droning_volume = 65
 	ambience_index = AMBIENCE_GENERIC
 
 /area/commons
@@ -61,18 +59,15 @@
 /area/maintenance/lift
 	name = "\proper Central Lift"
 	icon_state = "maintcentral"
-	droning_sound = DRONING_LIFT
 
 /area/maintenance/pitofdespair
 	name = "\proper PIT OF DESPAIR"
 	icon_state = "showroom"
-	droning_sound = DRONING_PITOFDESPAIR
 
 /area/maintenance/liminal/intro
 	name = "Liminal Introduction"
 	icon_state = "introduction"
 	icon = 'modular_septic/icons/turf/areas.dmi'
-	droning_sound = DRONING_LIMINALINTRO
 
 /area/engineering/greed
 	name = "\improper Greed Engine"
