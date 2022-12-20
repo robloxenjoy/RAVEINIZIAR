@@ -37,6 +37,9 @@
 	var/lip_color = "white"
 
 	var/age = 30 //Player's age
+	var/belief = null
+	var/elect = 0
+	var/untapped_potential = 0
 
 	//consider updating /mob/living/carbon/human/copy_clothing_prefs() if adding more of these
 	var/underwear = "Nude" //Which underwear the player wants

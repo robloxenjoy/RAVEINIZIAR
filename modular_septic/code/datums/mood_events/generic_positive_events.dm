@@ -79,3 +79,7 @@
 	mood_change = 2
 	timeout = 3 MINUTES
 
+/datum/mood_event/belief/hadot
+	description = span_nicegreen("Now I worship Hadot!")
+	mood_change = 2
+	timeout = 10 MINUTES
