@@ -88,8 +88,8 @@
 	desc = "You, bitch! PRAY!"
 	icon = 'icons/effects/32x64.dmi'
 	icon_state = "hadot"
-	density = FALSE
-	opacity = TRUE
+	density = TRUE
+	opacity = FALSE
 	deconstructible = FALSE
 	plane = GAME_PLANE_UPPER
 	layer = EDGED_TURF_LAYER
@@ -137,8 +137,8 @@
 	desc = "So beautiful."
 	icon = 'icons/effects/32x64.dmi'
 	icon_state = "gutted"
-	density = FALSE
-	opacity = TRUE
+	density = TRUE
+	opacity = FALSE
 	deconstructible = FALSE
 	plane = GAME_PLANE_UPPER
 	layer = EDGED_TURF_LAYER
