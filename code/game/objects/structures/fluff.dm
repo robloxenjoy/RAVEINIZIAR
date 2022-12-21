@@ -83,12 +83,6 @@
 	var/time_between_uses = 1000
 	var/last_process = 0
 
-/obj/structure/fluff/totem/hadot_totem/attack_hand(mob/living/user, list/modifiers)
-	. = ..()
-	if(last_process + time_between_uses > world.time)
-		to_chat(user, span_notice("The essence of the deity is still recovering from the last conversation."))
-		return
-
 /obj/structure/fluff/totem/hadot_totem
 	name = "Hadot Totem"
 	desc = "You, bitch! PRAY!"
@@ -102,6 +96,9 @@
 
 /obj/structure/fluff/totem/hadot_totem/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
+	if(last_process + time_between_uses > world.time)
+		to_chat(user, span_notice("The essence of the deity is still recovering from the last conversation."))
+		return
 	if(user.a_intent == INTENT_HELP)
 		if(user.belief == null)
 			var/hadot = tgui_alert(user, "Start worshiping Hadot?",, list("Yes", "No"))
@@ -148,6 +145,9 @@
 
 /obj/structure/fluff/totem/gutted_totem/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
+	if(last_process + time_between_uses > world.time)
+		to_chat(user, span_notice("The essence of the deity is still recovering from the last conversation."))
+		return
 	if(user.a_intent == INTENT_HELP)
 		if(user.belief == null)
 			var/hadot = tgui_alert(user, "Start worshiping Gutted?",, list("Yes", "No"))
