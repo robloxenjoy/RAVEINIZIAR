@@ -14,7 +14,6 @@
 		msg += span_info("\nI am, chronologically, <b>[H.age]</b> years old.")
 		if(H.belief != null)
 			msg += span_info("\nI worship <b>[H.belief]</b>.")
-		msg += span_info("\nMy belief )
 		if(H.mind.assigned_role)
 			msg += span_info("\nI am [prefix_a_or_an(H.mind.assigned_role.title)] <b>[lowertext(H.mind.assigned_role.title)]</b> by trade.")
 		for(var/thing in H.mind.antag_datums)

@@ -100,7 +100,7 @@
 	plane = GAME_PLANE_UPPER
 	layer = EDGED_TURF_LAYER
 
-/obj/structure/fluff/totem/hadot_totem/attack_hand(mob/living/user, list/modifiers)
+/obj/structure/fluff/totem/hadot_totem/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(user.a_intent == INTENT_HELP)
 		if(user.belief == null)
@@ -108,7 +108,7 @@
 			if(hadot != "Yes" || !loc || QDELETED(user))
 				return
 			user.belief = "Hadot"
-			to_chat(user, span_achievementrare("Now you are mine.")
+			to_chat(user, span_achievementrare("Now you are mine."))
 			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "hellohadot", /datum/mood_event/belief/hadot)
 	if(user.a_intent == INTENT_DISARM)
 		if(user.belief == "Hadot")
@@ -146,7 +146,7 @@
 	plane = GAME_PLANE_UPPER
 	layer = EDGED_TURF_LAYER
 
-/obj/structure/fluff/totem/gutted_totem/attack_hand(mob/living/user, list/modifiers)
+/obj/structure/fluff/totem/gutted_totem/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(user.a_intent == INTENT_HELP)
 		if(user.belief == null)
@@ -154,7 +154,7 @@
 			if(hadot != "Yes" || !loc || QDELETED(user))
 				return
 			user.belief = "Gutted"
-			to_chat(user, span_achievementrare("Now you are mine.")
+			to_chat(user, span_achievementrare("Now you are mine."))
 			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "hellogutted", /datum/mood_event/belief/gutted)
 	if(user.a_intent == INTENT_DISARM)
 		if(user.belief == "Gutted")

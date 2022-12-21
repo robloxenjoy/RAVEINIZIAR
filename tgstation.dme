@@ -4263,7 +4263,6 @@
 #include "modular_septic\code\controllers\subsystem\liquids.dm"
 #include "modular_septic\code\controllers\subsystem\mapping.dm"
 #include "modular_septic\code\controllers\subsystem\pollution.dm"
-#include "modular_septic\code\controllers\subsystem\potential.dm"
 #include "modular_septic\code\controllers\subsystem\radiation.dm"
 #include "modular_septic\code\controllers\subsystem\station_time.dm"
 #include "modular_septic\code\controllers\subsystem\ticker.dm"

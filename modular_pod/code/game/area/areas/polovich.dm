@@ -1,6 +1,6 @@
 /area/maintenance/polovich
 	name = "Polovich"
-	droning_sound = DRONING_POLOVICHSTAN
+//	droning_sound = DRONING_POLOVICHSTAN
 	droning_volume = 35
 	requires_power = FALSE
 	ambience_index = AMBIENCE_GENERIC

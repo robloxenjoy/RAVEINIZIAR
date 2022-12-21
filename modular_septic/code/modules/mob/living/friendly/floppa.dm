@@ -45,9 +45,11 @@
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
-/mob/living/simple_animal/hostile/podozl/caracal/Found(/mob/living/carbon/human/L)
-	if(L.belief == "Hadot")
-		return
+/mob/living/simple_animal/hostile/podozl/caracal/CanAttack(atom/the_target)
+	if(ishuman(the_target))
+		var/mob/living/carbon/human/human_hadot = the_target
+		if(human_hadot.belief == "Hadot")
+			return
 
 /mob/living/simple_animal/hostile/caracal/floppa
 	name = "big floppa"
