@@ -45,6 +45,10 @@
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
+/mob/living/simple_animal/hostile/podozl/caracal/Found(/mob/living/carbon/human/L)
+	if(L.belief == "Hadot")
+		return
+
 /mob/living/simple_animal/hostile/caracal/floppa
 	name = "big floppa"
 	desc = "Flops for no hoe."

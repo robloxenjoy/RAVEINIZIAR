@@ -15,3 +15,4 @@
 
 /datum/attribute_modifier/verybad
 	variable = TRUE
+

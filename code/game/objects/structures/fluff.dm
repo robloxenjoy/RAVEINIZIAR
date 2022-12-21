@@ -94,7 +94,7 @@
 	desc = "You, bitch! PRAY!"
 	icon = 'icons/effects/32x64.dmi'
 	icon_state = "hadot"
-	density = TRUE
+	density = FALSE
 	opacity = TRUE
 	deconstructible = FALSE
 	plane = GAME_PLANE_UPPER
@@ -120,16 +120,16 @@
 				var/list/verybad_stat_modification = list(STAT_STRENGTH = -1, STAT_ENDURANCE = -1)
 				var/diceroll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_WILL), context = DICE_CONTEXT_MENTAL)
 				if(diceroll == DICE_CRIT_SUCCESS)
-					to_chat(user, span_achievementrare("You are a real man."))
+					to_chat(user, span_achievementrare("Meow."))
 					user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/verygood, TRUE, verygood_stat_modification)
 				if(diceroll == DICE_SUCCESS)
-					to_chat(user, span_achievementrare("You are a man."))
+					to_chat(user, span_achievementrare("Hmmm, meow."))
 					user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/good, TRUE, good_stat_modification)
 				if(diceroll == DICE_FAILURE)
-					to_chat(user, span_achievementrare("You are shit."))
+					to_chat(user, span_achievementrare("Meaaww..."))
 					user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/verybad, TRUE, verybad_stat_modification)
 				if(diceroll == DICE_CRIT_FAILURE)
-					to_chat(user, span_achievementrare("Die."))
+					to_chat(user, span_achievementrare("AH! MEOW!"))
 					var/mob/living/carbon/C = user
 					if(C.can_heartattack())
 						C.set_heartattack(TRUE)
@@ -140,50 +140,47 @@
 	desc = "So beautiful."
 	icon = 'icons/effects/32x64.dmi'
 	icon_state = "gutted"
-	density = TRUE
+	density = FALSE
 	opacity = TRUE
 	deconstructible = FALSE
 	plane = GAME_PLANE_UPPER
 	layer = EDGED_TURF_LAYER
 
-/obj/structure/fluff/totem/gutted_totem/hm
-	name = "Gutted Totem"
-	desc = "You, bitch! DANCE!"
-	icon = 'icons/effects/32x64.dmi'
-	icon_state = "gutted"
-	density = TRUE
-	opacity = TRUE
-	deconstructible = FALSE
-	plane = GAME_PLANE_UPPER
-	layer = EDGED_TURF_LAYER
-
-/obj/structure/fluff/gutted_statue/attack_hand(mob/living/user, list/modifiers)
+/obj/structure/fluff/totem/gutted_totem/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	to_chat(user, span_notice("You start praying to Gutted."))
-	if(do_after(user, 100 SECONDS, target = src))
-		to_chat(user, span_notice("You prayed to Gutted!"))
-		var/list/verygood_stat_modification = list(STAT_STRENGTH = 2, STAT_ENDURANCE = 2)
-		var/list/good_stat_modification = list(STAT_STRENGTH = 1, STAT_ENDURANCE = 1)
-//		var/list/bad_stat_modification = list(STAT_STRENGTH = -1)
-		var/list/verybad_stat_modification = list(STAT_STRENGTH = -1, STAT_ENDURANCE = -1)
-//		var/diceroll = DICE_FAILURE
-//		switch(diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_WILL), context = DICE_CONTEXT_MENTAL))
-		var/diceroll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_WILL), context = DICE_CONTEXT_MENTAL)
-		if(diceroll == DICE_CRIT_SUCCESS)
-			to_chat(user, span_achievementrare("Vesterak!"))
-			user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/verygood, TRUE, verygood_stat_modification)
-		if(diceroll == DICE_SUCCESS)
-			to_chat(user, span_achievementrare("Mono Libi."))
-			user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/good, TRUE, good_stat_modification)
-		if(diceroll == DICE_FAILURE)
-			to_chat(user, span_achievementrare("Hvax Bestasss."))
-			user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/verybad, TRUE, verybad_stat_modification)
-		if(diceroll == DICE_CRIT_FAILURE)
-			to_chat(user, span_achievementrare("HARSH."))
-//			user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/verybad, TRUE, verybad_stat_modification)
-			var/mob/living/carbon/C = src
-			if(C.can_heartattack())
-				C.set_heartattack(TRUE)
+	if(user.a_intent == INTENT_HELP)
+		if(user.belief == null)
+			var/hadot = tgui_alert(user, "Start worshiping Gutted?",, list("Yes", "No"))
+			if(hadot != "Yes" || !loc || QDELETED(user))
+				return
+			user.belief = "Gutted"
+			to_chat(user, span_achievementrare("Now you are mine.")
+			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "hellogutted", /datum/mood_event/belief/gutted)
+	if(user.a_intent == INTENT_DISARM)
+		if(user.belief == "Gutted")
+			to_chat(user, span_notice("You start praying to Gutted."))
+			if(do_after(user, 100 SECONDS, target = src))
+				to_chat(user, span_notice("You prayed to Gutted!"))
+				var/list/verygood_gutted_stat_modification = list(STAT_DEXTERITY = 2, STAT_PERCEPTION = 2)
+				var/list/good_gutted_stat_modification = list(STAT_DEXTERITY = 1, STAT_PERCEPTION = 1)
+				var/list/verybad_gutted_stat_modification = list(STAT_DEXTERITY = -1, STAT_PERCEPTION = -1)
+				var/diceroll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_WILL), context = DICE_CONTEXT_MENTAL)
+				if(diceroll == DICE_CRIT_SUCCESS)
+					to_chat(user, span_achievementrare("Posa sa."))
+					user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/verygood, TRUE, verygood_gutted_stat_modification)
+				if(diceroll == DICE_SUCCESS)
+					to_chat(user, span_achievementrare("Sssmoa."))
+					user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/good, TRUE, good_gutted_stat_modification)
+				if(diceroll == DICE_FAILURE)
+					to_chat(user, span_achievementrare("Sere, mian."))
+					user.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/verybad, TRUE, verybad_gutted_stat_modification)
+				if(diceroll == DICE_CRIT_FAILURE)
+					to_chat(user, span_achievementrare("Xaixa."))
+					var/mob/living/carbon/C = user
+					if(C.can_heartattack())
+						C.set_heartattack(TRUE)
+				last_process = world.time
+
 /**
  * A variety of statue in disrepair; parts are broken off and a gemstone is missing
  */

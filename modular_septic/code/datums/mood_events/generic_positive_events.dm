@@ -83,3 +83,8 @@
 	description = span_nicegreen("Now I worship Hadot!")
 	mood_change = 2
 	timeout = 10 MINUTES
+
+/datum/mood_event/belief/gutted
+	description = span_nicegreen("Now I worship Gutted!")
+	mood_change = 2
+	timeout = 10 MINUTES
