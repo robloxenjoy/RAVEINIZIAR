@@ -424,7 +424,7 @@
 		if(w_uniform && (w_uniform.body_parts_covered & HANDS))
 			wrists_clothes = w_uniform
 		if(wrists && (wrists.body_parts_covered & HANDS))
-			wrist_clothes = wrists
+			wrists_clothes = wrists
 		if(wear_suit && (wear_suit.body_parts_covered & HANDS))
 			wrists_clothes = wear_suit
 		if(wrists_clothes)
