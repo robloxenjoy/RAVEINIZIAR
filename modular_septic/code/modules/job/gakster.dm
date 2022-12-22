@@ -158,8 +158,8 @@
 	uniform = /obj/item/clothing/under/venturerclassic
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/chaotic
 	r_pocket = /obj/item/shard/crystal/green
-	l_hand = /obj/item/keycard/chaot
-//	id = /obj/item/cellphone
+	id = /obj/item/keycard/chaot
+//	l_hand = /obj/item/cellphone
 //	belt = /obj/item/crowbar
 //	l_pocket = /obj/item/simcard
 //	back = /obj/item/storage/backpack/satchel/itobe
