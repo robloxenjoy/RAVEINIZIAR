@@ -68,7 +68,7 @@
 //	rpg_title = "Adventurer"
 	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
 
-/datum/outfit/venturer/post_equip(mob/living/carbon/human/H)
+/datum/outfit/venturer/equip(mob/living/carbon/human/H)
 	..()
 	var/result = rand(1, 5)
 	switch(result)

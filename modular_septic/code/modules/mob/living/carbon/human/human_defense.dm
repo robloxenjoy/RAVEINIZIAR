@@ -304,17 +304,15 @@
 
 	//WRISTS//
 	if(!def_zone || (def_zone in list(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND)))
-		var/obj/item/clothing/wrist_clothes = null
+		var/obj/item/clothing/wrists_clothes = null
+		if(wrists && (wrists.body_parts_covered & HANDS))
+			wrists_clothes = wrists
 		if(w_uniform && (w_uniform.body_parts_covered & HANDS))
-			wrist_clothes = w_uniform
-		if(wrist_r && (gloves.body_parts_covered & HANDS))
-			wrist_clothes = wrist_r
-		if(wrist_r && (gloves.body_parts_covered & HANDS))
-			wrist_clothes = wrist_l
+			wrists_clothes = w_uniform
 		if(wear_suit && (wear_suit.body_parts_covered & HANDS))
-			wrist_clothes = wear_suit
-		if(wrist_clothes)
-			torn_items |= wrist_clothes
+			wrists_clothes = wear_suit
+		if(wrists_clothes)
+			torn_items |= wrists_clothes
 
 	//LEGS//
 	if(!def_zone || (def_zone in list(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)))
@@ -422,17 +420,15 @@
 
 	//WRISTS//
 	if(!bodyzone_hit || (bodyzone_hit in list(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND)))
-		var/obj/item/clothing/wrist_clothes = null
+		var/obj/item/clothing/wrists_clothes = null
 		if(w_uniform && (w_uniform.body_parts_covered & HANDS))
-			wrist_clothes = w_uniform
-		if(wrist_l && (wrist_l.body_parts_covered & HANDS))
-			wrist_clothes = wrist_l
-		if(wrist_r && (wrist_r.body_parts_covered & HANDS))
-			wrist_clothes = wrist_r
+			wrists_clothes = w_uniform
+		if(wrists && (wrists.body_parts_covered & HANDS))
+			wrist_clothes = wrists
 		if(wear_suit && (wear_suit.body_parts_covered & HANDS))
-			wrist_clothes = wear_suit
-		if(wrist_clothes)
-			inventory_items_to_kill |= wrist_clothes
+			wrists_clothes = wear_suit
+		if(wrists_clothes)
+			inventory_items_to_kill |= wrists_clothes
 		else
 			var/obj/item/bodypart/hand = get_bodypart(BODY_ZONE_PRECISE_R_HAND)
 			if(hand)

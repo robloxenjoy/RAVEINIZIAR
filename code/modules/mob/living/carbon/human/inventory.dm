@@ -24,10 +24,8 @@
 			return glasses
 		if(ITEM_SLOT_GLOVES)
 			return gloves
-		if(ITEM_SLOT_RWRIST)
-			return wrist_r
-		if(ITEM_SLOT_LWRIST)
-			return wrist_l
+		if(ITEM_SLOT_WRISTS)
+			return wrists
 		if(ITEM_SLOT_HEAD)
 			return head
 		if(ITEM_SLOT_FEET)
@@ -55,8 +53,7 @@
 		legcuffed,
 		wear_suit,
 		gloves,
-		wrist_r,
-		wrist_l,
+		wrists,
 		shoes,
 		belt,
 		wear_id,
@@ -127,16 +124,11 @@
 				return
 			gloves = I
 			update_inv_gloves()
-		if(ITEM_SLOT_RWRIST)
-			if(wrist_r)
+		if(ITEM_SLOT_WRISTS)
+			if(wrists)
 				return
-			wrist_r = I
-			update_inv_rwrist()
-		if(ITEM_SLOT_LWRIST)
-			if(wrist_l)
-				return
-			wrist_l = I
-			update_inv_lwrist()
+			wrists = I
+			update_inv_wrists()
 		if(ITEM_SLOT_FEET)
 			if(shoes)
 				return
@@ -259,14 +251,10 @@
 		shoes = null
 		if(!QDELETED(src))
 			update_inv_shoes()
-	else if(I == wrist_r)
-		wrist_r = null
+	else if(I == wrists)
+		wrists = null
 		if(!QDELETED(src))
-			update_inv_rwrist()
-	else if(I == wrist_l)
-		wrist_l = null
-		if(!QDELETED(src))
-			update_inv_lwrist()
+			update_inv_wrists()
 	else if(I == belt)
 		belt = null
 		if(!QDELETED(src))

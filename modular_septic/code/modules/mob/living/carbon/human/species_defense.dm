@@ -62,10 +62,8 @@
 			arm_clothes = burned.w_uniform
 		if(arm_clothes)
 			burning_items |= arm_clothes
-		if(burned.wrist_r && !(obscured & ITEM_SLOT_RWRIST))
-			burning_items += burned.wrist_r
-		if(burned.wrist_l && !(obscured & ITEM_SLOT_LWRIST))
-			burning_items += burned.wrist_l
+		if(burned.wrists && !(obscured & ITEM_SLOT_WRISTS))
+			burning_items += burned.wrists
 
 		//LEGS & FEET//
 		var/obj/item/clothing/leg_clothes = null

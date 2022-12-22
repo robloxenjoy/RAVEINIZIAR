@@ -86,8 +86,7 @@
 #define HIDEHEADGEAR (1<<11)
 ///for lizard snouts, because some HIDEFACE clothes don't actually conceal that portion of the head.
 #define HIDESNOUT (1<<12)
-#define HIDERWRIST (1<<13) //these next seven are only used in masks and headgear.
-#define HIDELWRIST (1<<14) //these next seven are only used in masks and headgear.
+#define HIDEWRISTS (1<<13)
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)

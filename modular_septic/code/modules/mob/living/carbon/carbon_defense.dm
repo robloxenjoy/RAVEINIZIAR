@@ -346,7 +346,7 @@
 	if(shover)
 		shove_power *= (shover.limb_efficiency/LIMB_EFFICIENCY_OPTIMAL)
 
-	if((shove_power <= 0) || (target.combat_mode && (target in fov_viewers(2, src)) && (shove_power < 4)))
+	if((shove_power <= 0) || (target.combat_mode && (target in fov_viewers(2, src)) && (shove_power < 3)))
 		visible_message(span_danger("<b>[src]</b> tries to shove <b>[target]</b>, but [target.p_they()] regains balance!"),
 					span_userdanger("I try to shove <b>[target]</b>, but [target.p_they()] regains balance!"),
 					span_hear("I hear some shuffling."),

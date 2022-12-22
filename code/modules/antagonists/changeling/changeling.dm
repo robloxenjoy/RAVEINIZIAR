@@ -508,8 +508,7 @@
 		"glasses" = ITEM_SLOT_EYES,
 		"ears" = ITEM_SLOT_LEAR,
 		"ears_extra" = ITEM_SLOT_REAR,
-		"wrist_r" = ITEM_SLOT_RWRIST,
-		"wrist_l" = ITEM_SLOT_LWRIST,
+		"wrists" = ITEM_SLOT_WRISTS,
 		"wear_id" = ITEM_SLOT_ID,
 		"s_store" = ITEM_SLOT_SUITSTORE,
 	)

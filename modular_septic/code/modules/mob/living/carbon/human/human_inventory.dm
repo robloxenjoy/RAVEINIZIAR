@@ -22,10 +22,8 @@
 			return glasses
 		if(ITEM_SLOT_GLOVES)
 			return gloves
-		if(ITEM_SLOT_RWRIST)
-			return wrist_r
-		if(ITEM_SLOT_LWRIST)
-			return wrist_l
+		if(ITEM_SLOT_WRISTS)
+			return wrists
 		if(ITEM_SLOT_HEAD)
 			return head
 		if(ITEM_SLOT_FEET)
@@ -90,16 +88,11 @@
 				return
 			gloves = I
 			update_inv_gloves()
-		if(ITEM_SLOT_RWRIST)
-			if(wrist_r)
+		if(ITEM_SLOT_WRISTS)
+			if(wrists)
 				return
-			wrist_r = I
-			update_inv_rwrist()
-		if(ITEM_SLOT_LWRIST)
-			if(wrist_l)
-				return
-			wrist_l = I
-			update_inv_lwrist()
+			wrists = I
+			update_inv_wrists()
 		if(ITEM_SLOT_FEET)
 			if(shoes)
 				return

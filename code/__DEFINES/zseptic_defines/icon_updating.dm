@@ -1,26 +1,25 @@
-#define MUTATIONS_LAYER 42 //Mutations that appear behind the body - headglows, cold resistance glow, etc
-#define BODYPARTS_EXTENSION_BEHIND_LAYER 41 //Essentially, tits and the infamous dixel
-#define BODY_BEHIND_LAYER 40 //Certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LAYER 39 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODYPARTS_EXTENSION_LAYER 38 //Essentially, tits and the infamous dixel
-#define BODY_ADJ_LAYER 37 //certain mutantrace features (snout, body markings) that must appear above the body parts
-#define BODY_LAYER 36 //underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER 35 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER 34 //damage indicators (cuts and burns)
-#define UNIFORM_LAYER 33
-#define ID_LAYER 32
-#define ID_CARD_LAYER 31
-#define LOWER_MEDICINE_LAYER 30 //Medicine, like gauze and tourniquets
-#define HANDS_PART_LAYER 29
-#define HANDS_ADJ_LAYER 28
-#define UPPER_DAMAGE_LAYER 27 //damage indicators for the hands
-#define UPPER_MEDICINE_LAYER 26 //medicine, like gauze and tourniquets, for the hands
-#define GLOVES_LAYER 25
-#define SHOES_LAYER 24
-#define EARS_LAYER 23
-#define SUIT_LAYER 22
-#define LWRIST_LAYER 21
-#define RWRIST_LAYER 20
+#define MUTATIONS_LAYER 41 //Mutations that appear behind the body - headglows, cold resistance glow, etc
+#define BODYPARTS_EXTENSION_BEHIND_LAYER 40 //Essentially, tits and the infamous dixel
+#define BODY_BEHIND_LAYER 39 //Certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LAYER 38 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define BODYPARTS_EXTENSION_LAYER 37 //Essentially, tits and the infamous dixel
+#define BODY_ADJ_LAYER 36 //certain mutantrace features (snout, body markings) that must appear above the body parts
+#define BODY_LAYER 35 //underwear, undershirts, socks, eyes, lips(makeup)
+#define FRONT_MUTATIONS_LAYER 34 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER 33 //damage indicators (cuts and burns)
+#define UNIFORM_LAYER 32
+#define ID_LAYER 31
+#define ID_CARD_LAYER 30
+#define LOWER_MEDICINE_LAYER 29 //Medicine, like gauze and tourniquets
+#define HANDS_PART_LAYER 28
+#define HANDS_ADJ_LAYER 27
+#define UPPER_DAMAGE_LAYER 26 //damage indicators for the hands
+#define UPPER_MEDICINE_LAYER 25 //medicine, like gauze and tourniquets, for the hands
+#define WRISTS_LAYER 24
+#define GLOVES_LAYER 23
+#define SHOES_LAYER 22
+#define EARS_LAYER 21
+#define SUIT_LAYER 20
 #define GLASSES_LAYER 19
 #define BELT_LAYER 18 //Possibly make this an overlay of something required to wear a belt?
 #define SUIT_STORE_LAYER 17

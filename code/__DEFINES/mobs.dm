@@ -328,8 +328,7 @@
 #define OFFSET_BACK "back"
 #define OFFSET_SUIT "suit"
 #define OFFSET_NECK "neck"
-#define OFFSET_RWRIST "wrist right"
-#define OFFSET_LWRIST "wrist left"
+#define OFFSET_WRISTS "wrists"
 
 //MINOR TWEAKS/MISC
 #define AGE_MIN 17 //youngest a character can be

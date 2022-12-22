@@ -1192,12 +1192,8 @@
 		update_inv_gloves()
 		. = TRUE
 
-	if(wrist_r && !(obscured & ITEM_SLOT_RWRIST) && wrist_r.wash(clean_types))
-		update_inv_rwrist()
-		. = TRUE
-
-	if(wrist_l && !(obscured & ITEM_SLOT_LWRIST) && wrist_l.wash(clean_types))
-		update_inv_lwrist()
+	if(wrists && !(obscured & ITEM_SLOT_WRISTS) && wrists.wash(clean_types))
+		update_inv_wrists()
 		. = TRUE
 
 /// if any of our bodyparts are bleeding

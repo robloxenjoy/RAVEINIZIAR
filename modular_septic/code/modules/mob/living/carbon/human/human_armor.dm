@@ -37,8 +37,7 @@
 							belt, \
 							s_store, \
 							glasses, \
-							wrist_r, \
-							wrist_l, \
+							wrists, \
 							ears, \
 							ears_extra, \
 							wear_id, \

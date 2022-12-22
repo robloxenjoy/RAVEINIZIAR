@@ -388,10 +388,8 @@
 		obscured |= ITEM_SLOT_EARS
 	if(hidden_slots & HIDEGLOVES)
 		obscured |= ITEM_SLOT_GLOVES
-	if(hidden_slots & HIDERWRIST)
-		obscured |= ITEM_SLOT_RWRIST
-	if(hidden_slots & HIDELWRIST)
-		obscured |= ITEM_SLOT_LWRIST
+	if(hidden_slots & HIDEWRISTS)
+		obscured |= ITEM_SLOT_WRISTS
 	if(hidden_slots & HIDEJUMPSUIT)
 		obscured |= ITEM_SLOT_ICLOTHING
 	if(hidden_slots & HIDESHOES)

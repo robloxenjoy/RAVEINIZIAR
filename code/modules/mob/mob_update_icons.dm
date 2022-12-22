@@ -58,10 +58,7 @@
 /mob/proc/update_inv_shoes()
 	return
 
-/mob/proc/update_inv_rwrist()
-	return
-
-/mob/proc/update_inv_lwrist()
+/mob/proc/update_inv_wrists()
 	return
 
 /mob/proc/update_inv_glasses()

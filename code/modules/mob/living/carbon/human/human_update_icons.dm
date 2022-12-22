@@ -297,49 +297,27 @@ There are several things that need to be remembered:
 
 	apply_overlay(SHOES_LAYER)
 
-/mob/living/carbon/human/update_inv_rwrist()
-	remove_overlay(RWRIST_LAYER)
+/mob/living/carbon/human/update_inv_wrists()
+	remove_overlay(WRISTS_LAYER)
 
 	if(client && hud_used)
-		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_RWRIST) + 1]
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_WRISTS) + 1]
 		inv.update_appearance()
 
-	if(wrist_r)
-		wrist_r.screen_loc = ui_wrist_r //move the item to the appropriate screen loc
+	if(wrists)
+		wrists.screen_loc = ui_wrists //move the item to the appropriate screen loc
 		if(client && hud_used?.hud_shown)
 			if(hud_used.inventory_shown) //if the inventory is open
-				client.screen += (wrist_r) //add it to client's screen
-		update_observer_view(wrist_r,1)
-		overlays_standing[RWRIST_LAYER] = wrist_r.build_worn_icon(default_layer = RWRIST_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi')
-		var/mutable_appearance/rwrist_overlay = overlays_standing[RWRIST_LAYER]
-		if(OFFSET_RWRIST in dna.species.offset_features)
-			rwrist_overlay.pixel_x += dna.species.offset_features[OFFSET_RWRIST][1]
-			rwrist_overlay.pixel_y += dna.species.offset_features[OFFSET_RWRIST][2]
-		overlays_standing[RWRIST_LAYER] = rwrist_overlay
+				client.screen += (wrists) //add it to client's screen
+		update_observer_view(wrists,1)
+		overlays_standing[WRISTS_LAYER] = wrists.build_worn_icon(default_layer = WRISTS_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi')
+		var/mutable_appearance/wrists_overlay = overlays_standing[WRISTS_LAYER]
+		if(OFFSET_WRISTS in dna.species.offset_features)
+			wrists_overlay.pixel_x += dna.species.offset_features[OFFSET_WRISTS][1]
+			wrists_overlay.pixel_y += dna.species.offset_features[OFFSET_WRISTS][2]
+		overlays_standing[WRISTS_LAYER] = wrists_overlay
 
-	apply_overlay(RWRIST_LAYER)
-
-/mob/living/carbon/human/update_inv_lwrist()
-	remove_overlay(LWRIST_LAYER)
-
-	if(client && hud_used)
-		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_LWRIST) + 1]
-		inv.update_appearance()
-
-	if(wrist_l)
-		wrist_l.screen_loc = ui_wrist_l //move the item to the appropriate screen loc
-		if(client && hud_used?.hud_shown)
-			if(hud_used.inventory_shown) //if the inventory is open
-				client.screen += (wrist_l) //add it to client's screen
-		update_observer_view(wrist_l,1)
-		overlays_standing[LWRIST_LAYER] = wrist_l.build_worn_icon(default_layer = LWRIST_LAYER, default_icon_file = 'icons/mob/clothing/hands.dmi')
-		var/mutable_appearance/lwrist_overlay = overlays_standing[LWRIST_LAYER]
-		if(OFFSET_LWRIST in dna.species.offset_features)
-			lwrist_overlay.pixel_x += dna.species.offset_features[OFFSET_LWRIST][1]
-			lwrist_overlay.pixel_y += dna.species.offset_features[OFFSET_LWRIST][2]
-		overlays_standing[LWRIST_LAYER] = lwrist_overlay
-
-	apply_overlay(LWRIST_LAYER)
+	apply_overlay(WRISTS_LAYER)
 
 /mob/living/carbon/human/update_inv_s_store()
 	remove_overlay(SUIT_STORE_LAYER)

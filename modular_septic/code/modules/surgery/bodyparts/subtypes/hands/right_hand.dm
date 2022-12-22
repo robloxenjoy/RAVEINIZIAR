@@ -45,7 +45,7 @@
 			C.update_handcuffed()
 		if(C.gloves)
 			C.dropItemToGround(C.gloves, TRUE)
-		if(C.wrist_r)
-			C.dropItemToGround(C.wrist_r, TRUE)
+		if(C.wrists)
+			C.dropItemToGround(C.wrists, TRUE)
 		C.update_inv_gloves() //to remove the bloody hands overlay
-		C.update_inv_rwrist()
+		C.update_inv_wrists()

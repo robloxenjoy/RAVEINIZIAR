@@ -121,6 +121,7 @@
 				else
 					to_chat(src, span_steal("There is nothing left in the belt!"))
 					return
+/*
 			if(BODY_ZONE_PRECISE_R_HAND || BODY_ZONE_PRECISE_L_HAND)
 				if(C.wrist_l)
 					whatwillitsteal = C.wrist_l
@@ -132,7 +133,7 @@
 					else
 						to_chat(src, span_steal("There is nothing on wrists!"))
 						return
-
+*/
 		if(whatwillitsteal)
 			var/obj/item/stolen/S = new(src)
 			S.icon = whatwillitsteal.icon

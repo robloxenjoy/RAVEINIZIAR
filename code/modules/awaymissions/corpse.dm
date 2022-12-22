@@ -167,8 +167,7 @@
 	var/suit = -1
 	var/shoes = -1
 	var/gloves = -1
-	var/wrist_r = -1
-	var/wrist_l = -1
+	var/wrists = -1
 	var/ears = -1
 	var/glasses = -1
 	var/mask = -1
@@ -228,7 +227,7 @@
 	H.update_hair()
 	H.update_body()
 	if(outfit)
-		var/static/list/slots = list("uniform", "r_hand", "l_hand", "suit", "shoes", "gloves", "ears", "glasses", "wrist_r", "wrist_l", "mask", "head", "belt", "r_pocket", "l_pocket", "back", "id", "neck", "backpack_contents", "suit_store")
+		var/static/list/slots = list("uniform", "r_hand", "l_hand", "suit", "shoes", "gloves", "ears", "glasses", "wrists", "mask", "head", "belt", "r_pocket", "l_pocket", "back", "id", "neck", "backpack_contents", "suit_store")
 		for(var/slot in slots)
 			var/T = vars[slot]
 			if(!isnum(T))

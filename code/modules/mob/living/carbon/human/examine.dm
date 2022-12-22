@@ -55,10 +55,8 @@
 		if(num_hands)
 			. += span_warning("[t_He] [t_has] [num_hands > 1 ? "" : "a"] blood-stained hand[num_hands > 1 ? "s" : ""]!")
 	//wrists
-	if(wrist_r && !(obscured & ITEM_SLOT_RWRIST) && !(wrist_r.item_flags & EXAMINE_SKIP))
-		. += "[t_He] [t_has] [wrist_r.get_examine_string(user)] on [t_his] right wrist."
-	if(wrist_l && !(obscured & ITEM_SLOT_LWRIST) && !(wrist_l.item_flags & EXAMINE_SKIP))
-		. += "[t_He] [t_has] [wrist_l.get_examine_string(user)] on [t_his] left wrist."
+	if(wrists && !(obscured & ITEM_SLOT_WRISTS) && !(wrists.item_flags & EXAMINE_SKIP))
+		. += "[t_He] [t_has] [wrists.get_examine_string(user)] on [t_his] wrists."
 
 	//handcuffed?
 	if(handcuffed)

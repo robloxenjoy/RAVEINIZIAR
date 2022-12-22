@@ -21,10 +21,8 @@
 			belt = item_path
 		if(ITEM_SLOT_GLOVES)
 			gloves = item_path
-		if(ITEM_SLOT_RWRIST)
-			wrist_r = item_path
-		if(ITEM_SLOT_LWRIST)
-			wrist_l = item_path
+		if(ITEM_SLOT_WRISTS)
+			wrists = item_path
 		if(ITEM_SLOT_FEET)
 			shoes = item_path
 		if(ITEM_SLOT_HEAD)

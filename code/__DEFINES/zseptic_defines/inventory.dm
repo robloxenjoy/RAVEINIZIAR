@@ -19,40 +19,38 @@
 #define ITEM_SLOT_LEAR (1<<4)
 /// Right ear slot
 #define ITEM_SLOT_REAR (1<<5)
-/// Left ear slot
-#define ITEM_SLOT_RWRIST (1<<6)
-/// Right ear slot
-#define ITEM_SLOT_LWRIST (1<<7)
+/// Wrists slot
+#define ITEM_SLOT_WRISTS (1<<6)
 /// Mask slot
-#define ITEM_SLOT_MASK (1<<8)
+#define ITEM_SLOT_MASK (1<<7)
 /// Head slot (helmets, hats, etc.)
-#define ITEM_SLOT_HEAD (1<<9)
+#define ITEM_SLOT_HEAD (1<<8)
 /// Shoe slot
-#define ITEM_SLOT_FEET (1<<10)
+#define ITEM_SLOT_FEET (1<<9)
 /// ID slot
-#define ITEM_SLOT_ID (1<<11)
+#define ITEM_SLOT_ID (1<<10)
 /// Belt slot
-#define ITEM_SLOT_BELT (1<<12)
+#define ITEM_SLOT_BELT (1<<11)
 /// Back slot
-#define ITEM_SLOT_BACK (1<<13)
+#define ITEM_SLOT_BACK (1<<12)
 /// Dextrous simplemob "hands" (used for Drones and Dextrous Guardians)
-#define ITEM_SLOT_DEX_STORAGE (1<<14)
+#define ITEM_SLOT_DEX_STORAGE (1<<13)
 /// Neck slot (ties, bedsheets, scarves)
-#define ITEM_SLOT_NECK (1<<15)
+#define ITEM_SLOT_NECK (1<<14)
 /// A character's hand slots
-#define ITEM_SLOT_HANDS (1<<16)
+#define ITEM_SLOT_HANDS (1<<15)
 /// Inside of a character's backpack
-#define ITEM_SLOT_BACKPACK (1<<17)
+#define ITEM_SLOT_BACKPACK (1<<16)
 /// Suit Storage slot
-#define ITEM_SLOT_SUITSTORE (1<<18)
+#define ITEM_SLOT_SUITSTORE (1<<17)
 /// Left Pocket slot
-#define ITEM_SLOT_LPOCKET (1<<19)
+#define ITEM_SLOT_LPOCKET (1<<18)
 /// Right Pocket slot
-#define ITEM_SLOT_RPOCKET (1<<20)
+#define ITEM_SLOT_RPOCKET (1<<19)
 /// Handcuff slot
-#define ITEM_SLOT_HANDCUFFED (1<<21)
+#define ITEM_SLOT_HANDCUFFED (1<<20)
 /// Legcuff slot (bolas, beartraps)
-#define ITEM_SLOT_LEGCUFFED (1<<22)
+#define ITEM_SLOT_LEGCUFFED (1<<21)
 
 /// Total amount of slots
 #define SLOTS_AMT 21 // Keep this up to date!
@@ -63,4 +61,4 @@
 
 
 /// Item slots that if you equip an item on, it'll try to filthify you
-#define DIRTY_ITEM_SLOTS (ITEM_SLOT_OCLOTHING|ITEM_SLOT_ICLOTHING|ITEM_SLOT_RWRIST|ITEM_SLOT_LWRIST|ITEM_SLOT_GLOVES|ITEM_SLOT_EYES|ITEM_SLOT_LEAR|ITEM_SLOT_REAR|ITEM_SLOT_HEAD|ITEM_SLOT_FEET|ITEM_SLOT_BELT|ITEM_SLOT_BACK)
+#define DIRTY_ITEM_SLOTS (ITEM_SLOT_OCLOTHING|ITEM_SLOT_ICLOTHING|ITEM_SLOT_WRISTS|ITEM_SLOT_GLOVES|ITEM_SLOT_EYES|ITEM_SLOT_LEAR|ITEM_SLOT_REAR|ITEM_SLOT_HEAD|ITEM_SLOT_FEET|ITEM_SLOT_BELT|ITEM_SLOT_BACK)

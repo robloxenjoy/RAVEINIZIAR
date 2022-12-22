@@ -418,22 +418,14 @@
 	upper_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "right wrist"
+	inv_box.name = "wrists"
 	inv_box.icon = ui_style
-	inv_box.icon_state = "wrist_r"
-	inv_box.screen_loc = ui_wrist_r
-	inv_box.slot_id = ITEM_SLOT_RWRIST
+	inv_box.icon_state = "wrists"
+	inv_box.screen_loc = ui_wrists
+	inv_box.slot_id = ITEM_SLOT_WRISTS
 	inv_box.hud = src
 	upper_inventory += inv_box
 
-	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "left wrist"
-	inv_box.icon = ui_style
-	inv_box.icon_state = "wrist_l"
-	inv_box.screen_loc = ui_wrist_l
-	inv_box.slot_id = ITEM_SLOT_LWRIST
-	inv_box.hud = src
-	upper_inventory += inv_box
 	//SEPTIC EDIT END
 
 	inv_box = new /atom/movable/screen/inventory()
@@ -696,12 +688,9 @@
 			if(H.ears_extra)
 				H.ears_extra.screen_loc = ui_ears_extra
 				screenmob.client.screen += H.ears_extra
-			if(H.wrist_r)
-				H.wrist_r.screen_loc = ui_wrist_r
-				screenmob.client.screen += H.wrist_r
-			if(H.wrist_l)
-				H.wrist_l.screen_loc = ui_wrist_l
-				screenmob.client.screen += H.wrist_l
+			if(H.wrists)
+				H.wrists.screen_loc = ui_wrists
+				screenmob.client.screen += H.wrists
 		else
 			if(H.wear_neck)
 				screenmob.client.screen -= H.wear_neck
@@ -711,10 +700,8 @@
 				screenmob.client.screen -= H.ears
 			if(H.ears_extra)
 				screenmob.client.screen -= H.ears_extra
-			if(H.wrist_r)
-				screenmob.client.screen -= H.wrist_r
-			if(H.wrist_l)
-				screenmob.client.screen -= H.wrist_l
+			if(H.wrists)
+				screenmob.client.screen -= H.wrists
 		//SEPTIC EDIT END
 		if(H.shoes)
 			H.shoes.screen_loc = ui_shoes
@@ -757,10 +744,8 @@
 			screenmob.client.screen -= H.ears
 		if(H.ears_extra)
 			screenmob.client.screen -= H.ears_extra
-		if(H.wrist_r)
-			screenmob.client.screen -= H.wrist_r
-		if(H.wrist_l)
-			screenmob.client.screen -= H.wrist_l
+		if(H.wrists)
+			screenmob.client.screen -= H.wrists
 		//SEPTIC EDIT END
 		if(H.shoes) screenmob.client.screen -= H.shoes
 		if(H.gloves) screenmob.client.screen -= H.gloves

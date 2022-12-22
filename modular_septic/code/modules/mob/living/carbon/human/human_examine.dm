@@ -115,11 +115,8 @@
 		. += "[t_He] [t_has] <b>[s_store.get_examine_string(user)]</b> on [t_his] back."
 
 	//wrists
-	if(wrist_r && !(obscured & ITEM_SLOT_RWRIST) && !(wrist_r.item_flags & EXAMINE_SKIP) && !(wrist_r.item_flags & ABSTRACT))
-		. += "[t_He] [t_has] [wrist_r.get_examine_string(user)] on [t_his] right wrist."
-
-	if(wrist_l && !(obscured & ITEM_SLOT_LWRIST) && !(wrist_l.item_flags & EXAMINE_SKIP) && !(wrist_l.item_flags & ABSTRACT))
-		. += "[t_He] [t_has] [wrist_l.get_examine_string(user)] on [t_his] left wrist."
+	if(wrists && !(obscured & ITEM_SLOT_WRISTS) && !(wrists.item_flags & EXAMINE_SKIP) && !(wrists.item_flags & ABSTRACT))
+		. += "[t_He] [t_has] [wrists.get_examine_string(user)] on [t_his] wrists."
 
 	//hands
 	for(var/obj/item/I in held_items)

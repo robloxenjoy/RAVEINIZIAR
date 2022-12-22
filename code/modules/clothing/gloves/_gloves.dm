@@ -82,36 +82,22 @@
 	qdel(src)
 	return TRUE
 
-/obj/item/clothing/gloves/wrist
+/obj/item/clothing/gloves/wrists
 	name = "Wrist"
 	gender = PLURAL
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
 	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'
 	siemens_coefficient = 0.5
-	slot_flags = ITEM_SLOT_RWRIST|ITEM_SLOT_LWRIST
+	slot_flags = ITEM_SLOT_WRISTS
 	attack_verb_continuous = list("challenges")
 	attack_verb_simple = list("challenge")
 //	var/transfer_prints = FALSE
 	strip_delay = 20
 	equip_delay_other = 40
 
-/obj/item/clothing/gloves/wrist/Initialize(mapload)
-	. = ..()
-	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, .proc/on_glove_equip)
-
-/obj/item/clothing/gloves/wrist/proc/on_glove_equip(datum/source, mob/equipper, slot)
-	SIGNAL_HANDLER
-
-	if(slot == ITEM_SLOT_RWRIST)
-		worn_icon_state = "[initial(worn_icon_state)]_r"
-		body_parts_covered = HAND_RIGHT
-	if(slot == ITEM_SLOT_LWRIST)
-		worn_icon_state = "[initial(worn_icon_state)]_l"
-		body_parts_covered = HAND_LEFT
-
 /obj/item/clothing/gloves/wrist/leather
-	name = "Leather Brace"
+	name = "Leather Bracers"
 	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
 	icon_state = "leatherwrist"
 	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'

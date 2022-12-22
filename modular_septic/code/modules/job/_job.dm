@@ -137,8 +137,7 @@
 								spawned.wear_neck, \
 								spawned.head, \
 								spawned.gloves, \
-								spawned.wrist_r, \
-								spawned.wrist_l, \
+								spawned.wrists, \
 								spawned.shoes, \
 								spawned.glasses, \
 								spawned.wear_id, \
@@ -172,8 +171,7 @@
 								spawned.shoes, \
 								spawned.glasses, \
 								spawned.wear_id, \
-								spawned.wrist_r, \
-								spawned.wrist_l, \
+								spawned.wrists, \
 								spawned.r_store, \
 								spawned.l_store, \
 								spawned.s_store, \

@@ -23,10 +23,8 @@
 			return glasses
 		if(ITEM_SLOT_GLOVES)
 			return gloves
-		if(ITEM_SLOT_RWRIST)
-			return wrist_r
-		if(ITEM_SLOT_LWRIST)
-			return wrist_l
+		if(ITEM_SLOT_WRISTS)
+			return wrists
 		if(ITEM_SLOT_HEAD)
 			return head
 		if(ITEM_SLOT_FEET)

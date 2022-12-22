@@ -113,8 +113,7 @@
 #define ui_glasses "WEST+1,SOUTH+1"
 #define ui_ears "WEST+2,SOUTH+1"
 #define ui_ears_extra "WEST+3,SOUTH+1"
-#define ui_wrist_r "WEST+4,SOUTH+1"
-#define ui_wrist_l "WEST+5,SOUTH+1"
+#define ui_wrists "WEST+4,SOUTH+1"
 
 //Generic living
 #define ui_living_pull "EAST-1:28,CENTER-3:15"

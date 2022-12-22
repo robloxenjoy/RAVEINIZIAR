@@ -214,16 +214,10 @@ const SLOTS: Record<
     image: "inventory-pocket.png",
   },
 
-  left_wrist: {
-    displayName: "left wrist",
-    gridSpot: getGridSpotKey([3, 1]),
-    image: "inventory-lwrist.png",
-  },
-
-  right_wrist: {
-    displayName: "right wrist",
+  wrists: {
+    displayName: "wrists",
     gridSpot: getGridSpotKey([3, 3]),
-    image: "inventory-rwrist.png",
+    image: "inventory-wrists.png",
   },
 };
 

@@ -82,11 +82,8 @@
 	//Type path of item to go in left hand
 	var/r_hand = null
 
-	//Type path of item to go in left hand
-	var/wrist_r = null
-
-	//Type path of item to go in left hand
-	var/wrist_l = null
+	//Type path of item to go in wrists slot
+	var/wrists = null
 
 	/// Any clothing accessory item
 	var/accessory = null
@@ -178,10 +175,8 @@
 		H.equip_to_slot_or_del(new belt(H),ITEM_SLOT_BELT, TRUE)
 	if(gloves)
 		H.equip_to_slot_or_del(new gloves(H),ITEM_SLOT_GLOVES, TRUE)
-	if(wrist_r)
-		H.equip_to_slot_or_del(new wrist_r(H),ITEM_SLOT_RWRIST, TRUE)
-	if(wrist_l)
-		H.equip_to_slot_or_del(new wrist_l(H),ITEM_SLOT_LWRIST, TRUE)
+	if(wrists)
+		H.equip_to_slot_or_del(new wrists(H),ITEM_SLOT_WRISTS, TRUE)
 	if(shoes)
 		H.equip_to_slot_or_del(new shoes(H),ITEM_SLOT_FEET, TRUE)
 	if(head)
@@ -336,7 +331,7 @@
 
 /// Return a list of all the types that are required to disguise as this outfit type
 /datum/outfit/proc/get_chameleon_disguise_info()
-	var/list/types = list(uniform, suit, back, belt, gloves, shoes, head, mask, neck, ears, glasses, id, l_pocket, r_pocket, suit_store, r_hand, l_hand, wrist_r, wrist_l)
+	var/list/types = list(uniform, suit, back, belt, gloves, shoes, head, mask, neck, ears, glasses, id, l_pocket, r_pocket, suit_store, r_hand, l_hand, wrists)
 	types += chameleon_extras
 	types += skillchips
 	list_clear_nulls(types)
@@ -353,8 +348,7 @@
 	.["back"] = back
 	.["belt"] = belt
 	.["gloves"] = gloves
-	.["wrist_r"] = wrist_r
-	.["wrist_l"] = wrist_l
+	.["wrists"] = wrists
 	.["shoes"] = shoes
 	.["head"] = head
 	.["mask"] = mask
@@ -383,8 +377,7 @@
 	back = target.back
 	belt = target.belt
 	gloves = target.gloves
-	wrist_l = target.wrist_l
-	wrist_r = target.wrist_r
+	wrists = target.wrists
 	shoes = target.shoes
 	head = target.head
 	mask = target.mask
@@ -424,8 +417,7 @@
 	back = text2path(outfit_data["back"])
 	belt = text2path(outfit_data["belt"])
 	gloves = text2path(outfit_data["gloves"])
-	wrist_l = text2path(outfit_data["wrist_l"])
-	wrist_r = text2path(outfit_data["wrist_r"])
+	wrists = text2path(outfit_data["wrists"])
 	shoes = text2path(outfit_data["shoes"])
 	head = text2path(outfit_data["head"])
 	mask = text2path(outfit_data["mask"])
