@@ -96,7 +96,7 @@
 	strip_delay = 20
 	equip_delay_other = 40
 
-/obj/item/clothing/gloves/wrist/leather
+/obj/item/clothing/gloves/wrists/leather
 	name = "Leather Bracers"
 	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
 	icon_state = "leatherwrist"

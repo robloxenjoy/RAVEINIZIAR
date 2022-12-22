@@ -19,6 +19,7 @@
 
 /turf/closed/wall/purple
 	name = "Midnightstone Wall"
+	desc = "This wall makes you sleepy."
 	icon = 'modular_septic/icons/turf/tall/purple.dmi'
 //	smooth_icon = 'modular_septic/icons/turf/tall/purple.dmi'
 	frill_icon = 'modular_septic/icons/turf/tall/purple_frill.dmi'

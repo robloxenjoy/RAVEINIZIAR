@@ -94,7 +94,7 @@
 
 //Expand inventory bookmark
 #define ui_bookmark_off "WEST,SOUTH+1"
-#define ui_bookmark_on "WEST+6,SOUTH+1"
+#define ui_bookmark_on "WEST+5,SOUTH+1"
 
 //Pop-up inventory
 #define ui_shoes "WEST,SOUTH"

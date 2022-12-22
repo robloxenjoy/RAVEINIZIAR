@@ -323,7 +323,7 @@
 						span_hear("I hear the sound of shag."))
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
-	if(!do_after(user, 50, target = src))
+	if(!do_after(user, 30, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
 		return
 	if(!berries)
