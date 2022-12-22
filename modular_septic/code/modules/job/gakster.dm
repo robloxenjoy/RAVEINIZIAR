@@ -68,53 +68,16 @@
 //	rpg_title = "Adventurer"
 	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
 
-/datum/outfit/venturer/equip(mob/living/carbon/human/H)
-	..()
-	var/result = rand(1, 5)
-	switch(result)
-		if(1)
-			H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-			belt = /obj/item/changeable_attacks/slashbash/axe/small/steel
-			to_chat(H, span_achievementinteresting("I'm a woodcutter!"))
-			to_chat(H, span_info("I have a real friend - an axe. I have to take care of it, otherwise it will break at such a difficult time."))
-
-		if(2)
-			H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturertrue)
-			back = /obj/item/storage/backpack/satchel/itobe
-			backpack_contents = list(
-				/obj/item/reagent_containers/hypospray/medipen/retractible/blacktar = 1,
-				/obj/item/stack/grown/log/tree/evil/logg/three = 1,
-			)
-			to_chat(H, span_achievementinteresting("I'm a true venturer!"))
-			to_chat(H, span_info("No one expects anything from me, rather I expect something."))
-			if(prob(75))
-				glasses = /obj/item/clothing/glasses/itobe/sanfo
-
-		if(3)
-			H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturermeatwarrior)
-			suit = /obj/item/clothing/suit/armor/vest/leatherbreast
-			gloves = /obj/item/clothing/gloves/leathercool
-			to_chat(H, span_achievementinteresting("I'm a meat warrior!"))
-			to_chat(H, span_info("Maybe I'm an occultist, maybe I'm a maniac. But I have an equipment."))
-
-		if(4)
-			H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturervillageowner)
-			uniform = /obj/item/clothing/under/rank/captain/zoomtech
-			r_pocket = /obj/item/shard/crystal/purple
-			glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
-			to_chat(H, span_achievementinteresting("I'm a village owner!"))
-			to_chat(H, span_info("Finally got out of the turmoil with the village and can breathe fresh air."))
-
-		if(5)
-			H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturergardener)
-			to_chat(H, span_achievementinteresting("I'm a gardener!"))
-			to_chat(H, span_info("I think I'm the most boring... Maybe."))
-
 /datum/outfit/venturer
 	name = "Venturer Uniform"
 
 	uniform = /obj/item/clothing/under/venturerclassic
 	r_pocket = /obj/item/shard/crystal/blue
+	var/woodcutter = FALSE
+	var/venturertrue = FALSE
+	var/venturermeatwarrior = FALSE
+	var/venturervillageowner = FALSE
+	var/venturergardener = FALSE
 //	id = /obj/item/cellphone
 //	belt = /obj/item/crowbar
 //	l_pocket = /obj/item/simcard
@@ -125,6 +88,62 @@
 //	)
 //	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/venturer/pre_equip(mob/living/carbon/human/H)
+	..()
+	var/result = rand(1, 5)
+	switch(result)
+		if(1)
+			woodcutter = TRUE
+			to_chat(H, span_achievementinteresting("I'm a woodcutter!"))
+			to_chat(H, span_info("I have a real friend - an axe. I have to take care of it, otherwise it will break at such a difficult time."))
+
+		if(2)
+			venturertrue = TRUE
+			to_chat(H, span_achievementinteresting("I'm a true venturer!"))
+			to_chat(H, span_info("No one expects anything from me, rather I expect something."))
+
+		if(3)
+			venturermeatwarrior = TRUE
+			to_chat(H, span_achievementinteresting("I'm a meat warrior!"))
+			to_chat(H, span_info("Maybe I'm an occultist, maybe I'm a maniac. But I have an equipment."))
+
+		if(4)
+			venturervillageowner = TRUE
+			H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturervillageowner)
+			to_chat(H, span_achievementinteresting("I'm a village owner!"))
+			to_chat(H, span_info("Finally got out of the turmoil with the village and can breathe fresh air."))
+
+		if(5)
+			venturergardener = TRUE
+			to_chat(H, span_achievementinteresting("I'm a gardener!"))
+			to_chat(H, span_info("I think I'm the most boring... Maybe."))
+
+/datum/outfit/venturer/equip(mob/living/carbon/human/H)
+	..()
+	if(woodcutter)
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
+		belt = /obj/item/changeable_attacks/slashbash/axe/small/steel
+	if(venturertrue)
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturertrue)
+		back = /obj/item/storage/backpack/satchel/itobe
+		backpack_contents = list(
+			/obj/item/reagent_containers/hypospray/medipen/retractible/blacktar = 1,
+			/obj/item/stack/grown/log/tree/evil/logg/three = 1,
+		)
+		if(prob(75))
+			glasses = /obj/item/clothing/glasses/itobe/sanfo
+	if(venturermeatwarrior)
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturermeatwarrior)
+		suit = /obj/item/clothing/suit/armor/vest/leatherbreast
+		gloves = /obj/item/clothing/gloves/leathercool
+	if(venturervillageowner)
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturervillageowner)
+		uniform = /obj/item/clothing/under/rank/captain/zoomtech
+		r_pocket = /obj/item/shard/crystal/purple
+		glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
+	if(venturergardener)
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturergardener)
 
 /datum/job/chaot
 	title = "Chaot"
