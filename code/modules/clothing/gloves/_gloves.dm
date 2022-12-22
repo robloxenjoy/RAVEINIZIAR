@@ -99,9 +99,9 @@
 /obj/item/clothing/gloves/wrists/leather
 	name = "Leather Bracers"
 	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
-	icon_state = "leatherwrist"
+	icon_state = "leatherwrists"
 	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'
-	worn_icon_state = "leatherwrist"
+	worn_icon_state = "leatherwrists"
 	armor_broken_sound = "light"
 	armor_damaged_sound = "light"
 	max_integrity = 100
