@@ -87,7 +87,7 @@
 	/// Second ear slot
 	var/obj/item/clothing/ears_extra = null
 	/// Wrists slot
-	var/obj/item/clothing/gloves/wrist/wrists = null
+	var/obj/item/clothing/gloves/wrists/wrists = null
 
 	// ~INJURY PENALTIES
 	/// Timer for injury penalty, should reset if we take more damage
