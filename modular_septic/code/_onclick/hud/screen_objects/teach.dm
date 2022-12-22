@@ -1,5 +1,5 @@
 /atom/movable/screen/teach
-	name = "teach"
+	name = "realize"
 	icon = 'modular_septic/icons/hud/quake/screen_quake.dmi'
 	icon_state = "act_teach"
 	base_icon_state = "act_teach"
