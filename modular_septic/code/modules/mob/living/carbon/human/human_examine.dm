@@ -84,7 +84,7 @@
 			covered_lips |= "<span style='color: #[COLOR_BLUE_WATER];'>drool</span>"
 		if(LAZYLEN(covered_lips))
 			. += "Mmm, [t_his] lips are covered with [english_list(covered_lips)]!"
-		if(src.belief == "Hadot")
+		if(belief == "Hadot")
 			. += "There are lynx whiskers on [t_his] face"
 
 	//head
@@ -168,7 +168,7 @@
 			. += "<span class='warning'>[t_He] [t_has] a large pupils. Mysteriously.</B></span>"
 		if(HAS_TRAIT(src, TRAIT_HORROR_STARE))
 			. += "<span class='animated'>[t_He] [t_has] a deep, horror stare.</B></span>"
-		if(src.belief == "Gutted")
+		if(belief == "Gutted")
 			. += "<span class='warning'>[t_He] [t_has] a snake-like pupil shape.</B></span>"
 
 	//left ear
