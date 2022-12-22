@@ -412,12 +412,12 @@
 	inhand_icon_state = "steelaxe"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
 	worn_icon_state = "steelaxe"
-	current_atk_mode = slash
 	slash_hitsound = list('modular_septic/sound/weapons/melee/hitweapon.ogg', 'modular_septic/sound/weapons/melee/hitweapon2.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/pickupweapon.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.wav', 'modular_septic/sound/weapons/melee/missweapon2.wav')
 	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.wav'
 	embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
+	current_atk_mode = slash
 	min_force = 15
 	force = 20
 	min_force_strength = 1.5

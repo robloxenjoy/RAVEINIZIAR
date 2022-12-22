@@ -40,8 +40,8 @@
 		return ..()
 
 /obj/structure/flora/stump
-	name = "stump"
-	desc = "This represents our promise to the crew, and the station itself, to cut down as many trees as possible." //running naked through the trees
+	name = "Stump"
+	desc = "Another stump..."
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "tree_stump"
 	density = FALSE

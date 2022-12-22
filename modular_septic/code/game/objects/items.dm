@@ -28,13 +28,13 @@
 	return ..()
 
 // epic embed failure
-/obj/item/tryEmbed(atom/target, forced = FALSE, should = FALSE, silent = FALSE)
+/obj/item/tryEmbed(atom/target, forced = FALSE, silent = FALSE)
 	if(!isbodypart(target) && !iscarbon(target))
 		return COMPONENT_EMBED_FAILURE
 	if(!forced && !LAZYLEN(embedding))
 		return COMPONENT_EMBED_FAILURE
 
-	var/embed_attempt = SEND_SIGNAL(src, COMSIG_EMBED_TRY_FORCE, target, forced, should, silent)
+	var/embed_attempt = SEND_SIGNAL(src, COMSIG_EMBED_TRY_FORCE, target, forced, silent)
 	if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 		return embed_attempt
 

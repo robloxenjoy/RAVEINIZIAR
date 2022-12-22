@@ -1,4 +1,4 @@
-/datum/element/embed/tryForceEmbed(obj/item/embedder, atom/target, hit_zone, forced = FALSE, should = TRUE, silent = FALSE)
+/datum/element/embed/tryForceEmbed(obj/item/embedder, atom/target, hit_zone, forced = FALSE, silent = FALSE)
 	var/obj/item/bodypart/limb
 	var/mob/living/carbon/limb_owner
 
@@ -15,14 +15,13 @@
 		hit_zone = limb.body_zone
 		limb_owner = limb.owner
 
-	return checkEmbed(embedder, limb_owner, hit_zone, forced = TRUE, should = TRUE, silent = TRUE)
+	return checkEmbed(embedder, limb_owner, hit_zone, forced = TRUE, silent = TRUE)
 
 /datum/element/embed/checkEmbed(obj/item/weapon, \
 							mob/living/carbon/victim, \
 							hit_zone, \
 							datum/thrownthing/throwingdatum, \
 							forced = FALSE, \
-							should = FALSE, \
 							silent = FALSE)
 	if(!istype(victim) || HAS_TRAIT(victim, TRAIT_PIERCEIMMUNE))
 		return COMPONENT_EMBED_FAILURE
@@ -46,14 +45,14 @@
 		edge_protection = max(0, edge_protection - weapon.edge_protection_penetration)
 		if(edge_protection)
 			actual_chance -= edge_protection
-			if(!should && (actual_chance <= 0))
+			if(actual_chance <= 0)
 				if(!silent)
 					victim.visible_message(span_danger("[weapon] bounces off <b>[victim]</b>'s armor, unable to embed!"), \
 										span_notice("[weapon] bounces off my armor, unable to embed!"), \
 										vision_distance = COMBAT_MESSAGE_RANGE)
 				return (COMPONENT_EMBED_FAILURE | COMPONENT_EMBED_STOPPED_BY_ARMOR)
 
-	if(!should && !prob(actual_chance))
+	if(!prob(actual_chance))
 		return (!harmless && edge_protection ? (COMPONENT_EMBED_FAILURE | COMPONENT_EMBED_STOPPED_BY_ARMOR) : COMPONENT_EMBED_FAILURE)
 
 	var/obj/item/bodypart/limb = victim.get_bodypart(hit_zone)
