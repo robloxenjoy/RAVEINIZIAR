@@ -197,7 +197,7 @@
 	)
 
 /obj/effect/spawner/random/structure/maphelp/lynx/one
-	name = "lynx spawner 50"
+	name = "lynx spawner 10"
 	icon_state = "lynx"
 	spawn_loot_chance = 10
 	spawn_random_offset = FALSE

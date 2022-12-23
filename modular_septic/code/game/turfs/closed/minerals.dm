@@ -34,4 +34,5 @@
 //	needs_translation = FALSE
 
 /turf/closed/wall/purple/nocling
+	desc = "This wall makes you sleepy. Also you cant climb here."
 	clingable = FALSE

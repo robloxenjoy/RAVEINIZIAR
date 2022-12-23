@@ -154,7 +154,7 @@
 	durability = 150
 	carry_weight = 1 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	min_force = 6
 	force = 10
 	throwforce = 9

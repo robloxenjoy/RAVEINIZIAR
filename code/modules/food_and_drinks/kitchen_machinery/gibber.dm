@@ -105,6 +105,18 @@
 		startgibbing(user)
 
 /obj/machinery/gibber/attackby(obj/item/P, mob/user, params)
+	if(istype(P, /obj/item/grab))
+		return
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.belief == "Gutted")
+			to_chat(H, span_danger("Don't hit me, I'm your friend."))
+			return
+		else
+			to_chat(H, span_danger("Idiot, why did you put your hand on me."))
+			ADJUSTBRAINLOSS(H, BRAIN_DAMAGE_DEATH)
+			return
+
 	if(default_deconstruction_screwdriver(user, "grinder_open", "grinder", P))
 		return
 
@@ -116,6 +128,7 @@
 
 	else if(default_deconstruction_crowbar(P))
 		return
+
 	else
 		return ..()
 

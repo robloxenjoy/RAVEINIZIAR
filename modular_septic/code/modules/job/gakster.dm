@@ -95,6 +95,7 @@
 	switch(result)
 		if(1)
 			woodcutter = TRUE
+			wrists = /obj/item/clothing/gloves/wrists/leather
 			belt = /obj/item/changeable_attacks/slashbash/axe/small/steel
 			to_chat(H, span_achievementinteresting("I'm a woodcutter!"))
 			to_chat(H, span_info("I have a real friend - an axe. I have to take care of it, otherwise it will break at such a difficult time."))
