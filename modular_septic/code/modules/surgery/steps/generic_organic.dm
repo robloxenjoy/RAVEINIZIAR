@@ -139,7 +139,7 @@
 		if(!length(tool.embedding))
 			tool.embedding = EMBED_HARMLESS
 			tool.updateEmbedding()
-		tool.tryEmbed(target = BP, forced = TRUE, should = TRUE, silent = TRUE)
+		tool.tryEmbed(target = BP, forced = TRUE, silent = TRUE)
 		tool.RegisterSignal(tool, COMSIG_ITEM_UNEMBEDDED, /obj/item/proc/unspeculumize, TRUE)
 		playsound(target, 'modular_septic/sound/gore/stuck2.ogg', 60, 0)
 	return SURGERY_SUCCESS

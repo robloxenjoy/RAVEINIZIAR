@@ -364,7 +364,7 @@
 			if(!C.legcuffed && C.num_legs >= C.default_num_legs)
 			//SEPTIC EDIT END
 //				INVOKE_ASYNC(C, /mob/living/carbon.proc/equip_to_slot, src, ITEM_SLOT_LEGCUFFED)
-				tryEmbed(target = BODY_ZONE_L_LEG, forced = TRUE, should = TRUE, silent = FALSE)
+				tryEmbed(target = BODY_ZONE_L_LEG, forced = TRUE, silent = FALSE)
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 	else if(snap && isanimal(L))
 		var/mob/living/simple_animal/SA = L
