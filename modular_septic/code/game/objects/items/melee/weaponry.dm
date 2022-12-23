@@ -443,6 +443,7 @@
 	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/changeable_attacks/slashbash/axe/small/steel/Initialize(mapload)
+	. = ..()
 	durability = rand(150,195)
 
 /obj/item/changeable_attacks/slashbash/axe/small/steel/swap_intents(mob/user)
