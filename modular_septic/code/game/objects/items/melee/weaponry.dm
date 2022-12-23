@@ -529,6 +529,7 @@
 	tetris_height = 96
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
+	. = ..()
 	durability = rand(150, 160)
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt
@@ -538,6 +539,7 @@
 	parrying_modifier = 1.5
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt/Initialize(mapload)
+	. = ..()
 	durability = rand(160, 175)
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/fast
