@@ -442,8 +442,8 @@
 	tetris_height = 96
 	slot_flags = ITEM_SLOT_BELT
 
-/obj/item/changeable_attacks/slashbash/axe/small/steel
-	durability = rand(150, 195)
+/obj/item/changeable_attacks/slashbash/axe/small/steel/Initialize(mapload)
+	durability = rand(150,195)
 
 /obj/item/changeable_attacks/slashbash/axe/small/steel/swap_intents(mob/user)
 	. = ..()
@@ -527,6 +527,9 @@
 	tetris_width = 32
 	tetris_height = 96
 
+/obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
+	durability = rand(150, 160)
+
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt
 	desc = "Use this as weapon! Here is hilt."
 	icon_state = "steelsabrehilt"
@@ -535,9 +538,6 @@
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt/Initialize(mapload)
 	durability = rand(160, 175)
-
-/obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
-	durability = rand(150,160)
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/fast
 	desc = "Use this as weapon! Here is ball."
