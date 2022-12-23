@@ -486,6 +486,83 @@
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
 
+/obj/item/changeable_attacks/slashstab/sabre/small/steel
+	name = "Steel Sabre"
+	desc = "Use this as weapon!"
+	icon_state = "steelsabre"
+	inhand_icon_state = "steelsabre"
+	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
+	worn_icon_state = "steelsabre"
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	equip_sound = 'modular_septic/sound/weapons/melee/kukri_holster.wav'
+	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.wav', 'modular_septic/sound/weapons/melee/kukri_swish2.wav', 'modular_septic/sound/weapons/melee/kukri_swish3.wav')
+	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	current_atk_mode = slash
+	min_force = 18
+	force = 19
+	min_force_strength = 1
+	force_strength = 1.8
+	min_throwforce = 5
+	min_throwforce_strength = 8
+	throwforce_strength = 1.2
+	wound_bonus = 10
+	bare_wound_bonus = 5
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	sharpness = SHARP_EDGED
+	parrying_modifier = 1
+	skill_melee = SKILL_SHORTSWORD
+	carry_weight = 2 KILOGRAMS
+	attack_fatigue_cost = 8
+	attack_delay = 20
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	havedurability = 1
+	tetris_width = 32
+	tetris_height = 96
+
+/obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt
+	desc = "Use this as weapon! Here is hilt."
+	icon_state = "steelsabrehilt"
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	parrying_modifier = 1.5
+
+/obj/item/changeable_attacks/slashstab/sabre/small/steel/fast
+	desc = "Use this as weapon! Here is ball."
+	icon_state = "steelsabrefast"
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	carry_weight = 1.5 KILOGRAMS
+	parrying_modifier = 0.8
+	attack_fatigue_cost = 7
+	attack_delay = 17
+
+/obj/item/changeable_attacks/slashstab/sabre/small/steel/swap_intents(mob/user)
+	. = ..()
+	switch(current_atk_mode)
+		if(slash)
+			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
+			hitsound = stab_hitsound
+			min_force = 16
+			force = 18
+			min_force_strength = 1
+			force_strength = 1.8
+			current_atk_mode = stab
+			sharpness = SHARP_POINTY
+			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 30, "fall_chance" = 1)
+		if(stab)
+			to_chat(user, span_notice("I'm now slicing with the [src]."))
+			hitsound = slash_hitsound
+			min_force = 15
+			force = 19
+			min_force_strength = 1
+			force_strength = 1.8
+			current_atk_mode = slash
+			sharpness = SHARP_EDGED
+			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 25, "fall_chance" = 1)
+
 #undef slash
 #undef stab
 #undef bash
