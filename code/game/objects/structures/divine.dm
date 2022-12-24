@@ -24,6 +24,9 @@
 	if(istype(L, /mob/living/carbon/human/species/weakwillet))
 		to_chat(user, span_warning("I don't need this bastard, meow."))
 		return
+	if(L.belief == "Hadot")
+		to_chat(user, span_warning("What are you doing! [L] is our brother!))
+		return
 	visible_message(span_danger("[L] is destroyed for the glory of Hadot."))
 	L.gib()
 //	var/result = rand(1, 2)
