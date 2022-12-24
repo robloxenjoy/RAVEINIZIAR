@@ -491,7 +491,7 @@
 			sharpness = SHARP_EDGED
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel
-	name = "Steel Sabre"
+	name = "Steel Saber"
 	desc = "Use this as weapon!"
 	icon_state = "steelsabre"
 	inhand_icon_state = "steelsabre"

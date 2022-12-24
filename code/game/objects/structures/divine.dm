@@ -1,13 +1,13 @@
-/obj/structure/sacrificealtar
-	name = "sacrificial altar"
-	desc = "An altar designed to perform blood sacrifice for a deity. Alt-click it to sacrifice a buckled creature."
+/obj/structure/sacrificealtar/hadot
+	name = "Sacrificial Altar"
+	desc = "Altar in honor of Hadot."
 	icon = 'icons/obj/hand_of_god_structures.dmi'
-	icon_state = "sacrificealtar"
+	icon_state = "sacrificealtarhadot"
 	anchored = TRUE
 	density = FALSE
 	can_buckle = 1
 
-/obj/structure/sacrificealtar/AltClick(mob/living/user)
+/obj/structure/sacrificealtar/hadot/AltClick(mob/living/user)
 	..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
@@ -16,9 +16,22 @@
 	var/mob/living/L = locate() in buckled_mobs
 	if(!L)
 		return
-	to_chat(user, span_notice("Invoking the sacred ritual, you sacrifice [L]."))
+	if(L.stat == DEAD)
+		to_chat(user, span_warning("I don't want corpses."))
+		return
+	if(istype(L, /mob/living/carbon/human/species/weakwillet))
+		to_chat(user, span_warning("I don't need this bastard, meow."))
+		return
+	visible_message(span_danger("[L] is destroyed for the glory of Hadot."))
 	L.gib()
-	message_admins("[ADMIN_LOOKUPFLW(user)] has sacrificed [key_name_admin(L)] on the sacrificial altar at [AREACOORD(src)].")
+//	var/result = rand(1, 2)
+//	switch(result)
+//		if(1)
+	new /obj/item/changeable_attacks/slashstab/sabre/small/steel(get_turf(user))
+	visible_message(span_danger("This is my gift."))
+	
+//		if(2)
+//			new /obj/item/
 
 /obj/structure/healingfountain
 	name = "healing fountain"
