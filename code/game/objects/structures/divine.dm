@@ -7,7 +7,7 @@
 	density = FALSE
 	can_buckle = 1
 
-/obj/structure/sacrificealtar/hadot/AltClick(mob/living/user)
+/obj/structure/sacrificealtar/hadot/AltClick(mob/living/carbon/human/user)
 	..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
@@ -15,7 +15,7 @@
 		return
 	if(!has_buckled_mobs())
 		return
-	var/mob/living/L = locate() in buckled_mobs
+	var/mob/living/carbon/human/L = locate() in buckled_mobs
 	if(!L)
 		return
 	if(L.stat == DEAD)
@@ -25,16 +25,17 @@
 		to_chat(user, span_warning("I don't need this bastard, meow."))
 		return
 	if(L.belief == "Hadot")
-		to_chat(user, span_warning("What are you doing! [L] is our brother!))
+		to_chat(user, span_warning("What are you doing! [L] is our brother!"))
 		return
-	visible_message(span_danger("[L] is destroyed for the glory of Hadot."))
-	L.gib()
+	if(do_after(user, 100, target = src))
+		visible_message(span_danger("[L] is destroyed for the glory of Hadot."))
+		L.gib()
 //	var/result = rand(1, 2)
 //	switch(result)
 //		if(1)
-	new /obj/item/changeable_attacks/slashstab/sabre/small/steel(get_turf(user))
-	visible_message(span_danger("This is my gift."))
-	
+		new /obj/item/changeable_attacks/slashstab/sabre/small/steel(get_turf(user))
+		visible_message(span_danger("This is my gift."))
+
 //		if(2)
 //			new /obj/item/
 
@@ -47,7 +48,7 @@
 	density = FALSE
 	can_buckle = 1
 
-/obj/structure/sacrificealtar/gutted/AltClick(mob/living/user)
+/obj/structure/sacrificealtar/gutted/AltClick(mob/living/carbon/human/user)
 	..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
@@ -55,7 +56,7 @@
 		return
 	if(!has_buckled_mobs())
 		return
-	var/mob/living/L = locate() in buckled_mobs
+	var/mob/living/carbon/human/L = locate() in buckled_mobs
 	if(!L)
 		return
 	if(L.stat == DEAD)
@@ -64,14 +65,15 @@
 	if(istype(L, /mob/living/carbon/human/species/weakwillet))
 		to_chat(user, span_warning("Ssss, get this out of here."))
 		return
-	visible_message(span_danger("[L] is destroyed for the glory of Gutted."))
-	L.gib()
+	if(do_after(user, 100, target = src))
+		visible_message(span_danger("[L] is destroyed for the glory of Gutted."))
+		L.gib()
 //	var/result = rand(1, 2)
 //	switch(result)
 //		if(1)
-	new /obj/item/bodypart/face/gutted(get_turf(user))
-	visible_message(span_danger("For you."))
-	
+		new /obj/item/bodypart/face/gutted(get_turf(user))
+		visible_message(span_danger("For you."))
+
 //		if(2)
 //			new /obj/item/
 

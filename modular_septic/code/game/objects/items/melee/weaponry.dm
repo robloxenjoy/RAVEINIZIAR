@@ -132,8 +132,8 @@
 /obj/item/changeable_attacks
 	name = "a fucked up retarded weapon"
 	desc = "report thgis to a retard dev if you see it"
-	var/slash_hitsound = list('modular_septic/sound/weapons/melee/kukri1.wav', 'modular_septic/sound/weapons/melee/kukri2.wav', 'modular_septic/sound/weapons/melee/kukri3.wav')
-	var/stab_hitsound = list('modular_septic/sound/weapons/melee/sharp_stab1.ogg', 'modular_septic/sound/weapons/melee/sharp_stab2.ogg')
+	var/slash_hitsound = list('modular_septic/sound/weapons/melee/slasher1.wav', 'modular_septic/sound/weapons/melee/slasher2.wav', 'modular_septic/sound/weapons/melee/slasher3.wav')
+	var/stab_hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
 	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
 	var/current_atk_mode = null
 
@@ -407,6 +407,7 @@
 	if(slot == ITEM_SLOT_HANDS)
 		swap_intents(user)
 */
+
 /obj/item/changeable_attacks/slashbash/axe/small/steel
 	name = "Iron Axe"
 	desc = "Iron axe. Not bad."
@@ -505,15 +506,15 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	equip_sound = 'modular_septic/sound/weapons/melee/kukri_holster.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.wav', 'modular_septic/sound/weapons/melee/kukri_swish2.wav', 'modular_septic/sound/weapons/melee/kukri_swish3.wav')
-	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.wav'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	current_atk_mode = stab
 	min_force = 18
 	force = 19
 	min_force_strength = 1
-	force_strength = 1.8
+	force_strength = 1.5
 	min_throwforce = 5
 	min_throwforce_strength = 8
 	throwforce_strength = 1.2

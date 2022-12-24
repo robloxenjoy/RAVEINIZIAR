@@ -97,6 +97,8 @@
 			woodcutter = TRUE
 			wrists = /obj/item/clothing/gloves/wrists/leather
 			belt = /obj/item/changeable_attacks/slashbash/axe/small/steel
+			if(prob(75))
+				neck = /obj/item/clothing/neck/bear_cloak
 			to_chat(H, span_achievementinteresting("I'm a woodcutter!"))
 			to_chat(H, span_info("I have a real friend - an axe. I have to take care of it, otherwise it will break at such a difficult time."))
 
@@ -114,6 +116,7 @@
 
 		if(3)
 			venturermeatwarrior = TRUE
+			neck = /obj/item/clothing/neck/leather_cloak
 			suit = /obj/item/clothing/suit/armor/vest/leatherbreast
 			gloves = /obj/item/clothing/gloves/leathercool
 			to_chat(H, span_achievementinteresting("I'm a meat warrior!"))
@@ -121,6 +124,7 @@
 
 		if(4)
 			venturervillageowner = TRUE
+			neck = /obj/item/clothing/neck/noble_cloak
 			uniform = /obj/item/clothing/under/rank/captain/zoomtech
 			r_pocket = /obj/item/shard/crystal/purple
 			glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
