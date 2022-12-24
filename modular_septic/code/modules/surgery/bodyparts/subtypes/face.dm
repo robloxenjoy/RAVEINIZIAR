@@ -279,3 +279,6 @@
 			accessory_overlay.color = sanitize_hexcolor(body_markings[body_zone][name], 6, TRUE)
 		accessory_overlay.alpha = markings_alpha
 		. += accessory_overlay
+
+/obj/item/bodypart/face/gutted
+	real_name = "Slave Of Gutted"

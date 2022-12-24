@@ -38,6 +38,43 @@
 //		if(2)
 //			new /obj/item/
 
+/obj/structure/sacrificealtar/gutted
+	name = "Sacrificial Altar"
+	desc = "Altar in honor of Gutted."
+	icon = 'icons/obj/hand_of_god_structures.dmi'
+	icon_state = "sacrificealtargutted"
+	anchored = TRUE
+	density = FALSE
+	can_buckle = 1
+
+/obj/structure/sacrificealtar/gutted/AltClick(mob/living/user)
+	..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
+		return
+	if(user.belief != "Gutted")
+		return
+	if(!has_buckled_mobs())
+		return
+	var/mob/living/L = locate() in buckled_mobs
+	if(!L)
+		return
+	if(L.stat == DEAD)
+		to_chat(user, span_warning("Corpse? Very funny."))
+		return
+	if(istype(L, /mob/living/carbon/human/species/weakwillet))
+		to_chat(user, span_warning("Ssss, get this out of here."))
+		return
+	visible_message(span_danger("[L] is destroyed for the glory of Gutted."))
+	L.gib()
+//	var/result = rand(1, 2)
+//	switch(result)
+//		if(1)
+	new /obj/item/bodypart/face/gutted(get_turf(user))
+	visible_message(span_danger("For you."))
+	
+//		if(2)
+//			new /obj/item/
+
 /obj/structure/healingfountain
 	name = "healing fountain"
 	desc = "A fountain containing the waters of life."
