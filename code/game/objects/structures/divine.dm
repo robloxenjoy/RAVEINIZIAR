@@ -11,6 +11,8 @@
 	..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
+	if(user.belief != "Hadot")
+		return
 	if(!has_buckled_mobs())
 		return
 	var/mob/living/L = locate() in buckled_mobs
