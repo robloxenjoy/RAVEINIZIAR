@@ -401,7 +401,12 @@
 			attack_fatigue_cost = 10
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
-
+/*
+/obj/item/changeable_attacks/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_HANDS)
+		swap_intents(user)
+*/
 /obj/item/changeable_attacks/slashbash/axe/small/steel
 	name = "Iron Axe"
 	desc = "Iron axe. Not bad."
@@ -417,7 +422,7 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.wav', 'modular_septic/sound/weapons/melee/missweapon2.wav')
 	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.wav'
 	embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
-	current_atk_mode = slash
+	current_atk_mode = bash
 	min_force = 15
 	force = 20
 	min_force_strength = 1.5
@@ -504,7 +509,7 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.wav', 'modular_septic/sound/weapons/melee/kukri_swish2.wav', 'modular_septic/sound/weapons/melee/kukri_swish3.wav')
 	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
-	current_atk_mode = slash
+	current_atk_mode = stab
 	min_force = 18
 	force = 19
 	min_force_strength = 1
