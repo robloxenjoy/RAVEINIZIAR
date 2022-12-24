@@ -136,6 +136,7 @@
 	var/stab_hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
 	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
 	var/current_atk_mode = null
+	var/wielded_inhand_state = FALSE
 
 /obj/item/changeable_attacks/examine(mob/user)
 	. = ..()
@@ -161,6 +162,19 @@
 		to_chat(user, span_warning("There's no other ways to attack with this weapon."))
 		return
 	user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
+
+/obj/item/changeable_attacks/update_icon(updates)
+	. = ..()
+	if(wielded_inhand_state)
+		if(SEND_SIGNAL(src, COMSIG_TWOHANDED_WIELD_CHECK))
+			inhand_icon_state = "[initial(inhand_icon_state)]_wielded"
+		else
+			inhand_icon_state = "[initial(inhand_icon_state)"
+
+/obj/item/changeable_attacks/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_HANDS)
+		swap_intents(user)
 
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"
@@ -401,12 +415,6 @@
 			attack_fatigue_cost = 10
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
-/*
-/obj/item/changeable_attacks/equipped(mob/living/carbon/human/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_HANDS)
-		swap_intents(user)
-*/
 
 /obj/item/changeable_attacks/slashbash/axe/small/steel
 	name = "Iron Axe"
@@ -533,6 +541,7 @@
 	havedurability = 1
 	tetris_width = 32
 	tetris_height = 96
+	wielded_inhand_state = TRUE
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
 	. = ..()
