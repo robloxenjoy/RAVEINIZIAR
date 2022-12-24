@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(weatherr)
 						'sound/stalker/weather/wind_5.ogg','sound/stalker/weather/wind_6.ogg')
 
 
-/datum/controller/subsystem/weather/Initialize()
+/datum/controller/subsystem/weatherr/Initialize()
 	cooldown = rand(3000, 6000)
 	duration = rand(1000, 2000)
 	rain = new
@@ -47,7 +47,7 @@ SUBSYSTEM_DEF(weatherr)
 			T.vis_contents.Add(rain)
 	..()
 
-/datum/controller/subsystem/weather/fire()
+/datum/controller/subsystem/weatherr/fire()
 /*
 	if(world.time >= (lasttime + cooldown*0.9))
 		if(!SStext.pre_rained)
@@ -70,16 +70,16 @@ SUBSYSTEM_DEF(weatherr)
 	if(israin)
 		HandleSound()
 
-/datum/controller/subsystem/weather/proc/StartRain()
+/datum/controller/subsystem/weatherr/proc/StartRain()
 	rain.icon_state = "rain"
 	for(var/area/maintenance/polovich/forest/rain/A in world)
 		for(var/turf/open/floor/plating/polovich/T in A.contents)
 			T.rained = 1
 			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark))
 				var/turf/open/floor/plating/polovich/dirt/dark/AT = T
-				if(AT.AP)
+				if(AT)
 					spawn(rand(200,400))
-						AT.AP.icon_state = "[AT.AP.icon_state]_water"
+						AT.icon_state = "[AT.icon_state]_water"
 			CHECK_TICK
 /*
 	for(var/client/C in GLOB.clients)
@@ -94,17 +94,19 @@ SUBSYSTEM_DEF(weatherr)
 */
 //Stext.rain_start()
 
-/datum/controller/subsystem/weather/proc/StopRain()
+/datum/controller/subsystem/weatherr/proc/StopRain()
 	rain.icon_state = ""
 	for(var/area/maintenance/polovich/forest/rain/A in world)
 		for(var/turf/open/floor/plating/polovich/T in A.contents)
 			T.rained = 0
 			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark))
 				var/turf/open/floor/plating/polovich/dirt/dark/AT = T
-				if(AT.AP)
+				if(AT)
 					spawn(rand(3000,6000))
-						AT.AP.icon_state = "[copytext("[AT.AP.icon_state]")]"
-						AT.AP.dir = rand(0,4)
+//						AT.icon_state = "[copytext("[AT.AP.icon_state]",1,5)]"
+						AT.icon_state = "blackgryaz"
+						AT.dir = rand(0, 4)
+//						AT.dir = rand(0,4)
 //			CHECK_TICK
 /*
 	for(var/client/C in GLOB.clients)
@@ -114,14 +116,14 @@ SUBSYSTEM_DEF(weatherr)
 	cooldown = rand(3000, 6000)
 	duration = rand(1000, 2000)
 
-/datum/controller/subsystem/weather/proc/StartSound()
+/datum/controller/subsystem/weatherr/proc/StartSound()
 	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
 		if(H.client)
 			H.start_rain_sound()
 
-/datum/controller/subsystem/weather/proc/HandleSound()
-	var/rain_thunder_file = pick(SSweather.thunder)
-	var/rain_wind_file = pick(SSweather.wind)
+/datum/controller/subsystem/weatherr/proc/HandleSound()
+	var/rain_thunder_file = pick(SSweatherr.thunder)
+	var/rain_wind_file = pick(SSweatherr.wind)
 	var/cast_rain = 0
 	var/cast_wind = 0
 	if(prob(10))
@@ -141,7 +143,7 @@ SUBSYSTEM_DEF(weatherr)
 				H.rain_wind.file = rain_wind_file
 				H << H.rain_wind
 
-/datum/controller/subsystem/weather/proc/StopSound()
+/datum/controller/subsystem/weatherr/proc/StopSound()
 	for(var/mob/living/carbon/human/H in world)
 		if(H.client)
 

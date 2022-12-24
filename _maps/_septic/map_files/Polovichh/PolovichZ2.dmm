@@ -1,21 +1,23 @@
-"a" = (/turf/closed/wall/purple,/area/maintenance/polovich/forest)
-"b" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
-"c" = (/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest)
-"d" = (/turf/open/floor/plating/polovich/purplefantast/two{dir = 8},/area/maintenance/polovich/forest)
-"e" = (/turf/open/floor/plating/polovich/bluee,/area/maintenance/polovich/forest)
-"f" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
-"g" = (/turf/open/floor/plating/polovich/warlocksticky,/area/maintenance/polovich/forest)
-"h" = (/turf/open/floor/plating/polovich/purplefantast/two{dir = 4},/area/maintenance/polovich/forest)
-"i" = (/turf/open/floor/plating/polovich/magicsteel,/area/maintenance/polovich/forest)
-"j" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest)
-"k" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/purplefantast/two,/area/maintenance/polovich/forest)
-"l" = (/obj/structure/railing{dir = 4},/turf/open/openspace/norm,/area/maintenance/polovich/forest)
-"m" = (/obj/structure/railing{dir = 8},/turf/open/openspace/norm,/area/maintenance/polovich/forest)
-"n" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest)
-"o" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast/two{dir = 4},/area/maintenance/polovich/forest)
-"p" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast/two,/area/maintenance/polovich/forest)
-"q" = (/turf/closed/wall/r_wall,/area/maintenance/polovich/forest)
-"r" = (/turf/open/floor/plating/polovich/stonestonestone/two,/area/maintenance/polovich/forest)
+"a" = (/turf/closed/wall/purple,/area/maintenance/polovich/forest/rain)
+"b" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest/rain)
+"c" = (/turf/open/floor/plating/polovich/stonestonestone/two,/area/maintenance/polovich/forest/rain)
+"d" = (/obj/structure/railing{dir = 4},/turf/open/openspace/norm,/area/maintenance/polovich/forest/rain)
+"e" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest/rain)
+"f" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/purplefantast/two,/area/maintenance/polovich/forest/rain)
+"g" = (/obj/structure/railing{dir = 8},/turf/open/openspace/norm,/area/maintenance/polovich/forest/rain)
+"h" = (/turf/open/floor/plating/polovich/purplefantast/two{dir = 8},/area/maintenance/polovich/forest/rain)
+"i" = (/turf/closed/wall/r_wall,/area/maintenance/polovich/forest/rain)
+"j" = (/turf/open/floor/plating/polovich/bluee,/area/maintenance/polovich/forest)
+"k" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
+"l" = (/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest/rain)
+"m" = (/turf/open/floor/plating/polovich/warlocksticky,/area/maintenance/polovich/forest)
+"n" = (/turf/open/floor/plating/polovich/purplefantast/two{dir = 4},/area/maintenance/polovich/forest/rain)
+"o" = (/turf/open/floor/plating/polovich/magicsteel,/area/maintenance/polovich/forest)
+"p" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest/rain)
+"q" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast/two{dir = 4},/area/maintenance/polovich/forest/rain)
+"r" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast/two,/area/maintenance/polovich/forest/rain)
+"s" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
+"t" = (/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -49,13 +51,13 @@ abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbrrbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbrrrrrbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbrrrrrrrrrbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbrrrrbrrrrrrbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbrrrrrrrrrrrbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbrrrrrrrrbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbrrbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccbccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
@@ -89,14 +91,14 @@ abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbljjjjjkjjjmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbldqefffeqcmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblcegfffgecmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblcfffffffhmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblcfffifffcmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblcegfbfgecmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblcqefcfeqcmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblnnnnnopnnmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdeeeeefeeegbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdhijkkkjilgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdljmkkkmjlgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlkkkkkkkngbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlkkkokkklgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdljmkskmjlgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlijktkjilgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdpppppqrppgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba

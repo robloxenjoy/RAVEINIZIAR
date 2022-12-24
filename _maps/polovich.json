@@ -13,12 +13,6 @@
 	"station_name": "Dream",
 	"respawn_allowed": true,
 	"overflow_role": "Venturer",
-    "particle_weather":{
-		"Weather_Rain" : true,
-		"Weather_Snow" : true,
-		"Weather_Dust" : false,
-		"Weather_Rads" : false
-	},
 	"space_ruin_levels": 0,
 	"space_empty_levels": 0,
 	"surface_ruin_levels": 0,

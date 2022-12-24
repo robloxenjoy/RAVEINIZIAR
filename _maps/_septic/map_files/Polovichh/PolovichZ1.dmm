@@ -1,6 +1,6 @@
-"a" = (/turf/closed/wall/purple,/area/maintenance/polovich/forest)
-"b" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
-"c" = (/turf/open/floor/plating/polovich/bluee,/area/maintenance/polovich/forest)
+"a" = (/turf/closed/wall/purple,/area/maintenance/polovich/forest/rain)
+"b" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest/rain)
+"c" = (/turf/open/floor/plating/polovich/bluee,/area/maintenance/polovich/forest/rain)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

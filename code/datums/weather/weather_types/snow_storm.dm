@@ -27,3 +27,33 @@
 /datum/weather/snow_storm/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(5,15))
 
+/datum/weather/rain
+	name = "rain"
+	desc = "Water falls."
+	probability = 90
+
+	telegraph_message = "<span class='warning'>Drops start falling from the sky.</span>"
+	telegraph_duration = 300
+	telegraph_overlay = "light_rain"
+
+	weather_message = "<span class='userdanger'><i>The rain is pouring.</i></span>"
+	weather_overlay = "rain"
+	weather_duration_lower = 600
+	weather_duration_upper = 2500
+
+	end_duration = 100
+	end_message = "<span class='boldannounce'>The rain stops...</span>"
+
+	area_type = /area
+	protected_areas = list(/area/space)
+	protect_indoors = TRUE
+	target_trait = ZTRAIT_RAIN
+
+	immunity_type = TRAIT_RAIN_IMMUNE
+
+	barometer_predictable = TRUE
+
+
+/datum/weather/rain/weather_act(mob/living/L)
+	L.adjust_bodytemperature(-rand(5,8))
+

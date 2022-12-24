@@ -169,7 +169,7 @@
 		if(SEND_SIGNAL(src, COMSIG_TWOHANDED_WIELD_CHECK))
 			inhand_icon_state = "[initial(inhand_icon_state)]_wielded"
 		else
-			inhand_icon_state = "[initial(inhand_icon_state)"
+			inhand_icon_state = "[initial(inhand_icon_state)]"
 
 /obj/item/changeable_attacks/equipped(mob/living/carbon/human/user, slot)
 	. = ..()

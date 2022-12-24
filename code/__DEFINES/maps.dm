@@ -47,6 +47,7 @@ require only minor tweaks.
 
 // boolean - weather types that occur on the level
 #define ZTRAIT_SNOWSTORM "Weather_Snowstorm"
+#define ZTRAIT_RAIN "Weather_Rain"
 #define ZTRAIT_ASHSTORM "Weather_Ashstorm"
 #define ZTRAIT_VOIDSTORM "Weather_Voidstorm"
 

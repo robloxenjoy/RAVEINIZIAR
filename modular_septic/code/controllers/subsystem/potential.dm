@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(potential)
 	flags = SS_BACKGROUND
 	runlevels = RUNLEVEL_GAME
 
-/datum/controller/subsystem/pollution/Initialize(start_timeofday)
+/datum/controller/subsystem/potential/Initialize(start_timeofday)
 	if(!untaped)
 		return
 	if(untaped.mob.stat != DEAD)

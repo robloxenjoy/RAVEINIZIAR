@@ -143,20 +143,20 @@
 
 /datum/outfit/venturer/equip(mob/living/carbon/human/H)
 	..()
-	if(venturer_type = "woodcutter")
+	if(venturer_type == "woodcutter")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-	if(venturer_type = "venturertrue")
+	if(venturer_type == "venturertrue")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturertrue)
-	if(venturer_type = "venturermeatwarrior")
+	if(venturer_type == "venturermeatwarrior")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturermeatwarrior)
-	if(venturer_type = "venturervillageowner")
+	if(venturer_type == "venturervillageowner")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturervillageowner)
-	if(venturer_type = "venturergardener")
+	if(venturer_type == "venturergardener")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturergardener)
-	if(venturer_type = "venturerlordbandit")
-		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturerlordbandit)
-	if(venturer_type = "venturerbandit")
+	if(venturer_type == "venturerlordbandit")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturermeatwarrior)
+	if(venturer_type == "venturerbandit")
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 
 /datum/job/chaot
 	title = "Chaot"
