@@ -488,7 +488,7 @@
 			to_chat(user, span_notice("I'm now chop them with steel blade of the [src]."))
 			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
 			hitsound = slash_hitsound
-			embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
+			embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4, "ignore_throwspeed_threshold" = TRUE)
 			min_force = 15
 			force = 20
 			min_force_strength = 1.5
@@ -582,7 +582,7 @@
 			force_strength = 1.8
 			current_atk_mode = stab
 			sharpness = SHARP_POINTY
-			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 40, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5)
+			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 40, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
 			to_chat(user, span_notice("I'm now slicing with the [src]."))
 			hitsound = slash_hitsound
@@ -592,7 +592,7 @@
 			force_strength = 1.8
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
-			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1)
+			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
 #undef slash
 #undef stab

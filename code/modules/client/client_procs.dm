@@ -332,7 +332,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		set_macros()
 
 	//SEPTIC EDIT BEGIN
-	src << browse_rsc(file('html/assets/statbg.png'))
+//	src << browse_rsc(file('html/assets/statbg.png'))
 	//SEPTIC EDIT END
 	// Initialize tgui panel
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
@@ -469,6 +469,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		to_chat(src, span_warning("Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you."))
 
 	update_ambience_pref()
+	var/area/current_area = get_area(src)
+	if(current_area)
+		SSdroning.area_entered(current_area, src)
 
 	//This is down here because of the browse() calls in tooltip/New()
 	if(!tooltips)
