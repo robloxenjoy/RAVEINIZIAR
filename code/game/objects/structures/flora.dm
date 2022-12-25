@@ -80,6 +80,8 @@
 	desc = "It has become so evil! By the way, it's long."
 	icon = 'modular_pod/icons/obj/32x96.dmi'
 	icon_state = "treevillong_1"
+	pixel_x = 0
+//	pixel_y = -32
 	log_amount = 4
 	layer = ABOVE_MOB_LAYER
 	plane = ABOVE_GAME_PLANE
