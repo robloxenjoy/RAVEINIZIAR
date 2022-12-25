@@ -75,11 +75,13 @@ SUBSYSTEM_DEF(weatherr)
 	for(var/area/maintenance/polovich/forest/rain/A in world)
 		for(var/turf/open/floor/plating/polovich/T in A.contents)
 			T.rained = 1
+/*
 			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark/gryazka))
 				var/turf/open/floor/plating/polovich/dirt/dark/gryazka/AT = T
 				if(AT)
 					spawn(rand(200,400))
 						AT.icon_state = "[AT.icon_state]_water"
+*/
 			CHECK_TICK
 /*
 	for(var/client/C in GLOB.clients)
@@ -99,6 +101,7 @@ SUBSYSTEM_DEF(weatherr)
 	for(var/area/maintenance/polovich/forest/rain/A in world)
 		for(var/turf/open/floor/plating/polovich/T in A.contents)
 			T.rained = 0
+/*
 			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark/gryazka))
 				var/turf/open/floor/plating/polovich/dirt/dark/gryazka/AT = T
 				if(AT)
@@ -107,6 +110,7 @@ SUBSYSTEM_DEF(weatherr)
 						AT.icon_state = "blackgryaz"
 						AT.dir = rand(0, 4)
 //						AT.dir = rand(0,4)
+*/
 //			CHECK_TICK
 /*
 	for(var/client/C in GLOB.clients)
