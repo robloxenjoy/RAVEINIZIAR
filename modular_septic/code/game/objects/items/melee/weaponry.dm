@@ -163,6 +163,15 @@
 		return
 	user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
 
+/obj/item/changeable_attacks/Initialize(mapload)
+	. = ..()
+	if(current_atk_mode == slash)
+		hitsound = slash_hitsound
+	if(current_atk_mode == stab)
+		hitsound = stab_hitsound
+	if(current_atk_mode == bash)
+		hitsound = bash_hitsound
+
 /obj/item/changeable_attacks/update_icon(updates)
 	. = ..()
 	if(wielded_inhand_state)
@@ -209,15 +218,6 @@
 	carry_weight = 2 KILOGRAMS
 	tetris_width = 32
 	tetris_height = 96
-
-/obj/item/changeable_attacks/sword/Initialize(mapload)
-	. = ..()
-	if(current_atk_mode == slash)
-		hitsound = slash_hitsound
-	if(current_atk_mode == stab)
-		hitsound = stab_hitsound
-	if(current_atk_mode == bash)
-		hitsound = bash_hitsound
 
 /obj/item/changeable_attacks/sword/swap_intents(mob/user)
 	. = ..()
@@ -452,15 +452,15 @@
 	carry_weight = 3 KILOGRAMS
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	havedurability = 1
-	durability = 195
+//	durability = 195
 	tetris_width = 32
 	tetris_height = 96
 	slot_flags = ITEM_SLOT_BELT
-/*
+
 /obj/item/changeable_attacks/slashbash/axe/small/steel/Initialize(mapload)
 	. = ..()
 	durability = rand(150,195)
-*/
+
 /obj/item/changeable_attacks/slashbash/axe/small/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
@@ -540,26 +540,26 @@
 	attack_delay = 20
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	havedurability = 1
-	durability = 160
+//	durability = 160
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state = TRUE
-/*
+
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
 	. = ..()
 	durability = rand(150, 160)
-*/
+
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt
 	desc = "Use this as weapon! Here is hilt."
 	icon_state = "steelsabrehilt"
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	parrying_modifier = 1.5
-	durability = 190
-/*
+//	durability = 190
+
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt/Initialize(mapload)
 	. = ..()
 	durability = rand(160, 175)
-*/
+
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/fast
 	desc = "Use this as weapon! Here is ball."
 	icon_state = "steelsabrefast"
