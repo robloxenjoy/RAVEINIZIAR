@@ -1163,7 +1163,7 @@
 		if((initial_wounding_type in list(WOUND_BLUNT, WOUND_SLASH, WOUND_PIERCE)) && (initial_wounding_dmg >= NERVE_MINIMUM_DAMAGE))
 			check_wounding(WOUND_NERVE, initial_wounding_dmg * (initial_wounding_type == WOUND_BLUNT ? 0.65 : (initial_wounding_type == WOUND_PIERCE ? 0.5 : 1)), wound_bonus, bare_wound_bonus)
 		if(initial_wounding_dmg >= SPILL_MINIMUM_DAMAGE)
-			check_wounding(WOUND_SPILL, initial_wounding_dmg * (initial_wounding_type == WOUND_PIERCE ? 0.5 : 1), wound_bonus, bare_wound_bonus)
+			check_wounding(WOUND_SPILL, initial_wounding_dmg * (initial_wounding_type == WOUND_PIERCE ? 0.75 : 1), wound_bonus, bare_wound_bonus)
 
 	/*
 	// END WOUND HANDLING

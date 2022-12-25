@@ -1,14 +1,14 @@
 "a" = (/turf/closed/wall/purple,/area/maintenance/polovich/forest/rain)
 "b" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest/rain)
-"c" = (/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest/rain)
-"d" = (/obj/structure/closet/crate/wooden,/obj/item/clothing/suit/armor/vest/alt/ultraheavy,/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest/rain)
+"c" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest/rain)
+"d" = (/obj/structure/closet/crate/wooden,/obj/item/clothing/suit/armor/vest/alt/ultraheavy,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest/rain)
 "e" = (/turf/open/floor/plating/polovich/rockyhorrr,/area/maintenance/polovich/forest)
 "f" = (/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/forest)
 "g" = (/obj/structure/barricade/flora/crystal/red,/turf/open/floor/plating/polovich/rockyhorrr,/area/maintenance/polovich/forest)
-"h" = (/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/norm,/area/maintenance/polovich/forest/rain)
+"h" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm,/area/maintenance/polovich/forest/rain)
 "i" = (/turf/closed/wall/r_wall,/area/maintenance/polovich/forest/rain)
-"j" = (/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest)
-"k" = (/obj/structure/closet/crate/wooden,/obj/item/gun/energy/remis/siren,/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest)
+"j" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest)
+"k" = (/obj/structure/closet/crate/wooden,/obj/item/gun/energy/remis/siren,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

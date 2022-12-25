@@ -1,14 +1,14 @@
-/turf/open/floor/plating/asteroid/snow/nevado_surface
+/turf/open/floor/plating/polovich/asteroid/snow/nevado_surface
 	name = "snow"
 	desc = "Looks cold."
-	baseturfs = /turf/open/floor/plating/asteroid/snow/nevado_surface
+	baseturfs = /turf/open/floor/plating/polovich/asteroid/snow/nevado_surface
 
-/turf/open/floor/plating/asteroid/snow/ice/nevado_surface
+/turf/open/floor/plating/polovich/asteroid/snow/ice/nevado_surface
 	name = "ice"
 	desc = "Looks very cold."
-	baseturfs = /turf/open/floor/plating/asteroid/snow/nevado_surface
+	baseturfs = /turf/open/floor/plating/polovich/asteroid/snow/nevado_surface
 
-/turf/open/floor/plating/asteroid/snow/river
+/turf/open/floor/plating/polovich/asteroid/snow/river
 	name = "icy river"
 	desc = "Looks wet and cold."
 	icon_state = "snow-ice"
@@ -17,7 +17,6 @@
 	baseturfs = /turf/open/floor/plating/polovich/metalfloor
 	liquid_height = -(ONE_LIQUIDS_HEIGHT*4)
 	turf_height = -TURF_HEIGHT_BLOCK_THRESHOLD
-	floor_variance = 0
 	footstep = FOOTSTEP_WATER
 	barefootstep = FOOTSTEP_WATER
 	clawfootstep = FOOTSTEP_WATER
@@ -30,7 +29,7 @@
 	var/liquids_vaporize = TRUE
 	var/liquids_are_immutable = FALSE
 
-/turf/open/floor/plating/asteroid/snow/river/Initialize(mapload)
+/turf/open/floor/plating/polovich/asteroid/snow/river/Initialize(mapload)
 	. = ..()
 	if(liquids_are_immutable)
 		var/atom/movable/liquid/liquidation = SSliquids.get_immutable(initial_liquid_list)
@@ -40,7 +39,7 @@
 		add_liquid_list(initial_liquid_list, initial_liquid_no_react, initial_liquid_temperature, liquids_vaporize)
 	initial_liquid_list = null
 
-/turf/open/floor/plating/asteroid/snow/river/baluarte
+/turf/open/floor/plating/polovich/asteroid/snow/river/baluarte
 	name = "Water"
 	desc = "Looks wet."
 	initial_liquid_list = list(
@@ -49,7 +48,7 @@
 	initial_liquid_temperature = T0C+1 //water will freeze at 0c obviously
 	liquid_height = -LIQUID_SHOULDERS_LEVEL_HEIGHT
 
-/turf/open/floor/plating/asteroid/snow/river/baluarte/shallow
+/turf/open/floor/plating/polovich/asteroid/snow/river/baluarte/shallow
 	name = "Shallow Water"
 	desc = "Looks wet. It's better not to drink from here."
 	icon = 'modular_septic/icons/turf/floors/water.dmi'
@@ -64,7 +63,7 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 
-/turf/open/floor/plating/asteroid/snow/river/baluarte/shallow/deep
+/turf/open/floor/plating/polovich/asteroid/snow/river/baluarte/shallow/deep
 	name = "Deep Shallow Water"
 	desc = "Looks wet. It's better not to drink from here, also it deep."
 	icon = 'modular_septic/icons/turf/floors/water.dmi'
@@ -76,7 +75,7 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	slowdown = 4
 
-/turf/open/floor/plating/asteroid/snow/river/baluarte/shallow/verydeep
+/turf/open/floor/plating/polovich/asteroid/snow/river/baluarte/shallow/verydeep
 	name = "Very Deep Shallow Water"
 	desc = "Looks wet. It's better not to drink from here, also it very deep."
 	icon = 'modular_septic/icons/turf/floors/water.dmi'
@@ -88,7 +87,7 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	slowdown = 5
 
-/turf/open/floor/plating/asteroid/snow/river/baluarte/shallow/somedeep
+/turf/open/floor/plating/polovich/asteroid/snow/river/baluarte/shallow/somedeep
 	name = "Deep Shallow Water"
 	desc = "Looks wet. It's better not to drink from here, also it some deep."
 	icon = 'modular_septic/icons/turf/floors/water.dmi'
@@ -100,13 +99,13 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	slowdown = 5
 
-/turf/open/floor/plating/asteroid/snow/river/nevado_surface
-	baseturfs = /turf/open/floor/plating/asteroid/snow/nevado_surface
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface
+	baseturfs = /turf/open/floor/plating/polovich/asteroid/snow/nevado_surface
 	initial_liquid_list = /atom/movable/liquid/immutable/ocean/nevado
 	liquids_are_immutable = TRUE
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
-/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle
 	name = "Shallow Water"
 	desc = "Looks wet. It's better not to drink from here."
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
@@ -127,7 +126,7 @@
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
 	resistance_flags = FIRE_PROOF
 
-/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/norm
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm
 	name = "Water"
 	desc = "Looks wet."
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
@@ -141,7 +140,7 @@
 	liquids_are_immutable = FALSE
 	resistance_flags = FIRE_PROOF
 
-/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater
 	name = "Water"
 	desc = "Looks wet."
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
@@ -155,7 +154,7 @@
 	liquids_are_immutable = FALSE
 	resistance_flags = FIRE_PROOF
 
-/turf/open/floor/plating/asteroid/snow/river/nevado_surface/shallow/ankle/attack_jaw(mob/living/carbon/M as mob)
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/attack_jaw(mob/living/carbon/M as mob)
 	. = ..()
 	var/turf/turf_loc = get_turf(src)
 	if(get_dist(turf_loc?.liquids,M) <= 1)
@@ -186,7 +185,7 @@
 /obj/effect/overlay/ms13/water/top/shallow
 	icon_state = "water_shallow_top"
 
-/turf/open/floor/plating/asteroid/snow/river/nevado_surface/acid
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/acid
 	name = "infernal river of dissolution"
 	desc = "Ah, an acid bath. Delicious."
 	initial_liquid_list = list(
@@ -194,23 +193,14 @@
 	)
 	liquids_are_immutable = FALSE
 
-/turf/open/floor/plating/asteroid/nevado_caves
+/turf/open/floor/plating/polovich/asteroid/nevado_caves
 	name = "cave floor"
 	baseturfs = /turf/open/floor/plating/asteroid/nevado_caves
 	icon = 'modular_septic/icons/turf/floors/coolrock.dmi'
 	icon_state = "coolrock"
 	base_icon_state = "coolrock"
-	floor_variance = 50
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = TRUE
-	digResult = /obj/item/stack/ore/glass
-
-/turf/open/floor/plating/asteroid/nevado_caves/Initialize(mapload)
-	. = ..()
-	if(prob(floor_variance))
-		icon_state = "[base_icon_state][rand(0,1)]"
-	else
-		icon_state = base_icon_state
 
 /turf/open/floor/plating/asteroid/nevado_caves/setup_broken_states()
 	return list("coolrock_dug")

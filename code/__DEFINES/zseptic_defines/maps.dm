@@ -3,12 +3,12 @@
 #define ZTRAITS_PLANETARY_SURFACE list(\
 	ZTRAIT_LINKAGE = CROSSLINKED_SURFACE, \
 	ZTRAIT_NEVADO = TRUE, \
-	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/snow/nevado_surface)
+	ZTRAIT_BASETURF = /turf/open/floor/plating/polovich/asteroid/snow/nevado_surface)
 ///Z level traits for nevado caves
 #define ZTRAITS_PLANETARY_CAVE list(\
 	ZTRAIT_LINKAGE = CROSSLINKED_CAVE, \
 	ZTRAIT_NEVADO = TRUE, \
-	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/nevado_caves)
+	ZTRAIT_BASETURF = /turf/open/floor/plating/polovich/asteroid/nevado_caves)
 ///Z level traits for asteroid
 #define ZTRAITS_ASTEROID list(\
 	ZTRAIT_LINKAGE = SELFLOOPING, \

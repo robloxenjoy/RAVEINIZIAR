@@ -18,7 +18,7 @@
 		++surface_levels_so_far
 		empty_surface = add_new_zlevel("Nevado Surface [surface_levels_so_far]", list(ZTRAIT_LINKAGE = CROSSLINKED_SURFACE, \
 																					ZTRAIT_NEVADO = TRUE, \
-																					ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/snow/nevado_surface))
+																					ZTRAIT_BASETURF = /turf/open/floor/plating/polovich/asteroid/snow/nevado_surface))
 		load_planetary_level(empty_surface, /datum/map_template/nevado_surface)
 
 	//CAVES
@@ -32,7 +32,7 @@
 		++cave_levels_so_far
 		empty_cave = add_new_zlevel("Nevado Caves [cave_levels_so_far]", list(ZTRAIT_LINKAGE = CROSSLINKED_CAVE, \
 																			ZTRAIT_NEVADO = TRUE, \
-																			ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/nevado_caves))
+																			ZTRAIT_BASETURF = /turf/open/floor/plating/polovich/asteroid/nevado_caves))
 		load_planetary_level(empty_surface, /datum/map_template/nevado_cave)
 
 /datum/controller/subsystem/mapping/proc/load_planetary_level(datum/space_level/planetary_level, template_type = /datum/map_template/nevado_surface)

@@ -39,7 +39,7 @@ SUBSYSTEM_DEF(weatherr)
 //	rain = image('icons/stalker/structure/decor.dmi', icon_state = "rain", layer = 10)
 	rain.icon = 'icons/stalker/effects/weather.dmi'
 	rain.icon_state = ""
-	rain.layer = 10
+	rain.layer = TURF_FIRE_LAYER
 	rain.mouse_opacity = 0
 	rain.name = ""
 	for(var/area/maintenance/polovich/forest/rain/A in world)
@@ -75,8 +75,8 @@ SUBSYSTEM_DEF(weatherr)
 	for(var/area/maintenance/polovich/forest/rain/A in world)
 		for(var/turf/open/floor/plating/polovich/T in A.contents)
 			T.rained = 1
-			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark))
-				var/turf/open/floor/plating/polovich/dirt/dark/AT = T
+			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark/gryazka))
+				var/turf/open/floor/plating/polovich/dirt/dark/gryazka/AT = T
 				if(AT)
 					spawn(rand(200,400))
 						AT.icon_state = "[AT.icon_state]_water"
@@ -99,8 +99,8 @@ SUBSYSTEM_DEF(weatherr)
 	for(var/area/maintenance/polovich/forest/rain/A in world)
 		for(var/turf/open/floor/plating/polovich/T in A.contents)
 			T.rained = 0
-			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark))
-				var/turf/open/floor/plating/polovich/dirt/dark/AT = T
+			if(istype(T, /turf/open/floor/plating/polovich/dirt/dark/gryazka))
+				var/turf/open/floor/plating/polovich/dirt/dark/gryazka/AT = T
 				if(AT)
 					spawn(rand(3000,6000))
 //						AT.icon_state = "[copytext("[AT.AP.icon_state]",1,5)]"
@@ -165,7 +165,7 @@ SUBSYSTEM_DEF(weatherr)
 		start_rain_sound()
 		for(var/turf/open/floor/plating/polovich/T in range(7,src))
 			if(T.rained)
-				var/image/I = image('icons/stalker/structure/decor.dmi', T, "rain", layer = 10)
+				var/image/I = image('icons/stalker/structure/decor.dmi', T, "rain", layer = TURF_FIRE_LAYER)
 				if(I)
 					if(!client.rain_overlays.Find("[T.x],[T.y],[T.z]"))
 						client.rain_overlays["[T.x],[T.y],[T.z]"] = I

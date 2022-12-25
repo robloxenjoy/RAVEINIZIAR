@@ -367,7 +367,7 @@
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	slowdown = -1
 
-/turf/open/floor/plating/polovich/dirt/dark
+/turf/open/floor/plating/polovich/dirt/dark/gryazka
 	name = "Black Dirt"
 	desc = "This is darkly."
 	icon_state = "blackgryaz"
@@ -591,8 +591,8 @@
 			var/diceroll = stumbleguy.diceroll(GET_MOB_ATTRIBUTE_VALUE(stumbleguy, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
 			if(diceroll <= DICE_FAILURE)
 				stumbleguy.Stumble(3 SECONDS)
-				stumbleguy.visible_message(span_warning("[stumbleguy] poorly stumbles on the root!"), \
-										span_warning("I poorly stumble on the root!"))
+				stumbleguy.visible_message(span_warning("The roots are grasping [stumbleguy]!"), \
+										span_warning("The roots are grasping me!"))
 
 /turf/open/floor/plating/polovich/logsgreen
 	name = "Wooden Floor"
