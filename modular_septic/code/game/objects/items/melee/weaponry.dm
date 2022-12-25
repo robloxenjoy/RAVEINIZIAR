@@ -170,12 +170,12 @@
 			inhand_icon_state = "[initial(inhand_icon_state)]_wielded"
 		else
 			inhand_icon_state = "[initial(inhand_icon_state)]"
-
+/*
 /obj/item/changeable_attacks/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_HANDS)
 		swap_intents(user)
-
+*/
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"
 	desc = "A Nice Sword."

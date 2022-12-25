@@ -5,8 +5,8 @@
 	droning_volume = 35
 	requires_power = FALSE
 	ambience_index = AMBIENCE_GENERIC
-	min_ambience_cooldown = 20 SECONDS
-	max_ambience_cooldown = 30 SECONDS
+	min_ambience_cooldown = 60 SECONDS
+	max_ambience_cooldown = 90 SECONDS
 	area_flags = NO_ALERTS
 /*
 /area/Entered(atom/movable/arrived, area/old_area)
@@ -29,8 +29,8 @@
 	area_flags = NO_ALERTS
 	ambientsounds = list('modular_pod/sound/ambi_sounds/borne.ogg', 'modular_pod/sound/ambi_sounds/buffmfffpampam.ogg', 'modular_pod/sound/ambi_sounds/BOOOM.ogg')
 	droning_sound = DRONING_FOREST
-	min_ambience_cooldown = 40 SECONDS
-	max_ambience_cooldown = 60 SECONDS
+	min_ambience_cooldown = 60 SECONDS
+	max_ambience_cooldown = 90 SECONDS
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"

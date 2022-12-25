@@ -126,14 +126,14 @@
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
 			to_chat(user, span_notice("[open_message]"))
 			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			sleep(2)
+			sleep(6)
 			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 			open()
 			return
 		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
 			to_chat(user, span_notice("[close_message]"))
 			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			sleep(2)
+			sleep(6)
 			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 			close()
 			return
@@ -155,6 +155,7 @@
 	carry_weight = 1 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
 	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_ID
 	min_force = 6
 	force = 10
 	throwforce = 9
