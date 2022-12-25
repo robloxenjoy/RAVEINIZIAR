@@ -431,7 +431,7 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.wav', 'modular_septic/sound/weapons/melee/missweapon2.wav')
 	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.wav'
 	embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
-	current_atk_mode = bash
+	current_atk_mode = slash
 	min_force = 15
 	force = 20
 	min_force_strength = 1.5
@@ -519,7 +519,8 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	current_atk_mode = stab
+	current_atk_mode = slash
+	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 18
 	force = 19
 	min_force_strength = 1
