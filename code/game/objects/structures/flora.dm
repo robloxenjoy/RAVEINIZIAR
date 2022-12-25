@@ -75,6 +75,22 @@
 	. = ..()
 	icon_state = pick("treevil_1", "treevil_2", "treevil_3", "treevil_4")
 
+/obj/structure/flora/tree/evil/long
+	name = "Long Cursed Tree"
+	desc = "It has become so evil! By the way, it's long."
+	icon = 'modular_pod/icons/obj/32x96.dmi'
+	icon_state = "treevillong_1"
+	log_amount = 4
+	layer = ABOVE_MOB_LAYER
+	plane = ABOVE_GAME_PLANE
+	density = 1
+	anchored = 1
+	opacity = 1
+
+/obj/structure/flora/tree/evil/long/Initialize(mapload)
+	. = ..()
+	icon_state = pick("treevillong_1", "treevillong_2", "treevillong_3", "treevillong_4", "treevillong_5", "treevillong_6", "treevillong_7", "treevillong_8")
+
 /obj/structure/flora/tree/veva
 	name = "Spirited Tree"
 	desc = "Beacon of the Third Creator Veva."
