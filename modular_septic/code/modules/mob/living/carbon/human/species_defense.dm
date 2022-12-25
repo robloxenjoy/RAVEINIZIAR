@@ -867,7 +867,7 @@
 	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL)
 	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL)
 	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
-		var/embed_attempt = weapon.tryEmbed(target = affected, forced = TRUE, silent = FALSE)
+		var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 		if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 			user.changeNext_move(0)
 			victim.visible_message(span_pinkdang("[user]'s [weapon] get[weapon.p_s()] stuck in [victim]'s [affected]!"), \

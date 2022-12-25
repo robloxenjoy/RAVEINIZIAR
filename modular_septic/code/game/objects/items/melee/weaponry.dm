@@ -526,6 +526,7 @@
 	force_strength = 1.5
 	min_throwforce = 5
 	min_throwforce_strength = 8
+	throwforce = 10
 	throwforce_strength = 1.2
 	wound_bonus = 10
 	bare_wound_bonus = 5
