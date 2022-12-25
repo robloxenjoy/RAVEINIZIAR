@@ -247,16 +247,16 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-FORUMURL https://discord.gg/BdN9B677Np
+FORUMURL https://discord.gg/TtzF93reNJ 
 
 ## Wiki address
-WIKIURL https://discord.gg/BdN9B677Np
+WIKIURL https://discord.gg/TtzF93reNJ 
 
 ## Rules address
-RULESURL https://discord.gg/BdN9B677Np
+RULESURL https://discord.gg/TtzF93reNJ 
 
 ## Github address
-GITHUBURL https://discord.gg/BdN9B677Np
+GITHUBURL https://discord.gg/TtzF93reNJ 
 
 ## Discord bot command prefix, if the discord bot is used
 # DISCORDBOTCOMMANDPREFIX ?
@@ -273,7 +273,7 @@ GITHUBURL https://discord.gg/BdN9B677Np
 # GAMELOGURL
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS https://discord.gg/BdN9B677Np
+BANAPPEALS https://discord.gg/TtzF93reNJ 
 
 ## System command that invokes youtube-dl, used by Play Internet Sound.
 ## You can install youtube-dl with

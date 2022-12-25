@@ -578,7 +578,7 @@
 			force_strength = 1.8
 			current_atk_mode = stab
 			sharpness = SHARP_POINTY
-			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5)
+			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 40, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5)
 		if(stab)
 			to_chat(user, span_notice("I'm now slicing with the [src]."))
 			hitsound = slash_hitsound
@@ -588,7 +588,7 @@
 			force_strength = 1.8
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
-			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 40, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1)
+			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1)
 
 #undef slash
 #undef stab
