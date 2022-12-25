@@ -516,7 +516,6 @@
 		exposed_carbon.adjustBruteLoss(20)
 		exposed_carbon.emote("scream")
 
-
 /obj/item/jacobs_ladder
 	name = "jacob's ladder"
 	desc = "A celestial ladder that violates the laws of physics."

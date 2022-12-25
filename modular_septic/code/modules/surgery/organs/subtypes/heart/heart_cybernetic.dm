@@ -3,6 +3,7 @@
 	desc = "A basic electronic device designed to mimic the functions of an organic human heart."
 	icon_state = "heart-c"
 	organ_flags = ORGAN_SYNTHETIC
+	status = ORGAN_ROBOTIC
 	maxHealth = STANDARD_ORGAN_THRESHOLD*0.75 //This also hits defib timer, so a bit higher than its less important counterparts
 
 	emp_vulnerability = 80 //Chance of permanent effects if emp-ed.

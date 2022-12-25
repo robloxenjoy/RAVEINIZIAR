@@ -1,5 +1,6 @@
 /area/maintenance/polovich
 	name = "Polovich"
+	icon_state = "polovich"
 //	droning_sound = DRONING_POLOVICHSTAN
 	droning_volume = 35
 	requires_power = FALSE
@@ -35,6 +36,7 @@
 	name = "Polovich Forest Spawn"
 
 /area/maintenance/polovich/forest/rain
+	icon_state = "polovich_no_rain"
 //	base_lighting_alpha = 255
 //	power_light = FALSE
 //	power_equip = FALSE
