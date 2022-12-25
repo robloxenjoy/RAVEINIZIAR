@@ -95,6 +95,9 @@
 	playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 	sound_hint()
 
+/turf/open/floor/plating/polovich/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_ground[rand(1,5)].wav"
+
 /turf/open/floor/plating/polovich/red
 	name = "Red Floor"
 	desc = "This is cool."
