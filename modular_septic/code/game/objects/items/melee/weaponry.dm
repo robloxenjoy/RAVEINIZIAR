@@ -520,7 +520,7 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	current_atk_mode = slash
-	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 18
 	force = 19
 	min_force_strength = 1
@@ -583,7 +583,7 @@
 			force_strength = 1.8
 			current_atk_mode = stab
 			sharpness = SHARP_POINTY
-			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 40, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
 			to_chat(user, span_notice("I'm now slicing with the [src]."))
 			hitsound = slash_hitsound
