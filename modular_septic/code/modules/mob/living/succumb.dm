@@ -15,3 +15,21 @@
 	death()
 	updatehealth()
 */
+
+/mob/living/carbon/human/verb/belynx(whispered as null)
+	set name = "Become a Lynx"
+	set category = "IC"
+	set desc = "You want?"
+
+	return FALSE
+
+	if(belief == "Hadot")
+		if(HAS_TRAIT(src, TRAIT_LYNXER))
+			var/lynx_ask = tgui_alert(usr, "Become a lynx?", "Do you wish to sleep in bushes and eat noobs?", list("Yes", "No"))
+			if(lynx_ask == "No" || QDELETED(src))
+				return FALSE
+			if(can_heartattack())
+				set_heartattack(TRUE)
+			var/obj/effect/landmark/spawnedmob/lynx/lyn = locate() in world
+			var/mob/living/simple_animal/hostile/podozl/caracal/newlynx = new(lyn.loc)
+			newlynx.key = key

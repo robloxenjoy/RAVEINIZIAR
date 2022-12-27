@@ -1,3 +1,10 @@
+/obj/effect/landmark/spawnedmob/lynx
+	name = "landmark"
+	icon = 'modular_septic/icons/hud/screen_gen.dmi'
+	icon_state = "helloiamlynx"
+	invisibility = 101
+	anchored = 1
+
 /obj/effect/landmark/tendance
 	name = "landmark"
 	icon = 'modular_septic/icons/hud/screen_gen.dmi'

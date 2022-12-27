@@ -56,7 +56,7 @@
 #define KIDNEY_TOXIN_PAIN_FACTOR 0.5
 
 //The contant in the rate of reagent transfer on life ticks
-#define STOMACH_METABOLISM_CONSTANT 0.25
+#define STOMACH_METABOLISM_CONSTANT 0.35
 
 /// default organ maxHealth
 #define STANDARD_ORGAN_THRESHOLD 60
@@ -70,7 +70,7 @@
 #define MAX_ORGAN_DECAY_INFECTION 2
 
 /// Minimum organ damage at once to tell the player about the ouchie
-#define ORGAN_DAMAGE_NOTIFY_PLAYER 4
+#define ORGAN_DAMAGE_NOTIFY_PLAYER 3
 
 // ~organ sides
 #define NO_SIDE 0

@@ -1266,16 +1266,16 @@
 	switch(wounding_type)
 		// Piercing damage is more likely to damage internal organs
 		if(WOUND_PIERCE)
-			organ_damage_minimum *= 0.5
+			organ_damage_minimum *= 0.50
 		// Slashing damage is *slightly* more likely to damage internal organs
 		if(WOUND_SLASH)
-			organ_damage_minimum *= 0.50
+			organ_damage_minimum *= 0.60
 		// Burn damage is unlikely to damage organs
 		if(WOUND_BURN)
-			organ_damage_minimum *= 1.5
+			organ_damage_minimum *= 1.7
 		// Organ damage minimum is assumed to be the case for blunt anyway
 		else
-			organ_damage_hit_minimum *= 1
+			organ_damage_hit_minimum *= 1.2
 
 	// Wounds can alter our odds of harming organs
 	for(var/datum/wound/oof as anything in wounds)

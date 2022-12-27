@@ -44,6 +44,11 @@
 	sharpness = SHARP_EDGED
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+
+/mob/living/simple_animal/hostile/podozl/caracal/death(gibbed)
+	if(key)
+		send_naxyu()
+
 /*
 /mob/living/simple_animal/hostile/podozl/caracal/CanAttack(atom/the_target)
 	if(ishuman(the_target))

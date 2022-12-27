@@ -61,6 +61,8 @@
 #define TRAIT_LEAN "leaned"
 /// Crazy mushroom!
 #define TRAIT_BLOODARN "bloodarn"
+/// Can play as lynx!
+#define TRAIT_LYNXER "lynxer"
 /// Currently dancing!
 #define TRAIT_DANCING "dancing"
 /// Currently a stupid schizophrenic gakster!
