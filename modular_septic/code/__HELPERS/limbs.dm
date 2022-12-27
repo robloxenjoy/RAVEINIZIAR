@@ -3,7 +3,7 @@
 	var/obj/item/bodypart/part
 	for(var/thing in BODYPARTS_PATH)
 		part = new thing()
-		part.moveToNullspace()
+		part.loc = null
 		STOP_PROCESSING(SSobj, part)
 		. += part
 
@@ -26,7 +26,7 @@
 /proc/setup_bodyzone_to_bitflag()
 	. = list()
 	for(var/thing in ALL_BODYPARTS)
-		var/obj/item/bodypart/part = GLOB.bodyparts_by_zone[thing]
+		part = GLOB.bodyparts_by_zone[thing]
 		if(!initial(part?.body_part))
 			continue
 		.[initial(part.body_zone)] = initial(part.body_part)
@@ -100,66 +100,48 @@
 
 /proc/body_parts_covered2organ_names(bpc)
 	var/list/covered_parts = list()
-
 	if(!bpc)
 		return covered_parts
 
-	if(CHECK_MULTIPLE_BITFIELDS(bpc, HEAD|EYES|FACE|JAW|NECK|CHEST|GROIN|VITALS|ARMS|HANDS|LEGS|FEET))
-		covered_parts |= ALL_BODYPARTS
-	else
-		if(bpc & HEAD)
-			covered_parts |= list(BODY_ZONE_HEAD)
-		if(bpc & FACE)
-			covered_parts |= list(BODY_ZONE_PRECISE_FACE)
-		if(bpc & JAW)
-			covered_parts |= list(BODY_ZONE_PRECISE_MOUTH)
-		if(bpc & NECK)
-			covered_parts |= list(BODY_ZONE_PRECISE_NECK)
-		if(bpc & CHEST)
-			covered_parts |= list(BODY_ZONE_CHEST)
-		if(bpc & GROIN)
-			covered_parts |= list(BODY_ZONE_PRECISE_GROIN)
-		if(bpc & VITALS)
-			covered_parts |= list(BODY_ZONE_PRECISE_VITALS)
-		if(CHECK_MULTIPLE_BITFIELDS(bpc, EYES))
-			covered_parts |= list(BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_R_EYE)
-		else
-			if(bpc & EYE_LEFT)
-				covered_parts |= list(BODY_ZONE_PRECISE_L_EYE)
-			if(bpc & EYE_RIGHT)
-				covered_parts |= list(BODY_ZONE_PRECISE_R_EYE)
+	if(bpc & HEAD)
+		covered_parts |= list(BODY_ZONE_HEAD)
+	if(bpc & FACE)
+		covered_parts |= list(BODY_ZONE_PRECISE_FACE)
+	if(bpc & JAW)
+		covered_parts |= list(BODY_ZONE_PRECISE_MOUTH)
+	if(bpc & NECK)
+		covered_parts |= list(BODY_ZONE_PRECISE_NECK)
+	if(bpc & CHEST)
+		covered_parts |= list(BODY_ZONE_CHEST)
+	if(bpc & GROIN)
+		covered_parts |= list(BODY_ZONE_PRECISE_GROIN)
+	if(bpc & VITALS)
+		covered_parts |= list(BODY_ZONE_PRECISE_VITALS)
 
-		if(CHECK_MULTIPLE_BITFIELDS(bpc, ARMS))
-			covered_parts |= list(BODY_ZONE_L_ARM,BODY_ZONE_R_ARM)
-		else
-			if(bpc & ARM_LEFT)
-				covered_parts |= list(BODY_ZONE_L_ARM)
-			if(bpc & ARM_RIGHT)
-				covered_parts |= list(BODY_ZONE_R_ARM)
+	if(bpc & EYE_LEFT)
+		covered_parts |= list(BODY_ZONE_PRECISE_L_EYE)
+	if(bpc & EYE_RIGHT)
+		covered_parts |= list(BODY_ZONE_PRECISE_R_EYE)
 
-		if(CHECK_MULTIPLE_BITFIELDS(bpc, HANDS))
-			covered_parts |= list(BODY_ZONE_PRECISE_R_HAND,BODY_ZONE_PRECISE_L_HAND)
-		else
-			if(bpc & HAND_LEFT)
-				covered_parts |= list(BODY_ZONE_PRECISE_L_HAND)
-			if(bpc & HAND_RIGHT)
-				covered_parts |= list(BODY_ZONE_PRECISE_R_HAND)
+	if(bpc & ARM_LEFT)
+		covered_parts |= list(BODY_ZONE_L_ARM)
+	if(bpc & ARM_RIGHT)
+		covered_parts |= list(BODY_ZONE_R_ARM)
 
-		if(CHECK_MULTIPLE_BITFIELDS(bpc, LEGS))
-			covered_parts |= list(BODY_ZONE_L_LEG,BODY_ZONE_R_LEG)
-		else
-			if(bpc & LEG_LEFT)
-				covered_parts |= list(BODY_ZONE_L_LEG)
-			if(bpc & LEG_RIGHT)
-				covered_parts |= list(BODY_ZONE_R_LEG)
+	if(bpc & HAND_LEFT)
+		covered_parts |= list(BODY_ZONE_PRECISE_L_HAND)
+	if(bpc & HAND_RIGHT)
+		covered_parts |= list(BODY_ZONE_PRECISE_R_HAND)
 
-		if(CHECK_MULTIPLE_BITFIELDS(bpc, FEET))
-			covered_parts |= list(BODY_ZONE_PRECISE_L_FOOT,BODY_ZONE_PRECISE_R_FOOT)
-		else
-			if(bpc & FOOT_LEFT)
-				covered_parts |= list(BODY_ZONE_PRECISE_L_FOOT)
-			if(bpc & FOOT_RIGHT)
-				covered_parts |= list(BODY_ZONE_PRECISE_R_FOOT)
+	if(bpc & LEG_LEFT)
+		covered_parts |= list(BODY_ZONE_L_LEG)
+	if(bpc & LEG_RIGHT)
+		covered_parts |= list(BODY_ZONE_R_LEG)
+
+	if(bpc & FOOT_LEFT)
+		covered_parts |= list(BODY_ZONE_PRECISE_L_FOOT)
+	if(bpc & FOOT_RIGHT)
+		covered_parts |= list(BODY_ZONE_PRECISE_R_FOOT)
 
 	return covered_parts
 

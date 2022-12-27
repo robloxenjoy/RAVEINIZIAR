@@ -69,17 +69,19 @@
 
 /mob/living/carbon/get_missing_limbs()
 	var/static/list/full = ALL_BODYPARTS_ORDERED
+	var/list/missing = full.Copy()
 	for(var/zone in full)
 		if(get_bodypart(zone))
-			full -= zone
-	return full
+			missing -= zone
+	return missing
 
 /mob/living/carbon/alien/larva/get_missing_limbs()
 	var/static/list/full = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST)
+	var/list/missing = full.Copy()
 	for(var/zone in full)
 		if(get_bodypart(zone))
-			full -= zone
-	return full
+			missing -= zone
+	return missing
 
 /mob/living/proc/get_disabled_limbs()
 	return list()
@@ -125,6 +127,24 @@
 /mob/living/carbon/proc/newBodyPart(zone = BODY_ZONE_CHEST, robotic = FALSE, dropping_limb = FALSE)
 	var/obj/item/bodypart/new_limb
 	switch(zone)
+		if(BODY_ZONE_HEAD)
+			new_limb = new /obj/item/bodypart/head()
+		if(BODY_ZONE_PRECISE_FACE)
+			new_limb = new /obj/item/bodypart/face()
+		if(BODY_ZONE_PRECISE_L_EYE)
+			new_limb = new /obj/item/bodypart/l_eyelid()
+		if(BODY_ZONE_PRECISE_R_EYE)
+			new_limb = new /obj/item/bodypart/r_eyelid()
+		if(BODY_ZONE_PRECISE_MOUTH)
+			new_limb = new /obj/item/bodypart/mouth()
+		if(BODY_ZONE_PRECISE_NECK)
+			new_limb = new /obj/item/bodypart/neck()
+		if(BODY_ZONE_CHEST)
+			new_limb = new /obj/item/bodypart/chest()
+		if(BODY_ZONE_PRECISE_VITALS)
+			new_limb = new /obj/item/bodypart/vitals()
+		if(BODY_ZONE_PRECISE_GROIN)
+			new_limb = new /obj/item/bodypart/groin()
 		if(BODY_ZONE_L_ARM)
 			new_limb = new /obj/item/bodypart/l_arm()
 		if(BODY_ZONE_PRECISE_L_HAND)
@@ -133,16 +153,6 @@
 			new_limb = new /obj/item/bodypart/r_arm()
 		if(BODY_ZONE_PRECISE_R_HAND)
 			new_limb = new /obj/item/bodypart/r_hand()
-		if(BODY_ZONE_HEAD)
-			new_limb = new /obj/item/bodypart/head()
-		if(BODY_ZONE_PRECISE_MOUTH)
-			new_limb = new /obj/item/bodypart/mouth()
-		if(BODY_ZONE_PRECISE_NECK)
-			new_limb = new /obj/item/bodypart/neck()
-		if(BODY_ZONE_PRECISE_L_EYE)
-			new_limb = new /obj/item/bodypart/l_eyelid()
-		if(BODY_ZONE_PRECISE_R_EYE)
-			new_limb = new /obj/item/bodypart/r_eyelid()
 		if(BODY_ZONE_L_LEG)
 			new_limb = new /obj/item/bodypart/l_leg()
 		if(BODY_ZONE_PRECISE_L_FOOT)
@@ -151,12 +161,6 @@
 			new_limb = new /obj/item/bodypart/r_leg()
 		if(BODY_ZONE_PRECISE_R_FOOT)
 			new_limb = new /obj/item/bodypart/r_foot()
-		if(BODY_ZONE_CHEST)
-			new_limb = new /obj/item/bodypart/chest()
-		if(BODY_ZONE_PRECISE_VITALS)
-			new_limb = new /obj/item/bodypart/vitals()
-		if(BODY_ZONE_PRECISE_GROIN)
-			new_limb = new /obj/item/bodypart/groin()
 	if(new_limb)
 		new_limb.update_limb(dropping_limb, src)
 		if(robotic)
