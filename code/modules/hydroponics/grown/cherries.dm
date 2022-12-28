@@ -58,6 +58,8 @@
 	food_reagents = list( /datum/reagent/consumable/bluecherryjelly = 5, /datum/reagent/medicine/c2/penthrite = 1)
 	tastes = list("midnightberry" = 1, "sweet" = 1)
 	wine_power = 50
+	tetris_width = 16
+	tetris_height = 16
 
 /obj/item/food/grown/bluecherries/lie
 	name = "Midnightberry"

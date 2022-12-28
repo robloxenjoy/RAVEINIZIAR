@@ -46,6 +46,8 @@
 	tastes = list("gule berry" = 1, "morose" = 1)
 	drop_sound = 'modular_septic/sound/effects/softdrop.wav'
 //	wine_power = 50
+	tetris_width = 16
+	tetris_height = 16
 
 /obj/item/food/berries/redcherrie/lie
 	name = "Gule Berry"
@@ -76,6 +78,8 @@
 	tastes = list("saisilva berry" = 1, "strange" = 1)
 	drop_sound = 'modular_septic/sound/effects/softdrop.wav'
 //	wine_power = 50
+	tetris_width = 16
+	tetris_height = 16
 
 /obj/item/food/candy/bronx
 	name = "South Bronx Paradise bar"
