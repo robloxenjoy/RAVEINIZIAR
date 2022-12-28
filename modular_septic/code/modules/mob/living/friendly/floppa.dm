@@ -26,11 +26,11 @@
 	response_harm_simple = "kick"
 	turns_per_move = 5
 	taunt_chance = 85
-	vision_range = 9
-	aggro_vision_range = 9
+	vision_range = 8
+	aggro_vision_range = 8
 	maxHealth = 40
 	health = 40
-	speed = 3
+	speed = 2
 	see_in_dark = 4
 	move_to_delay = 1.1
 	deathmessage = "painfully collapses."
@@ -45,17 +45,18 @@
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
+/*
 /mob/living/simple_animal/hostile/podozl/caracal/death(gibbed)
 	if(mind)
 		send_naxyu()
 
-/*
 /mob/living/simple_animal/hostile/podozl/caracal/CanAttack(atom/the_target)
 	if(ishuman(the_target))
 		var/mob/living/carbon/human/human_hadot = the_target
 		if(human_hadot.belief == "Hadot")
 			return
 */
+
 /mob/living/simple_animal/hostile/caracal/floppa
 	name = "big floppa"
 	desc = "Flops for no hoe."

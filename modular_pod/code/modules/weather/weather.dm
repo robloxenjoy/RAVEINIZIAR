@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(weatherr)
 
 
 /datum/controller/subsystem/weatherr/Initialize()
-	cooldown = rand(6000, 6900)
+	cooldown = rand(8000, 9900)
 	duration = rand(3500, 4250)
 	rain = new
 //	rain = image('icons/stalker/structure/decor.dmi', icon_state = "rain", layer = 10)
@@ -117,7 +117,7 @@ SUBSYSTEM_DEF(weatherr)
 		C.images &= C.hidingAtoms
 		C.rain_overlays.Cut()
 */
-	cooldown = rand(3000, 6000)
+	cooldown = rand(7000, 9000)
 	duration = rand(1000, 2000)
 
 /datum/controller/subsystem/weatherr/proc/StartSound()
