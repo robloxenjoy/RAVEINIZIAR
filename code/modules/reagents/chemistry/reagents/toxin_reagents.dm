@@ -201,9 +201,9 @@
 		. = FALSE
 
 	if(.)
-		C.adjustOxyLoss(20 * REM * normalise_creation_purity() * delta_time, 0)
-		C.losebreath += 10 * REM * normalise_creation_purity() * delta_time
-		if(DT_PROB(10, delta_time))
+		C.adjustOxyLoss(30 * REM * normalise_creation_purity() * delta_time, 0)
+		C.losebreath += 20 * REM * normalise_creation_purity() * delta_time
+		if(DT_PROB(15, delta_time))
 			C.emote("gasp")
 	..()
 
