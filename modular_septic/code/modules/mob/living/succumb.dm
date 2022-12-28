@@ -20,8 +20,7 @@
 	set name = "Become a Lynx"
 	set category = "IC"
 	set desc = "You want?"
-
-	return FALSE
+	set hidden = TRUE
 
 	if(belief == "Hadot")
 		if(HAS_TRAIT(src, TRAIT_LYNXER))
