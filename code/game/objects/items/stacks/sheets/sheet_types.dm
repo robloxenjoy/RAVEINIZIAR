@@ -401,6 +401,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 			if(do_after(user, 100, target = src))
 				user.visible_message(span_notice("[user] crafted..."),span_notice("You crafted improvised bandages."), span_hear("You hear the sound of craft."))
 				user.changeNext_move(CLICK_CD_MELEE)
+				sound_hint()
 				new /obj/item/stack/medical/gauze/improvised(get_turf(src))
 				qdel(src)
 
