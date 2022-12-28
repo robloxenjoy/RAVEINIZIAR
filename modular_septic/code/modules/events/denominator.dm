@@ -104,10 +104,10 @@
 	/// Message that occurs when the door is closed.
 	var/close_message = "The door buzzes, and slides closed."
 
-/obj/machinery/door/keycard/denominator/chaot
+/obj/machinery/door/keycard/denominator/podozl/chaot
 	name = "Chaot Airlock"
 	desc = "Maybe I need a seal for this smooth stone door."
-	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/secretdoor.dmi'
+	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/secretdoor_chaot.dmi'
 	icon_state = "boor_closed"
 	base_icon_state = "boor"
 	explosion_block = 0
@@ -120,7 +120,7 @@
 	open_message = "The door moves with a stone sound, and opens."
 	close_message = "The door moves with a stone sound, and closes."
 
-/obj/machinery/door/keycard/denominator/chaot/attackby(obj/item/I, mob/user, params)
+/obj/machinery/door/keycard/denominator/podozl/chaot/attackby(obj/item/I, mob/user, params)
 	if(istype(I,/obj/item/keycard))
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
@@ -170,7 +170,7 @@
 	tetris_width = 32
 	tetris_height = 64
 
-/obj/machinery/door/keycard/denominator/inborn
+/obj/machinery/door/keycard/denominator/podozl/inborn
 	name = "yellow airlock"
 	desc = "This door only opens when a keycard is swiped. It looks like It's been heavily armored."
 	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/secretdoor_yellow.dmi'
@@ -183,7 +183,7 @@
 	/// Message that occurs when the door is closed.
 	close_message = "The door buzzes, and slides closed."
 
-/obj/machinery/door/keycard/denominator/bomj
+/obj/machinery/door/keycard/denominator/podozl/bomj
 	name = "yellow airlock"
 	desc = "This door only opens when a keycard is swiped."
 	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/secretdoor_yellow.dmi'
@@ -202,7 +202,7 @@
 	/// Message that occurs when the door is closed.
 	close_message = "The door buzzes, and slides closed."
 
-/obj/machinery/door/keycard/denominator/attackby(obj/item/I, mob/user, params)
+/obj/machinery/door/keycard/denominator/podozl/attackby(obj/item/I, mob/user, params)
 	if(istype(I,/obj/item/keycard))
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)

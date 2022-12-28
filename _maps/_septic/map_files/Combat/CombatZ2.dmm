@@ -17,7 +17,7 @@
 "aD" = (/obj/effect/turf_decal/trimline/green/filled/line,/obj/effect/turf_decal/trimline/neutral/filled/line{dir = 1},/turf/open/floor/iron/dark,/area/maintenance/liminal/hallways)
 "aE" = (/obj/structure/chair/office{dir = 1},/turf/open/floor/iron/dark/side,/area/maintenance/liminal/green)
 "aF" = (/obj/machinery/light/small/red/directional/east,/turf/open/floor/iron,/area/maintenance/liminal/termination_centre)
-"aG" = (/obj/structure/lattice,/obj/machinery/button/door/directional/north{id = bottom4},/turf/open/floor/plating,/area/maintenance/liminal/darkgreen)
+"aG" = (/obj/structure/lattice,/obj/machinery/button/door/directional/north,/turf/open/floor/plating,/area/maintenance/liminal/darkgreen)
 "aI" = (/obj/machinery/light/small/directional/east,/obj/effect/turf_decal/stripes/line,/turf/open/floor/iron/white{heat_capacity = 1e+006},/area/maintenance/liminal/darkgreen)
 "aJ" = (/turf/open/floor/carpet,/area/maintenance/liminal/waitroom)
 "aL" = (/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/item/gun/ballistic/automatic/pistol/remis/glock17,/turf/open/floor/iron,/area/maintenance/liminal/labs)

@@ -214,7 +214,6 @@
 	//stores missing limbs
 	var/list/missing = get_missing_limbs()
 	for(var/obj/item/bodypart/bodypart as anything in bodyparts)
-		var/obj/item/bodypart/bodypart = X
 		if(bodypart.is_stump())
 			msg += "<span class='dead'><b>[t_His] [parse_zone(bodypart.body_zone)] is a stump!</b></span>"
 			//stumps count as missing

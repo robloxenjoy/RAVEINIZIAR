@@ -22,7 +22,7 @@
 /turf/open/floor/plating/polovich/break_tile()
 	return
 
-/turf/open/floor/plating/polovich/attack_hand(mob/living/carbon/user, list/modifiers)
+/turf/open/floor/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
@@ -38,7 +38,7 @@
 		playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 		sound_hint()
 
-/turf/open/floor/plating/polovich/attack_hand_secondary(mob/living/carbon/user, list/modifiers)
+/turf/open/floor/attack_hand_secondary(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
@@ -54,7 +54,7 @@
 		playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 		sound_hint()
 
-/turf/open/floor/plating/polovich/attackby(obj/item/W, mob/living/carbon/user, params)
+/turf/open/floor/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
 	if(.)
 		return
@@ -75,7 +75,7 @@
 				var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
 				new /atom/movable/fire(firefloor, 21)
 
-/turf/open/floor/plating/polovich/attack_jaw(mob/living/carbon/human/user, list/modifiers)
+/turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
@@ -85,7 +85,7 @@
 	playsound(get_turf(src), 'sound/weapons/bite.ogg', 80 , FALSE, FALSE)
 	sound_hint()
 
-/turf/open/floor/plating/polovich/attack_foot(mob/living/carbon/human/user, list/modifiers)
+/turf/open/floor/attack_foot(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)
 		return

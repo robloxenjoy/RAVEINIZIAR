@@ -25,6 +25,7 @@
 
 /proc/setup_bodyzone_to_bitflag()
 	. = list()
+	var/obj/item/bodypart/part
 	for(var/thing in ALL_BODYPARTS)
 		part = GLOB.bodyparts_by_zone[thing]
 		if(!initial(part?.body_part))
