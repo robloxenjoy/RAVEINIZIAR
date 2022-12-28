@@ -16,6 +16,7 @@
 	updatehealth()
 */
 
+/*
 /mob/living/carbon/human/verb/belynx(whispered as null)
 	set name = "Become a Lynx"
 	set category = "IC"
@@ -32,3 +33,4 @@
 			var/obj/effect/landmark/spawnedmob/lynx/lyn = locate() in world
 			var/mob/living/simple_animal/hostile/podozl/caracal/newlynx = new(lyn.loc)
 			newlynx.key = key
+*/

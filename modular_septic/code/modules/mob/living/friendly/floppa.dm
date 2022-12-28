@@ -47,7 +47,8 @@
 
 /mob/living/simple_animal/hostile/podozl/caracal/death(gibbed)
 	if(key)
-		send_naxyu()
+		if(mind)
+			send_naxyu()
 
 /*
 /mob/living/simple_animal/hostile/podozl/caracal/CanAttack(atom/the_target)

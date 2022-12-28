@@ -30,12 +30,13 @@
 	if(do_after(user, 100, target = src))
 		visible_message(span_danger("[L] is destroyed for the glory of Hadot."))
 		L.gib()
-		var/result = rand(1, 2)
-		switch(result)
-			if(1)
-				new /obj/item/changeable_attacks/slashstab/sabre/small/steel(get_turf(user))
-				visible_message(span_danger("This is my gift."))
+//		var/result = rand(1, 2)
+//		switch(result)
+//			if(1)
+		new /obj/item/changeable_attacks/slashstab/sabre/small/steel(get_turf(user))
+		visible_message(span_danger("This is my gift."))
 
+/*
 			if(2)
 				if(!HAS_TRAIT(user, TRAIT_LYNXER)) 
 					ADD_TRAIT(user, TRAIT_LYNXER, name)
@@ -44,6 +45,7 @@
 				else
 					new /obj/item/changeable_attacks/slashstab/sabre/small/steel(get_turf(user))
 					visible_message(span_danger("This is my gift."))
+*/
 
 /obj/structure/sacrificealtar/gutted
 	name = "Sacrificial Altar"

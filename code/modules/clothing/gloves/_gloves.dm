@@ -98,6 +98,7 @@
 
 /obj/item/clothing/gloves/wrists/leather
 	name = "Leather Bracers"
+	desc = "Take care of your wrists!"
 	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
 	icon_state = "leatherwrists"
 	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'
