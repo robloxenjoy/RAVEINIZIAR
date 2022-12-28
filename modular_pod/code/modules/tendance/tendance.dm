@@ -60,8 +60,4 @@
 
 //	character.timeofdeath = timeofdeath
 	character.key = key
-	if(israin)
-		start_rain_sound()
-	else
-		return
 //	character.client.set_macros()
