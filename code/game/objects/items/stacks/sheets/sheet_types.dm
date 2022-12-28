@@ -393,7 +393,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	pickup_sound = 'sound/items/handling/cloth_pickup.ogg'
 	grind_results = list(/datum/reagent/cellulose = 20)
 
-/obj/item/stack/sheet/cloth/attack_hand(mob/living/carbon/user, list/modifiers)
+/obj/item/stack/sheet/cloth/attack_hand_tertiary(mob/living/carbon/human/user, params)
 	. = ..()
 	if(src.amount == 1)
 		if(user.a_intent == INTENT_GRAB)
