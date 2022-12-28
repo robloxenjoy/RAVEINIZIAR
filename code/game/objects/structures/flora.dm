@@ -73,7 +73,7 @@
 
 /obj/structure/flora/tree/evil/Initialize(mapload)
 	. = ..()
-	icon_state = pick("treevil_1", "treevil_2", "treevil_3", "treevil_4")
+	icon_state = pick("treevil_1", "treevil_2", "treevil_3", "treevil_4" "treevil_5", "treevil_6", "treevil_7", "treevil_8")
 
 /obj/structure/flora/tree/evil/long
 	name = "Long Cursed Tree"
