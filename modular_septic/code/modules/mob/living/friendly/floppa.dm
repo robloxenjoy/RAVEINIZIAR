@@ -46,9 +46,8 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/podozl/caracal/death(gibbed)
-	if(key)
-		if(mind)
-			send_naxyu()
+	if(mind)
+		send_naxyu()
 
 /*
 /mob/living/simple_animal/hostile/podozl/caracal/CanAttack(atom/the_target)
