@@ -19,7 +19,7 @@
 	alpha = 90
 
 /atom/movable/screen/fullscreen/noghost
-	icon = 'modular_septic/icons/hud/screen_chungus'
+	icon = 'modular_septic/icons/hud/screen_chungus.dmi'
 	icon_state = "shittyblack"
 	alpha = 255
 

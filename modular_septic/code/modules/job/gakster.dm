@@ -61,7 +61,7 @@
 	display_order = JOB_DISPLAY_ORDER_OUTER
 //	bounty_types = CIV_JOB_MINE
 	departments_list = list(
-		/datum/job_department/outer,
+		/datum/job_department/cargo,
 		)
 
 //	family_heirlooms = list(/obj/item/pickaxe/mini, /obj/item/shovel)
@@ -170,17 +170,11 @@
 
 	outfit = /datum/outfit/chaot
 
-//	paycheck = PAYCHECK_MEDIUM
-//	paycheck_department = ACCOUNT_CAR
-
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
-//	bounty_types = CIV_JOB_MINE
 	departments_list = list(
 		/datum/job_department/engineering,
 		)
 
-//	family_heirlooms = list(/obj/item/pickaxe/mini, /obj/item/shovel)
-//	rpg_title = "Adventurer"
 	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
 
 

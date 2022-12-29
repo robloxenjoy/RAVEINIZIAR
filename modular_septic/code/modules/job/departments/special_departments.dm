@@ -22,7 +22,7 @@
 	display_order = 7
 	label_class = "security"
 	latejoin_color = "#301934"
-*/
+
 /datum/job_department/outer
 	department_name = DEPARTMENT_OUTER
 	department_bitflags = DEPARTMENT_BITFLAG_OUTER
@@ -30,7 +30,7 @@
 	display_order = 5
 	label_class = "security"
 	latejoin_color = "#38e38e"
-
+*/
 /datum/job_department/undefined
 	display_order = 9
 
