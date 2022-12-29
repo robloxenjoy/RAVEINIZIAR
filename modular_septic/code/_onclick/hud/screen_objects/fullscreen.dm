@@ -18,6 +18,11 @@
 	icon_state = "fishbed"
 	alpha = 90
 
+/atom/movable/screen/fullscreen/noghost
+	icon = 'modular_septic/icons/hud/screen_chungus'
+	icon_state = "shittyblack"
+	alpha = 255
+
 /atom/movable/screen/fullscreen/slightredim
 	icon_state = "blackimageoverlay"
 	color = "#ff0000"

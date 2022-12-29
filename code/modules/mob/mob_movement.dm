@@ -88,7 +88,7 @@
 	if(!isliving(mob))
 		return mob.Move(new_loc, direct)
 	if(mob.stat == DEAD)
-		mob.send_naxyu()
+		mob.screen_end()
 		return FALSE
 	if(mob.force_moving)
 		return FALSE
