@@ -376,10 +376,25 @@
 	icon_state = "blackgryaz"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	slowdown = 1
+//	var/cooldown = 0
 
 /turf/open/floor/plating/polovich/dirt/dark/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+
+/*
+/turf/open/floor/plating/polovich/dirt/dark/gryazka/Eat()
+	var/open/floor/plating/polovich/dirt/dark/T = get_turf(src)
+	var/mob/living/carbon/human/eat_human = locate() in T
+	if(eat_human.stat != DEAD)
+		return
+	if(eat_human.body_position == LYING_DOWN)
+		if(cooldown <= world.time)
+			cooldown = world.time + 800 //.... 8800
+			visible_message(span_notice("The earth swallows the corpse."))
+			eat_human.unequip_everything()
+			qdel(eat_human)
+*/
 
 /turf/open/floor/plating/polovich/dirt/dark/bright
 	name = "Funny Dirt"
