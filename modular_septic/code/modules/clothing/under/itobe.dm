@@ -30,6 +30,23 @@
 	can_adjust = FALSE
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 
+/obj/item/clothing/under/venturerlong
+	name = "\proper Blue Clothes"
+	desc = "These clothes are very comfortable and cheap. Due to the many giant midnightberry bushes, it became very difficult to move around the continent of Terra, so people decided to create dyes from them. Midnightberry dyes are so plentiful that they have become very cheap, and many poor people often wear blue clothes because of this."
+	icon = 'modular_septic/icons/obj/clothing/under/itobe.dmi'
+	icon_state = "venturerlong"
+	worn_icon = 'modular_septic/icons/mob/clothing/under/itobe.dmi'
+	worn_icon_state = "venturerlong"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "soldat"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 4)
+	carry_weight = 500 GRAMS
+	can_adjust = FALSE
+	body_parts_covered = CHEST|VITALS|GROIN|LEGS|ARMS
+
 /obj/item/clothing/under/itobe/agent
 	name = "\proper darkened three-piece suit"
 	desc = "An ominous suit with a red-tie already attached and tied, somehow you can put this on without unraveling the fanciness at play here."
