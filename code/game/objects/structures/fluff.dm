@@ -181,6 +181,21 @@
 						C.set_heartattack(TRUE)
 				last_process = world.time
 
+/obj/structure/fluff/statuestone
+	name = "Stone Statue"
+	desc = "So beautiful and historic!"
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "statueki"
+	plane = GAME_PLANE_UPPER
+	layer = EDGED_TURF_LAYER
+	density = 0
+	anchored = 1
+	opacity = 0
+
+/obj/structure/fluff/statuestone/Initialize(mapload)
+	. = ..()
+	icon_state = pick("statueki", "statueli", "statuesi", "statuelimba", "statuelimbo", "statueslo", "statuemi", "statueslobo", "statuekil",  "statuereb", "statuebakir", "statuelyba", "statuepizd")
+
 /**
  * A variety of statue in disrepair; parts are broken off and a gemstone is missing
  */
