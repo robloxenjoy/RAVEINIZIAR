@@ -380,6 +380,16 @@
 	desc = "Green Shit."
 	icon_state = "poster36_legit"
 
+/obj/structure/sign/poster/official/dick_gum
+	name = "Poster"
+	desc = "The Process."
+	icon_state = "poster48_legit"
+
+/obj/structure/sign/poster/official/dick_gum
+	name = "Poster"
+	desc = "Oh!"
+	icon_state = "poster1"
+
 /obj/structure/sign/poster/official/random
 	name = "random official poster"
 	random_basetype = /obj/structure/sign/poster/official
