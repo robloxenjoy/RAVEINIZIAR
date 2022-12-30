@@ -117,8 +117,8 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
 	damage_deflection = 70
 	puzzle_id = "chaot"
-	open_message = "The door moves with a stone sound, and opens."
-	close_message = "The door moves with a stone sound, and closes."
+	open_message = "The door moves with a monstrous stone sound, and opens."
+	close_message = "The door moves with a monstrous stone sound, and closes."
 
 /obj/machinery/door/keycard/denominator/podozl/chaot/attackby(obj/item/I, mob/user, params)
 	if(istype(I,/obj/item/keycard))
