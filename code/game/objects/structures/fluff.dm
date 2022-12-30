@@ -194,7 +194,18 @@
 
 /obj/structure/fluff/statuestone/Initialize(mapload)
 	. = ..()
+	AddElement(/datum/element/climbable)
 	icon_state = pick("statueki", "statueli", "statuesi", "statuelimba", "statuelimbo", "statueslo", "statuemi", "statueslobo", "statuekil",  "statuereb", "statuebakir", "statuelyba", "statuepizd")
+
+/obj/structure/fluff/statuestone/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/item/stone(get_turf(src))
+		new /obj/item/stone(get_turf(src))
+		new /obj/item/stone(get_turf(src))
+		new /obj/item/stone(get_turf(src))
+		new /obj/item/stone(get_turf(src))
+		playsound(src, 'sound/effects/break_stone.ogg', 80, TRUE)
+	qdel(src)
 
 /**
  * A variety of statue in disrepair; parts are broken off and a gemstone is missing
