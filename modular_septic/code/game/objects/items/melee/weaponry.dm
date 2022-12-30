@@ -20,6 +20,33 @@
 	wound_bonus = 0
 	bare_wound_bonus = 5
 
+/obj/item/stone
+	name = "Stone"
+	desc = "Solid."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "stone"
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	havedurability = 1
+	durability = 140
+	carry_weight = 1 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	min_force = 9
+	force = 11
+	throwforce = 13
+	min_force_strength = 1
+	force_strength = 1.5
+	wound_bonus = 4
+	bare_wound_bonus = 4
+	throw_speed = 2
+	throw_range = 9
+	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
+	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
+	tetris_width = 32
+	tetris_height = 32
+
 //Nice sexy sex
 /obj/item/melee/truncheon
 	name = "truncheon"
