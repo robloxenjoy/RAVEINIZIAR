@@ -195,12 +195,12 @@ SUBSYSTEM_DEF(weatherr)
 	rain_wind.wait = 1
 	rain_wind.volume = 100
 	rain_wind.falloff = 2
-	rain_wind.channel = CHANNEL_WEATHER
+	rain_wind.channel = CHANNEL_WEATHEREFFECT
 	rain_wind.y = 1
 
 	rain_thunder.file = null
 	rain_thunder.wait = 1
 	rain_thunder.volume = 100
 	rain_thunder.falloff = 2
-	rain_thunder.channel = CHANNEL_WEATHER
+	rain_thunder.channel = CHANNEL_WEATHEREFFECTOTHER
 	rain_thunder.y = 1
