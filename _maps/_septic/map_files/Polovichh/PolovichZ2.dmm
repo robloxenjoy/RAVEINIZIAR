@@ -12,12 +12,12 @@
 "l" = (/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest/rain)
 "m" = (/turf/open/floor/plating/polovich/warlocksticky,/area/maintenance/polovich/forest)
 "n" = (/turf/open/floor/plating/polovich/purplefantast/two{dir = 4},/area/maintenance/polovich/forest/rain)
-"o" = (/turf/open/floor/plating/polovich/magicsteel,/area/maintenance/polovich/forest)
+"o" = (/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest)
 "p" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest/rain)
 "q" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast/two{dir = 4},/area/maintenance/polovich/forest/rain)
 "r" = (/obj/structure/railing,/turf/open/floor/plating/polovich/purplefantast/two,/area/maintenance/polovich/forest/rain)
 "s" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
-"t" = (/turf/open/floor/plating/polovich/purplefantast,/area/maintenance/polovich/forest)
+"t" = (/turf/closed/wall/r_wall,/area/maintenance/polovich/forest)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -95,9 +95,9 @@ abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdeeeeefeeegbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdhijkkkjilgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdljmkkkmjlgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlkkkkkkkngbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlkkkokkklgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlkkktkkklgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdljmkskmjlgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlijktkjilgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdlijkokjilgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdpppppqrppgbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba

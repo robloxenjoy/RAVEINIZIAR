@@ -384,6 +384,9 @@
 	absorption_capacity = 100
 	absorption_rate = 0.5
 
+/obj/item/stack/medical/gauze/improvised/one
+	amount = 1
+
 /obj/item/stack/medical/splint
 	name = "medical splints"
 	singular_name = "medical splint"

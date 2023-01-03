@@ -8,10 +8,10 @@
 "h" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest/rain)
 "i" = (/obj/structure/closet/cabinet,/turf/open/floor/plating/polovich/bluee,/area/maintenance/polovich/forest/rain)
 "j" = (/turf/open/floor/plating/polovich/warlocksticky,/area/maintenance/polovich/forest/rain)
+"k" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/magicsteel,/area/maintenance/polovich/forest/rain)
 "l" = (/obj/machinery/door/metal_door/wood_door/west,/turf/closed/wall/r_wall,/area/maintenance/polovich/forest/rain)
 "m" = (/obj/machinery/door/metal_door/east,/turf/open/floor/plating/polovich/stonestonestone/two,/area/maintenance/polovich/forest/rain)
 "o" = (/obj/machinery/door/metal_door/west,/turf/open/floor/plating/polovich/stonestonestone/two,/area/maintenance/polovich/forest/rain)
-"p" = (/turf/open/floor/plating/polovich/magicsteel,/area/maintenance/polovich/forest/rain)
 "q" = (/obj/structure/stairs/south,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest/rain)
 "r" = (/obj/structure/railing{dir = 4},/turf/open/openspace/norm,/area/maintenance/polovich/forest/rain)
 "s" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/slush,/area/maintenance/polovich/forest/rain)
@@ -119,7 +119,7 @@ abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdddddddddbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdefhhhfidbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdfjhbhjfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdhhhbhhhdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblhhhphhhdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbblhhhkhhhdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdfjhqhjfdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdffhdhffdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdddddddddbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba

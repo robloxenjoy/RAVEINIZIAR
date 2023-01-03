@@ -380,12 +380,12 @@
 	desc = "Green Shit."
 	icon_state = "poster36_legit"
 
-/obj/structure/sign/poster/official/dick_gum
+/obj/structure/sign/poster/official/process
 	name = "Poster"
 	desc = "The Process."
 	icon_state = "poster48_legit"
 
-/obj/structure/sign/poster/official/dick_gum
+/obj/structure/sign/poster/official/podozl
 	name = "Poster"
 	desc = "Oh!"
 	icon_state = "poster1"

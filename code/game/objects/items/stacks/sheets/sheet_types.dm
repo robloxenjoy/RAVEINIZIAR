@@ -402,7 +402,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 				user.visible_message(span_notice("[user] crafted..."),span_notice("You crafted improvised bandages."), span_hear("You hear the sound of craft."))
 				user.changeNext_move(CLICK_CD_MELEE)
 				sound_hint()
-				new /obj/item/stack/medical/gauze/improvised(get_turf(src))
+				new /obj/item/stack/medical/gauze/improvised/one(get_turf(src))
 				qdel(src)
 
 /*
