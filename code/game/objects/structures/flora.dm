@@ -458,6 +458,7 @@
 	name = "Midnightberry Thickets"
 	desc = "Oh, this is a great variety of midnightberry thickets."
 	var/haveberry = TRUE
+	var/stillborn = FALSE
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
@@ -482,6 +483,17 @@
 	user.Immobilize(1 SECONDS)
 	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
 	user.put_in_active_hand(new /obj/item/food/grown/bluecherries(loc))
+
+/obj/structure/flora/ausbushes/zarosli/midnight/good/Initialize(mapload)
+	. = ..()
+	if(prob(50))
+		stillborn = TRUE
+		haveberry = FALSE
+
+/obj/structure/flora/ausbushes/zarosli/midnight/good/examine(mob/user)
+	. = ..()
+	if(stillborn)
+		. += "<span class='warning'>Oh, looks like these thickets are stillborn.</span>"
 
 /obj/structure/flora/ausbushes/reedbush
 	icon_state = "reedbush_1"
