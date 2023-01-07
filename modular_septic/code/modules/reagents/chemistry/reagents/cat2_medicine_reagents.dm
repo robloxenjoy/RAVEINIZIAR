@@ -311,6 +311,7 @@
 	if(LAZYLEN(damaged_organs))
 		var/obj/item/organ/organ = pick(damaged_organs)
 		organ.applyOrganDamage(-2 * 0.5 * delta_time)
+	M.heal_overall_damage(brute = 3 * REM * delta_time)
 	return TRUE
 
 /datum/reagent/medicine/c2/penthrite/onesebasta
@@ -347,6 +348,7 @@
 	if(LAZYLEN(damaged_organs))
 		var/obj/item/organ/organ = pick(damaged_organs)
 		organ.applyOrganDamage(-3 * 0.5 * delta_time)
+	M.heal_overall_damage(brute = 5 * REM * delta_time)
 	return TRUE
 
 /******RADIATION******/

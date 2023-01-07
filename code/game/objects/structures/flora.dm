@@ -446,6 +446,41 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.Immobilize(1 SECONDS)
 	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	var/result = rand(1, 2)
+	switch(result)
+		if(1)
+			result = new /obj/item/food/grown/bluecherries(loc)
+		if(2)
+			result = new /obj/item/food/grown/bluecherries/lie(loc)
+	user.put_in_active_hand(result)
+
+/obj/structure/flora/ausbushes/zarosli/midnight/good
+	name = "Midnightberry Thickets"
+	desc = "Oh, this is a great variety of midnightberry thickets."
+	var/haveberry = TRUE
+
+/obj/structure/flora/ausbushes/zarosli/midnight/good/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent != INTENT_GRAB)
+		return
+	if(!do_after(user, 10 SECONDS, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		return
+	if(haveberry = FALSE)
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.Immobilize(1 SECONDS)
+		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		to_chat(user, span_notice("Looks like there are no more midnightberries will grow."))
+		sound_hint()
+		return
+	haveberry = FALSE
+	to_chat(user, span_notice("You pick pesky midnightberry."))
+	sound_hint()
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.Immobilize(1 SECONDS)
+	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
 	user.put_in_active_hand(new /obj/item/food/grown/bluecherries(loc))
 
 /obj/structure/flora/ausbushes/reedbush

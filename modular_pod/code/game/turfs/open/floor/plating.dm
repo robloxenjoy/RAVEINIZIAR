@@ -378,7 +378,7 @@
 	slowdown = 1
 //	var/cooldown = 0
 
-/turf/open/floor/plating/polovich/dirt/dark/Initialize(mapload)
+/turf/open/floor/plating/polovich/dirt/dark/gryazka/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 

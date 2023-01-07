@@ -28,7 +28,7 @@
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
 	havedurability = 1
-	durability = 140
+	durability = 160
 	carry_weight = 1 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
 	w_class = WEIGHT_CLASS_SMALL
@@ -46,6 +46,42 @@
 	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
 	tetris_width = 32
 	tetris_height = 32
+
+/obj/item/knife/combat/goldenmisericorde
+	name = "Golden Misericorde"
+	desc = "Expensive dagger. Shove it deep into the idiot."
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	lefthand_file = 'modular_septic/icons/mob/inhands/sword_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/sword_righthand.dmi'
+	icon_state = "goldenmisericorde"
+	inhand_icon_state = "goldenmisericorde"
+	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.wav'
+	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
+	w_class = WEIGHT_CLASS_SMALL
+	wound_bonus = 0
+	bare_wound_bonus = 5
+	min_force = 12
+	force = 15
+	min_force_strength = 1
+	throwforce = 5
+	force_strength = 1.8
+	sharpness = SHARP_POINTY
+	embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 38, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+	skill_melee = SKILL_KNIFE
+	carry_weight = 1 KILOGRAMS
+	attack_fatigue_cost = 6
+	attack_delay = 17
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	havedurability = 1
+	durability = 180
+	tetris_width = 32
+	tetris_height = 32
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("stabs", "pokes", "jabs")
+	attack_verb_simple = list("stab", "poke", "jab")
 
 //Nice sexy sex
 /obj/item/melee/truncheon
@@ -595,8 +631,8 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	carry_weight = 1.5 KILOGRAMS
 	parrying_modifier = 0.8
-	attack_fatigue_cost = 7
-	attack_delay = 17
+	attack_fatigue_cost = 6
+	attack_delay = 16
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/swap_intents(mob/user)
 	. = ..()

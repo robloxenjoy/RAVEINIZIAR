@@ -132,12 +132,14 @@
 
 		if(6)
 			venturer_type = "venturerbandit"
+			belt = /obj/item/knife/combat/goldenmisericorde
 			to_chat(H, span_achievementinteresting("I am a bandit!"))
 			to_chat(H, span_info("Hehe, how evil I am!"))
 
 		if(7)
 			venturer_type = "venturerlordbandit"
 			neck = /obj/item/clothing/neck/bear_cloak
+			belt = /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt
 			to_chat(H, span_achievementinteresting("I am the leader of the bandits!"))
 			to_chat(H, span_info("I need to find other bandits, and maybe start something insidious."))
 
