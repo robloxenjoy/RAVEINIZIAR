@@ -42,7 +42,7 @@
 			var/time = 14 SECONDS
 			time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 			if(do_after(user, time, target = src))
-				if(user.zone_selected == BODY_ZONE_NECK)
+				if(user.zone_selected == BODY_ZONE_PRECISE_NECK)
 					user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
 					user.changeNext_move(CLICK_CD_MELEE)
 					user.adjustFatigueLoss(10)

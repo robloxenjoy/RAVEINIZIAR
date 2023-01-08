@@ -222,7 +222,7 @@
 
 /obj/structure/sign/poster/official/build
 	name = "Coil"
-	desc = "The creature swallows its tail."
+	desc = "The creature swallows its own tail."
 	icon_state = "poster5_legit"
 
 /obj/structure/sign/poster/official/bless_this_spess
@@ -291,7 +291,7 @@
 	icon_state = "poster18_legit"
 
 /obj/structure/sign/poster/official/safety_internals
-	name = "Creatire"
+	name = "Creature"
 	desc = "Love is a dog from hell."
 	icon_state = "poster19_legit"
 

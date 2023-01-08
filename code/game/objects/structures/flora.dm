@@ -469,7 +469,7 @@
 	if(!do_after(user, 10 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
 		return
-	if(haveberry = FALSE)
+	if(haveberry == FALSE)
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.Immobilize(1 SECONDS)
 		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
