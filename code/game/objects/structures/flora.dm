@@ -466,8 +466,20 @@
 		return
 	if(user.a_intent != INTENT_GRAB)
 		return
+	user.visible_message(span_notice("<b>[user]</b> begins to search for midnightberries."), \
+						span_notice("I begin to search for midnightberries."), \
+						span_hear("I hear the sound of shag."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
 	if(!do_after(user, 10 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
+		return
+	if(stillborn == TRUE)
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.Immobilize(1 SECONDS)
+		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		to_chat(user, span_notice("These thickets are stillborn. Why did I touch this at all?"))
+		sound_hint()
 		return
 	if(haveberry == FALSE)
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -476,6 +488,7 @@
 		to_chat(user, span_notice("Looks like there are no more midnightberries will grow."))
 		sound_hint()
 		return
+
 	haveberry = FALSE
 	to_chat(user, span_notice("You pick pesky midnightberry."))
 	sound_hint()
@@ -488,7 +501,6 @@
 	. = ..()
 	if(prob(50))
 		stillborn = TRUE
-		haveberry = FALSE
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/examine(mob/user)
 	. = ..()
