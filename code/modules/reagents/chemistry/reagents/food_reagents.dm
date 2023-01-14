@@ -567,6 +567,13 @@
 	taste_description = "saisilva berry"
 	taste_mult = 8
 
+/datum/reagent/consumable/lifebloodjelly
+	name = "Lifeblood Berry"
+	description = "Living."
+	color = "#b81825"
+	taste_description = "lifeblood berry"
+	taste_mult = 8
+
 /datum/reagent/consumable/rice
 	name = "Rice"
 	description = "tiny nutritious grains"

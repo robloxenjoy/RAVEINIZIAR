@@ -66,7 +66,7 @@
 				if(wound_messages)
 					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] drops [p_their()] [held_item]!"))
 		if(BODY_ZONE_PRECISE_VITALS)
-			vomiting = prob(70)
+			vomiting = prob(80)
 			flash_pain_major()
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] nauseated!"))

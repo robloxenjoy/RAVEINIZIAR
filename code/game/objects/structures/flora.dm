@@ -321,7 +321,7 @@
 
 /obj/structure/flora/ausbushes/crystal/dark/Initialize()
 	. = ..()
-	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee")
+	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee", "reddd")
 	grow_berries()
 
 /obj/structure/flora/ausbushes/crystal/dark/update_overlays()
@@ -370,6 +370,8 @@
 			berry = new /obj/item/food/grown/bluecherries/super(loc)
 		if("purple")
 			berry = new /obj/item/food/berries/leancherrie(loc)
+		if("reddd")
+			berry = new /obj/item/food/grown/lifebloodcherries(loc)
 	user.put_in_active_hand(berry)
 	berries--
 	update_appearance()
@@ -430,6 +432,11 @@
 		return
 	if(user.a_intent != INTENT_GRAB)
 		return
+	user.visible_message(span_notice("<b>[user]</b> begins to search for midnightberries."), \
+						span_notice("I begin to search for midnightberries."), \
+						span_hear("I hear the sound of shag."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
 	if(!do_after(user, 10 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
 		return

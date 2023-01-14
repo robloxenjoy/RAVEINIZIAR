@@ -34,3 +34,10 @@
 			var/mob/living/simple_animal/hostile/podozl/caracal/newlynx = new(lyn.loc)
 			newlynx.key = key
 */
+
+/mob/living/carbon/human/verb/vomit(whispered as null)
+	set name = "Vomit"
+	set category = "Extra"
+	set desc = "You want?"
+
+	vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)

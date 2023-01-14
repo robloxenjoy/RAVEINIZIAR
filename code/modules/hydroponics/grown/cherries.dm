@@ -83,6 +83,23 @@
 	bite_consumption = 7
 	bite_consumption_mod = 5
 
+/obj/item/food/grown/lifebloodcherries
+	seed = /obj/item/seeds/cherry/blue
+	name = "Lifeblood Berry"
+	desc = "Delicious and healthy berry."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "lifeblood"
+	bite_consumption_mod = 3
+	bite_consumption = 6
+	eat_time = 2
+	foodtypes = FRUIT
+	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 4)
+	food_reagents = list( /datum/reagent/consumable/bluecherryjelly = 4, /datum/reagent/medicine/atropine = 2)
+	tastes = list("lifeblood berry" = 1, "viscous" = 1)
+	wine_power = 50
+	tetris_width = 32
+	tetris_height = 32
+
 //Cherry Bulbs
 /obj/item/seeds/cherry/bulb
 	name = "pack of cherry bulb pits"

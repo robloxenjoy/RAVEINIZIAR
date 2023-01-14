@@ -9,7 +9,7 @@
 /mob/Initialize(mapload)
 	. = ..()
 	set_hydration(rand(HYDRATION_LEVEL_START_MIN, HYDRATION_LEVEL_START_MAX))
-	set_nutrition(rand(NUTRITION_LEVEL_STARVING, NUTRITION_LEVEL_FULL))
+	set_nutrition(rand(NUTRITION_LEVEL_STARVING, NUTRITION_LEVEL_WELL_FED))
 	attribute_initialize()
 	if(ispath(frill_blocker, /atom/movable/blocker) && GLOB.blocker_movables[frill_blocker])
 		vis_contents |= GLOB.blocker_movables[frill_blocker]

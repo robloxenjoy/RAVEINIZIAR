@@ -8,6 +8,7 @@
 	var/mob/living/carbon/C = L
 	var/numbing = min(50, CEILING(C.getShock(TRUE)/2, 1))
 	C.add_chem_effect(CE_BLOODRESTORE, 1, "[type]")
+	C.add_chem_effect(CE_OXYGENATED, 1, "[type]")
 	C.add_chem_effect(CE_PAINKILLER, numbing, "[type]")
 	C.add_chem_effect(CE_STABLE, 1, "[type]")
 	if(C.undergoing_cardiac_arrest() || C.undergoing_nervous_system_failure())
@@ -21,6 +22,7 @@
 	L.remove_chem_effect(CE_TOXIN, "[type]")
 	L.remove_chem_effect(CE_BLOCKAGE, "[type]")
 	L.remove_chem_effect(CE_STABLE, "[type]")
+	L.remove_chem_effect(CE_OXYGENATED, "[type]")
 
 /datum/reagent/medicine/atropine/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()
