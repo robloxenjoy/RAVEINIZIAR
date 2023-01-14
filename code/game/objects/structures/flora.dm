@@ -321,6 +321,7 @@
 
 /obj/structure/flora/ausbushes/crystal/dark/Initialize()
 	. = ..()
+	icon_state = pick("blacknessbush1", "blacknessbush2", "blacknessbush3")
 	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee", "reddd")
 	grow_berries()
 
@@ -411,6 +412,7 @@
 
 /obj/structure/flora/ausbushes/zarosli/Initialize(mapload)
 	. = ..()
+	dir = rand(0,4)
 	update_appearance()
 
 /obj/structure/flora/ausbushes/zarosli/ComponentInitialize()
