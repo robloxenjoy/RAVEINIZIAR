@@ -122,6 +122,7 @@
 			uniform = /obj/item/clothing/under/rank/captain/zoomtech
 			r_pocket = /obj/item/shard/crystal/purple
 			glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
+			belt = /obj/item/knife/combat/goldenmisericorde
 			to_chat(H, span_achievementinteresting("I'm a village owner!"))
 			to_chat(H, span_info("Finally got out of the turmoil with the village and can breathe fresh air."))
 

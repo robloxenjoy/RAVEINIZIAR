@@ -61,7 +61,7 @@
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
 	w_class = WEIGHT_CLASS_SMALL
-	wound_bonus = 0
+	wound_bonus = 1
 	bare_wound_bonus = 5
 	min_force = 12
 	force = 15
@@ -74,7 +74,7 @@
 	carry_weight = 1 KILOGRAMS
 	attack_fatigue_cost = 6
 	attack_delay = 17
-	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_THROWN
 	havedurability = 1
 	durability = 180
 	tetris_width = 32
