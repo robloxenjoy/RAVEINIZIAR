@@ -82,6 +82,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	//durability of item
 	var/havedurability = 0
 	var/durability = 150
+	
+	var/canrust = FALSE
+	var/rustbegin = 6000 SECONDS
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
 	var/w_class = WEIGHT_CLASS_NORMAL
@@ -238,6 +241,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(!durability)
 			durability = rand(100,150)
 
+	if(canrust)
+		START_PROCESS(SSobj, src)
+
 	add_weapon_description()
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_ITEM, src)
@@ -391,6 +397,48 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		playsound(src.loc, 'sound/effects/break_stone.ogg', 100, TRUE)
 		src.visible_message(span_notice("[src] breaks."), span_notice("[src] breaks."), span_hear("You hear the sound of breaking."))
 		qdel(src)
+
+/obj/item/proc/rustItem(var/power_rust)
+	var/modifier = 1
+	switch(power_rust)
+		if("HARD")
+			modifier += 150
+		if("SOFT")
+			modifier = 5
+		if("MEDIUM")
+			modifier += 50
+	if(rustbegin > 0 SECONDS)
+		rustbegin -= modifier
+	if(rustbegin <= 0 SECONDS)
+		rustbegin = 0 SECONDS
+//		playsound(src.loc, 'sound/effects/break_stone.ogg', 100, TRUE)
+		src.visible_message(span_notice("[src] become rusty."), span_notice("[src] become rusty."), span_hear("You hear a strange sound."))
+		src.rusted()
+
+/obj/item/proc/rusted()
+	if(canrust)
+		canrust = FALSE
+		if(force )
+	if(!rust_item)
+		return
+
+	var/index = "[REF(icon)]-[icon_state]"
+	var/static/list/rust_icon = list()
+	var/icon/rust_icon = rust_icons[index]
+	if(!rust_icon)
+		rust_icon = icon(icon, icon_state, , 1)
+		rust_icon.Blend("#ffffff", ICON_ADD)
+		rust_icon.Blend(icon('modular_septic/icons/effects/item_damage.dmi', "itemrust"), ICON_MULTIPLY)
+		rust_icon.Blend("#4f2411", ICON_MULTIPLY)
+		rust_icon = fcopy_rsc(rust_icon)
+		rust_icons[index] = rust_icon
+	. += rust_icon
+
+/obj/item/process(delta_time)
+	if(canrust)
+		rustbegin -= delta_time
+		if(LAZYLEN(blood_dna)))
+			rustbegin -= delta_time * (4 SECONDS)
 
 /obj/item/interact(mob/user)
 	add_fingerprint(user)

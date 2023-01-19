@@ -40,4 +40,5 @@
 	set category = "Extra"
 	set desc = "You want?"
 
-	vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)
+	if(stat == CONSCIOUS)
+		vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)

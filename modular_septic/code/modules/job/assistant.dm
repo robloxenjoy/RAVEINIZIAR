@@ -3,6 +3,16 @@
 	total_positions = 45
 	spawn_positions = 2
 	required_languages = null
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	supervisors = "he's just suffering."
+	selection_color = "#596000"
+	exp_granted_type = EXP_TYPE_CREW
+
+	departments_list = list(
+		/datum/job_department/cargo,
+		)
+
 
 	outfit = /datum/outfit/job/assistant/zoomtech
 
@@ -32,3 +42,4 @@
 	r_pocket = null
 
 	skillchips = null
+	backpack = null
