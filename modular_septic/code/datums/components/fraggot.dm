@@ -53,7 +53,7 @@
 			"LGBT!!!", \
 			"GAMING!!!!", \
 			"NIGGERS!!!!!", \
-			"LIFEWEB!!!!", \
+			"GAYWEB!!!!", \
 			"FAGGOTS!!!", \
 			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!", \
 			"GODDAMNIT!!!!", \

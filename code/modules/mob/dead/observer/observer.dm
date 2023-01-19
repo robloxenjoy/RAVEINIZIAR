@@ -63,8 +63,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/datum/minigames_menu/minigames_menu
 
 /mob/dead/observer/Initialize(mapload)
+	overlay_fullscreen("fuckyoughost", /atom/movable/screen/fullscreen/noghost)
+	add_client_colour(/datum/client_colour/full_black_absolute)
 	set_invisibility(GLOB.observer_default_invisibility)
-	src.overlay_fullscreen("fuckyoughost", /atom/movable/screen/fullscreen/noghost)
 
 /*
 	add_verb(src, list(

@@ -3,10 +3,10 @@
 	attribute_variance = list(
 		STAT_STRENGTH = list(-4, -2),
 		STAT_ENDURANCE = list(-4, -2),
-		STAT_DEXTERITY = list(-4, -2),
-		STAT_INTELLIGENCE = list(-4, -2),
+		STAT_DEXTERITY = list(-3, -2),
+		STAT_INTELLIGENCE = list(-3, -2),
 		SKILL_BRAWLING = list(-2, 1),
-		SKILL_WRESTLING = list(-2, 1),
+		SKILL_WRESTLING = list(-2, 3),
 		SKILL_KNIFE = list(-2, 0),
 		SKILL_GAMING = list(-2, 2),
 	)
