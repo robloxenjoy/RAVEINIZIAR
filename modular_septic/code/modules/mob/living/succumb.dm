@@ -35,7 +35,7 @@
 			newlynx.key = key
 */
 
-/mob/living/carbon/human/verb/vomit(whispered as null)
+/mob/living/carbon/human/verb/vomited(whispered as null)
 	set name = "Vomit"
 	set category = "Extra"
 	set desc = "You want?"

@@ -11,7 +11,7 @@
 
 /datum/reagent/drug/lean/on_mob_life(mob/living/carbon/lean_monster, delta_time, times_fired)
 	. = ..()
-	M.adjustToxLoss(-1 * REM * delta_time)
+	lean_monster.adjustToxLoss(-1 * REM * delta_time)
 	//Chance of Willador Afton
 	if(DT_PROB(3, delta_time))
 		INVOKE_ASYNC(src, .proc/handle_lean_monster_hallucinations, lean_monster)
@@ -61,7 +61,7 @@
 /datum/reagent/drug/lean/on_mob_end_metabolize(mob/living/lean_monster)
 	. = ..()
 	to_chat(lean_monster, span_love(span_big("NOOOO... I NEED MORE LEAN...")))
-	L.remove_chem_effect(CE_ANTITOX, 10, "[type]")
+	lean_monster.remove_chem_effect(CE_ANTITOX, 10, "[type]")
 	lean_monster.attributes?.remove_attribute_modifier(/datum/attribute_modifier/lean, TRUE)
 	to_chat(lean_monster, span_warning("I feel myself weaker, so bad!"))
 	if(!lean_monster.hud_used)

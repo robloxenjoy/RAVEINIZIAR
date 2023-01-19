@@ -30,7 +30,4 @@
 	l_pocket = null
 	r_pocket = null
 
-	has_radio = FALSE
-	has_card = FALSE
-
 	skillchips = null
