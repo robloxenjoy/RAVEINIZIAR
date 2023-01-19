@@ -308,7 +308,7 @@
 
 /obj/effect/mob_spawn/human/corpse/assistant
 	name = "Assistant"
-	outfit = /datum/outfit/job/assistant
+	outfit = /datum/outfit/venturer
 	icon_state = "corpsegreytider"
 
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection

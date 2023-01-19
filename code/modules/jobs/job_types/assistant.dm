@@ -36,7 +36,7 @@ Assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant
 	id_trim = /datum/id_trim/job/assistant
-
+/*
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
 	if (CONFIG_GET(flag/grey_assistants))
@@ -66,3 +66,5 @@ Assistant
 	// This outfit is used by the assets SS, which is ran before the atoms SS
 	if (SSatoms.initialized == INITIALIZATION_INSSATOMS)
 		H.w_uniform?.update_greyscale()
+
+*/

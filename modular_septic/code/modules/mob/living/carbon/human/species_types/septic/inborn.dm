@@ -52,7 +52,7 @@
 	say_mod = "berates"
 	attack_verb = "slashes"
 	bite_sharpness = SHARP_POINTY
-	attack_sharpness = SHARP_EDGED
+//	attack_sharpness = SHARP_EDGED
 	limbs_icon = 'modular_septic/icons/mob/human/species/human/weak_parts.dmi'
 	limbs_id = "human"
 	examine_icon_state = "willetweak"

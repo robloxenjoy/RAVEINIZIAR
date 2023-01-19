@@ -208,7 +208,7 @@
 	assistant.hairstyle = hairstyle
 	assistant.update_hair()
 
-	var/icon/assistant_icon = render_preview_outfit(/datum/outfit/job/assistant/consistent, assistant)
+	var/icon/assistant_icon = render_preview_outfit(/datum/outfit/job/hos/zoomtech, assistant)
 	assistant_icon.ChangeOpacity(0.5)
 
 	qdel(assistant)

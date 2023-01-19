@@ -21,6 +21,7 @@
 	suit = null
 	gloves = null
 	head = null
+	back = null
 //	r_hand = null
 //	l_hand = null
 
