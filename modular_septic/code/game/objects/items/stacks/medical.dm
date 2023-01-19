@@ -290,7 +290,7 @@
 	affecting.receive_damage(10, sharpness = SHARP_EDGED | SHARP_POINTY | SHARP_IMPALING)
 	affecting.adjust_germ_level(100)
 	// oh you fucking idiot NOW YOU'VE DONE IT
-	if(prob(1))
+	if(prob(15))
 		affecting.painless_wound_roll(WOUND_ARTERY, 150, sharpness = SHARP_EDGED | SHARP_POINTY | SHARP_IMPALING)
 
 /obj/item/stack/medical/mesh

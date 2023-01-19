@@ -310,7 +310,7 @@
 	name = "Blackness Bush"
 	desc = "Bush of blackness. This bush is chaotic."
 	icon = 'icons/obj/flora/ausflora.dmi'
-	icon_state = "blacknessbush"
+	icon_state = "blacknessbush1"
 	plane = GAME_PLANE_UPPER
 	layer = EDGED_TURF_LAYER
 	density = 0
