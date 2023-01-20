@@ -242,7 +242,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 			durability = rand(100,150)
 
 	if(canrust)
-		START_PROCESS(SSobj, src)
+		START_PROCESSING(SSobj, src)
 
 	add_weapon_description()
 
@@ -411,7 +411,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		rustbegin -= modifier
 	if(rustbegin <= 0 SECONDS)
 		rustbegin = 0 SECONDS
-//		playsound(src.loc, 'sound/effects/break_stone.ogg', 100, TRUE)
+		playsound(src.loc, 'modular_septic/sound/effects/rusted.wav', 100, TRUE)
 		src.visible_message(span_notice("[src] become rusty."), span_notice("[src] become rusty."), span_hear("You hear a strange sound."))
 		src.rusted()
 
@@ -420,6 +420,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		return
 
 	canrust = FALSE
+	STOP_PROCESSING(SSobj, src)
 	switch(force)
 		if(9 to 13)
 			force -= 5
@@ -441,7 +442,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 			durability -= 65
 
 	var/index = "[REF(icon)]-[icon_state]"
-	var/static/list/rust_icon = list()
+	var/static/list/rust_icons = list()
 	var/icon/rust_icon = rust_icons[index]
 	if(!rust_icon)
 		rust_icon = icon(icon, icon_state, , 1)
@@ -455,7 +456,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 /obj/item/process(delta_time)
 	if(canrust)
 		rustbegin -= delta_time
-		if(LAZYLEN(blood_dna))
+		if(HAS_BLOOD_DNA(src))
 			rustbegin -= delta_time * (3 SECONDS)
 
 /obj/item/interact(mob/user)

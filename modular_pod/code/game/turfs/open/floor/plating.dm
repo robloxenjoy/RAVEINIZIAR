@@ -381,8 +381,18 @@
 /turf/open/floor/plating/polovich/dirt/dark/gryazka/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+/*
+	if(prob(65))
+		if(istype(src.loc, /mob/living/carbon/human))
+			try_eat()
+*/
+/turf/open/floor/plating/polovich/dirt/dark/gryazka/Initialize()
+	. = ..()
+	if(prob(65))
+		if(locate(/mob/living/carbon/human) in src)
+			try_eat()
 
-/turf/open/floor/plating/polovich/dirt/dark/gryazka/eat()
+/turf/open/floor/plating/polovich/dirt/dark/gryazka/proc/try_eat()
 //	var/open/floor/plating/polovich/dirt/dark/T = get_turf(src)
 	var/mob/living/carbon/human/eat_human = locate() in src
 	if(eat_human.stat != DEAD)
