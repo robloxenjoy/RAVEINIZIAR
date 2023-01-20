@@ -79,12 +79,17 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/drop_sound
 	///Whether or not we use stealthy audio levels for this item's attack sounds
 	var/stealthy_audio = FALSE
+
 	//durability of item
-	var/havedurability = 0
+	var/havedurability = FALSE
 	var/durability = 150
 
+	//rusting of item
 	var/canrust = FALSE
 	var/rustbegin = 4000 SECONDS
+
+	//dip items in liquid
+	var/list/poisoned = list()
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
 	var/w_class = WEIGHT_CLASS_NORMAL
@@ -458,6 +463,24 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		rustbegin -= delta_time
 		if(HAS_BLOOD_DNA(src))
 			rustbegin -= delta_time * (3 SECONDS)
+
+/obj/item/reagent_containers/attackby(obj/item/W, mob/user)
+    if(!ishuman(user))
+        return ..()
+    if(istype(src, /obj/item/reagent_containers/syringe))
+        return ..()
+    if(istype(src,/obj/item/reagent_containers/pill))
+        return ..()
+    if((W.get_sharpness() & SHARP_IMPALING) || (W.get_sharpness() & SHARP_POINTY) || (W.get_sharpness() & SHARP_EDGED))
+        if(reagents.total_volume >= reagents?.reagent_list.len)
+            for(var/datum/reagent/R in reagents?.reagent_list)
+                if(R.volume <= 1)
+                    reagents?.remove_reagent(R.type, volume)
+                    W.poisoned += list(list(R.type, volume))
+                    continue
+                reagents?.remove_reagent(R.type, 1)
+                W.poisoned += list(list(R.type, 1))
+            user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You flips [src] to the other side!"))
 
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
