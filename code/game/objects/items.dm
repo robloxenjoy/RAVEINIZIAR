@@ -82,9 +82,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	//durability of item
 	var/havedurability = 0
 	var/durability = 150
-	
+
 	var/canrust = FALSE
-	var/rustbegin = 6000 SECONDS
+	var/rustbegin = 4000 SECONDS
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
 	var/w_class = WEIGHT_CLASS_NORMAL
@@ -416,11 +416,29 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		src.rusted()
 
 /obj/item/proc/rusted()
-	if(canrust)
-		canrust = FALSE
-		if(force )
-	if(!rust_item)
+	if(!canrust)
 		return
+
+	canrust = FALSE
+	switch(force)
+		if(9 to 13)
+			force -= 5
+		if(14 to 17)
+			force -= 6
+		if(18 to 24)
+			force -= 7
+		if(25 to INFINITY)
+			force -= 8
+
+	switch(durability)
+		if(70 to 90)
+			durability -= 30
+		if(91 to 110)
+			durability -= 40
+		if(111 to 130)
+			durability -= 50
+		if(131 to INFINITY)
+			durability -= 65
 
 	var/index = "[REF(icon)]-[icon_state]"
 	var/static/list/rust_icon = list()
@@ -437,8 +455,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 /obj/item/process(delta_time)
 	if(canrust)
 		rustbegin -= delta_time
-		if(LAZYLEN(blood_dna)))
-			rustbegin -= delta_time * (4 SECONDS)
+		if(LAZYLEN(blood_dna))
+			rustbegin -= delta_time * (3 SECONDS)
 
 /obj/item/interact(mob/user)
 	add_fingerprint(user)

@@ -83,9 +83,9 @@
 		if(HAS_TRAIT(src, TRAIT_SSD_INDICATOR))
 			covered_lips |= "<span style='color: #[COLOR_BLUE_WATER];'>drool</span>"
 		if(LAZYLEN(covered_lips))
-			. += "Mmm, [t_his] lips are covered with [english_list(covered_lips)]!"
+			. += "Fuck, [t_his] lips are covered with [english_list(covered_lips)]!"
 		if(belief == "Hadot")
-			. += "There are lynx whiskers on [t_his] face"
+			. += "There are lynx whiskers near [t_his] mouth"
 
 	//head
 	if(head && !(obscured & ITEM_SLOT_HEAD) && !(head.item_flags & EXAMINE_SKIP) && !(head.item_flags & ABSTRACT))

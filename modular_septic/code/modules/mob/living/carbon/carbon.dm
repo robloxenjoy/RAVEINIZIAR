@@ -1,5 +1,6 @@
 /mob/living/carbon
 	var/vomitsound = 'modular_septic/sound/emotes/vomit.wav'
+	var/specialvomitsound = 'modular_septic/sound/emotes/vomitbutton.wav'
 	var/broken_cuffs = list('modular_septic/sound/effects/fucked_cuffs1.wav', 'modular_septic/sound/effects/fucked_cuffs2.wav')
 	var/broken_zipties = list('modular_septic/sound/effects/fucked_zipties1.wav', 'modular_septic/sound/effects/fucked_zipties2.wav')
 
@@ -261,7 +262,7 @@
 			attributes.remove_diceroll_modifier(/datum/diceroll_modifier/nondominant_hand)
 			attributes.update_attributes()
 
-/mob/living/carbon/vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = 1, message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)
+/mob/living/carbon/vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = 1, message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1, button = FALSE)
 	if((HAS_TRAIT(src, TRAIT_NOHUNGER) || HAS_TRAIT(src, TRAIT_TOXINLOVER)) && !force)
 		return TRUE
 
@@ -279,6 +280,8 @@
 							span_userdanger("You throw up all over yourself!"))
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomitself)
 		distance = 0
+		if(blood)
+			AddComponent(/datum/component/creamed/blood)
 	else
 		if(message)
 			visible_message(span_danger("[src] throws up!"), span_userdanger("You throw up!"))
@@ -288,7 +291,11 @@
 	if(stun)
 		Paralyze(80)
 
-	playsound(get_turf(src), vomitsound, 50, TRUE)
+	if(!button)
+		playsound(get_turf(src), vomitsound, 50, TRUE)
+	else
+		playsound(get_turf(src), specialvomitsound, 50, TRUE)
+
 	var/turf/T = get_turf(src)
 	if(!blood)
 		adjust_nutrition(-lost_nutrition)
