@@ -391,7 +391,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	var/current_atk_mode = slashh
 	worn_icon_state = "shard"
 //	worn_icon = 'icons/mob/clothing/belt.dmi'
-	havedurability = 1
+	havedurability = TRUE
 	durability = 50
 	force = 8
 	wound_bonus = 3

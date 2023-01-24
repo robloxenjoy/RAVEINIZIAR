@@ -641,7 +641,7 @@
 			to_chat(user, span_notice("You construct a floor."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new /turf/open/floor/plating/polovich/logsgreen(src)
-//			qdel(src)
+			qdel(src)
 		else
 			to_chat(user, span_warning("You need four logs to build a floor!"))
 		return

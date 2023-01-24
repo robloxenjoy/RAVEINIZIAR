@@ -55,7 +55,10 @@
 			readout += span_notice("<b>Organ Bonus:</b> [source.organ_bonus]")
 		if(source.bare_organ_bonus)
 			readout += span_notice("<b>Bare Organ Bonus:</b> [source.bare_organ_bonus]")
+		if(source.poisoned.len))
+			readout += span_notice("<b>Covered in:</b> [capitalize_like_old_man(source.poisoned.len)]")
 		readout += span_notice("<b>Durability:</b> [capitalize_like_old_man(source.durability)]")
+		readout += span_notice("<b>Rust Point:</b> [capitalize_like_old_man(source.rustbegin)]")
 		readout += span_notice("<b>Sharpness:</b> [capitalize_like_old_man(translate_sharpness(source.get_sharpness()))]")
 
 	// Custom manual notes

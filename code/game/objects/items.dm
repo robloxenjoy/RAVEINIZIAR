@@ -89,7 +89,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/rustbegin = 4000 SECONDS
 
 	//dip items in liquid
-	var/list/poisoned = list()
+    var/list/poisoned = list()
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
 	var/w_class = WEIGHT_CLASS_NORMAL
@@ -480,7 +480,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
                     continue
                 reagents?.remove_reagent(R.type, 1)
                 W.poisoned += list(list(R.type, 1))
-            user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You flips [src] to the other side!"))
+            user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
 
 /obj/item/interact(mob/user)
 	add_fingerprint(user)

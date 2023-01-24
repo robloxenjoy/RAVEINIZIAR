@@ -109,7 +109,7 @@
 	throw_range = 5
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
-	havedurability = 1
+	havedurability = TRUE
 	durability = 200
 	slowdown = 1
 	var/logs_amount = 3

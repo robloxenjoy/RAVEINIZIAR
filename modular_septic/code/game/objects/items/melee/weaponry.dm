@@ -27,7 +27,7 @@
 	icon_state = "stone"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
-	havedurability = 1
+	havedurability = TRUE
 	durability = 160
 	carry_weight = 1 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
@@ -74,8 +74,9 @@
 	carry_weight = 1 KILOGRAMS
 	attack_fatigue_cost = 6
 	attack_delay = 17
-	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_THROWN
-	havedurability = 1
+	parrying_flags = BLOCK_FLAG_THROWN | BLOCK_FLAG_UNARMED
+	canrust = TRUE	
+	havedurability = TRUE
 	durability = 180
 	tetris_width = 32
 	tetris_height = 32
@@ -514,7 +515,7 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	carry_weight = 3 KILOGRAMS
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	havedurability = 1
+	havedurability = TRUE
 	durability = 195
 	tetris_width = 32
 	tetris_height = 96
@@ -604,7 +605,7 @@
 	attack_fatigue_cost = 8
 	attack_delay = 20
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	havedurability = 1
+	havedurability = TRUE
 	durability = 160
 	tetris_width = 32
 	tetris_height = 96

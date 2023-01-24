@@ -150,7 +150,7 @@
 	puzzle_id = "chaot"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
-	havedurability = 1
+	havedurability = TRUE
 	durability = 150
 	carry_weight = 1 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
