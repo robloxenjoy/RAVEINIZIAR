@@ -270,12 +270,14 @@
 					subarmor_flags = subarmor_flags)
 		victim.damage_armor(damage+weapon.armor_damage_modifier, MELEE, weapon.damtype, sharpness, def_zone)
 		post_hit_effects(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
+/*		
 		if(edge_protection <= 0)
 			if(weapon.poisoned.len)
 				for(var/list/L in weapon.poisoned)
 					victim.reagents.add_reagent(L.type, 1)
 //					reagents.trans_to(victim, 1, methods = INJECT)
 				weapon.poisoned = list()
+*/
 	user.sound_hint()
 	victim.sound_hint()
 	victim.send_item_attack_message(weapon, user, hit_area, affecting)

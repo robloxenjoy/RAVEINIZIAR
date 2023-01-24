@@ -426,7 +426,7 @@
 	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
-	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/zarosli/midnight/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
@@ -445,7 +445,7 @@
 	if(last_process + time_between_uses > world.time)
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.Immobilize(1 SECONDS)
-		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 		to_chat(user, span_notice("Looks like there are no more midnightberries left."))
 		sound_hint()
 		return
@@ -454,7 +454,7 @@
 	sound_hint()
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.Immobilize(1 SECONDS)
-	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 	var/result = rand(1, 2)
 	switch(result)
 		if(1)
@@ -486,14 +486,14 @@
 	if(stillborn == TRUE)
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.Immobilize(1 SECONDS)
-		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 		to_chat(user, span_notice("These thickets are stillborn. Why did I touch this at all?"))
 		sound_hint()
 		return
 	if(haveberry == FALSE)
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.Immobilize(1 SECONDS)
-		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 		to_chat(user, span_notice("Looks like there are no more midnightberries will grow."))
 		sound_hint()
 		return
@@ -503,7 +503,7 @@
 	sound_hint()
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.Immobilize(1 SECONDS)
-	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 	user.put_in_active_hand(new /obj/item/food/grown/bluecherries(loc))
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/Initialize(mapload)
@@ -515,6 +515,45 @@
 	. = ..()
 	if(stillborn)
 		. += "<span class='warning'>Oh, looks like these thickets are stillborn.</span>"
+
+/obj/structure/flora/ausbushes/zarosli/midnight/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/item/craftitem/piece(get_turf(src))
+		new /obj/item/craftitem/piece(get_turf(src))
+		new /obj/item/craftitem/piece(get_turf(src))
+		new /obj/item/craftitem/piece(get_turf(src))
+		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+	qdel(src)
+
+/obj/structure/flora/ausbushes/zarosli/midnight/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+			else
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/crystal/dark/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+			else
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/crystal/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+			else
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/reedbush
 	icon_state = "reedbush_1"

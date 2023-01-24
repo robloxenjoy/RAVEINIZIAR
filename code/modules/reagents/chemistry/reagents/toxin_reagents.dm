@@ -202,9 +202,12 @@
 
 	if(.)
 		C.adjustOxyLoss(30 * REM * normalise_creation_purity() * delta_time, 0)
-		C.losebreath += 20 * REM * normalise_creation_purity() * delta_time
+		if(DT_PROB(2.5, delta_time))
+			C.losebreath += 20 * REM * normalise_creation_purity() * delta_time
+			C.Stun(20)
 		if(DT_PROB(15, delta_time))
 			C.emote("gasp")
+			C.Stun(10)
 	..()
 
 /datum/reagent/toxin/slimejelly

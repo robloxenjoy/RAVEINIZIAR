@@ -55,6 +55,8 @@
 	righthand_file = 'modular_septic/icons/mob/inhands/sword_righthand.dmi'
 	icon_state = "goldenmisericorde"
 	inhand_icon_state = "goldenmisericorde"
+	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
+	worn_icon_state = "goldenmisericorde"
 	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.wav'
 	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
@@ -75,7 +77,7 @@
 	attack_fatigue_cost = 6
 	attack_delay = 17
 	parrying_flags = BLOCK_FLAG_THROWN | BLOCK_FLAG_UNARMED
-	canrust = TRUE	
+//	canrust = TRUE	
 	havedurability = TRUE
 	durability = 180
 	tetris_width = 32
@@ -647,9 +649,9 @@
 			force_strength = 1.8
 			current_atk_mode = stab
 			sharpness = SHARP_POINTY
-			embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+			embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
-			to_chat(user, span_notice("I'm now slicing with the [src]."))
+			to_chat(user, span_notice("I'm now slicing them with the [src]."))
 			hitsound = slash_hitsound
 			min_force = 15
 			force = 19
@@ -657,7 +659,72 @@
 			force_strength = 1.8
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
-			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+
+/obj/item/changeable_attacks/slashstab/knife/small/steel
+	name = "Steel Knife"
+	desc = "Use this as weapon!"
+	icon_state = "steelknife"
+	inhand_icon_state = "steelknife"
+	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
+	worn_icon_state = "steelknife"
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.wav'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	current_atk_mode = slash
+	embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 20, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	min_force = 14
+	force = 16
+	min_force_strength = 1
+	force_strength = 1.3
+	min_throwforce = 5
+	min_throwforce_strength = 8
+	throwforce = 10
+	throwforce_strength = 1.2
+	wound_bonus = 6
+	bare_wound_bonus = 3
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	sharpness = SHARP_EDGED
+	skill_melee = SKILL_KNIFE
+	carry_weight = 1 KILOGRAMS
+	attack_fatigue_cost = 7
+	attack_delay = 18
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED
+	havedurability = TRUE
+	durability = 150
+	tetris_width = 32
+	tetris_height = 96
+	wielded_inhand_state = TRUE
+
+/obj/item/changeable_attacks/slashstab/knife/small/steel/swap_intents(mob/user)
+	. = ..()
+	switch(current_atk_mode)
+		if(slash)
+			to_chat(user, span_notice("I'm now stabbing them with the slightly curved end of the [src]."))
+			hitsound = stab_hitsound
+			min_force = 14
+			force = 15
+			min_force_strength = 1
+			force_strength = 1.3
+			current_atk_mode = stab
+			sharpness = SHARP_POINTY
+			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+		if(stab)
+			to_chat(user, span_notice("I'm now slicing them with the [src]."))
+			hitsound = slash_hitsound
+			min_force = 14
+			force = 16
+			min_force_strength = 1
+			force_strength = 1.3
+			current_atk_mode = slash
+			sharpness = SHARP_EDGED
+			embedding = list("pain_mult" = 6, "rip_time" = 3, "embed_chance" = 20, "jostle_chance" = 3.2, "pain_stam_pct" = 0.6, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
 #undef slash
 #undef stab

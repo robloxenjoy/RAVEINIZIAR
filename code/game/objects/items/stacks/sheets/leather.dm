@@ -73,6 +73,7 @@
 					new /obj/item/clothing/suit/armor/vest/leatherbreast(get_turf(src))
 					qdel(src)
 					qdel(W)
+
 /*
 GLOBAL_LIST_INIT(human_recipes, list( \
 	new/datum/stack_recipe("bloated human costume", /obj/item/clothing/suit/hooded/bloated_human, 5), \

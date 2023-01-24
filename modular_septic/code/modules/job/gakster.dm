@@ -91,6 +91,7 @@
 	switch(result)
 		if(1)
 			venturer_type = "woodcutter"
+			l_hand = /obj/item/storage/backpack/basket
 			wrists = /obj/item/clothing/gloves/wrists/leather
 			belt = /obj/item/changeable_attacks/slashbash/axe/small/steel
 			to_chat(H, span_achievementinteresting("I'm a woodcutter!"))
@@ -128,12 +129,14 @@
 
 		if(5)
 			venturer_type = "venturergardener"
+			l_hand = /obj/item/storage/backpack/basket
+			belt = /obj/item/changeable_attacks/slashstab/knife/small/steel
 			to_chat(H, span_achievementinteresting("I'm a gardener!"))
 			to_chat(H, span_info("I think I'm the most boring... Maybe."))
 
 		if(6)
 			venturer_type = "venturerbandit"
-			belt = /obj/item/knife/combat/goldenmisericorde
+			belt = /obj/item/changeable_attacks/slashstab/knife/small/steel
 			to_chat(H, span_achievementinteresting("I am a bandit!"))
 			to_chat(H, span_info("Hehe, how evil I am!"))
 

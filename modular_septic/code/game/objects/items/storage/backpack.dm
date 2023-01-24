@@ -68,6 +68,26 @@
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	inhand_icon_state = "itobe_satchel"
 
+/obj/item/storage/backpack/basket
+	name = "Blue Basket"
+	desc = "A basket made from a pieces of midnightberry thickets."
+	icon = 'modular_septic/icons/obj/clothing/back.dmi'
+	icon_state = "basketblue"
+	worn_icon = 'modular_septic/icons/mob/clothing/back.dmi'
+	worn_icon_state = "itobe_satchel"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "basketblue"
+	slot_flags = null
+	storage_flags = NONE
+	carry_weight = 1 KILOGRAMS
+
+/obj/item/storage/backpack/basket/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 10
+	STR.max_items = 20
+
 /obj/item/storage/backpack/itobe
 	name = "darkened backpack"
 	desc = "A sleek blackpack that wraps around using four straps around the user, allows the user to move light, and fast while carrying a medium or large-sized firearm."

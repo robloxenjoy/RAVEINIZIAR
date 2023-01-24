@@ -200,6 +200,48 @@
 /obj/item/stack/grown/log/tree/evil/logg/five
 	amount = 5
 
+/obj/item/craftitem/piece
+	name = "A Blue Piece"
+	desc = "It's a piece of midnightberry thickets"
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	icon_state = "pieceblue"
+
+/obj/item/craftitem/piece/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/craftitem/piece))
+		user.visible_message(span_notice("[user] begins to crafting..]."),span_notice("You begin to crafting..."), span_hear("You hear the sound of craft."))
+		var/time = 13 SECONDS
+		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+		if(do_after(user, time, target = src))
+			user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+			user.changeNext_move(CLICK_CD_MELEE)
+			user.adjustFatigueLoss(10)
+			sound_hint()
+//					playsound(get_turf(src), '', 100 , FALSE, FALSE)
+			new /obj/item/craftitem/plexus(get_turf(src))
+			qdel(src)
+			qdel(W)
+
+/obj/item/craftitem/plexus
+	name = "A Blue Plexus"
+	desc = "It's a plexus of midnightberry thickets"
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	icon_state = "plexusblue"
+
+/obj/item/craftitem/plexus/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/craftitem/plexus))
+		user.visible_message(span_notice("[user] begins to crafting..]."),span_notice("You begin to crafting..."), span_hear("You hear the sound of craft."))
+		var/time = 13 SECONDS
+		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+		if(do_after(user, time, target = src))
+			user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+			user.changeNext_move(CLICK_CD_MELEE)
+			user.adjustFatigueLoss(10)
+			sound_hint()
+//					playsound(get_turf(src), '', 100 , FALSE, FALSE)
+			new /obj/item/storage/backpack/basket(get_turf(src))
+			qdel(src)
+			qdel(W)
+
 /obj/item/grown/log/steel
 	seed = /obj/item/seeds/tower/steel
 	name = "steel-cap log"
