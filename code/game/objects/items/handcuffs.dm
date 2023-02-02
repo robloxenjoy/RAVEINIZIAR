@@ -356,14 +356,14 @@
 	if(snap && iscarbon(L))
 		var/mob/living/carbon/C = L
 		if(C.body_position == STANDING_UP)
-			def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+			def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT)
 			/* SEPTIC EDIT REMOVAL
 			if(!C.legcuffed && C.num_legs >= 2) //beartrap can't cuff your leg if there's already a beartrap or legcuffs, or you don't have two legs.
 			*/
 			//SEPTIC EDIT BEGIN
 			if(!C.legcuffed && C.num_legs >= C.default_num_legs)
 			//SEPTIC EDIT END
-//				INVOKE_ASYNC(C, /mob/living/carbon.proc/equip_to_slot, src, ITEM_SLOT_LEGCUFFED)
+				INVOKE_ASYNC(C, /mob/living/carbon.proc/equip_to_slot, src, ITEM_SLOT_LEGCUFFED)
 //				tryEmbed(target = BODY_ZONE_L_LEG, forced = TRUE, silent = FALSE)
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 	else if(snap && isanimal(L))

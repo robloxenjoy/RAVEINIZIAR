@@ -8,6 +8,6 @@
 										/datum/language/russian = LANGUAGE_SPOKEN, \
 										/datum/language/aphasia = LANGUAGE_SPOKEN)
 	/// List of languages our character MUST have in the setup
-	var/list/necessary_languages = list(/datum/language/common = LANGUAGE_UNDERSTOOD)
+	var/list/necessary_languages = list(/datum/language/aphasia = LANGUAGE_UNDERSTOOD && LANGUAGE_SPOKEN)
 	/// List of languages our character has by default in the setup
-	var/list/default_languages = list(/datum/language/common = LANGUAGE_SPOKEN)
+	var/list/default_languages = list(/datum/language/aphasia = LANGUAGE_SPOKEN)
