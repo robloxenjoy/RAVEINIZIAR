@@ -294,7 +294,7 @@
 	if(!button)
 		playsound(get_turf(src), vomitsound, 50, TRUE)
 	else
-		playsound(get_turf(src), specialvomitsound, 50, TRUE)
+		playsound(get_turf(src), specialvomitsound, 50, FALSE, FALSE)
 
 	var/turf/T = get_turf(src)
 	if(!blood)

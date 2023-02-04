@@ -322,6 +322,13 @@
 	. = ..()
 	if(!ishuman(user) || user.stat != CONSCIOUS || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED))
 		return
+	user.visible_message(span_notice("<b>[user]</b> begins to interact with the trap."), \
+						span_notice("I begin to interact with the trap."), \
+						span_hear("I hear the sound of mechanism."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(!do_after(user, 10 SECONDS, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		return
 	armed = !armed
 	update_appearance()
 	to_chat(user, span_notice("[src] is now [armed ? "armed" : "disarmed"]"))
