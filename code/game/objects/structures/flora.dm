@@ -321,7 +321,7 @@
 
 /obj/structure/flora/ausbushes/crystal/dark/Initialize()
 	. = ..()
-	icon_state = pick("blacknessbush1", "blacknessbush2", "blacknessbush3")
+	icon_state = pick("blacknessbush1", "blacknessbush2", "blacknessbush3", "blacknessbush4")
 	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee", "reddd")
 	grow_berries()
 
