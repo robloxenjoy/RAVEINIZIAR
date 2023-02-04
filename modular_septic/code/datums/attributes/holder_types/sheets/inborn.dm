@@ -81,6 +81,47 @@
 		SKILL_ACROBATICS = 2,
 	)
 
+/datum/attribute_holder/sheet/job/strongwillet
+    attribute_variance = list(
+		STAT_STRENGTH = list(1, 4),
+		STAT_ENDURANCE = list(1, 4),
+		STAT_DEXTERITY = list(-1, 2),
+		STAT_INTELLIGENCE = list(-1, 2),
+		SKILL_BRAWLING = list(5, 10),
+		SKILL_WRESTLING = list(5, 10),
+		SKILL_IMPACT_WEAPON = list(5, 8),
+		SKILL_IMPACT_WEAPON_TWOHANDED = list(5, 8),
+		SKILL_KNIFE = list(0, 3),
+		SKILL_SMG = list(0, 1),
+		SKILL_PISTOL = list(0, 1),
+		SKILL_SHOTGUN = list(3, 7),
+		SKILL_RIFLE = list(1, 10),
+		SKILL_LONGSWORD = list(1, 10),
+		SKILL_FORCESWORD = list(1, 2),
+		SKILL_THROWING = list(6, 13),
+		SKILL_FORENSICS = list(-2, 2),
+		SKILL_ACROBATICS = list(3, 8),
+	)
+    raw_attribute_list = list(
+		SKILL_BRAWLING = 1,
+		SKILL_WRESTLING = 1,
+		SKILL_IMPACT_WEAPON = 1,
+		SKILL_IMPACT_WEAPON_TWOHANDED = 1,
+		SKILL_SHORTSWORD = 1,
+		SKILL_KNIFE = 1,
+		SKILL_SMG = -10,
+		SKILL_PISTOL = -10,
+		SKILL_SHOTGUN = -10,
+		SKILL_RIFLE = -10,
+		SKILL_LONGSWORD = 1,
+		SKILL_FORCESWORD = -2,
+		SKILL_THROWING = 4,
+		SKILL_FORENSICS = -2,
+		SKILL_MEDICINE = 2,
+		SKILL_SURGERY = 1,
+		SKILL_ACROBATICS = 2,
+	)
+
 /datum/attribute_holder/sheet/job/tendonishe
     attribute_variance = list(
 		STAT_STRENGTH = list(10, 14),

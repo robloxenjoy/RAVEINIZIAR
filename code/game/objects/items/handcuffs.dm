@@ -290,7 +290,7 @@
  * This opens, closes, and bites people's legs.
  */
 /obj/item/restraints/legcuffs/beartrap
-	name = "bear trap"
+	name = "Beer Trap"
 	throw_speed = 1
 	throw_range = 1
 	icon_state = "beartrap"
@@ -298,7 +298,7 @@
 	///If true, the trap is "open" and can trigger.
 	var/armed = TRUE
 	///How much damage the trap deals when triggered.
-	var/trap_damage = 50
+	var/trap_damage = 45
 	item_flags = NO_PIXEL_RANDOM_DROP
 
 /obj/item/restraints/legcuffs/beartrap/Initialize(mapload)

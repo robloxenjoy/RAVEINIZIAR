@@ -42,22 +42,31 @@
 
 //	client.prefs.safe_transfer_prefs_to(character)
 //	character.dna.update_dna_identity()
+//	character.attributes.update_attributes()
 	character.fully_replace_character_name(character.real_name, "Particle Of Chaos")
 	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
-	character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
-//	character.attributes.update_attributes()
-	var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
-	if(!babble)
-		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
-	else
-		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
-		babble.volume = BABBLE_DEFAULT_VOLUME
-		babble.duration = BABBLE_DEFAULT_DURATION
+		var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
+		if(!babble)
+			character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
+		else
+			babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+			babble.volume = BABBLE_DEFAULT_VOLUME
+			babble.duration = BABBLE_DEFAULT_DURATION
 
-	if(mind)
-		mind.active = 0
-		mind.transfer_to(character)
+		if(mind)
+			mind.active = 0
+			mind.transfer_to(character)
+		
+		if(prob(5))
+			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+			character.height = HUMAN_HEIGHT_TALLEST
+		else
+			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+			character.height = HUMAN_HEIGHT_MEDIUM
+		
+		if(!character.attributes)
+			continue
+		character.attributes.update_attributes()
 
 //	character.timeofdeath = timeofdeath
-	character.key = key
-//	character.client.set_macros()
+		character.key = key
