@@ -83,7 +83,7 @@
 
 /datum/attribute_holder/sheet/job/strongwillet
     attribute_variance = list(
-		STAT_STRENGTH = list(1, 4),
+		STAT_STRENGTH = list(2, 4),
 		STAT_ENDURANCE = list(1, 4),
 		STAT_DEXTERITY = list(-1, 2),
 		STAT_INTELLIGENCE = list(-1, 2),
