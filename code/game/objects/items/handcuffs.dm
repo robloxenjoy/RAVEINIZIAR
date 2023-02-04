@@ -356,7 +356,7 @@
 	if(snap && iscarbon(L))
 		var/mob/living/carbon/C = L
 		if(C.body_position == STANDING_UP)
-			def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT)
+			def_zone = pick(BODY_ZONE_PRECISE_L_LEG, BODY_ZONE_PRECISE_R_LEG)
 			/* SEPTIC EDIT REMOVAL
 			if(!C.legcuffed && C.num_legs >= 2) //beartrap can't cuff your leg if there's already a beartrap or legcuffs, or you don't have two legs.
 			*/
