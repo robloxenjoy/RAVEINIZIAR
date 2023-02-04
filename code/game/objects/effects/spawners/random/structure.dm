@@ -224,6 +224,84 @@
 		/obj/structure/trap/lynx,
 	)
 
+/obj/effect/spawner/random/structure/maphelp/beertrap/one
+	name = "beer trap spawner 10"
+	icon_state = "beertrap"
+	spawn_loot_chance = 10
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/item/restraints/legcuffs/beartrap,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/beertrap/five
+	name = "beer trap spawner 50"
+	icon_state = "beertrap"
+	spawn_loot_chance = 50
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/item/restraints/legcuffs/beartrap,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/beertrap/eight
+	name = "beer trap spawner 80"
+	icon_state = "beertrap"
+	spawn_loot_chance = 80
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/item/restraints/legcuffs/beartrap,
+
+/obj/effect/spawner/random/structure/maphelp/rock/one
+	name = "rock spawner 10"
+	icon_state = "rock"
+	spawn_loot_chance = 10
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/item/stone,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/rock/five
+	name = "rock spawner 50"
+	icon_state = "rock"
+	spawn_loot_chance = 50
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/item/stone,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/rock/eight
+	name = "rock spawner 80"
+	icon_state = "rock"
+	spawn_loot_chance = 80
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/item/stone,
+
+/obj/effect/spawner/random/structure/maphelp/flametrap/one/chaot
+	name = "flame chaot spawner 10"
+	icon_state = "flametrap"
+	spawn_loot_chance = 10
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/trap/fire/chaot,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/flame/five/chaot
+	name = "flame chaot spawner 50"
+	icon_state = "flametrap"
+	spawn_loot_chance = 50
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/trap/fire/chaot,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/flame/eight/chaot
+	name = "flame chaot spawner 80"
+	icon_state = "flametrap"
+	spawn_loot_chance = 80
+	spawn_random_offset = FALSE
+	loot = list(
+		/obj/structure/trap/fire/chaot,
+
 /obj/effect/spawner/random/structure/maphelp/shallowater/waist/ten
 	name = "shallow water spawner 100"
 	icon_state = "shallowwater"
@@ -237,6 +315,33 @@
 	name = "inferno fire magic spawner 100"
 	icon_state = "inferno"
 	spawn_loot_chance = 100
+	spawn_random_offset = FALSE
+	loot = list(
+		/atom/movable/fire/inferno/magical,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/fire/inferno/one/magic
+	name = "inferno fire magic spawner 10"
+	icon_state = "inferno"
+	spawn_loot_chance = 10
+	spawn_random_offset = FALSE
+	loot = list(
+		/atom/movable/fire/inferno/magical,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/fire/inferno/eight/magic
+	name = "inferno fire magic spawner 80"
+	icon_state = "inferno"
+	spawn_loot_chance = 80
+	spawn_random_offset = FALSE
+	loot = list(
+		/atom/movable/fire/inferno/magical,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/fire/inferno/five/magic
+	name = "inferno fire magic spawner 50"
+	icon_state = "inferno"
+	spawn_loot_chance = 50
 	spawn_random_offset = FALSE
 	loot = list(
 		/atom/movable/fire/inferno/magical,

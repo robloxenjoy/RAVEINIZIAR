@@ -106,6 +106,8 @@
 /obj/structure/trap/stun/chaot/trap_effect(mob/living/L)
 	if(is_chaot_job(L.mind.assigned_role))
 		return
+	L.electrocute_act(30, src, flags = SHOCK_NOGLOVES) // electrocute act does a message.
+	L.Paralyze(stun_time)
 
 /obj/structure/trap/stun/hunter
 	name = "bounty trap"

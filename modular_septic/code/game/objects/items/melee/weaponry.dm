@@ -22,7 +22,7 @@
 
 /obj/item/stone
 	name = "Stone"
-	desc = "Solid."
+	desc = "Solid and small."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "stone"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
