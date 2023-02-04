@@ -96,6 +96,7 @@
 		SKILL_PISTOL = list(0, 1),
 		SKILL_SHOTGUN = list(3, 7),
 		SKILL_RIFLE = list(1, 10),
+		SKILL_POLEARM = list(5, 10),
 		SKILL_LONGSWORD = list(1, 10),
 		SKILL_FORCESWORD = list(1, 2),
 		SKILL_THROWING = list(6, 13),

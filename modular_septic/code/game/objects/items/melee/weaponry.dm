@@ -386,8 +386,8 @@
 			sharpness = SHARP_EDGED
 
 /obj/item/changeable_attacks/slashstabbash/axe/big/steel
-	name = "Long Ax"
-	desc = "Large two-handed ax with a hook on the butt."
+	name = "Steel Long Ax"
+	desc = "Large steel two-handed ax with a hook on the butt."
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
@@ -417,6 +417,8 @@
 	sharpness = SHARP_EDGED
 	skill_melee = SKILL_POLEARM
 	carry_weight = 4 KILOGRAMS
+	havedurability = TRUE
+	durability = 200
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	tetris_width = 32
 	tetris_height = 96
@@ -679,7 +681,7 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	current_atk_mode = slash
-	embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 20, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 15, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 14
 	force = 16
 	min_force_strength = 1
@@ -700,7 +702,7 @@
 	attack_delay = 18
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED
 	havedurability = TRUE
-	durability = 150
+	durability = 140
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state = TRUE
