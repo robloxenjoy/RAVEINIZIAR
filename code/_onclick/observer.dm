@@ -45,6 +45,7 @@
 		//spam prevention
 		if(!(world.time % 3))
 			to_chat(src, click_fail_msg())
+			src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 		//SEPTIC EDIT END
 		return
 	// You are responsible for checking config.ghost_interaction when you override this function

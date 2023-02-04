@@ -245,10 +245,12 @@
 		owner.custom_pain("OH GOD! There are needles inside my [src]!", 30, FALSE, owner.get_bodypart(current_zone))
 		if(!do_mob(user, owner, 5 SECONDS))
 			to_chat(user, span_warning("I must stand still!"))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 			return
 	else
 		if(!do_after(user, 5 SECONDS, src))
 			to_chat(user, span_warning("I must stand still!"))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 			return
 	if(istype(stack))
 		if(!stack.use(2))

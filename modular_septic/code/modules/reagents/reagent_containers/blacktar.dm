@@ -88,6 +88,7 @@
 /obj/item/reagent_containers/hypospray/medipen/retractible/blacktar/toggle_needle(mob/user)
 	if(state == BLACKTAR_EXTENDING || state == BLACKTAR_RETRACTING)
 		to_chat(user, span_notice("[fail_msg()]"))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 		return
 	if(state == BLACKTAR_RETRACTED)
 		playsound(src, needle_out_sound, 65, FALSE)

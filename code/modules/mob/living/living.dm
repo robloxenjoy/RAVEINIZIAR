@@ -935,6 +935,7 @@
 	if(!can_resist())
 		//SEPTIC EDIT BEGIN
 		to_chat(src, click_fail_msg())
+		src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 		//SEPTIC EDIT END
 		return
 	changeNext_move(CLICK_CD_RESIST)

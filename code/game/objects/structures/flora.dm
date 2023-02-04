@@ -344,6 +344,7 @@
 	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
 	if(!do_after(user, 30, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 		return
 	if(!berries)
 		to_chat(user, span_notice("No berries."))
@@ -441,6 +442,7 @@
 	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
 	if(!do_after(user, 10 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 		return
 	if(last_process + time_between_uses > world.time)
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -482,6 +484,7 @@
 	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
 	if(!do_after(user, 10 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 		return
 	if(stillborn == TRUE)
 		user.changeNext_move(CLICK_CD_MELEE)

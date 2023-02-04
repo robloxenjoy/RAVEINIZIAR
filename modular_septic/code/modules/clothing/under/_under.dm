@@ -53,6 +53,7 @@
 			to_chat(user, span_warning("I start ripping off [prefix_a_or_an(sleeve_wording)] from [src]..."))
 			if(!do_after(user, sleeve_rip_delay))
 				to_chat(user, span_warning(fail_msg()))
+				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 				return
 			to_chat(user, span_notice("I rip [prefix_a_or_an(sleeve_wording)] [sleeve_wording] from [src]."))
 			disable_zone(rippable_zone, BRUTE)
