@@ -385,8 +385,8 @@
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
 
-/obj/item/changeable_attacks/longaxe
-	name = "Long Axe"
+/obj/item/changeable_attacks/slashstabbash/axe/big/steel
+	name = "Long Ax"
 	desc = "Large two-handed ax with a hook on the butt."
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
@@ -398,6 +398,7 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavyysharp_deploy.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/heavyysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish3.ogg')
 	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 15, "jostle_chance" = 9, "pain_stam_pct" = 2, "pain_jostle_mult" = 10, "fall_chance" = 0.2)
 	min_force = 15
 	force = 35
 	min_force_strength = 1.5
@@ -421,13 +422,14 @@
 	tetris_height = 96
 	slot_flags = null
 
-/obj/item/changeable_attacks/longaxe/swap_intents(mob/user)
+/obj/item/changeable_attacks/slashstabbash/axe/big/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
 		if(slash)
-			to_chat(user, span_notice("I'm now stabbing them with a hook on the butt of [src]."))
-			user.visible_message(span_danger("[user] flips [src] to the other side!"), span_danger("You flips [src] to the other side!"))
+			to_chat(user, span_notice("I'm now stabbing them with a steel hook on the butt of the [src]."))
+			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
 			hitsound = stab_hitsound
+			embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 19, "jostle_chance" = 8, "pain_stam_pct" = 2, "pain_jostle_mult" = 9, "fall_chance" = 0.2)
 			min_force = 8
 			force = 13
 			min_force_strength = 1.5
@@ -445,7 +447,7 @@
 			current_atk_mode = stab
 			sharpness = SHARP_POINTY
 		if(stab)
-			to_chat(user, span_notice("I'm now bashing with the wooden hilt of the [src]."))
+			to_chat(user, span_notice("I'm now bashing them with the steel hilt of the [src]."))
 			hitsound = bash_hitsound
 			min_force = 7
 			force = 13
@@ -463,9 +465,10 @@
 			current_atk_mode = bash
 			sharpness = NONE
 		if(bash)
-			to_chat(user, span_notice("I'm now chop with the [src]."))
+			to_chat(user, span_notice("I'm now chop them with the heavy blade of the [src]."))
 			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
 			hitsound = slash_hitsound
+			embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 15, "jostle_chance" = 9, "pain_stam_pct" = 2, "pain_jostle_mult" = 10, "fall_chance" = 0.2)
 			min_force = 15
 			force = 35
 			min_force_strength = 1.5

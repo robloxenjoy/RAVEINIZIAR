@@ -112,7 +112,7 @@
 				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
 			oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG), list(BODY_ZONE_HEAD, BODY_ZONE_CHEST))
 			for(var/limb in oofzones)
-				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
+				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_HEAD, BODY_ZONE_CHEST))
 			CombatKnockdown(levels * 50, levels * 4 SECONDS, levels * 2 SECONDS, TRUE)
 	playsound(src, 'modular_septic/sound/effects/bodyfall.ogg', 70, FALSE)
 

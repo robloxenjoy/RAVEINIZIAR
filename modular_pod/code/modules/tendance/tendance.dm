@@ -60,6 +60,8 @@
 		if(prob(5))
 			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
 			character.height = HUMAN_HEIGHT_TALLEST
+			if(prob(50))
+				character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(spawned.drop_location()), FALSE)
 		else
 			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
 			character.height = HUMAN_HEIGHT_MEDIUM
