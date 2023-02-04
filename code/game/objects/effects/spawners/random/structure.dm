@@ -205,7 +205,6 @@
 		/obj/structure/trap/lynx,
 	)
 
-
 /obj/effect/spawner/random/structure/maphelp/lynx/five
 	name = "lynx spawner 50"
 	icon_state = "lynx"
@@ -249,6 +248,7 @@
 	spawn_random_offset = FALSE
 	loot = list(
 		/obj/item/restraints/legcuffs/beartrap,
+	)
 
 /obj/effect/spawner/random/structure/maphelp/rock/one
 	name = "rock spawner 10"
@@ -275,6 +275,7 @@
 	spawn_random_offset = FALSE
 	loot = list(
 		/obj/item/stone,
+	)
 
 /obj/effect/spawner/random/structure/maphelp/flametrap/one/chaot
 	name = "flame chaot spawner 10"
@@ -301,6 +302,7 @@
 	spawn_random_offset = FALSE
 	loot = list(
 		/obj/structure/trap/fire/chaot,
+	)
 
 /obj/effect/spawner/random/structure/maphelp/shallowater/waist/ten
 	name = "shallow water spawner 100"

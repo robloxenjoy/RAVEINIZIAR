@@ -306,7 +306,7 @@
 	SIGNAL_HANDLER
 
 	to_chat(parent, span_warning(fail_msg()))
-	carbon_parent.playsound_local(get_turf(carbon_parent), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+//	mover.playsound_local(get_turf(mover), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
 	qdel(src)
 
 /datum/component/clinging/proc/grab_examine(datum/source, mob/user, list/examine_list)

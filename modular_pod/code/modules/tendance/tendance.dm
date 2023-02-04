@@ -45,30 +45,29 @@
 //	character.attributes.update_attributes()
 	character.fully_replace_character_name(character.real_name, "Particle Of Chaos")
 	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
-		var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
-		if(!babble)
-			character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
-		else
-			babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
-			babble.volume = BABBLE_DEFAULT_VOLUME
-			babble.duration = BABBLE_DEFAULT_DURATION
+	var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
+	if(!babble)
+		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
+	else
+		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+		babble.volume = BABBLE_DEFAULT_VOLUME
+		babble.duration = BABBLE_DEFAULT_DURATION
 
-		if(mind)
-			mind.active = 0
-			mind.transfer_to(character)
-		
-		if(prob(5))
-			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
-			character.height = HUMAN_HEIGHT_TALLEST
-			if(prob(50))
-				character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(spawned.drop_location()), FALSE)
-		else
-			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
-			character.height = HUMAN_HEIGHT_MEDIUM
-		
-		if(!character.attributes)
-			continue
+	if(mind)
+		mind.active = 0
+		mind.transfer_to(character)
+
+	if(prob(5))
+		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
+		character.height = HUMAN_HEIGHT_TALLEST
+		if(prob(50))
+			character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
+	else
+		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+		character.height = HUMAN_HEIGHT_MEDIUM
+
+	if(!character.attributes)
 		character.attributes.update_attributes()
 
 //	character.timeofdeath = timeofdeath
-		character.key = key
+	character.key = key
