@@ -58,7 +58,7 @@
 			mind.transfer_to(character)
 		
 		if(prob(5))
-			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
 			character.height = HUMAN_HEIGHT_TALLEST
 		else
 			character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
