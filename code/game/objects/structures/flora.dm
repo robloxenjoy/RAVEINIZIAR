@@ -65,8 +65,8 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "treevil_1"
 	log_amount = 3
-	plane = GAME_PLANE_UPPER
-	layer = EDGED_TURF_LAYER
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
 	density = 1
 	anchored = 1
 	opacity = 1
@@ -83,8 +83,8 @@
 	pixel_x = 0
 //	pixel_y = -32
 	log_amount = 4
-	plane = GAME_PLANE_UPPER
-	layer = EDGED_TURF_LAYER
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
 	density = 1
 	anchored = 1
 	opacity = 1
@@ -250,8 +250,8 @@
 	desc = "A bush that grows over or near the crystal deposits."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "crystalbush"
-	plane = GAME_PLANE_UPPER
-	layer = EDGED_TURF_LAYER
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
 	density = 0
 	anchored = 1
@@ -311,8 +311,8 @@
 	desc = "Bush of blackness. This bush is chaotic."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "blacknessbush1"
-	plane = GAME_PLANE_UPPER
-	layer = EDGED_TURF_LAYER
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
 	density = 0
 	anchored = 1
 	opacity = 0
@@ -390,8 +390,8 @@
 	desc = "Nature is beautiful."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "zaroslisliz"
-	plane = GAME_PLANE_UPPER
-	layer = EDGED_TURF_LAYER
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
 	density = 0
 	anchored = TRUE
@@ -402,8 +402,8 @@
 	desc = "Nature is beautiful."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "zarosliya"
-	plane = GAME_PLANE_UPPER
-	layer = EDGED_TURF_LAYER
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
 	var/time_between_uses = 500
 	var/last_process = 0

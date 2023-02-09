@@ -31,7 +31,7 @@
 	taste_description = "not tasty water"
 	taste_mult = 1.5
 	liquid_evaporation_rate = 10
-	toxpwr = 0.5
+	toxpwr = 1
 
 /datum/reagent/toxin/badwater/shallow/expose_turf(turf/open/exposed_turf, reac_volume)
 	. = ..()

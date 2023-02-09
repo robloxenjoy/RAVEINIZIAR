@@ -11,7 +11,7 @@
 //  start = "0" //12:00:00 AM
 
 /datum/time_of_day/dawndawn
- name = "BeginDawn"
+ name = "Beforedawn"
  color = "#00000c"
  start = 1 HOURS //1:00:00 AM
 

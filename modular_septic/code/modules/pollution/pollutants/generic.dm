@@ -139,3 +139,12 @@
 /datum/pollutant/fragrance/amber
 	name = "Amber Perfume"
 	scent = "a sweet and powdery scent"
+
+/datum/pollutant/vomit
+	name = "Vomit"
+	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
+	smell_intensity = 3
+	descriptor = SCENT_DESC_ODOR
+	scent = "vanilla"
+	color = "#edc595"
+	thickness = 3

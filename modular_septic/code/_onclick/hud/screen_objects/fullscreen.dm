@@ -18,6 +18,11 @@
 	icon_state = "fishbed"
 	alpha = 90
 
+/atom/movable/screen/fullscreen/willetbecome
+	icon = 'modular_septic/icons/hud/screen_chungus.dmi'
+	icon_state = "willetina"
+	alpha = 100
+
 /atom/movable/screen/fullscreen/noghost
 	icon = 'modular_septic/icons/hud/screen_chungus.dmi'
 	icon_state = "shittyblack"

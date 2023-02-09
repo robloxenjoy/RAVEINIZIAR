@@ -47,7 +47,7 @@
 	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
 	var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
 	if(!babble)
-		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
+		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/creature.wav')
 	else
 		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
 		babble.volume = BABBLE_DEFAULT_VOLUME
@@ -60,7 +60,7 @@
 	if(prob(5))
 		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
 		character.height = HUMAN_HEIGHT_TALLEST
-		if(prob(50))
+		if(prob(65))
 			character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
 	else
 		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
@@ -69,5 +69,7 @@
 	if(!character.attributes)
 		character.attributes.update_attributes()
 
-//	character.timeofdeath = timeofdeath
 	character.key = key
+	character.playsound_local(character, 'modular_pod/sound/eff/DSBOSPN.wav', 100)
+	character.overlay_fullscreen("ressur", /atom/movable/screen/fullscreen/willetbecome, 3)
+//	addtimer(CALLBACK(character, .proc/clear_fullscreen, "ressur", 3), 3)

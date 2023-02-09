@@ -129,6 +129,21 @@
 	icon_state = "big_molten"
 	beauty = -300
 
+/obj/effect/decal/cleanable/spacespot
+	name = "Spot"
+	icon = 'icons/effects/blood.dmi'
+	desc = "Looks nice."
+	gender = NEUTER
+	plane = GAME_PLANE_UPPER
+	layer = WALL_OBJ_LAYER
+	icon_state = "spot"
+	resistance_flags = FLAMMABLE
+	beauty = 10
+
+/obj/effect/decal/cleanable/spacespot/Initialize()
+	. = ..()
+	AddComponent(/datum/pollutant/vomit, 10, 15 MINUTES)
+
 //Vomit (sorry)
 /obj/effect/decal/cleanable/vomit
 	name = "vomit"
