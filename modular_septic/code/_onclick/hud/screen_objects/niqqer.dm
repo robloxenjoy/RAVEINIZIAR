@@ -31,3 +31,20 @@
 /atom/movable/screen/fullscreen/fuuuck/update_for_view(client_view)
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	update_appearance()
+
+//chungus
+/atom/movable/screen/fullscreen/chungus
+	name = "Oh fuck!"
+	icon = 'modular_septic/icons/hud/screen_chungus.dmi'
+	icon_state = "chungus"
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/atom/movable/screen/fullscreen/chungus/Initialize(mapload)
+	. = ..()
+	animate(src, alpha = 255, time = 0, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(src, alpha = 50, time = 1 SECONDS)
+
+/atom/movable/screen/fullscreen/chungus/update_for_view(client_view)
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	update_appearance()

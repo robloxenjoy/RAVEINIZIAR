@@ -60,7 +60,7 @@
 	. = ..()
 	if(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) > ATTRIBUTE_MIDDLING)
 		if(prob(70))
-			. += "<span class='warning'>It's a wrong berry...</span>"
+			. += "<span class='warning'>It's a lie berry...</span>"
 
 /obj/item/food/berries/leancherrie
 	name = "Saisilva Berry"
@@ -80,6 +80,15 @@
 //	wine_power = 50
 	tetris_width = 32
 	tetris_height = 32
+
+/obj/item/food/berries/leancherrie/lie
+	food_reagents = list(/datum/reagent/consumable/leanberryjelly = 1, /datum/reagent/drug/chungusum = 8)
+
+/obj/item/food/berries/leancherrie/lie/examine(mob/user)
+	. = ..()
+	if(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) > ATTRIBUTE_MIDDLING)
+		if(prob(70))
+			. += "<span class='warning'>It's a lie berry...</span>"
 
 /obj/item/food/candy/bronx
 	name = "South Bronx Paradise bar"

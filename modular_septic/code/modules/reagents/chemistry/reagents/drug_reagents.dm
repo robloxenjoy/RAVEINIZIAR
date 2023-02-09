@@ -153,7 +153,7 @@
 	description = "cool."
 	reagent_state = LIQUID
 	taste_description = "interesting"
-	color = "#D3D3D3"
+	color = "#8a001a"
 	overdose_threshold = 60
 	metabolization_rate = 0.3 * REAGENTS_METABOLISM
 	ph = 3
@@ -167,3 +167,27 @@
 /datum/reagent/drug/kravsa/on_mob_end_metabolize(mob/living/crack_addict)
 	. = ..()
 	crack_addict.attributes?.remove_attribute_modifier(/datum/attribute_modifier/kravsa_addict, TRUE)
+
+/datum/reagent/drug/chungusum
+	name = "Chungusum"
+	description = "cool."
+	reagent_state = LIQUID
+	taste_description = "interesting"
+	color = "#ffffff"
+	overdose_threshold = 60
+	metabolization_rate = 2 * REAGENTS_METABOLISM
+	ph = 3
+
+/datum/reagent/drug/chungusum/on_mob_metabolize(mob/living/crack_addict)
+	. = ..()
+	var/chun = pick("BIG CHUNGUUSUSSSSSSSSS!!!!!!!!", "IS HE REAL?!?!?!?!?! BIG CHUNGUS?!?!?", "BIG CHUNGUS I LOVE YOU I LOVE YOUUU!!!", "CHUNGUS THE BIG, FANTASTIC!!!!!!!!!! OH FUCK!!!")
+	if(DT_PROB(2.5, delta_time))
+		to_chat(crack_addict, span_horny("[chun]"))
+	crack_addict.overlay_fullscreen("chungus", /atom/movable/screen/fullscreen/chungus)
+	ADD_TRAIT(crack_addict, TRAIT_CHUNG, name)
+	SSdroning.area_entered(get_area(crack_addict), crack_addict?.client)
+
+/datum/reagent/drug/chungusum/on_mob_end_metabolize(mob/living/crack_addict)
+	. = ..()
+	crack_addict.clear_fullscreen("chungus")
+	SSdroning.play_area_sound(get_area(crack_addict), crack_addict?.client)

@@ -59,6 +59,7 @@
 #define TRAIT_EFFORT_ACTIVE "effort_active"
 /// I LOVE LEAAANNN!
 #define TRAIT_LEAN "leaned"
+#define TRAIT_CHUNG "chungus"
 /// Crazy mushroom!
 #define TRAIT_BLOODARN "bloodarn"
 /// Can play as lynx!
