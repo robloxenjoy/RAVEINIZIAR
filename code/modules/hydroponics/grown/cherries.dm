@@ -93,12 +93,18 @@
 	bite_consumption = 6
 	eat_time = 2
 	foodtypes = FRUIT
-	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 4)
-	food_reagents = list( /datum/reagent/consumable/bluecherryjelly = 4, /datum/reagent/medicine/atropine = 2)
+	grind_results = list(/datum/reagent/consumable/lifebloodjelly = 4)
+	food_reagents = list(/datum/reagent/consumable/lifebloodjelly = 4, /datum/reagent/medicine/atropine = 2)
 	tastes = list("lifeblood berry" = 1, "viscous" = 1)
 	wine_power = 50
 	tetris_width = 32
 	tetris_height = 32
+
+/obj/item/food/grown/lifebloodcherries/lie
+	bite_consumption_mod = 3
+	bite_consumption = 7
+	grind_results = list(/datum/reagent/consumable/lifebloodjelly = 1)
+	food_reagents = list(/datum/reagent/consumable/lifebloodjelly= 1, /datum/reagent/toxin/pancuronium = 6)
 
 //Cherry Bulbs
 /obj/item/seeds/cherry/bulb

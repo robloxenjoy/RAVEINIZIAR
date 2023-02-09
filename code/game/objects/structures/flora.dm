@@ -245,6 +245,77 @@
 	if(icon_state == "firstbush_1")
 		icon_state = "firstbush_[rand(1, 4)]"
 
+/obj/structure/flora/ausbushes/incrementum
+	name = "Incrementum"
+	desc = "Infection of this forest."
+	icon = 'icons/obj/flora/ausflora.dmi'
+	icon_state = "incrementum"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = 0
+	anchored = 1
+
+/obj/structure/flora/ausbushes/incrementum/Initialize()
+	. = ..()
+	icon_state = pick("incrementum1", "incrementum2", "incrementum3", "incrementum4")
+
+/obj/structure/flora/ausbushes/incrementum/Initialize(mapload)
+	. = ..()
+	update_appearance()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/shagg,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/flora/ausbushes/incrementum/proc/shagg(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
+	if(!isturf(loc) || !isliving(AM))
+		return
+	playsound(loc,'modular_pod/sound/eff/incrementum.wav', 30, TRUE)
+
+/obj/structure/flora/ausbushes/incrementum/skunk
+	name = "Skunk"
+	desc = "Infection of this forest. It's smelly."
+	icon = 'icons/obj/flora/ausflora.dmi'
+	icon_state = "skunk"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = 0
+	anchored = 1
+
+/obj/structure/flora/ausbushes/incrementum/skunk/Initialize()
+	. = ..()
+	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 30)
+
+/obj/structure/flora/ausbushes/incrementum/deconstruct(disassembled = TRUE)
+	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+	qdel(src)
+
+/obj/structure/flora/ausbushes/incrementum/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+			else
+				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+		if(BURN)
+			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+
+/obj/structure/flora/ausbushes/incrementum/skunk/deconstruct(disassembled = TRUE)
+	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+	qdel(src)
+
+/obj/structure/flora/ausbushes/incrementum/skunk/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+			else
+				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+		if(BURN)
+			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+
 /obj/structure/flora/ausbushes/crystal
 	name = "Overcrystal Bush"
 	desc = "A bush that grows over or near the crystal deposits."
@@ -322,7 +393,7 @@
 /obj/structure/flora/ausbushes/crystal/dark/Initialize()
 	. = ..()
 	icon_state = pick("blacknessbush1", "blacknessbush2", "blacknessbush3", "blacknessbush4")
-	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee", "reddd")
+	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee", "reddd", "purplee", "redddd")
 	grow_berries()
 
 /obj/structure/flora/ausbushes/crystal/dark/update_overlays()
@@ -372,8 +443,12 @@
 			berry = new /obj/item/food/grown/bluecherries/super(loc)
 		if("purple")
 			berry = new /obj/item/food/berries/leancherrie(loc)
+		if("purplee")
+			berry = new /obj/item/food/berries/leancherrie/lie(loc)
 		if("reddd")
 			berry = new /obj/item/food/grown/lifebloodcherries(loc)
+		if("redddd")
+			berry = new /obj/item/food/grown/lifebloodcherries/lie(loc)
 	user.put_in_active_hand(berry)
 	berries--
 	update_appearance()

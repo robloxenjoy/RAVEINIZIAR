@@ -149,13 +149,13 @@
 	crack_addict.attributes?.remove_attribute_modifier(/datum/attribute_modifier/crack_addict, TRUE)
 
 /datum/reagent/drug/kravsa
-	name = "kravsa"
+	name = "Kravsa"
 	description = "cool."
 	reagent_state = LIQUID
 	taste_description = "interesting"
 	color = "#8a001a"
 	overdose_threshold = 60
-	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	metabolization_rate = 0.20 * REAGENTS_METABOLISM
 	ph = 3
 
 /datum/reagent/drug/kravsa/on_mob_metabolize(mob/living/crack_addict)
@@ -174,8 +174,8 @@
 	reagent_state = LIQUID
 	taste_description = "interesting"
 	color = "#ffffff"
-	overdose_threshold = 60
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	overdose_threshold = 50
+	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	ph = 3
 
 /datum/reagent/drug/chungusum/on_mob_metabolize(mob/living/crack_addict)

@@ -142,7 +142,7 @@
 
 /obj/effect/decal/cleanable/spacespot/Initialize()
 	. = ..()
-	AddComponent(/datum/pollutant/vomit, 10, 15 MINUTES)
+	AddComponent(/datum/pollutant/spot, 10, 15 MINUTES)
 
 //Vomit (sorry)
 /obj/effect/decal/cleanable/vomit

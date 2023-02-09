@@ -817,6 +817,7 @@
 /datum/reagent/toxin/pancuronium/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(current_cycle >= 10)
 		M.Stun(40 * REM * delta_time)
+		M.add_chem_effect(CE_BLOCKAGE, 30, "[type]")
 		. = TRUE
 	if(DT_PROB(10, delta_time))
 		M.losebreath += 4

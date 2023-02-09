@@ -140,8 +140,8 @@
 	name = "Amber Perfume"
 	scent = "a sweet and powdery scent"
 
-/datum/pollutant/vomit
-	name = "Vomit"
+/datum/pollutant/spot
+	name = "Spot"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
