@@ -178,7 +178,7 @@
 	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	ph = 3
 
-/datum/reagent/drug/chungusum/on_mob_metabolize(mob/living/crack_addict)
+/datum/reagent/drug/chungusum/on_mob_metabolize(mob/living/crack_addict, delta_time)
 	. = ..()
 	var/chun = pick("BIG CHUNGUUSUSSSSSSSSS!!!!!!!!", "IS HE REAL?!?!?!?!?! BIG CHUNGUS?!?!?", "BIG CHUNGUS I LOVE YOU I LOVE YOUUU!!!", "CHUNGUS THE BIG, FANTASTIC!!!!!!!!!! OH FUCK!!!")
 	if(DT_PROB(2.5, delta_time))

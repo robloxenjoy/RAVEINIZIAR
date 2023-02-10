@@ -85,8 +85,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/durability = 150
 
 	//rusting of item
-//	var/canrust = FALSE
-//	var/rustbegin = 4000 SECONDS
+	var/canrust = FALSE
+	var/rustbegin = 4000 SECONDS
 
 	//dip items in liquid
 //   var/list/poisoned = list()
@@ -245,10 +245,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(havedurability)
 		if(!durability)
 			durability = rand(100,150)
-/*
+
 	if(canrust)
 		START_PROCESSING(SSobj, src)
-*/
+
 	add_weapon_description()
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_ITEM, src)
@@ -402,7 +402,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		playsound(src.loc, 'sound/effects/break_stone.ogg', 100, TRUE)
 		src.visible_message(span_notice("[src] breaks."), span_notice("[src] breaks."), span_hear("You hear the sound of breaking."))
 		qdel(src)
-/*
+
 /obj/item/proc/rustItem(var/power_rust)
 	var/modifier = 1
 	switch(power_rust)
@@ -463,7 +463,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		rustbegin -= delta_time
 		if(HAS_BLOOD_DNA(src))
 			rustbegin -= delta_time * (3 SECONDS)
-
+/*
 /obj/item/reagent_containers/attackby(obj/item/W, mob/user)
     if(!ishuman(user))
         return ..()

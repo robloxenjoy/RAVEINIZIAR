@@ -77,7 +77,7 @@
 	attack_fatigue_cost = 6
 	attack_delay = 17
 	parrying_flags = BLOCK_FLAG_THROWN | BLOCK_FLAG_UNARMED
-//	canrust = TRUE	
+	canrust = TRUE	
 	havedurability = TRUE
 	durability = 180
 	tetris_width = 32
