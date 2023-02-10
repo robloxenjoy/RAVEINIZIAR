@@ -10,7 +10,7 @@
 	volume = 40
 	falloff_exponent = 10
 
-/datum/looping_sound/radioakt
+/datum/looping_sound/singster
 	mid_sounds = list('modular_pod/sound/mus/radioakt.ogg' = 1)
 	mid_length = 139 SECONDS
 	volume = 40
