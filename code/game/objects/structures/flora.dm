@@ -275,7 +275,7 @@
 	playsound(loc,'modular_pod/sound/eff/incrementum.wav', 30, TRUE)
 
 /obj/structure/flora/ausbushes/incrementum/skunk
-	name = "Skunk"
+	name = "Shit-Skunk"
 	desc = "Infection of this forest. It's smelly."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "skunk"
@@ -286,7 +286,7 @@
 
 /obj/structure/flora/ausbushes/incrementum/skunk/Initialize()
 	. = ..()
-	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 30)
+	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 50)
 
 /obj/structure/flora/ausbushes/incrementum/deconstruct(disassembled = TRUE)
 	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
@@ -303,6 +303,7 @@
 			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
 
 /obj/structure/flora/ausbushes/incrementum/skunk/deconstruct(disassembled = TRUE)
+	new /obj/effect/decal/cleanable/blood/shit(get_turf(src))
 	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
 	qdel(src)
 

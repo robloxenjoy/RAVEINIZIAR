@@ -48,7 +48,7 @@
 	//shit on face, yum
 	if(ishuman(eater))
 		eater.AddComponent(/datum/component/creamed/shit)
-		if(prob(30))
+		if(prob(1))
 			eater.gain_extra_effort(1, FALSE)
 
 /obj/item/shit/proc/on_entered(datum/source, atom/movable/movable)
@@ -61,7 +61,7 @@
 	if(shitty_decal?.blood_state == BLOOD_STATE_SHIT)
 		playsound(src, 'modular_septic/sound/effects/step_on_shit.ogg',  60, 0, 0)
 		return
-	if(reagents.total_volume < 3)
+	if(reagents.total_volume < 2)
 		return
 	var/modifier = min(10/reagents.total_volume, 1)
 	reagents.expose(shitted_on, TOUCH, modifier)
