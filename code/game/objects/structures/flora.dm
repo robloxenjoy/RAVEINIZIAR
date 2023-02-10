@@ -249,7 +249,7 @@
 	name = "Incrementum"
 	desc = "Infection of this forest."
 	icon = 'icons/obj/flora/ausflora.dmi'
-	icon_state = "incrementum"
+	icon_state = "incrementum1"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	density = 0
