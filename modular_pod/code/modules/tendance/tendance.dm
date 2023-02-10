@@ -19,8 +19,8 @@
 //	droning_volume = 35
 	requires_power = FALSE
 //	ambience_index = AMBIENCE_GENERIC
-	min_ambience_cooldown = 40 SECONDS
-	max_ambience_cooldown = 60 SECONDS
+	min_ambience_cooldown = 50 SECONDS
+	max_ambience_cooldown = 75 SECONDS
 	area_flags = NO_ALERTS
 	requires_power = FALSE
 	power_environ = FALSE
