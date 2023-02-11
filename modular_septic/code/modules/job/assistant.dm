@@ -21,7 +21,7 @@
 	ADD_TRAIT(spawned, TRAIT_ILLITERATE, "[type]")
 	ADD_TRAIT(spawned, TRAIT_FRAGGOT, "[type]")
 	spawned.apply_status_effect(/datum/status_effect/gakster_dissociative_identity_disorder)
-	var/datum/disease/advance/doggoned_astheneia = new /datum/disease/advance/random/doggoned(rand(1, 2), rand(1, 5))
+	var/datum/disease/advance/doggoned_astheneia = new /datum/disease/advance/random(rand(1, 2), rand(1, 5))
 	doggoned_astheneia.name = "Doggoned Astheneia"
 	doggoned_astheneia.try_infect(spawned)
 
