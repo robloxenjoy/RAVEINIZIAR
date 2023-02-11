@@ -671,8 +671,8 @@
 	desc = "Use this as weapon!"
 	icon_state = "steelknife"
 	inhand_icon_state = "steelknife"
-	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
-	worn_icon_state = "steelknife"
+	worn_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon_state = "knife"
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
@@ -682,10 +682,10 @@
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	current_atk_mode = slash
 	embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 15, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
-	min_force = 14
-	force = 16
+	min_force = 8
+	force = 15
 	min_force_strength = 1
-	force_strength = 1.3
+	force_strength = 1.2
 	min_throwforce = 5
 	min_throwforce_strength = 8
 	throwforce = 10
@@ -713,20 +713,20 @@
 		if(slash)
 			to_chat(user, span_notice("I'm now stabbing them with the slightly curved end of the [src]."))
 			hitsound = stab_hitsound
-			min_force = 14
+			min_force = 8
 			force = 15
 			min_force_strength = 1
-			force_strength = 1.3
+			force_strength = 1.2
 			current_atk_mode = stab
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
 			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
 			hitsound = slash_hitsound
-			min_force = 14
-			force = 16
+			min_force = 8
+			force = 15
 			min_force_strength = 1
-			force_strength = 1.3
+			force_strength = 1.2
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 6, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.2, "pain_stam_pct" = 0.6, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)

@@ -86,7 +86,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	//rusting of item
 	var/canrust = FALSE
-	var/rustbegin = 4000 SECONDS
+	var/rustbegin = 3500 SECONDS
 
 	//dip items in liquid
 //   var/list/poisoned = list()

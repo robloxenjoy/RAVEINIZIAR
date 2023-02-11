@@ -278,7 +278,7 @@
 	name = "Shit-Skunk"
 	desc = "Infection of this forest. It's smelly."
 	icon = 'icons/obj/flora/ausflora.dmi'
-	icon_state = "skunk"
+	icon_state = "skunk1"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	density = 0
@@ -287,6 +287,7 @@
 /obj/structure/flora/ausbushes/incrementum/skunk/Initialize()
 	. = ..()
 	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 50)
+	icon_state = pick("skunk1", "skunk2")
 
 /obj/structure/flora/ausbushes/incrementum/deconstruct(disassembled = TRUE)
 	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)

@@ -10,7 +10,7 @@
 	var/droning_vary = 0
 	var/droning_repeat = TRUE
 	var/droning_wait = 25
-	var/droning_volume = 25
+	var/droning_volume = 16
 	var/droning_channel = CHANNEL_BUZZ
 	var/droning_frequency = 0
 

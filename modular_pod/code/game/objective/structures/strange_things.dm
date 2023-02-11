@@ -77,6 +77,7 @@
 	icon_state = "songster"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
+	var/enabled = FALSE
 	var/datum/looping_sound/singster/soundloop
 
 /obj/structure/beast/songster/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
@@ -101,9 +102,14 @@
 	. = ..()
 	soundloop = new(src, FALSE)
 
-/obj/structure/beast/songster/process()
+/obj/structure/beast/songster/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
-	soundloop.start()
+	if(user.a_intent == INTENT_HELP)
+		user.visible_message(span_notice("[user] strokes Songster."),span_notice("You stroke Songster."), span_hear("You hear cute sound."))
+		if(enabled == FALSE)
+			soundloop.start()
+		else
+			soundloop.stop()
 
 /obj/structure/beast/songster/Destroy()
 	. = ..()
