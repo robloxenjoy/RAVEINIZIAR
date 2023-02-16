@@ -522,6 +522,8 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	carry_weight = 3 KILOGRAMS
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	canrust = TRUE
+	rustbegin = 3600 SECONDS
 	havedurability = TRUE
 	durability = 195
 	tetris_width = 32
@@ -682,17 +684,17 @@
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.wav', 'modular_septic/sound/weapons/melee/slashflesh2.wav', 'modular_septic/sound/weapons/melee/slashflesh3.wav')
 	current_atk_mode = slash
-	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 10, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 15
-	force = 22
+	force = 24
 	min_force_strength = 1
 	force_strength = 1.4
 	min_throwforce = 5
 	min_throwforce_strength = 8
 	throwforce = 10
 	throwforce_strength = 1.2
-	wound_bonus = 13
-	bare_wound_bonus = 8
+	wound_bonus = 10
+	bare_wound_bonus = 7
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
@@ -745,12 +747,12 @@
 			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
 			hitsound = slash_hitsound
 			min_force = 15
-			force = 22
+			force = 24
 			min_force_strength = 1
 			force_strength = 1.4
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
-			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 10, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
 /obj/item/changeable_attacks/slashstab/knife/small/steel
 	name = "Steel Knife"
@@ -787,6 +789,8 @@
 	attack_fatigue_cost = 7
 	attack_delay = 18
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED
+	canrust = TRUE
+	rustbegin = 10 SECONDS
 	havedurability = TRUE
 	durability = 140
 	tetris_width = 32
