@@ -340,8 +340,8 @@
 
 /obj/structure/flora/ausbushes/incrementum/ygro/deconstruct(disassembled = TRUE)
 	new /obj/item/food/gelatine/mesopelagic(get_turf(src))
+	new /obj/structure/flora/remains(get_turf(src))
 	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
-	var/obj/structure/flora/remains/S = new(loc)
 	qdel(src)
 
 /obj/structure/flora/ausbushes/incrementum/ygro/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
