@@ -9,7 +9,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	sentience_type = SENTIENCE_HUMANOID
 	speak_chance = 2
-	turns_per_move = 2
+	turns_per_move = 1
 	move_to_delay = 5
 	vision_range = 7
 	aggro_vision_range = 7
@@ -36,7 +36,7 @@
 	ranged_cooldown_time = 50
 	stat_attack = HARD_CRIT
 	projectilesound = 'modular_septic/sound/weapons/guns/energy/siren.wav'
-	projectiletype = /obj/item/ammo_casing/energy/siren
+	projectiletype = /obj/projectile/beam/laser/siren
 	deathmessage = "painfully collapses."
 	deathsound = 'modular_pod/sound/mobs_yes/hydra_2.ogg'
 
@@ -50,7 +50,6 @@
 	if(speak_chance && (override || prob(speak_chance)))
 		playsound(src, 'modular_pod/sound/mobs_yes/hydra_talk.wav', 50)
 	..()
-
 
 /mob/living/simple_animal/pet/podozl/shoebill
 	name = "Shoebill"

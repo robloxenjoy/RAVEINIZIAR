@@ -286,7 +286,7 @@
 
 /obj/structure/flora/ausbushes/incrementum/skunk/Initialize()
 	. = ..()
-	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 50)
+	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 30)
 	icon_state = pick("skunk1", "skunk2")
 
 /obj/structure/flora/ausbushes/incrementum/deconstruct(disassembled = TRUE)
@@ -335,7 +335,7 @@
 	icon_state = "ygro_reflection1"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
-	density = 0
+	density = 1
 	anchored = 1
 
 /obj/structure/flora/ausbushes/incrementum/ygro/deconstruct(disassembled = TRUE)
@@ -356,6 +356,7 @@
 
 /obj/structure/flora/ausbushes/incrementum/ygro/Initialize()
 	. = ..()
+	AddElement(/datum/element/climbable)
 	icon_state = pick("ygro_reflection1", "ygro_reflection2", "ygro_reflection3", "ygro_reflection4")
 
 /obj/structure/flora/ausbushes/crystal
