@@ -2,7 +2,7 @@
 	name = "Neptunian Heck"
 	desc = "A creature that is dug into the dirt. Interesting."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
-	icon_state = "neptunian_heck"
+	icon_state = "neptunian_heck_uncosc"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	var/uncosc = TRUE
@@ -18,6 +18,7 @@
 	if(uncosc == TRUE)
 		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/night))
 			uncosc = FALSE
+			icon_state = "neptunian_heck"
 			if(last_words + words_delay <= world.time && prob(50))
 				var/words = pick(words_list)
 				speak(words)
@@ -25,6 +26,7 @@
 				playsound(src, 'modular_pod/sound/eff/good_voice.wav', 55, FALSE)
 				last_words = world.time
 		else
+			icon_state = "neptunian_heck_uncosc"
 			uncosc = TRUE
 
 /obj/structure/beast/heck/attackby(obj/item/I, mob/living/user, params)
@@ -72,13 +74,14 @@
 
 /obj/structure/beast/songster
 	name = "Songster"
-	desc = "He hums something beautiful."
+	desc = "This hums something beautiful."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "songster"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
-	var/enabled = TRUE
-	var/datum/looping_sound/singster/soundloop
+	var/enabled = FALSE
+	var/list/rangers = list()
+	var/volume = 50
 
 /obj/structure/beast/songster/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -96,24 +99,40 @@
 		new /obj/item/organ/nerve/neck/robot(get_turf(src))
 		new /obj/effect/decal/cleanable/vomit(get_turf(src))
 		playsound(src,'modular_pod/sound/eff/death_sing.wav', 50, TRUE)
+		song_over()
 	qdel(src)
 
-/obj/structure/beast/songster/Initialize(mapload)
-	. = ..()
-	soundloop = new(src, FALSE)
+/obj/structure/beast/songster/proc/song_over()
+	for(var/mob/living/L in rangers)
+		if(!L || !L.client)
+			continue
+		L.stop_sound_channel(CHANNEL_JUKEBOX)
+	rangers = list()
 
 /obj/structure/beast/songster/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(user.a_intent == INTENT_HELP)
 		user.visible_message(span_notice("[user] strokes Songster."),span_notice("You stroke Songster."), span_hear("You hear cute sound."))
 		if(enabled == FALSE)
-			soundloop.start()
+			START_PROCESSING(SSobj, src)
 		else
-			soundloop.stop()
+			STOP_PROCESSING(SSobj, src)
+			song_over()
 
-/obj/structure/beast/songster/Destroy()
-	. = ..()
-	QDEL_NULL(soundloop)
+/obj/structure/beast/songster/process()
+	if(enabled == TRUE)
+		for(var/mob/M in range(10,src))
+			if(!M.client || !(M.client.prefs.toggles & SOUND_INSTRUMENTS))
+				continue
+			if(!(M in rangers))
+				rangers[M] = TRUE
+				M.playsound_local(get_turf(M), null, volume, channel = CHANNEL_JUKEBOX, 'modular_pod/sound/mus/radioakt.ogg', use_reverb = TRUE)
+		for(var/mob/L in rangers)
+			if(get_dist(src,L) > 10)
+				rangers -= L
+				if(!L || !L.client)
+					continue
+				L.stop_sound_channel(CHANNEL_JUKEBOX)
 
 /obj/structure/halo
 	name = "Halo"

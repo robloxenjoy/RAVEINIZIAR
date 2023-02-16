@@ -348,3 +348,30 @@
 	loot = list(
 		/atom/movable/fire/inferno/magical,
 	)
+
+/obj/effect/spawner/random/structure/maphelp/mob/hydra/one
+	name = "hydra spawner 10"
+	icon_state = "hydra"
+	spawn_loot_chance = 10
+	spawn_random_offset = FALSE
+	loot = list(
+		/mob/living/simple_animal/hostile/podozl/hydra,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/mob/hydra/eight
+	name = "hydra spawner 80"
+	icon_state = "hydra"
+	spawn_loot_chance = 80
+	spawn_random_offset = FALSE
+	loot = list(
+		/mob/living/simple_animal/hostile/podozl/hydra,
+	)
+
+/obj/effect/spawner/random/structure/maphelp/mob/hydra/five
+	name = "hydra spawner 50"
+	icon_state = "hydra"
+	spawn_loot_chance = 50
+	spawn_random_offset = FALSE
+	loot = list(
+		/mob/living/simple_animal/hostile/podozl/hydra,
+	)

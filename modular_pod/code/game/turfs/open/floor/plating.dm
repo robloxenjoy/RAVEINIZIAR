@@ -775,6 +775,21 @@
 	. = ..()
 	dir = rand(0,4)
 
+/turf/open/floor/plating/polovich/sea/gelatinea
+	name = "Mesopelagic Gelatine"
+	desc = "So pleasing to the eye."
+	icon_state = "gelatinea"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_MEAT
+	barefootstep = FOOTSTEP_MEAT
+	clawfootstep = FOOTSTEP_MEAT
+	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 1
+
+/turf/open/floor/plating/polovich/warlocksticky/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/slush
 	name = "Slush Floor"
 	desc = "This is so sad."
@@ -879,6 +894,10 @@
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
 
+/turf/open/floor/plating/polovich/rockedarr/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/rockedarrr
 	name = "Stone Floor"
 	desc = "This is interesting and neutral."
@@ -888,6 +907,10 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/rockedarrr/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
 
 /*
 	mood_turf_mes = "<span class='bloody'>Is this floor - EVIL!</span>\n"

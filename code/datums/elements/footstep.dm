@@ -34,6 +34,8 @@
 			footstep_sounds = GLOB.clawfootstep
 		if(FOOTSTEP_MOB_BAREFOOT)
 			footstep_sounds = GLOB.barefootstep
+		if(FOOTSTEP_MOB_CRAWL)
+			footstep_sounds = 'modular_pod/sound/eff/footstep/move_horror.wav'
 		if(FOOTSTEP_MOB_HEAVY)
 			footstep_sounds = GLOB.heavyfootstep
 		if(FOOTSTEP_MOB_SHOE)

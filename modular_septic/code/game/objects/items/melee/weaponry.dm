@@ -666,6 +666,92 @@
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
+/obj/item/changeable_attacks/slashstabbash/sword/medium/steel
+	name = "Steel Longsword"
+	desc = "Standard steel longsword. Very good."
+	icon_state = "steelsword"
+	inhand_icon_state = "steelsword"
+	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
+	worn_icon_state = "steelsabre"
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.wav'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.wav', 'modular_septic/sound/weapons/melee/slashflesh2.wav', 'modular_septic/sound/weapons/melee/slashflesh3.wav')
+	current_atk_mode = slash
+	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 10, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	min_force = 15
+	force = 22
+	min_force_strength = 1
+	force_strength = 1.4
+	min_throwforce = 5
+	min_throwforce_strength = 8
+	throwforce = 10
+	throwforce_strength = 1.2
+	wound_bonus = 13
+	bare_wound_bonus = 8
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	sharpness = SHARP_EDGED
+	parrying_modifier = 1
+	skill_melee = SKILL_LONGSWORD
+	carry_weight = 2 KILOGRAMS
+	attack_fatigue_cost = 9
+	attack_delay = 23
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	canrust = TRUE
+	rustbegin = 4000 SECONDS
+	havedurability = TRUE
+	durability = 180
+	tetris_width = 32
+	tetris_height = 96
+	wielded_inhand_state = TRUE
+
+/obj/item/changeable_attacks/slashstabbash/sword/medium/steel/swap_intents(mob/user)
+	. = ..()
+	switch(current_atk_mode)
+		if(slash)
+			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
+			hitsound = stab_hitsound
+			min_force = 14
+			force = 19
+			min_force_strength = 1
+			force_strength = 1.3
+			current_atk_mode = stab
+			sharpness = SHARP_POINTY
+			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+		if(stab)
+			to_chat(user, span_notice("I'm now bashing them with the iron hilt of the [src]."))
+			hitsound = bash_hitsound
+			min_force = 7
+			force = 13
+			min_force_strength = 0.65
+			force_strength = 1.3
+			wound_bonus = 7
+			bare_wound_bonus = 2
+			attack_fatigue_cost = 8
+			min_throwforce = 7
+			min_throwforce_strength = 10
+			throwforce_strength = 2
+			throwforce = 10
+			attack_delay = 20
+			current_atk_mode = bash
+			sharpness = NONE
+		if(bash)
+			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
+			hitsound = slash_hitsound
+			min_force = 15
+			force = 22
+			min_force_strength = 1
+			force_strength = 1.4
+			current_atk_mode = slash
+			sharpness = SHARP_EDGED
+			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 10, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+
 /obj/item/changeable_attacks/slashstab/knife/small/steel
 	name = "Steel Knife"
 	desc = "Use this as weapon!"

@@ -1026,3 +1026,19 @@
 	taste_description = "olive oil"
 	color = "#DBCF5C"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/meso_gelatine
+	name = "Mesopelagic Gelatine"
+	description = "Speeds you up!"
+	reagent_state = LIQUID
+	color = "#5765b5"
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/meso_gelatine/on_mob_metabolize(mob/living/L)
+	..()
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+
+/datum/reagent/consumable/meso_gelatine/on_mob_end_metabolize(mob/living/L)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+	..()

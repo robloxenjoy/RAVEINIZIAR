@@ -246,7 +246,7 @@
 		icon_state = "firstbush_[rand(1, 4)]"
 
 /obj/structure/flora/ausbushes/incrementum
-	name = "Incrementum"
+	name = "Goldish Incrementum"
 	desc = "Infection of this forest."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "incrementum1"
@@ -290,6 +290,7 @@
 	icon_state = pick("skunk1", "skunk2")
 
 /obj/structure/flora/ausbushes/incrementum/deconstruct(disassembled = TRUE)
+	new /obj/item/stack/medical/nanopaste/xap(get_turf(src))
 	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
 	qdel(src)
 
@@ -317,6 +318,45 @@
 				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
 		if(BURN)
 			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+
+/obj/structure/flora/remains
+	name = "Remains"
+	desc = "Broken gelatine."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "ygro_reflection"
+	density = FALSE
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+
+/obj/structure/flora/ausbushes/incrementum/ygro
+	name = "Ygro Reflection"
+	desc = "Aquatic flora."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "ygro_reflection1"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = 0
+	anchored = 1
+
+/obj/structure/flora/ausbushes/incrementum/ygro/deconstruct(disassembled = TRUE)
+	new /obj/item/food/gelatine/mesopelagic(get_turf(src))
+	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+	var/obj/structure/flora/remains/S = new(loc)
+	qdel(src)
+
+/obj/structure/flora/ausbushes/incrementum/ygro/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+			else
+				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+		if(BURN)
+			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+
+/obj/structure/flora/ausbushes/incrementum/ygro/Initialize()
+	. = ..()
+	icon_state = pick("ygro_reflection1", "ygro_reflection2", "ygro_reflection3", "ygro_reflection4")
 
 /obj/structure/flora/ausbushes/crystal
 	name = "Overcrystal Bush"

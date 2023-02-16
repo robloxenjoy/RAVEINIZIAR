@@ -49,6 +49,16 @@
 	tetris_width = 32
 	tetris_height = 32
 
+/obj/item/food/gelatine/mesopelagic
+	name = "Mesopelagic Gelatine"
+	desc = "It was deep in the water."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "meso_gelatine"
+	food_reagents = list(/datum/reagent/consumable/meso_gelatine = 2)
+	tastes = list("wet" = 1)
+	food_flags = SEAFOOD
+	w_class = WEIGHT_CLASS_TINY
+
 /obj/item/food/berries/redcherrie/lie
 	name = "Gule Berry"
 	desc = "Berry."

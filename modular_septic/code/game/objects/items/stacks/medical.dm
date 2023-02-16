@@ -467,6 +467,24 @@
 	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/silver = 10)
 	merge_type = /obj/item/stack/medical/nanopaste
 
+/obj/item/stack/medical/nanopaste/xap
+	name = "Xap"
+	singular_name = "Xap"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "xap"
+	desc = "Substance, the basis of the goldish incrementum."
+	novariants = TRUE
+	amount = 1
+	max_amount = 2
+	self_delay = 5 SECONDS
+	other_delay = 3 SECONDS
+	heal_brute = 0
+	heal_burn = 15
+	required_status = BODYPART_ORGANIC
+
+/obj/item/stack/medical/nanopaste/xap/two
+	amount = 2
+
 /obj/item/stack/medical/nervemend
 	name = "nerve mender"
 	singular_name = "nerve mender"
