@@ -86,7 +86,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	//rusting of item
 	var/canrust = FALSE
-	var/rustbegin = 3500 SECONDS
+	var/rustbegin = 3500
 
 	//dip items in liquid
 //   var/list/poisoned = list()
@@ -412,10 +412,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 			modifier = 5
 		if("MEDIUM")
 			modifier += 50
-	if(rustbegin > 0 SECONDS)
+	if(rustbegin > 0)
 		rustbegin -= modifier
-	if(rustbegin <= 0 SECONDS)
-		rustbegin = 0 SECONDS
+	if(rustbegin <= 0)
+		rustbegin = 0
 		playsound(src.loc, 'modular_septic/sound/effects/rusted.wav', 100, TRUE)
 		src.visible_message(span_notice("[src] become rusty."), span_notice("[src] become rusty."), span_hear("You hear a strange sound."))
 		src.rusted()
@@ -462,7 +462,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(canrust)
 		rustbegin -= delta_time
 		if(HAS_BLOOD_DNA(src))
-			rustbegin -= delta_time * (3 SECONDS)
+			rustbegin -= delta_time * 3
 /*
 /obj/item/reagent_containers/attackby(obj/item/W, mob/user)
     if(!ishuman(user))

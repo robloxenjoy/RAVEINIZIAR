@@ -786,7 +786,7 @@
 	heavyfootstep = FOOTSTEP_MEAT
 	slowdown = 1
 
-/turf/open/floor/plating/polovich/warlocksticky/Initialize(mapload)
+/turf/open/floor/plating/polovich/sea/gelatinea/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 

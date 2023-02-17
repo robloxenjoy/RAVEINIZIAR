@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(droning)
 		//transition(entering)
 		kill_droning(entering)
 		return
-	else if (HAS_TRAIT(entering.mob, TRAIT_CHUNG) && !area_entered.droning_sound)
+	if(HAS_TRAIT(entering.mob, TRAIT_CHUNG) && !area_entered.droning_sound)
 		kill_droning(entering)
 		return
 	var/list/last_droning = list()

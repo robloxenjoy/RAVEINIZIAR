@@ -523,7 +523,7 @@
 	carry_weight = 3 KILOGRAMS
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	canrust = TRUE
-	rustbegin = 3600 SECONDS
+	rustbegin = 3600
 	havedurability = TRUE
 	durability = 195
 	tetris_width = 32
@@ -706,7 +706,7 @@
 	attack_delay = 23
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	canrust = TRUE
-	rustbegin = 4000 SECONDS
+	rustbegin = 4000
 	havedurability = TRUE
 	durability = 180
 	tetris_width = 32
@@ -788,9 +788,9 @@
 	carry_weight = 1 KILOGRAMS
 	attack_fatigue_cost = 7
 	attack_delay = 18
-	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED
+	parrying_flags = BLOCK_FLAG_UNARMED
 	canrust = TRUE
-	rustbegin = 10 SECONDS
+	rustbegin = 10
 	havedurability = TRUE
 	durability = 140
 	tetris_width = 32
