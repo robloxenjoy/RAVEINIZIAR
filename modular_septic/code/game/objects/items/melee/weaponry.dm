@@ -708,7 +708,7 @@
 	canrust = TRUE
 	rustbegin = 4000
 	havedurability = TRUE
-	durability = 180
+	durability = 250
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state = TRUE

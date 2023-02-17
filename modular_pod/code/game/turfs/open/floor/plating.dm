@@ -385,7 +385,7 @@
 	if(prob(65))
 		if(istype(src.loc, /mob/living/carbon/human))
 			try_eat()
-*/
+
 /turf/open/floor/plating/polovich/dirt/dark/gryazka/Initialize()
 	. = ..()
 	if(prob(65))
@@ -403,6 +403,8 @@
 			eat_human.unequip_everything()
 			qdel(eat_human)
 			cooldown = world.time + 80 //.... 8800
+
+*/
 
 /turf/open/floor/plating/polovich/dirt/dark/bright
 	name = "Funny Dirt"

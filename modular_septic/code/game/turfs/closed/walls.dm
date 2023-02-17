@@ -6,6 +6,8 @@
 	clingable = TRUE
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_LOW_WALLS)
+	girder_type = null
+	decon_type = /turf/open/floor/plating/polovich/dirt/dark/gryazka
 //	turf_height = TURF_HEIGHT_BLOCK_THRESHOLD_TEST
 
 /turf/closed/wall/get_projectile_hitsound(obj/projectile/projectile)

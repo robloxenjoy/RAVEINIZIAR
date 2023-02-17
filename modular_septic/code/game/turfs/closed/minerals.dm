@@ -27,6 +27,7 @@
 	base_icon_state = "shale"
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
 	clingable = TRUE
+	girder_type = null
 //	turf_type = /turf/open/floor/plating/polovich/dirt/dark
 //	plane = GAME_PLANE
 //	layer = CLOSED_TURF_LAYER

@@ -17,7 +17,7 @@
 	multiplicative_slowdown = -0.8
 
 /datum/movespeed_modifier/reagent/methamphetamine
-	multiplicative_slowdown = -0.65
+	multiplicative_slowdown = -0.9
 
 /datum/movespeed_modifier/reagent/nitryl
 	multiplicative_slowdown = -0.65

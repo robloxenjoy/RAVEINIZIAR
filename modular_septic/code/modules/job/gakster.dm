@@ -153,7 +153,7 @@
 			suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 			belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 			to_chat(H, span_achievementinteresting("I am a goer!"))
-			to_chat(H, span_info("I'm a goer, I came here by solicitation!"))
+			to_chat(H, span_info("I came here by solicitation!"))
 
 /datum/outfit/venturer/equip(mob/living/carbon/human/H)
 	..()
