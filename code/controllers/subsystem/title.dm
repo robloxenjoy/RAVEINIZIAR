@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(title)
 	if(file_path == "[global.config.directory]/title_screens/images/podpol.dmi")
 		SSticker.login_music = "[global.config.directory]/title_music/sounds/dark-river-remastered.ogg"
 	else if(file_path == "[global.config.directory]/title_screens/images/podozl.dmi")
-		SSticker.login_music = "[global.config.directory]/title_music/sounds/denominator.ogg"
+		SSticker.login_music = "[global.config.directory]/title_music/sounds/cosmic.ogg"
 
 	for(var/mob/dead/new_player/P as anything in GLOB.new_player_list)
 		if(P.client)
