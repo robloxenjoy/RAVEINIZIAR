@@ -23,7 +23,7 @@ SUBSYSTEM_DEF(droning)
 /datum/controller/subsystem/droning/proc/area_entered(area/area_entered, client/entering)
 	if(!area_entered || !entering)
 		return
-	if(HAS_TRAIT(entering.mob, TRAIT_LEAN) || (HAS_TRAIT(entering.mob, TRAIT_BLOODARN) && !area_entered.droning_sound))
+//	if(HAS_TRAIT(entering.mob, TRAIT_LEAN) || (HAS_TRAIT(entering.mob, TRAIT_BLOODARN) && !area_entered.droning_sound))
 	if(HAS_TRAIT(entering.mob, TRAIT_LEAN) || HAS_TRAIT(entering.mob, TRAIT_BLOODARN) || HAS_TRAIT(entering.mob, TRAIT_CHUNG) && !area_entered.droning_sound)
 		//just kill the previous droning sound
 		//transition(entering)

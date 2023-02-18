@@ -115,5 +115,5 @@
 	clingable = FALSE
 
 /turf/closed/wall/nocling
-	desc = "Nice wall. Also you cant climb here.
+	desc = "Nice wall. Also you cant climb here."
 	clingable = FALSE
