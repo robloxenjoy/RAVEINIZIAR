@@ -190,4 +190,5 @@
 /datum/reagent/drug/chungusum/on_mob_end_metabolize(mob/living/crack_addict)
 	. = ..()
 	crack_addict.clear_fullscreen("chungus")
+	REMOVE_TRAIT(crack_addict, TRAIT_CHUNG, name)
 	SSdroning.play_area_sound(get_area(crack_addict), crack_addict?.client)

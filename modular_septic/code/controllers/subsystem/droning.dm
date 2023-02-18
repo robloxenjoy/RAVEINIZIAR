@@ -24,13 +24,16 @@ SUBSYSTEM_DEF(droning)
 	if(!area_entered || !entering)
 		return
 	if(HAS_TRAIT(entering.mob, TRAIT_LEAN) || (HAS_TRAIT(entering.mob, TRAIT_BLOODARN) && !area_entered.droning_sound))
+	if(HAS_TRAIT(entering.mob, TRAIT_LEAN) || HAS_TRAIT(entering.mob, TRAIT_BLOODARN) || HAS_TRAIT(entering.mob, TRAIT_CHUNG) && !area_entered.droning_sound)
 		//just kill the previous droning sound
 		//transition(entering)
 		kill_droning(entering)
 		return
+/*
 	if(HAS_TRAIT(entering.mob, TRAIT_CHUNG) && !area_entered.droning_sound)
 		kill_droning(entering)
 		return
+*/
 	var/list/last_droning = list()
 	last_droning |= entering.last_droning_sound
 	var/list/new_droning = list()
@@ -75,7 +78,7 @@ SUBSYSTEM_DEF(droning)
 			droning.file = 'modular_septic/sound/insanity/lean.ogg'
 		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
 			droning.file = 'modular_pod/sound/mus/deadcats.ogg'
-		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
+		if(HAS_TRAIT(listener.mob, TRAIT_CHUNG))
 			droning.file = 'modular_pod/sound/mus/chungus_curse.ogg'
 //		if(area_player.droning_volume <= 0)
 		if(area_player && (world.time + rand(area_player.min_droning_cooldown, area_player.max_droning_cooldown)))

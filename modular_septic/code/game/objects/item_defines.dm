@@ -79,9 +79,9 @@
 	/// Skill used in ranged combat
 	var/skill_ranged = SKILL_RIFLE
 	/// Accuracy modifier for ranged combat
-	var/ranged_modifier = 5
+	var/ranged_modifier = 8
 	/// Accuracy modifier for body zone in ranged combat
-	var/ranged_zone_modifier = 5
+	var/ranged_zone_modifier = 8
 	/**
 	 * Skill used for blocking
 	 *

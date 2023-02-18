@@ -522,8 +522,8 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	carry_weight = 3 KILOGRAMS
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	canrust = TRUE
-	rustbegin = 3600
+//	canrust = TRUE
+//	rustbegin = 3600
 	havedurability = TRUE
 	durability = 195
 	tetris_width = 32
@@ -705,8 +705,8 @@
 	attack_fatigue_cost = 9
 	attack_delay = 23
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	canrust = TRUE
-	rustbegin = 4000
+//	canrust = TRUE
+//	rustbegin = 4000
 	havedurability = TRUE
 	durability = 250
 	tetris_width = 32
@@ -789,8 +789,8 @@
 	attack_fatigue_cost = 7
 	attack_delay = 18
 	parrying_flags = BLOCK_FLAG_UNARMED
-	canrust = TRUE
-	rustbegin = 10
+//	canrust = TRUE
+//	rustbegin = 10
 	havedurability = TRUE
 	durability = 140
 	tetris_width = 32

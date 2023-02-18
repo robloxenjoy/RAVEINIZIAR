@@ -59,7 +59,8 @@
 		if(source.poisoned.len))
 			readout += span_notice("<b>Covered in:</b> [capitalize_like_old_man(source.poisoned.len)]")
 */
-		readout += span_notice("<b>Durability:</b> [capitalize_like_old_man(source.durability)]")
+		if(source.havedurability)
+			readout += span_notice("<b>Durability:</b> [capitalize_like_old_man(source.durability)]")
 		if(source.canrust)
 			readout += span_notice("<b>Rust Point:</b> [capitalize_like_old_man(source.rustbegin)]")
 		readout += span_notice("<b>Sharpness:</b> [capitalize_like_old_man(translate_sharpness(source.get_sharpness()))]")
