@@ -15,6 +15,7 @@
 
 /turf/closed/wall/r_wall
 	icon = 'modular_septic/icons/turf/tall/walls/reinforced_victorian.dmi'
+	desc = "Strong wall!"
 	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/reinforced_victorian_frill.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
@@ -78,13 +79,41 @@
 //Example smooth wall
 /turf/closed/wall/smooth
 	frill_icon = null
-/*
-/turf/closed/wall/smooth/rockcool
-	name = "Stone Wall"
-	icon = 'modular_septic/icons/turf/tall/walls/rockcool.dmi'
-	icon_state = "diamond_wall-0"
-	base_icon_state = "diamond_wall"
-	clingable = TRUE
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_LOW_WALLS)
-*/
+
+//NO   CLING!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/turf/closed/wall/pink_crazy/nocling
+	desc = "Strange wall. Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/r_wall/nocling
+	desc = "Strong wall! Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/r_wall/alt/nocling
+	desc = "Strong wall! Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/r_wall/rusty/nocling
+	desc = "Rusty and strong wall! Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/mineral/wood/nocling
+	desc = "Just wood wall. Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/mineral/wood/alt/nocling
+	desc = "Just wood wall. Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/bluegreen/nocling
+	desc = "Interesting wood wall. Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/darkrock/nocling
+	desc = "So dark and evil! Also you cant climb here."
+	clingable = FALSE
+
+/turf/closed/wall/nocling
+	desc = "Nice wall. Also you cant climb here.
+	clingable = FALSE
