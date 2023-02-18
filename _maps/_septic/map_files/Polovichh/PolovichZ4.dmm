@@ -263,7 +263,7 @@
 "fc" = (/obj/structure/closet/crate/wooden,/obj/item/stack/medical/suture,/obj/item/stack/medical/splint,/turf/open/floor/plating/polovich/krutoplitka,/area/maintenance/polovich/forest)
 "fd" = (/turf/open/floor/plating/polovich/strangeflesh,/area/maintenance/polovich/forest)
 "fe" = (/obj/structure/sign/poster/official/podozl,/turf/closed/wall/purple,/area/maintenance/polovich/forest/rain)
-"ff" = (/obj/structure/closet/crate/wooden,/obj/item/melee/bita/pink,/mob/living/simple_animal/hostile/podozl/hydra,/turf/open/floor/plating/polovich/krutoplitka,/area/maintenance/polovich/forest)
+"ff" = (/obj/structure/closet/crate/wooden,/obj/item/melee/bita/pink,/turf/open/floor/plating/polovich/krutoplitka,/area/maintenance/polovich/forest)
 "fg" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/mountain,/obj/structure/flora/ausbushes/incrementum/ygro,/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/forest)
 "fh" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
 "fi" = (/obj/structure/stairs/north,/obj/effect/spawner/random/structure/maphelp/lynx/eight,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
