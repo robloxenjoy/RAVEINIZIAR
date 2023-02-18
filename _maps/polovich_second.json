@@ -27,34 +27,34 @@
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/closed/wall/purple/nocling"
 		},
 		{
 			"Down": -1,
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/closed/wall/purple/nocling"
 		},
 		{
 			"Down": -1,
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/closed/wall/purple/nocling"
 		},
 		{
 			"Down": -1,
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/closed/wall/purple/nocling"
 		},
 		{
 			"Down": -1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/closed/wall/purple/nocling"
 		}
 	],
 	"minetype": "none"
