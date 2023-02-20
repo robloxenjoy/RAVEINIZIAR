@@ -9,7 +9,7 @@
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
 
-/turf/open/floor/plating/metalnoble
+/turf/open/floor/plating/polovich/metalnoble
 	name = "Metallic Floor"
 	desc = "This is expensive."
 	icon_state = "metalnoble1"
@@ -20,7 +20,7 @@
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
 
-/turf/open/floor/plating/metalnoble/second
+/turf/open/floor/plating/polovich/metalnoble/second
 	name = "Metallic Floor"
 	desc = "This is expensive."
 	icon_state = "metalnoble2"
@@ -386,7 +386,7 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
 
-/turf/open/floor/plating/polovich/dirt
+/turf/open/floor/plating/polovich/dirt/soft
 	name = "Soft Dirt"
 	desc = "Annoying to stand on it"
 	icon_state = "dirtvillage"
@@ -396,6 +396,10 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/dirt/soft/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/dirt/blue
 	name = "Blue Dirt"
