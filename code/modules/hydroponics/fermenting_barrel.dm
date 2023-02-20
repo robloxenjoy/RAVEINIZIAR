@@ -94,25 +94,11 @@
 	. = ..()
 	reagents.add_reagent(/datum/reagent/gunpowder, 250)
 
-
 /obj/structure/fermenting_barrel/water
 
 /obj/structure/fermenting_barrel/water/Initialize(mapload)
 	. = ..()
-	reagents.add_reagent(/datum/reagent/water, 300)
-
-/obj/structure/fermenting_barrel/water/attack_jaw(mob/living/user, list/modifiers)
-	. = ..()
-	if(.)
-		return
-	if(!open)
-		return
-	if(reagents.total_volume < 5)
-		to_chat(user, span_warning("The barrel has no more contents left!"))
-		return
-	reagents.expose(user, TOUCH, 5 / max(reagents.total_volume, 5))
-	visible_message(span_notice("[user] drinks from the barrel"))
-	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), TRUE)
+	reagents.add_reagent(/datum/reagent/water, 100)
 
 /obj/structure/fermenting_barrel/water/examine(mob/user)
 	. = ..()

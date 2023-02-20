@@ -8,6 +8,29 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
+
+/turf/open/floor/plating/metalnoble
+	name = "Metallic Floor"
+	desc = "This is expensive."
+	icon_state = "metalnoble1"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	attachment_holes = FALSE
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
+
+/turf/open/floor/plating/metalnoble/second
+	name = "Metallic Floor"
+	desc = "This is expensive."
+	icon_state = "metalnoble2"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	attachment_holes = FALSE
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
+
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()
 	return list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5")
@@ -363,6 +386,17 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
 
+/turf/open/floor/plating/polovich/dirt
+	name = "Soft Dirt"
+	desc = "Annoying to stand on it"
+	icon_state = "dirtvillage"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_SAND
+	slowdown = 1
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
 /turf/open/floor/plating/polovich/dirt/blue
 	name = "Blue Dirt"
 	desc = "This is good!"
@@ -648,6 +682,28 @@
 			to_chat(user, span_warning("You need four logs to build a floor!"))
 		return
 
+/turf/open/floor/plating/polovich/logsgreen/two
+	name = "Wooden Floor"
+	desc = "This is green. Cursed."
+	icon_state = "logsgreen_2"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/logsgreen/three
+	name = "Wooden Floor"
+	desc = "This is green. Cursed."
+	icon_state = "logsgreen_3"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
 /turf/open/floor/plating/polovich/greenishe2
 	name = "Wooden Floor"
 	desc = "This is green and dark."
@@ -692,6 +748,58 @@
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
 
+/turf/open/floor/plating/polovich/newstoneawesome
+	name = "Stone Floor"
+	desc = "Helps to move."
+	icon_state = "stonefloornew"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/newstoneawesome/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/newstoneawesome/dirty
+	name = "Stone Floor"
+	desc = "Helps to move."
+	icon_state = "stonefloordirty"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/newstoneawesome/big
+	name = "Stone Floor"
+	desc = "Helps to move."
+	icon_state = "stonefloorsecond"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/newstoneawesome/big/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/newstoneawesome/big/shining
+	name = "Stone Floor"
+	desc = "Helps to move. What is this red glow?"
+	icon_state = "stonefloorsecond_light"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/newstoneawesome/big/shining/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/gre
 	name = "Stone Floor"
 	desc = "This is probably boring."
@@ -716,6 +824,26 @@
 	name = "Steel Floor"
 	desc = "This is brutal."
 	icon_state = "metalnew"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
+
+/turf/open/floor/plating/polovich/metallicfloor
+	name = "Metallic Floor"
+	desc = "This is brutal."
+	icon_state = "metallicfloor"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
+
+/turf/open/floor/plating/polovich/metallicfloor/second
+	name = "Metallic Floor"
+	desc = "This is brutal."
+	icon_state = "metallicfloor2"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_METAL
 	barefootstep = FOOTSTEP_METAL
@@ -956,6 +1084,16 @@
 /turf/open/floor/plating/polovich/stonestonestone/three/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/tilefloor
+	name = "Blue Floor"
+	desc = "Interesting..."
+	icon_state = "tilefloor"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
 
 /turf/open/floor/plating/polovich/stonestonestone/evilstoney
 	name = "Stone Floor"

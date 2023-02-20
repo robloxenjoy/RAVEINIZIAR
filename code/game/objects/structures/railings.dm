@@ -1,5 +1,5 @@
 /obj/structure/railing
-	name = "railing"
+	name = "Wooden Railing"
 	desc = "Basic railing meant to protect idiots like you from falling."
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "railing"

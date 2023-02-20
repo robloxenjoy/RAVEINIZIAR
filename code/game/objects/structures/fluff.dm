@@ -207,6 +207,54 @@
 		playsound(src, 'sound/effects/break_stone.ogg', 80, TRUE)
 	qdel(src)
 
+/obj/structure/fluff/statueiron/first
+	name = "Iron Statue"
+	desc = "So beautiful and historic!"
+	icon = 'icons/effects/32x64.dmi'
+	icon_state = "badorza_1"
+	plane = GAME_PLANE_UPPER
+	layer = EDGED_TURF_LAYER
+	density = 1
+	anchored = 1
+	opacity = 0
+
+/obj/structure/fluff/statueiron/seond
+	name = "Iron Statue"
+	desc = "So beautiful and historic!"
+	icon = 'icons/effects/32x64.dmi'
+	icon_state = "badorza_2"
+	plane = GAME_PLANE_UPPER
+	layer = EDGED_TURF_LAYER
+	density = 1
+	anchored = 1
+	opacity = 0
+
+/obj/structure/fluff/statueiron/third
+	name = "Iron Statue"
+	desc = "So beautiful and historic!"
+	icon = 'icons/effects/32x64.dmi'
+	icon_state = "badorza_3"
+	plane = GAME_PLANE_UPPER
+	layer = EDGED_TURF_LAYER
+	density = 1
+	anchored = 1
+	opacity = 0
+
+/obj/structure/fluff/statueiron/random
+	name = "Iron Statue"
+	desc = "So beautiful and historic!"
+	icon = 'icons/effects/32x64.dmi'
+	icon_state = "badorza_1"
+	plane = GAME_PLANE_UPPER
+	layer = EDGED_TURF_LAYER
+	density = 1
+	anchored = 1
+	opacity = 0
+
+/obj/structure/fluff/statueiron/random/Initialize(mapload)
+	. = ..()
+	icon_state = pick("badorza_1", "badorza_2", "badorza_3")
+
 /**
  * A variety of statue in disrepair; parts are broken off and a gemstone is missing
  */
