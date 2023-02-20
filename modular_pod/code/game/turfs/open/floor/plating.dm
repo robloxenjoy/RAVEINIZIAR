@@ -9,28 +9,6 @@
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
 
-/turf/open/floor/plating/polovich/metalnoble
-	name = "Metallic Floor"
-	desc = "This is expensive."
-	icon_state = "metalnoble1"
-	icon = 'modular_pod/icons/turf/floors.dmi'
-	attachment_holes = FALSE
-	footstep = FOOTSTEP_METAL
-	barefootstep = FOOTSTEP_METAL
-	clawfootstep = FOOTSTEP_METAL
-	heavyfootstep = FOOTSTEP_METAL
-
-/turf/open/floor/plating/polovich/metalnoble/second
-	name = "Metallic Floor"
-	desc = "This is expensive."
-	icon_state = "metalnoble2"
-	icon = 'modular_pod/icons/turf/floors.dmi'
-	attachment_holes = FALSE
-	footstep = FOOTSTEP_METAL
-	barefootstep = FOOTSTEP_METAL
-	clawfootstep = FOOTSTEP_METAL
-	heavyfootstep = FOOTSTEP_METAL
-
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()
 	return list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5")
@@ -1112,6 +1090,28 @@
 /turf/open/floor/plating/polovich/stonestonestone/evilstoney/Initialize(mapload)
 	. = ..()
 	dir = rand(0,8)
+
+/turf/open/floor/plating/polovich/metalnoble
+	name = "Metallic Floor"
+	desc = "This is expensive."
+	icon_state = "metalnoble1"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	attachment_holes = FALSE
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
+
+/turf/open/floor/plating/polovich/metalnoble/second
+	name = "Metallic Floor"
+	desc = "This is expensive."
+	icon_state = "metalnoble2"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	attachment_holes = FALSE
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
 
 /turf/open/floor/plating/polovich/temnoo/experimental
 	name = "Tendance Stone"
