@@ -1,11 +1,10 @@
 import { Job } from "../base";
 import { Security } from "../departments";
 
-const SecurityOfficer: Job = {
-  name: "Security Officer",
-  description: "Protect company assets, follow the Standard Operating \
-    Procedure, eat donuts",
+const Venturer: Job = {
+  name: "Venturer",
+  description: "He came from somewhere. And he's going somewhere.",
   department: Security,
 };
 
-export default SecurityOfficer;
+export default Venturer;

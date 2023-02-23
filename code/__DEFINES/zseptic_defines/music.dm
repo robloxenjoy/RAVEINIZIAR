@@ -6,6 +6,8 @@
 
 #define DRONING_VILL list('modular_septic/sound/music/droning/unatko.ogg')
 
+#define DRONING_CHAOT list('modular_septic/sound/music/droning/gothic.ogg')
+
 //#define DRONING_FOREST list('modular_septic/sound/music/droning/forest.ogg')
 #define DRONING_FOREST list('modular_septic/sound/music/droning/celestial.ogg')
 
