@@ -104,8 +104,188 @@
 	/// Message that occurs when the door is closed.
 	var/close_message = "The door buzzes, and slides closed."
 
+/obj/machinery/door/keycard/denominator/podozl/akt
+	name = "Wooden Door"
+	desc = "Maybe I need a key for this wooden door."
+	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/door_akt.dmi'
+	icon_state = "koor_closed"
+	base_icon_state = "koor"
+	explosion_block = 0
+	heat_proof = TRUE
+	max_integrity = 600
+	armor = list(MELEE = 65, BULLET = 65, LASER = 65, ENERGY = 65, BOMB = 20, BIO = 65, FIRE = 65, ACID = 65)
+	damage_deflection = 40
+	puzzle_id = "housekey"
+	open_message = "The door moves with a some sound, and opens."
+	close_message = "The door moves with a some sound, and closes."
+
+/obj/machinery/door/keycard/denominator/podozl/akt/attackby(obj/item/I, mob/user, params)
+	if(istype(I,/obj/item/keycard))
+		var/obj/item/keycard/key = I
+		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
+			to_chat(user, span_notice("[open_message]"))
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
+			sleep(6)
+			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			open()
+			return
+		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
+			to_chat(user, span_notice("[close_message]"))
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
+			sleep(6)
+			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			close()
+			return
+		else
+			to_chat(user, span_notice("Not that key..."))
+			playsound(src, 'modular_septic/sound/effects/card_declined_horror.wav', 60, FALSE, 1)
+			return
+
+/obj/item/keycard/akt
+	name = "Wooden Key"
+	desc = "This key is for house in Akt Village..."
+	icon = 'modular_septic/icons/obj/items/keys.dmi'
+	icon_state = "woodenkey"
+	puzzle_id = "housekey"
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	havedurability = TRUE
+	durability = 100
+	carry_weight = 1 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_ID
+	min_force = 2
+	force = 3
+	throwforce = 2
+	min_force_strength = 1
+	force_strength = 1
+	wound_bonus = 1
+	bare_wound_bonus = 1
+	throw_speed = 3
+	throw_range = 8
+	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
+	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
+	tetris_width = 32
+	tetris_height = 64
+
+/obj/item/keycard/akt/gargostore
+	desc = "This key is for Gargostore in Akt Village..."
+	puzzle_id = "gargostore"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/gargostore
+	puzzle_id = "gargostore"
+
+/obj/item/keycard/akt/alchem
+	desc = "This key is for al-chemists houses in Akt Village..."
+	puzzle_id = "alchem"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/alchem
+	puzzle_id = "alchem"
+
+/obj/item/keycard/akt/controller
+	desc = "This key is for controller palace in Akt Village..."
+	puzzle_id = "controller"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/controller
+	puzzle_id = "controller"
+
+/obj/item/keycard/akt/granger
+	desc = "This key is for granger house in Akt Village..."
+	puzzle_id = "granger"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/granger
+	puzzle_id = "granger"
+
+/obj/item/keycard/akt/nailer
+	desc = "This key is for nailer house in Akt Village..."
+	puzzle_id = "nailer"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/nailer
+	puzzle_id = "nailer"
+
+/obj/item/keycard/akt/carehouse
+	desc = "This key is for carehouse in the forest..."
+	puzzle_id = "carehouse"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/carehouse
+	puzzle_id = "carehouse"
+
+/obj/item/keycard/akt/lair
+	desc = "This key is for lair in Akt Village..."
+	puzzle_id = "lair"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/lair
+	puzzle_id = "lair"
+
+/obj/item/keycard/akt/chantry
+	desc = "This key is for chantry in Akt Village..."
+	puzzle_id = "chantry"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/chantry
+	puzzle_id = "chantry"
+
+/obj/item/keycard/akt/barroom
+	desc = "This key is for chantry in Akt Village..."
+	puzzle_id = "barroom"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/barroom
+	puzzle_id = "barroom"
+
+/obj/item/keycard/akt/sewer
+	desc = "This key is for canalization in Akt Village..."
+	puzzle_id = "canal"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/sewer
+	puzzle_id = "canal"
+
+/obj/item/keycard/akt/lost
+	desc = "This key is for lost thing in the forest..."
+
+/obj/item/keycard/akt/lost/abandoned_f
+	puzzle_id = "abandoned_f"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/abandoned_f
+	puzzle_id = "abandoned_f"
+
+/obj/item/keycard/akt/lost/abandoned_x
+	puzzle_id = "abandoned_x"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/abandoned_x
+	puzzle_id = "abandoned_x"
+
+/obj/item/keycard/akt/lost/abandoned_m
+	puzzle_id = "abandoned_m"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/abandoned_m
+	puzzle_id = "abandoned_m"
+
+/obj/item/keycard/akt/lost/abandoned_a
+	puzzle_id = "abandoned_a"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/abandoned_a
+	puzzle_id = "abandoned_a"
+
+/obj/item/keycard/akt/lost/abandoned_q
+	puzzle_id = "abandoned_q"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/abandoned_q
+	puzzle_id = "abandoned_q"
+
+/obj/item/keycard/akt/lost/abandoned_zz
+	puzzle_id = "abandoned_zz"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/abandoned_zz
+	puzzle_id = "abandoned_zz"
+
+/obj/item/keycard/akt/lost/abandoned_m
+	puzzle_id = "abandoned_m"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/abandoned_m
+	puzzle_id = "abandoned_m"
+
 /obj/machinery/door/keycard/denominator/podozl/chaot
-	name = "Chaot Airlock"
+	name = "Chaot Door"
 	desc = "Maybe I need a seal for this smooth stone door."
 	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/secretdoor_chaot.dmi'
 	icon_state = "boor_closed"

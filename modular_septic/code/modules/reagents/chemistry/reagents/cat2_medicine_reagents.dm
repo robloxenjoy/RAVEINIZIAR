@@ -287,7 +287,7 @@
 	ph = 3.8
 	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 0
 	taste_description = "sour"
 	failed_chem = null
@@ -321,7 +321,7 @@
 	ph = 3.8
 	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	metabolization_rate = REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 0
 	taste_description = "sour"
 	failed_chem = null

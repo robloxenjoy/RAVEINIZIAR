@@ -61,7 +61,7 @@
 
 /obj/effect/decal/cleanable/oil
 	name = "motor oil"
-	desc = "It's black and greasy. Looks like Beepsky made another mess."
+	desc = "It's black and greasy."
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "floor1"
 	random_icon_states = list("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "floor7")

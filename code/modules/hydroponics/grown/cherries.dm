@@ -55,7 +55,7 @@
 	eat_time = 2
 	foodtypes = FRUIT
 	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 5)
-	food_reagents = list( /datum/reagent/consumable/bluecherryjelly = 5, /datum/reagent/medicine/c2/penthrite = 1)
+	food_reagents = list( /datum/reagent/consumable/bluecherryjelly = 4, /datum/reagent/medicine/c2/penthrite = 2)
 	tastes = list("midnightberry" = 1, "sweet" = 1)
 	wine_power = 50
 	tetris_width = 32

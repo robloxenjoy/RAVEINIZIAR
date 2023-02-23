@@ -77,7 +77,7 @@
 	attack_fatigue_cost = 6
 	attack_delay = 17
 	parrying_flags = BLOCK_FLAG_THROWN | BLOCK_FLAG_UNARMED
-	canrust = TRUE	
+//	canrust = TRUE	
 	havedurability = TRUE
 	durability = 180
 	tetris_width = 32
@@ -85,6 +85,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb_continuous = list("stabs", "pokes", "jabs")
 	attack_verb_simple = list("stab", "poke", "jab")
+	custom_materials = list(/datum/material/gold=18000)
 
 //Nice sexy sex
 /obj/item/melee/truncheon

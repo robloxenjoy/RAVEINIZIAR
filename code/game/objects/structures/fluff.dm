@@ -207,6 +207,38 @@
 		playsound(src, 'sound/effects/break_stone.ogg', 80, TRUE)
 	qdel(src)
 
+/obj/structure/fluff/narrator
+	name = "Narrator"
+	desc = "A wooden pole, there's a sign that says..."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "narrator"
+	plane = GAME_PLANE_UPPER
+	layer = EDGED_TURF_LAYER
+	density = 1
+	anchored = 1
+	opacity = 0
+	obj_flags = UNIQUE_RENAME
+
+/obj/structure/fluff/narrator/akt/hello
+	desc = "A wooden pole, there's a sign that says... Welcome, this is Akt village. Be polite, don't kill, don't steal or swear. We hope that this place will become your home and just a safe environment."
+
+/obj/structure/fluff/narrator/akt/barroom
+	desc = "A wooden pole, there's a sign that says... Here you can have a nice rest with great music and great alcohol!"
+
+/obj/structure/fluff/narrator/akt/farm
+	desc = "A wooden pole, there's a sign that says... Berries grow here. Don't steal them!"
+
+/obj/structure/fluff/narrator/akt/controller
+	desc = "A wooden pole, there's a sign that says... Palace of the controller - the owner of this village. Listen to him! "
+
+/obj/structure/fluff/narrator/forest
+	desc = "A stone deformity, the words are engraved here that says..."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "narrator_stone"
+
+/obj/structure/fluff/narrator/forest
+	desc = "A stone deformity, the words are engraved here that says... Carehouse - your forest-shelter. "
+
 /obj/structure/fluff/statueiron/first
 	name = "Iron Statue"
 	desc = "So beautiful and historic!"
