@@ -172,12 +172,15 @@
 	var/lit = FALSE
 
 /obj/item/crystal/red
+	icon_state = "red_crystal"
 	light_color = "#ff460e"
 
 /obj/item/crystal/blue
+	icon_state = "blue_crystal"
 	light_color = "#008eff"
 
 /obj/item/crystal/pink
+	icon_state = "pink_crystal"
 	light_color = "#e252ea"
 
 /obj/structure/crystal_holder
