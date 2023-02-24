@@ -108,7 +108,6 @@
 	QDEL_NULL(lighttorch)
 	. = ..()
 
-
 /obj/structure/torchwall/update_icon()
 	..()
 	if(lighttorch)

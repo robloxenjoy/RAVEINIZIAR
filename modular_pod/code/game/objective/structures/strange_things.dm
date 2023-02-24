@@ -158,3 +158,367 @@
 
 /obj/structure/halo/shine_whiteblack_three
 	icon_state = "shine_whiteblack_three"
+
+/obj/item/crystal/green
+	name = "Crystal"
+	desc = "Thanks to this, the dark light will be filled with bright light."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "green_crystal"
+	inhand_icon_state = "shard-glass"
+	light_range = 3
+	light_power = 2
+	light_color = "#00dd78"
+	light_system = MOVABLE_LIGHT
+	var/lit = FALSE
+
+/obj/item/crystal/red
+	light_color = "#ff460e"
+
+/obj/item/crystal/blue
+	light_color = "#008eff"
+
+/obj/item/crystal/pink
+	light_color = "#e252ea"
+
+/obj/structure/crystal_holder
+	name = "Wooden Pole"
+	desc = "Wooden Crystal holder. Just put a crystal in here."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "crystal-holder-empty""
+	anchored = FALSE
+	density = TRUE
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
+
+	var/obj/item/crystal/green/greeny
+	var/obj/item/crystal/red/reddy
+	var/obj/item/crystal/blue/bluey
+	var/obj/item/crystal/pink/pinky
+
+/obj/structure/crystal_holder/already/green/New()
+	..()
+	greeny = new(src)
+	update_icon()
+
+/obj/structure/crystal_holder/already/red/New()
+	..()
+	reddy = new(src)
+	update_icon()
+
+/obj/structure/crystal_holder/already/blue/New()
+	..()
+	bluey = new(src)
+	update_icon()
+
+/obj/structure/crystal_holder/already/pink/New()
+	..()
+	pinky = new(src)
+	update_icon()
+
+/obj/structure/crystal_holder/update_icon()
+	..()
+	if(greeny)
+		icon_state = "crystal-holder-green"
+		light_range = 3
+		light_power = 2
+		light_color = "#00dd78"
+		switch(dir)
+			if(NORTH)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(SOUTH)
+				plane = ABOVE_FRILL_PLANE_BLOOM
+			if(EAST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(WEST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			else
+				plane = ABOVE_FRILL_PLANE_BLOOM
+	else if(reddy)
+		icon_state = "crystal-holder-red"
+		light_range = 3
+		light_power = 2
+		light_color = "#00dd78"
+		switch(dir)
+			if(NORTH)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(SOUTH)
+				plane = ABOVE_FRILL_PLANE_BLOOM
+			if(EAST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(WEST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			else
+				plane = ABOVE_FRILL_PLANE_BLOOM
+	else if(bluey)
+		icon_state = "crystal-holder-blue"
+		light_range = 3
+		light_power = 2
+		light_color = "#008eff"
+		switch(dir)
+			if(NORTH)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(SOUTH)
+				plane = ABOVE_FRILL_PLANE_BLOOM
+			if(EAST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(WEST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			else
+				plane = ABOVE_FRILL_PLANE_BLOOM
+	else if(pinky)
+		icon_state = "crystal-holder-pink"
+		light_range = 3
+		light_power = 2
+		light_color = "#e252ea"
+		switch(dir)
+			if(NORTH)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(SOUTH)
+				plane = ABOVE_FRILL_PLANE_BLOOM
+			if(EAST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			if(WEST)
+				plane = GAME_PLANE_UPPER_BLOOM
+			else
+				plane = ABOVE_FRILL_PLANE_BLOOM
+	else
+		icon_state = "crystal-holder-empty"
+		light_range = 0
+		light_power = 0
+
+/obj/structure/crystal_holder/proc/insert_crystal_green(obj/item/crystal/green/T)
+	T.forceMove(src)
+	greeny = T
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture1.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/proc/insert_crystal_red(obj/item/crystal/red/T)
+	T.forceMove(src)
+	reddy = T
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture1.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/proc/insert_crystal_blue(obj/item/crystal/blue/T)
+	T.forceMove(src)
+	bluey = T
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture1.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/proc/insert_crystal_pinky(obj/item/crystal/pink/T)
+	T.forceMove(src)
+	pinky = T
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture1.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/crystal/green))
+		if(greeny || bluey || reddy || pinky)
+			return
+		else
+			insert_crystal_green(W)
+	else if(istype(W, /obj/item/crystal/blue))
+		if(greeny || bluey || reddy || pinky)
+			return
+		else
+			insert_crystal_blue(W)
+	else if(istype(W, /obj/item/crystal/red))
+		if(greeny || bluey || reddy || pinky)
+			return
+		else
+			insert_crystal_red(W)
+	else if(istype(W, /obj/item/crystal/pink))
+		if(greeny || bluey || reddy || pinky)
+			return
+		else
+			insert_crystal_pink(W)
+
+	src.add_fingerprint(user)
+	update_icon()
+
+/obj/structure/crystal_holder/proc/remove_green()
+	. = greeny
+	greeny.update_icon()
+	greeny = null
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture0.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/proc/remove_blue()
+	. = bluey
+	bluey.update_icon()
+	bluey = null
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture0.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/proc/remove_red()
+	. = reddy
+	reddy.update_icon()
+	reddy = null
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture0.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/proc/remove_pink()
+	. = pinky
+	pinky.update_icon()
+	pinky = null
+	update_icon()
+	playsound(src, 'sound/items/torch_fixture0.ogg', 50, TRUE)
+
+/obj/structure/crystal_holder/attack_hand(mob/user)
+
+	add_fingerprint(user)
+
+	if(!greeny || !reddy || !pinky || !bluey)
+		to_chat(user, "There is no crystal here.")
+		return
+
+	if(greeny)
+		user.put_in_active_hand(remove_green())
+	else if(reddy)
+		user.put_in_active_hand(remove_red())
+	else if(blue)
+		user.put_in_active_hand(remove_blue())
+	else if(pinky)
+		user.put_in_active_hand(remove_pink())
+
+/obj/structure/crystal_holder/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(greeny)
+			new /obj/item/crystal/green(get_turf(src))
+		if(reddy)
+			new /obj/item/crystal/red(get_turf(src))
+		if(bluey)
+			new /obj/item/crystal/blue(get_turf(src))
+		if(pinky)
+			new /obj/item/crystal/pink(get_turf(src))
+	qdel(src)
+
+/obj/structure/crystals_ground
+	var/crystal_amount = 3
+
+/obj/structure/crystals_ground/green
+	name = "Green Crystals"
+	desc = "Crystals sticking out of the ground."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "green_crystals"
+	anchored = TRUE
+	density = FALSE
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	light_range = 1
+	light_power = 1
+	light_color = "#00dd78"
+
+/obj/structure/crystals_ground/green/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
+		if(W.hitsound)
+			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
+		user.visible_message(span_notice("[user] begins to uproot [src] with [W]."),span_notice("You begin to uproot [src] with [W]."), span_hear("You hear the sound of uprooting."))
+		user.changeNext_move(W.attack_delay)
+		user.adjustFatigueLoss(W.attack_fatigue_cost)
+		W.damageItem("SOFT")
+		sound_hint()
+		if(do_after(user, 1000/W.force, target = src))
+			user.visible_message(span_notice("[user] uprooted [src] with the [W]."),span_notice("You uprooted [src] with the [W]."), span_hear("You hear the sound of uprooting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			W.damageItem("HARD")
+			sound_hint()
+			for(var/i=1 to crystal_amount)
+				new /obj/item/crystal/green(get_turf(src))
+			qdel(src)
+
+/obj/structure/crystals_ground/red
+	name = "Red Crystals"
+	desc = "Crystals sticking out of the ground."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "red_crystals"
+	anchored = TRUE
+	density = FALSE
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	light_range = 1
+	light_power = 1
+	light_color = "#ff460e"
+
+/obj/structure/crystals_ground/red/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
+		if(W.hitsound)
+			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
+		user.visible_message(span_notice("[user] begins to uproot [src] with [W]."),span_notice("You begin to uproot [src] with [W]."), span_hear("You hear the sound of uprooting."))
+		user.changeNext_move(W.attack_delay)
+		user.adjustFatigueLoss(W.attack_fatigue_cost)
+		W.damageItem("SOFT")
+		sound_hint()
+		if(do_after(user, 1000/W.force, target = src))
+			user.visible_message(span_notice("[user] uprooted [src] with the [W]."),span_notice("You uprooted [src] with the [W]."), span_hear("You hear the sound of uprooting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			W.damageItem("HARD")
+			sound_hint()
+			for(var/i=1 to crystal_amount)
+				new /obj/item/crystal/red(get_turf(src))
+			qdel(src)
+
+/obj/structure/crystals_ground/blue
+	name = "Blue Crystals"
+	desc = "Crystals sticking out of the ground."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "blue_crystals"
+	anchored = TRUE
+	density = FALSE
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	light_range = 1
+	light_power = 1
+	light_color = "#008eff"
+
+/obj/structure/crystals_ground/blue/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
+		if(W.hitsound)
+			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
+		user.visible_message(span_notice("[user] begins to uproot [src] with [W]."),span_notice("You begin to uproot [src] with [W]."), span_hear("You hear the sound of uprooting."))
+		user.changeNext_move(W.attack_delay)
+		user.adjustFatigueLoss(W.attack_fatigue_cost)
+		W.damageItem("SOFT")
+		sound_hint()
+		if(do_after(user, 1000/W.force, target = src))
+			user.visible_message(span_notice("[user] uprooted [src] with the [W]."),span_notice("You uprooted [src] with the [W]."), span_hear("You hear the sound of uprooting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			W.damageItem("HARD")
+			sound_hint()
+			for(var/i=1 to crystal_amount)
+				new /obj/item/crystal/blue(get_turf(src))
+			qdel(src)
+
+/obj/structure/crystals_ground/pink
+	name = "Pink Crystals"
+	desc = "Crystals sticking out of the ground."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "pink_crystals"
+	anchored = TRUE
+	density = FALSE
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	light_range = 1
+	light_power = 1
+	light_color = "#e252ea"
+
+/obj/structure/crystals_ground/pink/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
+		if(W.hitsound)
+			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
+		user.visible_message(span_notice("[user] begins to uproot [src] with [W]."),span_notice("You begin to uproot [src] with [W]."), span_hear("You hear the sound of uprooting."))
+		user.changeNext_move(W.attack_delay)
+		user.adjustFatigueLoss(W.attack_fatigue_cost)
+		W.damageItem("SOFT")
+		sound_hint()
+		if(do_after(user, 1000/W.force, target = src))
+			user.visible_message(span_notice("[user] uprooted [src] with the [W]."),span_notice("You uprooted [src] with the [W]."), span_hear("You hear the sound of uprooting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			W.damageItem("HARD")
+			sound_hint()
+			for(var/i=1 to crystal_amount)
+				new /obj/item/crystal/pink(get_turf(src))
+			qdel(src)
