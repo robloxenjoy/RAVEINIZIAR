@@ -184,7 +184,7 @@
 	name = "Wooden Pole"
 	desc = "Wooden Crystal holder. Just put a crystal in here."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
-	icon_state = "crystal-holder-empty""
+	icon_state = "crystal-holder-empty"
 	anchored = FALSE
 	density = TRUE
 	plane = ABOVE_GAME_PLANE
@@ -304,7 +304,7 @@
 	update_icon()
 	playsound(src, 'sound/items/torch_fixture1.ogg', 50, TRUE)
 
-/obj/structure/crystal_holder/proc/insert_crystal_pinky(obj/item/crystal/pink/T)
+/obj/structure/crystal_holder/proc/insert_crystal_pink(obj/item/crystal/pink/T)
 	T.forceMove(src)
 	pinky = T
 	update_icon()
@@ -375,7 +375,7 @@
 		user.put_in_active_hand(remove_green())
 	else if(reddy)
 		user.put_in_active_hand(remove_red())
-	else if(blue)
+	else if(bluey)
 		user.put_in_active_hand(remove_blue())
 	else if(pinky)
 		user.put_in_active_hand(remove_pink())
@@ -408,7 +408,7 @@
 	light_power = 1
 	light_color = "#00dd78"
 
-/obj/structure/crystals_ground/green/attackby(obj/item/W, mob/user)
+/obj/structure/crystals_ground/green/attackby(obj/item/W, mob/living/carbon/user)
 	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
 		if(W.hitsound)
 			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
@@ -440,7 +440,7 @@
 	light_power = 1
 	light_color = "#ff460e"
 
-/obj/structure/crystals_ground/red/attackby(obj/item/W, mob/user)
+/obj/structure/crystals_ground/red/attackby(obj/item/W, mob/living/carbon/user)
 	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
 		if(W.hitsound)
 			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
@@ -472,7 +472,7 @@
 	light_power = 1
 	light_color = "#008eff"
 
-/obj/structure/crystals_ground/blue/attackby(obj/item/W, mob/user)
+/obj/structure/crystals_ground/blue/attackby(obj/item/W, mob/living/carbon/user)
 	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
 		if(W.hitsound)
 			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
@@ -504,7 +504,7 @@
 	light_power = 1
 	light_color = "#e252ea"
 
-/obj/structure/crystals_ground/pink/attackby(obj/item/W, mob/user)
+/obj/structure/crystals_ground/pink/attackby(obj/item/W, mob/living/carbon/user)
 	if(istype(W, /obj/item/changeable_attacks/slashstab/knife/small/steel))
 		if(W.hitsound)
 			playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
