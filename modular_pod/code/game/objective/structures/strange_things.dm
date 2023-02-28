@@ -369,11 +369,11 @@
 /obj/structure/crystal_holder/attack_hand(mob/user)
 
 	add_fingerprint(user)
-
+/*
 	if(!greeny || !reddy || !pinky || !bluey)
 		to_chat(user, "There is no crystal here.")
 		return
-
+*/
 	if(greeny)
 		user.put_in_active_hand(remove_green())
 	else if(reddy)

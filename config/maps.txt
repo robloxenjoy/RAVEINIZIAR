@@ -50,3 +50,6 @@ endmap
 
 map polovich
 endmap
+
+map polovich_second
+endmap
