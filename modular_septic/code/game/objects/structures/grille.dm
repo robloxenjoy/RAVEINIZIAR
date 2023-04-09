@@ -85,7 +85,9 @@
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH_NEIGHBORS(src)
 
-/obj/structure/grille/small/iron
+/obj/structure/grille/iron
 	icon = 'modular_septic/icons/obj/structures/structures.dmi'
 	icon_state = "grille"
+	base_icon_state = "grille"
 	frill_icon = null
+	frill_uses_icon_state = FALSE

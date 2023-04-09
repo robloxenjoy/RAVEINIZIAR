@@ -16,7 +16,7 @@
 	density = TRUE
 	anchored = TRUE
 
-	icon = 'icons/obj/fence.dmi'
+	icon = 'modular_septic/icons/obj/structures/fence.dmi'
 	icon_state = "straight"
 
 	var/cuttable = TRUE

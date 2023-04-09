@@ -32,3 +32,7 @@
 /turf/open/floor/low_wall/mineral/wood/grille_and_window
 	start_with_grille = TRUE
 	start_with_window = TRUE
+
+/turf/open/floor/low_wall/mineral/wood/grille
+	start_with_grille = TRUE
+	start_with_window = FALSE

@@ -211,6 +211,13 @@
 /obj/machinery/door/keycard/denominator/podozl/akt/carehouse
 	puzzle_id = "carehouse"
 
+/obj/item/keycard/akt/infirmary
+	desc = "This key is for infirmary in the Akt Village..."
+	puzzle_id = "infirmary"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/infirmary
+	puzzle_id = "infirmary"
+
 /obj/item/keycard/akt/lair
 	desc = "This key is for lair in Akt Village..."
 	puzzle_id = "lair"

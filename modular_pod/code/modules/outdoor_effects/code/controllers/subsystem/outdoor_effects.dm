@@ -177,6 +177,19 @@ SUBSYSTEM_DEF(outdoor_effects)
 			area.droning_sound = DRONING_PURENIGHT_AKT
 		else
 			area.droning_sound = DRONING_VILL
+	if(istype(area, /area/maintenance/polovich/forest/rain/village))
+		if(istype(current_step_datum, /datum/time_of_day/midnight))
+			area.droning_sound = DRONING_PURENIGHT_AKT
+		else if(istype(current_step_datum, /datum/time_of_day/night))
+			area.droning_sound = DRONING_PURENIGHT_AKT
+		else if(istype(current_step_datum, /datum/time_of_day/dusk))
+			area.droning_sound = DRONING_PURENIGHT_AKT
+		else if(istype(current_step_datum, /datum/time_of_day/dawn))
+			area.droning_sound = DRONING_PURENIGHT_AKT
+		else if(istype(current_step_datum, /datum/time_of_day/dawndawn))
+			area.droning_sound = DRONING_PURENIGHT_AKT
+		else
+			area.droning_sound = DRONING_VILL
 	SSdroning.play_area_sound(area, user)
 */
 

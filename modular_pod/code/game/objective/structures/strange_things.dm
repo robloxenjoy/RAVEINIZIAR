@@ -164,24 +164,40 @@
 	desc = "Thanks to this, the dark light will be filled with bright light."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "green_crystal"
-	inhand_icon_state = "shard-glass"
 	light_range = 3
 	light_power = 2
 	light_color = "#00dd78"
 	light_system = MOVABLE_LIGHT
-	var/lit = FALSE
 
 /obj/item/crystal/red
+	name = "Crystal"
+	desc = "Thanks to this, the dark light will be filled with bright light."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "red_crystal"
 	light_color = "#ff460e"
+	light_range = 3
+	light_power = 2
+	light_system = MOVABLE_LIGHT
 
 /obj/item/crystal/blue
+	name = "Crystal"
+	desc = "Thanks to this, the dark light will be filled with bright light."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "blue_crystal"
 	light_color = "#008eff"
+	light_range = 3
+	light_power = 2
+	light_system = MOVABLE_LIGHT
 
 /obj/item/crystal/pink
+	name = "Crystal"
+	desc = "Thanks to this, the dark light will be filled with bright light."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "pink_crystal"
 	light_color = "#e252ea"
+	light_range = 3
+	light_power = 2
+	light_system = MOVABLE_LIGHT
 
 /obj/structure/crystal_holder
 	name = "Wooden Pole"
@@ -222,9 +238,7 @@
 	..()
 	if(greeny)
 		icon_state = "crystal-holder-green"
-		light_range = 3
-		light_power = 2
-		light_color = "#00dd78"
+		set_light(3, 2, "#00dd78")
 		switch(dir)
 			if(NORTH)
 				plane = GAME_PLANE_UPPER_BLOOM
@@ -238,9 +252,7 @@
 				plane = ABOVE_FRILL_PLANE_BLOOM
 	else if(reddy)
 		icon_state = "crystal-holder-red"
-		light_range = 3
-		light_power = 2
-		light_color = "#00dd78"
+		set_light(3, 2, "#ff460e")
 		switch(dir)
 			if(NORTH)
 				plane = GAME_PLANE_UPPER_BLOOM
@@ -254,9 +266,7 @@
 				plane = ABOVE_FRILL_PLANE_BLOOM
 	else if(bluey)
 		icon_state = "crystal-holder-blue"
-		light_range = 3
-		light_power = 2
-		light_color = "#008eff"
+		set_light(3, 2, "#008eff")
 		switch(dir)
 			if(NORTH)
 				plane = GAME_PLANE_UPPER_BLOOM
@@ -270,9 +280,7 @@
 				plane = ABOVE_FRILL_PLANE_BLOOM
 	else if(pinky)
 		icon_state = "crystal-holder-pink"
-		light_range = 3
-		light_power = 2
-		light_color = "#e252ea"
+		set_light(3, 2, "#e252ea")
 		switch(dir)
 			if(NORTH)
 				plane = GAME_PLANE_UPPER_BLOOM
@@ -286,8 +294,7 @@
 				plane = ABOVE_FRILL_PLANE_BLOOM
 	else
 		icon_state = "crystal-holder-empty"
-		light_range = 0
-		light_power = 0
+		set_light(0, 0, null)
 
 /obj/structure/crystal_holder/proc/insert_crystal_green(obj/item/crystal/green/T)
 	T.forceMove(src)

@@ -236,8 +236,8 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "narrator_stone"
 
-/obj/structure/fluff/narrator/forest
-	desc = "A stone deformity, the words are engraved here that says... Carehouse - your forest-shelter. "
+/obj/structure/fluff/narrator/forest/carehouse
+	desc = "A stone deformity, the words are engraved here that says... Carehouse - your forest-shelter."
 
 /obj/structure/fluff/statueiron/first
 	name = "Iron Statue"
