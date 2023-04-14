@@ -199,6 +199,7 @@
 	light_power = 2
 	light_system = MOVABLE_LIGHT
 
+/*
 /obj/structure/crystal_holder
 	name = "Wooden Pole"
 	desc = "Wooden Crystal holder. Just put a crystal in here."
@@ -401,6 +402,8 @@
 		if(pinky)
 			new /obj/item/crystal/pink(get_turf(src))
 	qdel(src)
+
+*/
 
 /obj/structure/crystals_ground
 	var/crystal_amount = 3

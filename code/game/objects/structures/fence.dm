@@ -15,6 +15,8 @@
 	desc = "A chain link fence. Not as effective as a wall, but generally it keeps people out."
 	density = TRUE
 	anchored = TRUE
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
 
 	icon = 'modular_septic/icons/obj/structures/fence.dmi'
 	icon_state = "straight"

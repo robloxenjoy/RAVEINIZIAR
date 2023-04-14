@@ -2,7 +2,7 @@
 "b" = (/turf/open/floor/plating/polovich/logsgreen{dir = 1},/area/maintenance/polovich/forest/rain)
 "c" = (/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
 "d" = (/turf/open/floor/plating/polovich/logsgreen{dir = 4},/area/maintenance/polovich/forest/rain)
-"e" = (/obj/structure/ladder{down = 1},/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
+"e" = (/obj/structure/ladder,/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
 "f" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest/rain)
 
 (1,1,1) = {"
