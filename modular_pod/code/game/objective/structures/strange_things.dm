@@ -535,3 +535,45 @@
 			for(var/i=1 to crystal_amount)
 				new /obj/item/crystal/pink(get_turf(src))
 			qdel(src)
+
+/obj/structure/newgrille
+	name = "Grille"
+	desc = "Iron grille! So awesome..."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "grille"
+	density = TRUE
+	anchored = TRUE
+	plane = ABOVE_GAME_PLANE
+	layer = GRILLE_LAYER
+	armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 100, BOMB = 10, BIO = 100, FIRE = 0, ACID = 0)
+	max_integrity = 50
+	integrity_failure = 0.4
+	var/rods_type = /obj/item/stack/rods
+	var/rods_amount = 3
+
+/obj/structure/newgrille/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'sound/effects/grillehit.ogg', 80, TRUE)
+			else
+				playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src, 'sound/items/welder.ogg', 80, TRUE)
+
+/obj/structure/newgrille/deconstruct(disassembled = TRUE)
+	if(!(flags_1&NODECONSTRUCT_1))
+		var/obj/R = new rods_type(drop_location(), rods_amount)
+		transfer_fingerprints_to(R)
+		new /obj/structure/remains/iron(get_turf(src))
+		qdel(src)
+	..()
+
+/obj/structure/remains/iron
+	name = "Broken Grille"
+	desc = "Iron grille! So awesome... But it's broken."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "brokengrille"
+	plane = ABOVE_GAME_PLANE
+	layer = GRILLE_LAYER
+	density = FALSE

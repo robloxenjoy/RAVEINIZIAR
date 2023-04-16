@@ -47,8 +47,10 @@
 				target.death_scream()
 			for(var/obj/item/organ/bone/bone in bodypart.getorganslotlist(ORGAN_SLOT_BONE))
 				bone.compound_fracture()
+/*
 			if(bodypart.body_zone in (LIMB_BODYPARTS|BODY_ZONE_PRECISE_NECK))
 				bodypart.apply_dismember(WOUND_SLASH, TRUE, FALSE)
+*/
 			bodypart.open_incision()
 			SEND_SIGNAL(target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 			playsound(target, 'modular_septic/sound/gore/dissection.ogg', 80, 0)

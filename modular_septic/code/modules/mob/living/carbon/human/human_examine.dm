@@ -350,24 +350,23 @@
 						msg += "<span class='notice'>[t_He] look[p_s()] very happy.</span>"
 					if(MOOD_LEVEL_HAPPY4 to INFINITY)
 						msg += "<span class='notice'>[t_He] look[p_s()] <b>ecstatic</b>!</span>"
-			if(HAS_TRAIT(user, TRAIT_EMPATH))
-				if(combat_mode)
-					msg += "[t_He] seem[p_s()] to be on guard."
-				if(getOxyLoss() >= 10)
-					msg += "[t_He] seem[p_s()] winded."
-				if(getToxLoss() >= 10)
-					msg += "[t_He] seem[p_s()] sickly."
-				if(mood.sanity <= SANITY_DISTURBED)
-					msg += "[t_He] seem[p_s()] significantly distressed."
-					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
-				if(is_blind())
-					msg += "[t_He] appear[p_s()] to be staring off into space."
-				if(HAS_TRAIT(src, TRAIT_DEAF))
-					msg += "[t_He] appear[p_s()] to not be responding to noises."
-				if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
-					msg += "[t_He] [t_is] flushed and wheezing."
-				if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
-					msg += "[t_He] [t_is] shivering."
+			if(combat_mode)
+				msg += "[t_He] seem[p_s()] to be on guard."
+			if(getOxyLoss() >= 10)
+				msg += "[t_He] seem[p_s()] winded."
+			if(getToxLoss() >= 10)
+				msg += "[t_He] seem[p_s()] sickly."
+			if(mood.sanity <= SANITY_DISTURBED)
+				msg += "[t_He] seem[p_s()] significantly distressed."
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
+			if(is_blind())
+				msg += "[t_He] appear[p_s()] to be staring off into space."
+			if(HAS_TRAIT(src, TRAIT_DEAF))
+				msg += "[t_He] appear[p_s()] to not be responding to noises."
+			if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
+				msg += "[t_He] [t_is] flushed and wheezing."
+			if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
+				msg += "[t_He] [t_is] shivering."
 			if(HAS_TRAIT(user, TRAIT_SPIRITUAL))
 				msg += "[t_He] [t_has] a holy aura about [t_him]."
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "religious_comfort", /datum/mood_event/religiously_comforted)

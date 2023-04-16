@@ -384,6 +384,34 @@
 	if(!isturf(loc) || !isliving(AM))
 		return
 	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
+
+/obj/structure/flora/ausbushes/bushka
+	name = "Longrass"
+	desc = "So long!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "bushka1"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	resistance_flags = FLAMMABLE
+	density = 0
+	anchored = 1
+
+/obj/structure/flora/ausbushes/bushka/Initialize(mapload)
+	. = ..()
+	update_appearance()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/shag,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+	icon_state = pick("bushka1", "bushka2", "bushka3")
+
+
+/obj/structure/flora/ausbushes/bushka/proc/shag(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
+	if(!isturf(loc) || !isliving(AM))
+		return
+	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
 /*
 /obj/structure/flora/ausbushes/root
 	name = "Tree Root"
@@ -667,6 +695,16 @@
 			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/crystal/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+			else
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/bushka/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
 			if(damage_amount)

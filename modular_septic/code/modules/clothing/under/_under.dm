@@ -37,6 +37,7 @@
 	var/sleeve_rip_delay = 1 SECONDS
 	var/sleeves = ARM_RIGHT|ARM_LEFT|LEG_RIGHT|LEG_LEFT
 
+/*
 /obj/item/clothing/under/attack_hand_tertiary(mob/user, params)
 	. = ..()
 	var/mob/living/living_user = user
@@ -68,3 +69,4 @@
 	else
 		to_chat(user, span_warning("I can't rip any [sleeve_wording] from [src]."))
 	return COMPONENT_TERTIARY_CANCEL_ATTACK_CHAIN
+*/

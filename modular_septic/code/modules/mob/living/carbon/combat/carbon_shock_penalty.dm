@@ -17,7 +17,7 @@
 
 /mob/living/carbon/proc/major_wound_effects(incoming_pain = 0, body_zone = BODY_ZONE_CHEST, wound_messages = TRUE)
 	//Try not to stack too much
-	if((world.time - last_major_wound) <= 1 SECONDS)
+	if((world.time - last_major_wound) <= 0.6 SECONDS)
 		return
 	var/attribute_modifier = GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)
 	var/modifier = 0
@@ -35,7 +35,7 @@
 		SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" Major Wound!"))
 	var/vomiting = FALSE
 	switch(body_zone)
-		if(BODY_ZONE_PRECISE_NECK, BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE)
+		if(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE)
 			drop_all_held_items()
 			HeadRape(8 SECONDS)
 			flash_pain_major()
@@ -45,6 +45,11 @@
 				rev.remove_revolutionary(FALSE)
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] is disoriented!"))
+		if(BODY_ZONE_PRECISE_NECK)
+			flash_pain_major()
+			adjustOxyLoss(20)
+			if(wound_messages)
+				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] deoxygenated!))
 		if(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_R_ARM)
 			var/obj/item/held_item = get_item_for_held_index(RIGHT_HANDS)
 			if(held_item)
@@ -70,6 +75,12 @@
 			flash_pain_major()
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] nauseated!"))
+		if(BODY_ZONE_PRECISE_CHEST)
+			flash_pain_major()
+			Daze(3 SECONDS)
+			blur_eyes(3)
+			if(wound_messages)
+				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] impulsed!"))
 		if(BODY_ZONE_PRECISE_GROIN)
 			if(getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
 				flash_pain_major()
