@@ -270,7 +270,7 @@
 					subarmor_flags = subarmor_flags)
 		victim.damage_armor(damage+weapon.armor_damage_modifier, MELEE, weapon.damtype, sharpness, def_zone)
 		post_hit_effects(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
-/*		
+/*
 		if(edge_protection <= 0)
 			if(weapon.poisoned.len)
 				for(var/list/L in weapon.poisoned)
@@ -891,7 +891,7 @@
 						intended_zone = BODY_ZONE_CHEST, \
 						wound_messages = TRUE, \
 						list/modifiers)
-	if(!istype(weapon)) || if(!sharpness)
+	if(!istype(weapon) || (!sharpness))
 		return FALSE
 	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
 	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL)
