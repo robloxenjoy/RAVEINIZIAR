@@ -87,7 +87,7 @@
 		if(DICE_SUCCESS)
 			visible_message(span_danger("<b>[src]</b> braces and cushions their fall!"), \
 						span_userdanger("I cushion my fall on [T]!"))
-			var/ouch = (levels * 2.5) ** 2
+			var/ouch = (levels * 3) ** 2
 			var/list/oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG))
 			for(var/limb in oofzones)
 				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
@@ -95,21 +95,21 @@
 		if(DICE_FAILURE)
 			visible_message(span_danger("<b>[src]</b> crashes into [T]!"), \
 						span_userdanger("I crash into [T]!"))
-			var/ouch = (levels * 3) ** 2
-			var/list/oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG))
+			var/ouch = (levels * 3.5) ** 2
+			var/list/oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG), list(BODY_ZONE_HEAD))
 			for(var/limb in oofzones)
-				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
-			oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG))
+				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_HEAD))
+			oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG), list(BODY_ZONE_HEAD))
 			for(var/limb in oofzones)
-				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
+				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_HEAD))
 			CombatKnockdown(levels * 35, levels * 2.5 SECONDS, levels * 1 SECONDS, TRUE)
 		if(DICE_CRIT_FAILURE)
 			visible_message(span_danger("<b>[src]</b> crashes into [T] with a sickening noise!"), \
 							span_userdanger("I crash into [T] with a sickening noise!"))
-			var/ouch = (levels * 3.5) ** 2
+			var/ouch = (levels * 4.5) ** 2
 			var/list/oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG), list(BODY_ZONE_HEAD, BODY_ZONE_CHEST))
 			for(var/limb in oofzones)
-				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
+				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_HEAD, BODY_ZONE_CHEST))
 			oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG), list(BODY_ZONE_HEAD, BODY_ZONE_CHEST))
 			for(var/limb in oofzones)
 				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_HEAD, BODY_ZONE_CHEST))

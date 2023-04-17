@@ -47,7 +47,7 @@
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] is disoriented!"))
 		if(BODY_ZONE_PRECISE_NECK)
 			flash_pain_major()
-			adjustOxyLoss(20)
+			adjustOxyLoss((rand(40, 55)) - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] deoxygenated!"))
 		if(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_R_ARM)
