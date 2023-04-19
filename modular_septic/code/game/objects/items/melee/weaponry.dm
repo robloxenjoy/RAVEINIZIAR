@@ -424,6 +424,7 @@
 	tetris_width = 32
 	tetris_height = 96
 	slot_flags = null
+	isAxe = TRUE
 
 /obj/item/changeable_attacks/slashstabbash/axe/big/steel/swap_intents(mob/user)
 	. = ..()
@@ -530,6 +531,7 @@
 	tetris_width = 32
 	tetris_height = 96
 	slot_flags = ITEM_SLOT_BELT
+	isAxe = TRUE
 /*
 /obj/item/changeable_attacks/slashbash/axe/small/steel/Initialize(mapload)
 	. = ..()

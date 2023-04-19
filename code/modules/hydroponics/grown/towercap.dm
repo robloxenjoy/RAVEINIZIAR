@@ -117,22 +117,27 @@
 /obj/item/grown/log/tree/evil/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(logs_amount)
 		if(W.get_sharpness() && W.force > 0)
-			if(W.hitsound)
-				playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
-			user.visible_message(span_notice("[user] begins to chopping [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
-			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
-				user.visible_message(span_notice("[user] chopped [src] with the [W]."),span_notice("You chopped [src] with the [W]."), span_hear("You hear the sound of a chopping. Chop chop!"))
+			if(W.isAxe)
+				if(W.hitsound)
+					playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
+				user.visible_message(span_notice("[user] begins to chopping [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
 				user.changeNext_move(W.attack_delay)
 				user.adjustFatigueLoss(W.attack_fatigue_cost)
-				W.damageItem("MEDIUM")
+				W.damageItem("SOFT")
 				sound_hint()
-				playsound(get_turf(src), 'sound/effects/drova.ogg', 100 , FALSE, FALSE)
+				if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
+					user.visible_message(span_notice("[user] chopped [src] with the [W]."),span_notice("You chopped [src] with the [W]."), span_hear("You hear the sound of a chopping. Chop chop!"))
+					user.changeNext_move(W.attack_delay)
+					user.adjustFatigueLoss(W.attack_fatigue_cost)
+					W.damageItem("MEDIUM")
+					sound_hint()
+					playsound(get_turf(src), 'sound/effects/drova.ogg', 100 , FALSE, FALSE)
 //				user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
-				for(var/i=1 to logs_amount)
-					new /obj/item/stack/grown/log/tree/evil/logg(get_turf(src))
+					for(var/i=1 to logs_amount)
+						new /obj/item/stack/grown/log/tree/evil/logg(get_turf(src))
 //				var/obj/structure/flora/stump/S = new(loc)
 //				S.name = "[name] stump"
-				qdel(src)
+					qdel(src)
 	else
 		return ..()
 
@@ -184,6 +189,10 @@
 			if(W.hitsound)
 				playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
 			user.visible_message(span_notice("[user] begins to sawing [src] with [W]."),span_notice("You begin to sawing [src] with [W]."), span_hear("You hear the sound of sawing."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			W.damageItem("SOFT")
+			sound_hint()
 			if(do_after(user, 500/W.force, target = src))
 				user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
 				user.changeNext_move(W.attack_delay)
@@ -208,7 +217,7 @@
 
 /obj/item/craftitem/piece/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(istype(W, /obj/item/craftitem/piece))
-		user.visible_message(span_notice("[user] begins to crafting..]."),span_notice("You begin to crafting..."), span_hear("You hear the sound of craft."))
+		user.visible_message(span_notice("[user] begins to crafting..."),span_notice("You begin to crafting..."), span_hear("You hear the sound of craft."))
 		var/time = 13 SECONDS
 		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
@@ -229,7 +238,7 @@
 
 /obj/item/craftitem/plexus/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(istype(W, /obj/item/craftitem/plexus))
-		user.visible_message(span_notice("[user] begins to crafting..]."),span_notice("You begin to crafting..."), span_hear("You hear the sound of craft."))
+		user.visible_message(span_notice("[user] begins to crafting..."),span_notice("You begin to crafting..."), span_hear("You hear the sound of craft."))
 		var/time = 13 SECONDS
 		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
@@ -239,6 +248,27 @@
 			sound_hint()
 //					playsound(get_turf(src), '', 100 , FALSE, FALSE)
 			new /obj/item/storage/backpack/basket(get_turf(src))
+			qdel(src)
+			qdel(W)
+
+/obj/item/craftitem/bladegrass
+	name = "Longrass Blade"
+	desc = "It's a blade of longrass"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "longrass_blade"
+
+/obj/item/craftitem/bladegrass/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/craftitem/bladegrass))
+		user.visible_message(span_notice("[user] begins to crafting..."),span_notice("You begin to crafting..."), span_hear("You hear the sound of craft."))
+		var/time = 13 SECONDS
+		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+		if(do_after(user, time, target = src))
+			user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+			user.changeNext_move(CLICK_CD_MELEE)
+			user.adjustFatigueLoss(10)
+			sound_hint()
+//					playsound(get_turf(src), '', 100 , FALSE, FALSE)
+			new /obj/item/stack/medical/gauze/improvised/one(get_turf(src))
 			qdel(src)
 			qdel(W)
 

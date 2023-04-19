@@ -393,6 +393,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	pickup_sound = 'sound/items/handling/cloth_pickup.ogg'
 	grind_results = list(/datum/reagent/cellulose = 20)
 
+/*
 /obj/item/stack/sheet/cloth/attack_hand_tertiary(mob/living/carbon/human/user, params)
 	. = ..()
 	if(src.amount == 1)
@@ -404,6 +405,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 				sound_hint()
 				new /obj/item/stack/medical/gauze/improvised/one(get_turf(src))
 				qdel(src)
+*/
 
 /*
 /obj/item/stack/sheet/cloth/get_main_recipes()

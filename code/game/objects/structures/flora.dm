@@ -16,26 +16,27 @@
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.get_sharpness() && W.force > 5)
 			if(!istype(W, /obj/item/shard))
-				if(W.hitsound)
-					playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
-				user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
-				user.changeNext_move(W.attack_delay)
-				user.adjustFatigueLoss(W.attack_fatigue_cost)
-				W.damageItem("SOFT")
-				sound_hint()
-				if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
-					user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
+				if(W.isAxe)
+					if(W.hitsound)
+						playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
+					user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(W.attack_fatigue_cost)
-					W.damageItem("HARD")
-					playsound(get_turf(src), 'modular_septic/sound/effects/fallheavy.ogg', 100 , FALSE, FALSE)
+					W.damageItem("SOFT")
 					sound_hint()
+					if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
+						user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
+						user.changeNext_move(W.attack_delay)
+						user.adjustFatigueLoss(W.attack_fatigue_cost)
+						W.damageItem("HARD")
+						playsound(get_turf(src), 'modular_septic/sound/effects/fallheavy.ogg', 100 , FALSE, FALSE)
+						sound_hint()
 //					user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
-					for(var/i=1 to log_amount)
-						new /obj/item/grown/log/tree/evil(get_turf(src))
-					var/obj/structure/flora/stump/S = new(loc)
-					S.name = "[name] stump"
-					qdel(src)
+						for(var/i=1 to log_amount)
+							new /obj/item/grown/log/tree/evil(get_turf(src))
+						var/obj/structure/flora/stump/S = new(loc)
+						S.name = "[name] stump"
+						qdel(src)
 	else
 		return ..()
 
@@ -412,6 +413,13 @@
 	if(!isturf(loc) || !isliving(AM))
 		return
 	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
+
+/obj/structure/flora/ausbushes/bushka/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/item/craftitem/bladegrass(get_turf(src))
+		new /obj/item/craftitem/bladegrass(get_turf(src))
+		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+	qdel(src)
 /*
 /obj/structure/flora/ausbushes/root
 	name = "Tree Root"
