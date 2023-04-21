@@ -67,7 +67,7 @@
 	desc = "Like life, it never quite tastes the same."
 	icon_state = "donut_chaos"
 	bite_consumption = 10
-	tastes = list("donut" = 3, "chaos" = 1)
+	tastes = list("donut" = 1, "chaos" = 3)
 	is_decorated = TRUE
 
 /obj/item/food/donut/chaos/Initialize(mapload)

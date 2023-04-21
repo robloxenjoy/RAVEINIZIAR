@@ -103,3 +103,11 @@
 /obj/structure/fermenting_barrel/water/examine(mob/user)
 	. = ..()
 	. += span_notice("[reagents.total_volume]/[reagents.maximum_volume] liquids remaining.")
+
+/obj/structure/fermenting_barrel/water/honeyba
+	anchored = TRUE
+
+/obj/structure/fermenting_barrel/water/honeyba/Initialize(mapload)
+	. = ..()
+	reagents.add_reagent(/datum/reagent/consumable/honey, 100)
+	reagents.add_reagent(/datum/reagent/consumable/tea, 100)

@@ -263,14 +263,15 @@
 		var/time = 13 SECONDS
 		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
-			user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
-			user.changeNext_move(CLICK_CD_MELEE)
-			user.adjustFatigueLoss(10)
-			sound_hint()
+			if(user.a_intent == INTENT_HELP)
+				user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+				user.changeNext_move(CLICK_CD_MELEE)
+				user.adjustFatigueLoss(10)
+				sound_hint()
 //					playsound(get_turf(src), '', 100 , FALSE, FALSE)
-			new /obj/item/stack/medical/gauze/improvised/one(get_turf(src))
-			qdel(src)
-			qdel(W)
+				new /obj/item/stack/medical/gauze/improvised/one(get_turf(src))
+				qdel(src)
+				qdel(W)
 
 /obj/item/grown/log/steel
 	seed = /obj/item/seeds/tower/steel

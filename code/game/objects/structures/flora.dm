@@ -665,7 +665,7 @@
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/Initialize(mapload)
 	. = ..()
-	if(prob(50))
+	if(prob(20))
 		stillborn = TRUE
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/examine(mob/user)
