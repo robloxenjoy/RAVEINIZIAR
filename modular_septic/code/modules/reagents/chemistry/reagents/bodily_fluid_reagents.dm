@@ -188,3 +188,18 @@
 		femcumsplatter = new /obj/effect/decal/cleanable/blood/femcum(exposed_turf)
 	if(LAZYACCESS(data, "blood_DNA"))
 		femcumsplatter.add_femcum_DNA(list(data["blood_DNA"] = data["blood_type"]))
+
+//VILIR
+/datum/reagent/consumable/vilir
+	name = "Vilir"
+	description = "Unusual liquid from willet's organ vilir."
+	taste_description = "stars"
+	reagent_state = LIQUID
+	color = "#a340fe"
+	liquid_evaporation_rate = 4
+	ph = 7.5
+
+/datum/reagent/consumable/vilir/expose_turf(turf/exposed_turf, reac_volume)
+	. = ..()
+	if(!. && isopenturf(exposed_turf))
+		exposed_turf.pollute_turf(/datum/pollutant/vilir, reac_volume)

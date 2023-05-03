@@ -163,3 +163,47 @@
 			victim.Unconscious(50)
 	if(message && prob(20))
 		to_chat(victim, message)
+
+///Vilir
+/datum/pollutant/vilir
+	name = "Vilir"
+	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
+	smell_intensity = 3
+	descriptor = SCENT_DESC_ODOR
+	scent = "stars"
+	color = "#a340fe"
+	thickness = 2
+
+/datum/pollutant/vilir/breathe_act(mob/living/carbon/victim, amount)
+	var/message
+	switch(amount)
+		if(0 to 6)
+			message = span_warning("OOFSICEIMDCWIDUR!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/vilir)
+			victim.clear_fullscreen("fuckaaafu")
+			if(prob(50))
+				victim.Dizzy(25)
+				victim.emote("scream")
+			if(prob(20))
+				victim.emote("laugh")
+		if(6 to 9)
+			message = span_warning("IIIWHY WE ARE WHYISACNDIWC STARSIASCODSC CHAOSIANDOC!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/vilir/harsh)
+			if(prob(60))
+				victim.Dizzy(25)
+				victim.emote("scream")
+			if(prob(30))
+				victim.emote("laugh")
+		if(9 to INFINITY)
+			message = span_bolddanger("CANUSESSTNRAOEPGODA!!!! CXDSNNXARAPSENIOSIYAANT!!! DOSCNSN!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/vilir/harsh)
+			victim.overlay_fullscreen("fuckaaafu", /atom/movable/screen/fullscreen/willetbecome)
+			if(prob(70))
+				victim.Dizzy(25)
+				victim.emote("scream")
+			if(prob(40))
+				victim.emote("laugh")
+			if(prob(40))
+				victim.emote("cry")
+	if(message && prob(20))
+		to_chat(victim, message)

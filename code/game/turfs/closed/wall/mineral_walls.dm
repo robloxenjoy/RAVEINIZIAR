@@ -164,7 +164,7 @@
 	. = ..()
 
 /turf/closed/wall/mineral/wood
-	name = "wooden wall"
+	name = "Wooden Wall"
 	desc = "A wall with wooden plating. Stiff."
 	icon = 'icons/turf/walls/wood_wall.dmi'
 	icon_state = "wood_wall-0"
@@ -177,7 +177,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
 	custom_materials = list(/datum/material/wood = 4000)
-
+/*
 /turf/closed/wall/mineral/wood/attackby(obj/item/W, mob/user)
 	if(W.get_sharpness() && W.force)
 		var/duration = (48/W.force) * 2 //In seconds, for now.
@@ -187,7 +187,7 @@
 			dismantle_wall(FALSE,FALSE)
 			return
 	return ..()
-
+*/
 /turf/closed/wall/mineral/hulk_recoil(obj/item/bodypart/arm, mob/living/carbon/human/hulkman, damage = 0)
 	return ..() //No recoil damage, wood is weak
 

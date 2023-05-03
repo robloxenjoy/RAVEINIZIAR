@@ -32,8 +32,7 @@
 /obj/structure/closet/chaotic/PopulateContents()
 	..()
 	var/static/items_inside = list(
-		/obj/item/shit = 2,
-		/obj/item/food/burger = 1)
+		/obj/item/food/donut/chaos = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/structure/closet/chefcloset

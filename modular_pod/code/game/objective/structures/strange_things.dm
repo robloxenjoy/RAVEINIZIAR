@@ -164,7 +164,7 @@
 	desc = "Thanks to this, the dark light will be filled with bright light."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "green_crystal"
-	light_range = 3
+	light_range = 2
 	light_power = 2
 	light_color = "#00dd78"
 	light_system = MOVABLE_LIGHT
@@ -175,7 +175,7 @@
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "red_crystal"
 	light_color = "#ff460e"
-	light_range = 3
+	light_range = 2
 	light_power = 2
 	light_system = MOVABLE_LIGHT
 
@@ -185,7 +185,7 @@
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "blue_crystal"
 	light_color = "#008eff"
-	light_range = 3
+	light_range = 2
 	light_power = 2
 	light_system = MOVABLE_LIGHT
 
@@ -195,7 +195,7 @@
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "pink_crystal"
 	light_color = "#e252ea"
-	light_range = 3
+	light_range = 2
 	light_power = 2
 	light_system = MOVABLE_LIGHT
 

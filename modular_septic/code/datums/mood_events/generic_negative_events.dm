@@ -100,6 +100,15 @@
 	description = span_infection("So good. So good smell...")
 	mood_change = 2
 
+/datum/mood_event/vilir
+	description = span_infection("I AM PETTY! I FEEL COLOSSAL ATROCITY!")
+	mood_change = -3
+	timeout = 1 MINUTES
+
+/datum/mood_event/vilir/harsh
+	description = span_infection("THE FIRST CREATOR!!!!")
+	mood_change = -6
+
 //Ate shit
 /datum/mood_event/creampie/shitface
 	description = span_infection("My face is covered in shit.")

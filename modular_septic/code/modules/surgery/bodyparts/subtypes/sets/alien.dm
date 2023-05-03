@@ -147,3 +147,6 @@
 	can_be_disabled = FALSE
 	max_damage = 70
 	animal_origin = ALIEN_BODYPART
+
+/obj/item/bodypart/chest/weakwillet
+	cavity_items = list(/obj/item/specialuser/vilir)

@@ -66,10 +66,9 @@
 		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
 		character.height = HUMAN_HEIGHT_MEDIUM
 
-	if(!character.attributes)
-		character.attributes.update_attributes()
+	character.attributes.update_attributes()
 
 	character.key = key
 	character.playsound_local(character, 'modular_pod/sound/eff/DSBOSPN.wav', 100)
-	character.overlay_fullscreen("ressur", /atom/movable/screen/fullscreen/willetbecome, 3)
+//	character.overlay_fullscreen("ressur", /atom/movable/screen/fullscreen/willetbecome)
 //	addtimer(CALLBACK(character, .proc/clear_fullscreen, "ressur", 3), 3)

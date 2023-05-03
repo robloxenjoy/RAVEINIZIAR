@@ -118,8 +118,9 @@
 	puzzle_id = "housekey"
 	open_message = "The door moves with a some sound, and opens."
 	close_message = "The door moves with a some sound, and closes."
+	var/forty = TRUE
 
-/obj/machinery/door/keycard/denominator/podozl/akt/attackby(obj/item/I, mob/user, params)
+/obj/machinery/door/keycard/denominator/podozl/akt/attackby(obj/item/I, mob/living/carbon/user, params)
 	if(istype(I,/obj/item/keycard))
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
@@ -140,6 +141,28 @@
 			to_chat(user, span_notice("Not that key..."))
 			playsound(src, 'modular_septic/sound/effects/card_declined_horror.wav', 60, FALSE, 1)
 			return
+	if(I.get_sharpness() && I.force)
+		if(forty)
+			to_chat(user, span_notice("This door has fortifications - it cannot be cut so easily."))
+			return
+		var/duration = (48/I.force) * 2 //In seconds, for now.
+		if(I.hitsound)
+			playsound(get_turf(src), I.hitsound, 100, FALSE, FALSE)
+		user.visible_message(span_notice("[user] begins to sawing [src] with [I]."),span_notice("You begin to sawing [src] with [I]."), span_hear("You hear the sound of sawing."))
+		user.changeNext_move(I.attack_delay)
+		user.adjustFatigueLoss(I.attack_fatigue_cost)
+		I.damageItem("SOFT")
+		sound_hint()
+		if(do_after(user, duration*10, target=src)) //Into deciseconds.
+			user.visible_message(span_notice("[user] sawed [src] with the [I]."),span_notice("You sawed [src] with the [I]."), span_hear("You hear the sound of a sawing."))
+			user.changeNext_move(I.attack_delay)
+			user.adjustFatigueLoss(I.attack_fatigue_cost)
+			I.damageItem("HARD")
+			sound_hint()
+			playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
+			qdel(src)
+			return
+	return ..()
 
 /obj/item/keycard/akt
 	name = "Wooden Key"
@@ -210,6 +233,7 @@
 
 /obj/machinery/door/keycard/denominator/podozl/akt/carehouse
 	puzzle_id = "carehouse"
+	forty = FALSE
 
 /obj/item/keycard/akt/infirmary
 	desc = "This key is for infirmary in the Akt Village..."

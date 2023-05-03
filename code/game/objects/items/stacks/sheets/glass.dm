@@ -459,8 +459,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	icon_state = "green"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "green"
-	light_range = 2
-	light_power = 2
+	light_range = 1
+	light_power = 1
 	light_color = "#00dd78"
 	light_system = MOVABLE_LIGHT
 //	weld_material = /obj/item/stack/sheet/plasmaglass
@@ -471,8 +471,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	icon_state = "red"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "red"
-	light_range = 2
-	light_power = 2
+	light_range = 1
+	light_power = 1
 	light_color = "#ff460e"
 	light_system = MOVABLE_LIGHT
 //	weld_material = /obj/item/stack/sheet/plasmaglass
@@ -483,8 +483,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	icon_state = "blue"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "blue"
-	light_range = 2
-	light_power = 2
+	light_range = 1
+	light_power = 1
 	light_color = "#008eff"
 	light_system = MOVABLE_LIGHT
 //	weld_material = /obj/item/stack/sheet/plasmaglass
@@ -495,8 +495,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	icon_state = "purple"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "purple"
-	light_range = 2
-	light_power = 2
+	light_range = 1
+	light_power = 1
 	light_color = "#e252ea"
 	light_system = MOVABLE_LIGHT
 //	weld_material = /obj/item/stack/sheet/plasmaglass

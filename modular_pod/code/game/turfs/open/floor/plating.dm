@@ -514,10 +514,51 @@
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 1
+	var/randomgenerate = TRUE
 
 /turf/open/floor/plating/polovich/greengryaz/Initialize(mapload)
 	. = ..()
 	dir = rand(0,8)
+/*
+			var/canspawn = 1
+			var/near_t = range(1, src)
+			if((locate(/turf/simulated/wall) in near_t) || (locate(/turf/stalker/floor/asphalt) in near_t) || (locate(/turf/stalker/floor/road) in near_t))
+				canspawn = 0													//Проверяем есть ли рядом стены или дороги
+			if(canspawn)
+				var/obj/structure/stalker/flora/trees/tree = pick(typesof(/obj/structure/stalker/flora/trees/alive))
+				new tree(loc)
+*/
+	if(randomgenerate)
+		if(locate(/obj/structure/flora/ausbushes/zarosli/midnight) in get_turf(src))
+			return
+		var/state = pick_weight(list("crystalbush" = 5, "shroom" = 5, "stump" = 5, "treelong" = 5, "groundcrystals" = 5, "nothing" = 60))
+		switch(state)
+			if("crystalbush")
+				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
+			if("shroom")
+				new /obj/item/food/grown/mushroom/blood(get_turf(src))
+			if("nothing")
+				return
+			if("stump")
+				new /obj/structure/flora/stump(get_turf(src))
+			if("treelong")
+				var/canspawn = TRUE
+				var/near_t = range(2, src)
+				if((locate(/turf/closed/wall) in near_t) || (locate(/obj/structure/flora/tree/evil) in near_t) || (locate(/obj/structure/barricade/flora/crystal) in near_t))
+					canspawn = FALSE
+				if(canspawn)
+					new /obj/structure/flora/tree/evil/long(get_turf(src))
+			if("groundcrystals")
+				var/crystaltype = rand(1, 4)
+				switch(crystaltype)
+					if(1)
+						new /obj/structure/crystals_ground/green(get_turf(src))
+					if(2)
+						new /obj/structure/crystals_ground/red(get_turf(src))
+					if(3)
+						new /obj/structure/crystals_ground/blue(get_turf(src))
+					if(4)
+						new /obj/structure/crystals_ground/pink(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical
@@ -659,7 +700,6 @@
 			to_chat(user, span_notice("You construct a floor."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new /turf/open/floor/plating/polovich/logsgreen(src)
-			qdel(src)
 		else
 			to_chat(user, span_warning("You need four logs to build a floor!"))
 		return
