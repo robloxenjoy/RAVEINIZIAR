@@ -28,7 +28,7 @@
 
 /obj/item/organ/spleen/vilir
 	name = "Vilir"
-	desc = "It's like spleen, but something other..."
+	desc = "It's like spleen, but something other."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "vilir"
 

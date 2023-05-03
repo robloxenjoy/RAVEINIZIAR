@@ -44,7 +44,7 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/weakwillet
 	inherent_biotypes = MOB_ORGANIC | MOB_BEAST
 	mutant_bodyparts = list()
-	mutantspleen = /obj/item/organ/spleen./vilir
+	mutantspleen = /obj/item/organ/spleen/vilir
 	heatmod = 4
 	coldmod = 0
 	liked_food = RAW | MEAT | SEWAGE
