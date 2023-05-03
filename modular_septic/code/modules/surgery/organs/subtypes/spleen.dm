@@ -31,6 +31,7 @@
 	desc = "It's like spleen, but something other."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "vilir"
+	var/used = FALSE
 
 /obj/item/organ/spleen/vilir/ComponentInitialize()
 	. = ..()

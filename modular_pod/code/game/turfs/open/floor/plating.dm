@@ -569,7 +569,7 @@
 					if(3)
 						new /obj/structure/barricade/flora/crystal/blue(get_turf(src))
 					if(4)
-						new /obj/structure/barricade/flora/crystal/pink(get_turf(src))
+						new /obj/structure/barricade/flora/crystal/purple(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical
