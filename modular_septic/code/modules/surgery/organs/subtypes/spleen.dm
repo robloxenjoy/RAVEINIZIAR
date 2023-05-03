@@ -25,3 +25,18 @@
 
 /obj/item/organ/spleen/get_availability(datum/species/S)
 	return (!(NOBLOOD in S.species_traits))
+
+/obj/item/organ/spleen/vilir
+	name = "Vilir"
+	desc = "It's like spleen, but something other..."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "vilir"
+
+/obj/item/organ/spleen/vilir/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/slippery, 60)
+
+/obj/item/organ/spleen/vilir/examine(mob/user)
+	. = ..()
+	if(used)
+		. += "<span class='warning'>Looks like it's already been used.</span>"

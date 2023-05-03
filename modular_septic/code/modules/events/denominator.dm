@@ -118,6 +118,7 @@
 	puzzle_id = "housekey"
 	open_message = "The door moves with a some sound, and opens."
 	close_message = "The door moves with a some sound, and closes."
+	safe = FALSE
 	var/forty = TRUE
 
 /obj/machinery/door/keycard/denominator/podozl/akt/attackby(obj/item/I, mob/living/carbon/user, params)

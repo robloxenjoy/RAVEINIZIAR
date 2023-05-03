@@ -45,29 +45,30 @@
 	update_icon()
 	START_PROCESSING(SSprocessing, src)
 	playsound(src, 'sound/items/torch_light.ogg', 50, TRUE)
-
+/*
 /obj/item/lamp/proc/snuff()
 	lit = FALSE
 	update_icon()
 	STOP_PROCESSING(SSprocessing, src)
 	playsound(src, 'sound/items/torch_snuff.ogg', 50, TRUE)
-	var/turf/vilired = get_turf(src)
-	vilired.add_liquid(/datum/reagent/consumable/vilir, 25)
-
+//	var/turf/vilired = get_turf(src)
+//	vilired.add_liquid(/datum/reagent/consumable/vilir, 25)
+*/
 /obj/item/lamp/attack_self(mob/user)
 	..()
 	if(self_lighting == 1)
 		light(user, TRUE)
 		self_lighting = -1
 		return
+/*
 	if(lit)
 		snuff()
-
+*/
 /obj/item/lamp/attackby(obj/item/W, mob/user)
 	..()
-	if(istype(W, /obj/item/specialuser/vilir))
+	if(istype(W, /obj/item/organ/spleen/vilir))
 		to_chat(user, span_notice("You fill the lamp with vilir."))
-		var/obj/item/specialuser/vilir/V = W
+		var/obj/item/organ/spleen/vilir/V = W
 		V.used = TRUE
 		light()
 
@@ -108,60 +109,12 @@
 		if(lightlamp.lit)
 			icon_state = "lampwall1"
 			set_light(6, 3,"#a340fe")
-			switch(dir)
-				if(NORTH)
-					plane = GAME_PLANE_UPPER_BLOOM
-					pixel_y = 35
-				if(SOUTH)
-					plane = ABOVE_FRILL_PLANE_BLOOM
-					pixel_y = -2
-				if(EAST)
-					plane = GAME_PLANE_UPPER_BLOOM
-					pixel_x = 16
-					pixel_y = 16
-				if(WEST)
-					plane = GAME_PLANE_UPPER_BLOOM
-					pixel_x = -16
-					pixel_y = 16
-				else
-					plane = ABOVE_FRILL_PLANE_BLOOM
-					pixel_y = -2
 		else
 			icon_state = "lampwall0"
 			set_light(0,0)
-			switch(dir)
-				if(NORTH)
-					plane = GAME_PLANE_UPPER
-					pixel_y = 35
-				if(SOUTH)
-					plane = ABOVE_FRILL_PLANE
-					pixel_y = -2
-				if(EAST)
-					plane = GAME_PLANE_UPPER
-					pixel_x = 16
-					pixel_y = 16
-				if(WEST)
-					plane = GAME_PLANE_UPPER
-					pixel_x = -16
-					pixel_y = 16
 	else
 		icon_state = "lampwall"
 		set_light(0,0)
-		switch(dir)
-			if(NORTH)
-				plane = GAME_PLANE_UPPER
-				pixel_y = 35
-			if(SOUTH)
-				plane = ABOVE_FRILL_PLANE
-				pixel_y = -2
-			if(EAST)
-				plane = GAME_PLANE_UPPER
-				pixel_x = 16
-				pixel_y = 16
-			if(WEST)
-				plane = GAME_PLANE_UPPER
-				pixel_x = -16
-				pixel_y = 16
 
 /obj/structure/lampwall/proc/insert_lamp(obj/item/lamp/T)
 	T.forceMove(src)
@@ -172,8 +125,8 @@
 /obj/structure/lampwall/attackby(obj/item/W, mob/user)
 	// attempt to insert lamp
 	if(lightlamp && !lightlamp.lit)
-		if(istype(W, /obj/item/specialuser/vilir))
-			var/obj/item/specialuser/vilir/V = W
+		if(istype(W, /obj/item/organ/spleen/vilir))
+			var/obj/item/organ/spleen/vilir/V = W
 			lightlamp.light()
 			V.used = TRUE
 			update_icon()

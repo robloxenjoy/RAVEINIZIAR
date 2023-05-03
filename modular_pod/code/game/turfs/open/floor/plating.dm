@@ -531,7 +531,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/flora/ausbushes/zarosli/midnight) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 5, "shroom" = 5, "stump" = 5, "treelong" = 5, "groundcrystals" = 5, "nothing" = 60))
+		var/state = pick_weight(list("crystalbush" = 5, "shroom" = 3, "stump" = 4, "treelong" = 4, "groundcrystals" = 2, "crystal" = 2, "nothing" = 60))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -559,6 +559,17 @@
 						new /obj/structure/crystals_ground/blue(get_turf(src))
 					if(4)
 						new /obj/structure/crystals_ground/pink(get_turf(src))
+			if("crystal")
+				var/crystaltypee = rand(1, 4)
+				switch(crystaltypee)
+					if(1)
+						new /obj/structure/barricade/flora/crystal/green(get_turf(src))
+					if(2)
+						new /obj/structure/barricade/flora/crystal/red(get_turf(src))
+					if(3)
+						new /obj/structure/barricade/flora/crystal/blue(get_turf(src))
+					if(4)
+						new /obj/structure/barricade/flora/crystal/pink(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical
@@ -1106,6 +1117,36 @@
 /turf/open/floor/plating/polovich/stonestonestone/three/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/stoneekas
+	name = "Stone Floor"
+	desc = "This is evil."
+	icon_state = "stoneeyyyas"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/stoneekasas
+	name = "Stone Floor"
+	desc = "This is depressed."
+	icon_state = "stoneyyyy"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/stoneekasasdarkk
+	name = "Stone Floor"
+	desc = "This is devasted."
+	icon_state = "darknessdarkl"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
 
 /turf/open/floor/plating/polovich/tilefloor
 	name = "Blue Floor"
