@@ -370,6 +370,7 @@
 	resistance_flags = FLAMMABLE
 	density = 0
 	anchored = 1
+	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/crystal/Initialize(mapload)
 	. = ..()
@@ -379,12 +380,16 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
+	if(traps)
+		if(prob(5))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+
 /obj/structure/flora/ausbushes/crystal/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 
 	if(!isturf(loc) || !isliving(AM))
 		return
-	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
+	playsound(loc,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/bushka
 	name = "Longrass"
@@ -396,6 +401,7 @@
 	resistance_flags = FLAMMABLE
 	density = 0
 	anchored = 1
+	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/bushka/Initialize(mapload)
 	. = ..()
@@ -406,13 +412,16 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	icon_state = pick("bushka1", "bushka2", "bushka3")
 
+	if(traps)
+		if(prob(5))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/bushka/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 
 	if(!isturf(loc) || !isliving(AM))
 		return
-	playsound(loc,'sound/effects/shelest.ogg', 60, TRUE)
+	playsound(loc,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/bushka/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -448,7 +457,7 @@
 
 	if(!isturf(loc) || !istype(arrived))
 		return
-	if(prob(50))
+	if(prob(40))
 		arrived.visible_message(span_warning("[arrived] stumbles on the root."), \
 								span_warning("I stumble on the root."))
 		sound_hint()
@@ -564,13 +573,18 @@
 	density = FALSE
 	anchored = TRUE
 	opacity = TRUE
+	var/traps = TRUE
 
-/obj/structure/flora/ausbushes/zarosli/Initialize(mapload)
+/obj/structure/flora/ausbushes/zarosli/midnight/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 	update_appearance()
 
-/obj/structure/flora/ausbushes/zarosli/ComponentInitialize()
+	if(traps)
+		if(prob(3))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+
+/obj/structure/flora/ausbushes/zarosli/midnight/ComponentInitialize()
 	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/shag,

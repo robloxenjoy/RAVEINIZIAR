@@ -75,6 +75,18 @@
 			if(prob(W.force))
 				var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
 				new /atom/movable/fire(firefloor, 21)
+		if(istype(src, /turf/open/floor/plating/polovich/roots))
+			if(W.sharpness)
+				if(user.a_intent == INTENT_DISARM)
+					if(do_after(user, 3 SECONDS, target=src))
+						user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
+						user.changeNext_move(I.attack_delay)
+						user.adjustFatigueLoss(I.attack_fatigue_cost)
+						W.damageItem("HARD")
+						sound_hint()
+						playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
+						var/turf/open/floor/plating/polovich/roots/noroots = src
+						noroots.canstumble = FALSE
 
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
@@ -529,9 +541,9 @@
 				new tree(loc)
 */
 	if(randomgenerate)
-		if(locate(/obj/structure/flora/ausbushes/zarosli/midnight) in get_turf(src))
+		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 5, "shroom" = 3, "stump" = 4, "treelong" = 4, "groundcrystals" = 2, "crystal" = 2, "nothing" = 60))
+		var/state = pick_weight(list("crystalbush" = 5, "shroom" = 3, "stump" = 4, "treelong" = 4, "groundcrystals" = 2, "goldishincrementum" = 2, "crystal" = 2, "ygro" = 1, "chaosbush" = 2, "statuekas" = 1, "beartrap" = 1, "nothing" = 60))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -548,6 +560,7 @@
 					canspawn = FALSE
 				if(canspawn)
 					new /obj/structure/flora/tree/evil/long(get_turf(src))
+					new /turf/open/floor/plating/polovich/roots(get_turf(src))
 			if("groundcrystals")
 				var/crystaltype = rand(1, 4)
 				switch(crystaltype)
@@ -570,6 +583,17 @@
 						new /obj/structure/barricade/flora/crystal/blue(get_turf(src))
 					if(4)
 						new /obj/structure/barricade/flora/crystal/purple(get_turf(src))
+			if("goldishincrementum")
+				new /obj/structure/flora/ausbushes/incrementum(get_turf(src))
+			if("ygro")
+				new /obj/structure/flora/ausbushes/incrementum/ygro(get_turf(src))
+			if("chaosbush")
+				new /obj/structure/flora/ausbushes/crystal/dark(get_turf(src))
+				new /turf/open/floor/plating/polovich/evilevil(get_turf(src))
+			if("statuekas")
+				new /obj/structure/fluff/statuestone(get_turf(src))
+			if("beartrap")
+				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical
@@ -669,6 +693,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
+	var/canstumble = TRUE
 
 /turf/open/floor/plating/polovich/roots/Initialize(mapload)
 	. = ..()
@@ -679,16 +704,22 @@
 	if(.)
 		return
 	if(isliving(arrived))
-		if(prob(50))
-			var/mob/living/stumbleguy = arrived
-			stumbleguy.visible_message(span_warning("[stumbleguy] stumbles on the root."), \
-						span_warning("I stumble on the root."))
-			sound_hint()
-			var/diceroll = stumbleguy.diceroll(GET_MOB_ATTRIBUTE_VALUE(stumbleguy, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
-			if(diceroll <= DICE_FAILURE)
-				stumbleguy.Stumble(3 SECONDS)
-				stumbleguy.visible_message(span_warning("The roots are grasping [stumbleguy]!"), \
-										span_warning("The roots are grasping me!"))
+		if(canstumble)
+			if(prob(50))
+				var/mob/living/stumbleguy = arrived
+				stumbleguy.visible_message(span_warning("[stumbleguy] stumbles on the root."), \
+							span_warning("I stumble on the root."))
+				sound_hint()
+				var/diceroll = stumbleguy.diceroll(GET_MOB_ATTRIBUTE_VALUE(stumbleguy, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL)
+				if(diceroll <= DICE_FAILURE)
+					stumbleguy.Stumble(3 SECONDS)
+					stumbleguy.visible_message(span_warning("The roots are grasping [stumbleguy]!"), \
+											span_warning("The roots are grasping me!"))
+
+/turf/open/floor/plating/polovich/roots/examine(mob/user)
+	. = ..()
+	if(canstumble)
+		. += "<span class='warning'>You might trip over those roots!</span>"
 
 /turf/open/floor/plating/polovich/logsgreen
 	name = "Wooden Floor"
@@ -710,7 +741,7 @@
 		if(R.amount == 4)
 			to_chat(user, span_notice("You construct a floor."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-			new /turf/open/floor/plating/polovich/logsgreen(src)
+			new /turf/open/floor/plating/polovich/logsgreen(get_turf(src))
 		else
 			to_chat(user, span_warning("You need four logs to build a floor!"))
 		return

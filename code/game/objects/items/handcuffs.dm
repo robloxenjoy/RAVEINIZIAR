@@ -299,6 +299,7 @@
 	var/armed = TRUE
 	///How much damage the trap deals when triggered.
 	var/trap_damage = 45
+	var/crazy = TRUE
 	item_flags = NO_PIXEL_RANDOM_DROP
 
 /obj/item/restraints/legcuffs/beartrap/Initialize(mapload)
@@ -386,7 +387,10 @@
 		else
 			L.visible_message(span_danger("\The [src] ensnares [L]!"), \
 					span_userdanger("\The [src] ensnares you!"))
-		L.apply_damage(trap_damage, BRUTE, def_zone)
+		if(!crazy)
+			L.apply_damage(trap_damage, BRUTE, def_zone)
+		else
+			L.apply_damage(rand(35, 50), BRUTE, def_zone)
 
 /**
  * # Energy snare

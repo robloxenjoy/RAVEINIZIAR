@@ -161,5 +161,13 @@
 	if(!putout)
 		to_chat(user, span_notice("This lamp cannot be removed!"))
 		return
-	// create a torch item and put it in the user's hand
+	// create a lamp item and put it in the user's hand
 	user.put_in_active_hand(remove_lamp())  //puts it in our active hand
+
+/obj/structure/lampwall/directional/north
+	dir = SOUTH
+	pixel_y = 32
+
+/obj/structure/lampwall/service/directional/north
+	dir = SOUTH
+	pixel_y = 32

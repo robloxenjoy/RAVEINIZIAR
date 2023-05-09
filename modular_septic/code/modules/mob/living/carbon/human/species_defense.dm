@@ -717,7 +717,6 @@
 						reduced = armor_reduce, \
 						edge_protection = edge_protection, \
 						subarmor_flags = subarmor_flags)
-	target.apply_damage(attack_damage*1.5, STAMINA, affecting)
 	target.damage_armor(attack_damage+attack_armor_damage, MELEE, user.dna.species.attack_type, attack_sharpness, affecting)
 	post_hit_effects(target, user, affecting, attack_effect, attack_damage, MELEE, user.dna.species.attack_type, NONE, def_zone, intended_zone, modifiers)
 	if(def_zone == intended_zone)
@@ -837,6 +836,7 @@
 									callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	stumbling(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+	staminy(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	return TRUE
@@ -855,9 +855,9 @@
 	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
 	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 		if(user_end >= 3)
-			victim.Immobilize(1 SECONDS)
+			victim.Immobilize(2 SECONDS)
 		else
-			victim.Immobilize(0.5 SECONDS)
+			victim.Immobilize(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/stumbling(mob/living/carbon/human/victim, \
@@ -877,6 +877,25 @@
 			victim.Stumble(3 SECONDS)
 		else
 			victim.Stumble(1 SECONDS)
+	return TRUE
+
+/datum/species/proc/staminy(mob/living/carbon/human/victim, \
+							mob/living/carbon/human/user, \
+							obj/item/bodypart/affected, \
+							obj/item/weapon, \
+							damage = 0, \
+							damage_flag = MELEE, \
+							damage_type = BRUTE, \
+							sharpness = NONE,
+							def_zone = BODY_ZONE_CHEST, \
+							intended_zone = BODY_ZONE_CHEST, \
+							list/modifiers)
+	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
+	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(user_end >= 3)
+			victim.apply_damage(damage*0.5, STAMINA, affecting, armor_block)
+		else
+			target.apply_damage(damage*0.2, STAMINA, affecting, armor_block)
 	return TRUE
 
 /datum/species/proc/incisioner(mob/living/carbon/human/victim, \
