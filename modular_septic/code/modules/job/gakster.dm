@@ -211,7 +211,7 @@
 //	)
 //	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
-/*
+
 /datum/job/aktliver
 	title = "Akt Liver"
 	department_head = list("Head of Personnel")
@@ -234,8 +234,8 @@
 /datum/outfit/liver
 	name = "Akt Liver Uniform"
 
-	uniform = /obj/item/clothing/under/venturerclassic
-	r_pocket = /obj/item/shard/crystal/blue
+	uniform = /obj/item/clothing/under/aktraiment
+	r_pocket = /obj/item/keycard/akt/lair
 //	r_pocket = /obj/item/shit
 //	id = /obj/item/cellphone
 //	belt = /obj/item/crowbar
@@ -246,7 +246,9 @@
 //		/obj/item/flashlight/seclite = 1,
 //	)
 //	gloves = /obj/item/clothing/gloves/color/black
-	shoes = /obj/item/clothing/shoes/laceup
+	shoes = /obj/item/clothing/shoes/barhatki
+
+/*
 
 /datum/job/evilwarlock
 	title = "Evil Warlock"

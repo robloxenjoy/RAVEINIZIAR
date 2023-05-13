@@ -835,6 +835,7 @@
 									force = victim.move_force, \
 									callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+	realstunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	stumbling(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	staminy(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
@@ -858,6 +859,25 @@
 			victim.Immobilize(2 SECONDS)
 		else
 			victim.Immobilize(1 SECONDS)
+	return TRUE
+
+/datum/species/proc/realstunning(mob/living/carbon/human/victim, \
+							mob/living/carbon/human/user, \
+							obj/item/bodypart/affected, \
+							obj/item/weapon, \
+							damage = 0, \
+							damage_flag = MELEE, \
+							damage_type = BRUTE, \
+							sharpness = NONE,
+							def_zone = BODY_ZONE_CHEST, \
+							intended_zone = BODY_ZONE_CHEST, \
+							list/modifiers)
+	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
+	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(user_end >= 3)
+			victim.Stun(2 SECONDS)
+		else
+			victim.Stun(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/stumbling(mob/living/carbon/human/victim, \
@@ -892,10 +912,11 @@
 							list/modifiers)
 	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
 	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		var/armor_block = victim.run_armor_check(affected, MELEE)
 		if(user_end >= 3)
-			victim.apply_damage(damage*0.5, STAMINA, affecting, armor_block)
+			victim.apply_damage(damage*0.5, STAMINA, affected, armor_block)
 		else
-			target.apply_damage(damage*0.2, STAMINA, affecting, armor_block)
+			victim.apply_damage(damage*0.2, STAMINA, affected, armor_block)
 	return TRUE
 
 /datum/species/proc/incisioner(mob/living/carbon/human/victim, \

@@ -1,11 +1,10 @@
 import { Job } from "../base";
 import { Service } from "../departments";
 
-const Janitor: Job = {
-  name: "Janitor",
-  description: "Clean up trash and blood. Replace broken lights. \
-    Slip people over.",
+const AktLiver: Job = {
+  name: "Akt Liver",
+  description: "Just lives.",
   department: Service,
 };
 
-export default Janitor;
+export default AktLiver;

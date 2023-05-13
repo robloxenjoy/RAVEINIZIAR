@@ -416,7 +416,7 @@
 	anchored = TRUE
 	density = FALSE
 	plane = ABOVE_GAME_PLANE
-	layer = CLOSED_TURF_LAYER
+	layer = TURF_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#00dd78"
@@ -448,7 +448,7 @@
 	anchored = TRUE
 	density = FALSE
 	plane = ABOVE_GAME_PLANE
-	layer = CLOSED_TURF_LAYER
+	layer = TURF_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#ff460e"
@@ -480,7 +480,7 @@
 	anchored = TRUE
 	density = FALSE
 	plane = ABOVE_GAME_PLANE
-	layer = CLOSED_TURF_LAYER
+	layer = TURF_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#008eff"
@@ -512,7 +512,7 @@
 	anchored = TRUE
 	density = FALSE
 	plane = ABOVE_GAME_PLANE
-	layer = CLOSED_TURF_LAYER
+	layer = TURF_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#e252ea"

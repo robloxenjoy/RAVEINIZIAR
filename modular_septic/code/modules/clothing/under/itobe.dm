@@ -28,6 +28,23 @@
 	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 3)
 	carry_weight = 400 GRAMS
 	can_adjust = FALSE
+	body_parts_covered = NECK|CHEST|VITALS|GROIN|LEGS
+
+/obj/item/clothing/under/aktraiment
+	name = "\proper Raiment"
+	desc = "Clothing made from the skin of a non-wild Paxlya larva. A little tight."
+	icon = 'modular_septic/icons/obj/clothing/under/itobe.dmi'
+	icon_state = "akt"
+	worn_icon = 'modular_septic/icons/mob/clothing/under/itobe.dmi'
+	worn_icon_state = "akt"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "soldat"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = list(MELEE = 2, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 10, ACID = 10, WOUND = 2)
+	carry_weight = 300 GRAMS
+	can_adjust = FALSE
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 
 /obj/item/clothing/under/venturerlong
@@ -45,7 +62,7 @@
 	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 4)
 	carry_weight = 500 GRAMS
 	can_adjust = FALSE
-	body_parts_covered = CHEST|VITALS|GROIN|LEGS|ARMS
+	body_parts_covered = NECK|CHEST|VITALS|GROIN|LEGS|ARMS
 
 /obj/item/clothing/under/itobe/agent
 	name = "\proper darkened three-piece suit"

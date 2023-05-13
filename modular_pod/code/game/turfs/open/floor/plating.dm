@@ -75,18 +75,18 @@
 			if(prob(W.force))
 				var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
 				new /atom/movable/fire(firefloor, 21)
+	if(user.a_intent == INTENT_DISARM)
 		if(istype(src, /turf/open/floor/plating/polovich/roots))
 			if(W.sharpness)
-				if(user.a_intent == INTENT_DISARM)
-					if(do_after(user, 3 SECONDS, target=src))
-						user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
-						user.changeNext_move(I.attack_delay)
-						user.adjustFatigueLoss(I.attack_fatigue_cost)
-						W.damageItem("HARD")
-						sound_hint()
-						playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
-						var/turf/open/floor/plating/polovich/roots/noroots = src
-						noroots.canstumble = FALSE
+				if(do_after(user, 3 SECONDS, target=src))
+					user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
+					user.changeNext_move(W.attack_delay)
+					user.adjustFatigueLoss(W.attack_fatigue_cost)
+					W.damageItem("HARD")
+					sound_hint()
+					playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
+					var/turf/open/floor/plating/polovich/roots/noroots = src
+					noroots.canstumble = FALSE
 
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()

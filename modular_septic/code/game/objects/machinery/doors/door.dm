@@ -6,7 +6,6 @@
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
-	. += span_notice("[p_their(TRUE)] maintenance panel is <b>screwed</b> in place.")
 	if(inserted_key)
 		. += span_notice("[inserted_key] is inserted in [p_their()] keyhole.")
 

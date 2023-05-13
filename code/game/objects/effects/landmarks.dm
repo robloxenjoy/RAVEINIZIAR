@@ -72,13 +72,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
-/obj/effect/landmark/start/chaot
-	name = "Chaot"
+/obj/effect/landmark/start/aktliver
+	name = "AktLiver"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
+	jobspawn_override = TRUE
 
-/obj/effect/landmark/start/aktliver
-	name = "Akt Liver"
+/obj/effect/landmark/start/chaot
+	name = "Chaot"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 
