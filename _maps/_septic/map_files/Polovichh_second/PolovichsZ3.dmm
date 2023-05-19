@@ -85,6 +85,7 @@
 "bG" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plating/polovich/dirt/soft,/area/maintenance/polovich/forest/rain)
 "bH" = (/obj/effect/turf_decal/siding/wood{dir = 5},/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest)
 "bI" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest)
+"bJ" = (/obj/structure/bed,/obj/effect/landmark/start/aktliver,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest)
 "bK" = (/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest)
 "bL" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest)
 "bM" = (/obj/structure/fence{dir = 8},/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest/rain)
@@ -123,11 +124,11 @@
 "ct" = (/obj/effect/turf_decal/siding/wood{dir = 1},/obj/structure/closet/crate,/turf/open/floor/plating/polovich/krutoplitka{dir = 8},/area/maintenance/polovich/forest)
 "cu" = (/obj/effect/turf_decal/siding/wood{dir = 5},/obj/structure/closet/crate,/turf/open/floor/plating/polovich/krutoplitka{dir = 8},/area/maintenance/polovich/forest)
 "cv" = (/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
+"cw" = (/obj/structure/bed,/obj/effect/landmark/start/aktliver,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
 "cx" = (/obj/structure/fence{dir = 8},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
 "cy" = (/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
 "cz" = (/obj/structure/fence{dir = 8},/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
 "cA" = (/obj/structure/bed,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest)
-"cB" = (/obj/structure/bed,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
 "cC" = (/obj/machinery/door/keycard/denominator/podozl/akt/lair,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/forest)
 "cD" = (/obj/structure/barricade/flora/crystal/green,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
 "cE" = (/obj/structure/closet/crate,/turf/open/floor/plating/polovich/krutoplitka{dir = 8},/area/maintenance/polovich/forest)
@@ -288,7 +289,7 @@ afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagag
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagexexexexexexexexexagagafafaAakdududududuakdududududuakdududuccccakayaqapadbKbKbKbKcQbKbKbKbKbKbKbKbKcQbKfcadadbmfbadbhafafafaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagexexexexexexexexexagagafafaAakdudududuaHakdudududuaHakdududuccaHakayapapadfaatbmbKadeAeAeScNcNeScNcNadbKbmaeaebmbKadapafafafaf
 afagagagagagagagagagagageQeQeQeQeQeQagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagexexexexexexexexexagagafafaAakdududuaKbeakdududuaKbeakdududuaKbeakayaqapadadbpfvadadadadadadadadadadadbKbmbmbmbmbKadapafafafaf
-afagagagagagagagagagagageQeQeQeQeQeQagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagagagagagagagagagagagagafafaAakducccccAakakdududucBakakdududucBakakayapapadbKbmbmbKadbqbwbwbwbwbwbwcKadbKbKbmbmbKbKadapafafafaf
+afagagagagagagagagagagageQeQeQeQeQeQagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagagagagagagagagagagagagafafaAakduccccbJakakdududucwakakdududucwakakayapapadbKbmbmbKadbqbwbwbwbwbwbwcKadbKbKbmbmbKbKadapafafafaf
 afagagagagagagagagagagageQeQeQeQeQeQagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagagagagagagagagagagagagafafaAakcCbvakakakakcCeXakakakakcCeYakakakakaBeVeVadbKbKbKbKbmbKbKbKbKbKbKbKbKcQbKbKbmbmbKbKadapafafafaf
 afeQeQeQeQeQeQeQeQeQeQeQeQeQeQeQeQeQagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagagagagagagagagagagagagafafapfdapaFaGaGaGfdapaFaGaGaGfdcWaFcWaGaGaJaMeVeWadbKbKeSbKadbKbmeSbKbKeSbmbKadfabKbmbmbKfbadapafafafaf
 afeQeQeQeQeQeQeQeQeQeQeQeQeQeQeQeQeQagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagagagagagagagagagagagagagcWapapapapapcWcWapapapababababbhapapapapapapaqbhadbKbKadadadadeTadadadadeTadadadadadadadadadapafafafaf

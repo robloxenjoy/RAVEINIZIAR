@@ -452,3 +452,8 @@
 	name = "bottle of caramel"
 	desc = "A bottle containing caramalized sugar, also known as caramel. Do not lick."
 	list_reagents = list(/datum/reagent/consumable/caramel = 30)
+
+/obj/item/reagent_containers/glass/bottle/potions/berryjuice
+	name = "Bottle"
+	desc = "Potion. Initially, here is berry juice."
+	list_reagents = list(/datum/reagent/medicine/c2/penthrite/onesebasta = 10, /datum/reagent/medicine/atropine = 10, /datum/reagent/drug/kravsa = 10)
