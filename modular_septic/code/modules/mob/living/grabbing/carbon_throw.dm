@@ -52,6 +52,8 @@
 						span_userdanger("I throw [thrown_thing] at [parsed_target][power_throw ? " really hard!" : "."]"))
 	log_message("has thrown [thrown_thing] at [parsed_target][power_throw ? " really hard" : ""]", LOG_ATTACK)
 	sound_hint()
+//	src.changeNext_move(CLICK_CD_CLING)
+	src.adjustFatigueLoss(5)
 	newtonian_move(get_dir(target, src))
 	var/final_throw_range = thrown_thing.throw_range
 	thrown_thing.safe_throw_at(target, final_throw_range, thrown_thing.throw_speed + power_throw, src, force = move_force)

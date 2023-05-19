@@ -169,7 +169,9 @@
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
 	min_force = 13
 	force = 21
-	throwforce = 18
+	throwforce = 15
+	throw_speed = 3
+	throw_range = 3
 	min_force_strength = 1.3
 	force_strength = 1.8
 	wound_bonus = 15
@@ -184,6 +186,7 @@
 	havedurability = TRUE
 	durability = 350
 	slot_flags = null
+	slowdown = 1
 	skill_melee = SKILL_IMPACT_WEAPON_TWOHANDED
 	readying_flags = READYING_FLAG_SOFT_TWO_HANDED
 	worn_icon_state = "classic_baton"

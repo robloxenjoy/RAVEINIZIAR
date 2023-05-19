@@ -18,8 +18,6 @@
 	screen_loc = ui_crafting
 
 /atom/movable/screen/craft/Click(location, control, params)
-	. = ..()
-
 	return FALSE
 
 /atom/movable/screen/language_menu

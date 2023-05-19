@@ -220,6 +220,8 @@
 				ignored_mobs = remover)
 		to_chat(remover, span_notice("I succesfully remove \the [weapon] from <b>[victim]</b>'s [limb.name]!"))
 	playsound(victim, 'modular_septic/sound/gore/pullout.ogg', 83, 0)
+	remover.changeNext_move(CLICK_CD_CLING)
+	remover.adjustFatigueLoss(5)
 	safeRemove(remover)
 
 /datum/component/embedded/fallOut()

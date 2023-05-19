@@ -147,6 +147,7 @@
 		actions_done++
 	else
 		var/wrench_verb_singular = "wrench"
+		grasped_part.receive_damage(brute = 5, wound_bonus = 1, sharpness = NONE)
 		if(nonlethal)
 			wrench_verb_singular = "twist"
 		if(owner != victim)
@@ -367,7 +368,6 @@
 		if(epic_success >= DICE_SUCCESS)
 			deal_wound_bonus += 5
 		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = SHARP_POINTY)
-		grasped_part.add_pain(10)
 		if(owner != victim)
 			victim.visible_message(span_pinkdang("[owner] twists [grasped_part.embedded_objects[1]] in [victim]'s [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_pinkdang("[owner] twists [grasped_part.embedded_objects[1]] in my [grasped_part.name]![carbon_victim.wound_message]"), \
@@ -381,6 +381,7 @@
 		SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 		actions_done++
 	else
+		grasped_part.receive_damage(brute = 3, wound_bonus = 2, sharpness = SHARP_POINTY)
 		if(owner != victim)
 			victim.visible_message(span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in [victim]'s [grasped_part.name]!"), \
 							span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in my [grasped_part.name]!"), \
@@ -391,6 +392,7 @@
 			victim.visible_message(span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in [owner.p_their()] [grasped_part.name]!"), \
 							span_pinkdang("I try to twist [grasped_part.embedded_objects[1]] in my [grasped_part.name]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
+	grasped_part.add_pain(10)
 	owner.changeNext_move(CLICK_CD_CLING)
 	owner.adjustFatigueLoss(10)
 	playsound(victim, 'modular_septic/sound/gore/twisting.ogg', 80, FALSE)
