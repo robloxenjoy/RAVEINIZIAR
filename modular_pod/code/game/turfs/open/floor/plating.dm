@@ -8,7 +8,7 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
-	powerfloor = 3
+	var/powerfloor = 3
 
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()
@@ -56,7 +56,7 @@
 		playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 		sound_hint()
 
-/turf/open/floor/attackby(obj/item/W, mob/living/carbon/user, params)
+/turf/open/floor/plating/polovich/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
 	if(.)
 		return
@@ -91,15 +91,15 @@
 
 	if(user.a_intent == INTENT_GRAB)
 		if(istype(W, /obj/item/grab))
-			if(user.pulling && isliving(user.pulling) && grab_state >= GRAB_AGGRESSIVE)
-				var/obj/item/grab/G = W
+			var/obj/item/grab/G = W
+			if(user.pulling && isliving(user.pulling) && G.grab_state >= GRAB_AGGRESSIVE)
 				if(G.grasped_part?.body_zone == BODY_ZONE_PRECISE_NECK)
 					var/mob/living/GR = user.pulling
 					if(GR.body_position == LYING_DOWN)
 						var/obj/item/bodypart/head = GR.get_bodypart(BODY_ZONE_HEAD)
 						var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerfloor)
 						GR.visible_message(span_pinkdang("[user] bangs [GR]'s head against the [src]!"))
-						head.receive_damage(brute = damage, wound_bonus = 2, sharpness = none)
+						head.receive_damage(brute = damage, wound_bonus = 2, sharpness = null)
 						user.changeNext_move(CLICK_CD_GRABBING)
 						user.adjustFatigueLoss(10)
 						playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.wav', 80, 0)
