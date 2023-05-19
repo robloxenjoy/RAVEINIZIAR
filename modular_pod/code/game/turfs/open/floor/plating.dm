@@ -749,8 +749,10 @@
 
 /turf/open/openspace/attackby(obj/item/C, mob/user, params)
 	. = ..()
+/*
 	if(!CanBuildHere())
 		return
+*/
 	if(istype(C, /obj/item/stack/grown/log/tree/evil/logg))
 		var/obj/item/stack/grown/log/tree/evil/logg/R = C
 		if(R.amount == 4)

@@ -206,6 +206,9 @@
 /obj/item/stack/grown/log/tree/evil/logg/three
 	amount = 3
 
+/obj/item/stack/grown/log/tree/evil/logg/four
+	amount = 4
+
 /obj/item/stack/grown/log/tree/evil/logg/five
 	amount = 5
 
