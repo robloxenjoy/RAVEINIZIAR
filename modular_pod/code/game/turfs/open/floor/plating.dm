@@ -8,6 +8,7 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
+	powerfloor = 3
 
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()
@@ -87,6 +88,21 @@
 					playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 					var/turf/open/floor/plating/polovich/roots/noroots = src
 					noroots.canstumble = FALSE
+
+	if(user.a_intent == INTENT_GRAB)
+		if(istype(W, /obj/item/grab))
+			if(user.pulling && isliving(user.pulling) && grab_state >= GRAB_AGGRESSIVE)
+				var/obj/item/grab/G = W
+				if(G.grasped_part?.body_zone == BODY_ZONE_PRECISE_NECK)
+					var/mob/living/GR = user.pulling
+					if(GR.body_position == LYING_DOWN)
+						var/obj/item/bodypart/head = GR.get_bodypart(BODY_ZONE_HEAD)
+						var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerfloor)
+						GR.visible_message(span_pinkdang("[user] bangs [GR]'s head against the [src]!"))
+						head.receive_damage(brute = damage, wound_bonus = 2, sharpness = none)
+						user.changeNext_move(CLICK_CD_GRABBING)
+						user.adjustFatigueLoss(10)
+						playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.wav', 80, 0)
 
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
