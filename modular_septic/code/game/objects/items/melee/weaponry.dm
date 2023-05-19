@@ -186,7 +186,7 @@
 	havedurability = TRUE
 	durability = 350
 	slot_flags = null
-	slowdown = 1
+	slowdown = 2
 	skill_melee = SKILL_IMPACT_WEAPON_TWOHANDED
 	readying_flags = READYING_FLAG_SOFT_TWO_HANDED
 	worn_icon_state = "classic_baton"
