@@ -7,9 +7,12 @@
 
 /atom/movable/screen/bookmark/update_name(updates)
 	. = ..()
-	name = (hud?.upper_inventory_shown ? "toggle upper inventory off" : "toggle upper inventory on")
+//	name = (hud?.upper_inventory_shown ? "toggle upper inventory off" : "toggle upper inventory on")
+	name = (hud?.upper_inventory_shown ? "HEHE" : "HAHA")
 
 /atom/movable/screen/bookmark/Click()
+	return FALSE
+/*
 	var/mob/targetmob = usr
 
 	if(isobserver(targetmob))
@@ -27,3 +30,4 @@
 		screen_loc = ui_bookmark_on
 
 	targetmob.hud_used.hidden_inventory_update(usr)
+*/

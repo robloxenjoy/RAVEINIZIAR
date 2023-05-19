@@ -38,7 +38,7 @@
 	var/atom/movable/screen/enhanced_sel/enhanced_sel
 	var/atom/movable/screen/filler/filler
 
-	var/upper_inventory_shown = FALSE
+	var/upper_inventory_shown = TRUE
 	var/list/upper_inventory = list()
 
 	var/uses_film_grain = TRUE
