@@ -447,8 +447,8 @@
 	icon_state = "red_crystals"
 	anchored = TRUE
 	density = FALSE
-	plane = ABOVE_GAME_PLANE
-	layer = TURF_LAYER
+	plane = FLOOR_PLANE
+	layer = LATTICE_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#ff460e"
@@ -479,8 +479,8 @@
 	icon_state = "blue_crystals"
 	anchored = TRUE
 	density = FALSE
-	plane = ABOVE_GAME_PLANE
-	layer = TURF_LAYER
+	plane = FLOOR_PLANE
+	layer = LATTICE_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#008eff"
@@ -511,8 +511,8 @@
 	icon_state = "pink_crystals"
 	anchored = TRUE
 	density = FALSE
-	plane = ABOVE_GAME_PLANE
-	layer = TURF_LAYER
+	plane = FLOOR_PLANE
+	layer = LATTICE_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#e252ea"

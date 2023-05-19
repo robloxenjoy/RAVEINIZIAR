@@ -86,6 +86,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 /turf/open/openspace/proc/CanBuildHere()
 	return can_build_on
 
+/*
 /turf/open/openspace/attackby(obj/item/C, mob/user, params)
 	. = ..()
 	if(!CanBuildHere())
@@ -128,6 +129,8 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 				to_chat(user, span_warning("You need one floor tile to build a floor!"))
 		else
 			to_chat(user, span_warning("The plating is going to need some support! Place iron rods first."))
+
+*/
 
 /turf/open/openspace/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	if(!CanBuildHere())
