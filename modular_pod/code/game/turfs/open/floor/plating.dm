@@ -93,7 +93,7 @@
 		if(istype(W, /obj/item/grab))
 			var/obj/item/grab/G = W
 			if(user.pulling && isliving(user.pulling) && G.grab_state >= GRAB_AGGRESSIVE)
-				if(G.grasped_part?.body_zone == BODY_ZONE_PRECISE_NECK)
+				if(G.grasped_part?.body_zone == BODY_ZONE_PRECISE_FACE)
 					var/mob/living/GR = user.pulling
 					if(GR.body_position == LYING_DOWN)
 						var/obj/item/bodypart/head = GR.get_bodypart(BODY_ZONE_HEAD)
