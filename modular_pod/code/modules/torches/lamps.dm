@@ -80,7 +80,7 @@
 	anchored = TRUE
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
-	var/putout = 1
+	var/putout = FALSE
 
 	var/obj/item/lamp/lightlamp
 
