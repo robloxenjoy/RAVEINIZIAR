@@ -415,8 +415,8 @@
 	icon_state = "green_crystals"
 	anchored = TRUE
 	density = FALSE
-	plane = ABOVE_GAME_PLANE
-	layer = TURF_LAYER
+	plane = FLOOR_PLANE
+	layer = LATTICE_LAYER
 	light_range = 1
 	light_power = 1
 	light_color = "#00dd78"
@@ -577,3 +577,27 @@
 	plane = ABOVE_GAME_PLANE
 	layer = GRILLE_LAYER
 	density = FALSE
+
+/obj/structure/beast/tohubohu
+	name = "Tohubohu"
+	desc = "?"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "tohubohu"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+
+/obj/structure/beast/tohubohu/attackby(obj/item/I, mob/living/carbon/user, params)
+	. = ..()
+	if(istype(I, /obj/item/stack/teeth))
+		var/obj/item/stack/teeth/R = I
+		if(R.amount == 2)
+			if(user.dna?.species?.id == SPECIES_WEAKWILLET)
+				user.visible_message(span_notice("[user] gives [I] to Tohubohu."),span_notice("You gave [I] to Tohubohu."), span_hear("You hear the sound of sacrificing."))
+				sound_hint()
+				playsound(get_turf(src), 'modular_pod/sound/eff/chaotic.wav', 100 , FALSE, FALSE)
+				new /obj/item/melee/bita/obsidian(get_turf(user))
+				qdel(I)
+		else
+			to_chat(user, span_warning("You need exactly 2 teeth!"))
+	else
+		return

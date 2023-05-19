@@ -157,6 +157,37 @@
 	slot_flags = ITEM_SLOT_BELT
 	worn_icon_state = "classic_baton"
 
+/obj/item/melee/bita/obsidian
+	name = "Obsidian Fragment"
+	desc = "A chipped piece of obsidian. Wait, is this a hallucination, or are the stars sparkling in obsidian?"
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "obsidian_fragment"
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	inhand_icon_state = "obsidian_fragment"
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	min_force = 13
+	force = 21
+	throwforce = 18
+	min_force_strength = 1.3
+	force_strength = 1.8
+	wound_bonus = 15
+	bare_wound_bonus = 6
+	armor_damage_modifier = 1
+	edge_protection_penetration = 3
+	subtractible_armour_penetration = 3
+	w_class = WEIGHT_CLASS_HUGE
+	carry_weight = 5 KILOGRAMS
+	attack_fatigue_cost = 10
+	attack_delay = 40
+	havedurability = TRUE
+	durability = 350
+	slot_flags = null
+	skill_melee = SKILL_IMPACT_WEAPON_TWOHANDED
+	readying_flags = READYING_FLAG_SOFT_TWO_HANDED
+	worn_icon_state = "classic_baton"
+
 /obj/item/melee/truncheon/black
 	name = "black truncheon"
 	icon = 'modular_septic/icons/obj/items/melee/baton.dmi'

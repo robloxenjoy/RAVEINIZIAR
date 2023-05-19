@@ -381,7 +381,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 	if(traps)
-		if(prob(5))
+		if(prob(6))
 			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/crystal/proc/shag(datum/source, atom/movable/AM)

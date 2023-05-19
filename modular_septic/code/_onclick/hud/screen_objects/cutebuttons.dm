@@ -17,6 +17,11 @@
 	icon = 'modular_septic/icons/hud/quake/screen_quake.dmi'
 	screen_loc = ui_crafting
 
+/atom/movable/screen/craft/Click(location, control, params)
+	. = ..()
+
+	return FALSE
+
 /atom/movable/screen/language_menu
 	name = "language"
 	icon = 'modular_septic/icons/hud/quake/screen_quake.dmi'
