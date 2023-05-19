@@ -200,6 +200,13 @@
 /obj/machinery/door/keycard/denominator/podozl/akt/gargostore
 	puzzle_id = "gargostore"
 
+/obj/item/keycard/akt/hut
+	desc = "This key is for Hut in Akt Village..."
+	puzzle_id = "hut"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/hut
+	puzzle_id = "hut"
+
 /obj/item/keycard/akt/alchem
 	desc = "This key is for al-chemists houses in Akt Village..."
 	puzzle_id = "alchem"

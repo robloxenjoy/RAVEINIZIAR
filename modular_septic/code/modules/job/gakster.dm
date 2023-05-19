@@ -248,6 +248,44 @@
 //	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/barhatki
 
+/datum/job/aktassertor
+	title = "Akt Assertor"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 10
+	spawn_positions = 10
+	supervisors = "living in Akt!"
+	selection_color = "#8e4a57"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/assertor
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/assertor
+	name = "Akt Assertor Uniform"
+
+	uniform = /obj/item/clothing/under/aktraiment
+	r_pocket = /obj/item/keycard/akt/lair
+	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
+	belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
+//	r_pocket = /obj/item/shit
+//	id = /obj/item/cellphone
+//	belt = /obj/item/crowbar
+//	l_pocket = /obj/item/simcard
+//	back = /obj/item/storage/backpack/satchel/itobe
+//	backpack_contents = list(
+//		/obj/item/reagent_containers/hypospray/medipen/retractible/blacktar = 1,
+//		/obj/item/flashlight/seclite = 1,
+//	)
+//	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/barhatki
+
 /*
 
 /datum/job/evilwarlock

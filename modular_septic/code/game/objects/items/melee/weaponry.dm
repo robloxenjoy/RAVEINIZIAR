@@ -157,6 +157,31 @@
 	slot_flags = ITEM_SLOT_BELT
 	worn_icon_state = "classic_baton"
 
+/obj/item/melee/bita/macecircle
+	name = "Steel Mace"
+	desc = "One-handed steel mace."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "club2"
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	inhand_icon_state = "club2"
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	min_force = 12
+	force = 18
+	throwforce = 15
+	min_force_strength = 1.1
+	force_strength = 1.4
+	wound_bonus = 15
+	bare_wound_bonus = 6
+	armor_damage_modifier = 1
+	havedurability = TRUE
+	durability = 300
+	carry_weight = 1.5 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	skill_melee = SKILL_IMPACT_WEAPON
+	worn_icon_state = "classic_baton"
+
 /obj/item/melee/bita/obsidian
 	name = "Obsidian Fragment"
 	desc = "A chipped piece of obsidian. Wait, is this a hallucination, or are the stars sparkling in obsidian?"
