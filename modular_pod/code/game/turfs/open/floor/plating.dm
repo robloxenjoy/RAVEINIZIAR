@@ -8,7 +8,7 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
-	var/powerfloor = 3
+	var/powerfloor = 5
 
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()

@@ -105,3 +105,6 @@
 */
 /datum/job/chaot
 	attribute_sheet = /datum/attribute_holder/sheet/job/chaot
+
+/datum/job/aktliver
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktliver
