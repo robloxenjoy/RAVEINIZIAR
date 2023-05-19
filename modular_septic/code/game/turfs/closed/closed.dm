@@ -26,7 +26,7 @@
 			var/obj/item/grab/G = W
 			if(G.grasped_part?.body_zone == BODY_ZONE_PRECISE_FACE)
 				var/mob/living/GR = user.pulling
-				if(GR.body_position == LYING_DOWN)
+				if(GR.body_position == STANDING_UP)
 					var/obj/item/bodypart/head = GR.get_bodypart(BODY_ZONE_HEAD)
 					var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerturf)
 					GR.visible_message(span_pinkdang("[user] bangs [GR]'s head against the [src]!"))
