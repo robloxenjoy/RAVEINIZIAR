@@ -31,10 +31,10 @@ GLOBAL_LIST_INIT(footstep, list(
 		'modular_septic/sound/effects/footstep/carpet3.wav',
 		'modular_septic/sound/effects/footstep/carpet4.wav'), 90, -1),
 	FOOTSTEP_SAND = list(list(
-		'modular_septic/sound/effects/footstep/sand1.ogg',
-		'modular_septic/sound/effects/footstep/sand2.ogg',
-		'modular_septic/sound/effects/footstep/sand3.ogg',
-		'modular_septic/sound/effects/footstep/sand4.ogg'), 110, 0),
+		'modular_septic/sound/effects/footstep/grass1.wav',
+		'modular_septic/sound/effects/footstep/grass2.wav',
+		'modular_septic/sound/effects/footstep/grass3.wav',
+		'modular_septic/sound/effects/footstep/grass4.wav'), 85, 0),
 	FOOTSTEP_GRASS = list(list(
 		'modular_septic/sound/effects/footstep/grass1.wav',
 		'modular_septic/sound/effects/footstep/grass2.wav',
@@ -101,10 +101,10 @@ GLOBAL_LIST_INIT(barefootstep, list(
 		'sound/effects/footstep/carpetbarefoot4.ogg',
 		'sound/effects/footstep/carpetbarefoot5.ogg'), 75, -2),
 	FOOTSTEP_SAND = list(list(
-		'modular_septic/sound/effects/footstep/sand1.ogg',
-		'modular_septic/sound/effects/footstep/sand2.ogg',
-		'modular_septic/sound/effects/footstep/sand3.ogg',
-		'modular_septic/sound/effects/footstep/sand4.ogg'), 105, 0),
+		'modular_septic/sound/effects/footstep/grass1.wav',
+		'modular_septic/sound/effects/footstep/grass2.wav',
+		'modular_septic/sound/effects/footstep/grass3.wav',
+		'modular_septic/sound/effects/footstep/grass4.wav'), 85, 0),
 	FOOTSTEP_GRASS = list(list(
 		'modular_septic/sound/effects/footstep/grass1.wav',
 		'modular_septic/sound/effects/footstep/grass2.wav',
@@ -165,15 +165,15 @@ GLOBAL_LIST_INIT(clawfootstep, list(
 		'modular_septic/sound/effects/footstep/walk_tarmac3.wav',
 		'modular_septic/sound/effects/footstep/walk_tarmac4.wav'), 100, 0),
 	FOOTSTEP_GRASS = list(list(
-		'sound/effects/footstep/grass1.wav',
-		'sound/effects/footstep/grass2.wav',
-		'sound/effects/footstep/grass3.wav',
-		'sound/effects/footstep/grass4.wav'), 75, 0),
+		'modular_septic/sound/effects/footstep/grass1.wav',
+		'modular_septic/sound/effects/footstep/grass2.wav',
+		'modular_septic/sound/effects/footstep/grass3.wav',
+		'modular_septic/sound/effects/footstep/grass4.wav'), 75, 0),
 	FOOTSTEP_WATER = list(list(
-		'sound/effects/footstep/water1.wav',
-		'sound/effects/footstep/water2.wav',
-		'sound/effects/footstep/water3.wav',
-		'sound/effects/footstep/water4.wav'), 100, 1),
+		'modular_septic/sound/effects/footstep/water1.wav',
+		'modular_septic/sound/effects/footstep/water2.wav',
+		'modular_septic/sound/effects/footstep/water3.wav',
+		'modular_septic/sound/effects/footstep/water4.wav'), 100, 1),
 	FOOTSTEP_LAVA = list(list(
 		'sound/effects/footstep/lava1.ogg',
 		'sound/effects/footstep/lava2.ogg',

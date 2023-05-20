@@ -34,6 +34,9 @@
 	/// This is NOT related to armor penetration, and simply works as a bonus for armor damage
 	var/armor_damage_modifier = 0
 
+	/// Can it be used for lockpicking?
+	var/canlockpick = FALSE
+
 	/**
 	 *  Modifier for block score
 	 *

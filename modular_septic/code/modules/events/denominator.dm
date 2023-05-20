@@ -120,28 +120,207 @@
 	close_message = "The door moves with a some sound, and closes."
 	safe = FALSE
 	var/forty = TRUE
+	var/locktype = "KOLLAX"
+	var/lockstate = null
+	var/lock_level_one = FALSE
+	var/lock_level_two = FALSE
+	var/hardnesslock = 48
 
 /obj/machinery/door/keycard/denominator/podozl/akt/attackby(obj/item/I, mob/living/carbon/user, params)
-	if(istype(I,/obj/item/keycard))
+	if(istype(I, /obj/item/keycard))
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
 			to_chat(user, span_notice("[open_message]"))
 			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			sleep(6)
+			sleep(2) // 6
 			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			user.changeNext_move(CLICK_CD_GRABBING)
 			open()
+			if(lockstate != null)
+				lockstate = null
 			return
 		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
 			to_chat(user, span_notice("[close_message]"))
 			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			sleep(6)
+			sleep(2) // 6
 			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			user.changeNext_move(CLICK_CD_GRABBING)
 			close()
+			if(lockstate != null)
+				lockstate = null
 			return
 		else
 			to_chat(user, span_notice("Not that key..."))
+			user.changeNext_move(CLICK_CD_GRABBING)
 			playsound(src, 'modular_septic/sound/effects/card_declined_horror.wav', 60, FALSE, 1)
 			return
+
+	if(istype(I, /obj/item/keycard/akt/lockpick/square))
+		if(density)
+			if(user.a_intent == INTENT_DISARM)
+				user.changeNext_move(CLICK_CD_GRABBING)
+				sound_hint()
+				src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
+				var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+				if(do_after(user, durationn*10, target=src))
+					if(lock_level_one)
+						var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
+						if(diceroll == DICE_CRIT_SUCCESS)
+							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							open()
+							return
+						if(diceroll == DICE_SUCCESS)
+							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							var/obj/item/keycard/akt/lockpick/square/SQ = I
+							SQ.damageItem("MEDIUM")
+							open()
+							return
+						if(diceroll <= DICE_FAILURE)
+							src.visible_message(span_steal("[user] tried to lockpick [src], but failed!"),span_steal("You failed to lockpick [src]."), span_hear("You hear the sound of failed lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							var/obj/item/keycard/akt/lockpick/square/SQ = I
+							SQ.damageItem("HARD")
+							return
+
+	if(istype(I, /obj/item/keycard/akt/lockpick/triangle))
+		if(density)
+			if(user.a_intent == INTENT_DISARM)
+				user.changeNext_move(CLICK_CD_GRABBING)
+				sound_hint()
+				src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
+				playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+				var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+				if(do_after(user, durationn*10, target=src))
+					if(lock_level_two)
+						var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						if(diceroll == DICE_CRIT_SUCCESS)
+							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							open()
+							return
+						if(diceroll == DICE_SUCCESS)
+							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							var/obj/item/keycard/akt/lockpick/triangle/TR = I
+							TR.damageItem("MEDIUM")
+							open()
+							return
+						if(diceroll <= DICE_FAILURE)
+							src.visible_message(span_steal("[user] tried to lockpick [src], but failed!"),span_steal("You failed to lockpick [src]."), span_hear("You hear the sound of failed lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							var/obj/item/keycard/akt/lockpick/triangle/TR = I
+							TR.damageItem("HARD")
+							sound_hint()
+							return
+
+	if(istype(I, /obj/item/keycard/akt/lockpick/prylock))
+		if(density)
+			if(user.a_intent == INTENT_DISARM)
+				if(lockstate == null)
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+					if(do_after(user, durationn*10, target=src))
+						lockstate = "READY_TO_CLUB"
+						I.damageItem("HARD")
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						to_chat(user, span_steal("Now, I need a club to create some force..."))
+						return
+				else
+					to_chat(user, span_steal("Right now, need a club."))
+					return
+
+	if(istype(I, /obj/item/keycard/akt/lockpick/sawtooth))
+		if(density)
+			if(user.a_intent == INTENT_DISARM)
+				if(lockstate == null)
+					if(locktype == "KOLLAX")
+						to_chat(user, span_steal("I can't lockpick this by using [I], here is KOLLAX type of lock."))
+						return
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+					if(do_after(user, durationn*10, target=src))
+						lockstate = "READY_TO_KNIFE"
+						I.damageItem("HARD")
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						to_chat(user, span_steal("Now, I need a knife to create some force..."))
+						return
+
+				else if(lockstate == "READY_TO_KNIFE")
+					to_chat(user, span_steal("Right now, need a knife."))
+					return
+
+				else if(lockstate == "READY_TO_PUSH")
+					user.changeNext_move(3)
+					sound_hint()
+					src.visible_message(span_steal("[user] interesting lockpicks [src]!"),span_steal("You interesting lockpicking [src]."), span_hear("You hear the sound of lockpicking."))
+					I.damageItem("SOFT")
+					user.adjustFatigueLoss(3)
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					if(prob(1 + (GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING))))
+						lockstate = null
+						src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						open()
+						return
+
+				else
+					to_chat(user, span_steal("Right now, need a knife."))
+					return
+
+	if(I.canlockpick)
+		if(density)
+			if(user.a_intent == INTENT_HARM)
+				if(lockstate == "READY_TO_KNIFE")
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+					if(do_after(user, durationn*10, target=src))
+						lockstate = "READY_TO_PUSH"
+						I.damageItem("HARD")
+						playsound(src, 'modular_pod/sound/eff/lockpicking1.wav', 70, FALSE, 3)
+						to_chat(user, span_steal("Now, I need lockpick..."))
+
+	if(istype(I, /obj/item/melee/bita))
+		if(density)
+			if(user.a_intent == INTENT_HARM)
+				if(lockstate == "READY_TO_CLUB")
+					src.visible_message(span_steal("[user] starts lockpicking [src] by force!"),span_steal("You start to lockpick [src] by force."), span_hear("You hear the sound of hard lockpicking."))
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					user.adjustFatigueLoss(10)
+					playsound(src, 'modular_pod/sound/eff/lockpicking1.wav', 70, FALSE, 3)
+					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+					if(do_after(user, durationn*10, target=src))
+						lockstate = null
+						playsound(src, 'modular_pod/sound/eff/lockpicking1.wav', 70, FALSE, 3)
+						var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
+						var/obj/item/melee/bita/BI = I
+						if(diceroll == DICE_CRIT_SUCCESS)
+							src.visible_message(span_steal("[user] lockpicked [src] by force!"),span_steal("You lockpicked [src] by force."), span_hear("You hear the sound of lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							user.adjustFatigueLoss(10)
+							BI.damageItem("MEDIUM")
+							open()
+							return
+						if(diceroll <= DICE_SUCCESS)
+							src.visible_message(span_steal("[user] tried to lockpick [src], but failed!"),span_steal("You failed to lockpick [src]."), span_hear("You hear the sound of failed lockpicking."))
+							user.changeNext_move(CLICK_CD_GRABBING)
+							user.adjustFatigueLoss(20)
+							BI.damageItem("HARD")
+							sound_hint()
+							return
+
 	if(I.get_sharpness() && I.force)
 		if(forty)
 			to_chat(user, span_notice("This door has fortifications - it cannot be cut so easily."))
@@ -164,6 +343,11 @@
 			qdel(src)
 			return
 	return ..()
+
+/obj/machinery/door/keycard/denominator/podozl/akt/examine(mob/user)
+	. = ..()
+	if(locktype)
+		. += span_notice("This door have a lock. [locktype] type.")
 
 /obj/item/keycard/akt
 	name = "Wooden Key"
@@ -192,6 +376,45 @@
 	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
 	tetris_width = 32
 	tetris_height = 64
+
+/obj/item/keycard/akt/lockpick/square
+	name = "Square Lockpick"
+	desc = "Why do I need it?"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "lockpick_square"
+	puzzle_id = null
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	havedurability = TRUE
+	durability = 30
+	carry_weight = 200 GRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_ID
+	min_force = 1
+	force = 1
+	throwforce = 1
+	min_force_strength = 1
+	force_strength = 1
+	wound_bonus = 1
+	bare_wound_bonus = 1
+	throw_speed = 3
+	throw_range = 8
+	tetris_width = 32
+	tetris_height = 32
+
+/obj/item/keycard/akt/lockpick/triangle
+	name = "Triangle Lockpick"
+	icon_state = "lockpick_triangle"
+
+/obj/item/keycard/akt/lockpick/prylock
+	name = "Pry Lockpick"
+	icon_state = "lockpick_prylocking"
+	durability = 60
+
+/obj/item/keycard/akt/lockpick/sawtooth
+	name = "Sawtooth Lockpick"
+	icon_state = "lockpick_sawtooth"
 
 /obj/item/keycard/akt/gargostore
 	desc = "This key is for Gargostore in Akt Village..."
@@ -256,6 +479,7 @@
 
 /obj/machinery/door/keycard/denominator/podozl/akt/lair
 	puzzle_id = "lair"
+	locktype = "JOBARDO"
 
 /obj/item/keycard/akt/chantry
 	desc = "This key is for chantry in Akt Village..."

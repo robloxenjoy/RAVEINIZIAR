@@ -82,6 +82,7 @@
 	durability = 180
 	tetris_width = 32
 	tetris_height = 32
+	canlockpick = TRUE
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb_continuous = list("stabs", "pokes", "jabs")
 	attack_verb_simple = list("stab", "poke", "jab")
@@ -855,6 +856,7 @@
 //	rustbegin = 10
 	havedurability = TRUE
 	durability = 140
+	canlockpick = TRUE
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state = TRUE
