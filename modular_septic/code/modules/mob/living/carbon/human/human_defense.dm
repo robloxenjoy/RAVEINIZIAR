@@ -683,7 +683,7 @@
 						return
 					if(dodge_parry == DP_PARRY)
 						var/dicerollll = src.diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
-						if(diceroll >= DICE_FAILURE)
+						if(dicerollll >= DICE_FAILURE)
 							src.visible_message(span_pinkdang("[src] flips weapon of [hitting_projectile.firer] to [hitting_projectile.firer]!"))
 							hitting_projectile.on_hit(firer, 100, def_zone, piercing_hit)
 			//There is some distance between us
