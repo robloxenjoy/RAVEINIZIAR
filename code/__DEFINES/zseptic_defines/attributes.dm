@@ -116,7 +116,7 @@
 
 // ~skulduggery skills
 #define SKILL_PICKPOCKET /datum/attribute/skill/pickpocket
-#define SKILL_LOCKPICKING /datum/attribute/skill/lockpicking
+#define SKILL_LOCKPICKING /datum/attribute/skill/lockpick
 #define SKILL_FORENSICS /datum/attribute/skill/forensics
 
 // ~medical skills

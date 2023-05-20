@@ -130,7 +130,7 @@
 			var/list/embed_strings = list()
 			for(var/obj/item/embedded_item as anything in injury.embedded_objects)
 				embed_strings += "\a [embedded_item]"
-			this_injury_desc += "<span class='pink_dang'> with [english_list(embed_strings)] poking out of [injury.amount > 1 ? "them" : "it"]</span>"
+			this_injury_desc += "<span style='color: [COLOR_STRONG_MAGENTA]'> with [english_list(embed_strings)] poking out of [injury.amount > 1 ? "them" : "it"]</span>"
 
 		if(injury_descriptors[this_injury_desc])
 			injury_descriptors[this_injury_desc] += injury.amount

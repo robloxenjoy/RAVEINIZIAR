@@ -22,7 +22,7 @@
 	)
 	difficulty = SKILL_DIFFICULTY_HARD
 
-/datum/attribute/skill/lockpicking
+/datum/attribute/skill/lockpick
 	name = "Lockpicking"
 	desc = "Ability at breaking mechanical locks open."
 	icon_state = "lockpicking"
