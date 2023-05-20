@@ -858,7 +858,7 @@
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	realstunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	stumbling(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
-	staminy(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+//	staminy(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	return TRUE
@@ -920,6 +920,7 @@
 			victim.Stumble(1 SECONDS)
 	return TRUE
 
+/*
 /datum/species/proc/staminy(mob/living/carbon/human/victim, \
 							mob/living/carbon/human/user, \
 							obj/item/bodypart/affected, \
@@ -939,6 +940,7 @@
 		else
 			victim.apply_damage(damage*0.2, STAMINA, affected, armor_block)
 	return TRUE
+*/
 
 /datum/species/proc/incisioner(mob/living/carbon/human/victim, \
 						mob/living/carbon/human/user, \
