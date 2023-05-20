@@ -685,7 +685,7 @@
 						var/dicerollll = src.diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
 						if(dicerollll >= DICE_FAILURE)
 							src.visible_message(span_pinkdang("[src] flips weapon of [hitting_projectile.firer] to [hitting_projectile.firer]!"))
-							hitting_projectile.on_hit(firer, 100, def_zone, piercing_hit)
+							hitting_projectile.on_hit(hitting_projectile.firer, 100, def_zone, piercing_hit)
 			//There is some distance between us
 			else
 				//Source for this calculation: I made it up
