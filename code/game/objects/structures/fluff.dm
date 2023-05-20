@@ -231,6 +231,9 @@
 /obj/structure/fluff/narrator/akt/controller
 	desc = "A wooden pole, there's a sign that says... Palace of the controller - the owner of this village. Listen to him! "
 
+/obj/structure/fluff/narrator/akt/hut
+	desc = "A wooden pole, there's a sign that says... Hut. House for assertors."
+
 /obj/structure/fluff/narrator/forest
 	desc = "A stone deformity, the words are engraved here that says..."
 	icon = 'icons/obj/objects.dmi'

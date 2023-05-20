@@ -271,7 +271,7 @@
 	name = "Akt Assertor Uniform"
 
 	uniform = /obj/item/clothing/under/aktraiment
-	r_pocket = /obj/item/keycard/akt/lair
+	r_pocket = /obj/item/keycard/akt/hut
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 //	r_pocket = /obj/item/shit
