@@ -674,6 +674,18 @@
 			//Point blank, very hard to miss
 			if(dist <= 1)
 				dist_modifier +=  10
+				if(body_position == STANDING_UP)
+					if(stat != CONSCIOUS)
+						return
+					if(!combat_mode)
+						return
+					if(hitting_projectile.firer == src)
+						return
+					if(dodge_parry == DP_PARRY)
+						var/dicerollll = src.diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
+						if(diceroll >= DICE_FAILURE)
+							src.visible_message(span_pinkdang("[src] flips weapon of [hitting_projectile.firer] to [hitting_projectile.firer]!"))
+							hitting_projectile.on_hit(firer, 100, def_zone, piercing_hit)
 			//There is some distance between us
 			else
 				//Source for this calculation: I made it up
