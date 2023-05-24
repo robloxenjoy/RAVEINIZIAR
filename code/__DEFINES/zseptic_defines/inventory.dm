@@ -11,49 +11,53 @@
 #define ITEM_SLOT_OCLOTHING (1<<0)
 /// Jumpsuit slot
 #define ITEM_SLOT_ICLOTHING (1<<1)
+/// Pants slot
+#define ITEM_SLOT_PANTS (1<<2)
+/// Oversuit slot
+#define ITEM_SLOT_OVERSUIT (1<<3)
 /// Glove slot
-#define ITEM_SLOT_GLOVES (1<<2)
+#define ITEM_SLOT_GLOVES (1<<4)
 /// Glasses slot
-#define ITEM_SLOT_EYES (1<<3)
+#define ITEM_SLOT_EYES (1<<5)
 /// Left ear slot
-#define ITEM_SLOT_LEAR (1<<4)
+#define ITEM_SLOT_LEAR (1<<6)
 /// Right ear slot
-#define ITEM_SLOT_REAR (1<<5)
+#define ITEM_SLOT_REAR (1<<7)
 /// Wrists slot
-#define ITEM_SLOT_WRISTS (1<<6)
+#define ITEM_SLOT_WRISTS (1<<8)
 /// Mask slot
-#define ITEM_SLOT_MASK (1<<7)
+#define ITEM_SLOT_MASK (1<<9)
 /// Head slot (helmets, hats, etc.)
-#define ITEM_SLOT_HEAD (1<<8)
+#define ITEM_SLOT_HEAD (1<<10)
 /// Shoe slot
-#define ITEM_SLOT_FEET (1<<9)
+#define ITEM_SLOT_FEET (1<<11)
 /// ID slot
-#define ITEM_SLOT_ID (1<<10)
+#define ITEM_SLOT_ID (1<<12)
 /// Belt slot
-#define ITEM_SLOT_BELT (1<<11)
+#define ITEM_SLOT_BELT (1<<13)
 /// Back slot
-#define ITEM_SLOT_BACK (1<<12)
+#define ITEM_SLOT_BACK (1<<14)
 /// Dextrous simplemob "hands" (used for Drones and Dextrous Guardians)
-#define ITEM_SLOT_DEX_STORAGE (1<<13)
+#define ITEM_SLOT_DEX_STORAGE (1<<15)
 /// Neck slot (ties, bedsheets, scarves)
-#define ITEM_SLOT_NECK (1<<14)
+#define ITEM_SLOT_NECK (1<<16)
 /// A character's hand slots
-#define ITEM_SLOT_HANDS (1<<15)
+#define ITEM_SLOT_HANDS (1<<17)
 /// Inside of a character's backpack
-#define ITEM_SLOT_BACKPACK (1<<16)
+#define ITEM_SLOT_BACKPACK (1<<18)
 /// Suit Storage slot
-#define ITEM_SLOT_SUITSTORE (1<<17)
+#define ITEM_SLOT_SUITSTORE (1<<19)
 /// Left Pocket slot
-#define ITEM_SLOT_LPOCKET (1<<18)
+#define ITEM_SLOT_LPOCKET (1<<20)
 /// Right Pocket slot
-#define ITEM_SLOT_RPOCKET (1<<19)
+#define ITEM_SLOT_RPOCKET (1<<21)
 /// Handcuff slot
-#define ITEM_SLOT_HANDCUFFED (1<<20)
+#define ITEM_SLOT_HANDCUFFED (1<<22)
 /// Legcuff slot (bolas, beartraps)
-#define ITEM_SLOT_LEGCUFFED (1<<21)
+#define ITEM_SLOT_LEGCUFFED (1<<23)
 
 /// Total amount of slots
-#define SLOTS_AMT 21 // Keep this up to date!
+#define SLOTS_AMT 23 // Keep this up to date!
 
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
@@ -61,4 +65,4 @@
 
 
 /// Item slots that if you equip an item on, it'll try to filthify you
-#define DIRTY_ITEM_SLOTS (ITEM_SLOT_OCLOTHING|ITEM_SLOT_ICLOTHING|ITEM_SLOT_WRISTS|ITEM_SLOT_GLOVES|ITEM_SLOT_EYES|ITEM_SLOT_LEAR|ITEM_SLOT_REAR|ITEM_SLOT_HEAD|ITEM_SLOT_FEET|ITEM_SLOT_BELT|ITEM_SLOT_BACK)
+#define DIRTY_ITEM_SLOTS (ITEM_SLOT_OCLOTHING|ITEM_SLOT_ICLOTHING||ITEM_SLOT_PANTS||ITEM_SLOT_OVERSUIT|ITEM_SLOT_WRISTS|ITEM_SLOT_GLOVES|ITEM_SLOT_EYES|ITEM_SLOT_LEAR|ITEM_SLOT_REAR|ITEM_SLOT_HEAD|ITEM_SLOT_FEET|ITEM_SLOT_BELT|ITEM_SLOT_BACK)

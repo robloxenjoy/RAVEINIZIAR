@@ -126,4 +126,3 @@
 				MAGIC = 0, \
 				WOUND = 5, \
 				ORGAN = 3)
-	resistance_flags = FIRE_PROOF | ACID_PROOF

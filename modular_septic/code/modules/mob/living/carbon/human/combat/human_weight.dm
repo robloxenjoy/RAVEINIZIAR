@@ -1,6 +1,6 @@
 /mob/living/carbon/human/update_carry_weight()
 	. = 0
-	var/list/inventory_items = list(back, wear_mask, wear_neck, head, gloves, shoes, glasses, wrists, wear_suit, w_uniform, belt, wear_id, r_store, l_store, s_store)
+	var/list/inventory_items = list(back, wear_mask, wear_neck, head, gloves, shoes, glasses, wrists, pants, oversuit, wear_suit, w_uniform, belt, wear_id, r_store, l_store, s_store)
 	//we do need a typecheck here to avoid nulls
 	for(var/obj/item/thing in inventory_items)
 		. += thing.get_carry_weight()

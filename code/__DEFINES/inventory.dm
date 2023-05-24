@@ -87,6 +87,8 @@
 ///for lizard snouts, because some HIDEFACE clothes don't actually conceal that portion of the head.
 #define HIDESNOUT (1<<12)
 #define HIDEWRISTS (1<<13)
+#define HIDEPANTS (1<<13)
+#define HIDEOVERSUIT (1<<13)
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)

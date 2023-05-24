@@ -38,10 +38,14 @@
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_OCLOTHING)
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+		if(ITEM_SLOT_OVERSUIT)
+			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_GLOVES)
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_WRISTS)
-			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+			if(H.get_empty_held_indexes())
+				return TRUE
+			return FALSE
 		if(ITEM_SLOT_FEET)
 			if(H.num_legs < H.default_num_legs)
 				return FALSE
@@ -119,6 +123,10 @@
 		if(ITEM_SLOT_LEGCUFFED)
 			if(!istype(I, /obj/item/restraints/legcuffs))
 				return FALSE
+			if(H.num_legs < H.default_num_legs)
+				return FALSE
+			return TRUE
+		if(ITEM_SLOT_PANTS)
 			if(H.num_legs < H.default_num_legs)
 				return FALSE
 			return TRUE

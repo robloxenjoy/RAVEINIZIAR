@@ -329,6 +329,8 @@
 #define OFFSET_SUIT "suit"
 #define OFFSET_NECK "neck"
 #define OFFSET_WRISTS "wrists"
+#define OFFSET_PANTS "pants"
+#define OFFSET_OVERSUIT "oversuit"
 
 //MINOR TWEAKS/MISC
 #define AGE_MIN 16 //youngest a character can be

@@ -25,6 +25,10 @@
 			return gloves
 		if(ITEM_SLOT_WRISTS)
 			return wrists
+		if(ITEM_SLOT_PANTS)
+			return pants
+		if(ITEM_SLOT_OVERSUIT)
+			return oversuit
 		if(ITEM_SLOT_HEAD)
 			return head
 		if(ITEM_SLOT_FEET)

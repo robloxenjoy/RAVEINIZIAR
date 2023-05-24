@@ -147,7 +147,8 @@
 		actions_done++
 	else
 		var/wrench_verb_singular = "wrench"
-		grasped_part.receive_damage(brute = 5, wound_bonus = 1, sharpness = NONE)
+		var/damagee = (GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)/2)
+		grasped_part.receive_damage(brute = damagee, wound_bonus = 1, sharpness = NONE)
 		if(nonlethal)
 			wrench_verb_singular = "twist"
 		if(owner != victim)

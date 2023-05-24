@@ -390,6 +390,10 @@
 		obscured |= ITEM_SLOT_GLOVES
 	if(hidden_slots & HIDEWRISTS)
 		obscured |= ITEM_SLOT_WRISTS
+	if(hidden_slots & HIDEPANTS)
+		obscured |= ITEM_SLOT_PANTS
+	if(hidden_slots & HIDEOVERSUIT)
+		obscured |= ITEM_SLOT_OVERSUIT
 	if(hidden_slots & HIDEJUMPSUIT)
 		obscured |= ITEM_SLOT_ICLOTHING
 	if(hidden_slots & HIDESHOES)

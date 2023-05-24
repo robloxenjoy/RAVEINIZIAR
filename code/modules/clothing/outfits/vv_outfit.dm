@@ -23,6 +23,10 @@
 			gloves = item_path
 		if(ITEM_SLOT_WRISTS)
 			wrists = item_path
+		if(ITEM_SLOT_PANTS)
+			pants = item_path
+		if(ITEM_SLOT_OVERSUIT)
+			oversuit = item_path
 		if(ITEM_SLOT_FEET)
 			shoes = item_path
 		if(ITEM_SLOT_HEAD)

@@ -106,6 +106,14 @@
 	if(wear_suit && !(obscured & ITEM_SLOT_OCLOTHING) && !(wear_suit.item_flags & EXAMINE_SKIP) && !(wear_suit.item_flags & ABSTRACT))
 		. += "[t_He] [t_is] wearing <b>[wear_suit.get_examine_string(user)]</b>."
 
+	//pants
+	if(pants && !(obscured & ITEM_SLOT_PANTS) && !(pants.item_flags & EXAMINE_SKIP) && !(pants.item_flags & ABSTRACT))
+		. += "[t_He] [t_is] wearing <b>[pants.get_examine_string(user)] on [t_his] legs.</b>."
+
+	//oversuit
+	if(oversuit && !(obscured & ITEM_SLOT_OVERSUIT) && !(oversuit.item_flags & EXAMINE_SKIP) && !(oversuit.item_flags & ABSTRACT))
+		. += "[t_He] [t_is] wearing <b>[oversuit.get_examine_string(user)]</b>."
+
 	//back
 	if(back && !(obscured & ITEM_SLOT_BACKPACK) && !(back.item_flags & EXAMINE_SKIP) && !(back.item_flags & ABSTRACT))
 		. += "[t_He] [t_has] <b>[back.get_examine_string(user)]</b> on [t_his] back."

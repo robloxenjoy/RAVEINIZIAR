@@ -399,6 +399,53 @@ There are several things that need to be remembered:
 
 	apply_overlay(SUIT_LAYER)
 
+/mob/living/carbon/human/update_inv_oversuit()
+	remove_overlay(OVERSUIT_LAYER)
+
+	if(client && hud_used)
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_OVERSUIT) + 1]
+		inv.update_appearance()
+
+	if(istype(oversuit, /obj/item/clothing/oversuit))
+		oversuit.screen_loc = ui_oversuit
+		if(client && hud_used?.hud_shown)
+			if(hud_used.inventory_shown)
+				client.screen += oversuit
+		update_observer_view(oversuit,1)
+		overlays_standing[OVERSUIT_LAYER] = oversuit.build_worn_icon(default_layer = OVERSUIT_LAYER, default_icon_file = 'icons/mob/clothing/oversuit.dmi')
+		var/mutable_appearance/oversuit_overlay = overlays_standing[OVERSUIT_LAYER]
+		if(OFFSET_OVERSUIT in dna.species.offset_features)
+			oversuit.pixel_x += dna.species.offset_features[OFFSET_OVERSUIT][1]
+			oversuit.pixel_y += dna.species.offset_features[OFFSET_OVERSUIT][2]
+		overlays_standing[OVERSUIT_LAYER] = oversuit_overlay
+	update_hair()
+	update_mutant_bodyparts()
+
+	apply_overlay(OVERSUIT_LAYER)
+
+/mob/living/carbon/human/update_inv_pants()
+	remove_overlay(PANTS_LAYER)
+
+	if(client && hud_used)
+		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_PANTS) + 1]
+		inv.update_appearance()
+
+	if(istype(pants, /obj/item/clothing/pants))
+		pants.screen_loc = ui_pants
+		if(client && hud_used?.hud_shown)
+			if(hud_used.inventory_shown)
+				client.screen += pants
+		update_observer_view(pants,1)
+		overlays_standing[PANTS_LAYER] = pants.build_worn_icon(default_layer = PANTS_LAYER, default_icon_file = 'icons/mob/clothing/pants.dmi')
+		var/mutable_appearance/pants_overlay = overlays_standing[PANTS_LAYER]
+		if(OFFSET_PANTS in dna.species.offset_features)
+			pants.pixel_x += dna.species.offset_features[OFFSET_PANTS][1]
+			pants.pixel_y += dna.species.offset_features[OFFSET_PANTS][2]
+		overlays_standing[PANTS_LAYER] = pants_overlay
+	update_hair()
+	update_mutant_bodyparts()
+
+	apply_overlay(PANTS_LAYER)
 
 /mob/living/carbon/human/update_inv_pockets()
 	if(client && hud_used)

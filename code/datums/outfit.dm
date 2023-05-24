@@ -85,6 +85,12 @@
 	//Type path of item to go in wrists slot
 	var/wrists = null
 
+	//Type path of item to go in pants slot
+	var/pants = null
+
+	//Type path of item to go in oversuit slot
+	var/oversuit = null
+
 	/// Any clothing accessory item
 	var/accessory = null
 
@@ -177,6 +183,10 @@
 		H.equip_to_slot_or_del(new gloves(H),ITEM_SLOT_GLOVES, TRUE)
 	if(wrists)
 		H.equip_to_slot_or_del(new wrists(H),ITEM_SLOT_WRISTS, TRUE)
+	if(pants)
+		H.equip_to_slot_or_del(new pants(H),ITEM_SLOT_PANTS, TRUE)
+	if(oversuit)
+		H.equip_to_slot_or_del(new oversuit(H),ITEM_SLOT_OVERSUIT, TRUE)
 	if(shoes)
 		H.equip_to_slot_or_del(new shoes(H),ITEM_SLOT_FEET, TRUE)
 	if(head)
@@ -331,7 +341,7 @@
 
 /// Return a list of all the types that are required to disguise as this outfit type
 /datum/outfit/proc/get_chameleon_disguise_info()
-	var/list/types = list(uniform, suit, back, belt, gloves, shoes, head, mask, neck, ears, glasses, id, l_pocket, r_pocket, suit_store, r_hand, l_hand, wrists)
+	var/list/types = list(uniform, suit, back, belt, gloves, shoes, head, mask, neck, ears, glasses, id, l_pocket, r_pocket, suit_store, r_hand, l_hand, wrists, pants, oversuit)
 	types += chameleon_extras
 	types += skillchips
 	list_clear_nulls(types)
@@ -349,6 +359,8 @@
 	.["belt"] = belt
 	.["gloves"] = gloves
 	.["wrists"] = wrists
+	.["pants"] = pants
+	.["oversuit"] = oversuit
 	.["shoes"] = shoes
 	.["head"] = head
 	.["mask"] = mask
@@ -378,6 +390,8 @@
 	belt = target.belt
 	gloves = target.gloves
 	wrists = target.wrists
+	pants = target.pants
+	oversuit = target.oversuit
 	shoes = target.shoes
 	head = target.head
 	mask = target.mask
@@ -418,6 +432,8 @@
 	belt = text2path(outfit_data["belt"])
 	gloves = text2path(outfit_data["gloves"])
 	wrists = text2path(outfit_data["wrists"])
+	pants = text2path(outfit_data["pants"])
+	oversuit = text2path(outfit_data["oversuit"])
 	shoes = text2path(outfit_data["shoes"])
 	head = text2path(outfit_data["head"])
 	mask = text2path(outfit_data["mask"])

@@ -87,6 +87,8 @@ export const OutfitEditor = (props, context) => {
               <OutfitSlot name="Left Hand" icon="hand-paper" slot="l_hand" />
               <OutfitSlot name="Right Hand" icon="hand-paper" slot="r_hand" />
               <OutfitSlot name="Wrists" icon="hand-paper" slot="wrists" />
+              <OutfitSlot name="Pants" icon="hand-paper" slot="pants" />
+              <OutfitSlot name="Oversuit" icon="hand-paper" slot="oversuit" />
             </Stack>
             <Stack mb={2}>
               <OutfitSlot name="Shoes" icon="socks" slot="shoes" />

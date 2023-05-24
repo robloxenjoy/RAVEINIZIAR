@@ -228,6 +228,9 @@
 /obj/structure/fluff/narrator/akt/farm
 	desc = "A wooden pole, there's a sign that says... Berries grow here. Don't steal them!"
 
+/obj/structure/fluff/narrator/akt/infirmary
+	desc = "A wooden pole, there's a sign that says... Infirmary. Here you can be healed."
+
 /obj/structure/fluff/narrator/akt/controller
 	desc = "A wooden pole, there's a sign that says... Palace of the controller - the owner of this village. Listen to him! "
 

@@ -31,7 +31,7 @@
 
 /obj/item/clothing/suit/armor/vest/chainmail/steel
 	name = "Steel Chainmail Armor"
-	desc = "Armor made of steel rings. Uuroboros-rings."
+	desc = "Armor made of steel rings. Ouroboros-rings."
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
 	icon_state = "steel_chainmail"
 	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
@@ -47,7 +47,7 @@
 	integrity_failure = 0.1
 	limb_integrity = 450
 	repairable_by = /obj/item/stack/ballistic
-	armor = list(MELEE = 0, \
+	armor = list(MELEE = 1, \
 				BULLET = 0, \
 				LASER = 0, \
 				ENERGY = 20, \

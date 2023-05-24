@@ -24,6 +24,10 @@
 			return gloves
 		if(ITEM_SLOT_WRISTS)
 			return wrists
+		if(ITEM_SLOT_PANTS)
+			return pants
+		if(ITEM_SLOT_OVERSUIT)
+			return oversuit
 		if(ITEM_SLOT_HEAD)
 			return head
 		if(ITEM_SLOT_FEET)
@@ -93,6 +97,16 @@
 				return
 			wrists = I
 			update_inv_wrists()
+		if(ITEM_SLOT_PANTS)
+			if(pants)
+				return
+			pants = I
+			update_inv_pants()
+		if(ITEM_SLOT_OVERSUIT)
+			if(oversuit)
+				return
+			oversuit = I
+			update_inv_oversuit()
 		if(ITEM_SLOT_FEET)
 			if(shoes)
 				return

@@ -51,6 +51,8 @@
 			burning_items += burned.w_uniform
 		if(burned.wear_suit)
 			burning_items += burned.wear_suit
+		if(burned.oversuit)
+			burning_items += burned.oversuit
 
 		//ARMS & HANDS//
 		var/obj/item/clothing/arm_clothes = null
@@ -73,6 +75,8 @@
 			leg_clothes = burned.wear_suit
 		else if(burned.w_uniform && ((burned.w_uniform.body_parts_covered & FEET) || (burned.w_uniform.body_parts_covered & LEGS)))
 			leg_clothes = burned.w_uniform
+		if(burned.pants)
+			burning_items += burned.pants
 		if(leg_clothes)
 			burning_items |= leg_clothes
 
@@ -702,6 +706,34 @@
 		log_combat(user, target, "attempted to [attack_verb], no effect")
 		return FALSE
 
+	if(target.stat == CONSCIOUS)
+		if(target.combat_mode)
+			if(target.dodge_parry != DP_PARRY)
+				return
+			if(target.usable_hands < target.default_num_hands)
+				return
+			if(target.next_move > world.time)
+				return
+			if(target.pulledby)
+				return
+			if(target == user)
+				return
+			var/empty_indexes = target.get_empty_held_indexes()
+			if(length(empty_indexes) < 2)
+				return
+			var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
+			if(dicerollll >= DICE_SUCCESS)
+				target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
+								span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
+								span_hear("I hear a swoosh!"), \
+								COMBAT_MESSAGE_RANGE, \
+								user)
+				to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
+				target.changeNext_move(CLICK_CD_GRABBING)
+				target.adjustFatigueLoss(5)
+				playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 60, TRUE)
+				return FALSE
+
 	target.lastattacker = user.real_name
 	target.lastattackerckey = user.ckey
 	user.dna.species.spec_unarmedattacked(user, target)
@@ -747,26 +779,6 @@
 							span_hear("I hear a sickening sound of flesh hitting flesh!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
-
-	if(target.stat != CONSCIOUS)
-		if(target.combat_mode)
-			if(target.dodge_parry != DP_PARRY)
-				return
-			if(target.usable_hands < target.default_num_hands)
-				return
-			if(target.next_move > world.time)
-				return
-			var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
-			if(dicerollll >= DICE_SUCCESS)
-				target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
-								span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
-								span_hear("I hear a swoosh!"), \
-								COMBAT_MESSAGE_RANGE, \
-								user)
-				to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
-				target.changeNext_move(CLICK_CD_GRABBING)
-				playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 60, TRUE)
-				return FALSE
 
 	log_combat(user, target, "[attack_verb]")
 	SEND_SIGNAL(target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)

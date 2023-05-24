@@ -61,6 +61,12 @@
 /mob/proc/update_inv_wrists()
 	return
 
+/mob/proc/update_inv_pants()
+	return
+
+/mob/proc/update_inv_oversuit()
+	return
+
 /mob/proc/update_inv_glasses()
 	return
 

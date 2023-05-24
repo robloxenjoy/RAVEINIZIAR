@@ -297,22 +297,20 @@
 			hand_clothes = w_uniform
 		if(gloves && (gloves.body_parts_covered & HANDS))
 			hand_clothes = gloves
+		if(wrists && (wrists.body_parts_covered & HANDS))
+			hand_clothes = wrists
 		if(wear_suit && (wear_suit.body_parts_covered & HANDS))
 			hand_clothes = wear_suit
 		if(hand_clothes)
 			torn_items |= hand_clothes
 
-	//WRISTS//
-	if(!def_zone || (def_zone in list(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND)))
-		var/obj/item/clothing/wrists_clothes = null
-		if(wrists && (wrists.body_parts_covered & HANDS))
-			wrists_clothes = wrists
-		if(w_uniform && (w_uniform.body_parts_covered & HANDS))
-			wrists_clothes = w_uniform
-		if(wear_suit && (wear_suit.body_parts_covered & HANDS))
-			wrists_clothes = wear_suit
-		if(wrists_clothes)
-			torn_items |= wrists_clothes
+	//OVERSUIT//
+	if(!def_zone || (def_zone == BODY_ZONE_CHEST))
+		var/obj/item/clothing/oversuit_clothes = null
+		if(oversuit && (oversuit.body_parts_covered & CHEST))
+			oversuit_clothes = oversuit
+		if(oversuit_clothes)
+			torn_items |= oversuit_clothes
 
 	//LEGS//
 	if(!def_zone || (def_zone in list(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)))
@@ -323,6 +321,8 @@
 			leg_clothes = w_uniform
 		if(wear_suit && (wear_suit.body_parts_covered & LEGS))
 			leg_clothes = wear_suit
+		if(pants && (pants.body_parts_covered & LEGS))
+			leg_clothes = pants
 		if(leg_clothes)
 			torn_items |= leg_clothes
 
@@ -674,6 +674,7 @@
 			//Point blank, very hard to miss
 			if(dist <= 1)
 				dist_modifier +=  10
+/*
 				if(body_position == STANDING_UP)
 					if(stat != CONSCIOUS)
 						return
@@ -686,6 +687,7 @@
 						if(dicerollll >= DICE_FAILURE)
 							src.visible_message(span_pinkdang("[src] flips weapon of [hitting_projectile.firer] to [hitting_projectile.firer]!"))
 							hitting_projectile.on_hit(hitting_projectile.firer, 100, def_zone, piercing_hit)
+*/
 			//There is some distance between us
 			else
 				//Source for this calculation: I made it up

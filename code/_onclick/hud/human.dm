@@ -426,6 +426,24 @@
 	inv_box.hud = src
 	upper_inventory += inv_box
 
+	inv_box = new /atom/movable/screen/inventory()
+	inv_box.name = "pants"
+	inv_box.icon = ui_style
+	inv_box.icon_state = "pants"
+	inv_box.screen_loc = ui_pants
+	inv_box.slot_id = ITEM_SLOT_PANTS
+	inv_box.hud = src
+	upper_inventory += inv_box
+
+	inv_box = new /atom/movable/screen/inventory()
+	inv_box.name = "oversuit"
+	inv_box.icon = ui_style
+	inv_box.icon_state = "oversuit"
+	inv_box.screen_loc = ui_oversuit
+	inv_box.slot_id = ITEM_SLOT_OVERSUIT
+	inv_box.hud = src
+	upper_inventory += inv_box
+
 	//SEPTIC EDIT END
 
 	inv_box = new /atom/movable/screen/inventory()
@@ -709,6 +727,12 @@
 		if(H.gloves)
 			H.gloves.screen_loc = ui_gloves
 			screenmob.client.screen += H.gloves
+		if(H.pants)
+			H.pants.screen_loc = ui_pants
+			screenmob.client.screen += H.pants
+		if(H.oversuit)
+			H.oversuit.screen_loc = ui_oversuit
+			screenmob.client.screen += H.oversuit
 		/* SEPTIC EDIT REMOVAL
 		if(H.ears)
 			H.ears.screen_loc = ui_ears
@@ -749,6 +773,8 @@
 		//SEPTIC EDIT END
 		if(H.shoes) screenmob.client.screen -= H.shoes
 		if(H.gloves) screenmob.client.screen -= H.gloves
+		if(H.pants) screenmob.client.screen -= H.pants
+		if(H.oversuit) screenmob.client.screen -= H.oversuit
 		/* SEPTIC EDIT REMOVAL
 		if(H.ears) screenmob.client.screen -= H.ears
 		if(H.glasses) screenmob.client.screen -= H.glasses

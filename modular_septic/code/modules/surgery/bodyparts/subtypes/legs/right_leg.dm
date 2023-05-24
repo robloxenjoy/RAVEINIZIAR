@@ -63,3 +63,11 @@
 	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_R_LEG)
 	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_R_LEG))
 	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_R_LEG), .proc/on_owner_paralysis_gain)
+
+/obj/item/bodypart/r_leg/drop_limb(special = FALSE, dismembered = FALSE, ignore_child_limbs = FALSE, destroyed = FALSE, wounding_type = WOUND_SLASH)
+	var/mob/living/carbon/C = owner
+	. = ..()
+	if(C && !special)
+		if(C.pants)
+			C.dropItemToGround(C.pants, TRUE)
+		C.update_inv_pants()

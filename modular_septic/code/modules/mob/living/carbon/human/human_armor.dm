@@ -38,6 +38,8 @@
 							s_store, \
 							glasses, \
 							wrists, \
+							pants, \
+							oversuit, \
 							ears, \
 							ears_extra, \
 							wear_id, \

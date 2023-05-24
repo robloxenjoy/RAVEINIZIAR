@@ -138,6 +138,8 @@
 								spawned.head, \
 								spawned.gloves, \
 								spawned.wrists, \
+								spawned.pants, \
+								spawned.oversuit, \
 								spawned.shoes, \
 								spawned.glasses, \
 								spawned.wear_id, \
@@ -172,6 +174,8 @@
 								spawned.glasses, \
 								spawned.wear_id, \
 								spawned.wrists, \
+								spawned.pants, \
+								spawned.oversuit, \
 								spawned.r_store, \
 								spawned.l_store, \
 								spawned.s_store, \

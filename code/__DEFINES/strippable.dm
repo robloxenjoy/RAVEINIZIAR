@@ -17,6 +17,8 @@
 #define STRIPPABLE_ITEM_LHAND "left_hand"
 #define STRIPPABLE_ITEM_RHAND "right_hand"
 #define STRIPPABLE_ITEM_WRISTS "wrists"
+#define STRIPPABLE_ITEM_PANTS "pants"
+#define STRIPPABLE_ITEM_OVERSUIT "oversuit"
 #define STRIPPABLE_ITEM_HANDCUFFS "handcuffs"
 #define STRIPPABLE_ITEM_LEGCUFFS "legcuffs"
 #define STRIPPABLE_ITEM_CORGI_COLLAR "corgi_collar"

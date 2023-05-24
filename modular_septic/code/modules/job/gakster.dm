@@ -72,6 +72,7 @@
 	name = "Venturer Uniform"
 
 	uniform = /obj/item/clothing/under/venturerclassic
+	pants = /obj/item/clothing/pants/venturer
 	r_pocket = /obj/item/shard/crystal/blue
 	var/venturer_type = ""
 //	id = /obj/item/cellphone
@@ -120,7 +121,9 @@
 		if(4)
 			venturer_type = "venturervillageowner"
 			neck = /obj/item/clothing/neck/noble_cloak
-			uniform = /obj/item/clothing/under/rank/captain/zoomtech
+//			uniform = /obj/item/clothing/under/rank/captain/zoomtech
+			uniform = /obj/item/clothing/under/aktraiment
+			pants = /obj/item/clothing/pants/aktliver
 			r_pocket = /obj/item/shard/crystal/purple
 			glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
 			belt = /obj/item/knife/combat/goldenmisericorde
@@ -198,6 +201,7 @@
 	name = "Chaot Uniform"
 
 	uniform = /obj/item/clothing/under/venturerclassic
+	pants = /obj/item/clothing/pants/venturer
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/chaotic
 	r_pocket = /obj/item/shard/crystal/green
 	id = /obj/item/keycard/chaot
@@ -235,6 +239,7 @@
 	name = "Akt Liver Uniform"
 
 	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
 	r_pocket = /obj/item/keycard/akt/lair
 //	r_pocket = /obj/item/shit
 //	id = /obj/item/cellphone
@@ -271,6 +276,7 @@
 	name = "Akt Assertor Uniform"
 
 	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
 	r_pocket = /obj/item/keycard/akt/hut
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel

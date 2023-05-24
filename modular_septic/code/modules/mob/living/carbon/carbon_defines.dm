@@ -88,6 +88,10 @@
 	var/obj/item/clothing/ears_extra = null
 	/// Wrists slot
 	var/obj/item/clothing/gloves/wrists/wrists = null
+	/// Pants slot
+	var/obj/item/clothing/pants/pants = null
+	/// Oversuit slot
+	var/obj/item/clothing/oversuit/oversuit = null
 
 	// ~INJURY PENALTIES
 	/// Timer for injury penalty, should reset if we take more damage

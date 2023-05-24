@@ -509,6 +509,8 @@
 		"ears" = ITEM_SLOT_LEAR,
 		"ears_extra" = ITEM_SLOT_REAR,
 		"wrists" = ITEM_SLOT_WRISTS,
+		"pants" = ITEM_SLOT_PANTS,
+		"oversuit" = ITEM_SLOT_OVERSUIT,
 		"wear_id" = ITEM_SLOT_ID,
 		"s_store" = ITEM_SLOT_SUITSTORE,
 	)

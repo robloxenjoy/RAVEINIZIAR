@@ -542,6 +542,8 @@
 		"inventory-hand_l.png" = 'icons/ui_icons/inventory/hand_l.png',
 		"inventory-hand_r.png" = 'icons/ui_icons/inventory/hand_r.png',
 		"inventory-wrists.png" = 'icons/ui_icons/inventory/wrists.png',
+		"inventory-pants.png" = 'icons/ui_icons/inventory/pants.png',
+		"inventory-oversuit.png" = 'icons/ui_icons/inventory/oversuit.png',
 		"inventory-shoes.png" = 'icons/ui_icons/inventory/shoes.png',
 		"inventory-suit_storage.png" = 'icons/ui_icons/inventory/suit_storage.png',
 		"inventory-id.png" = 'icons/ui_icons/inventory/id.png',

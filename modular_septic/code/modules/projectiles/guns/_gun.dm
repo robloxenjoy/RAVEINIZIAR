@@ -59,11 +59,11 @@
 	/// Aiming bonus that gets added in target_specific_diceroll, on stage 0
 	var/stage_zero_aim_bonus = 0
 	/// Aiming bonus that gets added in target_specific_diceroll, on stage 1
-	var/stage_one_aim_bonus = 0
+	var/stage_one_aim_bonus = 1
 	/// Aiming bonus that gets added in target_specific_diceroll, on stage 2
-	var/stage_two_aim_bonus = 0
+	var/stage_two_aim_bonus = 2
 	/// Aiming bonus that gets added in target_specific_diceroll, on stage 3
-	var/stage_three_aim_bonus = 0
+	var/stage_three_aim_bonus = 3
 
 	/// NO FULL AUTO IN BUILDINGS!
 	var/full_auto = FALSE

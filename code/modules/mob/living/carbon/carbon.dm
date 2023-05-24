@@ -1196,6 +1196,14 @@
 		update_inv_wrists()
 		. = TRUE
 
+	if(pants && !(obscured & ITEM_SLOT_PANTS) && pants.wash(clean_types))
+		update_inv_pants()
+		. = TRUE
+
+	if(oversuit && !(obscured & ITEM_SLOT_OVERSUIT) && oversuit.wash(clean_types))
+		update_inv_oversuit()
+		. = TRUE
+
 /// if any of our bodyparts are bleeding
 /mob/living/carbon/proc/is_bleeding()
 	for(var/i in bodyparts)

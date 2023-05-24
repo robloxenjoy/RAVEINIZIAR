@@ -219,6 +219,18 @@ const SLOTS: Record<
     gridSpot: getGridSpotKey([3, 3]),
     image: "inventory-wrists.png",
   },
+
+  pants: {
+    displayName: "pants",
+    gridSpot: getGridSpotKey([3, 4]),
+    image: "inventory-pants.png",
+  },
+
+  oversuit: {
+    displayName: "oversuit",
+    gridSpot: getGridSpotKey([2, 0]),
+    image: "inventory-oversuit.png",
+  },
 };
 
 enum ObscuringLevel {

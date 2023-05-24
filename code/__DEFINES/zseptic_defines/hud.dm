@@ -98,9 +98,9 @@
 
 //Pop-up inventory
 #define ui_shoes "WEST,SOUTH"
-#define ui_iclothing "WEST+1,SOUTH"
+#define ui_iclothing "WEST+1,SOUTH+1"
 #define ui_oclothing "WEST+2,SOUTH"
-#define ui_gloves "WEST+3,SOUTH"
+#define ui_gloves "WEST+3,SOUTH+1"
 #define ui_mask "WEST+4,SOUTH"
 #define ui_head "WEST+5,SOUTH"
 #define ui_id "WEST+6,SOUTH"
@@ -109,11 +109,13 @@
 #define ui_back "WEST+9,SOUTH"
 #define ui_storage2 "WEST+10,SOUTH" //right pocket
 #define ui_storage1 "WEST+13,SOUTH" //left pocket
-#define ui_neck "WEST,SOUTH+1"
-#define ui_glasses "WEST+1,SOUTH+1"
-#define ui_ears "WEST+2,SOUTH+1"
-#define ui_ears_extra "WEST+3,SOUTH+1"
-#define ui_wrists "WEST+4,SOUTH+1"
+#define ui_neck "WEST+4,SOUTH+1"
+#define ui_glasses "WEST+5,SOUTH+1"
+#define ui_ears "WEST+6,SOUTH+1"
+#define ui_ears_extra "WEST+7,SOUTH+1"
+#define ui_wrists "WEST+3,SOUTH"
+#define ui_pants "WEST+1,SOUTH"
+#define ui_oversuit "WEST+2,SOUTH+1"
 
 //Generic living
 #define ui_living_pull "EAST-1:28,CENTER-3:15"

@@ -26,6 +26,10 @@
 			return gloves
 		if(ITEM_SLOT_WRISTS)
 			return wrists
+		if(ITEM_SLOT_PANTS)
+			return pants
+		if(ITEM_SLOT_OVERSUIT)
+			return oversuit
 		if(ITEM_SLOT_HEAD)
 			return head
 		if(ITEM_SLOT_FEET)
@@ -54,6 +58,8 @@
 		wear_suit,
 		gloves,
 		wrists,
+		pants,
+		oversuit,
 		shoes,
 		belt,
 		wear_id,
@@ -129,6 +135,16 @@
 				return
 			wrists = I
 			update_inv_wrists()
+		if(ITEM_SLOT_PANTS)
+			if(pants)
+				return
+			pants = I
+			update_inv_pants()
+		if(ITEM_SLOT_OVERSUIT)
+			if(oversuit)
+				return
+			oversuit = I
+			update_inv_oversuit()
 		if(ITEM_SLOT_FEET)
 			if(shoes)
 				return
@@ -255,6 +271,14 @@
 		wrists = null
 		if(!QDELETED(src))
 			update_inv_wrists()
+	else if(I == pants)
+		pants = null
+		if(!QDELETED(src))
+			update_inv_pants()
+	else if(I == oversuit)
+		oversuit = null
+		if(!QDELETED(src))
+			update_inv_oversuit()
 	else if(I == belt)
 		belt = null
 		if(!QDELETED(src))

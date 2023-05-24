@@ -28,11 +28,11 @@
 	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 3)
 	carry_weight = 400 GRAMS
 	can_adjust = FALSE
-	body_parts_covered = NECK|CHEST|VITALS|GROIN|LEGS
+	body_parts_covered = NECK|CHEST|VITALS
 
 /obj/item/clothing/under/aktraiment
 	name = "\proper Raiment"
-	desc = "Clothing made from the skin of a non-wild Paxlya larva. A little tight."
+	desc = "Clothing made from the leather of a non-wild Paxlya larva. A little tight."
 	icon = 'modular_septic/icons/obj/clothing/under/itobe.dmi'
 	icon_state = "akt"
 	worn_icon = 'modular_septic/icons/mob/clothing/under/itobe.dmi'
@@ -45,7 +45,7 @@
 	armor = list(MELEE = 2, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 10, ACID = 10, WOUND = 2)
 	carry_weight = 300 GRAMS
 	can_adjust = FALSE
-	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	body_parts_covered = CHEST|VITALS
 
 /obj/item/clothing/under/venturerlong
 	name = "\proper Blue Clothes"

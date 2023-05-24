@@ -188,6 +188,10 @@
 			options = typesof(/obj/item/clothing/shoes)
 		if("wrists")
 			options = typesof(/obj/item/clothing/gloves/wrists)
+		if("pants")
+			options = typesof(/obj/item/clothing/pants)
+		if("oversuit")
+			options = typesof(/obj/item/clothing/oversuit)
 		if("r_pocket")
 			choose_any_item(slot)
 
