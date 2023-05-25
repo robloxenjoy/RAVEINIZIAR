@@ -30,7 +30,7 @@
 "aD" = (/turf/closed/wall/bluegreen,/area/maintenance/polovich/forest)
 "aE" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest)
 "aF" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/forest)
-"aG" = (/obj/effect/landmark/tendance,/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/medical/spawned)
+"aG" = (/obj/effect/landmark/tendance,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/medical/spawned)
 "aH" = (/obj/structure/barricade/flora/crystal/blue,/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/maintenance/polovich/forest/rain)
 "aI" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest/rain)
 "aJ" = (/obj/structure/newgrille,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest)

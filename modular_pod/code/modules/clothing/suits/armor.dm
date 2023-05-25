@@ -10,7 +10,7 @@
 	inhand_icon_state = "infiltrator"
 	armor = null
 	body_parts_covered = NECK|CHEST|VITALS|GROIN
-	slot_flags = ITEM_SLOT_SUIT|ITEM_SLOT_OVERSUIT
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
 				EDGE_PROTECTION = 30, \
 				CRUSHING = 22, \
