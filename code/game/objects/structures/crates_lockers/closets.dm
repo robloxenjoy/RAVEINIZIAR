@@ -182,11 +182,12 @@
 		. += span_notice("It's welded shut.")
 	if(anchored)
 		. += span_notice("It is <b>bolted</b> to the ground.")
+/*
 	if(opened)
 		. += span_notice("The parts are <b>welded</b> together.")
 	else if(secure && !opened)
 		. += span_notice("Right-click to [locked ? "unlock" : "lock"].")
-
+*/
 	if(HAS_TRAIT(user, TRAIT_SKITTISH) && divable)
 		. += span_notice("If you bump into [p_them()] while running, you will jump inside.")
 

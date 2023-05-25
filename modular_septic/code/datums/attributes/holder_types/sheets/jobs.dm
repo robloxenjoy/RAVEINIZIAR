@@ -829,6 +829,40 @@
 		SKILL_ACROBATICS = -3,
 	)
 
+//venturer thief
+/datum/attribute_holder/sheet/job/venturerthief
+	attribute_variance = list(
+		STAT_STRENGTH = list(-1, 2),
+		STAT_ENDURANCE = list(-1, 2),
+		STAT_DEXTERITY = list(-1, 5),
+		STAT_INTELLIGENCE = list(-1, 3),
+		SKILL_BRAWLING = list(-1, 10),
+		SKILL_WRESTLING = list(-1, 2),
+		SKILL_SMG = list(-1, 1),
+		SKILL_PISTOL = list(-1, 1),
+		SKILL_RAPIER = list(-1, 1),
+		SKILL_SHORTSWORD = list(-1, 1),
+		SKILL_THROWING = list(5, 8),
+		SKILL_PICKPOCKET = list(-3, 2),
+		SKILL_LOCKPICKING = list(5, 15),
+		SKILL_SCIENCE = list(-2, 0),
+		SKILL_ACROBATICS = list(2, 10),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 3,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
 //village owner
 /datum/attribute_holder/sheet/job/venturervillageowner
 	attribute_variance = list(

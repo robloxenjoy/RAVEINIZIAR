@@ -87,8 +87,6 @@
 	strip_delay = 20
 	equip_delay_other = 40
 	body_parts_covered = GROIN|LEGS
-	slowdown = 5
-	var/needBelt = TRUE
 
 /obj/item/clothing/pants/worn_overlays(mutable_appearance/standing, isinhands = FALSE)
 	. = ..()
@@ -128,20 +126,26 @@
 		var/mob/M = loc
 		M.update_inv_pants()
 
-/obj/item/clothing/pants/proc/equipped(datum/source, mob/equipper, slot)
+/*
+/obj/item/clothing/pants/equipped(datum/source, mob/equipper, slot)
 	. = ..()
 
 	if(slot != ITEM_SLOT_PANTS)
 		return
-	
+
 	if(equipper.get_item_by_slot(ITEM_SLOT_BELT))
 		var/obj/item/equipped_item = equipper.get_item_by_slot(ITEM_SLOT_BELT)
-		if(equipped_item == /obj/item/storage/belt)
-			slowdown = 0
+		if(istype(equipped_item, /obj/item/storage/belt))
+			var/obj/item/storage/belt/belter = equipped_item
+			if(belter.realBelt)
+				slowdown = 0
+		else
+			slowdown = 5
 
 /obj/item/clothing/pants/dropped(mob/living/user)
 	. = ..()
 	slowdown = 5
+*/
 
 /obj/item/clothing/pants/venturer
 	name = "Blue Pants"

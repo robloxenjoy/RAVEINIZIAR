@@ -38,6 +38,7 @@
 	body_parts_covered = NECK|CHEST|ARMS
 	cold_protection = NECK|CHEST|ARMS
 	heat_protection = NECK|CHEST|ARMS
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
 	armor = list(MELEE = 4, \
 				BULLET = 4, \
 				LASER = 0, \
@@ -46,6 +47,31 @@
 				BIO = 0, \
 				FIRE = 25, \
 				ACID = 50, \
+				WOUND = 1)
+
+/obj/item/clothing/neck/darkproject
+	name = "Dark Cloak"
+	desc = "Black, slightly torn cloak. Wearing this, people will definitely avoid you."
+	icon = 'modular_pod/icons/obj/clothing/neck.dmi'
+	icon_state = "darkproject"
+	worn_icon = 'modular_pod/icons/mob/clothing/neck.dmi'
+	worn_icon_state = "darkproject"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "ordinator_cloak"
+	strip_delay = 20
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	heat_protection = CHEST|ARMS
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
+	armor = list(MELEE = 4, \
+				BULLET = 4, \
+				LASER = 0, \
+				ENERGY = 5, \
+				BOMB = 0, \
+				BIO = 0, \
+				FIRE = 10, \
+				ACID = 5, \
 				WOUND = 1)
 
 /obj/item/clothing/neck/leather_cloak
@@ -62,6 +88,7 @@
 	body_parts_covered = NECK|CHEST|ARMS
 	cold_protection = NECK|CHEST|ARMS
 	heat_protection = NECK|CHEST|ARMS
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
 	armor = list(MELEE = 3, \
 				BULLET = 3, \
 				LASER = 0, \
@@ -86,6 +113,7 @@
 	body_parts_covered = NECK|CHEST|ARMS
 	cold_protection = NECK|CHEST|ARMS
 	heat_protection = NECK|CHEST|ARMS
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
 	armor = list(MELEE = 2, \
 				BULLET = 2, \
 				LASER = 0, \

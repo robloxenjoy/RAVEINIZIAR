@@ -20,7 +20,7 @@
 	/// Dismantled state, related to deconstruction.
 	var/dismantle_state = INTACT
 
-
+/*
 /turf/closed/wall/r_wall/deconstruction_hints(mob/user)
 	switch(dismantle_state)
 		if(INTACT)
@@ -37,7 +37,7 @@
 			return span_notice("The bolts anchoring the support rods have been <i>loosened</i>, but are still <b>welded</b> firmly to the girder.")
 		if(SHEATH)
 			return span_notice("The support rods have been <i>sliced through</i>, and the outer sheath is <b>connected loosely</b> to the girder.")
-
+*/
 /turf/closed/wall/r_wall/devastate_wall()
 	new sheet_type(src, sheet_amount)
 	new /obj/item/stack/sheet/iron(src, 2)

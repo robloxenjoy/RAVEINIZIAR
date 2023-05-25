@@ -25,7 +25,6 @@
 				MAGIC = 0, \
 				WOUND = 3, \
 				ORGAN = 5)
-	body_parts_covered = CHEST|GROIN|VITALS|NECK
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	strip_delay = 90
 
@@ -46,6 +45,7 @@
 	max_integrity = 500
 	integrity_failure = 0.1
 	limb_integrity = 450
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	repairable_by = /obj/item/stack/ballistic
 	armor = list(MELEE = 1, \
 				BULLET = 0, \

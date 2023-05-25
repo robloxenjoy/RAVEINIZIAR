@@ -88,7 +88,7 @@
 
 /datum/outfit/venturer/pre_equip(mob/living/carbon/human/H)
 	..()
-	var/result = rand(1, 7)
+	var/result = rand(1, 9)
 	switch(result)
 		if(1)
 			venturer_type = "woodcutter"
@@ -149,7 +149,7 @@
 			belt = /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt
 			to_chat(H, span_achievementinteresting("I am the leader of the bandits!"))
 			to_chat(H, span_info("I need to find other bandits, and maybe start something insidious."))
-		
+
 		if(8)
 			venturer_type = "venturergoer"
 			l_pocket = /obj/item/food/gelatine/mesopelagic
@@ -157,6 +157,15 @@
 			belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 			to_chat(H, span_achievementinteresting("I am a goer!"))
 			to_chat(H, span_info("I came here by solicitation!"))
+
+		if(9)
+			venturer_type = "venturerthief"
+			neck = /obj/item/clothing/neck/darkproject
+			l_hand = /obj/item/lamp/self_lit
+			if(prob(75))
+				glasses = /obj/item/clothing/glasses/sunglasses/sungrasses
+			to_chat(H, span_achievementinteresting("I am a thief!"))
+			to_chat(H, span_info("Well, shall we begin?"))
 
 /datum/outfit/venturer/equip(mob/living/carbon/human/H)
 	..()
@@ -176,6 +185,8 @@
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 	if(venturer_type == "venturergoer")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturergoer)
+	if(venturer_type == "venturerthief")
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturerthief)
 
 /datum/job/chaot
 	title = "Chaot"

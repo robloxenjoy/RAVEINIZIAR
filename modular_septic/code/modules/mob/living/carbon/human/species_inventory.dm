@@ -55,10 +55,7 @@
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_BELT)
-			var/obj/item/bodypart/O = H.get_bodypart_nostump(check_zone(BODY_ZONE_PRECISE_GROIN))
-			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
-				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [I.name]!"))
+			if(!H.get_bodypart_nostump(check_zone(BODY_ZONE_PRECISE_GROIN)))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_EYES)
@@ -81,9 +78,9 @@
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_ID)
 			var/obj/item/bodypart/O = H.get_bodypart_nostump(check_zone(BODY_ZONE_CHEST))
-			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
+			if(!H.pants && (!O || O.status != BODYPART_ROBOTIC))
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [I.name]!"))
+					to_chat(H, span_warning("You need pants before you can attach this [I.name]!"))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_LPOCKET)
@@ -92,9 +89,9 @@
 			if(H.l_store) // no pocket swaps at all
 				return FALSE
 			var/obj/item/bodypart/O = H.get_bodypart_nostump(check_zone(BODY_ZONE_L_LEG))
-			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
+			if(!H.pants && (!O || O.status != BODYPART_ROBOTIC))
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can pocket this [I.name]!"))
+					to_chat(H, span_warning("You need pants before you can pocket this [I.name]!"))
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_RPOCKET)
@@ -103,9 +100,9 @@
 			if(H.r_store)
 				return FALSE
 			var/obj/item/bodypart/O = H.get_bodypart_nostump(check_zone(BODY_ZONE_R_LEG))
-			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
+			if(!H.pants && (!O || O.status != BODYPART_ROBOTIC))
 				if(!disable_warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can pocket this [I.name]!"))
+					to_chat(H, span_warning("You need pants before you can pocket this [I.name]!"))
 				return FALSE
 			return TRUE
 		if(ITEM_SLOT_SUITSTORE)

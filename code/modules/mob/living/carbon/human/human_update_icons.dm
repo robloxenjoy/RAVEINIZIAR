@@ -412,7 +412,7 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)
 				client.screen += oversuit
 		update_observer_view(oversuit,1)
-		overlays_standing[OVERSUIT_LAYER] = oversuit.build_worn_icon(default_layer = OVERSUIT_LAYER, default_icon_file = 'icons/mob/clothing/oversuit.dmi')
+		overlays_standing[OVERSUIT_LAYER] = oversuit.build_worn_icon(default_layer = OVERSUIT_LAYER, default_icon_file = 'modular_pod/icons/mob/clothing/oversuit.dmi')
 		var/mutable_appearance/oversuit_overlay = overlays_standing[OVERSUIT_LAYER]
 		if(OFFSET_OVERSUIT in dna.species.offset_features)
 			oversuit.pixel_x += dna.species.offset_features[OFFSET_OVERSUIT][1]
@@ -436,7 +436,7 @@ There are several things that need to be remembered:
 			if(hud_used.inventory_shown)
 				client.screen += pants
 		update_observer_view(pants,1)
-		overlays_standing[PANTS_LAYER] = pants.build_worn_icon(default_layer = PANTS_LAYER, default_icon_file = 'icons/mob/clothing/pants.dmi')
+		overlays_standing[PANTS_LAYER] = pants.build_worn_icon(default_layer = PANTS_LAYER, default_icon_file = 'modular_pod/icons/mob/clothing/pants.dmi')
 		var/mutable_appearance/pants_overlay = overlays_standing[PANTS_LAYER]
 		if(OFFSET_PANTS in dna.species.offset_features)
 			pants.pixel_x += dna.species.offset_features[OFFSET_PANTS][1]

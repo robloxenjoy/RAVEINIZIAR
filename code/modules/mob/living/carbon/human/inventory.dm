@@ -229,8 +229,6 @@
 				dropItemToGround(l_store, TRUE)
 			if(wear_id)
 				dropItemToGround(wear_id)
-			if(belt)
-				dropItemToGround(belt)
 		w_uniform = null
 		update_suit_sensors()
 		if(!QDELETED(src))
@@ -272,13 +270,22 @@
 		if(!QDELETED(src))
 			update_inv_wrists()
 	else if(I == pants)
+		if(invdrop)
+			if(r_store)
+				dropItemToGround(r_store, TRUE)
+			if(l_store)
+				dropItemToGround(l_store, TRUE)
+			if(wear_id)
+				dropItemToGround(wear_id)
 		pants = null
 		if(!QDELETED(src))
 			update_inv_pants()
+//			update_inv_wear_suit()
 	else if(I == oversuit)
 		oversuit = null
 		if(!QDELETED(src))
 			update_inv_oversuit()
+//			update_inv_pants()
 	else if(I == belt)
 		belt = null
 		if(!QDELETED(src))

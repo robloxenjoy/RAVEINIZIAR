@@ -326,6 +326,13 @@
 						if(victim.wear_suit)
 							victim.wear_suit.add_mob_blood(victim)
 							victim.update_inv_wear_suit()
+						if(victim.oversuit)
+							victim.oversuit.add_mob_blood(victim)
+							victim.update_inv_oversuit()
+						if(victim.pants)
+							victim.pants.add_mob_blood(victim)
+							victim.update_inv_pants()
+
 						if(victim.w_uniform)
 							victim.w_uniform.add_mob_blood(victim)
 							victim.update_inv_w_uniform()
@@ -708,31 +715,25 @@
 
 	if(target.stat == CONSCIOUS)
 		if(target.combat_mode)
-			if(target.dodge_parry != DP_PARRY)
-				return
-			if(target.usable_hands < target.default_num_hands)
-				return
-			if(target.next_move > world.time)
-				return
-			if(target.pulledby)
-				return
-			if(target == user)
-				return
-			var/empty_indexes = target.get_empty_held_indexes()
-			if(length(empty_indexes) < 2)
-				return
-			var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
-			if(dicerollll >= DICE_SUCCESS)
-				target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
-								span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
-								span_hear("I hear a swoosh!"), \
-								COMBAT_MESSAGE_RANGE, \
-								user)
-				to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
-				target.changeNext_move(CLICK_CD_GRABBING)
-				target.adjustFatigueLoss(5)
-				playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 60, TRUE)
-				return FALSE
+			if(target.dodge_parry == DP_PARRY)
+				if(target.usable_hands >= target.default_num_hands)
+					if(target.next_move < world.time)
+						if(!target.pulledby)
+							if(target != user)
+								var/empty_indexes = target.get_empty_held_indexes()
+								if(length(empty_indexes) >= 2)
+									var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
+									if(dicerollll >= DICE_SUCCESS)
+										target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
+													span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
+													span_hear("I hear a swoosh!"), \
+													COMBAT_MESSAGE_RANGE, \
+													user)
+									to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
+									target.changeNext_move(CLICK_CD_GRABBING)
+									target.adjustFatigueLoss(5)
+									playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 60, TRUE)
+									return FALSE
 
 	target.lastattacker = user.real_name
 	target.lastattackerckey = user.ckey
@@ -972,18 +973,22 @@
 	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL)
 	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
 		if(affected.get_incision(FALSE))
-			affected.open_incision()
-			for(var/obj/item/organ/bone/bonee as anything in affected.getorganslotlist(ORGAN_SLOT_BONE))
-				if(!bonee.is_broken())
-					victim.visible_message(span_pinkdang("[user]'s [weapon] incised [victim]'s [affected]!"), \
-										span_pinkdang("[user]'s [weapon] incised my [affected]!"), \
-										span_hear("I hear the sound of flesh being penetrated."))
-					playsound(get_turf(victim), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
-				else
-					victim.visible_message(span_pinkdang("[user]'s [weapon] dissected [victim]'s [affected]!"), \
-										span_pinkdang("[user]'s [weapon] dissected my [affected]!"), \
-										span_hear("I hear the sound of flesh being penetrated."))
-					playsound(get_turf(victim), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
+			var/edge_protection = 0
+			edge_protection = victim.get_edge_protection(affected)
+			edge_protection = max(0, edge_protection - weapon.edge_protection_penetration)
+			if(edge_protection <= 0)
+				affected.open_incision()
+				for(var/obj/item/organ/bone/bonee as anything in affected.getorganslotlist(ORGAN_SLOT_BONE))
+					if(!bonee.is_broken())
+						victim.visible_message(span_pinkdang("[user]'s [weapon] incised [victim]'s [affected]!"), \
+											span_pinkdang("[user]'s [weapon] incised my [affected]!"), \
+											span_hear("I hear the sound of flesh being penetrated."))
+						playsound(get_turf(victim), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
+					else
+						victim.visible_message(span_pinkdang("[user]'s [weapon] dissected [victim]'s [affected]!"), \
+											span_pinkdang("[user]'s [weapon] dissected my [affected]!"), \
+											span_hear("I hear the sound of flesh being penetrated."))
+						playsound(get_turf(victim), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
 			return TRUE
 		return FALSE
 	return FALSE
