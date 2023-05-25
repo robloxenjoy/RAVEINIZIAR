@@ -39,11 +39,11 @@ SUBSYSTEM_DEF(droning)
 	var/list/new_droning = list()
 	new_droning |= area_entered.droning_sound
 	if(HAS_TRAIT(entering.mob, TRAIT_LEAN))
-		new_droning = list('modular_septic/sound/insanity/lean.ogg', 100)
+		new_droning = list('modular_septic/sound/insanity/lean.ogg')
 	if(HAS_TRAIT(entering.mob, TRAIT_BLOODARN))
-		new_droning = list('modular_pod/sound/mus/deadcats.ogg', 100)
+		new_droning = list('modular_pod/sound/mus/deadcats.ogg')
 	if(HAS_TRAIT(entering.mob, TRAIT_CHUNG))
-		new_droning = list('modular_pod/sound/mus/chungus_curse.ogg', 100)
+		new_droning = list('modular_pod/sound/mus/chungus_curse.ogg')
 	//Same ambience, don't bother
 	if(last_droning ~= new_droning)
 		return
