@@ -390,7 +390,9 @@
 		if(!crazy)
 			L.apply_damage(trap_damage, BRUTE, def_zone)
 		else
-			L.apply_damage(rand(35, 50), BRUTE, def_zone)
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
+				L.apply_damage((rand(45, 50) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, def_zone)
 
 /**
  * # Energy snare
