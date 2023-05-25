@@ -48,7 +48,21 @@
 				FIRE = 25, \
 				ACID = 50, \
 				WOUND = 1)
+/*
+/obj/item/clothing/neck/bear_cloak/equipped(datum/source, mob/equipper, slot)
+	. = ..()
 
+	if(slot == ITEM_SLOT_OVERSUIT)
+		icon = 'modular_pod/icons/obj/clothing/oversuit.dmi'
+		icon_state = "bear_cloak"
+		worn_icon = 'modular_pod/icons/mob/clothing/oversuit.dmi'
+		worn_icon_state = "bear_cloak"
+	else
+		icon = 'modular_pod/icons/obj/clothing/neck.dmi'
+		icon_state = "bear_cloak"
+		worn_icon = 'modular_pod/icons/mob/clothing/neck.dmi'
+		worn_icon_state = "bear_cloak"
+*/
 /obj/item/clothing/neck/darkproject
 	name = "Dark Cloak"
 	desc = "Black, slightly torn cloak. Wearing this, people will definitely avoid you."

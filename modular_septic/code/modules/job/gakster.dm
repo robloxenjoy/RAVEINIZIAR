@@ -162,6 +162,8 @@
 			venturer_type = "venturerthief"
 			neck = /obj/item/clothing/neck/darkproject
 			l_hand = /obj/item/lamp/self_lit
+			r_pocket = /obj/item/akt/lockpick/square
+			l_pocket = /obj/item/akt/lockpick/triangle
 			if(prob(75))
 				glasses = /obj/item/clothing/glasses/sunglasses/sungrasses
 			to_chat(H, span_achievementinteresting("I am a thief!"))

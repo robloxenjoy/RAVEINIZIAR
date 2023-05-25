@@ -488,7 +488,7 @@
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_OVERSUIT) + 1]
 		inv.update_appearance()
 
-	if(istype(oversuit, /obj/item/clothing/oversuit))
+	if(istype(oversuit, /obj/item/clothing))
 		oversuit.screen_loc = ui_oversuit
 		if(client && hud_used?.hud_shown)
 			if(hud_used.inventory_shown)
