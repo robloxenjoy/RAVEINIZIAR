@@ -560,7 +560,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 5, "shroom" = 3, "stump" = 4, "treelong" = 4, "groundcrystals" = 2, "goldishincrementum" = 2, "crystal" = 1, "ygro" = 1, "chaosbush" = 2, "statuekas" = 1, "beartrap" = 1, "nothing" = 60))
+		var/state = pick_weight(list("crystalbush" = 5, "shroom" = 3, "stump" = 4, "treelong" = 4, "groundcrystals" = 2, "goldishincrementum" = 2, "crystal" = 1, "ygro" = 1, "chaosbush" = 2, "statuekas" = 0.5, "beartrap" = 1, "nothing" = 60))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
