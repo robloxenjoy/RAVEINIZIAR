@@ -5,7 +5,7 @@
 /datum/mind/New()
 	. = ..()
 	if(SSmapping.config?.combat_map)
-		var/combat_music = 'modular_septic/sound/music/combat/erotikon.ogg'
+		combat_music = 'modular_septic/sound/music/combat/erotikon.ogg'
 
 /datum/mind/give_uplink(silent, datum/antagonist/antag_datum)
 	if(!current)
