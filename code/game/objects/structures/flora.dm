@@ -489,6 +489,19 @@
 	if((berries > 0) && berry_type)
 		. += "[berry_type]_berries"
 
+/obj/structure/flora/ausbushes/crystal/dark/ComponentInitialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/shag,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/flora/ausbushes/crystal/dark/proc/shag(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+	if(!isliving(AM))
+		return
+	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
 /obj/structure/flora/ausbushes/crystal/dark/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(.)
