@@ -21,6 +21,8 @@
 		"member_public" = MEMBER_PUBLIC,
 		"sound_adminhelp" = SOUND_ADMINHELP,
 		"sound_ambience" = SOUND_AMBIENCE,
+		"sound_ship_ambience" = SOUND_SHIP_AMBIENCE,
+		"sound_music_ambience" = SOUND_MUSIC_AMBIENCE,
 		"sound_announcements" = SOUND_ANNOUNCEMENTS,
 		"sound_combatmode" = SOUND_COMBATMODE,
 		"sound_endofround" = SOUND_ENDOFROUND,
@@ -28,7 +30,6 @@
 		"sound_lobby" = SOUND_LOBBY,
 		"sound_midi" = SOUND_MIDI,
 		"sound_prayers" = SOUND_PRAYERS,
-		"sound_ship_ambience" = SOUND_SHIP_AMBIENCE,
 		"split_admin_tabs" = SPLIT_ADMIN_TABS,
 	)
 

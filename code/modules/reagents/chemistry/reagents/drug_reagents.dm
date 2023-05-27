@@ -490,9 +490,9 @@
 	if(DT_PROB(2.5, delta_time))
 		to_chat(psychonaut, span_horny("[feel]"))
 
-	ADD_TRAIT(psychonaut, TRAIT_BLOODARN, name)
+	ADD_TRAIT(psychonaut, TRAIT_BLOODARN, "[type]")
 	psychonaut.attributes?.add_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
-	SSdroning.area_entered(get_area(psychonaut), psychonaut?.client)
+	psychonaut.client?.play_area_droning(get_area(psychonaut), psychonaut)
 	to_chat(psychonaut, span_horny(span_big("I am fucked!")))
 
 /datum/reagent/drug/mushroomhallucinogen/on_mob_end_metabolize(mob/living/psychonaut)
@@ -502,9 +502,9 @@
 	var/atom/movable/plane_master_controller/game_plane_master_controller = psychonaut.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 	game_plane_master_controller.remove_filter("rainbow")
 	psychonaut.clear_fullscreen("fuuuck")
-	REMOVE_TRAIT(psychonaut, TRAIT_BLOODARN, name)
+	REMOVE_TRAIT(psychonaut, TRAIT_BLOODARN, "[type]")
 	psychonaut.attributes?.remove_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
-	SSdroning.play_area_sound(get_area(psychonaut), psychonaut?.client)
+	psychonaut.client?.play_area_droning(get_area(psychonaut), psychonaut)
 
 /datum/reagent/drug/blastoff
 	name = "bLaSToFF"

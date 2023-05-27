@@ -93,6 +93,6 @@
 	if(eater.can_heartattack())
 		eater.set_heartattack(TRUE)
 //		eater.send_naxyu()
-		SSdroning.kill_droning(eater.client)
+		eater.client?.kill_droning(eater.client.current_droning_sound)
 		var/mob/dead/new_player/M = new /mob/dead/new_player()
 		M.ckey = eater.ckey

@@ -8,7 +8,9 @@
 	var/country = DEFAULT_CLIENT_COUNTRY
 	/// Political compass datum
 	var/datum/political_compass/political_compass
-	/// Used by the area music system to avoid repeating tracks
-	var/last_droning_sound
+	/// Used by the area music system to avoid repeating tracks from the start. Associative list, file = time paused (deciseconds).
+	var/list/droning_sounds
+	/// Last droning sound file played, used so we don't try to update tracks when we don't have to
+	var/current_droning_file
 	/// Current ambient track
-	var/sound/droning_sound
+	var/sound/current_droning_sound

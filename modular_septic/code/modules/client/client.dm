@@ -41,12 +41,12 @@
 	. = ..()
 	if(mob)
 		broadcast_connection(connection_string = "disconnected from the server")
+	droning_sounds = null
+	QDEL_NULL(current_droning_sound)
 	QDEL_NULL(political_compass)
 	QDEL_NULL(attribute_editor)
 	QDEL_NULL(nobody_wants_to_learn_matrix_math)
 //	QDEL_NULL(particool)
-	QDEL_NULL(droning_sound)
-	last_droning_sound = null
 
 /client/proc/broadcast_connection(connection_string = "connected to the server")
 	var/bling_bling = prefs?.donator_rank
@@ -99,3 +99,19 @@
 	for(var/list/funny_list as anything in .)
 		if(LAZYACCESS(funny_list, "rank"))
 			return funny_list["rank"]
+
+/client/proc/area_entered(area/area_entered, mob/entering)
+	if(isliving(entering))
+		var/mob/living/living_entering = entering
+		if(living_entering.combat_mode)
+			return
+	play_area_droning(area_entered, entering)
+
+/client/proc/combat_mode_activated(mob/combatant)
+	play_combat_droning(combatant)
+
+/client/proc/combat_mode_deactivated(mob/combatant)
+	kill_droning(current_droning_sound)
+	var/area/current_area = get_area(combatant)
+	if(current_area)
+		play_area_droning(current_area, combatant)

@@ -3,10 +3,10 @@
 	if(!QDELETED(src))
 		update_shock()
 	if(.)
+		set_combat_mode(FALSE, TRUE)
 		if(client)
 			if(deathsound_local)
 				SEND_SOUND(client, deathsound_local)
-			SSdroning.kill_droning(client)
 
 /mob/living/revive(full_heal, admin_revive, excess_healing)
 	. = ..()
