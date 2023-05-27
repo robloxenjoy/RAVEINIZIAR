@@ -108,7 +108,7 @@
 
 	//pants
 	if(pants && !(obscured & ITEM_SLOT_PANTS) && !(pants.item_flags & EXAMINE_SKIP) && !(pants.item_flags & ABSTRACT))
-		. += "[t_He] [t_is] wearing <b>[pants.get_examine_string(user)] on [t_his] legs.</b>."
+		. += "[t_He] [t_is] wearing <b>[pants.get_examine_string(user)]</b> on [t_his] legs."
 
 	//oversuit
 	if(oversuit && !(obscured & ITEM_SLOT_OVERSUIT) && !(oversuit.item_flags & EXAMINE_SKIP) && !(oversuit.item_flags & ABSTRACT))
