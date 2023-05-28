@@ -222,13 +222,6 @@
 				update_inv_w_uniform()
 			update_inv_wear_suit()
 	else if(I == w_uniform)
-		if(invdrop)
-			if(r_store)
-				dropItemToGround(r_store, TRUE) //Again, makes sense for pockets to drop.
-			if(l_store)
-				dropItemToGround(l_store, TRUE)
-			if(wear_id)
-				dropItemToGround(wear_id)
 		w_uniform = null
 		update_suit_sensors()
 		if(!QDELETED(src))
