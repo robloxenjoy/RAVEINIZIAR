@@ -55,7 +55,7 @@
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_BELT)
-			if(!H.get_bodypart_nostump(check_zone(BODY_ZONE_PRECISE_GROIN)))
+			if(!H.pants || !H.get_bodypart_nostump(check_zone(BODY_ZONE_PRECISE_GROIN)))
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_EYES)
