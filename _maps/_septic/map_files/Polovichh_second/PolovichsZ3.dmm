@@ -110,7 +110,7 @@
 "cf" = (/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/forest)
 "cg" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/forest)
 "ch" = (/turf/open/floor/plating/polovich/tilefloor,/area/maintenance/polovich/forest)
-"ci" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/forest)
+"ci" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/armor/vest/leatherbreastt,/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/forest)
 "cj" = (/obj/effect/turf_decal/siding/wood/corner{dir = 4},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest)
 "ck" = (/obj/effect/turf_decal/siding/wood/corner,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest)
 "cl" = (/obj/effect/turf_decal/siding/wood,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest)
@@ -169,8 +169,6 @@
 "dm" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/maintenance/polovich/forest)
 "dn" = (/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest)
 "do" = (/turf/open/floor/low_wall/reinforced/window,/area/maintenance/polovich/forest)
-"dp" = (/obj/structure/closet/cabinet,/obj/item/clothing/under/venturerlong,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest)
-"dq" = (/obj/structure/closet/cabinet,/obj/item/clothing/under/venturerlong,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/forest)
 "dr" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
 "ds" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
 "dt" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/kapec,/area/maintenance/polovich/forest)
@@ -287,7 +285,7 @@
 "fA" = (/obj/machinery/door/keycard/denominator/podozl/akt/hut{dir = 8},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
 "fB" = (/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/forest)
 "fC" = (/obj/machinery/door/keycard/denominator/podozl/akt/hut,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
-"fD" = (/obj/structure/closet/secure_closet/security,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
+"fD" = (/obj/structure/closet/secure_closet/security,/obj/item/clothing/head/helmet/golden/full,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
 "fE" = (/obj/structure/lampwall/service{dir = 4; putout = 0},/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/forest)
 "fF" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/forest)
 "fG" = (/turf/open/floor/plating/polovich/temnoo/ten,/area/maintenance/polovich/forest)
@@ -304,7 +302,7 @@
 "fR" = (/obj/machinery/light/red/flickering/directional/east,/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/forest)
 "fS" = (/obj/structure/closet/secure_closet/security,/obj/item/melee/bita/macecircle,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
 "fT" = (/obj/structure/fluff/statueiron/seond,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
-"fU" = (/obj/structure/closet/secure_closet/security,/obj/item/reagent_containers/glass/bottle/potions/berryjuice,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
+"fU" = (/obj/structure/closet/secure_closet/security,/obj/item/reagent_containers/glass/bottle/potions/berryjuice,/obj/item/clothing/head/helmet/silver/full,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest)
 "fV" = (/obj/structure/closet/crate,/turf/open/floor/plating/polovich/temnoo/six,/area/maintenance/polovich/forest)
 
 (1,1,1) = {"
@@ -335,13 +333,13 @@ afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagag
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafagagagagagagagagagagagagagafafdKaacWdKafafagagagagagagagagagagagagagagagagajajajcRajajajcBcBcBcBcBcBcBcBcBcBcBcBcBcBafafafafafafaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafafafafafafafafafafafagagagafafapeVapapafafagagagagagagagagagagagagagagagagajajamanamajajafafafafafafafafafafafafafafafafafafafafaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafafafafafafafafafafafafagagafafapapapapafafafafagagagagagagagagagagagagagagaoaoamamamaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaf
-afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdGcWdKababafafafafafdOdOdOdOeVcWafafagagagagagagagagagagagagagagaoccccccccccccaoaoaoaoaodpaodpaodpaodpaodpaoaoaoaoaoaoaf
+afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdGcWdKababafafafafafdOdOdOdOeVcWafafagagagagagagagagagagagagagagaoccccccccccccaoaoaoaoaocOaocOaocOaocOaocOaoaoaoaoaoaoaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdGesdKdKabffapapcxapapapapdOeVcWcWafagagagagagagagagagagagagagagaoccccccccccccaoaoaoaoaodrdrdrdrdrdrdrdrdraoaoaoaoaoaoaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagetetetetetdOabfhfPapapapapdOeVcWcWafafagagagagagagagagagagagagagaoccccccccccccaoaoaoaoaocOcOcOcOcOcOcOcOcOaoaoaoaoaoaoaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdKdKeteueudOdOdOdOdOdOdOdOdOeVcZcWeVafagagagagagagagagagagagagagaoccccccccccdncUdnehehehdududududududududncUdncOcOaoaoaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagetdKeteuapapdOfifPdOapababdOeVdaeVeVafagagagagagagagagagagagagagaoccccccccccccaoaoaoaoaoehehehehehehehehehaoaoaoduaoaoaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagageteteteuapfgdOapcxdOapababdOeVabeVafafafafafafafafafafafafafafafaoccccdnccccccaoaoaoaoaodrdrdrdrdrdrdrdrdraoaoaoduaoaoaf
-afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdGesetaacMafafafafafababdOdOabdeabafafdeeUafafafafafafafafafafafaoaoaodfaoaoaoaoaoaoaoaodqaodqaodqaodqaodqaoaoaoduaoaoaf
+afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdGesetaacMafafafafafababdOdOabdeabafafdeeUafafafafafafafafafafafaoaoaodfaoaoaoaoaoaoaoaoehaoehaoehaoehaoehaoaoaoduaoaoaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdGetetaacMafafafafafapapeueudedeafafdedecTcTcTawawawcTcTcTcTafafaoaoaodnaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaodnaoaoaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagdGcWfeaaaaafafafafafapeueufjafafafcPdecTcTcTabawcTawawabababcTafaoaoaoduaoaoaoaoaoaoaoaoaoaoaoaoaoaoeyeyeyeyeyeydfeyeyaf
 afagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagafaLafbXbXafafafafafapeueueuceafabcTababawcTabdeeUcPcTabababeUafaoaoaoduaoaoaoaoaoaoaoaoaoaoaoaoaoaoeyewcccccOcOdncOeyaf
