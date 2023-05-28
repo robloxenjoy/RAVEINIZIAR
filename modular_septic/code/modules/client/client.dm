@@ -115,7 +115,7 @@
 
 /client/proc/combat_mode_deactivated(mob/combatant)
 	//combat music disabled
-	if(!(prefs?.toggles & SOUND_MUSIC_COMBAT)))
+	if(!(prefs?.toggles & SOUND_MUSIC_COMBAT))
 		return
 	kill_droning(current_droning_sound)
 	var/area/current_area = get_area(combatant)

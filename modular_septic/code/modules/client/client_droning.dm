@@ -22,7 +22,7 @@
 	if(!combatant)
 		return
 	//combat music disabled
-	if(!(prefs?.toggles & SOUND_MUSIC_COMBAT)))
+	if(!(prefs?.toggles & SOUND_MUSIC_COMBAT))
 		return
 	var/combat_music = combatant.mind?.combat_music
 	if(!combat_music)
