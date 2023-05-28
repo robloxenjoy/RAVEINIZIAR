@@ -151,6 +151,12 @@ export const sound_music_ambience: FeatureToggle = {
   component: CheckboxInput,
 };
 
+export const sound_music_combat: FeatureToggle = {
+  name: "Enable combat music",
+  category: "SOUND",
+  component: CheckboxInput,
+};
+
 export const split_admin_tabs: FeatureToggle = {
   name: "Split admin tabs",
   category: "ADMIN",

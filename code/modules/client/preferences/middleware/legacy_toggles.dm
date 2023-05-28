@@ -23,6 +23,7 @@
 		"sound_ambience" = SOUND_AMBIENCE,
 		"sound_ship_ambience" = SOUND_SHIP_AMBIENCE,
 		"sound_music_ambience" = SOUND_MUSIC_AMBIENCE,
+		"sound_music_combat" = SOUND_MUSIC_COMBAT,
 		"sound_announcements" = SOUND_ANNOUNCEMENTS,
 		"sound_combatmode" = SOUND_COMBATMODE,
 		"sound_endofround" = SOUND_ENDOFROUND,

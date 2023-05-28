@@ -2,19 +2,27 @@
 	if(!area_droning || !listener)
 		return
 	var/droning_file = pick(area_droning.droning_sound)
-	if(HAS_TRAIT(listener, TRAIT_LEAN))
-		droning_file = 'modular_septic/sound/insanity/lean.ogg'
-	/// Same file, don't bother
-	if(current_droning_file == droning_file)
-		return
 	var/droning_repeat = area_droning.droning_repeat
 	var/droning_wait = area_droning.droning_wait
 	var/droning_channel = area_droning.droning_channel
 	var/droning_volume = area_droning.droning_volume
+	/// This kind of sucks, todo improve this somehow idk
+	if(HAS_TRAIT(listener, TRAIT_LEAN))
+		droning_file = 'modular_septic/sound/insanity/lean.ogg'
+		droning_repeat = TRUE
+		droning_wait = 0
+		droning_channel = CHANNEL_AMBIENCE_MUSIC
+		droning_volume = 70
+	/// Same file, don't bother
+	if(current_droning_file == droning_file)
+		return
 	play_droning(FALSE, droning_file, droning_repeat, droning_wait, droning_channel, droning_volume)
 
 /client/proc/play_combat_droning(mob/combatant)
 	if(!combatant)
+		return
+	//combat music disabled
+	if(!(prefs?.toggles & SOUND_MUSIC_COMBAT)))
 		return
 	var/combat_music = combatant.mind?.combat_music
 	if(!combat_music)
@@ -25,7 +33,7 @@
 		return
 	play_droning(TRUE, combat_music, TRUE, 0, CHANNEL_AMBIENCE_MUSIC, 75)
 
-/client/proc/play_droning(is_combat = FALSE, droning_file, droning_repeat = TRUE, droning_wait = 0, droning_channel = CHANNEL_BUZZ, droning_volume = 75)
+/client/proc/play_droning(is_combat = FALSE, droning_file, droning_repeat = TRUE, droning_wait = 0, droning_channel = CHANNEL_AMBIENCE_MUSIC, droning_volume = 75)
 	if(!droning_file || (!is_combat && !(prefs?.toggles & SOUND_MUSIC_AMBIENCE)))
 		pause_droning(current_droning_sound)
 		return
@@ -70,8 +78,11 @@
 	pause_droning(current_droning_sound)
 	droning_sounds = null
 
-/client/proc/soundquery()
-	return SoundQuery()
-
+/**
+ * DEBUG PROCS DO NOT USE THEM FOR ANYTHING BUT DEBUGGING FOR THE LOVE OF GOD
+ */
 /client/proc/sendsound(sound/sent_sound)
 	SEND_SOUND(src, sent_sound)
+
+/client/proc/soundquery()
+	return SoundQuery()

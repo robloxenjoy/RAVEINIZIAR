@@ -108,9 +108,15 @@
 	play_area_droning(area_entered, entering)
 
 /client/proc/combat_mode_activated(mob/combatant)
+	//combat music disabled
+	if(!(prefs?.toggles & SOUND_MUSIC_COMBAT))
+		return
 	play_combat_droning(combatant)
 
 /client/proc/combat_mode_deactivated(mob/combatant)
+	//combat music disabled
+	if(!(prefs?.toggles & SOUND_MUSIC_COMBAT)))
+		return
 	kill_droning(current_droning_sound)
 	var/area/current_area = get_area(combatant)
 	if(current_area)
