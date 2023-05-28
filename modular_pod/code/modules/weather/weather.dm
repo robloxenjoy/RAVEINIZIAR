@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(weatherr)
 	var/starttime = 0
 	var/lasttime = 0
 	var/duration = 15000
-	var/cooldown = 30000
+	var/cooldown = 35000
 	var/list/wturfs = list()
 
 	var/list/thunder = list('sound/stalker/weather/thunder_1.ogg','sound/stalker/weather/thunder_2.ogg','sound/stalker/weather/thunder_3.ogg','sound/stalker/weather/thunder_4.ogg'\
@@ -183,7 +183,7 @@ SUBSYSTEM_DEF(weatherr)
 	rain.status = SOUND_STREAM
 	rain.file = 'sound/stalker/weather/new_rain2.ogg'
 	rain.repeat = 1
-	rain.volume = 50
+	rain.volume = 45
 	rain.falloff = 2
 //	rain.channel = SSchannels.CHANNEL_WEATHER(12)
 	rain.channel = CHANNEL_WEATHER

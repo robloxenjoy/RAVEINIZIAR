@@ -15,6 +15,6 @@
 
 	var/sound = pick(current_area.ambientsounds)
 
-	SEND_SOUND(to_process.mob, sound(sound, repeat = 0, wait = 0, volume = 20, channel = CHANNEL_AMBIENCE))
+	SEND_SOUND(to_process.mob, sound(sound, repeat = 0, wait = 0, volume = 15, channel = CHANNEL_AMBIENCE))
 
 	ambience_listening_clients[to_process] = world.time + rand(current_area.min_ambience_cooldown, current_area.max_ambience_cooldown)
