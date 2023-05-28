@@ -27,7 +27,7 @@
 	lean_monster.attributes?.add_attribute_modifier(/datum/attribute_modifier/lean, TRUE)
 	to_chat(lean_monster, span_warning("I feel myself stronger, so nice!"))
 	SEND_SIGNAL(lean_monster, COMSIG_ADD_MOOD_EVENT, "forbidden_sizzup", /datum/mood_event/lean, lean_monster)
-	lean_monster.client?.play_area_droning(get_area(lean_monster), lean_monster)
+	SSdroning.area_entered(get_area(lean_monster), lean_monster?.client)
 	lean_monster.playsound_local(lean_monster, 'modular_septic/sound/insanity/leanlaugh.wav', 50)
 
 	if(!lean_monster.hud_used)
@@ -74,7 +74,7 @@
 	filter_plate.remove_filter("lean_filter")
 	filter_plate.remove_filter("lean_blur")
 	REMOVE_TRAIT(lean_monster, TRAIT_LEAN, "[type]")
-	lean_monster.client?.play_area_droning(get_area(lean_monster), lean_monster)
+	SSdroning.play_area_sound(get_area(lean_monster), lean_monster?.client)
 
 /datum/reagent/drug/lean/proc/handle_lean_monster_hallucinations(mob/living/lean_monster)
 	if(!lean_monster)
@@ -185,10 +185,10 @@
 		to_chat(crack_addict, span_horny("[chun]"))
 	crack_addict.overlay_fullscreen("chungus", /atom/movable/screen/fullscreen/chungus)
 	ADD_TRAIT(crack_addict, TRAIT_CHUNG, "[type]")
-	crack_addict.client?.play_area_droning(get_area(crack_addict), crack_addict)
+	SSdroning.area_entered(get_area(crack_addict), crack_addict?.client)
 
 /datum/reagent/drug/chungusum/on_mob_end_metabolize(mob/living/crack_addict)
 	. = ..()
 	crack_addict.clear_fullscreen("chungus")
 	REMOVE_TRAIT(crack_addict, TRAIT_CHUNG, "[type]")
-	crack_addict.client?.play_area_droning(get_area(crack_addict), crack_addict)
+	SSdroning.play_area_sound(get_area(crack_addict), crack_addict?.client)

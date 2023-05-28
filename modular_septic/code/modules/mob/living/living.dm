@@ -5,11 +5,6 @@
 		LoadComponent(/datum/component/field_of_vision, fov_type, get_fov_angle(fov_type))
 	update_shadow()
 
-/mob/living/Login()
-	. = ..()
-	if(combat_mode)
-		client?.play_combat_droning(src)
-
 // Fluoride stare
 /mob/living/handle_eye_contact(mob/living/examined_mob)
 	if(!istype(examined_mob) || src == examined_mob || stat >= UNCONSCIOUS || examined_mob.stat >= UNCONSCIOUS)
@@ -179,16 +174,16 @@
 	if(hud_used?.action_intent)
 		hud_used.action_intent.update_appearance()
 	SEND_SIGNAL(src, COMSIG_LIVING_SET_COMBAT_MODE, new_mode, silent)
-	if(combat_mode)
-		client?.combat_mode_activated(src)
-	else
-		client?.combat_mode_deactivated(src)
 	if(silent)
 		return
 	if(combat_mode)
 		playsound_local(src, 'modular_septic/sound/interface/ui_toggle.ogg', 30, FALSE, pressure_affected = FALSE) //Sound from interbay!
+		if(mind?.combat_music)
+			SSdroning.play_combat_music(mind.combat_music, client)
 	else
 		playsound_local(src, 'modular_septic/sound/interface/ui_toggleoff.ogg', 30, FALSE, pressure_affected = FALSE) //Slightly modified version of the above
+		if(mind?.combat_music)
+			SSdroning.play_area_sound(get_area(src), client)
 
 /mob/living/set_lying_angle(new_lying)
 	if(new_lying == lying_angle)

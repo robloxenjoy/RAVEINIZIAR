@@ -492,7 +492,7 @@
 
 	ADD_TRAIT(psychonaut, TRAIT_BLOODARN, "[type]")
 	psychonaut.attributes?.add_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
-	psychonaut.client?.play_area_droning(get_area(psychonaut), psychonaut)
+	SSdroning.area_entered(get_area(psychonaut), psychonaut?.client)
 	to_chat(psychonaut, span_horny(span_big("I am fucked!")))
 
 /datum/reagent/drug/mushroomhallucinogen/on_mob_end_metabolize(mob/living/psychonaut)
@@ -504,7 +504,7 @@
 	psychonaut.clear_fullscreen("fuuuck")
 	REMOVE_TRAIT(psychonaut, TRAIT_BLOODARN, "[type]")
 	psychonaut.attributes?.remove_attribute_modifier(/datum/attribute_modifier/bloodarn, TRUE)
-	psychonaut.client?.play_area_droning(get_area(psychonaut), psychonaut)
+	SSdroning.play_area_sound(get_area(psychonaut), psychonaut?.client)
 
 /datum/reagent/drug/blastoff
 	name = "bLaSToFF"

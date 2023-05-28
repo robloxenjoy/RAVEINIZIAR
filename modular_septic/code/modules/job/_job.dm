@@ -99,12 +99,6 @@
 			GLOB.data_core.birthday_boys += spawned_human.real_name
 	// this needs to be reset to pick up the color from preferences
 	spawned.chat_color_name = ""
-	player_client.reset_all_droning()
-	var/area/current_area = get_area(spawned)
-	if(current_area)
-		player_client.play_area_droning(current_area, src)
-	if(spawned.combat_mode)
-		player_client.play_combat_droning(spawned)
 
 /datum/job/get_roundstart_spawn_point()
 	if(random_spawns_possible)

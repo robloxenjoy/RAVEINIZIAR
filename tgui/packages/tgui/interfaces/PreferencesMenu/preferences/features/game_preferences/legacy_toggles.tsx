@@ -139,20 +139,8 @@ export const sound_prayers: FeatureToggle = {
   component: CheckboxInput,
 };
 
-export const sound_ship_ambience: FeatureToggle = {
-  name: "Enable ship ambience",
-  category: "SOUND",
-  component: CheckboxInput,
-};
-
 export const sound_music_ambience: FeatureToggle = {
   name: "Enable ambient music",
-  category: "SOUND",
-  component: CheckboxInput,
-};
-
-export const sound_music_combat: FeatureToggle = {
-  name: "Enable combat music",
   category: "SOUND",
   component: CheckboxInput,
 };
