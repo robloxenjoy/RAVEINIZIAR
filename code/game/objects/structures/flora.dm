@@ -492,11 +492,11 @@
 /obj/structure/flora/ausbushes/crystal/dark/ComponentInitialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/shag,
+		COMSIG_ATOM_ENTERED = .proc/shaggg,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/structure/flora/ausbushes/crystal/dark/proc/shag(datum/source, atom/movable/AM)
+/obj/structure/flora/ausbushes/crystal/dark/proc/shaggg(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
