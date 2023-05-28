@@ -478,7 +478,7 @@
 	var/berry_type = null
 	var/berries = 0
 
-/obj/structure/flora/ausbushes/crystal/dark/Initialize()
+/obj/structure/flora/ausbushes/crystal/dark/Initialize(mapload)
 	. = ..()
 	icon_state = pick("blacknessbush1", "blacknessbush2", "blacknessbush3", "blacknessbush4")
 	berry_type = pick("red", "blue", "redd", "bluee", "purple", "blueee", "reddd", "purplee", "redddd")

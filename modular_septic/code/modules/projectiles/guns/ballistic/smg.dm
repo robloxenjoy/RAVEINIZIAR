@@ -206,7 +206,7 @@
 // KAKAKAKAKAKAKAKAKAKKAKAKAKAKAKAKA REALLYGOODCOMICS GUN I LOVE REALLYGOODCOMICS YES SIR I AM AN AIR MARSHAL
 /obj/item/gun/ballistic/automatic/remis/smg/bolsa
 	name = "\improper Bolsa R6 submachine gun"
-	desc = "An antique, compact submachine gun that is prohibited to civillians in many stations. Discontinued, but it still has It's strengths, that being the extendable stock and the size."
+	desc = "An antique, compact submachine gun that is prohibited to civillians in many places. Discontinued, but it still has It's strengths, that being the extendable stock and the size."
 	icon = 'modular_septic/icons/obj/items/guns/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/smg_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/guns/inhands/smg_righthand.dmi'

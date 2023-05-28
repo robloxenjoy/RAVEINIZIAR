@@ -106,6 +106,12 @@
 	grind_results = list(/datum/reagent/consumable/lifebloodjelly = 1)
 	food_reagents = list(/datum/reagent/consumable/lifebloodjelly= 1, /datum/reagent/toxin/pancuronium = 6)
 
+/obj/item/food/grown/lifebloodcherries/lie/examine(mob/user)
+	. = ..()
+	if(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) > ATTRIBUTE_MIDDLING)
+		if(prob(70))
+			. += "<span class='warning'>It's a lie berry...</span>"
+
 //Cherry Bulbs
 /obj/item/seeds/cherry/bulb
 	name = "pack of cherry bulb pits"

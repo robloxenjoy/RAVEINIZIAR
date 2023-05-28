@@ -15,7 +15,7 @@
 				EDGE_PROTECTION = 30, \
 				CRUSHING = 22, \
 				CUTTING = 24, \
-				PIERCING = 30, \
+				PIERCING = 10, \
 				IMPALING = 8, \
 				LASER = 7, \
 				ENERGY = 0, \
@@ -26,7 +26,38 @@
 				MAGIC = 0, \
 				WOUND = 3, \
 				ORGAN = 5)
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+	strip_delay = 90
+
+/obj/item/clothing/suit/armor/vest/leatherbreastt
+	name = "Leather Breast-armor"
+	desc = "Bull leather armor."
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	icon_state = "leathervestt"
+	worn_icon_state = "leathervestt"
+	inhand_icon_state = "infiltrator"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	body_parts_covered = CHEST|VITALS|GROIN
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 35, \
+				CRUSHING = 7, \
+				CUTTING = 25, \
+				PIERCING = 20, \
+				IMPALING = 10, \
+				LASER = 7, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 3, \
+				ACID = 3, \
+				MAGIC = 0, \
+				WOUND = 5, \
+				ORGAN = 3)
 	strip_delay = 90
 
 /obj/item/clothing/suit/armor/vest/chainmail/steel
