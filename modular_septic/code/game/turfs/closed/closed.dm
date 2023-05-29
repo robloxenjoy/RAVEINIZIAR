@@ -5,7 +5,7 @@
 	upper_frill_layer = ABOVE_MOB_LAYER
 	lower_frill_plane = GAME_PLANE_ABOVE_WINDOW
 	lower_frill_layer = ABOVE_DOOR_LAYER
-	var/powerwall = 5
+	var/powerwall = 10
 
 /turf/closed/on_rammed(mob/living/carbon/rammer)
 	rammer.ram_stun()
