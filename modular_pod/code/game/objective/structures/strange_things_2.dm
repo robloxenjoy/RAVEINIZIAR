@@ -114,6 +114,14 @@
 			crystal = FALSE
 			sound_hint()
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+	else if(istype(I, /obj/item/shard/crystal/purple))
+		if(crystalBlue)
+			new /obj/item/stupidbottles/bluebottle(get_turf(user))
+			qdel(I)
+			crystalBlue = FALSE
+			crystal = FALSE
+			sound_hint()
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 
 /obj/structure/beast/gargotor/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
