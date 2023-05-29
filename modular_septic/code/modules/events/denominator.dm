@@ -189,7 +189,7 @@
 						to_chat(user, span_steal("Here is strong lock!"))
 						return
 
-	if(istype(I, /obj/item/akt/lockpick/triangle))
+	if(istype(I, /obj/item/akt/lockpick/square/triangle))
 		if(density)
 			if(user.a_intent == INTENT_DISARM)
 				user.changeNext_move(CLICK_CD_GRABBING)
@@ -209,19 +209,19 @@
 						if(diceroll == DICE_SUCCESS)
 							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
 							user.changeNext_move(CLICK_CD_GRABBING)
-							var/obj/item/akt/lockpick/triangle/TR = I
+							var/obj/item/akt/lockpick/square/triangle/TR = I
 							TR.damageItem("MEDIUM")
 							open()
 							return
 						if(diceroll <= DICE_FAILURE)
 							src.visible_message(span_steal("[user] tried to lockpick [src], but failed!"),span_steal("You failed to lockpick [src]."), span_hear("You hear the sound of failed lockpicking."))
 							user.changeNext_move(CLICK_CD_GRABBING)
-							var/obj/item/akt/lockpick/triangle/TR = I
+							var/obj/item/akt/lockpick/square/triangle/TR = I
 							TR.damageItem("HARD")
 							sound_hint()
 							return
 
-	if(istype(I, /obj/item/akt/lockpick/prylock))
+	if(istype(I, /obj/item/akt/lockpick/square/prylock))
 		if(density)
 			if(user.a_intent == INTENT_DISARM)
 				if(lockstate == null)
@@ -232,7 +232,7 @@
 					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 					if(do_after(user, durationn*10, target=src))
 						lockstate = "READY_TO_CLUB"
-						var/obj/item/akt/lockpick/prylock/PR = I
+						var/obj/item/akt/lockpick/square/prylock/PR = I
 						PR.damageItem("HARD")
 						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
 						to_chat(user, span_steal("Now, I need a club to create some force..."))
@@ -241,7 +241,7 @@
 					to_chat(user, span_steal("Right now, need a club."))
 					return
 
-	if(istype(I, /obj/item/akt/lockpick/sawtooth))
+	if(istype(I, /obj/item/akt/lockpick/square/sawtooth))
 		if(density)
 			if(user.a_intent == INTENT_DISARM)
 				if(lockstate == null)
@@ -255,7 +255,7 @@
 					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 					if(do_after(user, durationn*10, target=src))
 						lockstate = "READY_TO_KNIFE"
-						var/obj/item/akt/lockpick/sawtooth/SA = I
+						var/obj/item/akt/lockpick/square/sawtooth/SA = I
 						SA.damageItem("HARD")
 						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
 						to_chat(user, span_steal("Now, I need a knife to create some force..."))
@@ -269,7 +269,7 @@
 					user.changeNext_move(3)
 					sound_hint()
 					src.visible_message(span_steal("[user] interesting lockpicks [src]!"),span_steal("You interesting lockpicking [src]."), span_hear("You hear the sound of lockpicking."))
-					var/obj/item/akt/lockpick/sawtooth/SA = I
+					var/obj/item/akt/lockpick/square/sawtooth/SA = I
 					SA.damageItem("SOFT")
 					user.adjustFatigueLoss(3)
 					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
@@ -411,16 +411,16 @@
 	tetris_width = 32
 	tetris_height = 32
 
-/obj/item/akt/lockpick/triangle
+/obj/item/akt/lockpick/square/triangle
 	name = "Triangle Lockpick"
 	icon_state = "lockpick_triangle"
 
-/obj/item/akt/lockpick/prylock
+/obj/item/akt/lockpick/square/prylock
 	name = "Pry Lockpick"
 	icon_state = "lockpick_prylocking"
 	durability = 60
 
-/obj/item/akt/lockpick/sawtooth
+/obj/item/akt/lockpick/square/sawtooth
 	name = "Sawtooth Lockpick"
 	icon_state = "lockpick_sawtooth"
 

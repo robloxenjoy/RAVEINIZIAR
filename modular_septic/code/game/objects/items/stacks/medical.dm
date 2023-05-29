@@ -293,6 +293,9 @@
 	if(prob(15))
 		affecting.painless_wound_roll(WOUND_ARTERY, 150, sharpness = SHARP_EDGED | SHARP_POINTY | SHARP_IMPALING)
 
+/obj/item/stack/medical/suture/one
+	amount = 1
+
 /obj/item/stack/medical/mesh
 	name = "hydrogel meshes"
 	singular_name = "hydrogel mesh"
@@ -337,6 +340,9 @@
 			return TRUE
 	to_chat(user, span_warning("<b>[C]</b>'s [affecting.name] can not be healed with [src]!"))
 	return FALSE
+
+/obj/item/stack/medical/mesh/one
+	amount = 1
 
 /obj/item/stack/medical/bone_gel
 	icon = 'modular_septic/icons/obj/items/stack_medical.dmi'
@@ -403,6 +409,9 @@
 
 /obj/item/stack/medical/splint/five
 	amount = 5
+
+/obj/item/stack/medical/splint/one
+	amount = 1
 
 /obj/item/stack/medical/splint/try_heal(mob/living/M, mob/user, silent)
 	var/obj/item/bodypart/limb = M.get_bodypart_nostump(check_zone(user.zone_selected))

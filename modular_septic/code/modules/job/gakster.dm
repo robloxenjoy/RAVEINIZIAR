@@ -258,16 +258,6 @@
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
 	r_pocket = /obj/item/keycard/akt/lair
-//	r_pocket = /obj/item/shit
-//	id = /obj/item/cellphone
-//	belt = /obj/item/crowbar
-//	l_pocket = /obj/item/simcard
-//	back = /obj/item/storage/backpack/satchel/itobe
-//	backpack_contents = list(
-//		/obj/item/reagent_containers/hypospray/medipen/retractible/blacktar = 1,
-//		/obj/item/flashlight/seclite = 1,
-//	)
-//	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/barhatki
 
 /datum/job/aktassertor
@@ -297,16 +287,122 @@
 	r_pocket = /obj/item/keycard/akt/hut
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
-//	r_pocket = /obj/item/shit
-//	id = /obj/item/cellphone
-//	belt = /obj/item/crowbar
-//	l_pocket = /obj/item/simcard
-//	back = /obj/item/storage/backpack/satchel/itobe
-//	backpack_contents = list(
-//		/obj/item/reagent_containers/hypospray/medipen/retractible/blacktar = 1,
-//		/obj/item/flashlight/seclite = 1,
-//	)
-//	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/barhatki
+
+/datum/job/aktgranger
+	title = "Akt Granger"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 6
+	spawn_positions = 6
+	supervisors = "living in Akt!"
+	selection_color = "#8e4a57"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/granger
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/granger
+	name = "Akt Granger Uniform"
+
+	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
+	r_pocket = /obj/item/keycard/akt/granger
+	suit = /obj/item/clothing/suit/armor/vest/leatherbreastt
+	shoes = /obj/item/clothing/shoes/barhatki
+
+/datum/job/aktcurer
+	title = "Akt Curer"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 6
+	spawn_positions = 6
+	supervisors = "living in Akt!"
+	selection_color = "#8e4a57"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/curer
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/curer
+	name = "Akt Curer Uniform"
+
+	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
+	r_pocket = /obj/item/keycard/akt/granger
+	neck /obj/item/clothing/neck/noble_cloak
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	shoes = /obj/item/clothing/shoes/barhatki
+
+/datum/job/aktgargohelper
+	title = "Akt Gargohelper"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 6
+	spawn_positions = 6
+	supervisors = "living in Akt!"
+	selection_color = "#8e4a57"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/gargohelper
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/gargohelper
+	name = "Akt Gargohelper Uniform"
+
+	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
+	glasses = /obj/item/clothing/glasses/itobe/sanfo
+	r_hand = /obj/item/crystal/green
+	r_pocket = /obj/item/keycard/akt/gargostore
+	shoes = /obj/item/clothing/shoes/barhatki
+
+/datum/job/aktcontroller
+	title = "Akt Controller"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "living in Akt!"
+	selection_color = "#8e4a57"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/controller
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/controller
+	name = "Akt Controller Uniform"
+
+	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
+	belt = /obj/item/changeable_attacks/slashstab/sabre/small/steel
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
+	neck = /obj/item/clothing/neck/noble_cloak
+	r_pocket = /obj/item/keycard/akt/controller
 	shoes = /obj/item/clothing/shoes/barhatki
 
 /*

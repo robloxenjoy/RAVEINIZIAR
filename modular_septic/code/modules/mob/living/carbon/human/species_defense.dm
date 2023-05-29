@@ -202,6 +202,7 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
+			victim.adjustFatigueLoss(5)
 			victim.sound_hint()
 			return FALSE
 		if(victim.check_dodge(user, damage, "<b>[user]</b>'s [weapon.name]", "my [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
@@ -209,6 +210,7 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
+			victim.adjustFatigueLoss(5)
 			victim.sound_hint()
 			return FALSE
 	//No bodypart? That means we missed - Theoretically, we should never miss attacking ourselves
@@ -417,6 +419,7 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
+			target.adjustFatigueLoss(5)
 			target.sound_hint()
 			return FALSE
 		if(target.check_dodge(user, 10, "<b>[user]</b>'s shove", "my shove", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
@@ -424,6 +427,7 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
+			target.adjustFatigueLoss(5)
 			target.sound_hint()
 			return FALSE
 	if(attacker_style?.disarm_act(user,target) == MARTIAL_ATTACK_SUCCESS)
@@ -576,6 +580,7 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
+			target.adjustFatigueLoss(5)
 			target.sound_hint()
 			return FALSE
 		if(target.check_dodge(user, attack_damage, "<b>[user]</b>'s [attack_verb]", "my [attack_verb]", BLOCK_FLAG_UNARMED) & COMPONENT_HIT_REACTION_BLOCK)
@@ -583,6 +588,7 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
+			target.adjustFatigueLoss(5)
 			target.sound_hint()
 			return FALSE
 	if(attacker_style?.harm_act(user,target) == MARTIAL_ATTACK_SUCCESS)
@@ -726,13 +732,16 @@
 									if(dicerollll >= DICE_SUCCESS)
 										target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
 													span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
-													span_hear("I hear a swoosh!"), \
+													span_hear("I hear blocking!"), \
 													COMBAT_MESSAGE_RANGE, \
 													user)
 									to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
 									target.changeNext_move(CLICK_CD_GRABBING)
+									target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
+									target.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)
+									target.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
 									target.adjustFatigueLoss(5)
-									playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 60, TRUE)
+									playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 70, TRUE)
 									return FALSE
 
 	target.lastattacker = user.real_name

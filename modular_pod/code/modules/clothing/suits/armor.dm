@@ -131,7 +131,7 @@
 	integrity_failure = 0.1
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
                 EDGE_PROTECTION = 40, \
-                CRUSHING = 13, \
+                CRUSHING = 15, \
                 CUTTING = 20, \
                 PIERCING = 10, \
                 IMPALING = 5, \
@@ -169,7 +169,7 @@
 	integrity_failure = 0.1
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
                 EDGE_PROTECTION = 45, \
-                CRUSHING = 15, \
+                CRUSHING = 20, \
                 CUTTING = 23, \
                 PIERCING = 15, \
                 IMPALING = 8, \

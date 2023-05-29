@@ -111,3 +111,15 @@
 
 /datum/job/aktassertor
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktassertor
+
+/datum/job/aktgranger
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktgranger
+
+/datum/job/aktcurer
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktcurer
+
+/datum/job/aktcontroller
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktcontroller
+
+/datum/job/aktgargohelper
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktgargohelper
