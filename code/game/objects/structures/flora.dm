@@ -706,6 +706,8 @@
 		new /obj/item/craftitem/piece(get_turf(src))
 		new /obj/item/craftitem/piece(get_turf(src))
 		new /obj/item/craftitem/piece(get_turf(src))
+		if(prob(50))
+			new /obj/item/seeding/midnightberryseeds(get_turf(src))
 		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 	qdel(src)
 

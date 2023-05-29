@@ -692,6 +692,11 @@
 				to_chat(user, span_notice("Dirt is saturated already."))
 				return
 
+/turf/open/floor/plating/polovich/bluedirty/examine(mob/user)
+	. = ..()
+	if(saturated)
+		. += "<span class='warning'>This blue dirt is satured.</span>"
+
 /turf/open/floor/plating/polovich/greendirtevil
 	name = "Green Dirt"
 	desc = "This is evil."
