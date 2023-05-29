@@ -628,10 +628,69 @@
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 1
+	var/saturated = FALSE
 
 /turf/open/floor/plating/polovich/bluedirty/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/bluedirty/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_DISARM)
+		if(istype(W, /obj/item/seeding/midnightberryseeds))
+			if(locate(/obj/structure/) in get_turf(src))
+				return
+			if(saturated)
+				if(do_after(user, 3 SECONDS, target=src))
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll >= DICE_SUCCESS)
+						user.visible_message(span_notice("[user] seeded [src] with the [W]."),span_notice("You seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						sound_hint()
+						new /obj/structure/flora/ausbushes/zarosli/midnight/good(get_turf(src))
+						saturated = FALSE
+						playsound(get_turf(src), 'modular_pod/sound/eff/grow_up.wav', 80 , FALSE, FALSE)
+						qdel(W)
+					else
+						user.visible_message(span_notice("[user] faily seeded [src] with the [W]."),span_notice("You faily seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						sound_hint()
+						saturated = FALSE
+						qdel(W)
+			else
+				if(do_after(user, 3 SECONDS, target=src))
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll >= DICE_SUCCESS)
+						user.visible_message(span_notice("[user] seeded [src] with the [W]."),span_notice("You seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						sound_hint()
+						new /obj/structure/flora/ausbushes/zarosli/midnight(get_turf(src))
+						playsound(get_turf(src), 'modular_pod/sound/eff/grow_up.wav', 80 , FALSE, FALSE)
+						qdel(W)
+					else
+						user.visible_message(span_notice("[user] faily seeded [src] with the [W]."),span_notice("You faily seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						sound_hint()
+						qdel(W)
+		else if(istype(W, /obj/item/stupidbottles/bluebottle))
+			if(!saturated)
+				var/obj/item/stupidbottles/bluebottle/B = W
+				if(B.empty)
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					to_chat(user, span_notice("Bottle is empty..."))
+					return
+				user.visible_message(span_notice("[user] saturates [src] with the [B]."),span_notice("You saturates [src] with the [B]."), span_hear("You hear the sound of a saturating."))
+				user.changeNext_move(CLICK_CD_GRABBING)
+				sound_hint()
+				saturated = TRUE
+				B.empty = TRUE
+				playsound(get_turf(src), 'modular_pod/sound/eff/potnpour.wav', 80 , FALSE, FALSE)
+			else
+				to_chat(user, span_notice("Dirt is saturated already."))
+				return
 
 /turf/open/floor/plating/polovich/greendirtevil
 	name = "Green Dirt"

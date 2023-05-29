@@ -167,7 +167,7 @@
 			neck = /obj/item/clothing/neck/darkproject
 			l_hand = /obj/item/lamp/self_lit
 			r_pocket = /obj/item/akt/lockpick/square
-			l_pocket = /obj/item/akt/lockpick/triangle
+			l_pocket = /obj/item/akt/lockpick/square/triangle
 			if(prob(75))
 				glasses = /obj/item/clothing/glasses/sunglasses/sungrasses
 			to_chat(H, span_achievementinteresting("I am a thief!"))
@@ -342,7 +342,7 @@
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
 	r_pocket = /obj/item/keycard/akt/granger
-	neck /obj/item/clothing/neck/noble_cloak
+	neck = /obj/item/clothing/neck/noble_cloak
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	shoes = /obj/item/clothing/shoes/barhatki
 

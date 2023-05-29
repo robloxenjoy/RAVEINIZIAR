@@ -58,7 +58,7 @@
 
 /datum/attribute/skill/surgery
 	name = "Surgery"
-	desc = "Knowledge in humanoid anatomy, as well as surgical procedures and tools."
+	desc = "Knowledge in anatomy, as well as surgical procedures and tools."
 	icon_state = "alteration"
 	category = SKILL_CATEGORY_MEDICAL
 	governing_attribute = STAT_INTELLIGENCE

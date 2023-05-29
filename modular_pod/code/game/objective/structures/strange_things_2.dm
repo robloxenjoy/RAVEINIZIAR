@@ -156,3 +156,21 @@
 		. += "<span class='notice'>Here is pink crystal.</span>"
 	else if(crystalRed)
 		. += "<span class='notice'>Here is red crystal.</span>"
+
+/obj/item/seeding/midnightberryseeds
+	name = "Seeds"
+	desc = "Midnightberry seeds!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "seeds"
+
+/obj/item/stupidbottles/bluebottle
+	name = "Blue Bottle"
+	desc = "Interesting mixture."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "bluebottle"
+	var/empty = FALSE
+
+/obj/item/stupidbottles/bluebottle/examine(mob/user)
+	. = ..()
+	if(empty)
+		. += "<span class='notice'>Its empty.</span>"
