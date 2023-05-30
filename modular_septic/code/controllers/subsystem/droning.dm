@@ -36,6 +36,10 @@ SUBSYSTEM_DEF(droning)
 	//Same ambience, don't bother
 	if(last_droning ~= new_droning)
 		return
+	if(isliving(listener))
+		var/mob/living/combaty = listener
+		if(combaty.combat_mode)
+			return
 	if((istype(area_entered, /area/maintenance/polovich/forest)) || (istype(area_entered, /area/medical/spawned)))
 //		if(SSoutdoor_effects.current_step_datum == /datum/time_of_day/midnight || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dusk || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dawn)
 //		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
@@ -55,8 +59,6 @@ SUBSYSTEM_DEF(droning)
 
 /datum/controller/subsystem/droning/proc/play_area_sound(area/area_player, client/listener)
 	if(!area_player || !listener)
-		return
-	if(listener.mind?.combat_mode)
 		return
 	if(LAZYLEN(area_player.droning_sound) && (listener.prefs.toggles & SOUND_SHIP_AMBIENCE))
 		//kill the previous droning sound
