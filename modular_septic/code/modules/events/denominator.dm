@@ -132,7 +132,6 @@
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
 			to_chat(user, span_notice("[open_message]"))
 			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			sleep(2) // 6
 			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 			user.changeNext_move(CLICK_CD_GRABBING)
 			open()
@@ -142,7 +141,6 @@
 		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
 			to_chat(user, span_notice("[close_message]"))
 			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			sleep(2) // 6
 			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 			user.changeNext_move(CLICK_CD_GRABBING)
 			close()
@@ -170,6 +168,7 @@
 						if(diceroll == DICE_CRIT_SUCCESS)
 							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
 							user.changeNext_move(CLICK_CD_GRABBING)
+							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll == DICE_SUCCESS)
@@ -177,6 +176,7 @@
 							user.changeNext_move(CLICK_CD_GRABBING)
 							var/obj/item/akt/lockpick/square/SQ = I
 							SQ.damageItem("MEDIUM")
+							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll <= DICE_FAILURE)
@@ -204,6 +204,7 @@
 						if(diceroll == DICE_CRIT_SUCCESS)
 							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
 							user.changeNext_move(CLICK_CD_GRABBING)
+							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll == DICE_SUCCESS)
@@ -211,6 +212,7 @@
 							user.changeNext_move(CLICK_CD_GRABBING)
 							var/obj/item/akt/lockpick/square/triangle/TR = I
 							TR.damageItem("MEDIUM")
+							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll <= DICE_FAILURE)
@@ -277,6 +279,7 @@
 						lockstate = null
 						src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
 						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 						open()
 						return
 
@@ -320,6 +323,7 @@
 							user.changeNext_move(CLICK_CD_GRABBING)
 							user.adjustFatigueLoss(10)
 							BI.damageItem("MEDIUM")
+							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll <= DICE_SUCCESS)
