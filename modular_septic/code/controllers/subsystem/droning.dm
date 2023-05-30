@@ -36,33 +36,27 @@ SUBSYSTEM_DEF(droning)
 	//Same ambience, don't bother
 	if(last_droning ~= new_droning)
 		return
-/*
-	if(isliving(entering))
-		var/mob/living/combaty = entering
-		if(combaty.combat_mode)
-			return
-*/
-	if((istype(area_entered, /area/maintenance/polovich/forest)) || (istype(area_entered, /area/medical/spawned)))
-//		if(SSoutdoor_effects.current_step_datum == /datum/time_of_day/midnight || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dusk || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dawn)
-//		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
-		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight))
-			area_entered.droning_sound = DRONING_PURENIGHT
-		else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/night))
-			area_entered.droning_sound = DRONING_PURENIGHT
-		else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk))
-			area_entered.droning_sound = DRONING_PURENIGHT
-		else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
-			area_entered.droning_sound = DRONING_PURENIGHT
-		else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawndawn))
-			area_entered.droning_sound = DRONING_PURENIGHT
-		else
-			area_entered.droning_sound = DRONING_FOREST
 	play_area_sound(area_entered, entering)
 
 /datum/controller/subsystem/droning/proc/play_area_sound(area/area_player, client/listener)
 	if(!area_player || !listener)
 		return
 	if(LAZYLEN(area_player.droning_sound) && (listener.prefs.toggles & SOUND_SHIP_AMBIENCE))
+		if((istype(area_player, /area/maintenance/polovich/forest)) || (istype(area_player, /area/medical/spawned)))
+//		if(SSoutdoor_effects.current_step_datum == /datum/time_of_day/midnight || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dusk || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dawn)
+//		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
+			if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight))
+				area_player.droning_sound = DRONING_PURENIGHT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/night))
+				area_player.droning_sound = DRONING_PURENIGHT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk))
+				area_player.droning_sound = DRONING_PURENIGHT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
+				area_player.droning_sound = DRONING_PURENIGHT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawndawn))
+				area_player.droning_sound = DRONING_PURENIGHT
+			else
+				area_player.droning_sound = DRONING_FOREST
 		//kill the previous droning sound
 		kill_droning(listener)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
