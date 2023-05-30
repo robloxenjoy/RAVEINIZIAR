@@ -19,7 +19,7 @@
 	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, arrived, old_area)
 	var/mob/living/living_arrived = arrived
 //	if(istype(living_arrived) && living_arrived.client && !living_arrived.combat_mode)
-	if(istype(living_arrived) && living_arrived.client)
+	if(istype(living_arrived) && living_arrived.client && !living_arrived.combat_mode)
 		//Ambience if combat mode is off
 		SSdroning.area_entered(src, living_arrived.client)
 	if(!LAZYACCESS(arrived.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE))

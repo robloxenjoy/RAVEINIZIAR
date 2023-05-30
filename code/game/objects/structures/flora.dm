@@ -686,7 +686,8 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.Immobilize(1 SECONDS)
 		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
-		user.put_in_active_hand(new /obj/item/food/grown/bluecherries(loc))
+		var/obj/item/food/grown/bluecherries/midnightberry = new /obj/item/food/grown/bluecherries(user.loc)
+		user.put_in_active_hand(midnightberry)
 	else
 		to_chat(user, span_danger(xbox_rage_msg()))
 		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)

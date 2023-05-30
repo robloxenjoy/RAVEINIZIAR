@@ -23,6 +23,7 @@
 		user.visible_message(span_notice("[user] inserts green crystal in Gargotor."),span_notice("You insert green crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
 		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		qdel(I)
 		crystal = TRUE
 		crystalGreen = TRUE
 	else if(istype(I, /obj/item/crystal/red))
@@ -34,6 +35,7 @@
 		user.visible_message(span_notice("[user] inserts red crystal in Gargotor."),span_notice("You insert red crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
 		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		qdel(I)
 		crystal = TRUE
 		crystalRed = TRUE
 	else if(istype(I, /obj/item/crystal/blue))
@@ -45,6 +47,7 @@
 		user.visible_message(span_notice("[user] inserts blue crystal in Gargotor."),span_notice("You insert blue crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
 		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		qdel(I)
 		crystal = TRUE
 		crystalBlue = TRUE
 	else if(istype(I, /obj/item/crystal/pink))
@@ -56,6 +59,7 @@
 		user.visible_message(span_notice("[user] inserts pink crystal in Gargotor."),span_notice("You insert pink crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
 		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		qdel(I)
 		crystal = TRUE
 		crystalPink = TRUE
 	else if(istype(I, /obj/item/shard/crystal/green))
