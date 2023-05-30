@@ -18,7 +18,6 @@
 	set waitfor = FALSE
 	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, arrived, old_area)
 	var/mob/living/living_arrived = arrived
-//	if(istype(living_arrived) && living_arrived.client && !living_arrived.combat_mode)
 	if(istype(living_arrived) && living_arrived.client && !living_arrived.combat_mode)
 		//Ambience if combat mode is off
 		SSdroning.area_entered(src, living_arrived.client)

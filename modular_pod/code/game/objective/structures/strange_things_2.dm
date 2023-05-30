@@ -6,6 +6,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	anchored = 1
+	density = 1
 	var/crystal = FALSE
 	var/crystalGreen = FALSE
 	var/crystalRed = FALSE
