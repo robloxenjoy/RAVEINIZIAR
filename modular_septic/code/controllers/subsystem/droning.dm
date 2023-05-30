@@ -56,6 +56,8 @@ SUBSYSTEM_DEF(droning)
 /datum/controller/subsystem/droning/proc/play_area_sound(area/area_player, client/listener)
 	if(!area_player || !listener)
 		return
+	if(listener.mind?.combat_mode)
+		return
 	if(LAZYLEN(area_player.droning_sound) && (listener.prefs.toggles & SOUND_SHIP_AMBIENCE))
 		//kill the previous droning sound
 		kill_droning(listener)
