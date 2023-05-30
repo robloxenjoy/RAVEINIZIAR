@@ -651,6 +651,8 @@
 	desc = "Oh, this is a great variety of midnightberry thickets."
 	var/haveberry = TRUE
 	var/stillborn = FALSE
+	time_between_uses = null
+	last_process = null
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
@@ -689,6 +691,7 @@
 	user.Immobilize(1 SECONDS)
 	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 	user.put_in_active_hand(new /obj/item/food/grown/bluecherries(loc))
+	return
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/Initialize(mapload)
 	. = ..()

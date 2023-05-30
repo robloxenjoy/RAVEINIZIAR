@@ -15,6 +15,8 @@
 /obj/structure/beast/gargotor/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
 	if(istype(I, /obj/item/crystal/green))
+		if(user.a_intent != INTENT_DISARM)
+			return
 		if(crystal)
 			to_chat(user, span_notice("The crystal is already here!"))
 			return
@@ -24,6 +26,8 @@
 		crystal = TRUE
 		crystalGreen = TRUE
 	else if(istype(I, /obj/item/crystal/red))
+		if(user.a_intent != INTENT_DISARM)
+			return
 		if(crystal)
 			to_chat(user, span_notice("The crystal is already here!"))
 			return
@@ -33,6 +37,8 @@
 		crystal = TRUE
 		crystalRed = TRUE
 	else if(istype(I, /obj/item/crystal/blue))
+		if(user.a_intent != INTENT_DISARM)
+			return
 		if(crystal)
 			to_chat(user, span_notice("The crystal is already here!"))
 			return
@@ -42,6 +48,8 @@
 		crystal = TRUE
 		crystalBlue = TRUE
 	else if(istype(I, /obj/item/crystal/pink))
+		if(user.a_intent != INTENT_DISARM)
+			return
 		if(crystal)
 			to_chat(user, span_notice("The crystal is already here!"))
 			return
@@ -52,6 +60,8 @@
 		crystalPink = TRUE
 	else if(istype(I, /obj/item/shard/crystal/green))
 		if(crystalGreen)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/stack/medical/gauze/improvised/one(get_turf(user))
 			qdel(I)
 			crystalGreen = FALSE
@@ -60,6 +70,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/green))
 		if(crystalBlue)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/stack/medical/suture/one(get_turf(user))
 			qdel(I)
 			crystalBlue = FALSE
@@ -68,6 +80,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/green))
 		if(crystalRed)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/stack/medical/mesh/one(get_turf(user))
 			qdel(I)
 			crystalRed = FALSE
@@ -76,6 +90,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/green))
 		if(crystalPink)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/stack/medical/splint/one(get_turf(user))
 			qdel(I)
 			crystalPink = FALSE
@@ -84,6 +100,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalRed)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/clothing/shoes/laceup(get_turf(user))
 			qdel(I)
 			crystalRed = FALSE
@@ -92,6 +110,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalPink)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/clothing/pants/venturer(get_turf(user))
 			qdel(I)
 			crystalPink = FALSE
@@ -100,6 +120,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalGreen)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/clothing/under/venturerclassic(get_turf(user))
 			qdel(I)
 			crystalGreen = FALSE
@@ -108,6 +130,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalBlue)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/knife/combat/goldenmisericorde(get_turf(user))
 			qdel(I)
 			crystalBlue = FALSE
@@ -116,6 +140,8 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/purple))
 		if(crystalBlue)
+			if(user.a_intent != INTENT_DISARM)
+				return
 			new /obj/item/stupidbottles/bluebottle(get_turf(user))
 			qdel(I)
 			crystalBlue = FALSE
