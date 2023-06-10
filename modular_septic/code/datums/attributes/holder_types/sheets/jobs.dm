@@ -1288,6 +1288,45 @@
 		SKILL_ACROBATICS = -3,
 	)
 
+//aktnailer
+/datum/attribute_holder/sheet/job/aktnailer
+	attribute_variance = list(
+		STAT_STRENGTH = list(1, 4),
+		STAT_ENDURANCE = list(1, 3),
+		STAT_DEXTERITY = list(-1, 1),
+		STAT_INTELLIGENCE = list(-1, 1),
+		SKILL_BRAWLING = list(1, 7),
+		SKILL_WRESTLING = list(1, 7),
+		SKILL_SMG = list(-1, 1),
+		SKILL_PISTOL = list(-1, 1),
+		SKILL_RAPIER = list(-1, 1),
+		SKILL_SHORTSWORD = list(-1, 1),
+		SKILL_LONGSWORD = list(-1, 1),
+		SKILL_IMPACT_WEAPON = list(4, 8),
+		SKILL_IMPACT_WEAPON_TWOHANDED = list(4, 8)
+		SKILL_THROWING = list(6, 8),
+		SKILL_PICKPOCKET = list(-3, 2),
+		SKILL_LOCKPICKING = list(-2, 1),
+		SKILL_MASONRY = list(3, 6),
+		SKILL_SMITHING = list(3, 6),
+		SKILL_SCIENCE = list(-2, 4),
+		SKILL_ACROBATICS = list(-2, 3),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 0,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
 //ESCAPE FROM NEVADO///
 // DENOMINATOR
 /datum/attribute_holder/sheet/job/denominator

@@ -289,6 +289,33 @@
 	belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 	shoes = /obj/item/clothing/shoes/barhatki
 
+/datum/job/aktnailer
+	title = "Akt Nailer"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 10
+	spawn_positions = 10
+	supervisors = "living in Akt!"
+	selection_color = "#8e4a57"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/nailer
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/nailer
+	name = "Akt Nailer Uniform"
+
+	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
+	r_pocket = /obj/item/keycard/akt/nailer
+	shoes = /obj/item/clothing/shoes/barhatki
+
 /datum/job/aktgranger
 	title = "Akt Granger"
 	department_head = list("Head of Personnel")

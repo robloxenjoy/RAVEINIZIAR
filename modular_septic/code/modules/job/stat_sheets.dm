@@ -112,6 +112,9 @@
 /datum/job/aktassertor
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktassertor
 
+/datum/job/aktnailer
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktnailer
+
 /datum/job/aktgranger
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktgranger
 

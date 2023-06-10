@@ -158,6 +158,36 @@
 	slot_flags = ITEM_SLOT_BELT
 	worn_icon_state = "classic_baton"
 
+/obj/item/melee/bita/hammer/stone
+	name = "Stone Hammer"
+	desc = "Good for smithing and killing."
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	icon_state = "stonehammer"
+	inhand_icon_state = "hammer"
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	havedurability = TRUE
+	durability = 170
+	carry_weight = 1 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT
+	min_force = 10
+	force = 15
+	throwforce = 15
+	min_force_strength = 1
+	force_strength = 1.6
+	wound_bonus = 8
+	bare_wound_bonus = 8
+	throw_speed = 2
+	throw_range = 10
+	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks", "stones")
+	attack_verb_simple = list("bash", "batter", "bludgeon", "whack", "stone")
+	tetris_width = 32
+	tetris_height = 32
+
 /obj/item/melee/bita/macecircle
 	name = "Steel Mace"
 	desc = "One-handed steel mace."
