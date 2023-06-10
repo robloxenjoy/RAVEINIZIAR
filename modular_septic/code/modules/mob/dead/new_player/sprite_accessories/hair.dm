@@ -13,6 +13,14 @@
 	name = "Longer Bedhead"
 	icon_state = "hair_longer_bedhead"
 
+/datum/sprite_accessory/hair/septic/bearhead
+	name = "Bearhead"
+	icon_state = "hair_bearhead"
+
+/datum/sprite_accessory/hair/septic/shitweber
+	name = "Shitweber"
+	icon_state = "hair_shitweber"
+
 /datum/sprite_accessory/hair/septic/dave
 	name = "Dave"
 	icon_state = "hair_dave"

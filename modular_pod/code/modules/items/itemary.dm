@@ -54,6 +54,10 @@
 					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
 					sound_hint()
 					statuestate == READY_ARMOR
+				else if(statustate == READY_ARMOR)
+					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
+					sound_hint()
+					statuestate == READY_WEAPON
 
 /obj/item/craftorshit/thing/golden
 	name = "Golden Thing"

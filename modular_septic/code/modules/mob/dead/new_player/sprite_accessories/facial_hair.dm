@@ -37,3 +37,7 @@
 /datum/sprite_accessory/facial_hair/septic/postal
 	name = "Dude Goatee"
 	icon_state = "facial_postal"
+
+/datum/sprite_accessory/facial_hair/septic/junkie
+	name = "Junkie"
+	icon_state = "facial_junkie"

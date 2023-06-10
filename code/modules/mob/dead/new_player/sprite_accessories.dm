@@ -1662,6 +1662,11 @@
 	icon_state = "lbelly"
 	gender_specific = 1
 
+/datum/sprite_accessory/body_markings/shitweb
+	name = "Shitweb"
+	icon_state = "shitweb"
+	gender_specific = 1
+
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 	em_block = TRUE
