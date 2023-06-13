@@ -224,7 +224,7 @@
 		var/time = 13 SECONDS
 		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
-			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)	
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll > DICE_CRIT_FAILURE)
 				user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
 				user.changeNext_move(CLICK_CD_MELEE)
@@ -240,7 +240,7 @@
 				user.adjustFatigueLoss(10)
 				sound_hint()
 //				playsound(get_turf(src), '', 100 , FALSE, FALSE)
-				new /obj/item/craftorshit/retardedthing(get_turf(src))
+				new /obj/item/craftorshit/thing/retarded(get_turf(src))
 				qdel(src)
 				qdel(W)
 
@@ -256,7 +256,7 @@
 		var/time = 13 SECONDS
 		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
-			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)	
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll > DICE_FAILURE)
 				user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
 				user.changeNext_move(CLICK_CD_MELEE)
@@ -272,7 +272,7 @@
 				user.adjustFatigueLoss(10)
 				sound_hint()
 //				playsound(get_turf(src), '', 100 , FALSE, FALSE)
-				new /obj/item/craftorshit/retardedthing(get_turf(src))
+				new /obj/item/craftorshit/thing/retarded(get_turf(src))
 				qdel(src)
 				qdel(W)
 
@@ -289,7 +289,7 @@
 		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
 		if(do_after(user, time, target = src))
 			if(user.a_intent == INTENT_HELP)
-				var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)	
+				var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
 				if(diceroll > DICE_CRIT_FAILURE)
 					user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
 					user.changeNext_move(CLICK_CD_MELEE)
@@ -305,7 +305,7 @@
 					user.adjustFatigueLoss(10)
 					sound_hint()
 //					playsound(get_turf(src), '', 100 , FALSE, FALSE)
-					new /obj/item/craftorshit/retardedthing(get_turf(src))
+					new /obj/item/craftorshit/thing/retarded(get_turf(src))
 					qdel(src)
 					qdel(W)
 

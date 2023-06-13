@@ -132,6 +132,7 @@
 
 		if(5)
 			venturer_type = "venturergardener"
+			shoes = /obj/item/clothing/shoes/frogshoes
 			l_hand = /obj/item/storage/backpack/basket
 			belt = /obj/item/changeable_attacks/slashstab/knife/small/steel
 			to_chat(H, span_achievementinteresting("I'm a gardener!"))
@@ -145,6 +146,7 @@
 
 		if(7)
 			venturer_type = "venturerlordbandit"
+			shoes = /obj/item/clothing/shoes/frogshoes
 			suit = /obj/item/clothing/suit/armor/vest/leatherbreastt
 			neck = /obj/item/clothing/neck/bear_cloak
 			if(prob(50))
@@ -339,6 +341,7 @@
 	name = "Akt Granger Uniform"
 
 	uniform = /obj/item/clothing/under/aktraiment
+	shoes = /obj/item/clothing/shoes/frogshoes
 	pants = /obj/item/clothing/pants/aktliver
 	r_pocket = /obj/item/keycard/akt/granger
 	suit = /obj/item/clothing/suit/armor/vest/leatherbreastt

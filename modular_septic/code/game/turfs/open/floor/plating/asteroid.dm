@@ -125,6 +125,20 @@
 	heavyfootstep = FOOTSTEP_WATER
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
 	resistance_flags = FIRE_PROOF
+	var/frogs = TRUE
+	var/frogs_prob = 50
+
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/Initialize(mapload)
+	. = ..()
+	if(frogs)
+		if(prob(frogs_prob))
+			switch(rand(1, 3))
+				if(1)
+					new /mob/living/simple_animal/pet/podozl/frog(get_turf(src))
+				if(2)
+					new /mob/living/simple_animal/pet/podozl/frog/blue_eyes(get_turf(src))
+				if(3)
+					new /mob/living/simple_animal/pet/podozl/frog/green(get_turf(src))
 
 /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm
 	name = "Water"

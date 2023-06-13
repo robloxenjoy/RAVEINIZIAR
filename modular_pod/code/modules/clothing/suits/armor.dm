@@ -30,7 +30,7 @@
 
 /obj/item/clothing/suit/armor/vest/leatherbreastt
 	name = "Leather Breast-armor"
-	desc = "Bull leather armor."
+	desc = "Leather armor! Its made of brown frog leather."
 	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'

@@ -22,9 +22,8 @@
 
 /obj/item/craftorshit/thing
 	var/metallic = FALSE
-	var/statustate = NOT_READY
-	var/maxcondition = 100
-	var/condition = maxcondition
+	var/statustate = "NOT_READY"
+	var/condition = 100
 	var/hits = 5
 	var/attached_handle = FALSE
 
@@ -47,22 +46,22 @@
 	if(istype(I, /obj/item/craftorshit/instrument/swopper))
 		if(user.a_intent == INTENT_GRAB)
 			if(condition > 0)
-				if(statustate == NOT_READY)
+				if(statustate == "NOT_READY")
 					user.visible_message(span_notice("[user] readies the using of [src]."),span_notice("You ready the using of [src]."), span_hear("You hear the interesting sound."))
 					sound_hint()
-					statuestate == READY_HANDLE
-				else if(statustate == READY_HANDLE)
+					statustate = "READY_HANDLE"
+				else if(statustate == "READY_HANDLE")
 					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
 					sound_hint()
-					statuestate == READY_OTHER
-				else if(statustate == READY_OTHER)
+					statustate = "READY_OTHER"
+				else if(statustate == "READY_OTHER")
 					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
 					sound_hint()
-					statuestate == READY_HANDLE
+					statustate = "READY_HANDLE"
 	else if(istype(I, /obj/item/craftorshit/instrument/teether))
 		if(user.a_intent == INTENT_DISARM)
 			if(condition > 0)
-				if(statustate == READY_HANDLE)
+				if(statustate == "READY_HANDLE")
 					if(hits > 0)
 						if(!handle)
 							hits -= 1
@@ -83,7 +82,7 @@
 								sound_hint()
 								user.changeNext_move(10)
 								user.adjustFatigueLoss(5)
-								new /obj/item/craftorshit/retardedthing(get_turf(src))
+								new /obj/item/craftorshit/thing/retarded(get_turf(src))
 								qdel(src)
 
 /obj/item/craftorshit/thing/steel
@@ -99,24 +98,24 @@
 	if(istype(I, /obj/item/craftorshit/instrument/swopper))
 		if(user.a_intent == INTENT_GRAB)
 			if(condition > 0)
-				if(statustate == NOT_READY)
+				if(statustate == "NOT_READY")
 					user.visible_message(span_notice("[user] readies the using of [src]."),span_notice("You ready the using of [src]."), span_hear("You hear the interesting sound."))
 					sound_hint()
-					statuestate == READY_WEAPON
-				else if(statustate == READY_WEAPON)
+					statustate = "READY_WEAPON"
+				else if(statustate == "READY_WEAPON")
 					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
 					sound_hint()
-					statuestate == READY_ARMOR
+					statustate = "READY_ARMOR"
 					hits = 10
-				else if(statustate == READY_ARMOR)
+				else if(statustate == "READY_ARMOR")
 					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
 					sound_hint()
-					statuestate == READY_WEAPON
+					statustate = "READY_WEAPON"
 					hits = 10
 	else if(istype(I, /obj/item/melee/bita/hammer/stone))
 		if(user.a_intent == INTENT_HARM)
 			if(condition > 0)
-				if(statustate == READY_WEAPON)
+				if(statustate == "READY_WEAPON")
 					if(user.zone_selected == BODY_ZONE_PRECISE_L_HAND)
 						if(attached_handle)
 							if(hits > 0)
@@ -145,12 +144,12 @@
 									V.damageItem("HARD")
 									user.changeNext_move(V.attack_delay)
 									user.adjustFatigueLoss(10)
-									new /obj/item/craftorshit/retardedthing(get_turf(src))
+									new /obj/item/craftorshit/thing/retarded(get_turf(src))
 									qdel(src)
 	else if(istype(I, /obj/item/craftorshit/thing/wooden))
 		if(user.a_intent == INTENT_DISARM)
 			if(condition > 0)
-				if(statustate == READY_WEAPON)
+				if(statustate == "READY_WEAPON")
 					if(attached_handle)
 						return
 					var/obj/item/craftorshit/thing/wooden/V = I

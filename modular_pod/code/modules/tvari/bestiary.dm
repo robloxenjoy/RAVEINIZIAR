@@ -85,3 +85,55 @@
 /mob/living/simple_animal/pet/podozl/shoebill/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/pet_bonus, "crows happily!")
+
+/mob/living/simple_animal/pet/podozl/frog
+	name = "Brown Frog"
+	desc = "NEUTRAL FROG!"
+	icon = 'modular_pod/icons/mob/beasts/various_mobs.dmi'
+	icon_state = "brown_frog"
+	icon_living = "brown_frog"
+	icon_dead = "brown_frog_dead"
+	speak = list("Qua","QUA QUA!")
+	speak_emote = list("croaks")
+	emote_hear = list("croaks.")
+	emote_see = list("scratching itself.", "watching.")
+	speak_chance = 1
+	turns_per_move = 4
+	see_in_dark = 6
+	butcher_results = list(/obj/item/skin/human/small/frogbrown = 1)
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	can_be_held = FALSE
+//	held_state = "fox"
+	///In the case 'melee_damage_upper' is somehow raised above 0
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	attack_sound = 'sound/weapons/bite.ogg'
+	attack_vis_effect = ATTACK_EFFECT_BITE
+
+	footstep_type = FOOTSTEP_MOB_CLAW
+
+/mob/living/simple_animal/pet/podozl/frog/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/pet_bonus, "happily jumping!")
+
+/mob/living/simple_animal/pet/podozl/frog/blue_eyes
+	name = "Brown Frog"
+	desc = "NEUTRAL FROG!"
+	icon = 'modular_pod/icons/mob/beasts/various_mobs.dmi'
+	icon_state = "brown_frog_blue_eyes"
+	icon_living = "brown_frog_blue_eyes"
+	icon_dead = "brown_frog_blue_eyes_dead"
+
+/mob/living/simple_animal/pet/podozl/frog/green
+	name = "Green Frog"
+	desc = "NEUTRAL FROG!"
+	icon = 'modular_pod/icons/mob/beasts/various_mobs.dmi'
+	icon_state = "green_frog"
+	icon_living = "green_frog"
+	icon_dead = "green_frog_dead"
+	butcher_results = list(/obj/item/skin/human/small/frogreen = 1)
