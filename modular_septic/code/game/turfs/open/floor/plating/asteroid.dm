@@ -126,7 +126,7 @@
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
 	resistance_flags = FIRE_PROOF
 	var/frogs = TRUE
-	var/frogs_prob = 50
+	var/frogs_prob = 3
 
 /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/Initialize(mapload)
 	. = ..()
