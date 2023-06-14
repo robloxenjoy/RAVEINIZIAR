@@ -226,6 +226,7 @@
 				if(statustate == "READY_ARMOR")
 					if(attached_rings)
 						return
+					var/obj/item/craftorshit/thing/ouroboros/V = I
 					user.visible_message(span_notice("[user] attaches rings to [src]."),span_notice("You attach rings to [src]."), span_hear("You hear the sound of smithing."))
 					sound_hint()
 					attached_rings = TRUE

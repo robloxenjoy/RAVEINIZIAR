@@ -125,7 +125,7 @@
 
 /mob/living/simple_animal/pet/podozl/frog/handle_automated_speech(override)
 	if(speak_chance && (override || prob(speak_chance)))
-		playsound(src, 'modular_pod/sound/mobs_yes/frog_talk.wav', 50)
+		playsound(src, 'modular_pod/sound/mobs_yes/frog_talk.ogg', 50)
 	..()
 
 /mob/living/simple_animal/pet/podozl/frog/blue_eyes
