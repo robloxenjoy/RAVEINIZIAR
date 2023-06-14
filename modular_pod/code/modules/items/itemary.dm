@@ -27,6 +27,9 @@
 	var/hits = 5
 	var/attached_handle = FALSE
 	var/attached_rings = FALSE
+	var/attached_gold = FALSE
+	var/attached_steel = FALSE
+	var/attached_silver = FALSE
 
 /obj/item/craftorshit/thing/retarded
 	name = "Retarded Thing"
@@ -227,6 +230,24 @@
 					sound_hint()
 					attached_rings = TRUE
 					qdel(V)
+	else if(istype(I, /obj/item/craftorshit/thing/steel))
+		if(user.a_intent == INTENT_GRAB)
+			if(condition > 0)
+				if(statustate == "READY_ARMOR")
+					if(attached_steel)
+						return
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll >= DICE_SUCCESS)
+						user.visible_message(span_notice("[user] combined steel!"),span_notice("You combine the steel."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						user.changeNext_move(10)
+						user.adjustFatigueLoss(5)
+						attached_steel = TRUE
+					else
+						user.visible_message(span_notice("[user] failed to combine steel."),span_notice("You failed to combine steel."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						user.changeNext_move(10)
+						user.adjustFatigueLoss(5)
 
 /obj/item/craftorshit/thing/golden
 	name = "Golden Thing"
@@ -235,12 +256,163 @@
 	icon_state = "goldenthing"
 	metallic = TRUE
 
+/obj/item/craftorshit/thing/golden/attackby(obj/item/I, mob/living/carbon/user, params)
+	. = ..()
+	if(istype(I, /obj/item/craftorshit/instrument/swopper))
+		if(user.a_intent == INTENT_GRAB)
+			if(condition > 0)
+				if(statustate == "NOT_READY")
+					user.visible_message(span_notice("[user] readies the using of [src]."),span_notice("You ready the using of [src]."), span_hear("You hear the interesting sound."))
+					sound_hint()
+					statustate = "READY_WEAPON"
+				else if(statustate == "READY_WEAPON")
+					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
+					sound_hint()
+					statustate = "READY_ARMOR"
+				else if(statustate == "READY_ARMOR")
+					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
+					sound_hint()
+					statustate = "READY_WEAPON"
+	else if(istype(I, /obj/item/craftorshit/thing/golden))
+		if(user.a_intent == INTENT_GRAB)
+			if(condition > 0)
+				if(statustate == "READY_ARMOR")
+					if(attached_gold)
+						return
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll >= DICE_SUCCESS)
+						user.visible_message(span_notice("[user] combined gold!"),span_notice("You combine the gold."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						user.changeNext_move(10)
+						user.adjustFatigueLoss(5)
+						attached_gold = TRUE
+					else
+						user.visible_message(span_notice("[user] failed to combine gold."),span_notice("You failed to combine gold."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						user.changeNext_move(10)
+						user.adjustFatigueLoss(5)
+	else if(istype(I, /obj/item/melee/bita/hammer/stone))
+		if(user.a_intent == INTENT_HARM)
+			if(condition > 0)
+				if(statustate == "READY_ARMOR")
+					if(user.zone_selected == BODY_ZONE_HEAD)
+						if(attached_gold)
+							if(hits > 0)
+								hits -= 1
+								user.visible_message(span_notice("[user] forges [src]."),span_notice("You forge [src]."), span_hear("You hear the sound of smithing."))
+								sound_hint()
+								var/obj/item/melee/bita/hammer/stone/V = I
+								V.damageItem("HARD")
+								user.changeNext_move(V.attack_delay)
+								user.adjustFatigueLoss(10)
+							else
+								var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+								if(diceroll >= DICE_SUCCESS)
+									user.visible_message(span_notice("[user] forged the golden helmet!"),span_notice("You forge the golden helmet."), span_hear("You hear the sound of smithing."))
+									sound_hint()
+									var/obj/item/melee/bita/hammer/stone/V = I
+									V.damageItem("HARD")
+									user.changeNext_move(V.attack_delay)
+									user.adjustFatigueLoss(10)
+									new /obj/item/clothing/head/helmet/golden/full(get_turf(src))
+									qdel(src)
+								else
+									user.visible_message(span_notice("[user] failed to forge [src]."),span_notice("You failed to forge [src]."), span_hear("You hear the sound of smithing."))
+									sound_hint()
+									var/obj/item/melee/bita/hammer/stone/V = I
+									V.damageItem("HARD")
+									user.changeNext_move(V.attack_delay)
+									user.adjustFatigueLoss(10)
+									new /obj/item/craftorshit/thing/retarded(get_turf(src))
+									qdel(src)
+
 /obj/item/craftorshit/thing/iron
 	name = "Iron Thing"
 	desc = "Its strange. Can be used for crafting."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "ironthing"
 	metallic = TRUE
+
+/obj/item/craftorshit/thing/silver
+	name = "Silver Thing"
+	desc = "Its strange. Can be used for crafting."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "silverthing"
+	metallic = TRUE
+
+/obj/item/craftorshit/thing/silver/attackby(obj/item/I, mob/living/carbon/user, params)
+	. = ..()
+	if(istype(I, /obj/item/craftorshit/instrument/swopper))
+		if(user.a_intent == INTENT_GRAB)
+			if(condition > 0)
+				if(statustate == "NOT_READY")
+					user.visible_message(span_notice("[user] readies the using of [src]."),span_notice("You ready the using of [src]."), span_hear("You hear the interesting sound."))
+					sound_hint()
+					statustate = "READY_WEAPON"
+				else if(statustate == "READY_WEAPON")
+					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
+					sound_hint()
+					statustate = "READY_ARMOR"
+					hits = 10
+				else if(statustate == "READY_ARMOR")
+					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
+					sound_hint()
+					statustate = "READY_WEAPON"
+					hits = 10
+
+	else if(istype(I, /obj/item/melee/bita/hammer/stone))
+		if(user.a_intent == INTENT_HARM)
+			if(condition > 0)
+				if(statustate == "READY_ARMOR")
+					if(user.zone_selected == BODY_ZONE_HEAD)
+						if(attached_silver)
+							if(hits > 0)
+								hits -= 1
+								user.visible_message(span_notice("[user] forges [src]."),span_notice("You forge [src]."), span_hear("You hear the sound of smithing."))
+								sound_hint()
+								var/obj/item/melee/bita/hammer/stone/V = I
+								V.damageItem("HARD")
+								user.changeNext_move(V.attack_delay)
+								user.adjustFatigueLoss(10)
+							else
+								var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+								if(diceroll >= DICE_SUCCESS)
+									user.visible_message(span_notice("[user] forged the silver helmet!"),span_notice("You forge the silver helmet."), span_hear("You hear the sound of smithing."))
+									sound_hint()
+									var/obj/item/melee/bita/hammer/stone/V = I
+									V.damageItem("HARD")
+									user.changeNext_move(V.attack_delay)
+									user.adjustFatigueLoss(10)
+									new /obj/item/clothing/head/helmet/silver/full(get_turf(src))
+									qdel(src)
+								else
+									user.visible_message(span_notice("[user] failed to forge [src]."),span_notice("You failed to forge [src]."), span_hear("You hear the sound of smithing."))
+									sound_hint()
+									var/obj/item/melee/bita/hammer/stone/V = I
+									V.damageItem("HARD")
+									user.changeNext_move(V.attack_delay)
+									user.adjustFatigueLoss(10)
+									new /obj/item/craftorshit/thing/retarded(get_turf(src))
+									qdel(src)
+
+	else if(istype(I, /obj/item/craftorshit/thing/silver))
+		if(user.a_intent == INTENT_GRAB)
+			if(condition > 0)
+				if(statustate == "READY_ARMOR")
+					if(attached_silver)
+						return
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll >= DICE_SUCCESS)
+						user.visible_message(span_notice("[user] combined silver!"),span_notice("You combine the silver."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						user.changeNext_move(10)
+						user.adjustFatigueLoss(5)
+						attached_silver = TRUE
+					else
+						user.visible_message(span_notice("[user] failed to combine silver."),span_notice("You failed to combine silver."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						user.changeNext_move(10)
+						user.adjustFatigueLoss(5)
 
 /obj/item/craftorshit/thing/ouroboros
 	name = "Ouroboros Rings"

@@ -132,9 +132,9 @@
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
                 EDGE_PROTECTION = 40, \
                 CRUSHING = 15, \
-                CUTTING = 20, \
-                PIERCING = 10, \
-                IMPALING = 5, \
+                CUTTING = 25, \
+                PIERCING = 15, \
+                IMPALING = 9, \
                 LASER = 1, \
                 ENERGY = 0, \
                 BOMB = 8, \
@@ -142,8 +142,8 @@
                 FIRE = 20, \
                 ACID = 2, \
                 MAGIC = 0, \
-                WOUND = 6, \
-                ORGAN = 6)
+                WOUND = 9, \
+                ORGAN = 9)
 	armor_broken_sound = "heavy"
 	armor_damaged_sound = "heavy_helmet"
 	armor_damaged_sound_local = "heavy_helmet"
