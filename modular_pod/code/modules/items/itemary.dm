@@ -26,6 +26,7 @@
 	var/condition = 100
 	var/hits = 5
 	var/attached_handle = FALSE
+	var/attached_rings = FALSE
 
 /obj/item/craftorshit/thing/retarded
 	name = "Retarded Thing"
@@ -112,6 +113,33 @@
 					sound_hint()
 					statustate = "READY_WEAPON"
 					hits = 10
+	else if(istype(I, /obj/item/craftorshit/instrument/teether))
+		if(user.a_intent == INTENT_DISARM)
+			if(condition > 0)
+				if(statustate == "READY_ARMOR")
+					if(hits > 0)
+						if(!attached_rings)
+							hits -= 1
+							user.visible_message(span_notice("[user] sawing [src]."),span_notice("You saw [src]."), span_hear("You hear the interesting sound."))
+							sound_hint()
+							user.changeNext_move(10)
+							user.adjustFatigueLoss(5)
+						else
+							var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+							if(diceroll >= DICE_SUCCESS)
+								user.visible_message(span_notice("[user] made ouroboros rings!"),span_notice("You made ouroboros rings."), span_hear("You hear the sound of smithing."))
+								sound_hint()
+								user.changeNext_move(10)
+								user.adjustFatigueLoss(5)
+								new /obj/item/craftorshit/thing/ouroboros(get_turf(src))
+								qdel(src)
+							else
+								user.visible_message(span_notice("[user] failed to make ouroboros rings."),span_notice("You failed to make ouroboros rings."), span_hear("You hear the sound of smithing."))
+								sound_hint()
+								user.changeNext_move(10)
+								user.adjustFatigueLoss(5)
+								new /obj/item/craftorshit/thing/retarded(get_turf(src))
+								qdel(src)
 	else if(istype(I, /obj/item/melee/bita/hammer/stone))
 		if(user.a_intent == INTENT_HARM)
 			if(condition > 0)
@@ -146,6 +174,37 @@
 									user.adjustFatigueLoss(10)
 									new /obj/item/craftorshit/thing/retarded(get_turf(src))
 									qdel(src)
+				else if(statustate == "READY_ARMOR")
+					if(user.zone_selected == BODY_ZONE_CHEST)
+						if(attached_rings)
+							if(hits > 0)
+								hits -= 1
+								user.visible_message(span_notice("[user] forges [src]."),span_notice("You forge [src]."), span_hear("You hear the sound of smithing."))
+								sound_hint()
+								var/obj/item/melee/bita/hammer/stone/V = I
+								V.damageItem("HARD")
+								user.changeNext_move(V.attack_delay)
+								user.adjustFatigueLoss(10)
+							else
+								var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+								if(diceroll >= DICE_SUCCESS)
+									user.visible_message(span_notice("[user] forged the chainmail armor!"),span_notice("You forge the chainmail armor."), span_hear("You hear the sound of smithing."))
+									sound_hint()
+									var/obj/item/melee/bita/hammer/stone/V = I
+									V.damageItem("HARD")
+									user.changeNext_move(V.attack_delay)
+									user.adjustFatigueLoss(10)
+									new /obj/item/clothing/suit/armor/vest/chainmail/steel(get_turf(src))
+									qdel(src)
+								else
+									user.visible_message(span_notice("[user] failed to forge [src]."),span_notice("You failed to forge [src]."), span_hear("You hear the sound of smithing."))
+									sound_hint()
+									var/obj/item/melee/bita/hammer/stone/V = I
+									V.damageItem("HARD")
+									user.changeNext_move(V.attack_delay)
+									user.adjustFatigueLoss(10)
+									new /obj/item/craftorshit/thing/retarded(get_turf(src))
+									qdel(src)
 	else if(istype(I, /obj/item/craftorshit/thing/wooden))
 		if(user.a_intent == INTENT_DISARM)
 			if(condition > 0)
@@ -158,6 +217,16 @@
 						sound_hint()
 						attached_handle = TRUE
 						qdel(V)
+	else if(istype(I, /obj/item/craftorshit/thing/ouroboros))
+		if(user.a_intent == INTENT_DISARM)
+			if(condition > 0)
+				if(statustate == "READY_ARMOR")
+					if(attached_rings)
+						return
+					user.visible_message(span_notice("[user] attaches rings to [src]."),span_notice("You attach rings to [src]."), span_hear("You hear the sound of smithing."))
+					sound_hint()
+					attached_rings = TRUE
+					qdel(V)
 
 /obj/item/craftorshit/thing/golden
 	name = "Golden Thing"
@@ -171,4 +240,11 @@
 	desc = "Its strange. Can be used for crafting."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "ironthing"
+	metallic = TRUE
+
+/obj/item/craftorshit/thing/ouroboros
+	name = "Ouroboros Rings"
+	desc = "Its strange. Can be used for crafting."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "ouro_rings"
 	metallic = TRUE

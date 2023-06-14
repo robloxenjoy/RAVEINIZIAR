@@ -97,9 +97,11 @@
 	speak_emote = list("croaks")
 	emote_hear = list("croaks.")
 	emote_see = list("scratching itself.", "watching.")
-	speak_chance = 1
+	speak_chance = 2
 	turns_per_move = 4
 	see_in_dark = 6
+	maxHealth = 50
+	health = 50
 	butcher_results = list(/obj/item/skin/human/small/frogbrown = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
@@ -120,6 +122,11 @@
 /mob/living/simple_animal/pet/podozl/frog/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/pet_bonus, "happily jumping!")
+
+/mob/living/simple_animal/pet/podozl/frog/handle_automated_speech(override)
+	if(speak_chance && (override || prob(speak_chance)))
+		playsound(src, 'modular_pod/sound/mobs_yes/frog_talk.wav', 50)
+	..()
 
 /mob/living/simple_animal/pet/podozl/frog/blue_eyes
 	name = "Brown Frog"
