@@ -156,3 +156,15 @@
 		var/obj/item/food/drug/saturnx/new_glob = new(location)
 		new_glob.pixel_x = rand(-6, 6)
 		new_glob.pixel_y = rand(-6, 6)
+
+/datum/chemical_reaction/ironblood
+	required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/toxin = 3)
+	mob_react = FALSE
+	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_UNIQUE
+
+/datum/chemical_reaction/ironblood/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/iteration = 1, iteration <= created_volume, iteration++)
+		var/obj/item/craftorshit/thing/iron/new_glob = new(location)
+		new_glob.pixel_x = rand(-6, 6)
+		new_glob.pixel_y = rand(-6, 6)

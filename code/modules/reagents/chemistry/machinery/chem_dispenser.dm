@@ -64,10 +64,12 @@
 		/datum/reagent/sulfur,
 		/datum/reagent/toxin/acid,
 		/datum/reagent/water,
-		/datum/reagent/fuel
-	)
-	//these become available once the manipulator has been upgraded to tier 4 (femto)
-	var/list/upgrade_reagents = list(
+		/datum/reagent/fuel,
+		/datum/reagent/toxin/carpotoxin,
+		/datum/reagent/medicine/mine_salve,
+		/datum/reagent/medicine/morphine,
+		/datum/reagent/drug/space_drugs,
+		/datum/reagent/toxin,
 		/datum/reagent/acetone,
 		/datum/reagent/ammonia,
 		/datum/reagent/ash,
@@ -75,13 +77,9 @@
 		/datum/reagent/fuel/oil,
 		/datum/reagent/saltpetre
 	)
-	var/list/emagged_reagents = list(
-		/datum/reagent/toxin/carpotoxin,
-		/datum/reagent/medicine/mine_salve,
-		/datum/reagent/medicine/morphine,
-		/datum/reagent/drug/space_drugs,
-		/datum/reagent/toxin
-	)
+	//these become available once the manipulator has been upgraded to tier 4 (femto)
+	var/list/upgrade_reagents = null
+	var/list/emagged_reagents = null
 
 	var/list/recording_recipe
 
