@@ -73,7 +73,8 @@
 							sound_hint()
 							user.changeNext_move(10)
 							user.adjustFatigueLoss(5)
-						else
+					else
+						if(!handle)
 							var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
 							if(diceroll >= DICE_SUCCESS)
 								user.visible_message(span_notice("[user] made a handle!"),span_notice("You made the handle."), span_hear("You hear the sound of smithing."))

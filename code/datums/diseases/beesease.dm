@@ -12,7 +12,6 @@
 	severity = DISEASE_SEVERITY_MEDIUM
 	infectable_biotypes = MOB_ORGANIC|MOB_UNDEAD //bees nesting in corpses
 
-
 /datum/disease/beesease/stage_act(delta_time, times_fired)
 	. = ..()
 	if(!.)
@@ -39,3 +38,46 @@
 				affected_mob.visible_message(span_danger("[affected_mob] coughs up a swarm of bees!"), \
 													span_userdanger("You cough up a swarm of bees!"))
 				new /mob/living/simple_animal/hostile/bee(affected_mob.loc)
+
+/datum/disease/femboyza
+	name = "Femboyza"
+	form = "Infection"
+	max_stages = 4
+	spread_text = "On contact"
+	spread_flags = DISEASE_SPREAD_BLOOD | DISEASE_SPREAD_CONTACT_SKIN | DISEASE_SPREAD_CONTACT_FLUIDS
+	cure_text = "Gule berries"
+	cures = list(/datum/reagent/drug/kravsa)
+	agent = "Sexual revolution"
+	viable_mobtypes = list(/mob/living/carbon/human)
+	desc = "If left untreated subject will become a femboy."
+	severity = DISEASE_SEVERITY_MEDIUM
+	infectable_biotypes = MOB_ORGANIC
+
+/datum/disease/femboyza/stage_act(delta_time, times_fired)
+	. = ..()
+	if(!.)
+		return
+
+	var/mob/living/carbon/human/femboyyy = affected_mob
+	if((femboyyy.gender = FEMALE) || (femboyyy.body_type = FEMALE))
+		cure()
+		return FALSE
+
+	switch(stage)
+		if(1 to 2)
+			if(DT_PROB(1, delta_time))
+				to_chat(femboyyy, span_notice("You feel that you getting more feminine..."))
+		if(3)
+			if(DT_PROB(5, delta_time))
+				to_chat(femboyyy, span_notice("A little more and something will happen."))
+		if(4)
+			to_chat(femboyyy, span_danger("I AM FEMBOY!"))
+			playsound(get_turf(femboyyy), "modular_pod/sound/eff/anime-wow-1.ogg", 100)
+			new /obj/effect/temp_visual/heart(femboyyy.loc)
+			femboyyy.gender = FEMALE
+			femboyyy.body_type = FEMALE
+			femboyyy.dna.update_ui_block(DNA_GENDER_BLOCK)
+			femboyyy.update_body()
+			femboyyy.update_mutations_overlay()
+			cure()
+			return FALSE

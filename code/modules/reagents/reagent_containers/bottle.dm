@@ -300,6 +300,11 @@
 	desc = "A small bottle. Contains a sample of invasive Apidae."
 	spawned_disease = /datum/disease/beesease
 
+/obj/item/reagent_containers/glass/bottle/femboyza
+	name = "Femboyza culture bottle"
+	desc = "A small bottle. Contains a sample of Femboyza disease."
+	spawned_disease = /datum/disease/femboyza
+
 /obj/item/reagent_containers/glass/bottle/fluspanish
 	name = "Spanish flu culture bottle"
 	desc = "A small bottle. Contains a sample of Inquisitius."

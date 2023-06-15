@@ -213,3 +213,61 @@
 	. = ..()
 	if(empty)
 		. += "<span class='notice'>Its empty.</span>"
+
+/obj/structure/traphehe/spikes
+	name = "Spikes"
+	desc = "Don't step on this."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "trap_spikes"
+	resistance_flags = FIRE_PROOF
+	max_integrity = 50
+	density = FALSE
+	anchored = TRUE
+	var/activated = FALSE
+
+/obj/structure/traphehe/spikes/Initialize(mapload)
+	. = ..()
+	update_appearance()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/dont_step,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/traphehe/spikes/update_icon_state()
+	icon_state = "[initial(icon_state)][activated]"
+	return ..()
+
+/obj/structure/traphehe/spikes/proc/dont_step(datum/source, atom/movable/AM, thrown_at = FALSE)
+	SIGNAL_HANDLER
+	if(!isturf(loc) || !isliving(AM))
+		return
+	var/mob/living/L = AM
+	if(!thrown_at && L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
+		return
+
+	activated = TRUE
+	playsound(get_turf(src), 'modular_pod/sound/eff/open_trap.wav', 100 , FALSE, FALSE)
+	if(!thrown_at)
+		L.visible_message(span_danger("[L] triggers \the [src]."), \
+				span_userdanger("You trigger \the [src]!"))
+	else
+		L.visible_message(span_danger("\The [src] ensnares [L]!"), \
+				span_userdanger("\The [src] ensnares you!"))
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		if(C.body_position == STANDING_UP)
+			var/obj/item/bodypart/l_foot/lfoot = C.get_bodypart_nostump(BODY_ZONE_PRECISE_L_FOOT)
+			if(lfoot)
+				lfoot.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+			var/obj/item/bodypart/r_foot/rfoot = C.get_bodypart_nostump(BODY_ZONE_PRECISE_R_FOOT)
+			if(rfoot)
+				rfoot.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+		else
+			var/obj/item/bodypart/chest/cchest = C.get_bodypart_nostump(BODY_ZONE_CHEST)
+			if(cchest)
+				cchest.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+			var/obj/item/bodypart/vitals/vvitals = C.get_bodypart_nostump(BODY_ZONE_PRECISE_VITALS)
+			if(vvitals)
+				vvitals.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+	activated = FALSE
+	playsound(get_turf(src), 'modular_pod/sound/eff/close_trap.wav', 100 , FALSE, FALSE)

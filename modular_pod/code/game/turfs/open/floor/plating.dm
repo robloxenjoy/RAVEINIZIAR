@@ -97,7 +97,7 @@
 				if(GR == null)
 					return
 				if(GR.body_position == LYING_DOWN)
-					var/obj/item/bodypart/head = GR.get_bodypart(BODY_ZONE_HEAD)
+					var/obj/item/bodypart/head = GR.get_bodypart_nostump(BODY_ZONE_HEAD)
 					var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerfloor)
 					GR.visible_message(span_pinkdang("[user] bangs [GR]'s head against the [src]!"))
 					head.receive_damage(brute = damage, wound_bonus = 2, sharpness = null)
