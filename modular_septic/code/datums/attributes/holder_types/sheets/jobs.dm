@@ -1252,6 +1252,46 @@
 		SKILL_ACROBATICS = 4,
 	)
 
+// akt al-chemist
+/datum/attribute_holder/sheet/job/aktalchemist
+	attribute_variance = list(
+		STAT_STRENGTH = list(-1, 3),
+		STAT_ENDURANCE = list(-1, 3),
+		STAT_DEXTERITY = list(-1, 3),
+		STAT_INTELLIGENCE = list(1, 3),
+		SKILL_IMPACT_WEAPON = list(-4, 3),
+		SKILL_WRESTLING = list(-1, 2),
+		SKILL_BRAWLING = list(-1, 2),
+		SKILL_PISTOL = list(-3, 3),
+		SKILL_SMG = list(-4, 4),
+		SKILL_RIFLE = list(-4, 4),
+		SKILL_RAPIER = list(-3, 2),
+		SKILL_SHORTSWORD = list(-3, 3),
+		SKILL_LONGSWORD = list(-3, 3),
+		SKILL_THROWING = list(-1, 3),
+		SKILL_CLEANING = list(-2, 2),
+		SKILL_MEDICINE = list(-3, 2),
+		SKILL_LOCKPICKING = list(-2, 2),
+		SKILL_ACROBATICS = list(-2, 4),
+		SKILL_CHEMISTRY = list(2, 5),
+	)
+	raw_attribute_list = list(
+		SKILL_IMPACT_WEAPON = 4,
+		SKILL_PISTOL = 4,
+		SKILL_RAPIER = 5,
+		SKILL_LONGSWORD = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_BRAWLING = -2,
+		SKILL_WRESTLING = -2,
+		SKILL_SMG = 0,
+		SKILL_RIFLE = 0,
+		SKILL_THROWING = -3,
+		SKILL_CLEANING = 0,
+		SKILL_MEDICINE = 0,
+		SKILL_LOCKPICKING = -2,
+		SKILL_ACROBATICS = 4,
+	)
+
 //aktassertor
 /datum/attribute_holder/sheet/job/aktassertor
 	attribute_variance = list(

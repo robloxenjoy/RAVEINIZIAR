@@ -435,6 +435,34 @@
 	r_pocket = /obj/item/keycard/akt/controller
 	shoes = /obj/item/clothing/shoes/barhatki
 
+/datum/job/aktalchemist
+	title = "Akt Al-Chemist"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 5
+	spawn_positions = 5
+	supervisors = "living in Akt!"
+	selection_color = "#8e4a57"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/alchemist
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/alchemist
+	name = "Akt Al-Chemist Uniform"
+
+	uniform = /obj/item/clothing/under/aktraiment
+	pants = /obj/item/clothing/pants/aktliver
+	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/mystical
+	r_pocket = /obj/item/keycard/akt/alchem
+	shoes = /obj/item/clothing/shoes/frogshoes
+
 /*
 
 /datum/job/evilwarlock

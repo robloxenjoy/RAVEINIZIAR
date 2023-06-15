@@ -126,3 +126,6 @@
 
 /datum/job/aktgargohelper
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktgargohelper
+
+/datum/job/aktalchemist
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktalchemist
