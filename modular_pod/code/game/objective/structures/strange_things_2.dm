@@ -233,10 +233,6 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/structure/traphehe/spikes/update_icon_state()
-	icon_state = "[initial(icon_state)][activated]"
-	return ..()
-
 /obj/structure/traphehe/spikes/proc/dont_step(datum/source, atom/movable/AM, thrown_at = FALSE)
 	SIGNAL_HANDLER
 	if(!isturf(loc) || !isliving(AM))
@@ -258,16 +254,16 @@
 		if(C.body_position == STANDING_UP)
 			var/obj/item/bodypart/l_foot/lfoot = C.get_bodypart_nostump(BODY_ZONE_PRECISE_L_FOOT)
 			if(lfoot)
-				lfoot.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_L_FOOT, wound_bonus = 5, sharpness = SHARP_POINTY)
 			var/obj/item/bodypart/r_foot/rfoot = C.get_bodypart_nostump(BODY_ZONE_PRECISE_R_FOOT)
 			if(rfoot)
-				rfoot.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_R_FOOT, wound_bonus = 5, sharpness = SHARP_POINTY)
 		else
 			var/obj/item/bodypart/chest/cchest = C.get_bodypart_nostump(BODY_ZONE_CHEST)
 			if(cchest)
-				cchest.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_CHEST, wound_bonus = 5, sharpness = SHARP_POINTY)
 			var/obj/item/bodypart/vitals/vvitals = C.get_bodypart_nostump(BODY_ZONE_PRECISE_VITALS)
 			if(vvitals)
-				vvitals.receive_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_VITALS, wound_bonus = 5, sharpness = SHARP_POINTY)
 	activated = FALSE
 	playsound(get_turf(src), 'modular_pod/sound/eff/close_trap.wav', 100 , FALSE, FALSE)
