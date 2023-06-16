@@ -179,3 +179,10 @@
 		if(owner)
 			ADD_TRAIT(owner, TRAIT_MUTE, "tape")
 	update_limb(!owner)
+
+/obj/item/bodypart/mouth/halber
+	max_damage = 80
+	max_stamina_damage = 80
+	wound_resistance = -2
+	maxdam_wound_penalty = 20
+	bone_type = BONE_MOUTH_HALBER

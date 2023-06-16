@@ -69,3 +69,8 @@
 		if(C.pants)
 			C.dropItemToGround(C.pants, TRUE)
 		C.update_inv_pants()
+
+/obj/item/bodypart/l_leg/halber
+	max_damage = 80
+	max_stamina_damage = 80
+	bone_type = BONE_L_LEG_HALBER

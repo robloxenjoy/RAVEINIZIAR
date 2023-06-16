@@ -23,6 +23,7 @@
 	var/mutantkidneys = /obj/item/organ/kidneys
 	var/mutantintestines = /obj/item/organ/intestines
 	var/mutantbladder = /obj/item/organ/bladder
+	var/mutantvocal = /obj/item/organ/vocal_cords
 	var/list/default_genitals = list(
 		ORGAN_SLOT_PENIS = /obj/item/organ/genital/penis,
 		ORGAN_SLOT_TESTICLES = /obj/item/organ/genital/testicles,
@@ -371,6 +372,7 @@
 							ORGAN_SLOT_EYES = mutanteyes, ORGAN_SLOT_TONGUE = mutanttongue, \
 							ORGAN_SLOT_LIVER = mutantliver, ORGAN_SLOT_STOMACH = mutantstomach, \
 							ORGAN_SLOT_SPLEEN = mutantspleen, ORGAN_SLOT_KIDNEYS = mutantkidneys, \
+							ORGAN_SLOT_VOICE = mutantvocal, \
 							ORGAN_SLOT_INTESTINES = mutantintestines, ORGAN_SLOT_BLADDER = mutantbladder)
 	// this is pure dumb code but just, bare with me
 	for(var/slot in slot_mutantorgans)

@@ -168,6 +168,19 @@
 #define BONE_R_LEG /obj/item/organ/bone/r_leg
 #define BONE_R_FOOT /obj/item/organ/bone/r_foot
 
+#define BONE_HEAD_HALBER /obj/item/organ/bone/head/halber
+#define BONE_MOUTH_HALBER /obj/item/organ/bone/mouth/halber
+#define BONE_NECK_HALBER /obj/item/organ/bone/neck/halber
+#define BONE_CHEST_HALBER /obj/item/organ/bone/chest/halber
+#define BONE_GROIN_HALBER /obj/item/organ/bone/groin/halber
+#define BONE_L_ARM_HALBER /obj/item/organ/bone/l_arm/halber
+#define BONE_L_HAND_HALBER	/obj/item/organ/bone/l_hand/halber
+#define BONE_R_ARM_HALBER /obj/item/organ/bone/r_arm/halber
+#define BONE_R_HAND_HALBER /obj/item/organ/bone/r_hand/halber
+#define BONE_L_LEG_HALBER /obj/item/organ/bone/l_leg/halber
+#define BONE_L_FOOT_HALBER /obj/item/organ/bone/l_foot/halber
+#define BONE_R_LEG_HALBER /obj/item/organ/bone/r_leg/halber
+#define BONE_R_FOOT_HALBER /obj/item/organ/bone/r_foot/halber
 // ~tendons
 #define TENDON_MAX_HEALTH 100
 

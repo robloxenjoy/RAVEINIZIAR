@@ -167,3 +167,9 @@
 	return final_breath_modulo
 
 /obj/item/organ/lungs/proc/handle_gas_override(mob/living/carbon/human/breather, list/breath_gases, gas_breathed)
+
+/obj/item/organ/lungs/halber
+	maxHealth = 120
+	high_threshold = 110
+	low_threshold = 100
+	max_oxygen_deprivation = 100

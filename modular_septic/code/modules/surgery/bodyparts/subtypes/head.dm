@@ -289,3 +289,9 @@
 	//tape gag
 	else if(jaw.tapered)
 		. += image('modular_septic/icons/mob/human/overlays/tapegag.dmi', null, "tapegag", -UPPER_MEDICINE_LAYER)
+
+/obj/item/bodypart/head/halber
+	max_damage = 100
+	max_stamina_damage = 100
+	maxdam_wound_penalty = 30
+	bone_type = BONE_HEAD_HALBER

@@ -62,3 +62,8 @@
 	REMOVE_TRAIT(src, TRAIT_PARALYSIS, TRAIT_PARALYSIS_L_ARM)
 	UnregisterSignal(owner, SIGNAL_REMOVETRAIT(TRAIT_PARALYSIS_L_ARM))
 	RegisterSignal(owner, SIGNAL_ADDTRAIT(TRAIT_PARALYSIS_L_ARM), .proc/on_owner_paralysis_gain)
+
+/obj/item/bodypart/l_arm/halber
+	max_damage = 90
+	max_stamina_damage = 90
+	bone_type = BONE_L_ARM_HALBER

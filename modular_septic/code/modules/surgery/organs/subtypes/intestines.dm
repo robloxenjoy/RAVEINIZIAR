@@ -41,3 +41,8 @@
 
 /obj/item/organ/intestines/get_availability(datum/species/S)
 	return !(NOINTESTINES in S.species_traits)
+
+/obj/item/organ/infestines
+	maxHealth = 120
+	high_threshold = 110
+	low_threshold = 100

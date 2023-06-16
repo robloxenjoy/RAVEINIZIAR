@@ -41,3 +41,9 @@
 		return ..()
 	return FALSE
 */
+
+/obj/item/bodypart/chest/halber
+	max_damage = 130
+	max_stamina_damage = 130
+	maxdam_wound_penalty = 30
+	bone_type = BONE_CHEST_HALBER

@@ -43,3 +43,8 @@
 		if(owner.shoes)
 			owner.dropItemToGround(owner.shoes, TRUE)
 	return ..()
+
+/obj/item/bodypart/l_foot/halber
+	max_damage = 60
+	max_stamina_damage = 60
+	bone_type = BONE_L_FOOT_HALBER

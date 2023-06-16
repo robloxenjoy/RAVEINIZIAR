@@ -4,6 +4,7 @@
 	force = 0
 	throwforce = 0
 	w_class = WEIGHT_CLASS_NORMAL
+	drop_sound = "modular_pod/sound/eff/flesh_slap.wav"
 
 	/// Germ level is treated as the infection level of an organ, we start at 0 and only increase when appropriate
 	germ_level = 0

@@ -27,3 +27,9 @@
 	tendon_type = TENDON_GROIN
 	artery_type = ARTERY_GROIN
 	nerve_type = NERVE_GROIN
+
+/obj/item/bodypart/groin/halber
+	max_damage = 130
+	max_stamina_damage = 130
+	maxdam_wound_penalty = 30
+	bone_type = BONE_GROIN_HALBER

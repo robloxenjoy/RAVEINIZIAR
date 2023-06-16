@@ -63,3 +63,10 @@
 				break
 	else
 		name = initial(name)
+
+/obj/item/bodypart/neck/halber
+	max_damage = 50
+	max_stamina_damage = 50
+	wound_resistance = -2
+	maxdam_wound_penalty = 15
+	bone_type = BONE_NECK_HALBER

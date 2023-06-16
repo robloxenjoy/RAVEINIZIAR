@@ -103,3 +103,8 @@
 
 /obj/item/organ/heart/get_availability(datum/species/S)
 	return (!(NOBLOOD in S.species_traits) && !(TRAIT_STABLEHEART in S.inherent_traits))
+
+/obj/item/organ/heart/halber
+	maxHealth = 120
+	high_threshold = 110
+	low_threshold = 100

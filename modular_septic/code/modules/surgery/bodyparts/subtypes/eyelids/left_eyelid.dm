@@ -59,3 +59,7 @@
 	if(istype(new_limb, /obj/item/bodypart/head))
 		var/obj/item/bodypart/head/head = new_limb
 		head.left_eye = src
+
+/obj/item/bodypart/l_eyelid/halber
+	max_damage = 60
+	max_stamina_damage = 60

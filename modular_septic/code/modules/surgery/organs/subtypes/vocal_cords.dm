@@ -124,3 +124,8 @@
 /obj/item/organ/vocal_cords/colossus/speak_with(message)
 	var/cooldown = voice_of_god(uppertext(message), owner, spans, base_multiplier)
 	next_command = world.time + (cooldown * cooldown_mod)
+
+/obj/item/organ/vocal_cords/halber
+	maxHealth = 120
+	high_threshold = 110
+	low_threshold = 100

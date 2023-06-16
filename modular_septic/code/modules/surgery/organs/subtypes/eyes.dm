@@ -166,4 +166,3 @@
 			return 1
 		if(80 to INFINITY)
 			return 0
-

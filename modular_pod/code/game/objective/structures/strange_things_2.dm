@@ -267,3 +267,173 @@
 				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_VITALS, wound_bonus = 5, sharpness = SHARP_POINTY)
 	activated = FALSE
 	playsound(get_turf(src), 'modular_pod/sound/eff/close_trap.wav', 100 , FALSE, FALSE)
+
+/obj/structure/halber_socket
+	name = "Socket"
+	desc = "WHAT IS IT!!!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "socket"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+
+/obj/item/craftorshit/thing/alchemy/squash
+	name = "Squash"
+	desc = "HMMM..."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "squash"
+	var/heart_here = FALSE
+	var/guts_here = FALSE
+	var/lungs_here = FALSE
+	var/ready = FALSE
+	var/mob/living/carbon/human/species/halbermensch/halber
+
+/obj/item/craftorshit/thing/alchemy/squash/attackby(obj/item/I, mob/living/carbon/user, params)
+	. = ..()
+	if(istype(I, /obj/item/organ/heart))
+		if(user.a_intent == INTENT_DISARM)
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_PHYSICAL)
+			if(diceroll >= DICE_SUCCESS)
+				user.visible_message(span_notice("[user] connects the heart."),span_notice("You connect the heart."), span_hear("You hear a strange sound."))
+				sound_hint()
+				user.changeNext_move(10)
+				heart_here = TRUE
+				var/obj/item/organ/heart/heart = I
+				qdel(heart)
+			else
+				var/obj/item/organ/heart/heart = I
+				qdel(heart)
+				sound_hint()
+				user.changeNext_move(10)
+				new /obj/item/craftorshit/thing/retarded/alchemical(get_turf(src))
+	else if(istype(I, /obj/item/organ/intestines))
+		if(user.a_intent == INTENT_DISARM)
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_PHYSICAL)
+			if(diceroll >= DICE_SUCCESS)
+				user.visible_message(span_notice("[user] connects the infestines."),span_notice("You connect the infestines."), span_hear("You hear a strange sound."))
+				sound_hint()
+				user.changeNext_move(10)
+				guts_here = TRUE
+				var/obj/item/organ/infestines/guts = I
+				qdel(guts)
+			else
+				var/obj/item/organ/infestines/guts = I
+				qdel(guts)
+				sound_hint()
+				user.changeNext_move(10)
+				new /obj/item/craftorshit/thing/retarded/alchemical(get_turf(src))
+	else if(istype(I, /obj/item/organ/lungs))
+		if(user.a_intent == INTENT_DISARM)
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_PHYSICAL)
+			if(diceroll >= DICE_SUCCESS)
+				user.visible_message(span_notice("[user] connects the lungs"),span_notice("You connect the lungs."), span_hear("You hear a strange sound."))
+				sound_hint()
+				user.changeNext_move(10)
+				lungs_here = TRUE
+				var/obj/item/organ/lungs/lungs = I
+				qdel(lungs)
+			else
+				var/obj/item/organ/lungs/lungs = I
+				qdel(lungs)
+				sound_hint()
+				user.changeNext_move(10)
+				new /obj/item/craftorshit/thing/retarded/alchemical(get_turf(src))
+
+/obj/item/craftorshit/thing/alchemy/squash/Initialize(mapload)
+	. = ..()
+	if((heart_here) && (guts_here) && (lungs_here))
+		ready = TRUE
+
+/obj/item/craftorshit/thing/alchemy/squash/attack_self_tertiary(mob/living/carbon/human/user, modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_HELP)
+		if(ready)
+			user.visible_message(span_notice("<b>[user]</b> begins to compile the socket."), \
+						span_notice("I begin to compile the socket."), \
+						span_hear("I hear a strange sound."))
+			user.changeNext_move(CLICK_CD_MELEE)
+			playsound(loc, 'modular_pod/sound/eff/flesh_slap_second.wav', 50, TRUE)
+			var/durationn = (50 SECONDS - (GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY)))
+			if(!do_after(user, durationn, target = src))
+				to_chat(user, span_danger(xbox_rage_msg()))
+				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+				return
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_PHYSICAL)
+			if(diceroll >= DICE_SUCCESS)
+				to_chat(user, span_notice("You compile the socket..."))
+				sound_hint()
+				user.changeNext_move(CLICK_CD_MELEE)
+				user.Immobilize(1 SECONDS)
+				playsound(loc, 'modular_pod/sound/eff/creepy.ogg', 50, TRUE)
+				new /obj/structure/halber_socket(get_turf(user))
+				qdel(src)
+			else
+				to_chat(user, span_notice("NOTHING SUCCEEDED! NOTHING!"))
+				sound_hint()
+				user.changeNext_move(CLICK_CD_MELEE)
+				user.Immobilize(1 SECONDS)
+
+/obj/item/craftorshit/thing/alchemy/squash/examine(mob/user)
+	. = ..()
+	if(heart_here)
+		. += "<span class='notice'>Heart is connected.</span>"
+	else if(guts_here)
+		. += "<span class='notice'>Infestines are connected.</span>"
+	else if(lungs_here)
+		. += "<span class='notice'>Lungs are connected.</span>"
+
+/obj/item/craftorshit/thing/alchemy/squash/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
+	. = ..()
+	if(!ready)
+		to_chat(user, span_notice("Socket is not ready."))
+		return
+	if(!istype(over, /atom/movable/screen/inventory/hand) || !isliving(usr) || usr.incapacitated() || !cracked || !homie_in_geod)
+		return
+	var/mob/living/carbon/human/user = usr
+	var/turf/open/homie_release = get_turf(user)
+	if(!(istype(homie_release) && user.Adjacent(homie_release) && Adjacent(homie_release)))
+		return
+	if(!do_after(user, 10 SECONDS, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+		return
+	playsound(src, 'modular_septic/sound/effects/homierip.ogg', 80, FALSE)
+	to_chat(user, span_notice("I have freed <b>[halber]</b> from [halber.p_their()] socket!"))
+	halber.Unconscious(40 SECONDS)
+	halber.forceMove(homie_release)
+	halber.fully_replace_character_name(halber.real_name, "Halbermensch")
+	var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
+	if(!babble)
+		halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.wav')
+	else
+		babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.wav'
+		babble.volume = BABBLE_DEFAULT_VOLUME
+		babble.duration = BABBLE_DEFAULT_DURATION
+	halber.height = HUMAN_HEIGHT_MEDIUM
+	halber.attributes.update_attributes()
+	if(user.can_heartattack())
+		user.set_heartattack(TRUE)
+	halber.playsound_local(halber, 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
+	halber.key = user.key
+	qdel(src)
+
+/*
+		var/obj/structure/halber_socket/socket
+		var/mob/living/carbon/human/species/halbermensch/halber = new(socket.loc)
+		halber.fully_replace_character_name(halber.real_name, "Halbermensch")
+		var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
+		if(!babble)
+			halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.wav')
+		else
+			babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.wav'
+			babble.volume = BABBLE_DEFAULT_VOLUME
+			babble.duration = BABBLE_DEFAULT_DURATION
+
+		halber.height = HUMAN_HEIGHT_MEDIUM
+		halber.attributes.update_attributes()
+		halber.playsound_local(halber, 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
+		halber.key = key
+		qdel(socket)
+	else
+*/

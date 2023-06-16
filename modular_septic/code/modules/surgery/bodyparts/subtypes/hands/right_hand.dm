@@ -49,3 +49,8 @@
 			C.dropItemToGround(C.wrists, TRUE)
 		C.update_inv_gloves() //to remove the bloody hands overlay
 		C.update_inv_wrists()
+
+/obj/item/bodypart/r_hand/halber
+	max_damage = 60
+	max_stamina_damage = 60
+	bone_type = BONE_L_HAND_HALBER

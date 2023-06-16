@@ -41,3 +41,9 @@
 	. = ..()
 	if(used)
 		. += "<span class='warning'>Looks like it's already been used.</span>"
+
+/obj/item/organ/spleen/halber
+	maxHealth = 120
+	high_threshold = 110
+	low_threshold = 100
+	blood_regen_factor = 0.5

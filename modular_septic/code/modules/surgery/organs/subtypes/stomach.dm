@@ -49,3 +49,8 @@
 
 /obj/item/organ/stomach/get_availability(datum/species/S)
 	return !(NOSTOMACH in S.species_traits)
+
+/obj/item/organ/stomach/halber
+	maxHealth = 120
+	high_threshold = 110
+	low_threshold = 100

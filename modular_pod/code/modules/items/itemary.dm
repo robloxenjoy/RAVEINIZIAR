@@ -37,6 +37,12 @@
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "retardedthing"
 
+/obj/item/craftorshit/thing/retarded/alchemical
+	name = "Retarded Thing"
+	desc = "Its strange and retarded. Magical."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "retardedthing_magic"
+
 /obj/item/craftorshit/thing/wooden
 	name = "Evil Wooden Thing"
 	desc = "Its strange. Can be used for crafting."

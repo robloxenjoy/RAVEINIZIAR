@@ -282,3 +282,8 @@
 
 /obj/item/bodypart/face/gutted
 	real_name = "Slave Of Gutted"
+
+/obj/item/bodypart/face/halber
+	max_damage = 80
+	max_stamina_damage = 80
+	maxdam_wound_penalty = 20

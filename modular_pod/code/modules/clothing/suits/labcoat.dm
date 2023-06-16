@@ -75,10 +75,10 @@
 	inhand_icon_state = "robechaotic"
 	blood_overlay_type = "coat"
 	mutant_variants = NONE
+	hood_up = FALSE
 	body_parts_covered = NECK|CHEST|VITALS|GROIN|ARMS|LEGS
 	cold_protection = NECK|CHEST|VITALS|GROIN|ARMS|LEGS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	hoodtype = null
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
 				EDGE_PROTECTION = 2, \
 				CRUSHING = 2, \

@@ -568,3 +568,9 @@
 		qdel(X)
 		amount_cured++
 	return amount_cured
+
+/obj/item/organ/brain/halber
+	maxHealth = 200
+	high_threshold = 150
+	low_threshold = 140
+	internal_damage_modifier = 0.5

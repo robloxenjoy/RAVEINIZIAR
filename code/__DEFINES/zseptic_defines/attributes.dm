@@ -130,7 +130,7 @@
 
 // ~research skills
 #define SKILL_SCIENCE /datum/attribute/skill/science
-#define SKILL_CHEMISTRY /datum/attribute/skill/chemistry
+#define SKILL_ALCHEMISTRY /datum/attribute/skill/alchemistry
 
 // ~domestic skills
 #define SKILL_COOKING /datum/attribute/skill/culinary

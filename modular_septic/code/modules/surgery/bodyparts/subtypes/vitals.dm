@@ -37,3 +37,8 @@
 			funky_anus.icon_state = "[base_icon_state]-bone"
 		funky_anus.plane = plane
 		. += funky_anus
+
+/obj/item/bodypart/vitals/halber
+	max_damage = 130
+	max_stamina_damage = 130
+	maxdam_wound_penalty = 30

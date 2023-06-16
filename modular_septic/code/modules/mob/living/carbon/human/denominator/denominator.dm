@@ -8,6 +8,11 @@
 	icon_state = "glorytotheccp" //for mapping
 	race = /datum/species/weakwillet
 
+/mob/living/carbon/human/species/halbermensch
+	icon = 'modular_septic/icons/obj/items/books.dmi'
+	icon_state = "glorytotheccp" //for mapping
+	race = /datum/species/halbermensch
+
 /mob/living/carbon/human/species/tendonishe
 	icon = 'modular_septic/icons/obj/items/books.dmi'
 	icon_state = "glorytotheccp" //for mapping

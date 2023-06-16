@@ -37,6 +37,7 @@
 /mob/proc/send_naxyu()
 	if(stat != DEAD)
 		return
+
 	var/obj/effect/landmark/tendance/K = locate() in world
 	var/mob/living/carbon/human/species/weakwillet/character = new(K.loc)
 
