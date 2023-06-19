@@ -174,7 +174,7 @@
 #define BONE_CHEST_HALBER /obj/item/organ/bone/chest/halber
 #define BONE_GROIN_HALBER /obj/item/organ/bone/groin/halber
 #define BONE_L_ARM_HALBER /obj/item/organ/bone/l_arm/halber
-#define BONE_L_HAND_HALBER	/obj/item/organ/bone/l_hand/halber
+#define BONE_L_HAND_HALBER /obj/item/organ/bone/l_hand/halber
 #define BONE_R_ARM_HALBER /obj/item/organ/bone/r_arm/halber
 #define BONE_R_HAND_HALBER /obj/item/organ/bone/r_hand/halber
 #define BONE_L_LEG_HALBER /obj/item/organ/bone/l_leg/halber

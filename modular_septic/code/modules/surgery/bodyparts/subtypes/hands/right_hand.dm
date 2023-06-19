@@ -53,4 +53,4 @@
 /obj/item/bodypart/r_hand/halber
 	max_damage = 60
 	max_stamina_damage = 60
-	bone_type = BONE_L_HAND_HALBER
+	bone_type = BONE_R_HAND_HALBER

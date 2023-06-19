@@ -7,7 +7,6 @@
 	attack_verb_continuous = list("snaps")
 	attack_verb_simple = list("snap")
 	parent_body_zone = BODY_ZONE_CHEST
-	children_zones = list(BODY_ZONE_HEAD)
 	body_zone = BODY_ZONE_PRECISE_NECK
 	body_part = NECK
 	limb_flags = BODYPART_EDIBLE|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_HAS_ARTERY
@@ -15,7 +14,9 @@
 	max_stamina_damage = 30
 	wound_resistance = -5
 	maxdam_wound_penalty = 5 // too easy to hit max damage, too lethal
+	children_zones = list(BODY_ZONE_HEAD)
 	stam_heal_tick = 1
+//	can_be_disabled = TRUE
 
 	max_cavity_item_size = WEIGHT_CLASS_TINY
 	max_cavity_volume = 2.5
@@ -24,7 +25,6 @@
 	melee_hit_zone_modifier = -1
 
 	throw_range = 3
-	maxdam_wound_penalty = 10
 	px_x = 0
 	px_y = -8
 	dismemberment_sounds = list(
