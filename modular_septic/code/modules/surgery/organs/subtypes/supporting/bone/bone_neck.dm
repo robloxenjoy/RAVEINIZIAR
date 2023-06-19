@@ -5,7 +5,7 @@
 	base_icon_state = "spine"
 	zone = BODY_ZONE_PRECISE_NECK
 	joint_name = "cervical spine"
-	bone_flags = BONE_JOINTED
+	bone_flags = null
 
 /obj/item/organ/bone/neck/robot
 	name = "cyborg spine"

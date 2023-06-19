@@ -63,7 +63,7 @@
 //	var/obj/item/bodypart/affecting = C.get_bodypart(hit_zone)
 	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(src.zone_selected))
 	if(!affecting || affecting == ORGAN_DESTROYED)
-		to_chat(src, "<span class='necrosis'>They are missing that limb!</span>")
+		to_chat(src, "<span class='necrosis'>That limb is missing!</span>")
 		return
 /*
 	if(user.vice == "Kleptomaniac")
@@ -75,7 +75,6 @@
 //	var/list/rolled = roll3d6(user,SKILL_STEAL,null)
 	var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)
 	var/obj/whatwillitsteal = null
-	var/slot_it_will_go = null
 	if(diceroll == DICE_CRIT_FAILURE)
 		src.visible_message(span_steal("[src] caught stealing!"),span_steal("You got caught stealing! Very bad!"), span_hear("You hear the sound of tripping."))
 		src.Immobilize(2 SECONDS)
@@ -95,31 +94,26 @@
 			if(BODY_ZONE_CHEST)
 				if(C.r_store)
 					whatwillitsteal = C.r_store
-					slot_it_will_go = C.r_store
 				else
 					if(C.l_store)
 						whatwillitsteal = C.l_store
-						slot_it_will_go = C.l_store
 					else
 						to_chat(src, span_steal("There is nothing left in the pockets!"))
 						return
 			if(BODY_ZONE_PRECISE_VITALS)
 				if(C.wear_id)
 					whatwillitsteal = C.wear_id
-					slot_it_will_go = C.wear_id
 				else
 					if(C.s_store)
 						whatwillitsteal = C.s_store
-						slot_it_will_go = C.s_store
 					else
 						to_chat(src, span_steal("There is nothing left in here!"))
 						return
 			if(BODY_ZONE_PRECISE_GROIN)
 				if(C.belt)
 					whatwillitsteal = C.belt
-					slot_it_will_go = C.belt
 				else
-					to_chat(src, span_steal("There is nothing left in the belt!"))
+					to_chat(src, span_steal("There is nothing!"))
 					return
 /*
 			if(BODY_ZONE_PRECISE_R_HAND || BODY_ZONE_PRECISE_L_HAND)
@@ -134,18 +128,18 @@
 						to_chat(src, span_steal("There is nothing on wrists!"))
 						return
 */
-		if(whatwillitsteal)
-			var/obj/item/stolen/S = new(src)
-			S.icon = whatwillitsteal.icon
-			S.icon_state = whatwillitsteal.icon_state
-			S.name = whatwillitsteal.name
-			S.desc = whatwillitsteal.desc
+//		if(whatwillitsteal)
+//			var/obj/item/stolen/S = new(src)
+//			S.icon = whatwillitsteal.icon
+//			S.icon_state = whatwillitsteal.icon_state
+//			S.name = whatwillitsteal.name
+//			S.desc = whatwillitsteal.desc
 //			C.doUnEquip(whatwillitsteal)
 //		target.u_equip(whatwillitsteal)
-			C.dropItemToGround(whatwillitsteal, force = TRUE, silent = TRUE)
-			src.put_in_active_hand(whatwillitsteal)
-			C.equip_to_slot(S, slot_it_will_go)
-			to_chat(src, span_steal("I stealed the [S.name] from [C]!"))
+	C.dropItemToGround(whatwillitsteal, force = TRUE, silent = TRUE)
+	src.put_in_active_hand(whatwillitsteal)
+//			C.equip_to_slot(S, slot_it_will_go)
+//			to_chat(src, span_steal("I stealed the [S.name] from [C]!"))
 
 /obj/item/stolen
 	name = "none"

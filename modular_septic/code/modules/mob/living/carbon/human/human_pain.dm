@@ -166,7 +166,7 @@
 			status += "<span class='info'><a href='?src=[REF(LB)];gauze=1;'><b>GAUZE</b></a></span>"
 
 		if(LB.bodypart_disabled)
-			status += "<span class='danger'><b>CRIPPLED</b></span>"
+			status += "<span class='cyanicdream'><b>CRIPPLED</b></span>"
 
 		if(!length(status))
 			status += "<span class='nicegreen'><b>OK</b></span>"

@@ -16,7 +16,7 @@
 	maxdam_wound_penalty = 5 // too easy to hit max damage, too lethal
 	children_zones = list(BODY_ZONE_HEAD)
 	stam_heal_tick = 1
-//	can_be_disabled = TRUE
+	can_be_disabled = FALSE
 
 	max_cavity_item_size = WEIGHT_CLASS_TINY
 	max_cavity_volume = 2.5
