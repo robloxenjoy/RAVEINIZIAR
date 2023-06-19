@@ -69,6 +69,7 @@
 		NOEYESPRITES,
 	)
 	inherent_traits = list(
+		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CHUNKYFINGERS,
 		TRAIT_FLUORIDE_STARE,
 		TRAIT_DEPRESSION,
@@ -122,7 +123,7 @@
 	armor = 5
 	punchdamagelow = 5
 	punchdamagehigh = 14
-	liked_food = MEAT
+	liked_food = MEAT | RAW
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	say_mod = "defigures"
 	attack_verb = "crashes"
