@@ -64,6 +64,7 @@
 	default_color = "#ff6a00"
 	sexes = FALSE
 	species_traits = list(
+		NO_UNDERWEAR,
 		AGENDER,
 		NOEYESPRITES,
 	)
@@ -76,6 +77,7 @@
 	no_equip = list(ITEM_SLOT_LEAR,
 					ITEM_SLOT_REAR,
 					ITEM_SLOT_MASK,
+					ITEM_SLOT_HEAD,
 					ITEM_SLOT_EYES,
 					ITEM_SLOT_NECK,
 					ITEM_SLOT_OCLOTHING,
@@ -117,6 +119,9 @@
 	mutantliver = /obj/item/organ/liver/halber
 	mutantkidneys = /obj/item/organ/kidneys/halber
 	mutantheart = /obj/item/organ/heart/halber
+	armor = 5
+	punchdamagelow = 5
+	punchdamagehigh = 14
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	say_mod = "defigures"

@@ -983,9 +983,10 @@
 	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
 		if(affected.get_incision(FALSE))
 			var/edge_protection = 0
+			var/resultt = 0
 			edge_protection = victim.get_edge_protection(affected)
-			edge_protection = max(0, edge_protection - weapon.edge_protection_penetration)
-			if(edge_protection <= 0)
+			resultt = (edge_protection - weapon.edge_protection_penetration)
+			if(resultt <= 0)
 				affected.open_incision()
 				for(var/obj/item/organ/bone/bonee as anything in affected.getorganslotlist(ORGAN_SLOT_BONE))
 					if(!bonee.is_broken())

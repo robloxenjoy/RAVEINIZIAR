@@ -348,7 +348,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/proc/spring_trap(datum/source, atom/movable/AM, thrown_at = FALSE)
 	SIGNAL_HANDLER
-	if(!armed || !isturf(loc) || !isliving(AM))
+	if(!armed || !isturf(loc) || !iscarbon(AM))
 		return
 	var/mob/living/L = AM
 	var/snap = TRUE

@@ -275,6 +275,42 @@
 	icon_state = "socket"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
+	var/cracked = TRUE
+	var/ready = TRUE
+
+/obj/structure/halber_socket/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.incapacitated() || !cracked || !ready)
+		return
+	if(user.a_intent == INTENT_GRAB)
+		user.visible_message(span_notice("[user] begins to pull out the Halbermensch."),span_notice("You begin to pull out the Halbermensch."), span_hear("You hear a strange sound."))
+		sound_hint()
+		if(!do_after(user, 10 SECONDS, target = src))
+			to_chat(user, span_danger(xbox_rage_msg()))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+			return
+		playsound(src, 'modular_septic/sound/effects/homierip.ogg', 80, FALSE)
+		var/mob/living/carbon/human/species/halbermensch/halber = new(get_turf(src))
+		to_chat(user, span_notice("I have freed <b>[halber]</b> from socket!"))
+		halber.Unconscious(40 SECONDS)
+		halber.forceMove(get_turf(user))
+		halber.fully_replace_character_name(halber.real_name, "Halbermensch")
+		var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
+		if(!babble)
+			halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.wav')
+		else
+			babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.wav'
+			babble.volume = BABBLE_DEFAULT_VOLUME
+			babble.duration = BABBLE_DEFAULT_DURATION
+		halber.height = HUMAN_HEIGHT_MEDIUM
+		halber.attributes.update_attributes()
+		if(user.can_heartattack())
+			user.set_heartattack(TRUE)
+		halber.playsound_local(halber, 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
+		halber.key = user.key
+		qdel(src)
 
 /obj/item/craftorshit/thing/alchemy/squash
 	name = "Squash"
@@ -285,7 +321,6 @@
 	var/guts_here = FALSE
 	var/lungs_here = FALSE
 	var/ready = FALSE
-	var/mob/living/carbon/human/species/halbermensch/halber
 
 /obj/item/craftorshit/thing/alchemy/squash/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
@@ -382,41 +417,6 @@
 		. += "<span class='notice'>Infestines are connected.</span>"
 	else if(lungs_here)
 		. += "<span class='notice'>Lungs are connected.</span>"
-
-/obj/item/craftorshit/thing/alchemy/squash/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
-	. = ..()
-	if(!ready)
-		to_chat(user, span_notice("Socket is not ready."))
-		return
-	if(!istype(over, /atom/movable/screen/inventory/hand) || !isliving(usr) || usr.incapacitated() || !cracked || !homie_in_geod)
-		return
-	var/mob/living/carbon/human/user = usr
-	var/turf/open/homie_release = get_turf(user)
-	if(!(istype(homie_release) && user.Adjacent(homie_release) && Adjacent(homie_release)))
-		return
-	if(!do_after(user, 10 SECONDS, target = src))
-		to_chat(user, span_danger(xbox_rage_msg()))
-		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
-		return
-	playsound(src, 'modular_septic/sound/effects/homierip.ogg', 80, FALSE)
-	to_chat(user, span_notice("I have freed <b>[halber]</b> from [halber.p_their()] socket!"))
-	halber.Unconscious(40 SECONDS)
-	halber.forceMove(homie_release)
-	halber.fully_replace_character_name(halber.real_name, "Halbermensch")
-	var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
-	if(!babble)
-		halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.wav')
-	else
-		babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.wav'
-		babble.volume = BABBLE_DEFAULT_VOLUME
-		babble.duration = BABBLE_DEFAULT_DURATION
-	halber.height = HUMAN_HEIGHT_MEDIUM
-	halber.attributes.update_attributes()
-	if(user.can_heartattack())
-		user.set_heartattack(TRUE)
-	halber.playsound_local(halber, 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
-	halber.key = user.key
-	qdel(src)
 
 /*
 		var/obj/structure/halber_socket/socket

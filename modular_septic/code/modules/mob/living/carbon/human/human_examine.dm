@@ -277,7 +277,7 @@
 		msg += "[t_He] [t_is] severely malnourished."
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_He] [t_is] plump and delicious looking - Like a fat little piggy. A tasty piggy."
+			msg += "[t_He] [t_is] fat."
 		else
 			msg += "[t_He] [t_is] quite chubby."
 	switch(disgust)

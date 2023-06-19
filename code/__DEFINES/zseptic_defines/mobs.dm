@@ -42,7 +42,7 @@
 #define AROUSAL_LEVEL_START_MAX 200
 
 /// Factor at which mob hydration decreases
-#define THIRST_FACTOR 2.3
+#define THIRST_FACTOR 5
 
 /// How much moving around increases carbon germ level
 #define GERM_LEVEL_MOVEMENT_INCREASE 0.2
