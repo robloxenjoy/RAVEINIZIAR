@@ -17,7 +17,7 @@
 
 /mob/living/carbon/proc/major_wound_effects(incoming_pain = 0, body_zone = BODY_ZONE_CHEST, wound_messages = TRUE)
 	//Try not to stack too much
-	if((world.time - last_major_wound) <= 0.6 SECONDS)
+	if((world.time - last_major_wound) <= 1 SECONDS)
 		return
 	var/attribute_modifier = GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)
 	var/modifier = 0

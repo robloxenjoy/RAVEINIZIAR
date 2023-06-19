@@ -294,7 +294,7 @@
 		playsound(src, 'modular_septic/sound/effects/homierip.ogg', 80, FALSE)
 		var/mob/living/carbon/human/species/halbermensch/halber = new(get_turf(src))
 		to_chat(user, span_notice("I have freed <b>[halber]</b> from socket!"))
-		halber.Unconscious(40 SECONDS)
+		halber.Unconscious(10 SECONDS)
 		halber.forceMove(get_turf(user))
 		halber.fully_replace_character_name(halber.real_name, "Halbermensch")
 		var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
