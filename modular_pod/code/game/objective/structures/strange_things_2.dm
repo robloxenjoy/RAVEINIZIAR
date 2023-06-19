@@ -275,6 +275,7 @@
 	icon_state = "socket"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
+	density = TRUE
 	var/cracked = TRUE
 	var/ready = TRUE
 
@@ -308,8 +309,8 @@
 		halber.attributes.update_attributes()
 		if(user.can_heartattack())
 			user.set_heartattack(TRUE)
-		halber.playsound_local(halber, 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
 		halber.key = user.key
+		halber.playsound_local(halber, 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
 		qdel(src)
 
 /obj/item/craftorshit/thing/alchemy/squash
