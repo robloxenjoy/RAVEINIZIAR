@@ -13,7 +13,7 @@
 	name = "Eigenstasium"
 	description = "A strange mixture formed from a controlled reaction of bluespace with plasma, that causes localised eigenstate fluxuations within the patient"
 	taste_description = "wiggly cosmic dust."
-	color = "#5020F4"
+	color = "#5020F490"
 	overdose_threshold = 15
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	ph = 3.7

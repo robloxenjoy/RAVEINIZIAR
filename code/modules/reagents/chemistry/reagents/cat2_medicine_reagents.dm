@@ -16,7 +16,7 @@
 /datum/reagent/medicine/c2/helbital //kinda a C2 only if you're not in hardcrit.
 	name = "Helbital"
 	description = "Named after the norse goddess Hel, this medicine heals the patient's bruises the closer they are to death. Patients will find the medicine 'aids' their healing if not near death by causing asphyxiation."
-	color = "#9400D3"
+	color = "#9400D390"
 	taste_description = "cold and lifeless"
 	ph = 8
 	overdose_threshold = 35
@@ -94,7 +94,7 @@
 /datum/reagent/medicine/c2/libital //messes with your liber
 	name = "Libital"
 	description = "A bruise reliever. Does minor liver damage."
-	color = "#ECEC8D" // rgb: 236 236 141
+	color = "#ECEC8D90" // rgb: 236 236 141
 	ph = 8.2
 	taste_description = "bitter with a hint of alcohol"
 	reagent_state = SOLID
@@ -111,7 +111,7 @@
 	name = "Probital"
 	description = "Originally developed as a prototype-gym supliment for those looking for quick workout turnover, this oral medication quickly repairs broken muscle tissue but causes lactic acid buildup, tiring the patient. Overdosing can cause extreme drowsiness. An Influx of nutrients promotes the muscle repair even further."
 	reagent_state = SOLID
-	color = "#FFFF6B"
+	color = "#FFFF6B90"
 	ph = 5.5
 	overdose_threshold = 20
 	inverse_chem_val = 0.5//Though it's tough to get
@@ -159,7 +159,7 @@
 	name = "Lenturi"
 	description = "Used to treat burns. Makes you move slower while it is in your system. Applies stomach damage when it leaves your system."
 	reagent_state = LIQUID
-	color = "#6171FF"
+	color = "#6171FF90"
 	ph = 4.7
 	impure_chem = /datum/reagent/impurity/lentslurri
 	failed_chem = /datum/reagent/inverse/ichiyuri //I do hope cobby won't take this personally
@@ -178,7 +178,7 @@
 	name = "Aiuri"
 	description = "Used to treat burns. Does minor eye damage."
 	reagent_state = LIQUID
-	color = "#8C93FF"
+	color = "#8C93FF90"
 	ph = 4
 /* SEPTIC EDIT REMOVAL
 	impure_chem = /datum/reagent/impurity/aiuri //blurriness
@@ -196,7 +196,7 @@
 	name = "Hercuri"
 	description = "Not to be confused with element Mercury, this medicine excels in reverting effects of dangerous high-temperature environments. Prolonged exposure can cause hypothermia."
 	reagent_state = LIQUID
-	color = "#F7FFA5"
+	color = "#F7FFA590"
 	overdose_threshold = 25
 	reagent_weight = 0.6
 	ph = 8.9
@@ -243,7 +243,7 @@
 	name = "Convermol"
 	description = "Restores oxygen deprivation while producing a lesser amount of toxic byproducts. Both scale with exposure to the drug and current amount of oxygen deprivation. Overdose causes toxic byproducts regardless of oxygen deprivation."
 	reagent_state = LIQUID
-	color = "#FF6464"
+	color = "#FF646490"
 	overdose_threshold = 35 // at least 2 full syringes +some, this stuff is nasty if left in for long
 	ph = 5.6
 	inverse_chem_val = 0.5
@@ -271,7 +271,7 @@
 /datum/reagent/medicine/c2/tirimol
 	name = "Tirimol"
 	description = "An oxygen deprivation medication that causes fatigue. Prolonged exposure causes the patient to fall asleep once the medicine metabolizes."
-	color = "#FF6464"
+	color = "#FF646490"
 	ph = 5.6
 	inverse_chem = /datum/reagent/inverse/healing/tirimol
 	inverse_chem_val = 0.4
@@ -382,7 +382,7 @@
 	name = "Syriniver"
 	description = "A potent antidote for intravenous use with a narrow therapeutic index, it is considered an active prodrug of musiver."
 	reagent_state = LIQUID
-	color = "#8CDF24" // heavy saturation to make the color blend better
+	color = "#8CDF2490" // heavy saturation to make the color blend better
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	overdose_threshold = 6
 	impure_chem = /datum/reagent/inverse/healing/syriniver
@@ -427,7 +427,7 @@
 	name = "Musiver"
 	description = "The active metabolite of syriniver. Causes muscle weakness on overdose"
 	reagent_state = LIQUID
-	color = "#DFD54E"
+	color = "#DFD54E90"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	ph = 9.1
@@ -467,7 +467,7 @@
 	name = "Synthflesh"
 	description = "Heals brute and burn damage at the cost of toxicity (66% of damage healed). 100u or more can restore corpses husked by burns. Touch application only."
 	reagent_state = LIQUID
-	color = "#FFEBEB"
+	color = "#FFEBEB90"
 	ph = 7.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 /* SEPTIC EDIT REMOVAL
@@ -508,7 +508,7 @@
 /datum/reagent/medicine/c2/penthrite
 	name = "Penthrite"
 	description = "An expensive medicine that aids with pumping blood around the body even without a heart, and prevents the heart from slowing down. Mixing it with epinephrine or atropine will cause an explosion."
-	color = "#F5F5F5"
+	color = "#F5F5F590"
 	overdose_threshold = 50
 	ph = 12.7
 	inverse_chem = /datum/reagent/inverse/penthrite

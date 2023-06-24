@@ -11,7 +11,7 @@
 /datum/reagent/drug/space_drugs
 	name = "Space drugs"
 	description = "An illegal chemical compound used as drug."
-	color = "#60A584" // rgb: 96, 165, 132
+	color = "#60A584100" // rgb: 96, 165, 132
 	overdose_threshold = 30
 	ph = 9
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -37,7 +37,7 @@
 /datum/reagent/drug/cannabis
 	name = "Cannabis"
 	description = "A psychoactive drug from the Cannabis plant used for recreational purposes."
-	color = "#059033"
+	color = "#059033100"
 	overdose_threshold = INFINITY
 	ph = 6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -63,7 +63,7 @@
 	name = "Nicotine"
 	description = "Slightly reduces stun times. If overdosed it will deal toxin and oxygen damage."
 	reagent_state = LIQUID
-	color = "#60A584" // rgb: 96, 165, 132
+	color = "#60A584100" // rgb: 96, 165, 132
 	taste_description = "smoke"
 	trippy = FALSE
 	overdose_threshold=15
@@ -103,7 +103,7 @@
 	name = "Krokodil"
 	description = "Cools and calms you down. If overdosed it will deal significant Brain and Toxin damage."
 	reagent_state = LIQUID
-	color = "#0064B4"
+	color = "#0064B4100"
 	overdose_threshold = 20
 	ph = 9
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -129,12 +129,11 @@
 	. = TRUE
 
 
-
 /datum/reagent/drug/methamphetamine
 	name = "Methamphetamine"
 	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Toxin and Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
 	reagent_state = LIQUID
-	color = "#FAFAFA"
+	color = "#FAFAFA100"
 	overdose_threshold = 20
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	ph = 5
@@ -185,7 +184,7 @@
 	name = "Bath Salts"
 	description = "Makes you impervious to stuns and grants a stamina regeneration buff, but you will be a nearly uncontrollable tramp-bearded raving lunatic."
 	reagent_state = LIQUID
-	color = "#FAFAFA"
+	color = "#FAFAFA100"
 	overdose_threshold = 20
 	taste_description = "salt" // because they're bathsalts?
 	addiction_types = list(/datum/addiction/stimulants = 25)  //8 per 2 seconds
@@ -238,7 +237,7 @@
 	name = "Aranesp"
 	description = "Amps you up, gets you going, and rapidly restores stamina damage. Side effects include breathlessness and toxicity."
 	reagent_state = LIQUID
-	color = "#78FFF0"
+	color = "#78FFF0100"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	addiction_types = list(/datum/addiction/stimulants = 8)
 
@@ -258,7 +257,7 @@
 	name = "Happiness"
 	description = "Fills you with ecstasic numbness and causes minor brain damage. Highly addictive. If overdosed causes sudden mood swings."
 	reagent_state = LIQUID
-	color = "#EE35FF"
+	color = "#EE35FF100"
 	overdose_threshold = 20
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	taste_description = "paint thinner"
@@ -303,7 +302,7 @@
 	name = "Pump-Up"
 	description = "Take on the world! A fast acting, hard hitting drug that pushes the limit on what you can handle."
 	reagent_state = LIQUID
-	color = "#e38e44"
+	color = "#e38e44100"
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -352,7 +351,7 @@
 	name = "Maintenance Powder"
 	description = "An unknown powder that you most likely gotten from an assistant, a bored chemist... or cooked yourself. It is a refined form of tar that enhances your mental ability, making you learn stuff a lot faster."
 	reagent_state = SOLID
-	color = "#ffffff"
+	color = "#ffffff100"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 15
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -380,7 +379,7 @@
 	name = "Maintenance Sludge"
 	description = "An unknown sludge that you most likely gotten from an assistant, a bored chemist... or cooked yourself. Half refined, it fills your body with itself, making it more resistant to wounds, but causes toxins to accumulate."
 	reagent_state = LIQUID
-	color = "#203d2c"
+	color = "#203d2c100"
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -414,7 +413,7 @@
 	name = "Maintenance Tar"
 	description = "An unknown tar that you most likely gotten from an assistant, a bored chemist... or cooked yourself. Raw tar, straight from the floor. It can help you with escaping bad situations at the cost of liver damage."
 	reagent_state = LIQUID
-	color = "#000000"
+	color = "#000000100"
 	overdose_threshold = 30
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	addiction_types = list(/datum/addiction/maintenance_drugs = 5)
@@ -438,7 +437,7 @@
 /datum/reagent/drug/mushroomhallucinogen
 	name = "Mushroom Hallucinogen"
 	description = "A strong hallucinogenic drug derived from certain species of mushroom."
-	color = "#E700E7" // rgb: 231, 0, 231
+	color = "#E700E7100" // rgb: 231, 0, 231
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	taste_description = "darner"
 	ph = 11
@@ -510,7 +509,7 @@
 	name = "bLaSToFF"
 	description = "A drug for the hardcore party crowd said to enhance ones abilities on the dance floor.\nMost old heads refuse to touch this stuff, perhaps because memories of the luna discoteque incident are seared into their brains."
 	reagent_state = LIQUID
-	color = "#9015a9"
+	color = "#9015a9100"
 	taste_description = "holodisk cleaner"
 	ph = 5
 	overdose_threshold = 30
@@ -634,7 +633,7 @@
 	description = "This compound was first discovered during the infancy of cloaking technology and at the time thought to be a promising candidate agent. It was withdrawn for consideration after the researchers discovered a slew of associated safety issues including thought disorders and hepatoxicity."
 	reagent_state = SOLID
 	taste_description = "metallic bitterness"
-	color = "#638b9b"
+	color = "#638b9b100"
 	overdose_threshold = 25
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ph = 10
@@ -735,7 +734,7 @@
 	name = "kronkaine"
 	description = "A highly illegal stimulant from the edge of the galaxy.\nIt is said the average kronkaine addict causes as much criminal damage as five stick up men, two rascals and one proferssional cambringo hustler combined."
 	reagent_state = SOLID
-	color = "#FAFAFA"
+	color = "#FAFAFA100"
 	taste_description = "numbing bitterness"
 	ph = 8
 	overdose_threshold = 20

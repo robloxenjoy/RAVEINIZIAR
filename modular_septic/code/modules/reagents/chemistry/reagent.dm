@@ -1,6 +1,6 @@
 /datum/reagent
 	///Does this evaporate as a puddle?
-	var/liquid_evaporation_rate = 1
+	var/liquid_evaporation_rate = 0
 	///How much fire power does the liquid have, for burning on simulated liquids. Not enough fire power/unit of entire mixture may result in no fire
 	var/liquid_fire_power = 0
 	///How fast does the liquid burn on simulated turfs, if it does

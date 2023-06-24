@@ -21,7 +21,7 @@
 	name = "Leporazine"
 	description = "Leporazine will effectively regulate a patient's body temperature, ensuring it never leaves safe levels."
 	ph = 8.4
-	color = "#DB90C6"
+	color = "#DB90C690"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/leporazine/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
@@ -41,7 +41,7 @@
 /datum/reagent/medicine/adminordrazine //An OP chemical for admins
 	name = "Adminordrazine"
 	description = "It's magic. We don't have to explain it."
-	color = "#E0BB00" //golden for the gods
+	color = "#E0BB0090" //golden for the gods
 	taste_description = "badmins"
 	chemical_flags = REAGENT_DEAD_PROCESS
 
@@ -113,7 +113,7 @@
 /datum/reagent/medicine/synaptizine
 	name = "Synaptizine"
 	description = "Increases resistance to stuns as well as reducing drowsiness and hallucinations."
-	color = "#FF00FF"
+	color = "#FF00FF90"
 	ph = 4
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -135,7 +135,7 @@
 /datum/reagent/medicine/synaphydramine
 	name = "Diphen-Synaptizine"
 	description = "Reduces drowsiness, hallucinations, and Histamine from body."
-	color = "#EC536D" // rgb: 236, 83, 109
+	color = "#EC536D90" // rgb: 236, 83, 109
 	ph = 5.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -154,7 +154,7 @@
 /datum/reagent/medicine/cryoxadone
 	name = "Cryoxadone"
 	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the patient's body temperature must be under 270K for it to metabolise correctly."
-	color = "#0000C8"
+	color = "#0000C890"
 	taste_description = "blue"
 	ph = 11
 	burning_temperature = 20 //cold burning
@@ -186,7 +186,7 @@
 /datum/reagent/medicine/clonexadone
 	name = "Clonexadone"
 	description = "A chemical that derives from Cryoxadone. It specializes in healing clone damage, but nothing else. Requires very cold temperatures to properly metabolize, and metabolizes quicker than cryoxadone."
-	color = "#3D3DC6"
+	color = "#3D3DC690"
 	taste_description = "muscle"
 	ph = 13
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
@@ -202,7 +202,7 @@
 /datum/reagent/medicine/pyroxadone
 	name = "Pyroxadone"
 	description = "A mixture of cryoxadone and slime jelly, that apparently inverses the requirement for its activation."
-	color = "#f7832a"
+	color = "#f7832a90"
 	taste_description = "spicy jelly"
 	ph = 12
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -236,7 +236,7 @@
 	name = "Rezadone"
 	description = "A powder derived from fish toxin, Rezadone can effectively treat genetic damage as well as restoring minor wounds and restoring corpses husked by burns. Overdose will cause intense nausea and minor toxin damage."
 	reagent_state = SOLID
-	color = "#669900" // rgb: 102, 153, 0
+	color = "#66990090" // rgb: 102, 153, 0
 	overdose_threshold = 30
 	ph = 12.2
 	taste_description = "fish"
@@ -269,7 +269,7 @@
 /datum/reagent/medicine/spaceacillin
 	name = "Spaceacillin"
 	description = "Spaceacillin will prevent a patient from conventionally spreading any diseases they are currently infected with. Also reduces infection in serious burns."
-	color = "#E1F2E6"
+	color = "#E1F2E690"
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	ph = 8.1
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -280,7 +280,7 @@
 	name = "Oxandrolone"
 	description = "Stimulates the healing of severe burns. Extremely rapidly heals severe burns and slowly heals minor ones. Overdose will worsen existing burns."
 	reagent_state = LIQUID
-	color = "#1E8BFF"
+	color = "#1E8BFF90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	ph = 10.7
@@ -304,7 +304,7 @@
 	name = "Saline-Glucose Solution"
 	description = "Has a 33% chance per metabolism cycle to heal brute and burn damage. Can be used as a temporary blood substitute, as well as slowly speeding blood regeneration."
 	reagent_state = LIQUID
-	color = "#DCDCDC"
+	color = "#DCDCDC90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
 	taste_description = "sweetness and salt"
@@ -348,7 +348,7 @@
 	name = "Miner's Salve"
 	description = "A powerful painkiller. Restores bruising and burns in addition to making the patient believe they are fully healed. Also great for treating severe burn wounds in a pinch."
 	reagent_state = LIQUID
-	color = "#6D6374"
+	color = "#6D637490"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	ph = 2.6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -390,7 +390,7 @@
 	name = "Omnizine"
 	description = "Slowly heals all damage types. Overdose will cause damage in all types instead."
 	reagent_state = LIQUID
-	color = "#DCDCDC"
+	color = "#DCDCDC90"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	var/healing = 0.5
@@ -416,7 +416,7 @@
 /datum/reagent/medicine/omnizine/protozine
 	name = "Protozine"
 	description = "A less environmentally friendly and somewhat weaker variant of omnizine."
-	color = "#d8c7b7"
+	color = "#d8c7b790"
 	healing = 0.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -424,7 +424,7 @@
 	name = "Calomel"
 	description = "Quickly purges the body of all chemicals. Toxin damage is dealt if the patient is in good condition."
 	reagent_state = LIQUID
-	color = "#19C832"
+	color = "#19C83290"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "acid"
 	ph = 1.5
@@ -442,7 +442,7 @@
 	name = "Potassium Iodide"
 	description = "Heals low toxin damage while the patient is irradiated, and will halt the damaging effects of radiation."
 	reagent_state = LIQUID
-	color = "#BAA15D"
+	color = "#BAA15D90"
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	ph = 12 //It's a reducing agent
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -465,7 +465,7 @@
 	name = "Pentetic Acid"
 	description = "Reduces massive amounts of toxin damage while purging other chemicals from the body."
 	reagent_state = LIQUID
-	color = "#E6FFF0"
+	color = "#E6FFF090"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ph = 1 //One of the best buffers, NEVERMIND!
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -490,7 +490,7 @@
 	name = "Salicylic Acid"
 	description = "Stimulates the healing of severe bruises. Extremely rapidly heals severe bruising and slowly heals minor ones. Overdose will worsen existing bruising."
 	reagent_state = LIQUID
-	color = "#D2D2D2"
+	color = "#D2D2D290"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	ph = 2.1
@@ -514,7 +514,7 @@
 	name = "Salbutamol"
 	description = "Rapidly restores oxygen deprivation as well as preventing more of it to an extent."
 	reagent_state = LIQUID
-	color = "#00FFFF"
+	color = "#00FFFF90"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	ph = 2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -530,7 +530,7 @@
 	name = "Ephedrine"
 	description = "Increases stun resistance and movement speed, giving you hand cramps. Overdose deals toxin damage and inhibits breathing."
 	reagent_state = LIQUID
-	color = "#D2FFFA"
+	color = "#D2FFFA90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	ph = 12
@@ -582,7 +582,7 @@
 	name = "Diphenhydramine"
 	description = "Rapidly purges the body of Histamine and reduces jitteriness. Slight chance of causing drowsiness."
 	reagent_state = LIQUID
-	color = "#64FFE6"
+	color = "#64FFE690"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ph = 11.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -598,7 +598,7 @@
 	name = "Morphine"
 	description = "A painkiller that allows the patient to move at full speed even when injured. Causes drowsiness and eventually unconsciousness in high doses. Overdose will cause a variety of effects, ranging from minor to lethal."
 	reagent_state = LIQUID
-	color = "#A9FBFB"
+	color = "#A9FBFB90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	ph = 8.96
@@ -638,7 +638,7 @@
 	name = "Oculine"
 	description = "Quickly restores eye damage, cures nearsightedness, and has a chance to restore vision to the blind."
 	reagent_state = LIQUID
-	color = "#404040" //oculine is dark grey, inacusiate is light grey
+	color = "#40404090" //oculine is dark grey, inacusiate is light grey
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "dull toxin"
 	purity = REAGENT_STANDARD_PURITY
@@ -720,7 +720,7 @@
 /datum/reagent/medicine/inacusiate
 	name = "Inacusiate"
 	description = "Rapidly repairs damage to the patient's ears to cure deafness, assuming the source of said deafness isn't from genetic mutations, chronic deafness, or a total defecit of ears." //by "chronic" deafness, we mean people with the "deaf" quirk
-	color = "#606060" // ditto
+	color = "#60606090" // ditto
 	ph = 2
 	purity = REAGENT_STANDARD_PURITY
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -758,7 +758,7 @@
 	name = "Atropine"
 	description = "If a patient is in critical condition, rapidly heals all damage types as well as regulating oxygen in the body. Excellent for stabilizing wounded patients."
 	reagent_state = LIQUID
-	color = "#1D3535" //slightly more blue, like epinephrine
+	color = "#1D353590" //slightly more blue, like epinephrine
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 35
 	ph = 12
@@ -788,7 +788,7 @@
 	name = "Epinephrine"
 	description = "Very minor boost to stun resistance. Slowly heals damage if a patient is in critical condition, as well as regulating oxygen loss. Overdose causes weakness and toxin damage."
 	reagent_state = LIQUID
-	color = "#D2FFFA"
+	color = "#D2FFFA90"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	ph = 10.2
@@ -837,7 +837,7 @@
 	name = "Strange Reagent"
 	description = "A miracle drug capable of bringing the dead back to life. Works topically unless anotamically complex, in which case works orally. Only works if the target has less than 200 total brute and burn damage and hasn't been husked and requires more reagent depending on damage inflicted. Causes damage to the living."
 	reagent_state = LIQUID
-	color = "#A0E85E"
+	color = "#A0E85E90"
 	metabolization_rate = 1.25 * REAGENTS_METABOLISM
 	taste_description = "magnets"
 	harmful = TRUE
@@ -883,7 +883,7 @@
 /datum/reagent/medicine/mannitol
 	name = "Mannitol"
 	description = "Efficiently restores brain damage."
-	color = "#A0A0A0" //mannitol is light grey, neurine is lighter grey
+	color = "#A0A0A090" //mannitol is light grey, neurine is lighter grey
 	ph = 10.4
 	overdose_threshold = 15
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -925,7 +925,7 @@
 /datum/reagent/medicine/neurine
 	name = "Neurine"
 	description = "Reacts with neural tissue, helping reform damaged connections. Can cure minor traumas."
-	color = "#C0C0C0" //ditto
+	color = "#C0C0C090" //ditto
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED | REAGENT_DEAD_PROCESS
 	purity = REAGENT_STANDARD_PURITY
 	impure_chem = /datum/reagent/inverse/neurine //if people get grumpy, delete this line
@@ -966,7 +966,7 @@
 /datum/reagent/medicine/mutadone
 	name = "Mutadone"
 	description = "Removes jitteriness and restores genetic defects."
-	color = "#5096C8"
+	color = "#5096C890"
 	taste_description = "acid"
 	ph = 2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -981,7 +981,7 @@
 /datum/reagent/medicine/antihol
 	name = "Antihol"
 	description = "Purges alcoholic substance from the patient's body and eliminates its side effects."
-	color = "#00B4C8"
+	color = "#00B4C890"
 	taste_description = "raw egg"
 	ph = 4
 	purity = REAGENT_STANDARD_PURITY
@@ -1005,7 +1005,7 @@
 /datum/reagent/medicine/stimulants
 	name = "Stimulants"
 	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."
-	color = "#78008C"
+	color = "#78008C90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
 	ph = 8.7
@@ -1045,7 +1045,7 @@
 	name = "Insulin"
 	description = "Increases sugar depletion rates."
 	reagent_state = LIQUID
-	color = "#FFFFF0"
+	color = "#FFFFF090"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ph = 6.7
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1062,7 +1062,7 @@
 	name = "Inaprovaline"
 	description = "Stabilizes the breathing of patients. Good for those in critical condition."
 	reagent_state = LIQUID
-	color = "#A4D8D8"
+	color = "#A4D8D890"
 	ph = 8.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 /* SEPTIC EDIT REMOVAL
@@ -1075,7 +1075,7 @@
 	name = "Regenerative Jelly"
 	description = "Gradually regenerates all types of damage, without harming slime anatomy."
 	reagent_state = LIQUID
-	color = "#CC23FF"
+	color = "#CC23FF90"
 	taste_description = "jelly"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1101,7 +1101,7 @@
 	name = "Restorative Nanites"
 	description = "Miniature medical robots that swiftly restore bodily damage."
 	reagent_state = SOLID
-	color = "#555555"
+	color = "#55555590"
 	overdose_threshold = 30
 	ph = 11
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1126,7 +1126,7 @@
 /datum/reagent/medicine/earthsblood //Created by ambrosia gaia plants
 	name = "Earthsblood"
 	description = "Ichor from an extremely powerful plant. Great for restoring wounds, but it's a little heavy on the brain. For some strange reason, it also induces temporary pacifism in those who imbibe it and semi-permanent pacifism in those who overdose on it."
-	color = "#FFAF00"
+	color = "#FFAF0090"
 	metabolization_rate = REAGENTS_METABOLISM //Math is based on specific metab rate so we want this to be static AKA if define or medicine metab rate changes, we want this to stay until we can rework calculations.
 	overdose_threshold = 25
 	ph = 11
@@ -1181,7 +1181,7 @@
 	name = "Haloperidol"
 	description = "Increases depletion rates for most stimulating/hallucinogenic drugs. Reduces druggy effects and jitteriness. Severe stamina regeneration penalty, causes drowsiness. Small chance of brain damage."
 	reagent_state = LIQUID
-	color = "#27870a"
+	color = "#27870a90"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	ph = 4.3
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1204,7 +1204,7 @@
 /datum/reagent/medicine/changelingadrenaline
 	name = "Changeling Adrenaline"
 	description = "Reduces the duration of unconciousness, knockdown and stuns. Restores stamina, but deals toxin damage when overdosed."
-	color = "#C1151D"
+	color = "#C1151D90"
 	overdose_threshold = 30
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1238,7 +1238,7 @@
 /datum/reagent/medicine/changelinghaste
 	name = "Changeling Haste"
 	description = "Drastically increases movement speed, but deals toxin damage."
-	color = "#AE151D"
+	color = "#AE151D90"
 	metabolization_rate = 2.5 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1258,7 +1258,7 @@
 /datum/reagent/medicine/higadrite
 	name = "Higadrite"
 	description = "A medication utilized to treat ailing livers."
-	color = "#FF3542"
+	color = "#FF354290"
 	self_consuming = TRUE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1273,7 +1273,7 @@
 /datum/reagent/medicine/cordiolis_hepatico
 	name = "Cordiolis Hepatico"
 	description = "A strange, pitch-black reagent that seems to absorb all light. Effects unknown."
-	color = "#000000"
+	color = "#000000255"
 	self_consuming = TRUE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1304,7 +1304,7 @@
 	name = "Modafinil"
 	description = "Long-lasting sleep suppressant that very slightly reduces stun and knockdown times. Overdosing has horrendous side effects and deals lethal oxygen damage, will knock you unconscious if not dealt with."
 	reagent_state = LIQUID
-	color = "#BEF7D8" // palish blue white
+	color = "#BEF7D890" // palish blue white
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	overdose_threshold = 20 // with the random effects this might be awesome or might kill you at less than 10u (extensively tested)
 	taste_description = "salt" // it actually does taste salty
@@ -1370,7 +1370,7 @@
 	name = "Psicodine"
 	description = "Suppresses anxiety and other various forms of mental distress. Overdose causes hallucinations and minor toxin damage."
 	reagent_state = LIQUID
-	color = "#07E79E"
+	color = "#07E79E90"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	ph = 9.12
@@ -1406,7 +1406,7 @@
 	description = "This enzyme catalyzes the conversion of nutricious food into healing peptides."
 	metabolization_rate = 0.0625  * REAGENTS_METABOLISM //slow metabolism rate so the patient can self heal with food even after the troph has metabolized away for amazing reagent efficency.
 	reagent_state = SOLID
-	color = "#FFBE00"
+	color = "#FFBE0090"
 	overdose_threshold = 10
 	inverse_chem_val = 0.1 //Shouldn't happen - but this is so looking up the chem will point to the failed type
 	inverse_chem = /datum/reagent/impurity/probital_failed
@@ -1424,7 +1424,7 @@
 	name = "Silibinin"
 	description = "A thistle derrived hepatoprotective flavolignan mixture that help reverse damage to the liver."
 	reagent_state = SOLID
-	color = "#FFFFD0"
+	color = "#FFFFD090"
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1437,7 +1437,7 @@
 	name = "Polypyrylium Oligomers"
 	description = "A purple mixture of short polyelectrolyte chains not easily synthesized in the laboratory. It is valued as an intermediate in the synthesis of the cutting edge pharmaceuticals."
 	reagent_state = SOLID
-	color = "#9423FF"
+	color = "#9423FF90"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 50
 	taste_description = "numbing bitterness"
@@ -1465,7 +1465,7 @@
 /datum/reagent/medicine/granibitaluri
 	name = "Granibitaluri" //achieve "GRANular" amounts of C2
 	description = "A mild painkiller useful as an additive alongside more potent medicines. Speeds up the healing of small wounds and burns, but is ineffective at treating severe injuries. Extremely large doses are toxic, and may eventually cause liver failure."
-	color = "#E0E0E0"
+	color = "#E0E0E090"
 	reagent_state = LIQUID
 	overdose_threshold = 50
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //same as C2s
@@ -1489,7 +1489,7 @@
 	name = "Sanguirite"
 	description = "A proprietary coagulant used to help bleeding wounds clot faster."
 	reagent_state = LIQUID
-	color = "#bb2424"
+	color = "#bb242490"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 	/// The bloodiest wound that the patient has will have its blood_flow reduced by about half this much each second
@@ -1570,7 +1570,7 @@
 /datum/reagent/medicine/coagulant/banana_peel
 	name = "Pulped Banana Peel"
 	description = "Ancient Clown Lore says that pulped banana peels are good for your blood, but are you really going to take medical advice from a clown about bananas?"
-	color = "#50531a" // rgb: 175, 175, 0
+	color = "#50531a90" // rgb: 175, 175, 0
 	taste_description = "horribly stringy, bitter pulp"
 	glass_name = "glass of banana peel pulp"
 	glass_desc = "Ancient Clown Lore says that pulped banana peels are good for your blood, but are you really going to take medical advice from a clown about bananas?"
@@ -1582,7 +1582,7 @@
 /datum/reagent/medicine/coagulant/seraka_extract
 	name = "Seraka Extract"
 	description = "A deeply coloured oil present in small amounts in Seraka Mushrooms. Acts as an effective blood clotting agent, but has a low overdose threshold."
-	color = "#00767C"
+	color = "#00767C90"
 	taste_description = "intensely savoury bitterness"
 	glass_name = "glass of seraka extract"
 	glass_desc = "Deeply savoury, bitter, and makes your blood clot up in your veins. A great drink, all things considered."

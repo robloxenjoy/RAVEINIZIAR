@@ -410,6 +410,14 @@
 	name = "welding fuel bottle"
 	list_reagents = list(/datum/reagent/fuel = 30)
 
+/obj/item/reagent_containers/glass/bottle/urine
+	name = "urine bottle"
+	list_reagents = list(/datum/reagent/consumable/piss = 30)
+
+/obj/item/reagent_containers/glass/bottle/sperm
+	name = "sperm bottle"
+	list_reagents = list(/datum/reagent/consumable/cum = 30)
+
 /obj/item/reagent_containers/glass/bottle/silver
 	name = "silver bottle"
 	list_reagents = list(/datum/reagent/silver = 30)

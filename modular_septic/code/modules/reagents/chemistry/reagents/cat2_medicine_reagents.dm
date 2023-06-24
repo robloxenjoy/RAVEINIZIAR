@@ -254,7 +254,7 @@
 /datum/reagent/medicine/c2/probital
 	name = "Dicorderal"
 	description = "Heals both brute and burn damage, but rather slowly."
-	color = "#c15aec"
+	color = "#c15aec80"
 	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = REAGENTS_METABOLISM
@@ -359,7 +359,7 @@
 	name = "Prussian Blue"
 	description = "Originally created as a dye, this chemical can be used to effectively reduce radiation. \
 				Does not act against radiation sickness."
-	color = "#003053"
+	color = "#00305380"
 	ph = 6.4
 	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED

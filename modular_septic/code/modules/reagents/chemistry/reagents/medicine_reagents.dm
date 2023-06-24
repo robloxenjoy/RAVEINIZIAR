@@ -116,7 +116,7 @@
 	taste_description = "rush"
 	reagent_state = LIQUID
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	color = "#c8a5dc"
+	color = "#c8a5dc90"
 
 /datum/reagent/determination/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -236,7 +236,7 @@
 	ph = 5.1
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM //Lisinopril has a very, very slow metabolism IRL
 	self_consuming = TRUE //Does not get processed by the liver
-	color = "#dbafc0"
+	color = "#dbafc080"
 	overdose_threshold = OVERDOSE_STANDARD
 
 /datum/reagent/medicine/lisinopril/on_mob_metabolize(mob/living/L)
@@ -310,7 +310,7 @@
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = OVERDOSE_STANDARD
 	self_consuming = TRUE //Does not get processed by the liver
-	color = "#820000"
+	color = "#820000100"
 	overdose_threshold = 51
 
 /datum/reagent/medicine/blacktar/overdose_start(mob/living/M)
@@ -345,7 +345,7 @@
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM*0.5
 	self_consuming = TRUE //Does not get processed by the liver
-	color = "#d364ff"
+	color = "#d364ff100"
 	overdose_threshold = 15
 
 /datum/reagent/medicine/copium/overdose_start(mob/living/M)

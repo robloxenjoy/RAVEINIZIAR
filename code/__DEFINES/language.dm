@@ -23,4 +23,5 @@
 #define LANGUAGE_SOFTWARE "software"
 #define LANGUAGE_STONER "stoner"
 #define LANGUAGE_VOICECHANGE "voicechange"
+#define LANGUAGE_HALBER "halber"
 

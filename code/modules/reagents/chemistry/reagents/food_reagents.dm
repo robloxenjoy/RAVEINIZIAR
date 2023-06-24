@@ -51,7 +51,7 @@
 	description = "All the vitamins, minerals, and carbohydrates the body needs in pure form."
 	reagent_state = SOLID
 	nutriment_factor = 15 * REAGENTS_METABOLISM
-	color = "#664330" // rgb: 102, 67, 48
+	color = "#664330255" // rgb: 102, 67, 48
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 	var/brute_heal = 1
@@ -136,7 +136,7 @@
 /datum/reagent/consumable/cooking_oil
 	name = "Cooking Oil"
 	description = "A variety of cooking oil derived from fat or plants. Used in food preparation and frying."
-	color = "#EADD6B" //RGB: 234, 221, 107 (based off of canola oil)
+	color = "#EADD6B100" //RGB: 234, 221, 107 (based off of canola oil)
 	taste_mult = 0.8
 	taste_description = "oil"
 	nutriment_factor = 7 * REAGENTS_METABOLISM //Not very healthy on its own
@@ -192,7 +192,7 @@
 	name = "Sugar"
 	description = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
 	reagent_state = SOLID
-	color = "#FFFFFF" // rgb: 255, 255, 255
+	color = "#FFFFFF255" // rgb: 255, 255, 255
 	taste_mult = 1.5 // stop sugar drowning out other flavours
 	nutriment_factor = 10 * REAGENTS_METABOLISM
 	metabolization_rate = 2 * REAGENTS_METABOLISM
@@ -221,7 +221,7 @@
 	name = "Virus Food"
 	description = "A mixture of water and milk. Virus cells can use this mixture to reproduce."
 	nutriment_factor = 2 * REAGENTS_METABOLISM
-	color = "#899613" // rgb: 137, 150, 19
+	color = "#899613100" // rgb: 137, 150, 19
 	taste_description = "watery milk"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -243,7 +243,7 @@
 	name = "Ketchup"
 	description = "Ketchup, catsup, whatever. It's tomato paste."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#731008" // rgb: 115, 16, 8
+	color = "#731008255" // rgb: 115, 16, 8
 	taste_description = "ketchup"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -251,7 +251,7 @@
 /datum/reagent/consumable/capsaicin
 	name = "Capsaicin Oil"
 	description = "This is what makes chilis hot."
-	color = "#B31008" // rgb: 179, 16, 8
+	color = "#B31008255" // rgb: 179, 16, 8
 	taste_description = "hot peppers"
 	taste_mult = 1.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -283,7 +283,7 @@
 /datum/reagent/consumable/frostoil
 	name = "Frost Oil"
 	description = "A special oil that noticeably chills the body. Extracted from chilly peppers and slimes."
-	color = "#8BA6E9" // rgb: 139, 166, 233
+	color = "#8BA6E9255" // rgb: 139, 166, 233
 	taste_description = "mint"
 	ph = 13 //HMM! I wonder
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -332,7 +332,7 @@
 /datum/reagent/consumable/condensedcapsaicin
 	name = "Condensed Capsaicin"
 	description = "A chemical agent used for self-defense and in police work."
-	color = "#B31008" // rgb: 179, 16, 8
+	color = "#B31008255" // rgb: 179, 16, 8
 	taste_description = "scorching agony"
 	penetrates_skin = NONE
 	ph = 7.4
@@ -380,7 +380,7 @@
 	name = "Table Salt"
 	description = "A salt made of sodium chloride. Commonly used to season food."
 	reagent_state = SOLID
-	color = "#FFFFFF" // rgb: 255,255,255
+	color = "#FFFFFF255" // rgb: 255,255,255
 	taste_description = "salt"
 	penetrates_skin = NONE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -405,14 +405,14 @@
 	description = "A fatty, bitter paste made from coco beans."
 	reagent_state = SOLID
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#302000" // rgb: 48, 32, 0
+	color = "#302000255" // rgb: 48, 32, 0
 	taste_description = "bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/garlic //NOTE: having garlic in your blood stops vampires from biting you.
 	name = "Garlic Juice"
 	description = "Crushed garlic. Chefs love it, but it can make you smell bad."
-	color = "#FEFEFE"
+	color = "#FEFEFE255"
 	taste_description = "garlic"
 	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -442,7 +442,7 @@
 /datum/reagent/consumable/sprinkles
 	name = "Sprinkles"
 	description = "Multi-colored little bits of sugar, commonly found on donuts. Loved by cops."
-	color = "#FF00FF" // rgb: 255, 0, 255
+	color = "#FF00FF255" // rgb: 255, 0, 255
 	taste_description = "childhood whimsy"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -457,7 +457,7 @@
 	name = "Corn Oil"
 	description = "An oil derived from various types of corn."
 	nutriment_factor = 20 * REAGENTS_METABOLISM
-	color = "#302000" // rgb: 48, 32, 0
+	color = "#302000255" // rgb: 48, 32, 0
 	taste_description = "slime"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -477,7 +477,7 @@
 /datum/reagent/consumable/enzyme
 	name = "Universal Enzyme"
 	description = "A universal enzyme used in the preparation of certain chemicals and foods."
-	color = "#365E30" // rgb: 54, 94, 48
+	color = "#365E30255" // rgb: 54, 94, 48
 	taste_description = "sweetness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -485,7 +485,7 @@
 	name = "Dry Ramen"
 	description = "Space age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
 	reagent_state = SOLID
-	color = "#302000" // rgb: 48, 32, 0
+	color = "#302000255" // rgb: 48, 32, 0
 	taste_description = "dry and cheap noodles"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -493,7 +493,7 @@
 	name = "Hot Ramen"
 	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#302000" // rgb: 48, 32, 0
+	color = "#302000255" // rgb: 48, 32, 0
 	taste_description = "wet and cheap noodles"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -501,7 +501,7 @@
 	name = "Nutraslop"
 	description = "Mixture of leftover prison foods served on previous days."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#3E4A00" // rgb: 62, 74, 0
+	color = "#3E4A00255" // rgb: 62, 74, 0
 	taste_description = "your imprisonment"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -513,7 +513,7 @@
 	name = "Hell Ramen"
 	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#302000" // rgb: 48, 32, 0
+	color = "#302000255" // rgb: 48, 32, 0
 	taste_description = "wet and cheap noodles on fire"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -525,7 +525,7 @@
 	name = "Flour"
 	description = "This is what you rub all over yourself to pretend to be a ghost."
 	reagent_state = SOLID
-	color = "#FFFFFF" // rgb: 0, 0, 0
+	color = "#FFFFFF255" // rgb: 0, 0, 0
 	taste_description = "chalky wheat"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -542,35 +542,35 @@
 /datum/reagent/consumable/cherryjelly
 	name = "Cherry Jelly"
 	description = "Totally the best. Only to be spread on foods with excellent lateral symmetry."
-	color = "#801E28" // rgb: 128, 30, 40
+	color = "#801E28255" // rgb: 128, 30, 40
 	taste_description = "cherry"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/bluecherryjelly
 	name = "Blue Cherry Jelly"
 	description = "Blue and tastier kind of cherry jelly."
-	color = "#00F0FF"
+	color = "#00F0FF255"
 	taste_description = "midnightberry"
 	taste_mult = 8
 
 /datum/reagent/consumable/guleberryjelly
 	name = "Gule Berry"
 	description = "STRONG."
-	color = "#b81825"
+	color = "#b81825255"
 	taste_description = "gule berry"
 	taste_mult = 8
 
 /datum/reagent/consumable/leanberryjelly
 	name = "Saisilva Berry"
 	description = "Strange..."
-	color = "#00F0FF"
+	color = "#00F0FF255"
 	taste_description = "saisilva berry"
 	taste_mult = 8
 
 /datum/reagent/consumable/lifebloodjelly
 	name = "Lifeblood Berry"
 	description = "Living."
-	color = "#b81825"
+	color = "#b81825255"
 	taste_description = "lifeblood berry"
 	taste_mult = 8
 
@@ -579,7 +579,7 @@
 	description = "tiny nutritious grains"
 	reagent_state = SOLID
 	nutriment_factor = 3 * REAGENTS_METABOLISM
-	color = "#FFFFFF" // rgb: 0, 0, 0
+	color = "#FFFFFF255" // rgb: 0, 0, 0
 	taste_description = "rice"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -588,7 +588,7 @@
 	description = "A fatty, bitter paste made from vanilla pods."
 	reagent_state = SOLID
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#FFFACD"
+	color = "#FFFACD255"
 	taste_description = "vanilla"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -596,7 +596,7 @@
 	name = "Egg Yolk"
 	description = "It's full of protein."
 	nutriment_factor = 4 * REAGENTS_METABOLISM
-	color = "#FFB500"
+	color = "#FFB500255"
 	taste_description = "egg"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -604,20 +604,20 @@
 	name = "Egg White"
 	description = "It's full of even more protein."
 	nutriment_factor = 1.5 * REAGENTS_METABOLISM
-	color = "#fffdf7"
+	color = "#fffdf7255"
 	taste_description = "bland egg"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/corn_starch
 	name = "Corn Starch"
 	description = "A slippery solution."
-	color = "#DBCE95"
+	color = "#DBCE95255"
 	taste_description = "slime"
 
 /datum/reagent/consumable/corn_syrup
 	name = "Corn Syrup"
 	description = "Decays into sugar."
-	color = "#DBCE95"
+	color = "#DBCE95255"
 	metabolization_rate = 3 * REAGENTS_METABOLISM
 	taste_description = "sweet slime"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -629,7 +629,7 @@
 /datum/reagent/consumable/honey
 	name = "Honey"
 	description = "Sweet sweet honey that decays into sugar. Has antibacterial and natural healing properties."
-	color = "#d3a308"
+	color = "#d3a308255"
 	nutriment_factor = 15 * REAGENTS_METABOLISM
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	taste_description = "sweetness"
@@ -668,28 +668,28 @@
 /datum/reagent/consumable/mayonnaise
 	name = "Mayonnaise"
 	description = "A white and oily mixture of mixed egg yolks."
-	color = "#DFDFDF"
+	color = "#DFDFDF255"
 	taste_description = "mayonnaise"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/mold // yeah, ok, togopal, I guess you could call that a condiment
 	name = "Mold"
 	description = "This condiment will make any food break the mold. Or your stomach."
-	color ="#708a88"
+	color ="#708a88255"
 	taste_description = "rancid fungus"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/eggrot
 	name = "Rotten Eggyolk"
 	description = "It smells absolutely dreadful."
-	color ="#708a88"
+	color ="#708a88255"
 	taste_description = "rotten eggs"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/tearjuice
 	name = "Tear Juice"
 	description = "A blinding substance extracted from certain onions."
-	color = "#c0c9a0"
+	color = "#c0c9a0255"
 	taste_description = "bitterness"
 	ph = 5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -721,7 +721,7 @@
 	description = "A bioengineered protien-nutrient structure designed to decompose in high saturation. In layman's terms, it won't get you fat."
 	reagent_state = SOLID
 	nutriment_factor = 15 * REAGENTS_METABOLISM
-	color = "#664330" // rgb: 102, 67, 48
+	color = "#664330255" // rgb: 102, 67, 48
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/nutriment/stabilized/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
@@ -735,7 +735,7 @@
 /datum/reagent/consumable/entpoly
 	name = "Entropic Polypnium"
 	description = "An ichor, derived from a certain mushroom, makes for a bad time."
-	color = "#1d043d"
+	color = "#1d043d255"
 	taste_description = "bitter mushroom"
 	ph = 12
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -757,7 +757,7 @@
 /datum/reagent/consumable/tinlux
 	name = "Tinea Luxor"
 	description = "A stimulating ichor which causes luminescent fungi to grow on the skin. "
-	color = "#b5a213"
+	color = "#b5a213255"
 	taste_description = "tingling mushroom"
 	ph = 11.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -791,7 +791,7 @@
 /datum/reagent/consumable/vitfro
 	name = "Vitrium Froth"
 	description = "A bubbly paste that heals wounds of the skin."
-	color = "#d3a308"
+	color = "#d3a308255"
 	nutriment_factor = 3 * REAGENTS_METABOLISM
 	taste_description = "fruity mushroom"
 	ph = 10.4
@@ -808,7 +808,7 @@
 	name = "Clown's Tears"
 	description = "The sorrow and melancholy of a thousand bereaved clowns, forever denied their Honkmechs."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#eef442" // rgb: 238, 244, 66
+	color = "#eef442255" // rgb: 238, 244, 66
 	taste_description = "mournful honking"
 	ph = 9.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -818,7 +818,7 @@
 	name = "Liquid Electricity"
 	description = "The blood of Ethereals, and the stuff that keeps them going. Great for them, horrid for anyone else."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#97ee63"
+	color = "#97ee63255"
 	taste_description = "pure electricity"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -849,7 +849,7 @@
 	nutriment_factor = 0
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	reagent_state = SOLID
-	color = "#FFFFFF" // rgb: 255, 255, 255
+	color = "#FFFFFF255" // rgb: 255, 255, 255
 	taste_mult = 8
 	taste_description = "sweetness"
 	overdose_threshold = 17
@@ -865,7 +865,7 @@
 	name = "Secret Sauce"
 	description = "What could it be?"
 	nutriment_factor = 2 * REAGENTS_METABOLISM
-	color = "#792300"
+	color = "#792300255"
 	taste_description = "indescribable"
 	quality = FOOD_AMAZING
 	taste_mult = 100
@@ -873,7 +873,7 @@
 
 /datum/reagent/consumable/nutriment/peptides
 	name = "Peptides"
-	color = "#BBD4D9"
+	color = "#BBD4D9255"
 	taste_description = "mint frosting"
 	description = "These restorative peptides not only speed up wound healing, but are nutritious as well!"
 	nutriment_factor = 10 * REAGENTS_METABOLISM // 33% less than nutriment to reduce weight gain
@@ -887,7 +887,7 @@
 	name = "Caramel"
 	description = "Who would have guessed that heated sugar could be so delicious?"
 	nutriment_factor = 10 * REAGENTS_METABOLISM
-	color = "#D98736"
+	color = "#D98736255"
 	taste_mult = 2
 	taste_description = "caramel"
 	reagent_state = SOLID
@@ -898,7 +898,7 @@
 	description = "Essence of the grill. Has strange properties when overdosed."
 	reagent_state = LIQUID
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#C8C8C8"
+	color = "#C8C8C8255"
 	taste_mult = 6
 	taste_description = "smoke"
 	overdose_threshold = 15
@@ -914,7 +914,7 @@
 	name = "BBQ Sauce"
 	description = "Sweet, smoky, savory, and gets everywhere. Perfect for grilling."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
-	color = "#78280A" // rgb: 120 40, 10
+	color = "#78280A255" // rgb: 120 40, 10
 	taste_mult = 2.5 //sugar's 1.5, capsacin's 1.5, so a good middle ground.
 	taste_description = "smokey sweetness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -922,7 +922,7 @@
 /datum/reagent/consumable/chocolatepudding
 	name = "Chocolate Pudding"
 	description = "A great dessert for chocolate lovers."
-	color = "#800000"
+	color = "#800000255"
 	quality = DRINK_VERYGOOD
 	nutriment_factor = 4 * REAGENTS_METABOLISM
 	taste_description = "sweet chocolate"
@@ -935,7 +935,7 @@
 /datum/reagent/consumable/vanillapudding
 	name = "Vanilla Pudding"
 	description = "A great dessert for vanilla lovers."
-	color = "#FAFAD2"
+	color = "#FAFAD2255"
 	quality = DRINK_VERYGOOD
 	nutriment_factor = 4 * REAGENTS_METABOLISM
 	taste_description = "sweet vanilla"
@@ -947,7 +947,7 @@
 /datum/reagent/consumable/laughsyrup
 	name = "Laughin' Syrup"
 	description = "The product of juicing Laughin' Peas. Fizzy, and seems to change flavour based on what it's used with!"
-	color = "#803280"
+	color = "#803280255"
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	taste_mult = 2
 	taste_description = "fizzy sweetness"
@@ -957,7 +957,7 @@
 	name = "Gravy"
 	description = "A mixture of flour, water, and the juices of cooked meat."
 	taste_description = "gravy"
-	color = "#623301"
+	color = "#623301255"
 	taste_mult = 1.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -965,27 +965,27 @@
 	name = "pancake batter"
 	description = "A very milky batter. 5 units of this on the griddle makes a mean pancake."
 	taste_description = "milky batter"
-	color = "#fccc98"
+	color = "#fccc98255"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/korta_flour
 	name = "Korta Flour"
 	description = "A coarsely ground, peppery flour made from korta nut shells."
 	taste_description = "earthy heat"
-	color = "#EEC39A"
+	color = "#EEC39A255"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/korta_milk
 	name = "Korta Milk"
 	description = "A milky liquid made by crushing the centre of a korta nut."
 	taste_description = "sugary milk"
-	color = "#FFFFFF"
+	color = "#FFFFFF255"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/korta_nectar
 	name = "Korta Nectar"
 	description = "A sweet, sugary syrup made from crushed sweet korta nuts."
-	color = "#d3a308"
+	color = "#d3a308255"
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	taste_description = "peppery sweetness"
@@ -994,7 +994,7 @@
 /datum/reagent/consumable/whipped_cream
 	name = "Whipped Cream"
 	description = "A white fluffy cream made from whipping cream at intense speed."
-	color = "#efeff0"
+	color = "#efeff0255"
 	nutriment_factor = 4 * REAGENTS_METABOLISM
 	taste_description = "fluffy sweet cream"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1003,7 +1003,7 @@
 	name = "Peanut Butter"
 	description = "A rich, creamy spread produced by grinding peanuts."
 	taste_description = "peanuts"
-	color = "#D9A066"
+	color = "#D9A066255"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/peanut_butter/on_mob_life(mob/living/carbon/M, delta_time, times_fired) //ET loves peanut butter
@@ -1016,7 +1016,7 @@
 	name = "Vinegar"
 	description = "Useful for pickling, or putting on chips."
 	taste_description = "acid"
-	color = "#661F1E"
+	color = "#661F1E255"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 //A better oil, representing choices like olive oil, argan oil, avocado oil, etc.
@@ -1024,7 +1024,7 @@
 	name = "Quality Oil"
 	description = "A high quality oil, suitable for dishes where the oil is a key flavour."
 	taste_description = "olive oil"
-	color = "#DBCF5C"
+	color = "#DBCF5C255"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/consumable/meso_gelatine

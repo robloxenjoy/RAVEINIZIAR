@@ -1,7 +1,7 @@
 /datum/reagent/blood
 	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
 	name = "Blood"
-	color = "#C80000" // rgb: 200, 0, 0
+	color = "#C80000100" // rgb: 200, 0, 0
 	metabolization_rate = 12.5 * REAGENTS_METABOLISM //fast rate so it disappears fast.
 	taste_description = "iron"
 	taste_mult = 1.3
@@ -98,7 +98,7 @@
 
 /datum/reagent/liquidgibs
 	name = "Liquid gibs"
-	color = "#CC4633"
+	color = "#CC4633100"
 	description = "You don't even want to think about what's in here."
 	taste_description = "gross iron"
 	shot_glass_icon_state = "shotglassred"
@@ -108,14 +108,14 @@
 
 /datum/reagent/bone_dust
 	name = "bone dust"
-	color = "#dbcdcb"
+	color = "#dbcdcb100"
 	description = "Ground up bones, gross!"
 	taste_description = "the most disgusting grain in existence"
 
 /datum/reagent/vaccine
 	//data must contain virus type
 	name = "Vaccine"
-	color = "#C81040" // rgb: 200, 16, 64
+	color = "#C8104090" // rgb: 200, 16, 64
 	taste_description = "slime"
 	penetrates_skin = NONE
 
@@ -229,7 +229,7 @@
 /datum/reagent/water/holywater
 	name = "Holy Water"
 	description = "Water blessed by some deity."
-	color = "#E0E8EF" // rgb: 224, 232, 239
+	color = "#E0E8EF80" // rgb: 224, 232, 239
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
@@ -394,7 +394,7 @@
 /datum/reagent/lube
 	name = "Space Lube"
 	description = "Lubricant is a substance introduced between two moving surfaces to reduce the friction and wear between them. giggity."
-	color = "#009CA8" // rgb: 0, 156, 168
+	color = "#009CA890" // rgb: 0, 156, 168
 	taste_description = "cherry" // by popular demand
 	var/lube_kind = TURF_WET_LUBE ///What kind of slipperiness gets added to turfs
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -416,7 +416,7 @@
 /datum/reagent/spraytan
 	name = "Spray Tan"
 	description = "A substance applied to the skin to darken the skin."
-	color = "#FFC080" // rgb: 255, 196, 128  Bright orange
+	color = "#FFC08090" // rgb: 255, 196, 128  Bright orange
 	metabolization_rate = 10 * REAGENTS_METABOLISM // very fast, so it can be applied rapidly.  But this changes on an overdose
 	overdose_threshold = 11 //Slightly more than one un-nozzled spraybottle.
 	taste_description = "sour oranges"
@@ -508,7 +508,7 @@
 /datum/reagent/mutationtoxin
 	name = "Stable Mutation Toxin"
 	description = "A humanizing toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //metabolizes to prevent micro-dosage
 	taste_description = "slime"
 	var/race = /datum/species/human
@@ -552,13 +552,13 @@
 /datum/reagent/mutationtoxin/classic //The one from plasma on green slimes
 	name = "Mutation Toxin"
 	description = "A corruptive toxin."
-	color = "#13BC5E" // rgb: 19, 188, 94
+	color = "#13BC5E90" // rgb: 19, 188, 94
 	race = /datum/species/jelly/slime
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/mutationtoxin/felinid
 	name = "Felinid Mutation Toxin"
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/human/felinid
 	taste_description = "something nyat good"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -566,7 +566,7 @@
 /datum/reagent/mutationtoxin/lizard
 	name = "Lizard Mutation Toxin"
 	description = "A lizarding toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/lizard
 	taste_description = "dragon's breath but not as cool"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -574,7 +574,7 @@
 /datum/reagent/mutationtoxin/fly
 	name = "Fly Mutation Toxin"
 	description = "An insectifying toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/fly
 	taste_description = "trash"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -582,7 +582,7 @@
 /datum/reagent/mutationtoxin/moth
 	name = "Moth Mutation Toxin"
 	description = "A glowing toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/moth
 	taste_description = "clothing"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -590,7 +590,7 @@
 /datum/reagent/mutationtoxin/pod
 	name = "Podperson Mutation Toxin"
 	description = "A vegetalizing toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/pod
 	taste_description = "flowers"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -598,7 +598,7 @@
 /datum/reagent/mutationtoxin/jelly
 	name = "Imperfect Mutation Toxin"
 	description = "A jellyfying toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/jelly
 	taste_description = "grandma's gelatin"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -621,7 +621,7 @@
 /datum/reagent/mutationtoxin/golem
 	name = "Golem Mutation Toxin"
 	description = "A crystal toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/golem/random
 	taste_description = "rocks"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -629,7 +629,7 @@
 /datum/reagent/mutationtoxin/abductor
 	name = "Abductor Mutation Toxin"
 	description = "An alien toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/abductor
 	taste_description = "something out of this world... no, universe!"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -637,7 +637,7 @@
 /datum/reagent/mutationtoxin/android
 	name = "Android Mutation Toxin"
 	description = "A robotic toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/android
 	taste_description = "circuitry and steel"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -646,7 +646,7 @@
 /datum/reagent/mutationtoxin/skeleton
 	name = "Skeleton Mutation Toxin"
 	description = "A scary toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/skeleton
 	taste_description = "milk... and lots of it"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -654,7 +654,7 @@
 /datum/reagent/mutationtoxin/zombie
 	name = "Zombie Mutation Toxin"
 	description = "An undead toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/zombie //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
 	taste_description = "brai...nothing in particular"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -662,7 +662,7 @@
 /datum/reagent/mutationtoxin/ash
 	name = "Ash Mutation Toxin"
 	description = "An ashen toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/lizard/ashwalker
 	taste_description = "savagery"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -671,7 +671,7 @@
 /datum/reagent/mutationtoxin/shadow
 	name = "Shadow Mutation Toxin"
 	description = "A dark toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/shadow
 	taste_description = "the night"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -679,7 +679,7 @@
 /datum/reagent/mutationtoxin/plasma
 	name = "Plasma Mutation Toxin"
 	description = "A plasma-based toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	race = /datum/species/plasmaman
 	taste_description = "plasma"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -691,7 +691,7 @@
 /datum/reagent/mulligan
 	name = "Mulligan Toxin"
 	description = "This toxin will rapidly change the DNA of human beings. Commonly used by Syndicate spies and assassins in need of an emergency ID change."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	metabolization_rate = INFINITY
 	taste_description = "slime"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -708,7 +708,7 @@
 /datum/reagent/aslimetoxin
 	name = "Advanced Mutation Toxin"
 	description = "An advanced corruptive toxin produced by slimes."
-	color = "#13BC5E" // rgb: 19, 188, 94
+	color = "#13BC5E90" // rgb: 19, 188, 94
 	taste_description = "slime"
 	penetrates_skin = NONE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -721,7 +721,7 @@
 /datum/reagent/gluttonytoxin
 	name = "Gluttony's Blessing"
 	description = "An advanced corruptive toxin produced by something terrible."
-	color = "#5EFF3B" //RGB: 94, 255, 59
+	color = "#5EFF3B90" //RGB: 94, 255, 59
 	taste_description = "decay"
 	penetrates_skin = NONE
 
@@ -733,7 +733,7 @@
 /datum/reagent/serotrotium
 	name = "Serotrotium"
 	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans."
-	color = "#202040" // rgb: 20, 20, 40
+	color = "#20204090" // rgb: 20, 20, 40
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 	ph = 10
@@ -749,7 +749,7 @@
 	name = "Oxygen"
 	description = "A colorless, odorless gas. Grows on trees but is still pretty valuable."
 	reagent_state = GAS
-	color = "#808080" // rgb: 128, 128, 128
+	color = "#80808090" // rgb: 128, 128, 128
 	taste_mult = 0 // oderless and tasteless
 	ph = 9.2//It's acutally a huge range and very dependant on the chemistry but ph is basically a made up var in it's implementation anyways
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -766,7 +766,7 @@
 	name = "Copper"
 	description = "A highly ductile metal. Things made out of copper aren't very durable, but it makes a decent material for electrical wiring."
 	reagent_state = SOLID
-	color = "#6E3B08" // rgb: 110, 59, 8
+	color = "#6E3B0890" // rgb: 110, 59, 8
 	taste_description = "metal"
 	ph = 5.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -785,7 +785,7 @@
 	name = "Nitrogen"
 	description = "A colorless, odorless, tasteless gas. A simple asphyxiant that can silently displace vital oxygen."
 	reagent_state = GAS
-	color = "#808080" // rgb: 128, 128, 128
+	color = "#80808090" // rgb: 128, 128, 128
 	taste_mult = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -799,7 +799,7 @@
 	name = "Hydrogen"
 	description = "A colorless, odorless, nonmetallic, tasteless, highly combustible diatomic gas."
 	reagent_state = GAS
-	color = "#808080" // rgb: 128, 128, 128
+	color = "#80808090" // rgb: 128, 128, 128
 	taste_mult = 0
 	ph = 0.1//Now I'm stuck in a trap of my own design. Maybe I should make -ve phes? (not 0 so I don't get div/0 errors)
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -808,14 +808,14 @@
 	name = "Potassium"
 	description = "A soft, low-melting solid that can easily be cut with a knife. Reacts violently with water."
 	reagent_state = SOLID
-	color = "#A0A0A0" // rgb: 160, 160, 160
+	color = "#A0A0A090" // rgb: 160, 160, 160
 	taste_description = "sweetness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/mercury
 	name = "Mercury"
 	description = "A curious metal that's a liquid at room temperature. Neurodegenerative and very bad for the mind."
-	color = "#484848" // rgb: 72, 72, 72A
+	color = "#48484890" // rgb: 72, 72, 72A
 	taste_mult = 0 // apparently tasteless.
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -831,7 +831,7 @@
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
-	color = "#BF8C00" // rgb: 191, 140, 0
+	color = "#BF8C0090" // rgb: 191, 140, 0
 	taste_description = "rotten eggs"
 	ph = 4.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -840,7 +840,7 @@
 	name = "Carbon"
 	description = "A crumbly black solid that, while unexciting on a physical level, forms the base of all known life. Kind of a big deal."
 	reagent_state = SOLID
-	color = "#1C1300" // rgb: 30, 20, 0
+	color = "#1C130090" // rgb: 30, 20, 0
 	taste_description = "sour chalk"
 	ph = 5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -858,7 +858,7 @@
 	name = "Chlorine"
 	description = "A pale yellow gas that's well known as an oxidizer. While it forms many harmless molecules in its elemental form it is far from harmless."
 	reagent_state = GAS
-	color = "#FFFB89" //pale yellow? let's make it light gray
+	color = "#FFFB8990" //pale yellow? let's make it light gray
 	taste_description = "chlorine"
 	ph = 7.4
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -884,7 +884,7 @@
 	name = "Fluorine"
 	description = "A comically-reactive chemical element. The universe does not want this stuff to exist in this form in the slightest."
 	reagent_state = GAS
-	color = "#808080" // rgb: 128, 128, 128
+	color = "#80808090" // rgb: 128, 128, 128
 	taste_description = "acid"
 	ph = 2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -907,7 +907,7 @@
 	name = "Sodium"
 	description = "A soft silver metal that can easily be cut with a knife. It's not salt just yet, so refrain from putting it on your chips."
 	reagent_state = SOLID
-	color = "#808080" // rgb: 128, 128, 128
+	color = "#80808090" // rgb: 128, 128, 128
 	taste_description = "salty metal"
 	ph = 11.6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -916,7 +916,7 @@
 	name = "Phosphorus"
 	description = "A ruddy red powder that burns readily. Though it comes in many colors, the general theme is always the same."
 	reagent_state = SOLID
-	color = "#832828" // rgb: 131, 40, 40
+	color = "#83282890" // rgb: 131, 40, 40
 	taste_description = "vinegar"
 	ph = 6.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -933,7 +933,7 @@
 	name = "Lithium"
 	description = "A silver metal, its claim to fame is its remarkably low density. Using it is a bit too effective in calming oneself down."
 	reagent_state = SOLID
-	color = "#808080" // rgb: 128, 128, 128
+	color = "#80808090" // rgb: 128, 128, 128
 	taste_description = "metal"
 	ph = 11.3
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -948,7 +948,7 @@
 /datum/reagent/glycerol
 	name = "Glycerol"
 	description = "Glycerol is a simple polyol compound. Glycerol is sweet-tasting and of low toxicity."
-	color = "#D3B913"
+	color = "#D3B91390"
 	taste_description = "sweetness"
 	ph = 9
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -956,7 +956,7 @@
 /datum/reagent/space_cleaner/sterilizine
 	name = "Sterilizine"
 	description = "Sterilizes wounds in preparation for surgery."
-	color = "#D0EFEE" // space cleaner but lighter
+	color = "#D0EFEE90" // space cleaner but lighter
 	taste_description = "bitterness"
 	ph = 10.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -976,7 +976,7 @@
 	taste_description = "iron"
 	material = /datum/material/iron
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	color = "#606060" //pure iron? let's make it violet of course
+	color = "#606060255" //pure iron? let's make it violet of course
 	ph = 6
 
 /datum/reagent/iron/on_mob_life(mob/living/carbon/C, delta_time, times_fired)
@@ -988,7 +988,7 @@
 	name = "Gold"
 	description = "Gold is a dense, soft, shiny metal and the most malleable and ductile metal known."
 	reagent_state = SOLID
-	color = "#F7C430" // rgb: 247, 196, 48
+	color = "#F7C430255" // rgb: 247, 196, 48
 	taste_description = "expensive metal"
 	material = /datum/material/gold
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -997,7 +997,7 @@
 	name = "Silver"
 	description = "A soft, white, lustrous transition metal, it has the highest electrical conductivity of any element and the highest thermal conductivity of any metal."
 	reagent_state = SOLID
-	color = "#D0D0D0" // rgb: 208, 208, 208
+	color = "#D0D0D0255" // rgb: 208, 208, 208
 	taste_description = "expensive yet reasonable metal"
 	material = /datum/material/silver
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1006,7 +1006,7 @@
 	name ="Uranium"
 	description = "A jade-green metallic chemical element in the actinide series, weakly radioactive."
 	reagent_state = SOLID
-	color = "#5E9964" //this used to be silver, but liquid uranium can still be green and it's more easily noticeable as uranium like this so why bother?
+	color = "#5E9964255" //this used to be silver, but liquid uranium can still be green and it's more easily noticeable as uranium like this so why bother?
 	taste_description = "the inside of a reactor"
 	/// How much tox damage to deal per tick
 	var/tox_damage = 0.5
@@ -1041,7 +1041,7 @@
 	name = "Radium"
 	description = "Radium is an alkaline earth metal. It is extremely radioactive."
 	reagent_state = SOLID
-	color = "#00CC00" // ditto
+	color = "#00CC00255" // ditto
 	taste_description = "the colour blue and regret"
 	tox_damage = 1*REM
 	material = null
@@ -1058,7 +1058,7 @@
 	name = "Bluespace Dust"
 	description = "A dust composed of microscopic bluespace crystals, with minor space-warping properties."
 	reagent_state = SOLID
-	color = "#0000CC"
+	color = "#0000CC255"
 	taste_description = "fizzling blue"
 	material = /datum/material/bluespace
 	ph = 12
@@ -1084,7 +1084,7 @@
 	name = "Aluminium"
 	description = "A silvery white and ductile member of the boron group of chemical elements."
 	reagent_state = SOLID
-	color = "#A8A8A8" // rgb: 168, 168, 168
+	color = "#A8A8A8255" // rgb: 168, 168, 168
 	taste_description = "metal"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1092,7 +1092,7 @@
 	name = "Silicon"
 	description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
 	reagent_state = SOLID
-	color = "#A8A8A8" // rgb: 168, 168, 168
+	color = "#A8A8A8255" // rgb: 168, 168, 168
 	taste_mult = 0
 	material = /datum/material/glass
 	ph = 10
@@ -1101,7 +1101,7 @@
 /datum/reagent/fuel
 	name = "Welding fuel"
 	description = "Required for welders. Flammable."
-	color = "#660000" // rgb: 102, 0, 0
+	color = "#66000080" // rgb: 102, 0, 0, 80
 	taste_description = "gross metal"
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of welder fuel"
@@ -1126,7 +1126,7 @@
 /datum/reagent/space_cleaner
 	name = "Space cleaner"
 	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
-	color = "#A5F0EE" // rgb: 165, 240, 238
+	color = "#A5F0EE90" // rgb: 165, 240, 238
 	taste_description = "sourness"
 	reagent_weight = 0.6 //so it sprays further
 	penetrates_skin = NONE
@@ -1182,7 +1182,7 @@
 /datum/reagent/cryptobiolin
 	name = "Cryptobiolin"
 	description = "Cryptobiolin causes confusion and dizziness."
-	color = "#ADB5DB" //i hate default violets and 'crypto' keeps making me think of cryo so it's light blue now
+	color = "#ADB5DB90" //i hate default violets and 'crypto' keeps making me think of cryo so it's light blue now
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "sourness"
 	ph = 11.9
@@ -1196,7 +1196,7 @@
 /datum/reagent/impedrezene
 	name = "Impedrezene"
 	description = "Impedrezene is a narcotic that impedes one's ability by slowing down the higher brain cell functions."
-	color = "#E07DDD" // pink = happy = dumb
+	color = "#E07DDD90" // pink = happy = dumb
 	taste_description = "numbness"
 	ph = 9.1
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1215,7 +1215,7 @@
 /datum/reagent/cyborg_mutation_nanomachines
 	name = "Nanomachines"
 	description = "Microscopic construction robots."
-	color = "#535E66" // rgb: 83, 94, 102
+	color = "#535E6690" // rgb: 83, 94, 102
 	taste_description = "sludge"
 	penetrates_skin = NONE
 
@@ -1227,7 +1227,7 @@
 /datum/reagent/xenomicrobes
 	name = "Xenomicrobes"
 	description = "Microbes with an entirely alien cellular structure."
-	color = "#535E66" // rgb: 83, 94, 102
+	color = "#535E6690" // rgb: 83, 94, 102
 	taste_description = "sludge"
 	penetrates_skin = NONE
 
@@ -1239,7 +1239,7 @@
 /datum/reagent/fungalspores
 	name = "Tubercle bacillus Cosmosis microbes"
 	description = "Active fungal spores."
-	color = "#92D17D" // rgb: 146, 209, 125
+	color = "#92D17D90" // rgb: 146, 209, 125
 	taste_description = "slime"
 	penetrates_skin = NONE
 	ph = 11
@@ -1252,7 +1252,7 @@
 /datum/reagent/snail
 	name = "Agent-S"
 	description = "Virological agent that infects the subject with Gastrolosis."
-	color = "#003300" // rgb(0, 51, 0)
+	color = "#00330090" // rgb(0, 51, 0)
 	taste_description = "goo"
 	penetrates_skin = NONE
 	ph = 11
@@ -1265,7 +1265,7 @@
 /datum/reagent/fluorosurfactant//foam precursor
 	name = "Fluorosurfactant"
 	description = "A perfluoronated sulfonic acid that forms a foam when mixed with water."
-	color = "#9E6B38" // rgb: 158, 107, 56
+	color = "#9E6B38255" // rgb: 158, 107, 56
 	taste_description = "metal"
 	ph = 11
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1274,7 +1274,7 @@
 	name = "Foaming agent"
 	description = "An agent that yields metallic foam when mixed with light metal and a strong acid."
 	reagent_state = SOLID
-	color = "#664B63" // rgb: 102, 75, 99
+	color = "#664B63255" // rgb: 102, 75, 99
 	taste_description = "metal"
 	ph = 11.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1283,7 +1283,7 @@
 	name = "Smart foaming agent"
 	description = "An agent that yields metallic foam which conforms to area boundaries when mixed with light metal and a strong acid."
 	reagent_state = SOLID
-	color = "#664B63" // rgb: 102, 75, 99
+	color = "#664B63255" // rgb: 102, 75, 99
 	taste_description = "metal"
 	ph = 11.8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1292,7 +1292,7 @@
 	name = "Ammonia"
 	description = "A caustic substance commonly used in fertilizer or household cleaners."
 	reagent_state = GAS
-	color = "#404030" // rgb: 64, 64, 48
+	color = "#404030255" // rgb: 64, 64, 48
 	taste_description = "mordant"
 	ph = 11.6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1309,7 +1309,7 @@
 /datum/reagent/diethylamine
 	name = "Diethylamine"
 	description = "A secondary amine, mildly corrosive."
-	color = "#604030" // rgb: 96, 64, 48
+	color = "#60403090" // rgb: 96, 64, 48
 	taste_description = "iron"
 	ph = 12
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1328,7 +1328,7 @@
 	name = "Carbon Dioxide"
 	reagent_state = GAS
 	description = "A gas commonly produced by burning carbon fuels. You're constantly producing this in your lungs."
-	color = "#B0B0B0" // rgb : 192, 192, 192
+	color = "#B0B0B090" // rgb : 192, 192, 192
 	taste_description = "something unknowable"
 	ph = 6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1344,7 +1344,7 @@
 	description = "A potent oxidizer used as fuel in rockets and as an anaesthetic during surgery."
 	reagent_state = LIQUID
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-	color = "#808080"
+	color = "#80808090"
 	taste_description = "sweetness"
 	ph = 5.8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1375,7 +1375,7 @@
 	description = "An unstable experimental gas that greatly increases the energy of those that inhale it, while dealing increasing toxin damage over time."
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl/freon/hypernoblium are handled through gas breathing, metabolism must be lower for breathcode to keep up
-	color = "E1A116"
+	color = "E1A11690"
 	taste_description = "sourness"
 	ph = 1.8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1401,7 +1401,7 @@
 	description = "A highly reactive gas that makes you feel faster."
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl/freon/hypernoblium are handled through gas breathing, metabolism must be lower for breathcode to keep up
-	color = "90560B"
+	color = "90560B90"
 	taste_description = "burning"
 	ph = 2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1419,7 +1419,7 @@
 	description = "A powerful heat absorbent."
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl/freon/hypernoblium are handled through gas breathing, metabolism must be lower for breathcode to keep up
-	color = "90560B"
+	color = "90560B90"
 	taste_description = "burning"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1436,7 +1436,7 @@
 	description = "A suppressive gas that stops gas reactions on those who inhale it."
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because stimulum/nitryl/freon/hyper-nob are handled through gas breathing, metabolism must be lower for breathcode to keep up
-	color = "90560B"
+	color = "90560B90"
 	taste_description = "searingly cold"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1455,7 +1455,7 @@
 	description = "A powerful sleeping agent with healing properties"
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
-	color = "90560B"
+	color = "90560B90"
 	taste_description = "rubbery"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1478,7 +1478,7 @@
 	description = "A fire suppression gas that removes oxygen and cools down the area"
 	reagent_state = GAS
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
-	color = "90560B"
+	color = "90560B90"
 	taste_description = "minty"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1500,7 +1500,7 @@
 	var/colorname = "none"
 	description = "A powder that is used for coloring things."
 	reagent_state = SOLID
-	color = "#FFFFFF" // rgb: 207, 54, 0
+	color = "#FFFFFF255" // rgb: 207, 54, 0
 	taste_description = "the back of class"
 
 /datum/reagent/colorful_reagent/powder/New()
@@ -1515,15 +1515,15 @@
 /datum/reagent/colorful_reagent/powder/red
 	name = "Red Powder"
 	colorname = "red"
-	color = "#DA0000" // red
-	random_color_list = list("#FC7474")
+	color = "#DA000090" // red
+	random_color_list = list("#FC747490")
 	ph = 0.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/colorful_reagent/powder/orange
 	name = "Orange Powder"
 	colorname = "orange"
-	color = "#FF9300" // orange
+	color = "#FF930090" // orange
 	random_color_list = list("#FF9300")
 	ph = 2
 
@@ -1531,30 +1531,30 @@
 	name = "Yellow Powder"
 	colorname = "yellow"
 	color = "#FFF200" // yellow
-	random_color_list = list("#FFF200")
+	random_color_list = list("#FFF20090")
 	ph = 5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/colorful_reagent/powder/green
 	name = "Green Powder"
 	colorname = "green"
-	color = "#A8E61D" // green
-	random_color_list = list("#A8E61D")
+	color = "#A8E61D90" // green
+	random_color_list = list("#A8E61D90")
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/colorful_reagent/powder/blue
 	name = "Blue Powder"
 	colorname = "blue"
-	color = "#00B7EF" // blue
-	random_color_list = list("#71CAE5")
+	color = "#00B7EF90" // blue
+	random_color_list = list("#71CAE590")
 	ph = 10
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/colorful_reagent/powder/purple
 	name = "Purple Powder"
 	colorname = "purple"
-	color = "#DA00FF" // purple
-	random_color_list = list("#BD8FC4")
+	color = "#DA00FF90" // purple
+	random_color_list = list("#BD8FC490")
 	ph = 13
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1568,15 +1568,15 @@
 /datum/reagent/colorful_reagent/powder/black
 	name = "Black Powder"
 	colorname = "black"
-	color = "#1C1C1C" // not quite black
-	random_color_list = list("#8D8D8D") //more grey than black, not enough to hide your true colors
+	color = "#1C1C1C90" // not quite black
+	random_color_list = list("#8D8D8D90") //more grey than black, not enough to hide your true colors
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/colorful_reagent/powder/white
 	name = "White Powder"
 	colorname = "white"
-	color = "#FFFFFF" // white
-	random_color_list = list("#FFFFFF") //doesn't actually change appearance at all
+	color = "#FFFFFF90" // white
+	random_color_list = list("#FFFFFF90") //doesn't actually change appearance at all
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /* used by crayons, can't color living things but still used for stuff like food recipes */
@@ -1628,7 +1628,7 @@
 /datum/reagent/plantnutriment
 	name = "Generic nutriment"
 	description = "Some kind of nutriment. You can't really tell what it is. You should probably report it, along with how you obtained it."
-	color = "#000000" // RBG: 0, 0, 0
+	color = "#00000090" // RBG: 0, 0, 0
 	var/tox_prob = 0
 	taste_description = "plant food"
 	ph = 3
@@ -1642,7 +1642,7 @@
 /datum/reagent/plantnutriment/eznutriment
 	name = "E-Z-Nutrient"
 	description = "Contains electrolytes. It's what plants crave."
-	color = "#376400" // RBG: 50, 100, 0
+	color = "#37640090" // RBG: 50, 100, 0
 	tox_prob = 5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1656,7 +1656,7 @@
 /datum/reagent/plantnutriment/left4zednutriment
 	name = "Left 4 Zed"
 	description = "Unstable nutriment that makes plants mutate more often than usual."
-	color = "#1A1E4D" // RBG: 26, 30, 77
+	color = "#1A1E4D90" // RBG: 26, 30, 77
 	tox_prob = 13
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1669,7 +1669,7 @@
 /datum/reagent/plantnutriment/robustharvestnutriment
 	name = "Robust Harvest"
 	description = "Very potent nutriment that slows plants from mutating."
-	color = "#9D9D00" // RBG: 157, 157, 0
+	color = "#9D9D0090" // RBG: 157, 157, 0
 	tox_prob = 8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1683,7 +1683,7 @@
 /datum/reagent/plantnutriment/endurogrow
 	name = "Enduro Grow"
 	description = "A specialized nutriment, which decreases product quantity and potency, but strengthens the plants endurance."
-	color = "#a06fa7" // RBG: 160, 111, 167
+	color = "#a06fa790" // RBG: 160, 111, 167
 	tox_prob = 8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1697,7 +1697,7 @@
 /datum/reagent/plantnutriment/liquidearthquake
 	name = "Liquid Earthquake"
 	description = "A specialized nutriment, which increases the plant's production speed, as well as it's susceptibility to weeds."
-	color = "#912e00" // RBG: 145, 46, 0
+	color = "#912e0090" // RBG: 145, 46, 0
 	tox_prob = 13
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1716,7 +1716,7 @@
 	name = "Oil"
 	description = "Burns in a small smoky fire, can be used to get Ash."
 	reagent_state = LIQUID
-	color = "#2D2D2D"
+	color = "#2D2D2D90"
 	taste_description = "oil"
 	burning_temperature = 1200//Oil is crude
 	burning_volume = 0.05 //but has a lot of hydrocarbons
@@ -1727,7 +1727,7 @@
 	name = "Stable Plasma"
 	description = "Non-flammable plasma locked into a liquid form that cannot ignite or become gaseous/solid."
 	reagent_state = LIQUID
-	color = "#2D2D2D"
+	color = "#2D2D2D90"
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	ph = 1.5
@@ -1741,7 +1741,7 @@
 	name = "Iodine"
 	description = "Commonly added to table salt as a nutrient. On its own it tastes far less pleasing."
 	reagent_state = LIQUID
-	color = "#BC8A00"
+	color = "#BC8A0090"
 	taste_description = "metal"
 	ph = 4.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1750,7 +1750,7 @@
 	name = "Carpet"
 	description = "For those that need a more creative way to roll out a red carpet."
 	reagent_state = LIQUID
-	color = "#771100"
+	color = "#77110090"
 	taste_description = "carpet" // Your tounge feels furry.
 	var/carpet_type = /turf/open/floor/carpet
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1764,7 +1764,7 @@
 /datum/reagent/carpet/black
 	name = "Black Carpet"
 	description = "The carpet also comes in... BLAPCK" //yes, the typo is intentional
-	color = "#1E1E1E"
+	color = "#1E1E1E90"
 	taste_description = "licorice"
 	carpet_type = /turf/open/floor/carpet/black
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1772,7 +1772,7 @@
 /datum/reagent/carpet/blue
 	name = "Blue Carpet"
 	description = "For those that really need to chill out for a while."
-	color = "#0000DC"
+	color = "#0000DC90"
 	taste_description = "frozen carpet"
 	carpet_type = /turf/open/floor/carpet/blue
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1780,7 +1780,7 @@
 /datum/reagent/carpet/cyan
 	name = "Cyan Carpet"
 	description = "For those that need a throwback to the years of using poison as a construction material. Smells like asbestos."
-	color = "#00B4FF"
+	color = "#00B4FF90"
 	taste_description = "asbestos"
 	carpet_type = /turf/open/floor/carpet/cyan
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1788,7 +1788,7 @@
 /datum/reagent/carpet/green
 	name = "Green Carpet"
 	description = "For those that need the perfect flourish for green eggs and ham."
-	color = "#A8E61D"
+	color = "#A8E61D90"
 	taste_description = "Green" //the caps is intentional
 	carpet_type = /turf/open/floor/carpet/green
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1796,7 +1796,7 @@
 /datum/reagent/carpet/orange
 	name = "Orange Carpet"
 	description = "For those that prefer a healthy carpet to go along with their healthy diet."
-	color = "#E78108"
+	color = "#E7810890"
 	taste_description = "orange juice"
 	carpet_type = /turf/open/floor/carpet/orange
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1804,7 +1804,7 @@
 /datum/reagent/carpet/purple
 	name = "Purple Carpet"
 	description = "For those that need to waste copious amounts of healing jelly in order to look fancy."
-	color = "#91D865"
+	color = "#91D86590"
 	taste_description = "jelly"
 	carpet_type = /turf/open/floor/carpet/purple
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1812,7 +1812,7 @@
 /datum/reagent/carpet/red
 	name = "Red Carpet"
 	description = "For those that need an even redder carpet."
-	color = "#731008"
+	color = "#73100890"
 	taste_description = "blood and gibs"
 	carpet_type = /turf/open/floor/carpet/red
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1840,7 +1840,7 @@
 /datum/reagent/carpet/royal/black
 	name = "Royal Black Carpet"
 	description = "For those that feel the need to show off their timewasting skills."
-	color = "#000000"
+	color = "#000000255"
 	taste_description = "royalty"
 	carpet_type = /turf/open/floor/carpet/royalblack
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1848,7 +1848,7 @@
 /datum/reagent/carpet/royal/blue
 	name = "Royal Blue Carpet"
 	description = "For those that feel the need to show off their timewasting skills.. in BLUE."
-	color = "#5A64C8"
+	color = "#5A64C890"
 	taste_description = "blueyalty" //also intentional
 	carpet_type = /turf/open/floor/carpet/royalblue
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1856,7 +1856,7 @@
 /datum/reagent/carpet/neon
 	name = "Neon Carpet"
 	description = "For those who like the 1980s, vegas, and debugging."
-	color = COLOR_ALMOST_BLACK
+	color = "#000000200"
 	taste_description = "neon"
 	ph = 6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1970,7 +1970,7 @@
 	name = "Bromine"
 	description = "A brownish liquid that's highly reactive. Useful for stopping free radicals, but not intended for human consumption."
 	reagent_state = LIQUID
-	color = "#D35415"
+	color = "#D3541590"
 	taste_description = "chemicals"
 	ph = 7.8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1979,7 +1979,7 @@
 	name = "Pentaerythritol"
 	description = "Slow down, it ain't no spelling bee!"
 	reagent_state = SOLID
-	color = "#E66FFF"
+	color = "#E66FFF255"
 	taste_description = "acid"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1987,7 +1987,7 @@
 	name = "Acetaldehyde"
 	description = "Similar to plastic. Tastes like dead people."
 	reagent_state = SOLID
-	color = "#EEEEEF"
+	color = "#EEEEEF255"
 	taste_description = "dead people" //made from formaldehyde, ya get da joke ?
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -1995,7 +1995,7 @@
 	name = "Acetone oxide"
 	description = "Enslaved oxygen"
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#C8A5DC90"
 	taste_description = "acid"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2007,12 +2007,11 @@
 		exposed_mob.adjust_fire_stacks((reac_volume / 10))
 
 
-
 /datum/reagent/phenol
 	name = "Phenol"
 	description = "An aromatic ring of carbon with a hydroxyl group. A useful precursor to some medicines, but has no healing properties on its own."
 	reagent_state = LIQUID
-	color = "#E7EA91"
+	color = "#E7EA9190"
 	taste_description = "acid"
 	ph = 5.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2021,7 +2020,7 @@
 	name = "Ash"
 	description = "Supposedly phoenixes rise from these, but you've never seen it."
 	reagent_state = LIQUID
-	color = "#515151"
+	color = "#51515190"
 	taste_description = "ash"
 	ph = 6.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2037,7 +2036,7 @@
 	name = "Acetone"
 	description = "A slick, slightly carcinogenic liquid. Has a multitude of mundane uses in everyday life."
 	reagent_state = LIQUID
-	color = "#AF14B7"
+	color = "#AF14B790"
 	taste_description = "acid"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2046,7 +2045,7 @@
 	description = "Thoroughly sample the rainbow."
 	reagent_state = LIQUID
 	var/list/random_color_list = list("#00aedb","#a200ff","#f47835","#d41243","#d11141","#00b159","#00aedb","#f37735","#ffc425","#008744","#0057e7","#d62d20","#ffa700")
-	color = "#C8A5DC"
+	color = "#C8A5DC90"
 	taste_description = "rainbows"
 	var/can_colour_mobs = TRUE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2082,7 +2081,7 @@
 	description = "Has a high chance of making you look like a mad scientist."
 	reagent_state = LIQUID
 	var/list/potential_colors = list("#00aadd","#aa00ff","#ff7733","#dd1144","#dd1144","#00bb55","#00aadd","#ff7733","#ffcc22","#008844","#0055ee","#dd2222","#ffaa00") // fucking hair code
-	color = "#C8A5DC"
+	color = "#C8A5DC90"
 	taste_description = "sourness"
 	penetrates_skin = NONE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2108,7 +2107,7 @@
 	name = "Barber's Aid"
 	description = "A solution to hair loss across the world."
 	reagent_state = LIQUID
-	color = "#A86B45" //hair is brown
+	color = "#A86B4590" //hair is brown
 	taste_description = "sourness"
 	penetrates_skin = NONE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2130,7 +2129,7 @@
 	name = "Concentrated Barber's Aid"
 	description = "A concentrated solution to hair loss across the world."
 	reagent_state = LIQUID
-	color = "#7A4E33" //hair is dark browmn
+	color = "#7A4E3390" //hair is dark browmn
 	taste_description = "sourness"
 	penetrates_skin = NONE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2150,7 +2149,7 @@
 	name = "Baldium"
 	description = "A major cause of hair loss across the world."
 	reagent_state = LIQUID
-	color = "#ecb2cf"
+	color = "#ecb2cf90"
 	taste_description = "bitterness"
 	penetrates_skin = NONE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2170,7 +2169,7 @@
 	name = "Saltpetre"
 	description = "Volatile. Controversial. Third Thing."
 	reagent_state = LIQUID
-	color = "#60A584" // rgb: 96, 165, 132
+	color = "#60A58490" // rgb: 96, 165, 132
 	taste_description = "cool salt"
 	ph = 11.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2189,7 +2188,7 @@
 	name = "Lye"
 	description = "Also known as sodium hydroxide. As a profession making this is somewhat underwhelming."
 	reagent_state = LIQUID
-	color = "#FFFFD6" // very very light yellow
+	color = "#FFFFD690" // very very light yellow
 	taste_description = "acid"
 	ph = 11.9
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2198,7 +2197,7 @@
 	name = "Drying agent"
 	description = "A desiccant. Can be used to dry things."
 	reagent_state = LIQUID
-	color = "#A70FFF"
+	color = "#A70FFF90"
 	taste_description = "dryness"
 	ph = 10.7
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2221,51 +2220,51 @@
 
 /datum/reagent/toxin/mutagen/mutagenvirusfood
 	name = "mutagenic agar"
-	color = "#A3C00F" // rgb: 163,192,15
+	color = "#A3C00F90" // rgb: 163,192,15
 	taste_description = "sourness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/toxin/mutagen/mutagenvirusfood/sugar
 	name = "sucrose agar"
-	color = "#41B0C0" // rgb: 65,176,192
+	color = "#41B0C090" // rgb: 65,176,192
 	taste_description = "sweetness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/synaptizine/synaptizinevirusfood
 	name = "virus rations"
-	color = "#D18AA5" // rgb: 209,138,165
+	color = "#D18AA590" // rgb: 209,138,165
 	taste_description = "bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/toxin/plasma/plasmavirusfood
 	name = "virus plasma"
-	color = "#A270A8" // rgb: 166,157,169
+	color = "#A270A890" // rgb: 166,157,169
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/toxin/plasma/plasmavirusfood/weak
 	name = "weakened virus plasma"
-	color = "#A28CA5" // rgb: 206,195,198
+	color = "#A28CA590" // rgb: 206,195,198
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/uranium/uraniumvirusfood
 	name = "decaying uranium gel"
-	color = "#67ADBA" // rgb: 103,173,186
+	color = "#67ADBA90" // rgb: 103,173,186
 	taste_description = "the inside of a reactor"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/uranium/uraniumvirusfood/unstable
 	name = "unstable uranium gel"
-	color = "#2FF2CB" // rgb: 47,242,203
+	color = "#2FF2CB90" // rgb: 47,242,203
 	taste_description = "the inside of a reactor"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/uranium/uraniumvirusfood/stable
 	name = "stable uranium gel"
-	color = "#04506C" // rgb: 4,80,108
+	color = "#04506C90" // rgb: 4,80,108
 	taste_description = "the inside of a reactor"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2274,7 +2273,7 @@
 /datum/reagent/royal_bee_jelly
 	name = "royal bee jelly"
 	description = "Royal Bee Jelly, if injected into a Queen Space Bee said bee will split into two bees."
-	color = "#00ff80"
+	color = "#00ff8090"
 	taste_description = "strange honey"
 	ph = 3
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2294,7 +2293,7 @@
 		the subject. These nodules only become active upon death of the \
 		host, upon which, the secondary structures activate and take control \
 		of the host body."
-	color = "#123524" // RGB (18, 53, 36)
+	color = "#12352490" // RGB (18, 53, 36)
 	metabolization_rate = INFINITY
 	taste_description = "brains"
 	ph = 0.5
@@ -2310,7 +2309,7 @@
 	name = "Magillitis"
 	description = "An experimental serum which causes rapid muscular growth in Hominidae. Side-affects may include hypertrichosis, violent outbursts, and an unending affinity for bananas."
 	reagent_state = LIQUID
-	color = "#00f041"
+	color = "#00f04190"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/magillitis/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
@@ -2321,7 +2320,7 @@
 /datum/reagent/growthserum
 	name = "Growth Serum"
 	description = "A commercial chemical designed to help older men in the bedroom."//not really it just makes you a giant
-	color = "#ff0000"//strong red. rgb 255, 0, 0
+	color = "#ff000090"//strong red. rgb 255, 0, 0
 	var/current_size = RESIZE_DEFAULT_SIZE
 	taste_description = "bitterness" // apparently what viagra tastes like
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2354,7 +2353,7 @@
 /datum/reagent/plastic_polymers
 	name = "plastic polymers"
 	description = "the petroleum based components of plastic."
-	color = "#f7eded"
+	color = "#f7eded90"
 	taste_description = "plastic"
 	ph = 6
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2362,7 +2361,7 @@
 /datum/reagent/glitter
 	name = "generic glitter"
 	description = "if you can see this description, contact a coder."
-	color = "#FFFFFF" //pure white
+	color = "#FFFFFF90" //pure white
 	taste_description = "plastic"
 	reagent_state = SOLID
 	var/glitter_type = /obj/effect/decal/cleanable/glitter
@@ -2377,7 +2376,7 @@
 /datum/reagent/glitter/pink
 	name = "pink glitter"
 	description = "pink sparkles that get everywhere"
-	color = "#ff8080" //A light pink color
+	color = "#ff808090" //A light pink color
 	glitter_type = /obj/effect/decal/cleanable/glitter/pink
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2390,7 +2389,7 @@
 /datum/reagent/glitter/blue
 	name = "blue glitter"
 	description = "blue sparkles that get everywhere"
-	color = "#4040FF" //A blueish color
+	color = "#4040FF90" //A blueish color
 	glitter_type = /obj/effect/decal/cleanable/glitter/blue
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2414,7 +2413,7 @@
 /datum/reagent/bz_metabolites
 	name = "BZ metabolites"
 	description = "A harmless metabolite of BZ gas."
-	color = "#FAFF00"
+	color = "#FAFF0090"
 	taste_description = "acrid cinnamon"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2466,7 +2465,7 @@
 /datum/reagent/gondola_mutation_toxin
 	name = "Tranquility"
 	description = "A highly mutative liquid of unknown origin."
-	color = "#9A6750" //RGB: 154, 103, 80
+	color = "#9A675090" //RGB: 154, 103, 80
 	taste_description = "inner peace"
 	penetrates_skin = NONE
 
@@ -2479,7 +2478,7 @@
 /datum/reagent/spider_extract
 	name = "Spider Extract"
 	description = "A highly specialized extract coming from the Australicus sector, used to create broodmother spiders."
-	color = "#ED2939"
+	color = "#ED293990"
 	taste_description = "upside down"
 
 /// Improvised reagent that induces vomiting. Created by dipping a dead mouse in welder fluid.
@@ -2488,7 +2487,7 @@
 	description = "A mixture of various colors of fluid. Induces vomiting."
 	glass_name = "glass of ...yuck!"
 	glass_desc = "It smells like a carcass, and doesn't look much better."
-	color = "#545000"
+	color = "#54500090"
 	taste_description = "insides"
 	taste_mult = 4
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
@@ -2538,28 +2537,28 @@
 /datum/reagent/monkey_powder
 	name = "Monkey Powder"
 	description = "Just add water!"
-	color = "#9C5A19"
+	color = "#9C5A1990"
 	taste_description = "bananas"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/plasma_oxide
 	name = "Hyper-Plasmium Oxide"
 	description = "Compound created deep in the cores of demon-class planets. Commonly found through deep geysers."
-	color = "#470750" // rgb: 255, 255, 255
+	color = "#47075090" // rgb: 255, 255, 255
 	taste_description = "hell"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/exotic_stabilizer
 	name = "Exotic Stabilizer"
 	description = "Advanced compound created by mixing stabilizing agent and hyper-plasmium oxide."
-	color = "#180000" // rgb: 255, 255, 255
+	color = "#18000090" // rgb: 255, 255, 255
 	taste_description = "blood"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/wittel
 	name = "Wittel"
 	description = "An extremely rare metallic-white substance only found on demon-class planets."
-	color = "#FFFFFF" // rgb: 255, 255, 255
+	color = "#FFFFFF90" // rgb: 255, 255, 255
 	taste_mult = 0 // oderless and tasteless
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2567,7 +2566,7 @@
 	name = "Metalgen"
 	data = list("material"=null)
 	description = "A purple metal morphic liquid, said to impose it's metallic properties on whatever it touches."
-	color = "#b000aa"
+	color = "#b000aa90"
 	taste_mult = 0 // oderless and tasteless
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	/// The material flags used to apply the transmuted materials
@@ -2605,7 +2604,7 @@
 /datum/reagent/gravitum
 	name = "Gravitum"
 	description = "A rare kind of null fluid, capable of temporalily removing all weight of whatever it touches." //i dont even
-	color = "#050096" // rgb: 5, 0, 150
+	color = "#05009690" // rgb: 5, 0, 150
 	taste_mult = 0 // oderless and tasteless
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM //20 times as long, so it's actually viable to use
 	var/time_multiplier = 1 MINUTES //1 minute per unit of gravitum on objects. Seems overpowered, but the whole thing is very niche
@@ -2627,7 +2626,7 @@
 	name = "Cellulose Fibers"
 	description = "A crystaline polydextrose polymer, plants swear by this stuff."
 	reagent_state = SOLID
-	color = "#E6E6DA"
+	color = "#E6E6DA255"
 	taste_mult = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2636,7 +2635,7 @@
 	name = "Determination"
 	description = "For when you need to push on a little more. Do NOT allow near plants."
 	reagent_state = LIQUID
-	color = "#D2FFFA"
+	color = "#D2FFFA90"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~34 seconds
 	self_consuming = TRUE
 /* SEPTIC EDIT REMOVAL
@@ -2672,7 +2671,7 @@
 	name = "Eldritch Essence"
 	description = "A strange liquid that defies the laws of physics. It re-energizes and heals those who can see beyond this fragile reality, but is incredibly harmful to the closed-minded. It metabolizes very quickly."
 	taste_description = "Ag'hsj'saje'sh"
-	color = "#1f8016"
+	color = "#1f801690"
 	metabolization_rate = 2.5 * REAGENTS_METABOLISM  //0.5u/second
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -2699,7 +2698,7 @@
 	name = "Universal indicator"
 	description = "A solution that can be used to create pH paper booklets, or sprayed on things to colour them by their pH."
 	taste_description = "a strong chemical taste"
-	color = "#1f8016"
+	color = "#1f801690"
 
 //Colours things by their pH
 /datum/reagent/universal_indicator/expose_atom(atom/exposed_atom, reac_volume)
@@ -2714,7 +2713,7 @@
 	name = "Ants"
 	description = "A genetic crossbreed between ants and termites, their bites land at a 3 on the Schmidt Pain Scale."
 	reagent_state = SOLID
-	color = "#993333"
+	color = "#993333255"
 	taste_mult = 1.3
 	taste_description = "tiny legs scuttling down the back of your throat"
 	metabolization_rate = 5 * REAGENTS_METABOLISM //1u per second
@@ -2771,7 +2770,7 @@
 	description = "A dull metalltic element with a low melting point."
 	taste_description = "metal"
 	reagent_state = SOLID
-	color = "#80919d"
+	color = "#80919d255"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 
 /datum/reagent/lead/on_mob_life(mob/living/carbon/victim)
@@ -2783,7 +2782,7 @@
 	name = "kronkus extract"
 	description = "A frothy extract made from fermented kronkus vine pulp.\nHighly bitter due to the presence of a variety of kronkamines."
 	taste_description = "bitterness"
-	color = "#228f63"
+	color = "#228f6390"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	addiction_types = list(/datum/addiction/stimulants = 5)
 

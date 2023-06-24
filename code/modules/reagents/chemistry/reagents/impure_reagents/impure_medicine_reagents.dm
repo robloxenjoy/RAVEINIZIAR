@@ -171,7 +171,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	description = "This enzyme catalyzes crashes the conversion of nutricious food into healing peptides."
 	metabolization_rate = 0.0625  * REAGENTS_METABOLISM //slow metabolism rate so the patient can self heal with food even after the troph has metabolized away for amazing reagent efficency.
 	reagent_state = SOLID
-	color = "#b3ff00"
+	color = "#b3ff00255"
 	overdose_threshold = 10
 	ph = 1
 	addiction_types = list(/datum/addiction/medicine = 5)
@@ -213,7 +213,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	name = "Ichiyuri"
 	description = "Prolonged exposure to this chemical can cause an overwhelming urge to itch oneself."
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#C8A5DC90"
 	ph = 1.7
 	addiction_types = list(/datum/addiction/medicine = 2.5)
 	tox_damage = 0.1
@@ -265,7 +265,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	description = "This reagent causes a dramatic raise in a patient's body temperature."
 	ph = 0.8
 	tox_damage = 0
-	color = "#ff1818"
+	color = "#ff181890"
 	taste_description = "heat! Ouch!"
 	addiction_types = list(/datum/addiction/medicine = 2.5)
 	data = list("method" = TOUCH)
@@ -581,7 +581,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 /datum/reagent/impurity/mannitol
 	name = "Mannitoil"
 	description = "Gives the patient a temporary speech impediment."
-	color = "#CDCDFF"
+	color = "#CDCDFF90"
 	addiction_types = list(/datum/addiction/medicine = 5)
 	ph = 12.4
 	liver_damage = 0
@@ -614,7 +614,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 /datum/reagent/inverse/neurine
 	name = "Neruwhine"
 	description = "Induces a temporary brain trauma in the patient by redirecting neuron activity."
-	color = "#DCDCAA"
+	color = "#DCDCAA90"
 	ph = 13.4
 	addiction_types = list(/datum/addiction/medicine = 8)
 	metabolization_rate = 0.025 * REM
@@ -649,7 +649,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 /datum/reagent/inverse/corazargh
 	name = "Corazargh" //It's what you yell! Though, if you've a better name feel free. Also an omage to an older chem
 	description = "Interferes with the body's natural pacemaker, forcing the patient to manually beat their heart."
-	color = "#5F5F5F"
+	color = "#5F5F5F90"
 	self_consuming = TRUE
 	ph = 13.5
 	addiction_types = list(/datum/addiction/medicine = 2.5)
@@ -725,7 +725,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	chemical_flags = REAGENT_INVISIBLE
 	metabolization_rate = 0.05 * REM//This is fast
 	addiction_types = list(/datum/addiction/medicine = 4.5)
-	color = "#4C8000"
+	color = "#4C800090"
 	tox_damage = 0
 
 /datum/reagent/inverse/antihol/on_mob_life(mob/living/carbon/C, delta_time, times_fired)
@@ -737,7 +737,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	name = "Oculater"
 	description = "Temporarily blinds the patient."
 	reagent_state = LIQUID
-	color = "#DDDDDD"
+	color = "#DDDDDD90"
 	metabolization_rate = 0.1 * REM
 	addiction_types = list(/datum/addiction/medicine = 3)
 	taste_description = "funky toxin"
@@ -767,7 +767,7 @@ Basically, we fill the time between now and 2s from now with hands based off the
 	description = "Makes the patient's hearing temporarily funky."
 	reagent_state = LIQUID
 	addiction_types = list(/datum/addiction/medicine = 5.6)
-	color = "#DDDDFF"
+	color = "#DDDDFF90"
 	taste_description = "the heat evaporating from your mouth."
 	ph = 1
 	liver_damage = 0.1

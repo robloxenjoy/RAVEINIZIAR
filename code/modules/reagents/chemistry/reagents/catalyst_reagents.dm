@@ -46,4 +46,4 @@
 	target_reagent_type = /datum/reagent/medicine
 	modifier = 2
 	ph = 2 //drift towards acidity
-	color = "#b1b1b1"
+	color = "#b1b1b150"

@@ -276,6 +276,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	density = TRUE
+	anchored = TRUE
 	var/cracked = TRUE
 	var/ready = TRUE
 
@@ -295,9 +296,12 @@
 		playsound(src, 'modular_septic/sound/effects/homierip.ogg', 80, FALSE)
 		var/mob/living/carbon/human/species/halbermensch/halber = new(get_turf(src))
 		to_chat(user, span_notice("I have freed <b>[halber]</b> from socket!"))
-		halber.Unconscious(10 SECONDS)
+		halber.Unconscious(5 SECONDS)
 		halber.forceMove(get_turf(user))
 		halber.fully_replace_character_name(halber.real_name, "Halbermensch")
+		halber.remove_language(/datum/language/common, TRUE, TRUE, LANGUAGE_HALBER)
+		halber.grant_language(/datum/language/aphasia, TRUE, TRUE, LANGUAGE_HALBER)
+		halber.language_holder.selected_language = /datum/language/aphasia
 		var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
 		if(!babble)
 			halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.wav')
@@ -310,7 +314,7 @@
 		if(user.can_heartattack())
 			user.set_heartattack(TRUE)
 		halber.key = user.key
-		halber.playsound_local(halber, 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
+		playsound(get_turf(halber), 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
 		qdel(src)
 
 /obj/item/craftorshit/thing/alchemy/squash

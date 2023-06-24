@@ -3,7 +3,7 @@
 	description = "I LOVE LEAN."
 	reagent_state = SOLID
 	taste_description = "purple"
-	color = "#7E3990"
+	color = "#7E399090"
 	overdose_threshold = 35
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ph = 3
@@ -125,7 +125,7 @@
 	description = "finally some good fucking drugs."
 	reagent_state = LIQUID
 	taste_description = "grape"
-	color = "#D3D3D3"
+	color = "#D3D3D390"
 	overdose_threshold = 40
 	metabolization_rate = 0.3 * REAGENTS_METABOLISM
 	ph = 3
@@ -153,7 +153,7 @@
 	description = "cool."
 	reagent_state = LIQUID
 	taste_description = "interesting"
-	color = "#8a001a"
+	color = "#8a001a80"
 	overdose_threshold = 60
 	metabolization_rate = 0.20 * REAGENTS_METABOLISM
 	ph = 3
@@ -173,7 +173,7 @@
 	description = "cool."
 	reagent_state = LIQUID
 	taste_description = "interesting"
-	color = "#ffffff"
+	color = "#ffffff80"
 	overdose_threshold = 50
 	metabolization_rate = 0.15 * REAGENTS_METABOLISM
 	ph = 3

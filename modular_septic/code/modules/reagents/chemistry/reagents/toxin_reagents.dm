@@ -33,7 +33,7 @@
 	name = "Armor Oil"
 	description = "Oil widely used in the production of various types of armors. \
 				Despite conspiracy theories, it is not safe for human consumption."
-	color = "#180600"
+	color = "#180600100"
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	toxpwr = 2

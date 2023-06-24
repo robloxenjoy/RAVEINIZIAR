@@ -4,7 +4,7 @@
 /datum/reagent/toxin
 	name = "Toxin"
 	description = "A toxic chemical."
-	color = "#CF3600" // rgb: 207, 54, 0
+	color = "#CF360090" // rgb: 207, 54, 0
 	taste_description = "bitterness"
 	taste_mult = 1.2
 	harmful = TRUE
@@ -27,7 +27,7 @@
 /datum/reagent/toxin/badwater/shallow
 	name = "Dirty Water"
 	description = "Bad."
-	color = "#92dc76" // rgb: 207, 54, 0
+	color = "#92dc7690" // rgb: 207, 54, 0
 	taste_description = "not tasty water"
 	taste_mult = 1.5
 	liquid_evaporation_rate = 10
@@ -64,7 +64,7 @@
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
 	description = "A powerful poison derived from certain species of mushroom."
-	color = "#792300" // rgb: 121, 35, 0
+	color = "#79230090" // rgb: 121, 35, 0
 	toxpwr = 2.5
 	taste_description = "mushroom"
 	ph = 13
@@ -73,7 +73,7 @@
 /datum/reagent/toxin/mutagen
 	name = "Unstable mutagen"
 	description = "Might cause unpredictable mutations. Keep away from children."
-	color = "#00FF00"
+	color = "#00FF0090"
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	toxpwr = 0
@@ -113,7 +113,7 @@
 	taste_description = "bitterness"
 	specific_heat = SPECIFIC_HEAT_PLASMA
 	taste_mult = 1.5
-	color = "#8228A0"
+	color = "#8228A090"
 	toxpwr = 3
 	material = /datum/material/plasma
 	penetrates_skin = NONE
@@ -166,7 +166,7 @@
 	name = "Hot Ice Slush"
 	description = "Frozen plasma, worth its weight in gold, to the right people."
 	reagent_state = SOLID
-	color = "#724cb8" // rgb: 114, 76, 184
+	color = "#724cb890" // rgb: 114, 76, 184
 	taste_description = "thick and smokey"
 	specific_heat = SPECIFIC_HEAT_PLASMA
 	toxpwr = 3
@@ -186,7 +186,7 @@
 /datum/reagent/toxin/lexorin
 	name = "Lexorin"
 	description = "A powerful poison used to stop respiration."
-	color = "#7DC3A0"
+	color = "#7DC3A090"
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	toxpwr = 0
@@ -213,7 +213,7 @@
 /datum/reagent/toxin/slimejelly
 	name = "Slime Jelly"
 	description = "A gooey semi-liquid produced from one of the deadliest lifeforms in existence. SO REAL."
-	color = "#801E28" // rgb: 128, 30, 40
+	color = "#801E2890" // rgb: 128, 30, 40
 	toxpwr = 0
 	taste_description = "slime"
 	taste_mult = 1.3
@@ -233,7 +233,7 @@
 /datum/reagent/toxin/minttoxin
 	name = "Mint Toxin"
 	description = "Useful for dealing with undesirable customers."
-	color = "#CF3600" // rgb: 207, 54, 0
+	color = "#CF360090" // rgb: 207, 54, 0
 	toxpwr = 0
 	taste_description = "mint"
 	ph = 8
@@ -248,7 +248,7 @@
 	name = "Carpotoxin"
 	description = "A deadly neurotoxin produced by the dreaded spess carp."
 	silent_toxin = TRUE
-	color = "#003333" // rgb: 0, 51, 51
+	color = "#00333390" // rgb: 0, 51, 51
 	toxpwr = 1
 	taste_description = "fish"
 	ph = 12
@@ -261,7 +261,7 @@
 	reagent_state = SOLID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#669900" // rgb: 102, 153, 0
+	color = "#669900255" // rgb: 102, 153, 0
 	toxpwr = 0.5
 	taste_description = "death"
 	penetrates_skin = NONE
@@ -306,7 +306,7 @@
 	name = "Ghoul Powder"
 	description = "A strong neurotoxin that slows metabolism to a death-like state, while keeping the patient fully active. Causes toxin buildup if used too long."
 	reagent_state = SOLID
-	color = "#664700" // rgb: 102, 71, 0
+	color = "#664700255" // rgb: 102, 71, 0
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	toxpwr = 0.8
@@ -330,7 +330,7 @@
 /datum/reagent/toxin/mindbreaker
 	name = "Mindbreaker Toxin"
 	description = "A powerful hallucinogen. Not a thing to be messed with. For some mental patients. it counteracts their symptoms and anchors them to reality."
-	color = "#B31008" // rgb: 139, 166, 233
+	color = "#B3100890" // rgb: 139, 166, 233
 	toxpwr = 0
 	taste_description = "sourness"
 	creation_purity = REAGENT_STANDARD_PURITY
@@ -352,7 +352,7 @@
 /datum/reagent/toxin/plantbgone
 	name = "Plant-B-Gone"
 	description = "A harmful toxic mixture to kill plantlife. Do not ingest!"
-	color = "#49002E" // rgb: 73, 0, 46
+	color = "#49002E90" // rgb: 73, 0, 46
 	toxpwr = 1
 	taste_mult = 1
 	penetrates_skin = NONE
@@ -392,7 +392,7 @@
 /datum/reagent/toxin/plantbgone/weedkiller
 	name = "Weed Killer"
 	description = "A harmful toxic mixture to kill weeds. Do not ingest!"
-	color = "#4B004B" // rgb: 75, 0, 75
+	color = "#4B004B90" // rgb: 75, 0, 75
 	ph = 3
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -407,7 +407,7 @@
 /datum/reagent/toxin/pestkiller
 	name = "Pest Killer"
 	description = "A harmful toxic mixture to kill pests. Do not ingest!"
-	color = "#4B004B" // rgb: 75, 0, 75
+	color = "#4B004B90" // rgb: 75, 0, 75
 	toxpwr = 1
 	ph = 3.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -429,7 +429,7 @@
 /datum/reagent/toxin/pestkiller/organic
 	name = "Natural Pest Killer"
 	description = "An organic mixture used to kill pests, with less of the side effects. Do not ingest!"
-	color = "#4b2400" // rgb: 75, 0, 75
+	color = "#4b240090" // rgb: 75, 0, 75
 	toxpwr = 1
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -444,7 +444,7 @@
 /datum/reagent/toxin/spore
 	name = "Spore Toxin"
 	description = "A natural toxin produced by blob spores that inhibits vision when ingested."
-	color = "#9ACD32"
+	color = "#9ACD3290"
 	toxpwr = 1
 	ph = 11
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -458,7 +458,7 @@
 /datum/reagent/toxin/spore_burning
 	name = "Burning Spore Toxin"
 	description = "A natural toxin produced by blob spores that induces combustion in its victim."
-	color = "#9ACD32"
+	color = "#9ACD3290"
 	toxpwr = 0.5
 	taste_description = "burning"
 	ph = 13
@@ -476,7 +476,7 @@
 	reagent_state = SOLID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#000067" // rgb: 0, 0, 103
+	color = "#000067255" // rgb: 0, 0, 103
 	toxpwr = 0
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	ph = 11
@@ -500,7 +500,7 @@
 /datum/reagent/toxin/fakebeer //disguised as normal beer for use by emagged brobots
 	name = "Beer"
 	description = "A specially-engineered sedative disguised as beer. It induces instant sleep in its target."
-	color = "#664300" // rgb: 102, 67, 0
+	color = "#66430090" // rgb: 102, 67, 0
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "piss water"
 	glass_icon_state = "beerglass"
@@ -522,7 +522,7 @@
 	name = "Coffee Grounds"
 	description = "Finely ground coffee beans, used to make coffee."
 	reagent_state = SOLID
-	color = "#5B2E0D" // rgb: 91, 46, 13
+	color = "#5B2E0D255" // rgb: 91, 46, 13
 	toxpwr = 0.5
 	ph = 4.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -531,7 +531,7 @@
 	name = "Ground Tea Leaves"
 	description = "Finely shredded tea leaves, used for making tea."
 	reagent_state = SOLID
-	color = "#7F8400" // rgb: 127, 132, 0
+	color = "#7F8400255" // rgb: 127, 132, 0
 	toxpwr = 0.1
 	taste_description = "green tea"
 	ph = 4.9
@@ -541,7 +541,7 @@
 	name = "Mushroom Powder"
 	description = "Finely ground polypore mushrooms, ready to be steeped in water to make mushroom tea."
 	reagent_state = SOLID
-	color = "#67423A" // rgb: 127, 132, 0
+	color = "#67423A255" // rgb: 127, 132, 0
 	toxpwr = 0.1
 	taste_description = "mushrooms"
 	ph = 8.0
@@ -553,7 +553,7 @@
 	silent_toxin = TRUE
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#F0F8FF" // rgb: 240, 248, 255
+	color = "#F0F8FF90" // rgb: 240, 248, 255
 	toxpwr = 0
 	taste_description = "silence"
 	ph = 12.2
@@ -567,7 +567,7 @@
 	name = "Tirizene"
 	description = "A nonlethal poison that causes extreme fatigue and weakness in its victim."
 	silent_toxin = TRUE
-	color = "#6E2828"
+	color = "#6E282890"
 	data = 15
 	toxpwr = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -582,7 +582,7 @@
 	name = "Polonium"
 	description = "An extremely radioactive material in liquid form. Ingestion results in fatal irradiation."
 	reagent_state = LIQUID
-	color = "#787878"
+	color = "#78787890"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -600,7 +600,7 @@
 	description = "Histamine's effects become more dangerous depending on the dosage amount. They range from mildly annoying to incredibly lethal."
 	silent_toxin = TRUE
 	reagent_state = LIQUID
-	color = "#FA6464"
+	color = "#FA646490"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	toxpwr = 0
@@ -635,7 +635,7 @@
 	description = "Formaldehyde, on its own, is a fairly weak toxin. It contains trace amounts of Histamine, very rarely making it decay into Histamine."
 	silent_toxin = TRUE
 	reagent_state = LIQUID
-	color = "#B4004B"
+	color = "#B4004B90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
@@ -655,7 +655,7 @@
 	name = "Venom"
 	description = "An exotic poison extracted from highly toxic fauna. Causes scaling amounts of toxin damage and bruising depending and dosage. Often decays into Histamine."
 	reagent_state = LIQUID
-	color = "#F0FFF0"
+	color = "#F0FFF090"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	toxpwr = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -687,7 +687,7 @@
 	name = "Fentanyl"
 	description = "Fentanyl will inhibit brain function and cause toxin damage before eventually knocking out its victim."
 	reagent_state = LIQUID
-	color = "#64916E"
+	color = "#64916E90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
@@ -711,7 +711,7 @@
 	name = "Cyanide"
 	description = "An infamous poison known for its use in assassination. Causes small amounts of toxin damage with a small chance of oxygen damage or a stun."
 	reagent_state = LIQUID
-	color = "#00B4FF"
+	color = "#00B4FF90"
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
@@ -732,7 +732,7 @@
 	name = "Bad Food"
 	description = "The result of some abomination of cookery, food so bad it's toxic."
 	reagent_state = LIQUID
-	color = "#d6d6d8"
+	color = "#d6d6d890"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	toxpwr = 0.5
 	taste_description = "bad cooking"
@@ -745,7 +745,7 @@
 	reagent_state = LIQUID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#C8C8C8"
+	color = "#C8C8C890"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	toxpwr = 0
 	ph = 7
@@ -776,7 +776,7 @@
 	description = "A powerful poison with insidious effects. It can cause stuns, lethal breathing failure, and cardiac arrest."
 	silent_toxin = TRUE
 	reagent_state = LIQUID
-	color = "#7F10C0"
+	color = "#7F10C090"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	toxpwr = 2.5
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -808,7 +808,7 @@
 	description = "An undetectable toxin that swiftly incapacitates its victim. May also cause breathing failure."
 	silent_toxin = TRUE
 	reagent_state = LIQUID
-	color = "#195096"
+	color = "#19509690"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	toxpwr = 0
 	taste_mult = 0 // undetectable, I guess?
@@ -828,7 +828,7 @@
 	description = "Sodium Thiopental induces heavy weakness in its target as well as unconsciousness."
 	silent_toxin = TRUE
 	reagent_state = LIQUID
-	color = "#6496FA"
+	color = "#6496FA90"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	toxpwr = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -855,7 +855,7 @@
 	reagent_state = LIQUID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#7DC3A0"
+	color = "#7DC3A090"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 0.5
 	ph = 6
@@ -871,7 +871,7 @@
 	description = "A very powerful delayed toxin. Upon full metabolization, a massive amount of toxin damage will be dealt depending on how long it has been in the victim's bloodstream."
 	silent_toxin = TRUE
 	reagent_state = LIQUID
-	color = "#FFFFFF"
+	color = "#FFFFFF90"
 	toxpwr = 0
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -894,7 +894,7 @@
 	reagent_state = LIQUID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#F0FFF0"
+	color = "#F0FFF090"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	toxpwr = 0
 	ph = 6
@@ -912,7 +912,7 @@
 	name = "Coniine"
 	description = "Coniine metabolizes extremely slowly, but deals high amounts of toxin damage and stops breathing."
 	reagent_state = LIQUID
-	color = "#7DC3A0"
+	color = "#7DC3A090"
 	metabolization_rate = 0.06 * REAGENTS_METABOLISM
 	toxpwr = 1.75
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -926,7 +926,7 @@
 	name = "Spewium"
 	description = "A powerful emetic, causes uncontrollable vomiting.  May result in vomiting organs at high doses."
 	reagent_state = LIQUID
-	color = "#2f6617" //A sickly green color
+	color = "#2f661790" //A sickly green color
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = 29
 	toxpwr = 0
@@ -952,7 +952,7 @@
 	name = "Curare"
 	description = "Causes slight toxin damage followed by chain-stunning and oxygen damage."
 	reagent_state = LIQUID
-	color = "#191919"
+	color = "#19191990"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	toxpwr = 1
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -971,7 +971,7 @@
 	reagent_state = LIQUID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#C8C8C8" //RGB: 200, 200, 200
+	color = "#C8C8C890" //RGB: 200, 200, 200
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	toxpwr = 0
 	ph = 11.6
@@ -992,7 +992,7 @@
 	reagent_state = LIQUID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
-	color = "#AC88CA" //RGB: 172, 136, 202
+	color = "#AC88CA90" //RGB: 172, 136, 202
 	metabolization_rate = 0.6 * REAGENTS_METABOLISM
 	toxpwr = 0.5
 	ph = 6.2
@@ -1021,7 +1021,7 @@
 	name = "Anacea"
 	description = "A toxin that quickly purges medicines and metabolizes very slowly."
 	reagent_state = LIQUID
-	color = "#3C5133"
+	color = "#3C513390"
 	metabolization_rate = 0.08 * REAGENTS_METABOLISM
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
@@ -1043,7 +1043,7 @@
 /datum/reagent/toxin/acid
 	name = "Sulphuric acid"
 	description = "A strong mineral acid with the molecular formula H2SO4."
-	color = "#00FF32"
+	color = "#00FF3290"
 	toxpwr = 1
 	var/acidpwr = 10 //the amount of protection removed from the armour
 	taste_description = "acid"
@@ -1089,7 +1089,7 @@
 /datum/reagent/toxin/acid/fluacid
 	name = "Fluorosulfuric acid"
 	description = "Fluorosulfuric acid is an extremely corrosive chemical substance."
-	color = "#5050FF"
+	color = "#5050FF90"
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	toxpwr = 2
@@ -1113,7 +1113,7 @@
 /datum/reagent/toxin/acid/nitracid
 	name = "Nitric acid"
 	description = "Nitric acid is an extremely corrosive chemical substance that violently reacts with living organic tissue."
-	color = "#5050FF"
+	color = "#5050FF90"
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	toxpwr = 3
@@ -1150,7 +1150,7 @@
 	name = "Mime's Bane"
 	description = "A nonlethal neurotoxin that interferes with the victim's ability to gesture."
 	silent_toxin = TRUE
-	color = "#F0F8FF" // rgb: 240, 248, 255
+	color = "#F0F8FF90" // rgb: 240, 248, 255
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	toxpwr = 0
@@ -1211,7 +1211,7 @@
 	name = "Bungotoxin"
 	description = "A horrible cardiotoxin that protects the humble bungo pit."
 	silent_toxin = TRUE
-	color = "#EBFF8E"
+	color = "#EBFF8E90"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	toxpwr = 0
 	taste_description = "tannin"
@@ -1230,7 +1230,7 @@
 	name = "Lead Acetate"
 	description = "Used hundreds of years ago as a sweetener, before it was realized that it's incredibly poisonous."
 	reagent_state = SOLID
-	color = "#2b2b2b" // rgb: 127, 132, 0
+	color = "#2b2b2b90" // rgb: 127, 132, 0
 	toxpwr = 0.5
 	taste_mult = 1.3
 	taste_description = "sugary sweetness"

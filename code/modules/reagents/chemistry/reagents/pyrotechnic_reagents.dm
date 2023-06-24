@@ -4,7 +4,7 @@
 	description = "Thermite produces an aluminothermic reaction known as a thermite reaction. Can be used to melt walls."
 	reagent_state = SOLID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	color = "#550000"
+	color = "#550000255"
 	taste_description = "sweet tasting metal"
 
 /datum/reagent/thermite/expose_turf(turf/exposed_turf, reac_volume)
@@ -20,7 +20,7 @@
 /datum/reagent/nitroglycerin
 	name = "Nitroglycerin"
 	description = "Nitroglycerin is a heavy, colorless, oily, explosive liquid obtained by nitrating glycerol."
-	color = "#808080" // rgb: 128, 128, 128
+	color = "#80808090" // rgb: 128, 128, 128
 	taste_description = "oil"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -28,7 +28,7 @@
 	name = "Stabilizing Agent"
 	description = "Keeps unstable chemicals stable. This does not work on everything."
 	reagent_state = LIQUID
-	color = "#FFFF00"
+	color = "#FFFF0090"
 	taste_description = "metal"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -42,7 +42,7 @@
 	name = "Chlorine Trifluoride"
 	description = "Makes a temporary 3x3 fireball when it comes into existence, so be careful when mixing. ClF3 applied to a surface burns things that wouldn't otherwise burn, sometimes through the very floors of the station and exposing it to the vacuum of space."
 	reagent_state = LIQUID
-	color = "#FFC8C8"
+	color = "#FFC8C890"
 	metabolization_rate = 10 * REAGENTS_METABOLISM
 	taste_description = "burning"
 	penetrates_skin = NONE
@@ -82,7 +82,7 @@
 	name = "Sorium"
 	description = "Sends everything flying from the detonation point."
 	reagent_state = LIQUID
-	color = "#5A64C8"
+	color = "#5A64C890"
 	taste_description = "air and bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -90,7 +90,7 @@
 	name = "Liquid Dark Matter"
 	description = "Sucks everything into the detonation point."
 	reagent_state = LIQUID
-	color = "#210021"
+	color = "#21002190"
 	taste_description = "compressed bitterness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -98,7 +98,7 @@
 	name = "Gunpowder"
 	description = "Explodes. Violently."
 	reagent_state = LIQUID
-	color = "#000000"
+	color = "#000000255"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM
 	taste_description = "salt"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -123,7 +123,7 @@
 	name = "RDX"
 	description = "Military grade explosive"
 	reagent_state = SOLID
-	color = "#FFFFFF"
+	color = "#FFFFFF255"
 	taste_description = "salt"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -131,7 +131,7 @@
 	name = "TaTP"
 	description = "Suicide grade explosive"
 	reagent_state = SOLID
-	color = "#FFFFFF"
+	color = "#FFFFFF255"
 	taste_description = "death"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -139,7 +139,7 @@
 	name = "Flash Powder"
 	description = "Makes a very bright flash."
 	reagent_state = LIQUID
-	color = "#C8C8C8"
+	color = "#C8C8C890"
 	taste_description = "salt"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -147,7 +147,7 @@
 	name = "Smoke Powder"
 	description = "Makes a large cloud of smoke that can carry reagents."
 	reagent_state = LIQUID
-	color = "#C8C8C8"
+	color = "#C8C8C890"
 	taste_description = "smoke"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -155,7 +155,7 @@
 	name = "Sonic Powder"
 	description = "Makes a deafening noise."
 	reagent_state = LIQUID
-	color = "#C8C8C8"
+	color = "#C8C8C890"
 	taste_description = "loud noises"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
@@ -163,7 +163,7 @@
 	name = "Phlogiston"
 	description = "Catches you on fire and makes you ignite."
 	reagent_state = LIQUID
-	color = "#FA00AF"
+	color = "#FA00AF90"
 	taste_description = "burning"
 	self_consuming = TRUE
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -185,7 +185,7 @@
 	name = "Napalm"
 	description = "Very flammable."
 	reagent_state = LIQUID
-	color = "#FA00AF"
+	color = "#FA00AF90"
 	taste_description = "burning"
 	self_consuming = TRUE
 	penetrates_skin = NONE
@@ -215,7 +215,7 @@
 /datum/reagent/cryostylane
 	name = "Cryostylane"
 	description = "Induces a cryostasis like state in a patient's organs, preventing them from decaying while dead. Slows down surgery while in a patient however. When reacted with oxygen, it will slowly consume it and reduce a container's temperature to 0K. Also damages slime simplemobs when 5u is sprayed."
-	color = "#0000DC"
+	color = "#0000DC90"
 	ph = 8.6
 	metabolization_rate = 0.05 * REAGENTS_METABOLISM
 	taste_description = "icey bitterness"
@@ -272,7 +272,7 @@
 /datum/reagent/pyrosium
 	name = "Pyrosium"
 	description = "Comes into existence at 20K. As long as there is sufficient oxygen for it to react with, Pyrosium slowly heats all other reagents in the container."
-	color = "#64FAC8"
+	color = "#64FAC890"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 	self_consuming = TRUE
@@ -299,7 +299,7 @@
 	name = "Teslium"
 	description = "An unstable, electrically-charged metallic slurry. Periodically electrocutes its victim, and makes electrocutions against them more deadly. Excessively heating teslium results in dangerous destabilization. Do not allow to come into contact with water."
 	reagent_state = LIQUID
-	color = "#20324D" //RGB: 32, 50, 77
+	color = "#20324D90" //RGB: 32, 50, 77
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "charged metal"
 	self_consuming = TRUE
@@ -330,7 +330,7 @@
 	name = "Energized Jelly"
 	description = "Electrically-charged jelly. Boosts jellypeople's nervous system, but only shocks other lifeforms."
 	reagent_state = LIQUID
-	color = "#CAFF43"
+	color = "#CAFF4390"
 	taste_description = "jelly"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 

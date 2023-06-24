@@ -51,7 +51,7 @@
 	quality = -1
 	ph = 1.5
 	taste_description = "an awful, strongly chemical taste"
-	color = "#270d03"
+	color = "#270d0390"
 	glass_price = DRINK_PRICE_HIGH
 	fallback_icon_state = "failed_reaction_fallback"
 
@@ -89,7 +89,7 @@
 	name = "Cryogelidia"
 	description = "Freezes the live or dead patient in a cryostasis ice block."
 	reagent_state = LIQUID
-	color = "#03dbfc"
+	color = "#03dbfc90"
 	taste_description = "your tongue freezing, shortly followed by your thoughts. Brr!"
 	ph = 14
 	chemical_flags = REAGENT_DEAD_PROCESS | REAGENT_IGNORE_STASIS | REAGENT_DONOTSPLIT
