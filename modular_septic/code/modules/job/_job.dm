@@ -3,10 +3,14 @@
 	var/attribute_sheet
 	/// Whether or not this job has a circumcised penis
 	var/penis_circumcised = FALSE
+	/// Minimum cock size for this role (cm)
+	var/min_dicksize = 1
+	/// Maximum cock size for this role (cm)
+	var/max_dicksize = 50
 	/// Minimum breast size for this role (gets converted to cup size)
 	var/min_breastsize = 1
 	/// Maximum breast size for this role (gets converted to cup size)
-	var/max_breastsize = 3
+	var/max_breastsize = 7
 	/// Whether or not this job has lactating breasts
 	var/breasts_lactating = FALSE
 	/// With this set to TRUE, the loadout will be applied before a job clothing will be
@@ -28,6 +32,8 @@
 	. = ..()
 	if(spawned.attributes)
 		assign_attributes(spawned, player_client)
+	if(ishuman(spawned))
+		assign_genitalia(spawned, player_client)
 	if(ishuman(spawned))
 		var/mob/living/carbon/human/spawned_human = spawned
 		var/old_intent = spawned.a_intent
@@ -99,6 +105,15 @@
 			GLOB.data_core.birthday_boys += spawned_human.real_name
 	// this needs to be reset to pick up the color from preferences
 	spawned.chat_color_name = ""
+
+/datum/job/proc/assign_genitalia(mob/living/carbon/human/spawned, client/player_client)
+	spawned.dna.features["penis_size"] = clamp(rand(min_dicksize, max_dicksize), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)
+	spawned.dna.features["penis_girth"] = clamp(spawned.dna.features["penis_size"] - 3, PENIS_MIN_GIRTH, PENIS_MAX_GIRTH)
+	spawned.dna.features["breasts_size"] = clamp(rand(min_breastsize, max_breastsize), BREASTS_MIN_SIZE, BREASTS_MAX_SIZE)
+	spawned.dna.features["breasts_lactation"] = breasts_lactating
+	spawned.dna.features["penis_circumcised"] = penis_circumcised
+	for(var/obj/item/organ/genital/genital in spawned.internal_organs)
+		genital.build_from_dna(spawned.dna, genital.mutantpart_key)
 
 /datum/job/get_roundstart_spawn_point()
 	if(random_spawns_possible)

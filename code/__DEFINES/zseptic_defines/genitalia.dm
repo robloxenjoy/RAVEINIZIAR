@@ -1,10 +1,10 @@
 // ~hehe peepee - use centimeters you stupid americunt
 #define PENIS_MIN_GIRTH 1
 #define PENIS_DEFAULT_GIRTH 12
-#define PENIS_MAX_GIRTH 20
+#define PENIS_MAX_GIRTH 30
 #define PENIS_MIN_LENGTH 1
 #define PENIS_DEFAULT_LENGTH 15
-#define PENIS_MAX_LENGTH 30
+#define PENIS_MAX_LENGTH 50
 
 // ~these use arbitrary numbers for size
 #define BREASTS_MIN_SIZE 0

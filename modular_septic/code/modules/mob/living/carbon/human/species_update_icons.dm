@@ -690,10 +690,16 @@
 		if(bodypart.dmg_overlay_type)
 			var/image/damage
 			switch(bodypart.body_zone)
-				if(BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_MOUTH)
-					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_[BODY_ZONE_HEAD]_[bodypart.brutestate]0")
+				if(BODY_ZONE_PRECISE_FACE)
+					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_face_[bodypart.brutestate]0")
+				if(BODY_ZONE_PRECISE_L_EYE)
+					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_l_eyelid_[bodypart.brutestate]0")
+				if(BODY_ZONE_PRECISE_R_EYE)
+					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_r_eyelid_[bodypart.brutestate]0")
+				if(BODY_ZONE_PRECISE_MOUTH)
+					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_jaw_[bodypart.brutestate]0")
 				if(BODY_ZONE_PRECISE_VITALS)
-					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_[BODY_ZONE_CHEST]_[bodypart.brutestate]0")
+					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_vitals_[bodypart.brutestate]0")
 				else
 					damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_[bodypart.body_zone]_[bodypart.brutestate]0")
 			damage.layer = -DAMAGE_LAYER
@@ -717,12 +723,24 @@
 			continue
 		var/image/gauze
 		if(bodypart.current_gauze?.medicine_overlay_prefix)
-			gauze = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_gauze.medicine_overlay_prefix]_[bodypart.body_zone][bodypart.use_digitigrade ? "_digitigrade" : "" ]")
-			gauze.layer = -LOWER_MEDICINE_LAYER
-			if(bodypart.render_layer == HANDS_PART_LAYER)
-				upper_medicine_overlays.add_overlay(gauze)
-			else
-				lower_medicine_overlays.add_overlay(gauze)
+			switch(bodypart.body_zone)
+				if(BODY_ZONE_PRECISE_FACE)
+					gauze = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_gauze.medicine_overlay_prefix]_face_[bodypart.use_digitigrade ? "_digitigrade" : "" ]")
+				if(BODY_ZONE_PRECISE_L_EYE)
+					gauze = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_gauze.medicine_overlay_prefix]_l_eyelid_[bodypart.use_digitigrade ? "_digitigrade" : "" ]")
+				if(BODY_ZONE_PRECISE_R_EYE)
+					gauze = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_gauze.medicine_overlay_prefix]_r_eyelid_[bodypart.use_digitigrade ? "_digitigrade" : "" ]")
+				if(BODY_ZONE_PRECISE_MOUTH)
+					gauze = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_gauze.medicine_overlay_prefix]_jaw_[bodypart.use_digitigrade ? "_digitigrade" : "" ]")
+				if(BODY_ZONE_PRECISE_VITALS)
+					gauze = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_gauze.medicine_overlay_prefix]_vitals_[bodypart.use_digitigrade ? "_digitigrade" : "" ]")
+				else
+					gauze = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_gauze.medicine_overlay_prefix]_[bodypart.body_zone]_[bodypart.use_digitigrade ? "_digitigrade" : "" ]")
+					gauze.layer = -LOWER_MEDICINE_LAYER
+					if(bodypart.render_layer == HANDS_PART_LAYER)
+						upper_medicine_overlays.add_overlay(gauze)
+					else
+						lower_medicine_overlays.add_overlay(gauze)
 		var/image/splint
 		if(bodypart.current_splint?.medicine_overlay_prefix)
 			splint = mutable_appearance('modular_septic/icons/mob/human/overlays/medicine_overlays.dmi', "[bodypart.current_splint.medicine_overlay_prefix]_[check_zone(bodypart.body_zone)][bodypart.use_digitigrade ? "_digitigrade" : "" ]")

@@ -16,3 +16,5 @@
 /datum/attribute_modifier/verybad
 	variable = TRUE
 
+/datum/attribute_modifier/combat
+	variable = TRUE

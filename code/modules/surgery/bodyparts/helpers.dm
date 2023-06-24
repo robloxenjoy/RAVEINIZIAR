@@ -190,33 +190,19 @@
 	. = 0
 	switch(skin_tone)
 		if("caucasian1")
-			. = "#ffe0d1"
+			. = "efa6b2"
 		if("caucasian2")
-			. = "#fcccb3"
+			. = "d0a2b9"
 		if("caucasian3")
-			. = "#e8b59b"
-		if("latino")
-			. = "#d9ae96"
-		if("mediterranean")
-			. = "#c79b8b"
-		if("asian1")
-			. = "#ffdeb3"
-		if("asian2")
-			. = "#e3ba84"
+			. = "c4abc5"
 		if("arab")
-			. = "#c4915e"
-		if("indian")
-			. = "#b87840"
-		if("african1")
-			. = "#754523"
-		if("african2")
-			. = "#471c18"
-		if("bedouin")
-			. = "#fa9e32"
+			. = "fa9e32"
+		if("nigger")
+			. = "7f4160"
 		if("albino")
-			. = "#fff4e6"
+			. = "faf3f7"
 		if("orange")
-			. = "#ffc905"
+			. = "ffc905"
 
 /mob/living/carbon/proc/Digitigrade_Leg_Swap(swap_back)
 	var/body_plan_changed = FALSE

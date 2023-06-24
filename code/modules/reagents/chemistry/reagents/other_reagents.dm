@@ -10,6 +10,7 @@
 	glass_desc = "Are you sure this is tomato juice?"
 	shot_glass_icon_state = "shotglassred"
 	penetrates_skin = NONE
+	liquid_evaporation_rate = 5
 	ph = 7.4
 
 	// FEED ME
@@ -430,30 +431,16 @@
 			var/mob/living/carbon/human/exposed_human = exposed_mob
 			if(exposed_human.dna.species.id == SPECIES_HUMAN)
 				switch(exposed_human.skin_tone)
-					if("african2")
-						exposed_human.skin_tone = "bedouin"
-					if("african1")
-						exposed_human.skin_tone = "african2"
-					if("indian")
-						exposed_human.skin_tone = "african1"
 					if("arab")
-						exposed_human.skin_tone = "indian"
-					if("asian2")
-						exposed_human.skin_tone = "arab"
-					if("asian1")
-						exposed_human.skin_tone = "asian2"
-					if("mediterranean")
-						exposed_human.skin_tone = "african1"
-					if("latino")
-						exposed_human.skin_tone = "mediterranean"
-					if("caucasian3")
-						exposed_human.skin_tone = "mediterranean"
-					if("caucasian2")
-						exposed_human.skin_tone = pick("caucasian3", "latino")
+						exposed_human.skin_tone = "nigger"
+					if("albino")
+						exposed_human.skin_tone = "caucasian1"
 					if("caucasian1")
 						exposed_human.skin_tone = "caucasian2"
-					if ("albino")
-						exposed_human.skin_tone = "caucasian1"
+					if("caucasian2")
+						exposed_human.skin_tone = "caucasian3"
+					if("caucasian3")
+						exposed_human.skin_tone = "arab"
 
 			if(MUTCOLORS in exposed_human.dna.species.species_traits) //take current alien color and darken it slightly
 				var/newcolor = ""

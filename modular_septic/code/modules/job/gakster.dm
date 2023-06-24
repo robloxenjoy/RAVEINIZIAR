@@ -371,7 +371,7 @@
 
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
-	r_pocket = /obj/item/keycard/akt/granger
+	r_pocket = /obj/item/keycard/akt/infirmary
 	neck = /obj/item/clothing/neck/noble_cloak
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	shoes = /obj/item/clothing/shoes/barhatki

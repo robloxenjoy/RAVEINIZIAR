@@ -128,7 +128,7 @@
 			deal_wound_bonus += 10
 		if(!nonlethal)
 			grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
-			if(prob(1 + (GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH) - GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE))))
+			if(prob(2 + (GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH) - GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE))))
 				for(var/obj/item/organ/bone/bonee as anything in grasped_part.getorganslotlist(ORGAN_SLOT_BONE))
 					if(!bonee.is_broken())
 						bonee.compound_fracture()
