@@ -473,7 +473,7 @@
 	name = "Chloral Hydrate"
 	description = "A powerful sedative that induces confusion and drowsiness before putting its target to sleep."
 	silent_toxin = TRUE
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	creation_purity = REAGENT_STANDARD_PURITY
 	purity = REAGENT_STANDARD_PURITY
 	color = "#000067255" // rgb: 0, 0, 103

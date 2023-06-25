@@ -20,7 +20,7 @@
 	taste_description = "cold and lifeless"
 	ph = 8
 	overdose_threshold = 35
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	inverse_chem_val = 0.3
 	inverse_chem = /datum/reagent/inverse/helgrasp
 	failed_chem = null
@@ -97,7 +97,7 @@
 	color = "#ECEC8D90" // rgb: 236 236 141
 	ph = 8.2
 	taste_description = "bitter with a hint of alcohol"
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	impure_chem = /datum/reagent/impurity/libitoil
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 /* SEPTIC EDIT REMOVAL
@@ -110,7 +110,7 @@
 /datum/reagent/medicine/c2/probital
 	name = "Probital"
 	description = "Originally developed as a prototype-gym supliment for those looking for quick workout turnover, this oral medication quickly repairs broken muscle tissue but causes lactic acid buildup, tiring the patient. Overdosing can cause extreme drowsiness. An Influx of nutrients promotes the muscle repair even further."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#FFFF6B90"
 	ph = 5.5
 	overdose_threshold = 20

@@ -869,7 +869,7 @@
 			var/total_required_reagents = cached_required_reagents.len
 			var/total_matching_reagents = 0
 			var/list/cached_required_catalysts = reaction.required_catalysts
-			var/total_required_catalysts = cached_required_catalysts.len
+			var/total_required_catalysts = length(cached_required_catalysts)
 			var/total_matching_catalysts= 0
 			var/matching_container = FALSE
 			var/matching_other = FALSE

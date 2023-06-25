@@ -8,7 +8,7 @@
 /datum/reagent/medicine/c2/libital
 	name = "Codeine"
 	description = "Codeine is a slight painkiller and brute reliever opioid."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = REAGENTS_METABOLISM
 	addiction_types = list(/datum/addiction/opiods = 5) //1 per 2 seconds
@@ -127,7 +127,7 @@
 	name = "Activated Charcoal"
 	description = "Activated charcoal is a broad spectrum antitoxin used to stimulate toxin filtering by the kidneys and liver."
 	ph = 7.2
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = 0
@@ -176,7 +176,7 @@
 /datum/reagent/medicine/c2/convermol
 	name = "Formoterol"
 	description = "A bronchodilator capable of efficiently oxygenating the lungs of affected patients."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = 0
@@ -217,7 +217,7 @@
 	name = "Menderal" //Because it mends all... I am so clever!
 	description = "Heals both brute and burn damage. 100u or more can restore corpses husked by burns. \
 				Toxic when ingested, touch application only."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = REAGENTS_METABOLISM
 	overdose_threshold = 0

@@ -2,7 +2,7 @@
 /datum/reagent/thermite
 	name = "Thermite"
 	description = "Thermite produces an aluminothermic reaction known as a thermite reaction. Can be used to melt walls."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	color = "#550000255"
 	taste_description = "sweet tasting metal"
@@ -122,7 +122,7 @@
 /datum/reagent/rdx
 	name = "RDX"
 	description = "Military grade explosive"
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#FFFFFF255"
 	taste_description = "salt"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -130,7 +130,7 @@
 /datum/reagent/tatp
 	name = "TaTP"
 	description = "Suicide grade explosive"
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#FFFFFF255"
 	taste_description = "death"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED

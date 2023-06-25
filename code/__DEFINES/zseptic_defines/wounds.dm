@@ -32,7 +32,7 @@
 /// ditto but for kids named finger
 #define DIGITS_MINIMUM_DAMAGE 8
 /// ditto but for spills
-#define SPILL_MINIMUM_DAMAGE 10
+#define SPILL_MINIMUM_DAMAGE 15
 
 /// set wound_bonus on an item or attack to this to disable organ damage for the attack
 #define CANT_ORGAN -100

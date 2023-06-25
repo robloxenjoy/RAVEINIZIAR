@@ -77,7 +77,7 @@
 	attack_fatigue_cost = 6
 	attack_delay = 17
 	parrying_flags = BLOCK_FLAG_THROWN | BLOCK_FLAG_UNARMED
-//	canrust = TRUE	
+//	canrust = TRUE
 	havedurability = TRUE
 	durability = 180
 	tetris_width = 32
@@ -846,6 +846,99 @@
 			current_atk_mode = slash
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+
+/obj/item/changeable_attacks/slashstabbash/sword/big/bronze
+	name = "Two-Handed Bronze Sword"
+	desc = "So big sword!"
+	icon_state = "broze_two_sword"
+	inhand_icon_state = "broze_two_sword"
+//	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
+//	worn_icon_state = "steelsabre"
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.wav'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.wav', 'modular_septic/sound/weapons/melee/slashflesh2.wav', 'modular_septic/sound/weapons/melee/slashflesh3.wav')
+	current_atk_mode = slash
+	embedding = list("pain_mult" = 15, "rip_time" = 3, "embed_chance" = 6, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	min_force = 20
+	force = 35
+	min_force_strength = 1
+	force_strength = 1.6
+	min_throwforce = 10
+	min_throwforce_strength = 8
+	throwforce = 15
+	throwforce_strength = 1.2
+	wound_bonus = 15
+	bare_wound_bonus = 10
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = null
+	sharpness = SHARP_EDGED
+	parrying_modifier = -0.5
+	skill_melee = SKILL_SWORD_TWOHANDED
+	carry_weight = 2.5 KILOGRAMS
+	attack_fatigue_cost = 10
+	attack_delay = 25
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_THROWN
+	readying_flags = READYING_FLAG_SOFT_TWO_HANDED
+//	canrust = TRUE
+//	rustbegin = 4000
+	havedurability = TRUE
+	durability = 350
+	tetris_width = 32
+	tetris_height = 96
+	wielded_inhand_state = FALSE
+
+/obj/item/changeable_attacks/slashstabbash/sword/big/bronze/swap_intents(mob/user)
+	. = ..()
+	switch(current_atk_mode)
+		if(slash)
+			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
+			hitsound = stab_hitsound
+			min_force = 19
+			force = 30
+			min_force_strength = 1
+			force_strength = 1.3
+			current_atk_mode = stab
+			sharpness = SHARP_POINTY
+			embedding = list("pain_mult" = 16, "rip_time" = 8, "embed_chance" = 8, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+		if(stab)
+			to_chat(user, span_notice("I'm now bashing them with the iron hilt of the [src]."))
+			hitsound = bash_hitsound
+			min_force = 10
+			force = 16
+			min_force_strength = 0.65
+			force_strength = 1.3
+			wound_bonus = 8
+			bare_wound_bonus = 3
+			attack_fatigue_cost = 8
+			min_throwforce = 8
+			min_throwforce_strength = 10
+			throwforce_strength = 2
+			throwforce = 13
+			attack_delay = 25
+			current_atk_mode = bash
+			sharpness = NONE
+		if(bash)
+			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
+			hitsound = slash_hitsound
+			min_force = 20
+			force = 35
+			min_force_strength = 1
+			force_strength = 1.6
+			min_throwforce = 10
+			min_throwforce_strength = 8
+			throwforce = 15
+			throwforce_strength = 1.2
+			wound_bonus = 15
+			bare_wound_bonus = 10
+			current_atk_mode = slash
+			sharpness = SHARP_EDGED
+			embedding = list("pain_mult" = 15, "rip_time" = 4, "embed_chance" = 6, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 7, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
 /obj/item/changeable_attacks/slashstab/knife/small/steel
 	name = "Steel Knife"

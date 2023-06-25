@@ -47,7 +47,7 @@
 	name = "Excrement"
 	description = "Solid human waste. Disgusting."
 	taste_description = "literal shit"
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = COLOR_BROWN_SHIT
 	liquid_evaporation_rate = 3
 	ph = 6.6

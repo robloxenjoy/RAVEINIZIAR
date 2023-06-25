@@ -631,7 +631,7 @@
 /datum/reagent/drug/saturnx
 	name = "SaturnX"
 	description = "This compound was first discovered during the infancy of cloaking technology and at the time thought to be a promising candidate agent. It was withdrawn for consideration after the researchers discovered a slew of associated safety issues including thought disorders and hepatoxicity."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	taste_description = "metallic bitterness"
 	color = "#638b9b100"
 	overdose_threshold = 25
@@ -733,7 +733,7 @@
 /datum/reagent/drug/kronkaine
 	name = "kronkaine"
 	description = "A highly illegal stimulant from the edge of the galaxy.\nIt is said the average kronkaine addict causes as much criminal damage as five stick up men, two rascals and one proferssional cambringo hustler combined."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#FAFAFA100"
 	taste_description = "numbing bitterness"
 	ph = 8

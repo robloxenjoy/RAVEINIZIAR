@@ -7,7 +7,6 @@
 		"tits" = "Tits",
 	)
 	inherent_traits = list(
-		TRAIT_EASYDISMEMBER,
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
 		TRAIT_CAN_USE_FLIGHT_POTION,

@@ -1,7 +1,7 @@
 /datum/reagent/blood
 	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
 	name = "Blood"
-	color = "#C80000100" // rgb: 200, 0, 0
+	color = "#C8000090" // rgb: 200, 0, 0
 	metabolization_rate = 12.5 * REAGENTS_METABOLISM //fast rate so it disappears fast.
 	taste_description = "iron"
 	taste_mult = 1.3
@@ -765,7 +765,7 @@
 /datum/reagent/copper
 	name = "Copper"
 	description = "A highly ductile metal. Things made out of copper aren't very durable, but it makes a decent material for electrical wiring."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#6E3B0890" // rgb: 110, 59, 8
 	taste_description = "metal"
 	ph = 5.5
@@ -807,7 +807,7 @@
 /datum/reagent/potassium
 	name = "Potassium"
 	description = "A soft, low-melting solid that can easily be cut with a knife. Reacts violently with water."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#A0A0A090" // rgb: 160, 160, 160
 	taste_description = "sweetness"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -830,7 +830,7 @@
 /datum/reagent/sulfur
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#BF8C0090" // rgb: 191, 140, 0
 	taste_description = "rotten eggs"
 	ph = 4.5
@@ -839,7 +839,7 @@
 /datum/reagent/carbon
 	name = "Carbon"
 	description = "A crumbly black solid that, while unexciting on a physical level, forms the base of all known life. Kind of a big deal."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#1C130090" // rgb: 30, 20, 0
 	taste_description = "sour chalk"
 	ph = 5
@@ -906,7 +906,7 @@
 /datum/reagent/sodium
 	name = "Sodium"
 	description = "A soft silver metal that can easily be cut with a knife. It's not salt just yet, so refrain from putting it on your chips."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#80808090" // rgb: 128, 128, 128
 	taste_description = "salty metal"
 	ph = 11.6
@@ -915,7 +915,7 @@
 /datum/reagent/phosphorus
 	name = "Phosphorus"
 	description = "A ruddy red powder that burns readily. Though it comes in many colors, the general theme is always the same."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#83282890" // rgb: 131, 40, 40
 	taste_description = "vinegar"
 	ph = 6.5
@@ -932,7 +932,7 @@
 /datum/reagent/lithium
 	name = "Lithium"
 	description = "A silver metal, its claim to fame is its remarkably low density. Using it is a bit too effective in calming oneself down."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#80808090" // rgb: 128, 128, 128
 	taste_description = "metal"
 	ph = 11.3
@@ -972,7 +972,7 @@
 /datum/reagent/iron
 	name = "Iron"
 	description = "Pure iron is a metal."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	taste_description = "iron"
 	material = /datum/material/iron
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -987,7 +987,7 @@
 /datum/reagent/gold
 	name = "Gold"
 	description = "Gold is a dense, soft, shiny metal and the most malleable and ductile metal known."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#F7C430255" // rgb: 247, 196, 48
 	taste_description = "expensive metal"
 	material = /datum/material/gold
@@ -996,7 +996,7 @@
 /datum/reagent/silver
 	name = "Silver"
 	description = "A soft, white, lustrous transition metal, it has the highest electrical conductivity of any element and the highest thermal conductivity of any metal."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#D0D0D0255" // rgb: 208, 208, 208
 	taste_description = "expensive yet reasonable metal"
 	material = /datum/material/silver
@@ -1005,7 +1005,7 @@
 /datum/reagent/uranium
 	name ="Uranium"
 	description = "A jade-green metallic chemical element in the actinide series, weakly radioactive."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#5E9964255" //this used to be silver, but liquid uranium can still be green and it's more easily noticeable as uranium like this so why bother?
 	taste_description = "the inside of a reactor"
 	/// How much tox damage to deal per tick
@@ -1040,7 +1040,7 @@
 /datum/reagent/uranium/radium
 	name = "Radium"
 	description = "Radium is an alkaline earth metal. It is extremely radioactive."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#00CC00255" // ditto
 	taste_description = "the colour blue and regret"
 	tox_damage = 1*REM
@@ -1057,7 +1057,7 @@
 /datum/reagent/bluespace
 	name = "Bluespace Dust"
 	description = "A dust composed of microscopic bluespace crystals, with minor space-warping properties."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#0000CC255"
 	taste_description = "fizzling blue"
 	material = /datum/material/bluespace
@@ -1083,7 +1083,7 @@
 /datum/reagent/aluminium
 	name = "Aluminium"
 	description = "A silvery white and ductile member of the boron group of chemical elements."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#A8A8A8255" // rgb: 168, 168, 168
 	taste_description = "metal"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1091,7 +1091,7 @@
 /datum/reagent/silicon
 	name = "Silicon"
 	description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#A8A8A8255" // rgb: 168, 168, 168
 	taste_mult = 0
 	material = /datum/material/glass
@@ -1978,7 +1978,7 @@
 /datum/reagent/pentaerythritol
 	name = "Pentaerythritol"
 	description = "Slow down, it ain't no spelling bee!"
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#E66FFF255"
 	taste_description = "acid"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -1986,7 +1986,7 @@
 /datum/reagent/acetaldehyde
 	name = "Acetaldehyde"
 	description = "Similar to plastic. Tastes like dead people."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#EEEEEF255"
 	taste_description = "dead people" //made from formaldehyde, ya get da joke ?
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2625,7 +2625,7 @@
 /datum/reagent/cellulose
 	name = "Cellulose Fibers"
 	description = "A crystaline polydextrose polymer, plants swear by this stuff."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#E6E6DA255"
 	taste_mult = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -2769,7 +2769,7 @@
 	name = "lead"
 	description = "A dull metalltic element with a low melting point."
 	taste_description = "metal"
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	color = "#80919d255"
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 

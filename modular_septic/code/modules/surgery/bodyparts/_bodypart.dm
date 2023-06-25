@@ -963,6 +963,7 @@
 									required_status = null, \
 									wound_bonus = 0, \
 									bare_wound_bonus = 0, \
+									dismember_bouns = 0, \
 									sharpness = NONE, \
 									organ_bonus = 0, \
 									bare_organ_bonus = 0, \
@@ -1015,7 +1016,7 @@
 	var/wounding_type = WOUND_NONE
 	if(brute || burn)
 		wounding_type = (brute >= burn ? WOUND_BLUNT : WOUND_BURN)
-	var/wounding_dmg = brute + burn
+	var/wounding_dmg = brute + burn + dismember_bonus
 	var/mangled_state = get_mangled_state()
 	var/bio_state = owner?.get_biological_state()
 	var/easy_dismember = (owner && HAS_TRAIT(owner, TRAIT_EASYDISMEMBER)) // if we have easydismember, we don't reduce damage when redirecting damage to different types (slashing weapons on mangled/skinless limbs attack at 100% instead of 50%)

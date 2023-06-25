@@ -269,6 +269,7 @@
 					wound_bonus = weapon.wound_bonus, \
 					bare_wound_bonus = weapon.bare_wound_bonus, \
 					sharpness = sharpness, \
+					dimember_bonus = weapon.dismember_bonus, \
 					organ_bonus = weapon.organ_bonus, \
 					bare_organ_bonus = weapon.bare_organ_bonus, \
 					reduced = armor_reduce, \
@@ -917,10 +918,15 @@
 							list/modifiers)
 	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
 	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
-		if(user_end >= 3)
-			victim.Stun(2 SECONDS)
-		else
-			victim.Stun(1 SECONDS)
+		var/protection = 0
+		var/resultt = 0
+		protection = victim.getsubarmor(affected, MELEE)
+		resultt = (protection - weapon.armour_penetration)
+		if(resultt <= 0)
+			if(user_end >= 3)
+				victim.Stun(2 SECONDS)
+			else
+				victim.Stun(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/stumbling(mob/living/carbon/human/victim, \
@@ -1020,14 +1026,19 @@
 	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL)
 	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL)
 	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
-		var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
-		if(embed_attempt & COMPONENT_EMBED_SUCCESS)
-			user.changeNext_move(0)
-			victim.visible_message(span_pinkdang("[user]'s [weapon] get[weapon.p_s()] stuck in [victim]'s [affected]!"), \
-								span_pinkdang("[user]'s [weapon]  get[weapon.p_s()] stuck in my [affected]!"), \
-								span_hear("I hear the sound of flesh being penetrated."))
-			victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
-			playsound(get_turf(victim), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
-			return TRUE
-		return FALSE
+		var/edge_protection = 0
+		var/resultt = 0
+		edge_protection = victim.get_edge_protection(affected)
+		resultt = (edge_protection - weapon.edge_protection_penetration)
+		if(resultt <= 0)
+			var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
+			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
+				user.changeNext_move(0)
+				victim.visible_message(span_pinkdang("[user]'s [weapon] get[weapon.p_s()] stuck in [victim]'s [affected]!"), \
+									span_pinkdang("[user]'s [weapon]  get[weapon.p_s()] stuck in my [affected]!"), \
+									span_hear("I hear the sound of flesh being penetrated."))
+				victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
+				playsound(get_turf(victim), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
+				return TRUE
+			return FALSE
 	return FALSE

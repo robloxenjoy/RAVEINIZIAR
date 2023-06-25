@@ -1,7 +1,7 @@
 /datum/reagent/drug/lean
 	name = "lean"
 	description = "I LOVE LEAN."
-	reagent_state = SOLID
+	reagent_state = LIQUID
 	taste_description = "purple"
 	color = "#7E399090"
 	overdose_threshold = 35

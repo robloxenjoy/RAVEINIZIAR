@@ -4686,7 +4686,6 @@
 #include "modular_septic\code\game\objects\structures\false_walls\false_walls.dm"
 #include "modular_septic\code\game\objects\structures\false_walls\tram_wall.dm"
 #include "modular_septic\code\game\objects\structures\signs\numbers.dm"
-#include "modular_septic\code\game\objects\structures\table_racks\_table.dm"
 #include "modular_septic\code\game\objects\structures\table_racks\optable.dm"
 #include "modular_septic\code\game\turfs\turf.dm"
 #include "modular_septic\code\game\turfs\turf_defines.dm"
