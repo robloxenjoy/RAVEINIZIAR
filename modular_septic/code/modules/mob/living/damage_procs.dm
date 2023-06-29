@@ -10,7 +10,6 @@
 						wound_bonus = 0, \
 						bare_wound_bonus = 0, \
 						sharpness = NONE, \
-						dismember_bonus = 0, \
 						organ_bonus = 0, \
 						bare_organ_bonus = 0, \
 						reduced = 0, \

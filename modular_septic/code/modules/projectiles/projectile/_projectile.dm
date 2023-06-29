@@ -87,11 +87,15 @@
 				mode = PROJECTILE_PIERCE_NONE
 			else if(embed_attempt & COMPONENT_EMBED_WENT_THROUGH)
 				SEND_SIGNAL(target, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" <i>\The [name] go[p_es()] through!</i>"))
+	var/wound_message = ""
+	if(iscarbon(target))
+		var/mob/living/carbon/carbon_target = target
+		wound_message = carbon_target.wound_message
 	SEND_SIGNAL(target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 	// EXPERIMENTAL: Removed wound messages for projectiles
 	if(hit_text)
-		target.visible_message("[hit_text]", \
-			self_message = "[target_hit_text]", \
+		target.visible_message("[hit_text][wound_message]", \
+			self_message = "[target_hit_text][wound_message]", \
 			blind_message = span_hear("I hear something piercing flesh!"), \
 			vision_distance = COMBAT_MESSAGE_RANGE)
 	if((result == BULLET_ACT_FORCE_PIERCE) || (mode == PROJECTILE_PIERCE_HIT))

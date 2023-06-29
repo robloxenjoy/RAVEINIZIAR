@@ -269,7 +269,6 @@
 					wound_bonus = weapon.wound_bonus, \
 					bare_wound_bonus = weapon.bare_wound_bonus, \
 					sharpness = sharpness, \
-					dimember_bonus = weapon.dismember_bonus, \
 					organ_bonus = weapon.organ_bonus, \
 					bare_organ_bonus = weapon.bare_organ_bonus, \
 					reduced = armor_reduce, \
