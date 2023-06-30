@@ -429,14 +429,14 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 		to_chat(user, span_warning("There's no other ways to attack with this weapon."))
 		return
 	user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
-
+/*
 /obj/item/shard/crystal/Initialize(mapload)
 	. = ..()
 	if(current_atk_mode == slashh)
 		hitsound = slashh_hitsound
 	if(current_atk_mode == stabb)
 		hitsound = stabb_hitsound
-
+*/
 /obj/item/shard/crystal/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
