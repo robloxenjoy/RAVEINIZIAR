@@ -82,30 +82,39 @@
 // Yawn
 /datum/emote/living/yawn/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/yawn_male[rand(1,2)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/yawn_male[rand(1,2)].ogg"
+			else
+				return "modular_septic/sound/emotes/yawn_female[rand(1,3)].ogg"
 		else
-			return "modular_septic/sound/emotes/yawn_female[rand(1,3)].ogg"
+			return "modular_pod/sound/eff/piggo.ogg"
 	else
 		return ..()
 
 // Laughing sound
 /datum/emote/living/laugh/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/laugh_male[rand(1,5)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/laugh_male[rand(1,5)].ogg"
+			else
+				return "modular_septic/sound/emotes/laugh_female[rand(1,5)].ogg"
 		else
-			return "modular_septic/sound/emotes/laugh_female[rand(1,5)].ogg"
+			return "modular_pod/sound/eff/piggo.ogg"
 	else
 		return ..()
 
 // Normal screaming
 /datum/emote/living/scream/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/terror_scream_male[rand(1,2)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/terror_scream_male[rand(1,2)].ogg"
+			else
+				return "modular_septic/sound/emotes/terror_scream_female[rand(1,3)].ogg"
 		else
-			return "modular_septic/sound/emotes/terror_scream_female[rand(1,3)].ogg"
+			return "modular_pod/sound/eff/pigga.ogg"
 	else
 		return ..()
 
@@ -138,16 +147,19 @@
 
 /datum/emote/living/agonyscream/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.on_fire)
-			if(user.gender != FEMALE)
-				return "modular_septic/sound/emotes/agony_male[rand(1,15)].ogg"
+		if(!ispighuman(user))
+			if(user.on_fire)
+				if(user.gender != FEMALE)
+					return "modular_septic/sound/emotes/agony_male[rand(1,15)].ogg"
+				else
+					return "modular_septic/sound/emotes/agony_female[rand(1,8)].ogg"
 			else
-				return "modular_septic/sound/emotes/agony_female[rand(1,8)].ogg"
+				if(user.gender != FEMALE)
+					return "modular_septic/sound/emotes/pain_scream_male[rand(1,3)].wav"
+				else
+					return "modular_septic/sound/emotes/pain_scream_female[rand(1,7)].ogg"
 		else
-			if(user.gender != FEMALE)
-				return "modular_septic/sound/emotes/pain_scream_male[rand(1,3)].wav"
-			else
-				return "modular_septic/sound/emotes/pain_scream_female[rand(1,7)].ogg"
+			return "modular_pod/sound/eff/pigga.ogg"
 	else
 		return ..()
 
@@ -162,10 +174,13 @@
 
 /datum/emote/living/deathscream/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/death_scream_male[rand(1,5)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/death_scream_male[rand(1,5)].ogg"
+			else
+				return "modular_septic/sound/emotes/death_scream_female[rand(1,4)].ogg"
 		else
-			return "modular_septic/sound/emotes/death_scream_female[rand(1,4)].ogg"
+			return "modular_pod/sound/eff/piggator.ogg"
 	else
 		return ..()
 
@@ -180,7 +195,10 @@
 
 /datum/emote/living/deathrattle/get_sound(mob/living/user)
 	if(ishuman(user))
-		return "modular_septic/sound/emotes/deathgasp.wav"
+		if(!ispighuman(user))
+			return "modular_septic/sound/emotes/deathgasp.wav"
+		else
+			return "modular_pod/sound/eff/piggator.ogg"
 	else
 		return ..()
 
@@ -217,19 +235,25 @@
 
 /datum/emote/living/grunt/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/moan_male[rand(1, 8)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/moan_male[rand(1, 8)].ogg"
+			else
+				return "modular_septic/sound/emotes/moan_female[rand(1, 8)].ogg"
 		else
-			return "modular_septic/sound/emotes/moan_female[rand(1, 8)].ogg"
+			return "modular_pod/sound/eff/piggator.ogg"
 	else
 		return ..()
 
 /datum/emote/living/groan/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/moan_male[rand(1, 8)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/moan_male[rand(1, 8)].ogg"
+			else
+				return "modular_septic/sound/emotes/moan_female[rand(1, 8)].ogg"
 		else
-			return "modular_septic/sound/emotes/moan_female[rand(1, 8)].ogg"
+			return "modular_pod/sound/eff/piggator.ogg"
 	else
 		return ..()
 
@@ -261,19 +285,25 @@
 // Crying
 /datum/emote/living/whimper/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/whimper_male[rand(1, 3)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/whimper_male[rand(1, 3)].ogg"
+			else
+				return "modular_septic/sound/emotes/whimper_female[rand(1, 3)].ogg"
 		else
-			return "modular_septic/sound/emotes/whimper_female[rand(1, 3)].ogg"
+			return "modular_pod/sound/eff/pigscream.ogg"
 	else
 		return ..()
 
 /datum/emote/living/carbon/human/cry/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/cry_male[rand(1, 4)].ogg"
+		if(!ispighuman(user))
+			if(user.gender != FEMALE)
+				return "modular_septic/sound/emotes/cry_male[rand(1, 4)].ogg"
+			else
+				return "modular_septic/sound/emotes/cry_female[rand(1, 6)].ogg"
 		else
-			return "modular_septic/sound/emotes/cry_female[rand(1, 6)].ogg"
+			return "modular_pod/sound/eff/pigscream.ogg"
 	else
 		return ..()
 

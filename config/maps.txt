@@ -53,3 +53,6 @@ endmap
 
 map polovich_second
 endmap
+
+map polovich_third
+endmap

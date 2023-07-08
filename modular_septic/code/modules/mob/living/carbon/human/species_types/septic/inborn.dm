@@ -135,3 +135,52 @@
 	limbs_id = "halbermensch"
 	examine_icon_state = "halbermensch"
 	damage_overlay_type = ""
+
+/datum/species/pighuman
+	name = "Pighuman"
+	id = SPECIES_PIGHUMAN
+	default_color = "4B4B4B"
+	species_traits = list(
+		EYECOLOR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+	)
+	inherent_traits = list(
+		TRAIT_ADVANCEDTOOLUSER,
+		TRAIT_CAN_STRIP,
+	)
+	inherent_quirks = list(
+		/datum/quirk/voracious,
+	)
+	attribute_sheet = /datum/attribute_holder/sheet/pighuman
+	inherent_biotypes = MOB_ORGANIC | MOB_HUMANOID | MOB_BEAST
+	mutant_bodyparts = list()
+	default_mutant_bodyparts = list(
+		"snout" = "Piglet",
+		"ears" = "Pig Ears",
+	)
+	default_genitals = list(
+		ORGAN_SLOT_PENIS = /obj/item/organ/genital/penis/knotted/barbed,
+		ORGAN_SLOT_TESTICLES = /obj/item/organ/genital/testicles,
+		ORGAN_SLOT_VAGINA = /obj/item/organ/genital/vagina,
+		ORGAN_SLOT_WOMB = /obj/item/organ/genital/womb,
+		ORGAN_SLOT_BREASTS = /obj/item/organ/genital/breasts/sextuple,
+		ORGAN_SLOT_ANUS = /obj/item/organ/genital/anus,
+	)
+//	mutanttongue = /obj/item/organ/tongue/pig
+	speedmod = 2
+	heatmod = 1.2
+	coldmod = 0.5
+	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
+	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
+	liked_food = RAW | MEAT | GROSS | GRAIN | SEWAGE
+	disliked_food = GROSS | GRAIN | CLOTH | SEWAGE
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	say_mod = "oinks"
+	attack_verb = "beats"
+	attack_sharpness = NONE
+	bite_sharpness = SHARP_EDGED
+	limbs_icon = 'modular_pod/icons/mob/human/species/pighuman/pighuman_parts.dmi'
+	limbs_id = "pighuman"
+	examine_icon_state = "pighuman"

@@ -37,7 +37,7 @@
 	if(QDELETED(splatter))
 		splatter = new /obj/effect/decal/cleanable/blood/splatter(splatter_turf, get_static_viruses())
 		splatter_turf.pollute_turf(/datum/pollutant/metallic_scent, 30)
-//		splatter_turf.add_liquid(/datum/reagent/blood, 5)
+		splatter_turf.add_liquid(/datum/reagent/blood, 3)
 	// Since it takes 10 drips to create a splatter, divide by 10
 	if(small_drip)
 		splatter.bloodiness = min((splatter.bloodiness + BLOOD_AMOUNT_PER_DECAL/10), BLOOD_POOL_MAX)

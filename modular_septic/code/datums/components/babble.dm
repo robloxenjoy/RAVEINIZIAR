@@ -5,6 +5,7 @@
 	var/babble_sound_male = 'modular_septic/sound/voice/babble/babble_male.wav'
 	var/babble_sound_female = 'modular_septic/sound/voice/babble/babble_female.wav'
 	var/babble_sound_agender = 'modular_septic/sound/voice/babble/babble_agender.wav'
+	var/babble_sound_pig = 'modular_pod/sound/eff/pigtalk.ogg'
 	var/volume = BABBLE_DEFAULT_VOLUME
 	var/duration = BABBLE_DEFAULT_DURATION
 	var/last_babble = 0
@@ -13,6 +14,7 @@
 								babble_sound_male = 'modular_septic/sound/voice/babble/babble_male.wav', \
 								babble_sound_female = 'modular_septic/sound/voice/babble/babble_female.wav', \
 								babble_sound_agender = 'modular_septic/sound/voice/babble/babble_agender.wav', \
+								babble_sound_pig = 'modular_pod/sound/eff/pigtalk.ogg', \
 								volume = BABBLE_DEFAULT_VOLUME, \
 								duration = BABBLE_DEFAULT_DURATION)
 	. = ..()
@@ -22,6 +24,7 @@
 	src.babble_sound_male = babble_sound_male
 	src.babble_sound_female = babble_sound_female
 	src.babble_sound_agender = babble_sound_agender
+	src.babble_sound_pig = babble_sound_pig
 	src.volume = volume
 	src.duration = duration
 
@@ -51,6 +54,8 @@
 				initial_babble_sound = babble_sound_female
 			else
 				initial_babble_sound = babble_sound_agender
+		if(ispighuman(babbler))
+			initial_babble_sound = babble_sound_pig
 	var/initial_volume = volume
 	if(speech_mods[WHISPER_MODE])
 		initial_volume -= 30

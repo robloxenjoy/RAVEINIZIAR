@@ -585,7 +585,7 @@
 	icon_state = "tohubohu"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
-	anchored = 1
+	anchored = TRUE
 
 /obj/structure/beast/tohubohu/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
@@ -602,3 +602,17 @@
 			to_chat(user, span_warning("You need exactly 2 teeth!"))
 	else
 		return
+
+/obj/structure/lampstand
+	name = "Lampstand"
+	desc = "Nice."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "lampholdin"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = TRUE
+	anchored = TRUE
+	light_range = 4
+	light_power = 1
+	light_color = "#a340fe"
+	light_system = MOVABLE_LIGHT

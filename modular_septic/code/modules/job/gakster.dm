@@ -235,6 +235,29 @@
 //	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
 
+/datum/job/outcombat
+	title = "Outcombat"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 64
+	spawn_positions = 64
+	supervisors = "he's just attacking."
+	selection_color = "#38e38e"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/nothinger
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/silicon,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/nothinger
+	name = "Nothing Uniform"
+
+/*
 /datum/job/aktliver
 	title = "Akt Liver"
 	department_head = list("Head of Personnel")
@@ -462,8 +485,6 @@
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/mystical
 	r_pocket = /obj/item/keycard/akt/alchem
 	shoes = /obj/item/clothing/shoes/frogshoes
-
-/*
 
 /datum/job/evilwarlock
 	title = "Evil Warlock"

@@ -1,0 +1,61 @@
+{
+	"version": 1,
+	"map_name": "Polovich Third",
+	"map_path": "_septic/map_files/Polovichh_third",
+	"map_file": [
+		"PolovichssZ5.dmm",
+		"PolovichssZ4.dmm",
+		"PolovichssZ3.dmm",
+		"PolovichssZ2.dmm",
+		"PolovichssZ1.dmm"
+	],
+	"station_name": "Dream",
+	"respawn_allowed": true,
+	"overflow_role": "Venturer",
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"surface_ruin_levels": 0,
+	"surface_empty_levels": 0,
+	"cave_ruin_levels": 0,
+	"cave_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_baluarte",
+		"emergency": "emergency_efn"
+	},
+	"traits": [
+		{
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/closed/wall/purple/nocling"
+		},
+		{
+			"Down": -1,
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/closed/wall/purple/nocling"
+		},
+		{
+			"Down": -1,
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/closed/wall/purple/nocling"
+		},
+		{
+			"Down": -1,
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/closed/wall/purple/nocling"
+		},
+		{
+			"Down": -1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/closed/wall/purple/nocling"
+		}
+	],
+	"minetype": "none"
+}

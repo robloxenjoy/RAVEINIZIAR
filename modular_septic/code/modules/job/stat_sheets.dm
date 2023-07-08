@@ -99,13 +99,16 @@
 
 /datum/job/janitor
 	attribute_sheet = /datum/attribute_holder/sheet/job/janitor
+
+/datum/job/outcombat
+	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
 /*
 /datum/job/venturer
 	attribute_sheet = /datum/attribute_holder/sheet/job/venturer
 */
 /datum/job/chaot
 	attribute_sheet = /datum/attribute_holder/sheet/job/chaot
-
+/*
 /datum/job/aktliver
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktliver
 
@@ -129,3 +132,4 @@
 
 /datum/job/aktalchemist
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktalchemist
+*/

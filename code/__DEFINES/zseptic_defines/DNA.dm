@@ -111,6 +111,7 @@
 #define SPECIES_INBORN "nagger"
 #define SPECIES_WEAKWILLET "weakwillet"
 #define SPECIES_HALBERMENSCH "halbermensch"
+#define SPECIES_PIGHUMAN "pighuman"
 #define SPECIES_DENOMINATOR "combiners"
 
 // ~body types

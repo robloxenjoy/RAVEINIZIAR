@@ -1070,6 +1070,47 @@
 		SKILL_ACROBATICS = -2,
 	)
 
+//outcombat
+/datum/attribute_holder/sheet/job/outcombat
+	attribute_variance = list(
+		STAT_STRENGTH = list(-1, 5),
+		STAT_ENDURANCE = list(-1, 5),
+		STAT_DEXTERITY = list(-1, 5),
+		STAT_INTELLIGENCE = list(-1, 5),
+		SKILL_BRAWLING = list(-2, 6),
+		SKILL_WRESTLING = list(-2, 6),
+		SKILL_BUCKLER = list(-2, 6),
+		SKILL_SHIELD = list(-2, 6),
+		SKILL_IMPACT_WEAPON_TWOHANDED = list(-2, 6),
+		SKILL_IMPACT_WEAPON = list(-2, 6),
+		SKILL_SHOTGUN = list(-2, 6),
+		SKILL_SMG = list(-2, 6),
+		SKILL_PISTOL = list(-2, 6),
+		SKILL_RAPIER = list(-2, 6),
+		SKILL_SHORTSWORD = list(-2, 6),
+		SKILL_LONGSWORD = list(-2, 6),
+		SKILL_THROWING = list(-2, 6),
+		SKILL_PICKPOCKET = list(-2, 6),
+		SKILL_LOCKPICKING = list(-2, 6),
+		SKILL_SCIENCE = list(-2, 6),,
+		SKILL_ACROBATICS = list(-2, 6),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 0,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
+/*
 // akt liver
 /datum/attribute_holder/sheet/job/aktliver
 	attribute_variance = list(
@@ -1366,6 +1407,8 @@
 		SKILL_SCIENCE = -3,
 		SKILL_ACROBATICS = -3,
 	)
+
+*/
 
 //ESCAPE FROM NEVADO///
 // DENOMINATOR

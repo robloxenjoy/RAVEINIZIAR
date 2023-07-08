@@ -68,3 +68,7 @@
 // breasts shouldn't cum
 /obj/item/organ/genital/breasts/handle_climax(atom/target, method)
 	return
+
+/obj/item/organ/genital/breasts/sextuple
+	mutantpart_info = list(MUTANT_INDEX_NAME = "Sextuple", MUTANT_INDEX_COLOR = list("FEB"))
+	genital_type = "sextuple"

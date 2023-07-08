@@ -145,7 +145,7 @@
 		musics |= DRONING_TAVERN
 		musics |= DRONING_COMBAT
 		musics |= DRONING_FOREST
-		musics |= DRONING_FORESTOTHER
+//		musics |= DRONING_FORESTOTHER
 		musics |= DRONING_VILL
 		music_files = musics
 

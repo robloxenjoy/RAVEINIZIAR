@@ -53,6 +53,12 @@
 	icon_state = "bear"
 	color_src = USE_ONE_COLOR
 
+/datum/sprite_accessory/ears/mutant/pig
+	name = "Pig Ears"
+	icon_state = "piggy"
+//	recommended_species = list(SPECIES_PIGHUMAN)
+	color_src = FALSE
+
 /datum/sprite_accessory/ears/mutant/bigwolf
 	name = "Big Wolf"
 	icon_state = "bigwolf"

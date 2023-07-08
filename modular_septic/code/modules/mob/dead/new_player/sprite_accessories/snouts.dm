@@ -51,6 +51,12 @@
 	extra2 = TRUE
 	extra2_color_src = MUTCOLORS3
 
+/datum/sprite_accessory/snouts/mammal/pig
+	name = "Piglet"
+	icon_state = "piglet"
+//	recommended_species = list(SPECIES_PIGHUMAN)
+	color_src = FALSE
+
 /datum/sprite_accessory/snouts/mammal/elephant
 	name = "Elephant"
 	icon_state = "elephant"

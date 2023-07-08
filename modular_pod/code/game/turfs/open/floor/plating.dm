@@ -8,7 +8,6 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
-	var/powerfloor = 10
 
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()
@@ -66,16 +65,27 @@
 		user.changeNext_move(CLICK_CD_WRENCH)
 	if(user.a_intent == INTENT_HARM)
 //		user.visible_message("<span class='notice'>\[user] beats the [src] with [W].</span>")
-		user.visible_message(span_notice("[user] beats the [src] with [W]."),span_notice("You beat the [src] with [W]."), span_hear("You hear the sound of beating the floor."))
-		user.changeNext_move(W.attack_delay)
-		user.adjustFatigueLoss(W.attack_fatigue_cost)
-		W.damageItem("SOFT")
-		playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
-		sound_hint()
-		if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
-			if(prob(W.force))
-				var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
-				new /atom/movable/fire(firefloor, 21)
+		if(W.force)
+			if(W.get_sharpness())
+				user.visible_message(span_notice("[user] brandishing a [W]."),span_notice("You brandish a [W]."), span_hear("You hear the sound of swinging."))
+				user.changeNext_move(W.attack_delay)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				sound_hint()
+				if(W.force <= 16)
+					playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
+				else
+					playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
+			else
+				user.visible_message(span_notice("[user] beats the [src] with [W]."),span_notice("You beat the [src] with [W]."), span_hear("You hear the sound of beating the floor."))
+				user.changeNext_move(W.attack_delay)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				W.damageItem("SOFT")
+				playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
+				sound_hint()
+				if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
+					if(prob(W.force))
+						var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
+						new /atom/movable/fire(firefloor, 21)
 	if(user.a_intent == INTENT_DISARM)
 		if(istype(src, /turf/open/floor/plating/polovich/roots))
 			if(W.sharpness)
@@ -88,22 +98,6 @@
 					playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 					var/turf/open/floor/plating/polovich/roots/noroots = src
 					noroots.canstumble = FALSE
-
-	if(user.a_intent == INTENT_GRAB)
-		if(istype(W, /obj/item/grab))
-			var/obj/item/grab/G = W
-			if(G.grasped_part?.body_zone == BODY_ZONE_PRECISE_FACE)
-				var/mob/living/GR = user.pulling
-				if(GR == null)
-					return
-				if(GR.body_position == LYING_DOWN)
-					var/obj/item/bodypart/head = GR.get_bodypart_nostump(BODY_ZONE_HEAD)
-					var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerfloor)
-					GR.visible_message(span_pinkdang("[user] bangs [GR]'s head against the [src]!"))
-					head.receive_damage(brute = damage, wound_bonus = 2, sharpness = null)
-					user.changeNext_move(CLICK_CD_GRABBING)
-					user.adjustFatigueLoss(10)
-					playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.wav', 80, 0)
 
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
@@ -127,6 +121,52 @@
 
 /turf/open/floor/plating/polovich/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_ground[rand(1,5)].wav"
+
+/turf/open/floor/plating/polovich/rotten_stones
+	name = "Stone Floor"
+	desc = "DARK!"
+	icon_state = "STONINGHEHE"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/rotten_stones/sec
+	icon_state = "stonealbino"
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/secc
+	icon_state = "stonealbino1"
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/albino
+	icon_state = "stonerotten"
+
+/turf/open/floor/plating/polovich/steelishh
+	name = "Steel Floor"
+	desc = "DARK!"
+	icon_state = "steelishfloor"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_PLATING
+
+/turf/open/floor/plating/polovich/woodendarkdark
+	name = "Wooden Floor"
+	desc = "DARK!"
+	icon_state = "evilishwood"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+	var/randommm = FALSE
+
+/turf/open/floor/plating/polovich/woodendarkdark/Initialize(mapload)
+	. = ..()
+	if(randommm)
+		dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/woodendarkdark/random
+	randommm = TRUE
 
 /turf/open/floor/plating/polovich/red
 	name = "Red Floor"
@@ -421,7 +461,7 @@
 	icon_state = "blackgryaz"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	slowdown = 1
-	var/cooldown = 80
+//	var/cooldown = 80
 
 /turf/open/floor/plating/polovich/dirt/dark/gryazka/Initialize(mapload)
 	. = ..()
@@ -611,6 +651,9 @@
 				new /obj/structure/fluff/statuestone(get_turf(src))
 			if("beartrap")
 				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+
+/turf/open/floor/plating/polovich/greengryaz/norandomgen
+	randomgenerate = FALSE
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical

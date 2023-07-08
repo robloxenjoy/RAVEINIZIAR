@@ -861,22 +861,30 @@
 									list/modifiers)
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
 	if(!sharpness)
-		var/knockback_tiles = 0
-		if(victim_end >= 3)
-			knockback_tiles = FLOOR(damage/((victim_end - 2) * 2.5), 1)
-		// I HATE DIVISION BY ZERO! I HATE DIVISION BY ZERO!
+		if(victim.body_position != LYING_DOWN)
+			var/knockback_tiles = 0
+			if(victim_end >= 3)
+				knockback_tiles = FLOOR(damage/((victim_end - 2) * 2.5), 1)
+			// I HATE DIVISION BY ZERO! I HATE DIVISION BY ZERO!
+			else
+				knockback_tiles = FLOOR(damage/2, 1)
+			if(knockback_tiles >= 1)
+				var/turf/edge_target_turf = get_edge_target_turf(victim, get_dir(user, victim))
+				if(istype(edge_target_turf))
+					victim.safe_throw_at(edge_target_turf, \
+										knockback_tiles, \
+										knockback_tiles, \
+										user, \
+										spin = FALSE, \
+										force = victim.move_force, \
+										callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
 		else
-			knockback_tiles = FLOOR(damage/2, 1)
-		if(knockback_tiles >= 1)
-			var/turf/edge_target_turf = get_edge_target_turf(victim, get_dir(user, victim))
-			if(istype(edge_target_turf))
-				victim.safe_throw_at(edge_target_turf, \
-									knockback_tiles, \
-									knockback_tiles, \
-									user, \
-									spin = FALSE, \
-									force = victim.move_force, \
-									callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
+			var/turf/open/floor/plating/A = get_turf(victim)
+			victim.apply_damage(A.powerfloor, BRUTE, affected, victim.run_armor_check(affected, MELEE), wound_bonus = A.dangerfloor, sharpness = NONE)
+			victim.visible_message(span_pinkdang("[victim]'s [affected] crushed against [A]!"), \
+								span_pinkdang("My [affected] crushed against [A]!"), \
+								span_hear("I hear the sound of combat."))
+			playsound(get_turf(victim), 'modular_pod/sound/eff/punch 1.wav', 80, 0)
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	realstunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	stumbling(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
@@ -915,17 +923,21 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+	var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
+	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 		var/protection = 0
 		var/resultt = 0
-		protection = victim.getsubarmor(affected, MELEE)
-		resultt = (protection - weapon.armour_penetration)
-		if(resultt <= 0)
-			if(user_end >= 3)
-				victim.Stun(2 SECONDS)
-			else
-				victim.Stun(1 SECONDS)
+		if(!istype(weapon))
+			protection = victim.getarmor(affected, MELEE)
+			resultt = (protection - damage)
+		else
+			protection = victim.getsubarmor(affected, CRUSHING)
+			resultt = (protection - weapon.armour_penetration)
+			if(resultt <= 0)
+				if(user_str >= 3)
+					victim.Stun(2 SECONDS)
+				else
+					victim.Stun(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/stumbling(mob/living/carbon/human/victim, \

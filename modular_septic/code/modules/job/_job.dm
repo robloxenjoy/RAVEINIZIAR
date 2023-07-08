@@ -72,6 +72,13 @@
 		spawned.gain_extra_effort(1, TRUE)
 		if(prob(30))
 			spawned_human.gain_trauma(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_BASIC)
+		var/obj/item/organ/brain/brain = spawned.getorganslot(ORGAN_SLOT_BRAIN)
+		if(brain)
+			(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(spawned, STAT_ENDURANCE))
+		spawned.playsound_local(spawned, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
+//		spawned.overlay_fullscreen("podpol", /atom/movable/screen/fullscreen/impaired/podpol)
+//		spawned.clear_fullscreen("podpol", 3)
+//		addtimer(CALLBACK(spawned, /mob/.proc/clear_fullscreen, "podpol", 3), 3)
 		var/birthday = spawned_human.day_born
 		var/birthday_month = month_text(spawned_human.month_born)
 		var/station_realtime = SSstation_time.get_station_realtime()
@@ -104,7 +111,7 @@
 					bank_account.adjust_money(2000)
 			GLOB.data_core.birthday_boys += spawned_human.real_name
 	// this needs to be reset to pick up the color from preferences
-	spawned.chat_color_name = ""
+//	spawned.chat_color_name = ""
 
 /datum/job/proc/assign_genitalia(mob/living/carbon/human/spawned, client/player_client)
 	spawned.dna.features["penis_size"] = clamp(rand(min_dicksize, max_dicksize), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)
