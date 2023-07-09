@@ -175,12 +175,13 @@
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
 	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
 	liked_food = RAW | MEAT | GROSS | GRAIN | SEWAGE
-	disliked_food = GROSS | GRAIN | CLOTH | SEWAGE
+	disliked_food = CLOTH
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	say_mod = "oinks"
 	attack_verb = "beats"
 	attack_sharpness = NONE
 	bite_sharpness = SHARP_EDGED
+	species_language_holder = /datum/language/yoinky
 	limbs_icon = 'modular_pod/icons/mob/human/species/pighuman/pighuman_parts.dmi'
 	limbs_id = "pighuman"
 	examine_icon_state = "pighuman"

@@ -885,8 +885,6 @@
 	attack_delay = 25
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_THROWN
 	readying_flags = READYING_FLAG_SOFT_TWO_HANDED
-//	canrust = TRUE
-//	rustbegin = 4000
 	havedurability = TRUE
 	durability = 350
 	tetris_width = 32

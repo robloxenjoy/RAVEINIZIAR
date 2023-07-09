@@ -12,5 +12,5 @@ SUBSYSTEM_DEF(potential)
 			var/mob/living/carbon/human/untaped_human = untaped
 			if(untaped_human.attributes)
 				untaped_human.attributes.add_sheet(/datum/attribute_holder/sheet/potential)
-				to_chat(untaped_human, span_achievementrare("I feel like my potential is being unlocked!")
+				to_chat(untaped_human, span_achievementrare("I feel like my potential is being unlocked!"))
 

@@ -15,9 +15,7 @@ const Human: Species = {
   },
   lore: [
     "Humanity needs no introduction.",
-    "Most humans are allied to Itobe, however corporate war continues raging on as what ZoomTech lacks in numbers,",
-    "it has in technology. ZoomTech is also mostly composed of humans, but they have greatly accepted and incorporated",
-    "alien life in it's ranks to compensate for war related casualties and diminished birth rates.",
+    "Nightmarish evolved apes.",
   ],
 };
 

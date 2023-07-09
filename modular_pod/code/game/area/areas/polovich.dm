@@ -2,7 +2,7 @@
 	name = "Polovich"
 	icon_state = "polovich"
 //	droning_sound = DRONING_POLOVICHSTAN
-	droning_volume = 10
+	droning_volume = 15
 	requires_power = FALSE
 	ambience_index = AMBIENCE_GENERIC
 	min_ambience_cooldown = 60 SECONDS

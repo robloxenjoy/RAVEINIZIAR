@@ -35,10 +35,11 @@
 "I" = (/obj/structure/closet/crate/wooden,/obj/item/clothing/suit/armor/vest/leatherbreastt,/turf/open/floor/plating/polovich/rotten_stones{dir = 8},/area/maintenance/polovich/forest/rain)
 "J" = (/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/stoneekasasdarkk,/area/maintenance/polovich/forest/rain)
 "K" = (/obj/structure/lampwall/service/directional{dir = 1},/turf/open/floor/plating/polovich/stoneekasasdarkk,/area/maintenance/polovich/forest/rain)
-"L" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"L" = (/obj/machinery/light/red/flickering/directional/south,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "M" = (/obj/effect/landmark/start/outcombat,/turf/open/floor/plating/polovich/stoneekasasdarkk,/area/maintenance/polovich/forest/rain)
 "N" = (/obj/structure/lampwall/service/directional{dir = 8},/turf/open/floor/plating/polovich/stoneekasasdarkk,/area/maintenance/polovich/forest/rain)
 "O" = (/obj/structure/lampwall/service/directional{dir = 4},/turf/open/floor/plating/polovich/stoneekasasdarkk,/area/maintenance/polovich/forest/rain)
+"P" = (/obj/machinery/light/red/flickering/directional/north,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 
 (1,1,1) = {"
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -156,7 +157,7 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmJvxyBDFHq
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmmMmmmmmmmmmmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 baacccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 baacccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmooonttnooommbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-baacccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmorpLppLpsommbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+baacccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmorpPppPpsommbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 baacccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbOmorppppppsomNbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 baacccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmorppppppsommbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 baacccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbmmorppppppsommbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

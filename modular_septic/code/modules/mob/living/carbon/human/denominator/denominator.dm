@@ -17,6 +17,9 @@
 	icon = 'modular_septic/icons/obj/items/books.dmi'
 	icon_state = "glorytotheccp" //for mapping
 	race = /datum/species/halbermensch
+	max_fatigue = 200
+	base_max_fatigue = 200
+	fatigue = 200
 
 /mob/living/carbon/human/species/tendonishe
 	icon = 'modular_septic/icons/obj/items/books.dmi'
