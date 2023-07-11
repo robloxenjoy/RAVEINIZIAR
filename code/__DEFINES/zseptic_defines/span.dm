@@ -23,6 +23,7 @@
 #define span_bigdanger(str) ("<span class='bigdanger'>" + str + "</span>")
 #define span_bolddanger(str) ("<span class='bolddanger'>" + str + "</span>")
 #define span_pinkdang(str) ("<span class='pinkdang'>" + str + "</span>")
+#define span_boned(str) ("<span class='boned'>" + str + "</span>")
 #define span_emote(str) ("<span class='emote'>" + str + "</span>")
 #define span_achievementrare(str) ("<span class='achievementrare'>" + str + "</span>")
 #define span_achievementinteresting(str) ("<span class='achievementinteresting'>" + str + "</span>")

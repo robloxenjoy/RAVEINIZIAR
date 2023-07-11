@@ -127,9 +127,9 @@
 			status += "<span class='userdanger'><span class='artery'><b>ARTERY</b></span></span>"
 
 		if(LB.is_fractured())
-			status += "<span class='userdanger'><b>FRACTURE</b></span>"
+			status += "<span class='boned'><b>FRACTURE</b></span>"
 		else if(LB.is_dislocated())
-			status += "<span class='danger'><b>DISLOCATION</b></span>"
+			status += "<span class='boned'><b>DISLOCATION</b></span>"
 
 		if(LB.is_tendon_torn())
 			status += "<span class='userdanger'><b>TENDON</b></span>"
