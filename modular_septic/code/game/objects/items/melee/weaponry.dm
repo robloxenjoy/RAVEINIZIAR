@@ -857,11 +857,11 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
-	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.wav', 'modular_septic/sound/weapons/melee/slashflesh2.wav', 'modular_septic/sound/weapons/melee/slashflesh3.wav')
+	equip_sound = 'modular_pod/sound/eff/weapon/2blade_sheath.wav'
+	pickup_sound = 'modular_pod/sound/eff/weapon/2blade_draw.wav'
+	miss_sound = list('modular_pod/sound/eff/weapon/2blade_swing.wav')
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	slash_hitsound = list('modular_pod/sound/eff/weapon/2blade_impact.wav', 'modular_pod/sound/eff/weapon/2blade_impact2.wav', 'modular_pod/sound/eff/weapon/2blade_impact3.wav')
 	current_atk_mode = slash
 	embedding = list("pain_mult" = 15, "rip_time" = 3, "embed_chance" = 6, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 20
@@ -872,8 +872,8 @@
 	min_throwforce_strength = 8
 	throwforce = 15
 	throwforce_strength = 1.2
-	wound_bonus = 15
-	bare_wound_bonus = 10
+	wound_bonus = 10
+	bare_wound_bonus = 5
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
@@ -905,7 +905,7 @@
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 16, "rip_time" = 8, "embed_chance" = 8, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
-			to_chat(user, span_notice("I'm now bashing them with the iron hilt of the [src]."))
+			to_chat(user, span_notice("I'm now bashing them with the bronze hilt of the [src]."))
 			hitsound = bash_hitsound
 			min_force = 10
 			force = 16

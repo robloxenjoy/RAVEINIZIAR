@@ -181,7 +181,7 @@
 	attack_verb = "beats"
 	attack_sharpness = NONE
 	bite_sharpness = SHARP_EDGED
-	species_language_holder = /datum/language/yoinky
+//	species_language_holder = /datum/language/yoinky
 	limbs_icon = 'modular_pod/icons/mob/human/species/pighuman/pighuman_parts.dmi'
 	limbs_id = "pighuman"
 	examine_icon_state = "pighuman"

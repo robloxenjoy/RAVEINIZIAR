@@ -31,7 +31,7 @@
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if(user.a_intent == INTENT_HARM)
+	if(user.a_intent == INTENT_HARM || INTENT_GRAB)
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -47,7 +47,7 @@
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if(user.a_intent == INTENT_HARM)
+	if(user.a_intent == INTENT_HARM || INTENT_GRAB)
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -63,7 +63,7 @@
 //		user.visible_message("<span class='notice'>\[user] touches the [src] with [W].</span>")
 		user.visible_message(span_notice("[user] touches the [src] with [W]."),span_notice("You touch the [src] with [W]."), span_hear("You hear the sound of touching."))
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if(user.a_intent == INTENT_HARM)
+	if(user.a_intent == INTENT_HARM || INTENT_GRAB)
 //		user.visible_message("<span class='notice'>\[user] beats the [src] with [W].</span>")
 		if(W.force)
 			if(W.get_sharpness())
@@ -138,13 +138,143 @@
 /turf/open/floor/plating/polovich/rotten_stones/sec/secc
 	icon_state = "stonealbino1"
 
-/turf/open/floor/plating/polovich/rotten_stones/sec/albino
-	icon_state = "stonerotten"
+/turf/open/floor/plating/polovich/rotten_stones/sec/third
+	icon_state = "ebanytiy"
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/third/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/four
+	icon_state = "darkrockfloor"
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/five
+	icon_state = "darkrockfloor2"
+/*
+/turf/open/floor/plating/polovich/rotten_stones/sec/six
+	icon_state = "ebanytiy"
+*/
+/turf/open/floor/plating/polovich/rotten_stones/sec/sev
+	icon_state = "chaoto"
+	desc = "HMMM."
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/eight
+	icon_state = "chaotot"
+	desc = "HMMM."
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/nine
+	icon_state = "hotstone"
+	desc = "HMMM."
+
+/turf/open/floor/plating/polovich/rotten_stones/sec/ten
+	icon_state = "hotstone2"
+	desc = "HMMM."
+
+/turf/open/floor/plating/polovich/rotten_dirt
+	name = "Rotten Dirt"
+	desc = "This is sticky."
+	icon_state = "rottendirt"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	slowdown = 1
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/rotten_dirt/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/cosmicdirt
+	name = "Cosmic Dirt"
+	desc = "This is sticky."
+	icon_state = "dirtyish"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	slowdown = 1
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/cosmicdirt/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/otherdirts
+	name = "Dirt"
+	desc = "This is sticky."
+	icon_state = "dirtydirty"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	slowdown = 1
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/otherdirts/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/otherdirts/sec
+	icon_state = "dirtybluei"
+
+/turf/open/floor/plating/polovich/otherdirts/sec/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/otherdirts/third
+	icon_state = "dirtybluei2"
+
+/turf/open/floor/plating/polovich/otherdirts/third/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/otherdirts/four
+	icon_state = "devildirt"
+
+/turf/open/floor/plating/polovich/otherdirts/four/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/otherdirts/five
+	icon_state = "dirtymud"
+
+/turf/open/floor/plating/polovich/otherdirts/five/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/otherdirts/six
+	icon_state = "dirtymud2"
+
+/turf/open/floor/plating/polovich/otherdirts/six/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/steelishh
 	name = "Steel Floor"
 	desc = "DARK!"
 	icon_state = "steelishfloor"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_PLATING
+
+/turf/open/floor/plating/polovich/steelishhh
+	name = "Steel Floor"
+	desc = "Depressed."
+	icon_state = "depressed"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_PLATING
+
+/turf/open/floor/plating/polovich/steeldark
+	name = "Steel Floor"
+	desc = "DARK!"
+	icon_state = "steeldark"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_PLATING
+
+/turf/open/floor/plating/polovich/steeldarkk
+	name = "Steel Floor"
+	desc = "DARK!"
+	icon_state = "steeldark2"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_PLATING
 
@@ -167,6 +297,20 @@
 
 /turf/open/floor/plating/polovich/woodendarkdark/random
 	randommm = TRUE
+
+/turf/open/floor/plating/polovich/woodendarkdarkk
+	name = "Wooden Floor"
+	desc = "DARK!"
+	icon_state = "wodacid"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/woodendarkdarkk/dark
+	icon_state = "wodacid2"
 
 /turf/open/floor/plating/polovich/red
 	name = "Red Floor"
@@ -255,6 +399,20 @@
 	icon = 'modular_pod/icons/turf/floors.dmi'
 
 /turf/open/floor/plating/polovich/temnoo/two/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/darkydarkn
+	name = "Stone Floor"
+	desc = "Hmm."
+	icon_state = "darkorstone"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/darkydarkn/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -399,6 +557,13 @@
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_PLATING
 
+/turf/open/floor/plating/polovich/cosmick
+	name = "Cosmic Floor"
+	desc = "This is cool."
+	icon_state = "cosmicanomaly"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_PLATING
+
 /turf/open/floor/light/colour_cycle/polovich
 	name = "Dancefloor"
 	desc = "This is funny."
@@ -445,6 +610,21 @@
 	heavyfootstep = FOOTSTEP_SAND
 
 /turf/open/floor/plating/polovich/dirt/soft/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/dirtyddd
+	name = "Spidery Dirt"
+	desc = "This is STICKY."
+	icon_state = "webbishdirt"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_SAND
+	slowdown = 1
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/dirtyddd/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -512,6 +692,36 @@
 	. = ..()
 	dir = rand(0,4)
 
+/turf/open/floor/plating/polovich/dirt/blueee
+	name = "Blue Dirt"
+	desc = "This is sticky."
+	icon_state = "dirtybluei"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	slowdown = 1
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/dirt/blueee/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/dirt/blueee/second
+	name = "Blue Dirt"
+	desc = "This is sticky."
+	icon_state = "dirtybluei2"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	slowdown = 1
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/dirt/blueee/second/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/bonefloor
 	name = "Bone Floor"
 	desc = "This is brutal and interesting."
@@ -552,6 +762,46 @@
 	icon_state = "plitrapinkred"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_PLATING
+
+/turf/open/floor/plating/polovich/stoneplitblue
+	name = "Stone Floor"
+	desc = "This is interesting."
+	icon_state = "stonebluei"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/cosmickick
+	name = "Stone Floor"
+	desc = "This is interesting."
+	icon_state = "cosmicanomaly2"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/cosmickickk
+	name = "Stone Floor"
+	desc = "This is interesting."
+	icon_state = "cosmicbrick"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/stoneplitblue/second
+	name = "Stone Floor"
+	desc = "This is interesting."
+	icon_state = "stonebluei2"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
 
 /turf/open/floor/plating/polovich/krutoplitka/krutoplitka2
 	name = "Strange Floor"
@@ -1095,6 +1345,43 @@
 	. = ..()
 	dir = rand(0,4)
 
+/turf/open/floor/plating/polovich/albin_meat
+	name = "Meat Floor"
+	desc = "This is evil and sticky."
+	icon_state = "albin_meat"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_MEAT
+	barefootstep = FOOTSTEP_MEAT
+	clawfootstep = FOOTSTEP_MEAT
+	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 2
+
+/turf/open/floor/plating/polovich/albin_meat/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/muddmy
+	name = "Evil Mud"
+	desc = "This is evil and sticky."
+	icon_state = "evilmud"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_MEAT
+	barefootstep = FOOTSTEP_MEAT
+	clawfootstep = FOOTSTEP_MEAT
+	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 2
+
+/turf/open/floor/plating/polovich/muddmy/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/muddmy/second
+	icon_state = "evilmud2"
+
+/turf/open/floor/plating/polovich/muddmy/second/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/sea/gelatinea
 	name = "Mesopelagic Gelatine"
 	desc = "So pleasing to the eye."
@@ -1122,6 +1409,36 @@
 	slowdown = 3
 
 /turf/open/floor/plating/polovich/slush/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/slushy
+	name = "Slush Floor"
+	desc = "This is so sad."
+	icon_state = "mudacid"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_MEAT
+	barefootstep = FOOTSTEP_MEAT
+	clawfootstep = FOOTSTEP_MEAT
+	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 3
+
+/turf/open/floor/plating/polovich/slushy/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/slushyy
+	name = "Slush Floor"
+	desc = "This is so sad."
+	icon_state = "mudacid2"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_MEAT
+	barefootstep = FOOTSTEP_MEAT
+	clawfootstep = FOOTSTEP_MEAT
+	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 3
+
+/turf/open/floor/plating/polovich/slushyy/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 
@@ -1174,6 +1491,26 @@
 	name = "Stone Floor"
 	desc = "This is interesting and neutral."
 	icon_state = "rockydarkness"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/rockydarevil
+	name = "Stone Floor"
+	desc = "This is interesting and mortal."
+	icon_state = "stoneydeatth"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/rockydarevil/second
+	name = "Stone Floor"
+	desc = "This is interesting and mortal."
+	icon_state = "stoneydeath"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE
 	barefootstep = FOOTSTEP_STONE
