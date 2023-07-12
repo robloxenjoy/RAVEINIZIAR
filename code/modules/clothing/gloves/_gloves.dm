@@ -126,3 +126,34 @@
 				MAGIC = 0, \
 				WOUND = 5, \
 				ORGAN = 3)
+
+/obj/item/clothing/gloves/wrists/steel
+	name = "Steel Bracers"
+	desc = "Take care of your wrists!"
+	icon = 'modular_pod/icons/obj/clothing/wrist.dmi'
+	icon_state = "steelwrists"
+	worn_icon = 'modular_pod/icons/mob/clothing/wrists.dmi'
+	worn_icon_state = "steelwrists"
+	armor_broken_sound = "heavy"
+	armor_damaged_sound = "heavy"
+	max_integrity = 600
+	integrity_failure = 0.1
+	limb_integrity = 550
+	repairable_by = /obj/item/stack/ballistic
+	carry_weight = 1 KILOGRAMS
+	armor = null
+	subarmor = list(SUBARMOR_FLAGS = NONE, \
+				EDGE_PROTECTION = 74, \
+				CRUSHING = 15, \
+				CUTTING = 45, \
+				PIERCING = 24, \
+				IMPALING = 18, \
+				LASER = 10, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 9, \
+				ACID = 2, \
+				MAGIC = 0, \
+				WOUND = 8, \
+				ORGAN = 7)

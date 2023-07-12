@@ -41,6 +41,9 @@
 	armor_broken_sound = "light"
 	armor_damaged_sound = "light"
 	armor = null
+	max_integrity = 400
+	integrity_failure = 0.1
+	limb_integrity = 350
 	body_parts_covered = CHEST|VITALS|GROIN
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \

@@ -163,6 +163,22 @@
 	carry_weight = 800 GRAMS
 	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 3)
 
+/obj/item/clothing/pants/dark
+	name = "Dark Pants"
+	desc = "Tight chaotic pants. So cool!"
+	icon = 'modular_pod/icons/obj/clothing/pants.dmi'
+	icon_state = "darkpants"
+	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'
+	worn_icon_state = "darkpants"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	max_integrity = 100
+	integrity_failure = 0.1
+	limb_integrity = 90
+	repairable_by = /obj/item/stack/ballistic
+	carry_weight = 800 GRAMS
+	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 3)
+
 /obj/item/clothing/pants/aktliver
 	name = "Skin Pants"
 	desc = "These pants are made from larva leather."
@@ -178,6 +194,86 @@
 	repairable_by = /obj/item/stack/ballistic
 	carry_weight = 800 GRAMS
 	armor = list(MELEE = 2, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 10, ACID = 10, WOUND = 2)
+
+/obj/item/clothing/pants/leatherpants
+	name = "Leather Pants"
+	desc = "Its made of brown frog leather."
+	icon = 'modular_pod/icons/obj/clothing/pants.dmi'
+	icon_state = "leatherpants"
+	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'
+	worn_icon_state = "leatherpants"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	max_integrity = 400
+	integrity_failure = 0.1
+	limb_integrity = 350
+	repairable_by = /obj/item/stack/ballistic
+	carry_weight = 800 GRAMS
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 35, \
+				CRUSHING = 7, \
+				CUTTING = 25, \
+				PIERCING = 20, \
+				IMPALING = 10, \
+				LASER = 7, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 3, \
+				ACID = 3, \
+				MAGIC = 0, \
+				WOUND = 5, \
+				ORGAN = 3)
+
+/obj/item/clothing/pants/steelmailpants
+	name = "Chainmail Pants"
+	desc = "Steel chainmail pants. A little weird."
+	icon = 'modular_pod/icons/obj/clothing/pants.dmi'
+	icon_state = "leatherpants"
+	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'
+	worn_icon_state = "leatherpants"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	carry_weight = 800 GRAMS
+	max_integrity = 500
+	integrity_failure = 0.1
+	limb_integrity = 450
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	repairable_by = /obj/item/stack/ballistic
+	armor = list(MELEE = 1, \
+				BULLET = 0, \
+				LASER = 0, \
+				ENERGY = 20, \
+				BOMB = 20, \
+				BIO = 0, \
+				FIRE = 50, \
+				ACID = 45, \
+				WOUND = 10)
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 65, \
+				CRUSHING = 4, \
+				CUTTING = 35, \
+				PIERCING = 10, \
+				IMPALING = 12, \
+				LASER = 1, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 2, \
+				ACID = 2, \
+				MAGIC = 0, \
+				WOUND = 3, \
+				ORGAN = 2)
+
+/obj/item/clothing/pants/steelmailpants/Initialize(mapload)
+	. = ..()
+	var/datum/component/shuffling/shuffling = GetComponent(/datum/component/shuffling)
+	if(shuffling)
+		shuffling.override_squeak_sounds = list('modular_septic/sound/armor/chainmail_stereo1.ogg'=1,
+												'modular_septic/sound/armor/chainmail_stereo2.ogg'=1,
+												'modular_septic/sound/armor/chainmail_stereo3.ogg'=1)
+		shuffling.volume = 30
+		shuffling.sound_falloff_exponent = 20
 
 /obj/item/clothing/oversuit
 	name = "Oversuit"
