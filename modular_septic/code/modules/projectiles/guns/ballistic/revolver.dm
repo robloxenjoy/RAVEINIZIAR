@@ -116,6 +116,7 @@
 	can_modify_ammo = TRUE
 	initial_caliber = CALIBER_38
 	carry_weight = 1.5 KILOGRAMS
+	semi_auto = FALSE
 
 /obj/item/gun/ballistic/revolver/remis/nova/pluspee
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/nova/pluspee

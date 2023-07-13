@@ -23,6 +23,7 @@
 	COOLDOWN_DECLARE(open_cooldown)
 	auto_align = FALSE
 	key_worthy = TRUE
+	locked = TRUE
 
 /obj/machinery/door/metal_door/north
 	dir = NORTH

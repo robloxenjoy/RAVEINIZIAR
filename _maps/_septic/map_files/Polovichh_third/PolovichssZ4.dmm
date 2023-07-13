@@ -11,13 +11,13 @@
 "k" = (/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/slushyy,/area/maintenance/polovich/forest/rain)
 "l" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/greenishe2,/area/maintenance/polovich/forest/rain)
 "m" = (/turf/closed/wall/mineral/wood,/area/maintenance/polovich/forest/rain)
-"n" = (/obj/machinery/door/metal_door/north,/turf/open/floor/plating/polovich/greengryaz/norandomgen,/area/maintenance/polovich/forest/rain)
+"n" = (/obj/machinery/door/metal_door/north{dir = 8; id_tag = "leader"},/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
 "o" = (/turf/open/floor/plating/polovich/greenishe2,/area/maintenance/polovich/forest/rain)
 "p" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/woodendarkdarkk/dark,/area/maintenance/polovich/forest/rain)
 "q" = (/obj/structure/torchwall/service/directional/north,/turf/open/floor/plating/polovich/woodendarkdarkk,/area/maintenance/polovich/forest/rain)
 "r" = (/turf/open/floor/plating/polovich/woodendarkdarkk/dark,/area/maintenance/polovich/forest/rain)
 "s" = (/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
-"t" = (/obj/machinery/door/metal_door/north,/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
+"t" = (/obj/machinery/door/metal_door/north{dir = 8; id_tag = "leader"},/turf/open/floor/plating/polovich/greengryaz/norandomgen,/area/maintenance/polovich/forest/rain)
 "u" = (/turf/open/floor/plating/polovich/woodendarkdarkk,/area/maintenance/polovich/forest/rain)
 "v" = (/obj/structure/bed,/turf/open/floor/plating/polovich/woodendarkdarkk/dark,/area/maintenance/polovich/forest/rain)
 "w" = (/turf/open/floor/plating/polovich/otherdirts/five,/area/maintenance/polovich/forest/rain)
@@ -27,6 +27,7 @@
 "A" = (/obj/structure/bed/maint,/obj/effect/landmark/start/slave,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/forest/rain)
 "B" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/greenishe2,/area/maintenance/polovich/forest/rain)
 "C" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
+"D" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "leader"},/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
 
 (1,1,1) = {"
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -39,9 +40,9 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbmmmmmmmmmbbbbgggffffgggbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbmmmmmmlssooolmbbbbgggffffgggbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbmpquutoosoooombbbbgggffffgggbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbmpquunoosoooombbbbgggffffgggbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbmvsusmoooBooomajjhffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-bbbbbbbbbbbbbbbbbbmrrrsmoooBooonawjkfffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbmrrrDmoooBoootawjkfffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbmmmmmmoooBsoomawhifffffffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbmBCoosCombbbbgggffffgggbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbmmmmmmmmmbbbbgggffffgggbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -140,9 +141,9 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaxxaayzazazyax
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdaadaadaadbxaaaaaaaaaax
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaabxaaazazazaax
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaabbbbbxaaaaaaaaaax
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaabbbbbxaaazaAazaax
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaabbbbbxaayaaaaayax
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxaaaaaaaaaax
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxaaazaAazaax
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxaayaaaaayax
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxxxxxxxxxxxx
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

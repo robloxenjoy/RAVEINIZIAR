@@ -169,7 +169,7 @@
 		ORGAN_SLOT_ANUS = /obj/item/organ/genital/anus,
 	)
 //	mutanttongue = /obj/item/organ/tongue/pig
-	speedmod = 2
+	speedmod = 1
 	heatmod = 1.2
 	coldmod = 0.5
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
