@@ -976,7 +976,7 @@
 	taste_description = "iron"
 	material = /datum/material/iron
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	color = "#606060255" //pure iron? let's make it violet of course
+	color = "#606060100" //pure iron? let's make it violet of course
 	ph = 6
 
 /datum/reagent/iron/on_mob_life(mob/living/carbon/C, delta_time, times_fired)
