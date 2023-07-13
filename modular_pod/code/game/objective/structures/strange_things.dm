@@ -622,4 +622,16 @@
 	light_range = 4
 	light_power = 1
 	light_color = "#bf915c"
-	lit = TRUE
+
+/obj/structure/lampstand/fireholder/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_HELP)
+		if(istype(W, /obj/item/torch))
+			var/obj/item/torch/T = W
+			if(!T.lit)
+				T.light()
+				T.update_icon()
+			return
+		
