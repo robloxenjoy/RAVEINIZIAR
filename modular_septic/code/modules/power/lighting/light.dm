@@ -75,7 +75,7 @@
 		if(LIGHT_BROKEN,LIGHT_BURNED,LIGHT_EMPTY)
 			SSlight_flickering.active_lights |= src
 		else
-			SSlight_flickering.active_lights -= src
+			SSlight_flickering.active_lights += src
 
 /obj/machinery/light/floor
 	plane = FLOOR_PLANE

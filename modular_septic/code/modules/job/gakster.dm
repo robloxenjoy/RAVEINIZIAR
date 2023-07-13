@@ -534,3 +534,31 @@
 		spawned.apply_status_effect(/datum/status_effect/gakster_dissociative_identity_disorder)
 		spawned.maximum_examine_distance = EYE_CONTACT_HORROR_RANGE
 */
+
+/datum/job/slave
+	title = "Slave"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 64
+	spawn_positions = 64
+	supervisors = "he's just works."
+	selection_color = "#38e38e"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/slave
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/slave
+	name = "Slave Uniform"
+
+	uniform = /obj/item/clothing/under/darkshirt
+	pants = /obj/item/clothing/pants/dark
+//	r_pocket = /obj/item/shard/crystal/blue
+	shoes = /obj/item/clothing/shoes/veinshoes
+//	belt = /obj/item/melee/hehe/pickaxe/iron

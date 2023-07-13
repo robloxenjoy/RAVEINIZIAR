@@ -16,7 +16,7 @@ $include septic/septic_config.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-SERVERNAME Podpol
+SERVERNAME PODPOL
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME tgstation
@@ -210,7 +210,7 @@ VOTE_PERIOD 600
 # NORESPAWN
 
 ## set a hosted by name for unix platforms
-HOSTEDBY Most dangerous man on SS13
+HOSTEDBY RAVEIN
 
 ## Uncomment this to stop people connecting to your server without a registered ckey. (i.e. guest-* are all blocked from connecting)
 GUEST_BAN

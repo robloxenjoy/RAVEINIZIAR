@@ -1369,6 +1369,8 @@
 		SKILL_ACROBATICS = -3,
 	)
 
+*/
+
 //aktnailer
 /datum/attribute_holder/sheet/job/aktnailer
 	attribute_variance = list(
@@ -1407,8 +1409,6 @@
 		SKILL_SCIENCE = -3,
 		SKILL_ACROBATICS = -3,
 	)
-
-*/
 
 //ESCAPE FROM NEVADO///
 // DENOMINATOR

@@ -879,12 +879,13 @@
 										force = victim.move_force, \
 										callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
 		else
-			var/turf/open/floor/plating/A = get_turf(victim)
-			victim.apply_damage(A.powerfloor, BRUTE, affected, victim.run_armor_check(affected, MELEE), wound_bonus = A.dangerfloor, sharpness = NONE)
-			victim.visible_message(span_pinkdang("[victim]'s [affected] crushed against [A]!"), \
-								span_pinkdang("My [affected] crushed against [A]!"), \
-								span_hear("I hear the sound of combat."))
-			playsound(get_turf(victim), 'modular_pod/sound/eff/punch 1.wav', 80, 0)
+			if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+				var/turf/open/floor/plating/A = get_turf(victim)
+				victim.apply_damage(A.powerfloor, BRUTE, affected, victim.run_armor_check(affected, MELEE), wound_bonus = A.dangerfloor, sharpness = NONE)
+				victim.visible_message(span_pinkdang("[victim]'s [affected] crushed against [A]!"), \
+									span_pinkdang("My [affected] crushed against [A]!"), \
+									span_hear("I hear the sound of combat."))
+				playsound(get_turf(victim), 'modular_pod/sound/eff/punch 1.wav', 80, 0)
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	realstunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	stumbling(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)

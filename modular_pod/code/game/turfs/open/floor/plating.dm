@@ -31,7 +31,7 @@
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if(user.a_intent == INTENT_HARM || INTENT_GRAB)
+	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_GRAB) && user.body_position == STANDING_UP)
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -47,7 +47,7 @@
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if(user.a_intent == INTENT_HARM || INTENT_GRAB)
+	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_GRAB) && user.body_position == STANDING_UP)
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -1633,14 +1633,15 @@
 	heavyfootstep = FOOTSTEP_STONE
 
 /turf/open/floor/plating/polovich/stoneekasasdarkk
-	name = "Stone Floor"
+	name = "Wooden Floor"
 	desc = "This is devasted."
 	icon_state = "darknessdarkl"
 	icon = 'modular_pod/icons/turf/floors.dmi'
-	footstep = FOOTSTEP_STONE
-	barefootstep = FOOTSTEP_STONE
-	clawfootstep = FOOTSTEP_STONE
-	heavyfootstep = FOOTSTEP_STONE
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
 
 /turf/open/floor/plating/polovich/tilefloor
 	name = "Blue Floor"

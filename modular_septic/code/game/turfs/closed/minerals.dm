@@ -21,19 +21,20 @@
 	name = "Midnightstone Wall"
 	desc = "This wall makes you sleepy."
 	icon = 'modular_septic/icons/turf/tall/purple.dmi'
-//	smooth_icon = 'modular_septic/icons/turf/tall/purple.dmi'
 	frill_icon = 'modular_septic/icons/turf/tall/purple_frill.dmi'
 	icon_state = "shale-0"
 	base_icon_state = "shale"
-	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
+	baseturfs = /turf/open/floor/plating/polovich/dirt/blueee
 	clingable = TRUE
-	girder_type = null
-//	turf_type = /turf/open/floor/plating/polovich/dirt/dark
-//	plane = GAME_PLANE
-//	layer = CLOSED_TURF_LAYER
-//	environment_type = "shale"
-//	needs_translation = FALSE
+	mineable = TRUE
 
 /turf/closed/wall/purple/nocling
 	desc = "This wall makes you sleepy. Also you cant climb here."
 	clingable = FALSE
+
+/turf/closed/wall/purple/nocling/hard_to_break
+	mineable = FALSE
+	hardness = 10
+	explosion_block = 2
+	rad_insulation = RAD_HEAVY_INSULATION
+	heat_capacity = 312500

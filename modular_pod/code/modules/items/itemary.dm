@@ -428,3 +428,45 @@
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "ouro_rings"
 	metallic = TRUE
+
+/obj/item/melee/hehe/pickaxe/iron
+	name = "Iron Pickaxe"
+	desc = "GET THE STONES, SLAVE!"
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
+	icon_state = "ironpickaxe"
+	inhand_icon_state = "ironpickaxe"
+	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
+	worn_icon_state = "ironpickaxe"
+	equip_sound = 'modular_pod/sound/eff/weapon/sheath_default.wav'
+	pickup_sound = 'modular_pod/sound/eff/weapon/draw_default.wav'
+	miss_sound = list('modular_pod/sound/eff/weapon/swing_default.wav')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	hitsound = list('modular_pod/sound/eff/weapon/hit_default.wav')
+	w_class = WEIGHT_CLASS_NORMAL
+	wound_bonus = 5
+	bare_wound_bonus = 6
+	min_force = 15
+	force = 18
+	min_force_strength = 1
+	throwforce = 8
+	force_strength = 1.8
+	sharpness = SHARP_POINTY
+	embedding = list("pain_mult" = 10, "rip_time" = 5, "embed_chance" = 60, "jostle_chance" = 5, "pain_stam_pct" = 2, "pain_jostle_mult" = 9, "fall_chance" = 0.1, "ignore_throwspeed_threshold" = TRUE)
+	skill_melee = SKILL_IMPACT_WEAPON
+	carry_weight = 2 KILOGRAMS
+	attack_fatigue_cost = 15
+	attack_delay = 20
+	armor_damage_modifier = 3
+	edge_protection_penetration = 5
+	subtractible_armour_penetration = 5
+	armour_penetration = 10
+	parrying_flags = BLOCK_FLAG_UNARMED
+	havedurability = TRUE
+	durability = 200
+	tetris_width = 32
+	tetris_height = 32
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("stabs", "mines", "jabs")
+	attack_verb_simple = list("stab", "mine", "jab")

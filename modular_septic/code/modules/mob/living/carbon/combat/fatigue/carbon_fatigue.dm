@@ -28,11 +28,11 @@
 		return
 	if(absorb_stun(0)) //continuous effect, so we don't want it to increment the stuns absorbed.
 		return
-//	ADD_TRAIT(src, TRAIT_INCAPACITATED, FATIGUE)
+	ADD_TRAIT(src, TRAIT_INCAPACITATED, FATIGUE)
 	ADD_TRAIT(src, TRAIT_IMMOBILIZED, FATIGUE)
-//	ADD_TRAIT(src, TRAIT_FLOORED, FATIGUE)
+	ADD_TRAIT(src, TRAIT_FLOORED, FATIGUE)
 	setFatigueLoss(FATIGUE_CRIT_THRESHOLD + 20, FALSE)
-//	Stun(5 SECONDS)
+	Stun(5 SECONDS)
 	fatigue_grunt()
 	//rip
 	if(diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_CRIT_FAILURE)

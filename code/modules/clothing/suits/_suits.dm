@@ -229,9 +229,9 @@
 	name = "Chainmail Pants"
 	desc = "Steel chainmail pants. A little weird."
 	icon = 'modular_pod/icons/obj/clothing/pants.dmi'
-	icon_state = "leatherpants"
+	icon_state = "steelmailpants"
 	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'
-	worn_icon_state = "leatherpants"
+	worn_icon_state = "steelmailpants"
 	armor_broken_sound = "light"
 	armor_damaged_sound = "light"
 	carry_weight = 800 GRAMS

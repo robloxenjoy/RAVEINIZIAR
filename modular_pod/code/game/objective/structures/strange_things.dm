@@ -615,7 +615,6 @@
 	light_range = 4
 	light_power = 1
 	light_color = "#a340fe"
-	light_system = MOVABLE_LIGHT
 
 /obj/structure/lampstand/fireholder
 	name = "Fireholder"
@@ -623,4 +622,4 @@
 	light_range = 4
 	light_power = 1
 	light_color = "#bf915c"
-	light_system = MOVABLE_LIGHT
+	lit = TRUE

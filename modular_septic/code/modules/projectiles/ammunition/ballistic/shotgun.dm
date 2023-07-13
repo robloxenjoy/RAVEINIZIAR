@@ -1,7 +1,7 @@
 /obj/item/ammo_casing/shotgun
 	icon_state = "12gauge_slug"
 	base_icon_state = "12gauge_slug"
-	world_icon_state = "gshells"
+//	world_icon_state = "gshells"
 	bounce_sound = list('modular_septic/sound/weapons/guns/shotgun/12cal1.wav', 'modular_septic/sound/weapons/guns/shotgun/12cal2.wav', 'modular_septic/sound/weapons/guns/shotgun/12cal3.wav')
 	bounce_volume = 45
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/shotgun
@@ -16,21 +16,21 @@
 /obj/item/ammo_casing/shotgun/rubbershot
 	icon_state = "12gauge"
 	base_icon_state = "12gauge"
-	world_icon_state = "gshell"
+//	world_icon_state = "gshell"
 	pellets = 12
 	variance = 4
 
 /obj/item/ammo_casing/shotgun/buckshot
 	icon_state = "12gauge"
 	base_icon_state = "12gauge"
-	world_icon_state = "gshell"
+//	world_icon_state = "gshell"
 	pellets = 8
 	variance = 4.5
 
 /obj/item/ammo_casing/shotgun/beanbag
 	icon_state = "12gauge"
 	base_icon_state = "12gauge"
-	world_icon_state = "gshell"
+//	world_icon_state = "gshell"
 
 /obj/item/ammo_casing/shotgun/flechette
 	name = "shotgun flechette"
@@ -51,7 +51,7 @@
 			But It can destroy flesh, too."
 	icon_state = "8gauge"
 	base_icon_state = "8gauge"
-	world_icon_state = "8gshell"
+//	world_icon_state = "8gshell"
 	caliber = CALIBER_KS23
 	projectile_type = /obj/projectile/bullet/shotgun_bolas
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/shotgun/bolas
@@ -61,7 +61,7 @@
 	desc = "A 4 guage anti-personel buckshot shell for the sole purpose of completely fucking obliterating soft tissue from close range."
 	icon_state = "8gauge"
 	base_icon_state = "8gauge"
-	world_icon_state = "8gshell"
+//	world_icon_state = "8gshell"
 	caliber = CALIBER_KS23
 	pellets = 10
 	variance = 10

@@ -100,3 +100,8 @@
 		STOP_PROCESSING(SSobj, src)
 	qdel(reagents)
 	return ..()
+
+/obj/structure/liquid_pump/godlike
+	pump_speed_percentage = 5
+	pump_speed_flat = 100
+	max_volume = 200000

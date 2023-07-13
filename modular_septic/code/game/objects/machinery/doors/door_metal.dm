@@ -5,7 +5,7 @@
 	desc = "A broad metal door with a lock for keys, usually not locked, If It is, a nice firm kick from a friendly orange-suited protagonist would do the trick."
 	icon = 'modular_septic/icons/obj/structures/metal_door.dmi'
 	base_icon_state = "metal"
-	icon_state = "metal"
+	icon_state = "metal1"
 	var/doorOpen = 'modular_septic/sound/doors/door_metal_open.ogg'
 	var/doorClose = 'modular_septic/sound/doors/door_metal_close.ogg'
 	var/doorDeni = list('modular_septic/sound/doors/door_metal_try1.ogg', 'modular_septic/sound/doors/door_metal_try2.ogg')
@@ -22,6 +22,7 @@
 	COOLDOWN_DECLARE(kicking_cooldown)
 	COOLDOWN_DECLARE(open_cooldown)
 	auto_align = FALSE
+	key_worthy = TRUE
 
 /obj/machinery/door/metal_door/north
 	dir = NORTH

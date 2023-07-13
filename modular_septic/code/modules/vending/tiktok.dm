@@ -161,3 +161,30 @@
 /obj/machinery/vending/tiktok/directional/west
 	dir = EAST
 	pixel_x = -32
+
+/obj/machinery/vending/tiktok/arena
+	name = "Arena-2"
+	desc = "Do you want something?"
+	products = list(
+		/obj/item/clothing/shoes/laceup = 10,
+		/obj/item/clothing/shoes/frogshoes = 10,
+		/obj/item/clothing/under/aktraiment = 10,
+		/obj/item/clothing/pants/aktliver = 10,
+		/obj/item/clothing/pants/steelmailpants = 10,
+		/obj/item/clothing/gloves/wrists/leather = 10,
+		/obj/item/clothing/gloves/wrists/steel = 10,
+		/obj/item/clothing/suit/armor/vest/leatherbreastt = 10,
+		/obj/item/clothing/suit/armor/vest/chainmail/steel = 10,
+		/obj/item/clothing/head/helmet/golden/full = 10,
+		/obj/item/clothing/head/helmet/silver/full = 10,
+		/obj/item/melee/bita/evil = 10,
+		/obj/item/melee/bita/macecircle = 10,
+		/obj/item/knife/combat/goldenmisericorde = 10,
+		/obj/item/changeable_attacks/slashstabbash/sword/big/bronze = 10,
+		/obj/item/gun/ballistic/automatic/pistol/remis/ppk = 10,
+		/obj/item/gun/ballistic/shotgun/bolas = 10,
+	)
+
+/obj/machinery/vending/tiktok/arena/directional/north
+	dir = SOUTH
+	pixel_y = 32

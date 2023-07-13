@@ -29,7 +29,24 @@
 /obj/item/ammo_box/magazine/m45/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[min(round(ammo_count(), 2), 8)]"
+/*
+/obj/item/ammo_box/magazine/u45
+	name = "pistol magazine (.45)"
+	icon = 'modular_septic/icons/obj/items/ammo/pistol.dmi'
+	icon_state = "usp"
+	base_icon_state = "usp"
+	max_ammo = 8
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = CALIBER_45
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	drop_sound = 'modular_septic/sound/weapons/plastic_drop.ogg'
+	tetris_width = 32
+	tetris_height = 32
 
+/obj/item/ammo_box/magazine/u45/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[min(round(ammo_count(), 2), 8)]"
+*/
 /obj/item/ammo_box/magazine/combatmaster9mm
 	name = "frag master magazine (9mm)"
 	icon = 'modular_septic/icons/obj/items/ammo/pistol.dmi'

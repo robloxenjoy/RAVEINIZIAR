@@ -16,3 +16,12 @@
 	base_icon_state = "key_dorm"
 	pickup_sound = 'modular_septic/sound/effects/keys_pickup.wav'
 	drop_sound = 'modular_septic/sound/effects/keys_drop.wav'
+
+/obj/item/key/podpol/woody
+	name = "Wooden Key"
+	desc = "A key to one of the homes."
+	icon = 'modular_septic/icons/obj/items/keys.dmi'
+	icon_state = "key_wooden"
+	base_icon_state = "key_wooden"
+	pickup_sound = 'modular_septic/sound/effects/keys_pickup.wav'
+	drop_sound = 'modular_septic/sound/effects/keys_drop.wav'

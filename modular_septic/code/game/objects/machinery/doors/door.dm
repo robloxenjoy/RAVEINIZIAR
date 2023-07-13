@@ -1,13 +1,19 @@
 /obj/machinery/door
-	/// Key inserted here, may or may not actually have access
-	var/obj/item/key/inserted_key
 	/// Should we auto align on initialization?
 	var/auto_align = TRUE
+	/// Key cooldown
+	COOLDOWN_DECLARE(key_cooldown)
+	// Key cooldown duration
+	var/key_cooldown_duration = 1 SECONDS
+	/// Key worthy
+	var/key_worthy = FALSE
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
+/*
 	if(inserted_key)
 		. += span_notice("[inserted_key] is inserted in [p_their()] keyhole.")
+*/
 
 // Machinery always returns INITIALIZE_HINT_LATELOAD
 /obj/machinery/door/LateInitialize(mapload = FALSE)
@@ -17,6 +23,7 @@
 	if(auto_align && mapload)
 		auto_align()
 
+/*
 /obj/machinery/door/attack_hand_secondary(atom/over, src_location, over_location, src_control, over_control, params, list/modifiers)
 	. = SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	var/mob/living/user = usr
@@ -26,19 +33,34 @@
 		playsound(src, 'modular_septic/sound/effects/keys_remove.ogg', 75, FALSE)
 		sound_hint(user)
 		inserted_key = null
+*/
 
 /obj/machinery/door/attackby(obj/item/I, mob/living/user, params)
-	if(!inserted_key && istype(I, /obj/item/key) && user.transferItemToLoc(I, src))
+	if(!COOLDOWN_FINISHED(src, key_cooldown))
+		to_chat(user, span_warning("I need to calm down."))
+		return
+	if(istype(I, /obj/item/key) && key_worthy)
+		var/obj/item/key/key = I
+		if(key.door_allowed(src)) //I...?
+			var/lock_status = "unlock"
+			if(!locked)
+				lock_status = "lock"
+				locked = TRUE
+			else
+				locked = FALSE
+			to_chat(user, span_notice("I [lock_status] the [src] with the [I]."))
+			playsound(src, 'modular_septic/sound/effects/keys_use.wav', 75, FALSE)
+		else
+			to_chat(user, span_warning("Wrong key."))
+			playsound(src, 'modular_septic/sound/effects/keys_remove.ogg', 75, FALSE)
 		add_fingerprint(user)
-		to_chat(user, span_notice("I insert [I] into [src]'s keyhole."))
-		playsound(src, 'modular_septic/sound/effects/keys_use.wav', 75, FALSE)
 		sound_hint()
-		inserted_key = I
+		COOLDOWN_START(src, key_cooldown, key_cooldown_duration)
 		return TRUE
 	return ..()
 
-/obj/machinery/door/allowed(mob/M)
-	if(inserted_key?.door_allowed(src))
+/obj/machinery/door/allowed(mob/M, obj/item/key/key)
+	if(key?.door_allowed(src))
 		return TRUE
 	return ..()
 
