@@ -74,3 +74,25 @@
 	carry_weight = 200 GRAMS
 	body_parts_covered = HEAD
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/aphexcap
+	name = "Aphex Cap"
+	desc = "Good old cap."
+	icon = 'modular_septic/icons/obj/clothing/hats.dmi'
+	icon_state = "aphex_real"
+	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "ordinator_mask"
+	worn_icon_state = "aphex_real"
+	max_integrity = 160
+	limb_integrity = 100
+//	repairable_by = /obj/item/stack/ballistic/plate
+	repairable_by_offhand = null
+	integrity_failure = 0.1
+	armor = list(MELEE = 1, BULLET = 1, LASER = 0, ENERGY = 3, BOMB = 0, BIO = 0, FIRE = 1, ACID = 1, WOUND = 1)
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	carry_weight = 200 GRAMS
+	body_parts_covered = HEAD
+	flags_inv = HIDEEARS

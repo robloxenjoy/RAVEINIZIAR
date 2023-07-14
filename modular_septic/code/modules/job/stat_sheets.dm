@@ -106,6 +106,12 @@
 /datum/job/slave
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktnailer
 
+/datum/job/manhunter
+	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
+
+/datum/job/slavekeeper
+	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
+
 /*
 /datum/job/venturer
 	attribute_sheet = /datum/attribute_holder/sheet/job/venturer

@@ -141,11 +141,18 @@
 				slowdown = 0
 		else
 			slowdown = 5
+*/
 
 /obj/item/clothing/pants/dropped(mob/living/user)
 	. = ..()
-	slowdown = 5
-*/
+//	slowdown = 0
+
+	if(slot != ITEM_SLOT_PANTS)
+		return
+	
+	if(user.belt)
+		user.dropItemToGround(user.belt)
+
 
 /obj/item/clothing/pants/venturer
 	name = "Blue Pants"

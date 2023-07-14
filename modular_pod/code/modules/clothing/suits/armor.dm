@@ -117,6 +117,84 @@
 		shuffling.volume = 60
 		shuffling.sound_falloff_exponent = 20
 
+/obj/item/clothing/suit/armor/vest/bulletproofer
+	name = "Light Bulletproofer"
+	desc = "It will probably stop the bullet."
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	icon_state = "bulletproofer"
+	worn_icon_state = "bulletproofer"
+	inhand_icon_state = "infiltrator"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	max_integrity = 450
+	integrity_failure = 0.1
+	limb_integrity = 400
+	body_parts_covered = CHEST|VITALS|GROIN
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 10, \
+				CRUSHING = 5, \
+				CUTTING = 10, \
+				PIERCING = 70, \
+				IMPALING = 10, \
+				LASER = 7, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 3, \
+				ACID = 3, \
+				MAGIC = 0, \
+				WOUND = 9, \
+				ORGAN = 9)
+	strip_delay = 90
+	allowed = list(
+		/obj/item/ammo_casing,
+		/obj/item/grenade/frag,
+		/obj/item/grenade/gas,
+		)
+
+/obj/item/clothing/suit/armor/vest/redjacket
+	name = "Red Jacket"
+	desc = "It is dangerous to walk in such a jacket here!"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	icon_state = "redjacket"
+	worn_icon_state = "redjacket"
+	inhand_icon_state = "infiltrator"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	max_integrity = 450
+	integrity_failure = 0.1
+	limb_integrity = 400
+	body_parts_covered = CHEST|VITALS|GROIN
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 6, \
+				CRUSHING = 6, \
+				CUTTING = 7, \
+				PIERCING = 6, \
+				IMPALING = 6, \
+				LASER = 7, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 3, \
+				ACID = 3, \
+				MAGIC = 0, \
+				WOUND = 2, \
+				ORGAN = 2)
+	strip_delay = 90
+	allowed = list(
+		/obj/item/gun/ballistic/revolver/remis/nova,
+		)
+
 /obj/item/clothing/head/helmet/golden/full
 	name = "Golden Helmet"
 	desc = "Orbicular golden helmet. It is very expensive."

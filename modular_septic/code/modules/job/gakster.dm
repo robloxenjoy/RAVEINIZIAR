@@ -562,3 +562,58 @@
 //	r_pocket = /obj/item/shard/crystal/blue
 	shoes = /obj/item/clothing/shoes/veinshoes
 //	belt = /obj/item/melee/hehe/pickaxe/iron
+
+/datum/job/manhunter
+	title = "Manhunter"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 8
+	spawn_positions = 8
+	supervisors = "he's just works."
+	selection_color = "#38e38e"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/manhunter
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/manhunter
+	name = "Manhunter Uniform"
+
+	uniform = /obj/item/clothing/under/darkshirt
+	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
+	pants = /obj/item/clothing/pants/dark
+	shoes = /obj/item/clothing/shoes/frogshoes
+	head = /obj/item/clothing/head/aphexcap
+
+/datum/job/slavekeeper
+	title = "Slavekeeper"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "he's just works."
+	selection_color = "#38e38e"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/slavekeeper
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/service,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/slavekeeper
+	name = "Slavekeeper Uniform"
+
+	uniform = /obj/item/clothing/under/darkshirt
+	suit = /obj/item/clothing/suit/armor/vest/redjacket
+	pants = /obj/item/clothing/pants/dark
+	shoes = /obj/item/clothing/shoes/frogshoes
