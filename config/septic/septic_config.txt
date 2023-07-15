@@ -19,10 +19,10 @@ SPRINT_FATIGUE_COST 2
 IPSTACK_API_KEY
 
 ## Server hub tagline
-# SERVERTAGLINE Fuck
+SERVERTAGLINE [FUCK YOU ALL](https://discord.gg/wUPYTgJ4Th)
 
 ## Basically tagline 2: Electric boogaloo
-# FLUFFTAGLINE Fuck
+FLUFFTAGLINE FUCK YOU ALLLL!!!!!
 
 ## If this is set and someone gets caught by the panic bunker fail, this opens on their browser
 BUNKERTROLL https://cdn.discordapp.com/attachments/857026569670623253/857049663936659496/bemvindo.png

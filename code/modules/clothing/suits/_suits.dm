@@ -146,12 +146,10 @@
 /obj/item/clothing/pants/dropped(mob/living/user)
 	. = ..()
 //	slowdown = 0
-
-	if(slot != ITEM_SLOT_PANTS)
-		return
 	
-	if(user.belt)
-		user.dropItemToGround(user.belt)
+	if(user.get_item_by_slot(ITEM_SLOT_BELT))
+		var/obj/item/equipped_item = user.get_item_by_slot(ITEM_SLOT_BELT)
+		user.dropItemToGround(equipped_item)
 
 
 /obj/item/clothing/pants/venturer
