@@ -173,7 +173,7 @@
 	max_integrity = 450
 	integrity_failure = 0.1
 	limb_integrity = 400
-	body_parts_covered = CHEST|VITALS|GROIN
+	body_parts_covered = CHEST|VITALS|GROIN|NECK
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
 				EDGE_PROTECTION = 6, \

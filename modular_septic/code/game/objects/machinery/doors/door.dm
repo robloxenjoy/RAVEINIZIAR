@@ -42,7 +42,7 @@
 	if(istype(I, /obj/item/key) && key_worthy)
 		var/obj/item/key/key = I
 		if(key.door_allowed(src)) //I...?
-			var/lock_status = "locked"
+			var/lock_status = "unlocked"
 			if(!locked)
 				lock_status = "lock"
 				locked = TRUE

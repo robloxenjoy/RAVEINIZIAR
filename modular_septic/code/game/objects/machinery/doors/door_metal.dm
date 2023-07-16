@@ -160,25 +160,27 @@
 /obj/machinery/door/metal_door/proc/gordan_freeman_speedrunner(mob/living/user)
 	if(!isliving(usr) || !usr.Adjacent(src) || usr.incapacitated())
 		return
+	if(key_worthy)
+		return
 	if(!COOLDOWN_FINISHED(src, kicking_cooldown))
 		return
 	if(!(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH) > 11))
 		playsound(src, kickfailure, 75, FALSE, 2)
-		visible_message(span_danger("[user] kicks the [src]!"))
+		src.visible_message(span_danger("[user] kicks the [src]!"))
 		to_chat(user, span_userdanger("I kick the [src], but It's too hard!"))
 		sound_hint()
 		COOLDOWN_START(src, kicking_cooldown, kicking_cooldown_duration)
 		return
 	if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1) <= DICE_FAILURE)
 		playsound(src, kickfailure, 75, FALSE, 2)
-		visible_message(span_danger("[user] kicks the [src]!"))
+		src.visible_message(span_danger("[user] kicks the [src]!"))
 		to_chat(user, span_danger("I kick the [src]!"))
 		sound_hint()
 		COOLDOWN_START(src, kicking_cooldown, kicking_cooldown_duration)
 		return
 	else if(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH) > 18)
 		playsound(src, kicksuccess, 100, FALSE, 5)
-		visible_message(span_bigdanger("[user] kicks the [src] straight off it's hinges!"))
+		src.visible_message(span_bigdanger("[user] kicks the [src] straight off it's hinges!"))
 		to_chat(user, span_bolddanger("I kick the [src] straight off it's hinges!"))
 		sound_hint()
 		locked = FALSE
@@ -187,7 +189,7 @@
 	else
 		playsound(src, kicksuccess, 90, FALSE, 2)
 		sound_hint()
-		visible_message(span_danger("[user] kicks the [src] open!"))
+		src.visible_message(span_danger("[user] kicks the [src] open!"))
 		to_chat(user, span_danger("I kick the [src] down."))
 		locked = FALSE
 		open()

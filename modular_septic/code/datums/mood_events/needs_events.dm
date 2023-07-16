@@ -24,7 +24,7 @@
 	mood_change = -5
 
 /datum/mood_event/pissed_self
-	description = span_necrosis("I have pissed my pants. This day is ruined.")
+	description = span_necrosis("I have pissed myself. This day is ruined.")
 	mood_change = -8
 	timeout = 10 MINUTES
 
@@ -34,11 +34,11 @@
 	mood_change = -3
 
 /datum/mood_event/reallyneedshit
-	description = span_boldwarning("My anus is <b>BLEEDING!</b>")
+	description = span_boldwarning("My anus is ready to <b>SHIT!</b>")
 	mood_change = -5
 
 /datum/mood_event/shat_self
-	description = span_necrosis("I have shat my pants. This day is ruined.")
+	description = span_necrosis("I have shat myself. This day is ruined.")
 	mood_change = -8
 	timeout = 10 MINUTES
 

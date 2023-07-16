@@ -2,7 +2,7 @@
 	name = "Wooden Door"
 	desc = "A flimsy wooden door used for libraries and other nerd-related areas"
 	icon = 'modular_septic/icons/obj/structures/wood_door.dmi'
-	base_icon_state = "wood1"
+	base_icon_state = "wood"
 	icon_state = "wood1"
 	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
 	doorClose = 'modular_septic/sound/doors/wood/door_wooden_close.ogg'

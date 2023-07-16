@@ -243,7 +243,6 @@
 	max_integrity = 500
 	integrity_failure = 0.1
 	limb_integrity = 450
-	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	repairable_by = /obj/item/stack/ballistic
 	armor = list(MELEE = 1, \
 				BULLET = 0, \

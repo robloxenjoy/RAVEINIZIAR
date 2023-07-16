@@ -392,8 +392,8 @@
 		if(prob(WATER_HEIGHT_DIFFERENCE_SPLASH))
 			var/sound_to_play = "modular_septic/sound/liquids/wade[rand(1,4)].ogg"
 			playsound(my_turf, sound_to_play, 60, 0)
-		var/obj/splashy = new /obj/effect/temp_visual/liquid_splash(my_turf)
-		splashy.color = color
+//		var/obj/splashy = new /obj/effect/temp_visual/liquid_splash(my_turf)
+//		splashy.color = color
 		if(liquid_height >= LIQUID_WAIST_LEVEL_HEIGHT)
 			//Push things into some direction, like space wind
 			var/turf/dest_turf

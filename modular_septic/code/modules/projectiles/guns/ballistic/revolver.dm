@@ -149,3 +149,4 @@
 	)
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/poppy
 	carry_weight = 3 KILOGRAMS
+	semi_auto = FALSE
