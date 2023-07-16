@@ -529,4 +529,11 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/adamantine/doubloon
 	name = "doubloon"
 
+/obj/item/coin/stoneporridge
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	name = "Stone Porridge"
+	icon_state = "stone_porridge"
+	value = 1
+	custom_materials = null
+
 #undef ORESTACK_OVERLAYS_MAX

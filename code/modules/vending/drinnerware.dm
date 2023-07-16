@@ -34,3 +34,24 @@
 /obj/item/vending_refill/dinnerware
 	machine_name = "Plasteel Chef's Dinnerware Vendor"
 	icon_state = "refill_smoke"
+
+/obj/machinery/vending/stone_eater
+	name = "\improper Stone Eater"
+	desc = "STONE PORRIDGE...."
+	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;MEDICINE!.;Hmmm, pickaxes.;Do you need ammo?"
+	icon = 'modular_pod/icons/obj/machinery/vending.dmi'
+	icon_state = "stone_eater"
+	products = list(
+		/obj/item/food/canned/beef = 100,
+		/obj/item/reagent_containers/food/drinks/waterbottle = 100,
+		/obj/item/melee/hehe/pickaxe/iron = 50,
+		/obj/item/stack/medical/gauze = 30,
+		/obj/item/reagent_containers/food/drinks/bottle/beer = 50,
+		/obj/item/torch = 50
+	)
+	premium = list(
+		/obj/item/storage/box/a38/less = 1
+	)
+	default_price = PAYCHECK_ASSISTANT * 0.7
+	extra_price = PAYCHECK_MEDIUM
+	var/obj/item/coin/stoneporridge/coin

@@ -248,6 +248,11 @@
 			C.light()
 			user.visible_message("<span class='notice'>[user] enlights [C] with [src].")
 			return
+		if(istype(W, /obj/item/torch))
+			var/obj/item/torch/C = W
+			C.light()
+			user.visible_message("<span class='notice'>[user] enlights [C] with [src].")
+			return
 	if(W.get_temperature())
 		user.visible_message("<span class='notice'>[user] enlights [src].")
 		light()

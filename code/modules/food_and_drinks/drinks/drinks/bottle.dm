@@ -154,8 +154,8 @@
 	AddComponent(/datum/component/butchering, 200, 55)
 
 /obj/item/reagent_containers/food/drinks/bottle/beer
-	name = "space beer"
-	desc = "Beer. In space."
+	name = "Beer"
+	desc = "Just good beer."
 	icon_state = "beer"
 	volume = 30
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)

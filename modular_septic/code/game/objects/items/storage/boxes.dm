@@ -44,6 +44,18 @@
 		/obj/item/ammo_box/magazine/ammo_stack/c38/loaded = 3)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/a38/less
+	name = "boxed .38 ammunition"
+	desc = "According to the label on the side, this box contains 12 total rounds of .38"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "secbox"
+	illustration = null
+
+/obj/item/storage/box/a38/less/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/ammo_box/magazine/ammo_stack/c38/loaded = 1)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/a500
 	name = "boxed .500 ammunition"
 	desc = "According to the label on the side, this box contains 36 total rounds of .500"
