@@ -15,7 +15,7 @@
 "o" = (/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
 "p" = (/obj/structure/closet/cabinet,/obj/item/clothing/head/aphexcap,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "q" = (/turf/open/floor/plating/polovich/slushyy,/area/maintenance/polovich/forest/rain)
-"r" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"r" = (/obj/structure/closet/crate/wooden,/obj/item/melee/bita/pink,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "s" = (/obj/structure/closet/secure_closet/freezer/gulag_fridge{dir = 2},/turf/open/floor/plating/polovich/stoneekas,/area/maintenance/polovich/forest/rain)
 "t" = (/obj/structure/bed,/obj/effect/landmark/start/manhunter,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest/rain)
 "u" = (/obj/structure/closet/cabinet,/obj/item/clothing/suit/armor/vest/bulletproofer,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
@@ -25,12 +25,12 @@
 "y" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest/rain)
 "z" = (/obj/structure/bed,/obj/effect/landmark/start/slavekeeper,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "A" = (/obj/machinery/door/metal_door/wood_door/west,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
-"B" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"B" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "slavekeeper"},/obj/item/gun/ballistic/revolver/remis/nova,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "C" = (/obj/structure/bed,/obj/effect/landmark/start/manhunter,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
 "D" = (/turf/closed/wall/r_wall/alt/nocling,/area/maintenance/polovich/forest/rain)
 "E" = (/obj/machinery/door/metal_door/south{id_tag = "manhunter"},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
 "F" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "manhunter"},/obj/item/key/podpol/woody{id_tag = "manhunter"},/obj/item/key/podpol/woody{id_tag = "manhunter"},/obj/item/key/podpol/woody{id_tag = "manhunter"},/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
-"G" = (/obj/structure/closet/crate,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
+"G" = (/obj/structure/closet/crate,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
 "H" = (/turf/open/floor/plating/polovich/logsgreen{dir = 1},/area/maintenance/polovich/forest/rain)
 "I" = (/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
 "J" = (/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
@@ -48,7 +48,8 @@
 "V" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
 "W" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest/rain)
 "X" = (/obj/machinery/door/poddoor/shutters/window{id = "mine"},/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest/rain)
-"Y" = (/obj/structure/closet/crate/wooden,/obj/item/assembly/control{id = "mine"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"Y" = (/obj/structure/closet/crate/wooden,/obj/item/assembly/control{id = "mine"},/obj/item/keycard/akt/mine,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"Z" = (/obj/machinery/door/keycard/denominator/podozl/akt/mine,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest/rain)
 
 (1,1,1) = {"
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -166,7 +167,7 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbffbbebbbbkCxxxxxCkb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbccbbebbbbkxxxxxxxkb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbaaWXebbbbkCxxRxxCkb
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbddbbebbbbkkkEkkkkkb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbebbZZbbebbbbkkkEkkkkkb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbddddddddddddddddHIIIIIJkb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbddddddddddddddddHIIIIIJkb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbPggPbbbbbSkKLLLLVJkb

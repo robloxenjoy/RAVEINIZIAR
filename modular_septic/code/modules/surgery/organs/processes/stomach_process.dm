@@ -70,6 +70,18 @@
 	else if(owner.nutrition < (NUTRITION_LEVEL_STARVING + 50))
 		if(owner.metabolism_efficiency != 0.8)
 			to_chat(owner, span_notice("I feel sluggish."))
+		owner.metabolism_efficiency = 0.8
+	else
+		if(owner.metabolism_efficiency == 1.25)
+			to_chat(owner, span_notice("I no longer feel vigorous."))
+		owner.metabolism_efficiency = 1
+
+	//Hunger slowdown for if mood isn't enabled
+//	if(CONFIG_GET(flag/disable_human_mood))
+	if(!HAS_TRAIT(owner, TRAIT_NOHUNGER))
+		var/hungry = (500 - owner.nutrition) / 5 //So overeat would be 100 and default level would be 80
+		if(hungry >= 70)
+//			owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/hunger, TRUE, multiplicative_slowdown = (hungry / 50))
 			if(!owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/thirsty))
 				var/list/statr_modification = list( \
 					STAT_STRENGTH = -1, \
@@ -77,22 +89,10 @@
 					STAT_INTELLIGENCE = -1, \
 				)
 				owner.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/hungry, TRUE, statr_modification)
-		owner.metabolism_efficiency = 0.8
-	else
-		if(owner.metabolism_efficiency == 1.25)
-			to_chat(owner, span_notice("I no longer feel vigorous."))
+		else
+//			owner.remove_movespeed_modifier(/datum/movespeed_modifier/hunger, TRUE)
 			if(owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/hungry))
 				owner.attributes?.remove_attribute_modifier(/datum/attribute_modifier/hungry)
-		owner.metabolism_efficiency = 1
-
-	//Hunger slowdown for if mood isn't enabled
-	if(CONFIG_GET(flag/disable_human_mood))
-		if(!HAS_TRAIT(owner, TRAIT_NOHUNGER))
-			var/hungry = (500 - owner.nutrition) / 5 //So overeat would be 100 and default level would be 80
-			if(hungry >= 70)
-				owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/hunger, TRUE, multiplicative_slowdown = (hungry / 50))
-			else
-				owner.remove_movespeed_modifier(/datum/movespeed_modifier/hunger, TRUE)
 
 	switch(owner.nutrition)
 		if(NUTRITION_LEVEL_WELL_FED to INFINITY)
