@@ -183,14 +183,14 @@
 			)
 			attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/combat, TRUE, staet_modification)
 		playsound_local(src, 'modular_septic/sound/interface/ui_toggle.ogg', 30, FALSE, pressure_affected = FALSE) //Sound from interbay!
-		if(mind?.combat_music)
-			SSdroning.play_combat_music(mind.combat_music, client)
+//		if(mind?.combat_music)
+//			SSdroning.play_combat_music(mind.combat_music, client)
 	else
 		if(iscarbon(src))
 			attributes?.remove_attribute_modifier(/datum/attribute_modifier/combat)
 		playsound_local(src, 'modular_septic/sound/interface/ui_toggleoff.ogg', 30, FALSE, pressure_affected = FALSE) //Slightly modified version of the above
-		if(mind?.combat_music)
-			SSdroning.play_area_sound(get_area(src), client)
+//		if(mind?.combat_music)
+//			SSdroning.play_area_sound(get_area(src), client)
 
 /mob/living/set_lying_angle(new_lying)
 	if(new_lying == lying_angle)

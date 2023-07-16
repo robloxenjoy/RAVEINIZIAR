@@ -617,3 +617,4 @@
 	suit = /obj/item/clothing/suit/armor/vest/redjacket
 	pants = /obj/item/clothing/pants/dark
 	shoes = /obj/item/clothing/shoes/frogshoes
+	gloves = /obj/item/clothing/gloves/reddyred

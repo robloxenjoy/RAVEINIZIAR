@@ -78,7 +78,7 @@
 /obj/item/clothing/head/aphexcap
 	name = "Aphex Cap"
 	desc = "Good old cap."
-	icon = 'modular_septic/icons/obj/clothing/hats.dmi'
+	icon = 'modular_pod/icons/obj/clothing/hats.dmi'
 	icon_state = "aphex_real"
 	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
 	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'

@@ -273,7 +273,7 @@
 		msg += "[t_He] [t_is] covered in something flammable."
 	if(fire_stacks < 0)
 		msg += "[t_He] look[p_s()] a little soaked."
-	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
+	if(nutrition <= NUTRITION_LEVEL_STARVING)
 		msg += "[t_He] [t_is] severely malnourished."
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)

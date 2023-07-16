@@ -15,7 +15,7 @@
 
 /obj/item/food/canned/beef
 	name = "tin of delicious beef stew"
-	desc = "A large can of stew from genetically modified beef, could feed an entire starving african family! Or a pig. "
+	desc = "A large can of stew from genetically modified beef, could feed an entire starving african family! Or a pig."
 	icon = 'modular_septic/icons/obj/food/canned.dmi'
 	icon_state = "beef"
 	trash_type = /obj/item/trash/can/food/beef

@@ -463,6 +463,13 @@
 /obj/machinery/door/keycard/denominator/podozl/akt/granger
 	puzzle_id = "granger"
 
+/obj/item/keycard/akt/mine
+	desc = "This key is for Mine in catacombs..."
+	puzzle_id = "miner"
+
+/obj/machinery/door/keycard/denominator/podozl/akt/mine
+	puzzle_id = "miner"
+
 /obj/item/keycard/akt/nailer
 	desc = "This key is for nailer house in Akt Village..."
 	puzzle_id = "nailer"

@@ -70,10 +70,19 @@
 	else if(owner.nutrition < (NUTRITION_LEVEL_STARVING + 50))
 		if(owner.metabolism_efficiency != 0.8)
 			to_chat(owner, span_notice("I feel sluggish."))
+			if(!owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/thirty))
+				var/list/statr_modification = list( \
+					STAT_STRENGTH = -1, \
+					STAT_DEXTERITY = -1, \
+					STAT_INTELLIGENCE = -1, \
+				)
+				owner.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/hungry, TRUE, statr_modification)
 		owner.metabolism_efficiency = 0.8
 	else
 		if(owner.metabolism_efficiency == 1.25)
 			to_chat(owner, span_notice("I no longer feel vigorous."))
+			if(owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/hungry))
+				owner.attributes?.remove_attribute_modifier(/datum/attribute_modifier/hungry)
 		owner.metabolism_efficiency = 1
 
 	//Hunger slowdown for if mood isn't enabled

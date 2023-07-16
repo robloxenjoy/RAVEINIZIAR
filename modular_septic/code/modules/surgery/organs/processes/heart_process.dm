@@ -7,6 +7,8 @@
 /datum/organ_process/heart/handle_process(mob/living/carbon/owner, delta_time, times_fired)
 	if(owner.needs_heart())
 		handle_pulse(owner, delta_time, times_fired)
+		handle_nutrition(owneer, delta_time, times_fired)
+		handle_hydration(owner, delta_time, times_fired)
 		if(owner.pulse)
 			handle_heartbeat(owner, delta_time, times_fired)
 	handle_blood(owner, delta_time, times_fired)
@@ -168,6 +170,24 @@
 				playsound(owner, bleed_sound, 60, FALSE)
 	if((owner.status_flags & BLEEDOUT) && DT_PROB(50, delta_time))
 		owner.Unconscious(4 SECONDS)
+
+/datum/organ_process/heart/proc/handle_nutrition(mob/living/carbon/human/owner, delta_time, times_fired)
+	var/heart_efficiency = owner.getorganslotefficiency(ORGAN_SLOT_HEART)
+	if(owner.nutrition <= NUTRITION_LEVEL_STARVING)
+		if(owner.heart_efficiency >= ORGAN_FAILING_EFFICIENCY)
+			if(owner.pulse)
+				var/damage_chance = (pulse_mod - 2) ** 2
+				if(DT_PROB(damage_chance/2, delta_time))
+					owner.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
+
+/datum/organ_process/heart/proc/handle_hydration(mob/living/carbon/human/owner, delta_time, times_fired)
+	var/heart_efficiency = owner.getorganslotefficiency(ORGAN_SLOT_HEART)
+	if(owner.hydration <= HYDRATION_LEVEL_DEHYDRATED)
+		if(owner.heart_efficiency >= ORGAN_FAILING_EFFICIENCY)
+			if(owner.pulse)
+				var/damage_chance = (pulse_mod - 2) ** 2
+				if(DT_PROB(damage_chance/2, delta_time))
+					owner.adjustOrganLoss(ORGAN_SLOT_HEART, 1)
 
 /datum/organ_process/heart/proc/handle_heartbeat(mob/living/carbon/owner, delta_time, times_fired)
 	var/turf/T = get_turf(owner)

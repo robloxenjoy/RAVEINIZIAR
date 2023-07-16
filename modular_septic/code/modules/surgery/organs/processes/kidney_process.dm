@@ -72,8 +72,17 @@
 			var/thirsty = (500 - owner.hydration) / 5
 			if(thirsty >= 70)
 				owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/thirst, TRUE, multiplicative_slowdown = (thirsty / 50))
+				if(!owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/hugry))
+					var/list/statar_modification = list( \
+						STAT_STRENGTH = -1, \
+						STAT_DEXTERITY = -1, \
+						STAT_INTELLIGENCE = -1, \
+					)
+					owner.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/thirsty, TRUE, statar_modification)
 			else
 				owner.remove_movespeed_modifier(/datum/movespeed_modifier/thirst, TRUE)
+				if(owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/thirsty))
+					owner.attributes?.remove_attribute_modifier(/datum/attribute_modifier/thirsty)
 
 	switch(owner.hydration)
 		if(HYDRATION_LEVEL_WELL_HYDRATED to INFINITY)

@@ -399,8 +399,8 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	min_force_strength = 1
 	force_strength = 1.5
 	min_throwforce = 9
-	min_throwforce_strength = 8
-	throwforce_strength = 1.1
+	min_throwforce_strength = 1.1
+	throwforce_strength = 8
 	throwforce = 12
 	tetris_width = 32
 	tetris_height = 32
