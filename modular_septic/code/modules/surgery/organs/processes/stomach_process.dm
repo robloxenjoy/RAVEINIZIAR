@@ -70,7 +70,7 @@
 	else if(owner.nutrition < (NUTRITION_LEVEL_STARVING + 50))
 		if(owner.metabolism_efficiency != 0.8)
 			to_chat(owner, span_notice("I feel sluggish."))
-			if(!owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/thirty))
+			if(!owner.attributes?.has_attribute_modifier(/datum/attribute_modifier/thirsty))
 				var/list/statr_modification = list( \
 					STAT_STRENGTH = -1, \
 					STAT_DEXTERITY = -1, \

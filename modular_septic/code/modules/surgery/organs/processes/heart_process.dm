@@ -7,7 +7,7 @@
 /datum/organ_process/heart/handle_process(mob/living/carbon/owner, delta_time, times_fired)
 	if(owner.needs_heart())
 		handle_pulse(owner, delta_time, times_fired)
-		handle_nutrition(owneer, delta_time, times_fired)
+		handle_nutrition(owner, delta_time, times_fired)
 		handle_hydration(owner, delta_time, times_fired)
 		if(owner.pulse)
 			handle_heartbeat(owner, delta_time, times_fired)
@@ -173,8 +173,10 @@
 
 /datum/organ_process/heart/proc/handle_nutrition(mob/living/carbon/human/owner, delta_time, times_fired)
 	var/heart_efficiency = owner.getorganslotefficiency(ORGAN_SLOT_HEART)
+	var/is_stable = owner.get_chem_effect(CE_STABLE) || HAS_TRAIT(owner, TRAIT_STABLEHEART)
+	var/pulse_mod = (is_stable ? 0 : owner.get_chem_effect(CE_PULSE))
 	if(owner.nutrition <= NUTRITION_LEVEL_STARVING)
-		if(owner.heart_efficiency >= ORGAN_FAILING_EFFICIENCY)
+		if(heart_efficiency >= ORGAN_FAILING_EFFICIENCY)
 			if(owner.pulse)
 				var/damage_chance = (pulse_mod - 2) ** 2
 				if(DT_PROB(damage_chance/2, delta_time))
@@ -182,8 +184,10 @@
 
 /datum/organ_process/heart/proc/handle_hydration(mob/living/carbon/human/owner, delta_time, times_fired)
 	var/heart_efficiency = owner.getorganslotefficiency(ORGAN_SLOT_HEART)
+	var/is_stable = owner.get_chem_effect(CE_STABLE) || HAS_TRAIT(owner, TRAIT_STABLEHEART)
+	var/pulse_mod = (is_stable ? 0 : owner.get_chem_effect(CE_PULSE))
 	if(owner.hydration <= HYDRATION_LEVEL_DEHYDRATED)
-		if(owner.heart_efficiency >= ORGAN_FAILING_EFFICIENCY)
+		if(heart_efficiency >= ORGAN_FAILING_EFFICIENCY)
 			if(owner.pulse)
 				var/damage_chance = (pulse_mod - 2) ** 2
 				if(DT_PROB(damage_chance/2, delta_time))

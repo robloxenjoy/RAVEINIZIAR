@@ -29,7 +29,7 @@
 				user.changeNext_move(W.attack_delay)
 				user.adjustFatigueLoss(10)
 				W.damageItem(10)
-				playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.ogg', 90 , FALSE, FALSE)
+				playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.wav', 90 , FALSE, FALSE)
 				user.sound_hint()
 				mine_hp -= 1
 				var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
@@ -52,7 +52,7 @@
 				user.sound_hint()
 				var/flags = NONE
 				var/old_type = type
-				if(defer_change) // TODO: make the defer change var a var for any changeturf flag
+				if(defer_change)
 					flags = CHANGETURF_DEFER_CHANGE
 				var/turf/open/mined = ScrapeAway(null, flags)
 				addtimer(CALLBACK(src, .proc/AfterChange, flags, old_type), 1, TIMER_UNIQUE)
