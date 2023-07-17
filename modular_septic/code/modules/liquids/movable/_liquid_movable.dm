@@ -285,7 +285,7 @@
 	if(no_effects)
 		return
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
-	SSvis_overlays.add_vis_overlay(src, 'modular_septic/icons/effects/liquids/liquid_overlays.dmi', "shine", layer+0.01, plane, add_appearance_flags = RESET_COLOR|RESET_ALPHA)
+//	SSvis_overlays.add_vis_overlay(src, 'modular_septic/icons/effects/liquids/liquid_overlays.dmi', "shine", layer+0.01, plane, add_appearance_flags = RESET_COLOR|RESET_ALPHA)
 	//Add a fire overlay too
 	switch(fire_state)
 		if(LIQUID_FIRE_STATE_SMALL, LIQUID_FIRE_STATE_MILD)
