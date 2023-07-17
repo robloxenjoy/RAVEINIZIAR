@@ -41,7 +41,7 @@
 		var/edge_protection = get_edge_protection(def_zone)
 		edge_protection = max(0, edge_protection - thrown_item.edge_protection_penetration)
 		var/subarmor_flags = get_subarmor_flags(def_zone)
-		var/damage = thrown_item.get_throwforce(throwingdatum.thrower, GET_MOB_ATTRIBUTE_VALUE(throwingdatum.thrower, STAT_STRENGTH))
+		var/damage = thrown_item.get_throwforce(throwingdatum.thrower)
 		apply_damage(damage, \
 					thrown_item.damtype, \
 					def_zone, \

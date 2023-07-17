@@ -282,9 +282,9 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
-#define slash 1
-#define stab 2
-#define bash 3
+#define SLASH_MODE 1
+#define STAB_MODE 2
+#define BASH_MODE 3
 
 /obj/item/changeable_attacks
 	name = "a fucked up retarded weapon"
@@ -299,11 +299,11 @@
 	. = ..()
 	if(current_atk_mode)
 //		var/attack_text = current_atk_mode
-		if(current_atk_mode == slash)
+		if(current_atk_mode == SLASH_MODE)
 			. += span_info("It's currently ready to slash.")
-		else if (current_atk_mode == stab)
+		else if (current_atk_mode == STAB_MODE)
 			. += span_info("It's currently ready to stab.")
-		else if (current_atk_mode == bash)
+		else if (current_atk_mode == BASH_MODE)
 			. += span_info("It's currently ready to bash.")
 
 /obj/item/changeable_attacks/attack_self(mob/user, modifiers)
@@ -356,14 +356,15 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.wav', 'modular_septic/sound/weapons/melee/kukri_swish2.wav', 'modular_septic/sound/weapons/melee/kukri_swish3.wav')
 	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	min_force = 6
 	force = 10
 	min_force_strength = 1
 	force_strength = 1.8
 	min_throwforce = 5
-	min_throwforce_strength = 1.2
-	throwforce_strength = 8
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
 	wound_bonus = 5
 	bare_wound_bonus = 1
 	flags_1 = CONDUCT_1
@@ -386,7 +387,7 @@
 			force = 10
 			min_force_strength = 1
 			force_strength = 1.8
-			current_atk_mode = stab
+			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 4, "embed_chance" = 100, "fall_chance" = 10)
 		if(stab)
@@ -396,7 +397,7 @@
 			force = 10
 			min_force_strength = 0.6
 			force_strength = 1.65
-			current_atk_mode = bash
+			current_atk_mode = BASH_MODE
 			sharpness = NONE
 		if(bash)
 			to_chat(user, span_notice("I'm now slicing with the [src]."))
@@ -405,7 +406,7 @@
 			force = 10
 			min_force_strength = 1
 			force_strength = 1.8
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 4, "embed_chance" = 55, "fall_chance" = 10)
 
@@ -434,8 +435,9 @@
 	bare_wound_bonus = 1
 	force_strength = 2.5
 	min_throwforce = 5
+	throwforce = 8
 	min_throwforce_strength = 1
-	throwforce_strength = 8
+	throwforce_strength = 1.5
 	parrying_modifier = 1
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_EDGED
@@ -455,7 +457,7 @@
 			force = 10
 			min_force_strength = 1.5
 			force_strength = 2
-			current_atk_mode = stab
+			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 		if(stab)
 			to_chat(user, span_notice("I'm now bashing with the hilt of the [src]."))
@@ -464,7 +466,7 @@
 			force = 9
 			min_force_strength = 0.65
 			force_strength = 1.65
-			current_atk_mode = bash
+			current_atk_mode = BASH_MODE
 			sharpness = NONE
 		if(bash)
 			to_chat(user, span_notice("I'm now slicing with the [src]."))
@@ -473,7 +475,7 @@
 			force = 25
 			min_force_strength = 1.3
 			force_strength = 2.5
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 
 /obj/item/changeable_attacks/slashstabbash/axe/big/steel
@@ -496,10 +498,10 @@
 	wound_bonus = 10
 	bare_wound_bonus = 3
 	force_strength = 3
-	min_throwforce = 15
-	min_throwforce_strength = 2
-	throwforce_strength = 10
-	throwforce = 17
+	min_throwforce = 5
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
 	parrying_modifier = 1
 	armor_damage_modifier = 1
 	attack_fatigue_cost = 10
@@ -533,12 +535,12 @@
 			armor_damage_modifier = 1.5
 			attack_fatigue_cost = 8
 			armor_damage_modifier = 2
-			min_throwforce = 15
-			min_throwforce_strength = 2
-			throwforce_strength = 10
-			throwforce = 17
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			attack_delay = 40
-			current_atk_mode = stab
+			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 		if(stab)
 			to_chat(user, span_notice("I'm now bashing them with the steel hilt of the [src]."))
@@ -550,13 +552,13 @@
 			wound_bonus = 8
 			bare_wound_bonus = 2
 			attack_fatigue_cost = 8
-			min_throwforce = 15
-			min_throwforce_strength = 2
-			throwforce_strength = 10
-			throwforce = 17
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			attack_delay = 45
 			armor_damage_modifier = 0
-			current_atk_mode = bash
+			current_atk_mode = BASH_MODE
 			sharpness = NONE
 		if(bash)
 			to_chat(user, span_notice("I'm now chop them with the heavy blade of the [src]."))
@@ -570,13 +572,13 @@
 			wound_bonus = 10
 			bare_wound_bonus = 3
 			armor_damage_modifier = 1
-			min_throwforce = 15
-			min_throwforce_strength = 2
-			throwforce_strength = 10
-			throwforce = 17
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			attack_delay = 40
 			attack_fatigue_cost = 10
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 
 /obj/item/changeable_attacks/slashbash/axe/small/steel
@@ -594,17 +596,17 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.wav', 'modular_septic/sound/weapons/melee/missweapon2.wav')
 	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.wav'
 	embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	min_force = 15
 	force = 20
 	min_force_strength = 1.5
 	wound_bonus = 13
 	bare_wound_bonus = 5
 	force_strength = 4
-	min_throwforce = 19
-	min_throwforce_strength = 3
-	throwforce_strength = 12
-	throwforce = 20
+	min_throwforce = 5
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
 	parrying_modifier = 0.3
 	armor_damage_modifier = 0.5
 	attack_fatigue_cost = 9
@@ -642,13 +644,13 @@
 			wound_bonus = 10
 			bare_wound_bonus = 2
 			attack_fatigue_cost = 8
-			min_throwforce = 14
-			min_throwforce_strength = 2
-			throwforce_strength = 9
-			throwforce = 16
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			attack_delay = 20
 			armor_damage_modifier = 0.4
-			current_atk_mode = bash
+			current_atk_mode = BASH_MODE
 			sharpness = NONE
 		if(bash)
 			to_chat(user, span_notice("I'm now chop them with the heavy blade of the [src]."))
@@ -662,13 +664,13 @@
 			wound_bonus = 13
 			bare_wound_bonus = 5
 			armor_damage_modifier = 0.5
-			min_throwforce = 19
-			min_throwforce_strength = 3
-			throwforce_strength = 12
-			throwforce = 20
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			attack_delay = 20
 			attack_fatigue_cost = 9
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 
 /obj/item/changeable_attacks/slashstab/sabre/small/steel
@@ -685,16 +687,16 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 18
 	force = 19
 	min_force_strength = 1
 	force_strength = 1.5
 	min_throwforce = 5
-	min_throwforce_strength = 1.2
-	throwforce = 10
-	throwforce_strength = 8
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 5
 	flags_1 = CONDUCT_1
@@ -747,7 +749,7 @@
 			force = 18
 			min_force_strength = 1
 			force_strength = 1.8
-			current_atk_mode = stab
+			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
@@ -757,7 +759,7 @@
 			force = 19
 			min_force_strength = 1
 			force_strength = 1.8
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
@@ -776,16 +778,16 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.wav', 'modular_septic/sound/weapons/melee/slashflesh2.wav', 'modular_septic/sound/weapons/melee/slashflesh3.wav')
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 15
 	force = 24
 	min_force_strength = 1
 	force_strength = 1.4
 	min_throwforce = 5
-	min_throwforce_strength = 1.2
-	throwforce = 10
-	throwforce_strength = 8
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 7
 	flags_1 = CONDUCT_1
@@ -816,7 +818,7 @@
 			force = 19
 			min_force_strength = 1
 			force_strength = 1.3
-			current_atk_mode = stab
+			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
@@ -829,12 +831,12 @@
 			wound_bonus = 7
 			bare_wound_bonus = 2
 			attack_fatigue_cost = 8
-			min_throwforce = 7
-			min_throwforce_strength = 2
-			throwforce_strength = 10
-			throwforce = 10
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			attack_delay = 20
-			current_atk_mode = bash
+			current_atk_mode = BASH_MODE
 			sharpness = NONE
 		if(bash)
 			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
@@ -843,7 +845,7 @@
 			force = 24
 			min_force_strength = 1
 			force_strength = 1.4
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
@@ -862,16 +864,16 @@
 	miss_sound = list('modular_pod/sound/eff/weapon/2blade_swing.wav')
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	slash_hitsound = list('modular_pod/sound/eff/weapon/2blade_impact.wav', 'modular_pod/sound/eff/weapon/2blade_impact2.wav', 'modular_pod/sound/eff/weapon/2blade_impact3.wav')
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 15, "rip_time" = 3, "embed_chance" = 6, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 20
 	force = 35
 	min_force_strength = 1
 	force_strength = 1.6
-	min_throwforce = 10
-	min_throwforce_strength = 1.2
-	throwforce = 15
-	throwforce_strength = 8
+	min_throwforce = 5
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 5
 	flags_1 = CONDUCT_1
@@ -901,7 +903,7 @@
 			force = 30
 			min_force_strength = 1
 			force_strength = 1.3
-			current_atk_mode = stab
+			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 16, "rip_time" = 8, "embed_chance" = 8, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
@@ -914,12 +916,12 @@
 			wound_bonus = 8
 			bare_wound_bonus = 3
 			attack_fatigue_cost = 8
-			min_throwforce = 8
-			min_throwforce_strength = 2
-			throwforce_strength = 10
-			throwforce = 13
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			attack_delay = 25
-			current_atk_mode = bash
+			current_atk_mode = BASH_MODE
 			sharpness = NONE
 		if(bash)
 			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
@@ -928,13 +930,13 @@
 			force = 35
 			min_force_strength = 1
 			force_strength = 1.6
-			min_throwforce = 10
-			min_throwforce_strength = 1.2
-			throwforce = 15
-			throwforce_strength = 8
+			min_throwforce = 5
+			throwforce = 8
+			min_throwforce_strength = 1
+			throwforce_strength = 1.5
 			wound_bonus = 15
 			bare_wound_bonus = 10
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 15, "rip_time" = 4, "embed_chance" = 6, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 7, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
@@ -952,16 +954,16 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 15, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 8
 	force = 15
 	min_force_strength = 1
 	force_strength = 1.2
 	min_throwforce = 5
-	min_throwforce_strength = 1.2
-	throwforce = 10
-	throwforce_strength = 8
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
 	wound_bonus = 6
 	bare_wound_bonus = 3
 	flags_1 = CONDUCT_1
@@ -992,7 +994,7 @@
 			force = 15
 			min_force_strength = 1
 			force_strength = 1.2
-			current_atk_mode = stab
+			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(stab)
@@ -1002,13 +1004,9 @@
 			force = 15
 			min_force_strength = 1
 			force_strength = 1.2
-			current_atk_mode = slash
+			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 6, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.2, "pain_stam_pct" = 0.6, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
-
-#undef slash
-#undef stab
-#undef bash
 
 /obj/item/kukri
 	name = "Kukri"
@@ -1141,3 +1139,7 @@
 /obj/item/dualsaber
 	parrying_modifier = 2
 	skill_melee = SKILL_FORCESWORD
+
+#undef SLASH_MODE
+#undef STAB_MODE
+#undef BASH_MODE
