@@ -14,7 +14,8 @@
 	if(!prev_lying)
 		gib_animation()
 
-	spill_organs(no_brain, no_organs, no_bodyparts)
+	if(!no_organs)
+		spill_organs(no_brain, no_organs, no_bodyparts)
 
 	if(!no_bodyparts)
 		spread_bodyparts(no_brain, no_organs)
