@@ -379,7 +379,7 @@
 /obj/item/changeable_attacks/sword/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
-		if(slash)
+		if(SLASH_MODE)
 			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
 			hitsound = stab_hitsound
 			min_force = 6
@@ -389,7 +389,7 @@
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 4, "embed_chance" = 100, "fall_chance" = 10)
-		if(stab)
+		if(STAB_MODE)
 			to_chat(user, span_notice("I'm now bashing with the hilt of the [src]."))
 			hitsound = bash_hitsound
 			min_force = 6
@@ -398,7 +398,7 @@
 			force_strength = 1.65
 			current_atk_mode = BASH_MODE
 			sharpness = NONE
-		if(bash)
+		if(BASH_MODE)
 			to_chat(user, span_notice("I'm now slicing with the [src]."))
 			hitsound = slash_hitsound
 			min_force = 6
@@ -422,7 +422,7 @@
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
 	icon_state = "skin_cleaver"
 	inhand_icon_state = "skin_cleaver"
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	slash_hitsound = list('modular_septic/sound/weapons/melee/heavysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash3.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavysharp_deploy.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/heavysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish3.ogg')
@@ -485,7 +485,7 @@
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
 	icon_state = "longaxe"
 	inhand_icon_state = "longaxe"
-	current_atk_mode = slash
+	current_atk_mode = SLASH_MODE
 	slash_hitsound = list('modular_septic/sound/weapons/melee/heavyysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash3.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash4.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavyysharp_deploy.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/heavyysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish3.ogg')
@@ -520,7 +520,7 @@
 /obj/item/changeable_attacks/slashstabbash/axe/big/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
-		if(slash)
+		if(SLASH_MODE)
 			to_chat(user, span_notice("I'm now stabbing them with a steel hook on the butt of the [src]."))
 			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
 			hitsound = stab_hitsound
@@ -541,7 +541,7 @@
 			attack_delay = 40
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
-		if(stab)
+		if(STAB_MODE)
 			to_chat(user, span_notice("I'm now bashing them with the steel hilt of the [src]."))
 			hitsound = bash_hitsound
 			min_force = 7
@@ -559,7 +559,7 @@
 			armor_damage_modifier = 0
 			current_atk_mode = BASH_MODE
 			sharpness = NONE
-		if(bash)
+		if(BASH_MODE)
 			to_chat(user, span_notice("I'm now chop them with the heavy blade of the [src]."))
 			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
 			hitsound = slash_hitsound
@@ -631,7 +631,7 @@
 /obj/item/changeable_attacks/slashbash/axe/small/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
-		if(slash)
+		if(SLASH_MODE)
 			to_chat(user, span_notice("I'm now bashing them with heavy back of the [src]."))
 			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
 			hitsound = bash_hitsound
@@ -651,7 +651,7 @@
 			armor_damage_modifier = 0.4
 			current_atk_mode = BASH_MODE
 			sharpness = NONE
-		if(bash)
+		if(BASH_MODE)
 			to_chat(user, span_notice("I'm now chop them with the heavy blade of the [src]."))
 			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
 			hitsound = slash_hitsound
@@ -741,7 +741,7 @@
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
-		if(slash)
+		if(SLASH_MODE)
 			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
 			hitsound = stab_hitsound
 			min_force = 16
@@ -751,7 +751,7 @@
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
-		if(stab)
+		if(STAB_MODE)
 			to_chat(user, span_notice("I'm now slicing them with the thin blade of the [src]."))
 			hitsound = slash_hitsound
 			min_force = 15
@@ -810,7 +810,7 @@
 /obj/item/changeable_attacks/slashstabbash/sword/medium/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
-		if(slash)
+		if(SLASH_MODE)
 			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
 			hitsound = stab_hitsound
 			min_force = 14
@@ -820,7 +820,7 @@
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
-		if(stab)
+		if(STAB_MODE)
 			to_chat(user, span_notice("I'm now bashing them with the iron hilt of the [src]."))
 			hitsound = bash_hitsound
 			min_force = 7
@@ -837,7 +837,7 @@
 			attack_delay = 20
 			current_atk_mode = BASH_MODE
 			sharpness = NONE
-		if(bash)
+		if(BASH_MODE)
 			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
 			hitsound = slash_hitsound
 			min_force = 15
@@ -895,7 +895,7 @@
 /obj/item/changeable_attacks/slashstabbash/sword/big/bronze/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
-		if(slash)
+		if(SLASH_MODE)
 			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
 			hitsound = stab_hitsound
 			min_force = 19
@@ -905,7 +905,7 @@
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 16, "rip_time" = 8, "embed_chance" = 8, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
-		if(stab)
+		if(STAB_MODE)
 			to_chat(user, span_notice("I'm now bashing them with the bronze hilt of the [src]."))
 			hitsound = bash_hitsound
 			min_force = 10
@@ -922,7 +922,7 @@
 			attack_delay = 25
 			current_atk_mode = BASH_MODE
 			sharpness = NONE
-		if(bash)
+		if(BASH_MODE)
 			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
 			hitsound = slash_hitsound
 			min_force = 20
@@ -986,7 +986,7 @@
 /obj/item/changeable_attacks/slashstab/knife/small/steel/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
-		if(slash)
+		if(SLASH_MODE)
 			to_chat(user, span_notice("I'm now stabbing them with the slightly curved end of the [src]."))
 			hitsound = stab_hitsound
 			min_force = 8
@@ -996,7 +996,7 @@
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
-		if(stab)
+		if(STAB_MODE)
 			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
 			hitsound = slash_hitsound
 			min_force = 8

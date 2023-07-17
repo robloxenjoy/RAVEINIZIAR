@@ -39,7 +39,7 @@
 	name = "\improper Stone Eater"
 	desc = "STONE PORRIDGE...."
 	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;MEDICINE!.;Hmmm, pickaxes.;Do you need ammo?"
-	icon = 'modular_pod/icons/obj/machinery/vending.dmi'
+	icon = 'modular_septic/icons/obj/machinery/vending.dmi'
 	icon_state = "stone_eater"
 	products = list(
 		/obj/item/food/canned/beef = 100,
@@ -54,4 +54,3 @@
 	)
 	default_price = PAYCHECK_ASSISTANT * 0.7
 	extra_price = PAYCHECK_MEDIUM
-	var/obj/item/coin/stoneporridge/coin
