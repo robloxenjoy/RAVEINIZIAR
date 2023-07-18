@@ -44,13 +44,13 @@
 		user.visible_message("<span class='notice'>\The [user] rips the vilir liquid-sheath off their [src].</span>")
 	update_icon()
 	START_PROCESSING(SSprocessing, src)
-	playsound(src, 'sound/items/torch_light.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_light.wav', 50, TRUE)
 /*
 /obj/item/lamp/proc/snuff()
 	lit = FALSE
 	update_icon()
 	STOP_PROCESSING(SSprocessing, src)
-	playsound(src, 'sound/items/torch_snuff.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_snuff.wav', 50, TRUE)
 //	var/turf/vilired = get_turf(src)
 //	vilired.add_liquid(/datum/reagent/consumable/vilir, 25)
 */
@@ -120,7 +120,7 @@
 	T.forceMove(src)
 	lightlamp = T
 	update_icon()
-	playsound(src, 'sound/items/torch_fixture1.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_fixture.wav', 50, TRUE)
 
 /obj/structure/lampwall/attackby(obj/item/W, mob/user)
 	// attempt to insert lamp
@@ -147,7 +147,7 @@
 	lightlamp.update_icon()
 	lightlamp = null
 	update_icon()
-	playsound(src, 'sound/items/torch_fixture0.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_fixture.wav', 50, TRUE)
 
 // attack with hand - remove lamp
 /obj/structure/lampwall/attack_hand(mob/user)
@@ -177,7 +177,7 @@
 	icon = 'modular_pod/icons/obj/lighting.dmi'
 	icon_state = "mtorch0"
 	inhand_icon_state = "torch0"
-	name = "torch"
+	name = "Torch"
 	desc = "LIGHT!"
 	var/lit = FALSE
 	var/self_lighting = 0
@@ -218,13 +218,13 @@
 		user.visible_message("<span class='notice'>\The [user] rips the lighting sheath off their [src].</span>")
 	update_icon()
 	START_PROCESSING(SSprocessing, src)
-	playsound(src, 'sound/items/torch_light.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_light.wav', 50, TRUE)
 
 /obj/item/torch/proc/snuff()
 	lit = FALSE
 	update_icon()
 	STOP_PROCESSING(SSprocessing, src)
-	playsound(src, 'sound/items/torch_snuff.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_snuff.wav', 50, TRUE)
 
 /obj/item/torch/attack_self(mob/user)
 	..()
@@ -253,9 +253,18 @@
 			C.light()
 			user.visible_message("<span class='notice'>[user] enlights [C] with [src].")
 			return
-	if(W.get_temperature())
+
+	else if(W.get_temperature())
 		user.visible_message("<span class='notice'>[user] enlights [src].")
 		light()
+
+	else if(!src.lit)
+		if(istype(W, /obj/item/torch))
+			var/obj/item/torch/C = W
+			if(C.lit)
+				src.light()
+				user.visible_message("<span class='notice'>[user] enlights [src] with [C].")
+				return
 
 /obj/structure/torchwall
 	name = "Torch Holder"
@@ -316,7 +325,7 @@
 	T.forceMove(src)
 	lighttorch = T
 	update_icon()
-	playsound(src, 'sound/items/torch_fixture1.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_fixture.wav', 50, TRUE)
 
 /obj/structure/torchwall/attackby(obj/item/W, mob/user)
 	// attempt to insert torch
@@ -361,7 +370,7 @@
 	lighttorch.update_icon()
 	lighttorch = null
 	update_icon()
-	playsound(src, 'sound/items/torch_fixture0.ogg', 50, TRUE)
+	playsound(src, 'sound/items/torch_fixture.wav', 50, TRUE)
 
 // attack with hand - remove torch
 /obj/structure/torchwall/attack_hand(mob/user)

@@ -65,7 +65,7 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.wav'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
+	hitsound = list('modular_septic/sound/weapons/melee/stabber1.wav', 'modular_septic/sound/weapons/melee/stabber2.wav')
 	w_class = WEIGHT_CLASS_SMALL
 	wound_bonus = 1
 	bare_wound_bonus = 5
@@ -290,7 +290,7 @@
 	name = "a fucked up retarded weapon"
 	desc = "report thgis to a retard dev if you see it"
 	var/slash_hitsound = list('modular_septic/sound/weapons/melee/slasher1.wav', 'modular_septic/sound/weapons/melee/slasher2.wav', 'modular_septic/sound/weapons/melee/slasher3.wav')
-	var/stab_hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
+	var/stab_hitsound = list('modular_septic/sound/weapons/melee/stabber1.wav', 'modular_septic/sound/weapons/melee/stabber2.wav')
 	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
 	var/current_atk_mode = null
 	var/wielded_inhand_state = FALSE
@@ -435,7 +435,6 @@
 	force_strength = 2.5
 	min_throwforce = 5
 	throwforce = 8
-	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	parrying_modifier = 1
 	w_class = WEIGHT_CLASS_BULKY
@@ -694,7 +693,6 @@
 	force_strength = 1.5
 	min_throwforce = 5
 	throwforce = 8
-	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 5

@@ -530,10 +530,13 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	name = "doubloon"
 
 /obj/item/coin/stoneporridge
-	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	name = "Stone Porridge"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "stone_porridge"
 	value = 1
 	custom_materials = null
+
+/obj/item/coin/stoneporridge/attack_self(mob/user)
+	return
 
 #undef ORESTACK_OVERLAYS_MAX

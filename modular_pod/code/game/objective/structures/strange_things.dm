@@ -634,4 +634,78 @@
 				T.light()
 				T.update_icon()
 			return
-		
+
+/obj/structure/stone_eater
+	name = "Stone Eater"
+	desc = "GIVE ME YOUR STONE PORRIDGE!"
+	icon = 'modular_septic/icons/obj/machinery/vending.dmi'
+	icon_state = "stone_eater"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = TRUE
+	anchored = TRUE
+	obj_flags = NONE
+
+/obj/structure/stone_eater/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(istype(W, /obj/item/coin/stoneporridge))
+		user.visible_message(span_notice("[user] gives stone porridge to [src]."),span_notice("You gave stone porridge to [src]."), span_hear("You hear the sound of sacrificing."))
+		var/obj/item/coin/stoneporridge/por = W
+		qdel(por)
+		var/drop = pick_weight(list("beef" = 6, "water" = 6, "torch" = 5, "pickaxe" = 5, "gauze" = 5, "beer" = 5))
+		switch(drop)
+			if("beef")
+				new /obj/item/food/canned/beef(get_turf(user))
+			if("water")
+				new /obj/item/reagent_containers/food/drinks/waterbottle(get_turf(user))
+			if("torch")
+				new /obj/item/torch(get_turf(user))
+			if("pickaxe")
+				new /obj/item/melee/hehe/pickaxe/iron(get_turf(user))
+			if("gauze")
+				new /obj/item/stack/medical/gauze(get_turf(user))
+			if("beer")
+				new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
+
+/obj/structure/stone_mixer
+	name = "Stone Mixer"
+	desc = "GIVE ME YOUR STONE!"
+	icon = 'modular_septic/icons/obj/machinery/vending.dmi'
+	icon_state = "stone_mixer"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = TRUE
+	anchored = TRUE
+	var/first_slot = FALSE
+	var/second_slot = FALSE
+	obj_flags = NONE
+
+/obj/structure/stone_mixer/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(istype(W, /obj/item/stone))
+		if(!first_slot)
+			user.visible_message(span_notice("[user] gives stone to [src]."),span_notice("You gave stone to [src]."), span_hear("You hear the sound of sacrificing."))
+			var/obj/item/stone/stone = W
+			qdel(stone)
+			first_slot = TRUE
+			sound_hint()
+			return
+		else if(!second_slot)
+			user.visible_message(span_notice("[user] gives stone to [src]."),span_notice("You gave stone to [src]."), span_hear("You hear the sound of sacrificing."))
+			var/obj/item/stone/stone = W
+			qdel(stone)
+			second_slot = TRUE
+			sound_hint()
+			return
+		else if(first_slot && second_slot)
+			user.visible_message(span_notice("[user] gives stone to [src]."),span_notice("You gave stone to [src]."), span_hear("You hear the sound of sacrificing."))
+			var/obj/item/stone/stone = W
+			qdel(stone)
+			first_slot = FALSE
+			second_slot = FALSE
+			new /obj/item/coin/stoneporridge(get_turf(user))
+			sound_hint()

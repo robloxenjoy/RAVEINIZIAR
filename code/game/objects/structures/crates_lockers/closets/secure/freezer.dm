@@ -81,7 +81,6 @@
 
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
-	req_access = list(ACCESS_KITCHEN)
 
 /obj/structure/closet/secure_closet/freezer/fridge/PopulateContents()
 	..()

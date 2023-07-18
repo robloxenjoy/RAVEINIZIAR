@@ -5,8 +5,8 @@
 	layer = WALL_OBJ_LAYER
 	var/wall_mounted = TRUE
 	var/random_flickering = FALSE
-	var/flicker_amount = 10
-	var/flicker_prob = 20
+	var/flicker_amount = 0
+	var/flicker_prob = 0
 
 /obj/machinery/light/Initialize(mapload)
 	. = ..()

@@ -408,7 +408,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	sharpness = SHARP_EDGED
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
 	var/slashh_hitsound = list('modular_septic/sound/weapons/melee/sharpy1.ogg')
-	var/stabb_hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
+	var/stabb_hitsound = list('modular_septic/sound/weapons/melee/stabber1.wav', 'modular_septic/sound/weapons/melee/stabber2.wav')
 
 /obj/item/shard/crystal/examine(mob/user)
 	. = ..()
