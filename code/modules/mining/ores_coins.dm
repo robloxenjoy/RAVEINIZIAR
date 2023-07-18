@@ -364,7 +364,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/Initialize(mapload)
 	. = ..()
 	coinflip = pick(sideslist)
-	icon_state = "coin_[coinflip]"
+	icon_state = "[icon_state]_[coinflip]"
 	pixel_x = base_pixel_x + rand(0, 16) - 8
 	pixel_y = base_pixel_y + rand(0, 8) - 8
 

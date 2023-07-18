@@ -13,18 +13,13 @@
 		fluff = CONFIG_GET(string/flufftagline)
 	s += "<b>[station_name()]</b>"
 	s += " ("
-	s += "<a href='https://discord.gg/YrN2nNbhvP'>Discord</a>"
+	s += "<a href='https://discord.gg/wUPYTgJ4Th'>Discord</a>"
 	s += ")\]"
 	s += "<br>"
 	if(tagline)
 		s += "[tagline]<br>"
 	if(fluff)
 		s += "<i>[fluff]</i><br>"
-
-	var/map = SSmapping?.config?.map_name
-
-	if(map)
-		features += "[capitalize_like_old_man(map)]"
 
 	if(!GLOB.enter_allowed)
 		features += "Closed"
