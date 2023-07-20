@@ -1,7 +1,7 @@
 /datum/job/assistant
 	title = "Doggoned"
-	total_positions = 45
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	required_languages = null
 	department_head = list("Head of Personnel")
 	faction = list("neutral", "swarmer")
