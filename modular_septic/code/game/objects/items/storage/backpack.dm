@@ -88,6 +88,34 @@
 	STR.max_combined_w_class = 10
 	STR.max_items = 20
 
+/obj/item/storage/backpack/baggy
+	name = "Dark Bag"
+	desc = "What's in it?"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "darkbag"
+	worn_icon = 'modular_septic/icons/mob/clothing/back.dmi'
+	worn_icon_state = "itobe_satchel"
+	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
+	inhand_icon_state = "darkbag"
+	slot_flags = null
+	storage_flags = NONE
+	carry_weight = 1 KILOGRAMS
+
+/obj/item/storage/backpack/baggy/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 15
+	STR.max_items = 15
+
+/obj/item/storage/backpack/baggy/update_icon_state()
+	switch(contents.len)
+		if(1 to INFINITY)
+			icon_state = "[initial(icon_state)]_full"
+		else
+			icon_state = "[initial(icon_state)]"
+	return ..()
+
 /obj/item/storage/backpack/itobe
 	name = "darkened backpack"
 	desc = "A sleek blackpack that wraps around using four straps around the user, allows the user to move light, and fast while carrying a medium or large-sized firearm."

@@ -252,6 +252,7 @@
 			var/obj/item/torch/C = W
 			C.light()
 			user.visible_message("<span class='notice'>[user] enlights [C] with [src].")
+			C.update_icon()
 			return
 
 	else if(W.get_temperature())
@@ -264,6 +265,7 @@
 			if(C.lit)
 				src.light()
 				user.visible_message("<span class='notice'>[user] enlights [src] with [C].")
+				update_icon()
 				return
 
 /obj/structure/torchwall
@@ -291,7 +293,6 @@
 		lighttorch = new(src)
 	lighttorch.lit = TRUE
 	update_icon()
-
 
 /obj/structure/torchwall/Destroy()
 	QDEL_NULL(lighttorch)

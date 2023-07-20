@@ -47,8 +47,8 @@
 	title = "Venturer"
 	department_head = list("Head of Personnel")
 	faction = list("neutral", "swarmer")
-	total_positions = 64
-	spawn_positions = 64
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "he's just traveling."
 	selection_color = "#38e38e"
 	exp_granted_type = EXP_TYPE_CREW
@@ -232,8 +232,8 @@
 	title = "Outcombat"
 	department_head = list("Head of Personnel")
 	faction = list("neutral", "swarmer")
-	total_positions = 64
-	spawn_positions = 64
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "he's just attacking."
 	selection_color = "#38e38e"
 	exp_granted_type = EXP_TYPE_CREW

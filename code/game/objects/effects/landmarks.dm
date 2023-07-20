@@ -148,6 +148,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Chaot"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
+	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/winepiller
 	name = "Winepiller"

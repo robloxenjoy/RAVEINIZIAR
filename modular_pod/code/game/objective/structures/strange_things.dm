@@ -654,7 +654,7 @@
 		user.visible_message(span_notice("[user] gives stone porridge to [src]."),span_notice("You gave stone porridge to [src]."), span_hear("You hear the sound of sacrificing."))
 		var/obj/item/coin/stoneporridge/por = W
 		qdel(por)
-		var/drop = pick_weight(list("beef" = 6, "water" = 6, "torch" = 5, "pickaxe" = 5, "gauze" = 5, "beer" = 5))
+		var/drop = pick_weight(list("beef" = 6, "water" = 6, "torch" = 5, "pickaxe" = 5, "gauze" = 5, "beer" = 5, "baggy" = 5))
 		switch(drop)
 			if("beef")
 				new /obj/item/food/canned/beef(get_turf(user))
@@ -668,6 +668,8 @@
 				new /obj/item/stack/medical/gauze(get_turf(user))
 			if("beer")
 				new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
+			if("bag")
+				new /obj/item/storage/backpack/baggy(get_turf(user))
 
 /obj/structure/stone_mixer
 	name = "Stone Mixer"

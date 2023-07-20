@@ -15,7 +15,7 @@
 "ao" = (/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
 "ap" = (/obj/structure/closet/cabinet,/obj/item/clothing/head/aphexcap,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aq" = (/turf/open/floor/plating/polovich/slushyy,/area/maintenance/polovich/forest/rain)
-"ar" = (/obj/structure/closet/crate/wooden,/obj/item/melee/bita/pink,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"ar" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "as" = (/obj/structure/closet/secure_closet/freezer/gulag_fridge{dir = 2},/turf/open/floor/plating/polovich/stoneekas,/area/maintenance/polovich/forest/rain)
 "at" = (/obj/structure/bed,/obj/effect/landmark/start/manhunter,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest/rain)
 "au" = (/obj/structure/closet/cabinet,/obj/item/clothing/suit/armor/vest/bulletproofer,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
@@ -25,7 +25,7 @@
 "ay" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest/rain)
 "az" = (/obj/structure/bed,/obj/effect/landmark/start/slavekeeper,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aA" = (/obj/machinery/door/metal_door/wood_door/west{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
-"aB" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "slavekeeper"},/obj/item/gun/ballistic/revolver/remis/nova,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"aB" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "slavekeeper"},/obj/item/melee/bita/macecircle,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aC" = (/obj/structure/bed,/obj/effect/landmark/start/manhunter,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
 "aD" = (/turf/closed/wall/r_wall/alt/nocling,/area/maintenance/polovich/forest/rain)
 "aE" = (/obj/machinery/door/metal_door/south{id_tag = "manhunter"},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
@@ -33,7 +33,7 @@
 "aG" = (/obj/structure/closet/crate,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/melee/bita/evil,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
 "aH" = (/turf/open/floor/plating/polovich/logsgreen{dir = 1},/area/maintenance/polovich/forest/rain)
 "aI" = (/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
-"aJ" = (/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
+"aJ" = (/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/forest/rain)
 "aK" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/logsgreen{dir = 1},/area/maintenance/polovich/forest/rain)
 "aL" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
 "aM" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
@@ -45,7 +45,7 @@
 "aS" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest/rain)
 "aT" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
 "aU" = (/turf/open/floor/low_wall/window,/area/maintenance/polovich/forest/rain)
-"aV" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/logsgreen/two{dir = 8},/area/maintenance/polovich/forest/rain)
+"aV" = (/turf/open/floor/plating/polovich/rockydarevil,/area/maintenance/polovich/forest/rain)
 "aW" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest/rain)
 "aX" = (/obj/machinery/door/poddoor/shutters/window{id = "mine"},/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest/rain)
 "aY" = (/obj/structure/closet/crate/wooden,/obj/item/assembly/control{id = "mine"},/obj/item/keycard/akt/mine,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
@@ -54,6 +54,93 @@
 "bb" = (/turf/closed/wall/darkrock/nocling,/area/maintenance/polovich/forest/rain)
 "bc" = (/obj/structure/stone_mixer,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
 "bd" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/slushyy,/area/maintenance/polovich/forest/rain)
+"be" = (/turf/open/floor/plating/polovich/rockydarevil/second,/area/maintenance/polovich/forest/rain)
+"bf" = (/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest/rain)
+"bg" = (/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
+"bh" = (/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/maintenance/polovich/forest/rain)
+"bi" = (/obj/structure/barricade/flora/crystal/blue,/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/maintenance/polovich/forest/rain)
+"bj" = (/turf/closed/wall/nocling,/area/maintenance/polovich/chaot)
+"bk" = (/obj/structure/fluff/statuestone,/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/maintenance/polovich/forest/rain)
+"bl" = (/obj/machinery/shower{pixel_y = 16},/obj/structure/window/spawner/east,/obj/effect/decal/cleanable/vomit/old,/obj/structure/window/spawner/west,/turf/open/floor/plating/polovich/metalfloor,/area/maintenance/polovich/chaot)
+"bm" = (/turf/open/floor/plating/polovich/rockyhorrr,/area/maintenance/polovich/forest/rain)
+"bn" = (/obj/machinery/shower{pixel_y = 16},/obj/structure/window/spawner/east,/obj/structure/window/spawner/west,/obj/effect/decal/cleanable/blood/cum,/turf/open/floor/plating/polovich/metalfloor,/area/maintenance/polovich/chaot)
+"bo" = (/obj/structure/barricade/flora/crystal/blue,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest/rain)
+"bp" = (/obj/machinery/light/small/red/directional/west,/turf/open/floor/plating/polovich/rotten_stones/sec/sev,/area/maintenance/polovich/chaot)
+"bq" = (/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"br" = (/obj/machinery/light/small/red/directional/east,/turf/open/floor/plating/polovich/rotten_stones/sec/sev,/area/maintenance/polovich/chaot)
+"bs" = (/obj/machinery/door/keycard/denominator/podozl/chaot,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bt" = (/obj/structure/closet/chaotic,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bu" = (/obj/structure/closet/chaotic,/obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/loaded,/obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/loaded,/obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/loaded,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bv" = (/obj/structure/closet/chaotic,/obj/item/shit,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
+"bw" = (/obj/machinery/light/dim/directional/north,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
+"bx" = (/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
+"by" = (/obj/structure/table/reinforced,/obj/item/stack/medical/gauze/improvised,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
+"bz" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
+"bA" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bB" = (/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
+"bC" = (/obj/machinery/door/metal_door/south,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bD" = (/turf/open/floor/low_wall/window,/area/maintenance/polovich/chaot)
+"bE" = (/obj/structure/chair/wood,/obj/effect/landmark/start/chaot,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
+"bF" = (/obj/machinery/light/dim/directional/east,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bG" = (/obj/machinery/light/small/red/directional/north,/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
+"bH" = (/obj/structure/table/reinforced,/obj/item/food/donut/chaos,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
+"bI" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/beer,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
+"bJ" = (/obj/machinery/door/metal_door/west,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bK" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 8},/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
+"bL" = (/turf/open/floor/plating/polovich/rotten_stones/sec/sev,/area/maintenance/polovich/chaot)
+"bM" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 4},/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
+"bN" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/beer,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
+"bO" = (/obj/structure/table/reinforced,/obj/item/food/donut/chaos,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bP" = (/obj/structure/chair/wood{dir = 1},/obj/effect/landmark/start/chaot,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bQ" = (/obj/structure/weightmachine/stacklifter,/turf/open/floor/plating/polovich/rotten_stones/sec/eight,/area/maintenance/polovich/chaot)
+"bR" = (/obj/structure/table/reinforced,/obj/item/stack/medical/gauze/improvised/one,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
+"bS" = (/obj/structure/table/reinforced,/obj/item/halyabegg,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
+"bT" = (/obj/structure/chair/wood{dir = 8},/mob/living/simple_animal/pet/podozl/shoebill,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
+"bU" = (/obj/machinery/light/dim/directional/south,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bV" = (/obj/machinery/light/small/red/directional/south,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
+"bW" = (/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
+"bX" = (/obj/machinery/light/small/red/directional/south,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
+"bY" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/forest/rain)
+"bZ" = (/obj/structure/barricade/flora/crystal/blue,/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
+"ca" = (/obj/structure/beast/tohubohu,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest/rain)
+"cb" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest/rain)
+"cc" = (/turf/open/floor/plating/polovich/muddmy/second,/area/maintenance/polovich/forest/rain)
+"cd" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/forest/rain)
+"ce" = (/obj/effect/landmark/tendance,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/medical/spawned)
+"cf" = (/turf/open/floor/plating/polovich/slushy,/area/maintenance/polovich/forest/rain)
+"cg" = (/turf/open/floor/plating/polovich/darkydarkn,/area/maintenance/polovich/forest/rain)
+"ch" = (/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
+"ci" = (/turf/open/floor/plating/polovich/dirt/soft,/area/maintenance/polovich/forest/rain)
+"cj" = (/turf/open/floor/plating/polovich/greengryaz/norandomgen,/area/maintenance/polovich/forest/rain)
+"ck" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greengryaz/norandomgen,/area/maintenance/polovich/forest/rain)
+"cl" = (/obj/structure/flora/ausbushes/incrementum,/turf/open/floor/plating/polovich/dirt/soft,/area/maintenance/polovich/forest/rain)
+"cm" = (/obj/structure/barricade/flora/crystal/purple,/turf/open/floor/plating/polovich/greengryaz/norandomgen,/area/maintenance/polovich/forest/rain)
+"cn" = (/obj/structure/barricade/flora/crystal/green,/turf/open/floor/plating/polovich/greengryaz/norandomgen,/area/maintenance/polovich/forest/rain)
+"co" = (/turf/open/floor/plating/polovich/rockedar{dir = 1},/area/maintenance/polovich/forest/rain)
+"cp" = (/turf/open/floor/plating/polovich/rockedar{dir = 8},/area/maintenance/polovich/forest/rain)
+"cq" = (/turf/open/floor/plating/polovich/rockedar{dir = 4},/area/maintenance/polovich/forest/rain)
+"cr" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/rockydarevil/second,/area/maintenance/polovich/forest/rain)
+"cs" = (/turf/open/floor/plating/polovich/slush,/area/maintenance/polovich/forest/rain)
+"ct" = (/obj/structure/barricade/flora/crystal/blue,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
+"cu" = (/turf/open/floor/plating/polovich/dirt/dark/animated,/area/maintenance/polovich/forest/rain)
+"cv" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/dirt/dark/animated,/area/maintenance/polovich/forest/rain)
+"cw" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/forest/rain)
+"cx" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
+"cy" = (/obj/machinery/door/keycard/denominator/podozl/akt/mine{dir = 8},/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest/rain)
+"cz" = (/obj/machinery/shower{pixel_y = 16},/obj/structure/window/spawner/east,/obj/structure/window/spawner/west,/turf/open/floor/plating/polovich/metalfloor,/area/maintenance/polovich/chaot)
+"cA" = (/turf/open/floor/plating/polovich/rotten_dirt,/area/maintenance/polovich/forest/rain)
+"cB" = (/obj/effect/spawner/random/structure/maphelp/fire/inferno/five/magic,/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
+"cC" = (/obj/structure/barricade/flora/crystal/green,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
+"cD" = (/turf/open/floor/plating/polovich/bluedirty,/area/maintenance/polovich/forest/rain)
+"cE" = (/obj/machinery/door/keycard/denominator/podozl/akt/mine,/turf/open/floor/plating/polovich/rockedar{dir = 8},/area/maintenance/polovich/forest/rain)
+"cF" = (/obj/structure/flora/ausbushes/incrementum/ygro,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/forest/rain)
+"cG" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
+"cH" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/rotten_stones/sec,/area/maintenance/polovich/forest/rain)
+"cI" = (/turf/open/floor/plating/polovich/rotten_stones/sec,/area/maintenance/polovich/forest/rain)
+"cJ" = (/turf/open/floor/plating/polovich/rotten_stones/sec/secc,/area/maintenance/polovich/forest/rain)
+"cK" = (/turf/open/floor/plating/polovich/rotten_stones/sec/eight,/area/maintenance/polovich/chaot)
+"cL" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/bluedirty,/area/maintenance/polovich/forest/rain)
+"cM" = (/obj/structure/flora/tree/evil,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
 
 (1,1,1) = {"
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
@@ -153,37 +240,37 @@ abababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaTababababab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababakakakakaUakakakakab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababakaFayataGatayaFakab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaTaTabababababababakaCaxaxaxaxaxaCakab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaQaeaeaeaeaeaeaeaeaQabababakaRaxaxaxaxaxaRakab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaebbbbafafbbbbaeababababakaCaxaxaxaxaxaCakab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaebbbbacacbbbbaeababababakaxaxaxaxaxaxaxakab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaebbbbaaaaaWaXaeababababakaCaxaxaRaxaxaCakab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaebbbbaZaZbbbbaeababababakakakaEakakakakakab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababadadadadadadadadadadadadadadadadaHaIaIaIaIaIbaakab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababadadadadadadadadadadadadadadadadaHaIaIaIaIaIbcakab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababajagagajabababababaSakaKaLaLaLaLaVaJakab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaPagagaPababababababakakakakakakakakakab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDaDaDaDaDaDaiaiaDaDaDaDaDaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDaBazavauapahahaDaOaoaoaoaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDaNahaAahahahahanaoaoaoaoaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDahaDaDahahahahaDaoaoaqbdaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDahaDaMahahahaMaDaDaDaDaDaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDamaDahahahahahahahahawasaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDalaDaraYahahahahahahahahaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDabaDaUaDaDaDaDaDaDaUaDaDaDababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDaTaDababababaDaTaDababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababacabababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcucvcvabababababababababababababababababababababababababababababababababababababababababchabababababababababababababababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcucucucvababababababcBababababababababababababababababababababababababababababababababababchabababababababababababababababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcwcucucuababababababaoaoabababcFcdcdcFcdabababababababababababababababababababchchababababchabababababababababababababababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababababcdcdcdcdcwcuaoaocucucuaoaoaoaoaochcuchchchcuchctababababababababababcGcGchchchchchchchchchchchchchchchchabababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababcwcwcwcdcdcdchchchaoaoaochcucucuaoaochchchcuchcuchchchchaoaoaoaoababababcGcGcGchchababababababababchababababababababababababababababababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababcdcdcdcdcwababababaoababcdcdcdcdabchcdcdcdcdcdchchababababaoaoababaoaochcGababababababababababababababababababababababababababababababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababaoaoaobZcabocbbYcdcdababababababcvcxcvababababababchabababababchchababababchchchchchchchaoctabababababababababababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababaoaoaoaoaoaobfcdcdcdbhabababababababababababababababchaoabababababaoababababchchababababaoaoababababababababababababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababaoaobfbkcdcdcdcdcdbhbhabababababababababababababababaoaoabababababaochabababchchababababaoaoaoaoababababababababababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababaobfbfbhcdcecdcdcdcdcwabababababababababababababcFcdchababababababaoaoababababchababababababaoaoabababababababababababababababababababababababababababababababaTababababab
+abababababababababababababababababababababababababababababababababababababababababababababbfbhbhbkcdcdcdbfbgbgbhabababababababababababababaocdababababababababaoababababchababababababaochabababababababababababababababababababababababababababakakakakaUakakakakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbhbgbhbfbhbhbobhbgbfabababababababababababababaochababababababababaoababababchababababababchchababababababababababababaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDakaFayataGatayaFakab
+abababababababababababababababababababababababababababababababababababababababababababababbhbgbgbkbfbgbgbkbfbfbfabababababababababababababaoaochchcdcdcdcdchchaoabababcscscscscscscscschcsababababababababababababaDabababababaTaTabababababababakaCaxaxaxaxaxaCakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbgbhbhbhbgbgbibhbfbhbjbjbjbjbjbjabababababababababcdaoaoabaochcdababababababcccccccscscccfchcsababababababababababababaDabaQaeaeaeaeaeaeaeaeaQabababakaRaxaxaxaxaxaRakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbfbgbkbhbfbfbkbhbfbgbjczblczbnbjababababababababababcdcdcdcdcCababababababababababababcccfcscsababababababababababababaDababaebbbbafafbbbbaeababababakaCaxaxaxaxaxaCakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbfbgbfbgbhbobibhbgbgbjbpbLbLbrbjababababababababababababababababababababababababcscscscccfcfcccccccccscsabababababababaDababaebbaTacacaTbbaeababababakaxaxaxaxaxaxaxakab
+abababababababababababababababababababababababababababababababababababababababababababababbjbjbjbjbsbsbjbjbjbjbjbjbLbLbLbLbjababababababababababababababababababababababababcscscscccccscscfcfcccccsabababababababaDababaebbbbaaaaaWaXaeababababakaCaxaxaRaxaxaCakab
+abababababababababababababababababababababababababababababababababababababababababababababbtbubvbwbxbxbwbybzbAbAbjcKbLbLcKbjabababababababababababababababababababababababcfcfcccfcfcccscscfcfcfcfabababababababcraDababaebbbbaZaZbbbbaeababababakakakaEakakakakakab
+abababababababababababababababababababababababababababababababababababababababababababababbqbqbxbxbBbxbxbBbBbBbqbjbjbCbCbDbjbjbjcrbeaJaJbeaJbeaJaJcqaJcqaJcqaJbebeaJbebeaVcAcAcccfcfcgcgcscscsccccababcrcocqaJbmbecyadadadadadadadadadadadadadadadaHaIaIaIaIaIbaakab
+abababababababababababababababababababababababababababababababababababababababababababababbqbEbEbBbBbBbBbBbxbBbFbjbqbqbqbqbjbGbjbebeaJaJaJaJbebeaJcqaJcqaJcqaJbebeaJaJbeaVcAababababcgcgcgabababababababaJaJaJbebecyadadadadadadadadadadadadadadadaHaIaIaIaIaIbcakab
+abababababababababababababababababababababababababababababababababababababababababababababbqbHbIbxbBbxbxbBbxbBbqbJbqbqbqbqbKbLbMbebebebecJababababchchchchababababababaJaVabababababcgcgcsabababababababaJaJababcraDababababajagagajabababababaSakaKaLaLaLaLaIaTakab
+abababababababababababababababababababababababababababababababababababababababababababababbqbNbObqbqbqbqbBbqbBbqbJbBbBbBbBbjbjbjcHcIcIcIcHababababchchchabababababababaJbeabababababababababababababababaJaJabababaDababababaPagagaPababababababakakakakakakakakakab
+abababababababababababababababababababababababababababababababababababababababababababababbqbPbPbqbBbBbBbQbqbQbFbjbBbRbSbTbjabababababababababababchchchabababababababaJaVababababababababababababababcraJaJabababaDaDaDaDaDaDaiaiaDaDaDaDaDaDababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababbqbqbqbUbqbqbUbqbqbqbqbjbVbWbWbXbjabababababababababababchchababababababababaJaVabababababababababababababababcEcEabababaDaBazavauapahahaDaOaoaoaoaDababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjabababababababababababchchababababababababbebeaJcococoaJaJbebeaJcpcpaJaJaJbebecpabababaDaNahaAahahahahanaoaoaoaoaDababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababchchcDababababababababbeaVaVaVaVaVaVaVbebeaVaVaVaVaVbeaVaVaVabababaDahaDaDahahahahaDaoaoaqbdaDababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcmckcjchcDcLabababababababababababababababababababababababababchchabababaDahaDaMahahahaMaDaDaDaDaDaDababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbfckcMcjbfcjcLcLcLababababababababababababababababababababababchchchabababaDamaDahahahahahahahahawasaDaDabababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababckckckciclcjckcnckbfbfchchchchchchchchchchchchchchchchchchchchchchababababaDalaDaraYahahahahahahahahaUaTabababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbgciciciabcjckckckbfcucucucuababcuababcucuababcucucuababcuababcuabababababaDabaDaUaDaDaDaDaDaDaUaDaDaDaDabababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaDabaDaTaDababababaDaTaDababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 "}
