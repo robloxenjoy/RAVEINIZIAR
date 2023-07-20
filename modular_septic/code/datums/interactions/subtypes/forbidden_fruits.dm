@@ -13,7 +13,7 @@
 	button_icon = "heart"
 	var/gaysex_achievement = FALSE
 
-/datum/interaction/forbidden_fruits/proc/allow_interaction(datum/component/interactable/user, datum/component/interactable/target, silent = TRUE, check_cooldown = TRUE)
+/datum/interaction/forbidden_fruits/allow_interaction(datum/component/interactable/user, datum/component/interactable/target, silent = TRUE, check_cooldown = TRUE)
 	. = FALSE
 	if(!CONFIG_GET(flag/use_erp))
 		return FALSE
