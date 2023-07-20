@@ -232,7 +232,7 @@
 	closer.screen_loc = "[screen_start_x]:[screen_pixel_x],[screen_start_y+1]:[screen_pixel_y]"
 
 // No real location
-/datum/component/storage/concrete/organ/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/living/M)
+/datum/component/storage/concrete/organ/can_be_inserted(obj/item/I, stop_messages = FALSE, mob/living/M, params)
 	if(!istype(I) || (I.item_flags & ABSTRACT) || !is_accessible(parent))
 		return FALSE //Not an item
 	if(I == parent)

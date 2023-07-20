@@ -27,8 +27,6 @@
 				return TRUE
 			return FALSE
 		if(ITEM_SLOT_MASK)
-			if(!H.get_bodypart_nostump(check_zone(BODY_ZONE_PRECISE_FACE)))
-				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(ITEM_SLOT_NECK)
 			if(!H.get_bodypart_nostump(check_zone(BODY_ZONE_PRECISE_NECK)))

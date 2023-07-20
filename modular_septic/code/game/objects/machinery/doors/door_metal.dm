@@ -54,8 +54,9 @@
 		playsound(src, doorDeni, 70, FALSE)
 		sound_hint()
 		COOLDOWN_START(src, open_cooldown, open_cooldown_duration)
-		user.visible_message(span_danger("[user] shakes the handle of the [src]."), \
-		span_notice("It's locked!"))
+		if(user)
+			user.visible_message(span_danger("[user] shakes the handle of the [src]."), \
+								span_notice("It's locked!"))
 		return
 	operating = TRUE
 	do_animate("opening")
