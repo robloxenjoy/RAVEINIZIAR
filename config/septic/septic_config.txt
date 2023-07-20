@@ -3,6 +3,9 @@
 ## Enable/disable FoV
 USE_FIELD_OF_VISION
 
+## Whether or not to forcefully disable ERP
+#ENABLE_ERP
+
 ## Whether or not to forcefully disable atmos
 DISABLE_ATMOS
 

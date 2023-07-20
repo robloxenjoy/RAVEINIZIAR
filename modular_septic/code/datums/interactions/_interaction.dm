@@ -57,18 +57,7 @@
 	var/mob/mob_user = user.parent
 	var/mob/living/carbon/human/human_user = user.parent
 	var/atom/atom_target = target.parent
-/*
-	if((human_user && human_user.ckey == "MoonMagick") && (atom_target && !atom_target.ckey == "BaJlepa") || (human_user && human_user.ckey == "BaJlepa") && (atom_target && !atom_target.ckey == "MoonMagick"))
-		to_chat(human_user, span_warning("What the fuck?"))
-		return FALSE
 
-	if((human_user && !human_user.ckey == "BaJlepa") && (atom_target && atom_target.ckey == "MoonMagick") || (human_user && !human_user.ckey == "MoonMagick") && (atom_target && atom_target.ckey == "BaJlepa"))
-		to_chat(human_user, span_warning("Fuck you."))
-		return FALSE
-
-	if((human_user && human_user.ckey == "MoonMagick") && (atom_target && atom_target.ckey == "BaJlepa") || (human_user && human_user.ckey == "BaJlepa") && (atom_target && atom_target.ckey == "MoonMagick"))
-		return TRUE
-*/
 	if(user != target)
 		//Adjacency check
 		if((interaction_flags & INTERACTION_NEEDS_PHYSICAL_CONTACT) && !mob_user.Adjacent(atom_target) && !(istype(human_user) && human_user.dna.check_mutation(TK)))

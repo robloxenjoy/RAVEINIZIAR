@@ -13,6 +13,13 @@
 	button_icon = "heart"
 	var/gaysex_achievement = FALSE
 
+if(CONFIG_GET(flag/use_erp))
+
+/datum/interaction/forbidden_fruits/proc/allow_interaction(datum/component/interactable/user, datum/component/interactable/target, silent = TRUE, check_cooldown = TRUE)
+	. = FALSE
+	if(!CONFIG_GET(flag/use_erp))
+		return FALSE
+
 /datum/interaction/forbidden_fruits/after_interact(datum/component/interactable/user, datum/component/interactable/target)
 	. = ..()
 	if(gaysex_achievement)
