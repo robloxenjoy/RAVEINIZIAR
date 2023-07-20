@@ -1,0 +1,13 @@
+2023-07-20:
+  Nyksia:
+  - bugfix: aliens can no longer clear eggs before the hugger bursts out
+  Timberpoes:
+  - bugfix: Items with dash actions and the Bluespace Prophecy trauma now utilise
+      proper teleportation code, disallowing teleportation to and from teleport restricted
+      areas.
+  axietheaxolotl:
+  - bugfix: CentCom's suit using an old icon, and fixed the gas mask and helmet's
+      icon not showing
+  esainane:
+  - bugfix: TramStation now has a ticket dispenser by the HoP line, replacing one
+      of two very close gas vendors.
