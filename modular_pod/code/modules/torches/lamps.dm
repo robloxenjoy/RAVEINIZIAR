@@ -198,7 +198,6 @@
 
 /obj/item/torch/update_icon()
 	..()
-	overlays = overlays.Cut()
 	if(lit)
 		icon_state = "mtorch1"
 		inhand_icon_state = "torch1"
@@ -207,10 +206,13 @@
 		icon_state = "mtorch0"
 		inhand_icon_state = "torch0"
 		set_light(0,0)
-//		if(self_lighting == 1)
-//			icon_state = "torch0_lighter"
-//		update_appearance()
-//	update_held_icon()
+
+/obj/item/torch/update_icon_state()
+	..()
+	if(lit)
+		inhand_icon_state = "torch1"
+	else
+		inhand_icon_state = "torch0"
 
 /obj/item/torch/proc/light(var/mob/user, var/manually_lit = FALSE)//This doesn't seem to update the icon appropiately, not idea why.
 	lit = TRUE
@@ -252,7 +254,6 @@
 			var/obj/item/torch/C = W
 			C.light()
 			user.visible_message("<span class='notice'>[user] enlights [C] with [src].")
-			C.update_icon()
 			return
 
 	else if(W.get_temperature())
@@ -265,7 +266,6 @@
 			if(C.lit)
 				src.light()
 				user.visible_message("<span class='notice'>[user] enlights [src] with [C].")
-				update_icon()
 				return
 
 /obj/structure/torchwall

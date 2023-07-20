@@ -622,6 +622,7 @@
 	light_range = 4
 	light_power = 1
 	light_color = "#bf915c"
+	obj_flags = NONE
 
 /obj/structure/lampstand/fireholder/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
@@ -632,7 +633,6 @@
 			var/obj/item/torch/T = W
 			if(!T.lit)
 				T.light()
-				T.update_icon()
 			return
 
 /obj/structure/stone_eater
