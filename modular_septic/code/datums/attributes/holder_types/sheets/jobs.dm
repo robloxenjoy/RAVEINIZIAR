@@ -1292,9 +1292,10 @@
 		SKILL_LOCKPICKING = -2,
 		SKILL_ACROBATICS = 4,
 	)
+*/
 
-// akt al-chemist
-/datum/attribute_holder/sheet/job/aktalchemist
+// al-chemist
+/datum/attribute_holder/sheet/job/alchemist
 	attribute_variance = list(
 		STAT_STRENGTH = list(-1, 3),
 		STAT_ENDURANCE = list(-1, 3),
@@ -1332,7 +1333,7 @@
 		SKILL_LOCKPICKING = -2,
 		SKILL_ACROBATICS = 4,
 	)
-
+/*
 //aktassertor
 /datum/attribute_holder/sheet/job/aktassertor
 	attribute_variance = list(

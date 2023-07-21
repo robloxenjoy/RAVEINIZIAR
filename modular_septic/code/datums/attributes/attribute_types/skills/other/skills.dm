@@ -115,7 +115,7 @@
 
 /datum/attribute/skill/alchemistry
 	name = "Al-Chemistry"
-	desc = "Capability at handling al-chemicals and al-chemical reactions."
+	desc = "Capability at handling chemicals and al-chemical reactions."
 	icon_state = "alchemy"
 	category = SKILL_CATEGORY_RESEARCH
 	governing_attribute = STAT_INTELLIGENCE

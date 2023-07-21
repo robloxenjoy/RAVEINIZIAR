@@ -84,7 +84,11 @@
 
 /mob/living/simple_animal/pet/podozl/shoebill/Initialize(mapload)
 	. = ..()
+	can_buckle = TRUE
+	buckle_lying = 0
+	AddElement(/datum/element/ridable, /datum/component/riding/creature/carp)
 	AddElement(/datum/element/pet_bonus, "crows happily!")
+
 
 /mob/living/simple_animal/pet/podozl/frog
 	name = "Brown Frog"
