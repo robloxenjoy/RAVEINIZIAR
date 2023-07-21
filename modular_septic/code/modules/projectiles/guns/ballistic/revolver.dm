@@ -9,7 +9,6 @@
 	bolt_wording = "hammer"
 	cylinder_wording = "cylinder"
 	safety_flags = NONE
-	semi_auto = TRUE
 	initial_caliber = CALIBER_357
 	alternative_caliber = CALIBER_38
 	alternative_ammo_misfires = FALSE
@@ -163,6 +162,8 @@
 	inhand_icon_state = "one"
 	base_icon_state = "paralyzer"
 	uncocked_icon_state = FALSE
+	cylinder_shows_open = FALSE
+	cylinder_shows_ammo_count = FALSE
 	fire_sound = list('modular_septic/sound/weapons/guns/revolver/paralyzer_fire (3).wav', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (2).wav', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (1).wav')
 	safety_on_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyon.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyoff.ogg'
@@ -186,3 +187,4 @@
 	safety_flags = GUN_SAFETY_HAS_SAFETY | GUN_SAFETY_ENABLED
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pulser
 	carry_weight = 1 KILOGRAMS
+	can_spin = FALSE
