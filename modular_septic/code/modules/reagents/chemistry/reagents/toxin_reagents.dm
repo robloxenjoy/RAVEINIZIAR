@@ -22,11 +22,11 @@
 
 /datum/reagent/toxin/piranha_solution/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()
-	M.take_bodypart_damage(0, 2.5 * delta_time)
+	M.take_bodypart_damage(burn = 5 * REM* delta_time)
 
 /datum/reagent/toxin/piranha_solution/on_mob_dead(mob/living/carbon/C, delta_time)
 	. = ..()
-	C.take_bodypart_damage(0, 2.5 * delta_time)
+	M.take_bodypart_damage(burn = 5 * REM* delta_time)
 
 //armor oil real
 /datum/reagent/toxin/armor_oil
