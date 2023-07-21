@@ -46,7 +46,6 @@
 	name = "Paralyzer (pulser) rounds"
 	icon_state = "pulser-1"
 	base_icon_state = "pulser"
-//	world_icon_state = "sb-casing"
 	caliber = CALIBER_PULSER
 	ammo_type = /obj/item/ammo_casing/pulser
 	max_ammo = 7
