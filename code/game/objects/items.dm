@@ -89,7 +89,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/rustbegin = 3500
 
 	//dip items in liquid
-//   var/list/poisoned = list()
+  	var/list/poisoned = list()
+	//AXE?
 	var/isAxe = FALSE
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
@@ -464,7 +465,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		rustbegin -= delta_time
 		if(HAS_BLOOD_DNA(src))
 			rustbegin -= delta_time * 3
-/*
+
 /obj/item/reagent_containers/attackby(obj/item/W, mob/user)
     if(!ishuman(user))
         return ..()
@@ -482,7 +483,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
                 reagents?.remove_reagent(R.type, 1)
                 W.poisoned += list(list(R.type, 1))
             user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
-*/
+
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
 	ui_interact(user)

@@ -866,10 +866,10 @@
 			if(!reaction.required_reagents)//Don't bring in empty ones
 				continue
 			var/list/cached_required_reagents = reaction.required_reagents
-			var/total_required_reagents = cached_required_reagents.len
+			var/total_required_reagents = LAZYLEN(cached_required_reagents)
 			var/total_matching_reagents = 0
 			var/list/cached_required_catalysts = reaction.required_catalysts
-			var/total_required_catalysts = length(cached_required_catalysts)
+			var/total_required_catalysts = LAZYLEN(cached_required_catalysts)
 			var/total_matching_catalysts= 0
 			var/matching_container = FALSE
 			var/matching_other = FALSE

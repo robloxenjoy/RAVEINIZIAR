@@ -26,10 +26,29 @@
 // Burping
 /datum/emote/living/burp/get_sound(mob/living/user)
 	if(ishuman(user))
+		var/turf/my_turf = get_turf(user)
+		my_turf.pollute_turf(/datum/pollutant/vomit, 5)
 		if(user.gender != FEMALE)
 			return "modular_septic/sound/emotes/burp_male1.ogg"
 		else
 			return "modular_septic/sound/emotes/burp_female1.ogg"
+	else
+		return ..()
+
+// Farting
+/datum/emote/living/fart
+	key = "fart"
+	key_third_person = "farts"
+	message = "makes a fart noise."
+	emote_type = EMOTE_AUDIBLE
+	muzzle_ignore = TRUE
+	hands_use_check = FALSE
+
+/datum/emote/living/fart/get_sound(mob/living/user)
+	if(ishuman(user))
+		var/turf/my_turf = get_turf(user)
+		my_turf.pollute_turf(/datum/pollutant/shit, 5)
+		return "modular_pod/sound/voice/fart.ogg"
 	else
 		return ..()
 

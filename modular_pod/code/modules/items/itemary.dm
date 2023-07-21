@@ -459,9 +459,9 @@
 	attack_fatigue_cost = 15
 	attack_delay = 20
 	armor_damage_modifier = 3
-	edge_protection_penetration = 5
-	subtractible_armour_penetration = 5
-	armour_penetration = 10
+	edge_protection_penetration = 10
+	subtractible_armour_penetration = 510
+//	armour_penetration = 10
 	parrying_flags = BLOCK_FLAG_UNARMED
 	havedurability = TRUE
 	durability = 200

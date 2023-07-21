@@ -150,3 +150,38 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/poppy
 	carry_weight = 3 KILOGRAMS
 	semi_auto = FALSE
+
+// P A R A L Y Z E R
+/obj/item/gun/ballistic/revolver/remis/paralyzer
+	name = "\improper Paralyzer V350"
+	desc = "Catch up with the bastard, or run away from him... The choice is yours."
+	icon = 'modular_septic/icons/obj/items/guns/energy.dmi'
+	icon_state = "paralyzer"
+	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_righthand.dmi'
+	inhand_icon_state = "one"
+	base_icon_state = "paralyzer"
+	uncocked_icon_state = FALSE
+	fire_sound = list('modular_septic/sound/weapons/guns/revolver/paralyzer_fire (3).wav', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (2).wav', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (1).wav')
+	safety_on_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyon.ogg'
+	safety_off_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyoff.ogg'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/gado_in.wav'
+	// open cylinder sound
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/gado_out.wav'
+	// hammer sound
+	rack_sound = 'modular_septic/sound/weapons/guns/revolver/gado_hammer.wav'
+	gunshot_animation_information = list(
+		"pixel_x" = 13, \
+		"pixel_y" = 3, \
+	)
+	recoil_animation_information = list(
+		"recoil_angle_upper" = -15,
+		"recoil_angle_lower" = -30, \
+	)
+	client_recoil_animation_information = list(
+		"strength" = 0.3,
+		"duration" = 2.5,
+	)
+	safety_flags = GUN_SAFETY_HAS_SAFETY | GUN_SAFETY_ENABLED | GUN_SAFETY_OVERLAY_ENABLED | GUN_SAFETY_OVERLAY_DISABLED
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pulser
+	carry_weight = 1 KILOGRAMS

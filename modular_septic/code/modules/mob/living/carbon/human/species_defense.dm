@@ -276,14 +276,16 @@
 					subarmor_flags = subarmor_flags)
 		victim.damage_armor(damage+weapon.armor_damage_modifier, MELEE, weapon.damtype, sharpness, def_zone)
 		post_hit_effects(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
-/*
-		if(edge_protection <= 0)
-			if(weapon.poisoned.len)
-				for(var/list/L in weapon.poisoned)
-					victim.reagents.add_reagent(L.type, 1)
-//					reagents.trans_to(victim, 1, methods = INJECT)
-				weapon.poisoned = list()
-*/
+
+		var/edgee_protection = 0
+		var/resultt = 0
+		edgee_protection = victim.get_edge_protection(affected)
+		resultt = (edge_protection - weapon.edge_protection_penetration)
+		if(weapon.poisoned.len)
+			for(var/list/L in weapon.poisoned)
+				victim.reagents?.add_reagent(L.type, 1)
+//			weapon.reagents.trans_to(victim, 1, methods = INJECT)
+
 	user.sound_hint()
 	victim.sound_hint()
 	victim.send_item_attack_message(weapon, user, hit_area, affecting)
@@ -960,6 +962,64 @@
 			victim.Stumble(1 SECONDS)
 	return TRUE
 
+/datum/species/proc/goodhits(mob/living/carbon/human/victim, \
+							mob/living/carbon/human/user, \
+							obj/item/bodypart/affected, \
+							obj/item/weapon, \
+							damage = 0, \
+							damage_flag = MELEE, \
+							damage_type = BRUTE, \
+							sharpness = NONE,
+							def_zone = BODY_ZONE_CHEST, \
+							intended_zone = BODY_ZONE_CHEST, \
+							list/modifiers)
+	var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
+	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) > DICE_FAILURE)
+		switch(affected)
+			if(BODY_ZONE_PRECISE_GROIN)
+				if(getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
+					var/protection = 0
+					var/resultt = 0
+					if(!istype(weapon))
+						protection = victim.getarmor(affected, MELEE)
+						resultt = (protection - damage)
+					else
+						protection = victim.getsubarmor(affected, CRUSHING)
+						resultt = (protection - weapon.armour_penetration)
+						if(resultt <= 0)
+							Stumble(10 SECONDS)
+							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+							if(diceroll == DICE_FAILURE)
+								victim.Stun(1 SECONDS)
+							if(diceroll == DICE_CRIT_FAILURE)
+								victim.Stun(2 SECONDS)
+							victim.visible_message(span_pinkdang("[victim] is gelding blowed by [user]!"), \
+												span_pinkdang("I am was gelding blowed by [user]!"), \
+												span_hear("I hear the sound of flesh."))
+							playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
+			if(BODY_ZONE_PRECISE_VITALS)
+				var/protection = 0
+				var/resultt = 0
+				if(!istype(weapon))
+					protection = victim.getarmor(affected, MELEE)
+					resultt = (protection - damage)
+				else
+					protection = victim.getsubarmor(affected, CRUSHING)
+					resultt = (protection - weapon.armour_penetration)
+					if(resultt <= 0)
+							victim.emote("burp")
+						var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+						if(diceroll == DICE_FAILURE)
+							victim.emote("fart")
+						if(diceroll == DICE_CRIT_FAILURE)
+							victim.emote("fart")
+							victim.Stun(1 SECONDS)
+						victim.visible_message(span_pinkdang("[victim] is hooey-knocked out by [user]!"), \
+											span_pinkdang("I am was hooey-knocked out by [user]!"), \
+											span_hear("I hear the sound of flesh."))
+						playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
+	return TRUE
+
 /*
 /datum/species/proc/staminy(mob/living/carbon/human/victim, \
 							mob/living/carbon/human/user, \
@@ -999,7 +1059,7 @@
 	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
 	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL)
 	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
-		if(affected.get_incision(FALSE))
+		if(!affected.get_incision(TRUE))
 			var/edge_protection = 0
 			var/resultt = 0
 			edge_protection = victim.get_edge_protection(affected)

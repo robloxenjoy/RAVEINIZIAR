@@ -18,3 +18,10 @@
 	ammo_type = /obj/item/ammo_casing/a500
 	caliber = CALIBER_500
 	max_ammo = 6
+
+
+/obj/item/ammo_box/magazine/internal/cylinder/pulser
+	name = "pulser cylinder"
+	ammo_type = /obj/item/ammo_casing/pulser
+	caliber = CALIBER_PULSER
+	max_ammo = 1

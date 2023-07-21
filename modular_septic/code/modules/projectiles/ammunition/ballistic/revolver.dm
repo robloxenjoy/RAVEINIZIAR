@@ -38,4 +38,13 @@
 	bounce_volume = 35
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/a500
 
-
+/obj/item/ammo_casing/pulser
+	name = "paralyzer (pulser) bullet casing"
+	desc = "A .paralyzer (pulser) bullet casing."
+	icon_state = "pulser"
+	base_icon_state = "pulser"
+	caliber = CALIBER_PULSER
+	projectile_type = /obj/projectile/bullet/pulser
+	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.wav')
+	bounce_volume = 35
+	stack_type = /obj/item/ammo_box/magazine/ammo_stack/pulser

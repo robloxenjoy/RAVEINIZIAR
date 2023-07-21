@@ -75,18 +75,20 @@
 			flash_pain_major()
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] nauseated!"))
-		if(BODY_ZONE_CHEST)
+		if(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
 			flash_pain_major()
 			Daze(3 SECONDS)
 			blur_eyes(3)
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] impulsed!"))
+/*
 		if(BODY_ZONE_PRECISE_GROIN)
 			if(getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
 				flash_pain_major()
 				Stumble(10 SECONDS)
 				if(wound_messages)
 					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] gelding blowed!"))
+*/
 /*
 	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_SUCCESS) == DICE_SUCCESS)
 		KnockToFloor(5 SECONDS)
