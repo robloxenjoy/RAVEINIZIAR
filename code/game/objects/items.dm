@@ -89,7 +89,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/rustbegin = 3500
 
 	//dip items in liquid
-  	var/list/poisoned = list()
+	var/list/poisoned = list()
 	//AXE?
 	var/isAxe = FALSE
 

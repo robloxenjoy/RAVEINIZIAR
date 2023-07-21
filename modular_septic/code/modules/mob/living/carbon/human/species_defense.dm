@@ -279,7 +279,7 @@
 
 		var/edgee_protection = 0
 		var/resultt = 0
-		edgee_protection = victim.get_edge_protection(affected)
+		edgee_protection = victim.get_edge_protection(hit_area)
 		resultt = (edge_protection - weapon.edge_protection_penetration)
 		if(weapon.poisoned.len)
 			for(var/list/L in weapon.poisoned)
@@ -973,11 +973,10 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
 	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) > DICE_FAILURE)
 		switch(affected)
 			if(BODY_ZONE_PRECISE_GROIN)
-				if(getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
+				if(victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
 					var/protection = 0
 					var/resultt = 0
 					if(!istype(weapon))
@@ -987,8 +986,8 @@
 						protection = victim.getsubarmor(affected, CRUSHING)
 						resultt = (protection - weapon.armour_penetration)
 						if(resultt <= 0)
-							Stumble(10 SECONDS)
-							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+							victim.Stumble(10 SECONDS)
+							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 							if(diceroll == DICE_FAILURE)
 								victim.Stun(1 SECONDS)
 							if(diceroll == DICE_CRIT_FAILURE)
@@ -1007,8 +1006,8 @@
 					protection = victim.getsubarmor(affected, CRUSHING)
 					resultt = (protection - weapon.armour_penetration)
 					if(resultt <= 0)
-							victim.emote("burp")
-						var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+						victim.emote("burp")
+						var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 						if(diceroll == DICE_FAILURE)
 							victim.emote("fart")
 						if(diceroll == DICE_CRIT_FAILURE)

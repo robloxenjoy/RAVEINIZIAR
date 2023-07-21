@@ -28,6 +28,7 @@
 	if(ishuman(user))
 		var/turf/my_turf = get_turf(user)
 		my_turf.pollute_turf(/datum/pollutant/vomit, 5)
+		user.adjustToxLoss(-0.5, TRUE, TRUE)
 		if(user.gender != FEMALE)
 			return "modular_septic/sound/emotes/burp_male1.ogg"
 		else
@@ -48,6 +49,7 @@
 	if(ishuman(user))
 		var/turf/my_turf = get_turf(user)
 		my_turf.pollute_turf(/datum/pollutant/shit, 5)
+		user.adjust_nutrition(-2)
 		return "modular_pod/sound/voice/fart.ogg"
 	else
 		return ..()
