@@ -88,10 +88,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/canrust = FALSE
 	var/rustbegin = 3500
 
-	//dip items in liquid
-	var/list/poisoned = list()
 	//AXE?
 	var/isAxe = FALSE
+
+	var/max_reagents = 150
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
 	var/w_class = WEIGHT_CLASS_NORMAL
@@ -476,12 +476,12 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
     if((W.get_sharpness() & SHARP_IMPALING) || (W.get_sharpness() & SHARP_POINTY) || (W.get_sharpness() & SHARP_EDGED))
         if(reagents.total_volume >= reagents?.reagent_list.len)
             for(var/datum/reagent/R in reagents?.reagent_list)
-                if(R.volume <= 1)
+                if(R.volume <= 15)
                     reagents?.remove_reagent(R.type, volume)
-                    W.poisoned += list(list(R.type, volume))
-                    continue
-                reagents?.remove_reagent(R.type, 1)
-                W.poisoned += list(list(R.type, 1))
+                    W.reagents?.add_reagent(R.type, volume)
+				else if(R.volume >= 20)
+                	reagents?.remove_reagent(R.type, 5)
+                	W.reagents?.add_reagent(R.type, 5)
             user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
 
 /obj/item/interact(mob/user)

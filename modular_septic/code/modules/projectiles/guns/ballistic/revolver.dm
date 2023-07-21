@@ -183,6 +183,6 @@
 		"strength" = 0.3,
 		"duration" = 2.5,
 	)
-	safety_flags = GUN_SAFETY_HAS_SAFETY | GUN_SAFETY_ENABLED | GUN_SAFETY_OVERLAY_ENABLED | GUN_SAFETY_OVERLAY_DISABLED
+	safety_flags = GUN_SAFETY_HAS_SAFETY | GUN_SAFETY_ENABLED
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pulser
 	carry_weight = 1 KILOGRAMS

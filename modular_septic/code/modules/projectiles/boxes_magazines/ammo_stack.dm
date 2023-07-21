@@ -12,15 +12,15 @@
 	max_ammo = 12
 	carry_weight = 0
 	/// World icon for this stack
-	var/world_icon = 'modular_septic/icons/obj/items/ammo/casings_world.dmi'
+//	var/world_icon = 'modular_septic/icons/obj/items/ammo/casings_world.dmi'
 	/// World icon state
-	var/world_icon_state = "s-casing"
-
+//	var/world_icon_state = "s-casing"
+/*
 /obj/item/ammo_box/magazine/ammo_stack/Initialize(mapload)
 	. = ..()
 	if(world_icon)
 		AddElement(/datum/element/world_icon, .proc/update_icon_world)
-
+*/
 /obj/item/ammo_box/magazine/ammo_stack/update_icon(updates)
 	icon = initial(icon)
 	cut_overlays()
@@ -57,7 +57,7 @@
 	if((ammo_count(TRUE) <= 0) && !QDELETED(src))
 		qdel(src)
 		return TRUE
-
+/*
 /obj/item/ammo_box/magazine/ammo_stack/proc/update_icon_world()
 	cut_overlays()
 	icon_state = ""
@@ -68,7 +68,7 @@
 		bullet.transform = bullet.transform.Turn(rand(0, 360))
 		add_overlay(bullet)
 	return UPDATE_ICON_STATE | UPDATE_OVERLAYS
-
+*/
 // ammo casing attackby code here
 /obj/item/ammo_casing
 	/// What this casing can be stacked into

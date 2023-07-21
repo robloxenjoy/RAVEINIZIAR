@@ -190,6 +190,11 @@
 /obj/item/torch/Initialize()
 	..()
 
+	if(lit)
+		inhand_icon_state = "torch1"
+	else
+		inhand_icon_state = "torch0"
+
 	if(prob(1)) //Needs playtesting. This seems a little high.
 		if(istype(src.loc, /obj/structure/torchwall))
 			return //Please don't put out torches that are on the walls.
@@ -206,13 +211,6 @@
 		icon_state = "mtorch0"
 		inhand_icon_state = "torch0"
 		set_light(0,0)
-
-/obj/item/torch/update_icon_state()
-	..()
-	if(lit)
-		inhand_icon_state = "torch1"
-	else
-		inhand_icon_state = "torch0"
 
 /obj/item/torch/proc/light(var/mob/user, var/manually_lit = FALSE)//This doesn't seem to update the icon appropiately, not idea why.
 	lit = TRUE
@@ -260,11 +258,12 @@
 		user.visible_message("<span class='notice'>[user] enlights [src].")
 		light()
 
-	else if(!src.lit)
+	else if(!lit)
 		if(istype(W, /obj/item/torch))
 			var/obj/item/torch/C = W
 			if(C.lit)
-				src.light()
+				light()
+				update_icon()
 				user.visible_message("<span class='notice'>[user] enlights [src] with [C].")
 				return
 

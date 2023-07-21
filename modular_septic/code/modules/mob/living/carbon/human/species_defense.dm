@@ -276,8 +276,8 @@
 					subarmor_flags = subarmor_flags)
 		victim.damage_armor(damage+weapon.armor_damage_modifier, MELEE, weapon.damtype, sharpness, def_zone)
 		post_hit_effects(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
-
-		if(weapon.poisoned.len)
+/*
+		if(weapon.reagents.total_volume > 0)
 			var/edgee_protection = 0
 			var/resultt = 0
 			edgee_protection = victim.get_edge_protection(hit_area)
@@ -286,6 +286,22 @@
 				for(var/list/L in weapon.poisoned)
 					victim.reagents?.add_reagent(L.type, 1)
 //			weapon.reagents.trans_to(victim, 1, methods = INJECT)
+*/
+
+		if(weapon.reagents)
+			if(weapon.reagents.total_volume > 0)
+				var/edgee_protection = 0
+				var/resultt = 0
+				edgee_protection = victim.get_edge_protection(hit_area)
+				resultt = (edgee_protection - weapon.edge_protection_penetration)
+				if(resultt <= 0)
+        		    for(var/datum/reagent/R in weapon.reagents?.reagent_list)
+             		   if(R.volume <= 10)
+					   		weapon.reagents?.trans_to(victim, 1, methods = INJECT)
+						else if(R.volume >= 20)
+					   		weapon.reagents?.trans_to(victim, 5, methods = INJECT)
+						else if(R.volume >= 50)
+					   		weapon.reagents?.trans_to(victim, 10, methods = INJECT)
 
 	user.sound_hint()
 	victim.sound_hint()
@@ -975,7 +991,7 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) > DICE_FAILURE)
+	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 		switch(affected)
 			if(BODY_ZONE_PRECISE_GROIN)
 				if(victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
