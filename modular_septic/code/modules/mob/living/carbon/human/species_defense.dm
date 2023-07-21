@@ -277,13 +277,14 @@
 		victim.damage_armor(damage+weapon.armor_damage_modifier, MELEE, weapon.damtype, sharpness, def_zone)
 		post_hit_effects(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
 
-		var/edgee_protection = 0
-		var/resultt = 0
-		edgee_protection = victim.get_edge_protection(hit_area)
-		resultt = (edge_protection - weapon.edge_protection_penetration)
 		if(weapon.poisoned.len)
-			for(var/list/L in weapon.poisoned)
-				victim.reagents?.add_reagent(L.type, 1)
+			var/edgee_protection = 0
+			var/resultt = 0
+			edgee_protection = victim.get_edge_protection(hit_area)
+			resultt = (edgee_protection - weapon.edge_protection_penetration)
+			if(resultt <= 0)
+				for(var/list/L in weapon.poisoned)
+					victim.reagents?.add_reagent(L.type, 1)
 //			weapon.reagents.trans_to(victim, 1, methods = INJECT)
 
 	user.sound_hint()
@@ -894,6 +895,7 @@
 //	staminy(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+	goodhits(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	return TRUE
 
 /datum/species/proc/stunning(mob/living/carbon/human/victim, \
