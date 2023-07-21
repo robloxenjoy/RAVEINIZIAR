@@ -865,7 +865,7 @@
 									intended_zone = BODY_ZONE_CHEST, \
 									list/modifiers)
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
-	if(istype(weapon)
+	if(istype(weapon))
 		if(weapon.reagents)
 			if(weapon.reagents.total_volume > 0)
 				var/edgee_protection = 0
@@ -874,14 +874,13 @@
 				resultt = (edgee_protection - weapon.edge_protection_penetration)
 				if(resultt <= 0)
 					for(var/datum/reagent/R as anything in weapon.reagents?.reagent_list)
-						if(R.total_volume <= 0)
+						if(R.volume <= 0)
 							return FALSE
-						if(R.total_volume <= 10)
-							R.trans_to(victim, 1, methods = INJECT)
-						else if(R.total_volume >= 20)
-							R.trans_to(victim, 5, methods = INJECT)
-						else if(R.total_volume >= 50)
-							R.trans_to(victim, 10, methods = INJECT)
+						else if(R.volume > 0)
+//							weapon.reagents.trans_to(victim, 10, methods = INJECT)
+							weapon.reagents?.remove_reagent(R.type, 5)
+							victim.reagents?.add_reagent(R.type, 5)
+
 	if(!sharpness)
 		if(victim.body_position != LYING_DOWN)
 			var/knockback_tiles = 0
