@@ -288,21 +288,6 @@
 //			weapon.reagents.trans_to(victim, 1, methods = INJECT)
 */
 
-		if(weapon.reagents)
-			if(weapon.reagents.total_volume > 0)
-				var/edgee_protection = 0
-				var/resultt = 0
-				edgee_protection = victim.get_edge_protection(hit_area)
-				resultt = (edgee_protection - weapon.edge_protection_penetration)
-				if(resultt <= 0)
-					for(var/datum/reagent/R in weapon.reagents?.reagent_list)
-						if(R.volume <= 10)
-							weapon.reagents?.trans_to(victim, 1, methods = INJECT)
-						else if(R.volume >= 20)
-							weapon.reagents?.trans_to(victim, 5, methods = INJECT)
-						else if(R.volume >= 50)
-							weapon.reagents?.trans_to(victim, 10, methods = INJECT)
-
 	user.sound_hint()
 	victim.sound_hint()
 	victim.send_item_attack_message(weapon, user, hit_area, affecting)
@@ -747,21 +732,22 @@
 							if(target != user)
 								var/empty_indexes = target.get_empty_held_indexes()
 								if(length(empty_indexes) >= 2)
-									var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
-									if(dicerollll >= DICE_SUCCESS)
-										target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
-													span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
-													span_hear("I hear blocking!"), \
-													COMBAT_MESSAGE_RANGE, \
-													user)
-									to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
-									target.changeNext_move(CLICK_CD_GRABBING)
-									target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
-									target.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)
-									target.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
-									target.adjustFatigueLoss(5)
-									playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 70, TRUE)
-									return FALSE
+									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL))
+										var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
+										if(dicerollll >= DICE_SUCCESS)
+											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
+														span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
+														span_hear("I hear blocking!"), \
+														COMBAT_MESSAGE_RANGE, \
+														user)
+										to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
+										target.changeNext_move(CLICK_CD_GRABBING)
+										target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
+										target.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)
+										target.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
+										target.adjustFatigueLoss(5)
+										playsound(target.loc, 'modular_pod/sound/eff/punch 2.wav', 70, TRUE)
+										return FALSE
 
 	target.lastattacker = user.real_name
 	target.lastattackerckey = user.ckey
@@ -879,6 +865,20 @@
 									intended_zone = BODY_ZONE_CHEST, \
 									list/modifiers)
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
+	if(weapon.reagents)
+		if(weapon.reagents.total_volume > 0)
+			var/edgee_protection = 0
+			var/resultt = 0
+			edgee_protection = victim.get_edge_protection(hit_area)
+			resultt = (edgee_protection - weapon.edge_protection_penetration)
+			if(resultt <= 0)
+				for(var/datum/reagent/R in weapon.reagents?.reagent_list)
+					if(R.volume <= 10)
+						weapon.reagents?.trans_to(victim, 1, methods = INJECT)
+					else if(R.volume >= 20)
+						weapon.reagents?.trans_to(victim, 5, methods = INJECT)
+					else if(R.volume >= 50)
+						weapon.reagents?.trans_to(victim, 10, methods = INJECT)
 	if(!sharpness)
 		if(victim.body_position != LYING_DOWN)
 			var/knockback_tiles = 0

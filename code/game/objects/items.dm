@@ -474,7 +474,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(istype(src,/obj/item/reagent_containers/pill))
 		return ..()
 	if((W.get_sharpness() & SHARP_IMPALING) || (W.get_sharpness() & SHARP_POINTY) || (W.get_sharpness() & SHARP_EDGED))
-		if(reagents.total_volume >= reagents?.reagent_list.len)
+		if(reagents.total_volume > 0)
 			for(var/datum/reagent/R in reagents?.reagent_list)
 				if(R.volume <= 15)
 					reagents?.remove_reagent(R.type, volume)
@@ -482,6 +482,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 				else if(R.volume >= 20)
 					reagents?.remove_reagent(R.type, 5)
 					W.reagents?.add_reagent(R.type, 5)
+				else if(R.volume <= 0)
+					to_chat(user, span_notice("Here is no more reagents!"))		
 			user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
 
 /obj/item/interact(mob/user)
