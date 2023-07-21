@@ -450,7 +450,7 @@
 	neck = /obj/item/clothing/neck/noble_cloak
 	r_pocket = /obj/item/keycard/akt/controller
 	shoes = /obj/item/clothing/shoes/barhatki
-
+*/
 /datum/job/aktalchemist
 	title = "Akt Al-Chemist"
 	department_head = list("Head of Personnel")
@@ -465,7 +465,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_OUTER
 	departments_list = list(
-		/datum/job_department/service,
+		/datum/job_department/science,
 		)
 
 	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
@@ -478,7 +478,7 @@
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/mystical
 	r_pocket = /obj/item/keycard/akt/alchem
 	shoes = /obj/item/clothing/shoes/frogshoes
-
+/*
 /datum/job/evilwarlock
 	title = "Evil Warlock"
 	department_head = list("Head of Personnel")
