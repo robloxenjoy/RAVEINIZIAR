@@ -9,11 +9,11 @@
 "ai" = (/obj/machinery/door/metal_door/north{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aj" = (/obj/structure/fluff/statueiron/seond,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "ak" = (/turf/closed/wall/nocling,/area/maintenance/polovich/forest/rain)
-"al" = (/obj/structure/toilet{dir = 1},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"al" = (/obj/structure/toilet{dir = 1},/obj/item/ammo_box/magazine/ammo_stack/pulser/loaded,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "am" = (/obj/machinery/door/metal_door/wood_door/north{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "an" = (/obj/machinery/door/metal_door/west{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/steelishh,/area/maintenance/polovich/forest/rain)
 "ao" = (/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
-"ap" = (/obj/structure/closet/cabinet,/obj/item/clothing/head/aphexcap,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"ap" = (/obj/structure/closet/cabinet,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aq" = (/turf/open/floor/plating/polovich/slushyy,/area/maintenance/polovich/forest/rain)
 "ar" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "as" = (/obj/structure/closet/secure_closet/freezer/gulag_fridge{dir = 2},/turf/open/floor/plating/polovich/stoneekas,/area/maintenance/polovich/forest/rain)
@@ -25,7 +25,7 @@
 "ay" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest/rain)
 "az" = (/obj/structure/bed,/obj/effect/landmark/start/slavekeeper,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aA" = (/obj/machinery/door/metal_door/wood_door/west{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
-"aB" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "slavekeeper"},/obj/item/melee/bita/macecircle,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"aB" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "slavekeeper"},/obj/item/melee/bita/macecircle,/obj/item/gun/ballistic/revolver/remis/paralyzer,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aC" = (/obj/structure/bed,/obj/effect/landmark/start/manhunter,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
 "aD" = (/turf/closed/wall/r_wall/alt/nocling,/area/maintenance/polovich/forest/rain)
 "aE" = (/obj/machinery/door/metal_door/south{id_tag = "manhunter"},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
@@ -48,7 +48,7 @@
 "aV" = (/turf/open/floor/plating/polovich/rockydarevil,/area/maintenance/polovich/forest/rain)
 "aW" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest/rain)
 "aX" = (/obj/machinery/door/poddoor/shutters/window{id = "mine"},/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest/rain)
-"aY" = (/obj/structure/closet/crate/wooden,/obj/item/assembly/control{id = "mine"},/obj/item/keycard/akt/mine,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
+"aY" = (/obj/structure/closet/crate/wooden,/obj/item/keycard/akt/mine,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest/rain)
 "aZ" = (/obj/machinery/door/keycard/denominator/podozl/akt/mine,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest/rain)
 "ba" = (/obj/structure/stone_eater,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest/rain)
 "bb" = (/turf/closed/wall/darkrock/nocling,/area/maintenance/polovich/forest/rain)
@@ -78,14 +78,14 @@
 "bz" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
 "bA" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "bB" = (/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
-"bC" = (/obj/machinery/door/metal_door/south,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bC" = (/obj/machinery/door/metal_door/south{key_worthy = 0},/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "bD" = (/turf/open/floor/low_wall/window,/area/maintenance/polovich/chaot)
 "bE" = (/obj/structure/chair/wood,/obj/effect/landmark/start/chaot,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
 "bF" = (/obj/machinery/light/dim/directional/east,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "bG" = (/obj/machinery/light/small/red/directional/north,/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
 "bH" = (/obj/structure/table/reinforced,/obj/item/food/donut/chaos,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
 "bI" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/beer,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
-"bJ" = (/obj/machinery/door/metal_door/west,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bJ" = (/obj/machinery/door/metal_door/west{key_worthy = 0},/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "bK" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 8},/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
 "bL" = (/turf/open/floor/plating/polovich/rotten_stones/sec/sev,/area/maintenance/polovich/chaot)
 "bM" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 4},/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
@@ -141,6 +141,11 @@
 "cK" = (/turf/open/floor/plating/polovich/rotten_stones/sec/eight,/area/maintenance/polovich/chaot)
 "cL" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/bluedirty,/area/maintenance/polovich/forest/rain)
 "cM" = (/obj/structure/flora/tree/evil,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
+"cN" = (/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
+"cO" = (/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
+"cP" = (/obj/structure/flora/tree/evil,/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
+"cQ" = (/obj/structure/flora/tree/evil/long,/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
+"cR" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/rifle/boltaction/remis/federson,/turf/open/floor/plating/polovich/greengryaz/norandomgen,/area/maintenance/polovich/forest/rain)
 
 (1,1,1) = {"
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
@@ -245,17 +250,17 @@ abababababababababababababababababababababababababababababababababababababababab
 ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcucucucvababababababcBababababababababababababababababababababababababababababababababababchabababababababababababababababababababababababab
 ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababcwcucucuababababababaoaoabababcFcdcdcFcdabababababababababababababababababababchchababababchabababababababababababababababababababababababab
 ababababababababababababababababababababababababababababababababababababababababababababababababababababababababcdcdcdcdcwcuaoaocucucuaoaoaoaoaochcuchchchcuchctababababababababababcGcGchchchchchchchchchchchchchchchchabababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababababababababababcwcwcwcdcdcdchchchaoaoaochcucucuaoaochchchcuchcuchchchchaoaoaoaoababababcGcGcGchchababababababababchababababababababababababababababababababababababababab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababcdcdcdcdcwababababaoababcdcdcdcdabchcdcdcdcdcdchchababababaoaoababaoaochcGababababababababababababababababababababababababababababababababababababababab
-ababababababababababababababababababababababababababababababababababababababababababababababaoaoaobZcabocbbYcdcdababababababcvcxcvababababababchabababababchchababababchchchchchchchaoctabababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababaoaoaoaoaoaobfcdcdcdbhabababababababababababababababchaoabababababaoababababchchababababaoaoababababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababaoaobfbkcdcdcdcdcdbhbhabababababababababababababababaoaoabababababaochabababchchababababaoaoaoaoababababababababababababababababababababababababababababababababababababab
-abababababababababababababababababababababababababababababababababababababababababababababaobfbfbhcdcecdcdcdcdcwabababababababababababababcFcdchababababababaoaoababababchababababababaoaoabababababababababababababababababababababababababababababababaTababababab
-abababababababababababababababababababababababababababababababababababababababababababababbfbhbhbkcdcdcdbfbgbgbhabababababababababababababaocdababababababababaoababababchababababababaochabababababababababababababababababababababababababababakakakakaUakakakakab
-abababababababababababababababababababababababababababababababababababababababababababababbfbhbgbhbfbhbhbobhbgbfabababababababababababababaochababababababababaoababababchababababababchchababababababababababababaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDakaFayataGatayaFakab
-abababababababababababababababababababababababababababababababababababababababababababababbhbgbgbkbfbgbgbkbfbfbfabababababababababababababaoaochchcdcdcdcdchchaoabababcscscscscscscscschcsababababababababababababaDabababababaTaTabababababababakaCaxaxaxaxaxaCakab
-abababababababababababababababababababababababababababababababababababababababababababababbfbgbhbhbhbgbgbibhbfbhbjbjbjbjbjbjabababababababababcdaoaoabaochcdababababababcccccccscscccfchcsababababababababababababaDabaQaeaeaeaeaeaeaeaeaQabababakaRaxaxaxaxaxaRakab
-abababababababababababababababababababababababababababababababababababababababababababababbfbfbgbkbhbfbfbkbhbfbgbjczblczbnbjababababababababababcdcdcdcdcCababababababababababababcccfcscsababababababababababababaDababaebbbbafafbbbbaeababababakaCaxaxaxaxaxaCakab
+abababababababababababababababababababababababababababababababababababababababababababababababababababababcwcwcwcdcdcdchchchaoaoaochcucucuaoaochchchcuchcuchchchchaoaoaoaoababababcGcGcGchchabababababchchabchababababababababababababababababababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababababababababababcdcdcdcdcwababababaoababcdcdcdcdabchcdcdcdcdcdchchababababaoaoababaoaochcGababababababababchabababababababababababababababababababababababababababababab
+ababababababababababababababababababababababababababababababababababababababababababababababaoaoaobZcabocbbYcdcdababababababcvcxcvababababababchabababababchchababababchchchchchchchaoctabababababababchabababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababaoaoaoaoaoaobfcdcdcdbhabababababababababababababababchaoabababababaoababababchchababababaoaoababababababababchcsababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababaoaobfbkcdcdcdcdcdbhcQcOcOcjcjabababababababababababaoaoabababababaochabababchchababababaoaoaoaoabababababchchcsababababababababababababababababababababababababababababab
+abababababababababababababababababababababababababababababababababababababababababababababaobfbfbhcdcecdcdcdcdcwabcOcjcjabababababababababcFcdchababababababaoaoababababchababababababaoaoabababababchchababababababababababababababababababababababababaTababababab
+abababababababababababababababababababababababababababababababababababababababababababababbfbhbhbkcdcdcdbfbgbgbhabababcjcjababababababababcNcdababababababababaoaochaoaochababababababaochabababababchchababababababababababababababababababababakakakakaUakakakakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbhbgbhbfbhbhbobhbgbfababcjcjcjababababababababaochababababababababaoababababchababababababchchababababcschababababababaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDakaFayataGatayaFakab
+abababababababababababababababababababababababababababababababababababababababababababababcOcPbgbkbfbgbgbkbfbfbfababcRcjcjcjabababababababaoaochchcdcdcdcdchchaoabababcscscscscscscscschcsabababababchchabababababaDabababababaTaTabababababababakaCaxaxaxaxaxaCakab
+abababababababababababababababababababababababababababababababababababababababababababababbfcObhbhbhbgbgbibhcObhbjbjbjbjbjbjabababababababababcdaoaoabaochcdababababababcccccccscscccfchcsabababababchchabababababaDabaQaeaeaeaeaeaeaeaeaQabababakaRaxaxaxaxaxaRakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbfbgbkbhbfbfbkcOcPbgbjczblczbnbjababababababababababcdcdcdcdcCababababababababababababcccfcscsabababchchchababababababaDababaebbbbafafbbbbaeababababakaCaxaxaxaxaxaCakab
 abababababababababababababababababababababababababababababababababababababababababababababbfbfbgbfbgbhbobibhbgbgbjbpbLbLbrbjababababababababababababababababababababababababcscscscccfcfcccccccccscsabababababababaDababaebbaTacacaTbbaeababababakaxaxaxaxaxaxaxakab
 abababababababababababababababababababababababababababababababababababababababababababababbjbjbjbjbsbsbjbjbjbjbjbjbLbLbLbLbjababababababababababababababababababababababababcscscscccccscscfcfcccccsabababababababaDababaebbbbaaaaaWaXaeababababakaCaxaxaRaxaxaCakab
 abababababababababababababababababababababababababababababababababababababababababababababbtbubvbwbxbxbwbybzbAbAbjcKbLbLcKbjabababababababababababababababababababababababcfcfcccfcfcccscscfcfcfcfabababababababcraDababaebbbbaZaZbbbbaeababababakakakaEakakakakakab

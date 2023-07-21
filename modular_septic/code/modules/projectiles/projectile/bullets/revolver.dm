@@ -4,10 +4,10 @@
 	damage = 48
 	wound_bonus = 0
 	bare_wound_bonus = 0
-	wound_falloff_tile = -2
+	wound_falloff_tile = 0
 
 /obj/projectile/bullet/c38
-	name = ".38 suspicious bullet"
+	name = ".38 suspicious +P bullet"
 	damage = 28
 	wound_bonus = 0
 	bare_wound_bonus = 0
@@ -55,7 +55,7 @@
 	damage = 60
 	wound_bonus = 0
 	bare_wound_bonus = 0
-	wound_falloff_tile = -2
+	wound_falloff_tile = 0
 
 /obj/projectile/bullet/pulser
 	name = "pulser bullet"

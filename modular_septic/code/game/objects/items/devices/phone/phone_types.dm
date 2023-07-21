@@ -15,3 +15,19 @@
 	icon_state = "smartphone"
 	base_icon_state = "smartphone"
 	phone_flags = null
+
+/obj/item/cellphone/rotorphone
+	name = "Rotormauto 0"
+	desc = "Hello, Hans Giger?"
+	icon_state = "rotorphone"
+	base_icon_state = "rotorphone"
+	brand_name = "Rotormation"
+	phone_flags = null
+
+/obj/item/cellphone/aphexphone
+	name = "Aphex Phone"
+	desc = "So cute!"
+	icon_state = "aphex"
+	base_icon_state = "aphex"
+	brand_name = "AphexMans"
+	phone_flags = PHONE_FLIPHONE

@@ -59,6 +59,7 @@
 	icon = 'modular_septic/icons/obj/items/guns/projectiles/projectiles.dmi'
 	icon_state= "bolter"
 	damage = 30
+	damage_type = BURN
 	embedding = null
 	shrapnel_type = null
 	range = 7

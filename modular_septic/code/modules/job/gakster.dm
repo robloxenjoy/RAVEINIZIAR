@@ -590,6 +590,8 @@
 	pants = /obj/item/clothing/pants/dark
 	shoes = /obj/item/clothing/shoes/frogshoes
 	head = /obj/item/clothing/head/aphexcap
+	r_pocket = /obj/item/simcard
+	id = /obj/item/cellphone/aphexphone
 
 /datum/job/slavekeeper
 	title = "Slavekeeper"

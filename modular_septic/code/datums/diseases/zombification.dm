@@ -42,7 +42,7 @@
 	/// Zombies can only speak in retardspeak, this keeps track of our retardspeak before infection
 	var/list/was_retarded
 
-/datum/disease/zombification/Destroy()
+/datum/disease/zombification/cure(add_resistance)
 	if(stage >= 2)
 		dezombify()
 	return ..()
