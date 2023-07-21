@@ -51,7 +51,8 @@
 
 /obj/item/gun/ballistic/revolver/chamber_examine(mob/user)
 	. = ..()
-	. += "The [cylinder_wording] can be spun with <b>alt+click</b>"
+	if(can_spin)
+		. += "The [cylinder_wording] can be spun with <b>alt+click</b>"
 
 /obj/item/gun/ballistic/revolver/get_ammo(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //mature var names for mature people //What If I'm a child?

@@ -16,6 +16,7 @@
 	var/spin_delay = 10
 	var/recent_spin = 0
 	var/last_fire = 0
+	var/can_spin = TRUE
 
 /obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	. = ..()
@@ -23,7 +24,8 @@
 
 /obj/item/gun/ballistic/revolver/AltClick(mob/user)
 	. = ..()
-	spin()
+	if(can_spin)
+		spin()
 
 /obj/item/gun/ballistic/revolver/verb/spin()
 	set name = "Spin Chamber"

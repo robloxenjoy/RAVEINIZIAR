@@ -456,10 +456,10 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 /obj/item/shard/crystal/green
 	name = "Green Crystal Shard"
 	desc = "A nasty looking shard of green crystal."
-	icon_state = "green"
+	icon_state = "greenlarge"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "green"
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#00dd78"
 	light_system = MOVABLE_LIGHT
@@ -468,10 +468,10 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 /obj/item/shard/crystal/red
 	name = "Red Crystal Shard"
 	desc = "A nasty looking shard of red crystal."
-	icon_state = "red"
+	icon_state = "redlarge"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "red"
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#ff460e"
 	light_system = MOVABLE_LIGHT
@@ -480,10 +480,10 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 /obj/item/shard/crystal/blue
 	name = "Blue Crystal Shard"
 	desc = "A nasty looking shard of blue crystal."
-	icon_state = "blue"
+	icon_state = "bluelarge"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "blue"
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#008eff"
 	light_system = MOVABLE_LIGHT
@@ -492,10 +492,10 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 /obj/item/shard/crystal/purple
 	name = "Pink Crystal Shard"
 	desc = "A nasty looking shard of pink crystal."
-	icon_state = "purple"
+	icon_state = "purplelarge"
 //	custom_materials = list(/datum/material/alloy/plasmaglass=MINERAL_MATERIAL_AMOUNT)
 	icon_prefix = "purple"
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#e252ea"
 	light_system = MOVABLE_LIGHT
