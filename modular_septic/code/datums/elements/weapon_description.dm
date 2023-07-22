@@ -56,8 +56,8 @@
 		if(source.bare_organ_bonus)
 			readout += span_notice("<b>Bare Organ Bonus:</b> [source.bare_organ_bonus]")
 
-		if(source.poisoned.len)
-			readout += span_notice("<b>Covered in:</b> [capitalize_like_old_man(source.poisoned.len)]")
+		if(LAZYLEN(source.poisoned))
+			readout += span_notice("<b>Covered in:</b> [capitalize_like_old_man(LAZYLEN(source.poisoned))]")
 
 		if(source.havedurability)
 			readout += span_notice("<b>Durability:</b> [capitalize_like_old_man(source.durability)]")

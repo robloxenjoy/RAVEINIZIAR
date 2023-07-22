@@ -880,7 +880,7 @@
 //						weapon.reagents.trans_to(victim, 10, methods = INJECT)
 //						weapon.reagents.remove_reagent(R.type, 5)
 //						victim.reagents.add_reagent(R.type, 5)
-				for(var/datum/reagent/R in weapon.poisoned.len)
+				for(var/datum/reagent/R in LAZYLEN(weapon.poisoned))
 //					weapon.reagents.trans_to(victim, weapon.reagents.volume, transfered_by = user)
 					victim.reagents?.add_reagent(R.type, R.volume)
 
