@@ -866,23 +866,20 @@
 									list/modifiers)
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
 	if(istype(weapon))
-		if(weapon.poisoned.len)
-			var/edgee_protection = 0
-			var/resultt = 0
-			edgee_protection = victim.get_edge_protection(affected)
-			resultt = (edgee_protection - weapon.edge_protection_penetration)
-			if(resultt <= 0)
-//					for(var/datum/reagent/R as anything in weapon.reagents?.reagent_list)
-//					if(weapon.reagents.total_volume <= 0)
-//						return FALSE
-//					else 
-//						(weapon.reagents.total_volume >= 0)
-//						weapon.reagents.trans_to(victim, 10, methods = INJECT)
-//						weapon.reagents.remove_reagent(R.type, 5)
-//						victim.reagents.add_reagent(R.type, 5)
-				for(var/datum/reagent/R in LAZYLEN(weapon.poisoned))
-//					weapon.reagents.trans_to(victim, weapon.reagents.volume, transfered_by = user)
-					victim.reagents?.add_reagent(R.type, R.volume)
+		if(weapon.poisoned_type)
+			if(weapon.current_fucked_reagnets > 0)
+				var/edgee_protection = 0
+				var/resultt = 0
+				edgee_protection = victim.get_edge_protection(affected)
+				resultt = (edgee_protection - weapon.edge_protection_penetration)
+				if(resultt <= 0)
+					victim.reagents?.add_reagent(weapon.poisoned_type, weapon.how_eats)
+					weapon.current_fucked_reagents -= weapon.how_eats
+					victim.visible_message(span_green("[victim] got reagented by [user]!"), \
+										span_green("I am got reagented by [user]!"), \
+										span_hear("I hear the sound of combat."))
+
+COLOR_THEME_CODEC_GREEN
 
 	if(!sharpness)
 		if(victim.body_position != LYING_DOWN)

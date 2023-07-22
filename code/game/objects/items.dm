@@ -91,8 +91,13 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	//AXE?
 	var/isAxe = FALSE
 
-	var/list/poisoned = list()
+	//Poisoning
+	var/poisoned_type
+	var/poisoned2_type
+	var/poisoned3_type
+	var/current_fucked_reagents = 0
 	var/max_reagents = 150
+	var/how_eats = 10
 
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
 	var/w_class = WEIGHT_CLASS_NORMAL
@@ -479,16 +484,13 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		return FALSE
 	if((W.get_sharpness() & SHARP_IMPALING) || (W.get_sharpness() & SHARP_POINTY) || (W.get_sharpness() & SHARP_EDGED))
 		if(reagents.total_volume > 0)
-//			for(var/datum/reagent/R in reagents?.reagent_list)
-//			if(R.volume > 0)
-//			reagents?.remove_reagent(R.type, 5)
-//			W.reagents?.add_reagent(R.type, 5)
-//			reagents.trans_to(W, reagents.total_volume, transfered_by = user)
 			for(var/datum/reagent/R in reagents.reagent_list)
-				W.poisoned += list(list(R.type, R.volume))
+				W.poisoned_type = R.type
+				W.current_fucked_reagents += R.volume
 				reagents.remove_reagent(R.type, R.volume)
 				user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
-//		else if(reagents.total_volume <= 0)
+				if(W.current_fucked_reagents > W.max_reagents)
+					W.current_fucked_reagents = W.max_reagents
 		else
 			to_chat(user, span_notice("Here is no more reagents!"))
 
