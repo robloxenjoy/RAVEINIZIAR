@@ -55,10 +55,10 @@
 			readout += span_notice("<b>Organ Bonus:</b> [source.organ_bonus]")
 		if(source.bare_organ_bonus)
 			readout += span_notice("<b>Bare Organ Bonus:</b> [source.bare_organ_bonus]")
-/*
-		if(source.poisoned.len)
-			readout += span_notice("<b>Covered in:</b> [capitalize_like_old_man(source.poisoned.len)]")
-*/
+
+		if(source.reagents.len)
+			readout += span_notice("<b>Covered in:</b> [capitalize_like_old_man(source.reagents.len)]")
+
 		if(source.havedurability)
 			readout += span_notice("<b>Durability:</b> [capitalize_like_old_man(source.durability)]")
 		if(source.canrust)
