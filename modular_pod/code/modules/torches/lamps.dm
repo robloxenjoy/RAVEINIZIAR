@@ -179,6 +179,23 @@
 	inhand_icon_state = "torch0"
 	name = "Torch"
 	desc = "LIGHT!"
+	havedurability = TRUE
+	durability = 160
+	carry_weight = 1 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	min_force = 9
+	force = 11
+	throwforce = 13
+	min_force_strength = 1
+	force_strength = 1.5
+	wound_bonus = 4
+	bare_wound_bonus = 4
+	throw_speed = 2
+	throw_range = 9
+	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
+	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
+	tetris_width = 32
+	tetris_height = 32
 	var/lit = FALSE
 	var/self_lighting = 0
 
@@ -192,8 +209,10 @@
 
 	if(lit)
 		inhand_icon_state = "torch1"
+		damtype = BURN
 	else
 		inhand_icon_state = "torch0"
+		damtype = BRUTE
 
 	if(prob(1)) //Needs playtesting. This seems a little high.
 		if(istype(src.loc, /obj/structure/torchwall))
