@@ -469,11 +469,11 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 /obj/item/reagent_containers/attackby(obj/item/W, mob/user)
 	if(!ishuman(user))
-		return ..()
+		return FALSE
 	if(istype(src, /obj/item/reagent_containers/syringe))
-		return ..()
+		return FALSE
 	if(istype(src,/obj/item/reagent_containers/pill))
-		return ..()
+		return FALSE
 	if((W.get_sharpness() & SHARP_IMPALING) || (W.get_sharpness() & SHARP_POINTY) || (W.get_sharpness() & SHARP_EDGED))
 		if(reagents.total_volume > 0)
 //			for(var/datum/reagent/R in reagents?.reagent_list)
