@@ -468,6 +468,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 			rustbegin -= delta_time * 3
 
 /obj/item/reagent_containers/attackby(obj/item/W, mob/user)
+	. = ..()
+	if(.)
+		return
 	if(!ishuman(user))
 		return FALSE
 	if(istype(src, /obj/item/reagent_containers/syringe))
