@@ -866,18 +866,19 @@
 									list/modifiers)
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
 	if(istype(weapon))
-		if(weapon.poisoned_type)
-			if(weapon.current_fucked_reagents > 0)
-				var/edgee_protection = 0
-				var/resultt = 0
-				edgee_protection = victim.get_edge_protection(affected)
-				resultt = (edgee_protection - weapon.edge_protection_penetration)
-				if(resultt <= 0)
-					victim.reagents?.add_reagent(weapon.poisoned_type, weapon.how_eats)
-					weapon.current_fucked_reagents -= weapon.how_eats
-					victim.visible_message(span_green("[victim] got reagented by [user]!"), \
-										span_green("I am got reagented by [user]!"), \
-										span_hear("I hear the sound of combat."))
+		if(sharpness)
+			if(weapon.poisoned_type)
+				if(weapon.current_fucked_reagents > 0)
+					var/edgee_protection = 0
+					var/resultt = 0
+					edgee_protection = victim.get_edge_protection(affected)
+					resultt = (edgee_protection - weapon.edge_protection_penetration)
+					if(resultt <= 0)
+						victim.reagents?.add_reagent(weapon.poisoned_type, weapon.how_eats)
+						weapon.current_fucked_reagents -= weapon.how_eats
+						victim.visible_message(span_green("[victim] got reagented by [user]!"), \
+											span_green("I am got reagented by [user]!"), \
+											span_hear("I hear the sound of combat."))
 
 	if(!sharpness)
 		if(victim.body_position != LYING_DOWN)

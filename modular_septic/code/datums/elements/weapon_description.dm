@@ -58,7 +58,7 @@
 
 		if(source.poisoned_type)
 			if(source.current_fucked_reagents >= 10)
-				readout += span_notice("<b>Covered in:</b> [source.poisoned_type]")
+				readout += span_notice("<b>Covered in something...")
 
 		if(source.havedurability)
 			readout += span_notice("<b>Durability:</b> [capitalize_like_old_man(source.durability)]")

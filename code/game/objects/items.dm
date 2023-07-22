@@ -485,12 +485,15 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if((W.get_sharpness() & SHARP_IMPALING) || (W.get_sharpness() & SHARP_POINTY) || (W.get_sharpness() & SHARP_EDGED))
 		if(reagents.total_volume > 0)
 			for(var/datum/reagent/R in reagents.reagent_list)
-				W.poisoned_type = R.type
-				W.current_fucked_reagents += R.volume
-				reagents.remove_reagent(R.type, R.volume)
-				user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
-				if(W.current_fucked_reagents > W.max_reagents)
-					W.current_fucked_reagents = W.max_reagents
+				if(W.poisoned_type)
+					if(R.type != W.poisoned_type)
+						current_fucked_reagents = 0
+					W.poisoned_type = R.type
+					W.current_fucked_reagents += R.volume
+					reagents.remove_reagent(R.type, R.volume)
+					user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
+					if(W.current_fucked_reagents > W.max_reagents)
+						W.current_fucked_reagents = W.max_reagents
 		else
 			to_chat(user, span_notice("Here is no more reagents!"))
 
