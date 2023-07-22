@@ -14,7 +14,8 @@
 	var/gaysex_achievement = FALSE
 
 /datum/interaction/forbidden_fruits/allow_interaction(datum/component/interactable/user, datum/component/interactable/target, silent = TRUE, check_cooldown = TRUE)
-	. = FALSE
+//	. = FALSE
+	. = ..()
 	if(!CONFIG_GET(flag/use_erp))
 		return FALSE
 

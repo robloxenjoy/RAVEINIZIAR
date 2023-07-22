@@ -59,11 +59,11 @@
 
 /obj/projectile/bullet/pulser
 	name = "pulser bullet"
-	damage = 10
+	damage = 20
 	wound_bonus = 15
 	bare_wound_bonus = 15
-	stamina = 10
-	paralyze = 10
+	stamina = 50
+	paralyze = 25
 	edge_protection_penetration = 5
 	subtractible_armour_penetration = 5
 	sharpness = NONE

@@ -4,7 +4,7 @@
 USE_FIELD_OF_VISION
 
 ## Whether or not to forcefully disable ERP
-#USE_ERP
+USE_ERP
 
 ## Whether or not to forcefully disable atmos
 DISABLE_ATMOS

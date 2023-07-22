@@ -30,7 +30,6 @@
 "D" = (/obj/structure/table/reinforced,/obj/item/key/podpol/woody{id_tag = "leader"},/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
 "E" = (/obj/structure/torchwall/service/directional{dir = 1},/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/forest/rain)
 "F" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest/rain)
-"G" = (/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
 "H" = (/obj/structure/stairs/south,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest/rain)
 "I" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/forest/rain)
 "J" = (/turf/closed/wall/darkrock,/area/maintenance/polovich/forest/rain)
@@ -158,8 +157,8 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxdaaaaaaaadxxaaaaaaaaaax
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxaaaEaaEaaaxxaaazazazaax
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxxxxxFFxxxxxxaaaaaaaaaax
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxxxxxGGxxxxxxaaazaAazaax
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxxxxxHHxxxxxxaayaaaaayax
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxxxxxHHxxxxxxaaazaAazaax
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxxxxxxxxxxxxxaayaaaaayax
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbxxxxxxxxxxxxxxxxxxxxxxxx
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

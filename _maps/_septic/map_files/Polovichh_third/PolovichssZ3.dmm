@@ -85,7 +85,7 @@
 "bG" = (/obj/machinery/light/small/red/directional/north,/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
 "bH" = (/obj/structure/table/reinforced,/obj/item/food/donut/chaos,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
 "bI" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/beer,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 8},/area/maintenance/polovich/chaot)
-"bJ" = (/obj/machinery/door/metal_door/west{key_worthy = 0},/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
+"bJ" = (/obj/machinery/door/metal_door/west{key_worthy = 0; locked = 0},/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "bK" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 8},/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
 "bL" = (/turf/open/floor/plating/polovich/rotten_stones/sec/sev,/area/maintenance/polovich/chaot)
 "bM" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 4},/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/chaot)
@@ -141,7 +141,7 @@
 "cK" = (/turf/open/floor/plating/polovich/rotten_stones/sec/eight,/area/maintenance/polovich/chaot)
 "cL" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/bluedirty,/area/maintenance/polovich/forest/rain)
 "cM" = (/obj/structure/flora/tree/evil,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
-"cN" = (/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
+"cN" = (/obj/effect/spawner/random/entertainment/drugs,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
 "cO" = (/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
 "cP" = (/obj/structure/flora/tree/evil,/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
 "cQ" = (/obj/structure/flora/tree/evil/long,/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
@@ -267,8 +267,8 @@ abababababababababababababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababaoaoaoaoaoaobfcdcdcdbhabababababababababababababababchaoabababababaoababababchchababababaoaoababababababababchcsababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababaoaobfbkcdcdcdcdcdbhcQcOcObgbgabababababababababababaoaoabababababaochabababchchababababaoaoaoaoabababababchchcsababababababababababababababababababababababababababababab
 abababababababababababababababababababababababababababababababababababababababababababababaobfbfbhcdcecdcdcdcdcwabcOcjcjabababababababababcFcSchababababababaoaoababababchababababababaoaoabababababchchababababababababababababababababababababababababaTababababab
-abababababababababababababababababababababababababababababababababababababababababababababbfbhbhbkcdcdcdbfbgbgbhabababcjbfababababababababcNcdababababababababaoaochaoaochababababababaochabababababchchabababababaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDakakakakaUakakakakab
-abababababababababababababababababababababababababababababababababababababababababababababbfbhbgbhbfbhbhbobhbgbfababbgbfbfababababababababaochababababababababaoababababchababababababchchababababcschababababababaDabababababaTaTabababababababakaFayataGatayaFakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbhbhbkcdcdcdbfbgbgbhabababcjbfababababababababaocdababababababababaoaochaoaochababababababaochabababababchchabababababaDaDaDaDaDaDaDaDaDaDaDaDaDaDaDakakakakaUakakakakab
+abababababababababababababababababababababababababababababababababababababababababababababbfbhbgbhbfbhbhbobhbgbfababbgbfbfababababababababaocNababababababababaoababababchababababababchchababababcschababababababaDabababababaTaTabababababababakaFayataGatayaFakab
 abababababababababababababababababababababababababababababababababababababababababababababcOcPbgbkbfbgbgbkbfbfbfababcRcjbfbfabababababababaoaochchcdcdcdcdchchaoabababcscscscscscscscschcsabababababchchabababababaDabaQaeaeaeaeaeaeaeaeaQabababakaCaxaxaxaxaxaCakab
 abababababababababababababababababababababababababababababababababababababababababababababbfcObhbhbhbgbgbibhcObhbjbjbjbjbjbjabababababababababcdaoaoabaochcdababababababcccccccscscccfchcsabababababchchabababababaDababaebbbbafafbbbbaeababababakaRaxaxaxaxaxaRakab
 abababababababababababababababababababababababababababababababababababababababababababababbfbfbgbkbhbfbfbkcOcPbgbjczblczbnbjababababababababababcdcdcdcdcCababababababababababababcccfcscsabababchchchababababababaDababaebbaTacacaTbbaeababababakaCaxaxaxaxaxaCakab
