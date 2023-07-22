@@ -866,13 +866,12 @@
 									list/modifiers)
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
 	if(istype(weapon))
-		if(weapon.reagents)
-			if(weapon.reagents.total_volume > 0)
-				var/edgee_protection = 0
-				var/resultt = 0
-				edgee_protection = victim.get_edge_protection(affected)
-				resultt = (edgee_protection - weapon.edge_protection_penetration)
-				if(resultt <= 0)
+		if(weapon.poisoned.len)
+			var/edgee_protection = 0
+			var/resultt = 0
+			edgee_protection = victim.get_edge_protection(affected)
+			resultt = (edgee_protection - weapon.edge_protection_penetration)
+			if(resultt <= 0)
 //					for(var/datum/reagent/R as anything in weapon.reagents?.reagent_list)
 //					if(weapon.reagents.total_volume <= 0)
 //						return FALSE
@@ -881,7 +880,9 @@
 //						weapon.reagents.trans_to(victim, 10, methods = INJECT)
 //						weapon.reagents.remove_reagent(R.type, 5)
 //						victim.reagents.add_reagent(R.type, 5)
-					weapon.reagents.trans_to(victim, weapon.reagents.total_volume, transfered_by = user)
+				for(var/datum/reagent/R in weapon.poisoned)
+//					weapon.reagents.trans_to(victim, weapon.reagents.volume, transfered_by = user)
+					victim.reagents?.add_reagent(R.type, R.volume)
 
 	if(!sharpness)
 		if(victim.body_position != LYING_DOWN)

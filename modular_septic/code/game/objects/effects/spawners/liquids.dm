@@ -35,7 +35,7 @@
 /obj/effect/spawner/liquid/shallow/flood
 	name = "shallow liquid spawner"
 	liquid_list = list(
-		/datum/reagent/toxin/badwater/shallow = 100,
+		/datum/reagent/toxin/badwater/shallow = 150,
 	)
 	liquid_no_react = FALSE
 	liquid_temperature = T0C-10
