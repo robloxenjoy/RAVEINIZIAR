@@ -484,13 +484,13 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 //			reagents?.remove_reagent(R.type, 5)
 //			W.reagents?.add_reagent(R.type, 5)
 //			reagents.trans_to(W, reagents.total_volume, transfered_by = user)
-			var/datum/reagent/R in reagents.reagent_list
-			W.poisoned += list(list(R.type, R.volume))
-			reagents.remove_reagent(R.type, R.volume)
-			user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
+			for(var/datum/reagent/R in reagents.reagent_list)
+				W.poisoned += list(list(R.type, R.volume))
+				reagents.remove_reagent(R.type, R.volume)
+				user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))
 //		else if(reagents.total_volume <= 0)
 		else
-			to_chat(user, span_notice("Here is no more reagents!"))		
+			to_chat(user, span_notice("Here is no more reagents!"))
 
 /obj/item/interact(mob/user)
 	add_fingerprint(user)
