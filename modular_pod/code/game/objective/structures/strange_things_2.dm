@@ -324,7 +324,7 @@
 	icon_state = "squash"
 	var/heart_here = FALSE
 	var/guts_here = FALSE
-	var/lungs_here = FALSE
+	var/lung_here = FALSE
 	var/ready = FALSE
 
 /obj/item/craftorshit/thing/alchemy/squash/attackby(obj/item/I, mob/living/carbon/user, params)
@@ -345,7 +345,7 @@
 				sound_hint()
 				user.changeNext_move(10)
 				new /obj/item/craftorshit/thing/retarded/alchemical(get_turf(src))
-	else if(istype(I, /obj/item/organ/intestines))
+	if(istype(I, /obj/item/organ/intestines))
 		if(user.a_intent == INTENT_DISARM)
 			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll >= DICE_SUCCESS)
@@ -361,14 +361,14 @@
 				sound_hint()
 				user.changeNext_move(10)
 				new /obj/item/craftorshit/thing/retarded/alchemical(get_turf(src))
-	else if(istype(I, /obj/item/organ/lungs))
+	if(istype(I, /obj/item/organ/lungs))
 		if(user.a_intent == INTENT_DISARM)
 			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll >= DICE_SUCCESS)
 				user.visible_message(span_notice("[user] connects the lungs"),span_notice("You connect the lungs."), span_hear("You hear a strange sound."))
 				sound_hint()
 				user.changeNext_move(10)
-				lungs_here = TRUE
+				lung_here = TRUE
 				var/obj/item/organ/lungs/lungs = I
 				qdel(lungs)
 			else
@@ -380,7 +380,7 @@
 
 /obj/item/craftorshit/thing/alchemy/squash/Initialize(mapload)
 	. = ..()
-	if((heart_here) && (guts_here) && (lungs_here))
+	if((heart_here) && (guts_here) && (lung_here))
 		ready = TRUE
 
 /obj/item/craftorshit/thing/alchemy/squash/attack_self_tertiary(mob/living/carbon/human/user, modifiers)
@@ -418,10 +418,10 @@
 	. = ..()
 	if(heart_here)
 		. += "<span class='notice'>Heart is connected.</span>"
-	else if(guts_here)
+	if(guts_here)
 		. += "<span class='notice'>Infestines are connected.</span>"
-	else if(lungs_here)
-		. += "<span class='notice'>Lungs are connected.</span>"
+	if(lung_here)
+		. += "<span class='notice'>Lung is connected.</span>"
 
 /*
 		var/obj/structure/halber_socket/socket
