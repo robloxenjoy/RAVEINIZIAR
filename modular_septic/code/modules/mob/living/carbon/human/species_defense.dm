@@ -867,7 +867,7 @@
 	var/victim_end = GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)
 	if(istype(weapon))
 		if(weapon.poisoned_type)
-			if(weapon.current_fucked_reagnets > 0)
+			if(weapon.current_fucked_reagents > 0)
 				var/edgee_protection = 0
 				var/resultt = 0
 				edgee_protection = victim.get_edge_protection(affected)
@@ -878,8 +878,6 @@
 					victim.visible_message(span_green("[victim] got reagented by [user]!"), \
 										span_green("I am got reagented by [user]!"), \
 										span_hear("I hear the sound of combat."))
-
-COLOR_THEME_CODEC_GREEN
 
 	if(!sharpness)
 		if(victim.body_position != LYING_DOWN)
