@@ -81,7 +81,7 @@
 	stop_client_sounds()
 	bruh_moment()
 	QDEL_IN(src, 4 SECONDS)
-
+/*
 /client/proc/is_donator()
 	var/datum/db_query/query_check_donator = SSdbcore.NewQuery({"
 		SELECT
@@ -99,3 +99,4 @@
 	for(var/list/funny_list as anything in .)
 		if(LAZYACCESS(funny_list, "rank"))
 			return funny_list["rank"]
+*/

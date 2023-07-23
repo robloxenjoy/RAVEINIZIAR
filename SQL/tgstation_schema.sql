@@ -24,22 +24,6 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
--- SEPTIC SHOCK TABLE
--- Table structure for table `admin`
---
-
-DROP TABLE IF EXISTS `donators`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `donators` (
-  `ckey` varchar(32) NOT NULL,
-  `rank` varchar(32) NOT NULL,
-  PRIMARY KEY (`ckey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
--- SEPTIC SHOCK END
-
 --
 -- Table structure for table `admin_log`
 --

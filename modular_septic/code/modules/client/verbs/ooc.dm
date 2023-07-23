@@ -56,8 +56,8 @@
 	var/keyname = key
 	if(sheet.icon_tag("donator-[ckey]"))
 		keyname = "[sheet.icon_tag("donator-[ckey]")] [keyname]"
-	if(SSdonators.donator_to_ooc_color[ckey])
-		keyname = "<font color='[SSdonators.donator_to_ooc_color[ckey]]'>[keyname]</font>"
+//	if(SSdonators.donator_to_ooc_color[ckey])
+//		keyname = "<font color='[SSdonators.donator_to_ooc_color[ckey]]'>[keyname]</font>"
 	else if(CONFIG_GET(string/ipstack_api_key))
 		switch(country)
 			if("Brazil")

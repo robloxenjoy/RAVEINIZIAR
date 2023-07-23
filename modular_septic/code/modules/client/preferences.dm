@@ -25,11 +25,11 @@
 	max_save_slots = 5
 	if(C.IsByondMember())
 		max_save_slots += 5
-	var/is_donator = C.is_donator()
-	if(is_donator)
-		SSdonators.add_donator(C.ckey, is_donator)
-		donator_rank = is_donator
-		max_save_slots += 5
+//	var/is_donator = C.is_donator()
+//	if(is_donator)
+//		SSdonators.add_donator(C.ckey, is_donator)
+//		donator_rank = is_donator
+//		max_save_slots += 5
 
 /datum/preferences/ui_static_data(mob/user)
 	var/list/data = ..()

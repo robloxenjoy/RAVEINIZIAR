@@ -19,7 +19,7 @@ SPRINT_STAMINA_COST 2
 SPRINT_FATIGUE_COST 2
 
 ## Enables the GeoIP subsystem when you give it an ipstack.com API key
-IPSTACK_API_KEY
+#IPSTACK_API_KEY
 
 ## Server hub tagline
 SERVERTAGLINE [FUCK YOU ALL](https://discord.gg/wUPYTgJ4Th)

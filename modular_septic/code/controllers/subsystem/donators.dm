@@ -1,3 +1,4 @@
+/*
 SUBSYSTEM_DEF(donators)
 	name = "Donators"
 	flags = SS_NO_FIRE
@@ -28,3 +29,4 @@ SUBSYSTEM_DEF(donators)
 		unsanitized_donator = replacetext(unsanitized_donator, " ", "")
 		var/list/donator_and_color = splittext(unsanitized_donator, "=")
 		donator_to_ooc_color[donator_and_color[1]] = donator_and_color[2]
+*/
