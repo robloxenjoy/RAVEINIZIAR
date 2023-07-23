@@ -377,9 +377,21 @@
 				sound_hint()
 				user.changeNext_move(10)
 				new /obj/item/craftorshit/thing/retarded/alchemical(get_turf(src))
-
+/*
 /obj/item/craftorshit/thing/alchemy/squash/Initialize(mapload)
 	. = ..()
+	if((heart_here) && (guts_here) && (lung_here))
+		ready = TRUE
+*/
+
+/obj/item/craftorshit/thing/alchemy/squash/attack_foot(mob/living/carbon/human/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	user.visible_message(span_notice("[user] kicks the [src]."),span_notice("You kick the [src]."), span_hear("You hear the sound of kicking."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.adjustFatigueLoss(10)
+	sound_hint()
 	if((heart_here) && (guts_here) && (lung_here))
 		ready = TRUE
 

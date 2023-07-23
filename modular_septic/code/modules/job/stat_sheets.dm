@@ -103,9 +103,6 @@
 /datum/job/outcombat
 	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
 
-/datum/job/slave
-	attribute_sheet = /datum/attribute_holder/sheet/job/aktnailer
-
 /datum/job/manhunter
 	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
 

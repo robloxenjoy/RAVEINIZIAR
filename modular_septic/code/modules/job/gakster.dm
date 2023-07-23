@@ -557,11 +557,28 @@
 /datum/outfit/slave
 	name = "Slave Uniform"
 
+	var/strong_slave
 	uniform = /obj/item/clothing/under/darkshirt
 	pants = /obj/item/clothing/pants/dark
 //	r_pocket = /obj/item/shard/crystal/blue
 	shoes = /obj/item/clothing/shoes/veinshoes
 //	belt = /obj/item/melee/hehe/pickaxe/iron
+
+/datum/outfit/slave/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(5))
+		strong_slave = TRUE
+	else
+		strong_slave = FALSE
+
+/datum/outfit/slave/equip(mob/living/carbon/human/H)
+	..()
+	if(strong_slave)
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/strongslave)
+		to_chat(H, span_achievementinteresting("I'm a strong slave, really strong!"))
+		to_chat(H, span_info("Even a difficult life has its upsides... Maybe..."))
+	else
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/aktnailer)
 
 /datum/job/manhunter
 	title = "Manhunter"

@@ -1411,6 +1411,45 @@
 		SKILL_ACROBATICS = -3,
 	)
 
+//strong slave
+/datum/attribute_holder/sheet/job/strongslave
+	attribute_variance = list(
+		STAT_STRENGTH = list(3, 6),
+		STAT_ENDURANCE = list(3, 9),
+		STAT_DEXTERITY = list(-2, 1),
+		STAT_INTELLIGENCE = list(-2, 1),
+		SKILL_BRAWLING = list(4, 8),
+		SKILL_WRESTLING = list(5, 8),
+		SKILL_SMG = list(-1, 1),
+		SKILL_PISTOL = list(-1, 1),
+		SKILL_RAPIER = list(-1, 1),
+		SKILL_SHORTSWORD = list(-1, 1),
+		SKILL_LONGSWORD = list(-1, 1),
+		SKILL_IMPACT_WEAPON = list(6, 8),
+		SKILL_IMPACT_WEAPON_TWOHANDED = list(6, 8),
+		SKILL_THROWING = list(-1, 2),
+		SKILL_PICKPOCKET = list(-3, 2),
+		SKILL_LOCKPICKING = list(-2, 1),
+		SKILL_MASONRY = list(4, 7),
+		SKILL_SMITHING = list(3, 6),
+		SKILL_SCIENCE = list(-2, 4),
+		SKILL_ACROBATICS = list(-2, 2),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 0,
+		SKILL_SMG = 0,
+		SKILL_PISTOL = 0,
+		SKILL_RAPIER = 0,
+		SKILL_SHORTSWORD = 0,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_SCIENCE = -3,
+		SKILL_ACROBATICS = -3,
+	)
+
 //ESCAPE FROM NEVADO///
 // DENOMINATOR
 /datum/attribute_holder/sheet/job/denominator
