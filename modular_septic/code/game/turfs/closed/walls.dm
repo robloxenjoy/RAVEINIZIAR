@@ -25,7 +25,7 @@
 	if(mineable)
 		if(mine_hp > 0)
 			if(user.a_intent == INTENT_HARM)
-				if(W.candig)
+				if(W.can_dig)
 					user.visible_message(span_notice("[user] strikes the [src] with [W]."),span_notice("You strike the [src] with [W]."), span_hear("You hear the sound of mining."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(10)
