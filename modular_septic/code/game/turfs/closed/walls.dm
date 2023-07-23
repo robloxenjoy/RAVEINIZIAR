@@ -18,46 +18,47 @@
 /turf/closed/wall/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].wav"
 
-/turf/closed/wall/attackby(obj/item/melee/hehe/pickaxe/W, mob/living/carbon/user, params)
+/turf/closed/wall/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
 	if(.)
 		return
 	if(mineable)
 		if(mine_hp > 0)
 			if(user.a_intent == INTENT_HARM)
-				user.visible_message(span_notice("[user] strikes the [src] with [W]."),span_notice("You strike the [src] with [W]."), span_hear("You hear the sound of mining."))
-				user.changeNext_move(W.attack_delay)
-				user.adjustFatigueLoss(10)
-				W.damageItem(10)
-				playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.wav', 90 , FALSE, FALSE)
-				user.sound_hint()
-				mine_hp -= 1
-				var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
-				if(diceroll >= DICE_SUCCESS)
-					user.visible_message(span_notice("[user] mines the ore."),span_notice("You mine the ore with [W]."), span_hear("You hear the sound of mining."))
-					new ore_type(get_turf(user), ore_amount)
-				if(diceroll == DICE_CRIT_FAILURE)
-					var/dicerolll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
-					if(dicerolll == DICE_CRIT_FAILURE)
-						user.visible_message(span_notice("[user] failed to strike the [src] with [W]!"),span_notice("You failed to strike the [src] with [W]!"), span_hear("You hear the sound of mining."))
-						user.apply_damage(15, BRUTE, BODY_ZONE_HEAD, user.run_armor_check(BODY_ZONE_HEAD, MELEE), wound_bonus = 5, sharpness = NONE)
-					else
-						user.visible_message(span_notice("[user] stupidly strikes the [src] with [W]."),span_notice("You stupidly strike the [src] with [W]."), span_hear("You hear the sound of mining."))
-		else
-			if(user.a_intent == INTENT_HARM)
-				user.visible_message(span_notice("[user] ruins the [src] with [W]."),span_notice("You ruin the [src] with [W]."), span_hear("You hear the sound of mining."))
-				user.changeNext_move(W.attack_delay)
-				user.adjustFatigueLoss(10)
-				W.damageItem(10)
-				user.sound_hint()
-				var/flags = NONE
-				var/old_type = type
-				if(defer_change)
-					flags = CHANGETURF_DEFER_CHANGE
-				var/turf/open/mined = ScrapeAway(null, flags)
-				addtimer(CALLBACK(src, .proc/AfterChange, flags, old_type), 1, TIMER_UNIQUE)
-				playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
-				mined.update_visuals()
+				if(W.candig)
+					user.visible_message(span_notice("[user] strikes the [src] with [W]."),span_notice("You strike the [src] with [W]."), span_hear("You hear the sound of mining."))
+					user.changeNext_move(W.attack_delay)
+					user.adjustFatigueLoss(10)
+					W.damageItem(10)
+					playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.wav', 90 , FALSE, FALSE)
+					user.sound_hint()
+					mine_hp -= 1
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll >= DICE_SUCCESS)
+						user.visible_message(span_notice("[user] mines the ore."),span_notice("You mine the ore with [W]."), span_hear("You hear the sound of mining."))
+						new ore_type(get_turf(user), ore_amount)
+					if(diceroll == DICE_CRIT_FAILURE)
+						var/dicerolll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
+						if(dicerolll == DICE_CRIT_FAILURE)
+							user.visible_message(span_notice("[user] failed to strike the [src] with [W]!"),span_notice("You failed to strike the [src] with [W]!"), span_hear("You hear the sound of mining."))
+							user.apply_damage(15, BRUTE, BODY_ZONE_HEAD, user.run_armor_check(BODY_ZONE_HEAD, MELEE), wound_bonus = 5, sharpness = NONE)
+						else
+							user.visible_message(span_notice("[user] stupidly strikes the [src] with [W]."),span_notice("You stupidly strike the [src] with [W]."), span_hear("You hear the sound of mining."))
+			else
+				if(user.a_intent == INTENT_HARM)
+					user.visible_message(span_notice("[user] ruins the [src] with [W]."),span_notice("You ruin the [src] with [W]."), span_hear("You hear the sound of mining."))
+					user.changeNext_move(W.attack_delay)
+					user.adjustFatigueLoss(10)
+					W.damageItem(10)
+					user.sound_hint()
+					var/flags = NONE
+					var/old_type = type
+					if(defer_change)
+						flags = CHANGETURF_DEFER_CHANGE
+					var/turf/open/mined = ScrapeAway(null, flags)
+					addtimer(CALLBACK(src, .proc/AfterChange, flags, old_type), 1, TIMER_UNIQUE)
+					playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
+					mined.update_visuals()
 
 /turf/closed/wall/r_wall
 	icon = 'modular_septic/icons/turf/tall/walls/reinforced_victorian.dmi'

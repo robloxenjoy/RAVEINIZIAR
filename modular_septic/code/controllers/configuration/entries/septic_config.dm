@@ -11,7 +11,6 @@
   */
 
 /datum/config_entry/flag/use_erp
-	default = 1
 
 /datum/config_entry/flag/use_field_of_vision
 	config_entry_value = 1

@@ -468,5 +468,6 @@
 	tetris_width = 32
 	tetris_height = 64
 	slot_flags = ITEM_SLOT_BELT
+	can_dig = TRUE
 	attack_verb_continuous = list("stabs", "mines", "jabs")
 	attack_verb_simple = list("stab", "mine", "jab")

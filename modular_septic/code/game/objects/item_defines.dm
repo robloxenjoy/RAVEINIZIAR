@@ -36,6 +36,8 @@
 
 	/// Can it be used for lockpicking?
 	var/canlockpick = FALSE
+	/// can dig? walls?
+	var/can_dig = FALSE
 
 	/**
 	 *  Modifier for block score
