@@ -131,7 +131,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	if(!fun_verbs)
 		remove_verb(src, /mob/dead/observer/verb/boo)
-		remove_verb(src, /mob/dead/observer/verb/possess)
+//		remove_verb(src, /mob/dead/observer/verb/possess)
 
 	animate(src, pixel_y = 2, time = 10, loop = -1)
 
@@ -305,23 +305,22 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/living/verb/ghost()
 	set category = "OOC"
-	set name = "Shitty"
-	set desc = "Shit."
+	set name = "Ghostize"
+	set desc = "Are you want?"
 
 
 	return FALSE
-/*
+
 	if(stat != DEAD)
 		succumb()
 	if(stat == DEAD)
 		ghostize(TRUE)
 		return TRUE
-	var/response = tgui_alert(usr, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst still alive you may not play again this round! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?",list("Ghost","Stay in body"))
+	var/response = tgui_alert(usr, "Are you -sure- you want to ghost?\n(You are alive. You can't change your mind so choose wisely!!)","Are you sure you want to ghost?",list("Ghost","Stay In Body"))
 	if(response != "Ghost")
 		return FALSE//didn't want to ghost after-all
 	ghostize(FALSE) // FALSE parameter is so we can never re-enter our body. U ded.
 	return TRUE
-*/
 
 /mob/camera/verb/ghost()
 	set category = "OOC"
@@ -460,7 +459,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	usr.abstract_move(pick(L))
 	update_parallax_contents()
-
+/*
 /mob/dead/observer/verb/follow()
 	set category = "Ghost"
 	set name = "Orbit" // "Haunt"
@@ -503,7 +502,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	//restart our floating animation after orbit is done.
 	pixel_y = base_pixel_y
 	animate(src, pixel_y = base_pixel_y + 2, time = 1 SECONDS, loop = -1)
-
+*/
 /mob/dead/observer/verb/jumptomob() //Moves the ghost instead of just changing the ghosts's eye -Nodrak
 	set category = "Ghost"
 	set name = "Jump to Mob"
@@ -582,7 +581,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	//Maybe in the future we can add more <i>spooky</i> code here!
 	return
-
+/*
 /mob/dead/observer/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"
 	set desc = "Toggles your ability to see things only ghosts can see, like other ghosts"
@@ -590,6 +589,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	ghostvision = !(ghostvision)
 	update_sight()
 	to_chat(usr, span_boldnotice("You [(ghostvision?"now":"no longer")] have ghost vision."))
+*/
 
 /*
 /mob/dead/observer/verb/toggle_darkness()
@@ -647,7 +647,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 				client?.images |= (GLOB.ghost_images_default-ghostimage_default)
 			if(GHOST_OTHERS_SIMPLE)
 				client?.images |= (GLOB.ghost_images_simple-ghostimage_simple)
-
+/*
 /mob/dead/observer/verb/possess()
 	set category = "Ghost"
 	set name = "Possess!"
@@ -679,7 +679,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	target.key = key
 	target.faction = list("neutral")
 	return TRUE
-
+*/
 //this is a mob verb instead of atom for performance reasons
 //see /mob/verb/examinate() in mob.dm for more info
 //overridden here and in /mob/living for different point span classes and sanity checks
@@ -688,7 +688,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 	usr.visible_message(span_deadsay("<b>[src]</b> points to [A]."))
 	return TRUE
-
+/*
 /mob/dead/observer/verb/view_manifest()
 	set name = "View Crew Manifest"
 	set category = "Ghost"
@@ -703,7 +703,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
 
 	GLOB.crew_manifest_tgui.ui_interact(src)
-
+*/
 //this is called when a ghost is drag clicked to something.
 /mob/dead/observer/MouseDrop(atom/over)
 	if(!usr || !over)
@@ -717,11 +717,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/Topic(href, href_list)
 	..()
 	if(usr == src)
-		if(href_list["follow"])
-			var/atom/movable/target = locate(href_list["follow"])
-			if(istype(target) && (target != src))
-				ManualFollow(target)
-				return
+//		if(href_list["follow"])
+//			var/atom/movable/target = locate(href_list["follow"])
+//			if(istype(target) && (target != src))
+//				ManualFollow(target)
+//				return
 		if(href_list["x"] && href_list["y"] && href_list["z"])
 			var/tx = text2num(href_list["x"])
 			var/ty = text2num(href_list["y"])
@@ -748,7 +748,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	for(var/hudtype in datahuds)
 		var/datum/atom_hud/H = GLOB.huds[hudtype]
 		H.remove_hud_from(src)
-
+/*
 /mob/dead/observer/verb/toggle_data_huds()
 	set name = "Toggle Sec/Med/Diag HUD"
 	set desc = "Toggles whether you see medical/security/diagnostic HUDs"
@@ -833,7 +833,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	qdel(species)
 
 	update_appearance()
-
+*/
 /mob/dead/observer/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE, need_hands = FALSE, floor_okay=FALSE)
 	return isAdminGhostAI(usr)
 
@@ -852,10 +852,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if(NAMEOF(src, fun_verbs))
 			if(fun_verbs)
 				add_verb(src, /mob/dead/observer/verb/boo)
-				add_verb(src, /mob/dead/observer/verb/possess)
+//				add_verb(src, /mob/dead/observer/verb/possess)
 			else
 				remove_verb(src, /mob/dead/observer/verb/boo)
-				remove_verb(src, /mob/dead/observer/verb/possess)
+//				remove_verb(src, /mob/dead/observer/verb/possess)
 
 /mob/dead/observer/reset_perspective(atom/A)
 	if(client)
@@ -929,7 +929,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		sight = null //we dont want ghosts to see through walls in secret areas
 	else
 		sight = initial(sight)
-
+/*
 /mob/dead/observer/verb/register_pai_candidate()
 	set category = "Ghost"
 	set name = "pAI Setup"
@@ -960,7 +960,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!game)
 		game = create_mafia_game("mafia")
 	game.ui_interact(usr)
-
+*/
 /mob/dead/observer/CtrlShiftClick(mob/user)
 	if(isobserver(user) && check_rights(R_SPAWN))
 		change_mob_type( /mob/living/carbon/human , null, null, TRUE) //always delmob, ghosts shouldn't be left lingering
@@ -1006,7 +1006,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		spawners_menu = new(src)
 
 	spawners_menu.ui_interact(src)
-
+/*
 /mob/dead/observer/proc/open_minigames_menu()
 	set name = "Minigames Menu"
 	set desc = "See all currently available minigames"
@@ -1020,7 +1020,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		minigames_menu = new(src)
 
 	minigames_menu.ui_interact(src)
-
+*/
 /mob/dead/observer/proc/tray_view()
 	set category = "Ghost"
 	set name = "T-ray view"

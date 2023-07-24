@@ -993,7 +993,7 @@
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
 	if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
-		switch(affected)
+		switch(def_zone)
 			if(BODY_ZONE_PRECISE_GROIN)
 				if(victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
 					var/protection = 0
@@ -1032,8 +1032,8 @@
 						if(diceroll == DICE_CRIT_FAILURE)
 							victim.emote("fart")
 							victim.Stun(1 SECONDS)
-						victim.visible_message(span_pinkdang("[victim] is hooey-knocked out by [user]!"), \
-											span_pinkdang("I am was hooey-knocked out by [user]!"), \
+						victim.visible_message(span_pinkdang("[victim] is tummy-knocked by [user]!"), \
+											span_pinkdang("I am was tummy-knocked by [user]!"), \
 											span_hear("I hear the sound of flesh."))
 						playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
 	return TRUE

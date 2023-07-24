@@ -17,9 +17,9 @@
 	name = "Orbit"
 	icon_state = "orbit"
 
-/atom/movable/screen/ghost/orbit/Click()
-	var/mob/dead/observer/G = usr
-	G.follow()
+///atom/movable/screen/ghost/orbit/Click()
+//	var/mob/dead/observer/G = usr
+//	G.follow()
 
 /atom/movable/screen/ghost/reenter_corpse
 	name = "Reenter corpse"
@@ -41,17 +41,17 @@
 	name = "pAI Candidate"
 	icon_state = "pai"
 
-/atom/movable/screen/ghost/pai/Click()
-	var/mob/dead/observer/G = usr
-	G.register_pai()
+///atom/movable/screen/ghost/pai/Click()
+//	var/mob/dead/observer/G = usr
+//	G.register_pai()
 
 /atom/movable/screen/ghost/minigames_menu
 	name ="Minigames"
 	icon_state = "minigames"
-	
-/atom/movable/screen/ghost/minigames_menu/Click()
-	var/mob/dead/observer/observer = usr
-	observer.open_minigames_menu()
+
+///atom/movable/screen/ghost/minigames_menu/Click()
+//	var/mob/dead/observer/observer = usr
+//	observer.open_minigames_menu()
 
 /datum/hud/ghost/New(mob/owner)
 	..()

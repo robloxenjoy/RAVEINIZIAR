@@ -110,11 +110,11 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 		\t\t[num_sentient_mobs_hit] of which were sentient, and \n\
 		\t\t[num_sentient_people_hit] of which were sentient people</span>"
 
-/obj/effect/immovablerod/Topic(href, href_list)
-	if(href_list["orbit"])
-		var/mob/dead/observer/ghost = usr
-		if(istype(ghost))
-			ghost.ManualFollow(src)
+///obj/effect/immovablerod/Topic(href, href_list)
+//	if(href_list["orbit"])
+//		var/mob/dead/observer/ghost = usr
+//		if(istype(ghost))
+//			ghost.ManualFollow(src)
 
 /obj/effect/immovablerod/proc/on_entered_over_movable(datum/source, atom/movable/atom_crossed_over)
 	SIGNAL_HANDLER

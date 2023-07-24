@@ -41,16 +41,16 @@
 	//Climb up
 	else if((src.turf_height - dropping_turf.turf_height >= TURF_HEIGHT_BLOCK_THRESHOLD) || isopenspaceturf(dropping_turf))
 		if(!dropping_turf.type == /turf/closed)
-			if(user.body_position != LYING_DOWN)
-				if(user == dropping)
-					dropping.visible_message(span_notice("<b>[user]</b> starts climbing onto [src]"), \
-									span_notice("I start climbing onto [src]."))
-				else
-					dropping.visible_message(span_warning("<b>[user]</b> starts pulling <b>[dropping]</b> onto [src]"), \
-										span_notice("I start pulling <b>[dropping]</b> onto <b>[src]</b>."))
-				if(do_mob(user, dropping, 2 SECONDS))
-					dropping.forceMove(src)
-				return
+//			if(user.body_position != LYING_DOWN)
+			if(user == dropping)
+				dropping.visible_message(span_notice("<b>[user]</b> starts climbing onto [src]"), \
+								span_notice("I start climbing onto [src]."))
+			else
+				dropping.visible_message(span_warning("<b>[user]</b> starts pulling <b>[dropping]</b> onto [src]"), \
+									span_notice("I start pulling <b>[dropping]</b> onto <b>[src]</b>."))
+			if(do_mob(user, dropping, 2 SECONDS))
+				dropping.forceMove(src)
+			return
 
 /turf/attack_hand(mob/user, list/modifiers)
 	. = ..()

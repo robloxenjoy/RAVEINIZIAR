@@ -645,6 +645,10 @@
 	density = TRUE
 	anchored = TRUE
 	obj_flags = NONE
+	armor = list(MELEE = 80, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 25, BIO = 100, FIRE = 80, ACID = 100)
+	max_integrity = 75
+	explosion_block = 1
+	damage_deflection = 11
 
 /obj/structure/stone_eater/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
@@ -680,9 +684,13 @@
 	layer = FLY_LAYER
 	density = TRUE
 	anchored = TRUE
+	obj_flags = NONE
+	armor = list(MELEE = 80, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 25, BIO = 100, FIRE = 80, ACID = 100)
+	max_integrity = 75
+	explosion_block = 1
+	damage_deflection = 11
 	var/first_slot = FALSE
 	var/second_slot = FALSE
-	obj_flags = NONE
 
 /obj/structure/stone_mixer/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()

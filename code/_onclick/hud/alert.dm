@@ -708,8 +708,8 @@ so as to remain in compliance with the most up-to-date laws."
 			var/turf/target_turf = get_turf(target)
 			if(target_turf && isturf(target_turf))
 				ghost_owner.abstract_move(target_turf)
-		if(NOTIFY_ORBIT)
-			ghost_owner.ManualFollow(target)
+//		if(NOTIFY_ORBIT)
+//			ghost_owner.ManualFollow(target)
 
 //OBJECT-BASED
 

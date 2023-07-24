@@ -1200,8 +1200,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(!can_ghost)
 		return FALSE
 
-	var/mob/dead/observer/observer = mob
-	observer.ManualFollow(target)
+//	var/mob/dead/observer/observer = mob
+//	observer.ManualFollow(target)
 
 /client/verb/stop_client_sounds()
 	set name = "Stop Sounds"

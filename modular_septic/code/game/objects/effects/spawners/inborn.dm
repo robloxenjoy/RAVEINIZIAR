@@ -104,3 +104,38 @@
 		new_spawn.height = HUMAN_HEIGHT_MEDIUM
 
 	new_spawn.attributes.update_attributes()
+
+/obj/effect/mob_spawn/human/vampyre
+	name = "Vampyric"
+	desc = "Wow this is fantastic!"
+	random = FALSE
+	icon = 'icons/obj/lavaland/survival_pod.dmi'
+	icon_state = "willete"
+	roundstart = TRUE
+	death = FALSE
+	anchored = TRUE
+	density = FALSE
+	show_flavour = FALSE
+	permanent = TRUE
+	instant = TRUE
+	outfit = FALSE
+	mob_species = /datum/species/vampire
+	uses = 5
+
+/obj/effect/mob_spawn/human/vampyre/special(mob/living/carbon/human/new_spawn)
+	. = ..()
+	new_spawn.fully_replace_character_name(new_spawn.real_name, "Blackskinned")
+	new_spawn.left_eye_color = "#a90000"
+	new_spawn.right_eye_color = "#a90000"
+	var/datum/component/babble/babble = new_spawn.GetComponent(/datum/component/babble)
+	if(!babble)
+		new_spawn.AddComponent(/datum/component/babble, 'modular_pod/sound/voice/vampvoice.ogg')
+	else
+		babble.babble_sound_override = 'modular_pod/sound/voice/vampvoice.ogg'
+		babble.volume = BABBLE_DEFAULT_VOLUME
+		babble.duration = BABBLE_DEFAULT_DURATION
+
+	new_spawn.attributes.add_sheet(/datum/attribute_holder/sheet/job/venturergoer)
+	new_spawn.height = HUMAN_HEIGHT_TALLEST
+
+	new_spawn.attributes.update_attributes()

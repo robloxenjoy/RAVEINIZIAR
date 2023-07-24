@@ -44,8 +44,9 @@
 							user.apply_damage(15, BRUTE, BODY_ZONE_HEAD, user.run_armor_check(BODY_ZONE_HEAD, MELEE), wound_bonus = 5, sharpness = NONE)
 						else
 							user.visible_message(span_notice("[user] stupidly strikes the [src] with [W]."),span_notice("You stupidly strike the [src] with [W]."), span_hear("You hear the sound of mining."))
-			else
-				if(user.a_intent == INTENT_HARM)
+		else
+			if(user.a_intent == INTENT_HARM)
+				if(W.can_dig)
 					user.visible_message(span_notice("[user] ruins the [src] with [W]."),span_notice("You ruin the [src] with [W]."), span_hear("You hear the sound of mining."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(10)

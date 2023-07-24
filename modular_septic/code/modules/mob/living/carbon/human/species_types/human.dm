@@ -3,6 +3,12 @@
 	default_mutant_bodyparts = list(
 		"ears" = "None",
 		"tail" = "None",
+		"wings" = "None",
+		"spines" = "None",
+		"frills" = "None",
+		"horns" = "None",
+		"moth_antennae" = "None",
+		"moth_markings" = "None",
 		"dick" = "Dick",
 		"tits" = "Tits",
 	)

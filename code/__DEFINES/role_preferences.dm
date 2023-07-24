@@ -60,6 +60,7 @@
 #define ROLE_POSIBRAIN "Posibrain"
 #define ROLE_DRONE "Drone"
 #define ROLE_DEATHSQUAD "Deathsquad"
+#define ROLE_VAMPYRE	"vampyre"
 #define ROLE_LAVALAND "Lavaland"
 #define ROLE_INTERNAL_AFFAIRS "Internal Affairs Agent"
 

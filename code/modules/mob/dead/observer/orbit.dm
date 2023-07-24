@@ -44,7 +44,7 @@ GLOBAL_DATUM_INIT(orbit_menu, /datum/orbit_menu, new)
 				return TRUE
 
 			var/mob/dead/observer/user = usr
-			user.ManualFollow(poi)
+//			user.ManualFollow(poi)
 			user.reset_perspective(null)
 			if (auto_observe)
 				user.do_observe(poi)

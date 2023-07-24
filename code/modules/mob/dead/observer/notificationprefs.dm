@@ -1,3 +1,4 @@
+/*
 /mob/dead/observer/verb/show_notificationprefs()
 	set category = "Ghost"
 	set name = "Notification preferences"
@@ -48,3 +49,4 @@
 			if (key && islist(GLOB.poll_ignore[key]))
 				GLOB.poll_ignore[key] ^= list(user.ckey)
 	. = TRUE
+*/

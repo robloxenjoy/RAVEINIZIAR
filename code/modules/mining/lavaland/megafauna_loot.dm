@@ -657,11 +657,11 @@
 
 	summon_cooldown = world.time + 600
 
-/obj/item/melee/ghost_sword/Topic(href, href_list)
-	if(href_list["orbit"])
-		var/mob/dead/observer/ghost = usr
-		if(istype(ghost))
-			ghost.ManualFollow(src)
+///obj/item/melee/ghost_sword/Topic(href, href_list)
+//	if(href_list["orbit"])
+//		var/mob/dead/observer/ghost = usr
+//		if(istype(ghost))
+//			ghost.ManualFollow(src)
 
 /obj/item/melee/ghost_sword/process()
 	ghost_check()
