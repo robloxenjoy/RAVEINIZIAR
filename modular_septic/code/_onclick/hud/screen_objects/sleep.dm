@@ -14,7 +14,7 @@
 		else
 			if(C.getShock() >= PAIN_NO_SLEEP * (GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)/ATTRIBUTE_MIDDLING))
 				to_chat(C, span_warning("[fail_msg()] I can't sleep while... [span_userdanger("IN PAIN!")]"))
-				C.playsound_local(get_turf(C), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+				C.playsound_local(get_turf(C), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 				return
 			ADD_TRAIT(C, TRAIT_TRYINGTOSLEEP, "trynasleep")
 		update_appearance()

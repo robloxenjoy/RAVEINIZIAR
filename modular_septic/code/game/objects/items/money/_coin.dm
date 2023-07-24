@@ -1,7 +1,7 @@
 /obj/item/money/coin
 	name = "coin"
 	desc = "My life is like a videogame, trying hard to beat the stage, all while i am still collecting coins."
-	drop_sound = 'modular_septic/sound/items/coin_drop.wav'
+	drop_sound = 'modular_septic/sound/items/coin_drop.ogg'
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron = 400)
 	is_coin = TRUE
@@ -23,7 +23,7 @@
 	COOLDOWN_START(src, flip_cooldown, 1 SECONDS)
 	icon_state = "[base_icon_state]_[side]_flip"
 	side = pick(sides)
-	playsound(src, 'modular_septic/sound/items/coin_flip.wav', 60)
+	playsound(src, 'modular_septic/sound/items/coin_flip.ogg', 60)
 	user.visible_message(span_notice("[user] flips [src]..."), \
 		span_notice("I flip [src]..."), \
 		span_hear("I hear a metal object being flung."))

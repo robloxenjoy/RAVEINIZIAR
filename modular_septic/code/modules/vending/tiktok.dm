@@ -42,10 +42,10 @@
 	products = list(
 		/obj/item/clothing/suit/armor/vest/alt/discrete = 1,
 	)
-	var/list/tiktoklines = list('modular_septic/sound/effects/singer1.wav', 'modular_septic/sound/effects/singer2.wav')
+	var/list/tiktoklines = list('modular_septic/sound/effects/singer1.ogg', 'modular_septic/sound/effects/singer2.ogg')
 	var/refuse_sound_cooldown_duration = 1 SECONDS
-	var/barfsound = 'modular_septic/sound/emotes/vomit.wav'
-	var/crushersound = list('modular_septic/sound/effects/crusher1.wav', 'modular_septic/sound/effects/crusher2.wav', 'modular_septic/sound/effects/crusher3.wav')
+	var/barfsound = 'modular_septic/sound/emotes/vomit.ogg'
+	var/crushersound = list('modular_septic/sound/effects/crusher1.ogg', 'modular_septic/sound/effects/crusher2.ogg', 'modular_septic/sound/effects/crusher3.ogg')
 	COOLDOWN_DECLARE(refuse_cooldown)
 
 /obj/machinery/vending/tiktok/attackby(obj/item/I, mob/living/user, params)
@@ -53,7 +53,7 @@
 	if(!GLOB.bartering_inputs[I.type])
 		if(COOLDOWN_FINISHED(src, refuse_cooldown))
 			sound_hint()
-			playsound(src, 'modular_septic/sound/effects/clunk.wav', 60, vary = FALSE)
+			playsound(src, 'modular_septic/sound/effects/clunk.ogg', 60, vary = FALSE)
 			COOLDOWN_START(src, refuse_cooldown, refuse_sound_cooldown_duration)
 		return
 	if(user.transferItemToLoc(I, src))
@@ -136,7 +136,7 @@
 			var/output_amount = bartering_recipe.outputs[output]
 			for(var/i in 1 to output_amount)
 				new output(loc)
-		playsound(src, 'modular_septic/sound/effects/ring.wav', 90, TRUE)
+		playsound(src, 'modular_septic/sound/effects/ring.ogg', 90, TRUE)
 		speak("Take from me.")
 
 /obj/machinery/vending/tiktok/proc/vomit_items()

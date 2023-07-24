@@ -8,7 +8,7 @@
 	inhand_icon_state = "syringe-0"
 	icon_state = "syringe_0"
 	worn_icon_state = "pen"
-	drop_sound = list('modular_septic/sound/effects/syringe_drop1.wav', 'modular_septic/sound/effects/syringe_drop2.wav')
+	drop_sound = list('modular_septic/sound/effects/syringe_drop1.ogg', 'modular_septic/sound/effects/syringe_drop2.ogg')
 
 /obj/item/reagent_containers/syringe/update_overlays()
 	. = ..()
@@ -60,7 +60,7 @@
 			log_combat(user, living_target, "injected", src, addition="which had [contained]")
 	reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user, methods = INJECT)
 	to_chat(user, span_notice("You inject [amount_per_transfer_from_this] units of the solution. The syringe now contains [reagents.total_volume] units."))
-	playsound(src, 'modular_septic/sound/effects/syringe_success.wav',	60, FALSE)
+	playsound(src, 'modular_septic/sound/effects/syringe_success.ogg',	60, FALSE)
 
 /obj/item/reagent_containers/syringe/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
 	if (!try_syringe(target, user, proximity_flag))
@@ -85,7 +85,7 @@
 		busy = FALSE
 		if(living_target.transfer_blood_to(src, drawn_amount))
 			user.visible_message(span_notice("[user] takes a blood sample from [living_target]."))
-			playsound(src, 'modular_septic/sound/effects/syringe_extract.wav', volume, TRUE, vary = FALSE)
+			playsound(src, 'modular_septic/sound/effects/syringe_extract.ogg', volume, TRUE, vary = FALSE)
 		else
 			to_chat(user, span_warning("You are unable to draw any blood from [living_target]!"))
 	else
@@ -100,7 +100,7 @@
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user) // transfer from, transfer to - who cares?
 
 		to_chat(user, span_notice("You fill [src] with [trans] units of the solution. It now contains [reagents.total_volume] units."))
-		playsound(src, 'modular_septic/sound/effects/syringe_extract.wav', 60, FALSE)
+		playsound(src, 'modular_septic/sound/effects/syringe_extract.ogg', 60, FALSE)
 
 	return SECONDARY_ATTACK_CONTINUE_CHAIN
 

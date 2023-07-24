@@ -15,10 +15,10 @@
 
 	if (scanning)
 		AddComponent(/datum/component/geiger_sound)
-		playsound(src, 'modular_septic/sound/effects/geiger_turn_on_0.wav', 90, FALSE)
+		playsound(src, 'modular_septic/sound/effects/geiger_turn_on_0.ogg', 90, FALSE)
 	else
 		qdel(GetComponent(/datum/component/geiger_sound))
-		playsound(src, 'modular_septic/sound/effects/geiger_turn_off_0.wav', 75, FALSE)
+		playsound(src, 'modular_septic/sound/effects/geiger_turn_off_0.ogg', 75, FALSE)
 
 	update_appearance(UPDATE_ICON)
 	to_chat(user, span_notice("[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src]."))

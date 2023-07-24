@@ -7,9 +7,9 @@
 	/// Skill level required to cling to this
 	var/clinging_requirement = 2
 	/// Sound we play when the parent is clinged to by a mob
-	var/clinging_sound = 'modular_septic/sound/effects/clung.wav'
+	var/clinging_sound = 'modular_septic/sound/effects/clung.ogg'
 
-/datum/element/clingable/Attach(datum/target, clinging_skill = SKILL_ACROBATICS, clinging_requirement = 2, clinging_sound = 'modular_septic/sound/effects/clung.wav')
+/datum/element/clingable/Attach(datum/target, clinging_skill = SKILL_ACROBATICS, clinging_requirement = 2, clinging_sound = 'modular_septic/sound/effects/clung.ogg')
 	if(!isatom(target) || isarea(target))
 		return ELEMENT_INCOMPATIBLE
 	. = ..()

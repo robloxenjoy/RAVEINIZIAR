@@ -16,7 +16,7 @@
 	/// Gives us an unique icon_state with an uncocked hammer, if we are a break action or revovler
 	var/uncocked_icon_state = FALSE
 	/// Unracking sound
-	var/unrack_sound = 'modular_septic/sound/weapons/guns/decock_generic.wav'
+	var/unrack_sound = 'modular_septic/sound/weapons/guns/decock_generic.ogg'
 	/// Volume of unracking sound
 	var/unrack_sound_volume = 40
 	/// Whether unracking sound should vary
@@ -177,7 +177,7 @@
 		if(!do_after(user, 3 SECONDS, src))
 			return
 		to_chat(user, span_notice("I unscrew [suppressor] from [src]."))
-		playsound(user, 'modular_septic/sound/weapons/guns/silencer_off.wav', 75, TRUE)
+		playsound(user, 'modular_septic/sound/weapons/guns/silencer_off.ogg', 75, TRUE)
 		user.put_in_hands(suppressor)
 		clear_suppressor()
 	else
@@ -234,7 +234,7 @@
 				clear_suppressor()
 				return
 			to_chat(user, span_notice("I screw [suppressor] onto [src]."))
-			playsound(user, 'modular_septic/sound/weapons/guns/silencer_on.wav', 75, TRUE)
+			playsound(user, 'modular_septic/sound/weapons/guns/silencer_on.ogg', 75, TRUE)
 			return
 
 	if(can_be_sawn_off)

@@ -35,7 +35,7 @@
 	minimum_distance = 7
 	ranged_cooldown_time = 50
 	stat_attack = HARD_CRIT
-	projectilesound = 'modular_septic/sound/weapons/guns/energy/siren.wav'
+	projectilesound = 'modular_septic/sound/weapons/guns/energy/siren.ogg'
 	projectiletype = /obj/projectile/beam/laser/siren
 	deathmessage = "painfully collapses."
 	deathsound = 'modular_pod/sound/mobs_yes/hydra_2.ogg'
@@ -48,7 +48,7 @@
 
 /mob/living/simple_animal/hostile/podozl/hydra/handle_automated_speech(override)
 	if(speak_chance && (override || prob(speak_chance)))
-		playsound(src, 'modular_pod/sound/mobs_yes/hydra_talk.wav', 50)
+		playsound(src, 'modular_pod/sound/mobs_yes/hydra_talk.ogg', 50)
 	..()
 
 /mob/living/simple_animal/pet/podozl/shoebill

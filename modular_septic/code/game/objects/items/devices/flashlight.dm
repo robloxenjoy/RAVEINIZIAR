@@ -1,5 +1,5 @@
 /obj/item/flashlight/flare
-	pickup_sound = 'modular_septic/sound/effects/flare_prepare.wav'
+	pickup_sound = 'modular_septic/sound/effects/flare_prepare.ogg'
 	var/datum/looping_sound/flare/soundloop
 
 /obj/item/flashlight/flare/Initialize(mapload)
@@ -15,7 +15,7 @@
 	fuel = max(fuel - delta_time, 0)
 	if((fuel <= 0) || !on)
 		turn_off()
-		playsound(src, 'modular_septic/sound/effects/flare_end.wav', 90, FALSE)
+		playsound(src, 'modular_septic/sound/effects/flare_end.ogg', 90, FALSE)
 		if(!fuel)
 			icon_state = "[initial(icon_state)]-empty"
 		STOP_PROCESSING(SSobj, src)
@@ -31,7 +31,7 @@
 	. = ..()
 	if(.)
 		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
-		playsound(src, 'modular_septic/sound/effects/flare_start.wav', 90, FALSE)
+		playsound(src, 'modular_septic/sound/effects/flare_start.ogg', 90, FALSE)
 		soundloop.start()
 		force = on_damage
 		damtype = BURN

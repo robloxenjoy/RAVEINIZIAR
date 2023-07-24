@@ -76,7 +76,7 @@
 		homie.ghostize(FALSE)
 		homie.mind_initialize()
 		homie.key = picked.key
-		playsound(homie, 'modular_septic/sound/effects/homielife.wav', 100, FALSE)
+		playsound(homie, 'modular_septic/sound/effects/homielife.ogg', 100, FALSE)
 		notify_ghosts("A homie has gained sentience in \the [get_area(homie)]!", source = homie, action = NOTIFY_ORBIT, flashwindow = FALSE, header = "Homie Out of a Geod")
 
 /obj/item/geode/homie

@@ -29,9 +29,9 @@
 	armor_damaged_sound = "heavy_helmet"
 	armor_damaged_sound_local = "heavy_helmet"
 	carry_weight = 2.5 KILOGRAMS
-	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.wav'
-	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.wav'
-	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.wav'
+	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.ogg'
 
 /obj/item/clothing/head/helmet/medium
 	name = "\"Evacuador\" type III+ ballistic helmet"
@@ -121,7 +121,7 @@
                 WOUND = 0, \
                 ORGAN = 0)
 	carry_weight = 5 KILOGRAMS
-	equip_sound = 'modular_septic/sound/armor/equip/helmet_use_visor.wav'
+	equip_sound = 'modular_septic/sound/armor/equip/helmet_use_visor.ogg'
 
 /obj/item/clothing/head/helmet/infiltrator
 	name = "infiltrator helmet"

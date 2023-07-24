@@ -74,7 +74,7 @@
 		affected_mob.adjustStaminaLoss(-5)
 		affected_mob.adjustFatigueLoss(-2.5)
 		if((affected_mob.stat < DEAD) && DT_PROB(2, delta_time))
-			playsound(affected_mob, "modular_septic/sound/zombie/idle[rand(1, 14)].wav")
+			playsound(affected_mob, "modular_septic/sound/zombie/idle[rand(1, 14)].ogg")
 
 /datum/disease/zombification/proc/zombify()
 	if(QDELETED(affected_mob))
@@ -110,7 +110,7 @@
 	old_speedmod = affected_mob.dna.species.speedmod
 	affected_mob.dna.species.speedmod = 0.75
 	old_deathsound = affected_mob.dna.species.deathsound
-	affected_mob.dna.species.deathsound = 'modular_septic/sound/zombie/die.wav'
+	affected_mob.dna.species.deathsound = 'modular_septic/sound/zombie/die.ogg'
 	affected_mob.drop_all_held_items()
 	var/list/stat_modification = list( \
 		STAT_STRENGTH = 5, \

@@ -126,18 +126,18 @@
 		if(has_coin && has_note)
 			break
 	if(has_coin && has_note)
-		real_stack.drop_sound = 'modular_septic/sound/items/money_and_coin_drop.wav'
+		real_stack.drop_sound = 'modular_septic/sound/items/money_and_coin_drop.ogg'
 	else if(has_coin)
-		real_stack.drop_sound = 'modular_septic/sound/items/coin_drop.wav'
+		real_stack.drop_sound = 'modular_septic/sound/items/coin_drop.ogg'
 	else
-		real_stack.drop_sound = 'modular_septic/sound/items/money_drop.wav'
+		real_stack.drop_sound = 'modular_septic/sound/items/money_drop.ogg'
 	if(!silent)
 		if(has_coin && has_note)
-			playsound(real_stack, 'modular_septic/sound/items/money_and_coin_stack.wav', 60)
+			playsound(real_stack, 'modular_septic/sound/items/money_and_coin_stack.ogg', 60)
 		else if(has_coin)
-			playsound(real_stack, 'modular_septic/sound/items/coin_stack.wav', 60)
+			playsound(real_stack, 'modular_septic/sound/items/coin_stack.ogg', 60)
 		else
-			playsound(real_stack, 'modular_septic/sound/items/money_stack.wav', 60)
+			playsound(real_stack, 'modular_septic/sound/items/money_stack.ogg', 60)
 	real_stack.update_appearance()
 	return real_stack
 

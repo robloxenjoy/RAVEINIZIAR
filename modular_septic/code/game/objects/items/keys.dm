@@ -14,8 +14,8 @@
 	icon = 'modular_septic/icons/obj/items/keys.dmi'
 	icon_state = "key_dorm"
 	base_icon_state = "key_dorm"
-	pickup_sound = 'modular_septic/sound/effects/keys_pickup.wav'
-	drop_sound = 'modular_septic/sound/effects/keys_drop.wav'
+	pickup_sound = 'modular_septic/sound/effects/keys_pickup.ogg'
+	drop_sound = 'modular_septic/sound/effects/keys_drop.ogg'
 
 /obj/item/key/podpol/woody
 	name = "Wooden Key"
@@ -23,5 +23,5 @@
 	icon = 'modular_septic/icons/obj/items/keys.dmi'
 	icon_state = "key_wooden"
 	base_icon_state = "key_wooden"
-	pickup_sound = 'modular_septic/sound/effects/keys_pickup.wav'
-	drop_sound = 'modular_septic/sound/effects/keys_drop.wav'
+	pickup_sound = 'modular_septic/sound/effects/keys_pickup.ogg'
+	drop_sound = 'modular_septic/sound/effects/keys_drop.ogg'

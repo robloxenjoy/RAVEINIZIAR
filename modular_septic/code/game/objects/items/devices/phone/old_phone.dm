@@ -484,7 +484,7 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/cellular_phone/proc/gib_them_with_a_delay(mob/living/user)
-	playsound(src, 'modular_septic/sound/effects/ted_beeping.wav', 80, FALSE, 2)
+	playsound(src, 'modular_septic/sound/effects/ted_beeping.ogg', 80, FALSE, 2)
 	if(user)
 		user.sound_hint()
 	else

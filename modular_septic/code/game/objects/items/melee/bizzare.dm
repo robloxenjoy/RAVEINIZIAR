@@ -9,10 +9,10 @@
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/bizzare_righthand.dmi'
 	worn_icon = null
 	equip_sound = null
-	hitsound = list('modular_septic/sound/weapons/melee/sign1.wav', 'modular_septic/sound/weapons/melee/sign2.wav')
-	miss_sound = list('modular_septic/sound/weapons/melee/sign_miss1.wav', 'modular_septic/sound/weapons/melee/sign_miss2.wav')
-	pickup_sound = 'modular_septic/sound/weapons/melee/sign_pickup.wav'
-	drop_sound = 'modular_septic/sound/weapons/melee/sign_drop.wav'
+	hitsound = list('modular_septic/sound/weapons/melee/sign1.ogg', 'modular_septic/sound/weapons/melee/sign2.ogg')
+	miss_sound = list('modular_septic/sound/weapons/melee/sign_miss1.ogg', 'modular_septic/sound/weapons/melee/sign_miss2.ogg')
+	pickup_sound = 'modular_septic/sound/weapons/melee/sign_pickup.ogg'
+	drop_sound = 'modular_septic/sound/weapons/melee/sign_drop.ogg'
 	wield_info = /datum/wield_info/tricky
 	min_force = 15
 	force = 20
@@ -49,9 +49,9 @@
 
 	var/schwicky_turfs = list(/turf/open/floor/plating/dirt, /turf/open/floor/plating/grass, /turf/open/floor/plating/asteroid)
 	if(over.type in schwicky_turfs)
-		playsound(user, 'modular_septic/sound/weapons/melee/stone_embed.wav', 80, FALSE)
+		playsound(user, 'modular_septic/sound/weapons/melee/stone_embed.ogg', 80, FALSE)
 	else
-		playsound(user, 'modular_septic/sound/weapons/melee/tile_embed.wav', 80, FALSE)
+		playsound(user, 'modular_septic/sound/weapons/melee/tile_embed.ogg', 80, FALSE)
 	user.do_attack_animation(trickysign)
 	user.transferItemToLoc(src, trickysign)
 	QDEL_NULL(trickysign.trickysign) //it already gets one on initialize, we need to troll

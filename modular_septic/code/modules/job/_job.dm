@@ -234,9 +234,9 @@
 		spawned_human.apply_status_effect(/datum/status_effect/gakster_dissociative_identity_disorder)
 		var/datum/component/babble/babble = spawned_human.GetComponent(/datum/component/babble)
 		if(!babble)
-			spawned_human.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/gakster.wav')
+			spawned_human.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/gakster.ogg')
 		else
-			babble.babble_sound_override = 'modular_septic/sound/voice/babble/gakster.wav'
+			babble.babble_sound_override = 'modular_septic/sound/voice/babble/gakster.ogg'
 			babble.volume = BABBLE_DEFAULT_VOLUME
 			babble.duration = BABBLE_DEFAULT_DURATION
 

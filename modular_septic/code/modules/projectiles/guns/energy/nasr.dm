@@ -4,15 +4,15 @@
 	icon = 'modular_septic/icons/obj/items/guns/energy.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_righthand.dmi'
-	equip_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_holster.wav'
-	pickup_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_draw.wav'
-	fire_sound = list('modular_septic/sound/weapons/guns/energy/nasr1.wav', 'modular_septic/sound/weapons/guns/energy/nasr2.wav', 'modular_septic/sound/weapons/guns/energy/nasr3.wav')
-	safety_off_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyoff.wav'
-	safety_on_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyon.wav'
-	drop_sound = 'modular_septic/sound/weapons/guns/drop_lightgun.wav'
+	equip_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_holster.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_draw.ogg'
+	fire_sound = list('modular_septic/sound/weapons/guns/energy/nasr1.ogg', 'modular_septic/sound/weapons/guns/energy/nasr2.ogg', 'modular_septic/sound/weapons/guns/energy/nasr3.ogg')
+	safety_off_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyoff.ogg'
+	safety_on_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyon.ogg'
+	drop_sound = 'modular_septic/sound/weapons/guns/drop_lightgun.ogg'
 	dry_fire_sound_vary = TRUE
 	dry_fire_message = span_danger("*BLRRT*")
-	dry_fire_sound = list('modular_septic/sound/weapons/guns/energy/nasr_alarm1.wav', 'modular_septic/sound/weapons/guns/energy/nasr_alarm2.wav')
+	dry_fire_sound = list('modular_septic/sound/weapons/guns/energy/nasr_alarm1.ogg', 'modular_septic/sound/weapons/guns/energy/nasr_alarm2.ogg')
 	vary_fire_sound = FALSE
 	slot_flags = ITEM_SLOT_BELT
 	weapon_weight = WEAPON_LIGHT
@@ -59,4 +59,4 @@
 			recharge_newshot(TRUE)
 		sound_hint()
 		flick("nasr_reload", src)
-		playsound(src, 'modular_septic/sound/weapons/guns/energy/nasrcharge.wav', 75, FALSE)
+		playsound(src, 'modular_septic/sound/weapons/guns/energy/nasrcharge.ogg', 75, FALSE)

@@ -2,8 +2,8 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	skill_ranged = SKILL_PISTOL
 	carry_weight = 2.5 KILOGRAMS
-	pickup_sound = 'modular_septic/sound/weapons/guns/generic_draw.wav'
-	dry_fire_sound = 'modular_septic/sound/weapons/guns/empty.wav'
+	pickup_sound = 'modular_septic/sound/weapons/guns/generic_draw.ogg'
+	dry_fire_sound = 'modular_septic/sound/weapons/guns/empty.ogg'
 	/// Message when we dry fire (applies both to dry firing and failing to fire for other reasons)
 	var/dry_fire_message = span_danger("*click*")
 	/// Volume of dry_fire_sound
@@ -11,13 +11,13 @@
 	/// Whether to vary dry_fire_sound or not
 	var/dry_fire_sound_vary = FALSE
 	/// Sound for aiming at someone
-	var/aim_stress_sound = 'modular_septic/sound/weapons/guns/aim_stress.wav'
+	var/aim_stress_sound = 'modular_septic/sound/weapons/guns/aim_stress.ogg'
 	/// Volume for aiming sound
 	var/aim_stress_sound_volume = 50
 	/// Whether the aiming sound should vary on not
 	var/aim_stress_sound_vary = FALSE
 	/// Sound for stopping aiming at someone
-	var/aim_spare_sound = 'modular_septic/sound/weapons/guns/aim_spare.wav'
+	var/aim_spare_sound = 'modular_septic/sound/weapons/guns/aim_spare.ogg'
 	/// Volume for stopping aiming sound
 	var/aim_spare_sound_volume = 50
 	/// Whether the stopping aiming sound should vary on not
@@ -74,11 +74,11 @@
 	/// Whether the stock is folded or not.
 	var/folded = TRUE
 	/// The sound it makes when you fold a stock
-	var/fold_open_sound = 'modular_septic/sound/weapons/guns/stock_open.wav'
+	var/fold_open_sound = 'modular_septic/sound/weapons/guns/stock_open.ogg'
 	/// The sound it makes when you unfold a stock.
-	var/fold_close_sound = 'modular_septic/sound/weapons/guns/stock_close.wav'
+	var/fold_close_sound = 'modular_septic/sound/weapons/guns/stock_close.ogg'
 	/// Every time you fiddle with the stock
-	var/fiddle = 'modular_septic/sound/effects/fiddle.wav'
+	var/fiddle = 'modular_septic/sound/effects/fiddle.ogg'
 
 /obj/item/gun/Initialize(mapload)
 	. = ..()
@@ -183,7 +183,7 @@
 			to_chat(user, span_notice("I click [seclite] into place on [src]."))
 			set_gun_light(seclite)
 			update_gunlight()
-			playsound(src, 'modular_septic/sound/weapons/guns/mod_use.wav', 75, TRUE, vary = FALSE)
+			playsound(src, 'modular_septic/sound/weapons/guns/mod_use.ogg', 75, TRUE, vary = FALSE)
 			alight = new(src)
 			if(loc == user)
 				alight.Grant(user)
@@ -195,7 +195,7 @@
 			return
 		to_chat(user, span_notice("I attach [knife] to [src]'s bayonet lug."))
 		bayonet = knife
-		playsound(src, 'modular_septic/sound/weapons/guns/mod_use.wav', 75, TRUE, vary = FALSE)
+		playsound(src, 'modular_septic/sound/weapons/guns/mod_use.ogg', 75, TRUE, vary = FALSE)
 		update_appearance()
 	else
 		return ..()

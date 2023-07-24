@@ -3,13 +3,13 @@
 	fire_delay = 1
 	carry_weight = 1
 	carry_weight = 0.8
-	safety_off_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_safety.wav'
-	safety_on_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_safety.wav'
+	safety_off_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_safety.ogg'
+	safety_on_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_safety.ogg'
 	skill_melee = SKILL_IMPACT_WEAPON
 	skill_ranged = SKILL_PISTOL
 	suppressed = SUPPRESSED_NONE
-	equip_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_holster.wav'
-	drop_sound = 'modular_septic/sound/weapons/guns/drop_lightgun.wav'
+	equip_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_holster.ogg'
+	drop_sound = 'modular_septic/sound/weapons/guns/drop_lightgun.ogg'
 	tetris_width = 64
 	tetris_height = 64
 
@@ -20,16 +20,16 @@
 	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
 	icon_state = "ruger"
 	base_icon_state = "ruger"
-	pickup_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_draw.wav'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_lockback.wav'
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_lockin.wav'
-	eject_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magout.wav'
-	eject_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magout.wav'
+	pickup_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_draw.ogg'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_lockback.ogg'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_lockin.ogg'
+	eject_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magout.ogg'
+	eject_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magout.ogg'
 	eject_sound_vary = FALSE
 	rack_sound_vary = FALSE
-	load_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magin.wav'
-	load_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magin.wav'
-	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_rack.wav'
+	load_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magin.ogg'
+	load_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magin.ogg'
+	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_rack.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 15, \
 		"pixel_y" = 1, \
@@ -51,15 +51,15 @@
 		Uses 9mm ammo. Has a threaded barrel for suppressors."
 	fire_sound = 'modular_septic/sound/weapons/guns/pistol/aps.ogg'
 	suppressed_sound = list(
-		'modular_septic/sound/weapons/guns/pistol/glock_suppressed1.wav', \
-		'modular_septic/sound/weapons/guns/pistol/glock_suppressed2.wav', \
+		'modular_septic/sound/weapons/guns/pistol/glock_suppressed1.ogg', \
+		'modular_septic/sound/weapons/guns/pistol/glock_suppressed2.ogg', \
 	)
-	load_sound = 'modular_septic/sound/weapons/guns/pistol/aps_magin.wav'
-	load_empty_sound = 'modular_septic/sound/weapons/guns/pistol/aps_magin.wav'
+	load_sound = 'modular_septic/sound/weapons/guns/pistol/aps_magin.ogg'
+	load_empty_sound = 'modular_septic/sound/weapons/guns/pistol/aps_magin.ogg'
 	eject_sound = 'modular_septic/sound/weapons/guns/pistol/aps_magout.ogg'
 	eject_empty_sound = 'modular_septic/sound/weapons/guns/pistol/aps_magout.ogg'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/aps_lockback.wav'
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/aps_lockin.wav'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/aps_lockback.ogg'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/aps_lockin.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/aps_rack.ogg'
 	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
 	icon_state = "b93r"
@@ -97,8 +97,8 @@
 		"inactive_wben_suppressed" = TRUE,
 	)
 	recoil_animation_information = list()
-	fire_sound = 'modular_septic/sound/weapons/guns/pistol/colt1.wav'
-	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_rack.wav'
+	fire_sound = 'modular_septic/sound/weapons/guns/pistol/colt1.ogg'
+	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_rack.ogg'
 	force = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	carry_weight = 1 KILOGRAMS
@@ -112,8 +112,8 @@
 	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
 	icon_state = "combatmaster"
 	base_icon_state = "combatmaster"
-	fire_sound = list('modular_septic/sound/weapons/guns/pistol/combatmaster1.wav', 'modular_septic/sound/weapons/guns/pistol/combatmaster2.wav')
-	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/combatmaster_silenced.wav'
+	fire_sound = list('modular_septic/sound/weapons/guns/pistol/combatmaster1.ogg', 'modular_septic/sound/weapons/guns/pistol/combatmaster2.ogg')
+	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/combatmaster_silenced.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 15, \
 		"pixel_y" = 1, \
@@ -137,10 +137,10 @@
 	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
 	icon_state = "glock"
 	base_icon_state = "glock"
-	fire_sound = list('modular_septic/sound/weapons/guns/pistol/glock1.wav', \
-					'modular_septic/sound/weapons/guns/pistol/glock2.wav')
-	suppressed_sound = list('modular_septic/sound/weapons/guns/pistol/glock_suppressed1.wav', \
-					'modular_septic/sound/weapons/guns/pistol/glock_suppressed2.wav')
+	fire_sound = list('modular_septic/sound/weapons/guns/pistol/glock1.ogg', \
+					'modular_septic/sound/weapons/guns/pistol/glock2.ogg')
+	suppressed_sound = list('modular_septic/sound/weapons/guns/pistol/glock_suppressed1.ogg', \
+					'modular_septic/sound/weapons/guns/pistol/glock_suppressed2.ogg')
 	gunshot_animation_information = list(
 		"pixel_x" = 15, \
 		"pixel_y" = 5, \
@@ -166,11 +166,11 @@
 	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
 	icon_state = "ppk"
 	base_icon_state = "ppk"
-	fire_sound = list('modular_septic/sound/weapons/guns/pistol/walter1.wav',
-					'modular_septic/sound/weapons/guns/pistol/walter2.wav')
-	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/walter_silenced.wav'
-	safety_on_sound = 'modular_septic/sound/weapons/guns/pistol/walter_safety.wav'
-	safety_off_sound = 'modular_septic/sound/weapons/guns/pistol/walter_safety.wav'
+	fire_sound = list('modular_septic/sound/weapons/guns/pistol/walter1.ogg',
+					'modular_septic/sound/weapons/guns/pistol/walter2.ogg')
+	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/walter_silenced.ogg'
+	safety_on_sound = 'modular_septic/sound/weapons/guns/pistol/walter_safety.ogg'
+	safety_off_sound = 'modular_septic/sound/weapons/guns/pistol/walter_safety.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 11, \
 		"pixel_y" = 1, \
@@ -212,9 +212,9 @@
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/one_rack.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/one_lockback.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/one_lockin.ogg'
-	aim_stress_sound = list('modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_getout.wav',
-						'modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_noescape.wav')
-	aim_spare_sound = 'modular_septic/sound/weapons/guns/rifle/voice_steyr/spare.wav'
+	aim_stress_sound = list('modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_getout.ogg',
+						'modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_noescape.ogg')
+	aim_spare_sound = 'modular_septic/sound/weapons/guns/rifle/voice_steyr/spare.ogg'
 	force = 10
 	fire_delay = 8
 	mag_type = /obj/item/ammo_box/magazine/aniquilador
@@ -235,9 +235,9 @@
 /obj/item/gun/ballistic/automatic/pistol/remis/aniquilador/proc/aimed_sounding(datum/component/gunpoint/gunpoint, sounding)
 	var/voice_line = "FUCK!"
 	switch(sounding)
-		if('modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_getout.wav')
+		if('modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_getout.ogg')
 			voice_line = "GET OUT FREAK."
-		if('modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_noescape.wav')
+		if('modular_septic/sound/weapons/guns/pistol/voice_anaquilador/anaquilador_noescape.ogg')
 			voice_line = "THERE IS NO ESCAPE."
 	if(voice_line)
 		say(voice_line)
@@ -264,10 +264,10 @@
 		"pixel_y" = 2, \
 	)
 	recoil_animation_information = list()
-	fire_sound = list('modular_septic/sound/weapons/guns/pistol/john1.wav', 'modular_septic/sound/weapons/guns/pistol/john2.wav')
-	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.wav'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.wav'
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.wav'
+	fire_sound = list('modular_septic/sound/weapons/guns/pistol/john1.ogg', 'modular_septic/sound/weapons/guns/pistol/john2.ogg')
+	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.ogg'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.ogg'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.ogg'
 	force = 15
 	fire_delay = 2
 	mag_type = /obj/item/ammo_box/magazine/john
@@ -294,15 +294,15 @@
 		"strength" = 1,
 		"duration" = 2,
 	)
-	fire_sound = 'modular_septic/sound/weapons/guns/pistol/pm9.wav'
-	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_suppressed.wav'
-	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_rack.wav'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_lockback.wav'
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_lockin.wav'
-	load_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magin.wav'
-	load_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magin.wav'
-	eject_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magout.wav'
-	eject_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magout.wav'
+	fire_sound = 'modular_septic/sound/weapons/guns/pistol/pm9.ogg'
+	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_suppressed.ogg'
+	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_rack.ogg'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_lockback.ogg'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_lockin.ogg'
+	load_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magin.ogg'
+	load_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magin.ogg'
+	eject_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magout.ogg'
+	eject_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_magout.ogg'
 	force = 15
 	fire_delay = 2
 	mag_type = /obj/item/ammo_box/magazine/pm9
@@ -343,7 +343,7 @@
 				clear_suppressor()
 				return
 			to_chat(user, span_warning("I screw the mug can onto [src]. Are you happy now?"))
-			playsound(user, 'modular_septic/sound/weapons/guns/silencer_on.wav', 75, TRUE)
+			playsound(user, 'modular_septic/sound/weapons/guns/silencer_on.ogg', 75, TRUE)
 			return
 /*
 // USP
@@ -360,9 +360,9 @@
 	)
 	recoil_animation_information = list()
 	fire_sound = list('modular_septic/sound/weapons/guns/pistol/USP1.ogg', 'modular_septic/sound/weapons/guns/pistol/USP2.ogg')
-	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.wav'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.wav'
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.wav'
+	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.ogg'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.ogg'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.ogg'
 	mag_type = /obj/item/ammo_box/magazine/u45
 	can_suppress = FALSE
 	force = 15
@@ -391,7 +391,7 @@
 	if(COOLDOWN_FINISHED(src, corruption_cooldown) && human_user.dna?.species?.id == SPECIES_INBORN && !corrupted)
 		var/corruption_chance = GET_MOB_ATTRIBUTE_VALUE(human_user, STAT_INTELLIGENCE)*4.20 // :3
 		human_user.audible_message(span_boldwarning("[human_user] whispers a secret into [src]'s ear."))
-		playsound(human_user, 'modular_septic/sound/effects/whispers.wav', 35, TRUE)
+		playsound(human_user, 'modular_septic/sound/effects/whispers.ogg', 35, TRUE)
 		corrupt(corruption_chance, user)
 		COOLDOWN_START(src, corruption_cooldown, corruption_cooldown_duration)
 

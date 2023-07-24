@@ -439,11 +439,11 @@
 	inhand_icon_state = "ironpickaxe"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
 	worn_icon_state = "ironpickaxe"
-	equip_sound = 'modular_pod/sound/eff/weapon/sheath_default.wav'
-	pickup_sound = 'modular_pod/sound/eff/weapon/draw_default.wav'
-	miss_sound = list('modular_pod/sound/eff/weapon/swing_default.wav')
+	equip_sound = 'modular_pod/sound/eff/weapon/sheath_default.ogg'
+	pickup_sound = 'modular_pod/sound/eff/weapon/draw_default.ogg'
+	miss_sound = list('modular_pod/sound/eff/weapon/swing_default.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	hitsound = list('modular_pod/sound/eff/weapon/hit_default.wav')
+	hitsound = list('modular_pod/sound/eff/weapon/hit_default.ogg')
 	w_class = WEIGHT_CLASS_NORMAL
 	wound_bonus = 5
 	bare_wound_bonus = 6

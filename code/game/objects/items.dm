@@ -424,7 +424,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		rustbegin -= modifier
 	if(rustbegin <= 0)
 		rustbegin = 0
-		playsound(src.loc, 'modular_septic/sound/effects/rusted.wav', 100, TRUE)
+		playsound(src.loc, 'modular_septic/sound/effects/rusted.ogg', 100, TRUE)
 		src.visible_message(span_notice("[src] become rusty."), span_notice("[src] become rusty."), span_hear("You hear a strange sound."))
 		src.rusted()
 

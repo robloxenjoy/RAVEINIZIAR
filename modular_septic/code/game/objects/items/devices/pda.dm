@@ -82,7 +82,7 @@
 	user.log_talk(message, LOG_PDA, tag="PDA: [initial(name)] to [target_text]")
 	to_chat(user, span_info("PDA message sent to [target_text]: \"[message]\""))
 	if(!silent)
-		playsound(src, 'modular_septic/sound/effects/Mobile_sms_send.wav', 15, TRUE)
+		playsound(src, 'modular_septic/sound/effects/Mobile_sms_send.ogg', 15, TRUE)
 	// Reset the photo
 	picture = null
 	last_text = world.time

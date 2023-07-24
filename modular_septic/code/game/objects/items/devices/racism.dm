@@ -4,6 +4,6 @@
 	icon = 'modular_septic/icons/obj/machinery/intercom.dmi'
 	icon_state = "nasr_radio"
 	w_class = 3
-	pickup_sound = 'modular_septic/sound/armor/equip/goggles_pickup.wav'
-	drop_sound = 'modular_septic/sound/armor/equip/goggles_drop.wav'
+	pickup_sound = 'modular_septic/sound/armor/equip/goggles_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/goggles_drop.ogg'
 	var/on = FALSE

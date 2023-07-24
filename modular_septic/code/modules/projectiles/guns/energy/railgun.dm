@@ -11,10 +11,10 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	equip_sound = 'modular_septic/sound/weapons/guns/weap_away.ogg'
-	fire_sound = list('modular_septic/sound/weapons/guns/energy/railgun1.wav', 'modular_septic/sound/weapons/guns/energy/railgun2.wav', 'modular_septic/sound/weapons/guns/energy/railgun3.wav')
-	safety_off_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyoff.wav'
-	safety_on_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyon.wav'
-	drop_sound = 'modular_septic/sound/weapons/guns/drop_heavygun.wav'
+	fire_sound = list('modular_septic/sound/weapons/guns/energy/railgun1.ogg', 'modular_septic/sound/weapons/guns/energy/railgun2.ogg', 'modular_septic/sound/weapons/guns/energy/railgun3.ogg')
+	safety_off_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyoff.ogg'
+	safety_on_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyon.ogg'
+	drop_sound = 'modular_septic/sound/weapons/guns/drop_heavygun.ogg'
 	vary_fire_sound = FALSE
 	cell_type = /obj/item/stock_parts/cell/high
 	charge_delay = 5

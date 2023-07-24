@@ -8,7 +8,7 @@
 			if(!do_mob(user, M, self_delay))
 				return FALSE
 		to_chat(M, span_notice("I [apply_method] [src]."))
-		playsound(src, 'modular_septic/sound/effects/pill_swallow.wav', volume, TRUE, vary = FALSE)
+		playsound(src, 'modular_septic/sound/effects/pill_swallow.ogg', volume, TRUE, vary = FALSE)
 
 	else
 		M.visible_message(span_danger("[user] attempts to force [M] to [apply_method] [src]."), \
@@ -16,7 +16,7 @@
 		if(!do_mob(user, M, CHEM_INTERACT_DELAY(3 SECONDS, user)))
 			return FALSE
 		M.visible_message(span_danger("[user] forces [M] to [apply_method] [src]."), \
-							playsound(src, 'modular_septic/sound/effects/pill_swallow.wav', volume, TRUE, vary = FALSE), \
+							playsound(src, 'modular_septic/sound/effects/pill_swallow.ogg', volume, TRUE, vary = FALSE), \
 							span_userdanger("[user] forces you to [apply_method] [src]."))
 
 	return on_consumption(M, user)

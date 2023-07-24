@@ -3,7 +3,7 @@
 	proper_name = "Vending Machine"
 	hacking_actions = "vending"
 	var/obvious = TRUE
-	var/loud_sound = 'modular_septic/sound/effects/obvious.wav'
+	var/loud_sound = 'modular_septic/sound/effects/obvious.ogg'
 
 /datum/hacking/vending/generate_hacking_actions()
 	GLOB.hacking_actions_by_key[hacking_actions] = list(

@@ -45,7 +45,7 @@
 	)
 	armor = list(MELEE = 100, BULLET = 100, LASER = 100, ENERGY = 100, BOMB = 100, BIO = 0, FIRE = 100, ACID = 50)
 	resistance_flags = FIRE_PROOF
-	var/list/putalines = list('modular_septic/sound/effects/atireputas.wav', 'modular_septic/sound/effects/atireputas2.wav', 'modular_septic/sound/effects/atireputas3.wav')
+	var/list/putalines = list('modular_septic/sound/effects/atireputas.ogg', 'modular_septic/sound/effects/atireputas2.ogg', 'modular_septic/sound/effects/atireputas3.ogg')
 
 /obj/machinery/vending/pelejogador
 	name = "\improper Profundo-Pele"

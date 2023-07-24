@@ -2,18 +2,18 @@
 
 /datum/component/babble
 	var/babble_sound_override
-	var/babble_sound_male = 'modular_septic/sound/voice/babble/babble_male.wav'
-	var/babble_sound_female = 'modular_septic/sound/voice/babble/babble_female.wav'
-	var/babble_sound_agender = 'modular_septic/sound/voice/babble/babble_agender.wav'
+	var/babble_sound_male = 'modular_septic/sound/voice/babble/babble_male.ogg'
+	var/babble_sound_female = 'modular_septic/sound/voice/babble/babble_female.ogg'
+	var/babble_sound_agender = 'modular_septic/sound/voice/babble/babble_agender.ogg'
 	var/babble_sound_pig = 'modular_pod/sound/eff/pigtalk.ogg'
 	var/volume = BABBLE_DEFAULT_VOLUME
 	var/duration = BABBLE_DEFAULT_DURATION
 	var/last_babble = 0
 
 /datum/component/babble/Initialize(babble_sound_override, \
-								babble_sound_male = 'modular_septic/sound/voice/babble/babble_male.wav', \
-								babble_sound_female = 'modular_septic/sound/voice/babble/babble_female.wav', \
-								babble_sound_agender = 'modular_septic/sound/voice/babble/babble_agender.wav', \
+								babble_sound_male = 'modular_septic/sound/voice/babble/babble_male.ogg', \
+								babble_sound_female = 'modular_septic/sound/voice/babble/babble_female.ogg', \
+								babble_sound_agender = 'modular_septic/sound/voice/babble/babble_agender.ogg', \
 								babble_sound_pig = 'modular_pod/sound/eff/pigtalk.ogg', \
 								volume = BABBLE_DEFAULT_VOLUME, \
 								duration = BABBLE_DEFAULT_DURATION)

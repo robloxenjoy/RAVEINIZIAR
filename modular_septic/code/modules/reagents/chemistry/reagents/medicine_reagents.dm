@@ -323,7 +323,7 @@
 
 /datum/reagent/medicine/blacktar/on_mob_metabolize(mob/living/L, delta_time, times_fired)
 	. = ..()
-	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_start.wav', 100)
+	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_start.ogg', 100)
 	to_chat(L, span_achievementneutral("My skin feels numb and I can't feel pain anymore."))
 	L.heal_overall_damage(brute = 6 * REM * delta_time)
 	L.add_chem_effect(CE_PULSE, -2, "[type]")
@@ -331,7 +331,7 @@
 
 /datum/reagent/medicine/blacktar/on_mob_end_metabolize(mob/living/L)
 	. = ..()
-	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_end.wav', 100)
+	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_end.ogg', 100)
 	to_chat(L, span_achievementneutral("My skin doesn't feel numb anymore."))
 	L.remove_chem_effect(CE_PAINKILLER, "[type]")
 	L.remove_chem_effect(CE_PULSE, "[type]")
@@ -358,14 +358,14 @@
 
 /datum/reagent/medicine/copium/on_mob_metabolize(mob/living/L)
 	. = ..()
-	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_start.wav', 100)
+	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_start.ogg', 100)
 	to_chat(L, span_achievementneutral("My skin feels numb and I can't feel pain anymore."))
 	L.add_chem_effect(CE_PULSE, -2, "[type]")
 	L.add_chem_effect(CE_PAINKILLER, 200, "[type]")
 
 /datum/reagent/medicine/copium/on_mob_end_metabolize(mob/living/L)
 	. = ..()
-	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_end.wav', 100)
+	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_end.ogg', 100)
 	to_chat(L, span_achievementneutral("My skin doesn't feel numb anymore."))
 	L.remove_chem_effect(CE_PAINKILLER, "[type]")
 	L.remove_chem_effect(CE_PULSE, "[type]")

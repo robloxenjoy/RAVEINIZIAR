@@ -5,7 +5,7 @@
 	icon = 'modular_septic/icons/turf/floors.dmi'
 
 /turf/open/floor/wood/get_projectile_hitsound(obj/projectile/projectile)
-	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,5)].wav"
+	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,5)].ogg"
 
 /turf/open/floor/mineral/plastitanium
 	icon = 'modular_septic/icons/turf/floors.dmi'

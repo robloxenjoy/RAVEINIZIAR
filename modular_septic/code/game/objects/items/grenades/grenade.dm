@@ -1,14 +1,14 @@
 /obj/item/grenade
-	drop_sound = 'modular_septic/sound/weapons/grenade.wav'
-	pickup_sound = 'modular_septic/sound/weapons/grenade_draw.wav'
+	drop_sound = 'modular_septic/sound/weapons/grenade.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/grenade_draw.ogg'
 	item_flags = NO_PIXEL_RANDOM_DROP | NO_ANGLE_RANDOM_DROP
 	tetris_width = 32
 	tetris_height = 32
 	det_time = 1.2 SECONDS
 	/// Sound of the pin/activation sound
-	var/pin_sound = 'modular_septic/sound/weapons/grenade_pin.wav'
+	var/pin_sound = 'modular_septic/sound/weapons/grenade_pin.ogg'
 	/// Sound for when the grenade is deployed
-	var/spoon_sound = 'modular_septic/sound/weapons/grenade_spoon.wav'
+	var/spoon_sound = 'modular_septic/sound/weapons/grenade_spoon.ogg'
 	/// The pin contained inside of the grenade
 	var/obj/item/pin/pin = /obj/item/pin
 	/// Grenade type, checks If It's activated through pin, button, or fuse.
@@ -112,7 +112,7 @@
 		spoon_grenade()
 
 	if(grenade_flags & GRENADE_BUTTONED)
-		playsound(user, 'modular_septic/sound/weapons/bomb_press.wav', 35, FALSE)
+		playsound(user, 'modular_septic/sound/weapons/bomb_press.ogg', 35, FALSE)
 		pressing_button()
 		update_appearance(UPDATE_ICON)
 		addtimer(CALLBACK(src, .proc/pressing_button), button_press_time)
@@ -124,7 +124,7 @@
 		var/message = pick(GLOB.whoopsie)
 		to_chat(user, span_danger("[message]"))
 		if(grenade_flags & GRENADE_BUTTONED)
-			playsound(user, 'modular_septic/sound/weapons/bomb_toolate.wav', 25, FALSE)
+			playsound(user, 'modular_septic/sound/weapons/bomb_toolate.ogg', 25, FALSE)
 			sound_hint()
 
 /obj/item/grenade/proc/pressing_button(mob/user)
@@ -154,7 +154,7 @@
 				active = FALSE
 				user.visible_message(span_warning("[user] puts the pin back into the [src]!"), \
 							span_warning("I put the pin back into the [src]."))
-				playsound(I, 'modular_septic/sound/weapons/grenade_safety.wav', 65, FALSE)
+				playsound(I, 'modular_septic/sound/weapons/grenade_safety.ogg', 65, FALSE)
 				update_appearance(UPDATE_ICON)
 	else if((grenade_flags & GRENADE_FUSED) && I.get_temperature() && !active && !botch_check(user))
 		arm_grenade(user)
@@ -191,5 +191,5 @@
 	desc = "The detonation pin of a grenade, usually found on a grenade before It's armed."
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "pin"
-	drop_sound = 'modular_septic/sound/items/coin_drop.wav'
+	drop_sound = 'modular_septic/sound/items/coin_drop.ogg'
 	w_class = WEIGHT_CLASS_TINY

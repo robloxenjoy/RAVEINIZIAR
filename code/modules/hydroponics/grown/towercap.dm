@@ -108,7 +108,7 @@
 	throw_speed = 2
 	throw_range = 5
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	havedurability = TRUE
 	durability = 200
 	slowdown = 1
@@ -169,7 +169,7 @@
 	tetris_height = 64
 	durability = 100
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
 /obj/item/stack/grown/log/tree/evil/logg/update_name()
 	. = ..()

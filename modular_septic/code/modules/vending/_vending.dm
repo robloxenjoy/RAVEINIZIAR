@@ -1,6 +1,6 @@
 /obj/machinery/vending
 	var/infected = FALSE
-	var/infected_noise = 'modular_septic/sound/effects/pain_fuck.wav'
+	var/infected_noise = 'modular_septic/sound/effects/pain_fuck.ogg'
 
 /obj/machinery/vending/Initialize(mapload)
 	. = ..()

@@ -33,7 +33,7 @@
 	client.pixel_y += y_offset
 	hud_used?.fov_holder?.screen_loc = "WEST+4:[-x_offset],SOUTH+1:[-y_offset]"
 	if(!silent)
-		playsound_local(src, 'modular_septic/sound/interface/zoom_in.wav', 25, FALSE, pressure_affected = FALSE)
+		playsound_local(src, 'modular_septic/sound/interface/zoom_in.ogg', 25, FALSE, pressure_affected = FALSE)
 
 /mob/proc/unperform_zoom(atom/A, params, silent = FALSE)
 	REMOVE_TRAIT(src, TRAIT_LOOKING_INTO_DISTANCE, VERB_TRAIT)
@@ -45,7 +45,7 @@
 		client.pixel_y = initial(client.pixel_y)
 	hud_used?.fov_holder?.screen_loc = ui_fov
 	if(!silent)
-		playsound_local(src, 'modular_septic/sound/interface/zoom_out.wav', 25, FALSE, pressure_affected = FALSE)
+		playsound_local(src, 'modular_septic/sound/interface/zoom_out.ogg', 25, FALSE, pressure_affected = FALSE)
 
 /mob/proc/kill_zoom(mob/living/source)
 	SIGNAL_HANDLER

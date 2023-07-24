@@ -6,9 +6,9 @@
 	screen_start_x = 1
 	screen_start_y = 11
 	rustle_sound = list(
-		'modular_septic/sound/effects/foley1.wav',
-		'modular_septic/sound/effects/foley2.wav',
-		'modular_septic/sound/effects/foley3.wav',
+		'modular_septic/sound/effects/foley1.ogg',
+		'modular_septic/sound/effects/foley2.ogg',
+		'modular_septic/sound/effects/foley3.ogg',
 	)
 	/// Exactly what it sounds like, this makes it use the new RE4-like inventory system
 	var/tetris = FALSE

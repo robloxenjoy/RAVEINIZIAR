@@ -35,4 +35,4 @@
 					head.receive_damage(brute = damage, wound_bonus = 2, sharpness = null)
 					user.changeNext_move(CLICK_CD_GRABBING)
 					user.adjustFatigueLoss(10)
-					playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.wav', 80, 0)
+					playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)

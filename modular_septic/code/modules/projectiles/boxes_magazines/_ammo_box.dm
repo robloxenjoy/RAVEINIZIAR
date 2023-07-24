@@ -3,8 +3,8 @@
 	carry_weight = 2 KILOGRAMS
 	/// Time we must spend between each casing load
 	var/loading_cooldown_duration = 3
-	var/bullet_spill = list('modular_septic/sound/weapons/guns/bullet_spill1.wav', 'modular_septic/sound/weapons/guns/bullet_spill2.wav', 'modular_septic/sound/weapons/guns/bullet_spill3.wav')
-	var/bullet_load = list('modular_septic/sound/weapons/guns/bullet_load1.wav', 'modular_septic/sound/weapons/guns/bullet_load2.wav', 'modular_septic/sound/weapons/guns/bullet_load3.wav')
+	var/bullet_spill = list('modular_septic/sound/weapons/guns/bullet_spill1.ogg', 'modular_septic/sound/weapons/guns/bullet_spill2.ogg', 'modular_septic/sound/weapons/guns/bullet_spill3.ogg')
+	var/bullet_load = list('modular_septic/sound/weapons/guns/bullet_load1.ogg', 'modular_septic/sound/weapons/guns/bullet_load2.ogg', 'modular_septic/sound/weapons/guns/bullet_load3.ogg')
 
 /obj/item/ammo_box/attack_self(mob/user)
 	var/obj/item/ammo_casing/casing = get_round(FALSE)

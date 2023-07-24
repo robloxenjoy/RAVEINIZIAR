@@ -1,15 +1,15 @@
 /obj/item/gun/ballistic/automatic
 	select = 3
 	/// The sound effect for switching your gun back to semi-automatic
-	var/fireselector_semi = 'modular_septic/sound/weapons/guns/rifle/msafety.wav'
+	var/fireselector_semi = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	var/fireselector_semi_vary = FALSE
 	var/fireselector_semi_volume = 90
 	/// The sound effect for switching your gun to burst fire
-	var/fireselector_burst = 'modular_septic/sound/weapons/guns/rifle/msafety.wav'
+	var/fireselector_burst = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	var/fireselector_burst_vary = FALSE
 	var/fireselector_burst_volume = 90
 	/// The sound effect for switching your gun to full auto fire
-	var/fireselector_auto = 'modular_septic/sound/weapons/guns/rifle/msafety.wav'
+	var/fireselector_auto = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	var/fireselector_auto_vary = FALSE
 	var/fireselector_auto_volume = 90
 	/// Size of the burst when burst firing

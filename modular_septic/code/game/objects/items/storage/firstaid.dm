@@ -159,8 +159,8 @@
 	icon_state = "morango"
 	inhand_icon_state = "morango"
 	base_icon_state = "morango"
-	pickup_sound = 'modular_septic/sound/effects/pouch_pickup.wav'
-	drop_sound = 'modular_septic/sound/effects/pouch_drop.wav'
+	pickup_sound = 'modular_septic/sound/effects/pouch_pickup.ogg'
+	drop_sound = 'modular_septic/sound/effects/pouch_drop.ogg'
 	var/is_open = FALSE
 
 /obj/item/storage/firstaid/morango/Initialize()
@@ -189,9 +189,9 @@
 	. = ..()
 	is_open = !is_open
 	if(is_open)
-		playsound(src, 'modular_septic/sound/effects/pouch_open.wav', volume, TRUE, vary = FALSE)
+		playsound(src, 'modular_septic/sound/effects/pouch_open.ogg', volume, TRUE, vary = FALSE)
 	else
-		playsound(src, 'modular_septic/sound/effects/pouch_close.wav', volume, TRUE, vary = FALSE)
+		playsound(src, 'modular_septic/sound/effects/pouch_close.ogg', volume, TRUE, vary = FALSE)
 	update_appearance()
 
 /obj/item/storage/firstaid/morango/update_icon_state()
@@ -204,17 +204,17 @@
 /obj/item/storage/firstaid/morango/Exited(atom/movable/gone, direction)
 	. = ..()
 	if(!is_open)
-		playsound(src, 'modular_septic/sound/effects/pouch_open.wav', 30, FALSE)
+		playsound(src, 'modular_septic/sound/effects/pouch_open.ogg', 30, FALSE)
 	is_open = TRUE
-	playsound(src, 'modular_septic/sound/effects/pouch_use.wav', 30, FALSE)
+	playsound(src, 'modular_septic/sound/effects/pouch_use.ogg', 30, FALSE)
 	update_appearance()
 
 /obj/item/storage/firstaid/morango/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	. = ..()
 	if(!is_open)
-		playsound(src, 'modular_septic/sound/effects/pouch_open.wav', 30, FALSE)
+		playsound(src, 'modular_septic/sound/effects/pouch_open.ogg', 30, FALSE)
 	is_open = TRUE
-	playsound(src, 'modular_septic/sound/effects/pouch_use.wav', 30, FALSE)
+	playsound(src, 'modular_septic/sound/effects/pouch_use.ogg', 30, FALSE)
 	update_appearance()
 
 /obj/item/storage/pill_bottle/carbonylmethamphetamine
@@ -223,7 +223,7 @@
 	icon = 'modular_septic/icons/obj/items/firstaid.dmi'
 	icon_state = "pep"
 	base_icon_state = "pep"
-	pickup_sound = 'modular_septic/sound/effects/pillsbottle_foley.wav'
+	pickup_sound = 'modular_septic/sound/effects/pillsbottle_foley.ogg'
 	var/is_open = FALSE
 
 /obj/item/storage/pill_bottle/carbonylmethamphetamine/Initialize()
@@ -240,9 +240,9 @@
 	. = ..()
 	is_open = !is_open
 	if(is_open)
-		playsound(src, 'modular_septic/sound/effects/pillsbottle_open.wav', volume, TRUE, vary = FALSE)
+		playsound(src, 'modular_septic/sound/effects/pillsbottle_open.ogg', volume, TRUE, vary = FALSE)
 	else
-		playsound(src, 'modular_septic/sound/effects/pillsbottle_close.wav', volume, TRUE, vary = FALSE)
+		playsound(src, 'modular_septic/sound/effects/pillsbottle_close.ogg', volume, TRUE, vary = FALSE)
 	update_appearance()
 
 /obj/item/storage/pill_bottle/carbonylmethamphetamine/update_icon_state()
@@ -255,15 +255,15 @@
 /obj/item/storage/pill_bottle/carbonylmethamphetamine/Exited(atom/movable/gone, direction)
 	. = ..()
 	if(!is_open)
-		playsound(src, 'modular_septic/sound/effects/pillsbottle_open.wav', 30, FALSE)
+		playsound(src, 'modular_septic/sound/effects/pillsbottle_open.ogg', 30, FALSE)
 	is_open = TRUE
-	playsound(src, 'modular_septic/sound/effects/pillsbottle_pill.wav', 30, FALSE)
+	playsound(src, 'modular_septic/sound/effects/pillsbottle_pill.ogg', 30, FALSE)
 	update_appearance()
 
 /obj/item/storage/pill_bottle/carbonylmethamphetamine/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	. = ..()
 	if(!is_open)
-		playsound(src, 'modular_septic/sound/effects/pillsbottle_open.wav', 30, FALSE)
+		playsound(src, 'modular_septic/sound/effects/pillsbottle_open.ogg', 30, FALSE)
 	is_open = TRUE
-	playsound(src, 'modular_septic/sound/effects/pillsbottle_pill_put.wav', 30, FALSE)
+	playsound(src, 'modular_septic/sound/effects/pillsbottle_pill_put.ogg', 30, FALSE)
 	update_appearance()

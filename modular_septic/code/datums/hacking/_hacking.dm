@@ -126,7 +126,7 @@
 			var/hacking_action = params["hacking_action"]
 			set_hacker(user)
 			start_hacking(hacking_action, user)
-			playsound(holder, 'modular_septic/sound/hacking/ddos_start.wav', 80, FALSE)
+			playsound(holder, 'modular_septic/sound/hacking/ddos_start.ogg', 80, FALSE)
 		if("do_attack")
 			if((user != hacker) || !COOLDOWN_FINISHED(src, hacker_action_cooldown))
 				return
@@ -163,7 +163,7 @@
 
 /datum/hacking/proc/start_hacking(hacking_action = "Destroy", mob/living/hackerman)
 	if(hacked)
-		playsound(holder, 'modular_septic/sound/hacking/ddos_success.wav', 80, FALSE)
+		playsound(holder, 'modular_septic/sound/hacking/ddos_success.ogg', 80, FALSE)
 		return do_hacking_action(hacking_action, hackerman)
 	holder_attack = initial_holder_attack
 	holder_health = initial_holder_health
@@ -197,7 +197,7 @@
 
 /datum/hacking/proc/hacker_attack(attack_type = "Attack")
 	COOLDOWN_START(src, hacker_action_cooldown, HACKING_ATTACK_COOLDOWN_DURATION)
-	playsound(holder, "modular_septic/sound/hacking/ddos[rand(1, 4)].wav", 80, FALSE)
+	playsound(holder, "modular_septic/sound/hacking/ddos[rand(1, 4)].ogg", 80, FALSE)
 	switch(attack_type)
 		if("Attack")
 			var/electronics_bonus = FLOOR(GET_MOB_ATTRIBUTE_VALUE(hacker, SKILL_ELECTRONICS)/2, 1)
@@ -216,7 +216,7 @@
 
 /datum/hacking/proc/holder_attack(attack_type = "Attack")
 	COOLDOWN_START(src, holder_action_cooldown, HACKING_ATTACK_COOLDOWN_DURATION)
-	playsound(holder, "modular_septic/sound/hacking/ddos[rand(1, 4)].wav", 80, FALSE)
+	playsound(holder, "modular_septic/sound/hacking/ddos[rand(1, 4)].ogg", 80, FALSE)
 	switch(attack_type)
 		if("Attack")
 			var/damage = max(0, holder_attack - hacker_defense)
@@ -244,7 +244,7 @@
 
 /datum/hacking/proc/hacker_win()
 	hacked = TRUE
-	playsound(holder, "modular_septic/sound/hacking/ddos_success.wav", 80, FALSE)
+	playsound(holder, "modular_septic/sound/hacking/ddos_success.ogg", 80, FALSE)
 	if(hackingtool)
 		if(ishackingtool(hackingtool))
 			hackingtool.cut_overlays()
@@ -253,7 +253,7 @@
 	return do_hacking_action(current_hacking_action, hacker)
 
 /datum/hacking/proc/hacker_loss()
-	playsound(holder, "modular_septic/sound/hacking/ddos_failure.wav", 80, FALSE)
+	playsound(holder, "modular_septic/sound/hacking/ddos_failure.ogg", 80, FALSE)
 	if(hackingtool)
 		if(ishackingtool(hackingtool))
 			hackingtool.cut_overlays()
