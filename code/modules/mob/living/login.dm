@@ -31,4 +31,4 @@
 		spawn(100)
 			if(stat != DEAD)
 				return
-			client.screen_end()
+			client.ghostize()

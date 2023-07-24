@@ -94,7 +94,7 @@
 		to_chat(new_mob, span_userdanger("Your mob has been claimed by death! Appeal your job ban if you want to avoid this in the future!"))
 		new_mob.death()
 		if (!QDELETED(new_mob))
-			new_mob.send_naxyu()
+			new_mob.ghostize()
 			new_mob.key = null
 
 /datum/disease/transformation/jungle_fever

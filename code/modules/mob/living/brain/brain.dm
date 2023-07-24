@@ -32,13 +32,13 @@
 
 /mob/living/brain/mode()
 	if(stat == DEAD)
-		send_naxyu()
+		ghostize()
 		return
 	return ..()
 
 /mob/living/brain/swap_hand()
 	if(stat == DEAD)
-		send_naxyu()
+		ghostize()
 		return
 	return ..()
 

@@ -132,7 +132,7 @@
 				for(var/obj/item/organ/bone/bonee as anything in grasped_part.getorganslotlist(ORGAN_SLOT_BONE))
 					if(!bonee.is_broken())
 						bonee.compound_fracture()
-						playsound(victim, 'modular_septic/sound/gore/neck_crack.ogg', 75, FALSE)
+						playsound(victim, 'modular_septic/sound/gore/ouchie.ogg', 75, FALSE)
 		if(owner != victim)
 			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_userdanger("<b>[owner]</b> [wrench_verb] my [grasped_part.name]![carbon_victim.wound_message]"), \

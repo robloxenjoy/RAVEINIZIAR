@@ -44,7 +44,7 @@
 		return
 
 	if(isliving(friend_candidate_client.mob))
-		friend_candidate_client.mob.send_naxyu()
+		friend_candidate_client.mob.ghostize()
 
 	var/mob/camera/imaginary_friend/friend_mob
 

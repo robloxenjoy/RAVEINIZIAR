@@ -213,7 +213,7 @@
 
 	log_combat(user, occupant, "gibbed")
 	mob_occupant.death(1)
-//	mob_occupant.send_naxyu()
+	mob_occupant.ghostize()
 	set_occupant(null)
 	qdel(mob_occupant)
 	addtimer(CALLBACK(src, .proc/make_meat, skin, allmeat, meat_produced, gibtype, diseases), gibtime)

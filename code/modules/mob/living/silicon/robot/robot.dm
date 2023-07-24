@@ -127,7 +127,7 @@
 			mmi.update_appearance()
 		else
 			to_chat(src, span_boldannounce("Oops! Something went very wrong, your MMI was unable to receive your mind. You have been ghosted. Please make a bug report so we can fix this bug."))
-			send_naxyu()
+			ghostize()
 			stack_trace("Borg MMI lacked a brainmob")
 		mmi = null
 	if(modularInterface)

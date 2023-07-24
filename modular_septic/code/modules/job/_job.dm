@@ -6,7 +6,7 @@
 	/// Minimum cock size for this role (cm)
 	var/min_dicksize = 1
 	/// Maximum cock size for this role (cm)
-	var/max_dicksize = 50
+	var/max_dicksize = 15
 	/// Minimum breast size for this role (gets converted to cup size)
 	var/min_breastsize = 1
 	/// Maximum breast size for this role (gets converted to cup size)
