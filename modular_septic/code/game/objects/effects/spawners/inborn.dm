@@ -65,12 +65,12 @@
 		babble.duration = BABBLE_DEFAULT_DURATION
 
 /obj/effect/mob_spawn/human/weakwillet
-	name = "weak willet spawner"
-	desc = "wow this is fantastic!"
+	name = "Willete"
+	desc = "Wow this is fantastic!"
 	random = FALSE
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
-	icon_state = "bed"
-	mob_name = "a black criminal"
+	icon_state = "willete"
+//	mob_name = "a black criminal"
 	roundstart = TRUE
 	death = FALSE
 	anchored = TRUE
