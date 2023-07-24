@@ -25,7 +25,7 @@
 			death(TRUE) //Brains can die again. AND THEY SHOULD AHA HA HA HA HA HA
 		if(mind) //You aren't allowed to return to brains that don't exist
 			mind.set_current(null)
-		send_naxyu() //Ghostize checks for key so nothing else is necessary.
+		ghostize() //Ghostize checks for key so nothing else is necessary.
 	container = null
 	QDEL_NULL(stored_dna)
 	return ..()
