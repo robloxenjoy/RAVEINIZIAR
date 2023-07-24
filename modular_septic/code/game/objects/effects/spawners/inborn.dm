@@ -67,27 +67,40 @@
 /obj/effect/mob_spawn/human/weakwillet
 	name = "weak willet spawner"
 	desc = "wow this is fantastic!"
-	random = TRUE
+	random = FALSE
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "bed"
 	mob_name = "a black criminal"
-	roundstart = FALSE
+	roundstart = TRUE
 	death = FALSE
 	anchored = TRUE
 	density = FALSE
 	show_flavour = FALSE
-	outfit = /datum/outfit/inborn
+	permanent = TRUE
+	instant = TRUE
+	outfit = FALSE
 	mob_species = /datum/species/weakwillet
 	uses = 500
 
 /obj/effect/mob_spawn/human/weakwillet/special(mob/living/new_spawn)
 	. = ..()
 	new_spawn.fully_replace_character_name(new_spawn.real_name, "Weak Willet")
-	new_spawn.mind.add_antag_datum(/datum/antagonist/inborn)
+	new_spawn.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
 	var/datum/component/babble/babble = new_spawn.GetComponent(/datum/component/babble)
 	if(!babble)
-		new_spawn.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
+		new_spawn.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/creature.wav')
 	else
 		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
 		babble.volume = BABBLE_DEFAULT_VOLUME
 		babble.duration = BABBLE_DEFAULT_DURATION
+
+	if(prob(5))
+		new_spawn.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
+		new_spawn.height = HUMAN_HEIGHT_TALLEST
+		if(prob(65))
+			new_spawn.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
+	else
+		new_spawn.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+		new_spawn.height = HUMAN_HEIGHT_MEDIUM
+
+	new_spawn.attributes.update_attributes()

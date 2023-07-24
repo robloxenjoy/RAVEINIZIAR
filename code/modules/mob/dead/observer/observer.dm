@@ -63,17 +63,13 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/datum/minigames_menu/minigames_menu
 
 /mob/dead/observer/Initialize(mapload)
-	overlay_fullscreen("fuckyoughost", /atom/movable/screen/fullscreen/noghost)
-	add_client_colour(/datum/client_colour/full_black_absolute)
+//	overlay_fullscreen("fuckyoughost", /atom/movable/screen/fullscreen/noghost)
+//	add_client_colour(/datum/client_colour/full_black_absolute)
 	set_invisibility(GLOB.observer_default_invisibility)
 
-/*
 	add_verb(src, list(
 		/mob/dead/observer/proc/dead_tele,
-		/mob/dead/observer/proc/open_spawners_menu,
-		/mob/dead/observer/proc/tray_view,
-		/mob/dead/observer/proc/open_minigames_menu))
-*/
+		/mob/dead/observer/proc/open_spawners_menu))
 
 	if(icon_state in GLOB.ghost_forms_with_directions_list)
 		ghostimage_default = image(src.icon,src,src.icon_state + "_nodir")
@@ -538,7 +534,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		source_mob.update_parallax_contents()
 	else
 		to_chat(source_mob, span_danger("This mob is not located in the game world."))
-
+/*
 /mob/dead/observer/verb/change_view_range()
 	set category = "Ghost"
 	set name = "View Range"
@@ -570,6 +566,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/max_view = client.prefs.unlock_content ? GHOST_MAX_VIEW_RANGE_MEMBER : GHOST_MAX_VIEW_RANGE_DEFAULT
 	if(input)
 		client.rescale_view(input, 0, ((max_view*2)+1) - 15)
+*/
 
 /mob/dead/observer/verb/boo()
 	set category = "Ghost"
@@ -594,6 +591,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	update_sight()
 	to_chat(usr, span_boldnotice("You [(ghostvision?"now":"no longer")] have ghost vision."))
 
+/*
 /mob/dead/observer/verb/toggle_darkness()
 	set name = "Toggle Darkness"
 	set category = "Ghost"
@@ -621,6 +619,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	updateghostimages()
 	..()
+*/
 
 /proc/updateallghostimages()
 	list_clear_nulls(GLOB.ghost_images_default)
