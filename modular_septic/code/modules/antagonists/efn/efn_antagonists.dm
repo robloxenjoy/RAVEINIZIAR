@@ -14,23 +14,25 @@
 	name = "Third Denomination Agent"
 	roundend_category = "denominators"
 	antagpanel_category = "Denominator"
-	var/employer = "OcularTech"
 	preview_outfit = /datum/outfit/denominator
-	antag_hud_type = ANTAG_HUD_DENOMINATOR
-	antag_hud_name = "deno"
-	combat_music = null
+	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator.ogg'
 	show_to_ghosts = TRUE
+	antag_hud_type = ANTAG_HUD_DENOMINATOR
+	var/employer = "OcularTech"
+
+/datum/team/denominator
+	name = "Denominator"
+
+/datum/antagonist/denominator/create_team(datum/team/denominator/new_team)
 
 /datum/antagonist/denominator/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'modular_septic/sound/greetings/deno_greet.ogg',100,0, use_reverb = FALSE)
-	to_chat(owner, span_notice("You are an Agent of the Third Denomination."))
-	owner.announce_objectives()
+	to_chat(owner, span_notice("You are an Agent of the Third Denomination.\nIt's been a-long time since you've been sleeping. It's time to INVESTIGATE the Abandoned Warehouse with my TEAM. \
+	And see what's going on."))
 
 /datum/antagonist/denominator/on_gain()
 	. = ..()
 	ADD_TRAIT(owner.current, TRAIT_DENOMINATOR_ACCESS, SAFEZONE_ACCESS)
-	if(combat_music)
-		owner.combat_music = pick(combat_music)
 	var/datum/component/babble/babble = owner.current.GetComponent(/datum/component/babble)
 	if(!babble)
 		owner.current.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/denom.wav')
@@ -43,8 +45,10 @@
 	name = "Third Denomination Shotgunner"
 	preview_outfit = /datum/outfit/denominator/shotgunner
 	antag_hud_name = "deno_shotgunner"
-	combat_music = null
+	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator_shotgunner.ogg'
 
 /datum/antagonist/denominator/shotgunner/on_gain()
 	. = ..()
 	ADD_TRAIT(owner, TRAIT_DENOMINATOR_REDSCREEN, MEGALOMANIAC_TRAIT)
+
+
