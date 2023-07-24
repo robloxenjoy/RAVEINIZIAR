@@ -19,5 +19,5 @@
 	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/visor/on_craft_completion(mob/user, atom/result)
-	playsound(user.loc, 'modular_septic/sound/weapons/guns/mod_use.wav', 65)
+	playsound(user.loc, 'modular_septic/sound/weapons/guns/mod_use.ogg', 65)
 	return

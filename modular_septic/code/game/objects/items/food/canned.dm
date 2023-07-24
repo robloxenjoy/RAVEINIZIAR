@@ -4,11 +4,11 @@
 
 /obj/item/food/canned/proc/open_can(mob/user)
 	to_chat(user, span_notice("I pop the tab of \the [src]."))
-	playsound(user.loc, 'modular_septic/sound/food/foodcan_preopen.wav', 65)
+	playsound(user.loc, 'modular_septic/sound/food/foodcan_preopen.ogg', 65)
 	if(!do_after(user, 5, src))
 		return
 	to_chat(user, span_notice("I pull back the lid of \the [src]."))
-	playsound(user.loc, 'modular_septic/sound/food/foodcan_open.wav', 65)
+	playsound(user.loc, 'modular_septic/sound/food/foodcan_open.ogg', 65)
 	reagents.flags |= OPENCONTAINER
 	preserved_food = FALSE
 	MakeDecompose()

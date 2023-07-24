@@ -6,7 +6,7 @@
 	base_icon_state = "syndicate"
 	inhand_icon_state = "flashbang"
 	worn_icon_state = "minibomb"
-	pin_sound = 'modular_septic/sound/weapons/bomb_pin.wav'
+	pin_sound = 'modular_septic/sound/weapons/bomb_pin.ogg'
 	spoon_loud = FALSE
 	spoon_sound = null
 	pickup_sound = null
@@ -59,7 +59,7 @@
 	worn_icon_state = "minibomb"
 	grenade_flags = GRENADE_BUTTONED|GRENADE_VISIBLE_BUTTON
 	det_time = 2 SECONDS
-	pin_sound = 'modular_septic/sound/weapons/bomb_pin.wav'
+	pin_sound = 'modular_septic/sound/weapons/bomb_pin.ogg'
 	spoon_loud = FALSE
 	spoon_sound = null
 	pickup_sound = null
@@ -93,7 +93,7 @@
 	worn_icon_state = "minibomb"
 	grenade_flags = GRENADE_BUTTONED|GRENADE_VISIBLE_BUTTON
 	det_time = 2 SECONDS
-	pin_sound = 'modular_septic/sound/weapons/bomb_pin.wav'
+	pin_sound = 'modular_septic/sound/weapons/bomb_pin.ogg'
 	spoon_loud = FALSE
 	spoon_sound = null
 	pickup_sound = null
@@ -127,7 +127,7 @@
 	worn_icon_state = "minibomb"
 	grenade_flags = GRENADE_BUTTONED|GRENADE_VISIBLE_BUTTON
 	det_time = 2 SECONDS
-	pin_sound = 'modular_septic/sound/weapons/bomb_pin.wav'
+	pin_sound = 'modular_septic/sound/weapons/bomb_pin.ogg'
 	spoon_loud = FALSE
 	spoon_sound = null
 	pickup_sound = null
@@ -214,7 +214,7 @@
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "ted"
 	base_icon_state = "ted"
-	pin_sound = 'modular_septic/sound/effects/flare_start.wav'
+	pin_sound = 'modular_septic/sound/effects/flare_start.ogg'
 	spoon_loud = FALSE
 	pickup_sound = null
 	grenade_flags = GRENADE_FUSED

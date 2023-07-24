@@ -78,7 +78,7 @@
 	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound = 'sound/items/handling/cloth_pickup.ogg'
-	equip_sound = 'modular_pod/sound/eff/equip_armor.wav'
+	equip_sound = 'modular_pod/sound/eff/equip_armor.ogg'
 	siemens_coefficient = 0.5
 	slot_flags = ITEM_SLOT_PANTS
 	attack_verb_continuous = list("challenges")
@@ -147,7 +147,7 @@
 /obj/item/clothing/pants/dropped(mob/living/user)
 	. = ..()
 //	slowdown = 0
-	
+
 	if(user.get_item_by_slot(ITEM_SLOT_BELT))
 		var/obj/item/equipped_item = user.get_item_by_slot(ITEM_SLOT_BELT)
 		user.dropItemToGround(equipped_item)

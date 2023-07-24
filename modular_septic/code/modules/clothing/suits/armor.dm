@@ -4,9 +4,9 @@
 /obj/item/clothing/suit/armor/Initialize(mapload)
 	. = ..()
 	LoadComponent(/datum/component/shuffling, list(
-				'modular_septic/sound/armor/gear_stereo1.wav'=1,
-				'modular_septic/sound/armor/gear_stereo2.wav'=1,
-				'modular_septic/sound/armor/gear_stereo3.wav'=1), 70, falloff_exponent = 20)
+				'modular_septic/sound/armor/gear_stereo1.ogg'=1,
+				'modular_septic/sound/armor/gear_stereo2.ogg'=1,
+				'modular_septic/sound/armor/gear_stereo3.ogg'=1), 70, falloff_exponent = 20)
 
 /obj/item/clothing/suit/armor/vest
 	name = "slim type II armor vest"
@@ -19,9 +19,9 @@
 	//But does not cover the groin
 	carry_weight = 2.5 KILOGRAMS
 	body_parts_covered = CHEST|VITALS
-	equip_sound = 'modular_septic/sound/armor/equip/armor_use.wav'
-	pickup_sound = 'modular_septic/sound/armor/equip/armor_pickup.wav'
-	drop_sound = 'modular_septic/sound/armor/equip/armor_drop.wav'
+	equip_sound = 'modular_septic/sound/armor/equip/armor_use.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/armor_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/armor_drop.ogg'
 	armor_broken_sound = "light"
 	armor_damaged_sound = "light"
 	max_integrity = 200

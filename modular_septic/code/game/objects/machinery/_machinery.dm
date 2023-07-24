@@ -12,7 +12,7 @@
 		if(GET_MOB_SKILL_VALUE(user, SKILL_ELECTRONICS) <= 6)
 			to_chat(user, span_danger("I'm sadly not good enough as my hero."))
 			return
-		playsound(src, 'modular_septic/sound/effects/ted.wav', 50, FALSE)
+		playsound(src, 'modular_septic/sound/effects/ted.ogg', 50, FALSE)
 		var/godforsaken = pick("godforsaken", "devious", "monumental", "memorable", "good", "fantastic", "really good")
 		var/ted_message
 		if(prob(5))
@@ -44,7 +44,7 @@
 		ted_kaczynskied = FALSE
 		pipebomb_triggered = FALSE
 		bomb = null
-		playsound(src, 'modular_septic/sound/effects/CT_win.wav', 80, FALSE)
+		playsound(src, 'modular_septic/sound/effects/CT_win.ogg', 80, FALSE)
 		user.visible_message(span_bolddanger("[user] disables the pipebomb before it explodes!"), \
 			span_boldwarning("I disable the pipebomb."))
 		return TRUE
@@ -58,7 +58,7 @@
 			return
 		visible_message(span_danger("[bomb] underneath the [src] beeps rapidly!"), \
 				span_bigdanger("Looks like I've been left a bright shiny gift!"))
-		playsound(src, 'modular_septic/sound/effects/ted_beeping.wav', 80, FALSE, 2)
+		playsound(src, 'modular_septic/sound/effects/ted_beeping.ogg', 80, FALSE, 2)
 		sound_hint()
 		bomb.det_time = 1 SECONDS
 		bomb.spoon_grenade()

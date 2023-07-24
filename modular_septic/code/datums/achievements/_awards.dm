@@ -18,22 +18,22 @@
 			if(unlock_message)
 				unlock_text = span_achievementrare("Achievement unlocked:\n<b>[name]</b>")
 			if(unlock_sound)
-				unlock_sound_file = 'modular_septic/sound/achievement/achievement_rare.wav'
+				unlock_sound_file = 'modular_septic/sound/achievement/achievement_rare.ogg'
 		if(ACHIEVEMENT_GOOD)
 			if(unlock_message)
 				unlock_text = span_achievementgood("Achievement unlocked:\n<b>[name]</b>")
 			if(unlock_sound)
-				unlock_sound_file = 'modular_septic/sound/achievement/achievement_good.wav'
+				unlock_sound_file = 'modular_septic/sound/achievement/achievement_good.ogg'
 		if(ACHIEVEMENT_NEUTRAL)
 			if(unlock_message)
 				unlock_text = span_achievementneutral("Achievement unlocked:\n<b>[name]</b>")
 			if(unlock_sound)
-				unlock_sound_file = 'modular_septic/sound/achievement/achievement_neutral.wav'
+				unlock_sound_file = 'modular_septic/sound/achievement/achievement_neutral.ogg'
 		if(ACHIEVEMENT_BAD)
 			if(unlock_message)
 				unlock_text = span_achievementbad("Achievement unlocked:\n<b>[name]</b>")
 			if(unlock_sound)
-				unlock_sound_file = 'modular_septic/sound/achievement/achievement_bad.wav'
+				unlock_sound_file = 'modular_septic/sound/achievement/achievement_bad.ogg'
 	if(unlock_text)
 		to_chat(user, unlock_text)
 	if(unlock_sound_file)

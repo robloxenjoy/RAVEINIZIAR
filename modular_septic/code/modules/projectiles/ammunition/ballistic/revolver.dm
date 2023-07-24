@@ -4,7 +4,7 @@
 	desc = "A .38 suspicious bullet casing."
 	icon_state = "c38"
 	base_icon_state = "c38"
-	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.wav')
+	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.ogg')
 	bounce_volume = 35
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/c38
 
@@ -14,7 +14,7 @@
 	icon_state = "c38"
 	base_icon_state = "c38"
 	projectile_type = /obj/projectile/bullet/c38/pluspee
-	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.wav')
+	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.ogg')
 	bounce_volume = 35
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/c38/pluspee
 
@@ -23,7 +23,7 @@
 	desc = "A .357 magnum bullet casing."
 	icon_state = "c357"
 	base_icon_state = "c357"
-	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.wav')
+	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.ogg')
 	bounce_volume = 35
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/a357
 
@@ -34,7 +34,7 @@
 	base_icon_state = "c357"
 	caliber = CALIBER_500
 	projectile_type = /obj/projectile/bullet/a500
-	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.wav')
+	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.ogg')
 	bounce_volume = 35
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/a500
 
@@ -45,6 +45,6 @@
 	base_icon_state = "pulser"
 	caliber = CALIBER_PULSER
 	projectile_type = /obj/projectile/bullet/pulser
-	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.wav', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.wav')
+	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.ogg')
 	bounce_volume = 35
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/pulser

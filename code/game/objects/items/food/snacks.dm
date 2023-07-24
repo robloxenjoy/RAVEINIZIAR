@@ -44,7 +44,7 @@
 //	bitecount = 1
 	bite_consumption = 3
 	tastes = list("gule berry" = 1, "morose" = 1)
-	drop_sound = 'modular_septic/sound/effects/softdrop.wav'
+	drop_sound = 'modular_septic/sound/effects/softdrop.ogg'
 //	wine_power = 50
 	tetris_width = 32
 	tetris_height = 32
@@ -86,7 +86,7 @@
 //	bitecount = 1
 	bite_consumption = 9
 	tastes = list("saisilva berry" = 1, "strange" = 1)
-	drop_sound = 'modular_septic/sound/effects/softdrop.wav'
+	drop_sound = 'modular_septic/sound/effects/softdrop.ogg'
 //	wine_power = 50
 	tetris_width = 32
 	tetris_height = 32

@@ -15,7 +15,7 @@
 		ANNOUNCER_POWEROFF = 'sound/ai/default/poweroff.ogg',
 		ANNOUNCER_POWERON = 'sound/ai/default/poweron.ogg',
 		ANNOUNCER_RADIATION = 'sound/ai/default/radiation.ogg',
-		ANNOUNCER_SHUTTLECALLED = 'modular_septic/sound/misc/podcalled.wav',
-		ANNOUNCER_SHUTTLEDOCK = 'modular_septic/sound/misc/podbeep.wav',
-		ANNOUNCER_SHUTTLERECALLED = 'modular_septic/sound/misc/podrecalled.wav',
+		ANNOUNCER_SHUTTLECALLED = 'modular_septic/sound/misc/podcalled.ogg',
+		ANNOUNCER_SHUTTLEDOCK = 'modular_septic/sound/misc/podbeep.ogg',
+		ANNOUNCER_SHUTTLERECALLED = 'modular_septic/sound/misc/podrecalled.ogg',
 		ANNOUNCER_SPANOMALIES = 'sound/ai/default/spanomalies.ogg')

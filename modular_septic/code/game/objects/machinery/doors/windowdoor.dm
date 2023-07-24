@@ -10,7 +10,7 @@
 	if(!operating) //in case of emag
 		operating = TRUE
 	do_animate("opening")
-	playsound(src, 'modular_septic/sound/machinery/windowdoor_open.wav', 85, TRUE)
+	playsound(src, 'modular_septic/sound/machinery/windowdoor_open.ogg', 85, TRUE)
 	icon_state ="[base_state]open"
 	sleep(10)
 	set_density(FALSE)
@@ -32,7 +32,7 @@
 			return 0
 	operating = TRUE
 	do_animate("closing")
-	playsound(src, 'modular_septic/sound/machinery/windowdoor_close.wav', 85, TRUE)
+	playsound(src, 'modular_septic/sound/machinery/windowdoor_close.ogg', 85, TRUE)
 	icon_state = base_state
 
 	set_density(TRUE)

@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/drinks/soda_cans
-	drop_sound = 'modular_septic/sound/effects/soda.wav'
+	drop_sound = 'modular_septic/sound/effects/soda.ogg'
 
 /obj/item/reagent_containers/food/drinks/mug/tea/Initialize()
 	. = ..()

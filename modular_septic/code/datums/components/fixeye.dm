@@ -94,7 +94,7 @@
 	fixeye_flags &= ~FIXEYE_INACTIVE
 	SEND_SIGNAL(source, COMSIG_LIVING_FIXEYE_ENABLED, silent, forced)
 	if(!silent)
-		source.playsound_local(source, 'modular_septic/sound/interface/fixeye_on.wav', 25, FALSE, pressure_affected = FALSE)
+		source.playsound_local(source, 'modular_septic/sound/interface/fixeye_on.ogg', 25, FALSE, pressure_affected = FALSE)
 	facedir = source.dir
 	RegisterSignal(source, COMSIG_ATOM_DIR_CHANGE, .proc/on_dir_change)
 	RegisterSignal(source, COMSIG_MOB_CLIENT_MOVED, .proc/on_client_move)
@@ -124,7 +124,7 @@
 	facedir = null
 	SEND_SIGNAL(source, COMSIG_LIVING_FIXEYE_DISABLED, silent, forced)
 	if(!silent)
-		source.playsound_local(source, 'modular_septic/sound/interface/fixeye_off.wav', 25, FALSE, pressure_affected = FALSE)
+		source.playsound_local(source, 'modular_septic/sound/interface/fixeye_off.ogg', 25, FALSE, pressure_affected = FALSE)
 	UnregisterSignal(source, list(COMSIG_ATOM_DIR_CHANGE, COMSIG_MOB_CLIENT_MOVED, COMSIG_MOB_CLICKON))
 	if(hud_icon)
 		hud_icon.fixed_eye = FALSE

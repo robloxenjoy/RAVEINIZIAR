@@ -7,7 +7,7 @@
 	lefthand_file = 'modular_septic/icons/mob/inhands/sword_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/sword_righthand.dmi'
 	active_force = 70
-	active_hitsound = list('modular_septic/sound/weapons/kelzad1.wav', 'modular_septic/sound/weapons/kelzad2.wav')
+	active_hitsound = list('modular_septic/sound/weapons/kelzad1.ogg', 'modular_septic/sound/weapons/kelzad2.ogg')
 	stealthy_audio = FALSE
 	sword_color_icon = "blue"
 	light_color = COLOR_BLUE
@@ -59,6 +59,6 @@
 		soundloop.stop()
 
 	balloon_alert(user, "[name] [active ? "enabled":"disabled"]")
-	playsound(user ? user : src, active ? 'modular_septic/sound/weapons/kelzadon.wav' : 'modular_septic/sound/weapons/kelzadoff.ogg', 60, TRUE)
+	playsound(user ? user : src, active ? 'modular_septic/sound/weapons/kelzadon.ogg' : 'modular_septic/sound/weapons/kelzadoff.ogg', 60, TRUE)
 	set_light_on(active)
 	return COMPONENT_NO_DEFAULT_MESSAGE

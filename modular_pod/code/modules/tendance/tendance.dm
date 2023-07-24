@@ -48,9 +48,9 @@
 	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
 	var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
 	if(!babble)
-		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/creature.wav')
+		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/creature.ogg')
 	else
-		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.ogg'
 		babble.volume = BABBLE_DEFAULT_VOLUME
 		babble.duration = BABBLE_DEFAULT_DURATION
 
@@ -70,7 +70,7 @@
 	character.attributes.update_attributes()
 
 	character.key = key
-	character.playsound_local(character, 'modular_pod/sound/eff/DSBOSPN.wav', 100)
+	character.playsound_local(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100)
 //	character.overlay_fullscreen("ressur", /atom/movable/screen/fullscreen/willetbecome)
 //	addtimer(CALLBACK(character, .proc/clear_fullscreen, "ressur", 3), 3)
 */

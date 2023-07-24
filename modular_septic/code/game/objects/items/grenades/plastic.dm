@@ -30,5 +30,5 @@
 
 		target.add_overlay(plastic_overlay)
 		to_chat(user, span_notice("You plant the bomb. Timer counting down from [det_time]."))
-		playsound(bomb_target, 'modular_septic/sound/weapons/c4_plant.wav', 60, TRUE)
+		playsound(bomb_target, 'modular_septic/sound/weapons/c4_plant.ogg', 60, TRUE)
 		addtimer(CALLBACK(src, .proc/detonate), det_time*10)

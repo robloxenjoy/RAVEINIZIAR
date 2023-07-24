@@ -34,7 +34,7 @@
 		return
 	var/area/area = get_area(src)
 	area.firereset()
-	playsound(loc, 'modular_septic/sound/machinery/firealarm_start.wav', 75, FALSE, 3)
+	playsound(loc, 'modular_septic/sound/machinery/firealarm_start.ogg', 75, FALSE, 3)
 	if(user)
 		log_game("[user] reset a fire alarm at [COORD(src)]")
 	update_appearance(UPDATE_ICON)
@@ -45,7 +45,7 @@
 	COOLDOWN_START(src, last_alarm, FIREALARM_COOLDOWN)
 	var/area/area = get_area(src)
 	area.firealert(src)
-	playsound(loc, 'modular_septic/sound/machinery/firealarm_start.wav', 75, FALSE, 3)
+	playsound(loc, 'modular_septic/sound/machinery/firealarm_start.ogg', 75, FALSE, 3)
 	addtimer(CALLBACK(src, .proc/activate_soundloop), 2.5 SECONDS)
 	if(user)
 		log_game("[user] triggered a fire alarm at [COORD(src)]")

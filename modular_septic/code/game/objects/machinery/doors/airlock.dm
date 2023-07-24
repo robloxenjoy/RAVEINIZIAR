@@ -1,10 +1,10 @@
 /obj/machinery/door/airlock
 	greyscale_config = /datum/greyscale_config/airlocks/custom
 	greyscale_colors = "#a5a7ac#a5a7ac#969696#969696#5ea52c#6d6565#777777"
-	doorOpen = 'modular_septic/sound/machinery/airlock_open.wav'
-	doorClose = 'modular_septic/sound/machinery/airlock_close.wav'
-	boltUp = 'modular_septic/sound/machinery/airlock_bolt.wav'
-	boltDown = 'modular_septic/sound/machinery/airlock_unbolt.wav'
+	doorOpen = 'modular_septic/sound/machinery/airlock_open.ogg'
+	doorClose = 'modular_septic/sound/machinery/airlock_close.ogg'
+	boltUp = 'modular_septic/sound/machinery/airlock_bolt.ogg'
+	boltDown = 'modular_septic/sound/machinery/airlock_unbolt.ogg'
 	doorDeni = 'modular_septic/sound/machinery/airlock_deny.ogg'
 
 /obj/machinery/door/airlock/Initialize(mapload)

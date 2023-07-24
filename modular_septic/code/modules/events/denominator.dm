@@ -22,7 +22,7 @@
 		return
 
 	var/list/candidates = poll_ghost_candidates("Do you wish to be apart of the Denominator cult?", ROLE_TRAITOR)
-	playsound_local(candidates, 'modular_septic/sound/effects/ghostcue.wav', 60)
+	playsound_local(candidates, 'modular_septic/sound/effects/ghostcue.ogg', 60)
 	shuffle_inplace(candidates)
 
 	var/datum/map_template/shuttle/pirate/ship = new ship_template
@@ -55,8 +55,8 @@
 	icon = 'modular_septic/icons/obj/items/keys.dmi'
 	icon_state = "redkey"
 	puzzle_id = "denom"
-	pickup_sound = 'modular_septic/sound/effects/card_pickup.wav'
-	drop_sound = 'modular_septic/sound/effects/card_drop.wav'
+	pickup_sound = 'modular_septic/sound/effects/card_pickup.ogg'
+	drop_sound = 'modular_septic/sound/effects/card_drop.ogg'
 
 /obj/item/keycard/inborn
 	name = "yellow keycard"
@@ -64,8 +64,8 @@
 	icon = 'modular_septic/icons/obj/items/keys.dmi'
 	icon_state = "yellowkey"
 	puzzle_id = "InBor"
-	pickup_sound = 'modular_septic/sound/effects/card_pickup.wav'
-	drop_sound = 'modular_septic/sound/effects/card_drop.wav'
+	pickup_sound = 'modular_septic/sound/effects/card_pickup.ogg'
+	drop_sound = 'modular_septic/sound/effects/card_drop.ogg'
 
 /obj/item/keycard/bomj
 	name = "yellow keycard"
@@ -73,8 +73,8 @@
 	icon = 'modular_septic/icons/obj/items/keys.dmi'
 	icon_state = "yellowkey"
 	puzzle_id = "Bomj"
-	pickup_sound = 'modular_septic/sound/effects/card_pickup.wav'
-	drop_sound = 'modular_septic/sound/effects/card_drop.wav'
+	pickup_sound = 'modular_septic/sound/effects/card_pickup.ogg'
+	drop_sound = 'modular_septic/sound/effects/card_drop.ogg'
 
 /obj/item/keycard/entry_three
 	name = "violet keycard"
@@ -82,8 +82,8 @@
 	icon = 'modular_septic/icons/obj/items/keys.dmi'
 	icon_state = "purplekey"
 	puzzle_id = "entry"
-	pickup_sound = 'modular_septic/sound/effects/card_pickup.wav'
-	drop_sound = 'modular_septic/sound/effects/card_drop.wav'
+	pickup_sound = 'modular_septic/sound/effects/card_pickup.ogg'
+	drop_sound = 'modular_septic/sound/effects/card_drop.ogg'
 
 /obj/machinery/door/keycard/denominator
 	name = "red airlock"
@@ -131,8 +131,8 @@
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
 			to_chat(user, span_notice("[open_message]"))
-			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.ogg', 70, FALSE, 3)
+			playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 			user.changeNext_move(CLICK_CD_GRABBING)
 			open()
 			if(lockstate != null)
@@ -140,8 +140,8 @@
 			return
 		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
 			to_chat(user, span_notice("[close_message]"))
-			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
-			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.ogg', 70, FALSE, 3)
+			playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 			user.changeNext_move(CLICK_CD_GRABBING)
 			close()
 			if(lockstate != null)
@@ -150,7 +150,7 @@
 		else
 			to_chat(user, span_notice("Not that key..."))
 			user.changeNext_move(CLICK_CD_GRABBING)
-			playsound(src, 'modular_septic/sound/effects/card_declined_horror.wav', 60, FALSE, 1)
+			playsound(src, 'modular_septic/sound/effects/card_declined_horror.ogg', 60, FALSE, 1)
 			return
 
 	if(istype(I, /obj/item/akt/lockpick/square))
@@ -159,16 +159,16 @@
 				user.changeNext_move(CLICK_CD_GRABBING)
 				sound_hint()
 				src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
-				playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+				playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
 				var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 				if(do_after(user, durationn*10, target=src))
 					if(lock_level_one)
 						var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
-						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
 						if(diceroll == DICE_CRIT_SUCCESS)
 							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
 							user.changeNext_move(CLICK_CD_GRABBING)
-							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+							playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll == DICE_SUCCESS)
@@ -176,7 +176,7 @@
 							user.changeNext_move(CLICK_CD_GRABBING)
 							var/obj/item/akt/lockpick/square/SQ = I
 							SQ.damageItem("MEDIUM")
-							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+							playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll <= DICE_FAILURE)
@@ -195,16 +195,16 @@
 				user.changeNext_move(CLICK_CD_GRABBING)
 				sound_hint()
 				src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
-				playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+				playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
 				var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 				if(do_after(user, durationn*10, target=src))
 					if(lock_level_two)
 						var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
-						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
 						if(diceroll == DICE_CRIT_SUCCESS)
 							src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
 							user.changeNext_move(CLICK_CD_GRABBING)
-							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+							playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll == DICE_SUCCESS)
@@ -212,7 +212,7 @@
 							user.changeNext_move(CLICK_CD_GRABBING)
 							var/obj/item/akt/lockpick/square/triangle/TR = I
 							TR.damageItem("MEDIUM")
-							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+							playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll <= DICE_FAILURE)
@@ -230,13 +230,13 @@
 					user.changeNext_move(CLICK_CD_GRABBING)
 					sound_hint()
 					src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
-					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
 					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 					if(do_after(user, durationn*10, target=src))
 						lockstate = "READY_TO_CLUB"
 						var/obj/item/akt/lockpick/square/prylock/PR = I
 						PR.damageItem("HARD")
-						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
 						to_chat(user, span_steal("Now, I need a club to create some force..."))
 						return
 				else
@@ -253,13 +253,13 @@
 					user.changeNext_move(CLICK_CD_GRABBING)
 					sound_hint()
 					src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
-					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
 					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 					if(do_after(user, durationn*10, target=src))
 						lockstate = "READY_TO_KNIFE"
 						var/obj/item/akt/lockpick/square/sawtooth/SA = I
 						SA.damageItem("HARD")
-						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
 						to_chat(user, span_steal("Now, I need a knife to create some force..."))
 						return
 
@@ -274,12 +274,12 @@
 					var/obj/item/akt/lockpick/square/sawtooth/SA = I
 					SA.damageItem("SOFT")
 					user.adjustFatigueLoss(3)
-					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
 					if(prob(1 + (GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING))))
 						lockstate = null
 						src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
-						playsound(src, 'modular_pod/sound/eff/lockpicking2.wav', 70, FALSE, 3)
-						playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+						playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
+						playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 						open()
 						return
 
@@ -294,13 +294,13 @@
 					user.changeNext_move(CLICK_CD_GRABBING)
 					sound_hint()
 					src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
-					playsound(src, 'modular_pod/sound/eff/lockpicking3.wav', 70, FALSE, 3)
+					playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
 					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 					if(do_after(user, durationn*10, target=src))
 						lockstate = "READY_TO_PUSH"
 						var/obj/item/IT = I
 						IT.damageItem("HARD")
-						playsound(src, 'modular_pod/sound/eff/lockpicking1.wav', 70, FALSE, 3)
+						playsound(src, 'modular_pod/sound/eff/lockpicking1.ogg', 70, FALSE, 3)
 						to_chat(user, span_steal("Now, I need lockpick..."))
 
 	if(istype(I, /obj/item/melee/bita))
@@ -311,11 +311,11 @@
 					user.changeNext_move(CLICK_CD_GRABBING)
 					sound_hint()
 					user.adjustFatigueLoss(10)
-					playsound(src, 'modular_pod/sound/eff/lockpicking1.wav', 70, FALSE, 3)
+					playsound(src, 'modular_pod/sound/eff/lockpicking1.ogg', 70, FALSE, 3)
 					var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
 					if(do_after(user, durationn*10, target=src))
 						lockstate = null
-						playsound(src, 'modular_pod/sound/eff/lockpicking1.wav', 70, FALSE, 3)
+						playsound(src, 'modular_pod/sound/eff/lockpicking1.ogg', 70, FALSE, 3)
 						var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
 						var/obj/item/melee/bita/BI = I
 						if(diceroll == DICE_CRIT_SUCCESS)
@@ -323,7 +323,7 @@
 							user.changeNext_move(CLICK_CD_GRABBING)
 							user.adjustFatigueLoss(10)
 							BI.damageItem("MEDIUM")
-							playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+							playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 							open()
 							return
 						if(diceroll <= DICE_SUCCESS)
@@ -369,7 +369,7 @@
 	icon_state = "woodenkey"
 	puzzle_id = "housekey"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	havedurability = TRUE
 	durability = 100
 	carry_weight = 1 KILOGRAMS
@@ -396,7 +396,7 @@
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "lockpick_square"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	havedurability = TRUE
 	durability = 30
 	carry_weight = 200 GRAMS
@@ -588,21 +588,21 @@
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
 			to_chat(user, span_notice("[open_message]"))
-			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.ogg', 70, FALSE, 3)
 			sleep(6)
-			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 			open()
 			return
 		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
 			to_chat(user, span_notice("[close_message]"))
-			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.wav', 70, FALSE, 3)
+			playsound(src, 'modular_septic/sound/effects/card_accepted_horror.ogg', 70, FALSE, 3)
 			sleep(6)
-			playsound(src, 'modular_septic/sound/effects/movedoor.wav', 70, FALSE, 4)
+			playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
 			close()
 			return
 		else
 			to_chat(user, span_notice("[src] makes strange sound. Not that key..."))
-			playsound(src, 'modular_septic/sound/effects/card_declined_horror.wav', 60, FALSE, 1)
+			playsound(src, 'modular_septic/sound/effects/card_declined_horror.ogg', 60, FALSE, 1)
 			return
 
 /obj/item/keycard/chaot
@@ -612,7 +612,7 @@
 	icon_state = "chaotseal"
 	puzzle_id = "chaot"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	havedurability = TRUE
 	durability = 150
 	carry_weight = 1 KILOGRAMS
@@ -670,19 +670,19 @@
 		var/obj/item/keycard/key = I
 		if((!puzzle_id || puzzle_id == key.puzzle_id)  && density)
 			to_chat(user, span_notice("[open_message]"))
-			playsound(src, 'modular_septic/sound/effects/card_accepted.wav', 70, FALSE, 3)
+			playsound(src, 'modular_septic/sound/effects/card_accepted.ogg', 70, FALSE, 3)
 			sleep(6)
-			playsound(src, 'modular_septic/sound/effects/secretopen1.wav', 70, FALSE, 4)
+			playsound(src, 'modular_septic/sound/effects/secretopen1.ogg', 70, FALSE, 4)
 			open()
 			return
 		else if((!puzzle_id || puzzle_id == key.puzzle_id)  && !density)
 			to_chat(user, span_notice("[close_message]"))
-			playsound(src, 'modular_septic/sound/effects/card_accepted.wav', 70, FALSE, 3)
+			playsound(src, 'modular_septic/sound/effects/card_accepted.ogg', 70, FALSE, 3)
 			sleep(6)
-			playsound(src, 'modular_septic/sound/effects/secretclose2.wav', 70, FALSE, 4)
+			playsound(src, 'modular_septic/sound/effects/secretclose2.ogg', 70, FALSE, 4)
 			close()
 			return
 		else
 			to_chat(user, span_notice("[src] buzzes. This must not be the right key."))
-			playsound(src, 'modular_septic/sound/effects/card_declined.wav', 60, FALSE, 1)
+			playsound(src, 'modular_septic/sound/effects/card_declined.ogg', 60, FALSE, 1)
 			return

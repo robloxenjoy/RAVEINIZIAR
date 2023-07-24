@@ -64,9 +64,9 @@
 			to_chat(hearer, "[span_minorannounce("[span_red(title)]<BR>[message]")]<BR>")
 			if(hearer.client.prefs.toggles & SOUND_ANNOUNCEMENTS)
 				if(alert)
-					SEND_SOUND(hearer, sound('modular_septic/sound/misc/notice1.wav'))
+					SEND_SOUND(hearer, sound('modular_septic/sound/misc/notice1.ogg'))
 				else
-					SEND_SOUND(hearer, sound('modular_septic/sound/misc/notice2.wav'))
+					SEND_SOUND(hearer, sound('modular_septic/sound/misc/notice2.ogg'))
 
 	new /datum/announcement(parsed_title, parsed_message)
 

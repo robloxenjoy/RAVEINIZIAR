@@ -6,7 +6,7 @@
 	/// Should this falsewall get the clingable element?
 	var/clingable = FALSE
 	/// If we are clingable, this var stores which sound we make when clung to
-	var/clinging_sound = 'modular_septic/sound/effects/clung.wav'
+	var/clinging_sound = 'modular_septic/sound/effects/clung.ogg'
 	/// Can this false wall be opened with your hand?
 	var/can_open = TRUE
 

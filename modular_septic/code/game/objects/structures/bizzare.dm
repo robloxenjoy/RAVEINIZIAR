@@ -35,7 +35,7 @@
 	user.put_in_hands(trickysign)
 	trickysign = null
 	check_for_no_sign()
-	playsound(user, 'modular_septic/sound/weapons/melee/sign_rip.wav', 70, FALSE)
+	playsound(user, 'modular_septic/sound/weapons/melee/sign_rip.ogg', 70, FALSE)
 	user.visible_message(span_danger("[user] rip the [src] straight out of the ground!"), \
 					span_danger("I rip the [src] straight out of the ground."))
 	if(!HAS_TRAIT(user, TRAIT_TRICKY))

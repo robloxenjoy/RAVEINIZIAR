@@ -16,7 +16,7 @@
 //	turf_height = TURF_HEIGHT_BLOCK_THRESHOLD_TEST
 
 /turf/closed/wall/get_projectile_hitsound(obj/projectile/projectile)
-	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].wav"
+	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
 
 /turf/closed/wall/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
@@ -30,7 +30,7 @@
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(10)
 					W.damageItem(10)
-					playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.wav', 90 , FALSE, FALSE)
+					playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.ogg', 90 , FALSE, FALSE)
 					user.sound_hint()
 					mine_hp -= 1
 					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)

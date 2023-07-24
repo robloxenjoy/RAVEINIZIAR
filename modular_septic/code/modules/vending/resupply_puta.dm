@@ -224,7 +224,7 @@
 	if(!do_after(user, 1 SECONDS, target = src))
 		var/retarded = pick("Retarded.", "Fucking stupid.", "Fucked up.", "I'm a fucking lawyer.")
 		to_chat(user, span_bolddanger("[retarded]"))
-		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 	if(captagon)
 		user.transferItemToLoc(user, captagon)

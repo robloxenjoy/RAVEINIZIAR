@@ -118,7 +118,7 @@
 	sound_hint()
 
 /turf/open/floor/plating/polovich/get_projectile_hitsound(obj/projectile/projectile)
-	return "modular_septic/sound/bullet/projectile_impact/ric_ground[rand(1,5)].wav"
+	return "modular_septic/sound/bullet/projectile_impact/ric_ground[rand(1,5)].ogg"
 
 /turf/open/floor/plating/polovich/rotten_stones
 	name = "Stone Floor"
@@ -942,7 +942,7 @@
 						sound_hint()
 						new /obj/structure/flora/ausbushes/zarosli/midnight/good(get_turf(src))
 						saturated = FALSE
-						playsound(get_turf(src), 'modular_pod/sound/eff/grow_up.wav', 80 , FALSE, FALSE)
+						playsound(get_turf(src), 'modular_pod/sound/eff/grow_up.ogg', 80 , FALSE, FALSE)
 						qdel(W)
 					else
 						user.visible_message(span_notice("[user] faily seeded [src] with the [W]."),span_notice("You faily seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
@@ -958,7 +958,7 @@
 						user.changeNext_move(CLICK_CD_GRABBING)
 						sound_hint()
 						new /obj/structure/flora/ausbushes/zarosli/midnight(get_turf(src))
-						playsound(get_turf(src), 'modular_pod/sound/eff/grow_up.wav', 80 , FALSE, FALSE)
+						playsound(get_turf(src), 'modular_pod/sound/eff/grow_up.ogg', 80 , FALSE, FALSE)
 						qdel(W)
 					else
 						user.visible_message(span_notice("[user] faily seeded [src] with the [W]."),span_notice("You faily seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
@@ -978,7 +978,7 @@
 				sound_hint()
 				saturated = TRUE
 				B.empty = TRUE
-				playsound(get_turf(src), 'modular_pod/sound/eff/potnpour.wav', 80 , FALSE, FALSE)
+				playsound(get_turf(src), 'modular_pod/sound/eff/potnpour.ogg', 80 , FALSE, FALSE)
 			else
 				to_chat(user, span_notice("Dirt is saturated already."))
 				return

@@ -10,9 +10,9 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
 	anchored = TRUE
-	var/gurby = list('modular_septic/sound/effects/teleporter/gurby1.wav', 'modular_septic/sound/effects/teleporter/gurby2.wav', 'modular_septic/sound/effects/teleporter/gurby3.wav', 'modular_septic/sound/effects/teleporter/gurby4.wav', 'modular_septic/sound/effects/teleporter/gurby5.wav')
-	var/gurby_escape = 'modular_septic/sound/effects/chadjack.wav'
-	var/gurby_unescape = 'modular_septic/sound/effects/soyjack.wav'
+	var/gurby = list('modular_septic/sound/effects/teleporter/gurby1.ogg', 'modular_septic/sound/effects/teleporter/gurby2.ogg', 'modular_septic/sound/effects/teleporter/gurby3.ogg', 'modular_septic/sound/effects/teleporter/gurby4.ogg', 'modular_septic/sound/effects/teleporter/gurby5.ogg')
+	var/gurby_escape = 'modular_septic/sound/effects/chadjack.ogg'
+	var/gurby_unescape = 'modular_septic/sound/effects/soyjack.ogg'
 
 /obj/structure/gptdfm/Initialize(mapload)
 	. = ..()

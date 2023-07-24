@@ -261,7 +261,7 @@
 		if(biting_grab)
 			playsound(victim, owner.dna.species.bite_sound, 75, FALSE)
 		else
-			playsound(victim, 'modular_septic/sound/attack/grapple.wav', 75, FALSE)
+			playsound(victim, 'modular_septic/sound/attack/grapple.ogg', 75, FALSE)
 	/// The owner always has to be a carbon - Thus selfgrab always has a bodypart being grasped
 	if(silent)
 		return FALSE

@@ -16,8 +16,8 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 	var/eyeball_scale_y = 0.32
 	var/eyeball_pixel_x = 80
 	var/eyeball_pixel_y = -22
-	var/static/sound/click_sound = sound('modular_septic/sound/interface/uiclick.wav', FALSE, 0, CHANNEL_CLICKITY_CLACK, 220)
-	var/static/sound/ready_sound = sound('modular_septic/sound/interface/readyclick.wav', FALSE, 0, CHANNEL_CLICKITY_CLACK, 220)
+	var/static/sound/click_sound = sound('modular_septic/sound/interface/uiclick.ogg', FALSE, 0, CHANNEL_CLICKITY_CLACK, 220)
+	var/static/sound/ready_sound = sound('modular_septic/sound/interface/readyclick.ogg', FALSE, 0, CHANNEL_CLICKITY_CLACK, 220)
 
 /atom/movable/screen/lobby/button/Initialize(mapload)
 	. = ..()

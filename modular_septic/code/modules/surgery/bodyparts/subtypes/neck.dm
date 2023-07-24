@@ -28,8 +28,8 @@
 	px_x = 0
 	px_y = -8
 	dismemberment_sounds = list(
-		'modular_septic/sound/gore/neck_explodie1.wav',
-		'modular_septic/sound/gore/neck_explodie2.wav',
+		'modular_septic/sound/gore/neck_explodie1.ogg',
+		'modular_septic/sound/gore/neck_explodie2.ogg',
 	)
 	dismemberment_volume = 125
 

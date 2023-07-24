@@ -46,7 +46,7 @@
 		//spam prevention
 		if(!(world.time % 3))
 			to_chat(src, click_fail_msg())
-			src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+			src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 
 	if(!LAZYACCESS(modifiers, "catcher") && A.IsObscured())

@@ -65,12 +65,12 @@
 	add_fingerprint(user)
 	if(inserted_data && user.put_in_hands(inserted_data))
 		to_chat(user, span_notice("I pull [inserted_data] from [src]'s data slot."))
-		playsound(src, 'modular_septic/sound/machinery/cardreader_desert.wav', 70, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/cardreader_desert.ogg', 70, FALSE)
 		inserted_data = null
 		return
 	if(inserted_id && user.put_in_hands(inserted_id))
 		to_chat(user, span_notice("I pull [inserted_id] from [src]'s data slot."))
-		playsound(src, 'modular_septic/sound/machinery/cardreader_desert.wav', 70, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/cardreader_desert.ogg', 70, FALSE)
 		inserted_id = null
 		if(ui_page == "banking")
 			ui_page = initial(ui_page)
@@ -80,7 +80,7 @@
 	if(!inserted_id && istype(weapon, /obj/item/card/id) && user.transferItemToLoc(weapon, src))
 		add_fingerprint(user)
 		to_chat(user, span_notice("I insert [weapon] into [src]'s ID card slot."))
-		playsound(src, 'modular_septic/sound/machinery/cardreader_insert.wav', 70, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/cardreader_insert.ogg', 70, FALSE)
 		inserted_id = weapon
 		if(ui_page == "banking")
 			ui_page = initial(ui_page)
@@ -89,7 +89,7 @@
 	if(!inserted_data && istype(weapon, /obj/item/computer_hardware/hard_drive/portable) && user.transferItemToLoc(weapon, src))
 		add_fingerprint(user)
 		to_chat(user, span_notice("I insert [weapon] into [src]'s data slot."))
-		playsound(src, 'modular_septic/sound/machinery/cardreader_insert.wav', 70, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/cardreader_insert.ogg', 70, FALSE)
 		inserted_data = weapon
 		return TRUE
 	if(ismoney(weapon))
@@ -181,10 +181,10 @@
 		return
 
 	if(real_money.is_coin)
-		playsound(src, 'modular_septic/sound/machinery/coin_insert.wav', 60, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/coin_insert.ogg', 60, FALSE)
 		TIMER_COOLDOWN_START(src, COOLDOWN_MONEY, coin_cooldown_duration)
 	else
-		playsound(src, 'modular_septic/sound/machinery/cash_insert.wav', 60, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/cash_insert.ogg', 60, FALSE)
 		TIMER_COOLDOWN_START(src, COOLDOWN_MONEY, cash_cooldown_duration)
 	qdel(real_money)
 	if(money_stack && (length(money_stack.contents) <= 1))
@@ -211,7 +211,7 @@
 		return
 	if(!inserted_id.registered_account.adjust_money(-amount))
 		return
-	playsound(src, 'modular_septic/sound/machinery/cardreader_read.wav', 70, FALSE)
+	playsound(src, 'modular_septic/sound/machinery/cardreader_read.ogg', 70, FALSE)
 	to_chat(user, span_notice("I withdraw $[amount] from [src]."))
 	withdraw_timer = addtimer(CALLBACK(src, .proc/finalize_withdraw_money, amount, user), 1.25 SECONDS, TIMER_STOPPABLE)
 

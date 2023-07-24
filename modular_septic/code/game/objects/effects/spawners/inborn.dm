@@ -58,9 +58,9 @@
 	new_spawn.mind.add_antag_datum(/datum/antagonist/inborn)
 	var/datum/component/babble/babble = new_spawn.GetComponent(/datum/component/babble)
 	if(!babble)
-		new_spawn.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.wav')
+		new_spawn.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.ogg')
 	else
-		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.ogg'
 		babble.volume = BABBLE_DEFAULT_VOLUME
 		babble.duration = BABBLE_DEFAULT_DURATION
 
@@ -88,9 +88,9 @@
 	new_spawn.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
 	var/datum/component/babble/babble = new_spawn.GetComponent(/datum/component/babble)
 	if(!babble)
-		new_spawn.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/creature.wav')
+		new_spawn.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/inborn.ogg')
 	else
-		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.wav'
+		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.ogg'
 		babble.volume = BABBLE_DEFAULT_VOLUME
 		babble.duration = BABBLE_DEFAULT_DURATION
 

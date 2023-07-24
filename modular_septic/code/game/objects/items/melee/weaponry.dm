@@ -30,7 +30,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "stone"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	havedurability = TRUE
 	durability = 160
 	carry_weight = 1 KILOGRAMS
@@ -61,11 +61,11 @@
 	inhand_icon_state = "goldenmisericorde"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
 	worn_icon_state = "goldenmisericorde"
-	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	hitsound = list('modular_septic/sound/weapons/melee/stabber1.wav', 'modular_septic/sound/weapons/melee/stabber2.wav')
+	hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
 	w_class = WEIGHT_CLASS_SMALL
 	wound_bonus = 1
 	bare_wound_bonus = 5
@@ -101,9 +101,9 @@
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/baton_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/baton_righthand.dmi'
 	inhand_icon_state = "truncheon"
-	drop_sound = list('modular_septic/sound/weapons/melee/baton_fall1.wav', 'modular_septic/sound/weapons/melee/baton_fall2.wav')
-	miss_sound = list('modular_septic/sound/weapons/melee/baton_swish1.wav', 'modular_septic/sound/weapons/melee/baton_swish2.wav', 'modular_septic/sound/weapons/melee/baton_swish3.wav')
-	hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
+	drop_sound = list('modular_septic/sound/weapons/melee/baton_fall1.ogg', 'modular_septic/sound/weapons/melee/baton_fall2.ogg')
+	miss_sound = list('modular_septic/sound/weapons/melee/baton_swish1.ogg', 'modular_septic/sound/weapons/melee/baton_swish2.ogg', 'modular_septic/sound/weapons/melee/baton_swish3.ogg')
+	hitsound = list('modular_septic/sound/weapons/melee/baton1.ogg', 'modular_septic/sound/weapons/melee/baton2.ogg', 'modular_septic/sound/weapons/melee/baton3.ogg')
 	min_force = 3
 	force = 5
 	min_force_strength = 1
@@ -125,9 +125,9 @@
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	inhand_icon_state = "pinkbita"
-	drop_sound = list('modular_septic/sound/weapons/melee/baton_fall1.wav', 'modular_septic/sound/weapons/melee/baton_fall2.wav')
-	miss_sound = list('modular_septic/sound/weapons/melee/baton_swish1.wav', 'modular_septic/sound/weapons/melee/baton_swish2.wav', 'modular_septic/sound/weapons/melee/baton_swish3.wav')
-	hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
+	drop_sound = list('modular_septic/sound/weapons/melee/baton_fall1.ogg', 'modular_septic/sound/weapons/melee/baton_fall2.ogg')
+	miss_sound = list('modular_septic/sound/weapons/melee/baton_swish1.ogg', 'modular_septic/sound/weapons/melee/baton_swish2.ogg', 'modular_septic/sound/weapons/melee/baton_swish3.ogg')
+	hitsound = list('modular_septic/sound/weapons/melee/baton1.ogg', 'modular_septic/sound/weapons/melee/baton2.ogg', 'modular_septic/sound/weapons/melee/baton3.ogg')
 	min_force = 10
 	force = 16
 	throwforce = 16
@@ -171,7 +171,7 @@
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	havedurability = TRUE
 	durability = 170
 	carry_weight = 1 KILOGRAMS
@@ -201,7 +201,7 @@
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	inhand_icon_state = "club2"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	min_force = 12
 	force = 18
 	throwforce = 15
@@ -226,7 +226,7 @@
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	inhand_icon_state = "obsidian_fragment"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.wav'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	min_force = 13
 	force = 21
 	throwforce = 15
@@ -289,9 +289,9 @@
 /obj/item/changeable_attacks
 	name = "a fucked up retarded weapon"
 	desc = "report thgis to a retard dev if you see it"
-	var/slash_hitsound = list('modular_septic/sound/weapons/melee/slasher1.wav', 'modular_septic/sound/weapons/melee/slasher2.wav', 'modular_septic/sound/weapons/melee/slasher3.wav')
-	var/stab_hitsound = list('modular_septic/sound/weapons/melee/stabber1.wav', 'modular_septic/sound/weapons/melee/stabber2.wav')
-	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.wav', 'modular_septic/sound/weapons/melee/baton2.wav', 'modular_septic/sound/weapons/melee/baton3.wav')
+	var/slash_hitsound = list('modular_septic/sound/weapons/melee/slasher1.ogg', 'modular_septic/sound/weapons/melee/slasher2.ogg', 'modular_septic/sound/weapons/melee/slasher3.ogg')
+	var/stab_hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
+	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.ogg', 'modular_septic/sound/weapons/melee/baton2.ogg', 'modular_septic/sound/weapons/melee/baton3.ogg')
 	var/current_atk_mode = null
 	var/wielded_inhand_state = FALSE
 
@@ -351,10 +351,10 @@
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/knife_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/knife_righthand.dmi'
 	worn_icon = 'modular_septic/icons/obj/items/melee/worn/knife_worn.dmi'
-	equip_sound = 'modular_septic/sound/weapons/melee/kukri_holster.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.wav', 'modular_septic/sound/weapons/melee/kukri_swish2.wav', 'modular_septic/sound/weapons/melee/kukri_swish3.wav')
-	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	equip_sound = 'modular_septic/sound/weapons/melee/kukri_holster.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.ogg', 'modular_septic/sound/weapons/melee/kukri_swish2.ogg', 'modular_septic/sound/weapons/melee/kukri_swish3.ogg')
+	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
 	current_atk_mode = SLASH_MODE
 	min_force = 6
 	force = 10
@@ -426,7 +426,7 @@
 	slash_hitsound = list('modular_septic/sound/weapons/melee/heavysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash3.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavysharp_deploy.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/heavysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish3.ogg')
-	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
 	min_force = 13
 	force = 25
 	min_force_strength = 1.3
@@ -488,7 +488,7 @@
 	slash_hitsound = list('modular_septic/sound/weapons/melee/heavyysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash3.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash4.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavyysharp_deploy.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/heavyysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish3.ogg')
-	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
 	embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 15, "jostle_chance" = 9, "pain_stam_pct" = 2, "pain_jostle_mult" = 10, "fall_chance" = 0.2)
 	min_force = 15
 	force = 35
@@ -590,9 +590,9 @@
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
 	worn_icon_state = "steelaxe"
 	slash_hitsound = list('modular_septic/sound/weapons/melee/hitweapon.ogg', 'modular_septic/sound/weapons/melee/hitweapon2.ogg')
-	pickup_sound = 'modular_septic/sound/weapons/melee/pickupweapon.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.wav', 'modular_septic/sound/weapons/melee/missweapon2.wav')
-	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.wav'
+	pickup_sound = 'modular_septic/sound/weapons/melee/pickupweapon.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/missweapon.ogg', 'modular_septic/sound/weapons/melee/missweapon2.ogg')
+	drop_sound = 'modular_septic/sound/weapons/melee/dropnotbig.ogg'
 	embedding = list("pain_mult" = 4, "rip_time" = 5, "embed_chance" = 20, "jostle_chance" = 5, "pain_stam_pct" = 0.7, "pain_jostle_mult" = 9, "fall_chance" = 0.4)
 	current_atk_mode = SLASH_MODE
 	min_force = 15
@@ -681,9 +681,9 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
@@ -770,11 +770,11 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.wav', 'modular_septic/sound/weapons/melee/slashflesh2.wav', 'modular_septic/sound/weapons/melee/slashflesh3.wav')
+	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.ogg', 'modular_septic/sound/weapons/melee/slashflesh2.ogg', 'modular_septic/sound/weapons/melee/slashflesh3.ogg')
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 15
@@ -856,11 +856,11 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	equip_sound = 'modular_pod/sound/eff/weapon/2blade_sheath.wav'
-	pickup_sound = 'modular_pod/sound/eff/weapon/2blade_draw.wav'
-	miss_sound = list('modular_pod/sound/eff/weapon/2blade_swing.wav')
+	equip_sound = 'modular_pod/sound/eff/weapon/2blade_sheath.ogg'
+	pickup_sound = 'modular_pod/sound/eff/weapon/2blade_draw.ogg'
+	miss_sound = list('modular_pod/sound/eff/weapon/2blade_swing.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	slash_hitsound = list('modular_pod/sound/eff/weapon/2blade_impact.wav', 'modular_pod/sound/eff/weapon/2blade_impact2.wav', 'modular_pod/sound/eff/weapon/2blade_impact3.wav')
+	slash_hitsound = list('modular_pod/sound/eff/weapon/2blade_impact.ogg', 'modular_pod/sound/eff/weapon/2blade_impact2.ogg', 'modular_pod/sound/eff/weapon/2blade_impact3.ogg')
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 15, "rip_time" = 3, "embed_chance" = 6, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 20
@@ -947,9 +947,9 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.wav')
+	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 15, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
@@ -1015,11 +1015,11 @@
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/knife_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/knife_righthand.dmi'
 	worn_icon = 'modular_septic/icons/obj/items/melee/worn/knife_worn.dmi'
-	hitsound = list('modular_septic/sound/weapons/melee/kukri1.wav', 'modular_septic/sound/weapons/melee/kukri2.wav', 'modular_septic/sound/weapons/melee/kukri3.wav')
-	equip_sound = 'modular_septic/sound/weapons/melee/kukri_holster.wav'
-	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.wav'
-	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.wav', 'modular_septic/sound/weapons/melee/kukri_swish2.wav', 'modular_septic/sound/weapons/melee/kukri_swish3.wav')
-	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	hitsound = list('modular_septic/sound/weapons/melee/kukri1.ogg', 'modular_septic/sound/weapons/melee/kukri2.ogg', 'modular_septic/sound/weapons/melee/kukri3.ogg')
+	equip_sound = 'modular_septic/sound/weapons/melee/kukri_holster.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/kukri_deploy.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/kukri_swish1.ogg', 'modular_septic/sound/weapons/melee/kukri_swish2.ogg', 'modular_septic/sound/weapons/melee/kukri_swish3.ogg')
+	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
 	min_force = 6
 	force = 10
 	min_force_strength = 1
@@ -1044,7 +1044,7 @@
 	hitsound = list('modular_septic/sound/weapons/melee/heavysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash3.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavysharp_deploy.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/heavysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish3.ogg')
-	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.wav', 'modular_septic/sound/weapons/melee/bladedrop2.wav')
+	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'

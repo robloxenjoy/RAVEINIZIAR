@@ -273,7 +273,7 @@
 
 	if(!isturf(loc) || !isliving(AM))
 		return
-	playsound(loc,'modular_pod/sound/eff/incrementum.wav', 30, TRUE)
+	playsound(loc,'modular_pod/sound/eff/incrementum.ogg', 30, TRUE)
 
 /obj/structure/flora/ausbushes/incrementum/skunk
 	name = "Shit-Skunk"
@@ -292,33 +292,33 @@
 
 /obj/structure/flora/ausbushes/incrementum/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/medical/nanopaste/xap(get_turf(src))
-	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+	playsound(src,'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 	qdel(src)
 
 /obj/structure/flora/ausbushes/incrementum/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
 			if(damage_amount)
-				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+				playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 			else
-				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+				playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 		if(BURN)
-			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+			playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/incrementum/skunk/deconstruct(disassembled = TRUE)
 	new /obj/effect/decal/cleanable/blood/shit(get_turf(src))
-	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+	playsound(src,'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 	qdel(src)
 
 /obj/structure/flora/ausbushes/incrementum/skunk/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
 			if(damage_amount)
-				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+				playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 			else
-				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+				playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 		if(BURN)
-			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+			playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 
 /obj/structure/flora/remains
 	name = "Remains"
@@ -342,18 +342,18 @@
 /obj/structure/flora/ausbushes/incrementum/ygro/deconstruct(disassembled = TRUE)
 	new /obj/item/food/gelatine/mesopelagic(get_turf(src))
 	new /obj/structure/flora/remains(get_turf(src))
-	playsound(src,'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+	playsound(src,'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 	qdel(src)
 
 /obj/structure/flora/ausbushes/incrementum/ygro/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
 			if(damage_amount)
-				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+				playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 			else
-				playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+				playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 		if(BURN)
-			playsound(src, 'modular_pod/sound/eff/incrementum.wav', 50, TRUE)
+			playsound(src, 'modular_pod/sound/eff/incrementum.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/incrementum/ygro/Initialize()
 	. = ..()
@@ -516,7 +516,7 @@
 	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
 	if(!do_after(user, 30, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
-		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 	if(!berries)
 		to_chat(user, span_notice("No berries."))
@@ -623,7 +623,7 @@
 	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
 	if(!do_after(user, 10 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
-		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 	if(last_process + time_between_uses > world.time)
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -695,7 +695,7 @@
 		user.put_in_active_hand(result)
 	else
 		to_chat(user, span_danger(xbox_rage_msg()))
-		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 
 /obj/structure/flora/ausbushes/zarosli/midnight/good/Initialize(mapload)

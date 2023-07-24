@@ -40,7 +40,7 @@
 	owner.changeNext_move(CLICK_CD_STRANGLE)
 	owner.sound_hint()
 	owner.adjustFatigueLoss(5)
-	playsound(victim, 'modular_septic/sound/attack/twist.wav', 75, FALSE)
+	playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 	return TRUE
 
 /obj/item/grab/proc/takedown()
@@ -96,7 +96,7 @@
 	owner.changeNext_move(CLICK_CD_TAKEDOWN)
 	owner.sound_hint()
 	owner.adjustFatigueLoss(5)
-	playsound(victim, 'modular_septic/sound/attack/twist.wav', 75, FALSE)
+	playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 	return TRUE
 
 /obj/item/grab/proc/wrench_limb()
@@ -166,7 +166,7 @@
 	owner.sound_hint()
 	owner.changeNext_move(CLICK_CD_WRENCH)
 	owner.adjustFatigueLoss(5)
-	playsound(victim, 'modular_septic/sound/attack/twist.wav', 75, FALSE)
+	playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 	return TRUE
 
 /obj/item/grab/proc/relocate_limb()
@@ -231,7 +231,7 @@
 	owner.sound_hint()
 	owner.changeNext_move(CLICK_CD_WRENCH)
 	owner.adjustFatigueLoss(5)
-	playsound(victim, 'modular_septic/sound/attack/twist.wav', 75, FALSE)
+	playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 	return TRUE
 
 /obj/item/grab/proc/tear_off_limb()
@@ -299,7 +299,7 @@
 	var/mob/living/carbon/carbon_victim = victim
 	owner.adjustFatigueLoss(5)
 	owner.changeNext_move(CLICK_CD_WRENCH)
-	playsound(victim, 'modular_pod/sound/eff/outshit.wav', 80, FALSE)
+	playsound(victim, 'modular_pod/sound/eff/outshit.ogg', 80, FALSE)
 	qdel(gut_rope)
 	carbon_victim.gut_cut()
 	update_grab_mode()

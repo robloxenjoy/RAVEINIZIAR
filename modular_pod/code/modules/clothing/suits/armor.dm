@@ -72,9 +72,9 @@
 	worn_icon_state = "steel_chainmail"
 	carry_weight = 6 KILOGRAMS
 	body_parts_covered = CHEST|VITALS|GROIN|ARMS|LEGS|NECK
-	equip_sound = 'modular_septic/sound/armor/equip/armor_use_001.wav'
-	pickup_sound = 'modular_septic/sound/armor/equip/armor_up_001.wav'
-	drop_sound = 'modular_septic/sound/armor/equip/armor_down_001.wav'
+	equip_sound = 'modular_septic/sound/armor/equip/armor_use_001.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/armor_up_001.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/armor_down_001.ogg'
 	armor_broken_sound = "light"
 	armor_damaged_sound = "light"
 	max_integrity = 500
@@ -229,9 +229,9 @@
 	armor_damaged_sound = "heavy_helmet"
 	armor_damaged_sound_local = "heavy_helmet"
 	carry_weight = 3.5 KILOGRAMS
-	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.wav'
-	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.wav'
-	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.wav'
+	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.ogg'
 
 /obj/item/clothing/head/helmet/silver/full
 	name = "Silver Helmet"
@@ -267,6 +267,6 @@
 	armor_damaged_sound = "heavy_helmet"
 	armor_damaged_sound_local = "heavy_helmet"
 	carry_weight = 3.3 KILOGRAMS
-	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.wav'
-	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.wav'
-	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.wav'
+	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.ogg'

@@ -38,7 +38,7 @@
 	var/datum/bank_account/cargo_bank = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	if(!cargo_bank.adjust_money(-amount))
 		return
-	playsound(src, 'modular_septic/sound/machinery/cardreader_read.wav', 70, FALSE)
+	playsound(src, 'modular_septic/sound/machinery/cardreader_read.ogg', 70, FALSE)
 	to_chat(user, span_notice("I withdraw $[amount] from [src]."))
 	withdraw_timer = addtimer(CALLBACK(src, .proc/finalize_withdraw_money, amount, user), 1.25 SECONDS, TIMER_STOPPABLE)
 
@@ -104,10 +104,10 @@
 		return
 
 	if(real_money.is_coin)
-		playsound(src, 'modular_septic/sound/machinery/coin_insert.wav', 60, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/coin_insert.ogg', 60, FALSE)
 		TIMER_COOLDOWN_START(src, COOLDOWN_MONEY, coin_cooldown_duration)
 	else
-		playsound(src, 'modular_septic/sound/machinery/cash_insert.wav', 60, FALSE)
+		playsound(src, 'modular_septic/sound/machinery/cash_insert.ogg', 60, FALSE)
 		TIMER_COOLDOWN_START(src, COOLDOWN_MONEY, cash_cooldown_duration)
 	qdel(real_money)
 	if(money_stack && (length(money_stack.contents) <= 1))

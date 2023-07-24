@@ -13,12 +13,12 @@
 	alternative_caliber = CALIBER_38
 	alternative_ammo_misfires = FALSE
 	// close cylinder sound
-	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/cylinder_in.wav'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/cylinder_in.ogg'
 	// open cylinder sound
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/cylinder_out.wav'
-	load_sound = 'modular_septic/sound/weapons/guns/revolver/load_bullet.wav'
-	eject_sound = 'modular_septic/sound/weapons/guns/revolver/revolver_eject.wav'
-	drop_sound = 'modular_septic/sound/weapons/guns/drop_lightgun.wav'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/cylinder_out.ogg'
+	load_sound = 'modular_septic/sound/weapons/guns/revolver/load_bullet.ogg'
+	eject_sound = 'modular_septic/sound/weapons/guns/revolver/revolver_eject.ogg'
+	drop_sound = 'modular_septic/sound/weapons/guns/drop_lightgun.ogg'
 	// hammer sound
 	rack_sound = list(
 		'modular_septic/sound/weapons/guns/revolver/hammer1.ogg', \
@@ -26,9 +26,9 @@
 	)
 	fire_sound = 'modular_septic/sound/weapons/guns/revolver/revolver_fire.ogg'
 	alternative_fire_sound = 'modular_septic/sound/weapons/guns/revolver/revolver_fire.ogg'
-	equip_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_holster.wav'
-	pickup_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_draw.wav'
-	dry_fire_sound = 'modular_septic/sound/weapons/guns/revolver/empty_revolver.wav'
+	equip_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_holster.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_draw.ogg'
+	dry_fire_sound = 'modular_septic/sound/weapons/guns/revolver/empty_revolver.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 12, \
 		"pixel_y" = 5, \
@@ -69,14 +69,14 @@
 	icon_state = "bladerunner"
 	base_icon_state = "bladerunner"
 	uncocked_icon_state = FALSE
-	fire_sound = list('modular_septic/sound/weapons/guns/revolver/gado1.wav', 'modular_septic/sound/weapons/guns/revolver/gado3.wav', 'modular_septic/sound/weapons/guns/revolver/gado3.wav')
+	fire_sound = list('modular_septic/sound/weapons/guns/revolver/gado1.ogg', 'modular_septic/sound/weapons/guns/revolver/gado3.ogg', 'modular_septic/sound/weapons/guns/revolver/gado3.ogg')
 	safety_on_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyon.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyoff.ogg'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/gado_in.wav'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/gado_in.ogg'
 	// open cylinder sound
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/gado_out.wav'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/gado_out.ogg'
 	// hammer sound
-	rack_sound = 'modular_septic/sound/weapons/guns/revolver/gado_hammer.wav'
+	rack_sound = 'modular_septic/sound/weapons/guns/revolver/gado_hammer.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 13, \
 		"pixel_y" = 3, \
@@ -110,8 +110,8 @@
 		"recoil_angle_upper" = -10, \
 		"recoil_angle_lower" = -25, \
 	)
-	fire_sound = 'modular_septic/sound/weapons/guns/revolver/nova.wav'
-	alternative_fire_sound = 'modular_septic/sound/weapons/guns/revolver/nova_alt.wav'
+	fire_sound = 'modular_septic/sound/weapons/guns/revolver/nova.ogg'
+	alternative_fire_sound = 'modular_septic/sound/weapons/guns/revolver/nova_alt.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/nova
 	can_modify_ammo = TRUE
 	initial_caliber = CALIBER_38
@@ -130,11 +130,11 @@
 	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_righthand.dmi'
 	inhand_icon_state = "poppy"
-	fire_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy.wav'
-	alternative_fire_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy.wav'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_in.wav'
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_out.wav'
-	rack_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_hammer.wav'
+	fire_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy.ogg'
+	alternative_fire_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy.ogg'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_in.ogg'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_out.ogg'
+	rack_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_hammer.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 13, \
 		"pixel_y" = 3, \
@@ -164,14 +164,14 @@
 	uncocked_icon_state = FALSE
 	cylinder_shows_open = FALSE
 	cylinder_shows_ammo_count = FALSE
-	fire_sound = list('modular_septic/sound/weapons/guns/revolver/paralyzer_fire (3).wav', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (2).wav', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (1).wav')
+	fire_sound = list('modular_septic/sound/weapons/guns/revolver/paralyzer_fire (3).ogg', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (2).ogg', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (1).ogg')
 	safety_on_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyon.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyoff.ogg'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/gado_in.wav'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/gado_in.ogg'
 	// open cylinder sound
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/gado_out.wav'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/gado_out.ogg'
 	// hammer sound
-	rack_sound = 'modular_septic/sound/weapons/guns/revolver/gado_hammer.wav'
+	rack_sound = 'modular_septic/sound/weapons/guns/revolver/gado_hammer.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 13, \
 		"pixel_y" = 3, \

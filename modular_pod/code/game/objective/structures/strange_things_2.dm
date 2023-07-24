@@ -23,7 +23,7 @@
 			return
 		user.visible_message(span_notice("[user] inserts green crystal in Gargotor."),span_notice("You insert green crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
-		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 		qdel(I)
 		crystal = TRUE
 		crystalGreen = TRUE
@@ -35,7 +35,7 @@
 			return
 		user.visible_message(span_notice("[user] inserts red crystal in Gargotor."),span_notice("You insert red crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
-		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 		qdel(I)
 		crystal = TRUE
 		crystalRed = TRUE
@@ -47,7 +47,7 @@
 			return
 		user.visible_message(span_notice("[user] inserts blue crystal in Gargotor."),span_notice("You insert blue crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
-		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 		qdel(I)
 		crystal = TRUE
 		crystalBlue = TRUE
@@ -59,7 +59,7 @@
 			return
 		user.visible_message(span_notice("[user] inserts pink crystal in Gargotor."),span_notice("You insert pink crystal in Gargotor."), span_hear("You hear the sound of inserting."))
 		sound_hint()
-		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 		qdel(I)
 		crystal = TRUE
 		crystalPink = TRUE
@@ -72,7 +72,7 @@
 			crystalGreen = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/green))
 		if(crystalBlue)
 			if(user.a_intent != INTENT_DISARM)
@@ -82,7 +82,7 @@
 			crystalBlue = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/green))
 		if(crystalRed)
 			if(user.a_intent != INTENT_DISARM)
@@ -92,7 +92,7 @@
 			crystalRed = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/green))
 		if(crystalPink)
 			if(user.a_intent != INTENT_DISARM)
@@ -102,7 +102,7 @@
 			crystalPink = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalRed)
 			if(user.a_intent != INTENT_DISARM)
@@ -112,7 +112,7 @@
 			crystalRed = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalPink)
 			if(user.a_intent != INTENT_DISARM)
@@ -122,7 +122,7 @@
 			crystalPink = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalGreen)
 			if(user.a_intent != INTENT_DISARM)
@@ -132,7 +132,7 @@
 			crystalGreen = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/blue))
 		if(crystalBlue)
 			if(user.a_intent != INTENT_DISARM)
@@ -142,7 +142,7 @@
 			crystalBlue = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 	else if(istype(I, /obj/item/shard/crystal/purple))
 		if(crystalBlue)
 			if(user.a_intent != INTENT_DISARM)
@@ -152,7 +152,7 @@
 			crystalBlue = FALSE
 			crystal = FALSE
 			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.wav', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 
 /obj/structure/beast/gargotor/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
@@ -162,25 +162,25 @@
 		if(crystal)
 			if(crystalBlue)
 				new /obj/item/crystal/blue(get_turf(user))
-				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.wav', 100 , FALSE, FALSE)
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 				sound_hint()
 				crystal = FALSE
 				crystalBlue = FALSE
 			else if(crystalRed)
 				new /obj/item/crystal/red(get_turf(user))
-				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.wav', 100 , FALSE, FALSE)
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 				sound_hint()
 				crystal = FALSE
 				crystalRed = FALSE
 			else if(crystalGreen)
 				new /obj/item/crystal/green(get_turf(user))
-				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.wav', 100 , FALSE, FALSE)
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 				sound_hint()
 				crystal = FALSE
 				crystalGreen = FALSE
 			else if(crystalPink)
 				new /obj/item/crystal/pink(get_turf(user))
-				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.wav', 100 , FALSE, FALSE)
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 				sound_hint()
 				crystal = FALSE
 				crystalPink = FALSE
@@ -242,7 +242,7 @@
 		return
 
 	activated = TRUE
-	playsound(get_turf(src), 'modular_pod/sound/eff/open_trap.wav', 100 , FALSE, FALSE)
+	playsound(get_turf(src), 'modular_pod/sound/eff/open_trap.ogg', 100 , FALSE, FALSE)
 	if(!thrown_at)
 		L.visible_message(span_danger("[L] triggers \the [src]."), \
 				span_userdanger("You trigger \the [src]!"))
@@ -266,7 +266,7 @@
 			if(vvitals)
 				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_VITALS, wound_bonus = 5, sharpness = SHARP_POINTY)
 	activated = FALSE
-	playsound(get_turf(src), 'modular_pod/sound/eff/close_trap.wav', 100 , FALSE, FALSE)
+	playsound(get_turf(src), 'modular_pod/sound/eff/close_trap.ogg', 100 , FALSE, FALSE)
 
 /obj/structure/halber_socket
 	name = "Socket"
@@ -291,7 +291,7 @@
 		sound_hint()
 		if(!do_after(user, 10 SECONDS, target = src))
 			to_chat(user, span_danger(xbox_rage_msg()))
-			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 			return
 		playsound(src, 'modular_septic/sound/effects/homierip.ogg', 80, FALSE)
 		var/mob/living/carbon/human/species/halbermensch/halber = new(get_turf(src))
@@ -304,9 +304,9 @@
 		halber.language_holder.selected_language = /datum/language/aphasia
 		var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
 		if(!babble)
-			halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.wav')
+			halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
 		else
-			babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.wav'
+			babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.ogg'
 			babble.volume = BABBLE_DEFAULT_VOLUME
 			babble.duration = BABBLE_DEFAULT_DURATION
 		halber.height = HUMAN_HEIGHT_MEDIUM
@@ -405,11 +405,11 @@
 						span_notice("I begin to compile the socket."), \
 						span_hear("I hear a strange sound."))
 			user.changeNext_move(CLICK_CD_MELEE)
-			playsound(loc, 'modular_pod/sound/eff/flesh_slap_second.wav', 50, TRUE)
+			playsound(loc, 'modular_pod/sound/eff/flesh_slap_second.ogg', 50, TRUE)
 			var/durationn = (50 SECONDS - (GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY)))
 			if(!do_after(user, durationn, target = src))
 				to_chat(user, span_danger(xbox_rage_msg()))
-				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 				return
 			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll >= DICE_SUCCESS)
@@ -441,9 +441,9 @@
 		halber.fully_replace_character_name(halber.real_name, "Halbermensch")
 		var/datum/component/babble/babble = halber.GetComponent(/datum/component/babble)
 		if(!babble)
-			halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.wav')
+			halber.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
 		else
-			babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.wav'
+			babble.babble_sound_override = 'modular_pod/sound/mobs_yes/babble/halber.ogg'
 			babble.volume = BABBLE_DEFAULT_VOLUME
 			babble.duration = BABBLE_DEFAULT_DURATION
 

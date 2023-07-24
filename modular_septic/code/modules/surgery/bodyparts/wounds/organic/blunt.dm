@@ -4,7 +4,7 @@
 */
 /datum/wound/blunt
 	name = "Blunt Wound"
-	sound_effect = list('modular_septic/sound/gore/nasty1.wav', 'modular_septic/sound/gore/nasty2.wav')
+	sound_effect = list('modular_septic/sound/gore/nasty1.ogg', 'modular_septic/sound/gore/nasty2.ogg')
 	base_treat_time = 6 SECONDS
 
 	wound_type = WOUND_BLUNT
@@ -21,7 +21,7 @@
 	occur_text = "jerks violently and becomes unseated"
 
 	severity = WOUND_SEVERITY_MODERATE
-	sound_effect = list('modular_septic/sound/gore/nasty1.wav', 'modular_septic/sound/gore/nasty2.wav')
+	sound_effect = list('modular_septic/sound/gore/nasty1.ogg', 'modular_septic/sound/gore/nasty2.ogg')
 	viable_zones = ALL_BODYPARTS
 	threshold_minimum = 30
 	wound_flags = (WOUND_SOUND_HINTS)

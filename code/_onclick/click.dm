@@ -364,7 +364,7 @@
 		//spam prevention
 		if(!(world.time % 3))
 			to_chat(user, click_fail_msg())
-			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		//SEPTIC EDIT END
 		return FALSE
 
@@ -386,7 +386,7 @@
 		//spam prevention
 		if(!(world.time % 3))
 			to_chat(user, click_fail_msg())
-			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.wav', 15, FALSE)
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		//SEPTIC EDIT END
 		return FALSE
 

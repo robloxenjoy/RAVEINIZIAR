@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/hypospray/medipen
-	var/stimulator_sound = 'modular_septic/sound/effects/stimulator.wav'
+	var/stimulator_sound = 'modular_septic/sound/effects/stimulator.ogg'
 
 /obj/item/reagent_containers/hypospray/medipen/retractible
 	var/needle_out_sound = 'modular_septic/sound/efn/captagon/heroin_out.ogg'

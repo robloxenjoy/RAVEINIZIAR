@@ -3,15 +3,15 @@
 	slowdown = 0
 	storage_flags = STORAGE_NO_WORN_ACCESS
 	carry_weight = 3 KILOGRAMS
-	pickup_sound = 'modular_septic/sound/armor/equip/backpack_pickup.wav'
-	drop_sound = 'modular_septic/sound/armor/equip/backpack_drop.wav'
-	equip_sound = 'modular_septic/sound/armor/equip/backpack_wear.wav'
+	pickup_sound = 'modular_septic/sound/armor/equip/backpack_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/backpack_drop.ogg'
+	equip_sound = 'modular_septic/sound/armor/equip/backpack_wear.ogg'
 
 /obj/item/storage/backpack/Initialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
-		STR.rustle_sound = 'modular_septic/sound/armor/equip/backpack_use.wav'
+		STR.rustle_sound = 'modular_septic/sound/armor/equip/backpack_use.ogg'
 
 /obj/item/storage/backpack/satchel
 	slowdown = 0

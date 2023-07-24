@@ -31,8 +31,8 @@
 													echo_factor, \
 													creaking, \
 													sound/near_sound = sound(get_sfx("explosion")), \
-													sound/far_sound = sound('modular_septic/sound/effects/explodefar1.wav', 'modular_septic/sound/effects/explodefar2.wav', 'modular_septic/sound/effects/explodefar3.wav', 'modular_septic/sound/effects/explodefar4.wav'), \
-													sound/echo_sound = sound('modular_septic/sound/effects/explodedistant1.wav', 'modular_septic/sound/effects/explodedistant2.wav', 'modular_septic/sound/effects/explodedistant3.wav', 'modular_septic/sound/effects/explodedistant4.wav'), \
+													sound/far_sound = sound('modular_septic/sound/effects/explodefar1.ogg', 'modular_septic/sound/effects/explodefar2.ogg', 'modular_septic/sound/effects/explodefar3.ogg', 'modular_septic/sound/effects/explodefar4.ogg'), \
+													sound/echo_sound = sound('modular_septic/sound/effects/explodedistant1.ogg', 'modular_septic/sound/effects/explodedistant2.ogg', 'modular_septic/sound/effects/explodedistant3.ogg', 'modular_septic/sound/effects/explodedistant4.ogg'), \
 													sound/creaking_sound = sound(get_sfx("explosion_creaking")), \
 													hull_creaking_sound = sound(get_sfx("hull_creaking")))
 	var/frequency = get_rand_frequency()

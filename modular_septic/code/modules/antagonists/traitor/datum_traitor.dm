@@ -3,7 +3,7 @@
 	combat_music = 'modular_septic/sound/music/combat/teen_angel.ogg'
 	roundend_category = "sleeper agents"
 	antagpanel_category = "Sleeper Agent"
-	greeting_sound = 'modular_septic/sound/villain/mkultra.wav'
+	greeting_sound = 'modular_septic/sound/villain/mkultra.ogg'
 	attribute_sheet = /datum/attribute_holder/sheet/traitor
 	var/datum/weakref/cranial_depressurization_implant
 

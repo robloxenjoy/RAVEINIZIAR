@@ -9,8 +9,8 @@
 	var/min_force_strength = 0
 	/// Increases maximum bound for the force increase we get per point of strength
 	var/force_strength = 0
-	var/wieldnoise = 'modular_septic/sound/effects/hand_grip.wav'
-	var/unwieldnoise = 'modular_septic/sound/effects/hand_release.wav'
+	var/wieldnoise = 'modular_septic/sound/effects/hand_grip.ogg'
+	var/unwieldnoise = 'modular_septic/sound/effects/hand_release.ogg'
 	var/wieldvolume = 30
 	var/unwieldvolume = 25
 
