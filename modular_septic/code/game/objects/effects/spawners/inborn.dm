@@ -82,7 +82,7 @@
 	mob_species = /datum/species/weakwillet
 	uses = 500
 
-/obj/effect/mob_spawn/human/weakwillet/special(mob/living/new_spawn)
+/obj/effect/mob_spawn/human/weakwillet/special(mob/living/carbon/human/new_spawn)
 	. = ..()
 	new_spawn.fully_replace_character_name(new_spawn.real_name, "Weak Willet")
 	new_spawn.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
@@ -98,7 +98,7 @@
 		new_spawn.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
 		new_spawn.height = HUMAN_HEIGHT_TALLEST
 		if(prob(65))
-			new_spawn.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
+			new_spawn.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(new_spawn.drop_location()), FALSE)
 	else
 		new_spawn.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
 		new_spawn.height = HUMAN_HEIGHT_MEDIUM

@@ -15,7 +15,7 @@
 	roundend_category = "denominators"
 	antagpanel_category = "Denominator"
 	preview_outfit = /datum/outfit/denominator
-	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator.ogg'
+//	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator.ogg'
 	show_to_ghosts = TRUE
 	antag_hud_type = ANTAG_HUD_DENOMINATOR
 	var/employer = "OcularTech"
@@ -45,7 +45,7 @@
 	name = "Third Denomination Shotgunner"
 	preview_outfit = /datum/outfit/denominator/shotgunner
 	antag_hud_name = "deno_shotgunner"
-	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator_shotgunner.ogg'
+//	combat_music = 'modular_septic/sound/music/combat/deathmatch/denominator_shotgunner.ogg'
 
 /datum/antagonist/denominator/shotgunner/on_gain()
 	. = ..()
