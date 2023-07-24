@@ -992,7 +992,7 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+	if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 		switch(affected)
 			if(BODY_ZONE_PRECISE_GROIN)
 				if(victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
@@ -1075,7 +1075,7 @@
 	if(!istype(weapon) || (!sharpness))
 		return FALSE
 	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
-	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL)
+	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL)
 	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
 		if(!affected.get_incision(TRUE))
 			var/edge_protection = 0
@@ -1120,7 +1120,7 @@
 		var/resultt = 0
 		edge_protection = victim.get_edge_protection(affected)
 		resultt = (edge_protection - weapon.edge_protection_penetration)
-		if(resultt <= 0)
+		if(resultt <= 5)
 			var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 				user.changeNext_move(0)
