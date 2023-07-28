@@ -88,9 +88,9 @@
 
 /datum/outfit/venturer/pre_equip(mob/living/carbon/human/H)
 	..()
-	var/result = rand(1, 4)
+	var/result = rand(1, 5)
 	switch(result)
-/*
+
 		if(1)
 			venturer_type = "woodcutter"
 			l_hand = /obj/item/storage/backpack/basket
@@ -98,9 +98,9 @@
 			belt = /obj/item/changeable_attacks/slashbash/axe/small/steel
 			to_chat(H, span_achievementinteresting("I'm a woodcutter!"))
 			to_chat(H, span_info("I have a real friend - an axe. I have to take care of it, otherwise it will break at such a difficult time."))
-*/
 
-		if(1)
+
+		if(2)
 			venturer_type = "venturertrue"
 			back = /obj/item/storage/backpack/satchel/itobe
 			backpack_contents = list(
@@ -121,7 +121,7 @@
 			to_chat(H, span_achievementinteresting("I'm a meat warrior!"))
 			to_chat(H, span_info("Maybe I'm an occultist, maybe I'm a maniac. But I have an equipment."))
 */
-		if(2)
+		if(3)
 			venturer_type = "venturervillageowner"
 			neck = /obj/item/clothing/neck/noble_cloak
 //			uniform = /obj/item/clothing/under/rank/captain/zoomtech
@@ -133,7 +133,7 @@
 			to_chat(H, span_achievementinteresting("I'm a village owner!"))
 			to_chat(H, span_info("Finally got out of the turmoil with the village and can breathe fresh air."))
 
-		if(3)
+		if(4)
 			venturer_type = "venturergardener"
 			shoes = /obj/item/clothing/shoes/frogshoes
 			l_hand = /obj/item/storage/backpack/basket
@@ -159,7 +159,7 @@
 			to_chat(H, span_achievementinteresting("I am the leader of the bandits!"))
 			to_chat(H, span_info("I need to find other bandits, and maybe start something insidious."))
 */
-		if(4)
+		if(5)
 			venturer_type = "venturergoer"
 			l_pocket = /obj/item/food/gelatine/mesopelagic
 			suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
@@ -250,7 +250,7 @@
 /datum/outfit/nothinger
 	name = "Nothing Uniform"
 
-/*
+
 /datum/job/aktliver
 	title = "Akt Liver"
 	department_head = list("Head of Personnel")
@@ -450,9 +450,9 @@
 	neck = /obj/item/clothing/neck/noble_cloak
 	r_pocket = /obj/item/keycard/akt/controller
 	shoes = /obj/item/clothing/shoes/barhatki
-*/
+
 /datum/job/alchemist
-	title = "Al-Chemist"
+	title = "Akt Al-Chemist"
 	department_head = list("Head of Personnel")
 	faction = list("neutral", "swarmer")
 	total_positions = 5

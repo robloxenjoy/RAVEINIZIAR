@@ -186,6 +186,10 @@
 	if(range < 1)
 		to_chat(src, span_warning("I'm too weak to do this..."))
 		return FALSE
+	if(next_move > world.time)
+		to_chat(src, click_fail_msg())
+		src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		return FALSE
 	if(ismob(jump_target))
 		visible_message(span_warning("<b>[src]</b> jumps at <b>[jump_target]</b>!"), \
 					span_userdanger("I jump at <b>[jump_target]</b>!"), \
@@ -196,19 +200,20 @@
 					span_userdanger("I jump at [jump_target]!"))
 	jump_grunt()
 	sound_hint()
+	changeNext_move(CLICK_CD_MELEE)
 	safe_throw_at(jump_target, range, throw_speed, src, FALSE, callback = CALLBACK(src, .proc/jump_callback))
 
 /mob/living/carbon/proc/jump_callback()
 	sound_hint()
 	switch(diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL))
 		if(DICE_CRIT_SUCCESS)
-			adjustFatigueLoss(15)
+			adjustFatigueLoss(10)
 		if(DICE_SUCCESS)
+			adjustFatigueLoss(20)
+//			Immobilize(1 SECONDS)
+		if(DICE_FAILURE)
 			adjustFatigueLoss(30)
 			Immobilize(1 SECONDS)
-		if(DICE_FAILURE)
-			adjustFatigueLoss(50)
-			Immobilize(2 SECONDS)
 		if(DICE_CRIT_FAILURE)
-			adjustFatigueLoss(65)
+			adjustFatigueLoss(45)
 			CombatKnockdown(75, 2 SECONDS)

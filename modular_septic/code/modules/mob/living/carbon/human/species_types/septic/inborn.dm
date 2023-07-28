@@ -47,8 +47,8 @@
 	mutantspleen = /obj/item/organ/spleen/vilir
 	heatmod = 4
 	coldmod = 0
-	liked_food = RAW | MEAT | SEWAGE
-	disliked_food = VEGETABLES
+	liked_food = RAW | MEAT | GROSS | GRAIN | SEWAGE
+	disliked_food = CLOTH
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	say_mod = "chaotises"
 	attack_verb = "flouts"
@@ -125,7 +125,8 @@
 	armor = 5
 	punchdamagelow = 5
 	punchdamagehigh = 14
-	liked_food = MEAT | RAW
+	liked_food = RAW | MEAT | GROSS | GRAIN | SEWAGE
+	disliked_food = CLOTH
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	say_mod = "defigures"
 	attack_verb = "crashes"

@@ -480,7 +480,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		return FALSE
 	if(istype(src, /obj/item/reagent_containers/syringe))
 		return FALSE
-	if(istype(src,/obj/item/reagent_containers/pill))
+	if(istype(W, /obj/item/reagent_containers/syringe))
+		return FALSE
+	if(istype(src, /obj/item/reagent_containers/pill))
 		return FALSE
 	if((W.get_sharpness() & SHARP_IMPALING) || (W.get_sharpness() & SHARP_POINTY) || (W.get_sharpness() & SHARP_EDGED))
 		if(reagents.total_volume > 0)

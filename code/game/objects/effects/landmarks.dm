@@ -139,7 +139,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/alchemist
-	name = "Al-Chemist"
+	name = "Akt Al-Chemist"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
