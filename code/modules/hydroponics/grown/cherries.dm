@@ -49,7 +49,7 @@
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	name = "Molyak Leaf"
 	desc = "Why do you need it?"
-	icon_state = "molyak_leave"
+	icon_state = "molyak_leaf"
 	bite_consumption_mod = 4
 	foodtypes = VEGETABLES
 	tastes = list("dream" = 1)

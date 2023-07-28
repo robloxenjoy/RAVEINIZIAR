@@ -115,7 +115,7 @@
 */
 /datum/job/chaot
 	attribute_sheet = /datum/attribute_holder/sheet/job/chaot
-/*
+
 /datum/job/aktliver
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktliver
 
@@ -131,13 +131,11 @@
 /datum/job/aktcurer
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktcurer
 
-/datum/job/aktcontroller
-	attribute_sheet = /datum/attribute_holder/sheet/job/aktcontroller
-
 /datum/job/aktgargohelper
 	attribute_sheet = /datum/attribute_holder/sheet/job/aktgargohelper
 
-*/
+/datum/job/aktcontroller
+	attribute_sheet = /datum/attribute_holder/sheet/job/aktcontroller
 
 /datum/job/alchemist
 	attribute_sheet = /datum/attribute_holder/sheet/job/alchemist
