@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(augury)
 	doombringers -= A
 
 /datum/controller/subsystem/augury/fire()
-//	var/biggest_doom = null
+	var/biggest_doom = null
 	var/biggest_threat = null
 
 	for(var/db in doombringers)
@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(augury)
 			continue
 		var/threat = doombringers[d]
 		if((biggest_threat == null) || (biggest_threat < threat))
-//			biggest_doom = d
+			biggest_doom = d
 			biggest_threat = threat
 
 	if(doombringers.len)
@@ -53,9 +53,9 @@ SUBSYSTEM_DEF(augury)
 		if(!w)
 			watchers -= w
 			continue
-//		var/mob/dead/observer/O = w
-//		if(biggest_doom && (!O.orbiting || O.orbiting.parent != biggest_doom))
-//			O.ManualFollow(biggest_doom)
+		var/mob/dead/observer/O = w
+		if(biggest_doom && (!O.orbiting || O.orbiting.parent != biggest_doom))
+			O.ManualFollow(biggest_doom)
 
 /datum/action/innate/augury
 	name = "Auto Follow Debris"

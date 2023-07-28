@@ -8,8 +8,8 @@
 			return // seems legit.
 
 	// Things you might plausibly want to follow
-//	if(ismovable(A))
-//		ManualFollow(A)
+	if(ismovable(A))
+		ManualFollow(A)
 
 	// Otherwise jump
 	else if(A.loc)

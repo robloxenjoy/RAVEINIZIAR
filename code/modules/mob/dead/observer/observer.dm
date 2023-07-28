@@ -758,11 +758,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/Topic(href, href_list)
 	..()
 	if(usr == src)
-//		if(href_list["follow"])
-//			var/atom/movable/target = locate(href_list["follow"])
-//			if(istype(target) && (target != src))
-//				ManualFollow(target)
-//				return
+		if(href_list["follow"])
+			var/atom/movable/target = locate(href_list["follow"])
+			if(istype(target) && (target != src))
+				ManualFollow(target)
+				return
 		if(href_list["x"] && href_list["y"] && href_list["z"])
 			var/tx = text2num(href_list["x"])
 			var/ty = text2num(href_list["y"])
