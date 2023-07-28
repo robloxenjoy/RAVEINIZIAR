@@ -18,7 +18,7 @@
 
 /mob/living/carbon/handle_fatigue(delta_time, times_fired)
 	//regenerate fatigue if possible
-	if(!combat_mode && COOLDOWN_FINISHED(src, fatigue_regen_cooldown) && getFatigueLoss())
+	if(!combat_mode && COOLDOWN_FINISHED(src, fatigue_regen_cooldown) && (max_fatigue - fatigue > 0))
 		adjustFatigueLoss(-FATIGUE_REGEN_FACTOR * (body_position == LYING_DOWN ? FATIGUE_REGEN_LYING_MULTIPLIER : 1) * delta_time)
 
 /mob/living/carbon/proc/enter_fatiguecrit()

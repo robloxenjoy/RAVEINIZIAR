@@ -45,11 +45,11 @@
 		return
 
 	// If our heart is stopped, it isn't going to restart itself randomly.
-	if(heart_efficiency < failing_threshold)
-		owner.set_heartattack(TRUE)
+	if(owner.pulse <= PULSE_NONE)
 		ADD_TRAIT(owner, TRAIT_DEATHS_DOOR, ASYSTOLE_TRAIT)
 		return
-	if(owner.pulse <= PULSE_NONE)
+	else if(heart_efficiency < failing_threshold)
+		owner.set_heartattack(TRUE)
 		ADD_TRAIT(owner, TRAIT_DEATHS_DOOR, ASYSTOLE_TRAIT)
 		return
 

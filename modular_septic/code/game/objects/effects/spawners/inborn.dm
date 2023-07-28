@@ -63,24 +63,26 @@
 		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.ogg'
 		babble.volume = BABBLE_DEFAULT_VOLUME
 		babble.duration = BABBLE_DEFAULT_DURATION
-
+/*
 /obj/effect/mob_spawn/human/weakwillet
-	name = "Willete"
+	name = "Weak Willet Spawner"
 	desc = "Wow this is fantastic!"
+	short_desc = "Particle of chaos."
 	random = FALSE
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "willete"
 //	mob_name = "a black criminal"
-	roundstart = TRUE
+//	roundstart = TRUE
 	death = FALSE
 	anchored = TRUE
 	density = FALSE
 	show_flavour = FALSE
-	permanent = TRUE
+	permanent = FALSE
 	instant = TRUE
 	outfit = FALSE
+	ghost_usable = TRUE
 	mob_species = /datum/species/weakwillet
-	uses = 500
+	uses = -1
 
 /obj/effect/mob_spawn/human/weakwillet/special(mob/living/carbon/human/new_spawn)
 	. = ..()
@@ -103,7 +105,37 @@
 		new_spawn.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
 		new_spawn.height = HUMAN_HEIGHT_MEDIUM
 
-	new_spawn.attributes.update_attributes()
+//	new_spawn.attributes.update_attributes()
+
+/obj/effect/mob_spawn/human/weakwillet/attack_ghost(mob/user)
+	if(!SSticker.HasRoundStarted() || !loc || !ghost_usable)
+		return
+	if(!radial_based)
+		var/ghost_role = tgui_alert(usr, "Become a weak willet?",, list("Sure", "No!"))
+		do_sparks(3, FALSE, user)
+		if(ghost_role != "Yes" || !loc || QDELETED(user))
+			return
+	if(!(GLOB.ghost_role_flags & GHOSTROLE_SPAWNER) && !(flags_1 & ADMIN_SPAWNED_1))
+		to_chat(user, span_warning("An admin has temporarily disabled non-admin ghost roles!"))
+		return
+	if(!uses)
+		to_chat(user, span_warning("This spawner is out of charges!"))
+		return
+	if(is_banned_from(user.key, banType))
+		to_chat(user, span_warning("You are jobanned!"))
+		return
+	if(!allow_spawn(user))
+		return
+	if(QDELETED(src) || QDELETED(user))
+		return
+	log_game("[key_name(user)] became [mob_name]")
+	create(user)
+
+/obj/effect/mob_spawn/human/weakwillet/Initialize(mapload)
+	. = ..()
+	if(ghost_usable)
+//		SSpoints_of_interest.make_point_of_interest(src)
+		LAZYADD(GLOB.mob_spawners[name], src)
 
 /obj/effect/mob_spawn/human/vampyre
 	name = "Vampyric"
@@ -111,12 +143,11 @@
 	random = FALSE
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "willete"
-	roundstart = TRUE
 	death = FALSE
 	anchored = TRUE
 	density = FALSE
 	show_flavour = FALSE
-	permanent = TRUE
+	permanent = FALSE
 	instant = TRUE
 	outfit = FALSE
 	mob_species = /datum/species/vampire
@@ -124,7 +155,7 @@
 
 /obj/effect/mob_spawn/human/vampyre/special(mob/living/carbon/human/new_spawn)
 	. = ..()
-	new_spawn.fully_replace_character_name(new_spawn.real_name, "Blackskinned")
+	new_spawn.fully_replace_character_name(new_spawn.real_name, "Blackskinned Vampyre")
 	new_spawn.left_eye_color = "#a90000"
 	new_spawn.right_eye_color = "#a90000"
 	var/datum/component/babble/babble = new_spawn.GetComponent(/datum/component/babble)
@@ -139,3 +170,4 @@
 	new_spawn.height = HUMAN_HEIGHT_TALLEST
 
 	new_spawn.attributes.update_attributes()
+*/

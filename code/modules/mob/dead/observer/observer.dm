@@ -12,8 +12,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	stat = DEAD
 	density = FALSE
 	see_invisible = SEE_INVISIBLE_OBSERVER
-	see_in_dark = 100
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	see_in_dark = 2
+	lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
 	invisibility = INVISIBILITY_OBSERVER
 	hud_type = /datum/hud/ghost
 	movement_type = GROUND | FLYING
@@ -68,8 +68,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	set_invisibility(GLOB.observer_default_invisibility)
 
 	add_verb(src, list(
-		/mob/dead/observer/proc/dead_tele,
-		/mob/dead/observer/proc/open_spawners_menu))
+		/mob/dead/observer/proc/dead_tele))
+//		/mob/dead/observer/proc/open_spawners_menu
 
 	if(icon_state in GLOB.ghost_forms_with_directions_list)
 		ghostimage_default = image(src.icon,src,src.icon_state + "_nodir")
@@ -308,11 +308,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set name = "Ghostize"
 	set desc = "Are you want?"
 
-
-	return FALSE
-
 	if(stat != DEAD)
-		succumb()
+		to_chat(src, span_info("Somehow, I'm still alive."))
+		return FALSE
 	if(stat == DEAD)
 		ghostize(TRUE)
 		return TRUE
@@ -581,6 +579,49 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	//Maybe in the future we can add more <i>spooky</i> code here!
 	return
+
+
+/mob/dead/observer/verb/particlize()
+	set category = "Ghost"
+	set name = "Particlize"
+	set desc = "Are you want?"
+
+	if(stat != DEAD)
+		to_chat(src, span_info("Somehow, I'm still alive."))
+		return FALSE
+
+	var/obj/effect/landmark/tendance/willet/K = locate() in world
+	var/mob/living/carbon/human/species/weakwillet/character = new(K.loc)
+
+	character.fully_replace_character_name(character.real_name, "Particle Of Chaos")
+	character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
+	var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
+	if(!babble)
+		character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/creature.ogg')
+	else
+		babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.ogg'
+		babble.volume = BABBLE_DEFAULT_VOLUME
+		babble.duration = BABBLE_DEFAULT_DURATION
+
+	if(mind)
+		mind.active = 0
+		mind.transfer_to(character)
+
+	if(prob(5))
+		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
+		character.height = HUMAN_HEIGHT_TALLEST
+		if(prob(65))
+			character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
+	else
+		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+		character.height = HUMAN_HEIGHT_MEDIUM
+
+	character.attributes.update_attributes()
+
+	character.key = key
+	character.playsound_local(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100)
+
+	return TRUE
 /*
 /mob/dead/observer/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"
@@ -998,14 +1039,14 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			to_chat(G, message)
 	GLOB.observer_default_invisibility = amount
 
-/mob/dead/observer/proc/open_spawners_menu()
-	set name = "Spawners Menu"
-	set desc = "See all currently available spawners"
-	set category = "Ghost"
-	if(!spawners_menu)
-		spawners_menu = new(src)
+///mob/dead/observer/proc/open_spawners_menu()
+//	set name = "Spawners Menu"
+//	set desc = "See all currently available spawners"
+//	set category = "Ghost"
+//	if(!spawners_menu)
+//		spawners_menu = new(src)
 
-	spawners_menu.ui_interact(src)
+//	spawners_menu.ui_interact(src)
 /*
 /mob/dead/observer/proc/open_minigames_menu()
 	set name = "Minigames Menu"

@@ -142,11 +142,12 @@
 	. = ..()
 	if(!music_files)
 		var/list/musics = list()
-		musics |= DRONING_TAVERN
-		musics |= DRONING_COMBAT
+//		musics |= DRONING_TAVERN
+//		musics |= DRONING_COMBAT
 		musics |= DRONING_FOREST
-//		musics |= DRONING_FORESTOTHER
-		musics |= DRONING_VILL
+		musics |= DRONING_PURENIGHT
+		musics |= DRONING_CATACOMBS
+//		musics |= DRONING_VILL
 		music_files = musics
 
 /datum/asset/simple/music/send(client)

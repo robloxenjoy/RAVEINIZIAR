@@ -848,7 +848,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "beartrap" = 2, "nothing" = 70))
+		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "molyakii" = 3, "statuekas" = 1, "beartrap" = 2, "nothing" = 70))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -899,6 +899,8 @@
 				new /obj/structure/fluff/statuestone(get_turf(src))
 			if("beartrap")
 				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+			if("molyakii")
+				new /obj/structure/flora/ausbushes/molyakii(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/norandomgen
 	randomgenerate = FALSE

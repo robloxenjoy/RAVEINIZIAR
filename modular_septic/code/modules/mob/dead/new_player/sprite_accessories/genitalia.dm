@@ -1,6 +1,6 @@
 /datum/sprite_accessory/genital
 	special_render_case = TRUE
-	var/uses_skintones = FALSE
+	var/uses_skintones = TRUE
 	var/associated_organ_slot
 
 /datum/sprite_accessory/genital/is_hidden(mob/living/carbon/human/H, obj/item/bodypart/BP)

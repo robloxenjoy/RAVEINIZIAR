@@ -465,6 +465,45 @@
 		if(diceroll <= DICE_FAILURE)
 			arrived.Stumble(3 SECONDS)
 */
+
+/obj/structure/flora/ausbushes/molyakii
+	name = "Shrub"
+	desc = "These leaves lure me."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "molyakii"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	resistance_flags = FLAMMABLE
+	density = 0
+	anchored = 1
+	var/traps = TRUE
+
+/obj/structure/flora/ausbushes/molyakii/Initialize(mapload)
+	. = ..()
+	update_appearance()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/shag,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+	dir = rand(0,4)
+
+	if(traps)
+		if(prob(5))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+
+/obj/structure/flora/ausbushes/molyakii/proc/shag(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+
+	if(!isturf(loc) || !isliving(AM))
+		return
+	playsound(loc,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/molyakii/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/item/food/grown/molyak(drop_location(), 3)
+		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+	qdel(src)
+
 /obj/structure/flora/ausbushes/crystal/dark
 	name = "Blackness Bush"
 	desc = "Bush of blackness. This bush is chaotic."

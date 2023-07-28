@@ -19,6 +19,6 @@
 	/// Combat style
 	var/combat_style = CS_DEFAULT
 	/// Dodge/parry
-	var/dodge_parry = DP_PARRY
+	var/dodge_parry = DP_DODGE
 	/// Middle click special attacks
 	var/special_attack = SPECIAL_ATK_NONE

@@ -9,7 +9,9 @@
 #define DRONING_CHAOT list('modular_septic/sound/music/droning/gothic.ogg')
 
 //#define DRONING_FOREST list('modular_septic/sound/music/droning/forest.ogg')
-#define DRONING_FOREST list('modular_pod/sound/mus/cavemusick.ogg')
+#define DRONING_FOREST list('modular_pod/sound/mus/sun.ogg')
+
+#define DRONING_CATACOMBS list('modular_septic/sound/music/droning/evil.ogg')
 
 #define DRONING_FORESTOTHER list('modular_septic/sound/music/droning/darkenwood.ogg')
 

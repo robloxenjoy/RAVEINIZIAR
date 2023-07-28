@@ -42,7 +42,7 @@ SUBSYSTEM_DEF(droning)
 	if(!area_player || !listener)
 		return
 	if(LAZYLEN(area_player.droning_sound) && (listener.prefs.toggles & SOUND_SHIP_AMBIENCE))
-/*
+
 		if((istype(area_player, /area/maintenance/polovich/forest)) || (istype(area_player, /area/medical/spawned)))
 //		if(SSoutdoor_effects.current_step_datum == /datum/time_of_day/midnight || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dusk || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dawn)
 //		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
@@ -58,7 +58,7 @@ SUBSYSTEM_DEF(droning)
 				area_player.droning_sound = DRONING_PURENIGHT
 			else
 				area_player.droning_sound = DRONING_FOREST
-*/
+
 		//kill the previous droning sound
 		kill_droning(listener)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)

@@ -848,6 +848,31 @@
 	..()
 	return TRUE
 
+/datum/reagent/toxin/nox
+	name = "Nox"
+	description = "Standard, one of the main poisons that causes loss of consciousness."
+	silent_toxin = TRUE
+	reagent_state = LIQUID
+	color = "#62017e90"
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+	toxpwr = 1
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/medicine/nox/on_mob_add(mob/living/L, amount)
+	. = ..()
+	ADD_TRAIT(L, TRAIT_ANTICONVULSANT, name)
+
+/datum/reagent/medicine/nox/on_mob_delete(mob/living/L)
+	. = ..()
+	REMOVE_TRAIT(L, TRAIT_ANTICONVULSANT, name)
+
+/datum/reagent/toxin/nox/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(current_cycle >= 9)
+		M.Sleeping(40 * REM * delta_time)
+	M.adjustStaminaLoss(5 * REM * delta_time, 0)
+	..()
+	return TRUE
+
 /datum/reagent/toxin/sulfonal
 	name = "Sulfonal"
 	description = "A stealthy poison that deals minor toxin damage and eventually puts the target to sleep."

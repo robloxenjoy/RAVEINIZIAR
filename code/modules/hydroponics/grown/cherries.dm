@@ -44,6 +44,19 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.07, /datum/reagent/consumable/sugar = 0.07, /datum/reagent/oxygen = 0.07)
 	rarity = 10
 
+/obj/item/food/grown/molyak
+	seed = /obj/item/seeds/cannabis
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	name = "Molyak Leaf"
+	desc = "Why do you need it?"
+	icon_state = "molyak_leave"
+	bite_consumption_mod = 4
+	foodtypes = VEGETABLES
+	tastes = list("dream" = 1)
+	wine_power = 10
+	grind_results = list(/datum/reagent/toxin/nox = 6)
+	food_reagents = list(/datum/reagent/toxin/nox = 5)
+
 /obj/item/food/grown/bluecherries
 	seed = /obj/item/seeds/cherry/blue
 	name = "Midnightberry"
@@ -54,7 +67,7 @@
 	bite_consumption = 6
 	eat_time = 2
 	foodtypes = FRUIT
-	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 5)
+	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 5, /datum/reagent/medicine/c2/penthrite = 1)
 	food_reagents = list( /datum/reagent/consumable/bluecherryjelly = 4, /datum/reagent/medicine/c2/penthrite = 2)
 	tastes = list("midnightberry" = 1, "sweet" = 1)
 	wine_power = 50
@@ -64,7 +77,7 @@
 /obj/item/food/grown/bluecherries/lie
 	name = "Midnightberry"
 	desc = "Delicious Berry."
-	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 1)
+	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/toxin/lexorin = 5)
 	food_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/toxin/lexorin = 6)
 	bite_consumption = 7
 	bite_consumption_mod = 5
@@ -78,7 +91,7 @@
 /obj/item/food/grown/bluecherries/super
 	name = "Midnightberry"
 	desc = "Delicious Berry."
-	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 1)
+	grind_results = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/medicine/c2/penthrite/onesebasta = 5)
 	food_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/medicine/c2/penthrite/onesebasta = 6)
 	bite_consumption = 7
 	bite_consumption_mod = 5
@@ -93,7 +106,7 @@
 	bite_consumption = 6
 	eat_time = 2
 	foodtypes = FRUIT
-	grind_results = list(/datum/reagent/consumable/lifebloodjelly = 4)
+	grind_results = list(/datum/reagent/consumable/lifebloodjelly = 4, /datum/reagent/medicine/atropine = 1)
 	food_reagents = list(/datum/reagent/consumable/lifebloodjelly = 4, /datum/reagent/medicine/atropine = 2)
 	tastes = list("lifeblood berry" = 1, "viscous" = 1)
 	wine_power = 50
@@ -103,7 +116,7 @@
 /obj/item/food/grown/lifebloodcherries/lie
 	bite_consumption_mod = 3
 	bite_consumption = 7
-	grind_results = list(/datum/reagent/consumable/lifebloodjelly = 1)
+	grind_results = list(/datum/reagent/consumable/lifebloodjelly = 1, /datum/reagent/toxin/pancuronium = 5)
 	food_reagents = list(/datum/reagent/consumable/lifebloodjelly= 1, /datum/reagent/toxin/pancuronium = 6)
 
 /obj/item/food/grown/lifebloodcherries/lie/examine(mob/user)
