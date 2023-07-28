@@ -180,6 +180,8 @@
 */
 /datum/outfit/venturer/equip(mob/living/carbon/human/H)
 	..()
+	if(venturer_type == "woodcutter")
+		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 	if(venturer_type == "venturertrue")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturertrue)
 	if(venturer_type == "venturervillageowner")
