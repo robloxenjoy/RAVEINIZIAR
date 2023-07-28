@@ -662,9 +662,9 @@
 		/datum/reagent/fuel/oil,
 		/datum/reagent/saltpetre,
 		/datum/reagent/medicine/mine_salve,
-		/datum/reagent/medicine/morphine,
-		/datum/reagent/drug/space_drugs,
+//		/datum/reagent/medicine/morphine,
+//		/datum/reagent/drug/space_drugs,
 		/datum/reagent/toxin,
-		/datum/reagent/toxin/plasma,
+//		/datum/reagent/toxin/plasma,
 		/datum/reagent/uranium
 	)
