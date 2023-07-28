@@ -508,7 +508,7 @@
 				expensive_find(user)
 
 /obj/structure/accepter/proc/cheap_find(mob/living/carbon/user)
-	var/thingy = tgui_input_list(user, "You want someting cheap?", "I want...")
+	var/thingy = stripped_input(user, "You want someting cheap?", "I want...")
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
