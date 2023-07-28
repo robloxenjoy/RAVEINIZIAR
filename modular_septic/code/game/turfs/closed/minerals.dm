@@ -1,6 +1,5 @@
 /turf/closed/mineral
 	clingable = TRUE
-	mine_hp = 4
 
 /turf/closed/mineral/snowmountain/nevado_surface
 	baseturfs = /turf/open/floor/plating/polovich/asteroid/snow/nevado_surface
@@ -28,6 +27,7 @@
 	baseturfs = /turf/open/floor/plating/polovich/dirt/blueee
 	clingable = TRUE
 	mineable = TRUE
+	mine_hp = 4
 
 /turf/closed/wall/purple/nocling
 	desc = "This wall makes you sleepy. Also you cant climb here."
