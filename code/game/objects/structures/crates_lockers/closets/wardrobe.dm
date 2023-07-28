@@ -31,6 +31,7 @@
 	icon_door = "black"
 
 /obj/structure/closet/wardrobe/black/PopulateContents()
+/*
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/under/color/black(src)
 	for(var/i in 1 to 3)
@@ -50,7 +51,10 @@
 	if(prob(40))
 		new /obj/item/clothing/mask/bandana/skull(src)
 	return
-
+*/
+	if(prob(1))
+		new /obj/item/clothing/head/that(src)
+	return
 
 /obj/structure/closet/wardrobe/green
 	name = "green wardrobe"

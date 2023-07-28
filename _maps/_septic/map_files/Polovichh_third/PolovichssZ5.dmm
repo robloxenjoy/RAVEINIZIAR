@@ -65,7 +65,7 @@
 "bm" = (/obj/structure/barricade/flora/crystal/purple,/turf/open/floor/plating/polovich/dirt/blueee/second,/area/maintenance/polovich/catacombs)
 "bn" = (/obj/structure/closet/crate/wooden,/obj/item/storage/box/syringes,/obj/item/storage/box/beakers,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/catacombs)
 "bo" = (/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/catacombs)
-"bp" = (/obj/structure/bed,/obj/effect/landmark/start/alchemist,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/catacombs)
+"bp" = (/obj/structure/bed,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/catacombs)
 "bq" = (/obj/structure/table/reinforced,/obj/item/book/secret_alchem,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/catacombs)
 "br" = (/obj/machinery/door/keycard/denominator/podozl/akt/alchem,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/catacombs)
 "bs" = (/obj/effect/turf_decal/siding/wood{dir = 1},/turf/open/floor/plating/polovich/dirt/blueee/second,/area/maintenance/polovich/catacombs)

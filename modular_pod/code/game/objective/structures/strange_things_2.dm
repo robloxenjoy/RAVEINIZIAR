@@ -7,14 +7,15 @@
 	layer = FLY_LAYER
 	anchored = 1
 	density = 1
-	var/crystal = FALSE
-	var/crystalGreen = FALSE
-	var/crystalRed = FALSE
-	var/crystalBlue = FALSE
-	var/crystalPink = FALSE
-
+//	var/crystal = FALSE
+//	var/crystalGreen = FALSE
+//	var/crystalRed = FALSE
+//	var/crystalBlue = FALSE
+//	var/crystalPink = FALSE
+/*
 /obj/structure/beast/gargotor/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
+
 	if(istype(I, /obj/item/crystal/green))
 		if(user.a_intent != INTENT_DISARM)
 			return
@@ -185,6 +186,7 @@
 				crystal = FALSE
 				crystalPink = FALSE
 
+
 /obj/structure/beast/gargotor/examine(mob/user)
 	. = ..()
 	if(crystalBlue)
@@ -195,6 +197,7 @@
 		. += "<span class='notice'>Here is pink crystal.</span>"
 	else if(crystalRed)
 		. += "<span class='notice'>Here is red crystal.</span>"
+*/
 
 /obj/item/seeding/midnightberryseeds
 	name = "Seeds"
@@ -454,3 +457,108 @@
 		qdel(socket)
 	else
 */
+
+/obj/structure/accepter
+	name = "Accepter"
+	desc = "Put in this crystals."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "accepter"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+	obj_flags = NONE
+	var/moneymoney = 0
+
+/obj/structure/accepter/attackby(obj/item/I, mob/living/carbon/user, params)
+	. = ..()
+	if(istype(I, /obj/item/crystal))
+		if(user.a_intent != INTENT_DISARM)
+			return
+		user.visible_message(span_notice("[user] inserts crystal in Accepter."),span_notice("You insert crystal in Accepter."), span_hear("You hear the sound of inserting."))
+		sound_hint()
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
+		qdel(I)
+		moneymoney += 20
+	if(istype(I, /obj/item/shard/crystal))
+		if(user.a_intent != INTENT_DISARM)
+			return
+		user.visible_message(span_notice("[user] inserts crystal shard in Accepter."),span_notice("You insert crystal shard in Accepter."), span_hear("You hear the sound of inserting."))
+		sound_hint()
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
+		qdel(I)
+		moneymoney += 5
+
+/obj/structure/accepter/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_GRAB)
+		if(moneymoney > 0)
+			var/thing = stripped_input(user, "What you want?", "I want...")
+			if(!thing)
+				return
+			if(thing == "cheap")
+				cheap_find(user)
+			if(thing == "expensive")
+				expensive_find(user)
+
+/obj/structure/accepter/proc/cheap_find(mob/living/carbon/user)
+	var/thingy = stripped_input(user, "You want someting cheap?", "I want...")
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	switch(thingy)
+		if("beer")
+			new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("beef")
+			new /obj/item/food/canned/beef(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("water")
+			new /obj/item/reagent_containers/food/drinks/waterbottle(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("gauze")
+			new /obj/item/stack/medical/gauze(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("blue bottle")
+			new /obj/item/stupidbottles/bluebottle(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		else
+			return
+
+/obj/structure/accepter/proc/expensive_find(mob/living/carbon/user)
+	var/thingy = stripped_input(user, "You want someting expensive?", "I want...")
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	switch(thingy)
+		if("beer")
+			new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("beef")
+			new /obj/item/food/canned/beef(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("water")
+			new /obj/item/reagent_containers/food/drinks/waterbottle(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("gauze")
+			new /obj/item/stack/medical/gauze(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("blue bottle")
+			new /obj/item/stupidbottles/bluebottle(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		else
+			return

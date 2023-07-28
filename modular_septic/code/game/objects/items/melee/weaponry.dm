@@ -979,7 +979,6 @@
 	canlockpick = TRUE
 	tetris_width = 32
 	tetris_height = 96
-	wielded_inhand_state = TRUE
 
 /obj/item/changeable_attacks/slashstab/knife/small/steel/swap_intents(mob/user)
 	. = ..()

@@ -485,7 +485,7 @@
 		COMSIG_ATOM_ENTERED = .proc/shag,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-	dir = rand(0,4)
+	icon_state = "molyakii[rand(1, 2)]"
 
 	if(traps)
 		if(prob(5))
