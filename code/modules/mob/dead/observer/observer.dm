@@ -457,7 +457,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	usr.abstract_move(pick(L))
 	update_parallax_contents()
-/*
+
 /mob/dead/observer/verb/follow()
 	set category = "Ghost"
 	set name = "Orbit" // "Haunt"
@@ -500,7 +500,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	//restart our floating animation after orbit is done.
 	pixel_y = base_pixel_y
 	animate(src, pixel_y = base_pixel_y + 2, time = 1 SECONDS, loop = -1)
-*/
+
 /mob/dead/observer/verb/jumptomob() //Moves the ghost instead of just changing the ghosts's eye -Nodrak
 	set category = "Ghost"
 	set name = "Jump to Mob"
