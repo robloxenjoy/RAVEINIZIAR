@@ -1,5 +1,6 @@
 /turf/closed/mineral
 	clingable = TRUE
+	mine_hp = 4
 
 /turf/closed/mineral/snowmountain/nevado_surface
 	baseturfs = /turf/open/floor/plating/polovich/asteroid/snow/nevado_surface
@@ -38,3 +39,4 @@
 	explosion_block = 2
 	rad_insulation = RAD_HEAVY_INSULATION
 	heat_capacity = 312500
+	mine_hp = 100

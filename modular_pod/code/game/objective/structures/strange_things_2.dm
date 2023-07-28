@@ -495,19 +495,25 @@
 		return
 	if(user.a_intent == INTENT_GRAB)
 		if(moneymoney > 0)
-			var/thing = stripped_input(user, "What you want?", "I want...")
+			var/thing = tgui_input_list(user, "You want something cheap or expensive?",, list("Cheap", "Expensive"))
 			if(!thing)
 				return
-			if(thing == "cheap")
+			if(thing == "Cheap")
+				if(moneymoney < 10)
+					return
 				cheap_find(user)
-			if(thing == "expensive")
+			if(thing == "Expensive")
+				if(moneymoney < 20)
+					return
 				expensive_find(user)
 
 /obj/structure/accepter/proc/cheap_find(mob/living/carbon/user)
-	var/thingy = stripped_input(user, "You want someting cheap?", "I want...")
+	var/thingy = tgui_input_list(user, "You want someting cheap?", "I want...")
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
+		return
+	if(moneymoney < 10)
 		return
 	switch(thingy)
 		if("beer")
@@ -534,31 +540,26 @@
 			return
 
 /obj/structure/accepter/proc/expensive_find(mob/living/carbon/user)
-	var/thingy = stripped_input(user, "You want someting expensive?", "I want...")
+	var/thingy = tgui_input_list(user, "You want someting expensive?", "I want...")
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
+	if(moneymoney < 20)
+		return
 	switch(thingy)
-		if("beer")
-			new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
-			moneymoney -= 10
+		if("venturer pants")
+			new /obj/item/clothing/pants/venturer(get_turf(user))
+			moneymoney -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("beef")
-			new /obj/item/food/canned/beef(get_turf(user))
-			moneymoney -= 10
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("water")
-			new /obj/item/reagent_containers/food/drinks/waterbottle(get_turf(user))
-			moneymoney -= 10
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("gauze")
-			new /obj/item/stack/medical/gauze(get_turf(user))
-			moneymoney -= 10
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("blue bottle")
-			new /obj/item/stupidbottles/bluebottle(get_turf(user))
-			moneymoney -= 10
+		if("misericorde")
+			new /obj/item/knife/combat/goldenmisericorde(get_turf(user))
+			moneymoney -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		else
 			return
+
+/obj/structure/accepter/examine(mob/user)
+	. = ..()
+	if(moneymoney)
+		. += "<span class='notice'>Here is [src.moneymoney] savings!</span>"

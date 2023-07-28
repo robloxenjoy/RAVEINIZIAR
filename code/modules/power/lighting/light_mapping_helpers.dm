@@ -42,6 +42,13 @@
 	bulb_power = 0.7
 	random_flickering = TRUE
 
+/obj/machinery/light/toxic
+	bulb_colour = "#8dff90"
+	nightshift_allowed = FALSE
+	no_emergency = TRUE
+	brightness = 2
+	bulb_power = 0.7
+
 /obj/machinery/light/blacklight
 	bulb_colour = "#A700FF"
 	nightshift_allowed = FALSE
@@ -195,6 +202,19 @@
 	dir = EAST
 
 /obj/machinery/light/warm/directional/west
+	dir = WEST
+
+// ---- Toxic light tubes
+/obj/machinery/light/toxic/directional/north
+	dir = NORTH
+
+/obj/machinery/light/toxic/directional/south
+	dir = SOUTH
+
+/obj/machinery/light/toxic/directional/east
+	dir = EAST
+
+/obj/machinery/light/toxic/directional/west
 	dir = WEST
 
 // ---- No nightlight warm light tubes

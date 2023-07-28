@@ -464,7 +464,7 @@
 //	armour_penetration = 10
 	parrying_flags = BLOCK_FLAG_UNARMED
 	havedurability = TRUE
-	durability = 200
+	durability = 100
 	tetris_width = 32
 	tetris_height = 64
 	slot_flags = ITEM_SLOT_BELT

@@ -53,7 +53,7 @@
 "ba" = (/obj/structure/flora/tree/evil,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest/rain)
 "bb" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/bluedirty,/area/maintenance/polovich/forest/rain)
 "bc" = (/obj/structure/flora/ausbushes/crystal/dark,/obj/item/restraints/legcuffs/beartrap,/turf/open/floor/plating/polovich/evilevil,/area/maintenance/polovich/forest/rain)
-"bd" = (/obj/effect/landmark/latejoin,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/space)
+"bd" = (/obj/effect/landmark/latejoin,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/forest/rain)
 "be" = (/obj/effect/spawner/random/structure/maphelp/cursedtree/eight,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest/rain)
 "bf" = (/obj/structure/flora/tree/evil/long,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
 "bg" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
@@ -122,7 +122,9 @@
 "cr" = (/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
 "cs" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
 "ct" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/forest/rain)
+"cu" = (/obj/structure/accepter,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest/rain)
 "cv" = (/obj/structure/fence{dir = 2},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
+"cw" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/armor/vest/leatherbreastt,/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/forest/rain)
 "cy" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
 "cz" = (/obj/effect/turf_decal/siding/wood/corner,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
 "cA" = (/obj/effect/turf_decal/siding/wood,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
@@ -233,7 +235,6 @@
 "eB" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/structure/lampwall/service{dir = 4},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/forest/rain)
 "eC" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/forest/rain)
 "eD" = (/turf/open/floor/plating/polovich/tilefloor,/area/maintenance/polovich/forest/rain)
-"eE" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/armor/vest/leatherbreastt,/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/forest/rain)
 "eF" = (/obj/effect/turf_decal/siding/wood/corner{dir = 4},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
 "eG" = (/obj/structure/newgrille,/turf/open/floor/plating/polovich/tilefloor,/area/maintenance/polovich/forest/rain)
 "eH" = (/obj/effect/turf_decal/siding/wood/corner,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
@@ -439,9 +440,9 @@ abababababababababababababababababababababababazaDaGaGaDazazabababababaDazceaDaA
 abababababababababababababababababababababababazaDaGaAaAazabababababazazazazazaAbbbbaXazbbbbbbaXazazaAaAaAaGbbbbbbaAaAaAbbbbbIauaAaAaAazababababababababababababclcocobOeeaDbibNazazazaAaBcycyaDazazaDbibiababaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiababababababababab
 abababababababababababababababababababababababazaDaGaGaDaDabababababaDceaDaDaAaAaAaDaDbbazaXbbazbiccaXaCaAaXaCbpbpaXazaAbIbIauauaXaCaAbbababcDcDcDcDcDcDcDcDcDcDdbcocobOcYbibiazazazazbNbNazcycyazazaDaDaDababaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiababababababababab
 abababababababababababababababababababababababaDaAaAaGaDabababababaDazaAaAaAazaAaAbbbbbbbWbWauaAbicdazaGaAaCaAbpbpazazbIbIbIauazazazaAbbababcDeqerescDetererescDefcocobOcXaDaAaAaCazbgbgbNazazazaCaBazazazababaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiababababababababab
-ababababababababababababababababababababazaCaCazazazazaDaBaDaDaBaCazaCaEazazazaAaBaDaDaAcfauauaDaDaDbbbbaAaAazaXchazazazaAaGauauauauciaAababcDeucIevcDewexexeycDegclclbOcYaDaCaBaCazbNbYbgbgaAazazaAazazazababaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiababababababababab
+ababababababababababababababababababababazaCaCazazazazaDaBaDaDaBaCazaCaEazazazaAaBaDaDaAcfauauaDaDaDbbbbaAaAazaXchazazazaAaGauauauauciaAababcDeucuevcDewexexeycDegclclbOcYaDaCaBaCazbNbYbgbgaAazazaAazazazababaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiababababababababab
 abababababababababababababababababababazazazaDaDazaDaDaDaCaBaDazaDaFaFaEaBazaGaAaCaDazaXazaAaAaAaCaXaDbbaAaAaGazazbbbbazaXazaGaubbbbaAaAababcDezcIeAcDeBcocoeCcDegcocobOcXaAazazazazazbiaDaAaAazazbNazazaDababaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiababababababababab
-abababababababababababababababababazazauazauaDaBaCazazazazaAazauaBaGauaHaHazaRaAaAaAazazaAaAaGaAazaCazbbbbaXaubkcjbbbbaDaDazaAaAbbaAaAabababcDeucIeDeEeDclcleFcUehcocoauabauaGazaDazaDaDaDazazaAaAbgaAazaDababababababababeagLeaabababababababababababababababababab
+abababababababababababababababababazazauazauaDaBaCazazazazaAazauaBaGauaHaHazaRaAaAaAazazaAaAaGaAazaCazbbbbaXaubkcjbbbbaDaDazaAaAbbaAaAabababcDeucIeDcweDclcleFcUehcocoauabauaGazaDazaDaDaDazazaAaAbgaAazaDababababababababeagLeaabababababababababababababababababab
 ababababababababababababababababababazaAazazaDaDazaAaAaAazaGaGauaDaGaGaHaHaDazabaXazaubbbbaCbYaCbpbpaAaAaGazaAauaXaAaDaDauaDaAaCaAaAaDaDababcDeucIeDeGeDclclclclcocobOaGecauaGazazazaDaDaDaDazaAaAbgaAazazabeaeaeaeaeaeaeaeagLeaeaeaeaeaeaeaeaeaeaeaabababababababab
 ababababababababababababababababababaCaBazauazaAazaDaBaDazaGauauauauaHaEaGazazaAauauaubbbbazaCaAbpbpaAaCaXazaAaGaCazaAaGaAaAaCaXaCaDaAabababcDeucIevcDdbclcleHcBeiclbOedabauaGaBaDazazaCaBazazaBaCazaAazazabeagTcIcIaKhcgUeagLeahagZgYgXhbgXgYgZgYeaabababababababab
 abababababababababababababababababababaAazaDaBaHazazaCazazaGauauaRaRaRazauazazabaXauauaXbbbbazaDaAaBaCaGaCaAaAaAaGaAaGaXaAaAbIaCaDabababababcDeucIeIeJeIeIeIeKcDejaGbObOcYaGaGazaDazazaCaCazazaCaCazazaDaDabeagVgWcIaLaLfBeagLeagLgLgLgLgLgLgLgLgLeaabababababababab
