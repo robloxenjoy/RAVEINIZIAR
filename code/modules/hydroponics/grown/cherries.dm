@@ -45,7 +45,7 @@
 	rarity = 10
 
 /obj/item/food/grown/molyak
-	seed = /obj/item/seeds/cannabis
+	seed = /obj/item/seeds/cherry/blue
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	name = "Molyak Leaf"
 	desc = "Why do you need it?"
@@ -56,6 +56,19 @@
 	wine_power = 10
 	grind_results = list(/datum/reagent/toxin/nox = 6)
 	food_reagents = list(/datum/reagent/toxin/nox = 5)
+
+/obj/item/food/grown/aguo
+	seed = /obj/item/seeds/cherry/blue
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	name = "Aguo"
+	desc = "Ripe fruit! Yummy!"
+	icon_state = "aguo"
+	bite_consumption_mod = 4
+	foodtypes = FRUIT
+	tastes = list("dawn" = 1)
+	wine_power = 5
+	grind_results = list(/datum/reagent/consumable/aguo = 6)
+	food_reagents = list(/datum/reagent/consumable/aguo = 5)
 
 /obj/item/food/grown/bluecherries
 	seed = /obj/item/seeds/cherry/blue

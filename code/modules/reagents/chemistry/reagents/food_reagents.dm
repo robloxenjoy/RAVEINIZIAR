@@ -546,6 +546,13 @@
 	taste_description = "cherry"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
+/datum/reagent/consumable/aguo
+	name = "Aguo Jelly"
+	description = "Fine bubble jelly."
+	color = "#e3ddb3255"
+	taste_description = "aguo"
+	taste_mult = 9
+
 /datum/reagent/consumable/bluecherryjelly
 	name = "Blue Cherry Jelly"
 	description = "Blue and tastier kind of cherry jelly."

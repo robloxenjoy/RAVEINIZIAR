@@ -251,8 +251,8 @@
 	desc = "Infection of this forest."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "incrementum1"
-	plane = ABOVE_GAME_PLANE
-	layer = FLY_LAYER
+	plane = FLOOR_PLANE
+	layer = LATTICE_LAYER
 	density = 0
 	anchored = 1
 
@@ -477,6 +477,7 @@
 	density = 0
 	anchored = 1
 	var/traps = TRUE
+	var/amount = 3
 
 /obj/structure/flora/ausbushes/molyakii/Initialize(mapload)
 	. = ..()
@@ -500,9 +501,19 @@
 
 /obj/structure/flora/ausbushes/molyakii/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/food/grown/molyak(drop_location(), 3)
+		new /obj/item/food/grown/molyak(drop_location(), amount)
 		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 	qdel(src)
+
+/obj/structure/flora/ausbushes/molyakii/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+			else
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/crystal/dark
 	name = "Blackness Bush"
@@ -789,6 +800,122 @@
 			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/bushka/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+			else
+				playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+		if(BURN)
+			playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/zarosli/aguo
+	name = "Aguo Plant"
+	desc = "FRUIT!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "aguo_growing"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	resistance_flags = FLAMMABLE
+	var/time_between_uses = 500
+	var/last_process = 0
+	density = FALSE
+	anchored = TRUE
+	opacity = FALSE
+	var/traps = FALSE
+	var/berry = 0
+	var/saturated = FALSE
+
+/obj/structure/flora/ausbushes/zarosli/aguo/Initialize(mapload)
+	. = ..()
+	update_appearance()
+
+	if(traps)
+		if(prob(3))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+
+/obj/structure/flora/ausbushes/zarosli/aguo/ComponentInitialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/shago,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/flora/ausbushes/zarosli/aguo/update_overlays()
+	. = ..()
+	if(berry > 0)
+		. += "[icon_state]1"
+
+/obj/structure/flora/ausbushes/zarosli/aguo/proc/shago(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
+	if(!isliving(AM))
+		return
+	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/zarosli/aguo/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent != INTENT_GRAB)
+		return
+	user.visible_message(span_notice("<b>[user]</b> begins to picks a fruit."), \
+						span_notice("I begin to pick a fruit."), \
+						span_hear("I hear the sound of shag."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	playsound(loc,'sound/effects/shelest.ogg', 30, TRUE)
+	if(!do_after(user, 10 SECONDS, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		return
+	if(!berry)
+		to_chat(user, span_notice("No fruit."))
+		user.Immobilize(1 SECONDS)
+		user.changeNext_move(CLICK_CD_MELEE)
+		playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+		sound_hint()
+		return
+	to_chat(user, span_notice("You pick nice augo!"))
+	sound_hint()
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.Immobilize(1 SECONDS)
+	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+	new /obj/item/food/grown/aguo(get_turf(user))
+	berry--
+	saturated = FALSE
+	update_appearance()
+//	addtimer(CALLBACK(src, .proc/grow_berry), 150 SECONDS)
+
+/obj/structure/flora/ausbushes/zarosli/aguo/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_DISARM)
+		if(istype(W, /obj/item/stupidbottles/bluebottle))
+			if(!saturated)
+				var/obj/item/stupidbottles/bluebottle/B = W
+				if(B.empty)
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					to_chat(user, span_notice("Bottle is empty..."))
+					return
+				user.visible_message(span_notice("[user] saturates [src] with the [B]."),span_notice("You saturates [src] with the [B]."), span_hear("You hear the sound of a saturating."))
+				user.changeNext_move(CLICK_CD_GRABBING)
+				sound_hint()
+				saturated = TRUE
+				B.empty = TRUE
+				playsound(get_turf(src), 'modular_pod/sound/eff/potnpour.ogg', 80 , FALSE, FALSE)
+				addtimer(CALLBACK(src, .proc/grow_berry), 50 SECONDS)
+			else
+				to_chat(user, span_notice("Aguo plant is saturated already."))
+				return
+
+/obj/structure/flora/ausbushes/zarosli/aguo/proc/grow_berry()
+	if(QDELETED(src) || (berry > 0))
+		return
+	berry++
+	update_appearance()
+
+/obj/structure/flora/ausbushes/zarosli/aguo/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
 			if(damage_amount)

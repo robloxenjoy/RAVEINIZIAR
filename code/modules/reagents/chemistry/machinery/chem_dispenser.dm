@@ -24,6 +24,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_dispenser
 	processing_flags = NONE
+	max_integrity = 1000
 
 	var/obj/item/stock_parts/cell/cell
 	var/powerefficiency = 0.1
@@ -67,8 +68,7 @@
 		/datum/reagent/fuel,
 		/datum/reagent/toxin/carpotoxin,
 		/datum/reagent/medicine/mine_salve,
-		/datum/reagent/medicine/morphine,
-		/datum/reagent/drug/space_drugs,
+//		/datum/reagent/medicine/morphine,
 		/datum/reagent/toxin,
 		/datum/reagent/acetone,
 		/datum/reagent/ammonia,

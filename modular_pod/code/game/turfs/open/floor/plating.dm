@@ -984,6 +984,23 @@
 			else
 				to_chat(user, span_notice("Dirt is saturated already."))
 				return
+		else if(istype(W, /obj/item/seeding/aguoseeds))
+			if(locate(/obj/structure/) in get_turf(src))
+				return
+			if(do_after(user, 3 SECONDS, target=src))
+				var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE), context = DICE_CONTEXT_PHYSICAL)
+				if(diceroll >= DICE_SUCCESS)
+					user.visible_message(span_notice("[user] seeded [src] with the [W]."),span_notice("You seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					new /obj/structure/flora/ausbushes/zarosli/aguo(get_turf(src))
+					playsound(get_turf(src), 'modular_pod/sound/eff/grow_up.ogg', 80 , FALSE, FALSE)
+					qdel(W)
+				else
+					user.visible_message(span_notice("[user] faily seeded [src] with the [W]."),span_notice("You faily seeded [src] with the [W]."), span_hear("You hear the sound of a seeding."))
+					user.changeNext_move(CLICK_CD_GRABBING)
+					sound_hint()
+					qdel(W)
 
 /turf/open/floor/plating/polovich/bluedirty/examine(mob/user)
 	. = ..()

@@ -205,6 +205,12 @@
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "seeds"
 
+/obj/item/seeding/aguoseeds
+	name = "Seeds"
+	desc = "Aguo seeds!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "aguo_seeds"
+
 /obj/item/stupidbottles/bluebottle
 	name = "Blue Bottle"
 	desc = "Interesting mixture."
@@ -468,6 +474,7 @@
 	anchored = 1
 	density = 1
 	obj_flags = NONE
+	max_integrity = 1000
 	var/moneymoney = 0
 
 /obj/structure/accepter/attackby(obj/item/I, mob/living/carbon/user, params)
@@ -520,10 +527,10 @@
 			new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
 			moneymoney -= 10
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("beef")
-			new /obj/item/food/canned/beef(get_turf(user))
-			moneymoney -= 10
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+//		if("beef")
+//			new /obj/item/food/canned/beef(get_turf(user))
+//			moneymoney -= 10
+//			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		if("water")
 			new /obj/item/reagent_containers/food/drinks/waterbottle(get_turf(user))
 			moneymoney -= 10
@@ -534,6 +541,10 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		if("blue bottle")
 			new /obj/item/stupidbottles/bluebottle(get_turf(user))
+			moneymoney -= 10
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("aguo seeds")
+			new /obj/item/seeding/aguoseeds(get_turf(user))
 			moneymoney -= 10
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		else
