@@ -484,4 +484,4 @@
 	if(usedy)
 		return
 	SSshuttle.emergency.request()
-	used = TRUE
+	usedy = TRUE

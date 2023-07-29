@@ -452,6 +452,7 @@
 	neck = /obj/item/clothing/neck/noble_cloak
 	r_pocket = /obj/item/keycard/akt/controller
 	shoes = /obj/item/clothing/shoes/barhatki
+	r_hand = /obj/item/pinker_caller
 
 /datum/job/alchemist
 	title = "Akt Al-Chemist"

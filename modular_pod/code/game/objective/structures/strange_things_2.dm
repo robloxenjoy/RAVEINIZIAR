@@ -204,12 +204,14 @@
 	desc = "Midnightberry seeds!"
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/seeding/aguoseeds
 	name = "Seeds"
 	desc = "Aguo seeds!"
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "aguo_seeds"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stupidbottles/bluebottle
 	name = "Blue Bottle"
@@ -217,6 +219,7 @@
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "bluebottle"
 	var/empty = FALSE
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/stupidbottles/bluebottle/examine(mob/user)
 	. = ..()
