@@ -7,6 +7,7 @@
 _maps/shuttles/emergency_birdboat.dmm
 _maps/shuttles/emergency_box.dmm
 _maps/shuttles/emergency_delta.dmm
+_maps/shuttles/emergency_omega.dmm
 _maps/shuttles/emergency_meta.dmm
 _maps/shuttles/emergency_mini.dmm
 _maps/shuttles/emergency_pubby.dmm

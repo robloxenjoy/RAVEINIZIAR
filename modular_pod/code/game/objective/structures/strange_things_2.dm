@@ -305,7 +305,7 @@
 		playsound(src, 'modular_septic/sound/effects/homierip.ogg', 80, FALSE)
 		var/mob/living/carbon/human/species/halbermensch/halber = new(get_turf(src))
 		to_chat(user, span_notice("I have freed <b>[halber]</b> from socket!"))
-		halber.Unconscious(5 SECONDS)
+//		halber.Unconscious(5 SECONDS)
 		halber.forceMove(get_turf(user))
 		halber.fully_replace_character_name(halber.real_name, "Halbermensch")
 		halber.remove_language(/datum/language/common, TRUE, TRUE, LANGUAGE_HALBER)
@@ -323,7 +323,8 @@
 		if(user.can_heartattack())
 			user.set_heartattack(TRUE)
 		halber.key = user.key
-		playsound(get_turf(halber), 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
+		priority_announce("HALBERMENSCH CREATED!", "WORLD", 'modular_pod/sound/mus/new_halbermensch.ogg', has_important_message = TRUE)
+//		playsound(get_turf(halber), 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
 		qdel(src)
 
 /obj/item/craftorshit/thing/alchemy/squash
@@ -574,3 +575,49 @@
 	. = ..()
 	if(moneymoney)
 		. += "<span class='notice'>Here is [src.moneymoney] savings!</span>"
+
+/obj/structure/village_screamer
+	name = "Village Screamer"
+	desc = "THE SCREAM!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "village_screamer"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+	obj_flags = NONE
+	max_integrity = 1000
+	var/can_scream = TRUE
+	var/timeout = 100
+
+/obj/structure/village_screamer/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_GRAB)
+		var/thing = tgui_input_list(user, "You want to scream something?",, list("Yes", "No"))
+		if(!thing)
+			return
+		if(thing == "Yes")
+			if(!can_scream)
+				return
+			scream(user)
+		else
+			return
+
+/obj/structure/village_screamer/proc/scream(mob/living/carbon/user)
+	var/thingy = stripped_input(user, "What you want to scream?", "")
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(!can_scream)
+		return
+	priority_announce(thingy, "[user.real_name]", 'modular_pod/sound/mus/announce.ogg', has_important_message = TRUE)
+	can_scream = FALSE
+	addtimer(CALLBACK(src, .proc/can_scream), timeout)
+
+/obj/structure/village_screamer/proc/can_scream()
+	if(QDELETED(src))
+		return
+	can_scream = TRUE

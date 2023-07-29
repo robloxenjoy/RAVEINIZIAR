@@ -438,12 +438,6 @@
 	admin_notes = "If the crew can solve the puzzle, they will wake the wabbajack statue. It will likely not end well. There's a reason it's boarded up. Maybe they should have just left it alone."
 	credit_cost = CARGO_CRATE_VALUE * 30
 
-/datum/map_template/shuttle/emergency/omega
-	suffix = "omega"
-	name = "Omegastation Emergency Shuttle"
-	description = "On the smaller size with a modern design, this shuttle is for the crew who like the cosier things, while still being able to stretch their legs."
-	credit_cost = CARGO_CRATE_VALUE * 2
-
 /datum/map_template/shuttle/emergency/cruise
 	suffix = "cruise"
 	name = "The NTSS Independence"
@@ -647,10 +641,6 @@
 /datum/map_template/shuttle/arrival/pubby
 	suffix = "pubby"
 	name = "arrival shuttle (Pubby)"
-
-/datum/map_template/shuttle/arrival/omega
-	suffix = "omega"
-	name = "arrival shuttle (Omega)"
 
 /datum/map_template/shuttle/aux_base/default
 	suffix = "default"

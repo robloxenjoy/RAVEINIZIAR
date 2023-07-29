@@ -619,7 +619,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	character.attributes.update_attributes()
 
 	character.key = key
-	playsound(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100, TRUE)
+	playsound(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100, FALSE)
 
 	return TRUE
 /*

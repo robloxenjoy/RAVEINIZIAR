@@ -20,7 +20,7 @@
 	"cave_empty_levels": 0,
 	"shuttles": {
 		"cargo": "cargo_baluarte",
-		"emergency": "emergency_efn"
+		"emergency": "emergency_delta"
 	},
 	"traits": [
 		{

@@ -1,10 +1,10 @@
 /datum/centcom_announcer
-	welcome_sounds = list('modular_septic/sound/efn/efn_start.ogg', 'modular_septic/sound/efn/efn_start2.ogg', 'modular_septic/sound/efn/efn_start3.ogg')
+	welcome_sounds = list('modular_pod/sound/mus/start.ogg')
 	///Roundshift end audio
-	var/goodbye_sounds = null
+	var/goodbye_sounds = list('modular_pod/sound/mus/sadend.ogg')
 
 /datum/centcom_announcer/proc/combat_map_preset()
-	command_report_sounds = list('modular_septic/sound/misc/report_efn.ogg')
+	command_report_sounds = list('modular_pod/sound/mus/announce.ogg')
 	event_sounds = list(ANNOUNCER_AIMALF = 'sound/ai/default/aimalf.ogg',
 		ANNOUNCER_ALIENS = 'sound/ai/default/aliens.ogg',
 		ANNOUNCER_ANIMES = 'sound/ai/default/animes.ogg',

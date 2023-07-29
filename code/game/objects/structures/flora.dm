@@ -381,7 +381,7 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 	if(traps)
-		if(prob(6))
+		if(prob(3))
 			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/crystal/proc/shag(datum/source, atom/movable/AM)
@@ -413,7 +413,7 @@
 	icon_state = pick("bushka1", "bushka2", "bushka3")
 
 	if(traps)
-		if(prob(5))
+		if(prob(2))
 			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/bushka/proc/shag(datum/source, atom/movable/AM)
@@ -489,7 +489,7 @@
 	icon_state = "molyakii[rand(1, 2)]"
 
 	if(traps)
-		if(prob(5))
+		if(prob(2))
 			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/molyakii/proc/shag(datum/source, atom/movable/AM)
@@ -644,7 +644,7 @@
 	update_appearance()
 
 	if(traps)
-		if(prob(3))
+		if(prob(2))
 			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/zarosli/midnight/ComponentInitialize()
@@ -822,17 +822,12 @@
 	density = FALSE
 	anchored = TRUE
 	opacity = FALSE
-	var/traps = FALSE
 	var/berry = 0
 	var/saturated = FALSE
 
 /obj/structure/flora/ausbushes/zarosli/aguo/Initialize(mapload)
 	. = ..()
 	update_appearance()
-
-	if(traps)
-		if(prob(3))
-			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/zarosli/aguo/ComponentInitialize()
 	. = ..()
