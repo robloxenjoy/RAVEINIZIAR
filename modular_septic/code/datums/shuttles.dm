@@ -7,7 +7,7 @@
 
 /datum/map_template/shuttle/emergency/efn
 	suffix = "efn"
-	name = "Delta Pod"
+	name = "Delta Podd"
 	credit_cost = 100 DOLLARS
 	description = "the most evil pod"
 

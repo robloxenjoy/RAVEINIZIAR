@@ -26,6 +26,7 @@
 "z" = (/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "A" = (/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
 "B" = (/obj/structure/railing,/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"C" = (/obj/docking_port/mobile/emergency,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 
 (1,1,1) = {"
 rbbbbvvvy
@@ -34,7 +35,7 @@ abbbbeegz
 aceeceeez
 aeeeeeeez
 eeeehihee
-eeeeijiee
+eeeeijieC
 aceehihez
 aeeeeieez
 aceeeieez

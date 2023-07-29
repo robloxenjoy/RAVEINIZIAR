@@ -63,7 +63,7 @@
 //		user.visible_message("<span class='notice'>\[user] touches the [src] with [W].</span>")
 		user.visible_message(span_notice("[user] touches the [src] with [W]."),span_notice("You touch the [src] with [W]."), span_hear("You hear the sound of touching."))
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if(user.a_intent == INTENT_HARM || INTENT_GRAB || INTENT_DISARM)
+	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_GRAB) || (user.a_intent == INTENT_DISARM))
 //		user.visible_message("<span class='notice'>\[user] beats the [src] with [W].</span>")
 		if(W.force)
 			if(W.get_sharpness())

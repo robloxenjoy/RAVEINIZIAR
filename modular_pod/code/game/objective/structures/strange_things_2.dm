@@ -323,7 +323,8 @@
 		if(user.can_heartattack())
 			user.set_heartattack(TRUE)
 		halber.key = user.key
-		priority_announce("HALBERMENSCH CREATED!", "WORLD", 'modular_pod/sound/mus/new_halbermensch.ogg', has_important_message = TRUE)
+		priority_announce("HALBERMENSCH CREATED!", "WORLD", has_important_message = TRUE)
+		SEND_SOUND(world, sound('modular_pod/sound/mus/new_halbermensch.ogg'))
 //		playsound(get_turf(halber), 'modular_pod/sound/mus/new_halbermensch.ogg', 100)
 		qdel(src)
 
@@ -588,7 +589,7 @@
 	obj_flags = NONE
 	max_integrity = 1000
 	var/can_scream = TRUE
-	var/timeout = 100
+	var/timeout = 100 SECONDS
 
 /obj/structure/village_screamer/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
@@ -613,7 +614,8 @@
 		return
 	if(!can_scream)
 		return
-	priority_announce(thingy, "[user.real_name]", 'modular_pod/sound/mus/announce.ogg', has_important_message = TRUE)
+	priority_announce(thingy, "[user.real_name]", has_important_message = TRUE)
+	SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 	can_scream = FALSE
 	addtimer(CALLBACK(src, .proc/can_scream), timeout)
 

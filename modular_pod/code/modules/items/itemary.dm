@@ -471,3 +471,17 @@
 	can_dig = TRUE
 	attack_verb_continuous = list("stabs", "mines", "jabs")
 	attack_verb_simple = list("stab", "mine", "jab")
+
+/obj/item/pinker_caller
+	name = "PINKER Caller"
+	desc = "CALL HIM!"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "pinker"
+	var/usedy = FALSE
+
+/obj/item/pinker_caller/attack_self(mob/living/carbon/user, modifiers)
+	. = ..()
+	if(usedy)
+		return
+	SSshuttle.emergency.request()
+	used = TRUE
