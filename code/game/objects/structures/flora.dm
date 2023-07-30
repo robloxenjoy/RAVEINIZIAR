@@ -384,6 +384,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
+	obj_flags = NONE
 	density = 0
 	anchored = 1
 	var/traps = TRUE
@@ -431,6 +432,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
+	obj_flags = NONE
 	density = 0
 	anchored = 1
 	var/traps = TRUE
@@ -523,6 +525,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
+	obj_flags = NONE
 	density = 0
 	anchored = 1
 	var/traps = TRUE
@@ -586,6 +589,7 @@
 	icon_state = "blacknessbush1"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
+	obj_flags = NONE
 	density = 0
 	anchored = 1
 	opacity = 0
@@ -709,6 +713,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
+	obj_flags = NONE
 	var/time_between_uses = 500
 	var/last_process = 0
 	density = FALSE
@@ -913,6 +918,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
+	obj_flags = NONE
 	var/time_between_uses = 500
 	var/last_process = 0
 	density = FALSE
