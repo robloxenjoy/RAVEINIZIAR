@@ -33,3 +33,9 @@
 		SSdroning.area_entered(src, boarder.client)
 		boarder.client.update_ambience_pref()
 //		SSambience.process_ambience_client(src, boarder.client)
+
+/area/reconnect_game(mob/living/boarder)
+	. = ..()
+	if(istype(boarder) && boarder.client)
+		SSdroning.area_entered(src, boarder.client)
+//		boarder.client.update_ambience_pref()

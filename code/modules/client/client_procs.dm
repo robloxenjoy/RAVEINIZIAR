@@ -406,6 +406,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if (mob && reconnecting)
 		var/stealth_admin = mob.client?.holder?.fakekey
 		var/announce_leave = mob.client?.prefs?.read_preference(/datum/preference/toggle/broadcast_login_logout)
+		var/area/joined_area = get_area(mob.loc)
+		if(joined_area)
+			joined_area.reconnect_game(mob)
 /*
 		var/area/current_area = get_area(mob.client)
 		if(current_area)
@@ -1175,9 +1178,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/proc/update_ambience_pref()
 //	if(prefs.toggles & SOUND_SHIP_AMBIENCE)
 //		SSdroning.area_entered(get_area(src), src)
-	var/area/current_area = get_area(mob.client)
-	if(current_area)
-		SSdroning.play_area_sound(current_area, src)
+//	if(mob)
+//		var/area/current_area = get_area(mob.client?.loc)
+//		if(istype(current_area, /area/maintenance/polovich))
+//			SSdroning.play_area_sound(current_area, mob.client)
 	if(prefs.toggles & SOUND_AMBIENCE)
 		if(SSambience.ambience_listening_clients[src] > world.time)
 			return // If already properly set we don't want to reset the timer.

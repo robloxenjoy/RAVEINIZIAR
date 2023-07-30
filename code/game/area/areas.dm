@@ -585,3 +585,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /// Called when a living mob that spawned here, joining the round, receives the player client.
 /area/proc/on_joining_game(mob/living/boarder)
 	return
+
+/area/proc/reconnect_game(mob/living/boarder)
+	return
