@@ -406,6 +406,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if (mob && reconnecting)
 		var/stealth_admin = mob.client?.holder?.fakekey
 		var/announce_leave = mob.client?.prefs?.read_preference(/datum/preference/toggle/broadcast_login_logout)
+/*
+		var/area/current_area = get_area(mob.client)
+		if(current_area)
+			SSdroning.play_area_sound(current_area, mob.client)
+*/
 		if (!stealth_admin)
 			deadchat_broadcast(" has reconnected.", "<b>[mob][mob.get_realname_string()]</b>", follow_target = mob, turf_target = get_turf(mob), message_type = DEADCHAT_LOGIN_LOGOUT, admin_only=!announce_leave)
 	add_verbs_from_config()
@@ -469,13 +474,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		to_chat(src, span_warning("Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you."))
 
 	update_ambience_pref()
-
+/*
 	var/mob/living/living_arrived = src
 	if(istype(living_arrived) && living_arrived.client)
 		var/area/current_area = get_area(living_arrived.client)
 		if(current_area)
 			SSdroning.area_entered(current_area, living_arrived.client)
-
+*/
 	//This is down here because of the browse() calls in tooltip/New()
 	if(!tooltips)
 		tooltips = new /datum/tooltip(src)
@@ -1170,6 +1175,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/proc/update_ambience_pref()
 //	if(prefs.toggles & SOUND_SHIP_AMBIENCE)
 //		SSdroning.area_entered(get_area(src), src)
+	var/area/current_area = get_area(mob.client)
+	if(current_area)
+		SSdroning.play_area_sound(current_area, src)
 	if(prefs.toggles & SOUND_AMBIENCE)
 		if(SSambience.ambience_listening_clients[src] > world.time)
 			return // If already properly set we don't want to reset the timer.
