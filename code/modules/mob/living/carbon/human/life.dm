@@ -28,12 +28,12 @@
 
 	//Body temperature stability and damage
 	dna.species.handle_body_temperature(src, delta_time, times_fired)
-
+/*
 	if(SSoutdoor_effects.check_cycle())
 		var/area/current_area = get_area(src)
 		if(current_area)
 			SSdroning.area_entered(current_area, src)
-
+*/
 	if(!IS_IN_STASIS(src))
 		if(.) //not dead
 

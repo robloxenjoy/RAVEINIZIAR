@@ -64,7 +64,8 @@
 	strength_value = clamp(strength_value, 0, maximum_strength)
 	var/final_force = rand(min_force, force)
 	/// Fraggots are always considered to have absolutely 0 strength
-	if(user && !HAS_TRAIT(user, TRAIT_FRAGGOT))
+	if(user)
+//	if(user && !HAS_TRAIT(user, TRAIT_FRAGGOT))
 		var/strength_multiplier = rand(min_force_strength, force_strength)
 		/**
 		 * If the multiplier is negative, we instead punish the dude for each point of strength below ATTRIBUTE_MASTER

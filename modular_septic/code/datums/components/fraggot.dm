@@ -1,22 +1,29 @@
+GLOBAL_LIST_INIT(fraggots, world.file2list('config/fraggots.txt'))
+
 /datum/component/fraggot
 	/// Annoying fullscreen overlay
-	var/atom/movable/screen/fullscreen/niqqer/niqqerlay
+//	var/atom/movable/screen/fullscreen/niqqer/niqqerlay
 
 /datum/component/fraggot/Initialize()
 	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
+	if(iswillet(parent))
+		return COMPONENT_INCOMPATIBLE
 
 /datum/component/fraggot/RegisterWithParent()
 	var/mob/living/our_fraggot = parent
-	our_fraggot.attributes?.add_diceroll_modifier(/datum/diceroll_modifier/fraggot)
+//	our_fraggot.attributes?.add_diceroll_modifier(/datum/diceroll_modifier/fraggot)
 	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
 		SEND_SIGNAL(human, COMSIG_ADD_MOOD_EVENT, "[our_fraggot.real_name]", /datum/mood_event/fraggot, our_fraggot)
+	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list))
+		SEND_SOUND(human, sound('modular_pod/sound/eff/kill_her_now_kill_her_now.ogg', FALSE, CHANNEL_LOBBYMUSIC, 70))
+		to_chat(human, "<span class='warning'><span class='big bold'>[emoji_parse(":chaos:")][name_override ? name_override : real_name] IS A FRAGGOT! KILL THIS CREATURE![emoji_parse(":chaos:")]</span></span>")
 	RegisterSignal(our_fraggot, COMSIG_PARENT_EXAMINE, .proc/fraggot_examine)
 	RegisterSignal(our_fraggot, COMSIG_LIVING_DEATH, .proc/fraggot_died)
 	RegisterSignal(our_fraggot, COMSIG_PARENT_PREQDELETED, .proc/fraggot_deleted)
 	ADD_TRAIT(our_fraggot, TRAIT_FRAGGOT, "fraggot")
 	START_PROCESSING(SSfraggots, src)
-	niqqerlay = our_fraggot.overlay_fullscreen("niqqer", /atom/movable/screen/fullscreen/niqqer)
+//	niqqerlay = our_fraggot.overlay_fullscreen("niqqer", /atom/movable/screen/fullscreen/niqqer)
 
 /datum/component/fraggot/UnregisterFromParent()
 	var/mob/living/our_fraggot = parent
@@ -27,12 +34,12 @@
 	REMOVE_TRAIT(our_fraggot, TRAIT_FRAGGOT, "fraggot")
 	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
 		SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
-	our_fraggot.clear_fullscreen("niqqer")
-	niqqerlay = null
+//	our_fraggot.clear_fullscreen("niqqer")
+//	niqqerlay = null
 
-/datum/component/fraggot/proc/fraggot_died(mob/living/our_fraggot)
-	if(!QDELETED(our_fraggot))
-		our_fraggot.gib()
+///datum/component/fraggot/proc/fraggot_died(mob/living/our_fraggot)
+//	if(!QDELETED(our_fraggot))
+//		our_fraggot.gib()
 
 /datum/component/fraggot/proc/fraggot_deleted(mob/living/our_fraggot)
 	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
@@ -76,10 +83,11 @@
 			'modular_septic/sound/memeshit/youstupid.ogg',
 		)
 		if(DT_PROB(10, delta_time))
-			var/sound/annoying = sound(pick(fraggot_sounds), FALSE, 0, CHANNEL_LOBBYMUSIC, 200)
-			SEND_SOUND(our_fraggot.client, annoying)
-		if(DT_PROB(0.25, delta_time))
-			our_fraggot.client.bruh_moment()
+			playsound_local(get_turf(src), pick(fraggot_sounds), 100)
+//			var/sound/annoying = sound(pick(fraggot_sounds), FALSE, 0, CHANNEL_LOBBYMUSIC, 100)
+//			SEND_SOUND(our_fraggot.client, annoying)
+//		if(DT_PROB(0.25, delta_time))
+//			our_fraggot.client.bruh_moment()
 	if(DT_PROB(1, delta_time))
 		our_fraggot.agony_scream()
 	else if(DT_PROB(1, delta_time))

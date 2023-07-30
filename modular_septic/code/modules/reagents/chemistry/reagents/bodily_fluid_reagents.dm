@@ -41,6 +41,14 @@
 	if(!.)
 		exposed_atom.adjust_germ_level(GERM_PER_UNIT_PISS * reac_volume)
 
+/datum/reagent/consumable/piss/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	M.adjust_disgust(1)
+	M.adjust_hydration(-3)
+	var/obj/item/organ/kidneys/kidneys = M.getorganslotefficiency(ORGAN_SLOT_KIDNEYS)
+	if(kidneys)
+		MGPPL.adjustToxLoss(1)
+
 //SHIT
 /datum/reagent/consumable/shit
 	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
