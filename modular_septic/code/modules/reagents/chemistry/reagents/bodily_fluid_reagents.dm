@@ -47,7 +47,7 @@
 	M.adjust_hydration(-3)
 	var/obj/item/organ/kidneys/kidneys = M.getorganslotefficiency(ORGAN_SLOT_KIDNEYS)
 	if(kidneys)
-		MGPPL.adjustToxLoss(1)
+		M.adjustToxLoss(1)
 
 //SHIT
 /datum/reagent/consumable/shit

@@ -576,15 +576,16 @@ SUBSYSTEM_DEF(job)
 
 	job.after_spawn(equipping, player_client)
 
+
 	if(player_client && (player_client.key in GLOB.fraggots))
-		player_client.AddComponent(/datum/component/fraggot)
+		equipping.AddComponent(/datum/component/fraggot)
 //		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list))
 //			SEND_SOUND(human, sound('modular_pod/sound/eff/kill_her_now_kill_her_now.ogg', FALSE, CHANNEL_LOBBYMUSIC, 70))
 //			to_chat(human, "<span class='warning'><span class='big bold'>[emoji_parse(":chaos:")][name_override ? name_override : real_name] IS A FRAGGOT! KILL THIS CREATURE![emoji_parse(":chaos:")]</span></span>")
 
 	for(var/datum/data/record/record in GLOB.data_core.general)
-		if(H.real_name == record.fields["name"])
-			H.AddComponent(/datum/component/fraggot)
+		if(equipping.real_name == record.fields["name"])
+			equipping.AddComponent(/datum/component/fraggot)
 			break
 
 /datum/controller/subsystem/job/proc/handle_auto_deadmin_roles(client/C, rank)
