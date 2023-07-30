@@ -65,12 +65,12 @@ GLOBAL_LIST_INIT(fraggots, world.file2list('config/fraggots.txt'))
 			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!", \
 			"GODDAMNIT!!!!", \
 			"FUCK!!!!", \
-			"Okay, WHO TOOK A SHIT IN MY CUM SOCK? The cum sock and poop sock are CLEARLY LABELED. I should know, because I embroidered them myself after the last incident. If you quinkers could take TWO SECONDS of your time to make sure you have the right sock before dropping a MASSIVE FUDGE DRAGON inside of it, I wouldn't be sitting here jacking off into a pile of SHIT right now. Seriously, this is a mess. I've got squishy chunks oozing out the hole, the fabric is soaking through with juices, my phone is covered in shit, and the smell is god AWFUL. I'm not kidding guys. My mom is gonna be LIVID when she cleans this off my bedsheets. It's everywhere and I'm honestly disgusted. Fess up now and it will be easier for all of us, trust me.", \
-			"The black community has suffered more than enough. We, as Funko POP owners, need to stand with them and DEMAND that Funko honors the lives of black victims of police brutality by making a George Floyd Funko POP. We need to tell the world to take a stand against anti-black racism, and there would be no better way to do so than buying a George Floyd Funko POP. Will you take a stand and join me?", \
-			"So I ask you: If Mario is way out there, but the position used for floor detection is still in the box, can he still stand? The answer is yes. As far as the game sees it, Mario is in fact above land out here, because the game checks for floor detection back over there. \['There' is the actual course.\] So for all intensive purposes there is land over here! This is known as a parallel universe, or a PU for short.", \
+			"PODPOL IS A PARODY OF DICKWEB!!!!", \
+			"IVASHKA!!!!!", \
 		)
 		var/message = pick(fraggot_lines)
-		to_chat(our_fraggot, span_horny(span_big(message)))
+		if(DT_PROB(10, delta_time))
+			to_chat(our_fraggot, span_horny(span_big(message)))
 		var/static/list/fraggot_sounds = list(
 			'modular_septic/sound/memeshit/pigdeath.ogg',
 			'modular_septic/sound/memeshit/naggers.ogg',
