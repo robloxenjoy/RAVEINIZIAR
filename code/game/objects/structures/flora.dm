@@ -248,11 +248,12 @@
 
 /obj/structure/flora/ausbushes/incrementum
 	name = "Goldish Incrementum"
-	desc = "Infection of this forest."
+	desc = "Infection of the forest."
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "incrementum1"
 	plane = FLOOR_PLANE
 	layer = LATTICE_LAYER
+	obj_flags = NONE
 	density = 0
 	anchored = 1
 
@@ -274,6 +275,21 @@
 	if(!isturf(loc) || !isliving(AM))
 		return
 	playsound(loc,'modular_pod/sound/eff/incrementum.ogg', 30, TRUE)
+
+/obj/structure/flora/ausbushes/incrementum/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(W.force >= 5)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] cuts the [W]."),span_notice("You cut [W]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			new /obj/item/stack/medical/nanopaste/xap(loc)
+			playsound(loc,'modular_pod/sound/eff/incrementum.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			qdel(src)
 
 /obj/structure/flora/ausbushes/incrementum/skunk
 	name = "Shit-Skunk"
@@ -391,6 +407,22 @@
 		return
 	playsound(loc,'sound/effects/shelest.ogg', 50, TRUE)
 
+
+/obj/structure/flora/ausbushes/crystal/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(W.force >= 5)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] cuts the [W]."),span_notice("You cut [W]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+//			new /obj/item/stack/medical/nanopaste/xap(get_turf(src))
+			playsound(loc,'modular_pod/sound/eff/hitgrass.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			qdel(src)
+
 /obj/structure/flora/ausbushes/bushka
 	name = "Longrass"
 	desc = "So long!"
@@ -429,6 +461,23 @@
 		new /obj/item/craftitem/bladegrass(get_turf(src))
 		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 	qdel(src)
+
+/obj/structure/flora/ausbushes/bushka/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(W.force >= 5)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] cuts the [src]."),span_notice("You cut [src]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			new /obj/item/craftitem/bladegrass(loc)
+			new /obj/item/craftitem/bladegrass(loc)
+			playsound(loc,'modular_pod/sound/eff/hitgrass.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			qdel(src)
+
 /*
 /obj/structure/flora/ausbushes/root
 	name = "Tree Root"
@@ -477,7 +526,6 @@
 	density = 0
 	anchored = 1
 	var/traps = TRUE
-	var/amount = 3
 
 /obj/structure/flora/ausbushes/molyakii/Initialize(mapload)
 	. = ..()
@@ -501,9 +549,25 @@
 
 /obj/structure/flora/ausbushes/molyakii/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/food/grown/molyak(drop_location(), amount)
+		new /obj/item/food/grown/molyak(drop_location(), 2)
 		playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 	qdel(src)
+
+/obj/structure/flora/ausbushes/molyakii/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(W.force >= 5)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] cuts the [src]."),span_notice("You cut [src]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			new /obj/item/food/grown/molyak(drop_location())
+			new /obj/item/food/grown/molyak(drop_location())
+			playsound(loc,'modular_pod/sound/eff/hitgrass.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			qdel(src)
 
 /obj/structure/flora/ausbushes/molyakii/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
@@ -551,6 +615,20 @@
 	if(!isliving(AM))
 		return
 	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/crystal/dark/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(W.force >= 5)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] cuts the [src]."),span_notice("You cut [src]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			playsound(loc,'modular_pod/sound/eff/hitgrass.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			qdel(src)
 
 /obj/structure/flora/ausbushes/crystal/dark/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
@@ -659,6 +737,24 @@
 	if(!isliving(AM))
 		return
 	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
+
+/obj/structure/flora/ausbushes/zarosli/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(W.force >= 5)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] cuts the [src]."),span_notice("You cut [src]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			playsound(loc,'modular_pod/sound/eff/hitgrass.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			new /obj/item/craftitem/piece(get_turf(src))
+			new /obj/item/craftitem/piece(get_turf(src))
+			new /obj/item/craftitem/piece(get_turf(src))
+			new /obj/item/craftitem/piece(get_turf(src))
+			qdel(src)
 
 /obj/structure/flora/ausbushes/zarosli/midnight/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
@@ -903,6 +999,16 @@
 			else
 				to_chat(user, span_notice("Aguo plant is saturated already."))
 				return
+
+	if(W.force >= 5)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] cuts the [src]."),span_notice("You cut [src]."), span_hear("You hear the sound of cutting."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			playsound(loc,'modular_pod/sound/eff/hitgrass.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			qdel(src)
 
 /obj/structure/flora/ausbushes/zarosli/aguo/proc/grow_berry()
 	if(QDELETED(src) || (berry > 0))

@@ -469,9 +469,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		to_chat(src, span_warning("Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you."))
 
 	update_ambience_pref()
-//	var/area/current_area = get_area(src)
-//	if(current_area)
-//		SSdroning.area_entered()
+
+	var/mob/living/living_arrived = src
+	if(istype(living_arrived) && living_arrived.client)
+		var/area/current_area = get_area(living_arrived.client)
+		if(current_area)
+			SSdroning.area_entered(current_area, living_arrived.client)
 
 	//This is down here because of the browse() calls in tooltip/New()
 	if(!tooltips)

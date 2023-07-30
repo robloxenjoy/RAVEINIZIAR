@@ -147,23 +147,23 @@
 "cQ" = (/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/catacombs)
 "cR" = (/obj/structure/closet/crate/wooden,/obj/item/keycard/akt/mine,/obj/item/cellphone/rotorphone,/obj/item/simcard,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/catacombs)
 "cS" = (/obj/structure/sign/poster/official/dick_gum,/turf/closed/wall/purple/nocling,/area/maintenance/polovich/catacombs)
-"cT" = (/turf/closed/wall/purple/nocling,/area/maintenance/polovich/forest/rain)
-"cU" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest/rain)
-"cV" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/maintenance/polovich/forest/rain)
-"cW" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
-"cX" = (/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
-"cY" = (/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest/rain)
-"cZ" = (/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest/rain)
-"da" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest/rain)
-"db" = (/turf/closed/wall/bluegreen,/area/maintenance/polovich/forest)
-"dc" = (/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest/rain)
-"dd" = (/obj/machinery/chem_master,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest)
+"cT" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/village)
+"cU" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/maintenance/polovich/village)
+"cV" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/village)
+"cW" = (/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/village)
+"cX" = (/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/village)
+"cY" = (/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/village)
+"cZ" = (/turf/closed/wall/bluegreen/nocling,/area/maintenance/polovich/village)
+"da" = (/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/village)
+"db" = (/obj/machinery/chem_master,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
+"dc" = (/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
+"dd" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "de" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 8},/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "df" = (/obj/machinery/door/keycard/denominator/podozl/chaot{dir = 4},/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "dg" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/catacombs)
 "dh" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/catacombs)
-"di" = (/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest)
-"dj" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/forest)
+"di" = (/obj/structure/table/reinforced,/obj/machinery/reagentgrinder,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/village)
+"dj" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/village)
 "dk" = (/obj/structure/barricade/flora/crystal/blue,/turf/open/floor/plating/polovich/greengryaz{randomgenerate = 0},/area/maintenance/polovich/catacombs)
 "dl" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/rockydarevil/second,/area/maintenance/polovich/catacombs)
 "dm" = (/turf/open/floor/plating/polovich/rockydarevil/second,/area/maintenance/polovich/catacombs)
@@ -176,72 +176,70 @@
 "dt" = (/turf/open/floor/plating/polovich/rotten_stones/sec/secc,/area/maintenance/polovich/catacombs)
 "du" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/rotten_stones/sec,/area/maintenance/polovich/catacombs)
 "dv" = (/turf/open/floor/plating/polovich/rotten_stones/sec,/area/maintenance/polovich/catacombs)
-"dw" = (/obj/structure/table/reinforced,/obj/machinery/reagentgrinder,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/forest)
-"dx" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
-"dy" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/forest/rain)
-"dz" = (/obj/machinery/chem_heater,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dA" = (/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dB" = (/obj/effect/turf_decal/siding/wood/corner,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dC" = (/obj/effect/turf_decal/siding/wood,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dD" = (/obj/effect/turf_decal/siding/wood/corner{dir = 8},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dE" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/dropper,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/forest)
-"dF" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/forest/rain)
-"dG" = (/obj/machinery/chem_dispenser,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dH" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dI" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/forest)
-"dJ" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/forest)
-"dK" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/forest)
-"dL" = (/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/forest)
-"dM" = (/obj/structure/bed,/obj/effect/landmark/start/alchemist,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/forest)
-"dN" = (/obj/structure/crystals_ground/blue,/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest/rain)
-"dO" = (/obj/machinery/door/keycard/denominator/podozl/akt/alchem,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/forest)
-"dP" = (/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/forest/rain)
-"dQ" = (/obj/structure/flora/tree/evil/long,/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
-"dR" = (/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/forest/rain)
-"dS" = (/obj/structure/stairs/east,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest/rain)
-"dT" = (/obj/effect/landmark/start/alchemist,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/forest)
-"dU" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
-"dV" = (/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
-"dW" = (/obj/effect/landmark/start/alchemist,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest)
-"dX" = (/turf/closed/wall/bluegreen,/area/maintenance/polovich/forest/rain)
-"dY" = (/obj/structure/closet/crate/wooden,/obj/item/storage/box/syringes,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/forest/rain)
-"dZ" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/forest/rain)
-"ea" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest/rain)
-"eb" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest/rain)
-"ec" = (/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/forest/rain)
-"ed" = (/obj/effect/landmark/start/alchemist,/obj/structure/lampwall/service{dir = 4; putout = 0},/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/forest/rain)
-"ee" = (/obj/effect/landmark/start/alchemist,/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/forest/rain)
-"ef" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest/rain)
-"eg" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/forest/rain)
-"eh" = (/obj/structure/closet/crate/wooden,/obj/item/storage/box/beakers,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/forest/rain)
-"ei" = (/turf/closed/wall/darkrock,/area/maintenance/polovich/forest/rain)
-"ej" = (/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"ek" = (/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
-"el" = (/obj/machinery/door/keycard/denominator/podozl/akt/infirmary{dir = 8},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
-"em" = (/obj/effect/landmark/start/aktcurer,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"en" = (/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
-"eo" = (/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"ep" = (/obj/structure/lampwall/service{dir = 4},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"eq" = (/obj/structure/chair/wood,/obj/effect/landmark/start/aktcurer,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
-"er" = (/obj/structure/table/reinforced,/obj/item/stack/medical/gauze/improvised/one,/obj/item/stack/medical/gauze/improvised/one,/obj/item/stack/medical/gauze/improvised/one,/obj/item/stack/medical/gauze/improvised/one,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"es" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"et" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"eu" = (/obj/structure/stairs/north,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
-"ev" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
-"ew" = (/obj/structure/table/reinforced,/obj/item/keycard/akt/carehouse,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/forest/rain)
-"ex" = (/obj/structure/chair/pew/left,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"ey" = (/obj/structure/chair/pew,/obj/effect/landmark/start/aktcurer,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"ez" = (/obj/structure/chair/pew,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"eA" = (/obj/structure/chair/pew/right,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/forest/rain)
-"eB" = (/obj/structure/stairs/west,/turf/closed/wall/purple/nocling,/area/maintenance/polovich/forest/rain)
-"eD" = (/obj/structure/stairs/north,/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
-"eE" = (/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
-"eF" = (/obj/machinery/door/keycard/denominator/podozl/akt/controller,/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
-"eG" = (/turf/open/floor/plating/polovich/greenishe2,/area/maintenance/polovich/forest/rain)
-"eH" = (/obj/structure/stairs/south,/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/forest/rain)
-"eI" = (/turf/closed/wall/bluegreen/nocling,/area/maintenance/polovich/forest)
-"eJ" = (/turf/open/floor/plating/polovich/metalnoble,/area/maintenance/polovich/forest/rain)
-"eK" = (/obj/structure/village_screamer,/turf/open/floor/plating/polovich/metalnoble,/area/maintenance/polovich/forest/rain)
+"dw" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/village)
+"dx" = (/obj/machinery/chem_heater,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dy" = (/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dz" = (/obj/effect/turf_decal/siding/wood/corner,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dA" = (/obj/effect/turf_decal/siding/wood,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dB" = (/obj/effect/turf_decal/siding/wood/corner{dir = 8},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dC" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/dropper,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/village)
+"dD" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/village)
+"dE" = (/obj/machinery/chem_dispenser,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dF" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dG" = (/turf/closed/wall/bluegreen,/area/maintenance/polovich/village)
+"dH" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/village)
+"dI" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/village)
+"dJ" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/village)
+"dK" = (/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/village)
+"dL" = (/obj/structure/bed,/obj/effect/landmark/start/alchemist,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/village)
+"dM" = (/obj/structure/crystals_ground/blue,/obj/structure/flora/ausbushes/crystal,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/village)
+"dN" = (/obj/machinery/door/keycard/denominator/podozl/akt/alchem,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/village)
+"dO" = (/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/village)
+"dP" = (/obj/structure/flora/tree/evil/long,/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/village)
+"dQ" = (/turf/open/floor/plating/polovich/roots,/area/maintenance/polovich/village)
+"dR" = (/obj/structure/stairs/east,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/village)
+"dS" = (/obj/effect/landmark/start/alchemist,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
+"dT" = (/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/village)
+"dU" = (/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/village)
+"dV" = (/obj/effect/landmark/start/alchemist,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/village)
+"dW" = (/obj/structure/closet/crate/wooden,/obj/item/storage/box/syringes,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
+"dX" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
+"dY" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/village)
+"dZ" = (/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
+"ea" = (/obj/effect/landmark/start/alchemist,/obj/structure/lampwall/service{dir = 4; putout = 0},/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
+"eb" = (/obj/effect/landmark/start/alchemist,/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/kollo,/area/maintenance/polovich/village)
+"ec" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
+"ed" = (/obj/structure/closet/crate/wooden,/obj/item/storage/box/beakers,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
+"ee" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/village)
+"ei" = (/turf/closed/wall/darkrock,/area/maintenance/polovich/village)
+"ej" = (/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"ek" = (/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"el" = (/obj/machinery/door/keycard/denominator/podozl/akt/infirmary{dir = 8},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"em" = (/obj/effect/landmark/start/aktcurer,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"en" = (/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"eo" = (/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"ep" = (/obj/structure/lampwall/service{dir = 4},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"eq" = (/obj/structure/chair/wood,/obj/effect/landmark/start/aktcurer,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"er" = (/obj/structure/table/reinforced,/obj/item/stack/medical/gauze/improvised/one,/obj/item/stack/medical/gauze/improvised/one,/obj/item/stack/medical/gauze/improvised/one,/obj/item/stack/medical/gauze/improvised/one,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"es" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"et" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"eu" = (/obj/structure/stairs/north,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"ev" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"ew" = (/obj/structure/table/reinforced,/obj/item/keycard/akt/carehouse,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"ex" = (/obj/structure/chair/pew/left,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"ey" = (/obj/structure/chair/pew,/obj/effect/landmark/start/aktcurer,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"ez" = (/obj/structure/chair/pew,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"eA" = (/obj/structure/chair/pew/right,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"eB" = (/obj/structure/stairs/west,/turf/closed/wall/purple/nocling,/area/maintenance/polovich/village)
+"eC" = (/obj/structure/stairs/north,/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/village)
+"eD" = (/turf/closed/wall/purple/nocling,/area/maintenance/polovich/village)
+"eE" = (/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/village)
+"eF" = (/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/village)
+"eG" = (/obj/machinery/door/keycard/denominator/podozl/akt/controller,/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/village)
+"eH" = (/turf/open/floor/plating/polovich/greenishe2,/area/maintenance/polovich/village)
+"eJ" = (/turf/open/floor/plating/polovich/metalnoble,/area/maintenance/polovich/village)
+"eK" = (/obj/structure/village_screamer,/turf/open/floor/plating/polovich/metalnoble,/area/maintenance/polovich/village)
+"eL" = (/obj/structure/stairs/south,/turf/open/floor/plating/polovich/greenishe,/area/maintenance/polovich/village)
 
 (1,1,1) = {"
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
@@ -265,54 +263,54 @@ bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcUcUcVcWcXcVcYcZcZcXdacUcYcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeieieieieieieieieieieieieieieieieieieieieieicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcUcUcVcWcXcZcYcVcYcZcZcUcUcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeiejejejejeiejejejejejejejejeiejekeieiekejeicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcUcZeIeIeIeIeIeIeIeIeIcXcZcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeiejejejejelejejemejejemejejelejeneieiekeoeicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTdcdceIdddidjdjdjdjdweIcXdxcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeiepeqekejeierereseteteseteteiejekeueuekejeicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTdydyeIdzdAdBdCdDdAdEeIcZcZcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeieieveweieieieieieieieieieieiejekekekekejeicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTdFdyeIdGdAdHdbdIdAdJeIcZcZcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeiejekekejeiexeyezezezezezeAeiejejekekejejeicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTdFdFeIdKdLdMdbdLdLdJeIdNcXcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeiejejejejekejejejejejejejejelejejekekejejeicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcZdFeIeIeIeIeIdOeIeIeIcZcWcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeiejejesejeiejekesejejesekejeiepejekekejeoeicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTdcdFdFdPdPdPcYcYcZcVcZcVcWcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeiejejejejeieieieieieieieieieieieieieieieieicTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcZdFdFdFdPcZcZcXcYcYcYcXcUcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcTcTeBejejcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcZcZdydFdFcZcZcXcYcYdQdRcTcTcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcTcZdydydccYcZcYcYcZcZcZcZdScTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaacTdcdFdFdccZcUcXcZcYcZcYcZdScTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaacTdcdFdFdFcWcUcWcZcZcZcZcZdScTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaacTdcdFdFdccXdxdxcZcZcZcVcVcTcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaaacTcZdFdFdcdbdbdbdbdOdbdbcVcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaaacTcZdydydcdbdTdUdVdUdWdbcYcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaacTdFdydydcdXdYdZeaebebdXcYcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaacTdFdFdFdcdXdZdZecdZebdXcZcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaacTdcdFdFdcdXedecececeedXcUcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaacTdcdFdFdcdXdZebeadZebdXcUcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaabhbhcTcTcVdFdydFdXdZdZegehebdXcYcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcWefdcdydydXdXdXdXdXdXdXcYcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcWdxdcdydydFdFdFdFdFdFdcdccTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDcTcTcUcVcWcUcXeFeFcWcYcTcXeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeieieieieieieieieieieieieieieieieieieieieieieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDcTcTcUcVcWeFcXcUcXeFeFcTcTeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeiejejejejeiejejejejejejejejeiejekeieiekejeieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDcTeFcZcZcZcZcZcZcZcZcZcWeFeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeiejejejejelejejemejejemejejelejeneieiekeoeieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDdadacZdbdcdddddddddicZcWdjeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeiepeqekejeierereseteteseteteiejekeueuekejeieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDdwdwcZdxdydzdAdBdydCcZeFeFeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeieieveweieieieieieieieieieieiejekekekekejeieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDdDdwcZdEdydFdGdHdydIcZeFeFeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeiejekekejeiexeyezezezezezeAeiejejekekejejeieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDdDdDcZdJdKdLdGdKdKdIcZdMcWeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeiejejejejekejejejejejejejejelejejekekejejeieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeFdDcZcZcZcZcZdNcZcZcZeFcVeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeiejejesejeiejekesejejesekejeiepejekekejeoeieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDdadDdDdOdOdOcXcXeFcUeFcUcVeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeiejejejejeieieieieieieieieieieieieieieieieieDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeFdDdDdDdOeFeFcWcXcXcXcWcTeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDeBejejeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeFeFdwdDdDeFeFcWcXcXdPdQeDeDeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeFdwdwdacXeFcXcXeFeFeFeFdReDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaeDdadDdDdaeFcTcWeFcXeFcXeFdReDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaeDdadDdDdDcVcTcVeFeFeFeFeFdReDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaeDdadDdDdacWdjdjeFeFeFcUcUeDeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaaaeDeFdDdDdadGdGdGdGdNdGdGcUeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaaaeDeFdwdwdadGdSdTdUdTdVdGcXeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaeDdDdwdwdadGdWdXdTdYdYdGcXeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaeDdDdDdDdadGdXdXdZdXdYdGeFeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaeDdadDdDdadGeadZdZdZebdGcTeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaaaaaaaaeDdadDdDdadGdXdYdTdXdYdGcTeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhaaaaaaaaaaaaaabhbheDeDcUdDdwdDdGdXdXeceddYdGcXeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDcVeedadwdwdGdGdGdGdGdGdGcXeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDcVdjdadwdwdDdDdDdDdDdDdadaeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTcTbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheEeEeEcTcTcZcZcZcZcZcZcZcZcZcZcZcZcZcZcZcZcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTeFcTcTcTeGeGeGeGeGeGeGeGeGeGeGeGeGeGeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZeJeKeJeJcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZeJeJeJeJcZcZcZeGeGcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeEeEcZeEeEcZcZcZcZcZcZcZcZcZcZeEeEcZeEeEcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcZcZcZcZcZeGeGeGcZcZcZcZcZcZcZcZcZcZcZcZcZcZbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcTcTcTcTeEeEeEcTcTcTcTcTcTcTcTcTcTcTcTcTcTbhbhbhbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcTcTcTcTcTeEeHeEcTcTcTcTcTcTcTcTcTcTcTcTcTcTbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheCeCeCeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheEeEeEeDeDeFeFeFeFeFeFeFeFeFeFeFeFeFeFeFeFeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeGeDeDeDeHeHeHeHeHeHeHeHeHeHeHeHeHeHeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeJeKeJeJeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeJeJeJeJeFeFeFeHeHeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeEeEeFeEeEeFeFeFeFeFeFeFeFeFeFeEeEeFeEeEeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeHeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheFeFeFeFeFeHeHeHeFeFeFeFeFeFeFeFeFeFeFeFeFeFbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDeDeDeEeEeEeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbhbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbheDeDeDeDeDeEeLeEeDeDeDeDeDeDeDeDeDeDeDeDeDeDbhbhbhbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhdgdgbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhababacdgbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhabababacadabacacacbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbh

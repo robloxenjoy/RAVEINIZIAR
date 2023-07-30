@@ -73,9 +73,9 @@
 "bu" = (/turf/closed/wall/purple,/area/maintenance/polovich/catacombs)
 "bv" = (/obj/effect/spawner/liquid/shallow/flood,/turf/open/floor/plating/polovich/otherdirts/sec,/area/maintenance/polovich/catacombs)
 "bw" = (/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/catacombs)
-"bx" = (/turf/closed/wall/darkrock/nocling,/area/maintenance/polovich/forest)
-"by" = (/obj/structure/halo/whiteblack,/obj/effect/spawner/liquid/shallow/flood,/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/forest)
-"bz" = (/obj/structure/halo/whiteblack,/obj/docking_port/stationary{dir = 1; dwidth = 25; height = 50; id = "emergency_away"; json_key = "emergency"; name = "CentCom Emergency Shuttle Dock"; width = 50},/obj/effect/spawner/liquid/shallow/flood,/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/forest)
+"bx" = (/turf/closed/wall/darkrock/nocling,/area/maintenance/polovich/village)
+"by" = (/obj/structure/halo/whiteblack,/obj/effect/spawner/liquid/shallow/flood,/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/village)
+"bz" = (/obj/structure/halo/whiteblack,/obj/docking_port/stationary{dir = 1; dwidth = 25; height = 50; id = "emergency_away"; json_key = "emergency"; name = "CentCom Emergency Shuttle Dock"; width = 50},/obj/effect/spawner/liquid/shallow/flood,/turf/open/floor/plating/polovich/kruto,/area/maintenance/polovich/village)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababababababababababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

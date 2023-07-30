@@ -43,7 +43,7 @@
 //	power_environ = FALSE
 
 /area/maintenance/polovich/forest/rain/village
-	droning_sound = DRONING_VILL
+	droning_sound = DRONING_AKT
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 	requires_power = FALSE
@@ -60,14 +60,17 @@
 
 /area/maintenance/polovich/village
 	name = "Polovich Village"
-	droning_sound = DRONING_VILL
-	area_flags = NO_ALERTS
+	icon_state = "village"
+	droning_sound = DRONING_AKT
 	requires_power = FALSE
 	power_environ = FALSE
 	power_equip = FALSE
 	power_light = FALSE
-	outdoors = FALSE
+	outdoors = TRUE
 	static_lighting = TRUE
+	area_flags = NO_ALERTS
+	min_ambience_cooldown = 60 SECONDS
+	max_ambience_cooldown = 95 SECONDS
 
 /area/maintenance/polovich/chaot
 	droning_sound = DRONING_CHAOT

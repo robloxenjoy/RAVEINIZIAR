@@ -4,7 +4,9 @@
 
 #define DRONING_POLOVICHSTAN list('modular_septic/sound/music/droning/emptiness.ogg')
 
-#define DRONING_VILL list('modular_septic/sound/music/droning/unatko.ogg')
+#define DRONING_NIGHTVILL list('modular_pod/sound/mus/thief.ogg')
+
+#define DRONING_AKT list('modular_septic/sound/music/droning/unatko.ogg')
 
 #define DRONING_CHAOT list('modular_septic/sound/music/droning/gothic.ogg')
 

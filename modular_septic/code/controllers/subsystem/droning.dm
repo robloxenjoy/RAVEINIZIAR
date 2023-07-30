@@ -59,6 +59,20 @@ SUBSYSTEM_DEF(droning)
 			else
 				area_player.droning_sound = DRONING_FOREST
 
+		if(istype(area_player, /area/maintenance/polovich/village))
+			if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight))
+				area_player.droning_sound = DRONING_PURENIGHT_AKT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/night))
+				area_player.droning_sound = DRONING_PURENIGHT_AKT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk))
+				area_player.droning_sound = DRONING_PURENIGHT_AKT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
+				area_player.droning_sound = DRONING_PURENIGHT_AKT
+			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawndawn))
+				area_player.droning_sound = DRONING_PURENIGHT_AKT
+			else
+				area_player.droning_sound = DRONING_AKT
+
 		//kill the previous droning sound
 		kill_droning(listener)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)

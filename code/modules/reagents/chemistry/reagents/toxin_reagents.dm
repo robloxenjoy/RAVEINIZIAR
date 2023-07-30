@@ -852,7 +852,7 @@
 	name = "Nox"
 	description = "Standard, one of the main poisons that causes loss of consciousness."
 	silent_toxin = TRUE
-	reagent_state = LIQUID
+//	reagent_state = LIQUID
 	color = "#62017e90"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	toxpwr = 1
