@@ -12,4 +12,4 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/fraggot/killed/add_effects(mob/living/fraggot)
-	description = span_flashingdanger(span_big("[fraggot.real_name] IS KILLED!"))
+	description = span_flashingdanger(span_big("FRAGGOT IS KILLED!"))
