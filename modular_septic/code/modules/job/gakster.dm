@@ -427,8 +427,8 @@
 	title = "Akt Controller"
 	department_head = list("Head of Personnel")
 	faction = list("neutral", "swarmer")
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "living in Akt!"
 	selection_color = "#8e4a57"
 	exp_granted_type = EXP_TYPE_CREW

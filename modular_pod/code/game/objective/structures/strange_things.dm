@@ -142,7 +142,8 @@
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
 	anchored = TRUE
-	layer = CLOSED_TURF_LAYER
+	layer = ABOVE_NORMAL_TURF_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/halo/black
 	icon_state = "shine_black"

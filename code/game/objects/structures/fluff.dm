@@ -237,6 +237,9 @@
 /obj/structure/fluff/narrator/akt/hut
 	desc = "A wooden pole, there's a sign that says... Hut. House for assertors."
 
+/obj/structure/fluff/narrator/akt/pinker
+	desc = "A wooden pole, there's a sign that says... PINKER Platform. The PINKER is coming soon and it will pick us up!"
+
 /obj/structure/fluff/narrator/forest
 	desc = "A stone deformity, the words are engraved here that says..."
 	icon = 'icons/obj/objects.dmi'

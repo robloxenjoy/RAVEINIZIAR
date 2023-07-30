@@ -1,4 +1,4 @@
-"a" = (/obj/structure/railing{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"a" = (/obj/machinery/door/airlock/maintenance{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "b" = (/turf/closed/wall/pink_crazy/nocling,/area/shuttle/escape)
 "c" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "d" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/soda_cans/lean,/obj/item/gun/ballistic/automatic/remis/g36,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
@@ -9,41 +9,34 @@
 "i" = (/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
 "j" = (/obj/structure/village_screamer,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "k" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"l" = (/obj/structure/railing{dir = 8},/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
+"l" = (/obj/machinery/door/poddoor/shutters/preopen{dir = 8; id = "chungus"},/obj/docking_port/mobile/emergency{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "m" = (/obj/structure/chair/wood,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "n" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "o" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/obj/item/pizzabox/vegetable,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "p" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "q" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/wine,/obj/item/pizzabox/pineapple,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"r" = (/obj/structure/railing{dir = 8},/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"r" = (/obj/structure/bed,/obj/machinery/button/door/directional/north{id = "chungus"},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "s" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/obj/item/pizzabox/mushroom,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "t" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "u" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"v" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"w" = (/obj/structure/railing,/obj/structure/railing{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"x" = (/obj/structure/railing,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"y" = (/obj/structure/railing{dir = 4},/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"z" = (/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"A" = (/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
-"B" = (/obj/structure/railing,/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"C" = (/obj/docking_port/mobile/emergency,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"v" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/low_wall/reinforced,/area/shuttle/escape)
 
 (1,1,1) = {"
-rbbbbvvvy
-abcdfeegz
-abbbbeegz
-aceeceeez
-aeeeeeeez
-eeeehihee
-eeeeijieC
-aceehihez
-aeeeeieez
-aceeeieez
-aeeekikez
-aiiiiiiiA
-limmmmmiA
-lnopqsptA
-liuuuuuiA
-aihihihiA
-wxxxxxxxB
+bbbbbbbbb
+brcdbeegb
+beeefeeeb
+bbbbbeeeb
+beeeeeekb
+behiheibb
+beijiiial
+behiheibb
+veeieeekv
+veeieeeev
+bekikeeeb
+biiiiiiib
+vimmmmmiv
+vnopqsptv
+biuuuuuib
+bihihihib
+bbbbbbbbb
 "}
