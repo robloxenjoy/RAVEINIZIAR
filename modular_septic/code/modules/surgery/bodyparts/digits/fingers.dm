@@ -29,7 +29,7 @@
 /obj/item/digit/finger/pinky
 	name = "pinky finger"
 	digit_type = "pinky finger"
-
+/*
 /mob/living/carbon/human/desc_chaser(mob/user)
 	. = list()
 	if(HAS_TRAIT(src, TRAIT_FRAGGOT))
@@ -38,3 +38,4 @@
 			if(!wear_neck)
 				var/image_src = image2html('modular_pod/icons/beast.jpg', user, format = "jpg", sourceonly = TRUE)
 				. += "<img src='[image_src]' width=63 height=70>"
+*/
