@@ -1,4 +1,4 @@
-#define FRAGGOTS "[global.config.directory]/fraggots.txt"
+//#define FRAGGOTS "[global.config.directory]/fraggots.txt"
 
 /datum/component/fraggot
 	/// Annoying fullscreen overlay
