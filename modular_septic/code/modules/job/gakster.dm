@@ -308,6 +308,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 	shoes = /obj/item/clothing/shoes/barhatki
+	neck = /obj/item/clothing/neck/clodcoater
 
 /datum/job/aktnailer
 	title = "Akt Nailer"
