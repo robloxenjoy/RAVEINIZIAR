@@ -449,10 +449,11 @@
 	pants = /obj/item/clothing/pants/aktliver
 	belt = /obj/item/changeable_attacks/slashstab/sabre/small/steel
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
-	neck = /obj/item/clothing/neck/noble_cloak
+	suit = /obj/item/clothing/neck/noble_cloak
+	neck = /obj/item/clothing/neck/gorget/steel
 	r_pocket = /obj/item/keycard/akt/controller
 	shoes = /obj/item/clothing/shoes/barhatki
-	r_hand = /obj/item/pinker_caller
+//	r_hand = /obj/item/pinker_caller
 
 /datum/job/alchemist
 	title = "Akt Al-Chemist"

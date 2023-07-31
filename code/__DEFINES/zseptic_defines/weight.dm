@@ -5,7 +5,7 @@
 #define ENCUMBRANCE_EXTREME 4
 
 #define GRAMS * 0.001
-#define KILOGRAMS * 1
+#define KILOGRAMS * 1.5
 
 /// Weight of an average human in kgs
 #define HUMAN_WEIGHT 60

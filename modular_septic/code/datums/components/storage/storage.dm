@@ -216,13 +216,14 @@
 					to_chat(user, span_warning("[storing] can't fit in [host] while [recursive_loc] is in the way!"))
 				return FALSE
 		recursive_loc = recursive_loc.loc
-	var/sum_w_class = storing.w_class
-	for(var/obj/item/stored_item in real_location)
-		sum_w_class += stored_item.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
-	if(sum_w_class > max_combined_w_class)
-		if(!stop_messages)
-			to_chat(user, span_warning("[storing] won't fit in [host], make some space!"))
-		return FALSE
+	if(!tetris)
+		var/sum_w_class = storing.w_class
+		for(var/obj/item/stored_item in real_location)
+			sum_w_class += stored_item.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
+		if(sum_w_class > max_combined_w_class)
+			if(!stop_messages)
+				to_chat(user, span_warning("[storing] won't fit in [host], make some space!"))
+			return FALSE
 	if(isitem(host))
 		var/obj/item/host_item = host
 		var/datum/component/storage/storage_internal = storing.GetComponent(/datum/component/storage)

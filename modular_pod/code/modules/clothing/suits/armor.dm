@@ -202,8 +202,8 @@
 	icon_state = "goldenhelmet"
 	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
 	worn_icon_state = "goldenhelmet"
-	max_integrity = 300
-	limb_integrity = 290
+	max_integrity = 400
+	limb_integrity = 380
 	body_parts_covered = HEAD|FACE|EYES
 	flags_inv = HIDEHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
 	flags_cover = HEADCOVERSEYES | PEPPERPROOF
@@ -240,8 +240,8 @@
 	icon_state = "silverhelmet"
 	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
 	worn_icon_state = "silverhelmet"
-	max_integrity = 350
-	limb_integrity = 310
+	max_integrity = 450
+	limb_integrity = 400
 	body_parts_covered = HEAD|FACE|JAW
 	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEFACE|HIDESNOUT
 	flags_cover = HEADCOVERSMOUTH

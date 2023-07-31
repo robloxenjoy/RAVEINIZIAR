@@ -572,6 +572,12 @@
 			new /obj/item/knife/combat/goldenmisericorde(get_turf(user))
 			moneymoney -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("pinker caller")
+			if(moneymoney < 300)
+				return
+			new /obj/item/pinker_caller(get_turf(user))
+			moneymoney -= 300
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		else
 			return
 
