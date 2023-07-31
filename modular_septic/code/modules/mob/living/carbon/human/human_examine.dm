@@ -60,12 +60,13 @@
 	//TODO: Add a social recordkeeping mechanic and datum to keep tracker of who the viewer knows
 	//This will do it for now, i guess
 //	var/visible_job = get_assignment(if_no_id = "", if_no_job = "", hand_first = FALSE)
-	var/visible_job = mind.assigned_role.title
+	var/visible_job = mind?.assigned_role.title
 	var/job_message = "<span class='info'>"
 	if(visible_job)
-		job_message += "I'm pretty sure [t_he] [t_is] [prefix_a_or_an(visible_job)] <b>[visible_job]</b>."
-	else
-		job_message += "I don't know [t_his] occupation."
+		if(!skipface)
+			job_message += "I'm pretty sure [t_he] [t_is] [prefix_a_or_an(visible_job)] <b>[visible_job]</b>."
+		else
+			job_message += "I don't know [t_his] occupation."
 	. += job_message
 
 	var/visible_gender = t_he
