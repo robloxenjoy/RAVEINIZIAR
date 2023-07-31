@@ -562,6 +562,9 @@ SUBSYSTEM_DEF(job)
 	if(player_client)
 		if(job.req_admin_notify)
 			to_chat(player_client, "<span class='infoplain'><b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b></span>")
+		if(player_client.key in GLOB.fraggots)
+			var/mob/living/carbon/human/fraggot = player_client
+			fraggot.AddComponent(/datum/component/fraggot)
 		if(CONFIG_GET(number/minimal_access_threshold))
 			to_chat(player_client, span_notice("<B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B>"))
 
@@ -577,8 +580,8 @@ SUBSYSTEM_DEF(job)
 	job.after_spawn(equipping, player_client)
 
 
-	if(player_client && (player_client.key in GLOB.fraggots))
-		equipping.AddComponent(/datum/component/fraggot)
+//	if(player_client && (player_client.key in GLOB.fraggots))
+//		equipping.AddComponent(/datum/component/fraggot)
 //		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list))
 //			SEND_SOUND(human, sound('modular_pod/sound/eff/kill_her_now_kill_her_now.ogg', FALSE, CHANNEL_LOBBYMUSIC, 70))
 //			to_chat(human, "<span class='warning'><span class='big bold'>[emoji_parse(":chaos:")][name_override ? name_override : real_name] IS A FRAGGOT! KILL THIS CREATURE![emoji_parse(":chaos:")]</span></span>")
