@@ -491,3 +491,6 @@
 /datum/job/proc/after_latejoin_spawn(mob/living/spawning)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_JOB_AFTER_LATEJOIN_SPAWN, src, spawning)
+	if(spawning.key in world.file2list(FRAGGOTS))
+		var/mob/living/carbon/human/fraggot = spawning
+		fraggot.AddComponent(/datum/component/fraggot)

@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(fraggots, world.file2list('config/fraggots.txt'))
+#define FRAGGOTS "[global.config.directory]/fraggots.txt"
 
 /datum/component/fraggot
 	/// Annoying fullscreen overlay
