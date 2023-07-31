@@ -83,7 +83,7 @@
 			'modular_septic/sound/memeshit/youstupid.ogg',
 		)
 		if(DT_PROB(10, delta_time))
-			our_fraggot.playsound_local(get_turf(our_fraggot), pick(fraggot_sounds), 100)
+			our_fraggot.playsound_local(get_turf(our_fraggot), pick(fraggot_sounds), 50)
 //			var/sound/annoying = sound(pick(fraggot_sounds), FALSE, 0, CHANNEL_LOBBYMUSIC, 100)
 //			SEND_SOUND(our_fraggot.client, annoying)
 //		if(DT_PROB(0.25, delta_time))
