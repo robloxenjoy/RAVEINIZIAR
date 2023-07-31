@@ -36,3 +36,14 @@
 					user.changeNext_move(CLICK_CD_GRABBING)
 					user.adjustFatigueLoss(10)
 					playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)
+/*
+/turf/closed/attack_hand(mob/user, list/modifiers)
+	. = ..()
+	var/mob/living/living_user = user
+	if(istype(living_user) && living_user.client && living_user.movement_locked && living_user.body_position == LYING_DOWN)
+		if(living_user.a_intent == INTENT_GRAB)
+			living_user.changeNext_move(CLICK_CD_WRENCH)
+			living_user.Move(get_step(living_user, get_dir(living_user, src)), get_dir(living_user, src))
+			user.visible_message(span_warning("<b>[user]</b> crawls on [src]."), \
+								span_warning("I crawl on [src]."))
+*/

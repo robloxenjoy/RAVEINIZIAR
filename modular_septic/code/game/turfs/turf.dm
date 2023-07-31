@@ -52,6 +52,7 @@
 				dropping.forceMove(src)
 			return
 
+/*
 /turf/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	var/mob/living/living_user = user
@@ -61,7 +62,8 @@
 				return
 			user.visible_message(span_warning("<b>[user]</b> crawls on [src]."), \
 								span_warning("I crawl on [src]."))
-
+*/
+/*
 /obj/structure/stairs/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	var/mob/living/living_user = user
@@ -69,23 +71,24 @@
 		if(living_user.a_intent == INTENT_GRAB)
 //			if(!living_user.client.Move(src, get_dir(living_user, src)))
 //				return
+			living_user.changeNext_move(CLICK_CD_WRENCH)
 			living_user.Move(get_step(living_user, get_dir(living_user, src)), get_dir(living_user, src))
 			user.visible_message(span_warning("<b>[user]</b> crawls on [src]."), \
 								span_warning("I crawl on [src]."))
-
+*/
 // safe_throw_at(jump_target, range, throw_speed, src, FALSE, callback = CALLBACK(src, .proc/jump_callback))
 
 /turf/handle_fall(mob/faller)
 	if(!faller.mob_has_gravity())
 		return
-	playsound(src, "modular_septic/sound/effects/collapse[rand(1,5)].ogg", 50, TRUE)
+	playsound(faller, "modular_septic/sound/effects/collapse[rand(1,5)].ogg", 50, TRUE)
 	sound_hint()
 	SEND_SIGNAL(src, COMSIG_TURF_MOB_FALL, faller)
-
+/*
 /turf/air_update_turf(update = FALSE, remove = FALSE)
 	. = ..()
 	liquid_update_turf()
-
+*/
 /turf/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_ground[rand(1,5)].ogg"
 

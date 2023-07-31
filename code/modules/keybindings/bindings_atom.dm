@@ -20,9 +20,17 @@
 	/* SEPTIC EDIT REMOVAL
 	if(user?.movement_locked)
 	*/
+/*
 	//SEPTIC EDIT BEGIN
 	if(user && (user.movement_locked || user.mob?.movement_locked))
 	//SEPTIC EDIT END
 		keybind_face_direction(movement_dir)
 	else
 		user?.Move(get_step(src, movement_dir), movement_dir)
+*/
+
+	if(user?.movement_locked)
+		keybind_face_direction(movement_dir)
+	else
+		user?.Move(get_step(src, movement_dir), movement_dir)
+		return !!movement_dir //true if there was actually any player input
