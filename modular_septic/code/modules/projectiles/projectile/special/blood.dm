@@ -63,7 +63,7 @@
 
 			if(final_hitsound)
 				playsound(floor, final_hitsound, hitsound_volume, TRUE, -1)
-		else if(ismob.target)
+		else if(ismob(target))
 			if(!isliving(target))
 				return
 			target.add_blood_DNA(return_blood_DNA())
