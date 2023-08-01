@@ -632,3 +632,18 @@
 	if(QDELETED(src))
 		return
 	can_scream = TRUE
+
+/obj/structure/eyecrazy
+	name = "Eye"
+	desc = "Eye of Time."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "eye"
+	obj_flags = NONE
+	anchored = TRUE
+	density = FALSE
+	plane = FLOOR_PLANE
+	layer = LATTICE_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	light_range = 5
+	light_power = 1
+	light_color = "#00ff00"
