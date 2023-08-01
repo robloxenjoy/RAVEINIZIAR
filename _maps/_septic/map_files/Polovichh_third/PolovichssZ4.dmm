@@ -39,7 +39,7 @@
 "aM" = (/turf/closed/wall/darkrock/nocling,/area/maintenance/polovich/catacombs)
 "aN" = (/turf/closed/wall/darkrock,/area/maintenance/polovich/catacombs)
 "aO" = (/obj/structure/closet/crate/wooden,/obj/item/melee/hehe/pickaxe/iron,/obj/item/melee/hehe/pickaxe/iron,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
-"aP" = (/obj/structure/closet/crate/wooden,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
+"aP" = (/obj/structure/closet/crate/wooden,/obj/item/organ/spleen/vilir,/obj/item/organ/spleen/vilir,/obj/item/organ/spleen/vilir,/obj/item/organ/spleen/vilir,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
 "aQ" = (/obj/structure/flora/ausbushes/zarosli/midnight,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
 "aR" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
 "aS" = (/obj/structure/closet/crate/wooden,/obj/item/storage/backpack/baggy,/obj/item/storage/backpack/baggy,/obj/item/storage/backpack/baggy,/obj/item/storage/backpack/baggy,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
@@ -48,6 +48,7 @@
 "aV" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
 "aW" = (/obj/structure/stone_eater,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
 "aX" = (/obj/structure/stone_mixer,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
+"aY" = (/obj/structure/closet/crate/wooden,/obj/item/lamp,/obj/item/lamp,/obj/item/lamp,/obj/item/lamp,/turf/open/floor/plating/polovich/dirt/blueee,/area/maintenance/polovich/catacombs)
 "aZ" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/catacombs)
 "ba" = (/obj/structure/stairs/south,/turf/open/floor/plating/polovich/logsgreen/two,/area/maintenance/polovich/catacombs)
 
@@ -148,7 +149,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMaMaMaMaMaMaMaMaMaMaMaMaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaNaNaMaOaOaOaOaOaOaOaOaPaPaMaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaNaNaMaOaOaOaOaOaOaOaOaYaPaMaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaNalaQalalalalalalalalalalaMaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaNaNaMaRalalalalalalalalaRaMaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMaSalalalalalalalalaSaMaMaMaMaMaMaMaMaMaMaMaMaM

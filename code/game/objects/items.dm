@@ -407,7 +407,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		durability -= modifier
 	if(durability <= 0)
 		durability = 0
-		playsound(src.loc, 'sound/effects/break_stone.ogg', 100, TRUE)
+		playsound(src.loc, 'modular_pod/sound/eff/broken.ogg', 100, TRUE)
 		src.visible_message(span_notice("[src] breaks."), span_notice("[src] breaks."), span_hear("You hear the sound of breaking."))
 		qdel(src)
 

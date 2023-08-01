@@ -52,7 +52,8 @@
 		user.visible_message("<span class='notice'>\The [user] rips the vilir liquid-sheath off their [src].</span>")
 	update_icon()
 	START_PROCESSING(SSprocessing, src)
-	playsound(src, 'sound/items/torch_light.ogg', 50, TRUE)
+//	playsound(src, 'sound/items/torch_light.ogg', 50, TRUE)
+	playsound(get_turf(src), 'modular_pod/sound/eff/potnpour.ogg', 80 , FALSE, FALSE)
 /*
 /obj/item/lamp/proc/snuff()
 	lit = FALSE
