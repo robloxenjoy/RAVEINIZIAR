@@ -14,3 +14,12 @@
 	floor_tile = /obj/item/stack/tile/carpet/redd
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_PURPLEE)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_PURPLEE)
+
+/turf/open/floor/carpet/blackk
+	desc = "Black carpet."
+	icon = 'modular_pod/icons/turf/smooth/carpet_blavk.dmi'
+	icon_state = "carpet-255"
+	base_icon_state = "carpet"
+	floor_tile = /obj/item/stack/tile/carpet/redd
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_PURPLEE)
+	canSmoothWith = list(SMOOTH_GROUP_CARPET_BLACKK)

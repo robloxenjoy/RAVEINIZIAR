@@ -115,10 +115,13 @@
 "ck" = (/turf/closed/wall/purple/nocling,/area/maintenance/polovich/village)
 "cl" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/village)
 "cm" = (/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"cn" = (/obj/structure/eyecrazy,/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/village)
 "co" = (/turf/open/floor/plating/polovich/pinkbrick,/area/maintenance/polovich/village)
 "cp" = (/turf/open/floor/plating/polovich/dirt/soft,/area/maintenance/polovich/village)
+"cq" = (/turf/open/floor/plating/polovich/stonestonestone/three{dir = 1},/area/maintenance/polovich/village)
 "cr" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/village)
 "cs" = (/turf/closed/wall/darkrock,/area/maintenance/polovich/village)
+"ct" = (/obj/structure/table/reinforced,/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/village)
 "cu" = (/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "cv" = (/obj/structure/bed/maint,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "cw" = (/obj/structure/bed/maint,/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
@@ -192,7 +195,6 @@
 "dM" = (/obj/structure/table/reinforced,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/stonestonestone/evilstoney,/area/maintenance/polovich/village)
 "dN" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
 "dO" = (/obj/structure/bed,/obj/effect/landmark/start/aktassertor,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
-"dP" = (/obj/machinery/light/red/flickering/directional/north,/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/village)
 "dQ" = (/obj/machinery/door/keycard/denominator/podozl/akt/hut{dir = 8},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "dR" = (/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
 "dS" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
@@ -208,7 +210,6 @@
 "ec" = (/obj/structure/closet/secure_closet/security,/obj/item/reagent_containers/glass/bottle/potions/berryjuice,/obj/item/clothing/head/helmet/silver/full,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "ed" = (/obj/structure/closet/secure_closet/security,/obj/item/clothing/head/helmet/golden/full,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "ee" = (/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/village)
-"ef" = (/obj/machinery/light/red/flickering/directional/east,/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/village)
 "eg" = (/turf/open/floor/plating/polovich/temnoo/three,/area/maintenance/polovich/village)
 "eh" = (/turf/open/floor/plating/polovich/temnoo/ten,/area/maintenance/polovich/village)
 "ei" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/village)
@@ -254,7 +255,6 @@
 "eW" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/structure/lampwall/service{dir = 4},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/village)
 "eX" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/village)
 "eY" = (/turf/open/floor/plating/polovich/tilefloor,/area/maintenance/polovich/village)
-"eZ" = (/obj/structure/table/reinforced,/obj/item/clothing/suit/armor/vest/leatherbreastt,/turf/open/floor/plating/polovich/sea/gelatinea,/area/maintenance/polovich/village)
 "fa" = (/obj/effect/turf_decal/siding/wood/corner{dir = 4},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "fb" = (/obj/effect/turf_decal/siding/wood/corner{dir = 1},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/village)
 "fc" = (/turf/closed/wall/r_wall/rusty/nocling,/area/maintenance/polovich/village)
@@ -446,11 +446,11 @@ abababababajaNazaGaGaGaAazaAaAaDazaCaBaBaCaDazaEazaBazaDazazaBazaEbIazazazaDaNaN
 abababababaNaNaCazaDaAaDazaDaDazazaDaCaCazazaFaEazazazazaGaGaAaAaEbIaDaDaDaAabajajbzaNajabababababababababababaiaiaiaiaiaiaiaiaiaiababababcOcOcOcOcOcOcOcOcOcOdAducmcmcmcmcmcmcmcmcmdydydydydycmcmcmcmcmcmcocmcocmcocmcocmcococococococococmcocococococpcpcpcmckabab
 ababababajaNajaBazazaCaBaCazazazazaDaDazaGazaFaEaAaAazaDauaGaDaHaHaEaEazazaCabajaNaNajaNaSababababababababababaiaiaiaiaiaiaiaiaiaiababababcOcOcOcOcOcOcOcOcOckcscmcmcmcmcsckckckckckckckckckckckckckckckckckckckdBdCdBdDcrcrcrcrcrcrcrcrcrcrcrcrcrcpcpcpcpcpcmckabab
 ababababajajaWazazazazazazazaAazaBaDaDazauazaFaFaBaCazazaRaAaHaHaHaHaDazazaDabajaNaNaNaNaSaSaSaSaSaSaSaSaSaSaiaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcscmcmcmcmcsckckckckckckckckckckckckckckckckckckckcmcmcmdFdFdFdGdFdFdFdFdFdFdFdFdFdFdFdFckckckckckabab
-ababababajajajaAaAazazazazazazazaCaGaGaDauazaEazazazaDazauazaDaEaEaHaHaCaCazabababajaNaSaSabababababaSaSaSaSaiaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcsdqdudAdqcsckckckckckckckckckckckckckckckckckckckdBdCcmdFdHdIdIdJdKdLdMdNdJdOdPdOdPdOdJckckckckckabab
-ababababababajaEaEaDaBaCazbCbDaBazaGauauauaBaDazaEazazaBazaCaCaCaEaDaDaBaCaDababababaNaSaSababababababababababaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcsdqcrdudqcsckckckckckckckckckckckckckckckckckckckcmcmcmdFdIdIdIdQdIdRdSdRdJdIdTdIdIdIdJckckckckckabab
+ababababajajajaAaAazazazazazazazaCaGaGaDauazaEazazazaDazauazaDaEaEaHaHaCaCazabababajaNaSaSabababababaSaSaSaSaiaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcsdqdudAdqcsckckckckckckckckckckckckckckckckckckckdBdCcmdFdHdIdIdJdKdLdMdNdJdOcndOcndOdJckckckckckabab
+ababababababajaEaEaDaBaCazbCbDaBazaGauauauaBaDazaEazazaBazaCaCaCaEaDaDaBaCaDababababaNaSaSababababababababababaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcsdqcrdudqcsckckckckckckckckckckckckckckckckckckckcmcmcmdFdIdIdIdQdIdRdScqdJdIdTdIdIdIdJckckckckckabab
 ababababababajaEaEazaAazaRauaDazazauaRaRauaCaDazaEazaAaAazazaCaBaCazaDazazazabababaSaSaSabababababababababababaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcsdqcrcrdqcsckckckckckckckckckckckckckckckckckckckdBdCcmdFdUdJdJdJdJdJdJdJdJdOdVdOdIdOdJckckckckckabab
 abababababababaEaEazaAaGaRauaDazazauaBaRazazaFaFaEaTaUaAazazazaCazazaDaDaDaNaSaSaSaSaSababababababababababababaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcscmduducmcsckckckckckckckckckckckckckckckckckckckdWcmdXdJdYdZdZdZeaebeceddJdIdIdIdIdIdJckckckckckabab
-ababababababababababababbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbraNaNaNaSaSaSaSaSaNaNababababababababababaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcscmdbeecmcsckckckckckckckckckckckckckckckckckckckdBdCcmdQdIdIdIdIdIdIdIdIdQdIdIdIdIefdJckckckckckabab
+ababababababababababababbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbraNaNaNaSaSaSaSaSaNaNababababababababababaiaiaiaiaiaiaiaiaiaiababababcOdEdEdEdEdEdEdEcOckcscmdbeecmcsckckckckckckckckckckckckckckckckckckckdBdCcmdQdIdIdIdIdIdIdIdIdQdIdIdIdIcndJckckckckckabab
 abababababababababababababababababababababababababababababababababababaNaNaSaSaSaNabaSaSaNababababababababababaiaiaiaiaiaiaiabababababababcOdEdEdEdEdEdEdEcOckcsdqdbeedqcsckckckckckckckckckckckckckckckckckckckcmcmcmdQegehehehehehehehdQdIdIdIdIdIdJckckckckckabab
 abababababababababababababababababababababababababababababababababababababababaNaNabaNaSaNaNaSaSabababababababababababababababababababababcOdEdEdEdEdEdEdEcOckcsdqcreidqcsckckckckckckckckckckckckckckckckckckckejdCcmdFdZdIdIekdIdIdIdIdJdOeldOemdOdJckckckckckabab
 ababababababababababababababababababababababababababababababababababababababababababababaNabaSaSaSababababababababababababababababababababcOcOcOcOcOcOcOcOcOckcsdqcrdudqcsckckckckckckckckckckckckckckckckckckckcmcmcmdFdJdJdJdJdJdJdJdJdJdJdJdJdJdJdJckckckckckabab
@@ -477,7 +477,7 @@ abababababababababababababababababababababababazaDaGaGaDaDabababababaDceaDaDaAaA
 abababababababababababababababababababababababaDaAaAaGaDabababababaDazaAaAaAazaAaAbbbbbbbWbWauaAbicdazaGaAaCaAbpbpazazbIbIbIauazazazaAbbabckcLeHeIeJcLeKeIeIeJcLeLenendbezdyeeeeesdzeyeyevdzdzdzeseDdzdzdzckckcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOckckckckckckckabab
 ababababababababababababababababababababazaCaCazazazazaDaBaDaDaBaCazaCaEazazazaAaBaDaDaAcfauauaDaDaDbbbbaAaAazaXchazazazaAaGauauauauciaAabckcLeMeNeOcLePeQeQeRcLeScmcmdbeAdyeseDesdzeveTeyeyeedzdzeedzdzdzckckcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOckckckckckckckabab
 abababababababababababababababababababazazazaDaDazaDaDaDaCaBaDazaDaFaFaEaBazaGaAaCaDazaXazaAaAaAaCaXaDbbaAaAaGazazbbbbazaXazaGaubbbbaAaAabckcLeUcYeVcLeWeneneXcLeSenendbezeedzdzdzdzdzeudyeeeedzdzevdzdzdyckckcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOcOckckckckckckckabab
-abababababababababababababababababazazauazauaDaBaCazazazazaAazauaBaGauaHaHazaRaAaAaAazazaAaAaGaAazaCazbbbbaXaubkcjbbbbaDaDazaAaAbbaAaAababckcLeMcYeYeZeYcmcmfadtfbenencrckcrdudzdydzdydydydzdzeeeeeyeedzdyckckckckckckckckfcfdfcckckckckckckckckckckckckckckckckabab
+abababababababababababababababababazazauazauaDaBaCazazazazaAazauaBaGauaHaHazaRaAaAaAazazaAaAaGaAazaCazbbbbaXaubkcjbbbbaDaDazaAaAbbaAaAababckcLeMcYeYcteYcmcmfadtfbenencrckcrdudzdydzdydydydzdzeeeeeyeedzdyckckckckckckckckfcfdfcckckckckckckckckckckckckckckckckabab
 ababababababababababababababababababazaAazazaDaDazaAaAaAazaGaGauaDaGaGaHaHaDazabaXazaubbbbaCbYaCbpbpaAaAaGazaAauaXaAaDaDauaDaAaCaAaAaDaDabckcLeMcYeYfeeYcmcmcmcmenendbdueCcrdudzdzdzdydydydydzeeeeeyeedzdzckfcfcfcfcfcfcfcfcfdfcfcfcfcfcfcfcfcfcfcfcckckckckckckabab
 ababababababababababababababababababaCaBazauazaAazaDaBaDazaGauauauauaHaEaGazazaAauauaubbbbazaCaAbpbpaAaCaXazaAaGaCazaAaGaAaAaCaXaCaDaAababckcLeMcYeOcLcMcmcmffcDfgcmdbeEckcrdueDdydzdzeseDdzdzeDesdzeedzdzckfcfhcucucufifjfcfdfcfkflfmfnfofnfmflfmfcckckckckckckabab
 abababababababababababababababababababaAazaDaBaHazazaCazazaGauauaRaRaRazauazazabaXauauaXbbbbazaDaAaBaCaGaCaAaAaAaGaAaGaXaAaAbIaCaDabababckckcLeMcYfpfqfpfpfpfrcLfsdudbdbeAdududzdydzdzesesdzdzesesdzdzdydyckfcftfucYcGcGfvfcfdfcfdfdfdfdfdfdfdfdfdfcckckckckckckabab

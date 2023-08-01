@@ -104,6 +104,7 @@ DEFINE_BITFIELD(smoothing_flags, list(
 
 #define SMOOTH_GROUP_CARPET_REDD S_TURF(59) //![turf/open/floor/carpet/neon]
 #define SMOOTH_GROUP_CARPET_PURPLEE S_TURF(60) //![turf/open/floor/carpet/neon]
+#define SMOOTH_GROUP_CARPET_BLACKK S_TURF(61) //![turf/open/floor/carpet/neon]
 
 #define MAX_S_TURF SMOOTH_GROUP_SURVIVAL_TITANIUM_WALLS //Always match this value with the one above it.
 
