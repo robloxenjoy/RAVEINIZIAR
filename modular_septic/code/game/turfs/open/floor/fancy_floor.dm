@@ -17,7 +17,7 @@
 
 /turf/open/floor/carpet/blackk
 	desc = "Black carpet."
-	icon = 'modular_pod/icons/turf/smooth/carpet_blavk.dmi'
+	icon = 'modular_pod/icons/turf/smooth/carpet_black.dmi'
 	icon_state = "carpet-255"
 	base_icon_state = "carpet"
 	floor_tile = /obj/item/stack/tile/carpet/redd
