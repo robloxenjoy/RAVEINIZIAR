@@ -118,7 +118,7 @@
 "cn" = (/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/catacombs)
 "co" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/slush/mudd,/area/maintenance/polovich/catacombs)
 "cp" = (/turf/open/floor/plating/polovich/rockedar{dir = 8},/area/maintenance/polovich/catacombs)
-"cq" = (/obj/structure/torchwall/service/directional{dir = 4},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/catacombs)
+"cq" = (/obj/structure/eyecrazy,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/catacombs)
 "cr" = (/obj/machinery/door/metal_door/wood_door/west{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/catacombs)
 "cs" = (/obj/machinery/door/metal_door/west{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/steelishh,/area/maintenance/polovich/catacombs)
 "ct" = (/turf/open/floor/plating/polovich/bluedirty,/area/maintenance/polovich/catacombs)

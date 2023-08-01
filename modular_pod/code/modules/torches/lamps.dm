@@ -12,6 +12,14 @@
 	name = "Self-activating Lamp"
 	desc = "Thanks to this, the void will be filled with chaos. This lamp provides its own."
 	self_lighting = 1
+
+/obj/item/lamp/work
+	icon = 'modular_pod/code/modules/torches/lamps.dmi'
+	icon_state = "lamp0"
+	inhand_icon_state = "lamp0"
+	name = "Lamp"
+	desc = "Thanks to this, the void will be filled with chaos."
+	lit = TRUE
 /*
 /obj/item/lamp/Initialize()
 	..()
