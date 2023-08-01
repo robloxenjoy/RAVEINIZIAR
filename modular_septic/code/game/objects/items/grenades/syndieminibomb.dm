@@ -45,7 +45,7 @@
 	icon_state = "frag"
 	base_icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
-	shrapnel_radius = 4
+	shrapnel_radius = 7
 	grenade_flags = GRENADE_PINNED|GRENADE_VISIBLE_PIN|GRENADE_VISIBLE_SPOON
 	det_time = 1.5 SECONDS
 

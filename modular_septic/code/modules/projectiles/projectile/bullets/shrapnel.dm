@@ -2,16 +2,16 @@
 	name = "flying shrapnel shard"
 	icon_state = "shrapnel"
 	base_icon_state = "shrapnel"
-	damage = 14
-	range = 5
+	damage = 15
+	range = 7
 	weak_against_armour = TRUE
 	dismemberment = 0
-	ricochets_max = 0
-	ricochet_chance = 0
+	ricochets_max = 1
+	ricochet_chance = 1
 	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 60
 	hit_prone_targets = TRUE
-	sharpness = SHARP_EDGED
+	sharpness = SHARP_POINTY
 	wound_bonus = 30
 	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=1)
 	var/state_variation = 5

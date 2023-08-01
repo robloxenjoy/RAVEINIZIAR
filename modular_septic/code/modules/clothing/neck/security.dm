@@ -165,17 +165,17 @@
 	cold_protection = NECK
 	heat_protection = NECK
 	slot_flags = ITEM_SLOT_NECK
-	max_integrity = 480
-	limb_integrity = 440
+	max_integrity = 680
+	limb_integrity = 640
 	body_parts_covered = NECK
 	repairable_by = /obj/item/stack/ballistic/plate
 	repairable_by_offhand = null
 	integrity_failure = 0.1
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
-                EDGE_PROTECTION = 55, \
+                EDGE_PROTECTION = 80, \
                 CRUSHING = 25, \
-                CUTTING = 30, \
-                PIERCING = 25, \
+                CUTTING = 40, \
+                PIERCING = 35, \
                 IMPALING = 15, \
                 LASER = 5, \
                 ENERGY = 5, \

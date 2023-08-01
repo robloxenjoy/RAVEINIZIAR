@@ -8,7 +8,7 @@
 	light_color = LIGHT_COLOR_LIGHT_CYAN
 	//should never happen
 	ricochets_max = 1
-	ricochet_chance = 100
+	ricochet_chance = 5
 	range = 6
 	damage = 33
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser

@@ -31,7 +31,7 @@
 	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 60
 	hit_prone_targets = TRUE
-	sharpness = SHARP_EDGED
+	sharpness = SHARP_POINTY
 	wound_bonus = 30
 	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=1)
 
