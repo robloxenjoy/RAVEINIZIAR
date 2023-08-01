@@ -211,7 +211,7 @@
 "ec" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
 "ed" = (/obj/structure/closet/crate/wooden,/obj/item/storage/box/beakers,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
 "ee" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/village)
-"ef" = (/obj/structure/stairs/west,/turf/open/space/basic,/area/maintenance/polovich/village)
+"ef" = (/obj/structure/stairs/west,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "ei" = (/turf/closed/wall/darkrock,/area/maintenance/polovich/village)
 "ej" = (/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "ek" = (/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
