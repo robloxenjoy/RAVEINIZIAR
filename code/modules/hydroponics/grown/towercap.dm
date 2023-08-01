@@ -168,6 +168,7 @@
 	tetris_width = 32
 	tetris_height = 64
 	durability = 100
+	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
