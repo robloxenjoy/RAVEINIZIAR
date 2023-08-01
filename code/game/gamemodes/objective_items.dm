@@ -197,6 +197,7 @@
 	return ..()
 
 //Old ninja objectives.
+/*
 /datum/objective_item/special/pinpointer
 	name = "the captain's pinpointer."
 	targetitem = /obj/item/pinpointer/nuke
@@ -232,6 +233,8 @@
 	targetitem = /obj/item/food/meat/slab/corgi
 	difficulty = 5
 
+*/
+
 /datum/objective_item/stack/New()
 	..()
 	if(TargetExists())
@@ -242,6 +245,11 @@
 /datum/objective_item/stack/Destroy()
 	GLOB.possible_items_special -= src
 	return ..()
+
+/datum/objective_item/special/knot
+	name = "penis."
+	targetitem = /obj/item/organ/genital/penis
+	difficulty = 5
 
 //Stack objectives get their own subtype
 /datum/objective_item/stack
@@ -256,7 +264,7 @@
 	if(istype(S, targetitem))
 		found_amount = S.amount
 	return found_amount>=target_amount
-
+/*
 /datum/objective_item/stack/diamond
 	name = "10 diamonds."
 	targetitem = /obj/item/stack/sheet/mineral/diamond
@@ -270,4 +278,10 @@
 /datum/objective_item/stack/uranium
 	name = "25 refined uranium bars."
 	targetitem = /obj/item/stack/sheet/mineral/uranium
+	difficulty = 10
+*/
+
+/datum/objective_item/stack/wood
+	name = "10 logs"
+	targetitem = /obj/item/stack/grown/log/tree/evil/logg
 	difficulty = 10

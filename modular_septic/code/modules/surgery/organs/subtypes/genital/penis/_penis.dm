@@ -20,10 +20,10 @@
 	var/circumcised = FALSE
 
 /obj/item/organ/genital/penis/update_sprite_suffix()
-	if(genital_sheath && (genital_sheath != SHEATH_NONE) && (arousal_state < AROUSAL_FULL))
-		sprite_suffix = "[lowertext(genital_sheath)]_[arousal_state >= AROUSAL_PARTIAL ? TRUE : FALSE]"
-		return sprite_suffix
-	sprite_suffix = "[genital_type]_[translate_size_to_suffix(genital_size)]_[arousal_state >= AROUSAL_FULL ? TRUE : FALSE]"
+//	if(genital_sheath && (genital_sheath != SHEATH_NONE) && (arousal_state < AROUSAL_FULL))
+//		sprite_suffix = "[lowertext(genital_sheath)]_[arousal_state >= AROUSAL_PARTIAL ? TRUE : FALSE]"
+//		return sprite_suffix
+	sprite_suffix = "[genital_type]_[translate_size_to_suffix(genital_size)]"
 	return sprite_suffix
 
 /obj/item/organ/genital/penis/translate_size_to_suffix(size = genital_size)
