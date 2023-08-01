@@ -38,3 +38,5 @@
 	//Will is a dumb little snowflake
 	if(!isnull(plagiarist.raw_attribute_list[STAT_WILL]))
 		plagiarist.raw_attribute_list[STAT_WILL] = plagiarist.raw_attribute_list[STAT_INTELLIGENCE]
+	if(!isnull(plagiarist.raw_attribute_list[STAT_LUCK]))
+		plagiarist.raw_attribute_list[STAT_LUCK] = plagiarist.raw_attribute_list[STAT_INTELLIGENCE]

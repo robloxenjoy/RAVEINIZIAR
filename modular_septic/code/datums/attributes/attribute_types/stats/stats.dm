@@ -66,3 +66,10 @@
 		resistance to supernatural attacks. \
 		Favorite attribute of the priest."
 	icon_state = "willpower"
+
+/datum/attribute/stat/luck
+	name = "Luck"
+	shorthand = "LK"
+	desc = "Luck measures your LUCK! \
+		Favorite attribute of the rogue."
+	icon_state = "willpower"

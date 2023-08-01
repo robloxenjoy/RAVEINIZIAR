@@ -73,6 +73,7 @@
 #define STAT_INTELLIGENCE /datum/attribute/stat/intelligence
 #define STAT_PERCEPTION /datum/attribute/stat/perception
 #define STAT_WILL /datum/attribute/stat/will
+#define STAT_LUCK /datum/attribute/stat/luck
 
 // ~melee combat skills
 #define SKILL_RAPIER /datum/attribute/skill/rapier
