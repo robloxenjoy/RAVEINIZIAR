@@ -195,6 +195,7 @@
 "dM" = (/obj/structure/table/reinforced,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/stonestonestone/evilstoney,/area/maintenance/polovich/village)
 "dN" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
 "dO" = (/obj/structure/bed,/obj/effect/landmark/start/aktassertor,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"dP" = (/turf/open/floor/carpet/blackk,/area/maintenance/polovich/forest/rain)
 "dQ" = (/obj/machinery/door/keycard/denominator/podozl/akt/hut{dir = 8},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "dR" = (/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
 "dS" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
@@ -210,6 +211,7 @@
 "ec" = (/obj/structure/closet/secure_closet/security,/obj/item/reagent_containers/glass/bottle/potions/berryjuice,/obj/item/clothing/head/helmet/silver/full,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "ed" = (/obj/structure/closet/secure_closet/security,/obj/item/clothing/head/helmet/golden/full,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "ee" = (/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/village)
+"ef" = (/turf/open/floor/carpet/blackk,/area/maintenance/polovich/village)
 "eg" = (/turf/open/floor/plating/polovich/temnoo/three,/area/maintenance/polovich/village)
 "eh" = (/turf/open/floor/plating/polovich/temnoo/ten,/area/maintenance/polovich/village)
 "ei" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle,/area/maintenance/polovich/village)
@@ -255,6 +257,7 @@
 "eW" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/structure/lampwall/service{dir = 4},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/village)
 "eX" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/lampwall/service{dir = 8},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/village)
 "eY" = (/turf/open/floor/plating/polovich/tilefloor,/area/maintenance/polovich/village)
+"eZ" = (/turf/open/floor/plating/polovich/rockedarr{dir = 1},/area/maintenance/polovich/village)
 "fa" = (/obj/effect/turf_decal/siding/wood/corner{dir = 4},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "fb" = (/obj/effect/turf_decal/siding/wood/corner{dir = 1},/turf/open/floor/plating/polovich/rockedar,/area/maintenance/polovich/village)
 "fc" = (/turf/closed/wall/r_wall/rusty/nocling,/area/maintenance/polovich/village)
@@ -383,7 +386,6 @@
 "hv" = (/obj/effect/turf_decal/siding/wood{dir = 9},/turf/open/floor/plating/polovich/krutoplitka{dir = 6},/area/maintenance/polovich/village)
 "hw" = (/turf/open/floor/plating/polovich/krutoplitka{dir = 6},/area/maintenance/polovich/village)
 "hx" = (/turf/open/floor/plating/polovich/rockedarr,/area/maintenance/polovich/village)
-"hy" = (/turf/open/floor/plating/polovich/rockyhorrr,/area/maintenance/polovich/village)
 "hz" = (/obj/structure/fluff/statuestone,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "hA" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plating/polovich/krutoplitka{dir = 6},/area/maintenance/polovich/village)
 "hB" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plating/polovich/krutoplitka{dir = 6},/area/maintenance/polovich/village)
@@ -511,8 +513,8 @@ ababababababababababaDababababababababaPaPaOababaNaNaNaNabababababababababababab
 ababababababababababaDabababababababaDaPaPabababajajajajababababababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckeueudbcmdbevdydyckckcpdqdqduckckckckckgDhphqhqhqhrhqhqhqhtgDabab
 ababababababababababaGaGabababaDaPaPaDaDababababajajajajababababababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckevevdbcmdbevdbevckckdudqdqduckckckckckgDgDgDgDgDhlgDgDgDgDgDabab
 abababababababababababaGaDaDaDaDaPaPababababababajajajajababababababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmhuhuhudbdbckckckdudqdqducrckckckckckckckgDhvhwgDckckckckabab
-ababababababababababababaGababababababababababajajajajajababababababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmhxhyhucmcmcmcmcmcmdqducmhzckckckckckckckgDhAhBgDckckckckabab
-ababababababababababababaGababababababababababarajajajajajabababababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmhuhuhudydyeedycmcmdqducmcmckckckckckckckgDhAhBgDckckckckabab
+ababababababababababababaGababababababababababajajajajajababababababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmhxefhucmcmcmcmcmcmdqducmhzckckckckckckckgDhAhBgDckckckckabab
+ababababababababababababaGababababababababababarajajajajajabababababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmeZeZeZdydyeedycmcmdqducmcmckckckckckckckgDhAhBgDckckckckabab
 ababababababababababababaGababababababababababajajajajajajajajajajajabababaiaiaiaiaiaiaiaiaiaiababaiaiababaiababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmcmcmdyeresckckckcmdqducmckckckckckckckckgDhChDgDckckckckabab
 ababababababababababababaGababababababababababajajajajajajajajajajajajajajaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiabababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmcmdbdbeeckckckdudqdqduckckckckckckckckgDgDgDgDckckckckabab
 ababababababababababababaGababababababababababarajajajajajajajajajagagagagaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiabababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckdydbckckckckckdudqdqduckckckckckckckckckckckckckckckckabab
@@ -522,7 +524,7 @@ ababababababababababababaGababababababababababababababababababababajababajaiaiai
 ababababababababababababaGababababababababababababababababababababababababababababababababababababaiaiaiaiaiababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckdbdbeCcmhzdZdZdZcmcmdZcmcmdududududududuckckckckckckckabab
 ababababababababababababaGababapapapapapapapapapapapapapapapapababababababababababababababababababaiaiaiababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckdydydZdZdZdZcmcmcmcLhGcLcLcLcLcLcLcLcLduckckckckckckckabab
 ababababababababababababaGababapadaaacaaahaaafaaaaahaaacaaadapabababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckdyeeeCcmhzdZcmcmcmcLdZeocmcmgohHhIhIcLduckckckckckckckabab
-ababababababababababababaGababapaaaaaaalaaaaaaaaaaaaaaaaaaaaapabababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmcmdZdZcmcmdZdZcmcLcmcmcmcmgogocmdXcLduckckckckckckckabab
+ababababababababababababaGababapaaaaaaaldPdPdPdPdPdPaaaaaaaaapabababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcmcmdZdZcmcmdZdZcmcLcmcmcmcmgogocmdXcLduckckckckckckckabab
 ababababababababababababaGababapaaaaaaaaaaamananamaaaaaaaaaaapabababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckgqcmcmdZdZcmcmdZdZcmcLcmcmcmcmgogocmcmcLduckckckckckckckabab
 ababababababababababababaGababapaaaaaoaoaoapaeaeapaoaoaoaaaaapabababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckgqcmcmcmcmcmcmcmcmcmcLgogocmhJcLcLcLcLcLckckckckckckckckabab
 ababababababababababababaGababapaaaaaoasasatasasatasasaoaaaaapabababababababababababababababababababababababababababababababababababckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckckcLcLcLcLcLcLcLcLcLcLcLhKgocmhLcLckckckckckckckckckckckckabab
