@@ -24,7 +24,7 @@
 /datum/objective_item/steal/Destroy()
 	GLOB.possible_items -= src
 	return ..()
-
+/*
 /datum/objective_item/steal/caplaser
 	name = "the captain's antique laser gun."
 	targetitem = /obj/item/gun/energy/laser/captain
@@ -184,6 +184,8 @@
 	difficulty = 10
 	excludefromjob = list("Chief Engineer","Station Engineer","Atmospheric Technician")
 
+*/
+
 //Unique Objectives
 /datum/objective_item/special/New()
 	..()
@@ -285,3 +287,14 @@
 	name = "10 logs"
 	targetitem = /obj/item/stack/grown/log/tree/evil/logg
 	difficulty = 10
+
+/datum/objective_item/steal/silverhelmet
+	name = "full silver helmet."
+	targetitem = /obj/item/clothing/head/helmet/silver/full
+	difficulty = 5
+	excludefromjob = list("Akt Assertor")
+
+/datum/objective_item/steal/pinkercaller
+	name = "pinker caller."
+	targetitem = /obj/item/pinker_caller
+	difficulty = 5
