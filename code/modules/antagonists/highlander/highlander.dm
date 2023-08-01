@@ -24,7 +24,7 @@
 	REMOVE_TRAIT(L, TRAIT_NOBREATH, HIGHLANDER_TRAIT)
 	if(L.has_quirk(/datum/quirk/nonviolent))
 		ADD_TRAIT(L, TRAIT_PACIFISM, ROUNDSTART_TRAIT)
-
+/*
 /datum/antagonist/highlander/proc/forge_objectives()
 	var/datum/objective/steal/steal_objective = new
 	steal_objective.owner = owner
@@ -33,9 +33,9 @@
 	var/datum/objective/elimination/highlander/elimination_objective = new
 	elimination_objective.owner = owner
 	objectives += elimination_objective
-
+*/
 /datum/antagonist/highlander/on_gain()
-	forge_objectives()
+//	forge_objectives()
 	owner.special_role = "highlander"
 	give_equipment()
 	. = ..()

@@ -173,7 +173,7 @@
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
-	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
+	hitsound = list('modular_pod/sound/eff/weapon/blunty1.ogg', 'modular_pod/sound/eff/weapon/blunty2.ogg', 'modular_pod/sound/eff/weapon/blunty3.ogg')
 	havedurability = TRUE
 	durability = 170
 	carry_weight = 1 KILOGRAMS
@@ -204,7 +204,7 @@
 	inhand_icon_state = "club2"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
-hitsound = list('modular_pod/sound/eff/weapon/blunty1.ogg', 'modular_pod/sound/eff/weapon/blunty2.ogg', 'modular_pod/sound/eff/weapon/blunty3.ogg')
+	hitsound = list('modular_pod/sound/eff/weapon/blunty1.ogg', 'modular_pod/sound/eff/weapon/blunty2.ogg', 'modular_pod/sound/eff/weapon/blunty3.ogg')
 	min_force = 12
 	force = 18
 	throwforce = 15
