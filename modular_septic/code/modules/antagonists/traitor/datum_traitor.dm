@@ -17,6 +17,7 @@
 	. = ..()
 	owner.current.flash_darkness(100)
 	owner.current.apply_status_effect(/datum/status_effect/thug_shaker)
+	owner.current.special_item = /obj/item/modular_computer/laptop/preset/civilian
 
 /datum/antagonist/traitor/remove_innate_effects(mob/living/mob_override)
 	. = ..()

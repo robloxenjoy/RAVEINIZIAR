@@ -38,7 +38,7 @@
 	body_parts_covered = NECK|CHEST|ARMS
 	cold_protection = NECK|CHEST|ARMS
 	heat_protection = NECK|CHEST|ARMS
-	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT|ITEM_SLOT_OCLOTHING
 	armor = list(MELEE = 4, \
 				BULLET = 4, \
 				LASER = 0, \
@@ -77,7 +77,7 @@
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
-	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT|ITEM_SLOT_OCLOTHING
 	armor = list(MELEE = 4, \
 				BULLET = 4, \
 				LASER = 0, \
@@ -102,7 +102,7 @@
 	body_parts_covered = NECK|CHEST|ARMS
 	cold_protection = NECK|CHEST|ARMS
 	heat_protection = NECK|CHEST|ARMS
-	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT|ITEM_SLOT_OCLOTHING
 	armor = list(MELEE = 3, \
 				BULLET = 3, \
 				LASER = 0, \
@@ -208,7 +208,7 @@
 	body_parts_covered = NECK|CHEST|ARMS
 	cold_protection = NECK|CHEST|ARMS
 	heat_protection = NECK|CHEST|ARMS
-	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT|ITEM_SLOT_OCLOTHING
 	armor = list(MELEE = 2, \
 				BULLET = 2, \
 				LASER = 0, \

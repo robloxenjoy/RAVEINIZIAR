@@ -15,28 +15,27 @@
 /obj/structure/flora/tree/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.get_sharpness() && W.force > 5)
-			if(!istype(W, /obj/item/shard))
-				if(W.isAxe)
-					if(W.hitsound)
-						playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
-					user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
+			if(W.isAxe)
+				if(W.hitsound)
+					playsound(get_turf(src), 'modular_septic/sound/weapons/melee/hitree.ogg', 100, FALSE, FALSE)
+				user.visible_message(span_notice("[user] begins to cut down [src] with [W]."),span_notice("You begin to cut down [src] with [W]."), span_hear("You hear the sound of sawing."))
+				user.changeNext_move(W.attack_delay)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				W.damageItem("SOFT")
+				sound_hint()
+				if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
+					user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(W.attack_fatigue_cost)
-					W.damageItem("SOFT")
+					W.damageItem("HARD")
+					playsound(get_turf(src), 'modular_septic/sound/effects/fallheavy.ogg', 100 , FALSE, FALSE)
 					sound_hint()
-					if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
-						user.visible_message(span_notice("[user] fells [src] with the [W]."),span_notice("You fell [src] with the [W]."), span_hear("You hear the sound of a tree falling."))
-						user.changeNext_move(W.attack_delay)
-						user.adjustFatigueLoss(W.attack_fatigue_cost)
-						W.damageItem("HARD")
-						playsound(get_turf(src), 'modular_septic/sound/effects/fallheavy.ogg', 100 , FALSE, FALSE)
-						sound_hint()
 //					user.log_message("cut down [src] at [AREACOORD(src)]", LOG_ATTACK)
-						for(var/i=1 to log_amount)
-							new /obj/item/grown/log/tree/evil(get_turf(src))
-						var/obj/structure/flora/stump/S = new(loc)
-						S.name = "[name] stump"
-						qdel(src)
+					for(var/i=1 to log_amount)
+						new /obj/item/grown/log/tree/evil(get_turf(src))
+					var/obj/structure/flora/stump/S = new(loc)
+					S.name = "[name] stump"
+					qdel(src)
 	else
 		return ..()
 
@@ -60,6 +59,9 @@
 	if(islist(icon_states?.len))
 		icon_state = pick(icon_states)
 
+/mob/living/var/special_item
+/obj/structure/flora/tree/evil/var/list/itemstake = list()
+
 /obj/structure/flora/tree/evil
 	name = "Cursed Tree"
 	desc = "It has become so evil!"
@@ -76,6 +78,63 @@
 	. = ..()
 	icon_state = pick("treevil_1", "treevil_2", "treevil_3", "treevil_4", "treevil_5", "treevil_6", "treevil_7", "treevil_8")
 
+/obj/structure/flora/tree/evil/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_GRAB)
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.adjustFatigueLoss(5)
+		sound_hint()
+		if(get_dist(src, user) > 2)
+			return
+		var/mob/living/carbon/human/H = user
+		if(H.mind.has_antag_datum(/datum/antagonist/traitor))
+			if(H.special_item)
+				var/pickeditem = tgui_input_list(user, "You want something?",, list("LAPTOP"))
+				if(!pickeditem)
+					return
+				if(pickeditem == "LAPTOP")
+					new /obj/item/modular_computer/laptop/preset/civilian(get_turf(user))
+					H.special_item = null
+/*
+				var/pickeditem
+				init_items(H)
+				pickeditem = tgui_input_list(user, "You want something?",, list(itemstake))
+				if(!pickeditem)
+					return
+				if(get_dist(user, src) > 1)
+					return
+				if(pickeditem)
+					spawn_item(pickeditem, H)
+					itemstake = list()
+				..()
+			else
+				to_chat(user, "<i>Hmmm.</i>")
+				return
+
+/obj/structure/flora/tree/evil/proc/init_items(var/mob/living/carbon/human/H)
+	itemstake = list()
+	if(IS_TRAITOR(H))
+		if(H.special_item)
+			itemstake.Add("Individual")
+
+/obj/structure/flora/tree/evil/proc/spawn_item(var/pickeditem, var/mob/living/carbon/human/receiver)
+	var/spawnitem
+	switch(pickeditem)
+		if("Individual")
+			spawnitem = receiver.special_item
+			receiver.special_item = null
+	new spawnitem(receiver.loc)
+	receiver.put_in_active_hand(spawnitem)
+//	if(spawnitem == /obj/item/device/cellphone)
+//		var/obj/item/device/cellphone/C = W
+//		var/obj/item/device/rim_card/R = new()
+//		C.rimcard = R
+//		R.loc = src
+//		R.Phone = src
+	to_chat(receiver, "<i>It's my thing.</i>")
+*/
 /obj/structure/flora/tree/evil/long
 	name = "Long Cursed Tree"
 	desc = "It has become so evil! By the way, it's long."

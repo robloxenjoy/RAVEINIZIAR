@@ -169,6 +169,9 @@ GLOBAL_LIST_INIT(normal_employers, list(
 /// Checks if the given mob is a blood cultist
 #define IS_CULTIST(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/cult))
 
+/// Checks if the given mob is a traitor
+#define IS_TRAITOR(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/traitor))
+
 /// Checks if the given mind is a leader of the monkey antagonists
 #define IS_MONKEY_LEADER(mind) mind?.has_antag_datum(/datum/antagonist/monkey/leader)
 

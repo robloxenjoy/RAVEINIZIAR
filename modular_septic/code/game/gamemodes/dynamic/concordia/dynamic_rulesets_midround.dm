@@ -223,6 +223,9 @@
 		return FALSE
 	return ..()
 
+/datum/dynamic_ruleset/midround/concordia/autotraitor/finish_setup(mob/living/new_character, index)
+	new_characer.special_item = /obj/item/modular_computer/laptop/preset/civilian
+
 /datum/dynamic_ruleset/midround/concordia/autotraitor/execute()
 	var/mob/M = pick(living_players)
 	assigned += M
