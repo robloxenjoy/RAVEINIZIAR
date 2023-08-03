@@ -440,8 +440,8 @@ GLOBAL_LIST_EMPTY(objectives)
 
 /datum/objective/escape
 	name = "escape"
-	explanation_text = "Escape on the shuttle or an escape pod alive and without being in custody."
-	team_explanation_text = "Have all members of your team escape on a shuttle or pod alive, without being in custody."
+	explanation_text = "Escape on the PINKER alive and without being in custody."
+	team_explanation_text = "Have all members of your team escape on a PINKER alive, without being in custody."
 
 /datum/objective/escape/check_completion()
 	// Require all owners escape safely.
@@ -463,7 +463,7 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/escape/escape_with_identity/update_explanation_text()
 	if(target?.current)
 		target_real_name = target.current.real_name
-		explanation_text = "Escape on the shuttle or an escape pod with the identity of [target_real_name], the [target.assigned_role.title]"
+		explanation_text = "Escape on the PINKER with the identity of [target_real_name], the [target.assigned_role.title]"
 		var/mob/living/carbon/human/H
 		if(ishuman(target.current))
 			H = target.current

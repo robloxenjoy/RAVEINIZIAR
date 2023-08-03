@@ -378,10 +378,10 @@
 			for(var/area/shuttle/shuttle_area as anything in mobile_docking_port.shuttle_areas)
 				if(current_turf in shuttle_area)
 					return TRUE
-
+/*
 	if(!is_centcom_level(current_turf.z))//if not, don't bother
 		return FALSE
-
+*/
 	//Check for centcom itself
 	if(istype(current_turf.loc, /area/centcom))
 		return TRUE

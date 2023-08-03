@@ -75,6 +75,7 @@
 		/datum/reagent/ash,
 		/datum/reagent/diethylamine,
 		/datum/reagent/fuel/oil,
+		/datum/reagent/wittel,
 		/datum/reagent/saltpetre
 	)
 	//these become available once the manipulator has been upgraded to tier 4 (femto)
