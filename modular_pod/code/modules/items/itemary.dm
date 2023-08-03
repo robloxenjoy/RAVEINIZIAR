@@ -483,7 +483,9 @@
 	. = ..()
 	if(usedy)
 		return
+	var/srd = CONFIG_GET(number/shuttle_refuel_delay)
 	if(world.time - SSticker.round_start_time < srd)
-		to_chat(user, span_notice("The PINKER is prepares. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before attempting to call."))
+		to_chat(user, span_notice("The PINKER is getting ready. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before attempting to call."))
+		return
 	SSshuttle.emergency.request()
 	usedy = TRUE
