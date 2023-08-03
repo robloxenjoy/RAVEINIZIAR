@@ -219,21 +219,21 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/canEvac(mob/user)
 	var/srd = CONFIG_GET(number/shuttle_refuel_delay)
 	if(world.time - SSticker.round_start_time < srd)
-		return "The emergency shuttle is refueling. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before attempting to call."
+		return "The PINKER is prepares. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before attempting to call."
 
 	switch(emergency.mode)
 		if(SHUTTLE_RECALL)
-			return "The emergency shuttle may not be called while returning to CentCom."
+			return "The PINKER may not be called while returning to awakening phase."
 		if(SHUTTLE_CALL)
-			return "The emergency shuttle is already on its way."
+			return "The PINKER is already on its way."
 		if(SHUTTLE_DOCKED)
-			return "The emergency shuttle is already here."
+			return "The PINKER is already here."
 		if(SHUTTLE_IGNITING)
-			return "The emergency shuttle is firing its engines to leave."
+			return "The PINKER is firing its engines to leave."
 		if(SHUTTLE_ESCAPE)
-			return "The emergency shuttle is moving away to a safe distance."
+			return "The PINKER is moving away to a safe distance."
 		if(SHUTTLE_STRANDED)
-			return "The emergency shuttle has been disabled by CentCom."
+			return "The PINKER has been disabled by Graymouth Void."
 
 	return TRUE
 

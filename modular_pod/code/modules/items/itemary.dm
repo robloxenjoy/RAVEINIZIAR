@@ -483,5 +483,7 @@
 	. = ..()
 	if(usedy)
 		return
+	if(world.time - SSticker.round_start_time < srd)
+		to_chat(user, span_notice("The PINKER is prepares. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before attempting to call."))
 	SSshuttle.emergency.request()
 	usedy = TRUE
