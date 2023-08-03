@@ -45,7 +45,7 @@
 #define THIRST_FACTOR 5
 
 /// How much moving around increases carbon germ level
-#define GERM_LEVEL_MOVEMENT_INCREASE 0.2
+#define GERM_LEVEL_MOVEMENT_INCREASE 1
 
 /// Germ levels for carbon mob hygiene
 #define GERM_LEVEL_START_MIN 0

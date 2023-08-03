@@ -1,5 +1,5 @@
 /// Max damage we consider for damage_organs()
-#define MAX_CONSIDERED_ORGAN_DAMAGE_ROLL 75
+#define MAX_CONSIDERED_ORGAN_DAMAGE_ROLL 80
 
 // ~pulse levels, very simplified.
 #define PULSE_NONE 0   // So !M.pulse checks would be possible.

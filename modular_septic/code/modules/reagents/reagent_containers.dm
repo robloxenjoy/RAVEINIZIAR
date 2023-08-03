@@ -69,7 +69,7 @@
 		desired_transfer = free_space
 	var/datum/reagents/temporary_holder = liquids.take_reagents_flat(desired_transfer)
 	temporary_holder.trans_to(my_container.reagents, temporary_holder.total_volume)
-	to_chat(user, span_notice("I scoop up around [my_container.amount_per_transfer_from_this] units of liquids with [my_container]."))
+	to_chat(user, span_notice("I scoop up a some liquids with [my_container]."))
 	qdel(temporary_holder)
 	user.changeNext_move(my_container.attack_delay)
 	return TRUE
