@@ -17,7 +17,7 @@
 		SEND_SIGNAL(human, COMSIG_ADD_MOOD_EVENT, "[our_fraggot.real_name]", /datum/mood_event/fraggot, our_fraggot)
 	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list))
 		SEND_SOUND(human, sound('modular_pod/sound/eff/kill_her_now_kill_her_now.ogg', FALSE, CHANNEL_LOBBYMUSIC, 70))
-		to_chat(human, "<span class='warning'><span class='big bold'>[emoji_parse(":chaos:")][our_fraggot.real_name], THE [our_fraggot.mind?.assigned_role.title], IS A FRAGGOT! KILL THIS CREATURE![emoji_parse(":chaos:")]</span></span>")
+		to_chat(human, "<span class='warning'><span class='big bold'>[emoji_parse(":fraggot:")][our_fraggot.real_name], THE [our_fraggot.mind?.assigned_role.title], IS A FRAGGOT! KILL THIS CREATURE![emoji_parse(":chaos:")]</span></span>")
 //	RegisterSignal(our_fraggot, COMSIG_PARENT_EXAMINE, .proc/fraggot_examine)
 //	RegisterSignal(our_fraggot, COMSIG_LIVING_DEATH, .proc/fraggot_died)
 	RegisterSignal(our_fraggot, COMSIG_PARENT_PREQDELETED, .proc/fraggot_deleted)

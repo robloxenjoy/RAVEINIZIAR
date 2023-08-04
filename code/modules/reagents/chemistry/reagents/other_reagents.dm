@@ -188,22 +188,23 @@
 
 /datum/reagent/water/expose_obj(obj/exposed_obj, reac_volume)
 	. = ..()
-	exposed_obj.extinguish()
-	exposed_obj.wash(CLEAN_TYPE_ACID)
-	// Monkey cube
-	if(istype(exposed_obj, /obj/item/food/monkeycube))
-		var/obj/item/food/monkeycube/cube = exposed_obj
-		cube.Expand()
+	if(exposed_obj.resistance_flags & ON_FIRE)
+		exposed_obj.extinguish()
+		exposed_obj.wash(CLEAN_TYPE_ACID)
+		// Monkey cube
+		if(istype(exposed_obj, /obj/item/food/monkeycube))
+			var/obj/item/food/monkeycube/cube = exposed_obj
+			cube.Expand()
 
-	// Dehydrated carp
-	else if(istype(exposed_obj, /obj/item/toy/plush/carpplushie/dehy_carp))
-		var/obj/item/toy/plush/carpplushie/dehy_carp/dehy = exposed_obj
-		dehy.Swell() // Makes a carp
+		// Dehydrated carp
+		else if(istype(exposed_obj, /obj/item/toy/plush/carpplushie/dehy_carp))
+			var/obj/item/toy/plush/carpplushie/dehy_carp/dehy = exposed_obj
+			dehy.Swell() // Makes a carp
 
-	else if(istype(exposed_obj, /obj/item/stack/sheet/hairlesshide))
-		var/obj/item/stack/sheet/hairlesshide/HH = exposed_obj
-		new /obj/item/stack/sheet/wethide(get_turf(HH), HH.amount)
-		qdel(HH)
+		else if(istype(exposed_obj, /obj/item/stack/sheet/hairlesshide))
+			var/obj/item/stack/sheet/hairlesshide/HH = exposed_obj
+			new /obj/item/stack/sheet/wethide(get_turf(HH), HH.amount)
+			qdel(HH)
 
 /*
  * Water reaction to a mob
@@ -212,7 +213,8 @@
 /datum/reagent/water/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume)//Splashing people with water can help put them out!
 	. = ..()
 	if(methods & TOUCH)
-		exposed_mob.extinguish_mob() // extinguish removes all fire stacks
+		if(exposed_mob.fire_stacks > 0)
+			exposed_mob.extinguish_mob() // extinguish removes all fire stacks
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()

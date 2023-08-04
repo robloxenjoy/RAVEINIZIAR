@@ -846,17 +846,6 @@
 				var/obj/structure/stalker/flora/trees/tree = pick(typesof(/obj/structure/stalker/flora/trees/alive))
 				new tree(loc)
 */
-	if(randomcolor)
-		var/colori = list("red", "green", "blue", "none")
-		switch(colori)
-			if("red")
-				color = "#fed0d6"
-			if("green")
-				color = "#d1ffd1"
-			if("blue")
-				color = "#d1d4ff"
-			if("none")
-				return
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
@@ -913,6 +902,18 @@
 				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 			if("molyakii")
 				new /obj/structure/flora/ausbushes/molyakii(get_turf(src))
+
+	if(randomcolor)
+		var/colori = pick("red", "green", "blue", "none")
+		switch(colori)
+			if("red")
+				src.color = "#fed0d6"
+			if("green")
+				src.color = "#d1ffd1"
+			if("blue")
+				src.color = "#d1d4ff"
+			if("none")
+				return
 
 /turf/open/floor/plating/polovich/greengryaz/norandomgen
 	randomgenerate = FALSE

@@ -55,11 +55,13 @@
 /datum/reagent/toxin/badwater/shallow/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume)//Splashing people with water can help put them out!
 	. = ..()
 	if(methods & (TOUCH|VAPOR))
-		exposed_mob.extinguish_mob() // extinguish removes all fire stacks
+		if(exposed_mob.fire_stacks > 0)
+			exposed_mob.extinguish_mob() // extinguish removes all fire stacks
 
 /datum/reagent/toxin/badwater/shallow/expose_obj(obj/exposed_obj, reac_volume)
 	. = ..()
-	exposed_obj.extinguish()
+	if(exposed_obj.resistance_flags & ON_FIRE)
+		exposed_obj.extinguish()
 
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"

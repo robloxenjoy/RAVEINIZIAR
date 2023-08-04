@@ -74,9 +74,9 @@
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	inhand_icon_state = "ordinator_cloak"
 	strip_delay = 20
-	body_parts_covered = CHEST|ARMS
-	cold_protection = CHEST|ARMS
-	heat_protection = CHEST|ARMS
+	body_parts_covered = CHEST|ARMS|NECK
+	cold_protection = CHEST|ARMS|NECK
+	heat_protection = CHEST|ARMS|NECK
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_OVERSUIT|ITEM_SLOT_OCLOTHING
 	armor = list(MELEE = 4, \
 				BULLET = 4, \
