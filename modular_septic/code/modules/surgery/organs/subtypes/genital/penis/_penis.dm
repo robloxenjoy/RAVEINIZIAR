@@ -48,6 +48,12 @@
 	//ignore the arousal state of the knob
 	icon_state = "[base_icon_state][copytext(sprite_suffix, 1, length(sprite_suffix)-1)]"
 */
+
+/obj/item/organ/genital/penis/update_icon_state()
+	. = ..()
+//	update_sprite_suffix()
+	icon_state = "[icon_state]"
+
 /obj/item/organ/genital/penis/translate_size_to_examine(size = genital_size)
 	return translate_knob_size(size)
 

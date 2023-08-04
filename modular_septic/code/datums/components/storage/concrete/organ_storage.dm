@@ -2,7 +2,7 @@
 /datum/component/storage/concrete/organ
 	rustle_sound = list('modular_septic/sound/gore/organ1.ogg', 'modular_septic/sound/gore/organ2.ogg')
 	attack_hand_interact = FALSE
-	max_items = 99 //this doesn't actually matter
+	max_items = 13 //this doesn't actually matter
 	max_combined_w_class = 99 //this doesn't actually matter
 	max_w_class = WEIGHT_CLASS_GIGANTIC //this doesn't actually matter
 	allow_big_nesting = TRUE //this doesn't actually matter

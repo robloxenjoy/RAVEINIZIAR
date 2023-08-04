@@ -96,3 +96,62 @@
 	carry_weight = 200 GRAMS
 	body_parts_covered = HEAD
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/leather_headbag
+	name = "Leather Headbag"
+	desc = "So creepy..."
+	icon = 'modular_pod/icons/obj/clothing/hats.dmi'
+	icon_state = "leather_headbag"
+	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "ordinator_mask"
+	worn_icon_state = "leather_headbag"
+	max_integrity = 160
+	limb_integrity = 100
+//	repairable_by = /obj/item/stack/ballistic/plate
+	repairable_by_offhand = null
+	integrity_failure = 0.1
+	armor = list(MELEE = 3, \
+				BULLET = 3, \
+				LASER = 0, \
+				ENERGY = 10, \
+				BOMB = 0, \
+				BIO = 0, \
+				FIRE = 25, \
+				ACID = 50, \
+				WOUND = 1)
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	carry_weight = 200 GRAMS
+	body_parts_covered = HEAD|FACE|JAW|EYES|NECK
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT|HIDEEYES
+
+/obj/item/clothing/head/blackhood
+	name = "Blackhood"
+	desc = "Only mysterious people wear clothes like this."
+	icon = 'modular_pod/icons/obj/clothing/hats.dmi'
+	icon_state = "black_hood"
+	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "ordinator_mask"
+	worn_icon_state = "black_hood"
+	max_integrity = 160
+	limb_integrity = 100
+	repairable_by_offhand = null
+	integrity_failure = 0.1
+	armor = list(MELEE = 4, \
+				BULLET = 4, \
+				LASER = 0, \
+				ENERGY = 5, \
+				BOMB = 0, \
+				BIO = 0, \
+				FIRE = 10, \
+				ACID = 5, \
+				WOUND = 1)
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	carry_weight = 150 GRAMS
+	body_parts_covered = HEAD|NECK
+	flags_inv = HIDEFACE|HIDEFACIALHAIR

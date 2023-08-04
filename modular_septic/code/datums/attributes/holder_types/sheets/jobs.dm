@@ -844,7 +844,7 @@
 		SKILL_SHORTSWORD = list(-1, 1),
 		SKILL_THROWING = list(-5, 0),
 		SKILL_PICKPOCKET = list(-3, 2),
-		SKILL_LOCKPICKING = list(5, 15),
+		SKILL_LOCKPICKING = list(5, 10),
 		SKILL_SCIENCE = list(-2, 0),
 		SKILL_ACROBATICS = list(2, 10),
 	)

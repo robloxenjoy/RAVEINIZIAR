@@ -191,6 +191,39 @@
 	if(venturer_type == "venturergoer")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturergoer)
 
+/datum/job/thief
+	title = "Thief"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 5
+	spawn_positions = 5
+	supervisors = "Banditism."
+	selection_color = "#94009b"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/thief
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/security,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+
+/datum/outfit/thief
+	name = "Thief Uniform"
+
+	uniform = /obj/item/clothing/under/venturerclassic
+	pants = /obj/item/clothing/pants/venturer
+	suit = /obj/item/clothing/neck/darkproject
+//	r_pocket = /obj/item/shard/crystal/green
+//	id = /obj/item/keycard/chaot
+	belt = /obj/item/storage/belt/military/blackin/full
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/blackhood
+
 /datum/job/chaot
 	title = "Chaot"
 	department_head = list("Head of Personnel")
@@ -364,6 +397,7 @@
 	pants = /obj/item/clothing/pants/aktliver
 	r_pocket = /obj/item/keycard/akt/granger
 	suit = /obj/item/clothing/suit/armor/vest/leatherbreastt
+	head = /obj/item/clothing/head/leather_headbag
 	shoes = /obj/item/clothing/shoes/barhatki
 
 /datum/job/aktcurer

@@ -113,6 +113,10 @@
 /datum/job/venturer
 	attribute_sheet = /datum/attribute_holder/sheet/job/venturer
 */
+
+/datum/job/thief
+	attribute_sheet = /datum/attribute_holder/sheet/job/venturerthief
+
 /datum/job/chaot
 	attribute_sheet = /datum/attribute_holder/sheet/job/chaot
 

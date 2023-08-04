@@ -608,12 +608,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		mind.transfer_to(character)
 
 	if(prob(5))
-		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
+//		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
+		character.attributes.copy_sheet(/datum/attribute_holder/sheet/job/strongwillet)
 		character.height = HUMAN_HEIGHT_TALLEST
 		if(prob(65))
 			character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
 	else
-		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
+//		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
 		character.height = HUMAN_HEIGHT_MEDIUM
 
 	character.key = key

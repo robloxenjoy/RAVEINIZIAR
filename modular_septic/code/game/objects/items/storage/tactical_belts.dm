@@ -46,3 +46,35 @@
 		/obj/item/wormhole_jaunter,
 		/obj/item/stack/marker_beacon,
 		))
+
+/obj/item/storage/belt/military/blackin
+	name = "Lockpick Belt"
+	desc = "A belt used for lockpicks-holding."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "lockpick_belt"
+	inhand_icon_state = "militarywebbing"
+	worn_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon_state = "lockpick_belt"
+//	pickup_sound = 'modular_septic/sound/armor/equip/backpack_pickup.ogg'
+//	drop_sound = 'modular_septic/sound/armor/equip/backpack_drop.ogg'
+//	equip_sound = 'modular_septic/sound/armor/equip/backpack_wear.ogg'
+
+/obj/item/storage/belt/military/blackin/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 20
+	STR.set_holdable(list(
+		/obj/item/akt/lockpick,
+		))
+
+/obj/item/storage/belt/military/blackin/full/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/akt/lockpick/square = 2,
+		/obj/item/akt/lockpick/triangle = 2,
+		/obj/item/akt/lockpick/prylock = 2,
+		/obj/item/akt/lockpick/sawtooth = 2)
+	generate_items_inside(items_inside,src)
