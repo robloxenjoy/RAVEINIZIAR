@@ -283,8 +283,10 @@
 	. = chambered
 	if(cylinder_open)
 		return FALSE
-	if((bolt_type == BOLT_TYPE_BREAK_ACTION) && bolt_locked)
+	if(bolt_locked)
 		return FALSE
+//	if((bolt_type == BOLT_TYPE_BREAK_ACTION) && bolt_locked)
+//		return FALSE
 
 /obj/item/gun/ballistic/drop_bolt(mob/user)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, bolt_drop_sound_vary)

@@ -192,6 +192,9 @@
 	suppressor_x_offset = 8
 	custom_price = 900
 
+/obj/item/gun/ballistic/automatic/pistol/remis/ppk/empty
+	spawnwithmagazine = FALSE
+
 // "DEAGLE"
 /obj/item/gun/ballistic/automatic/pistol/remis/aniquilador
 	name = "\improper Aniquilador .50 LE Anti-Personnel Firearm"

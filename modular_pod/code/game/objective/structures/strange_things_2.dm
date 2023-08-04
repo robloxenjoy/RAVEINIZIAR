@@ -568,7 +568,7 @@
 			new /obj/item/clothing/pants/venturer(get_turf(user))
 			moneymoney -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("misericorde")
+		if("golden misericorde")
 			new /obj/item/knife/combat/goldenmisericorde(get_turf(user))
 			moneymoney -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
@@ -584,7 +584,135 @@
 /obj/structure/accepter/examine(mob/user)
 	. = ..()
 	if(moneymoney)
-		. += "<span class='notice'>Here is [src.moneymoney] savings!</span>"
+		. += "<span class='notice'>Here is [moneymoney] savings!</span>"
+
+/obj/structure/accepter/black
+	name = "Black Accepter"
+	desc = "Illegal version. Put in this crystals."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "black_accepter"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+	obj_flags = NONE
+	max_integrity = 1000
+
+/obj/structure/accepter/black/attackby(obj/item/I, mob/living/carbon/user, params)
+	. = ..()
+	if(istype(I, /obj/item/crystal))
+		if(user.a_intent != INTENT_DISARM)
+			return
+		user.visible_message(span_notice("[user] inserts crystal in Black Accepter."),span_notice("You insert crystal in Black Accepter."), span_hear("You hear the sound of inserting."))
+		sound_hint()
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
+		qdel(I)
+		moneymoney += 20
+	if(istype(I, /obj/item/shard/crystal))
+		if(user.a_intent != INTENT_DISARM)
+			return
+		user.visible_message(span_notice("[user] inserts crystal shard in Black Accepter."),span_notice("You insert crystal shard in Black Accepter."), span_hear("You hear the sound of inserting."))
+		sound_hint()
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
+		qdel(I)
+		moneymoney += 5
+
+/obj/structure/accepter/black/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_GRAB)
+		if(moneymoney > 0)
+			var/thing = tgui_input_list(user, "What you want?",, list("Guns", "Ammo", "Other"))
+			if(!thing)
+				return
+			if(thing == "Guns")
+				if(moneymoney < 100)
+					return
+				guns_find(user)
+			if(thing == "Ammo")
+				if(moneymoney < 50)
+					return
+				ammo_find(user)
+			if(thing == "Other")
+				if(moneymoney < 50)
+					return
+				other_find(user)
+
+/obj/structure/accepter/black/proc/guns_find(mob/living/carbon/user)
+	var/thingy = stripped_input(user, "Which gun you want?", "I want...")
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(moneymoney < 100)
+		return
+	switch(thingy)
+		if("paralyzer V350")
+			new /obj/item/gun/ballistic/revolver/remis/paralyzer/empty(get_turf(user))
+			moneymoney -= 100
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("bombeiro 22lr pistol")
+			if(moneymoney < 150)
+				return
+			new /obj/item/gun/ballistic/automatic/pistol/remis/ppk/empty(get_turf(user))
+			moneymoney -= 150
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		else
+			return
+
+/obj/structure/accepter/black/proc/ammo_find(mob/living/carbon/user)
+	var/thingy = stripped_input(user, "Which ammo you want?", "I want...")
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(moneymoney < 50)
+		return
+	switch(thingy)
+		if("paralyzer rounds")
+			new /obj/item/ammo_box/magazine/ammo_stack/pulser/loaded(get_turf(user))
+			moneymoney -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("22lr rounds")
+			if(moneymoney < 70)
+				return
+			new /obj/item/ammo_box/magazine/ammo_stack/c22lr/loaded(get_turf(user))
+			moneymoney -= 70
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("22lr magazine")
+			if(moneymoney < 70)
+				return
+			new /obj/item/ammo_box/magazine/ppk22lr/empty(get_turf(user))
+			moneymoney -= 70
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		else
+			return
+
+/obj/structure/accepter/black/proc/other_find(mob/living/carbon/user)
+	var/thingy = stripped_input(user, "Which thing you want?", "I want...")
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(moneymoney < 50)
+		return
+	switch(thingy)
+		if("carbonylmethamphetamine pill")
+			new /obj/item/reagent_containers/pill/carbonylmethamphetamine(get_turf(user))
+			moneymoney -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("morphine syringe")
+			new /obj/item/reagent_containers/syringe/morphine(get_turf(user))
+			moneymoney -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		else
+			return
+
+/obj/structure/accepter/black/examine(mob/user)
+	. = ..()
+	if(moneymoney)
+		. += "<span class='notice'>Here is [moneymoney] savings!</span>"
 
 /obj/structure/village_screamer
 	name = "Village Screamer"
@@ -627,12 +755,12 @@
 	SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 	can_scream = FALSE
 	addtimer(CALLBACK(src, .proc/can_scream), timeout)
-
+/*
 /obj/structure/village_screamer/proc/can_scream()
 	if(QDELETED(src))
 		return
 	can_scream = TRUE
-
+*/
 /obj/structure/eyecrazy
 	name = "Eye"
 	desc = "Eye of Time."

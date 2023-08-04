@@ -98,6 +98,9 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[min(round(ammo_count()), 9)]"
 
+/obj/item/ammo_box/magazine/ppk22lr/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/aniquilador
 	name = "Anaquilador Magazine (.50 LE)"
 	icon = 'modular_septic/icons/obj/items/ammo/pistol.dmi'

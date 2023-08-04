@@ -188,3 +188,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pulser
 	carry_weight = 1 KILOGRAMS
 	can_spin = FALSE
+
+/obj/item/gun/ballistic/revolver/remis/paralyzer/empty
+	spawnwithmagazine = FALSE
