@@ -846,6 +846,10 @@
 				var/obj/structure/stalker/flora/trees/tree = pick(typesof(/obj/structure/stalker/flora/trees/alive))
 				new tree(loc)
 */
+
+	if(randomcolor)
+		color = pick("#fed0d6", "#d1ffd1", "#d1d4ff", "")
+
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
@@ -903,20 +907,9 @@
 			if("molyakii")
 				new /obj/structure/flora/ausbushes/molyakii(get_turf(src))
 
-	if(randomcolor)
-		var/colori = pick("red", "green", "blue", "none")
-		switch(colori)
-			if("red")
-				src.color = "#fed0d6"
-			if("green")
-				src.color = "#d1ffd1"
-			if("blue")
-				src.color = "#d1d4ff"
-			if("none")
-				return
-
 /turf/open/floor/plating/polovich/greengryaz/norandomgen
 	randomgenerate = FALSE
+	randomcolor = FALSE
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical
@@ -1030,10 +1023,14 @@
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 1
+	var/randomcolor = TRUE
 
 /turf/open/floor/plating/polovich/greendirtevil/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+
+	if(randomcolor)
+		color = pick("#fed0d6", "#d1ffd1", "#d1d4ff", "")
 
 /turf/open/floor/plating/polovich/lightblue
 	name = "Blue Dirt"
@@ -1045,10 +1042,14 @@
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 1
+	var/randomcolor = TRUE
 
 /turf/open/floor/plating/polovich/lightblue/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+
+	if(randomcolor)
+		color = pick("#fed0d6", "#d1ffd1", "#d1d4ff", "")
 
 /turf/open/floor/plating/polovich/woodennewblue
 	name = "Wooden Floor"
