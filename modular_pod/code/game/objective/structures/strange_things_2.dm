@@ -668,7 +668,7 @@
 
 /obj/structure/column
 	name = "Stone Column"
-	desc = "THE SCREAM!"
+	desc = "So hard."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "column"
 	plane = ABOVE_GAME_PLANE

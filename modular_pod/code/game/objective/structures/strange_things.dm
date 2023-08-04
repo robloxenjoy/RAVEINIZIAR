@@ -590,7 +590,9 @@
 	icon_state = "tohubohu"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
+	obj_flags = NONE
 	anchored = TRUE
+	density = TRUE
 
 /obj/structure/beast/tohubohu/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()

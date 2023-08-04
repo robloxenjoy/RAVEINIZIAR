@@ -55,6 +55,7 @@
 	inhand_icon_state = "militarywebbing"
 	worn_icon = 'icons/mob/clothing/belt.dmi'
 	worn_icon_state = "lockpick_belt"
+	var/empty = FALSE
 //	pickup_sound = 'modular_septic/sound/armor/equip/backpack_pickup.ogg'
 //	drop_sound = 'modular_septic/sound/armor/equip/backpack_drop.ogg'
 //	equip_sound = 'modular_septic/sound/armor/equip/backpack_wear.ogg'
@@ -74,7 +75,7 @@
 		return
 	var/static/items_inside = list(
 		/obj/item/akt/lockpick/square = 2,
-		/obj/item/akt/lockpick/triangle = 2,
-		/obj/item/akt/lockpick/prylock = 2,
-		/obj/item/akt/lockpick/sawtooth = 2)
+		/obj/item/akt/lockpick/square/triangle = 2,
+		/obj/item/akt/lockpick/square/prylock = 2,
+		/obj/item/akt/lockpick/square/sawtooth = 2)
 	generate_items_inside(items_inside,src)

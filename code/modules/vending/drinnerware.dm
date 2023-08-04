@@ -36,7 +36,7 @@
 	icon_state = "refill_smoke"
 
 /obj/machinery/vending/stone_eater
-	name = "\improper Stone Eater"
+	name = "\improper Porridge Eater"
 	desc = "STONE PORRIDGE...."
 	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;MEDICINE!.;Hmmm, pickaxes.;Do you need ammo?"
 	icon = 'modular_septic/icons/obj/machinery/vending.dmi'

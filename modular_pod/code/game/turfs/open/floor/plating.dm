@@ -832,6 +832,7 @@
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 1
 	var/randomgenerate = TRUE
+	var/randomcolor = TRUE
 
 /turf/open/floor/plating/polovich/greengryaz/Initialize(mapload)
 	. = ..()
@@ -845,6 +846,17 @@
 				var/obj/structure/stalker/flora/trees/tree = pick(typesof(/obj/structure/stalker/flora/trees/alive))
 				new tree(loc)
 */
+	if(randomcolor)
+		var/colori = list("red", "green", "blue", "none")
+		switch(colori)
+			if("red")
+				color = "#fed0d6"
+			if("green")
+				color = "#d1ffd1"
+			if("blue")
+				color = "#d1d4ff"
+			if("none")
+				return
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
