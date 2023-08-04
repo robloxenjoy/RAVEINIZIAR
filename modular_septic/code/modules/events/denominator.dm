@@ -501,7 +501,6 @@
 
 /obj/machinery/door/keycard/denominator/podozl/akt/carehouse
 	puzzle_id = "carehouse"
-	forty = FALSE
 
 /obj/item/keycard/akt/infirmary
 	desc = "This key is for infirmary in the Akt Village..."
