@@ -2,10 +2,11 @@
 /datum/component/storage/concrete/organ
 	rustle_sound = list('modular_septic/sound/gore/organ1.ogg', 'modular_septic/sound/gore/organ2.ogg')
 	attack_hand_interact = FALSE
-	max_items = 13 //this doesn't actually matter
+	max_items = 15 //this doesn't actually matter
 	max_combined_w_class = 99 //this doesn't actually matter
 	max_w_class = WEIGHT_CLASS_GIGANTIC //this doesn't actually matter
 	allow_big_nesting = TRUE //this doesn't actually matter
+	var/using_right_now = FALSE
 	var/obj/item/bodypart/bodypart_affected
 
 // Unregister signals we don't want
@@ -53,6 +54,7 @@
 		I.stored_in = null
 		UnregisterSignal(I, COMSIG_CLICK)
 	bodypart_affected = null
+	using_right_now = FALSE
 	return ..()
 
 // Check if we are accessible
@@ -373,6 +375,9 @@
 		return FALSE
 	if(ismecha(M.loc)) // stops inventory actions in a mech
 		return FALSE
+	if(using_right_now)
+		to_chat(user, span_warning("Someome already opened it!"))
+		return FALSE
 	// this must come before the screen objects only block, dunno why it wasn't before
 	var/mob/living/L = M
 	var/mob/living/carbon/carbon_mob = parent
@@ -383,4 +388,5 @@
 	if(isliving(over_object) && (check_zone(L.zone_selected) == check_zone(bodypart_affected.body_zone)))
 		update_insides()
 		user_show_to_mob(M)
+		using_right_now = TRUE
 		return COMPONENT_NO_MOUSEDROP
