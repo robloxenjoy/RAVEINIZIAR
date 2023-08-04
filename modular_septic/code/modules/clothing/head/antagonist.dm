@@ -154,4 +154,4 @@
 	armor_damaged_sound = "light"
 	carry_weight = 150 GRAMS
 	body_parts_covered = HEAD|NECK
-	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
