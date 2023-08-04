@@ -848,7 +848,7 @@
 */
 
 	if(randomcolor)
-		color = pick("#fed0d6", "#d1ffd1", "#d1d4ff")
+		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
 
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
@@ -1030,7 +1030,7 @@
 	dir = rand(0,4)
 
 	if(randomcolor)
-		color = pick("#fed0d6", "#d1ffd1", "#d1d4ff")
+		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
 
 /turf/open/floor/plating/polovich/lightblue
 	name = "Blue Dirt"
@@ -1049,7 +1049,7 @@
 	dir = rand(0,4)
 
 	if(randomcolor)
-		color = pick("#fed0d6", "#d1ffd1", "#d1d4ff")
+		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
 
 /turf/open/floor/plating/polovich/woodennewblue
 	name = "Wooden Floor"
