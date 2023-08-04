@@ -195,6 +195,7 @@
 /mob/living/carbon/human/extinguish_mob()
 	if(!dna || !dna.species.extinguish_mob(src))
 		last_fire_update = null
+		playsound(src, 'modular_pod/sound/eff/extinguish.ogg', 60, FALSE)
 		..()
 //END FIRE CODE
 

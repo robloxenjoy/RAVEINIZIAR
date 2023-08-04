@@ -1404,6 +1404,7 @@
 		throw_alert("fire", /atom/movable/screen/alert/fire)
 		update_fire()
 		SEND_SIGNAL(src, COMSIG_LIVING_IGNITED,src)
+		playsound(src, 'modular_pod/sound/eff/ignition.ogg', 60, FALSE)
 		return TRUE
 	return FALSE
 

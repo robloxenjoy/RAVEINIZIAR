@@ -17,7 +17,6 @@
 	if(affected_carbon.disgust < DISGUST_LEVEL_DISGUSTED && DT_PROB(7.5, delta_time))
 		affected_carbon.adjust_disgust(12.5 * delta_time)
 
-
 /datum/addiction/opiods/end_withdrawal(mob/living/carbon/affected_carbon)
 	. = ..()
 	affected_carbon.remove_status_effect(STATUS_EFFECT_HIGHBLOODPRESSURE)

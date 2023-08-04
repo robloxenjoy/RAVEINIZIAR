@@ -755,7 +755,7 @@
 	UnregisterSignal(owner, COMSIG_MOVABLE_HEAR)
 
 /datum/reagent/medicine/atropine
-	name = "Atropine"
+	name = "Tata"
 	description = "If a patient is in critical condition, rapidly heals all damage types as well as regulating oxygen in the body. Excellent for stabilizing wounded patients."
 	reagent_state = LIQUID
 	color = "#1D353590" //slightly more blue, like epinephrine

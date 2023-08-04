@@ -647,3 +647,33 @@
 	light_range = 5
 	light_power = 1
 	light_color = "#00ff00"
+
+/obj/structure/table/stoney
+	name = "Stone Table"
+	desc = "So hard."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "table_stone"
+	smoothing_flags = NONE
+	smoothing_groups = null
+	canSmoothWith = null
+
+/obj/structure/table/oldwood
+	name = "Table"
+	desc = "Old."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "table_old"
+	smoothing_flags = NONE
+	smoothing_groups = null
+	canSmoothWith = null
+
+/obj/structure/column
+	name = "Stone Column"
+	desc = "THE SCREAM!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "column"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+//	obj_flags = NONE
+	max_integrity = 300

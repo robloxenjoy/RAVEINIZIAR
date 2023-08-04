@@ -31,7 +31,7 @@
 	taste_description = "not tasty water"
 	taste_mult = 1.5
 	liquid_evaporation_rate = 10
-	toxpwr = 1
+	toxpwr = 1.5
 
 /datum/reagent/toxin/badwater/shallow/expose_turf(turf/open/exposed_turf, reac_volume)
 	. = ..()
@@ -804,7 +804,7 @@
 	return ..() || .
 
 /datum/reagent/toxin/pancuronium
-	name = "Pancuronium"
+	name = "Grabama"
 	description = "An undetectable toxin that swiftly incapacitates its victim. May also cause breathing failure."
 	silent_toxin = TRUE
 	reagent_state = LIQUID
@@ -867,8 +867,9 @@
 	REMOVE_TRAIT(L, TRAIT_ANTICONVULSANT, name)
 
 /datum/reagent/toxin/nox/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	if(current_cycle >= 9)
-		M.Sleeping(40 * REM * delta_time)
+	switch(current_cycle)
+		if(1 to INFINITY)
+			M.Sleeping(40 * REM * delta_time)
 	M.adjustStaminaLoss(5 * REM * delta_time, 0)
 	..()
 	return TRUE

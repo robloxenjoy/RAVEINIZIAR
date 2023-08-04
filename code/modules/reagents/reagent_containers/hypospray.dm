@@ -264,7 +264,7 @@
 	list_reagents = list(/datum/reagent/medicine/salbutamol = 10, /datum/reagent/medicine/c2/penthrite = 10, /datum/reagent/medicine/oxandrolone = 10, /datum/reagent/medicine/sal_acid = 10 ,/datum/reagent/medicine/omnizine = 10 ,/datum/reagent/medicine/leporazine = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/atropine
-	name = "atropine autoinjector"
+	name = "tata autoinjector"
 	desc = "A rapid way to save a person from a critical injury state!"
 	icon_state = "atropen"
 	inhand_icon_state = "atropen"

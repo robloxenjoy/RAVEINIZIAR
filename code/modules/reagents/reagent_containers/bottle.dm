@@ -158,8 +158,8 @@
 	list_reagents = list(/datum/reagent/toxin/initropidril = 30)
 
 /obj/item/reagent_containers/glass/bottle/pancuronium
-	name = "pancuronium bottle"
-	desc = "A small bottle. Contains pancuronium."
+	name = "grabama bottle"
+	desc = "A small bottle. Contains grabama."
 	list_reagents = list(/datum/reagent/toxin/pancuronium = 30)
 
 /obj/item/reagent_containers/glass/bottle/sodium_thiopental
