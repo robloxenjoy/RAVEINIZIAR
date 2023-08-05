@@ -119,12 +119,10 @@
 
 /obj/item/gun/ballistic/Initialize(mapload)
 	. = ..()
-/*
 	if (!spawnwithmagazine)
-		bolt_locked = TRUE
+//		bolt_locked = TRUE
 		update_appearance()
 		return
-*/
 	if (!magazine)
 		magazine = new mag_type(src)
 	if(bolt_type == BOLT_TYPE_STANDARD)
