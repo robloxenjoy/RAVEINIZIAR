@@ -869,9 +869,7 @@
 	REMOVE_TRAIT(L, TRAIT_ANTICONVULSANT, name)
 
 /datum/reagent/toxin/nox/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	switch(current_cycle)
-		if(1 to INFINITY)
-			M.Sleeping(40 * REM * delta_time)
+	M.Sleeping(40 * REM * delta_time)
 	M.adjustStaminaLoss(5 * REM * delta_time, 0)
 	..()
 	return TRUE
