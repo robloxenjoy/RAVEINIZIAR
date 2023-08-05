@@ -586,7 +586,7 @@
 	if(moneymoney)
 		. += "<span class='notice'>Here is [moneymoney] savings!</span>"
 
-/obj/structure/accepter/black
+/obj/structure/accepterblack
 	name = "Black Accepter"
 	desc = "Illegal version. Put in this crystals."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
@@ -597,8 +597,9 @@
 	density = 1
 	obj_flags = NONE
 	max_integrity = 1000
+	var/moneymoney = 0
 
-/obj/structure/accepter/black/attackby(obj/item/I, mob/living/carbon/user, params)
+/obj/structure/accepterblack/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
 	if(istype(I, /obj/item/crystal))
 		if(user.a_intent != INTENT_DISARM)
@@ -617,7 +618,7 @@
 		qdel(I)
 		moneymoney += 5
 
-/obj/structure/accepter/black/attack_hand(mob/living/carbon/user, list/modifiers)
+/obj/structure/accepterblack/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
@@ -639,7 +640,7 @@
 					return
 				other_find(user)
 
-/obj/structure/accepter/black/proc/guns_find(mob/living/carbon/user)
+/obj/structure/accepterblack/proc/guns_find(mob/living/carbon/user)
 	var/thingy = stripped_input(user, "Which gun you want?", "I want...")
 	if(!thingy)
 		return
@@ -661,7 +662,7 @@
 		else
 			return
 
-/obj/structure/accepter/black/proc/ammo_find(mob/living/carbon/user)
+/obj/structure/accepterblack/proc/ammo_find(mob/living/carbon/user)
 	var/thingy = stripped_input(user, "Which ammo you want?", "I want...")
 	if(!thingy)
 		return
@@ -689,7 +690,7 @@
 		else
 			return
 
-/obj/structure/accepter/black/proc/other_find(mob/living/carbon/user)
+/obj/structure/accepterblack/proc/other_find(mob/living/carbon/user)
 	var/thingy = stripped_input(user, "Which thing you want?", "I want...")
 	if(!thingy)
 		return
@@ -709,7 +710,7 @@
 		else
 			return
 
-/obj/structure/accepter/black/examine(mob/user)
+/obj/structure/accepterblack/examine(mob/user)
 	. = ..()
 	if(moneymoney)
 		. += "<span class='notice'>Here is [moneymoney] savings!</span>"
@@ -754,13 +755,13 @@
 	priority_announce(thingy, "[user.real_name]", has_important_message = TRUE)
 	SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 	can_scream = FALSE
-	addtimer(CALLBACK(src, .proc/can_scream), timeout)
-/*
-/obj/structure/village_screamer/proc/can_scream()
+	addtimer(CALLBACK(src, .proc/cann_scream), timeout)
+
+/obj/structure/village_screamer/proc/cann_scream()
 	if(QDELETED(src))
 		return
 	can_scream = TRUE
-*/
+
 /obj/structure/eyecrazy
 	name = "Eye"
 	desc = "Eye of Time."
