@@ -352,6 +352,8 @@
 		return
 	var/mob/living/L = AM
 	var/snap = TRUE
+	if(L.body_position != STANDING_UP)
+		return
 	if(istype(L.buckled, /obj/vehicle))
 		var/obj/vehicle/ridden_vehicle = L.buckled
 		if(!ridden_vehicle.are_legs_exposed) //close the trap without injuring/trapping the rider if their legs are inside the vehicle at all times.
