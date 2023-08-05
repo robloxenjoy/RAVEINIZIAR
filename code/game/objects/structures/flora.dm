@@ -446,7 +446,7 @@
 	obj_flags = NONE
 	density = 0
 	anchored = 1
-	var/traps = TRUE
+//	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/crystal/Initialize(mapload)
 	. = ..()
@@ -456,9 +456,9 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-	if(traps)
-		if(prob(3))
-			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+//	if(traps)
+//		if(prob(3))
+//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/crystal/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -494,7 +494,7 @@
 	obj_flags = NONE
 	density = 0
 	anchored = 1
-	var/traps = TRUE
+//	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/bushka/Initialize(mapload)
 	. = ..()
@@ -505,9 +505,9 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	icon_state = pick("bushka1", "bushka2", "bushka3")
 
-	if(traps)
-		if(prob(2))
-			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+//	if(traps)
+//		if(prob(2))
+//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/bushka/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -587,7 +587,7 @@
 	obj_flags = NONE
 	density = 0
 	anchored = 1
-	var/traps = TRUE
+//	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/molyakii/Initialize(mapload)
 	. = ..()
@@ -598,9 +598,9 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	icon_state = "molyakii[rand(1, 2)]"
 
-	if(traps)
-		if(prob(2))
-			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+//	if(traps)
+//		if(prob(2))
+//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/molyakii/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -778,16 +778,16 @@
 	density = FALSE
 	anchored = TRUE
 	opacity = TRUE
-	var/traps = TRUE
+//	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/zarosli/midnight/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 	update_appearance()
 
-	if(traps)
-		if(prob(2))
-			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+//	if(traps)
+//		if(prob(2))
+//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/zarosli/midnight/ComponentInitialize()
 	. = ..()

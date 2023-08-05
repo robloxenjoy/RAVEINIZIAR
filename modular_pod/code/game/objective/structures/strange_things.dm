@@ -418,7 +418,7 @@
 	density = FALSE
 	plane = FLOOR_PLANE
 	layer = LATTICE_LAYER
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#00dd78"
 
@@ -451,7 +451,7 @@
 	density = FALSE
 	plane = FLOOR_PLANE
 	layer = LATTICE_LAYER
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#ff460e"
 
@@ -484,7 +484,7 @@
 	density = FALSE
 	plane = FLOOR_PLANE
 	layer = LATTICE_LAYER
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#008eff"
 
@@ -517,7 +517,7 @@
 	density = FALSE
 	plane = FLOOR_PLANE
 	layer = LATTICE_LAYER
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#e252ea"
 
