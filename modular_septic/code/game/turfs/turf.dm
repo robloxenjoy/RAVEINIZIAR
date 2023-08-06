@@ -85,8 +85,6 @@
 	sound_hint()
 	SEND_SIGNAL(src, COMSIG_TURF_MOB_FALL, faller)
 
-
-
 /obj/structure/stairs/MouseDropReceive(atom/movable/dropping, mob/living/user)
 	. = ..()
 	if(!isliving(dropping) || !isliving(user) || !dropping.has_gravity() || \
@@ -94,7 +92,7 @@
 		HAS_TRAIT_FROM(dropping, TRAIT_IMMOBILIZED, CLINGING_TRAIT))
 		return
 	var/turf/dropping_turf = get_turf(dropping)
-	if(!dropping_turf || (dropping_turf == src))
+	if(!dropping_turf)
 		return
 	var/z_difference = dropping_turf.z - src.z
 	if((z_difference < 0) || (z_difference > 1))
