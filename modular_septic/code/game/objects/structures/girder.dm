@@ -15,8 +15,8 @@
 	anchored = TRUE
 	var/openet = FALSE
 	var/can_walk = FALSE
-	var/openwindowound = 'modular_pod/sounds/eff/openwindows.ogg'
-	var/closewindowound = 'modular_pod/sounds/eff/closewindows.ogg'
+	var/openwindowound = 'modular_pod/sound/eff/openwindows.ogg'
+	var/closewindowound = 'modular_pod/sound/eff/closewindows.ogg'
 
 /obj/structure/windowed/update_icon_state()
 	. = ..()

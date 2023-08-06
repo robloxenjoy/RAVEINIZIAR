@@ -11,7 +11,7 @@
 	var/crafted = FALSE
 	/// Optional travel time for ladder in deciseconds
 	var/travel_time = 0
-	var/laddersound = 'modular_pod/sound/eff/ladder.ogg
+	var/laddersound = 'modular_pod/sound/eff/ladder.ogg'
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()

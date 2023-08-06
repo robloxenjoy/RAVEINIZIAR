@@ -1,5 +1,5 @@
 /datum/mood_event/fraggot
-	description = span_flashingdanger(span_big("I must kill the fatal! [emoji_parse(":fatal:")]"))
+	description = span_flashingdanger(span_big("I must kill the fatal!"))
 	mood_change = -5
 	timeout = 0
 
