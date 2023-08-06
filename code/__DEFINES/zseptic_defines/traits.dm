@@ -33,6 +33,8 @@
 #define TRAIT_NOPARRY "no_parry"
 /// Fraggot system
 #define TRAIT_FRAGGOT "fraggot"
+/// Misanthrope system
+#define TRAIT_MISANTHROPE "misanthrope"
 /// Fluoride stare
 #define TRAIT_FLUORIDE_STARE "fluoride_stare"
 /// Fluoride stare

@@ -323,6 +323,7 @@
 			babble.duration = BABBLE_DEFAULT_DURATION
 		halber.height = HUMAN_HEIGHT_MEDIUM
 		halber.attributes.update_attributes()
+		ADD_TRAIT(halber, TRAIT_MISANTHROPE, "misanthrope")
 		if(user.can_heartattack())
 			user.set_heartattack(TRUE)
 		halber.key = user.key

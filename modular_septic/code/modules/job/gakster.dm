@@ -210,6 +210,9 @@
 
 	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
 
+/datum/job/thief/pre_equip(mob/living/carbon/human/H)
+	..()
+	ADD_TRAIT(H, TRAIT_MISANTHROPE, "misanthrope")
 
 /datum/outfit/thief
 	name = "Thief Uniform"
@@ -223,6 +226,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/blackhood
+
 
 /datum/job/chaot
 	title = "Chaot"
