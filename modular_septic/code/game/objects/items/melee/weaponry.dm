@@ -169,6 +169,8 @@
 	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
 	icon_state = "stonehammer"
 	inhand_icon_state = "hammer"
+	worn_icon = null
+	worn_icon_state = null
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
