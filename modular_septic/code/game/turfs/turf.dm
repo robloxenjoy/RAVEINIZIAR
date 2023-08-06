@@ -84,7 +84,7 @@
 	playsound(faller, "modular_septic/sound/effects/collapse[rand(1,5)].ogg", 50, TRUE)
 	sound_hint()
 	SEND_SIGNAL(src, COMSIG_TURF_MOB_FALL, faller)
-
+/*
 /obj/structure/stairs/MouseDropReceive(atom/movable/dropping, mob/living/user)
 	. = ..()
 	if(!isliving(dropping) || !isliving(user) || !dropping.has_gravity() || \
@@ -111,7 +111,7 @@
 			dropping.forceMove(src)
 		return
 
-/*
+
 /turf/air_update_turf(update = FALSE, remove = FALSE)
 	. = ..()
 	liquid_update_turf()

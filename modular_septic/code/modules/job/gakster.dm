@@ -219,7 +219,7 @@
 //	r_pocket = /obj/item/shard/crystal/green
 //	id = /obj/item/keycard/chaot
 	belt = /obj/item/storage/belt/military/blackin/full
-	gloves = /obj/item/clothing/gloves/color/black
+//	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/blackhood
 
