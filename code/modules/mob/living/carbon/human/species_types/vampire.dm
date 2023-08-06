@@ -25,7 +25,7 @@
 /datum/species/vampire/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
 	. = ..()
 //	to_chat(C, "[info_text]")
-	C.skin_tone = "nigger"
+	C.skin_tone = "nox"
 	C.update_body(0)
 	if(isnull(batform))
 		batform = new

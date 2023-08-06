@@ -46,7 +46,7 @@
 	limbs_id = "homie"
 	examine_icon = 'modular_septic/icons/obj/items/deviouslick.dmi'
 	examine_icon_state = "caucasian_homie"
-	var/static/list/homie_types = list("caucasian", "nigger")
+	var/static/list/homie_types = list("caucasian", "nox")
 	var/homie_type = "caucasian"
 
 /datum/species/homie/New()

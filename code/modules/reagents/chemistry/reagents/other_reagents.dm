@@ -434,7 +434,7 @@
 			if(exposed_human.dna.species.id == SPECIES_HUMAN)
 				switch(exposed_human.skin_tone)
 					if("arab")
-						exposed_human.skin_tone = "nigger"
+						exposed_human.skin_tone = "nox"
 					if("albino")
 						exposed_human.skin_tone = "caucasian1"
 					if("caucasian1")

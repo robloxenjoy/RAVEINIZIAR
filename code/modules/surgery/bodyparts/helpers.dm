@@ -197,7 +197,7 @@
 			. = "c4abc5"
 		if("arab")
 			. = "fa9e32"
-		if("nigger")
+		if("nox")
 			. = "7f4160"
 		if("albino")
 			. = "faf3f7"

@@ -150,11 +150,11 @@ GLOBAL_LIST_INIT(skin_tones, sort_list(list(
 	"caucasian2",
 	"caucasian3",
 	"arab",
-	"nigger"
+	"nox"
 )))
 
 GLOBAL_LIST_INIT(skin_tone_names, list(
-	"nigger" = "Nigger",
+	"nox" = "Nox",
 	"arab" = "Bedouin Karak",
 	"albino" = "Albino",
 	"caucasian1" = "Pinkie",
