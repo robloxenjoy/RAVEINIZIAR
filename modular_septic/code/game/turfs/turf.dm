@@ -84,6 +84,35 @@
 	playsound(faller, "modular_septic/sound/effects/collapse[rand(1,5)].ogg", 50, TRUE)
 	sound_hint()
 	SEND_SIGNAL(src, COMSIG_TURF_MOB_FALL, faller)
+
+
+
+/obj/structure/stairs/MouseDropReceive(atom/movable/dropping, mob/living/user)
+	. = ..()
+	if(!isliving(dropping) || !isliving(user) || !dropping.has_gravity() || \
+		user.incapacitated() || \
+		HAS_TRAIT_FROM(dropping, TRAIT_IMMOBILIZED, CLINGING_TRAIT))
+		return
+	var/turf/dropping_turf = get_turf(dropping)
+	if(!dropping_turf || (dropping_turf == src))
+		return
+	var/z_difference = dropping_turf.z - src.z
+	if((z_difference < 0) || (z_difference > 1))
+		return
+	if(z_difference)
+		if(get_dist(src, dropping_turf) > 1)
+			return
+	else if(!dropping_turf.Adjacent(src) || !Adjacent(dropping_turf))
+		return
+	//Climb down
+	if((dropping_turf.z > src.z))
+		if(user != dropping)
+			dropping.visible_message(span_warning("<b>[user]</b> starts lowering <b>[dropping]</b> down to [src]"), \
+								span_notice("I start lowering <b>[dropping]</b> down to [src]."))
+		if(do_mob(user, dropping, 2 SECONDS))
+			dropping.forceMove(src)
+		return
+
 /*
 /turf/air_update_turf(update = FALSE, remove = FALSE)
 	. = ..()

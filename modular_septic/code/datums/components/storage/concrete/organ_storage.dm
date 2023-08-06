@@ -35,6 +35,8 @@
 /datum/component/storage/concrete/organ/Destroy()
 	for(var/atom/atom in contents())
 		atom.mouse_opacity = initial(atom.mouse_opacity)
+	if(using_right_now)
+		using_right_now = FALSE
 	return ..()
 
 // Assign a bodypart to be affected
@@ -54,7 +56,8 @@
 		I.stored_in = null
 		UnregisterSignal(I, COMSIG_CLICK)
 	bodypart_affected = null
-	using_right_now = FALSE
+	if(using_right_now)
+		using_right_now = FALSE
 	return ..()
 
 // Check if we are accessible
@@ -163,6 +166,8 @@
 		M.client.screen -= thing
 	if(M.active_storage == src)
 		M.active_storage = null
+	if(using_right_now)
+		using_right_now = FALSE
 	LAZYREMOVE(is_using, M)
 	return TRUE
 
