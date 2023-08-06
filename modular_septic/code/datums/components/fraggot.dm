@@ -61,6 +61,8 @@
 			"GAMING!!!!", \
 			"GAYWEB!!!!", \
 			"FATAL!!!", \
+			"WHITE DREAM RUSSIAN SERVER!!!", \
+			"SS14 LOL!!!", \
 			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!", \
 			"GODDAMNIT!!!!", \
 			"FUCK!!!!", \

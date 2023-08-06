@@ -1205,6 +1205,21 @@
 		else
 			show_traitor_panel(M)
 
+	else if(href_list["fatal"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/mob/living/M = locate(href_list["fatal"])
+		M.AddComponent(/datum/component/fraggot)
+
+	else if(href_list["fatalremove"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/mob/living/M = locate(href_list["fatal"])
+		if(HAS_TRAIT(M.FRAGGOT_TRAIT))
+			qdel(M.GetComponent(/datum/component/fraggot))
+
 	else if(href_list["skill"])
 		if(!check_rights(R_ADMIN))
 			return
