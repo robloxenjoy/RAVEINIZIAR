@@ -1,5 +1,5 @@
 /datum/mood_event/fraggot
-	description = span_flashingdanger(span_big("I must kill the fraggot!"))
+	description = span_flashingdanger(span_big("I must kill the fatal! [emoji_parse(":fatal:")]"))
 	mood_change = -5
 	timeout = 0
 
@@ -7,9 +7,9 @@
 	description = span_flashingdanger(span_big("I must kill [fraggot.real_name]!"))
 
 /datum/mood_event/fraggot/killed
-	description = span_flashingdanger(span_big("Fraggot is killed! AWESOME!"))
+	description = span_flashingdanger(span_big("Fatal is killed! AWESOME!"))
 	mood_change = 5
 	timeout = 5 MINUTES
 
 /datum/mood_event/fraggot/killed/add_effects(mob/living/fraggot)
-	description = span_flashingdanger(span_big("FRAGGOT IS KILLED!"))
+	description = span_flashingdanger(span_big("FATAL IS KILLED!"))

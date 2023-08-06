@@ -1,6 +1,6 @@
 //Fraggots
 /atom/movable/screen/fullscreen/niqqer
-	name = "NIQQER"
+	name = "WHAT"
 	icon = 'modular_septic/icons/hud/screen_chungus.dmi'
 	icon_state = "niqqer"
 	screen_loc = "WEST,SOUTH to EAST,NORTH"

@@ -50,7 +50,7 @@
 				if(!wear_neck)
 					var/necky = get_bodypart_nostump(BODY_ZONE_PRECISE_NECK)
 					if(!LAZYLEN(clothingonpart(necky)))
-						. += span_flashingdanger("[emoji_parse(":fraggot:")] [uppertext(src.name)] IS A FRAGGOT! [uppertext(src.p_they())] MUST BE KILLED!")
+						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] IS A FATAL! [uppertext(src.p_they())] MUST BE KILLED!")
 	else
 		. += "[icon2html(dna.species.examine_icon, user, dna.species.examine_icon_state)] <span class='info'>Oh, this is <EM>[obscure_name ? "Unknown" : fancy_name]</EM>, [prefix_a_or_an(dna.species.name)] <EM>[dna.species.name]</EM>!</span>"
 		if(HAS_TRAIT(src, TRAIT_FRAGGOT))
@@ -58,7 +58,7 @@
 				if(!wear_neck)
 					var/necky = get_bodypart_nostump(BODY_ZONE_PRECISE_NECK)
 					if(!LAZYLEN(clothingonpart(necky)))
-						. += span_flashingdanger("[emoji_parse(":fraggot")] [uppertext(src.name)] IS A FRAGGOT! [uppertext(src.p_they())] MUST BE KILLED!")
+						. += span_flashingdanger("[emoji_parse(":fatal")] [uppertext(src.name)] IS A FATAL! [uppertext(src.p_they())] MUST BE KILLED!")
 	. += "<br><hr class='infohr'>"
 
 	//TODO: Add a social recordkeeping mechanic and datum to keep tracker of who the viewer knows
