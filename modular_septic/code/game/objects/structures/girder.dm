@@ -15,7 +15,8 @@
 	anchored = TRUE
 	var/openet = FALSE
 	var/can_walk = FALSE
-	var/windowsound = 'modular_pod/sounds/eff/.ogg'
+	var/openwindowound = 'modular_pod/sounds/eff/openwindows.ogg'
+	var/closewindowound = 'modular_pod/sounds/eff/closewindows.ogg'
 
 /obj/structure/windowed/update_icon_state()
 	. = ..()
@@ -42,12 +43,13 @@
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.adjustFatigueLoss(5)
-		playsound(get_turf(src), windowsound, 80 , FALSE, FALSE)
 		sound_hint()
 		if(!openet)
 			openet = TRUE
+			playsound(get_turf(src), openwindowound, 80 , FALSE, FALSE)
 		else
 			openet = FALSE
+			playsound(get_turf(src), openwindowound, 80 , FALSE, FALSE)
 
 /obj/structure/windowed/windows
 	name = "Window"

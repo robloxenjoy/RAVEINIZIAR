@@ -11,6 +11,7 @@
 	var/crafted = FALSE
 	/// Optional travel time for ladder in deciseconds
 	var/travel_time = 0
+	var/laddersound = 'modular_pod/sound/eff/ladder.ogg
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
@@ -163,8 +164,10 @@
 /obj/structure/ladder/proc/show_fluff_message(going_up, mob/user)
 	if(going_up)
 		user.visible_message(span_notice("[user] climbs up [src]."), span_notice("You climb up [src]."))
+		playsound(get_turf(user), laddersound, 80 , FALSE, FALSE)
 	else
 		user.visible_message(span_notice("[user] climbs down [src]."), span_notice("You climb down [src]."))
+		playsound(get_turf(user), laddersound, 80 , FALSE, FALSE)
 
 
 // Indestructible away mission ladders which link based on a mapped ID and height value rather than X/Y/Z.
