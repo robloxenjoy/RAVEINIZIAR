@@ -35,6 +35,8 @@
 			msg += span_info("\nMy blood type is <span class='artery'>[blood_name]</span>.")
 		if(!H.is_literate())
 			msg += span_info("\nI am proudly iliterate.")
+		if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
+			msg += span_info("\n<span class='evilblack'>I HATE PEOPLE</span>.")
 		if(length(H.quirks))
 			msg += span_info("\nI am <i>\"special\"</i>:")
 			for(var/datum/quirk/quirk as anything in H.quirks)

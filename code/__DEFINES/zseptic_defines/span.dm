@@ -10,6 +10,7 @@
 #define span_lowpain(str) ("<span class='lowpain'>" + str + "</span>")
 #define span_lowestpain(str) ("<span class='lowestpain'>" + str + "</span>")
 #define span_artery(str) ("<span class='artery'>" + str + "</span>")
+#define span_evilblack(str) ("<span class='evilblack'>" + str + "</span>")
 #define span_infection(str) ("<span class='infection'>" + str + "</span>")
 #define span_necrosis(str) ("<span class='necrosis'>" + str + "</span>")
 #define span_dead(str) ("<span class='dead'>" + str + "</span>")

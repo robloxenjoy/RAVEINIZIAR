@@ -1217,7 +1217,7 @@
 			return
 
 		var/mob/living/M = locate(href_list["fatal"])
-		if(HAS_TRAIT(M.FRAGGOT_TRAIT))
+		if(HAS_TRAIT(M, FRAGGOT_TRAIT))
 			qdel(M.GetComponent(/datum/component/fraggot))
 
 	else if(href_list["skill"])

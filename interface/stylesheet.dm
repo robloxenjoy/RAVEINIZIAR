@@ -124,6 +124,7 @@ h1.alert, h2.alert		{color: #000000;}
 .artery					{color: #9B5455; text-shadow: 0 0 3px #9B5455;}
 .userdanger				{color: #ba55d3; text-shadow: 0 0 6px #c75be2; font-size: 110%}
 .boned				    {color: #F6ECBE; text-shadow: 0 0 6px #634A63; font-size: 110%}
+.evilblack				{color: #930000; text-shadow: 0 0 3px #000000;}
 .bolddanger 			{color: #c51e1e; text-shadow: 0 0 3px #ff4747; font-weight: bold;}
 .pinkdang 				{color: #c2006b; text-shadow: 0 0 3px #8a3e85; font-weight: bold;}
 .bigdanger				{color: #c51e1e; font-size: 140%; text-shadow: 0 0 6px #ff4444;}
