@@ -67,6 +67,8 @@
 /mob/living/makeTrail(turf/target_turf, turf/start, direction)
 	if(!has_gravity() || !isturf(start) || !blood_volume)
 		return
+	if(isopenspaceturf(start))
+		return
 
 	var/bleed_amount = bleedDragAmount()
 	if(!bleed_amount)
