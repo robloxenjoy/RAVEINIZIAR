@@ -973,6 +973,7 @@
 						user.changeNext_move(CLICK_CD_GRABBING)
 						sound_hint()
 						qdel(W)
+/*
 		else if(istype(W, /obj/item/stupidbottles/bluebottle))
 			if(!saturated)
 				var/obj/item/stupidbottles/bluebottle/B = W
@@ -990,6 +991,7 @@
 			else
 				to_chat(user, span_notice("Dirt is saturated already."))
 				return
+*/
 		else if(istype(W, /obj/item/seeding/aguoseeds))
 			if(locate(/obj/structure/) in get_turf(src))
 				return
