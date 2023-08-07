@@ -76,8 +76,11 @@
 /obj/item/lamp/attackby(obj/item/W, mob/user)
 	..()
 	if(istype(W, /obj/item/organ/spleen/vilir))
-		to_chat(user, span_notice("You fill the lamp with vilir."))
 		var/obj/item/organ/spleen/vilir/V = W
+		if(V.used)
+			to_chat(user, span_notice("Vilir already used!"))
+			return
+		to_chat(user, span_notice("You fill the lamp with vilir."))
 		V.used = TRUE
 		light()
 
@@ -133,6 +136,8 @@
 
 /obj/structure/lampwall/attackby(obj/item/W, mob/user)
 	// attempt to insert lamp
+	return
+/*
 	if(lightlamp && !lightlamp.lit)
 		if(istype(W, /obj/item/organ/spleen/vilir))
 			var/obj/item/organ/spleen/vilir/V = W
@@ -144,11 +149,13 @@
 		else if(lightlamp)
 			return
 
-//		user.drop_item()
-	insert_lamp(W)
-	src.add_fingerprint(user)
+*/
 
-	update_icon()
+//		user.drop_item()
+//	insert_lamp(W)
+//	src.add_fingerprint(user)
+
+//	update_icon()
 
 /obj/structure/lampwall/proc/remove_lamp()
 	. = lightlamp
