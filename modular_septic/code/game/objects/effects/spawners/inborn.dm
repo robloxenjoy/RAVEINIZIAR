@@ -99,6 +99,7 @@
 	if(prob(5))
 		new_spawn.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
 		new_spawn.height = HUMAN_HEIGHT_TALLEST
+		ADD_TRAIT(new_spawn, TRAIT_GIANT, GENETIC_MUTATION)
 		if(prob(65))
 			new_spawn.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(new_spawn.drop_location()), FALSE)
 	else

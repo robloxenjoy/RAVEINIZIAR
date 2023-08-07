@@ -23,6 +23,25 @@
 	else
 		return ..()
 
+// Liquid choking
+/datum/emote/living/chokeliquid
+	key = "liquidchoke"
+	key_third_person = "chokes"
+	message = "chokes."
+	emote_type = EMOTE_AUDIBLE
+	muzzle_ignore = TRUE
+	hands_use_check = FALSE
+
+// Choking on liquids
+/datum/emote/living/chokeliquid/get_sound(mob/living/user)
+	if(ishuman(user))
+		if(user.gender != FEMALE)
+			return "modular_septic/sound/emotes/gurp_male[rand(1, 2)].ogg"
+		else
+			return "modular_septic/sound/emotes/gurp_female[rand(1, 2)].ogg"
+	else
+		return ..()
+
 // Burping
 /datum/emote/living/burp/get_sound(mob/living/user)
 	if(ishuman(user))
@@ -77,7 +96,7 @@
 /datum/emote/living/sniff/get_sound(mob/living/user)
 	if(ishuman(user))
 		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/snore_male1.ogg"
+			return "modular_septic/sound/emotes/sniff_male1.ogg"
 		else
 			return "modular_septic/sound/emotes/sniff_female1.ogg"
 	else
@@ -126,6 +145,17 @@
 	else
 		return ..()
 
+/datum/emote/living/scream
+	key = "scream"
+	key_third_person = "screams"
+	message = "screams!"
+	message_mime = "acts out a scream!"
+	emote_type = EMOTE_AUDIBLE
+//	only_forced_audio = TRUE
+//	vary = TRUE
+	muzzle_ignore = FALSE
+	hands_use_check = FALSE
+
 // Normal screaming
 /datum/emote/living/scream/get_sound(mob/living/user)
 	if(ishuman(user))
@@ -147,6 +177,16 @@
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	hands_use_check = FALSE
+
+/*
+/datum/emote/living/carbon/human/scream/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/human = user
+	if(human.mind?.miming)
+		return
+	return human.dna.species.get_scream_sound(human)
+*/
 
 /datum/emote/living/fallscream/get_sound(mob/living/user)
 	if(ishuman(user))

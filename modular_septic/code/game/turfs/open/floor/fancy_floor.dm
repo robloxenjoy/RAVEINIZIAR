@@ -21,5 +21,5 @@
 	icon_state = "carpet-255"
 	base_icon_state = "carpet"
 	floor_tile = /obj/item/stack/tile/carpet/redd
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_PURPLEE)
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_CARPET_BLACKK)
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_BLACKK)

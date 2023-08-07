@@ -50,6 +50,7 @@
 		else
 			openet = FALSE
 			playsound(get_turf(src), openwindowound, 80 , FALSE, FALSE)
+		update_appearance(UPDATE_ICON)
 
 /obj/structure/windowed/windows
 	name = "Window"

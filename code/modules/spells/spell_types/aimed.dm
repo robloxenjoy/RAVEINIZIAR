@@ -111,11 +111,11 @@
 
 /obj/effect/proc_holder/spell/aimed/fireball
 	name = "Fireball"
-	desc = "This spell fires an explosive fireball at a target."
+	desc = "This spell fires fireball at a target."
 	school = SCHOOL_EVOCATION
 	charge_max = 60
 	clothes_req = FALSE
-	invocation = "ONI SOMA"
+	invocation = "PURTATOR CELL!"
 	invocation_type = INVOCATION_SHOUT
 	range = 20
 	cooldown_min = 20 //10 deciseconds reduction per rank

@@ -275,8 +275,8 @@
 	AddElement(/datum/element/swabable, CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2,4), 15)
 
 /obj/effect/decal/cleanable/ants
-	name = "space ants"
-	desc = "A small colony of space ants. They're normally used to the vacuum of space, so they can't climb too well."
+	name = "Cosmic Spiders"
+	desc = "They are eating..."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ants"
 	beauty = -150

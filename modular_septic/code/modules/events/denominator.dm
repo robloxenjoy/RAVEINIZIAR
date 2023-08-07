@@ -334,7 +334,7 @@
 						return
 					lockstate = null
 					playsound(src, 'modular_pod/sound/eff/lockpicking1.ogg', 70, FALSE, 3)
-					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
+					var/diceroll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
 					var/obj/item/melee/bita/BI = I
 					if(diceroll == DICE_CRIT_SUCCESS)
 						src.visible_message(span_steal("[user] lockpicked [src] by force!"),span_steal("You lockpicked [src] by force."), span_hear("You hear the sound of lockpicking."))
@@ -345,7 +345,7 @@
 						open()
 						return
 					if(diceroll <= DICE_SUCCESS)
-						src.visible_message(span_steal("[user] tried to lockpick [src], but failed!"),span_steal("You failed to lockpick [src]."), span_hear("You hear the sound of failed lockpicking."))
+						src.visible_message(span_steal("[user] tried to lockpick [src] by force, but failed!"),span_steal("You failed to lockpick [src] by force."), span_hear("You hear the sound of failed lockpicking."))
 						user.changeNext_move(CLICK_CD_GRABBING)
 						user.adjustFatigueLoss(20)
 						BI.damageItem("HARD")

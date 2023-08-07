@@ -117,6 +117,9 @@
 /datum/job/thief
 	attribute_sheet = /datum/attribute_holder/sheet/job/venturerthief
 
+/datum/job/leader
+	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
+
 /datum/job/chaot
 	attribute_sheet = /datum/attribute_holder/sheet/job/chaot
 

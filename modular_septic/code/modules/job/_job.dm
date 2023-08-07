@@ -112,7 +112,7 @@
 			GLOB.data_core.birthday_boys += spawned_human.real_name
 	// this needs to be reset to pick up the color from preferences
 //	spawned.chat_color_name = ""
-	spawned.chat_color = ""
+//	spawned.chat_color = ""
 
 /datum/job/proc/assign_genitalia(mob/living/carbon/human/spawned, client/player_client)
 	spawned.dna.features["penis_size"] = clamp(rand(min_dicksize, max_dicksize), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)

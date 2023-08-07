@@ -2,7 +2,7 @@
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
 	savefile_key = "filmgrainpref"
 	savefile_identifier = PREFERENCE_PLAYER
-	default_value = TRUE
+	default_value = FALSE
 
 /datum/preference/toggle/filmgrain/apply_to_client(client/client, value)
 	if(client.mob?.hud_used)

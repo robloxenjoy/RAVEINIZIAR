@@ -491,6 +491,7 @@
 	icon_state = "longaxe"
 	inhand_icon_state = "longaxe"
 	current_atk_mode = SLASH_MODE
+	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
 	slash_hitsound = list('modular_septic/sound/weapons/melee/heavyysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash3.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash4.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavyysharp_deploy.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/heavyysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish3.ogg')
@@ -780,6 +781,7 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
 	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.ogg', 'modular_septic/sound/weapons/melee/slashflesh2.ogg', 'modular_septic/sound/weapons/melee/slashflesh3.ogg')
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
@@ -866,6 +868,7 @@
 	pickup_sound = 'modular_pod/sound/eff/weapon/2blade_draw.ogg'
 	miss_sound = list('modular_pod/sound/eff/weapon/2blade_swing.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
 	slash_hitsound = list('modular_pod/sound/eff/weapon/2blade_impact.ogg', 'modular_pod/sound/eff/weapon/2blade_impact2.ogg', 'modular_pod/sound/eff/weapon/2blade_impact3.ogg')
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 15, "rip_time" = 3, "embed_chance" = 6, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)

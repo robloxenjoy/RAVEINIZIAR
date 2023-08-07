@@ -581,8 +581,8 @@
 	desc = "These leaves lure me."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "molyakii"
-	plane = ABOVE_GAME_PLANE
-	layer = FLY_LAYER
+	plane = FLOOR_PLANE
+	layer = LATTICE_LAYER
 	resistance_flags = FLAMMABLE
 	obj_flags = NONE
 	density = 0

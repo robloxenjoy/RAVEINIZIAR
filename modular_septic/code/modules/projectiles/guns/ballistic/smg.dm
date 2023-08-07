@@ -58,7 +58,7 @@
 	safety_on_sound = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/smg/hksmg.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/smg/hksmg_silenced.ogg'
-	mag_type =	/obj/item/ammo_box/magazine/hksmg22lr
+	mag_type = /obj/item/ammo_box/magazine/hksmg22lr
 	weapon_weight = WEAPON_LIGHT
 	bolt_type = BOLT_TYPE_LOCKING
 	slot_flags = ITEM_SLOT_BELT
@@ -228,7 +228,7 @@
 	fireselector_semi = 'modular_septic/sound/weapons/guns/smg/bolsa_safety.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/smg/bolsa_safety.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/smg/bolsa_safety.ogg'
-	mag_type =	/obj/item/ammo_box/magazine/uzi9mm
+	mag_type = /obj/item/ammo_box/magazine/uzi9mm
 	foldable = TRUE
 	folded = TRUE
 	w_class = WEIGHT_CLASS_NORMAL

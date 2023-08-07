@@ -165,40 +165,52 @@
 	desc = "Thanks to this, the dark light will be filled with bright light."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "green_crystal"
+	worn_icon = null
+	worn_icon_state = null
 	light_range = 2
 	light_power = 2
 	light_color = "#00dd78"
 	light_system = MOVABLE_LIGHT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 
 /obj/item/crystal/red
 	name = "Crystal"
 	desc = "Thanks to this, the dark light will be filled with bright light."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "red_crystal"
+	worn_icon = null
+	worn_icon_state = null
 	light_color = "#ff460e"
 	light_range = 2
 	light_power = 2
 	light_system = MOVABLE_LIGHT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 
 /obj/item/crystal/blue
 	name = "Crystal"
 	desc = "Thanks to this, the dark light will be filled with bright light."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "blue_crystal"
+	worn_icon = null
+	worn_icon_state = null
 	light_color = "#008eff"
 	light_range = 2
 	light_power = 2
 	light_system = MOVABLE_LIGHT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 
 /obj/item/crystal/pink
 	name = "Crystal"
 	desc = "Thanks to this, the dark light will be filled with bright light."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "pink_crystal"
+	worn_icon = null
+	worn_icon_state = null
 	light_color = "#e252ea"
 	light_range = 2
 	light_power = 2
 	light_system = MOVABLE_LIGHT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 
 /*
 /obj/structure/crystal_holder

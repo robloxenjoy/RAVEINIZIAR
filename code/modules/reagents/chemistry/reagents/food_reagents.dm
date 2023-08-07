@@ -1042,11 +1042,13 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
-/datum/reagent/consumable/meso_gelatine/on_mob_metabolize(mob/living/L)
+/datum/reagent/consumable/meso_gelatine/on_mob_metabolize(mob/living/L, delta_time, times_fired)
 	..()
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+	L.adjustFatigueLoss(1 * REM * delta_time)
 	ADD_TRAIT(L, TRAIT_SHOCKIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_NOFIRE, type)
+
 
 /datum/reagent/consumable/meso_gelatine/on_mob_end_metabolize(mob/living/L)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)

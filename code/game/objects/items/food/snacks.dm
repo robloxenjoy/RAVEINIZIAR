@@ -37,7 +37,7 @@
 	icon_state = "guleberry"
 //	bite_consumption_mod = 2
 	foodtypes = FRUIT
-	grind_results = list(/datum/reagent/consumable/guleberryjelly = 1)
+	grind_results = list(/datum/reagent/consumable/guleberryjelly = 1, /datum/reagent/drug/kravsa = 2)
 	food_reagents = list(/datum/reagent/consumable/guleberryjelly = 1, /datum/reagent/drug/kravsa = 2)
 	w_class = WEIGHT_CLASS_TINY
 	eat_time = 2
@@ -54,7 +54,8 @@
 	desc = "It was deep in the water."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "meso_gelatine"
-	food_reagents = list(/datum/reagent/consumable/meso_gelatine = 2)
+	grind_results = list(/datum/reagent/consumable/meso_gelatine = 4)
+	food_reagents = list(/datum/reagent/consumable/meso_gelatine = 3)
 	tastes = list("wet" = 1)
 	food_flags = SEAFOOD
 	w_class = WEIGHT_CLASS_TINY
@@ -62,7 +63,7 @@
 /obj/item/food/berries/redcherrie/lie
 	name = "Gule Berry"
 	desc = "Berry."
-	grind_results = list(/datum/reagent/consumable/guleberryjelly = 1)
+	grind_results = list(/datum/reagent/consumable/guleberryjelly = 1,  /datum/reagent/toxin/mutagen = 6)
 	food_reagents = list(/datum/reagent/consumable/guleberryjelly = 1, /datum/reagent/toxin/mutagen = 6)
 	bite_consumption = 7
 
@@ -79,7 +80,7 @@
 	icon_state = "leanberry"
 //	bite_consumption_mod = 2
 	foodtypes = FRUIT
-	grind_results = list(/datum/reagent/consumable/leanberryjelly = 1)
+	grind_results = list(/datum/reagent/consumable/leanberryjelly = 1, /datum/reagent/drug/lean = 8)
 	food_reagents = list(/datum/reagent/consumable/leanberryjelly = 1, /datum/reagent/drug/lean = 8)
 	w_class = WEIGHT_CLASS_TINY
 	eat_time = 2
@@ -92,6 +93,7 @@
 	tetris_height = 32
 
 /obj/item/food/berries/leancherrie/lie
+	grind_results = list(/datum/reagent/consumable/leanberryjelly = 1, /datum/reagent/drug/chungusum = 8)
 	food_reagents = list(/datum/reagent/consumable/leanberryjelly = 1, /datum/reagent/drug/chungusum = 8)
 
 /obj/item/food/berries/leancherrie/lie/examine(mob/user)

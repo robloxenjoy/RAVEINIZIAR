@@ -464,6 +464,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	light_power = 1
 	light_color = "#00dd78"
 	light_system = MOVABLE_LIGHT
+	organ_bonus = -3
 //	weld_material = /obj/item/stack/sheet/plasmaglass
 
 /obj/item/shard/crystal/red
@@ -476,6 +477,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	light_power = 1
 	light_color = "#ff460e"
 	light_system = MOVABLE_LIGHT
+	organ_bonus = -3
 //	weld_material = /obj/item/stack/sheet/plasmaglass
 
 /obj/item/shard/crystal/blue
@@ -488,6 +490,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	light_power = 1
 	light_color = "#008eff"
 	light_system = MOVABLE_LIGHT
+	organ_bonus = -3
 //	weld_material = /obj/item/stack/sheet/plasmaglass
 
 /obj/item/shard/crystal/purple
@@ -500,6 +503,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	light_power = 1
 	light_color = "#e252ea"
 	light_system = MOVABLE_LIGHT
+	organ_bonus = -3
 //	weld_material = /obj/item/stack/sheet/plasmaglass
 
 

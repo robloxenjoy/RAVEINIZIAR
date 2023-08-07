@@ -272,6 +272,7 @@
 						span_horny("I gasp."),
 						span_horny("I shudder softly"))
 				var/message_index = rand(1, length(sexo_messages))
+				humie_user.emote("sexymoan")
 				humie_user.visible_message(sexo_messages[message_index], sexo_messages_self[message_index])
 			//todo: lust messages based on intent, CBA to do it now
 			else
@@ -286,6 +287,7 @@
 						span_horny("I gasp."),
 						span_horny("I shudder softly"))
 				var/message_index = rand(1, length(sexo_messages))
+				humie_user.emote("sexymoan")
 				humie_user.visible_message(sexo_messages[message_index], sexo_messages_self[message_index])
 		if(humie_user.lust < 5)
 			humie_user.set_lust(5)
@@ -308,6 +310,7 @@
 						span_horny("I gasp."),
 						span_horny("I shudder softly"))
 				var/message_index = rand(1, length(sexo_messages))
+				humie_target.emote("sexymoan")
 				humie_target.visible_message(sexo_messages[message_index], sexo_messages_self[message_index])
 			//todo: lust messages based on intent, CBA to do it now
 			else
@@ -322,6 +325,7 @@
 						span_horny("I gasp."),
 						span_horny("I shudder softly"))
 				var/message_index = rand(1, length(sexo_messages))
+				humie_target.emote("sexymoan")
 				humie_target.visible_message(sexo_messages[message_index], sexo_messages_self[message_index])
 		if(humie_target.lust < 5)
 			humie_target.set_lust(5)

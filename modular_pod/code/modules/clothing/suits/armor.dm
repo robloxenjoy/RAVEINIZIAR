@@ -191,9 +191,75 @@
 				WOUND = 2, \
 				ORGAN = 2)
 	strip_delay = 90
-	allowed = list(
-		/obj/item/gun/ballistic/revolver/remis/nova,
-		)
+
+/obj/item/clothing/suit/armor/vest/redjacket/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = 2
+	STR.max_w_class = 12
+	STR.set_holdable(list(/obj/item/gun/ballistic/revolver/remis/nova, /obj/item/ammo_casing))
+
+/*
+/obj/item/clothing/suit/armor/vest/redjacket/attack_self_secondary(mob/user, modifiers)
+	. = ..()
+	GetComponent(src, /datum/component/storage)
+	open_storage()
+*/
+
+/obj/item/clothing/suit/armor/vest/fullcrazy/copper
+	name = "Copper Armor"
+	desc = "Armor made of copper."
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	icon_state = "copper_armor"
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	worn_icon_state = "copper_armor"
+	body_parts_covered = CHEST|VITALS|GROIN|ARMS|LEGS|NECK
+	equip_sound = 'modular_septic/sound/armor/equip/armor_use_001.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/armor_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/armor_drop.ogg'
+	armor_broken_sound = "heavy"
+	armor_damaged_sound = "heavy"
+	max_integrity = 600
+	integrity_failure = 0.1
+	limb_integrity = 550
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	repairable_by = /obj/item/stack/ballistic
+	armor = list(MELEE = 1, \
+				BULLET = 1, \
+				LASER = 0, \
+				ENERGY = 20, \
+				BOMB = 20, \
+				BIO = 0, \
+				FIRE = 50, \
+				ACID = 0, \
+				WOUND = 10)
+	subarmor = list(SUBARMOR_FLAGS = NONE, \
+				EDGE_PROTECTION = 75, \
+				CRUSHING = 38, \
+				CUTTING = 38, \
+				PIERCING = 20, \
+				IMPALING = 24, \
+				LASER = 1, \
+				ENERGY = 0, \
+				BOMB = 15, \
+				BIO = 0, \
+				FIRE = 5, \
+				ACID = 0, \
+				MAGIC = 0, \
+				WOUND = 5, \
+				ORGAN = 5)
+	carry_weight = 7 KILOGRAMS
+
+/obj/item/clothing/suit/armor/vest/fullcrazy/copper/Initialize(mapload)
+	. = ..()
+	var/datum/component/shuffling/shuffling = GetComponent(/datum/component/shuffling)
+	if(shuffling)
+		shuffling.override_squeak_sounds = list('modular_septic/sound/armor/heavygear_stereo1.ogg'=1,
+												'modular_septic/sound/armor/heavygear_stereo2.ogg'=1,
+												'modular_septic/sound/armor/heavygear_stereo3.ogg'=1)
+		shuffling.volume = 60
+		shuffling.sound_falloff_exponent = 20
 
 /obj/item/clothing/head/helmet/golden/full
 	name = "Golden Helmet"

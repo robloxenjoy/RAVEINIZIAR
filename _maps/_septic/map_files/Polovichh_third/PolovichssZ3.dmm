@@ -94,7 +94,7 @@
 "bP" = (/obj/structure/chair/wood{dir = 1},/obj/effect/landmark/start/chaot,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "bQ" = (/obj/structure/weightmachine/stacklifter,/turf/open/floor/plating/polovich/rotten_stones/sec/eight,/area/maintenance/polovich/chaot)
 "bR" = (/obj/structure/table/reinforced,/obj/item/stack/medical/gauze/improvised/one,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
-"bS" = (/obj/structure/table/reinforced,/obj/item/halyabegg,/obj/item/gun/ballistic/shotgun/automatic/b2000,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
+"bS" = (/obj/structure/table/reinforced,/obj/item/gun/ballistic/shotgun/automatic/b2000,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
 "bT" = (/obj/structure/chair/wood{dir = 8},/mob/living/simple_animal/pet/podozl/shoebill,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 4},/area/maintenance/polovich/chaot)
 "bU" = (/obj/machinery/light/dim/directional/south,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2{dir = 1},/area/maintenance/polovich/chaot)
 "bV" = (/obj/machinery/light/small/red/directional/south,/turf/open/floor/plating/polovich/krutoplitka/krutoplitka2,/area/maintenance/polovich/chaot)
@@ -212,6 +212,7 @@
 "ed" = (/obj/structure/closet/crate/wooden,/obj/item/storage/box/beakers,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
 "ee" = (/obj/structure/flora/ausbushes/bushka,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/village)
 "ef" = (/obj/structure/stairs/west,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"eg" = (/obj/machinery/shower{pixel_y = 16},/obj/structure/window/spawner/east,/obj/structure/window/spawner/west,/obj/item/halyabegg,/turf/open/floor/plating/polovich/metalfloor,/area/maintenance/polovich/chaot)
 "ei" = (/turf/closed/wall/darkrock,/area/maintenance/polovich/village)
 "ej" = (/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "ek" = (/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
@@ -354,7 +355,7 @@ bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcPcQcQ
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbibicecebibibicecebicQbicebibibYbicQcebhbhcQcecebhbhbhbhbhbhbhbhbkaBbhbhbhbhbhbhbhbhbkbhbhbhbhafbhbhbhbhbhbhafafbhbhbhbhauafbhbhbhbhbhbhaybhbhbhbhbhaxaxbhbhbhbhbhbhbhazaCaDaEaFaEaDaCazbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcebicebicebibibicHcAcQcIcecQcQcIcececebhbhaGavcecebhbhbhbhbhbhbhbkbkafafdgdgdgdgafafbkbhbhbhauauauauauauauauafaubhbhbhbhbhafafbhbhbhbhbhaybhaHaIaIaIaIaIaIaIaIaHbhbhbhazaJaKaKaKaKaKaJazbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcecececHbibibicQcQdkbicHbibjbjbjbjbjbjbhbhbhbhbhbhbhbhbhdgbkbkbhbkafdgbhbhbhbhbhbhdrdrdrauaudrdsafaubhbhbhbhbhafafbhbhbhbhbhaybhbhaIaLaLaMaMaLaLaIbhbhbhbhazaNaKaKaKaKaKaNazbh
-bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcececQcIbicececIcHcAcQbjczblczbnbjbhbhbhbhbhbhbhbhbhbhdgdgdgdgaObhbhbhbhbhbhbhbhbhbhbhbhdrdsauaubhbhbhafafafbhbhbhbhbhbhaybhbhaIaLaxaaaaaxaLaIbhbhbhbhazaJaKaKaKaKaKaJazbh
+bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcececQcIbicececIcHcAcQbjczblegbnbjbhbhbhbhbhbhbhbhbhbhdgdgdgdgaObhbhbhbhbhbhbhbhbhbhbhbhdrdsauaubhbhbhafafafbhbhbhbhbhbhaybhbhaIaLaxaaaaaxaLaIbhbhbhbhazaJaKaKaKaKaKaJazbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhcececQcecQbibYdkbicQcQbjbpbLbLbrbjbhbhbhbhbhbhbhbhbhbhbhdgdgdgbhbhbhbhbhbhbhbhbhbhauauaudrdsdsdrdrdrdrauaubhbhbhbhbhbhbhaybhbhaIaLaLaPaPaQaRaIbhbhbhbhazaKaKaKaKaKaKaKazbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbjbjbjbjbjbsbsbjbjbjbjbjbjbLbLbLbLbjbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhauauaudrdrauaudsdsdrdraubhbhbhbhbhbhbhaybhbhaIaLaLaPaPaLaLaIbhbhbhbhazaJaKaKaNaKaKaJazbh
 bhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbjbtbubvbwbxbxbwbybzbAbAbjcKbLbLcKbjbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhbhdsdsdrdsdsdrauaudsdsdsdsbhbhbhbhbhbhbhdlaybhbhaIaLaLaSaSaLaLaIbhbhbhbhazazazaTazazazazazbh

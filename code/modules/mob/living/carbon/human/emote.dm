@@ -43,7 +43,7 @@
 	key_third_person = "mumbles"
 	message = "mumbles!"
 	emote_type = EMOTE_AUDIBLE
-
+/*
 /datum/emote/living/carbon/human/scream
 	key = "scream"
 	key_third_person = "screams"
@@ -60,7 +60,7 @@
 	if(human.mind?.miming)
 		return
 	return human.dna.species.get_scream_sound(human)
-
+*/
 /datum/emote/living/carbon/human/scream/screech //If a human tries to screech it'll just scream.
 	key = "screech"
 	key_third_person = "screeches"

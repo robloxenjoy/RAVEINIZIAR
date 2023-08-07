@@ -55,6 +55,7 @@
 				qdel(temporary_holder)
 				visible_message(span_warning("<b>[src]</b> chokes on liquids!"), \
 							span_userdanger("I'm choking on liquids!"))
+				emote("liquidchoke")
 		if(istype(loc, /obj/))
 			var/obj/loc_as_obj = loc
 			loc_as_obj.handle_internal_lifeform(src,0)

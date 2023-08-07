@@ -114,7 +114,7 @@
 	if(produce_ants)
 		new /obj/effect/decal/cleanable/ants(decomp.loc)
 	new decomp_result(decomp.loc)
-	decomp.visible_message("<span class='notice'>[decomp] gets overtaken by mold and ants! Gross!</span>")
+	decomp.visible_message("<span class='necrosis'>[decomp] gets overtaken by cosmic spiders! Gross!</span>")
 	qdel(decomp)
 	return
 

@@ -121,10 +121,10 @@
 		if(LAZYACCESS(modifiers, RIGHT_CLICK))
 			switch(user.combat_style)
 				if(CS_WEAK)
-					damage *= 0.35
+					damage *= 0.2
 					attack_fatigue_cost *= 0.25
 				if(CS_AIMED)
-					attack_skill_modifier += 4
+					attack_skill_modifier += 5
 					attack_delay *= 1.25
 					human_user.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
 					human_user.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)
@@ -995,7 +995,7 @@
 	if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 		switch(def_zone)
 			if(BODY_ZONE_PRECISE_GROIN)
-				if(victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
+				if((victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY) || (victim.getorganslotefficiency(ORGAN_SLOT_PENIS) > ORGAN_FAILING_EFFICIENCY))
 					var/protection = 0
 					var/resultt = 0
 					if(!istype(weapon))
@@ -1014,6 +1014,8 @@
 							victim.visible_message(span_pinkdang("[victim] is gelding blowed by [user]!"), \
 												span_pinkdang("I am was gelding blowed by [user]!"), \
 												span_hear("I hear the sound of flesh."))
+							if(victim.stat >= UNCONSCIOUS)
+								return
 							playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
 			if(BODY_ZONE_PRECISE_VITALS)
 				var/protection = 0
@@ -1035,6 +1037,8 @@
 						victim.visible_message(span_pinkdang("[victim] is tummy-knocked by [user]!"), \
 											span_pinkdang("I am was tummy-knocked by [user]!"), \
 											span_hear("I hear the sound of flesh."))
+						if(victim.stat >= UNCONSCIOUS)
+							return
 						playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
 	return TRUE
 

@@ -1216,7 +1216,7 @@
 		if(!check_rights(R_ADMIN))
 			return
 
-		var/mob/living/M = locate(href_list["fatal"])
+		var/mob/living/M = locate(href_list["fatalremove"])
 		if(HAS_TRAIT(M, TRAIT_FRAGGOT))
 			qdel(M.GetComponent(/datum/component/fraggot))
 

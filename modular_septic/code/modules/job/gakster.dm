@@ -191,6 +191,39 @@
 	if(venturer_type == "venturergoer")
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturergoer)
 
+/datum/job/leader
+	title = "Leader Of Bandits"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Banditism."
+	selection_color = "#94009b"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/leader
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/security,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/leader
+	name = "Leader Uniform"
+
+	uniform = /obj/item/clothing/under/venturerclassic
+	pants = /obj/item/clothing/pants/venturer
+	oversuit = /obj/item/clothing/suit/armor/vest/bulletproofer
+	suit = /obj/item/clothing/suit/armor/vest/fullcrazy/copper
+	shoes = /obj/item/clothing/shoes/frogshoes
+//	neck = /obj/item/clothing/neck/bear_cloak
+
+/datum/outfit/leader/equip(mob/living/carbon/human/H)
+	..()
+	ADD_TRAIT(H, TRAIT_MISANTHROPE, "misanthrope")
+
 /datum/job/thief
 	title = "Thief"
 	department_head = list("Head of Personnel")

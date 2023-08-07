@@ -512,14 +512,14 @@
 	name = "bolt of fireball"
 	icon_state = "fireball"
 	damage = 10
-	damage_type = BRUTE
+	damage_type = BURN
 	nodamage = FALSE
 
 	//explosion values
 	var/exp_heavy = 0
-	var/exp_light = 2
-	var/exp_flash = 3
-	var/exp_fire = 2
+	var/exp_light = 0
+	var/exp_flash = 1
+	var/exp_fire = 1
 
 /obj/projectile/magic/aoe/fireball/on_hit(target)
 	. = ..()
