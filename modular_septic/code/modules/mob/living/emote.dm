@@ -145,7 +145,7 @@
 	else
 		return ..()
 
-/datum/emote/living/scream
+/datum/emote/living/carbon/human/scream
 	key = "scream"
 	key_third_person = "screams"
 	message = "screams!"
@@ -157,7 +157,7 @@
 	hands_use_check = FALSE
 
 // Normal screaming
-/datum/emote/living/scream/get_sound(mob/living/user)
+/datum/emote/living/carbon/human/scream/get_sound(mob/living/user)
 	if(ishuman(user))
 		if(!ispighuman(user))
 			if(user.gender != FEMALE)
