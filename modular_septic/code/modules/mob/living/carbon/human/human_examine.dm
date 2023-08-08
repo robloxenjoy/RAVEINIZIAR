@@ -58,7 +58,7 @@
 				if(!wear_neck)
 					var/necky = get_bodypart_nostump(BODY_ZONE_PRECISE_NECK)
 					if(!LAZYLEN(clothingonpart(necky)))
-						. += span_flashingdanger("[emoji_parse(":fatal")] [uppertext(src.name)] IS A FATAL! [uppertext(src.p_they())] MUST BE KILLED!")
+						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] IS A FATAL! [uppertext(src.p_they())] MUST BE KILLED!")
 	. += "<br><hr class='infohr'>"
 
 	//TODO: Add a social recordkeeping mechanic and datum to keep tracker of who the viewer knows

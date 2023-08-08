@@ -26,16 +26,15 @@
 		var/obj/item/organ/heart/heart = thing
 		heart.Stop()
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "died", /datum/mood_event/died)
-	if(!HAS_TRAIT(src, TRAIT_FRAGGOT))
-		if(!iswillet(src))
-			for(var/mob/living/carbon/human/H in range(src))
-				if(H != src && (src in view(H)))
-					if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
-						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
-					if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) > ATTRIBUTE_MIDDLING)
-						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
-					else
-						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
+	if(!iswillet(src))
+		for(var/mob/living/carbon/human/H in range(src))
+			if(H != src && (src in view(H)))
+				if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
+					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
+				if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) > ATTRIBUTE_MIDDLING)
+					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
+				else
+					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
 	// Shit yourself
 	if(!QDELETED(src))
 		if(prob(80))
