@@ -529,7 +529,7 @@
 		return
 	if(W.force >= 5)
 		if(W.get_sharpness())
-			user.visible_message(span_notice("[user] cuts the [src]."),span_notice("You cut [src]."), span_hear("You hear the sound of cutting."))
+			user.visible_message(span_notice("[user] cuts the Longrass."),span_notice("You cut Longrass."), span_hear("You hear the sound of cutting."))
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(5)
 			sound_hint()
