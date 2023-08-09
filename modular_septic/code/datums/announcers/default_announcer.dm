@@ -1,6 +1,6 @@
 /datum/centcom_announcer/default
 	welcome_sounds = list('modular_pod/sound/mus/start.ogg')
-	goodbye_sounds = list('modular_pod/sound/mus/sadend.ogg')
+	goodbye_sounds = list('modular_pod/sound/mus/hrumka.ogg')
 	alert_sounds = list('modular_pod/sound/mus/announce.ogg')
 	command_report_sounds = list('sound/ai/default/commandreport.ogg')
 	event_sounds = list(ANNOUNCER_AIMALF = 'sound/ai/default/aimalf.ogg',

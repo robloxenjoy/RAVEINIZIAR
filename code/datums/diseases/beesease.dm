@@ -58,26 +58,27 @@
 	if(!.)
 		return
 
-	var/mob/living/carbon/human/femboyyy = affected_mob
-	if((femboyyy.gender = FEMALE) || (femboyyy.body_type = FEMALE))
-		cure()
-		return FALSE
-
-	switch(stage)
-		if(1 to 2)
-			if(DT_PROB(1, delta_time))
-				to_chat(femboyyy, span_notice("You feel that you getting more feminine..."))
-		if(3)
-			if(DT_PROB(5, delta_time))
-				to_chat(femboyyy, span_notice("A little more and something will happen."))
-		if(4)
-			to_chat(femboyyy, span_danger("I AM FEMBOY!"))
-			playsound(get_turf(femboyyy), "modular_pod/sound/eff/anime-wow-1.ogg", 100)
-			new /obj/effect/temp_visual/heart(femboyyy.loc)
-			femboyyy.gender = FEMALE
-			femboyyy.body_type = FEMALE
-			femboyyy.dna.update_ui_block(DNA_GENDER_BLOCK)
-			femboyyy.update_body()
-			femboyyy.update_mutations_overlay()
+	if(ishuman(affected_mob))
+		var/mob/living/carbon/human/femboy = affected_mob
+		if((femboy.gender = FEMALE) || (femboy.body_type = FEMALE))
 			cure()
 			return FALSE
+
+		switch(stage)
+			if(1 to 2)
+				if(DT_PROB(1, delta_time))
+					to_chat(femboy, span_notice("You feel that you getting more feminine..."))
+			if(3)
+				if(DT_PROB(5, delta_time))
+					to_chat(femboy, span_notice("A little more and something will happen."))
+			if(4)
+				to_chat(femboy, span_danger("I AM FEMBOY!"))
+				playsound(get_turf(femboy), "modular_pod/sound/eff/anime-wow-1.ogg", 100)
+				new /obj/effect/temp_visual/heart(femboyyy.loc)
+				femboy.gender = FEMALE
+				femboy.body_type = FEMALE
+				femboy.dna.update_ui_block(DNA_GENDER_BLOCK)
+				femboy.update_body()
+				femboy.update_mutations_overlay()
+				cure()
+				return FALSE

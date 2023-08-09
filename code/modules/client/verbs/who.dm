@@ -4,9 +4,6 @@
 	set name = "Who"
 	set category = "OOC"
 
-	if(!check_rights(R_ADMIN))
-		return FALSE
-
 	var/msg = "<b>Current Players:</b>\n"
 
 	var/list/Lines = list()
