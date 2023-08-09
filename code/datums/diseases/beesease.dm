@@ -74,7 +74,7 @@
 			if(4)
 				to_chat(femboy, span_danger("I AM FEMBOY!"))
 				playsound(get_turf(femboy), "modular_pod/sound/eff/anime-wow-1.ogg", 100)
-				new /obj/effect/temp_visual/heart(femboyyy.loc)
+				new /obj/effect/temp_visual/heart(femboy.loc)
 				femboy.gender = FEMALE
 				femboy.body_type = FEMALE
 				femboy.dna.update_ui_block(DNA_GENDER_BLOCK)
