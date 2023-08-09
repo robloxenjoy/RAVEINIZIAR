@@ -48,9 +48,9 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	else
 		. += "Time To Start: SOON"
 
-	. += "Players: [SSticker.totalPlayers]"
-	if(client.holder)
-		. += "Players Ready: [SSticker.totalPlayersReady]"
+//	. += "Players: [SSticker.totalPlayers]"
+//	if(client.holder)
+//		. += "Players Ready: [SSticker.totalPlayersReady]"
 
 /mob/dead/proc/server_hop()
 	set category = "OOC"

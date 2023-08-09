@@ -39,8 +39,8 @@
 
 /client/Destroy()
 	. = ..()
-	if(mob)
-		broadcast_connection(connection_string = "disconnected from the server")
+//	if(mob)
+//		broadcast_connection(connection_string = "disconnected from the server")
 	QDEL_NULL(droning_sound)
 	last_droning_sound = null
 	QDEL_NULL(political_compass)
