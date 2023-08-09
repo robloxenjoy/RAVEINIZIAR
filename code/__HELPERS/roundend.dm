@@ -206,6 +206,7 @@
 
 	to_chat(world, "<span class='infoplain'><BR><BR><BR><span class='big bold'>Graymouth Void Has Woke Up.</span></span>")
 	log_game("The round has ended.")
+	SEND_SOUND(world, sound('modular_pod/sound/mus/sadend.ogg'))
 
 	for(var/I in round_end_events)
 		var/datum/callback/cb = I
@@ -220,7 +221,7 @@
 		if(!C?.credits)
 			C?.RollCredits()
 //		C?.playtitlemusic(40)
-		SEND_SOUND(world, sound('modular_pod/sound/mus/sadend.ogg'))
+//		SEND_SOUND(world, sound('modular_pod/sound/mus/sadend.ogg'))
 		if(speed_round)
 			C?.give_award(/datum/award/achievement/misc/speed_round, C?.mob)
 		HandleRandomHardcoreScore(C)

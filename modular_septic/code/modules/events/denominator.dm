@@ -228,6 +228,9 @@
 						TR.damageItem("HARD")
 						sound_hint()
 						return
+				else
+					to_chat(user, span_steal("Here is strong lock!"))
+					return
 
 	if(istype(I, /obj/item/akt/lockpick/square/prylock))
 		if(density)
@@ -516,7 +519,7 @@
 /obj/machinery/door/keycard/denominator/podozl/akt/lair
 	puzzle_id = "lair"
 	locktype = "JOBARDO"
-	lock_level_one = TRUE
+//	lock_level_one = TRUE
 
 /obj/item/keycard/akt/chantry
 	desc = "This key is for chantry in Akt Village..."
