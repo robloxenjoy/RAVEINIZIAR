@@ -19,7 +19,7 @@
 		SEND_SOUND(human, sound('modular_pod/sound/eff/kill_her_now_kill_her_now.ogg', FALSE, CHANNEL_LOBBYMUSIC, 70))
 		to_chat(human, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")][our_fraggot.real_name], THE [our_fraggot.mind?.assigned_role.title], IS A FATAL! KILL THIS CREATURE![emoji_parse(":chaos:")]</span></span>")
 //	RegisterSignal(our_fraggot, COMSIG_PARENT_EXAMINE, .proc/fraggot_examine)
-//	RegisterSignal(our_fraggot, COMSIG_LIVING_DEATH, .proc/fraggot_died)
+	RegisterSignal(our_fraggot, COMSIG_LIVING_DEATH, .proc/fraggot_died)
 	RegisterSignal(our_fraggot, COMSIG_PARENT_PREQDELETED, .proc/fraggot_deleted)
 	ADD_TRAIT(our_fraggot, TRAIT_FRAGGOT, "fraggot")
 	START_PROCESSING(SSfraggots, src)
@@ -28,7 +28,7 @@
 /datum/component/fraggot/UnregisterFromParent()
 	var/mob/living/carbon/our_fraggot = parent
 	STOP_PROCESSING(SSfraggots, src)
-//	UnregisterSignal(our_fraggot, COMSIG_LIVING_DEATH)
+	UnregisterSignal(our_fraggot, COMSIG_LIVING_DEATH)
 	UnregisterSignal(our_fraggot, COMSIG_PARENT_PREQDELETED)
 //	UnregisterSignal(our_fraggot, COMSIG_PARENT_EXAMINE)
 	REMOVE_TRAIT(our_fraggot, TRAIT_FRAGGOT, "fraggot")
@@ -38,8 +38,11 @@
 //	niqqerlay = null
 
 ///datum/component/fraggot/proc/fraggot_died(mob/living/our_fraggot)
-//	if(!QDELETED(our_fraggot))
+	if(!QDELETED(our_fraggot))
 //		our_fraggot.gib()
+		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
+			SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
+			to_chat(human, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")][our_fraggot.real_name], THE [our_fraggot.mind?.assigned_role.title], HAS DIED![emoji_parse(":chaos:")]</span></span>")
 
 /datum/component/fraggot/proc/fraggot_deleted(mob/living/our_fraggot)
 	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))

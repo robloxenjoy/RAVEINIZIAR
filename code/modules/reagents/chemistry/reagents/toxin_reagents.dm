@@ -853,7 +853,7 @@
 /datum/reagent/toxin/nox
 	name = "Nox"
 	description = "Standard, one of the main poisons that causes loss of consciousness."
-	silent_toxin = TRUE
+	silent_toxin = FALSE
 //	reagent_state = LIQUID
 	color = "#62017e90"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
@@ -869,7 +869,8 @@
 	REMOVE_TRAIT(L, TRAIT_ANTICONVULSANT, name)
 
 /datum/reagent/toxin/nox/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.Sleeping(5 SECONDS)
+	M.Unconscious(4 SECONDS)
+//	M.Sleeping(5 SECONDS)
 //	M.SetSleeping(400 * REM * delta_time)
 //	M.Sleeping(40 * REM * delta_time)
 	M.adjustStaminaLoss(5 * REM * delta_time, 0)

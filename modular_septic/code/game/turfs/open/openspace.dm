@@ -1,7 +1,7 @@
 /turf/open/openspace
 	icon = 'modular_septic/icons/turf/floors.dmi'
 	icon_state = "transparent"
-//	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	light_range = 1
 	light_power = 1
 	light_color = COLOR_WHITE

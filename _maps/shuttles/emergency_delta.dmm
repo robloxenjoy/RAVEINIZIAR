@@ -9,7 +9,7 @@
 "i" = (/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
 "j" = (/obj/structure/village_screamer,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "k" = (/obj/machinery/light/dim/directional/east,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"l" = (/obj/machinery/door/poddoor/shutters/preopen{dir = 8; id = "chungus"},/obj/docking_port/mobile/emergency{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"l" = (/obj/machinery/door/poddoor/shutters/preopen{dir = 8; id = "chungus"},/obj/docking_port/mobile/emergency{dir = 2; name = "podozled emergency shuttle"},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "m" = (/obj/structure/chair/wood,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "n" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "o" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/obj/item/pizzabox/vegetable,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)

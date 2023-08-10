@@ -15,6 +15,7 @@
 	anchored = TRUE
 	var/openet = FALSE
 	var/can_walk = FALSE
+	var/setting_opacity = FALSE
 	var/openwindowound = 'modular_pod/sound/eff/openwindows.ogg'
 	var/closewindowound = 'modular_pod/sound/eff/closewindows.ogg'
 
@@ -22,11 +23,15 @@
 	. = ..()
 	if(!openet)
 		icon_state = "[icon_state]_closed"
-		set_opacity(FALSE)
+//		set_opacity(FALSE)
 		set_density(TRUE)
+		if(setting_opacity)
+			set_opacity(FALSE)
 	else
 		icon_state = "[icon_state]_opened"
-		set_opacity(TRUE)
+//		set_opacity(TRUE)
+		if(setting_opacity)
+			set_opacity(TRUE)
 		if(can_walk)
 			set_density(FALSE)
 
@@ -49,7 +54,7 @@
 			playsound(get_turf(src), openwindowound, 80 , FALSE, FALSE)
 		else
 			openet = FALSE
-			playsound(get_turf(src), openwindowound, 80 , FALSE, FALSE)
+			playsound(get_turf(src), closewindowound, 80 , FALSE, FALSE)
 		update_appearance(UPDATE_ICON)
 
 /obj/structure/windowed/windows

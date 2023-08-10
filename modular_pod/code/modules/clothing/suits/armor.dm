@@ -316,8 +316,8 @@
 	integrity_failure = 0.1
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
                 EDGE_PROTECTION = 45, \
-                CRUSHING = 20, \
-                CUTTING = 23, \
+                CRUSHING = 30, \
+                CUTTING = 33, \
                 PIERCING = 15, \
                 IMPALING = 8, \
                 LASER = 5, \

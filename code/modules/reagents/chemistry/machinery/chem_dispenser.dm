@@ -25,6 +25,7 @@
 	circuit = /obj/item/circuitboard/machine/chem_dispenser
 	processing_flags = NONE
 	max_integrity = 1000
+	explosion_block = INFINITY
 
 	var/obj/item/stock_parts/cell/cell
 	var/powerefficiency = 0.1
