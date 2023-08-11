@@ -37,7 +37,7 @@
 //	our_fraggot.clear_fullscreen("niqqer")
 //	niqqerlay = null
 
-///datum/component/fraggot/proc/fraggot_died(mob/living/our_fraggot)
+/datum/component/fraggot/proc/fraggot_died(mob/living/our_fraggot)
 	if(!QDELETED(our_fraggot))
 //		our_fraggot.gib()
 		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
