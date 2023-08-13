@@ -1,15 +1,15 @@
 "a" = (/obj/machinery/door/airlock/maintenance{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "b" = (/turf/closed/wall/pink_crazy/nocling,/area/shuttle/escape)
-"c" = (/obj/machinery/light/blacklight/directional/north,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"c" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
 "d" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/soda_cans/lean,/obj/item/gun/ballistic/automatic/remis/g36,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "e" = (/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "f" = (/obj/machinery/door/keycard/denominator/podozl/akt/controller{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"g" = (/obj/structure/reagent_dispensers/watertank/sperm,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"h" = (/obj/machinery/light/dim/directional/west,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"g" = (/obj/structure/reagent_dispensers/watertank/sperm{reagent_id = /datum/reagent/toxin/acid/fluacid},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"h" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "i" = (/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
 "j" = (/obj/structure/village_screamer,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"k" = (/obj/machinery/light/dim/directional/east,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"l" = (/obj/machinery/door/poddoor/shutters/preopen{dir = 8; id = "chungus"},/obj/docking_port/mobile/emergency{dir = 2; name = "podozled emergency shuttle"},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"k" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"l" = (/obj/machinery/door/poddoor/shutters/preopen{dir = 8; id = "chungus"},/obj/docking_port/mobile/emergency{dir = 1; name = "podozled emergency shuttle"},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "m" = (/obj/structure/chair/wood,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "n" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "o" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/obj/item/pizzabox/vegetable,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
@@ -20,26 +20,24 @@
 "t" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "u" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "v" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/low_wall/reinforced,/area/shuttle/escape)
-"w" = (/obj/machinery/light/dim/directional/south,/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
-"x" = (/obj/machinery/light/dim/directional/north,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"y" = (/obj/machinery/light/dim/directional/east,/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
+"w" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/revolver/remis/gado,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 
 (1,1,1) = {"
 bbbbbbbbb
-brcdbexgb
+brkdbhwgb
 beeefeeeb
 bbbbbeeeb
-beeeeeeeb
-bhiiieybb
-beijiiial
+beeeeeehb
 beiiieibb
+bhijiiial
+beiiieibb
+veeiheehv
 veeieeeev
-veeieeeev
-bheieeekb
-biiiiiiib
+beeieeeeb
+bciiiiicb
 vimmmmmiv
 vnopqsptv
 biuuuuuib
-biwiiiwib
+bciiciicb
 bbbbbbbbb
 "}
