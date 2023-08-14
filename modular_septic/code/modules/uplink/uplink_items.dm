@@ -3,6 +3,7 @@
 	desc = "The perfect companion for the surplus rifle. This small sized gremlin is sure to kill any ZoomTech loyalist with disgust."
 	item = /obj/item/knife/combat/zhunter
 	cost = 1
+	purchasable_from = NONE
 
 /datum/uplink_item/bundles_tc/chemical
 	purchasable_from = NONE
@@ -72,7 +73,7 @@
 	name = "Solitario Inseguro R5 submachine gun"
 	desc = "A fully-automatic submachine gun by S&I chambered in low-recoil 22lr, however It makes up for It's low-power with high-capacity mags and the ability to be suppressed. \
 	Can be converted to the .380 version, Solitario-SD \"Saber\" using the custom receiver of the same name."
-	cost = 11
+	cost = 14
 	item = /obj/item/gun/ballistic/automatic/remis/smg/solitario
 	purchasable_from = ALL
 
@@ -94,7 +95,7 @@
 	name = "Energy Sword \"Bonitinho\""
 	desc = "A small capsule of pure energy; able to be activated into your hand to form into an extendable sword that can slice through flesh with ease."
 	item = /obj/item/melee/energy/sword/kelzad
-	cost = 8
+	cost = 11
 
 /datum/uplink_item/dangerous/shield
 	purchasable_from = NONE
@@ -129,6 +130,27 @@
 /datum/uplink_item/dangerous/foampistol
 	purchasable_from = NONE
 
+/datum/uplink_item/dangerous/squash
+	name = "Squash"
+	desc = "Alchemy thing. Nothing interesting."
+	item = /obj/item/craftorshit/thing/alchemy/squash
+	cost = 11
+	purchasable_from = NONE
+
+/datum/uplink_item/dangerous/steelsword
+	name = "Steel Longsword"
+	desc = "Can be good in good hands."
+	item = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
+	cost = 11
+	purchasable_from = NONE
+
+/datum/uplink_item/dangerous/steelmace
+	name = "Steel Mace"
+	desc = "Can be good in good hands."
+	item = /obj/item/melee/bita/macecircle
+	cost = 11
+	purchasable_from = NONE
+
 /datum/uplink_item/dangerous/pistol
 	name = "Plinker Pistol"
 	desc = "A small, easily concealable handgun that uses 9mm auto rounds in 8-round magazines and is compatible \
@@ -139,13 +161,14 @@
 	name = "Pernetta 69R Machine Pistol"
 	desc = "A machine pistol. Uses 9mm rounds in 15-round magazines and is compatible \
 			with suppressors. The gun fires in three round bursts and fully automatic."
+	cost = 11
 	purchasable_from = ALL
 
 /datum/uplink_item/dangerous/revolver
 	name = "Nova Seguranca M62 Revolver"
 	desc = "A criminal revolver without any serial number that fires .38 suspicious rounds. Can also be loaded with more powerful +P rounds"
 	item = /obj/item/gun/ballistic/revolver/remis/nova
-	cost = 6
+	cost = 10
 	purchasable_from = ALL
 
 /datum/uplink_item/dangerous/shotgun
@@ -159,7 +182,7 @@
 	desc = "A highly lethal, integrally suppressed 12 guage shotgun. \
 			Comes with an internal tube magazine capacity of 10 shells, including the chamber, slugs are pre-loaded when shipped."
 	item = /obj/item/gun/ballistic/shotgun/automatic/b2021
-	cost = 7
+	cost = 11
 	purchasable_from = ALL
 
 /datum/uplink_item/dangerous/surplus_smg
@@ -345,6 +368,13 @@
 	and the next person to even touch it will be met with a bright shiny gift."
 	item = /obj/item/grenade/frag/pipebomb/trap
 	cost = 6
+	purchasable_from = ALL
+
+/datum/uplink_item/explosives/fraggotgrenade
+	name = "A Frag Grenade"
+	desc = "Dangerous explosive thing!"
+	item = /obj/item/grenade/frag/pipebomb
+	cost = 10
 	purchasable_from = ALL
 
 /datum/uplink_item/explosives/bioterrorfoam
@@ -533,5 +563,5 @@
 	purchasable_from = NONE
 
 /datum/uplink_item/badass/costumes
-	purchasable_from = ALL
+	purchasable_from = NONE
 
