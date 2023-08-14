@@ -6,19 +6,19 @@
 	carry_weight = 20 KILOGRAMS
 
 /obj/item/clothing/suit/space/stray
-	name = "\"Mentalidade Presidente\" type V combat-ready biosuit"
-	desc = "A type V ballistic-armored biosuit coming straight from the depths of shit, protects against all biological hazards and is equipped with hard, calloused organic platings."
-	icon = 'modular_septic/icons/obj/clothing/suits.dmi'
-	icon_state = "yoinky"
-	worn_icon = 'modular_septic/icons/mob/clothing/suit.dmi'
-	worn_icon_state = "yoinky"
+	name = "PINKER Armor"
+	desc = "CRAZY!"
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	icon_state = "pinker"
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	worn_icon_state = "pinker"
 	armor_broken_sound = "heavy"
 	armor_damaged_sound = "heavy"
 	max_integrity = 500
 	integrity_failure = 0.05
 	limb_integrity = 420
 	repairable_by = /obj/item/stack/ballistic/plate
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS|NECK|VITALS
+	body_parts_covered = CHEST|GROIN|LEGS||ARMS|NECK|VITALS
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
                 EDGE_PROTECTION = 75, \
                 CRUSHING = 28, \
@@ -43,11 +43,11 @@
 				'modular_septic/sound/armor/heavygear_stereo3.ogg'=1), 70, falloff_exponent = 20)
 
 /obj/item/clothing/head/helmet/space/stray
-	name = "\"Mentalidade Presidente\" type V combat-ready biosuit helmet"
-	desc = "A type V ballistic-armored biosuit helmet coming straight from the depths of shit, protects against all biological hazards and is equipped with hard, calloused organic platings."
-	icon = 'modular_septic/icons/obj/clothing/hats.dmi'
+	name = "PINKER Helmet"
+	desc = "CRAZY!"
+	icon = 'modular_pod/icons/obj/clothing/hats.dmi'
 	icon_state = "sploinky"
-	worn_icon = 'modular_septic/icons/mob/clothing/head.dmi'
+	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
 	worn_icon_state = "sploinky"
 	armor_broken_sound = "heavy"
 	armor_damaged_sound = "heavy"

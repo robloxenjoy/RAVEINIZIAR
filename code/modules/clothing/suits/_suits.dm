@@ -201,6 +201,22 @@
 	carry_weight = 800 GRAMS
 	armor = list(MELEE = 2, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 10, ACID = 10, WOUND = 2)
 
+/obj/item/clothing/pants/pinker
+	name = "Pinker Pants"
+	desc = "CRAZY!"
+	icon = 'modular_pod/icons/obj/clothing/pants.dmi'
+	icon_state = "pinker"
+	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'
+	worn_icon_state = "pinker"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	max_integrity = 100
+	integrity_failure = 0.1
+	limb_integrity = 90
+	repairable_by = /obj/item/stack/ballistic
+	carry_weight = 800 GRAMS
+	armor = list(MELEE = 2, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 10, ACID = 10, WOUND = 2)
+
 /obj/item/clothing/pants/leatherpants
 	name = "Leather Pants"
 	desc = "Its made of brown frog leather."

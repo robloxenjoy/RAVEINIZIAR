@@ -712,3 +712,13 @@
 	pants = /obj/item/clothing/pants/dark
 	shoes = /obj/item/clothing/shoes/frogshoes
 	gloves = /obj/item/clothing/gloves/reddyred
+
+/datum/outfit/pinker
+	name = "Pinker Uniform"
+
+	head = /obj/item/clothing/head/helmet/space/stray
+	suit = /obj/item/clothing/suit/space/stray
+	uniform = /obj/item/clothing/under/pinker
+	pants = /obj/item/clothing/pants/pinker
+	r_pocket = /obj/item/keycard/akt/controller
+	shoes =/obj/item/clothing/shoes/frogshoes

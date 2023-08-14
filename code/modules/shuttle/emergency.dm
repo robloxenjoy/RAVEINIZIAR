@@ -451,6 +451,39 @@
 				send2adminchat("Server", "The Pinker has docked at the Akt Village.")
 				priority_announce("Pinker has docked with the Akt Village. You have [timeLeft(600)] minutes to board the Pinker!", null, ANNOUNCER_SHUTTLEDOCK, "Priority")
 				ShuttleDBStuff()
+				var/obj/effect/landmark/tendance/pinker/K = locate() in world
+				var/mob/living/carbon/human/character = new(K.loc)
+
+				character.fully_replace_character_name(character.real_name, "PINKER")
+				character.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_WEAKWILLET)
+				var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
+				if(!babble)
+					character.AddComponent(/datum/component/babble, 'modular_pod/sound/voice/vampvoice.ogg')
+				else
+					babble.babble_sound_override = 'modular_septic/sound/voice/babble/inborn.ogg'
+					babble.volume = BABBLE_DEFAULT_VOLUME
+					babble.duration = BABBLE_DEFAULT_DURATION
+/*
+				if(character.mind)
+					mind.active = 0
+					mind.transfer_to(character)
+*/
+				character.attributes.add_sheet(/datum/attribute_holder/sheet/job/outcombat)
+				character.height = HUMAN_HEIGHT_MEDIUM
+				character.skin_tone = "nox"
+				character.equipOutfit(/datum/outfit/pinker)
+				character.put_in_hands(new /obj/item/gun/energy/remis/siren(character.drop_location()), FALSE)
+
+				var/list/mob/dead/observer/candidates = poll_ghost_candidates("Do you want to play as PINKER?", ROLE_SENTIENCE, FALSE, 100, POLL_IGNORE_SENTIENCE_POTION)
+				if(LAZYLEN(candidates))
+					var/mob/dead/observer/C = pick(candidates)
+					character.mind_initialize()
+					character.key = C.key
+					notify_ghosts("HEHEHE! PINKER-HUMANOID IS HERE!", source = character, action = NOTIFY_ORBIT, flashwindow = FALSE, header = "PINKER created")
+					to_chat(character, span_notice("You are the humanoid form of Void's guardian angel. Try to minimize the danger of the end of his dream!"))
+					if(character.attributes)
+						character.attributes.update_attributes()
+//				playsound(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100, FALSE)
 
 
 		if(SHUTTLE_DOCKED)

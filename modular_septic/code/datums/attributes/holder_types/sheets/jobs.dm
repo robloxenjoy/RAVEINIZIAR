@@ -1086,6 +1086,7 @@
 		SKILL_SHOTGUN = list(-2, 6),
 		SKILL_SMG = list(-2, 6),
 		SKILL_PISTOL = list(-2, 6),
+		SKILL_LAW = list(2, 6),
 		SKILL_RAPIER = list(-2, 6),
 		SKILL_SHORTSWORD = list(-2, 6),
 		SKILL_LONGSWORD = list(-2, 6),
