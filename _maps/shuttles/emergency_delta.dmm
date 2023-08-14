@@ -15,7 +15,7 @@
 "o" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/obj/item/pizzabox/vegetable,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "p" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "q" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/wine,/obj/item/pizzabox/pineapple,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"r" = (/obj/structure/bed,/obj/machinery/button/door/directional/north{id = "chungus"},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"r" = (/obj/structure/bed,/obj/machinery/button/door/directional/north{id = "chungus"},/obj/effect/landmark/tendance/pinker,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "s" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/bottle/whiskey,/obj/item/pizzabox/mushroom,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "t" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "u" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
