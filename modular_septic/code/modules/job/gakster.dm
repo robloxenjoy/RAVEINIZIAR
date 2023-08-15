@@ -31,7 +31,7 @@
 /datum/job/venturer
 	title = "Venturer"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	supervisors = "no-one"
 	selection_color = "#38e38e"
 
@@ -46,7 +46,7 @@
 /datum/job/venturer
 	title = "Venturer"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "he's just traveling."
@@ -194,7 +194,7 @@
 /datum/job/leader
 	title = "Leader Of Bandits"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Banditism."
@@ -227,7 +227,7 @@
 /datum/job/thief
 	title = "Thief"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "Banditism."
@@ -295,7 +295,7 @@
 /datum/job/outcombat
 	title = "Outcombat"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "he's just attacking."
@@ -318,7 +318,7 @@
 /datum/job/aktliver
 	title = "Akt Liver"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 30
 	spawn_positions = 30
 	supervisors = "living in Akt!"
@@ -345,7 +345,7 @@
 /datum/job/aktassertor
 	title = "Akt Assertor"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 10
 	spawn_positions = 10
 	supervisors = "living in Akt!"
@@ -375,7 +375,7 @@
 /datum/job/aktnailer
 	title = "Akt Nailer"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 10
 	spawn_positions = 10
 	supervisors = "living in Akt!"
@@ -402,7 +402,7 @@
 /datum/job/aktgranger
 	title = "Akt Granger"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "living in Akt!"
@@ -432,7 +432,7 @@
 /datum/job/aktcurer
 	title = "Akt Curer"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "living in Akt!"
@@ -461,7 +461,7 @@
 /datum/job/aktgargohelper
 	title = "Akt Accepter-helper"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "living in Akt!"
@@ -490,7 +490,7 @@
 /datum/job/aktcontroller
 	title = "Akt Controller"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "living in Akt!"
@@ -522,7 +522,7 @@
 /datum/job/alchemist
 	title = "Akt Al-Chemist"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "living in Akt!"
@@ -606,7 +606,7 @@
 /datum/job/slave
 	title = "Slave"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 64
 	spawn_positions = 64
 	supervisors = "he's just works."
@@ -651,7 +651,7 @@
 /datum/job/manhunter
 	title = "Manhunter"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 8
 	spawn_positions = 8
 	supervisors = "he's just works."
@@ -681,7 +681,7 @@
 /datum/job/slavekeeper
 	title = "Slavekeeper"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list(ROLE_AKT)
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "he's just works."

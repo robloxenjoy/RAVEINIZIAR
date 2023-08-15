@@ -1,7 +1,6 @@
 /obj/item/cellphone
 	name = "cellular phone"
-	desc = "An allegedly portable phone that comes with primarily communication uses, with the ability to make both public and private calls from anywhere in the world. Data service may vary If you're \
-			tightly trapped in a supernatural warehouse with only one way out."
+	desc = "An allegedly portable phone that comes with primarily communication uses, with the ability to make both public and private calls from anywhere in the world."
 	icon = 'modular_septic/icons/obj/items/phone.dmi'
 	icon_state = "phone"
 	base_icon_state = "phone"
@@ -96,6 +95,10 @@
 		. += span_warning("[src] has no sim card loaded, making [p_them()] pretty useless.")
 	else
 		. += span_info("[src] has [icon2html(simcard, user)] <b>[simcard]</b> installed in the sim card slot.")
+		if(!simcard.username)
+			. += span_warning("[simcard] has no username.")
+		else
+			. += span_info("<b>Username:</b> [simcard.username]")
 	if(phone_flags & PHONE_RESETTING)
 		. += span_warning("[src] [p_are()] undergoing a factory reset.")
 	if(connected_phone)
@@ -106,10 +109,6 @@
 				. += span_info("Currently being called by <b>[connected_phone.simcard.username]</b>.")
 			if(CONNECTION_CALLING)
 				. += span_info("Currently calling <b>[connected_phone.simcard.username]</b>.")
-	if(!simcard.username)
-		. += span_warning("[simcard]] has no username.")
-	else
-		. += span_info("<b>Username:</b> [simcard.username]")
 	. += span_info("<b>Phone number:</b> [simcard.phone_number]")
 	. += span_info("Right button (RMB) for the settings. Left button (LMB) for calling and call options.")
 

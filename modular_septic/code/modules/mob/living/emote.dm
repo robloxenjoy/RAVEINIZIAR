@@ -431,7 +431,7 @@
 			return "modular_septic/sound/sexo/moan_f[rand(1, 7)].ogg"
 	else
 		return ..()
-
+/*
 /datum/emote/living/sexymoan/run_emote(mob/living/carbon/human/user, params, type_override, intentional)
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
@@ -469,7 +469,7 @@
 		if(user.runechat_prefs_check(hearer, NONE) && hearer.can_hear())
 			hearer.create_chat_message(src, raw_message = msg, runechat_flags = NONE)
 		hearer.show_message(message, MSG_AUDIBLE, null, MSG_VISUAL)
-
+*/
 // Le quake jump has arrive
 /datum/emote/living/jumpgrunt
 	key = "jumpgrunt"

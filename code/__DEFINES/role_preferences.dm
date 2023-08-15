@@ -46,6 +46,7 @@
 
 // Other roles
 #define ROLE_SYNDICATE "Syndicate"
+#define ROLE_AKT "Akt"
 #define ROLE_REV "Revolutionary"
 #define ROLE_REV_SUCCESSFUL "Victorious Revolutionary"
 #define ROLE_PAI "pAI"
