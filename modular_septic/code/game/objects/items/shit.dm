@@ -82,9 +82,9 @@
 /obj/item/halyabegg/Initialize()
 	. = ..()
 	AddComponent(/datum/component/edible, \
-		initial_reagents = list(/datum/reagent/consumable/shit = 15), \
+		initial_reagents = list(/datum/reagent/consumable/shit = 1), \
 		foodtypes = BREAKFAST, \
-		volume = 115, \
+		volume = 1, \
 		after_eat = CALLBACK(src, .proc/on_eat_fromm))
 
 /obj/item/halyabegg/proc/on_eat_fromm(mob/living/carbon/eater, mob/living/feeder)

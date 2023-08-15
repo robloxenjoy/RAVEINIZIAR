@@ -32,6 +32,11 @@
 	desc = "A small bottle of cyanide. Bitter almonds?"
 	list_reagents = list(/datum/reagent/toxin/cyanide = 30)
 
+/obj/item/reagent_containers/glass/bottle/healbrain
+	name = "crazy pomxo bottle"
+	desc = "A small bottle of crazy pomxo."
+	list_reagents = list(/datum/reagent/medicine/crazypomxo = 30)
+
 /obj/item/reagent_containers/glass/bottle/spewium
 	name = "spewium bottle"
 	desc = "A small bottle of spewium."

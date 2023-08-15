@@ -112,9 +112,9 @@
 	base_icon_state = "koor"
 	explosion_block = 0
 	heat_proof = TRUE
-	max_integrity = 600
-	armor = list(MELEE = 65, BULLET = 65, LASER = 65, ENERGY = 65, BOMB = 20, BIO = 65, FIRE = 65, ACID = 65)
-	damage_deflection = 40
+	max_integrity = 500
+	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 10, BIO = 45, FIRE = 45, ACID = 45)
+	damage_deflection = 20
 	puzzle_id = "housekey"
 	open_message = "The door moves with a some sound, and opens."
 	close_message = "The door moves with a some sound, and closes."

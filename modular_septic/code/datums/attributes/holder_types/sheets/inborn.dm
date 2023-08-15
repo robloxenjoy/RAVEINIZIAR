@@ -101,6 +101,7 @@
 		SKILL_FORCESWORD = list(1, 2),
 		SKILL_THROWING = list(6, 13),
 		SKILL_FORENSICS = list(-2, 2),
+		SKILL_ALCHEMISTRY = list(2, 5),
 		SKILL_ACROBATICS = list(3, 8),
 	)
     raw_attribute_list = list(

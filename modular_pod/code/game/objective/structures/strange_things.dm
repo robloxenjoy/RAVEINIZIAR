@@ -611,14 +611,29 @@
 	if(istype(I, /obj/item/stack/teeth))
 		var/obj/item/stack/teeth/R = I
 		if(R.amount == 2)
-			if(user.dna?.species?.id == SPECIES_WEAKWILLET)
-				user.visible_message(span_notice("[user] gives [I] to Tohubohu."),span_notice("You gave [I] to Tohubohu."), span_hear("You hear the sound of sacrificing."))
+//			if((user.dna?.species?.id == SPECIES_WEAKWILLET) || is_chaot_job(user.mind.assigned_role)
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_MENTAL)
+			if(diceroll == DICE_SUCCESS)
 				sound_hint()
 				playsound(get_turf(src), 'modular_pod/sound/eff/chaotic.ogg', 100 , FALSE, FALSE)
 				new /obj/item/melee/bita/obsidian(get_turf(user))
 				qdel(I)
+			else
+				qdel(I)
+				return
 		else
 			to_chat(user, span_warning("You need exactly 2 teeth!"))
+	if(istype(I, /obj/item/organ/spleen))
+		var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ALCHEMISTRY), context = DICE_CONTEXT_MENTAL)
+		if(diceroll == DICE_SUCCESS)
+			sound_hint()
+			playsound(get_turf(src), 'modular_pod/sound/eff/chaotic.ogg', 100 , FALSE, FALSE)
+//			new /obj/item/melee/bita/obsidian(get_turf(user))
+			new /obj/item/halyabegg(get_turf(user))
+			qdel(I)
+		else
+			qdel(I)
+			return
 	else
 		return
 

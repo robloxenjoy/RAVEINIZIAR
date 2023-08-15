@@ -1047,6 +1047,7 @@
 		SKILL_SMG = list(-1, 1),
 		SKILL_PISTOL = list(-1, 1),
 		SKILL_RIFLE = list(-1, 4),
+		SKILL_SHOTGUN = list(2, 6),
 //		SKILL_RAPIER = list(-1, 1),
 		SKILL_SHORTSWORD = list(-1, 1),
 		SKILL_THROWING = list(-5, 0),
@@ -1054,6 +1055,9 @@
 		SKILL_LOCKPICKING = list(-2, 2),
 		SKILL_SCIENCE = list(-2, 2),
 		SKILL_ACROBATICS = list(-2, 1),
+		SKILL_MEDICINE = list(-1, 6),
+		SKILL_SURGERY = list(-1, 6),
+		SKILL_ALCHEMISTRY = list(2, 5),
 	)
 	raw_attribute_list = list(
 		SKILL_BRAWLING = -1,

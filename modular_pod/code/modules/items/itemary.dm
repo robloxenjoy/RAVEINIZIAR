@@ -489,3 +489,34 @@
 		return
 	SSshuttle.emergency.request()
 	usedy = TRUE
+
+/obj/item/atrat
+	name = "Atrat"
+	desc = "Femboy sex."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "atrat"
+	var/usedy = FALSE
+
+/*
+/obj/item/atrat/attack_self(mob/living/carbon/user, modifiers)
+	. = ..()
+	if(usedy)
+		return
+	usedy = TRUE
+	addtimer(CALLBACK(src, .proc/restart_use), 50 SECONDS)
+*/
+
+/obj/item/atrat/attack_atom(atom/attacked_atom, mob/living/carbon/user, params)
+	if(!isturf(attacked_atom))
+		return
+	if(isopenspaceturf(attacked_atom) || isspaceturf(attacked_atom))
+		return
+	if(!usedy)
+		new /atom/movable/fire(attacked_atom, 21)
+		usedy = TRUE
+		addtimer(CALLBACK(src, .proc/restart_use), 50 SECONDS)
+
+/obj/item/atrat/proc/restart_use()
+	if(QDELETED(src) || !usedy)
+		return
+	usedy = FALSE

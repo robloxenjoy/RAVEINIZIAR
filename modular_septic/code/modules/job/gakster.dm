@@ -263,7 +263,7 @@
 /datum/job/chaot
 	title = "Chaot"
 	department_head = list("Head of Personnel")
-	faction = list("neutral", "swarmer")
+	faction = list("chaos")
 	total_positions = 5
 	spawn_positions = 5
 	supervisors = "CHAOTIC."
@@ -288,15 +288,6 @@
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/chaotic
 	r_pocket = /obj/item/shard/crystal/green
 	id = /obj/item/keycard/chaot
-//	l_hand = /obj/item/cellphone
-//	belt = /obj/item/crowbar
-//	l_pocket = /obj/item/simcard
-//	back = /obj/item/storage/backpack/satchel/itobe
-//	backpack_contents = list(
-//		/obj/item/reagent_containers/hypospray/medipen/retractible/blacktar = 1,
-//		/obj/item/flashlight/seclite = 1,
-//	)
-//	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
 
 /datum/job/outcombat

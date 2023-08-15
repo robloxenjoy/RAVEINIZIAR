@@ -1046,12 +1046,15 @@
 	..()
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
 	L.adjustFatigueLoss(1 * REM * delta_time)
+	L.add_chem_effect(CE_OXYGENATED, 1, "[type]")
+//	L.adjustOxyLoss(-3 * REM * delta_time * normalise_creation_purity())
 	ADD_TRAIT(L, TRAIT_SHOCKIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_NOFIRE, type)
 
 
 /datum/reagent/consumable/meso_gelatine/on_mob_end_metabolize(mob/living/L)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
+	L.remove_chem_effect(CE_OXYGENATED, "[type]")
 	REMOVE_TRAIT(L, TRAIT_SHOCKIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_NOFIRE, type)
 	..()

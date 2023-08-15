@@ -336,6 +336,26 @@
 	L.remove_chem_effect(CE_PAINKILLER, "[type]")
 	L.remove_chem_effect(CE_PULSE, "[type]")
 
+/datum/reagent/medicine/crazypomxo
+	name = "Crazy Pomxo"
+	description = "Good thing."
+	ph = 6.9
+	reagent_state = LIQUID
+	metabolization_rate = REAGENTS_METABOLISM * 3 //very fast metabolism
+	self_consuming = TRUE //Does not get processed by the liver
+	color = "#FBFBFD100"
+	overdose_threshold = 51
+
+/datum/reagent/medicine/crazypomxo/on_mob_life(mob/living/carbon/owner, delta_time, times_fired)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -6 * REM * delta_time * normalise_creation_purity())
+	owner.jitteriness = 0
+//	if(DT_PROB(5, delta_time))
+//		owner.cure_all_traumas(TRAUMA_RESILIENCE_LOBOTOMY)
+//		if(owner.has_dna())
+//			owner.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
+
+	return ..()
+
 //Copium
 /datum/reagent/medicine/copium
 	name = "Copium"

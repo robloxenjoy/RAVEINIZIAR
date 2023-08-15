@@ -49,6 +49,11 @@
 	tetris_width = 32
 	tetris_height = 32
 
+/obj/item/food/berries/redcherrie/super
+	bite_consumption = 6
+	grind_results = list(/datum/reagent/consumable/guleberryjelly = 1, /datum/reagent/drug/kravsa = 2, /datum/reagent/medicine/crazypomxo = 3)
+	food_reagents = list(/datum/reagent/consumable/guleberryjelly = 1, /datum/reagent/drug/kravsa = 2, /datum/reagent/medicine/crazypomxo = 3)
+
 /obj/item/food/gelatine/mesopelagic
 	name = "Mesopelagic Gelatine"
 	desc = "It was deep in the water."

@@ -208,9 +208,9 @@
 /obj/structure/trap/fire/chaot
 
 /obj/structure/trap/fire/chaot/trap_effect(mob/living/L)
-	var/datum/job/job = SSjob.GetJob(/datum/job/chaot)
-	if(is_chaot_job(job))
-//	if(is_chaot_job(L.mind.assigned_role))
+//	var/datum/job/job = SSjob.GetJob(/datum/job/chaot)
+//	if(is_chaot_job(job))
+	if(is_chaot_job(L.mind.assigned_role))
 		return
 	to_chat(L, span_danger("<B>Pox Harve!</B>"))
 	L.Paralyze(20)
@@ -232,8 +232,8 @@
 
 /obj/structure/trap/chill/chaot/trap_effect(mob/living/L)
 //	if(is_chaot_job(L.mind.assigned_role))
-	var/datum/job/job = SSjob.GetJob(/datum/job/chaot)
-	if(is_chaot_job(job))
+//	var/datum/job/job = SSjob.GetJob(/datum/job/chaot)
+	if(is_chaot_job(L.mind.assigned_role))
 		return
 
 /obj/structure/trap/damage

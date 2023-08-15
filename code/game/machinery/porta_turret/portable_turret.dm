@@ -845,6 +845,22 @@ DEFINE_BITFIELD(turret_flags, list(
 	lethal_projectile = /obj/projectile/beam/weak/penetrator
 	faction = list("neutral","silicon","turret")
 
+/obj/machinery/porta_turret/centcom_shuttle/akt
+	installation = null
+	max_integrity = 260
+	always_up = TRUE
+	use_power = NO_POWER_USE
+	has_cover = FALSE
+	scan_range = 9
+	stun_projectile = /obj/projectile/bullet/a545
+	lethal_projectile = /obj/projectile/bullet/a545
+	lethal_projectile_sound = 'modular_septic/sound/weapons/guns/rifle/ak.ogg'
+	stun_projectile_sound = 'modular_septic/sound/weapons/guns/rifle/ak.ogg'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	faction = list("neutral","silicon","turret")
+	mode = TURRET_LETHAL
+
 ////////////////////////
 //Turret Control Panel//
 ////////////////////////

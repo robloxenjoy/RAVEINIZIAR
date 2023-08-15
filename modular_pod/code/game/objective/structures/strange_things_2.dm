@@ -710,6 +710,10 @@
 			new /obj/item/reagent_containers/syringe/morphine(get_turf(user))
 			moneymoney -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("pickaxe")
+			new /obj/item/melee/hehe/pickaxe/iron(get_turf(user))
+			moneymoney -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		if("square lockpick")
 			new /obj/item/akt/lockpick/square(get_turf(user))
 			moneymoney -= 50
