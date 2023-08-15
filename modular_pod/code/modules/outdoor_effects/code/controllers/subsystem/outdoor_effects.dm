@@ -145,7 +145,7 @@ SUBSYSTEM_DEF(outdoor_effects)
 	//New time is the last time step in list (midnight) - next time will be the first step
 	if(!new_step)
 		new_step = time_cycle_steps[length(time_cycle_steps)]
-		next_step_datum = time_cycle_steps[1]
+		next_step_datum = time_cycle_steps[3]
 
 	current_step_datum = new_step
 /*
