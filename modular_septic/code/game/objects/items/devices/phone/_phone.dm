@@ -11,7 +11,7 @@
 	inhand_icon_state = "electronic"
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	verb_say = "communicates"
 	pickup_sound = 'modular_septic/sound/efn/phone_pickup.ogg'
 	equip_sound = 'modular_septic/sound/efn/phone_holster.ogg'

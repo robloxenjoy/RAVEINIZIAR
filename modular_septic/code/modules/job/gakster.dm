@@ -286,8 +286,10 @@
 	uniform = /obj/item/clothing/under/venturerclassic
 	pants = /obj/item/clothing/pants/venturer
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/chaotic
-	r_pocket = /obj/item/shard/crystal/green
+	mask = /obj/item/shard/crystal/green
 	id = /obj/item/keycard/chaot
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 	shoes = /obj/item/clothing/shoes/laceup
 
 /datum/job/outcombat

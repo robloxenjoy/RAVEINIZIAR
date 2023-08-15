@@ -1058,6 +1058,7 @@
 		SKILL_MEDICINE = list(-1, 6),
 		SKILL_SURGERY = list(-1, 6),
 		SKILL_ALCHEMISTRY = list(2, 5),
+		SKILL_MASONRY = list(3, 6),
 	)
 	raw_attribute_list = list(
 		SKILL_BRAWLING = -1,
