@@ -60,7 +60,7 @@
 /datum/sprite_accessory/snouts/mammal/pig
 	name = "Boarlet"
 	icon_state = "boar"
-	recommended_species = list(SPECIES_BOARUMAN)
+	recommended_species = list(SPECIES_BOARHUMAN)
 	color_src = FALSE
 
 /datum/sprite_accessory/snouts/mammal/elephant

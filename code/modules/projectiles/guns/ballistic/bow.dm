@@ -1,20 +1,21 @@
-
 /obj/item/gun/ballistic/bow
-	name = "longbow"
-	desc = "While pretty finely crafted, surely you can find something better to use in the current year."
-	icon = 'icons/obj/guns/ballistic.dmi'
+	name = "Wooden Bow"
+	desc = "AWESOME!"
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "bow"
 	inhand_icon_state = "bow"
 	load_sound = null
-	fire_sound = null
+	fire_sound = 'modular_pod/sound/eff/bow_shoot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
-	force = 15
+	force = 5
 	attack_verb_continuous = list("whipped", "cracked")
 	attack_verb_simple = list("whip", "crack")
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
 	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
+	skill_melee = SKILL_IMPACT_WEAPON
+	skill_ranged = SKILL_BOW
 	var/drawn = FALSE
 
 /obj/item/gun/ballistic/bow/update_icon_state()
@@ -24,9 +25,12 @@
 /obj/item/gun/ballistic/bow/proc/drop_arrow()
 	drawn = FALSE
 	if(chambered)
-		chambered.forceMove(drop_location())
+//		chambered.forceMove(drop_location())
 		magazine.get_round(keep = FALSE)
 		chambered = null
+	if(!chambered)
+		return
+	chambered.forceMove(drop_location())
 	update_appearance()
 
 /obj/item/gun/ballistic/bow/chamber_round(keep_bullet = FALSE, spin_cylinder, replace_new_round)
@@ -40,6 +44,7 @@
 	if(chambered)
 		to_chat(user, span_notice("You [drawn ? "release the tension on" : "draw the string on"] [src]."))
 		drawn = !drawn
+		playsound(user, 'modular_pod/sound/eff/bow_start.ogg', 60, TRUE)
 	update_appearance()
 
 /obj/item/gun/ballistic/bow/afterattack(atom/target, mob/living/user, flag, params, passthrough = FALSE)
@@ -87,11 +92,9 @@
 	name = "arrow"
 	desc = "Ow! Get it out of me!"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
-	damage = 50
+	damage = 20
 	speed = 1
 	range = 25
-
-
 
 /obj/item/storage/bag/quiver
 	name = "quiver"
@@ -105,7 +108,7 @@
 	. = ..()
 	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
 	storage.max_w_class = WEIGHT_CLASS_TINY
-	storage.max_items = 40
+	storage.max_items = 20
 	storage.max_combined_w_class = 100
 	storage.set_holdable(list(
 		/obj/item/ammo_casing/caseless/arrow

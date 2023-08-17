@@ -41,7 +41,7 @@
 		if(spawned.ckey == "crazyduster")
 			if(ispighuman(spawned))
 				add_verb(spawned, list(
-					/mob/living/carbon/human/verb/becomeboar))
+					/mob/living/carbon/human/proc/becomeboar))
 		//chipraps plushie
 		if(spawned.ckey == "chrapacz2000")
 			spawned.put_in_hands(new /obj/item/toy/plush/chipraps(spawned.drop_location()), FALSE)
@@ -82,16 +82,15 @@
 //		addtimer(CALLBACK(spawned, /mob/.proc/clear_fullscreen, "podpol", 3), 3)
 		var/list/in_range = range(2, spawned)
 		var/obj/structure/bed/a_mimir
-		if(!a_mimir)
-			return
-		spawned.forceMove(get_turf(a_mimir))
-		a_mimir.buckle_mob(spawned)
+		if(a_mimir in range (in_range))
+			spawned.forceMove(get_turf(a_mimir))
+			a_mimir.buckle_mob(spawned)
 
 //		for(var/obj/structure/bed/bed in in_range)
 //			if(bed.id_tag == dorm_key.id_tag)
 //				break
 		var/birthday = spawned_human.day_born
-		var/birthday_month = month_text(spawned_human.month_born)c
+		var/birthday_month = month_text(spawned_human.month_born)
 		var/station_realtime = SSstation_time.get_station_realtime()
 		var/DD = text2num(time2text(station_realtime, "DD")) //  current day (numeric)
 		var/month = lowertext(time2text(station_realtime, "Month")) // current month (text)
