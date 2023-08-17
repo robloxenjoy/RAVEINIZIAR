@@ -860,7 +860,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "molyakii" = 3, "statuekas" = 1, "nothing" = 70))
+		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "nothing" = 70))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -911,12 +911,83 @@
 				new /obj/structure/fluff/statuestone(get_turf(src))
 //			if("beartrap")
 //				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
-			if("molyakii")
-				new /obj/structure/flora/ausbushes/molyakii(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/norandomgen
 	randomgenerate = FALSE
 	randomcolor = FALSE
+
+/turf/open/floor/plating/polovich/greengryaz/norandomgen/super
+	randomgenerate = FALSE
+	randomcolor = TRUE
+
+/turf/open/floor/plating/polovich/greengryaz/super/Initialize(mapload)
+	. = ..()
+	dir = rand(0,8)
+
+	if(randomcolor)
+		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
+
+	if(locate(/obj/structure/) in get_turf(src))
+		return
+	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "beartrap" = 3, "statuekas" = 1, "nothing" = 70))
+	switch(state)
+		if("crystalbush")
+			new /obj/structure/flora/ausbushes/crystal(get_turf(src))
+		if("shroom")
+			new /obj/item/food/grown/mushroom/blood(get_turf(src))
+		if("nothing")
+			return
+		if("stump")
+			new /obj/structure/flora/stump(get_turf(src))
+		if("treelong")
+			var/canspawn = TRUE
+			var/near_t = range(2, src)
+			if((locate(/turf/closed/wall) in near_t) || (locate(/obj/structure/flora/tree/evil) in near_t) || (locate(/obj/structure/barricade/flora/crystal) in near_t))
+				canspawn = FALSE
+			if(canspawn)
+				new /obj/structure/flora/tree/evil/long(get_turf(src))
+				new /turf/open/floor/plating/polovich/roots(get_turf(src))
+		if("tree")
+			var/canspawn = TRUE
+			var/near_t = range(2, src)
+			if((locate(/turf/closed/wall) in near_t) || (locate(/obj/structure/flora/tree/evil) in near_t) || (locate(/obj/structure/barricade/flora/crystal) in near_t))
+				canspawn = FALSE
+			if(canspawn)
+				new /obj/structure/flora/tree/evil(get_turf(src))
+				new /turf/open/floor/plating/polovich/roots(get_turf(src))
+		if("groundcrystals")
+			var/crystaltype = rand(1, 4)
+			switch(crystaltype)
+				if(1)
+					new /obj/structure/crystals_ground/green(get_turf(src))
+				if(2)
+					new /obj/structure/crystals_ground/red(get_turf(src))
+				if(3)
+					new /obj/structure/crystals_ground/blue(get_turf(src))
+				if(4)
+					new /obj/structure/crystals_ground/pink(get_turf(src))
+		if("crystal")
+			var/crystaltypee = rand(1, 4)
+			switch(crystaltypee)
+				if(1)
+					new /obj/structure/barricade/flora/crystal/green(get_turf(src))
+				if(2)
+					new /obj/structure/barricade/flora/crystal/red(get_turf(src))
+				if(3)
+					new /obj/structure/barricade/flora/crystal/blue(get_turf(src))
+				if(4)
+					new /obj/structure/barricade/flora/crystal/purple(get_turf(src))
+		if("goldishincrementum")
+			new /obj/structure/flora/ausbushes/incrementum(get_turf(src))
+		if("ygro")
+			new /obj/structure/flora/ausbushes/incrementum/ygro(get_turf(src))
+		if("chaosbush")
+			new /turf/open/floor/plating/polovich/evilevil(get_turf(src))
+			new /obj/structure/flora/ausbushes/crystal/dark(get_turf(src))
+		if("statuekas")
+			new /obj/structure/fluff/statuestone(get_turf(src))
+		if("beartrap")
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical

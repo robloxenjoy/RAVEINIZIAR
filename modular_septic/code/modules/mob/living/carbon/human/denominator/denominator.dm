@@ -13,6 +13,11 @@
 	icon_state = "glorytotheccp" //for mapping
 	race = /datum/species/pighuman
 
+/mob/living/carbon/human/species/boarhuman
+	icon = 'modular_septic/icons/obj/items/books.dmi'
+	icon_state = "glorytotheccp" //for mapping
+	race = /datum/species/boarhuman
+
 /mob/living/carbon/human/species/halbermensch
 	icon = 'modular_septic/icons/obj/items/books.dmi'
 	icon_state = "glorytotheccp" //for mapping

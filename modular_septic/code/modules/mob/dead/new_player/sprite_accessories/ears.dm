@@ -59,6 +59,12 @@
 //	recommended_species = list(SPECIES_PIGHUMAN)
 	color_src = FALSE
 
+/datum/sprite_accessory/ears/mutant/boark
+	name = "Boar Ears"
+	icon_state = "boark"
+	recommended_species = list(SPECIES_BOARHUMAN)
+	color_src = FALSE
+
 /datum/sprite_accessory/ears/mutant/bigwolf
 	name = "Big Wolf"
 	icon_state = "bigwolf"

@@ -38,9 +38,10 @@
 		var/mob/living/carbon/human/spawned_human = spawned
 		var/old_intent = spawned.a_intent
 		spawned.a_intent = INTENT_GRAB
-		//lemun
-		if(player_client?.ckey == "ltkoepple")
-			spawned.put_in_hands(new /obj/item/food/grown/citrus/lemon(spawned.drop_location()), FALSE)
+		if(spawned.ckey == "crazyduster")
+			if(ispighuman(spawned))
+				add_verb(spawned, list(
+					/mob/living/carbon/human/verb/becomeboar))
 		//chipraps plushie
 		if(spawned.ckey == "chrapacz2000")
 			spawned.put_in_hands(new /obj/item/toy/plush/chipraps(spawned.drop_location()), FALSE)
@@ -70,8 +71,8 @@
 				put_stuff_in_spawn_closet(spawned)
 		spawned.a_intent = old_intent
 		spawned.gain_extra_effort(1, TRUE)
-		if(prob(30))
-			spawned_human.gain_trauma(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_BASIC)
+//		if(prob(30))
+//			spawned_human.gain_trauma(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_BASIC)
 		var/obj/item/organ/brain/brain = spawned.getorganslot(ORGAN_SLOT_BRAIN)
 		if(brain)
 			(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(spawned, STAT_ENDURANCE))
@@ -79,8 +80,18 @@
 //		spawned.overlay_fullscreen("podpol", /atom/movable/screen/fullscreen/impaired/podpol)
 //		spawned.clear_fullscreen("podpol", 3)
 //		addtimer(CALLBACK(spawned, /mob/.proc/clear_fullscreen, "podpol", 3), 3)
+		var/list/in_range = range(2, spawned)
+		var/obj/structure/bed/a_mimir
+		if(!a_mimir)
+			return
+		spawned.forceMove(get_turf(a_mimir))
+		a_mimir.buckle_mob(spawned)
+
+//		for(var/obj/structure/bed/bed in in_range)
+//			if(bed.id_tag == dorm_key.id_tag)
+//				break
 		var/birthday = spawned_human.day_born
-		var/birthday_month = month_text(spawned_human.month_born)
+		var/birthday_month = month_text(spawned_human.month_born)c
 		var/station_realtime = SSstation_time.get_station_realtime()
 		var/DD = text2num(time2text(station_realtime, "DD")) //  current day (numeric)
 		var/month = lowertext(time2text(station_realtime, "Month")) // current month (text)

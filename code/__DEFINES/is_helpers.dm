@@ -76,6 +76,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define ismonkey(A) (is_species(A, /datum/species/monkey))
 #define isandroid(A) (is_species(A, /datum/species/android))
 #define ispighuman(A) (is_species(A, /datum/species/pighuman))
+#define isboarhuman(A) (is_species(A, /datum/species/boarhuman))
 #define iswillet(A) (is_species(A, /datum/species/weakwillet))
 #define ishalber(A) (is_species(A, /datum/species/halbermensch))
 

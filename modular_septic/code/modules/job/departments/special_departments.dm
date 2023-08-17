@@ -30,6 +30,24 @@
 	display_order = 5
 	label_class = "security"
 	latejoin_color = "#38e38e"
+
+/datum/job_department/kador
+	department_name = DEPARTMENT_KADOR
+	department_bitflags = DEPARTMENT_BITFLAG_KADOR
+	department_experience_type = EXP_TYPE_SPECIAL
+	display_order = 6
+	label_class = "security"
+	latejoin_color = "#301934"
+
+/datum/job_department/ladax
+	department_name = DEPARTMENT_LADAX
+	department_bitflags = DEPARTMENT_BITFLAG_LADAX
+	department_experience_type = EXP_TYPE_SPECIAL
+	display_order = 7
+	label_class = "security"
+	latejoin_color = "#301934"
+
+
 */
 /datum/job_department/undefined
 	display_order = 9

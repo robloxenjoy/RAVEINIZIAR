@@ -42,3 +42,13 @@
 
 	if(stat == CONSCIOUS)
 		vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1, button = TRUE)
+	
+/mob/living/carbon/human/proc/becomeboar(whispered as null)
+	set hidden = TRUE
+	set name = "Become Boar"
+	set category = "Extra"
+	set desc = "You want?"
+
+	if(stat == CONSCIOUS)
+		if(!isboarhuman(src))
+			set_species(/datum/species/boarhuman)

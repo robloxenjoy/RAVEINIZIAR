@@ -3,7 +3,7 @@
 	. = ..()
 	//values are quite low due to the way dirty clothing dirtifies you
 	set_germ_level(rand(GERM_LEVEL_START_MIN, GERM_LEVEL_START_MAX))
-	add_verb(src, /mob/living/carbon/human/proc/hide_furry_shit)
+//	add_verb(src, /mob/living/carbon/human/proc/hide_furry_shit)
 	//hehe horny
 	set_arousal(rand(AROUSAL_LEVEL_START_MIN, AROUSAL_LEVEL_START_MAX))
 	AddComponent(/datum/component/fixeye)

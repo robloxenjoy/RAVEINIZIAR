@@ -470,7 +470,7 @@ SUBSYSTEM_DEF(job)
 					JobDebug("DO player has incompatible species, Player: [player], Job:[job.title]")
 					continue
 				if(job.lacks_required_languages(player.client.prefs))
-					JobDebug("DO player has incompatible species, Player: [player], Job:[job.title]")
+					JobDebug("DO player has incompatible lang, Player: [player], Job:[job.title]")
 					continue
 				//SEPTIC EDIT END
 
@@ -723,13 +723,13 @@ SUBSYSTEM_DEF(job)
 	// Placing a mob in a chair will attempt to buckle it, or else fall back to default.
 	if(buckle && isliving(joining_mob))
 		buckle_mob(joining_mob, FALSE, FALSE)
-
+/*
 /obj/structure/bed/JoinPlayerHere(mob/joining_mob, buckle)
 	. = ..()
 	// Placing a mob in a bed will attempt to buckle it, or else fall back to default.
 	if(buckle && isliving(joining_mob))
 		buckle_mob(joining_mob, FALSE, FALSE)
-
+*/
 /datum/controller/subsystem/job/proc/SendToLateJoin(mob/M, buckle = TRUE)
 	var/atom/destination
 	if(M.mind && !is_unassigned_job(M.mind.assigned_role) && length(GLOB.jobspawn_overrides[M.mind.assigned_role.title])) //We're doing something special today.

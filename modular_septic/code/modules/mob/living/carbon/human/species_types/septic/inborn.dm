@@ -186,3 +186,52 @@
 	limbs_icon = 'modular_pod/icons/mob/human/species/pighuman/pighuman_parts.dmi'
 	limbs_id = "pighuman"
 	examine_icon_state = "pighuman"
+
+/datum/species/boarhuman
+	name = "Boarhuman"
+	id = SPECIES_BOARHUMAN
+	default_color = "4B4B4B"
+	species_traits = list(
+		EYECOLOR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
+	)
+	inherent_traits = list(
+		TRAIT_ADVANCEDTOOLUSER,
+		TRAIT_CAN_STRIP,
+	)
+	inherent_quirks = list(
+		/datum/quirk/voracious,
+	)
+	attribute_sheet = /datum/attribute_holder/sheet/boarhuman
+	inherent_biotypes = MOB_ORGANIC | MOB_HUMANOID | MOB_BEAST
+	mutant_bodyparts = list()
+	default_mutant_bodyparts = list(
+		"snout" = "Boarlet",
+		"ears" = "Boar Ears",
+	)
+	default_genitals = list(
+		ORGAN_SLOT_PENIS = /obj/item/organ/genital/penis/knotted/barbed,
+		ORGAN_SLOT_TESTICLES = /obj/item/organ/genital/testicles,
+		ORGAN_SLOT_VAGINA = /obj/item/organ/genital/vagina,
+		ORGAN_SLOT_WOMB = /obj/item/organ/genital/womb,
+		ORGAN_SLOT_BREASTS = /obj/item/organ/genital/breasts/sextuple,
+		ORGAN_SLOT_ANUS = /obj/item/organ/genital/anus,
+	)
+//	mutanttongue = /obj/item/organ/tongue/pig
+	heatmod = 1.2
+	coldmod = 0.5
+	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT - 10)
+	bodytemp_cold_damage_limit = (BODYTEMP_COLD_DAMAGE_LIMIT - 10)
+	liked_food = RAW | MEAT | GROSS | GRAIN | SEWAGE
+	disliked_food = CLOTH
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	say_mod = "oinks"
+	attack_verb = "beats"
+	attack_sharpness = NONE
+	bite_sharpness = SHARP_POINTY
+//	species_language_holder = /datum/language/yoinky
+	limbs_icon = 'modular_pod/icons/mob/human/species/blackboar/blackboar_parts.dmi'
+	limbs_id = "blackboar"
+	examine_icon_state = "blackboar"

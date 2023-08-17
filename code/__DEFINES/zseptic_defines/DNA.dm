@@ -112,6 +112,7 @@
 #define SPECIES_WEAKWILLET "weakwillet"
 #define SPECIES_HALBERMENSCH "halbermensch"
 #define SPECIES_PIGHUMAN "pighuman"
+#define SPECIES_BOARHUMAN "boarman"
 #define SPECIES_DENOMINATOR "combiners"
 
 // ~body types

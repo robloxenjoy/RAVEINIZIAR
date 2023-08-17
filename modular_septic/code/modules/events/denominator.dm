@@ -120,7 +120,7 @@
 	close_message = "The door moves with a some sound, and closes."
 	safe = FALSE
 	var/forty = TRUE
-	var/locktype = "KOLLAX"
+	var/locktype = "JOBARDO"
 	var/lockstate = null
 	var/lock_level_one = FALSE
 	var/lock_level_two = TRUE
@@ -518,7 +518,7 @@
 
 /obj/machinery/door/keycard/denominator/podozl/akt/lair
 	puzzle_id = "lair"
-	locktype = "JOBARDO"
+	locktype = "KOLLAX"
 //	lock_level_one = TRUE
 
 /obj/item/keycard/akt/chantry
