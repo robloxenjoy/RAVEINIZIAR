@@ -56,6 +56,13 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define ishuman(A) (istype(A, /mob/living/carbon/human))
 
+GLOBAL_LIST_INIT(piggers, typecacheof(list(
+	/datum/species/pighuman,
+	/datum/species/boarhuman
+	)))
+
+#define arepiggers(A) (is_type_in_typecache(A, GLOB.piggers))
+
 //Human sub-species
 #define isabductor(A) (is_species(A, /datum/species/abductor))
 #define isgolem(A) (is_species(A, /datum/species/golem))
