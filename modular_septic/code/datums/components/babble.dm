@@ -54,7 +54,7 @@
 				initial_babble_sound = babble_sound_female
 			else
 				initial_babble_sound = babble_sound_agender
-		if(is_species(babbler, GLOB.piggers))
+		if(is_species(babbler, /datum/species/pighuman) || is_species(babbler, /datum/species/boarhuman))
 			initial_babble_sound = babble_sound_pig
 	var/initial_volume = volume
 	if(speech_mods[WHISPER_MODE])

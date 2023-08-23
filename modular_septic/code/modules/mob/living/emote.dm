@@ -122,7 +122,7 @@
 // Yawn
 /datum/emote/living/yawn/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/yawn_male[rand(1,2)].ogg"
 			else
@@ -135,7 +135,7 @@
 // Laughing sound
 /datum/emote/living/laugh/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/laugh_male[rand(1,5)].ogg"
 			else
@@ -159,7 +159,7 @@
 // Normal screaming
 /datum/emote/living/carbon/human/scream/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/terror_scream_male[rand(1,2)].ogg"
 			else
@@ -208,7 +208,7 @@
 
 /datum/emote/living/agonyscream/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.on_fire)
 				if(user.gender != FEMALE)
 					return "modular_septic/sound/emotes/agony_male[rand(1,15)].ogg"
@@ -235,7 +235,7 @@
 
 /datum/emote/living/deathscream/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/death_scream_male[rand(1,5)].ogg"
 			else
@@ -256,7 +256,7 @@
 
 /datum/emote/living/deathrattle/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			return "modular_septic/sound/emotes/deathgasp.ogg"
 		else
 			return "modular_pod/sound/eff/piggator.ogg"
@@ -296,7 +296,7 @@
 
 /datum/emote/living/grunt/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/moan_male[rand(1, 8)].ogg"
 			else
@@ -308,7 +308,7 @@
 
 /datum/emote/living/groan/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/moan_male[rand(1, 8)].ogg"
 			else
@@ -346,7 +346,7 @@
 // Crying
 /datum/emote/living/whimper/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/whimper_male[rand(1, 3)].ogg"
 			else
@@ -358,7 +358,7 @@
 
 /datum/emote/living/carbon/human/cry/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!arepiggers(user))
+		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
 			if(user.gender != FEMALE)
 				return "modular_septic/sound/emotes/cry_male[rand(1, 4)].ogg"
 			else
