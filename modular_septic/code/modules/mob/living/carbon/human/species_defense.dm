@@ -1034,12 +1034,12 @@
 						if(diceroll == DICE_CRIT_FAILURE)
 							victim.emote("fart")
 							victim.Stun(1 SECONDS)
-						victim.visible_message(span_pinkdang("[victim] is tummy-knocked by [user]!"), \
-											span_pinkdang("I am was tummy-knocked by [user]!"), \
+						victim.visible_message(span_pinkdang("[victim] is gut busted by [user]!"), \
+											span_pinkdang("I am was gut busted by [user]!"), \
 											span_hear("I hear the sound of flesh."))
 						if(victim.stat >= UNCONSCIOUS)
 							return
-						playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
+						playsound(get_turf(victim), 'modular_septic/sound/effects/gutbusted.ogg', 80, 0)
 	return TRUE
 
 /*

@@ -59,7 +59,7 @@
 				dropItemToGround(held_item)
 				flash_pain_major()
 				if(wound_messages)
-					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] drops [p_their()] [held_item]!"))
+					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] got sec neuritis!"))
 		if(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM)
 			var/obj/item/held_item = get_item_for_held_index(LEFT_HANDS)
 			if(held_item)
@@ -69,7 +69,7 @@
 				dropItemToGround(held_item)
 				flash_pain_major()
 				if(wound_messages)
-					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] drops [p_their()] [held_item]!"))
+					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] got sec neuritis!"))
 		if(BODY_ZONE_PRECISE_VITALS)
 			vomiting = prob(80)
 			flash_pain_major()
@@ -101,13 +101,13 @@
 		if(vomiting && (stat < DEAD))
 			vomit(10, TRUE, FALSE)
 		Unconscious(4 SECONDS)
-		if(wound_messages)
-			if((body_zone == BODY_ZONE_PRECISE_VITALS) && prob(10))
-				//gut status: busted
-				playsound(src, 'modular_septic/sound/effects/gutbusted.ogg', 100, 0)
-				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<u>Gut busted</u>!")]"))
-			else
-				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<u>Knock-out</u>!")]"))
+//		if(wound_messages)
+//			if((body_zone == BODY_ZONE_PRECISE_VITALS) && prob(10))
+//				//gut status: busted
+//				playsound(src, 'modular_septic/sound/effects/gutbusted.ogg', 100, 0)
+//				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<u>Gut busted</u>!")]"))
+//			else
+//				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<u>Knock-out</u>!")]"))
 	else if(vomiting)
 		//vomit without blood
 		vomit(10, FALSE, FALSE)

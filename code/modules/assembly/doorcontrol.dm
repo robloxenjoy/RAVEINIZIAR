@@ -19,7 +19,7 @@
 		id = clamp(round(change_id, 1), 1, 100)
 		to_chat(user, span_notice("You change the ID to [id]."))
 
-/obj/item/assembly/control/activate()
+/obj/item/assembly/control/attack_self(mob/user)
 	var/openclose
 	if(cooldown)
 		return
