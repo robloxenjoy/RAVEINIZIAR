@@ -90,8 +90,7 @@
 	var/amount_lungs = length(lungs)
 
 	// loopity loop
-	for(var/thing in lungs)
-		var/obj/item/organ/lungs/lung = thing
+	for(var/obj/item/organ/lungs/lung as anything in lungs)
 		// "master lung" handles these variables
 		if(lungs[1] == lung)
 			oxy_damage_type = lung.oxy_damage_type
@@ -387,11 +386,11 @@
 			var/miasma_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/miasma][MOLES])
 
 			//Miasma sickness
-//			if(prob(0.5 * miasma_pp))
-//				var/datum/disease/advance/miasma_disease = new /datum/disease/advance/random(min(round(max(miasma_pp/2, 1), 1), 6), min(round(max(miasma_pp, 1), 1), 8))
-//				//tl;dr the first argument chooses the smaller of miasma_pp/2 or 6(typical max virus symptoms), the second chooses the smaller of miasma_pp or 8(max virus symptom level) //
-//				miasma_disease.name = "Unknown"//^each argument has a minimum of 1 and rounds to the nearest value. Feel free to change the pp scaling I couldn't decide on good numbers for it.
-//				miasma_disease.try_infect(src)
+			if(prob(0.5 * miasma_pp))
+				var/datum/disease/advance/miasma_disease = new /datum/disease/advance/random(min(round(max(miasma_pp/2, 1), 1), 6), min(round(max(miasma_pp, 1), 1), 8))
+				//tl;dr the first argument chooses the smaller of miasma_pp/2 or 6(typical max virus symptoms), the second chooses the smaller of miasma_pp or 8(max virus symptom level) //
+				miasma_disease.name = "Unknown"//^each argument has a minimum of 1 and rounds to the nearest value. Feel free to change the pp scaling I couldn't decide on good numbers for it.
+				miasma_disease.try_infect(src)
 
 			// Miasma side effects
 			switch(miasma_pp)
@@ -449,6 +448,9 @@
 	. = 0
 	if(!safe_breath_min) //the other args are either: Ok being 0 or Specifically handled.
 		return FALSE
+	for(var/obj/item/organ/lungs/lung as anything in lungs)
+		if(reagents.has_reagent(lung.crit_stabilizing_reagent, needs_metabolizing = TRUE))
+			return FALSE
 	if(prob(20))
 		agony_gasp()
 
@@ -462,8 +464,7 @@
 	update_hud_breath(failed_last_breath, lung_efficiency, lung_process.bruised_threshold, lung_process.failing_threshold)
 
 /mob/living/carbon/human/check_failed_breath(datum/gas_mixture/breath, lung_efficiency = 0, list/lungs, datum/organ_process/lung_process)
-	for(var/thing in lungs)
-		var/obj/item/organ/lungs/lung = thing
+	for(var/obj/item/organ/lungs/lung as anything in lungs)
 		if(reagents.has_reagent(lung.crit_stabilizing_reagent, needs_metabolizing = TRUE))
 			return FALSE
 	if(prob(20))

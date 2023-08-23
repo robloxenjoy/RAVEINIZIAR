@@ -18,8 +18,11 @@
 
 /mob/living/carbon/handle_fatigue(delta_time, times_fired)
 	//regenerate fatigue if possible
-	if(!combat_mode && COOLDOWN_FINISHED(src, fatigue_regen_cooldown) && (max_fatigue - fatigue > 0))
-		adjustFatigueLoss(-FATIGUE_REGEN_FACTOR * (body_position == LYING_DOWN ? FATIGUE_REGEN_LYING_MULTIPLIER : 1) * delta_time)
+	if(combat_mode || !COOLDOWN_FINISHED(src, fatigue_regen_cooldown) || (max_fatigue - fatigue <= 0))
+		return
+	var/regen_multiplier = (body_position == LYING_DOWN ? FATIGUE_REGEN_LYING_MULTIPLIER : 1)
+	regen_multiplier *= (1 + get_chem_effect(CE_ENERGETIC))
+	adjustFatigueLoss(-FATIGUE_REGEN_FACTOR * regen_multiplier * delta_time)
 
 /mob/living/carbon/proc/enter_fatiguecrit()
 	if(!(status_flags & CANKNOCKDOWN) || HAS_TRAIT(src, TRAIT_STUNIMMUNE))

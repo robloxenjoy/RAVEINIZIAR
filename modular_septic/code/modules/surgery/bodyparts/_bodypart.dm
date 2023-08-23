@@ -1829,8 +1829,8 @@
 /obj/item/bodypart/proc/on_paralysis_trait_gain(obj/item/bodypart/source)
 	SIGNAL_HANDLER
 
-	if(can_be_disabled)
-		set_disabled(TRUE)
+	update_limb(!owner, owner)
+	update_limb_efficiency()
 
 ///Called when TRAIT_PARALYSIS is removed from the limb.
 /obj/item/bodypart/proc/on_paralysis_trait_loss(obj/item/bodypart/source)

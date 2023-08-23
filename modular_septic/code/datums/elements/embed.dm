@@ -60,12 +60,17 @@
 		limb = pick(victim.bodyparts)
 	var/datum/injury/supply_injury = limb.last_injury
 	if(!harmless && (!limb.last_injury || !(limb.last_injury.damage_type in list(WOUND_SLASH, WOUND_PIERCE))) )
+		return COMPONENT_EMBED_FAILURE
+
+/*
+	if(!harmless && (!limb.last_injury || !(limb.last_injury.damage_type in list(WOUND_SLASH, WOUND_PIERCE))) )
 		supply_injury = limb.create_injury((weapon.get_sharpness() & SHARP_POINTY ? WOUND_PIERCE : WOUND_SLASH), \
 											throwingdatum ? weapon.get_throwforce(throwingdatum.thrower, GET_MOB_ATTRIBUTE_VALUE(throwingdatum.thrower, STAT_STRENGTH)) : \
 															weapon.get_force(), \
 											wound_messages = FALSE)
 		if(!limb.last_injury || !(limb.last_injury.damage_type in list(WOUND_SLASH, WOUND_PIERCE)))
 			return COMPONENT_EMBED_FAILURE
+*/
 
 	victim.AddComponent(/datum/component/embedded,\
 						weapon,\

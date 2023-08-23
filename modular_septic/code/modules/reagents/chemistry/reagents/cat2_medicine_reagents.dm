@@ -205,6 +205,10 @@
 	. = ..()
 	L.add_chem_effect(CE_OXYGENATED, 1, "[type]")
 
+/datum/reagent/medicine/c2/tirimol/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	M.adjustOxyLoss(-1.5 * REM * delta_time)
+
 /datum/reagent/medicine/c2/tirimol/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_chem_effect(CE_OXYGENATED, "[type]")

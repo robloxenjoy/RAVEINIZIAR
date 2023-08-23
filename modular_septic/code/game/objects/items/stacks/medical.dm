@@ -287,7 +287,7 @@
 	if(C.get_chem_effect(CE_PAINKILLER) < 30)
 		to_chat(user, span_userdanger("FUCK THIS REALLY HURTS!"))
 		C.agony_scream()
-	affecting.receive_damage(10, sharpness = SHARP_EDGED | SHARP_POINTY | SHARP_IMPALING)
+	affecting.receive_damage(brute = 10, sharpness = SHARP_EDGED | SHARP_POINTY | SHARP_IMPALING)
 	affecting.adjust_germ_level(100)
 	// oh you fucking idiot NOW YOU'VE DONE IT
 	if(prob(15))

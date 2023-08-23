@@ -191,19 +191,20 @@
 	if(HAS_TRAIT(src, TRAIT_BLOODLOSSIMMUNE))
 		return BLOOD_VOLUME_NORMAL
 
-	var/apparent_blood_volume = get_blood_circulation()
+	var/apparent_blood_volume
 	if(blood_carries_oxygen())
+		apparent_blood_volume = get_blood_circulation()
 		if(!needs_lungs())
 			return apparent_blood_volume
 	else
 		apparent_blood_volume = BLOOD_VOLUME_NORMAL
 
-	var/apparent_blood_volume_mod = max(0, 1 - getOxyLoss()/maxHealth)
+	var/apparent_blood_volume_mod = clamp(1 - getOxyLoss()/maxHealth, 0.1, 1)
 	var/oxygenated = get_chem_effect(CE_OXYGENATED)
-	if(oxygenated == 1) // Tirimol
-		apparent_blood_volume_mod += 0.5
-	else if(oxygenated >= 2) // Dexalin plus
+	if(oxygenated >= 2) // Dexalin plus
 		apparent_blood_volume_mod += 0.8
+	else if(oxygenated) // Tirimol
+		apparent_blood_volume_mod += 0.5
 	apparent_blood_volume = apparent_blood_volume * apparent_blood_volume_mod
 	return apparent_blood_volume
 

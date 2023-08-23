@@ -298,6 +298,16 @@
 	..()
 	. = TRUE
 
+/datum/reagent/consumable/coffee/on_mob_metabolize(mob/living/L, delta_time, times_fired)
+	..()
+	L.add_chem_effect(CE_ENERGETIC, 2, "[type]")
+	L.add_chem_effect(CE_PULSE, 1, "[type]")
+
+/datum/reagent/consumable/coffee/on_mob_end_metabolize(mob/living/L)
+	L.remove_chem_effect(CE_ENERGETIC, "[type]")
+	L.remove_chem_effect(CE_PULSE, "[type]")
+	..()
+
 /datum/reagent/consumable/tea
 	name = "Tea"
 	description = "Tasty black tea, it has antioxidants, it's good for you!"

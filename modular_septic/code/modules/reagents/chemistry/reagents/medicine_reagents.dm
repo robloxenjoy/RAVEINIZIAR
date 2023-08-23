@@ -13,11 +13,13 @@
 	C.add_chem_effect(CE_STABLE, 1, "[type]")
 	if(C.undergoing_cardiac_arrest() || C.undergoing_nervous_system_failure())
 		C.add_chem_effect(CE_ORGAN_REGEN, 1, "[type]")
+		C.add_chem_effect(CE_BRAIN_REGEN, 1, "[type]")
 
 /datum/reagent/medicine/atropine/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_chem_effect(CE_BLOODRESTORE, "[type]")
 	L.remove_chem_effect(CE_ORGAN_REGEN, "[type] ")
+	L.remove_chem_effect(CE_BRAIN_REGEN, "[type] ")
 	L.remove_chem_effect(CE_PAINKILLER, "[type]")
 	L.remove_chem_effect(CE_TOXIN, "[type]")
 	L.remove_chem_effect(CE_BLOCKAGE, "[type]")
@@ -349,11 +351,6 @@
 /datum/reagent/medicine/crazypomxo/on_mob_life(mob/living/carbon/owner, delta_time, times_fired)
 	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -6 * REM * delta_time * normalise_creation_purity())
 	owner.jitteriness = 0
-//	if(DT_PROB(5, delta_time))
-//		owner.cure_all_traumas(TRAUMA_RESILIENCE_LOBOTOMY)
-//		if(owner.has_dna())
-//			owner.dna.remove_all_mutations(list(MUT_NORMAL, MUT_EXTRA), TRUE)
-
 	return ..()
 
 //Copium

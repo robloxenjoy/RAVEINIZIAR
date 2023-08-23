@@ -142,9 +142,7 @@
 
 // Returns a percentage value for use by GetOxyloss().
 /obj/item/organ/lungs/proc/get_oxygen_deprivation()
-	if(is_failing())
-		return max_oxygen_deprivation
-	return FLOOR(oxygen_deprivation, 1)
+	return round(oxygen_deprivation, DAMAGE_PRECISION)
 
 /obj/item/organ/lungs/proc/can_oxy_deprive()
 	if(oxygen_deprivation < max_oxygen_deprivation)
@@ -152,7 +150,7 @@
 	return FALSE
 
 /obj/item/organ/lungs/proc/can_oxy_heal()
-	if(oxygen_deprivation)
+	if(oxygen_deprivation && !is_failing())
 		return TRUE
 	return FALSE
 
