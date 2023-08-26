@@ -118,9 +118,9 @@
 	)
 	recoil_animation_information = list()
 	fire_sound = list('modular_septic/sound/weapons/guns/pistol/USP1.ogg', 'modular_septic/sound/weapons/guns/pistol/USP2.ogg')
-	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.wav'
-	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.wav'
-	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.wav'
+	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.ogg'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.ogg'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.ogg'
 	mag_type = /obj/item/ammo_box/magazine/u45
 	can_suppress = FALSE
 	force = 15
