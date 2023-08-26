@@ -25,3 +25,15 @@
 	description = "An electronic device designed to mimic the functions of an organic human heart. Also holds an emergency dose of epinephrine, used automatically after facing severe trauma."
 	path = /obj/item/organ/heart/cybernetic/tier2
 	value = 4
+
+/datum/augment_item/organ/lungs/robotic
+	name = "Cybernetic Lungs 1.0"
+	description = "A basic cybernetic version of the lungs found in traditional humanoid entities."
+	path = /obj/item/organ/lungs/cybernetic
+	value = 3
+
+/datum/augment_item/organ/lungs/robotic
+	name = "Cybernetic Lungs 2.0"
+	description = "A cybernetic version of the lung found in traditional humanoid entities. Allows for greater intakes of oxygen than organic lungs, requiring slightly less pressure."
+	path = /obj/item/organ/lungs/cybernetic/tier2
+	value = 4

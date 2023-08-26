@@ -106,7 +106,7 @@
 	slot = AUGMENT_SLOT_L_ARM
 	path = /obj/item/bodypart/l_arm
 	value = -4
-
+/*
 /datum/augment_item/limb/l_arm/surplus
 	name = "Surplus Robotic Left Arm"
 	path = /obj/item/bodypart/l_arm/robot/surplus
@@ -115,6 +115,7 @@
 /datum/augment_item/limb/l_arm/robotic
 	name = "Robotic Left Arm"
 	path = /obj/item/bodypart/l_arm/robot/weak
+*/
 
 //LEFT HANDS
 /datum/augment_item/limb/l_hand
@@ -127,6 +128,7 @@
 	path = /obj/item/bodypart/l_hand
 	value = -4
 
+/*
 /datum/augment_item/limb/l_hand/surplus
 	name = "Surplus Robotic Left Hand"
 	path = /obj/item/bodypart/l_hand/robot/surplus
@@ -135,6 +137,7 @@
 /datum/augment_item/limb/l_hand/robotic
 	name = "Robotic Left Hand"
 	path = /obj/item/bodypart/l_hand/robot/weak
+*/
 
 //RIGHT ARMS
 /datum/augment_item/limb/r_arm
@@ -146,7 +149,7 @@
 	slot = AUGMENT_SLOT_R_ARM
 	path = /obj/item/bodypart/r_arm
 	value = -4
-
+/*
 /datum/augment_item/limb/r_arm/surplus
 	name = "Surplus Robotic Right Arm"
 	path = /obj/item/bodypart/r_arm/robot/surplus
@@ -155,7 +158,7 @@
 /datum/augment_item/limb/r_arm/robotic
 	name = "Robotic Right Arm"
 	path = /obj/item/bodypart/r_arm/robot/weak
-
+*/
 //RIGHT HANDS
 /datum/augment_item/limb/r_hand
 	slot = AUGMENT_SLOT_R_HAND
@@ -166,7 +169,7 @@
 	slot = AUGMENT_SLOT_R_HAND
 	path = /obj/item/bodypart/r_hand
 	value = -4
-
+/*
 /datum/augment_item/limb/r_hand/surplus
 	name = "Surplus Robotic Right Hand"
 	path = /obj/item/bodypart/r_hand/robot/surplus
@@ -175,7 +178,7 @@
 /datum/augment_item/limb/r_hand/robotic
 	name = "Robotic Right Hand"
 	path = /obj/item/bodypart/r_hand/robot/weak
-
+*/
 //LEFT LEGS
 /datum/augment_item/limb/l_leg
 	slot = AUGMENT_SLOT_L_LEG
@@ -186,7 +189,7 @@
 	slot = AUGMENT_SLOT_L_LEG
 	path = /obj/item/bodypart/l_leg
 	value = -4
-
+/*
 /datum/augment_item/limb/l_leg/surplus
 	name = "Surplus Robotic Left Leg"
 	path = /obj/item/bodypart/l_leg/robot/surplus
@@ -195,7 +198,7 @@
 /datum/augment_item/limb/l_leg/robotic
 	name = "Robotic Left Leg"
 	path = /obj/item/bodypart/l_leg/robot/weak
-
+*/
 //LEFT FEET
 /datum/augment_item/limb/l_foot
 	slot = AUGMENT_SLOT_L_FOOT
@@ -206,7 +209,7 @@
 	slot = AUGMENT_SLOT_L_FOOT
 	path = /obj/item/bodypart/l_foot
 	value = -4
-
+/*
 /datum/augment_item/limb/l_foot/surplus
 	name = "Surplus Robotic Left Foot"
 	path = /obj/item/bodypart/l_foot/robot/surplus
@@ -215,7 +218,7 @@
 /datum/augment_item/limb/l_foot/robotic
 	name = "Robotic Left Foot"
 	path = /obj/item/bodypart/l_foot/robot/weak
-
+*/
 //RIGHT LEGS
 /datum/augment_item/limb/r_leg
 	slot = AUGMENT_SLOT_R_LEG
@@ -226,7 +229,7 @@
 	slot = AUGMENT_SLOT_R_LEG
 	path = /obj/item/bodypart/r_leg
 	value = -4
-
+/*
 /datum/augment_item/limb/r_leg/surplus
 	name = "Surplus Robotic Right Leg"
 	path = /obj/item/bodypart/r_leg/robot/surplus
@@ -235,7 +238,7 @@
 /datum/augment_item/limb/r_leg/robotic
 	name = "Robotic Right Leg"
 	path = /obj/item/bodypart/r_leg/robot/weak
-
+*/
 //RIGHT FEET
 /datum/augment_item/limb/r_foot
 	slot = AUGMENT_SLOT_R_FOOT
@@ -246,7 +249,7 @@
 	slot = AUGMENT_SLOT_R_FOOT
 	path = /obj/item/bodypart/r_foot
 	value = -4
-
+/*
 /datum/augment_item/limb/r_foot/surplus
 	name = "Surplus Robotic Right Foot"
 	path = /obj/item/bodypart/r_foot/robot/surplus
@@ -255,3 +258,4 @@
 /datum/augment_item/limb/r_foot/robotic
 	name = "Robotic Right Foot"
 	path = /obj/item/bodypart/r_foot/robot/weak
+*/

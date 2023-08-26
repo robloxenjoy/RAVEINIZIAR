@@ -121,7 +121,7 @@
 		final_descriptive = "\The [bone] is shattered!"
 	if(victim)
 		if(sound_effect)
-			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)
+			playsound(new_limb.owner, pick(sound_effect), 80 + 20 * severity, TRUE)
 		if(add_descriptive)
 			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [final_descriptive]"))
 	qdel(src)
