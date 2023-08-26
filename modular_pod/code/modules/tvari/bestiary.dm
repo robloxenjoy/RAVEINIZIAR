@@ -101,7 +101,7 @@
 	speak_emote = list("croaks")
 	emote_hear = list("croaks.")
 	emote_see = list("scratching itself.", "watching.")
-	speak_chance = 2
+	speak_chance = 3
 	turns_per_move = 4
 	see_in_dark = 6
 	maxHealth = 50
