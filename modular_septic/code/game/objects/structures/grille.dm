@@ -5,10 +5,10 @@
 	base_icon_state = "grille"
 	plane = GAME_PLANE
 	layer = CLOSED_TURF_LAYER
-	upper_frill_plane = FRILL_PLANE_WINDOW
-	upper_frill_layer = WINDOW_FRILL_LAYER
+	upper_frill_plane = ABOVE_GAME_PLANE
+	upper_frill_layer = ABOVE_ALL_MOB_LAYER
 	lower_frill_plane = GAME_PLANE_WINDOW
-	lower_frill_layer = ABOVE_WINDOW_FULLTILE_LAYER
+	lower_frill_layer = ABOVE_MOB_LAYER
 	frill_uses_icon_state = TRUE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_GRILLES)
