@@ -85,6 +85,7 @@
 		if(a_mimir in range (in_range))
 			spawned.forceMove(get_turf(a_mimir))
 			a_mimir.buckle_mob(spawned)
+			spawned.AdjustSleeping(4 SECONDS)
 
 //		for(var/obj/structure/bed/bed in in_range)
 //			if(bed.id_tag == dorm_key.id_tag)
@@ -121,7 +122,7 @@
 					bank_account.adjust_money(2000)
 			GLOB.data_core.birthday_boys += spawned_human.real_name
 	// this needs to be reset to pick up the color from preferences
-//	spawned.chat_color_name = ""
+	spawned.chat_color_name = ""
 //	spawned.chat_color = ""
 
 /datum/job/proc/assign_genitalia(mob/living/carbon/human/spawned, client/player_client)
