@@ -12,6 +12,8 @@
 
 /turf/MouseDropReceive(atom/movable/dropping, mob/living/user)
 	. = ..()
+	if(density)
+		return
 	if(!isliving(dropping) || !isliving(user) || !dropping.has_gravity() || \
 		user.incapacitated() || \
 		HAS_TRAIT_FROM(dropping, TRAIT_IMMOBILIZED, CLINGING_TRAIT))

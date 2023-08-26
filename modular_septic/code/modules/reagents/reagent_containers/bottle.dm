@@ -9,8 +9,8 @@
 	list_reagents = list(/datum/reagent/medicine/c2/syriniver = 30)
 
 /obj/item/reagent_containers/glass/bottle/spaceacillin
-	name = "spaceacillin bottle"
-	desc = "A small bottle of spaceacilin."
+	name = "penicillin bottle"
+	desc = "A small bottle of penicillin."
 	list_reagents = list(/datum/reagent/medicine/spaceacillin = 30)
 
 /obj/item/reagent_containers/glass/bottle/tirimol

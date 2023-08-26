@@ -104,6 +104,78 @@
 	carry_weight = 1 KILOGRAMS
 	custom_price = 3500
 
+// USP
+/obj/item/gun/ballistic/automatic/pistol/cortes //corruptable gun
+	name = "\improper Cortes .45"
+	desc = "A lavish pistol for a lavish life."
+	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
+	icon_state = "USP"
+	base_icon_state = "USP"
+	gunshot_animation_information = list(
+		"pixel_x" = 16, \
+		"pixel_y" = 2, \
+		"inactive_wben_suppressed" = TRUE,
+	)
+	recoil_animation_information = list()
+	fire_sound = list('modular_septic/sound/weapons/guns/pistol/USP1.ogg', 'modular_septic/sound/weapons/guns/pistol/USP2.ogg')
+	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.wav'
+	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.wav'
+	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.wav'
+	mag_type = /obj/item/ammo_box/magazine/u45
+	can_suppress = FALSE
+	force = 15
+	w_class = WEIGHT_CLASS_NORMAL
+	carry_weight = 1 KILOGRAMS
+	var/corrupted = FALSE
+	var/corrupted_shot_sound = list('modular_septic/sound/weapons/guns/pistol/USP_corrupt1.ogg', 'modular_septic/sound/weapons/guns/pistol/USP_corrupt2.ogg')
+	var/corruption_cooldown_duration = 1 SECONDS
+	COOLDOWN_DECLARE(corruption_cooldown)
+	custom_price = 3500
+
+/obj/item/gun/ballistic/automatic/pistol/cortes/examine(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/human_user
+	if(ishuman(user))
+		human_user = user
+	if(HAS_TRAIT(human_user, TRAIT_GAKSTER) && !corrupted)
+		. += span_warning("An <span class='boldwarning'>inborn</span> can do something special with this to make it <span class='boldwarning'>more powerful.</span> It'd be <span class='boldwarning'>suicide</span> to be allies with one.")
+	if(human_user.dna?.species?.id == SPECIES_INBORN && !corrupted)
+		. += span_boldwarning("I can alternatively use this to corrupt it and empower it with Liminal Power.")
+
+/obj/item/gun/ballistic/automatic/pistol/cortes/alt_click_secondary(mob/user)
+	var/mob/living/carbon/human/human_user
+	if(ishuman(user))
+		human_user = user
+	if(COOLDOWN_FINISHED(src, corruption_cooldown) && human_user.dna?.species?.id == SPECIES_INBORN && !corrupted)
+		var/corruption_chance = GET_MOB_ATTRIBUTE_VALUE(human_user, STAT_INTELLIGENCE)*4.20 // :3
+		human_user.audible_message(span_boldwarning("[human_user] whispers a secret into [src]'s ear."))
+		playsound(human_user, 'modular_septic/sound/effects/whispers.wav', 35, TRUE)
+		corrupt(corruption_chance, user)
+		COOLDOWN_START(src, corruption_cooldown, corruption_cooldown_duration)
+
+/obj/item/gun/ballistic/automatic/pistol/cortes/proc/corrupt(chance = 0, mob/inborn)
+	if(corrupted)
+		return
+	if(prob(chance))
+		visible_message(span_warning("[src] grumbles."))
+		corrupted = TRUE
+		sleep(rand(1 SECONDS, 1.5 SECONDS))
+		visible_message(span_warning("[src] <span class='boldwarning'>CORRUPTS!</span>"))
+		to_chat(inborn, span_notice("I have corrupted the [src]."))
+		playsound(src, 'modular_septic/sound/heart/inborn_combatcocktail.ogg', 80, FALSE)
+		name = "\improper Cortraxx .45"
+		desc = "A lavish pistol for a lavish life. <span class='boldwarning'>It has been corrupted.</span>"
+		icon_state = "USP_corrupted"
+		base_icon_state = "USP_corrupted"
+		update_appearance(UPDATE_ICON)
+	else
+		say(pick("No...", "It can't be...", "Stop..."))
+
+/obj/item/gun/ballistic/automatic/pistol/cortes/shoot_live_shot(mob/living/user, pointblank = FALSE, atom/target, message = TRUE)
+	. = ..()
+	if(corrupted)
+		playsound(user, corrupted_shot_sound, 70, FALSE)
+
 // STI 2011 COMBAT MASTER
 /obj/item/gun/ballistic/automatic/pistol/remis/combatmaster
 	name = "\improper Frag Master 2511"

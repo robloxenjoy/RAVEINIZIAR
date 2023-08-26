@@ -126,7 +126,7 @@
 "cv" = (/obj/structure/bed/maint,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "cw" = (/obj/structure/bed/maint,/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "cx" = (/turf/closed/wall/darkrock/nocling,/area/maintenance/polovich/village)
-"cy" = (/obj/structure/closet/crate,/obj/item/stack/medical/mesh,/obj/item/stack/medical/suture,/obj/item/stack/medical/bruise_pack,/obj/item/stack/medical/bone_gel,/obj/item/stack/medical/gauze/improvised,/obj/item/stack/medical/nanopaste/xap/two,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
+"cy" = (/obj/structure/closet/crate,/obj/item/stack/medical/mesh,/obj/item/stack/medical/suture,/obj/item/stack/medical/bruise_pack,/obj/item/stack/medical/gauze/improvised,/obj/item/stack/medical/nanopaste/xap/two,/obj/item/stack/medical/bone_gel{amount = 12},/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "cz" = (/obj/structure/lampwall/service/directional/north,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "cA" = (/obj/machinery/door/keycard/denominator/podozl/akt/infirmary{dir = 8},/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "cB" = (/obj/effect/turf_decal/siding/wood/corner,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/village)
