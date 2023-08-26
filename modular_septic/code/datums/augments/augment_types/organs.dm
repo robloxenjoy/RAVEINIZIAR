@@ -10,7 +10,8 @@
 	for(var/obj/item/organ/organ in kill_organs)
 		organ.Remove(human, FALSE)
 		qdel(organ)
-//RIGHT EYELID
+
+//HEART
 /datum/augment_item/organ/heart
 	slot = AUGMENT_SLOT_HEART
 
@@ -26,13 +27,17 @@
 	path = /obj/item/organ/heart/cybernetic/tier2
 	value = 4
 
+//LUNGS
+/datum/augment_item/organ/lungs
+	slot = AUGMENT_SLOT_LUNGS
+
 /datum/augment_item/organ/lungs/robotic
 	name = "Cybernetic Lungs 1.0"
 	description = "A basic cybernetic version of the lungs found in traditional humanoid entities."
 	path = /obj/item/organ/lungs/cybernetic
 	value = 3
 
-/datum/augment_item/organ/lungs/robotic
+/datum/augment_item/organ/lungs/robotic/two
 	name = "Cybernetic Lungs 2.0"
 	description = "A cybernetic version of the lung found in traditional humanoid entities. Allows for greater intakes of oxygen than organic lungs, requiring slightly less pressure."
 	path = /obj/item/organ/lungs/cybernetic/tier2
