@@ -256,10 +256,12 @@
 
 /datum/emote/living/deathrattle/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
+		if(is_species(user, /datum/species/human))
 			return "modular_septic/sound/emotes/deathgasp.ogg"
-		else
+		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
+		else if(is_species(user, /datum/species/weakwillet))
+			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
 
@@ -283,7 +285,12 @@
 // Fuck it deathgasp does the same sound
 /datum/emote/living/deathgasp/get_sound(mob/living/user)
 	if(ishuman(user))
-		return "modular_septic/sound/emotes/deathgasp.ogg"
+		if(is_species(user, /datum/species/human))
+			return "modular_septic/sound/emotes/deathgasp.ogg"
+		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
+			return "modular_pod/sound/eff/piggator.ogg"
+		else if(is_species(user, /datum/species/weakwillet))
+			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
 
@@ -389,10 +396,12 @@
 
 /datum/emote/living/sag/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(user.gender != FEMALE)
+		if(is_species(user, /datum/species/human))
 			return "modular_septic/sound/emotes/deathgasp.ogg"
-		else
-			return "modular_septic/sound/emotes/deathgasp.ogg"
+		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
+			return "modular_pod/sound/eff/piggator.ogg"
+		else if(is_species(user, /datum/species/weakwillet))
+			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
 

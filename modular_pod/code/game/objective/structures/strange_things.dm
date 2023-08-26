@@ -172,6 +172,8 @@
 	light_color = "#00dd78"
 	light_system = MOVABLE_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
 /obj/item/crystal/red
 	name = "Crystal"
@@ -185,6 +187,8 @@
 	light_power = 2
 	light_system = MOVABLE_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
 /obj/item/crystal/blue
 	name = "Crystal"
@@ -198,6 +202,8 @@
 	light_power = 2
 	light_system = MOVABLE_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
 /obj/item/crystal/pink
 	name = "Crystal"
@@ -211,6 +217,8 @@
 	light_power = 2
 	light_system = MOVABLE_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
 /*
 /obj/structure/crystal_holder

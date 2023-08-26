@@ -91,8 +91,8 @@
 
 /obj/item/grown/log/tree/evil
 	seed = null
-	name = "Evil Wood Stub"
-	desc = "It's cursed, warlocks is bad!"
+	name = "Cursed Stub"
+	desc = "It's cursed, warlocks are bad!"
 	icon_state = "evilstub"
 	min_force = 7
 	force = 13
@@ -142,7 +142,7 @@
 		return ..()
 
 /obj/item/stack/grown/log/tree/evil/logg
-	name = "Evil Wood Log"
+	name = "Cursed Wood Log"
 	desc = "It's cursed, warlocks are bad! Also, it's chopped."
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "evilog"
