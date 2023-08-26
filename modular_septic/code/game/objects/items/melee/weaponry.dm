@@ -505,7 +505,6 @@
 	force_strength = 3
 	min_throwforce = 5
 	throwforce = 8
-	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	parrying_modifier = 1
 	armor_damage_modifier = 1
@@ -542,7 +541,6 @@
 			armor_damage_modifier = 2
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			attack_delay = 40
 			current_atk_mode = STAB_MODE
@@ -559,7 +557,6 @@
 			attack_fatigue_cost = 8
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			attack_delay = 45
 			armor_damage_modifier = 0
@@ -579,7 +576,6 @@
 			armor_damage_modifier = 1
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			attack_delay = 40
 			attack_fatigue_cost = 10
@@ -610,7 +606,6 @@
 	force_strength = 4
 	min_throwforce = 5
 	throwforce = 8
-	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	parrying_modifier = 0.3
 	armor_damage_modifier = 0.5
@@ -651,7 +646,6 @@
 			attack_fatigue_cost = 8
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			attack_delay = 20
 			armor_damage_modifier = 0.4
@@ -671,7 +665,6 @@
 			armor_damage_modifier = 0.5
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			attack_delay = 20
 			attack_fatigue_cost = 9
@@ -791,7 +784,6 @@
 	force_strength = 1.4
 	min_throwforce = 5
 	throwforce = 8
-	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 7
@@ -838,7 +830,6 @@
 			attack_fatigue_cost = 8
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			attack_delay = 20
 			current_atk_mode = BASH_MODE
@@ -878,7 +869,6 @@
 	force_strength = 1.6
 	min_throwforce = 5
 	throwforce = 8
-	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 5
@@ -924,7 +914,6 @@
 			attack_fatigue_cost = 8
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			attack_delay = 25
 			current_atk_mode = BASH_MODE
@@ -938,7 +927,6 @@
 			force_strength = 1.6
 			min_throwforce = 5
 			throwforce = 8
-			min_throwforce_strength = 1
 			throwforce_strength = 1.5
 			wound_bonus = 15
 			bare_wound_bonus = 10
@@ -968,7 +956,6 @@
 	force_strength = 1.2
 	min_throwforce = 5
 	throwforce = 8
-	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	wound_bonus = 6
 	bare_wound_bonus = 3
