@@ -149,7 +149,7 @@
 	if(COOLDOWN_FINISHED(src, corruption_cooldown) && human_user.dna?.species?.id == SPECIES_INBORN && !corrupted)
 		var/corruption_chance = GET_MOB_ATTRIBUTE_VALUE(human_user, STAT_INTELLIGENCE)*4.20 // :3
 		human_user.audible_message(span_boldwarning("[human_user] whispers a secret into [src]'s ear."))
-		playsound(human_user, 'modular_septic/sound/effects/whispers.wav', 35, TRUE)
+		playsound(human_user, 'modular_septic/sound/effects/whispers.ogg', 35, TRUE)
 		corrupt(corruption_chance, user)
 		COOLDOWN_START(src, corruption_cooldown, corruption_cooldown_duration)
 
@@ -162,7 +162,7 @@
 		sleep(rand(1 SECONDS, 1.5 SECONDS))
 		visible_message(span_warning("[src] <span class='boldwarning'>CORRUPTS!</span>"))
 		to_chat(inborn, span_notice("I have corrupted the [src]."))
-		playsound(src, 'modular_septic/sound/heart/inborn_combatcocktail.ogg', 80, FALSE)
+//		playsound(src, 'modular_septic/sound/heart/inborn_combatcocktail.ogg', 80, FALSE)
 		name = "\improper Cortraxx .45"
 		desc = "A lavish pistol for a lavish life. <span class='boldwarning'>It has been corrupted.</span>"
 		icon_state = "USP_corrupted"
