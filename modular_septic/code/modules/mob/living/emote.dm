@@ -260,7 +260,7 @@
 			return "modular_septic/sound/emotes/deathgasp.ogg"
 		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		else if(is_species(user, /datum/species/weakwillet))
+		else if(iswillet(user))
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
@@ -289,7 +289,7 @@
 			return "modular_septic/sound/emotes/deathgasp.ogg"
 		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		else if(is_species(user, /datum/species/weakwillet))
+		else if(iswillet(user))
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
@@ -400,7 +400,7 @@
 			return "modular_septic/sound/emotes/deathgasp.ogg"
 		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		else if(is_species(user, /datum/species/weakwillet))
+		else if(iswillet(user))
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
@@ -491,7 +491,7 @@
 /datum/emote/living/jumpgrunt/get_sound(mob/living/user)
 	if(ishuman(user))
 		if(user.gender != FEMALE)
-			return "modular_septic/sound/emotes/jump_male[rand(1,2)].ogg"
+			return "modular_septic/sound/emotes/jump_male2.ogg"
 		else
 			return "modular_septic/sound/emotes/jump_female1.ogg"
 	else

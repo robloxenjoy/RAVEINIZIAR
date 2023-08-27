@@ -366,7 +366,7 @@
 	force = 10
 	min_force_strength = 1
 	force_strength = 1.8
-	min_throwforce = 5
+	min_throwforce = 4
 	throwforce = 8
 	min_throwforce_strength = 1
 	throwforce_strength = 1.5
@@ -439,8 +439,9 @@
 	wound_bonus = 5
 	bare_wound_bonus = 1
 	force_strength = 2.5
-	min_throwforce = 5
+	min_throwforce = 4
 	throwforce = 8
+	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	parrying_modifier = 1
 	w_class = WEIGHT_CLASS_BULKY

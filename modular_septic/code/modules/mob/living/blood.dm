@@ -14,8 +14,7 @@
 		var/obj/effect/decal/cleanable/blood/drip/drop = locate() in splatter_turf
 		if(drop)
 			drop.drips++
-			var/bleeding = list('modular_pod/sound/eff/drip.ogg')
-			playsound(splatter_turf, bleeding, 70, vary = FALSE)
+			playsound(splatter_turf, 'modular_pod/sound/eff/drip.ogg', 80, vary = FALSE)
 			if(drop.drips <= 5)
 				drop.add_overlay(pick(drop.random_icon_states))
 				drop.transfer_mob_blood_dna(src)
