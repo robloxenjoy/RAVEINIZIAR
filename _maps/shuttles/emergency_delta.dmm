@@ -1,7 +1,7 @@
 "a" = (/obj/machinery/door/airlock/maintenance{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "b" = (/turf/closed/wall/pink_crazy/nocling,/area/shuttle/escape)
 "c" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
-"d" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/soda_cans/lean,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"d" = (/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/soda_cans/lean,/obj/item/storage/pill_bottle/carbonylmethamphetamine,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "e" = (/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "f" = (/obj/machinery/door/keycard/denominator/podozl/akt/controller{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "g" = (/obj/structure/closet/crate,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)

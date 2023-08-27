@@ -31,6 +31,6 @@
 	results = list(/datum/reagent/medicine/blacktar = 1)
 	required_reagents = list(/datum/reagent/toxin/nox = 2, /datum/reagent/medicine/copium = 2)
 	mix_message = "The mixture transformates into a hard coal-color liquid."
-	required_temp = 700 
+	required_temp = 700
 	optimal_temp = 700
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_CHEMICAL | REACTION_TAG_HEALING
