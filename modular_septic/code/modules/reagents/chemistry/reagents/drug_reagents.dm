@@ -180,7 +180,7 @@
 
 /datum/reagent/drug/chungusum/on_mob_metabolize(mob/living/crack_addict, delta_time)
 	. = ..()
-	var/chun = pick("BIG CHUNGUUSUSSSSSSSSS!!!!!!!!", "IS HE REAL?!?!?!?!?! BIG CHUNGUS?!?!?", "BIG CHUNGUS I LOVE YOU I LOVE YOUUU!!!", "CHUNGUS THE BIG, FANTASTIC!!!!!!!!!!" "OH FUCK!!!")
+	var/chun = pick("BIG CHUNGUUSUSSSSSSSSS!!!!!!!!", "IS HE REAL?!?!?!?!?! BIG CHUNGUS?!?!?", "BIG CHUNGUS I LOVE YOU I LOVE YOUUU!!!", "CHUNGUS THE BIG, FANTASTIC!!!!!!!!!!", "OH FUCK!!!")
 	if(DT_PROB(2.5, delta_time))
 		to_chat(crack_addict, span_horny("[chun]"))
 	crack_addict.overlay_fullscreen("chungus", /atom/movable/screen/fullscreen/chungus)
