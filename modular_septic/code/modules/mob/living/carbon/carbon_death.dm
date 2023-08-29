@@ -31,10 +31,11 @@
 			if(H != src && (src in view(H)))
 				if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
 					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
-				if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) > ATTRIBUTE_MIDDLING)
-					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
 				else
-					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
+					if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) < ATTRIBUTE_MIDDLING)
+						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
+					else
+						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
 	// Shit yourself
 	if(!QDELETED(src))
 		if(prob(80))

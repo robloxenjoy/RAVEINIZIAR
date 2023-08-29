@@ -16,13 +16,7 @@
 			//sprinting makes you sweaty faster
 			if(is_sprinting)
 				germ_level_increase *= 2
-				hint_probability = 50
-			else
-				switch(m_intent)
-					if(MOVE_INTENT_RUN)
-						hint_probability = 25
-					if(MOVE_INTENT_WALK)
-						hint_probability = 10
+				hint_probability = 30
 			if(prob(hint_probability))
 				sound_hint()
 			adjust_germ_level(germ_level_increase)
@@ -90,6 +84,8 @@
 /mob/living/carbon/proc/ram_stun()
 	//Deal with knockdown
 	switch(diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_DEXTERITY), context = DICE_CONTEXT_PHYSICAL))
+		if(DICE_CRIT_SUCCESS)
+			Immobilize(1 SECONDS)
 		if(DICE_SUCCESS)
 			Immobilize(2 SECONDS)
 		if(DICE_FAILURE)

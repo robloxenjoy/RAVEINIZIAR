@@ -258,9 +258,9 @@
 	if(ishuman(user))
 		if(is_species(user, /datum/species/human))
 			return "modular_septic/sound/emotes/deathgasp.ogg"
-		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
+		if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		else if(iswillet(user))
+		if(iswillet(user))
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
@@ -287,9 +287,9 @@
 	if(ishuman(user))
 		if(is_species(user, /datum/species/human))
 			return "modular_septic/sound/emotes/deathgasp.ogg"
-		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
+		if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		else if(iswillet(user))
+		if(iswillet(user))
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
@@ -398,9 +398,9 @@
 	if(ishuman(user))
 		if(is_species(user, /datum/species/human))
 			return "modular_septic/sound/emotes/deathgasp.ogg"
-		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
+		if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		else if(iswillet(user))
+		if(iswillet(user))
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()

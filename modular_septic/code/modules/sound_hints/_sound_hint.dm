@@ -1,4 +1,4 @@
-#define SOUND_HINT_COOLDOWN_DURATION 1 SECONDS
+#define SOUND_HINT_COOLDOWN_DURATION 2 SECONDS
 
 //Do a little sound hint
 /atom/proc/sound_hint(duration = 5, use_icon = 'modular_septic/icons/effects/sound.dmi', use_states = "sound2")
