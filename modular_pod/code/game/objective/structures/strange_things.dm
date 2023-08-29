@@ -665,7 +665,7 @@
 	light_power = 1
 	light_color = "#bf915c"
 	obj_flags = NONE
-
+/*
 /obj/structure/lampstand/fireholder/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
 	if(.)
@@ -676,7 +676,7 @@
 			if(!T.lit)
 				T.light()
 			return
-
+*/
 /obj/structure/stone_eater
 	name = "Stone Eater"
 	desc = "GIVE ME YOUR STONE PORRIDGE!"

@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(lighting)
 	name = "Lighting"
-	wait = 5
+	wait = 6
 	init_order = INIT_ORDER_LIGHTING
 	flags = SS_TICKER
 	var/static/list/sources_queue = list() // List of lighting sources queued for update.

@@ -386,6 +386,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  * Im not sure what the heck this does, somethign to do with weather being able to set icon
  * states on areas?? where the heck would that even display?
  */
+
+ /*
 /area/update_icon_state()
 	var/weather_icon
 	for(var/V in SSweather.processing)
@@ -396,6 +398,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(!weather_icon)
 		icon_state = null
 	return ..()
+*/
 
 /**
  * Update the icon of the area (overridden to always be null for space

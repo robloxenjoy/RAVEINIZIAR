@@ -461,7 +461,7 @@
 		//SEPTIC EDIT END
 		crit_wound.apply_wound(bodypart)
 	return ..()
-
+/*
 /datum/status_effect/eldritch/ash
 	id = "ash_mark"
 	effect_sprite = "emark2"
@@ -483,7 +483,7 @@
 			victim.apply_status_effect(type,repetitions-1)
 			break
 	return ..()
-
+*/
 /datum/status_effect/eldritch/rust
 	id = "rust_mark"
 	effect_sprite = "emark3"
@@ -967,7 +967,7 @@
 			H.adjustOrganLoss(ORGAN_SLOT_TONGUE,10)
 		if(100)
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN,20)
-
+/*
 /datum/status_effect/amok
 	id = "amok"
 	status_type = STATUS_EFFECT_REPLACE
@@ -1000,7 +1000,7 @@
 	/* SEPTIC EDIT REMOVAL
 	owner.set_combat_mode(prev_combat_mode);
 	*/
-
+*/
 /datum/status_effect/cloudstruck
 	id = "cloudstruck"
 	status_type = STATUS_EFFECT_REPLACE

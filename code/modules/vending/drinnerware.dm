@@ -46,8 +46,8 @@
 		/obj/item/reagent_containers/food/drinks/waterbottle = 100,
 		/obj/item/melee/hehe/pickaxe/iron = 50,
 		/obj/item/stack/medical/gauze = 30,
-		/obj/item/reagent_containers/food/drinks/bottle/beer = 50,
-		/obj/item/torch = 50
+		/obj/item/reagent_containers/food/drinks/bottle/beer = 50
+//		/obj/item/torch = 50
 	)
 	premium = list(
 		/obj/item/storage/box/a38/less = 1

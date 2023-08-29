@@ -112,7 +112,7 @@
 					  /obj/item/reagent_containers/food/drinks/drinkingglass,
 					  /obj/item/ammo_box/a762))
 
-
+/*
 /datum/component/storage/concrete/pockets/void_cloak
 	quickdraw = TRUE
 	max_items = 3
@@ -121,3 +121,4 @@
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(/obj/item/living_heart,/obj/item/forbidden_book))
 	exception_hold = exception_cache
+*/

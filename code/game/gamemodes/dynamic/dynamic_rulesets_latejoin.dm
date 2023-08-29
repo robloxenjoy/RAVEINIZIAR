@@ -140,7 +140,7 @@
 //           HERETIC SMUGGLER //
 //                                          //
 //////////////////////////////////////////////
-
+/*
 /datum/dynamic_ruleset/latejoin/heretic_smuggler
 	name = "Heretic Smuggler"
 	antag_datum = /datum/antagonist/heretic
@@ -153,3 +153,4 @@
 	cost = 10
 	requirements = list(101,101,101,10,10,10,10,10,10,10)
 	repeatable = TRUE
+*/

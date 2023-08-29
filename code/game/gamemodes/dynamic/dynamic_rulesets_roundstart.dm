@@ -174,7 +174,7 @@
 //              ELDRITCH CULT               //
 //                                          //
 //////////////////////////////////////////////
-
+/*
 /datum/dynamic_ruleset/roundstart/heretics
 	name = "Heretics"
 	antag_flag = ROLE_HERETIC
@@ -212,6 +212,7 @@
 	return TRUE
 
 
+*/
 //////////////////////////////////////////////
 //                                          //
 //               WIZARDS                    //

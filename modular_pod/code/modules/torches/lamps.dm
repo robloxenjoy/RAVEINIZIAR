@@ -187,7 +187,7 @@
 /obj/structure/lampwall/service/directional/north
 	dir = SOUTH
 	pixel_y = 32
-
+/*
 //Torches
 /obj/item/torch
 	icon = 'modular_pod/icons/obj/lighting.dmi'
@@ -425,3 +425,4 @@
 /obj/structure/torchwall/service/directional/north
 	dir = SOUTH
 	pixel_y = 32
+*/

@@ -632,12 +632,12 @@ GENE SCANNER
 
 		playsound(src, 'sound/effects/pop.ogg', 100)
 		var/area/user_area = T.loc
-		var/datum/weather/ongoing_weather = null
+//		var/datum/weather/ongoing_weather = null
 
 		if(!user_area.outdoors)
 			to_chat(user, span_warning("[src]'s barometer function won't work indoors!"))
 			return
-
+/*
 		for(var/V in SSweather.processing)
 			var/datum/weather/W = V
 			if(W.barometer_predictable && (T.z in W.impacted_z_levels) && W.area_type == user_area.type && !(W.stage == END_STAGE))
@@ -661,6 +661,8 @@ GENE SCANNER
 				to_chat(user, span_warning("[src]'s barometer function says a storm will land in approximately [butchertime(fixed)]."))
 		cooldown = TRUE
 		addtimer(CALLBACK(src,/obj/item/analyzer/proc/ping), cooldown_time)
+
+*/
 
 /obj/item/analyzer/proc/ping()
 	if(isliving(loc))

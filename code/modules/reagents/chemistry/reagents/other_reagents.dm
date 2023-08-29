@@ -2668,7 +2668,9 @@
 			wounded_part.heal_damage(0.25 * REM * delta_time, 0.25 * REM * delta_time)
 		M.adjustStaminaLoss(-0.25 * REM * delta_time) // the more wounds, the more stamina regen
 	..()
+
 */
+/*
 /datum/reagent/eldritch //unholy water, but for eldritch cultists. why couldn't they have both just used the same reagent? who knows. maybe nar'sie is considered to be too "mainstream" of a god to worship in the cultist community.
 	name = "Eldritch Essence"
 	description = "A strange liquid that defies the laws of physics. It re-energizes and heals those who can see beyond this fragile reality, but is incredibly harmful to the closed-minded. It metabolizes very quickly."
@@ -2695,7 +2697,7 @@
 		M.adjustOxyLoss(2 * REM * delta_time, FALSE)
 		M.adjustBruteLoss(2 * REM * delta_time, FALSE)
 	..()
-
+*/
 /datum/reagent/universal_indicator
 	name = "Universal indicator"
 	description = "A solution that can be used to create pH paper booklets, or sprayed on things to colour them by their pH."

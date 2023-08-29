@@ -57,7 +57,8 @@ GLOBAL_LIST_EMPTY(SUNLIGHT_QUEUE_CORNER) /* turfs to have their color/lights/etc
 
 SUBSYSTEM_DEF(outdoor_effects)
 	name = "Sunlight"
-	wait = LIGHTING_INTERVAL
+	wait = 20
+	priority = 2
 	flags = SS_TICKER
 	init_order = INIT_ORDER_OUTDOOR_EFFECTS
 

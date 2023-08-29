@@ -959,7 +959,7 @@
 	. += span_notice("Use it in hand to dispel storms.")
 	. += span_notice("Use it on targets to summon thunderbolts from the sky.")
 	. += span_notice("The thunderbolts are boosted if in an area with weather effects.")
-
+/*
 /obj/item/storm_staff/attack_self(mob/user)
 	var/area/user_area = get_area(user)
 	var/turf/user_turf = get_turf(user)
@@ -1050,3 +1050,4 @@
 	playsound(target, 'sound/magic/lightningbolt.ogg', 100, TRUE)
 	target.visible_message(span_danger("A thunderbolt strikes [target]!"))
 	explosion(target, light_impact_range = (boosted ? 1 : 0), flame_range = (boosted ? 2 : 1), silent = TRUE)
+*/

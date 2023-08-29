@@ -416,6 +416,7 @@
 						user.changeNext_move(10)
 						user.adjustFatigueLoss(5)
 						attached_silver = TRUE
+						qdel(src)
 					else
 						user.visible_message(span_notice("[user] failed to combine silver."),span_notice("You failed to combine silver."), span_hear("You hear the sound of smithing."))
 						sound_hint()
