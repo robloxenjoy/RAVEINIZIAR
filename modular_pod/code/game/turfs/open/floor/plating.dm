@@ -860,7 +860,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "nothing" = 70))
+		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -909,6 +909,13 @@
 				new /obj/structure/flora/ausbushes/crystal/dark(get_turf(src))
 			if("statuekas")
 				new /obj/structure/fluff/statuestone(get_turf(src))
+			if("water")
+				var/watertype = rand(1, 2)
+				switch(watertype)
+					if(1)
+						new /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/coffee(get_turf(src))
+					if(2)
+						new /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/acid(get_turf(src))
 //			if("beartrap")
 //				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
@@ -929,7 +936,7 @@
 
 	if(locate(/obj/structure/) in get_turf(src))
 		return
-	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "beartrap" = 3, "statuekas" = 1, "nothing" = 70))
+	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "beartrap" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
 	switch(state)
 		if("crystalbush")
 			new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -988,6 +995,13 @@
 			new /obj/structure/fluff/statuestone(get_turf(src))
 		if("beartrap")
 			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+		if("water")
+			var/watertype = rand(1, 2)
+			switch(watertype)
+				if(1)
+					new /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/coffee(get_turf(src))
+				if(2)
+					new /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/acid(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/bigfire
 	turf_fire = /atom/movable/fire/inferno/magical

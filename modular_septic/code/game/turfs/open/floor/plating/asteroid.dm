@@ -140,6 +140,48 @@
 				if(3)
 					new /mob/living/simple_animal/pet/podozl/frog/green(get_turf(src))
 
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/coffee
+	name = "Shallow Coffee"
+	desc = "Looks wet... WHAT!"
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_liquid_list = /atom/movable/liquid/immutable/ocean/coffee
+	liquid_height = (-LIQUID_WAIST_LEVEL_HEIGHT - 2)
+	liquids_are_immutable = TRUE
+	turf_height = -500
+	slowdown = 5
+	icon = 'modular_septic/icons/turf/floors/water.dmi'
+	icon_state = "coffee"
+	base_icon_state = "coffee"
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
+	resistance_flags = FIRE_PROOF
+
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/acid
+	name = "Shallow Acid"
+	desc = "Looks wet... WHAT!"
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	initial_liquid_list = /atom/movable/liquid/immutable/ocean/acid
+	liquid_height = (-LIQUID_WAIST_LEVEL_HEIGHT - 2)
+	liquids_are_immutable = TRUE
+	turf_height = -500
+	slowdown = 5
+	icon = 'modular_septic/icons/turf/floors/water.dmi'
+	icon_state = "coffee"
+	base_icon_state = "coffee"
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
+	resistance_flags = FIRE_PROOF
+
 /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm
 	name = "Water"
 	desc = "Looks wet."

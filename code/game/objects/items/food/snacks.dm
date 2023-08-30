@@ -75,8 +75,7 @@
 /obj/item/food/berries/redcherrie/lie/examine(mob/user)
 	. = ..()
 	if(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) > ATTRIBUTE_MIDDLING)
-		if(prob(70))
-			. += "<span class='warning'>It's a lie berry...</span>"
+		. += "<span class='warning'>It's a lie berry...</span>"
 
 /obj/item/food/berries/leancherrie
 	name = "Saisilva Berry"
@@ -104,8 +103,7 @@
 /obj/item/food/berries/leancherrie/lie/examine(mob/user)
 	. = ..()
 	if(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) > ATTRIBUTE_MIDDLING)
-		if(prob(70))
-			. += "<span class='warning'>It's a lie berry...</span>"
+		. += "<span class='warning'>It's a lie berry...</span>"
 
 /obj/item/food/candy/bronx
 	name = "South Bronx Paradise bar"

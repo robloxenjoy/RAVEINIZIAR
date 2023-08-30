@@ -1,5 +1,5 @@
 /obj/item/storage/belt/military
-	color = ""
+	color = null
 
 /obj/item/storage/belt/military/army/pioneer
 	name = "pioneer chestrig"

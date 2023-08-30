@@ -21,6 +21,20 @@
 /atom/movable/liquid/immutable/ocean/nevado
 	temperature = T0C-10
 
+/atom/movable/liquid/immutable/ocean/coffee
+	temperature = T20C+20
+	vaporizes = FALSE
+	starting_mixture = list(
+		/datum/reagent/consumable/coffee = 100,
+	)
+
+/atom/movable/liquid/immutable/ocean/acid
+	temperature = T20C
+	vaporizes = FALSE
+	starting_mixture = list(
+		/datum/reagent/toxin/acid = 100,
+	)
+
 /atom/movable/liquid/immutable/ocean/shallow
 	temperature = T0C-20
 	vaporizes = FALSE

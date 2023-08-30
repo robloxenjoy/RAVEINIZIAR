@@ -208,6 +208,8 @@
 	return TRUE
 
 /obj/machinery/door/metal_door/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+
 	if(istype(I, /obj/item/storage/belt/military/keychain))
 		for (var/obj/item/key/podpol/KK in I.contents)
 			if(KK.door_allowed(src) && key_worthy)
