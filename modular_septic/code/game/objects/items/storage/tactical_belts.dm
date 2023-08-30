@@ -1,3 +1,6 @@
+/obj/item/storage/belt/military
+	color = ""
+
 /obj/item/storage/belt/military/army/pioneer
 	name = "pioneer chestrig"
 	desc = "A belt used by pioneers to lug their equipment around."
