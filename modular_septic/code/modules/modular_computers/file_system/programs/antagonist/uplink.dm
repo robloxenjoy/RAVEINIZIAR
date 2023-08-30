@@ -1,6 +1,6 @@
 /datum/computer_file/program/uplink
-	filename = "limewire"
-	filedesc = "LimeWire 1.2"
+	filename = "sleep parasite system"
+	filedesc = "Sleep Parasite System"
 	category = PROGRAM_CATEGORY_MISC
 	program_icon = "tasks"
 	program_icon_state = "assign"

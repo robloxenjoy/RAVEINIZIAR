@@ -152,7 +152,7 @@
 			user.changeNext_move(CLICK_CD_GRABBING)
 			playsound(src, 'modular_septic/sound/effects/card_declined_horror.ogg', 60, FALSE, 1)
 			return
-
+/*
 	if(istype(I, /obj/item/akt/lockpick/square))
 		if(density)
 			if(user.a_intent == INTENT_DISARM)
@@ -377,7 +377,7 @@
 			qdel(src)
 			return
 	return ..()
-
+*/
 /obj/machinery/door/keycard/denominator/podozl/akt/examine(mob/user)
 	. = ..()
 	if(locktype)

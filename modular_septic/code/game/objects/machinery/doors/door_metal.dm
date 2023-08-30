@@ -18,8 +18,6 @@
 
 	var/kicking_cooldown_duration = 0.8 SECONDS
 	var/open_cooldown_duration = 2 SECONDS
-	var/locktype = "JOBARDO"
-	var/lockstate = null
 	var/lock_level_one = FALSE
 	var/lock_level_two = TRUE
 	var/hardnesslock = 48
