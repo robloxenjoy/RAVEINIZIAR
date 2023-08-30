@@ -285,8 +285,8 @@
 		return FALSE
 	if(bolt_locked)
 		return FALSE
-//	if((bolt_type == BOLT_TYPE_BREAK_ACTION) && bolt_locked)
-//		return FALSE
+	if((bolt_type == BOLT_TYPE_BREAK_ACTION) && bolt_locked)
+		return FALSE
 
 /obj/item/gun/ballistic/drop_bolt(mob/user)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, bolt_drop_sound_vary)
@@ -405,7 +405,7 @@
 	//there's a chambered round
 	if(istype(casing))
 		if(QDELING(casing))
-			stack_trace("Trying to move a qdeleted casing of type [casing.type]!")
+//			stack_trace("Trying to move a qdeleted casing of type [casing.type]!")
 			chambered = null
 		else if(casing_ejector || !from_firing)
 			casing.forceMove(drop_location()) //Eject casing onto ground.
@@ -419,7 +419,7 @@
 
 /obj/item/gun/ballistic/chamber_round(keep_bullet = FALSE, spin_cylinder = TRUE, replace_new_round = FALSE)
 	if(!magazine)
-		stack_trace("[src] ([type]) tried to chamber a round without a magazine!")
+//		stack_trace("[src] ([type]) tried to chamber a round without a magazine!")
 		return
 	if(bolt_type == BOLT_TYPE_BREAK_ACTION)
 		if(spin_cylinder)

@@ -18,6 +18,11 @@
 
 	var/kicking_cooldown_duration = 0.8 SECONDS
 	var/open_cooldown_duration = 2 SECONDS
+	var/locktype = "JOBARDO"
+	var/lockstate = null
+	var/lock_level_one = FALSE
+	var/lock_level_two = TRUE
+	var/hardnesslock = 48
 
 	COOLDOWN_DECLARE(kicking_cooldown)
 	COOLDOWN_DECLARE(open_cooldown)
@@ -203,3 +208,98 @@
 		else
 			lock()
 	return TRUE
+
+/obj/machinery/door/metal_door/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/storage/belt/military/keychain))
+		for (var/obj/item/key/podpol/KK in I.contents)
+			if(KK.door_allowed(src) && key_worthy)
+				if(locked)
+					visible_message("<span class = 'notice'>[user] unlocks [src].</span>")
+					playsound(src, 'modular_septic/sound/effects/keys_use.ogg', 75, FALSE)
+					locked = FALSE
+				else
+					visible_message("<span class = 'notice'>[user] locks [src].</span>")
+					playsound(src, 'modular_septic/sound/effects/keys_use.ogg', 75, FALSE)
+					locked = TRUE
+			else
+				to_chat(user, span_warning("No matching key."))
+				playsound(src, 'modular_septic/sound/effects/keys_remove.ogg', 75, FALSE)
+
+	if(istype(I, /obj/item/akt/lockpick/square))
+		if(density)
+			if(user.a_intent == INTENT_DISARM)
+				user.changeNext_move(CLICK_CD_GRABBING)
+				sound_hint()
+				src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
+				playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
+				var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+				if(!do_after(user, durationn*10, target=src))
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
+				if(lock_level_one && !lock_level_two)
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
+					playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
+					if(diceroll == DICE_CRIT_SUCCESS)
+						src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
+						open()
+						return
+					if(diceroll == DICE_SUCCESS)
+						src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						var/obj/item/akt/lockpick/square/SQ = I
+						SQ.damageItem("MEDIUM")
+						playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
+						open()
+						return
+					if(diceroll <= DICE_FAILURE)
+						src.visible_message(span_steal("[user] tried to lockpick [src], but failed!"),span_steal("You failed to lockpick [src]."), span_hear("You hear the sound of failed lockpicking."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						var/obj/item/akt/lockpick/square/SQ = I
+						SQ.damageItem("HARD")
+						return
+				else
+					to_chat(user, span_steal("Here is a strong lock!"))
+					return
+
+	if(istype(I, /obj/item/akt/lockpick/square/triangle))
+		if(density)
+			if(user.a_intent == INTENT_DISARM)
+				user.changeNext_move(CLICK_CD_GRABBING)
+				sound_hint()
+				src.visible_message(span_steal("[user] starts lockpicking [src]!"),span_steal("You start to lockpick [src]."), span_hear("You hear the sound of lockpicking."))
+				playsound(src, 'modular_pod/sound/eff/lockpicking3.ogg', 70, FALSE, 3)
+				var/durationn = (hardnesslock/(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING)) * 2)
+				if(!do_after(user, durationn*10, target=src))
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
+				if(lock_level_two && !lock_level_one)
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
+					playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
+					if(diceroll == DICE_CRIT_SUCCESS)
+						src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
+						open()
+						return
+					if(diceroll == DICE_SUCCESS)
+						src.visible_message(span_steal("[user] lockpicked [src]!"),span_steal("You lockpicked [src]."), span_hear("You hear the sound of lockpicking."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						var/obj/item/akt/lockpick/square/triangle/TR = I
+						TR.damageItem("MEDIUM")
+						playsound(src, 'modular_septic/sound/effects/movedoor.ogg', 70, FALSE, 4)
+						open()
+						return
+					if(diceroll <= DICE_FAILURE)
+						src.visible_message(span_steal("[user] tried to lockpick [src], but failed!"),span_steal("You failed to lockpick [src]."), span_hear("You hear the sound of failed lockpicking."))
+						user.changeNext_move(CLICK_CD_GRABBING)
+						var/obj/item/akt/lockpick/square/triangle/TR = I
+						TR.damageItem("HARD")
+						sound_hint()
+						return
+				else
+					to_chat(user, span_steal("Here is a weak lock!"))
+					return

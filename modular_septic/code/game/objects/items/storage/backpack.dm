@@ -85,8 +85,8 @@
 /obj/item/storage/backpack/basket/Initialize(mapload)
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 10
-	STR.max_items = 20
+	STR.max_combined_w_class = 30
+	STR.max_items = 60
 
 /obj/item/storage/backpack/baggy
 	name = "Dark Bag"
@@ -105,8 +105,8 @@
 /obj/item/storage/backpack/baggy/Initialize(mapload)
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 15
-	STR.max_items = 15
+	STR.max_combined_w_class = 30
+	STR.max_items = 60
 
 /obj/item/storage/backpack/baggy/update_icon_state()
 	switch(contents.len)

@@ -135,21 +135,35 @@
 	desc = "Alchemy thing. Nothing interesting."
 	item = /obj/item/craftorshit/thing/alchemy/squash
 	cost = 11
-	purchasable_from = NONE
+	purchasable_from = ALL
 
 /datum/uplink_item/dangerous/steelsword
 	name = "Steel Longsword"
 	desc = "Can be good in good hands."
 	item = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 	cost = 11
-	purchasable_from = NONE
+	purchasable_from = ALL
 
 /datum/uplink_item/dangerous/steelmace
 	name = "Steel Mace"
 	desc = "Can be good in good hands."
 	item = /obj/item/melee/bita/macecircle
 	cost = 11
-	purchasable_from = NONE
+	purchasable_from = ALL
+
+/datum/uplink_item/stealthy_weapons/pickaxe
+	name = "Iron Pickaxe"
+	desc = "For digging!"
+	item = /obj/item/melee/hehe/pickaxe/iron
+	cost = 5
+	purchasable_from = ALL
+
+/datum/uplink_item/stealthy_weapons/beertrap
+	name = "Beer Trap"
+	desc = "BEER! Or bear?"
+	item = /obj/item/restraints/legcuffs/beartrap
+	cost = 3
+	purchasable_from = ALL
 
 /datum/uplink_item/dangerous/pistol
 	name = "Plinker Pistol"

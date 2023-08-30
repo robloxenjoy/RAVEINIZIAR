@@ -74,8 +74,39 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/akt/lockpick/square = 2,
-		/obj/item/akt/lockpick/square/triangle = 2,
-		/obj/item/akt/lockpick/square/prylock = 2,
-		/obj/item/akt/lockpick/square/sawtooth = 2)
+		/obj/item/akt/lockpick/square = 3)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/belt/military/keychain
+	name = "Keychain"
+	desc = "A keychain!"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "keychain"
+	inhand_icon_state = "militarywebbing"
+	worn_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon_state = "lockpick_belt"
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ID|ITEM_SLOT_BELT
+
+/obj/item/storage/belt/military/keychain/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 8
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 20
+	STR.set_holdable(list(
+		/obj/item/key/podpol/woody,
+		/obj/item/keycard/akt,
+		))
+
+/obj/item/storage/belt/military/keychain/update_icon_state()
+	switch(contents.len)
+		if(1)
+			icon_state = "[initial(icon_state)]_1"
+		if(2)
+			icon_state = "[initial(icon_state)]_2"
+		if(3 to INFINITY)
+			icon_state = "[initial(icon_state)]_3"
+		if(0)
+			icon_state = "[initial(icon_state)]"
+	return ..()

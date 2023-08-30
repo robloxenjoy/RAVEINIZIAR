@@ -442,7 +442,7 @@
 	name = "Overcrystal Bush"
 	desc = "A bush that grows over or near the crystal deposits."
 	icon = 'icons/obj/flora/ausflora.dmi'
-	icon_state = "crystalbush"
+	icon_state = "crystalbush1"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
@@ -458,6 +458,7 @@
 		COMSIG_ATOM_ENTERED = .proc/shag,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	icon_state = pick("crystalbush1", "crystalbush2")
 
 //	if(traps)
 //		if(prob(3))

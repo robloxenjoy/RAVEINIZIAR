@@ -1,6 +1,6 @@
 /obj/item/plate
-	name = "plate"
-	desc = "Holds food, powerful. Good for morale when you're not eating your spaghetti off of a desk."
+	name = "Plate"
+	desc = "Holds food, powerful. Good for morale when you're not eating your berries off of a desk."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "plate"
 	w_class = WEIGHT_CLASS_BULKY //No backpack.
@@ -60,3 +60,6 @@
 /obj/item/plate/proc/ItemMoved(obj/item/moved_item, atom/OldLoc, Dir, Forced)
 	SIGNAL_HANDLER
 	ItemRemovedFromPlate(moved_item)
+
+/obj/item/plate/orange
+	icon_state = "plate_orange"

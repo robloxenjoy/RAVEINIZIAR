@@ -67,7 +67,7 @@
 	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/reinforced_victorian_frill.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
-	mine_hp = 9
+	mine_hp = 11
 
 /turf/closed/wall/r_wall/alt
 	icon = 'modular_septic/icons/turf/tall/walls/reinforced_victorian_alt.dmi'

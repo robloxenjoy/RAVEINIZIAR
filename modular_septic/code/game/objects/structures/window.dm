@@ -75,3 +75,15 @@
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 	pixel_y = WINDOW_OFF_FRAME_Y_OFFSET
 	obj_flags = CAN_BE_HIT|BLOCK_Z_OUT_DOWN|BLOCK_Z_OUT_UP|BLOCK_Z_IN_DOWN|BLOCK_Z_IN_UP
+
+/obj/structure/window/attack_foot(mob/living/carbon/human/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	user.visible_message(span_notice("[user] kicks the [src]."),span_notice("You kick the [src]."), span_hear("You hear the sound of kicking."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.adjustFatigueLoss(10)
+	playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
+	sound_hint()
+	var/damagee = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + 5)
+	take_damage(damagee, BRUTE, "melee", 1)

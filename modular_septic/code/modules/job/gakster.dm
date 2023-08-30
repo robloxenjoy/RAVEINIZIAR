@@ -74,6 +74,7 @@
 	uniform = /obj/item/clothing/under/venturerclassic
 	pants = /obj/item/clothing/pants/venturer
 	r_pocket = /obj/item/shard/crystal/blue
+	id = /obj/item/key/podpol/woody/carehouse
 	var/venturer_type = ""
 //	id = /obj/item/cellphone
 //	belt = /obj/item/crowbar
@@ -218,7 +219,6 @@
 	oversuit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	suit = /obj/item/clothing/suit/armor/vest/fullcrazy/copper
 	shoes = /obj/item/clothing/shoes/frogshoes
-//	neck = /obj/item/clothing/neck/bear_cloak
 
 /datum/outfit/leader/equip(mob/living/carbon/human/H)
 	..()
@@ -249,10 +249,9 @@
 	uniform = /obj/item/clothing/under/venturerclassic
 	pants = /obj/item/clothing/pants/venturer
 	suit = /obj/item/clothing/neck/darkproject
-//	r_pocket = /obj/item/shard/crystal/green
-//	id = /obj/item/keycard/chaot
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 	belt = /obj/item/storage/belt/military/blackin/full
-//	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/blackhood
 
@@ -339,8 +338,10 @@
 
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
-	r_pocket = /obj/item/keycard/akt/lair
+	id = /obj/item/key/podpol/woody/lair
 	shoes = /obj/item/clothing/shoes/barhatki
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 
 /datum/job/aktassertor
 	title = "Akt Assertor"
@@ -366,11 +367,13 @@
 
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
-	r_pocket = /obj/item/keycard/akt/hut
+	id = /obj/item/key/podpol/woody/hut
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	belt = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 	shoes = /obj/item/clothing/shoes/barhatki
 	neck = /obj/item/clothing/neck/clodcoater
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 
 /datum/job/aktnailer
 	title = "Akt Nailer"
@@ -396,8 +399,10 @@
 
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
-	r_pocket = /obj/item/keycard/akt/nailer
 	shoes = /obj/item/clothing/shoes/barhatki
+	id = /obj/item/key/podpol/woody/nailer
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 
 /datum/job/aktgranger
 	title = "Akt Granger"
@@ -424,10 +429,12 @@
 	uniform = /obj/item/clothing/under/aktraiment
 	shoes = /obj/item/clothing/shoes/frogshoes
 	pants = /obj/item/clothing/pants/aktliver
-	r_pocket = /obj/item/keycard/akt/granger
 	suit = /obj/item/clothing/suit/armor/vest/leatherbreastt
+	id = /obj/item/key/podpol/woody/granger
 	head = /obj/item/clothing/head/leather_headbag
 	shoes = /obj/item/clothing/shoes/barhatki
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 
 /datum/job/aktcurer
 	title = "Akt Curer"
@@ -453,10 +460,12 @@
 
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
-	r_pocket = /obj/item/keycard/akt/infirmary
 	neck = /obj/item/clothing/neck/noble_cloak
+	belt = /obj/item/key/podpol/woody/infirmary
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	shoes = /obj/item/clothing/shoes/barhatki
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 
 /datum/job/aktgargohelper
 	title = "Akt Accepter-helper"
@@ -484,7 +493,9 @@
 	pants = /obj/item/clothing/pants/aktliver
 	glasses = /obj/item/clothing/glasses/itobe/sanfo
 	r_hand = /obj/item/crystal/green
-	r_pocket = /obj/item/keycard/akt/gargostore
+	id = /obj/item/key/podpol/woody/accepter
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 	shoes = /obj/item/clothing/shoes/barhatki
 
 /datum/job/aktcontroller
@@ -515,7 +526,9 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
 	suit = /obj/item/clothing/neck/noble_cloak
 	neck = /obj/item/clothing/neck/gorget/steel
-	r_pocket = /obj/item/keycard/akt/controller
+	id = /obj/item/key/podpol/woody/controller
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
 	shoes = /obj/item/clothing/shoes/barhatki
 //	r_hand = /obj/item/pinker_caller
 
@@ -544,8 +557,11 @@
 	uniform = /obj/item/clothing/under/aktraiment
 	pants = /obj/item/clothing/pants/aktliver
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/mystical
-	r_pocket = /obj/item/keycard/akt/alchem
+	id = /obj/item/key/podpol/woody/alchemist
 	shoes = /obj/item/clothing/shoes/frogshoes
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
+
 /*
 /datum/job/evilwarlock
 	title = "Evil Warlock"
@@ -644,7 +660,7 @@
 	if(strong_slave)
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/strongslave)
 		to_chat(H, span_achievementinteresting("I'm a strong slave, really strong!"))
-		to_chat(H, span_info("Even a difficult life has its upsides... Maybe..."))
+		to_chat(H, span_info("Even a hard life has its upsides... Maybe..."))
 	else
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/aktnailer)
 
@@ -713,5 +729,5 @@
 	suit = /obj/item/clothing/suit/space/stray
 	uniform = /obj/item/clothing/under/pinker
 	pants = /obj/item/clothing/pants/pinker
-	r_pocket = /obj/item/keycard/akt/controller
+	r_pocket = /obj/item/key/podpol/woody/controller
 	shoes =/obj/item/clothing/shoes/frogshoes

@@ -27,9 +27,9 @@
 	/// Volume of the hitsound
 	var/hitsound_volume = 80
 	/// Stored visible message
-	var/hit_text = ""
+//	var/hit_text = ""
 	/// Stored target message
-	var/target_hit_text = ""
+//	var/target_hit_text = ""
 
 /obj/projectile/Initialize(mapload)
 	. = ..()
@@ -90,11 +90,18 @@
 
 	SEND_SIGNAL(target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 	// EXPERIMENTAL: Removed wound messages for projectiles
+
+/*
 	if(hit_text)
-		target.visible_message("", \
+		target.visible_message("[hit_text]", \
 			self_message = "[target_hit_text]", \
 			blind_message = span_hear("I hear something piercing flesh!"), \
 			vision_distance = COMBAT_MESSAGE_RANGE)
+*/
+
+/*
+	to_chat(target, span_notice("[target_hit_text]"))
+*/
 
 	if((result == BULLET_ACT_FORCE_PIERCE) || (mode == PROJECTILE_PIERCE_HIT))
 		if(damage <= 0)
@@ -185,10 +192,9 @@
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter(target_location, splatter_dir)
 		if(impact_effect_type && !hitscan)
 			new impact_effect_type(target_location, hitx, hity)
-
-		var/organ_hit_text = ""
-		if(zone_hit)
-			organ_hit_text = " in \the [parse_zone(zone_hit)]"
+//		var/organ_hit_text = ""
+//		if(zone_hit)
+//			organ_hit_text = " in \the [parse_zone(zone_hit)]"
 		if(suppressed == SUPPRESSED_VERY)
 			if(final_hitsound)
 				playsound(target, final_hitsound, 5, TRUE, -1)
@@ -196,13 +202,13 @@
 	//		sound_hint()
 			if(final_hitsound)
 				playsound(target, final_hitsound, 5, TRUE, -1)
-			target_hit_text = span_userdanger("I'm hit by \the [src][organ_hit_text]!")
+			to_chat(target, span_userdanger("I'm hit by \the [src]!"))
 		else
 	//		sound_hint()
 			if(final_hitsound)
 				playsound(target, final_hitsound, final_hitsound_volume, TRUE, -1)
 //			hit_text = span_danger("<b>[living_target]</b> is hit by \the [src][organ_hit_text]!")
-			target_hit_text = span_userdanger("I'm hit by \the [src][organ_hit_text]!")
+			to_chat(target, span_userdanger("I'm hit by \the [src]!"))
 		living_target.on_hit(src)
 
 	var/reagent_note

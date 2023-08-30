@@ -719,16 +719,10 @@
 			moneymoney -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		if("triangle lockpick")
+			if(moneymoney < 60)
+				return
 			new /obj/item/akt/lockpick/square/triangle(get_turf(user))
-			moneymoney -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("pry lockpick")
-			new /obj/item/akt/lockpick/square/prylock(get_turf(user))
-			moneymoney -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-		if("sawtooth lockpick")
-			new /obj/item/akt/lockpick/square/sawtooth(get_turf(user))
-			moneymoney -= 50
+			moneymoney -= 60
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		else
 			return
@@ -818,11 +812,41 @@
 	smoothing_groups = null
 	canSmoothWith = null
 
+/obj/structure/table/fine
+	name = "Table"
+	desc = "Fine."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "table_fine"
+	smoothing_flags = NONE
+	smoothing_groups = null
+	canSmoothWith = null
+
+/obj/structure/table/cursedwood
+	name = "Table"
+	desc = "Cursed wood..."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "table_cursed"
+	smoothing_flags = NONE
+	smoothing_groups = null
+	canSmoothWith = null
+
 /obj/structure/column
 	name = "Stone Column"
 	desc = "So hard."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "column"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+//	obj_flags = NONE
+	max_integrity = 350
+
+/obj/structure/column/wooden
+	name = "Wooden Column"
+	desc = "It supports."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "support"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
 	anchored = 1
