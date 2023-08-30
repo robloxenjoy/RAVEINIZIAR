@@ -21,7 +21,7 @@
 						vision_distance = EYE_CONTACT_RANGE)
 		else
 			var/mob/mob_examined = examined
-			mob_examined.playsound_local(get_turf(mob_examined), 'modular_pod/sound/eff/Stare.ogg', 40, FALSE)
+			mob_examined.playsound_local(get_turf(mob_examined), 'modular_pod/sound/eff/Stare.ogg', 80, FALSE)
 			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> fluoride stares \
 						<span style='color: [mob_examined.chat_color];'><b>[examined]</b></span>.")), \
 						span_notice("I fluoride stare <b>[examined]</b>."), \
