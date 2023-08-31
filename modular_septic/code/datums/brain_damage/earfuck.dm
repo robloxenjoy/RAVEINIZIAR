@@ -7,6 +7,7 @@
 	scan_desc = "complete lobe separation"
 	gain_text = "<span class='boldwarning'>My mind is violated in every way It's possible to be violated.</span>"
 	lose_text = "<span class='boldnotice'>My mind feels like It only has one occupant again.</span>"
+	random_gain = FALSE
 	var/current_controller = OWNER
 	var/initialized = FALSE //to prevent personalities deleting themselves while we wait for ghosts
 	var/control = 100 // the amount of control they have over the body, starts full
