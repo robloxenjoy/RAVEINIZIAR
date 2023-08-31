@@ -17,7 +17,7 @@
 
 /datum/mind/proc/bobux_panel()
 	if(!length(SSbobux.all_bobux_rewards))
-		alert("Not before round-start!", "0 Bobux")
+		alert("Not before round-start!", "0 Kaotik")
 		return
 	if(QDELETED(src))
 		alert("This mind doesn't have a mob, or is deleted! For some reason!", "0 Kaotik")

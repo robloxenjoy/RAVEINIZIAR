@@ -67,10 +67,13 @@
 	buy_message = "<b>My mind seizes control over a creature.</span>"
 	id = "possess"
 	cost = 100
+	infinite_buy = TRUE
 
 /datum/bobux_reward/possess_mob/can_buy(client/noob, silent, fail_message)
 	. = ..()
-	if(. && noob.mob && (isobserver(noob.mob)) && length(GLOB.mob_living_list))
+	if(!isobserver(noob.mob))
+		return FALSE
+	if(. && noob.mob && length(GLOB.mob_living_list))
 		return TRUE
 
 /datum/bobux_reward/possess_mob/on_buy(client/noob)
@@ -116,12 +119,8 @@
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
-	var/mob/living/carbon/human/input = input(noob, "I have contracted a subconscious mercenary. Who is the first victim?", "Subconscious Mercenary", null) as mob in possible_targets
-	if(!input)
-		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
-		noob.prefs?.adjust_bobux(cost)
-		return FALSE
-	else
+	var/mob/living/carbon/human/input = input(noob, "I have contracted a subconscious mercenary. Who is the first victim?", "Subconscious Mercenary") as mob in possible_targets
+	if(input)
 		for(var/mob/living/carbon/human/H in shuffle(GLOB.player_list - input))
 			var/datum/antagonist/traitor/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor)
 			for(var/datum/objective/O in bounty_hunter.objectives)
@@ -133,6 +132,10 @@
 			H.mind.announce_objectives()
 			to_chat(input.mind, span_dead("Someone's hunting you."))
 			return TRUE
+	else
+		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
+		noob.prefs?.adjust_bobux(cost)
+		return FALSE
 
 /datum/bobux_reward/market_crash
 	name = "Market Crash"
@@ -173,6 +176,7 @@
 	id = "coom"
 	cost = 100
 	single_use = TRUE
+	infinite_buy = TRUE
 
 /datum/bobux_reward/cum_shower/on_buy(client/noob)
 	. = ..()
@@ -198,7 +202,8 @@
 	buy_message = "I'M FAAARTING!"
 	id = "fart"
 	cost = 100
-	single_use = TRUE
+//	single_use = TRUE
+	infinite_buy = TRUE
 
 /datum/bobux_reward/farto/on_buy(client/noob)
 	. = ..()

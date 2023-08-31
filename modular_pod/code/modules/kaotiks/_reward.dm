@@ -7,6 +7,7 @@
 	var/cost = 1
 	var/unbuyable = FALSE //Used for "rewards" that you don't buy, but rather gain by the subsystem
 	//Will mostly be used for negative stuff for people that have a negative bobux balance
+	var/infinite_buy = FALSE
 	var/single_use = FALSE
 	var/used_up = FALSE
 
@@ -23,7 +24,8 @@
 		noob = M.client
 	if(!noob || !noob.prefs)
 		return FALSE
-	noob.mob?.mind?.bobux_bought |= type
+	if(!infinite_buy)
+		noob.mob?.mind?.bobux_bought |= type
 	if(buy_message)
 		to_chat(noob, "<span class='bobux'>[buy_message]</span>")
 
