@@ -25,7 +25,7 @@
 
 /datum/bobux_reward/stat_boost/can_buy(client/noob, silent, fail_message)
 	. = ..()
-	if(!noob.attributes)
+	if(!noob.mob.attributes)
 		return FALSE
 	if(. && ishuman(noob.mob) && noob.mob.mind)
 		return TRUE
@@ -41,7 +41,7 @@
 	STAT_WILL = 1, \
 	STAT_LUCK = 1, \
 	)
-	noob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik, TRUE, stat_modification)
+	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik, TRUE, stat_modification)
 //	for(var/stat in noob.mob.mind.mob_stats)
 //		noob.mob.mind.mob_stats[stat].level += 1
 
@@ -59,7 +59,7 @@
 
 /datum/bobux_reward/combat_boost/on_buy(client/noob)
 	. = ..()
-	noob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik)
+	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik)
 
 /datum/bobux_reward/possess_mob
 	name = "Possess Mob"
@@ -88,8 +88,9 @@
 		to_chat(noob, "<span class='bobux'>Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
-	var/datum/mind/mind = choice.mind
-	noob.mob.transfer_ckey(choice, TRUE)
+//	var/datum/mind/mind = choice.mind
+	choice.key = noob.key
+//	noob.mob.transfer_ckey(choice, TRUE)
 //	if(mind)
 //		var/datum/mind/our_mind = noob.mob.mind
 //		for(var/datum/skills/skill in our_mind.mob_skills)
@@ -128,7 +129,7 @@
 			var/datum/objective/assassinate/kill_objective = new
 			kill_objective.owner = H.mind
 			kill_objective.target = input.mind
-			bounty_hunter.add_objective(kill_objective)
+			bounty_hunter.objectives += kill_objective
 			H.mind.announce_objectives()
 			to_chat(input.mind, span_dead("Someone's hunting you."))
 			return TRUE
@@ -164,7 +165,7 @@
 		C.prefs?.adjust_bobux(-C.prefs.bobux_amount)
 	for(var/datum/preferences/prefs in world)
 		prefs.load_preferences()
-
+/*
 /datum/bobux_reward/cum_shower
 	name = "Chungus Prank"
 	desc = "Make everyone cum."
@@ -189,3 +190,30 @@
 //		coomer.moan()
 //		coomer.cum()
 		coomer.handle_user_climax()
+*/
+
+/datum/bobux_reward/farto
+	name = "Chungus Prank"
+	desc = "Make everyone fart."
+	buy_message = "I'M FAAARTING!"
+	id = "fart"
+	cost = 100
+	single_use = TRUE
+
+/datum/bobux_reward/farto/on_buy(client/noob)
+	. = ..()
+//	if(noob.key == "Subaruuuuu")
+//		to_chat(noob, "<span class='bobux'>fuck you lol!!!!!</span>")
+//		message_admins("[noob] tried to make everyone coom, too bad!")
+//		return FALSE
+	message_admins("[noob] has made everyone FART.")
+	log_admin("[noob] has made everyone FART.")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] has made everyone fart!</span>")
+//	var/cumsound = pick('modular_pod/sound/eff/coom.ogg','modular_pod/sound/eff/bobcoomer.ogg')
+//	SEND_SOUND(world, sound(cumsound, volume = 50))
+	to_chat(world, "<span class='reallybig hypnophrase'>I'M FARTING!!!!</span>")
+	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
+//		coomer.moan()
+//		coomer.cum()
+//		coomer.handle_user_climax()
+		coomer.emote("fart")
