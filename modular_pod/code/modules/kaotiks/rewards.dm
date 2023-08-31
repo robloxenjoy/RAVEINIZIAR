@@ -260,6 +260,6 @@
 /datum/bobux_reward/respawn/on_buy(client/noob)
 	. = ..()
 	SSdroning.kill_droning(noob)
-	noob.stop_sound_channel(CHANNEL_HEARTBEAT)
+//	noob.stop_sound_channel(CHANNEL_HEARTBEAT)
 	var/mob/dead/new_player/M = new /mob/dead/new_player()
 	M.ckey = noob.ckey
