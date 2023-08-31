@@ -9,6 +9,7 @@
 #define span_animatedpain(str) ("<span class='animatedpain'>" + str + "</span>")
 #define span_lowpain(str) ("<span class='lowpain'>" + str + "</span>")
 #define span_lowestpain(str) ("<span class='lowestpain'>" + str + "</span>")
+#define span_bobux(str) ("<span class='bobux'>" + str + "</span>")
 #define span_artery(str) ("<span class='artery'>" + str + "</span>")
 #define span_evilblack(str) ("<span class='evilblack'>" + str + "</span>")
 #define span_infection(str) ("<span class='infection'>" + str + "</span>")

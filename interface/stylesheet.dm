@@ -129,6 +129,7 @@ h1.alert, h2.alert		{color: #000000;}
 .pinkdang 				{color: #c2006b; text-shadow: 0 0 3px #8a3e85; font-weight: bold;}
 .bigdanger				{color: #c51e1e; font-size: 140%; text-shadow: 0 0 6px #ff4444;}
 .steal					{color: #3a1b4e; text-shadow: 0 0 3px #894d90;}
+.bobux					{color: #e86e0a; font-size: 3;}
 .danger					{color: #ff0000; text-shadow: 0 0 3px #ff4772;}
 .cyanicdream			{color: #1ad06f; text-shadow: 0 0 3px #42e2af;}
 .flashingdanger 		{color: #c51e1e; font-weight: bold; text-shadow: 0 0 3px #a81010; animation: flashdanger 1000ms infinite;}

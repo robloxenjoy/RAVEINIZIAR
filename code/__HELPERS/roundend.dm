@@ -128,7 +128,18 @@
 
 		if(A.objectives.len)
 			for(var/datum/objective/O in A.objectives)
-				var/result = O.check_completion() ? "SUCCESS" : "FAIL"
+				var/result = "UNKNOWN"
+				var/actual_result = O.check_completion()
+				if(actual_result && O.bobux_reward)
+					A.owner.current?.client?.prefs?.adjust_bobux(O.bobux_reward)
+				else if(!actual_result && O.bobux_penalty)
+					A.owner.current?.client?.prefs?.adjust_bobux(-O.bobux_penalty)
+				if(actual_result >= 1)
+					result = "SUCCESS"
+				else if(actual_result <= 0)
+					result = "FAIL"
+				else
+					result = "[actual_result*100]%"
 				antag_info["objectives"] += list(list("objective_type"=O.type,"text"=O.explanation_text,"result"=result))
 		SSblackbox.record_feedback("associative", "antagonists", 1, antag_info)
 

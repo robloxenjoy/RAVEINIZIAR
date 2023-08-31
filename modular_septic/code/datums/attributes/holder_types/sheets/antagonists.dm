@@ -35,3 +35,39 @@
 	for(var/attribute_type in magic_attribute_variations)
 		if(ispath(attribute_type, SKILL))
 			plagiarist.raw_attribute_list[attribute_type] = clamp(plagiarist.raw_attribute_list[attribute_type] + rand(-2, 2), plagiarist.skill_min, plagiarist.skill_max)
+
+/datum/attribute_holder/sheet/kaotik
+	attribute_default = 0
+	skill_default = null
+	raw_attribute_list = list(
+		SKILL_IMPACT_WEAPON = 5,
+		SKILL_IMPACT_WEAPON_TWOHANDED = 5,
+		SKILL_BRAWLING = 5,
+		SKILL_WRESTLING = 5,
+		SKILL_KNIFE = 5,
+		SKILL_FORCESWORD = 5,
+		SKILL_SHORTSWORD = 5,
+		SKILL_SWORD_TWOHANDED = 5,
+		SKILL_LONGSWORD = 5,
+		SKILL_RAPIER = 5,
+		SKILL_LONGSWORD = 5,
+		SKILL_PISTOL = 5,
+		SKILL_SMG = 5,
+		SKILL_RIFLE = 5,
+		SKILL_SHOTGUN = 5,
+		SKILL_LAW = 5,
+		SKILL_THROWING = 5,
+	)
+
+/datum/attribute_holder/sheet/kaotik/on_add(datum/attribute_holder/plagiarist)
+	. = ..()
+	//we will always have at least 0 in these skills, this is intentional
+	var/static/list/magic_attribute_variations = list(
+		SKILL_IMPACT_WEAPON,
+		SKILL_RIFLE,
+		SKILL_ELECTRONICS,
+		SKILL_LOCKPICKING,
+	)
+	for(var/attribute_type in magic_attribute_variations)
+		if(ispath(attribute_type, SKILL))
+			plagiarist.raw_attribute_list[attribute_type] = clamp(plagiarist.raw_attribute_list[attribute_type] + rand(-2, 2), plagiarist.skill_min, plagiarist.skill_max)

@@ -26,10 +26,10 @@
 		to_chat(src, span_warning("Not enough legs!"))
 		return
 	if(CHECK_BITFIELD(combat_flags, COMBAT_FLAG_SPRINT_ACTIVE))
-		playsound_local(src, 'modular_septic/sound/effects/sprintactivate.ogg', 60, FALSE, pressure_affected = FALSE)
+		playsound_local(src, 'modular_septic/sound/effects/sprintactivate.ogg', 70, FALSE, pressure_affected = FALSE)
 		enable_sprint()
 	else
-		playsound_local(src, 'modular_septic/sound/effects/sprintdeactivate.ogg', 60, FALSE, pressure_affected = FALSE)
+		playsound_local(src, 'modular_septic/sound/effects/sprintdeactivate.ogg', 70, FALSE, pressure_affected = FALSE)
 		disable_sprint()
 	hud_used?.sprint?.update_appearance()
 	hud_used?.mov_intent?.update_appearance()

@@ -26,6 +26,8 @@
 		var/obj/item/organ/heart/heart = thing
 		heart.Stop()
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "died", /datum/mood_event/died)
+	client?.prefs?.adjust_bobux(-5, "<span class='bobux'>I'm dead! So bad... -5 kaotiks!</span>")
+//	client?.prefs?.adjust_bobux(-1)
 	if(!iswillet(src))
 		for(var/mob/living/carbon/human/H in range(src))
 			if(H != src && (src in view(H)))

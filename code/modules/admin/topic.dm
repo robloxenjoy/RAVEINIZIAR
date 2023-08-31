@@ -1220,6 +1220,16 @@
 		if(HAS_TRAIT(M, TRAIT_FRAGGOT))
 			qdel(M.GetComponent(/datum/component/fraggot))
 
+	else if(href_list["bobux"])
+		if(!check_rights(R_ADMIN))
+			return
+		
+		var/mob/M = locate(href_list["bobux"])
+		if(!M?.mind)
+			return
+		
+		show_bobux_panel(M)
+
 	else if(href_list["skill"])
 		if(!check_rights(R_ADMIN))
 			return

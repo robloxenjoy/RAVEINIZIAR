@@ -634,6 +634,35 @@
 				else
 					log_admin("[key_name(usr)] gave [current] an uplink.")
 
+	else if(href_list["bobux"])
+		var/datum/preferences/prefs = current?.client?.prefs
+		var/type = href_list["bobux"]
+		switch(type)
+			if("add")
+				var/choice = abs(input(usr, "How much to add?", "Infinite Kaotik", 0) as num)
+				if(choice)
+					var/secondchoice = input(usr, "Display a message to the target?") as text|null
+					prefs.adjust_bobux(choice, (secondchoice ? "<span class='bobux'>[secondchoice]</span>" : null))
+					message_admins("[key_name_admin(usr)] gave [current] [choice] kaotiks. Message: [secondchoice ? secondchoice : "None."]")
+					log_admin("[key_name(usr)] gave [current] [choice] kaotiks. Message: [secondchoice ? secondchoice : "None."]")
+			if("remove")
+				var/choice = -abs(input(usr, "How much to remove?", "No Kaotiks", 0) as num)
+				if(choice)
+					var/secondchoice = input(usr, "Display a message to the target?") as text|null
+					prefs.adjust_bobux(choice, (secondchoice ? "<span class='bobux'>[secondchoice]</span>" : null))
+					message_admins("[key_name_admin(usr)] removed [choice] kaotiks from [current]. Message: [secondchoice ? secondchoice : "None."]")
+					log_admin("[key_name(usr)] removed [choice] kaotiks from [current]. Message: [secondchoice ? secondchoice : "None."]")
+			if("set")
+				var/choice =  input(usr, "How much to set?", "All Kaotiks", 0) as num
+				if(choice)
+					var/secondchoice = input(usr, "Display a message to the target?") as text|null
+					choice = (choice - prefs.bobux_amount)
+					prefs.adjust_bobux(choice, (secondchoice ? "<span class='bobux'>[secondchoice]</span>" : null))
+					message_admins("[key_name_admin(usr)] set [current]'s kaotiks to[choice]. Message: [secondchoice ? secondchoice : "None."]")
+					log_admin("[key_name(usr)] set [current]'s kaotiks to [choice]. Message: [secondchoice ? secondchoice : "None."]")
+		bobux_panel()
+		return
+
 	else if (href_list["obj_announce"])
 		announce_objectives()
 

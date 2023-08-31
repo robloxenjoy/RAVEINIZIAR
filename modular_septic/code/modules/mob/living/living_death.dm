@@ -10,8 +10,11 @@
 	if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 		for(var/mob/living/carbon/human/M in range(7, src))
 			if(M != src && (src in view(M)))
-				to_chat(M, span_achievementrare("I have seen a death of fatal! So good!"))
+//				to_chat(M, span_bobux("I have seen a death of fatal! +10 kaotiks!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[src.real_name]", /datum/mood_event/fraggot/killed)
+				if(M.client?.prefs)
+					M.client.prefs.adjust_bobux(10, "<span class='bobux'>I have seen a death of fatal! +10 kaotiks!</span>")
+
 
 /mob/living/revive(full_heal, admin_revive, excess_healing)
 	. = ..()
