@@ -82,9 +82,9 @@
 /obj/item/halyabegg/Initialize()
 	. = ..()
 	AddComponent(/datum/component/edible, \
-		initial_reagents = list(/datum/reagent/consumable/shit = 5), \
+		initial_reagents = list(/datum/reagent/consumable/shit = 10), \
 		foodtypes = BREAKFAST, \
-		volume = 5, \
+		volume = 10, \
 		after_eat = CALLBACK(src, .proc/on_eat_fromm))
 
 /obj/item/halyabegg/proc/on_eat_fromm(mob/living/carbon/eater, mob/living/feeder)
@@ -94,5 +94,6 @@
 		eater.set_heartattack(TRUE)
 //		eater.send_naxyu()
 		SSdroning.kill_droning(eater.client)
+		eater.stop_sound_channel(CHANNEL_HEARTBEAT)
 		var/mob/dead/new_player/M = new /mob/dead/new_player()
 		M.ckey = eater.ckey

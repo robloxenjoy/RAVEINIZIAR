@@ -88,3 +88,8 @@
 	description = span_nicegreen("Now I worship Gutted!")
 	mood_change = 2
 	timeout = 10 MINUTES
+
+/datum/mood_event/koatik
+	description = span_nicegreen("A strange energy!")
+	mood_change = 10
+	timeout = 10 MINUTES

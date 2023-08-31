@@ -227,3 +227,39 @@
 //		coomer.moan()
 //		coomer.cum()
 //		coomer.handle_user_climax()
+
+/datum/bobux_reward/goodmood
+	name = "Funny Day"
+	desc = "Make everyone happier!"
+	buy_message = "<b>I am so good!</span>"
+	id = "funnyday"
+	cost = 100
+	infinite_buy = TRUE
+
+/datum/bobux_reward/goodmood/on_buy(client/noob)
+	..()
+	message_admins("[noob] has made everyone happier.")
+	log_admin("[noob] has made everyone happier.")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] has made everyone happier! So cute :3</span>")
+	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
+		if(coomer.mind)
+			SEND_SIGNAL(coomer, COMSIG_ADD_MOOD_EVENT, "funnyday", /datum/mood_event/koatik)
+
+/datum/bobux_reward/respawn
+	name = "Respawn"
+	desc = "Just forget all about it."
+	buy_message = "<b>I AM NEW!</span>"
+	id = "respawn"
+	cost = 100
+
+/datum/bobux_reward/respawn/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	if(!isobserver(noob.mob))
+		return FALSE
+
+/datum/bobux_reward/respawn/on_buy(client/noob)
+	. = ..()
+	SSdroning.kill_droning(noob)
+	noob.stop_sound_channel(CHANNEL_HEARTBEAT)
+	var/mob/dead/new_player/M = new /mob/dead/new_player()
+	M.ckey = noob.ckey
