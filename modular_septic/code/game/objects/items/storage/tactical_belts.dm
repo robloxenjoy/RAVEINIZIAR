@@ -50,7 +50,7 @@
 		/obj/item/stack/marker_beacon,
 		))
 
-/obj/item/storage/belt/military/blackin
+/obj/item/storage/belt/blackin
 	name = "Lockpick Belt"
 	desc = "A belt used for lockpicks-holding."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
@@ -63,7 +63,7 @@
 //	drop_sound = 'modular_septic/sound/armor/equip/backpack_drop.ogg'
 //	equip_sound = 'modular_septic/sound/armor/equip/backpack_wear.ogg'
 
-/obj/item/storage/belt/military/blackin/Initialize(mapload)
+/obj/item/storage/belt/blackin/Initialize(mapload)
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
@@ -73,14 +73,14 @@
 		/obj/item/akt/lockpick,
 		))
 
-/obj/item/storage/belt/military/blackin/full/PopulateContents()
+/obj/item/storage/belt/blackin/full/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
 		/obj/item/akt/lockpick/square = 3)
 	generate_items_inside(items_inside,src)
 
-/obj/item/storage/belt/military/keychain
+/obj/item/storage/belt/keychain
 	name = "Keychain"
 	desc = "A keychain!"
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
@@ -91,7 +91,7 @@
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ID|ITEM_SLOT_BELT
 
-/obj/item/storage/belt/military/keychain/Initialize(mapload)
+/obj/item/storage/belt/keychain/Initialize(mapload)
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 8
@@ -102,7 +102,7 @@
 		/obj/item/keycard/akt,
 		))
 
-/obj/item/storage/belt/military/keychain/update_icon_state()
+/obj/item/storage/belt/keychain/update_icon_state()
 	switch(contents.len)
 		if(1)
 			icon_state = "[initial(icon_state)]_1"

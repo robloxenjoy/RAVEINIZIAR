@@ -251,7 +251,7 @@
 	suit = /obj/item/clothing/neck/darkproject
 	r_pocket = /obj/item/cellphone
 	l_pocket = /obj/item/simcard
-	belt = /obj/item/storage/belt/military/blackin/full
+	belt = /obj/item/storage/belt/blackin/full
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/blackhood
 

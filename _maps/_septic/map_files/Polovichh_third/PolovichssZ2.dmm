@@ -444,7 +444,7 @@
 "iB" = (/turf/open/floor/plating/polovich/rockedarr{dir = 2},/area/maintenance/polovich/forest/rain)
 "iC" = (/turf/open/floor/plating/polovich/rockedarr{dir = 8},/area/maintenance/polovich/forest/rain)
 "iD" = (/turf/open/floor/plating/polovich/rockyhorrr{dir = 1},/area/maintenance/polovich/village)
-"iE" = (/obj/structure/table/reinforced,/obj/item/storage/belt/military/keychain,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/village)
+"iE" = (/obj/structure/table/reinforced,/obj/item/storage/belt/keychain,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/village)
 "iF" = (/turf/open/floor/plating/polovich/rockyhorrr{dir = 8},/area/maintenance/polovich/village)
 "iG" = (/turf/open/floor/plating/polovich/rockyhorrr,/area/maintenance/polovich/village)
 "iH" = (/turf/open/floor/plating/polovich/stoneekas,/area/maintenance/polovich/village)
