@@ -175,6 +175,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["chat_toggles"], chat_toggles)
 	READ_FILE(S["toggles"], toggles)
 	READ_FILE(S["ignoring"], ignoring)
+	READ_FILE(S["bobux_amount"], bobux_amount)
 
 	// OOC commendations
 	READ_FILE(S["hearted_until"], hearted_until)
@@ -265,6 +266,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["hearted_until"], (hearted_until > world.realtime ? hearted_until : null))
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
+	WRITE_FILE(S["bobux_amount"], bobux_amount)
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)

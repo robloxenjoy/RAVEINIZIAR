@@ -17,6 +17,7 @@
 	var/list/list/body_markings = list()
 	/// Our currently chosen birthsign type
 	var/datum/cultural_info/birthsign/birthsign
+	var/bobux_amount = 0
 
 /datum/preferences/New(client/C)
 	//handle giving all the fucking antagonists by default
@@ -283,3 +284,13 @@
 		antagonists += initial(ruleset.antag_flag)
 	for(var/antag_flag in antagonists)
 		be_special |= antag_flag
+
+/datum/preferences/proc/adjust_bobux(amount, message)
+	bobux_amount += amount
+	if(parent && message)
+		to_chat(parent, "<span class='bobux'>[message]</span>")
+	save_preferences()
+	return TRUE
+
+/datum/mind
+	var/list/bobux_bought = list()

@@ -41,7 +41,7 @@ SUBSYSTEM_DEF(bobux)
 	var/list/dat = list()
 	var/datum/preferences/pref_source = noob.prefs
 	dat += "<center><b>Kaotik Menu</b></center><br>"
-	dat += "<center>You currently have <b>[pref_source.bobux_amount]</b> kaotik.</center><br>"
+	dat += "<center>You currently have <b>[pref_source.bobux_amount]</b> kaotiks.</center><br>"
 	dat += "<center><a href='?src=\ref[src];task=close'>Done</a></center>"
 	dat += "<hr>"
 	for(var/aaa in bobux_rewards_buyable)
