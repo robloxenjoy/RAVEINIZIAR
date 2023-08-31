@@ -131,7 +131,7 @@
 				kill_objective.target = input.mind
 				bounty_hunter.add_objective(kill_objective)
 				H.mind.announce_objectives()
-				to_chat(input.mind, span_dead("Someone's hunting you.")
+				to_chat(input.mind, span_dead("Someone's hunting you."))
 				return TRUE
 
 /datum/bobux_reward/market_crash
