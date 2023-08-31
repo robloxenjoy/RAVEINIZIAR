@@ -254,6 +254,7 @@
 	belt = /obj/item/storage/belt/blackin/full
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/blackhood
+	r_hand = /obj/item/melee/bita/dark
 
 /datum/outfit/thief/equip(mob/living/carbon/human/H)
 	..()

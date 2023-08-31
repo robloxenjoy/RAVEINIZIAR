@@ -162,6 +162,37 @@
 	carry_weight = 1.3 KILOGRAMS
 	slot_flags = ITEM_SLOT_BELT
 	worn_icon_state = "classic_baton"
+	skill_melee = SKILL_IMPACT_WEAPON
+	tetris_width = 32
+	tetris_height = 64
+	havedurability = TRUE
+	durability = 150
+
+/obj/item/melee/bita/dark
+	name = "Dark John"
+	desc = "In the dark, the victim will not understand what you are hitting it with."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "dark_club"
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	inhand_icon_state = "dark_club"
+	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
+	min_force = 7
+	force = 17
+	throwforce = 16
+	min_force_strength = 1.1
+	force_strength = 1.5
+	wound_bonus = 10
+	bare_wound_bonus = 4
+	armor_damage_modifier = 1
+	havedurability = TRUE
+	durability = 180
+	carry_weight = 1.5 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	worn_icon_state = "classic_baton"
+	skill_melee = SKILL_IMPACT_WEAPON
+	tetris_width = 32
+	tetris_height = 64
 
 /obj/item/melee/bita/hammer/stone
 	name = "Stone Hammer"
