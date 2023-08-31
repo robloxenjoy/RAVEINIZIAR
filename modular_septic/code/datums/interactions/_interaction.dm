@@ -224,7 +224,7 @@
 	for(var/obj/item/organ/genital/genital in human_user.internal_organs)
 		if(CHECK_BITFIELD(genital.genital_flags, GENITAL_CAN_CLIMAX))
 			genital.handle_climax(get_turf(human_user), TOUCH)
-	humie_user.emote("sexycum")
+	human_user.emote("sexycum")
 	human_user.adjust_arousal(-AROUSAL_LEVEL_HORNY)
 	human_user.set_lust(0)
 	human_user.SetStun(25)

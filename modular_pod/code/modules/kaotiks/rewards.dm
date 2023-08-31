@@ -122,17 +122,16 @@
 		return FALSE
 	else
 		for(var/mob/living/carbon/human/H in shuffle(GLOB.player_list - input))
-			if((ROLE_TRAITOR in H.client?.prefs?.be_special) && (H.client?.prefs?.toggles & MIDROUND_ANTAG))
-				var/datum/antagonist/traitor/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor)
-				for(var/datum/objective/O in bounty_hunter.objectives)
-					qdel(O)
-				var/datum/objective/assassinate/kill_objective = new
-				kill_objective.owner = H.mind
-				kill_objective.target = input.mind
-				bounty_hunter.add_objective(kill_objective)
-				H.mind.announce_objectives()
-				to_chat(input.mind, span_dead("Someone's hunting you."))
-				return TRUE
+			var/datum/antagonist/traitor/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor)
+			for(var/datum/objective/O in bounty_hunter.objectives)
+				qdel(O)
+			var/datum/objective/assassinate/kill_objective = new
+			kill_objective.owner = H.mind
+			kill_objective.target = input.mind
+			bounty_hunter.add_objective(kill_objective)
+			H.mind.announce_objectives()
+			to_chat(input.mind, span_dead("Someone's hunting you."))
+			return TRUE
 
 /datum/bobux_reward/market_crash
 	name = "Market Crash"
@@ -145,7 +144,7 @@
 /datum/bobux_reward/market_crash/on_buy(client/noob)
 	. = ..()
 	to_chat(world, "<span class='userdanger'><span class='big bold'>The kaotik system was destroyed by [noob.key]!</span></span>")
-	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
+//	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
 	message_admins("[noob] has destroyed the kaotik system!")
 	log_admin("[noob] has destroyed the kaotik system!")
 	var/list/bogged = flist("data/player_saves/")
@@ -189,4 +188,4 @@
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
 //		coomer.moan()
 //		coomer.cum()
-		coomer.handle_user_climax(user, target)
+		coomer.handle_user_climax()

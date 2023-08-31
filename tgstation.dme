@@ -4060,6 +4060,7 @@
 #include "modular_pod\code\modules\items\itemary.dm"
 #include "modular_pod\code\modules\kaotiks\_reward.dm"
 #include "modular_pod\code\modules\kaotiks\holder.dm"
+#include "modular_pod\code\modules\kaotiks\kaotik_panel.dm"
 #include "modular_pod\code\modules\kaotiks\rewards.dm"
 #include "modular_pod\code\modules\kaotiks\subsystem.dm"
 #include "modular_pod\code\modules\kaotiks\verb.dm"
