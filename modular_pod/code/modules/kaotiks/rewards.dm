@@ -1,6 +1,6 @@
 //the rewards themselves
 /datum/bobux_reward/become_traitor
-	name = "Become Dream Terrorist"
+	name = "Become A Dream Terrorist"
 	desc = "Become a dream terrorist. It's time to parasitize this warlock dream!"
 	buy_message = "<b>My ancient instincts activated... I'm a dream terrorist, parasite.</span>"
 	id = "become_traitor"

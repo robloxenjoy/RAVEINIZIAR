@@ -1,6 +1,6 @@
 //simple verb to open the fucking menu
 /client/verb/bobuxmenu()
-	set category = "Extra"
+	set category = "OOC"
 	set name = "Kaotik System"
 	set desc = "Buy kaotik thinqs."
 
