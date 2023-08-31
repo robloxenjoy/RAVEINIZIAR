@@ -26,7 +26,7 @@
 	if(!prefs)
 		alert("Unable to find preferences for [key]!", "0 Kaotik")
 		return
-	
+
 	var/list/bobux_rewards = bobux_bought.Copy()
 	for(var/chungus in bobux_rewards)
 		bobux_rewards -= chungus
