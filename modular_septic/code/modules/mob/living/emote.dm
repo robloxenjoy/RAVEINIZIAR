@@ -440,6 +440,25 @@
 			return "modular_septic/sound/sexo/moan_f[rand(1, 7)].ogg"
 	else
 		return ..()
+
+/datum/emote/living/sexycum
+	key = "sexycum"
+	key_third_person = "sexycums"
+	message = "moans!"
+	emote_type = EMOTE_AUDIBLE
+	muzzle_ignore = TRUE
+	hands_use_check = FALSE
+	mob_type_allowed_typecache = /mob/living/carbon/human
+
+/datum/emote/living/sexycum/get_sound(mob/living/user)
+	if(ishuman(user))
+		if(user.gender != FEMALE)
+			return "modular_septic/sound/sexo/final_m[rand(1, 5)].ogg"
+		else
+			return "modular_septic/sound/sexo/final_f[rand(1, 3)].ogg"
+	else
+		return ..()
+
 /*
 /datum/emote/living/sexymoan/run_emote(mob/living/carbon/human/user, params, type_override, intentional)
 	. = TRUE

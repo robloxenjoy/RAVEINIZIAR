@@ -4,7 +4,7 @@
 	desc = "Become a dream terrorist. It's time to parasitize this warlock dream!"
 	buy_message = "<b>My ancient instincts activated... I'm a dream terrorist, parasite.</span>"
 	id = "become_traitor"
-	cost = 100
+	cost = 150
 
 /datum/bobux_reward/become_traitor/can_buy(client/noob, silent, fail_message)
 	. = ..()
@@ -100,7 +100,7 @@
 
 /datum/bobux_reward/bounty_hunter
 	name = "Subconscious Mercenary"
-	desc = "You need to kill a specific detail in this dream."
+	desc = "Sure, you need help of subconscious mercenary."
 	buy_message = null
 	id = "bounty_hunter"
 	cost = 100
@@ -145,7 +145,7 @@
 /datum/bobux_reward/market_crash/on_buy(client/noob)
 	. = ..()
 	to_chat(world, "<span class='userdanger'><span class='big bold'>The kaotik system was destroyed by [noob.key]!</span></span>")
-//	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
+	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
 	message_admins("[noob] has destroyed the kaotik system!")
 	log_admin("[noob] has destroyed the kaotik system!")
 	var/list/bogged = flist("data/player_saves/")
@@ -183,7 +183,7 @@
 	message_admins("[noob] has made everyone COOM.")
 	log_admin("[noob] has made everyone COOM.")
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] has made everyone cum!</span>")
-	var/cumsound = pick('modular_skyrat/sound/misc/coom.ogg','modular_skyrat/sound/misc/bobcoomer.ogg')
+	var/cumsound = pick('modular_pod/sound/eff/coom.ogg','modular_pod/sound/eff/bobcoomer.ogg')
 	SEND_SOUND(world, sound(cumsound, volume = 50))
 	to_chat(world, "<span class='reallybig hypnophrase'>I'M COOMING!!!</span>")
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
