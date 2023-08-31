@@ -168,6 +168,7 @@
 		C.prefs?.adjust_bobux(-C.prefs.bobux_amount)
 	for(var/datum/preferences/prefs in world)
 		prefs.load_preferences()
+
 /*
 /datum/bobux_reward/cum_shower
 	name = "Chungus Prank"
@@ -198,8 +199,8 @@
 
 /datum/bobux_reward/farto
 	name = "Chungus Prank"
-	desc = "Make everyone fart."
-	buy_message = "I'M FAAARTING!"
+	desc = "Make everyone PPFV."
+	buy_message = "I'M PPVF!!!!!!!"
 	id = "fart"
 	cost = 100
 //	single_use = TRUE
@@ -211,14 +212,18 @@
 //		to_chat(noob, "<span class='bobux'>fuck you lol!!!!!</span>")
 //		message_admins("[noob] tried to make everyone coom, too bad!")
 //		return FALSE
-	message_admins("[noob] has made everyone FART.")
-	log_admin("[noob] has made everyone FART.")
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] has made everyone fart!</span>")
+	message_admins("[noob] has made everyone PPFV.")
+	log_admin("[noob] has made everyone PPFV.")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] has made everyone pee, poo, fart and vomit!</span>")
 //	var/cumsound = pick('modular_pod/sound/eff/coom.ogg','modular_pod/sound/eff/bobcoomer.ogg')
 //	SEND_SOUND(world, sound(cumsound, volume = 50))
-	to_chat(world, "<span class='reallybig hypnophrase'>I'M FARTING!!!!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>I'M PPFV!!!!</span>")
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
+		if(coomer.mind)
+			coomer.emote("fart")
+			coomer.shit(FALSE)
+			coomer.piss(FALSE)
+			coomer.vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)
 //		coomer.moan()
 //		coomer.cum()
 //		coomer.handle_user_climax()
-		coomer.emote("fart")
