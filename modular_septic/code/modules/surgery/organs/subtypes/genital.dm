@@ -42,6 +42,8 @@
 	var/arousal_state = AROUSAL_NONE
 	///What we change our greyscale_colors var to when skintoned
 	var/skintoned_colors = "#fcccb3"
+	var/arousal_verb = "You feel aroused"
+	var/unarousal_verb = "You no longer feel aroused"
 
 /obj/item/organ/genital/Initialize()
 	. = ..()
@@ -49,6 +51,13 @@
 		create_reagents(reagent_vol, REAGENT_HOLDER_ALIVE)
 	else
 		reagents.flags |= REAGENT_HOLDER_ALIVE
+
+/obj/item/organ/genital/proc/set_arousal_state(new_state)
+	if(!(arousal_state & AROUSAL_CANT))
+		return FALSE
+	if(!((HAS_TRAIT(owner,TRAIT_PERMABONER) && !new_state) || HAS_TRAIT(owner,TRAIT_NEVERBONER) && new_state))
+		arousal_state = new_state
+	return arousal_state
 
 /obj/item/organ/genital/on_life(delta_time, times_fired)
 	. = ..()

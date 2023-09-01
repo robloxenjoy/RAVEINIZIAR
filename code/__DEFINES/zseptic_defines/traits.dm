@@ -76,6 +76,9 @@
 #define TRAIT_DENOMINATOR_ACCESS "denominator_safezone_access"
 /// Denominator Shotgunner Rage
 #define TRAIT_DENOMINATOR_REDSCREEN "denominator_shotgunner_hud_effect"
+#define TRAIT_NEVERBONER "never_aroused"
+#define TRAIT_PERMABONER "permanent_arousal"
+#define APHRO_TRAIT "aphro"
 
 // ~BODYPART TRAITS
 /// Rotten beyond salvation

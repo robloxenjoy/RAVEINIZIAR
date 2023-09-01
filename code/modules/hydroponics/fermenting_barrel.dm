@@ -11,6 +11,9 @@
 	var/open = OPEN
 	var/can_open = TRUE
 	var/speed_multiplier = 1 //How fast it distills. Defaults to 100% (1.0). Lower is better.
+	var/maxstoredmobs = 3
+	var/storedmobs = 0
+	var/volumeperprocess = 2.5
 
 /obj/structure/fermenting_barrel/Initialize(mapload)
 	// Bluespace beakers, but without the portability or efficiency in circuits.

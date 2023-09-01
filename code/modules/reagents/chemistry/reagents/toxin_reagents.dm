@@ -55,6 +55,7 @@
 /datum/reagent/toxin/badwater/shallow/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume)//Splashing people with water can help put them out!
 	. = ..()
 	if(methods & (TOUCH|VAPOR))
+		exposed_mob.wash(CLEAN_WASH)
 		if(exposed_mob.fire_stacks > 0)
 			exposed_mob.extinguish_mob() // extinguish removes all fire stacks
 

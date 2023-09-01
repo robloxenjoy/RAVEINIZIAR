@@ -358,6 +358,8 @@
 	supervisors = "living in Akt!"
 	selection_color = "#8e4a57"
 	exp_granted_type = EXP_TYPE_CREW
+	min_dicksize = 15
+	max_dicksize = 25
 
 	outfit = /datum/outfit/liver
 
