@@ -120,7 +120,7 @@
 /datum/bobux_reward/bounty_hunter/on_buy(client/noob)
 	..()
 	var/list/possible_targets = list()
-	for(var/mob/living/carbon/human/H in GLOB.player_list)
+	for(var/mob/living/carbon/human/H in GLOB.alive_player_list)
 		if(H.mind)
 			possible_targets |= H
 	if(!LAZYLEN(possible_targets))
