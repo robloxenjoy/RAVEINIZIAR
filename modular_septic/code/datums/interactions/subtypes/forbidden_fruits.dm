@@ -18,6 +18,9 @@
 	. = ..()
 	if(!CONFIG_GET(flag/use_erp))
 		return FALSE
+	if(user.arousal < 50)
+		to_chat(user, span_love("I don't really want..."))
+		return FALSE
 
 /datum/interaction/forbidden_fruits/after_interact(datum/component/interactable/user, datum/component/interactable/target)
 	. = ..()

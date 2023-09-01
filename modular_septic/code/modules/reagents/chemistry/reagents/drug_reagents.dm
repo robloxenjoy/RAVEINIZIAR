@@ -246,11 +246,11 @@
 			to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/carbon/M)
+/datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/carbon/M, delta_time)
 	if(prob(30))
 		ADJUSTBRAINLOSS(M, 2 * REM * delta_time)
 	..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/carbon/M)
+/datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/carbon/M, delta_time)
 	if(prob(30))
 		ADJUSTBRAINLOSS(M, 3 * REM * delta_time)
 	..()
