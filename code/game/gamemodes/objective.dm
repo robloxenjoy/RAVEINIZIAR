@@ -199,8 +199,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "assasinate"
 	var/target_role_type=FALSE
 	martyr_compatible = TRUE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/assassinate/check_completion()
 	return completed || (!considered_alive(target) || considered_afk(target) || considered_exiled(target))
@@ -227,8 +227,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "mutiny"
 	var/target_role_type=FALSE
 	martyr_compatible = 1
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/mutiny/check_completion()
 	if(!target || !considered_alive(target) || considered_afk(target) || considered_exiled(target))
@@ -247,8 +247,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "maroon"
 	var/target_role_type=FALSE
 	martyr_compatible = TRUE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/maroon/check_completion()
 	return !target || !considered_alive(target) || (!target.current.onCentCom() && !target.current.onSyndieBase())
@@ -265,8 +265,8 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/debrain
 	name = "debrain"
 	var/target_role_type=0
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/debrain/check_completion()
 	if(!target)//If it's a free objective.
@@ -298,8 +298,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = TRUE
 	var/target_role_type = FALSE
 	var/human_check = TRUE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/protect/check_completion()
 	var/obj/item/organ/brain/brain_target
@@ -321,15 +321,15 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/protect/nonhuman
 	name = "protect nonhuman"
 	human_check = FALSE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/jailbreak
 	name = "jailbreak"
 	martyr_compatible = TRUE //why not?
 	var/target_role_type
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/jailbreak/check_completion()
 	return completed || (considered_escaped(target))
@@ -364,8 +364,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	martyr_compatible = FALSE //Technically you won't get both anyway.
 	/// Overrides the hijack speed of any antagonist datum it is on ONLY, no other datums are impacted.
 	var/hijack_speed_override = 1
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/hijack/check_completion() // Requires all owners to escape.
 	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
@@ -381,8 +381,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	explanation_text = "Slaughter all loyalist crew aboard the shuttle. You, and any likeminded individuals, must be the only remaining people on the shuttle."
 	team_explanation_text = "Slaughter all loyalist crew aboard the shuttle. You, and any likeminded individuals, must be the only remaining people on the shuttle. Leave no team member behind."
 	martyr_compatible = FALSE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/elimination/check_completion()
 	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
@@ -410,8 +410,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "no organics on shuttle"
 	explanation_text = "Do not allow any organic lifeforms with sapience to escape on the shuttle alive."
 	martyr_compatible = 1
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/block/check_completion()
 	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
@@ -426,8 +426,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "no mutants on shuttle"
 	explanation_text = "Ensure no nonhuman humanoid species with sapience are present aboard the escape shuttle."
 	martyr_compatible = TRUE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/purge/check_completion()
 	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
@@ -443,8 +443,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "robot army"
 	explanation_text = "Have at least eight active cyborgs synced to you."
 	martyr_compatible = FALSE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/robot_army/check_completion()
 	var/counter = 0
@@ -462,8 +462,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "escape"
 	explanation_text = "Escape on the PINKER alive and without being in custody."
 	team_explanation_text = "Have all members of your team escape on a PINKER alive, without being in custody."
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/escape/check_completion()
 	// Require all owners escape safely.
@@ -477,8 +477,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "escape with identity"
 	var/target_real_name // Has to be stored because the target's real_name can change over the course of the round
 	var/target_missing_id
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/escape/escape_with_identity/find_target(dupe_search_range)
 	target = ..()
@@ -518,8 +518,8 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/survive
 	name = "survive"
 	explanation_text = "Stay alive until the end."
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/survive/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -531,8 +531,8 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/survive/malf //Like survive, but for Malf AIs
 	name = "survive AI"
 	explanation_text = "Prevent your own deactivation."
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/survive/malf/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -544,8 +544,8 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/exile
 	name = "exile"
 	explanation_text = "Stay alive off forest. Do not go to awakening phase."
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/exile/check_completion()
 	var/list/owners = get_owners()
@@ -559,8 +559,8 @@ GLOBAL_LIST_EMPTY(objectives)
 /datum/objective/martyr
 	name = "martyr"
 	explanation_text = "Die a glorious death."
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/martyr/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -575,8 +575,8 @@ GLOBAL_LIST_EMPTY(objectives)
 	name = "nuclear"
 	explanation_text = "Destroy the station with a nuclear device."
 	martyr_compatible = TRUE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/nuclear/check_completion()
 	if(GLOB.station_was_nuked)
@@ -589,8 +589,8 @@ GLOBAL_LIST_EMPTY(possible_items)
 	var/datum/objective_item/targetinfo = null //Save the chosen item datum so we can access it later.
 	var/obj/item/steal_target = null //Needed for custom objectives (they're just items, not datums).
 	martyr_compatible = FALSE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/steal/get_target()
 	return steal_target
@@ -675,8 +675,8 @@ GLOBAL_LIST_EMPTY(possible_items)
 GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/steal/special //ninjas are so special they get their own subtype good for them
 	name = "steal special"
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/steal/special/New()
 	..()
@@ -689,8 +689,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/capture
 	name = "capture"
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/capture/proc/gen_amount_goal()
 	target_amount = rand(5,10)
@@ -739,8 +739,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/protect_object
 	name = "protect object"
 	var/obj/protect_target
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/protect_object/proc/set_target(obj/O)
 	protect_target = O
@@ -760,8 +760,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 
 /datum/objective/absorb
 	name = "absorb"
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/absorb/proc/gen_amount_goal(lowbound = 4, highbound = 6)
 	target_amount = rand (lowbound,highbound)
@@ -806,8 +806,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/absorb_most
 	name = "absorb most"
 	explanation_text = "Extract more compatible genomes than any other Changeling."
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/absorb_most/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -829,8 +829,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/absorb_changeling
 	name = "absorb changeling"
 	explanation_text = "Absorb another Changeling."
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/absorb_changeling/check_completion()
 	var/list/datum/mind/owners = get_owners()
@@ -854,8 +854,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 /datum/objective/destroy
 	name = "destroy AI"
 	martyr_compatible = TRUE
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/destroy/find_target(dupe_search_range)
 	var/list/possible_targets = active_ais(1)
@@ -892,8 +892,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	name = "steal five of"
 	explanation_text = "Steal at least five items!"
 	var/list/wanted_items = list()
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/steal_five_of_type/New()
 	..()
@@ -915,15 +915,15 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 	name = "steal guns"
 	explanation_text = "Steal at least five guns!"
 	wanted_items = list(/obj/item/gun)
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/steal_five_of_type/summon_magic
 	name = "steal magic"
 	explanation_text = "Steal at least five magical artefacts!"
 	wanted_items = list()
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/steal_five_of_type/summon_magic/New()
 	wanted_items = GLOB.summoned_magic_objectives
@@ -948,8 +948,8 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 //Created by admin tools
 /datum/objective/custom
 	name = "custom"
-	bobux_reward = 50
-	bobux_penalty = 10
+	bobux_reward = 100
+	bobux_penalty = 50
 
 /datum/objective/custom/admin_edit(mob/admin)
 	var/expl = stripped_input(admin, "Custom objective:", "Objective", explanation_text)
