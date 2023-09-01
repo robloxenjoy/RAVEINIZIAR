@@ -690,9 +690,9 @@
 			return
 */
 /obj/structure/stone_eater
-	name = "Stone Eater"
+	name = "Porridge Eater"
 	desc = "GIVE ME YOUR STONE PORRIDGE!"
-	icon = 'modular_pod/icons/obj/things/thigs.dmi'
+	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "stone_eater"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
@@ -710,10 +710,10 @@
 	if(istype(W, /obj/item/coin/stoneporridge))
 		user.visible_message(span_notice("[user] gives stone porridge to [src]."),span_notice("You gave stone porridge to [src]."), span_hear("You hear the sound of sacrificing."))
 		if(is_slave_job(user.mind.assigned_role))
-			user.client?.prefs?.adjust_bobux(5, "<span class='bobux'>I liked working. +5 kaotiks!</span>")
+			user.client?.prefs?.adjust_bobux(5, "<span class='bobux'>I love these weird stone porridges. +5 kaotiks!</span>")
 		var/obj/item/coin/stoneporridge/por = W
 		qdel(por)
-		var/drop = pick_weight(list("beef" = 6, "water" = 6, "torch" = 5, "pickaxe" = 5, "gauze" = 5, "beer" = 5, "baggy" = 5))
+		var/drop = pick_weight(list("beef" = 6, "water" = 6, "lamp" = 5, "pickaxe" = 5, "gauze" = 5, "beer" = 5, "baggy" = 5))
 		switch(drop)
 			if("beef")
 				new /obj/item/food/canned/beef(get_turf(user))
@@ -727,7 +727,7 @@
 				new /obj/item/stack/medical/gauze(get_turf(user))
 			if("beer")
 				new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
-			if("bag")
+			if("baggy")
 				new /obj/item/storage/backpack/baggy(get_turf(user))
 
 /obj/structure/stone_mixer

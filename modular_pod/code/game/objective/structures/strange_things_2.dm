@@ -416,6 +416,8 @@
 	. = ..()
 	if(.)
 		return
+	if(special_attack != SPECIAL_ATK_NONE)
+		return
 	if(user.a_intent == INTENT_HELP)
 		if(ready)
 			user.visible_message(span_notice("<b>[user]</b> begins to compile the socket."), \

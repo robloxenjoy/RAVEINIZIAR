@@ -137,8 +137,8 @@
 //				var/datum/antagonist/traitor/submerc/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor/submerc)
 //				for(var/datum/objective/O in bounty_hunter.objectives)
 //					qdel(O)
-				var/bounty_hunter = H.mind.has_antag_datum(/datum/antagonist/custom/submerc)
-				var/datum/objective/assassinate/merc/kill_objective = new
+				var/datum/antagonist/custom/submerc/bounty_hunter = H.mind.has_antag_datum(/datum/antagonist/custom/submerc)
+				var/datum/objective/assassinate/submerc/kill_objective = new
 				kill_objective.owner = H.mind
 				kill_objective.target = input.mind
 				bounty_hunter.objectives += kill_objective

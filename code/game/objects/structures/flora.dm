@@ -333,6 +333,10 @@
 
 	if(!isturf(loc) || !isliving(AM))
 		return
+	var/mob/living/walker = AM
+	if(istype(walker))
+		if((GET_MOB_ATTRIBUTE_VALUE(walker, STAT_DEXTERITY) >= 14) && walker.combat_mode)
+			return
 	playsound(loc,'modular_pod/sound/eff/incrementum.ogg', 30, TRUE)
 
 /obj/structure/flora/ausbushes/incrementum/attackby(obj/item/W, mob/living/carbon/user, params)
@@ -469,8 +473,11 @@
 
 	if(!isturf(loc) || !isliving(AM))
 		return
+	var/mob/living/walker = AM
+	if(istype(walker))
+		if((GET_MOB_ATTRIBUTE_VALUE(walker, STAT_DEXTERITY) >= 14) && walker.combat_mode)
+			return
 	playsound(loc,'sound/effects/shelest.ogg', 50, TRUE)
-
 
 /obj/structure/flora/ausbushes/crystal/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
@@ -518,6 +525,10 @@
 
 	if(!isturf(loc) || !isliving(AM))
 		return
+	var/mob/living/walker = AM
+	if(istype(walker))
+		if((GET_MOB_ATTRIBUTE_VALUE(walker, STAT_DEXTERITY) >= 14) && walker.combat_mode)
+			return
 	playsound(loc,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/bushka/deconstruct(disassembled = TRUE)
@@ -611,6 +622,10 @@
 
 	if(!isturf(loc) || !isliving(AM))
 		return
+	var/mob/living/walker = AM
+	if(istype(walker))
+		if((GET_MOB_ATTRIBUTE_VALUE(walker, STAT_DEXTERITY) >= 14) && walker.combat_mode)
+			return
 	playsound(loc,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/molyakii/deconstruct(disassembled = TRUE)
@@ -681,6 +696,10 @@
 	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
+	var/mob/living/walker = AM
+	if(istype(walker))
+		if((GET_MOB_ATTRIBUTE_VALUE(walker, STAT_DEXTERITY) >= 14) && walker.combat_mode)
+			return
 	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/crystal/dark/attackby(obj/item/W, mob/living/carbon/user, params)
@@ -806,6 +825,10 @@
 	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
+	var/mob/living/walker = AM
+	if(istype(walker))
+		if((GET_MOB_ATTRIBUTE_VALUE(walker, STAT_DEXTERITY) >= 14) && walker.combat_mode)
+			return
 	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/zarosli/attackby(obj/item/W, mob/living/carbon/user, params)
@@ -1012,6 +1035,10 @@
 	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
+	var/mob/living/walker = AM
+	if(istype(walker))
+		if((GET_MOB_ATTRIBUTE_VALUE(walker, STAT_DEXTERITY) >= 14) && walker.combat_mode)
+			return
 	playsound(src,'sound/effects/shelest.ogg', 50, TRUE)
 
 /obj/structure/flora/ausbushes/zarosli/aguo/attack_hand(mob/living/user, list/modifiers)
