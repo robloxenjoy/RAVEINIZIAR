@@ -255,10 +255,6 @@
 		M.adjustBrainLoss(3)
 
 		..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage4(mob/living/M)
-	if(prob(30))
-		M.adjustBrainLoss(4)
-	..()
 
 /datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/M)
 	if(prob(5) && ishuman(M) && M.has_dna())
