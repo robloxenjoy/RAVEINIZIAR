@@ -37,6 +37,4 @@
 	antag_moodlet = null
 
 	show_in_roundend = TRUE
-	give_objectives = FALSE
 	show_in_antagpanel = FALSE
-	give_uplink = FALSE

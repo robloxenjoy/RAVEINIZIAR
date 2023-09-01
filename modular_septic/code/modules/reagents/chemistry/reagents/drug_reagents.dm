@@ -268,7 +268,7 @@
 	if(prob(16))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/list/genits = H.adjust_arousal(-100, aphro)
+			var/list/genits = H.adjust_arousal(-100)
 			if(genits.len)
 				to_chat(M, "<span class='notice'>You no longer feel aroused.")
 	..()

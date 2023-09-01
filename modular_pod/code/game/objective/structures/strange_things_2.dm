@@ -416,7 +416,7 @@
 	. = ..()
 	if(.)
 		return
-	if(special_attack != SPECIAL_ATK_NONE)
+	if(user.special_attack != SPECIAL_ATK_NONE)
 		return
 	if(user.a_intent == INTENT_HELP)
 		if(ready)

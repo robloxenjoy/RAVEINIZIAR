@@ -112,7 +112,7 @@
 /datum/bobux_reward/bounty_hunter/can_buy(client/noob, silent, fail_message)
 	. = ..()
 	if(!isobserver(noob.mob))
-		if(is_merc_job(noob.mind.assigned_role))
+		if(is_merc_job(noob.mob.mind.assigned_role))
 			return FALSE
 
 /datum/bobux_reward/bounty_hunter/on_buy(client/noob)

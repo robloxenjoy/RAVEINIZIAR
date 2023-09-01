@@ -92,7 +92,7 @@
 		user.stop_sound_channel(CHANNEL_HEARTBEAT)
 		var/mob/dead/new_player/M = new /mob/dead/new_player()
 		M.ckey = user.ckey
-		qdel(I)
+		qdel(src)
 
 /obj/item/halyabegg/attack_jaw(mob/living/carbon/user, modifiers)
 	. = ..()
@@ -114,7 +114,7 @@
 		user.stop_sound_channel(CHANNEL_HEARTBEAT)
 		var/mob/dead/new_player/M = new /mob/dead/new_player()
 		M.ckey = user.ckey
-		qdel(I)
+		qdel(src)
 
 /*
 /obj/item/halyabegg/Initialize()
