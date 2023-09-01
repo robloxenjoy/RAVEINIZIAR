@@ -38,3 +38,21 @@
 	icon_state = "pep-pill"
 	list_reagents = list(/datum/reagent/drug/carbonylmethamphetamine = 20)
 	apply_method = "chew"
+
+/obj/item/reagent_containers/pill/crocin
+	name = "crocin pill"
+	desc = "I've fallen, and I can't get it up!"
+	icon_state = "pill10"
+	list_reagents = list(/datum/reagent/drug/aphrodisiac = 10)
+
+/obj/item/reagent_containers/pill/hexacrocin
+	name = "hexacrocin pill"
+	desc = "It has a creepy smiling face on it."
+	icon_state = "pill_happy"
+	list_reagents = list(/datum/reagent/drug/aphrodisiacplus = 10)
+
+/obj/item/reagent_containers/pill/camphor
+	name = "camphor pill"
+	desc = "For the early bird."
+	icon_state = "pill0"
+	list_reagents = list(/datum/reagent/drug/anaphrodisiac = 10)

@@ -246,15 +246,14 @@
 			to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
 	..()
 
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
+/datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/carbon/M)
 	if(prob(30))
-		M.adjustBrainLoss(2)
+		ADJUSTBRAINLOSS(M, 2 * REM * delta_time)
 	..()
-/datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/M)
+/datum/reagent/drug/aphrodisiacplus/addiction_act_stage3(mob/living/carbon/M)
 	if(prob(30))
-		M.adjustBrainLoss(3)
-
-		..()
+		ADJUSTBRAINLOSS(M, 3 * REM * delta_time)
+	..()
 
 /datum/reagent/drug/aphrodisiacplus/overdose_process(mob/living/M)
 	if(prob(5) && ishuman(M) && M.has_dna())
