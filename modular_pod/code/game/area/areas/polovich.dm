@@ -81,7 +81,6 @@
 	max_ambience_cooldown = 95 SECONDS
 
 /area/maintenance/polovich/catacombs
-	droning_sound = DRONING_CATACOMBS
 
 /area/maintenance/polovich/night
 	name = "Polovich Purenight"

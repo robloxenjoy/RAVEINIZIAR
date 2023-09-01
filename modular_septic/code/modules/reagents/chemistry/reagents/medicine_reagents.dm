@@ -46,7 +46,7 @@
 /datum/reagent/medicine/morphine
 	name = "Morphine"
 	description = "A powerful yet highly addictive painkiller. Causes drowsyness. Overdosing causes jitteryness and muscle spasms."
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = OVERDOSE_STANDARD
 	addiction_types = list(/datum/addiction/opiods = 15)
 
@@ -64,9 +64,16 @@
 	switch(current_cycle)
 		if(12)
 			to_chat(M, span_warning("I feel tired...") )
+			if(prob(20))
+				M.HeadRape(3 SECONDS)
+				M.Stumble(2 SECONDS)
 		if(13 to 20)
 			if(prob(50))
-				M.drowsyness += 1 * REM * delta_time
+				M.drowsyness += 2 * REM * delta_time
+				M.Stumble(2 SECONDS)
+			if(prob(40))
+				M.HeadRape(4 SECONDS)
+				M.Stumble(4 SECONDS)
 	return ..()
 
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M, delta_time, times_fired)

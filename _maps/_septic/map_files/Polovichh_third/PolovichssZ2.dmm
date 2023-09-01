@@ -192,7 +192,7 @@
 "dJ" = (/turf/closed/wall/r_wall/alt/nocling,/area/maintenance/polovich/village)
 "dK" = (/obj/structure/lampwall/service{dir = 4; putout = 0},/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/village)
 "dL" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
-"dM" = (/obj/structure/table/reinforced,/obj/item/restraints/handcuffs,/obj/item/grenade/frag,/turf/open/floor/plating/polovich/stonestonestone/evilstoney,/area/maintenance/polovich/village)
+"dM" = (/obj/structure/table/reinforced,/obj/item/restraints/handcuffs,/obj/item/grenade/frag,/obj/item/storage/belt/keychain,/obj/item/key/podpol/woody/granger,/obj/item/key/podpol/woody/infirmary,/obj/item/key/podpol/woody/carehouse,/turf/open/floor/plating/polovich/stonestonestone/evilstoney,/area/maintenance/polovich/village)
 "dN" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/stonestonestone/three,/area/maintenance/polovich/village)
 "dO" = (/obj/structure/bed,/obj/effect/landmark/start/aktassertor,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "dP" = (/turf/open/floor/carpet/blackk,/area/maintenance/polovich/forest/rain)
