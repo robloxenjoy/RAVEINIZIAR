@@ -28,6 +28,8 @@
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "died", /datum/mood_event/died)
 	if(!has_died)
 		client?.prefs?.adjust_bobux(-5, "<span class='bobux'>I'm dead! So bad... -5 kaotiks!</span>")
+	if(is_merc_job(src))
+		GLOB.mercenary_list -= src
 	has_died = TRUE
 //	client?.prefs?.adjust_bobux(-1)
 	if(!iswillet(src))

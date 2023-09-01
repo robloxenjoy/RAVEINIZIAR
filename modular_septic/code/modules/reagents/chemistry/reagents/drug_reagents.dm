@@ -209,7 +209,7 @@
 		to_chat(M, "<span class='userlove'>[aroused_message]</span>")
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/list/genits = H.adjust_arousal(current_cycle, aphro = TRUE) // redundant but should still be here
+		var/list/genits = H.adjust_arousal(current_cycle) // redundant but should still be here
 		for(var/g in genits)
 			var/obj/item/organ/genital/G = g
 			to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
@@ -240,7 +240,7 @@
 		REMOVE_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/list/genits = H.adjust_arousal(100, aphro = TRUE) // redundant but should still be here
+		var/list/genits = H.adjust_arousal(100) // redundant but should still be here
 		for(var/g in genits)
 			var/obj/item/organ/genital/G = g
 			to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
@@ -268,7 +268,7 @@
 	if(prob(16))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/list/genits = H.adjust_arousal(-100, aphro = TRUE)
+			var/list/genits = H.adjust_arousal(-100, aphro)
 			if(genits.len)
 				to_chat(M, "<span class='notice'>You no longer feel aroused.")
 	..()
@@ -286,7 +286,7 @@
 		REMOVE_TRAIT(M,TRAIT_PERMABONER,APHRO_TRAIT)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-			var/list/genits = H.adjust_arousal(-100, aphro = TRUE)
+			var/list/genits = H.adjust_arousal(-100)
 			if(genits.len)
 				to_chat(M, "<span class='notice'>You no longer feel aroused.")
 

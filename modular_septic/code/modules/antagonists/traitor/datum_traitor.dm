@@ -32,7 +32,7 @@
 	cranial_depressurization_implant = null
 	owner.current.remove_status_effect(/datum/status_effect/thug_shaker)
 
-/datum/antagonist/traitor/submerc
+/datum/antagonist/custom/submerc
 	name = "Subconscious Mercenary"
 	antag_moodlet = null
 

@@ -109,13 +109,23 @@
 	id = "bounty_hunter"
 	cost = 50
 
+/datum/bobux_reward/bounty_hunter/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	if(!isobserver(noob.mob))
+		if(is_merc_job(noob.mind.assigned_role))
+			return FALSE
+
 /datum/bobux_reward/bounty_hunter/on_buy(client/noob)
 	..()
 	var/list/possible_targets = list()
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(H.mind)
 			possible_targets |= H
-	if(!length(possible_targets))
+	if(!LAZYLEN(possible_targets))
+		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
+		noob.prefs?.adjust_bobux(cost)
+		return FALSE
+	if(!GLOB.mercenary_list.len)
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
@@ -124,10 +134,11 @@
 		for(var/mob/living/carbon/human/H in shuffle(GLOB.player_list - input))
 //			var/datum/job/job = SSjob.GetJob(rank)
 			if(is_merc_job(H.mind.assigned_role))
-				var/datum/antagonist/traitor/submerc/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor/submerc)
-				for(var/datum/objective/O in bounty_hunter.objectives)
-					qdel(O)
-				var/datum/objective/assassinate/kill_objective = new
+//				var/datum/antagonist/traitor/submerc/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor/submerc)
+//				for(var/datum/objective/O in bounty_hunter.objectives)
+//					qdel(O)
+				var/bounty_hunter = H.mind.has_antag_datum(/datum/antagonist/custom/submerc)
+				var/datum/objective/assassinate/merc/kill_objective = new
 				kill_objective.owner = H.mind
 				kill_objective.target = input.mind
 				bounty_hunter.objectives += kill_objective

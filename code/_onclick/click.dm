@@ -28,7 +28,7 @@
 		mod *= S.nextmove_modifier()
 		adj += S.nextmove_adjust()
 	if(attributes)
-		var/speedy_attack = (round((GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH) + GET_MOB_ATTRIBUTE_VALUE(src, STAT_DEXTERITY)) / 6))
+		var/speedy_attack = (round((GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH) + GET_MOB_ATTRIBUTE_VALUE(src, STAT_DEXTERITY)) / 5))
 		next_move = world.time + ((((num - speedy_attack) + adj)*mod) + 0.5)
 	else
 		next_move = world.time + ((num + adj)*mod)

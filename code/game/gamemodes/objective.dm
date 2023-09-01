@@ -223,6 +223,10 @@ GLOBAL_LIST_EMPTY(objectives)
 	if(target && !target.current)
 		explanation_text = "Assassinate [target.name], who was obliterated"
 
+/datum/objective/assassinate/submerc
+	bobux_reward = 50
+	bobux_penalty = 50
+
 /datum/objective/mutiny
 	name = "mutiny"
 	var/target_role_type=FALSE
