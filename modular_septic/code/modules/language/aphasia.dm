@@ -1,3 +1,3 @@
 /datum/language/aphasia
-	name = "Moronspeak"
+	name = "Retardspeak"
 	desc = "Language of just retarded guys."

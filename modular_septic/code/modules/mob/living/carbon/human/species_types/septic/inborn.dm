@@ -233,5 +233,5 @@
 	bite_sharpness = SHARP_POINTY
 //	species_language_holder = /datum/language/yoinky
 	limbs_icon = 'modular_pod/icons/mob/human/species/blackboar/blackboar_parts.dmi'
-	limbs_id = "blackboar"
+	limbs_id = "pighuman"
 	examine_icon_state = "blackboar"

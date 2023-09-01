@@ -52,3 +52,4 @@
 	if(stat == CONSCIOUS)
 		if(!isboarhuman(src))
 			set_species(/datum/species/boarhuman)
+			grant_language(/datum/language/russian, TRUE, TRUE, LANGUAGE_CULTIST)
