@@ -253,13 +253,10 @@
 	l_pocket = /obj/item/simcard
 	shoes = /obj/item/clothing/shoes/laceup
 
-/datum/outfit/submercenary/pre_equip(mob/living/carbon/human/H)
-	..()
-	H.mind.add_antag_datum(/datum/antagonist/custom/submerc)
-
 /datum/outfit/submercenary/equip(mob/living/carbon/human/H)
 	..()
 	ADD_TRAIT(H, TRAIT_MISANTHROPE, "misanthrope")
+		H.mind?.add_antag_datum(/datum/antagonist/custom/submerc)
 	GLOB.mercenary_list += H
 
 /datum/job/thief

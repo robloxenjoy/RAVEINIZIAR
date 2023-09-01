@@ -114,6 +114,8 @@
 	if(!isobserver(noob.mob))
 		if(is_merc_job(noob.mob.mind.assigned_role))
 			return FALSE
+	if(GLOB.alive_player_list <= 1)
+		return FALSE
 
 /datum/bobux_reward/bounty_hunter/on_buy(client/noob)
 	..()
