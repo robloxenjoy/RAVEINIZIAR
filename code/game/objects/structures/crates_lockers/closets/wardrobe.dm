@@ -16,7 +16,7 @@
 /obj/structure/closet/wardrobe/pink
 	name = "pink wardrobe"
 	icon_door = "pink"
-
+/*
 /obj/structure/closet/wardrobe/pink/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/under/color/pink(src)
@@ -25,7 +25,7 @@
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/shoes/sneakers/brown(src)
 	return
-
+*/
 /obj/structure/closet/wardrobe/black
 	name = "black wardrobe"
 	icon_door = "black"
