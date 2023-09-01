@@ -27,7 +27,11 @@
 		var/datum/status_effect/S = i
 		mod *= S.nextmove_modifier()
 		adj += S.nextmove_adjust()
-	next_move = world.time + ((num + adj)*mod)
+	if(attributes)
+		var/speedy_attack = (GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH) + GET_MOB_ATTRIBUTE_VALUE(src, STAT_DEXTERITY) / 3)
+		next_move = world.time + ((((num - speedy_attack) + adj)*mod) + 0.5)
+	else
+		next_move = world.time + ((num + adj)*mod)
 
 /**
  * Before anything else, defer these calls to a per-mobtype handler.  This allows us to
