@@ -256,7 +256,7 @@
 /datum/outfit/submercenary/equip(mob/living/carbon/human/H)
 	..()
 	ADD_TRAIT(H, TRAIT_MISANTHROPE, "misanthrope")
-		H.mind?.add_antag_datum(/datum/antagonist/custom/submerc)
+	H.mind?.add_antag_datum(/datum/antagonist/custom/submerc)
 	GLOB.mercenary_list += H
 
 /datum/job/thief
