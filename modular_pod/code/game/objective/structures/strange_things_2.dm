@@ -567,7 +567,11 @@
 	if(moneymoney < 20)
 		return
 	switch(thingy)
-		if("venturer pants")
+		if("blue clothes")
+			new /obj/item/clothing/under/venturerclassic(get_turf(user))
+			moneymoney -= 20
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("blue pants")
 			new /obj/item/clothing/pants/venturer(get_turf(user))
 			moneymoney -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
