@@ -28,6 +28,8 @@
 	clingable = TRUE
 	mineable = TRUE
 	mine_hp = 4
+	sheet_type = null
+	sheet_amount = null
 
 /turf/closed/wall/purple/nocling
 	desc = "This wall makes you sleepy. Also you cant climb here."

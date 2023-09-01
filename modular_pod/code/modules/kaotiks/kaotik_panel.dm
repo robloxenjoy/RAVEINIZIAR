@@ -15,12 +15,41 @@
 	M.mind.bobux_panel()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Traitor Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/datum/admins/proc/destroykaotiks(mob/M in GLOB.mob_list)
+	set category = "Admin"
+	set desc = "Destroy them"
+	set name = "Destroy Kaotiks"
+
+//	message_admins("[noob] has destroyed the kaotik system!")
+//	log_admin("[noob] has destroyed the kaotik system!")
+	var/list/bogged = flist("data/player_saves/")
+	for(var/fuck in bogged)
+		if(copytext(fuck, -1) != "/")
+			continue
+		var/list/bogged_again = flist("data/player_saves/[fuck]")
+		for(var/fucked in bogged_again)
+			if(copytext(fucked, -1) != "/")
+				continue
+			var/savefile/S = new /savefile("data/player_saves/[fuck][fucked]preferences.sav")
+			if(!S)
+				continue
+			S.cd = "/"
+			WRITE_FILE(S["bobux_amount"], 0)
+	for(var/client/C in GLOB.clients)
+		C.prefs?.adjust_bobux(-C.prefs.bobux_amount)
+	for(var/datum/preferences/prefs in world)
+		prefs.load_preferences()
+
+//	SSblackbox.record_feedback("tally", "admin_verb", 1, "Traitor Panel")
+
 /datum/mind/proc/bobux_panel()
 	if(!length(SSbobux.all_bobux_rewards))
 		alert("Not before round-start!", "0 Kaotik")
 		return
 	if(QDELETED(src))
 		alert("This mind doesn't have a mob, or is deleted! For some reason!", "0 Kaotik")
+		return
+	if(!SSbobux.working)
 		return
 	var/datum/preferences/prefs = current?.client?.prefs
 	if(!prefs)

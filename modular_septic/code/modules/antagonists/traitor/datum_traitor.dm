@@ -31,3 +31,12 @@
 	. = ..()
 	cranial_depressurization_implant = null
 	owner.current.remove_status_effect(/datum/status_effect/thug_shaker)
+
+/datum/antagonist/traitor/submerc
+	name = "Subconscious Mercenary"
+	antag_moodlet = null
+
+	show_in_roundend = TRUE
+	give_objectives = FALSE
+	show_in_antagpanel = FALSE
+	give_uplink = FALSE

@@ -9,10 +9,7 @@
 	selection_color = "#596000"
 	exp_granted_type = EXP_TYPE_CREW
 
-	departments_list = list(
-		/datum/job_department/cargo,
-		)
-
+	departments_list = null
 
 	outfit = /datum/outfit/job/assistant/zoomtech
 

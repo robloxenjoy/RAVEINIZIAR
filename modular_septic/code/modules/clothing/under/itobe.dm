@@ -81,6 +81,23 @@
 	can_adjust = FALSE
 	body_parts_covered = CHEST|VITALS|GROIN
 
+/obj/item/clothing/under/blackshirt
+	name = "\proper Black Shirt"
+	desc = "Another nice shirt."
+	icon = 'modular_pod/icons/obj/clothing/under/antagonist.dmi'
+	icon_state = "blackkshirt"
+	worn_icon = 'modular_pod/icons/mob/clothing/under/antagonist.dmi'
+	worn_icon_state = "blackkshirt"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "soldat"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = list(MELEE = 2, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 10, ACID = 10, WOUND = 2)
+	carry_weight = 300 GRAMS
+	can_adjust = FALSE
+	body_parts_covered = CHEST|VITALS|GROIN
+
 /obj/item/clothing/under/venturerlong
 	name = "\proper Blue Clothes"
 	desc = "These clothes are very comfortable and cheap. Due to the many giant midnightberry bushes, it became very difficult to move around the continent of Terra, so people decided to create dyes from them. Midnightberry dyes are so plentiful that they have become very cheap, and many poor people often wear blue clothes because of this."

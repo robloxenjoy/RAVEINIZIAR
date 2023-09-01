@@ -192,6 +192,42 @@
 				ORGAN = 2)
 	strip_delay = 90
 
+/obj/item/clothing/suit/armor/vest/leatherjacket
+	name = "Leather Jacket"
+	desc = "It is dangerous to walk in such a jacket here!"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	icon_state = "leatherjacket"
+	worn_icon_state = "leatherjacket"
+	inhand_icon_state = "infiltrator"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	max_integrity = 450
+	integrity_failure = 0.1
+	limb_integrity = 400
+	body_parts_covered = CHEST|VITALS|GROIN|NECK
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 6, \
+				CRUSHING = 6, \
+				CUTTING = 7, \
+				PIERCING = 6, \
+				IMPALING = 6, \
+				LASER = 7, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 3, \
+				ACID = 3, \
+				MAGIC = 0, \
+				WOUND = 2, \
+				ORGAN = 2)
+	strip_delay = 90
+
+/*
 /obj/item/clothing/suit/armor/vest/redjacket/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -200,7 +236,7 @@
 	STR.max_w_class = 12
 	STR.set_holdable(list(/obj/item/gun/ballistic/revolver/remis/nova, /obj/item/ammo_casing))
 
-/*
+
 /obj/item/clothing/suit/armor/vest/redjacket/attack_self_secondary(mob/user, modifiers)
 	. = ..()
 	GetComponent(src, /datum/component/storage)
@@ -214,7 +250,7 @@
 	icon_state = "copper_armor"
 	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
 	worn_icon_state = "copper_armor"
-	body_parts_covered = CHEST|VITALS|GROIN|ARMS|LEGS|NECK
+	body_parts_covered = CHEST|VITALS|GROIN|ARMS|NECK
 	equip_sound = 'modular_septic/sound/armor/equip/armor_use_001.ogg'
 	pickup_sound = 'modular_septic/sound/armor/equip/armor_pickup.ogg'
 	drop_sound = 'modular_septic/sound/armor/equip/armor_drop.ogg'

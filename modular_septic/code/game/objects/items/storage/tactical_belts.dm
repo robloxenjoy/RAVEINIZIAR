@@ -71,6 +71,7 @@
 	STR.max_combined_w_class = 20
 	STR.set_holdable(list(
 		/obj/item/akt/lockpick,
+		/obj/item/melee/bita/dark,
 		))
 
 /obj/item/storage/belt/blackin/full/PopulateContents()

@@ -18,8 +18,7 @@
 
 	var/kicking_cooldown_duration = 0.8 SECONDS
 	var/open_cooldown_duration = 2 SECONDS
-	var/lock_level_one = FALSE
-	var/lock_level_two = TRUE
+	var/lock_level = 2
 	var/hardnesslock = 48
 
 	COOLDOWN_DECLARE(kicking_cooldown)
@@ -237,7 +236,7 @@
 					to_chat(user, span_danger(xbox_rage_msg()))
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return
-				if(lock_level_one && !lock_level_two)
+				if(lock_level <= 1)
 					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
 					playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
 					if(diceroll == DICE_CRIT_SUCCESS)
@@ -276,7 +275,7 @@
 					to_chat(user, span_danger(xbox_rage_msg()))
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return
-				if(lock_level_two && !lock_level_one)
+				if(lock_level >= 2)
 					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_LOCKPICKING), context = DICE_CONTEXT_PHYSICAL)
 					playsound(src, 'modular_pod/sound/eff/lockpicking2.ogg', 70, FALSE, 3)
 					if(diceroll == DICE_CRIT_SUCCESS)

@@ -802,6 +802,7 @@
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
+	frame = null
 
 /obj/structure/table/oldwood
 	name = "Table"
@@ -811,6 +812,7 @@
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
+	frame = null
 
 /obj/structure/table/fine
 	name = "Table"
@@ -820,6 +822,7 @@
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
+	frame = null
 
 /obj/structure/table/cursedwood
 	name = "Table"
@@ -829,6 +832,7 @@
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
+	frame = null
 
 /obj/structure/column
 	name = "Stone Column"

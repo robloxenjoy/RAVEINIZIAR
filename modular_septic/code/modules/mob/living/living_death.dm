@@ -13,7 +13,7 @@
 //				to_chat(M, span_bobux("I have seen a death of fatal! +10 kaotiks!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[src.real_name]", /datum/mood_event/fraggot/killed)
 				if(M.client?.prefs)
-					M.client.prefs.adjust_bobux(10, "<span class='bobux'>I have seen a death of fatal! +10 kaotiks!</span>")
+					M.client.prefs.adjust_bobux(50, "<span class='bobux'>I have seen a death of fatal! +50 kaotiks!</span>")
 
 
 /mob/living/revive(full_heal, admin_revive, excess_healing)

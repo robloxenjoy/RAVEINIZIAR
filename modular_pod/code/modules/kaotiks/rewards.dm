@@ -107,7 +107,7 @@
 	desc = "Sure, you need help of subconscious mercenary."
 	buy_message = null
 	id = "bounty_hunter"
-	cost = 100
+	cost = 50
 
 /datum/bobux_reward/bounty_hunter/on_buy(client/noob)
 	..()
@@ -122,16 +122,18 @@
 	var/mob/living/carbon/human/input = input(noob, "I have contracted a subconscious mercenary. Who is the first victim?", "Subconscious Mercenary") as mob in possible_targets
 	if(input)
 		for(var/mob/living/carbon/human/H in shuffle(GLOB.player_list - input))
-			var/datum/antagonist/traitor/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor)
-			for(var/datum/objective/O in bounty_hunter.objectives)
-				qdel(O)
-			var/datum/objective/assassinate/kill_objective = new
-			kill_objective.owner = H.mind
-			kill_objective.target = input.mind
-			bounty_hunter.objectives += kill_objective
-			H.mind.announce_objectives()
-			to_chat(input.mind, span_dead("Someone's hunting you."))
-			return TRUE
+//			var/datum/job/job = SSjob.GetJob(rank)
+			if(is_merc_job(H.mind.assigned_role))
+				var/datum/antagonist/traitor/submerc/bounty_hunter = H.mind.add_antag_datum(/datum/antagonist/traitor/submerc)
+				for(var/datum/objective/O in bounty_hunter.objectives)
+					qdel(O)
+				var/datum/objective/assassinate/kill_objective = new
+				kill_objective.owner = H.mind
+				kill_objective.target = input.mind
+				bounty_hunter.objectives += kill_objective
+				H.mind.announce_objectives()
+				to_chat(input.mind, span_dead("Someone's hunting you."))
+				return TRUE
 	else
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
@@ -148,6 +150,8 @@
 /datum/bobux_reward/market_crash/on_buy(client/noob)
 	. = ..()
 	to_chat(world, "<span class='userdanger'><span class='big bold'>The kaotik system was destroyed by [noob.key]!</span></span>")
+	SSbobux.working = FALSE
+/*
 //	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
 	message_admins("[noob] has destroyed the kaotik system!")
 	log_admin("[noob] has destroyed the kaotik system!")
@@ -168,6 +172,7 @@
 		C.prefs?.adjust_bobux(-C.prefs.bobux_amount)
 	for(var/datum/preferences/prefs in world)
 		prefs.load_preferences()
+*/
 
 /*
 /datum/bobux_reward/cum_shower

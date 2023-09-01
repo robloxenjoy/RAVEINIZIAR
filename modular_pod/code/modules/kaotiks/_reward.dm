@@ -40,6 +40,9 @@
 	if(type in noob.mob?.mind?.bobux_bought)
 		to_chat(noob, "<span clas='bobux'>You have already bought this kaotik thinq!</span>")
 		return FALSE
+	if(!SSbobux.working)
+		to_chat(noob, "<span clas='bobux'>Kaotik System was crashed!</span>")
+		return FALSE
 	if((noob?.prefs?.bobux_amount >= cost) && !unbuyable)
 		return TRUE
 	else if(!silent)

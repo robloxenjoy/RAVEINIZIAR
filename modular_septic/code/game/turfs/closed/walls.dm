@@ -13,6 +13,8 @@
 	var/ore_type = /obj/item/stone
 	var/ore_amount = 1
 	var/defer_change = TRUE
+	sheet_type = null
+	sheet_amount = null
 //	turf_height = TURF_HEIGHT_BLOCK_THRESHOLD_TEST
 
 /turf/closed/wall/get_projectile_hitsound(obj/projectile/projectile)
@@ -68,6 +70,8 @@
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	mine_hp = 11
+	sheet_type = null
+	sheet_amount = null
 
 /turf/closed/wall/r_wall/alt
 	icon = 'modular_septic/icons/turf/tall/walls/reinforced_victorian_alt.dmi'
@@ -88,6 +92,8 @@
 	base_icon_state = "pink_crazy"
 	desc = "Strange wall."
 	mine_hp = 6
+	sheet_type = null
+	sheet_amount = null
 
 /turf/closed/wall/darkrock
 	icon = 'modular_septic/icons/turf/tall/walls/rockcoolnew.dmi'
@@ -96,6 +102,8 @@
 	base_icon_state = "wood_wall"
 	desc = "So dark and evil!"
 	mine_hp = 6
+	sheet_type = null
+	sheet_amount = null
 
 /turf/closed/wall/mineral/wood
 	icon = 'modular_septic/icons/turf/tall/walls/wood.dmi'
@@ -105,6 +113,8 @@
 	resistance_flags = FLAMMABLE
 	desc = "Just wood wall."
 	mine_hp = 4
+	sheet_type = null
+	sheet_amount = null
 
 /turf/closed/wall/bluegreen
 	icon = 'modular_septic/icons/turf/tall/walls/woodbluegreen.dmi'
@@ -114,6 +124,8 @@
 	resistance_flags = FLAMMABLE
 	desc = "Interesting wood wall."
 	mine_hp = 4
+	sheet_type = null
+	sheet_amount = null
 
 /turf/closed/wall/bluegreen/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,4)].ogg"

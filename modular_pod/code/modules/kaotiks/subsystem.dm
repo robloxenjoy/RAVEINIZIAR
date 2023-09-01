@@ -5,6 +5,7 @@ SUBSYSTEM_DEF(bobux)
 	flags = SS_NO_FIRE
 	var/list/datum/bobux_reward/all_bobux_rewards = list()
 	var/list/datum/bobux_reward/bobux_rewards_buyable = list()
+	var/working = TRUE
 
 /datum/controller/subsystem/bobux/Initialize(start_timeofday)
 	. = ..()
@@ -48,7 +49,7 @@ SUBSYSTEM_DEF(bobux)
 		var/datum/bobux_reward/comicao = aaa
 		dat += "<span class='bobux'><b>[comicao.name]</b></span><br>"
 		dat += "[comicao.desc]</span><br>"
-		dat += "<a href='?src=\ref[src];task=buy;id=[comicao.id]'>Buy</a> ([comicao.cost] kaotik)"
+		dat += "<a href='?src=\ref[src];task=buy;id=[comicao.id]'>Buy</a> ([comicao.cost] kaotiks)"
 		dat += "<hr>"
 	return dat
 

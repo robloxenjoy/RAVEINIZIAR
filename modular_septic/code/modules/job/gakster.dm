@@ -224,6 +224,40 @@
 	..()
 	ADD_TRAIT(H, TRAIT_MISANTHROPE, "misanthrope")
 
+/datum/job/submercenary
+	title = "Subconscious Mercenary"
+	department_head = list("Head of Personnel")
+	faction = list(ROLE_AKT)
+	total_positions = 5
+	spawn_positions = 5
+	supervisors = "Banditism."
+	selection_color = "#94009b"
+	exp_granted_type = EXP_TYPE_CREW
+
+	outfit = /datum/outfit/submercenary
+
+	display_order = JOB_DISPLAY_ORDER_OUTER
+	departments_list = list(
+		/datum/job_department/security,
+		)
+
+	job_flags = JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS
+
+/datum/outfit/submercenary
+	name = "Submercenary Uniform"
+
+	uniform = /obj/item/clothing/under/blackshirt
+	pants = /obj/item/clothing/pants/leatherpants
+	suit = /obj/item/clothing/suit/armor/vest/leatherjacket
+	r_pocket = /obj/item/cellphone
+	l_pocket = /obj/item/simcard
+	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/submercenary/equip(mob/living/carbon/human/H)
+	..()
+	ADD_TRAIT(H, TRAIT_MISANTHROPE, "misanthrope")
+	H.mind.add_antag_datum(/datum/antagonist/traitor/submerc)
+
 /datum/job/thief
 	title = "Thief"
 	department_head = list("Head of Personnel")
@@ -730,5 +764,5 @@
 	suit = /obj/item/clothing/suit/space/stray
 	uniform = /obj/item/clothing/under/pinker
 	pants = /obj/item/clothing/pants/pinker
-	r_pocket = /obj/item/key/podpol/woody/controller
+	id = /obj/item/key/podpol/woody/controller
 	shoes =/obj/item/clothing/shoes/frogshoes
