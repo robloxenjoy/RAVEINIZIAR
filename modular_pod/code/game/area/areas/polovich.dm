@@ -55,7 +55,6 @@
 
 /area/maintenance/polovich/evilplace
 	name = "Polovich Evil"
-	droning_sound = DRONING_EVIL
 	area_flags = NO_ALERTS
 
 /area/maintenance/polovich/village
