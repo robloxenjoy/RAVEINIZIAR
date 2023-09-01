@@ -257,7 +257,7 @@
 	..()
 	ADD_TRAIT(H, TRAIT_MISANTHROPE, "misanthrope")
 	H.mind?.add_antag_datum(/datum/antagonist/custom/submerc)
-	GLOB.mercenary_list += H
+	GLOB.mercenary_list += 1
 
 /datum/job/thief
 	title = "Thief"

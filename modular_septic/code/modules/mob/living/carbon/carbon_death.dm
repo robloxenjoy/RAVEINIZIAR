@@ -29,7 +29,7 @@
 	if(!has_died)
 		client?.prefs?.adjust_bobux(-5, "<span class='bobux'>I'm dead! So bad... -5 kaotiks!</span>")
 	if(is_merc_job(src))
-		GLOB.mercenary_list -= src
+		GLOB.mercenary_list -= 1
 	has_died = TRUE
 //	client?.prefs?.adjust_bobux(-1)
 	if(!iswillet(src))
@@ -53,3 +53,5 @@
 	. = ..()
 	// We are alive - We need our pulse back!
 	set_heartattack(FALSE)
+	if(is_merc_job(src))
+		GLOB.mercenary_list += 1

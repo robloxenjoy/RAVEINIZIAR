@@ -127,7 +127,7 @@
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
-	if(!GLOB.mercenary_list.len)
+	if(GLOB.mercenary_list <= 0)
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
