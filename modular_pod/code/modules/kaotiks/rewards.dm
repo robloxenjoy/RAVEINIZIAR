@@ -141,11 +141,12 @@
 //					qdel(O)
 				var/datum/antagonist/custom/submerc/bounty_hunter = H.mind.has_antag_datum(/datum/antagonist/custom/submerc)
 				var/datum/objective/assassinate/submerc/kill_objective = new
+				var/victima = input.mind
 				kill_objective.owner = H.mind
-				kill_objective.target = input.mind
+				kill_objective.target = victima
 				bounty_hunter.objectives += kill_objective
 				H.mind.announce_objectives()
-				to_chat(input.mind, span_dead("You're being hunted."))
+				to_chat(victima, span_dead("You're being hunted."))
 				to_chat(noob, "<span class='bobux'>We have to wait for the creature to be killed. Pray that this dream have really good subconscious mercenaries.</span>")
 				return TRUE
 	else
