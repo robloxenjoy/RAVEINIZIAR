@@ -228,8 +228,8 @@
 	title = "Subconscious Mercenary"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 10
+	spawn_positions = 10
 	supervisors = "Banditism."
 	selection_color = "#94009b"
 	exp_granted_type = EXP_TYPE_CREW
@@ -252,6 +252,11 @@
 	r_pocket = /obj/item/cellphone
 	l_pocket = /obj/item/simcard
 	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/submercenary/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(10))
+		belt = /obj/item/gun/ballistic/automatic/pistol/cortes
 
 /datum/outfit/submercenary/equip(mob/living/carbon/human/H)
 	..()

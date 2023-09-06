@@ -131,7 +131,8 @@
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
-	var/mob/living/carbon/human/input = input(noob, "I have contracted a subconscious mercenaries. Who is the first victim?", "Subconscious Mercenary") as mob in possible_targets
+			var/thing = tgui_input_list(user, "What you want?",, list("Guns", "Ammo", "Other"))
+	var/input = tgui_input_list(noob, "I have contracted a subconscious mercenaries. Who is the first victim?", "Who should be killed?", possible_targets)
 	if(input)
 		for(var/mob/living/carbon/human/H in shuffle(GLOB.player_list - input))
 //			var/datum/job/job = SSjob.GetJob(rank)
@@ -145,7 +146,7 @@
 				kill_objective.target = input.mind
 				bounty_hunter.objectives += kill_objective
 				H.mind.announce_objectives()
-				to_chat(input.mind, span_dead("Someone's hunting you."))
+				to_chat(input.mind, span_dead("You're being hunted."))
 				to_chat(noob, "<span class='bobux'>We have to wait for the creature to be killed. Pray that this dream have really good subconscious mercenaries.</span>")
 				return TRUE
 	else
