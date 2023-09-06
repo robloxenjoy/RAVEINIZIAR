@@ -131,7 +131,6 @@
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
-			var/thing = tgui_input_list(user, "What you want?",, list("Guns", "Ammo", "Other"))
 	var/input = tgui_input_list(noob, "I have contracted a subconscious mercenaries. Who is the first victim?", "Who should be killed?", possible_targets)
 	if(input)
 		for(var/mob/living/carbon/human/H in shuffle(GLOB.player_list - input))
