@@ -141,7 +141,7 @@
 //					qdel(O)
 				var/datum/antagonist/custom/submerc/bounty_hunter = H.mind.has_antag_datum(/datum/antagonist/custom/submerc)
 				var/datum/objective/assassinate/submerc/kill_objective = new
-				var/victima = input.mind
+				var/victima = input
 				kill_objective.owner = H.mind
 				kill_objective.target = victima
 				bounty_hunter.objectives += kill_objective
