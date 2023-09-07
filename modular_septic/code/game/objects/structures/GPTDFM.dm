@@ -3,8 +3,8 @@ GLOBAL_LIST_EMPTY(child_exiterporter)
 GLOBAL_LIST_EMPTY(denominator_exiterporter)
 
 /obj/structure/gptdfm
-	name = "rapid-major-transportation-effect"
-	desc = "Rapid teleportation area."
+	name = "CRAZY"
+	desc = "What..."
 	icon = 'modular_septic/icons/obj/structures/gptdfm.dmi'
 	icon_state = "child_transporter"
 	density = FALSE
@@ -41,10 +41,10 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 		user.flash_darkness(100)
 
 /obj/structure/gptdfm/proc/mass_teleportation(mob/leader, list/mob/friends_list, specific_location)
-	var/friend_message_composed = "<div class='infobox'>I'm bringing my PARTY along with me:"
+	var/friend_message_composed = "<div class='infobox'>I'm bringing my guys along with me:"
 	for(var/atom/friend as anything in friends_list)
 		if(ismob(friend))
-			to_chat(friend, span_notice("Our party has gathered, [leader] is taking us to [specific_location]..."))
+			to_chat(friend, span_notice("Our guys has gathered, [leader] is taking us to [specific_location]..."))
 		friend_message_composed += "\n[friend.name]"
 	friend_message_composed += "</div>"
 	to_chat(leader, span_notice("[friend_message_composed]"))
@@ -64,8 +64,8 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 	INVOKE_ASYNC(src, .proc/teleportation, child_victim)
 
 /obj/structure/gptdfm/entrance
-	name = "An unEscape from Nevado"
-	desc = "GTFIN!"
+	name = "CRAZY"
+	desc = "What..."
 
 /obj/structure/gptdfm/entrance/Initialize(mapload)
 	. = ..()
@@ -77,12 +77,12 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 
 /obj/structure/gptdfm/entrance/examine(mob/user)
 	. = ..()
-	. += span_info("Time to Escape from Nevado!")
+	. += span_info("Time to escape!")
 	. += span_big(span_alert("What..."))
 
 /obj/structure/gptdfm/exit
-	name = "An Escape from Nevado"
-	desc = "GTFO!"
+	name = "CRAZY"
+	desc = "What..."
 
 /obj/structure/gptdfm/exit/Initialize(mapload)
 	. = ..()
@@ -95,11 +95,11 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 
 /obj/structure/gptdfm/exit/examine(mob/user)
 	. = ..()
-	. += span_info("Back to the Safezone!")
+	. += span_info("Back!")
 	. += span_big(span_alert("Hmm..."))
 
 /obj/structure/gptdfm/exit/teleportation(mob/user, obj/structure/gptdfm/specific_location = pick(GLOB.child_enterporter), leaving_message = "Time for my journey. I'm going to [specific_location.name].")
-	leaving_message = "I'm going back to the safezone now."
+	leaving_message = "I'm going back."
 	if(HAS_TRAIT(user, TRAIT_DENOMINATOR_ACCESS))
 		leaving_message = "Establishing an exfil back to base."
 		if(LAZYLEN(GLOB.denominator_exiterporter))
@@ -110,8 +110,8 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 	return ..()
 
 /obj/structure/gptdfm/denominator
-	name = "An unEscape from Nevado but for Denominators"
-	desc = "GTFIN IDIOT!"
+	name = "CRAZY"
+	desc = "What..."
 
 /obj/structure/gptdfm/denominator/Initialize(mapload)
 	. = ..()

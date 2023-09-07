@@ -860,7 +860,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
+		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -878,6 +878,7 @@
 				if(canspawn)
 					new /obj/structure/flora/tree/evil/long(get_turf(src))
 					new /turf/open/floor/plating/polovich/roots(get_turf(src))
+/*
 			if("groundcrystals")
 				var/crystaltype = rand(1, 4)
 				switch(crystaltype)
@@ -889,6 +890,7 @@
 						new /obj/structure/crystals_ground/blue(get_turf(src))
 					if(4)
 						new /obj/structure/crystals_ground/pink(get_turf(src))
+*/
 			if("crystal")
 				var/crystaltypee = rand(1, 4)
 				switch(crystaltypee)
@@ -936,7 +938,7 @@
 
 	if(locate(/obj/structure/) in get_turf(src))
 		return
-	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "groundcrystals" = 2, "goldishincrementum" = 3, "crystal" = 1, "ygro" = 2, "chaosbush" = 3, "beartrap" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
+	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "beartrap" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
 	switch(state)
 		if("crystalbush")
 			new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -962,6 +964,7 @@
 			if(canspawn)
 				new /obj/structure/flora/tree/evil(get_turf(src))
 				new /turf/open/floor/plating/polovich/roots(get_turf(src))
+/*
 		if("groundcrystals")
 			var/crystaltype = rand(1, 4)
 			switch(crystaltype)
@@ -973,6 +976,7 @@
 					new /obj/structure/crystals_ground/blue(get_turf(src))
 				if(4)
 					new /obj/structure/crystals_ground/pink(get_turf(src))
+*/
 		if("crystal")
 			var/crystaltypee = rand(1, 4)
 			switch(crystaltypee)

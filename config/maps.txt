@@ -57,6 +57,9 @@ endmap
 map polovich_third
 endmap
 
+map polovichx
+endmap
+
 map warwar
 endmap
 

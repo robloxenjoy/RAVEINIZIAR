@@ -157,6 +157,9 @@
 			if((victim.body_position == LYING_DOWN) && (user.body_position != LYING_DOWN))
 				hit_modifier += 5
 				hit_zone_modifier += 5
+			//bad damage!
+			if(user.body_position == LYING_DOWN)
+				damage *= 0.5
 			//bro we dead :skull:
 			if(victim.stat >= UNCONSCIOUS)
 				hit_modifier += 15
@@ -172,8 +175,8 @@
 			affecting = null
 		if(diceroll >= DICE_SUCCESS)
 			diceroll = user.diceroll(skill_modifier+hit_zone_modifier-strength_difference, context = DICE_CONTEXT_PHYSICAL)
-			if(diceroll <= DICE_FAILURE)
-				affecting = victim.get_bodypart(ran_zone(user.zone_selected, 0))
+//		if(diceroll <= DICE_FAILURE)
+//			affecting = victim.get_bodypart(ran_zone(user.zone_selected, 0))
 		if(victim.check_block())
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
@@ -209,6 +212,7 @@
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
+			playsound(user, weapon.miss_sound, weapon.get_clamped_volume(), extrarange = weapon.stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
 			user.sound_hint()
 			victim.adjustFatigueLoss(5)
 			victim.sound_hint()
@@ -433,6 +437,7 @@
 			user.sound_hint()
 			target.adjustFatigueLoss(5)
 			target.sound_hint()
+			playsound(target, 'modular_pod/sound/eff/dodged.ogg', 70, TRUE)
 			return FALSE
 	if(attacker_style?.disarm_act(user,target) == MARTIAL_ATTACK_SUCCESS)
 		return TRUE
@@ -594,6 +599,7 @@
 			user.sound_hint()
 			target.adjustFatigueLoss(5)
 			target.sound_hint()
+			playsound(target, 'modular_pod/sound/eff/dodged.ogg', 70, TRUE)
 			return FALSE
 	if(attacker_style?.harm_act(user,target) == MARTIAL_ATTACK_SUCCESS)
 		return TRUE
@@ -735,12 +741,12 @@
 									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
 										var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
 										if(dicerollll >= DICE_SUCCESS)
-											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked by hands!"), \
-														span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this by my hands!"), \
+											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"), \
+														span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this with my hands!"), \
 														span_hear("I hear blocking!"), \
 														COMBAT_MESSAGE_RANGE, \
 														user)
-											to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked this by hands!"))
+											to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"))
 											target.changeNext_move(CLICK_CD_GRABBING)
 											target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
 											target.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)

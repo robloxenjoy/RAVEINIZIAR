@@ -62,7 +62,7 @@
 									attack_text = "the attack", \
 									user_attack_text = "my attack", \
 									attacking_flags = BLOCK_FLAG_MELEE)
-	/// Can only dodge while conscious, can only dodge in combat mode, can only dodge once every second, can only dodge in parry mode
+	/// Can only dodge while conscious, can only dodge in combat mode, can only dodge once every second, can only dodge in dodge mode
 	if((stat >= UNCONSCIOUS) || !combat_mode || !COOLDOWN_FINISHED(src, dodging_cooldown) || (dodge_parry != DP_DODGE) || !CHECK_MULTIPLE_BITFIELDS(dodging_flags, attacking_flags))
 		return COMPONENT_HIT_REACTION_CANCEL
 	var/dodging_modifier = 0
@@ -88,6 +88,13 @@
 								vision_distance = COMBAT_MESSAGE_RANGE, \
 								ignored_mobs = attacker)
 				to_chat(attacker, span_userdanger("<b>[src]</b> dodges [user_attack_text]!"))
+				var/matrix/return_matrix = matrix(transform)
+				var/matrix/dodge_matrix = matrix(transform)
+				dodge_matrix = dodge_matrix.Turn(rand(-20, -30))
+				animate(src, transform = dodge_matrix, time = 2, easing = ELASTIC_EASING)
+				sleep(2)
+				animate(src, transform = return_matrix, time = 2, easing = ELASTIC_EASING)
+//				playsound(src, 'modular_pod/sound/eff/dodged.ogg', 70, TRUE)
 				return COMPONENT_HIT_REACTION_CANCEL | COMPONENT_HIT_REACTION_BLOCK
 	return COMPONENT_HIT_REACTION_CANCEL
 
