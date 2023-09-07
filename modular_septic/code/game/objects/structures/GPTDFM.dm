@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 
 /obj/structure/gptdfm/exit/Initialize(mapload)
 	. = ..()
-	name = "[pick("Leave","Escape","Depart","Getaway","Flee","Abandon")] from [rand(1,9)][rand(1,9)][rand(1,9)][rand(1,9)][rand(1,9)]"
+	name = "Come to the Chaots Home."
 	GLOB.child_exiterporter += src
 
 /obj/structure/gptdfm/exit/Destroy()
