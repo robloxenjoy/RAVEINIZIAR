@@ -244,6 +244,7 @@
 "eJ" = (/obj/structure/barricade/flora/crystal/red,/turf/open/floor/plating/polovich/dirt/dark/gryazka,/area/maintenance/polovich/forest)
 "eK" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/mountain,/turf/closed/wall/purple/nocling/hard_to_break,/area/maintenance/polovich/forest)
 "eL" = (/obj/structure/stairs/west,/turf/open/floor/plating/polovich/greendirtevil,/area/maintenance/polovich/forest)
+"eM" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/machinery/door/metal_door/wood_door/north{id_tag = "granger"},/turf/open/floor/plating/polovich/logsgreen{dir = 4},/area/maintenance/polovich/village)
 "fa" = (/obj/structure/fluff/statueiron/third,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest)
 "fb" = (/obj/structure/fluff/statueiron/third,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest)
 "fc" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/plating/polovich/krutoplitka,/area/maintenance/polovich/village)
@@ -417,7 +418,6 @@
 "ir" = (/obj/structure/lampwall/service{dir = 1},/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/village)
 "is" = (/obj/structure/table/reinforced,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/item/changeable_attacks/slashbash/axe/small/steel,/turf/open/floor/plating/polovich/logsgreen{dir = 8},/area/maintenance/polovich/village)
 "it" = (/obj/structure/flora/ausbushes/crystal,/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/village)
-"iu" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/machinery/door/metal_door/wood_door/north{id_tag = "nailer"},/turf/open/floor/plating/polovich/logsgreen{dir = 4},/area/maintenance/polovich/village)
 "iv" = (/obj/structure/newgrille,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/logsgreen,/area/maintenance/polovich/village)
 "iw" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/village)
 "ix" = (/obj/structure/closet/crate/wooden{dir = 1},/obj/item/storage/backpack/basket,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/logsgreen/three{dir = 1},/area/maintenance/polovich/village)
@@ -487,7 +487,7 @@ gneKeKeKeKeKeKeKeKaReKeKeKeKeKeKeKeKaBaBaBaBaBaBaBaBaBaBaBajajajajajaahRdHdOdTdY
 ajaBaBaBaBaBaSaTaUaUaTaSaBaVaWaXaYaZaBaBaBaBaBaBaBaBaBaBaBajajajajajaahRdHdOdZhReadVdVebecfwdVdVdRdtaabJdedefiijcVddhZddbJbJbJiabJbJibfgdedecUichXididieifhXigaa
 ajaBaBaBaBaBaZaTbaaTbaaTaTaTaUaUaUbbaBaBaBaBaBaBaBaBaBaBaBajajajajajaahRdHdOedeeedededefhRfxcQdVcvdRfkcUfiflfiijaaihdfdfdfdfiiiidfdfcMijijijijijikililililhXimaa
 ajbcbdbeaZaBaUaTaTaUaTaZaBbfaUbgbhaZaBaBaBaBaBaBaBaBaBaBaBajajajajajaahRegeghRhRhRhRhRhRhRfxcQdVcvdRfpdecVcVcVijcVddinininininininincMijdviofyiphXiqilirishXimaa
-ajaTaTaTaTaBaUbibaaTbaaUaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBajajajajajaahReheiejejejekelemhRfzcUdRdRbJaabJcQcVcUijijcMdfdfdfdfdfdfdfdfcMijdvithXhXhXhXiuhXhXhXimaa
+ajaTaTaTaTaBaUbibaaTbaaUaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBajajajajajaahReheiejejejekelemhRfzcUdRdRbJaabJcQcVcUijijcMdfdfdfdfdfdfdfdfcMijdvithXhXhXhXeMhXhXhXimaa
 ajaTaTaTaZaBaZaTaTaTaTaUbjbkblbmaBbnaBaBbobpbqbrbsboaBaBaBajajajajajaahReheieieieieieneohRfxcQcUcQbJfubJcQcVcVcUcUbJinininininininincMijdvcVivieieieieiwixhXiyaa
 ajaZaTaTaTaTaUaTbaaTbaaTbububuaTaZaUaBaBbvbvbvbvbvbvaBbwbxajajajajajaahReheiepepepeqereshRfncUcUcUdtaabJcQflcUcVaaizdfdfdfdfdfdfdfdfcMijdviAhXiBiliBiliwiChXigaa
 ajaBaBaBaBaBaUaTaTaTaUaUaTaTaTaTaTaTbybzbzbvbAbBbvbvaBbvbvajajajajajaahRegeghRhRhRhRhRhRhRfzcUdRdRdRfkcQcQcVcUcVcVbJinininininininincMijcUiAhXililililiwiDhXhYaa
