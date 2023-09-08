@@ -36,6 +36,16 @@
 	clingable = FALSE
 
 /turf/closed/wall/purple/nocling/hard_to_break
+	clingable = TRUE
+	mineable = FALSE
+	hardness = 10
+	explosion_block = 2
+	rad_insulation = RAD_HEAVY_INSULATION
+	heat_capacity = 312500
+	mine_hp = 100
+
+/turf/closed/wall/purple/nocling/hard_to_break/nocling
+	clingable = FALSE
 	mineable = FALSE
 	hardness = 10
 	explosion_block = 2
