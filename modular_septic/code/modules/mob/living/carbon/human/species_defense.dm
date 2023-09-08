@@ -153,6 +153,7 @@
 			if(!(victim in fov_viewers(2, user)))
 				hit_modifier += 10
 				hit_zone_modifier += 10
+				damage *= 1.1
 			//easy to kick people when they are down
 			if((victim.body_position == LYING_DOWN) && (user.body_position != LYING_DOWN))
 				hit_modifier += 5
@@ -635,12 +636,13 @@
 		if(!(src in fov_viewers(2, user)))
 			hit_modifier += 10
 			hit_zone_modifier += 10
+			attack_damage *= 1.1
 		//easy to kick people when they are down
 		if((target.body_position == LYING_DOWN) && (user.body_position != LYING_DOWN))
 			hit_modifier += 5
 			hit_zone_modifier += 5
 		if(user.body_position == LYING_DOWN)
-			damage *= 0.5
+			attack_damage *= 0.5
 		//bro we dead :skull:
 		if(target.stat >= UNCONSCIOUS)
 			hit_modifier += 15
