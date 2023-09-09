@@ -102,6 +102,7 @@
 //			stat.level = mind.mob_stats[stat.type].level
 	to_chat(noob, "<span class='deadsay'>I have taken over [choice].</span>")
 
+/*
 /datum/bobux_reward/bounty_hunter
 	name = "Subconscious Mercenary"
 	desc = "Sure, you need help of subconscious mercenary."
@@ -153,6 +154,7 @@
 		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
+*/
 
 /datum/bobux_reward/market_crash
 	name = "Market Crash"

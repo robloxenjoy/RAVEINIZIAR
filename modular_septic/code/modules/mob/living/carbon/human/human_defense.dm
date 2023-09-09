@@ -206,8 +206,8 @@
 					if(prob(35) || (diceroll >= DICE_CRIT_SUCCESS))
 						target?.pump_heart(src)
 						target.set_heartattack(FALSE)
-						if(GETBRAINLOSS(target) >= 100)
-							SETBRAINLOSS(target, 85)
+//						if(GETBRAINLOSS(target) >= 100)
+//							SETBRAINLOSS(target, 85)
 						if(target.revive())
 							target.grab_ghost(TRUE)
 							target.visible_message(span_warning("<b>[target]</b> limply spasms their muscles."), \
