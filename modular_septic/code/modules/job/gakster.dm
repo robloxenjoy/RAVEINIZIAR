@@ -251,7 +251,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/leatherjacket
 	r_pocket = /obj/item/cellphone
 	l_pocket = /obj/item/simcard
-	id = /obj/item/storage/belt/pouch
+	id = /obj/item/storage/belt/pouch/submerc
 	shoes = /obj/item/clothing/shoes/laceup
 
 /datum/outfit/submercenary/pre_equip(mob/living/carbon/human/H)

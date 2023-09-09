@@ -42,7 +42,7 @@
 			icon_state = "eviljewel6"
 		if(7)
 			icon_state = "eviljewel7"
-		if(8)
+		if(8 to INFINITY)
 			icon_state = "eviljewel8"
 	return ..()
 
