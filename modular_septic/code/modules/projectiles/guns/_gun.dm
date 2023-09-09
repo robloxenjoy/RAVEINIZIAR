@@ -333,7 +333,7 @@
 	if(suppressed)
 		playsound(user, suppressed_sound, suppressed_volume, vary_fire_sound, ignore_walls = FALSE, extrarange = SILENCED_SOUND_EXTRARANGE, falloff_distance = 0)
 	else
-		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
+		fire_sounds(user, target)
 		if(message)
 			if(pointblank)
 				if(ismob(target))
