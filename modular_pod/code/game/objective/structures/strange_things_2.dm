@@ -486,9 +486,21 @@
 	obj_flags = NONE
 	max_integrity = 1000
 	var/moneymoney = 0
+	var/lockeda = FALSE
 
 /obj/structure/accepter/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
+	if(istype(I, /obj/item/stack/eviljewel))
+		if(user.a_intent != INTENT_DISARM))
+			return
+		var/obj/item/stack/eviljewel/M = I
+		user.visible_message(span_notice("[user] inserts [M] in Accepter."),span_notice("You insert [M] in Accepter."), span_hear("You hear the sound of inserting."))
+		sound_hint()
+		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
+		moneymoney += M.amount
+		qdel(M)
+
+/*
 	if(istype(I, /obj/item/crystal))
 		if(user.a_intent != INTENT_DISARM)
 			return
@@ -505,12 +517,13 @@
 		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
 		qdel(I)
 		moneymoney += 5
+*/
 
 /obj/structure/accepter/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
-	if(user.a_intent == INTENT_GRAB)
+	if(user.a_intent == INTENT_HELP)
 		if(moneymoney > 0)
 			var/thing = tgui_input_list(user, "You want something cheap or expensive?",, list("Cheap", "Expensive"))
 			if(!thing)
@@ -523,6 +536,36 @@
 				if(moneymoney < 20)
 					return
 				expensive_find(user)
+	if(user.a_intent == INTENT_GRAB)
+		if(lockeda)
+			to_chat(user, span_notice("[src] is locked!"))
+			return
+		if(moneymoney > 0)
+			var/thing = tgui_input_list(user, "You want to take Evil Jewels?",, list("Yes!", "No..."))
+			if(!thing)
+				return
+			if(thing == "No...")
+				return
+			if(thing == "Yes!")
+				give_me_eviljewels(user)
+
+/obj/structure/accepter/proc/give_me_eviljewels(mob/living/carbon/user)
+//	var/thingy = sanitize_name(stripped_input(user, "How much do you want to take Evil Jewels?", "I want..."), allow_numbers = TRUE, word_use = FALSE)
+	var/thingy = input("How much do you want to take Evil Jewels?", "I want...") as num|null
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(moneymoney <= 0)
+		return
+	if(thingy > moneymoney)
+		to_chat(user, span_notice("Don't have that much..."))
+		return
+	if(thingy > 32)
+		to_chat(user, span_notice("Pick less!"))
+		return
+	new /obj/item/stack/eviljewel(get_turf(user), thingy)
+	playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 
 /obj/structure/accepter/proc/cheap_find(mob/living/carbon/user)
 	var/thingy = stripped_input(user, "You want something cheap?", "I want...")
@@ -607,6 +650,7 @@
 	obj_flags = NONE
 	max_integrity = 1000
 	var/moneymoney = 0
+	var/lockeda = FALSE
 
 /obj/structure/accepterblack/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
@@ -631,7 +675,7 @@
 	. = ..()
 	if(.)
 		return
-	if(user.a_intent == INTENT_GRAB)
+	if(user.a_intent == INTENT_DISARM)
 		if(moneymoney > 0)
 			var/thing = tgui_input_list(user, "What you want?",, list("Guns", "Ammo", "Other"))
 			if(!thing)
@@ -648,6 +692,37 @@
 				if(moneymoney < 50)
 					return
 				other_find(user)
+
+	if(user.a_intent == INTENT_GRAB)
+		if(lockeda)
+			to_chat(user, span_notice("[src] is locked!"))
+			return
+		if(moneymoney > 0)
+			var/thing = tgui_input_list(user, "You want to take Evil Jewels?",, list("Yes!", "No..."))
+			if(!thing)
+				return
+			if(thing == "No...")
+				return
+			if(thing == "Yes!")
+				give_me_eviljewels(user)
+
+/obj/structure/accepterblack/proc/give_me_eviljewels(mob/living/carbon/user)
+//	var/thingy = sanitize_name(stripped_input(user, "How much do you want to take Evil Jewels?", "I want..."), allow_numbers = TRUE, word_use = FALSE)
+	var/thingy = input("How much do you want to take Evil Jewels?", "I want...") as num|null
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(moneymoney <= 0)
+		return
+	if(thingy > moneymoney)
+		to_chat(user, span_notice("Don't have that much..."))
+		return
+	if(thingy > 32)
+		to_chat(user, span_notice("Pick less!"))
+		return
+	new /obj/item/stack/eviljewel(get_turf(user), thingy)
+	playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 
 /obj/structure/accepterblack/proc/guns_find(mob/living/carbon/user)
 	var/thingy = stripped_input(user, "Which gun you want?", "I want...")
