@@ -40,7 +40,7 @@
 	governing_attribute = STAT_DEXTERITY
 	default_attributes = list(
 		STAT_DEXTERITY = -5,
-		SKILL_POLEARM = -4,
-		SKILL_STAFF = -2,
+		SKILL_SPEAR = -4,
+		SKILL_POLEARM = -2,
 	)
 	difficulty = SKILL_DIFFICULTY_AVERAGE

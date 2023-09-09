@@ -610,7 +610,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(prob(5))
 //		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
 		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/strongwillet)
-		character.height = HUMAN_HEIGHT_TALLEST
+//		character.height = HUMAN_HEIGHT_TALLEST
 		ADD_TRAIT(character, TRAIT_GIANT, GENETIC_MUTATION)
 		if(prob(65))
 			character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
@@ -620,8 +620,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	character.faction |= "chaos"
 	character.key = key
-	if(character.attributes)
-		character.attributes.update_attributes()
+//	if(character.attributes)
+	character.attributes?.update_attributes()
 	playsound(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100, FALSE)
 
 	return TRUE

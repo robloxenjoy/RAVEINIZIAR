@@ -49,6 +49,27 @@
 /obj/effect/decal/cleanable/glass/plasma
 	icon_state = "plasmatiny"
 
+/obj/effect/decal/cleanable/glass/crystal
+	icon_state = "plasmatiny"
+	light_range = 2
+	light_power = 1
+
+/obj/effect/decal/cleanable/glass/crystal/green
+	icon_state = "greentiny"
+	light_color = "#00dd78"
+
+/obj/effect/decal/cleanable/glass/crystal/blue
+	icon_state = "bluetiny"
+	light_color = "#008eff"
+
+/obj/effect/decal/cleanable/glass/crystal/red
+	icon_state = "redtiny"
+	light_color = "#ff460e"
+
+/obj/effect/decal/cleanable/glass/crystal/purple
+	icon_state = "purpletiny"
+	light_color = "#e252ea"
+
 /obj/effect/decal/cleanable/dirt
 	name = "dirt"
 	desc = "Someone should clean that up."

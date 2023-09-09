@@ -165,14 +165,14 @@
 	name = "Shallow Acid"
 	desc = "Looks wet... WHAT!"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-	initial_liquid_list = /atom/movable/liquid/immutable/ocean/acid
+	initial_liquid_list = /atom/movable/liquid/immutable/ocean/piranha
 	liquid_height = (-LIQUID_WAIST_LEVEL_HEIGHT - 2)
 	liquids_are_immutable = TRUE
 	turf_height = -500
 	slowdown = 5
 	icon = 'modular_septic/icons/turf/floors/water.dmi'
-	icon_state = "coffee"
-	base_icon_state = "coffee"
+	icon_state = "acid"
+	base_icon_state = "acid"
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	footstep = FOOTSTEP_WATER

@@ -35,6 +35,13 @@
 		/datum/reagent/toxin/acid = 100,
 	)
 
+/atom/movable/liquid/immutable/ocean/piranha
+	temperature = T30C
+	vaporizes = FALSE
+	starting_mixture = list(
+		/datum/reagent/toxin/piranha_solution = 100,
+	)
+
 /atom/movable/liquid/immutable/ocean/shallow
 	temperature = T0C-20
 	vaporizes = FALSE

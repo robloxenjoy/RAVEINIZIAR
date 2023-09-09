@@ -73,6 +73,7 @@
 	density = 1
 	anchored = 1
 	opacity = 1
+	var/havebranch = TRUE
 
 /obj/structure/flora/tree/evil/Initialize(mapload)
 	. = ..()
@@ -82,7 +83,7 @@
 	. = ..()
 	if(.)
 		return
-	if(user.a_intent == INTENT_GRAB)
+	if(user.a_intent == INTENT_DISARM)
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.adjustFatigueLoss(5)
 		sound_hint()
@@ -97,6 +98,19 @@
 				if(pickeditem == "LAPTOP")
 					new /obj/item/modular_computer/laptop/preset/civilian(get_turf(user))
 					H.special_item = null
+	if(user.a_intent == INTENT_GRAB)
+		if(do_after(user, 1 SECONDS, target = src))
+			if(!havebranch)
+				to_chat(user, span_notice("I can't tear a branch off this tree."))
+				return
+			user.visible_message(span_notice("[user] tears a branch from [src]."),span_notice("You tear a branch from [src]."), span_hear("You hear a crunch."))
+			user.changeNext_move(CLICK_CD_MELEE)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			playsound(get_turf(src), 'modular_pod/sound/eff/stick.ogg', 100 , FALSE, FALSE)
+			new /obj/item/melee/bita/branch(get_turf(user))
+			havebranch = FALSE
+
 /*
 				var/pickeditem
 				init_items(H)
@@ -453,7 +467,7 @@
 	obj_flags = NONE
 	density = 0
 	anchored = 1
-//	var/traps = TRUE
+	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/crystal/Initialize(mapload)
 	. = ..()
@@ -464,9 +478,9 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	icon_state = pick("crystalbush1", "crystalbush2")
 
-//	if(traps)
-//		if(prob(3))
-//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+	if(traps)
+		if(prob(2))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/crystal/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -505,7 +519,7 @@
 	obj_flags = NONE
 	density = 0
 	anchored = 1
-//	var/traps = TRUE
+	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/bushka/Initialize(mapload)
 	. = ..()
@@ -516,9 +530,9 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	icon_state = pick("bushka1", "bushka2", "bushka3")
 
-//	if(traps)
-//		if(prob(2))
-//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+	if(traps)
+		if(prob(2))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/bushka/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -602,7 +616,7 @@
 	obj_flags = NONE
 	density = 0
 	anchored = 1
-//	var/traps = TRUE
+	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/molyakii/Initialize(mapload)
 	. = ..()
@@ -613,9 +627,9 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 	icon_state = "molyakii[rand(1, 2)]"
 
-//	if(traps)
-//		if(prob(2))
-//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+	if(traps)
+		if(prob(2))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/molyakii/proc/shag(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
@@ -803,16 +817,16 @@
 	density = FALSE
 	anchored = TRUE
 	opacity = TRUE
-//	var/traps = TRUE
+	var/traps = TRUE
 
 /obj/structure/flora/ausbushes/zarosli/midnight/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
 	update_appearance()
 
-//	if(traps)
-//		if(prob(2))
-//			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+	if(traps)
+		if(prob(2))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 
 /obj/structure/flora/ausbushes/zarosli/midnight/ComponentInitialize()
 	. = ..()
@@ -1457,41 +1471,25 @@
 
 /obj/structure/barricade/flora/crystal/purple/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/shard/crystal/purple(get_turf(src))
-		new /obj/item/shard/crystal/purple(get_turf(src))
-		new /obj/item/shard/crystal/purple(get_turf(src))
-		new /obj/item/shard/crystal/purple(get_turf(src))
-		new /obj/item/shard/crystal/purple(get_turf(src))
+		new /obj/effect/decal/cleanable/glass/crystal/purple(get_turf(src))
 		playsound(src, "shatter", 70, TRUE)
 	qdel(src)
 
 /obj/structure/barricade/flora/crystal/green/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/shard/crystal/green(get_turf(src))
-		new /obj/item/shard/crystal/green(get_turf(src))
-		new /obj/item/shard/crystal/green(get_turf(src))
-		new /obj/item/shard/crystal/green(get_turf(src))
-		new /obj/item/shard/crystal/green(get_turf(src))
+		new /obj/effect/decal/cleanable/glass/crystal/green(get_turf(src))
 		playsound(src, "shatter", 70, TRUE)
 	qdel(src)
 
 /obj/structure/barricade/flora/crystal/red/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/shard/crystal/red(get_turf(src))
-		new /obj/item/shard/crystal/red(get_turf(src))
-		new /obj/item/shard/crystal/red(get_turf(src))
-		new /obj/item/shard/crystal/red(get_turf(src))
-		new /obj/item/shard/crystal/red(get_turf(src))
+		new /obj/effect/decal/cleanable/glass/crystal/red(get_turf(src))
 		playsound(src, "shatter", 70, TRUE)
 	qdel(src)
 
 /obj/structure/barricade/flora/crystal/blue/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/shard/crystal/blue(get_turf(src))
-		new /obj/item/shard/crystal/blue(get_turf(src))
-		new /obj/item/shard/crystal/blue(get_turf(src))
-		new /obj/item/shard/crystal/blue(get_turf(src))
-		new /obj/item/shard/crystal/blue(get_turf(src))
+		new /obj/effect/decal/cleanable/glass/crystal/blue(get_turf(src))
 		playsound(src, "shatter", 70, TRUE)
 	qdel(src)
 

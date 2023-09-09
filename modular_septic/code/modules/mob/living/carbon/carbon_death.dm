@@ -27,7 +27,9 @@
 		heart.Stop()
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "died", /datum/mood_event/died)
 	if(!has_died)
-		client?.prefs?.adjust_bobux(-5, "<span class='bobux'>I'm dead! So bad... -5 kaotiks!</span>")
+		if(iswillet(src))
+			return
+		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>I'm dead! So bad... -10 kaotiks!</span>")
 	if(is_merc_job(src))
 		GLOB.mercenary_list -= 1
 	has_died = TRUE
@@ -35,6 +37,8 @@
 	if(!iswillet(src))
 		for(var/mob/living/carbon/human/H in range(src))
 			if(H != src && (src in view(H)))
+				if(iswillet(H))
+					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
 				if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
 					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
 				else
@@ -42,6 +46,14 @@
 						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
 					else
 						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
+	else
+		for(var/mob/living/carbon/human/M in range(7, src))
+			if(M != src && (src in view(M)))
+				if(!iswillet(M))
+					if(M.client?.prefs)
+						M.client.prefs.adjust_bobux(10, "<span class='bobux'>I have seen a death of weak willet! +10 kaotiks!</span>")
+				
+
 	// Shit yourself
 	if(!QDELETED(src))
 		if(prob(80))

@@ -260,7 +260,7 @@
 			return "modular_septic/sound/emotes/deathgasp.ogg"
 		if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		if(is_species(user, /datum/species/weakwillet))
+		else
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
@@ -289,7 +289,7 @@
 			return "modular_septic/sound/emotes/deathgasp.ogg"
 		if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		if(is_species(user, /datum/species/weakwillet))
+		else
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
@@ -400,7 +400,7 @@
 			return "modular_septic/sound/emotes/deathgasp.ogg"
 		if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
 			return "modular_pod/sound/eff/piggator.ogg"
-		if(is_species(user, /datum/species/weakwillet))
+		else
 			return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()

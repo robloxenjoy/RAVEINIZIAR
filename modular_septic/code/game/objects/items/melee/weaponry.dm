@@ -168,6 +168,33 @@
 	havedurability = TRUE
 	durability = 150
 
+/obj/item/melee/bita/branch
+	name = "Cursed Branch"
+	desc = "A torn branch from a tree."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "stick"
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	inhand_icon_state = "evilbita"
+	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
+	min_force = 5
+	force = 10
+	throwforce = 10
+	min_force_strength = 1.1
+	force_strength = 1.2
+	wound_bonus = 3
+	bare_wound_bonus = 3
+	carry_weight = 1 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	worn_icon_state = "classic_baton"
+	skill_melee = SKILL_STAFF
+	tetris_width = 32
+	tetris_height = 64
+	havedurability = TRUE
+	durability = 50
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	parrying_modifier = 2
+
 /obj/item/melee/bita/dark
 	name = "Dark John"
 	desc = "In the dark, the victim will not understand what you are hitting it with."

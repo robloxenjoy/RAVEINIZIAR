@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 	. = ..()
 	playsound(user, gurby, 30, FALSE)
 
-/obj/structure/gptdfm/proc/teleportation(mob/user, obj/structure/gptdfm/specific_location = pick(GLOB.child_exiterporter), leaving_message = "Time for my journey. I'm going to [specific_location.name].")
+/obj/structure/gptdfm/proc/teleportation(mob/user, obj/structure/gptdfm/specific_location = pick(GLOB.child_exiterporter), leaving_message = "Time for my teleportation.")
 	to_chat(user, span_notice("[leaving_message]"))
 	if(user.pulling)
 		var/atom/movable/friend = user.pulling
@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(denominator_exiterporter)
 
 /obj/structure/gptdfm/exit/Initialize(mapload)
 	. = ..()
-	name = "Come to the Chaots Home."
+	name = "Come to the Forest."
 	GLOB.child_exiterporter += src
 
 /obj/structure/gptdfm/exit/Destroy()
