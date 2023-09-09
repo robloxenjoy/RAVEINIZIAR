@@ -57,6 +57,7 @@
 	safety_off_sound = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/smg/hksmg.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/22_smg.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/smg/hksmg_silenced.ogg'
 	mag_type = /obj/item/ammo_box/magazine/hksmg22lr
 	weapon_weight = WEAPON_LIGHT
@@ -104,6 +105,7 @@
 	rack_sound = 'modular_septic/sound/weapons/guns/rifle/akrack.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/smg/vityaz_silenced.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/smg/vityaz.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/10mm_smg.ogg'
 	fireselector_auto = 'modular_septic/sound/weapons/guns/rifle/aksafety2.ogg'
 	fireselector_burst = 'modular_septic/sound/weapons/guns/rifle/aksafety2.ogg'
 	fireselector_semi = 'modular_septic/sound/weapons/guns/rifle/aksafety1.ogg'
@@ -152,6 +154,7 @@
 	safety_off_sound = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/rifle/msafety.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/smg/thump.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/12mm_smg.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/smg/thump_silenced.ogg'
 	mag_type =	/obj/item/ammo_box/magazine/thump45
 	weapon_weight = WEAPON_MEDIUM
@@ -176,6 +179,7 @@
 	desc = "An integrally suppressed version of the Solitario, changed post-factory to be chambered in .380, however. This has made the drum mags incompatible."
 	icon = 'modular_septic/icons/obj/items/guns/48x32.dmi'
 	fire_sound = 'modular_septic/sound/weapons/guns/smg/hksmg380_silenced.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/9mmpistol.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/smg/hksmg380_silenced.ogg'
 	weapon_weight = WEAPON_MEDIUM
 	worn_icon_state = "hksmgs"
@@ -214,6 +218,7 @@
 	inhand_icon_state = "uzi"
 	base_icon_state = "uzi"
 	icon_state = "uzi"
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/9mmpistol.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/smg/bolsa_magin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/smg/bolsa_magin.ogg'
 	eject_empty_sound = 'modular_septic/sound/weapons/guns/smg/bolsa_magout.ogg'

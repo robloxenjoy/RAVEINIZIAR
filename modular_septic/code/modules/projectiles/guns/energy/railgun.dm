@@ -12,6 +12,7 @@
 	inhand_y_dimension = 64
 	equip_sound = 'modular_septic/sound/weapons/guns/weap_away.ogg'
 	fire_sound = list('modular_septic/sound/weapons/guns/energy/railgun1.ogg', 'modular_septic/sound/weapons/guns/energy/railgun2.ogg', 'modular_septic/sound/weapons/guns/energy/railgun3.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/plasma_3.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyoff.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyon.ogg'
 	drop_sound = 'modular_septic/sound/weapons/guns/drop_heavygun.ogg'

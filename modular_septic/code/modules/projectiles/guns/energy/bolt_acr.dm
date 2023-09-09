@@ -9,6 +9,7 @@
 	worn_icon = 'modular_septic/icons/obj/items/guns/worn/back.dmi'
 	equip_sound = 'modular_septic/sound/weapons/guns/weap_away.ogg'
 	drop_sound = 'modular_septic/sound/weapons/guns/drop_heavygun.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/laser_rifle_heavy.ogg'
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	wielded_inhand_state = TRUE
 	inhand_icon_state = "boltacr"

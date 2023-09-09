@@ -38,6 +38,7 @@
 	empty_icon_state = FALSE
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/niggakiller.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/varmint_rifle.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/niggakiller_silenced.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/rifle/mmagin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/rifle/mmagin.ogg'
@@ -84,6 +85,7 @@
 	base_icon_state = "nikonov"
 	mag_type = /obj/item/ammo_box/magazine/a545
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/ak.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/hunting_rifle.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/ak_silenced.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/rifle/akmagin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/rifle/akmagin.ogg'
@@ -129,6 +131,7 @@
 	icon_state = "goldonov"
 	base_icon_state = "goldonov"
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/goldonov.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/hunting_rifle.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/goldonov.ogg'
 	can_unsuppress = FALSE
 	suppressor_x_offset = 2
@@ -150,6 +153,7 @@
 	base_icon_state = "g11"
 	mag_type = /obj/item/ammo_box/magazine/a49234g11
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/g11.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/chinesearfile.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/rifle/g11magin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/rifle/g11magin.ogg'
 	eject_sound = 'modular_septic/sound/weapons/guns/rifle/g11magout.ogg'
@@ -214,6 +218,7 @@
 	base_icon_state = "steyr"
 	mag_type = /obj/item/ammo_box/magazine/a556steyr
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/steyr.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/chinesearfile.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/steyr_silenced.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/rifle/mmagin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/rifle/mmagin.ogg'
@@ -311,6 +316,7 @@
 	burst_size = 1
 	select = FALSE
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/svd.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/sks.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/svd_silenced.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/rifle/svdmagin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/rifle/svdmagin.ogg'
@@ -381,6 +387,7 @@
 	worn_icon_state = "pedersen"
 	fire_sound_volume = 100
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/bolties/federson.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/battlerifle.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/bolties/federson_silenced.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/rifle/bolties/federson_boltout.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/rifle/bolties/federson_boltin.ogg'
@@ -403,6 +410,7 @@
 	base_icon_state = "g36"
 	mag_type = /obj/item/ammo_box/magazine/a556g36
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/g36.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/varmint_rifle.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/g36_suppressed.ogg'
 	load_sound = list('modular_septic/sound/weapons/guns/rifle/g36_magin1.ogg', 'modular_septic/sound/weapons/guns/rifle/g36_magin2.ogg')
 	load_empty_sound = list('modular_septic/sound/weapons/guns/rifle/g36_magin1.ogg', 'modular_septic/sound/weapons/guns/rifle/g36_magin2.ogg')

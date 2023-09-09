@@ -70,6 +70,7 @@
 	base_icon_state = "bladerunner"
 	uncocked_icon_state = FALSE
 	fire_sound = list('modular_septic/sound/weapons/guns/revolver/gado1.ogg', 'modular_septic/sound/weapons/guns/revolver/gado3.ogg', 'modular_septic/sound/weapons/guns/revolver/gado3.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/44_revolver.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyon.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyoff.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/gado_in.ogg'
@@ -111,6 +112,7 @@
 		"recoil_angle_lower" = -25, \
 	)
 	fire_sound = 'modular_septic/sound/weapons/guns/revolver/nova.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/huntingrev.ogg'
 	alternative_fire_sound = 'modular_septic/sound/weapons/guns/revolver/nova_alt.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/nova
 	can_modify_ammo = TRUE
@@ -131,6 +133,7 @@
 	righthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_righthand.dmi'
 	inhand_icon_state = "poppy"
 	fire_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/that_gun.ogg'
 	alternative_fire_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_in.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/revolver/bigboy_out.ogg'
@@ -165,6 +168,7 @@
 	cylinder_shows_open = FALSE
 	cylinder_shows_ammo_count = FALSE
 	fire_sound = list('modular_septic/sound/weapons/guns/revolver/paralyzer_fire (3).ogg', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (2).ogg', 'modular_septic/sound/weapons/guns/revolver/paralyzer_fire (1).ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/plasma_pistol.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyon.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/revolver/gado_safetyoff.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/revolver/gado_in.ogg'

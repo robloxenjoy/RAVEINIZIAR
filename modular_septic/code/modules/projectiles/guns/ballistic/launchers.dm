@@ -14,6 +14,7 @@
 	icon_state = "chinalake"
 	base_icon_state = "chinalake"
 	fire_sound = 'modular_septic/sound/weapons/guns/launcher/batata.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/that_gun.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/launcher/batata_lock_back.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/launcher/batata_lockin.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/launcher/batata_rack.ogg'

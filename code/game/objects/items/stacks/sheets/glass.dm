@@ -409,7 +409,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
 	canlockpick = TRUE
 	var/slashh_hitsound = list('modular_septic/sound/weapons/melee/sharpy1.ogg')
-	var/stabb_hitsound = list('modular_septic/sound/weapons/melee/stabber1.ogg', 'modular_septic/sound/weapons/melee/stabber2.ogg')
+	var/stabb_hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 
 /obj/item/shard/crystal/examine(mob/user)
 	. = ..()

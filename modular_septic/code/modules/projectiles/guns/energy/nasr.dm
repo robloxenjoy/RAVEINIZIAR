@@ -7,6 +7,7 @@
 	equip_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_holster.ogg'
 	pickup_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_draw.ogg'
 	fire_sound = list('modular_septic/sound/weapons/guns/energy/nasr1.ogg', 'modular_septic/sound/weapons/guns/energy/nasr2.ogg', 'modular_septic/sound/weapons/guns/energy/nasr3.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/laser_pistol.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyoff.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/energy/siren_safetyon.ogg'
 	drop_sound = 'modular_septic/sound/weapons/guns/drop_lightgun.ogg'

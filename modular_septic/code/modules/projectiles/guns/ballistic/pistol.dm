@@ -30,6 +30,7 @@
 	load_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_magin.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_rack.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/9mmpistol.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 15, \
 		"pixel_y" = 1, \
@@ -61,6 +62,7 @@
 	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/aps_lockback.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/aps_lockin.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/aps_rack.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/9mmpistol.ogg'
 	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
 	icon_state = "b93r"
 	base_icon_state = "b93r"
@@ -99,6 +101,7 @@
 	recoil_animation_information = list()
 	fire_sound = 'modular_septic/sound/weapons/guns/pistol/colt1.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pistol_rack.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/45_pistol.ogg'
 	force = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	carry_weight = 1 KILOGRAMS
@@ -121,6 +124,7 @@
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/45_pistol.ogg'
 	mag_type = /obj/item/ammo_box/magazine/u45
 	can_suppress = FALSE
 	force = 15
@@ -186,6 +190,7 @@
 	base_icon_state = "combatmaster"
 	fire_sound = list('modular_septic/sound/weapons/guns/pistol/combatmaster1.ogg', 'modular_septic/sound/weapons/guns/pistol/combatmaster2.ogg')
 	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/combatmaster_silenced.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/9mmpistol.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 15, \
 		"pixel_y" = 1, \
@@ -213,6 +218,7 @@
 					'modular_septic/sound/weapons/guns/pistol/glock2.ogg')
 	suppressed_sound = list('modular_septic/sound/weapons/guns/pistol/glock_suppressed1.ogg', \
 					'modular_septic/sound/weapons/guns/pistol/glock_suppressed2.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/9mmpistol.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 15, \
 		"pixel_y" = 5, \
@@ -243,6 +249,7 @@
 	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/walter_silenced.ogg'
 	safety_on_sound = 'modular_septic/sound/weapons/guns/pistol/walter_safety.ogg'
 	safety_off_sound = 'modular_septic/sound/weapons/guns/pistol/walter_safety.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/22_smg.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 11, \
 		"pixel_y" = 1, \
@@ -284,6 +291,7 @@
 	)
 	recoil_animation_information = list()
 	fire_sound = 'modular_septic/sound/weapons/guns/pistol/one.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/amr.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/one_rack.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/one_lockback.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/one_lockin.ogg'
@@ -340,6 +348,7 @@
 	)
 	recoil_animation_information = list()
 	fire_sound = list('modular_septic/sound/weapons/guns/pistol/john1.ogg', 'modular_septic/sound/weapons/guns/pistol/john2.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/amr.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/john_rack.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockback.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/pistol/john_lockin.ogg'
@@ -370,6 +379,7 @@
 		"duration" = 2,
 	)
 	fire_sound = 'modular_septic/sound/weapons/guns/pistol/pm9.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/9mmpistol.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_suppressed.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_rack.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/pistol/pm9_lockback.ogg'

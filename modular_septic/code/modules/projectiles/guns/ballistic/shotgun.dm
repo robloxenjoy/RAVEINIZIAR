@@ -18,6 +18,7 @@
 	equip_sound = 'modular_septic/sound/weapons/guns/weap_away.ogg'
 	worn_icon_state = "shotgun"
 	fire_sound = 'modular_septic/sound/weapons/guns/shotgun/shotgun.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun.ogg'
 	suppressed_sound = list('modular_septic/sound/weapons/guns/shotgun/countryforold1.ogg', 'modular_septic/sound/weapons/guns/shotgun/countryforold2.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/guns/shotgun/shotgun_draw.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/shotgun/shotgun_lock_back.ogg'
@@ -89,6 +90,7 @@
 	// open cylinder sound
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/shotgun/db_out.ogg'
 	fire_sound = list('modular_septic/sound/weapons/guns/shotgun/comgun1.ogg', 'modular_septic/sound/weapons/guns/shotgun/comgun2.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/shotgun/db_load.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/bobox
 	slot_flags = ITEM_SLOT_BELT
@@ -102,6 +104,7 @@
 	icon_state = "ithaca"
 	base_icon_state = "ithaca"
 	empty_indicator = FALSE
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun_lever.ogg'
 
 // ??? SHOTGUN
 /obj/item/gun/ballistic/shotgun/riot
@@ -109,6 +112,7 @@
 	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for \"non-lethal\" riot control."
 	icon = 'modular_septic/icons/obj/items/guns/40x32.dmi'
 	icon_state = "riot"
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun_lever.ogg'
 	base_icon_state = "riot"
 	inhand_icon_state = "riot"
 	empty_indicator = FALSE
@@ -129,6 +133,7 @@
 	bolt_type = BOLT_TYPE_LOCKING
 	lock_back_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun_lock_back.ogg'
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun_lockin.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun_lever.ogg'
 
 // BENELLI M4 SHOTGUN
 /obj/item/gun/ballistic/shotgun/automatic/combat
@@ -143,6 +148,7 @@
 	flight_y_offset = 10
 	rack_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun_cycle.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun_lever.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun_silenced.ogg'
 	empty_indicator = FALSE
 	gunshot_animation_information = list(
@@ -169,6 +175,7 @@
 	empty_indicator = FALSE
 	rack_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun_cycle.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun_silenced.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 25, \
@@ -197,6 +204,7 @@
 	can_unsuppress = FALSE
 	rack_sound = 'modular_septic/sound/weapons/guns/shotgun/semigun_cycle.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/shotgun/rape_gun.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/shotgun/belador_silenced.ogg'
 	gunshot_animation_information = list(
 		"pixel_x" = 25, \
@@ -238,6 +246,7 @@
 	rack_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_cycle.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_lock_back.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/shotgun/rape_gun.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun_hunting.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_magin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_magin.ogg'
 	eject_empty_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_magout.ogg'
@@ -282,6 +291,7 @@
 	rack_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_cycle.ogg'
 	lock_back_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_lock_back.ogg'
 	fire_sound = 'modular_septic/sound/weapons/guns/shotgun/rape_gun.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun_hunting.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_magin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_magin.ogg'
 	eject_empty_sound = 'modular_septic/sound/weapons/guns/shotgun/autogun_magout.ogg'
@@ -312,6 +322,7 @@
 	inhand_icon_state = "bolas"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bolas
 	fire_sound = list('modular_septic/sound/weapons/guns/shotgun/bolas1.ogg', 'modular_septic/sound/weapons/guns/shotgun/bolas2.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun.ogg'
 	suppressed_sound = list('modular_septic/sound/weapons/guns/shotgun/bolas_silenced1.ogg', 'modular_septic/sound/weapons/guns/shotgun/bolas_silenced2.ogg')
 	load_sound = list(
 		'modular_septic/sound/weapons/guns/shotgun/bolas_load1.ogg', \
@@ -343,6 +354,7 @@
 	bolt_drop_sound = 'modular_septic/sound/weapons/guns/shotgun/spas_lockin.ogg'
 	rack_sound = 'modular_septic/sound/weapons/guns/shotgun/spas_cycle.ogg'
 	fire_sound = list('modular_septic/sound/weapons/guns/shotgun/spas1.ogg', 'modular_septic/sound/weapons/guns/shotgun/spas2.ogg')
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/shotgun.ogg'
 	fold_open_sound = 'modular_septic/sound/weapons/guns/rifle/ak_stock_open.ogg'
 	fold_close_sound = 'modular_septic/sound/weapons/guns/rifle/ak_stock_close.ogg'
 	var/semi = FALSE
