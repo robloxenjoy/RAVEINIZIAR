@@ -153,7 +153,7 @@
 	base_icon_state = "g11"
 	mag_type = /obj/item/ammo_box/magazine/a49234g11
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/g11.ogg'
-	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/chinesearfile.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/chinesearfire.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/rifle/g11magin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/rifle/g11magin.ogg'
 	eject_sound = 'modular_septic/sound/weapons/guns/rifle/g11magout.ogg'
@@ -218,7 +218,7 @@
 	base_icon_state = "steyr"
 	mag_type = /obj/item/ammo_box/magazine/a556steyr
 	fire_sound = 'modular_septic/sound/weapons/guns/rifle/steyr.ogg'
-	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/chinesearfile.ogg'
+	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/chinesearfire.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/rifle/steyr_silenced.ogg'
 	load_sound = 'modular_septic/sound/weapons/guns/rifle/mmagin.ogg'
 	load_empty_sound = 'modular_septic/sound/weapons/guns/rifle/mmagin.ogg'

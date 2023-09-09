@@ -586,6 +586,6 @@
 			listening_mob.playsound_local(turf_source, fire_sound, fire_sound_volume, vary_fire_sound)
 		//far listener
 		else if(far_fire_sound && (distance <= far_fire_range))
-			if(supressed)
+			if(suppressed)
 				return
 			listening_mob.playsound_local(turf_source, far_fire_sound, far_fire_sound_volume, vary_far_fire_sound)
