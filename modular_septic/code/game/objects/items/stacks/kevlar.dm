@@ -27,7 +27,7 @@
 	full_w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stack/eviljewel/update_icon_state()
-	switch(contents.len)
+	switch(amount)
 		if(1)
 			icon_state = "eviljewel1"
 		if(2)

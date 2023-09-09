@@ -114,3 +114,57 @@
 		if(0)
 			icon_state = "[initial(icon_state)]"
 	return ..()
+
+/obj/item/storage/belt/pouch
+	name = "Pouch"
+	desc = "What's in it?"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "bag"
+	worn_icon = null
+	worn_icon_state = null
+	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
+	inhand_icon_state = "darkbag"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS | ITEM_SLOT_ID
+	storage_flags = NONE
+	carry_weight = 1 KILOGRAMS
+
+/obj/item/storage/belt/pouch/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 3
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 20
+	STR.set_holdable(list(
+		/obj/item/stack/eviljewel,
+		))
+
+/obj/item/storage/belt/pouch/update_icon_state()
+	switch(contents.len)
+		if(1 to INFINITY)
+			icon_state = "[initial(icon_state)]_full"
+		else
+			icon_state = "[initial(icon_state)]"
+	return ..()
+
+/obj/item/storage/belt/pouch/submerc
+
+/obj/item/storage/belt/pouch/venturer
+
+/obj/item/storage/belt/pouch/venturer/noble
+
+/obj/item/storage/belt/pouch/submerc/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stack/eviljewel = 1,
+		/obj/item/stack/eviljewel/max = 2)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/belt/pouch/venturer/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stack/eviljewel/twenty = 1)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/belt/pouch/venturer/noble/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stack/eviljewel/max = 1)
+	generate_items_inside(items_inside,src)

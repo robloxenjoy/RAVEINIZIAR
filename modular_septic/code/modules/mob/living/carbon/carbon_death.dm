@@ -53,8 +53,7 @@
 				if(!iswillet(M))
 					if(has_died)
 						return
-					if(M.client?.prefs)
-						M.client.prefs.adjust_bobux(10, "<span class='bobux'>I have seen a death of weak willet! +10 kaotiks!</span>")
+					M.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of weak willet! +10 kaotiks!</span>")
 	has_died = TRUE
 
 
