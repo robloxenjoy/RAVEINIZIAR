@@ -491,7 +491,7 @@
 /obj/structure/accepter/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
 	if(istype(I, /obj/item/stack/eviljewel))
-		if(user.a_intent != INTENT_DISARM))
+		if(user.a_intent != INTENT_DISARM)
 			return
 		var/obj/item/stack/eviljewel/M = I
 		user.visible_message(span_notice("[user] inserts [M] in Accepter."),span_notice("You insert [M] in Accepter."), span_hear("You hear the sound of inserting."))

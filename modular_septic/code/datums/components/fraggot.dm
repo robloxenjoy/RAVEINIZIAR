@@ -45,8 +45,11 @@
 		SEND_SOUND(world, sound('modular_pod/sound/eff/fataldeath.ogg'))
 		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
 			SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
+		our_fraggot.gib()
 
 /datum/component/fraggot/proc/fraggot_deleted(mob/living/our_fraggot)
+	to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")][our_fraggot.real_name], THE [our_fraggot.mind?.assigned_role.title], HAS DIED![emoji_parse(":chaos:")]</span></span>")
+	SEND_SOUND(world, sound('modular_pod/sound/eff/fataldeath.ogg'))
 	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
 		SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
 /*
@@ -76,7 +79,7 @@
 			"IVASHKA!!!!!", \
 		)
 		var/message = pick(fraggot_lines)
-		if(DT_PROB(10, delta_time))
+		if(DT_PROB(8, delta_time))
 			to_chat(our_fraggot, span_horny(span_big(message)))
 		var/static/list/fraggot_sounds = list(
 			'modular_septic/sound/memeshit/pigdeath.ogg',
@@ -89,8 +92,8 @@
 			'modular_septic/sound/memeshit/socialcreditsdeducted.ogg',
 			'modular_septic/sound/memeshit/youstupid.ogg',
 		)
-		if(DT_PROB(10, delta_time))
-			our_fraggot.playsound_local(get_turf(our_fraggot), pick(fraggot_sounds), 50)
+		if(DT_PROB(8, delta_time))
+			our_fraggot.playsound_local(get_turf(our_fraggot), pick(fraggot_sounds), 40)
 //			var/sound/annoying = sound(pick(fraggot_sounds), FALSE, 0, CHANNEL_LOBBYMUSIC, 100)
 //			SEND_SOUND(our_fraggot.client, annoying)
 //		if(DT_PROB(0.25, delta_time))

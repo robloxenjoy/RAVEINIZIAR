@@ -156,23 +156,17 @@
 /obj/item/storage/backpack/pouch/venturer/noble
 
 /obj/item/storage/backpack/pouch/submerc/PopulateContents()
-	if(empty)
-		return
 	var/static/items_inside = list(
 		/obj/item/stack/eviljewel = 1,
 		/obj/item/stack/eviljewel/max = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/backpack/pouch/venturer/PopulateContents()
-	if(empty)
-		return
 	var/static/items_inside = list(
 		/obj/item/stack/eviljewel/twenty = 1)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/backpack/pouch/venturer/noble/PopulateContents()
-	if(empty)
-		return
 	var/static/items_inside = list(
 		/obj/item/stack/eviljewel/max = 1)
 	generate_items_inside(items_inside,src)

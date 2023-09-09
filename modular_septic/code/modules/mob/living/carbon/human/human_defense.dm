@@ -223,7 +223,7 @@
 										span_hear("I hear a loud crack!"),
 										ignored_mobs = target)
 							to_chat(target, span_userdanger("<b>[src]</b> botches the CPR and cracks my [ribs.name]!"))
-							playsound(victim, 'modular_septic/sound/gore/ouchie.ogg', 75, FALSE)
+							playsound(target, 'modular_septic/sound/gore/ouchie.ogg', 75, FALSE)
 							SEND_SIGNAL(target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 
 /mob/living/carbon/human/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)

@@ -1122,6 +1122,7 @@
 	heavyfootstep = FOOTSTEP_GRASS
 	slowdown = 1
 	var/randomcolor = TRUE
+	var/randomgenerate = TRUE
 
 /turf/open/floor/plating/polovich/greendirtevil/Initialize(mapload)
 	. = ..()
