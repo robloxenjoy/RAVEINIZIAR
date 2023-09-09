@@ -1059,6 +1059,70 @@
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 6, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.2, "pain_stam_pct" = 0.6, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
+/obj/item/changeable_attacks/slashstab/knife/big/steel
+	name = "Steel Hunting Knife"
+	desc = "Use this as weapon!"
+	icon_state = "bigknife_steel"
+	inhand_icon_state = "steelknife"
+	worn_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon_state = "knife"
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	current_atk_mode = SLASH_MODE
+	embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	min_force = 10
+	force = 17
+	min_force_strength = 1
+	force_strength = 1.3
+	min_throwforce = 6
+	throwforce = 10
+	throwforce_strength = 1.5
+	wound_bonus = 7
+	bare_wound_bonus = 4
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	sharpness = SHARP_EDGED
+	skill_melee = SKILL_KNIFE
+	carry_weight = 1 KILOGRAMS
+	attack_fatigue_cost = 8
+	attack_delay = 19
+	parrying_flags = BLOCK_FLAG_UNARMED
+	havedurability = TRUE
+	durability = 160
+	canlockpick = TRUE
+	tetris_width = 32
+	tetris_height = 96
+
+/obj/item/changeable_attacks/slashstab/knife/big/steel/swap_intents(mob/user)
+	. = ..()
+	switch(current_atk_mode)
+		if(SLASH_MODE)
+			to_chat(user, span_notice("I'm now stabbing them with the curved end of the [src]."))
+			hitsound = stab_hitsound
+			min_force = 10
+			force = 17
+			min_force_strength = 1
+			force_strength = 1.3
+			current_atk_mode = STAB_MODE
+			sharpness = SHARP_POINTY
+			embedding = list("pain_mult" = 8, "rip_time" = 3, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+		if(STAB_MODE)
+			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
+			hitsound = slash_hitsound
+			min_force = 10
+			force = 17
+			min_force_strength = 1
+			force_strength = 1.3
+			current_atk_mode = SLASH_MODE
+			sharpness = SHARP_EDGED
+			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.2, "pain_stam_pct" = 0.6, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+
 /obj/item/kukri
 	name = "Kukri"
 	desc = "A carbon-steel kukri, usually found in the hands of people who really want to make cartel videos."

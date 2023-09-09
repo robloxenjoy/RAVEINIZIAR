@@ -720,6 +720,12 @@
 			new /obj/item/melee/hehe/pickaxe/iron(get_turf(user))
 			moneymoney -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+		if("steel hunting knife")
+			if(moneymoney < 65)
+				return
+			new /obj/item/changeable_attacks/slashstab/knife/big/steel(get_turf(user))
+			moneymoney -= 65
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		if("square lockpick")
 			new /obj/item/akt/lockpick/square(get_turf(user))
 			moneymoney -= 50
