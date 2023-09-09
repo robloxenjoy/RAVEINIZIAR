@@ -25,3 +25,15 @@
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stack/eviljewel/five
+	amount = 5
+
+/obj/item/stack/eviljewel/ten
+	amount = 10
+
+/obj/item/stack/eviljewel/twenty
+	amount = 20
+
+/obj/item/stack/eviljewel/max
+	amount = 32

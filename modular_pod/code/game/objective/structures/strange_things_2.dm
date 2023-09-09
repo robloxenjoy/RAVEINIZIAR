@@ -677,7 +677,7 @@
 		return
 	if(user.a_intent == INTENT_DISARM)
 		if(moneymoney > 0)
-			var/thing = tgui_input_list(user, "What you want?",, list("Guns", "Ammo", "Other"))
+			var/thing = tgui_input_list(user, "What do you want?",, list("Guns", "Ammo", "Other"))
 			if(!thing)
 				return
 			if(thing == "Guns")

@@ -73,7 +73,7 @@
 
 	uniform = /obj/item/clothing/under/venturerclassic
 	pants = /obj/item/clothing/pants/venturer
-	r_pocket = /obj/item/shard/crystal/blue
+	r_pocket = /obj/item/stack/eviljewel/twenty
 	id = /obj/item/key/podpol/woody/carehouse
 	var/venturer_type = ""
 //	id = /obj/item/cellphone
@@ -128,7 +128,7 @@
 //			uniform = /obj/item/clothing/under/rank/captain/zoomtech
 			uniform = /obj/item/clothing/under/aktraiment
 			pants = /obj/item/clothing/pants/aktliver
-			r_pocket = /obj/item/shard/crystal/purple
+			r_pocket = /obj/item/stack/eviljewel/max
 			glasses = /obj/item/clothing/glasses/hud/security/sunglasses/zoomtech
 			belt = /obj/item/knife/combat/goldenmisericorde
 			to_chat(H, span_achievementinteresting("I'm a village owner!"))
@@ -326,7 +326,7 @@
 	uniform = /obj/item/clothing/under/venturerclassic
 	pants = /obj/item/clothing/pants/venturer
 	suit = /obj/item/clothing/suit/hooded/labcoat/podpol/robe/chaotic
-	mask = /obj/item/shard/crystal/green
+//	mask = /obj/item/shard/crystal/green
 	id = /obj/item/keycard/chaot
 	r_pocket = /obj/item/cellphone
 	l_pocket = /obj/item/simcard
