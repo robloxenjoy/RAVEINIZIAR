@@ -564,6 +564,7 @@
 	if(thingy > 32)
 		to_chat(user, span_notice("Pick less!"))
 		return
+	moneymoney -= thingy
 	new /obj/item/stack/eviljewel(get_turf(user), thingy)
 	playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 
@@ -714,6 +715,7 @@
 	if(thingy > 32)
 		to_chat(user, span_notice("Pick less!"))
 		return
+	moneymoney -= thingy
 	new /obj/item/stack/eviljewel(get_turf(user), thingy)
 	playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 
