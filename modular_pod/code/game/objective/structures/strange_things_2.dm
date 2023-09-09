@@ -654,28 +654,21 @@
 
 /obj/structure/accepterblack/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
-	if(istype(I, /obj/item/crystal))
+	if(istype(I, /obj/item/stack/eviljewel))
 		if(user.a_intent != INTENT_DISARM)
 			return
-		user.visible_message(span_notice("[user] inserts crystal in Black Accepter."),span_notice("You insert crystal in Black Accepter."), span_hear("You hear the sound of inserting."))
+		var/obj/item/stack/eviljewel/M = I
+		user.visible_message(span_notice("[user] inserts [M] in Accepter."),span_notice("You insert [M] in Accepter."), span_hear("You hear the sound of inserting."))
 		sound_hint()
 		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
-		qdel(I)
-		moneymoney += 20
-	if(istype(I, /obj/item/shard/crystal))
-		if(user.a_intent != INTENT_DISARM)
-			return
-		user.visible_message(span_notice("[user] inserts crystal shard in Black Accepter."),span_notice("You insert crystal shard in Black Accepter."), span_hear("You hear the sound of inserting."))
-		sound_hint()
-		playsound(get_turf(src), 'modular_pod/sound/eff/thingg.ogg', 100 , FALSE, FALSE)
-		qdel(I)
-		moneymoney += 5
+		moneymoney += M.amount
+		qdel(M)
 
 /obj/structure/accepterblack/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
-	if(user.a_intent == INTENT_DISARM)
+	if(user.a_intent == INTENT_HELP)
 		if(moneymoney > 0)
 			var/thing = tgui_input_list(user, "What do you want?",, list("Guns", "Ammo", "Other"))
 			if(!thing)
