@@ -116,6 +116,67 @@
 			icon_state = "[initial(icon_state)]"
 	return ..()
 
+/obj/item/storage/backpack/pouch
+	name = "Pouch"
+	desc = "What's in it?"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "bag"
+	worn_icon = null
+	worn_icon_state = null
+	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
+	inhand_icon_state = "darkbag"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS | ITEM_SLOT_ID
+	storage_flags = NONE
+	carry_weight = 1 KILOGRAMS
+
+/obj/item/storage/backpack/pouch/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 10
+	STR.max_items = 3
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.set_holdable(list(
+		/obj/item/stack/eviljewel,
+		))
+
+
+/obj/item/storage/backpack/pouch/update_icon_state()
+	switch(contents.len)
+		if(1 to INFINITY)
+			icon_state = "[initial(icon_state)]_full"
+		else
+			icon_state = "[initial(icon_state)]"
+	return ..()
+
+/obj/item/storage/backpack/pouch/submerc
+
+/obj/item/storage/backpack/pouch/venturer
+
+/obj/item/storage/backpack/pouch/venturer/noble
+
+/obj/item/storage/backpack/pouch/submerc/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/stack/eviljewel = 1,
+		/obj/item/stack/eviljewel/max = 2)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/backpack/pouch/venturer/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/stack/eviljewel/twenty = 1)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/backpack/pouch/venturer/noble/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/stack/eviljewel/max = 1)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/backpack/itobe
 	name = "darkened backpack"
 	desc = "A sleek blackpack that wraps around using four straps around the user, allows the user to move light, and fast while carrying a medium or large-sized firearm."
