@@ -36,9 +36,9 @@
 	if(!iswillet(src))
 		for(var/mob/living/carbon/human/H in range(src))
 			if(H != src && (src in view(H)))
-				if(has_died)
-					return
 				if(iswillet(H))
+					if(has_died)
+						return
 					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
 				if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
 					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
@@ -47,7 +47,7 @@
 						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
 					else
 						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
-	else
+	if(iswillet(src))
 		for(var/mob/living/carbon/human/M in range(7, src))
 			if(M != src && (src in view(M)))
 				if(!iswillet(M))
