@@ -177,8 +177,8 @@
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	inhand_icon_state = "evilbita"
 	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
-	min_force = 5
-	force = 10
+	min_force = 7
+	force = 11
 	throwforce = 10
 	min_force_strength = 1.1
 	force_strength = 1.2
