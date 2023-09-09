@@ -1132,7 +1132,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystal" = 3, "thickets" = 2, "nothing" = 70))
+		var/state = pick_weight(list("crystal" = 3, "thickets" = 2, "flametrap" = 2, "nothing" = 70))
 		switch(state)
 			if("thickets")
 				new /obj/structure/flora/ausbushes/zarosli/midnight(get_turf(src))
@@ -1147,6 +1147,8 @@
 						new /obj/structure/barricade/flora/crystal/blue(get_turf(src))
 					if(4)
 						new /obj/structure/barricade/flora/crystal/purple(get_turf(src))
+			if("flametrap")
+				new /obj/structure/trap/fire(get_turf(src))
 
 /turf/open/floor/plating/polovich/lightblue
 	name = "Blue Dirt"

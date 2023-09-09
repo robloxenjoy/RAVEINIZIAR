@@ -6,6 +6,7 @@
 	density = FALSE
 	anchored = TRUE
 	alpha = 30 //initially quite hidden when not "recharging"
+	obj_flags = NONE
 	var/flare_message = "<span class='warning'>the trap flares brightly!</span>"
 	var/last_trigger = 0
 	var/time_between_triggers = 600 //takes a minute to recharge
@@ -202,7 +203,7 @@
 
 /obj/structure/trap/fire/trap_effect(mob/living/L)
 	to_chat(L, span_danger("<B>Pox Harve!</B>"))
-	L.Paralyze(20)
+//	L.Paralyze(20)
 	new /obj/effect/hotspot(get_turf(src))
 
 /obj/structure/trap/fire/chaot
