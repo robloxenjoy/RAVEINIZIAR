@@ -38,7 +38,7 @@
 "aL" = (/obj/machinery/door/metal_door/wood_door/north{id_tag = "slavekeeper"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest)
 "aM" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/item/food/canned/beef,/turf/open/floor/plating/polovich/woodennewblue,/area/maintenance/polovich/forest)
 "aN" = (/obj/structure/toilet{dir = 1},/obj/item/ammo_box/magazine/ammo_stack/pulser/loaded,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest)
-"aO" = (/obj/structure/closet/crate/wooden,/obj/item/assembly/control{id = "slavedoor"},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest)
+"aO" = (/obj/structure/closet/crate/wooden,/obj/item/assembly/control{id = "slavedoor"},/obj/item/storage/backpack/pouch/venturer/noble,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest)
 "aP" = (/obj/structure/closet/crate/wooden,/obj/item/cellphone/rotorphone,/obj/item/simcard,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest)
 "aQ" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/item/food/canned/beef,/obj/item/food/canned/beef,/obj/item/food/canned/beef,/obj/item/reagent_containers/food/drinks/waterbottle/empty,/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest)
 "aR" = (/obj/structure/closet/secure_closet/freezer/gulag_fridge{dir = 2},/turf/open/floor/plating/polovich/woodendarkdark/random,/area/maintenance/polovich/forest)
@@ -126,6 +126,7 @@
 "cv" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "cw" = (/turf/open/openspace/norm,/area/maintenance/polovich/village)
 "cx" = (/obj/structure/stairs/west,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"cy" = (/obj/structure/closet/crate/wooden,/obj/item/storage/backpack/pouch/venturer,/turf/open/floor/plating/polovich/kollo{dir = 4},/area/maintenance/polovich/village)
 
 (1,1,1) = {"
 abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
@@ -148,7 +149,7 @@ ababababababababababababababababaVaVbdbsbsbfbcbkbkaYaYbWaZbdbaaVaVababababababab
 ababababababababababababababababaVaVbdbsbsbfbvbvbvbvbCbvbvbdaVaVaVababababababababababababababababababababababababababababababababababababababababababababababab
 ababababababababababababababababaVaVaVblblbfbvaXbFbGbFbHbvbsaVaVaVababababababababababababababababababababababababababababababababababababababababababababababab
 ababababababababababababababababaVaVaVblblbfbvbIbJbFbKbKbvbsaVaVaVababababababababababababababababababababababababababababababababababababababababababababababab
-ababababababababababababababababaVaVaVbsbsbfbvbLbLbMbNbObvbaaVaVabababababababababababababababababababababababababababababababababababababababababababababababab
+ababababababababababababababababaVaVaVbsbsbfbvbLcybMbNbObvbaaVaVabababababababababababababababababababababababababababababababababababababababababababababababab
 ababababababababababababababababaVaVaVbsbsbfbvbPbMbMbMbQbvbaaVaVabababababababababababababababababababababababababababababababababababababababababababababababab
 ababababababababababababababababaVaVaVbsbsbfbvbRbSbFbTbUbvbaaVaVabababababababababababababababababababababababababababababababababababababababababababababababab
 ababababababababababababababababaVaVaVbsblbsbvbLbLbVbLbUbvbsaVaVabababababababababababababababababababababababababababababababababababababababababababababababab
