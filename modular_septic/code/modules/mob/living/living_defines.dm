@@ -27,3 +27,5 @@
 	var/usable_eyes = 2
 	/// Used for the cringe filter
 	var/bad_ic_count = 0
+
+	var/has_died = FALSE

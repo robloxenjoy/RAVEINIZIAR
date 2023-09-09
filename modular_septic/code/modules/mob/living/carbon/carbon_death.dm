@@ -47,6 +47,7 @@
 						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
 					else
 						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
+/*
 	if(iswillet(src))
 		for(var/mob/living/carbon/human/M in range(7, src))
 			if(M != src && (src in view(M)))
@@ -54,6 +55,7 @@
 					if(has_died)
 						return
 					M.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of weak willet! +10 kaotiks!</span>")
+*/
 	has_died = TRUE
 
 

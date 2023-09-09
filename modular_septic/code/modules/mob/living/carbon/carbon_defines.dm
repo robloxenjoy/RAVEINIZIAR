@@ -100,5 +100,3 @@
 	var/shock_penalty = 0
 	/// Last time we got a major wound
 	var/last_major_wound = 0
-
-	var/has_died = FALSE
