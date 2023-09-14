@@ -71,6 +71,7 @@
 				put_stuff_in_spawn_closet(spawned)
 		spawned.a_intent = old_intent
 		spawned.gain_extra_effort(1, TRUE)
+		graymouth_sleep(spawned)
 //		if(prob(30))
 //			spawned_human.gain_trauma(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_BASIC)
 		var/obj/item/organ/brain/brain = spawned.getorganslot(ORGAN_SLOT_BRAIN)
@@ -80,12 +81,15 @@
 //		spawned.overlay_fullscreen("podpol", /atom/movable/screen/fullscreen/impaired/podpol)
 //		spawned.clear_fullscreen("podpol", 3)
 //		addtimer(CALLBACK(spawned, /mob/.proc/clear_fullscreen, "podpol", 3), 3)
+
+/*
 		var/list/in_range = range(2, spawned)
 		var/obj/structure/bed/a_mimir
 		if(a_mimir in range (in_range))
 			spawned.forceMove(get_turf(a_mimir))
 			a_mimir.buckle_mob(spawned)
 			spawned.AdjustSleeping(4 SECONDS)
+*/
 
 //		for(var/obj/structure/bed/bed in in_range)
 //			if(bed.id_tag == dorm_key.id_tag)
@@ -122,8 +126,8 @@
 					bank_account.adjust_money(2000)
 			GLOB.data_core.birthday_boys += spawned_human.real_name
 	// this needs to be reset to pick up the color from preferences
-	spawned.chat_color_name = ""
-//	spawned.chat_color = ""
+//	spawned.chat_color_name = ""
+	spawned.chat_color = ""
 
 /datum/job/proc/assign_genitalia(mob/living/carbon/human/spawned, client/player_client)
 	spawned.dna.features["penis_size"] = clamp(rand(min_dicksize, max_dicksize), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)
@@ -228,6 +232,14 @@
 	spawned.forceMove(get_turf(a_mimir))
 	a_mimir.buckle_mob(spawned)
 	spawned.AdjustSleeping(4 SECONDS)
+
+/datum/job/proc/graymouth_sleep(mob/living/carbon/human/spawned)
+	var/list/in_range = range(2, spawned)
+	var/obj/structure/bed/a_mimir
+	if(a_mimir in range (in_range))
+		spawned.forceMove(get_turf(a_mimir))
+		a_mimir.buckle_mob(spawned)
+		spawned.AdjustSleeping(4 SECONDS)
 
 /datum/job/proc/assign_attributes(mob/living/spawned, client/player_client)
 	if(!ishuman(spawned))
