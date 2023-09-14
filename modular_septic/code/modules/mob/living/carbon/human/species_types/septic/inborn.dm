@@ -33,6 +33,7 @@
 	default_color = "#4B4B4B"
 	sexes = FALSE
 	species_traits = list(
+		NO_UNDERWEAR,
 		AGENDER,
 		NOEYESPRITES,
 	)
