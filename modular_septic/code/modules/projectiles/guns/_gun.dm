@@ -91,7 +91,7 @@
 	/// Whether or not to apply variation to the far fire sound
 	var/vary_far_fire_sound = TRUE
 	/// Volume of the far fire sound (generally should be lower than the normal fire sound, obviously)
-	var/far_fire_sound_volume = 40
+	var/far_fire_sound_volume = 60
 
 /obj/item/gun/Initialize(mapload)
 	. = ..()
