@@ -2,7 +2,7 @@
 /datum/surgery_step/relocate_bones
 	name = "Relocate bones"
 	implements = list(
-		TOOL_BONESET = 85,
+		TOOL_BONESET = 90,
 	)
 	minimum_time = 25
 	maximum_time = 75
@@ -50,7 +50,7 @@
 // Set bones
 /datum/surgery_step/set_bones
 	name = "Set bones"
-	implements = list(TOOL_BONESET = 80, \
+	implements = list(TOOL_BONESET = 90, \
 			/obj/item/stack/sticky_tape/surgical = 70, \
 			/obj/item/stack/sticky_tape/super = 50, \
 			/obj/item/stack/sticky_tape = 30)
@@ -104,7 +104,7 @@
 // Gel le bone
 /datum/surgery_step/gel_bones
 	name = "Gel bones"
-	implements = list(/obj/item/stack/medical/bone_gel = 80, \
+	implements = list(/obj/item/stack/medical/bone_gel = 85, \
 			/obj/item/stack/sticky_tape/surgical = 70, \
 			/obj/item/stack/sticky_tape/super = 50, \
 			/obj/item/stack/sticky_tape = 30)

@@ -1351,6 +1351,7 @@
 		SKILL_BRAWLING = list(1, 10),
 		SKILL_WRESTLING = list(1, 10),
 		SKILL_SMG = list(-1, 1),
+		SKILL_BUCKLER = list(-1, 6),
 		SKILL_PISTOL = list(-1, 1),
 		SKILL_RAPIER = list(-1, 1),
 		SKILL_SHORTSWORD = list(1, 3),

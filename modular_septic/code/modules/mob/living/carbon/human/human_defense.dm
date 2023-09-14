@@ -598,10 +598,14 @@
 			hitpush = FALSE
 			skipcatch = TRUE
 			blocked = TRUE
+			if(durability)
+				damageItem("MEDIUM")
 		if(check_parry(thrown_item, thrown_item.throwforce, "\the [thrown_item]", BLOCK_FLAG_THROWN) & COMPONENT_HIT_REACTION_BLOCK)
 			hitpush = FALSE
 			skipcatch = TRUE
 			blocked = TRUE
+			if(durability)
+				damageItem("MEDIUM")
 		if(check_dodge(thrown_item, thrown_item.throwforce, "\the [thrown_item]", BLOCK_FLAG_THROWN) & COMPONENT_HIT_REACTION_BLOCK)
 			hitpush = FALSE
 			skipcatch = TRUE
@@ -686,8 +690,9 @@
 					if(dodge_parry == DP_PARRY)
 						var/dicerollll = src.diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
 						if(dicerollll >= DICE_FAILURE)
-							src.visible_message(span_pinkdang("[src] flips weapon of [hitting_projectile.firer] to [hitting_projectile.firer]!"))
-							hitting_projectile.on_hit(hitting_projectile.firer, 100, def_zone, piercing_hit)
+							visible_message(span_pinkdang("[src] flips weapon of [hitting_projectile.firer] to [hitting_projectile.firer]!"))
+							var/shot_foot = pick(BODY_ZONE_HEAD)
+							process_fire(src, , FALSE, params, shot_foot)
 */
 			//There is some distance between us
 			else
@@ -708,9 +713,13 @@
 		if(!critical_hit && (hitting_projectile.firer != src))
 			if(check_shields(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)
+				if(durability)
+					damageItem("MEDIUM")
 				return BULLET_ACT_HIT
 			if(check_parry(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)
+				if(durability)
+					damageItem("MEDIUM")
 				return BULLET_ACT_HIT
 			if(check_dodge(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)

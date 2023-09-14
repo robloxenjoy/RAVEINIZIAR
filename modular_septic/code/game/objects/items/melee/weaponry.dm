@@ -24,6 +24,45 @@
 	wound_bonus = 0
 	bare_wound_bonus = 5
 
+/obj/item/shieldo
+	skill_blocking = SKILL_SHIELD
+	blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN | BLOCK_FLAG_PROJECTILE
+
+/obj/item/shieldo/buckler/wooden
+	name = "Wooden Buckler"
+	desc = "It can save your ass."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "buckler"
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	inhand_icon_state = "buckler"
+	worn_icon = 'modular_septic/icons/obj/items/guns/worn/back.dmi'
+	worn_icon_state = "buckler"
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_pod/sound/eff/weapon/draw_default.ogg'
+	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
+	block_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
+	havedurability = TRUE
+	durability = 210
+	carry_weight = 1.6 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	skill_blocking = SKILL_BUCKLER
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	min_force = 9
+	force = 11
+	throwforce = 13
+	min_force_strength = 1
+	force_strength = 1.5
+	wound_bonus = 4
+	bare_wound_bonus = 4
+	throw_speed = 2
+	throw_range = 10
+	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks", "shields")
+	attack_verb_simple = list("bash", "batter", "bludgeon", "whack", "shields")
+	tetris_width = 64
+	tetris_height = 64
+
 /obj/item/stone
 	name = "Stone"
 	desc = "Solid and small."

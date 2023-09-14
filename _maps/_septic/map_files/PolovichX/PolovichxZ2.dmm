@@ -189,6 +189,7 @@
 "dG" = (/obj/effect/turf_decal/siding/wood{dir = 5},/obj/structure/column/wooden,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/village)
 "dH" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/carpet/purplee,/area/maintenance/polovich/village)
 "dI" = (/obj/machinery/door/metal_door/north{id_tag = "store"},/turf/open/floor/carpet/purplee,/area/maintenance/polovich/village)
+"dJ" = (/obj/structure/closet/crate,/turf/open/floor/plating/polovich/temnoo/six,/area/maintenance/polovich/village)
 "dK" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/plating/polovich/warlocksticky,/area/maintenance/polovich/village)
 "dL" = (/turf/open/floor/plating/polovich/warlocksticky,/area/maintenance/polovich/village)
 "dM" = (/obj/effect/turf_decal/siding/wood{dir = 4},/turf/open/floor/plating/polovich/warlocksticky,/area/maintenance/polovich/village)
@@ -252,6 +253,8 @@
 "eS" = (/obj/structure/closet/crate,/obj/item/storage/belt/pouch/venturer/noble,/turf/open/floor/plating/polovich/krutoplitka{dir = 8},/area/maintenance/polovich/village)
 "eT" = (/obj/effect/turf_decal/siding/wood{dir = 4},/obj/structure/closet/crate,/turf/open/floor/plating/polovich/krutoplitka{dir = 8},/area/maintenance/polovich/village)
 "eU" = (/obj/effect/turf_decal/siding/wood,/obj/structure/closet/crate,/turf/open/floor/plating/polovich/krutoplitka{dir = 8},/area/maintenance/polovich/village)
+"eV" = (/obj/structure/closet/secure_closet/security,/obj/item/reagent_containers/glass/bottle/potions/berryjuice,/obj/item/restraints/handcuffs,/obj/item/shieldo/buckler/wooden,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
+"eW" = (/obj/structure/closet/secure_closet/security,/obj/item/restraints/handcuffs,/obj/item/shieldo/buckler/wooden,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "fa" = (/obj/structure/fluff/statueiron/third,/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest)
 "fb" = (/obj/structure/fluff/statueiron/third,/turf/open/floor/plating/polovich/lightblue,/area/maintenance/polovich/forest)
 "fc" = (/obj/structure/chair/wood{dir = 4},/turf/open/floor/plating/polovich/krutoplitka,/area/maintenance/polovich/village)
@@ -358,13 +361,10 @@
 "he" = (/obj/structure/closet/secure_closet/security,/obj/item/restraints/legcuffs/beartrap,/obj/item/restraints/legcuffs/beartrap,/obj/item/restraints/legcuffs/beartrap,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "hf" = (/obj/structure/fluff/statueiron/seond,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "hg" = (/obj/structure/closet/secure_closet/security,/obj/item/melee/bita/macecircle,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
-"hh" = (/obj/structure/closet/secure_closet/security,/obj/item/reagent_containers/glass/bottle/potions/berryjuice,/obj/item/clothing/head/helmet/silver/full,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
-"hi" = (/obj/structure/closet/secure_closet/security,/obj/item/clothing/head/helmet/golden/full,/obj/item/restraints/handcuffs,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "hj" = (/turf/open/floor/plating/polovich/temnoo/three,/area/maintenance/polovich/village)
 "hk" = (/turf/open/floor/plating/polovich/temnoo/ten,/area/maintenance/polovich/village)
 "hl" = (/obj/structure/lampwall/service{dir = 1},/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/village)
 "hm" = (/obj/structure/closet/crate,/turf/open/floor/plating/polovich/temnoo/five,/area/maintenance/polovich/village)
-"hn" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/automatic/remis/svd,/turf/open/floor/plating/polovich/temnoo/six,/area/maintenance/polovich/village)
 "ho" = (/obj/structure/lampwall/service{dir = 4},/turf/open/floor/plating/polovich/metalnoble,/area/maintenance/polovich/village)
 "hp" = (/turf/closed/wall/r_wall/rusty/nocling,/area/maintenance/polovich/village)
 "hr" = (/obj/structure/lampstand,/turf/open/floor/plating/polovich/logsgreen/three,/area/maintenance/polovich/village)
@@ -457,10 +457,10 @@ abaoaoaoaoaoeEajajajahahababahaiahahagagajajajajajajajaaaaaaaaaaaaaaaaaaaaaaaaaa
 ajajajajajaweEajajajajajajajajajawawawajajajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKcMcQcWcMbKaaaaaaaaaahocYdVdbgMgNgOgPgQgRgSgTgPgUgVgUgVgUgPaaaaaaaaaa
 ajajajajajawawajajajajajajajajajawawawawajajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKcMbJbJcMbKaaaaaaaaaadVdVdVdbgOgOgOgWgOfLgXgYgPgOgZgOgOgOgPaaaaaaaaaa
 abajajajahahahahapapabamaeananasawawawajajajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKcMddddcMbKaaaaaaaaaacXcYdVdbhagPgPgPgPgPgPgPgPgUhbgUgOgUgPaaaaaaaaaa
-aiaiajajaCahahaCaoaparababanasanawawawajajajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKdVcQcQdVbKaaaaaaaaaadVdVdVgPhcgchdhehfhghhhigPgOgOgOgOgOgPaaaaaaaaaa
+aiaiajajaCahahaCaoaparababanasanawawawajajajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKdVcQcQdVbKaaaaaaaaaadVdVdVgPhcgchdhehfhgeVeWgPgOgOgOgOgOgPaaaaaaaaaa
 asasababahabahaharararapapaoasanawawawajajajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKdVcvdedVbKaaaaaaaaaahocYdVgWgOgOgOgOgOgOgOgOgWgOgOgOgOgVgPaaaaaaaaaa
 anabababababaharararabapapapapaoawaweEajajajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaahIcMcvdecMhIaaaaaaaaaadVdVdVgWhjhkhkhkhkhkhkhkgWgOgOgOgOgOgPaaaaaaaaaa
-ababamabababahababababapahaCaoaDawapeEeEeEajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKcMddddcMbKaaaaaaaaaacXcYdVdbgcgOgOhlgOgOgOgOgPgUhmgUhngUgPaaaaaaaaaa
+ababamabababahababababapahaCaoaDawapeEeEeEajajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKcMddddcMbKaaaaaaaaaacXcYdVdbgcgOgOhlgOgOgOgOgPgUhmgUdJgUgPaaaaaaaaaa
 aiaiaiabamababapabamabapahahahahapapapapeEeEajajajajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKcMbJbJcMbKbKaaaaaaaaaaaaaadbgPgPgPgPhMhMgPgPgPgPgPgPgPgPgPaaaaaaaaaa
 aiaEaEaEaFaFapapababaoapaoahahaeaoaoapapapeEeEeEeEajajajajajajajajajajaaaaaaaaaaaaaaaaaaaabKdVdVdVdVdRbKaaaaaaaaaaaaaahpfdfdfdhSfdfdhSfdfdfdhSfdfdfdhpaaaaaaaaaa
 aGaGaGaHaFapaIapababaoaoaoabahapaoaoaoapapapapapapajajajajajajajajajajbKbKbKbKbKbKaaaaaabKbKdVdVdVdVdRhIcvaaaaaaaaaaaahpfchJhKhLfdfdfdfdhNhJhKdOfdfdhpaaaaaaaaaa

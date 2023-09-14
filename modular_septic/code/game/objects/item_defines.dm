@@ -46,7 +46,7 @@
 	 * SET TO NULL INSTEAD!
 	 */
 	var/blocking_modifier = null
-	/// Flags related to what the fuck we can block
+	/// Flags related to what the fuck we can block (BLOCK_FLAG_LEAP)
 	var/blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	/**
 	 *  Modifier for parry score
@@ -55,7 +55,7 @@
 	 * SET TO NULL INSTEAD!
 	 */
 	var/parrying_modifier = null
-	/// Flags related to what the fuck we can parry
+	/// Flags related to what the fuck we can parry (BLOCK_FLAG_LEAP)
 	var/parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	/**
 	 *  Modifier for dodge score

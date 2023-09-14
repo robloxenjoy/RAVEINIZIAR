@@ -4,7 +4,7 @@
 /datum/surgery_step/incise
 	name = "Make incision"
 	implements = list(
-		TOOL_SCALPEL = 80,
+		TOOL_SCALPEL = 90,
 		/obj/item/melee/energy/sword = 65,
 		/obj/item/knife = 65,
 		/obj/item/shard = 45,
@@ -281,7 +281,7 @@
 /datum/surgery_step/disinfect_injuries
 	name = "Disinfect injuries"
 	implements = list(
-		/obj/item/reagent_containers = 80,
+		/obj/item/reagent_containers = 95,
 	)
 	minimum_time = 16
 	maximum_time = 32

@@ -283,6 +283,24 @@
 	if(check_botched(user, target))
 		return
 
+	if(get_dist(user, target) < 2)
+		if(istype(user))
+			if(!iscarbon(target))
+				return
+			if(target.body_position == STANDING_UP)
+				if(target.stat != CONSCIOUS)
+					return
+				if(!target.combat_mode)
+					return
+				if(target == user)
+					return
+				if(target.dodge_parry == DP_PARRY)
+					var/dicerollll = target.diceroll(GET_MOB_ATTRIBUTE_VALUE(target, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
+					if(dicerollll >= DICE_FAILURE)
+						visible_message(span_pinkdang("[target] flips weapon of [user] to [user]'s head!"))
+						var/shot_head = pick(BODY_ZONE_HEAD)
+						process_fire(user, user, FALSE, params, shot_head)
+
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
 	var/loop_counter = 0
