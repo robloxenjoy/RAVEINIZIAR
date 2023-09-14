@@ -83,7 +83,7 @@
 	/// Range beyond which listeners hear far_fire_sound instead of fire_sound
 	var/close_fire_range = SOUND_RANGE
 	/// Range beyond which no one is hearing anything, not even far_fire_sound
-	var/far_fire_range = SOUND_RANGE * 5
+	var/far_fire_range = SOUND_RANGE * 6
 	/// Falloff distance for far fire sound, no need to fuck with falloff for nearby guns honestly
 	var/far_fire_falloff_distance = SOUND_RANGE
 	/// Fire sound for long distances (not providing a default because it would be so fucked up dude)
