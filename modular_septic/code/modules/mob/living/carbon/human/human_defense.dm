@@ -598,14 +598,14 @@
 			hitpush = FALSE
 			skipcatch = TRUE
 			blocked = TRUE
-			if(durability)
-				damageItem("MEDIUM")
+			if(thrown_item.durability)
+				thrown_item.damageItem("MEDIUM")
 		if(check_parry(thrown_item, thrown_item.throwforce, "\the [thrown_item]", BLOCK_FLAG_THROWN) & COMPONENT_HIT_REACTION_BLOCK)
 			hitpush = FALSE
 			skipcatch = TRUE
 			blocked = TRUE
-			if(durability)
-				damageItem("MEDIUM")
+			if(thrown_item.durability)
+				thrown_item.damageItem("MEDIUM")
 		if(check_dodge(thrown_item, thrown_item.throwforce, "\the [thrown_item]", BLOCK_FLAG_THROWN) & COMPONENT_HIT_REACTION_BLOCK)
 			hitpush = FALSE
 			skipcatch = TRUE
@@ -713,13 +713,13 @@
 		if(!critical_hit && (hitting_projectile.firer != src))
 			if(check_shields(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)
-				if(durability)
-					damageItem("MEDIUM")
+				if(hitting_projectile.durability)
+					hitting_projectile.damageItem("MEDIUM")
 				return BULLET_ACT_HIT
 			if(check_parry(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)
-				if(durability)
-					damageItem("MEDIUM")
+				if(hitting_projectile.durability)
+					hitting_projectile.damageItem("MEDIUM")
 				return BULLET_ACT_HIT
 			if(check_dodge(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)

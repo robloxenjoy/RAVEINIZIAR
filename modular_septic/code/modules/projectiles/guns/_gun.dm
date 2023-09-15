@@ -287,6 +287,7 @@
 		if(istype(user))
 			if(!iscarbon(target))
 				return
+			var/mob/living/carbon/target = target
 			if(target.body_position == STANDING_UP)
 				if(target.stat != CONSCIOUS)
 					return
@@ -297,7 +298,7 @@
 				if(target.dodge_parry == DP_PARRY)
 					var/dicerollll = target.diceroll(GET_MOB_ATTRIBUTE_VALUE(target, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
 					if(dicerollll >= DICE_FAILURE)
-						visible_message(span_pinkdang("[target] flips weapon of [user] to [user]'s head!"))
+						visible_message(span_pinkdang("[target] flips [user]'s weapon to [user]'s head!"))
 						var/shot_head = pick(BODY_ZONE_HEAD)
 						process_fire(user, user, FALSE, params, shot_head)
 
