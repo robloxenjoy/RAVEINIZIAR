@@ -7,6 +7,7 @@
 	icon = 'modular_septic/icons/obj/items/books.dmi'
 	icon_state = "glorytotheccp" //for mapping
 	race = /datum/species/weakwillet
+	see_in_dark = 5
 
 /mob/living/carbon/human/species/pighuman
 	icon = 'modular_septic/icons/obj/items/books.dmi'

@@ -621,7 +621,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	character.faction |= "chaos"
 	character.key = key
 //	if(character.attributes)
-	character.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+//	character.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	character.attributes?.update_attributes()
 	playsound(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100, FALSE)
 
