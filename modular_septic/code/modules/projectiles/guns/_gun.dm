@@ -285,22 +285,18 @@
 
 	if(get_dist(user, target) < 2)
 		if(istype(user))
-			if(!iscarbon(target))
-				return
-			var/mob/living/carbon/targett = target
-			if(targett.body_position == STANDING_UP)
-				if(targett.stat != CONSCIOUS)
-					return
-				if(!targett.combat_mode)
-					return
-				if(targett == user)
-					return
-				if(targett.dodge_parry == DP_PARRY)
-					var/dicerollll = targett.diceroll(GET_MOB_ATTRIBUTE_VALUE(targett, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
-					if(dicerollll >= DICE_FAILURE)
-						visible_message(span_pinkdang("[targett] flips [user]'s weapon to [user]'s head!"))
-						var/shot_head = pick(BODY_ZONE_HEAD)
-						process_fire(user, user, FALSE, params, shot_head)
+			if(iscarbon(target))
+				var/mob/living/carbon/targett = target
+				if(targett.body_position == STANDING_UP)
+					if(targett.stat == CONSCIOUS)
+						if(targett.combat_mode)
+							if(targett != user)
+								if(targett.dodge_parry == DP_PARRY)
+									var/dicerollll = targett.diceroll(GET_MOB_ATTRIBUTE_VALUE(targett, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
+									if(dicerollll > DICE_FAILURE)
+										user.visible_message(span_pinkdang("[targett] flips [user]'s weapon to [user]'s head!"))
+										var/shot_head = pick(BODY_ZONE_HEAD)
+										process_fire(user, user, FALSE, params, shot_head)
 
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
