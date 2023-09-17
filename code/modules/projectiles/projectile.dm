@@ -742,6 +742,8 @@
 		return ..()
 	var/zc = target.z != z
 	var/old = loc
+	if(zc)
+		z_chungus_change(old, target)
 //	if(zc)
 //		before_z_change(old, target)
 	. = ..()
@@ -753,8 +755,6 @@
 		trajectory.initialize_location(target.x, target.y, target.z, 0, 0)
 		if(hitscan)
 			record_hitscan_start(RETURN_PRECISE_POINT(src))
-	if(zc)
-		z_chungus_change(old, target)
 
 ///obj/projectile/proc/after_z_change(atom/olcloc, atom/newloc)
 
