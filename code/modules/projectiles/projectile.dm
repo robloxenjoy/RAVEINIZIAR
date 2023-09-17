@@ -822,11 +822,11 @@
 			return
 		if(T.z != loc.z)
 			var/old = loc
-			before_z_change(loc, T)
+//			before_z_change(loc, T)
 			trajectory_ignore_forcemove = TRUE
 			forceMove(T)
 			trajectory_ignore_forcemove = FALSE
-			after_z_change(old, loc)
+//			after_z_change(old, loc)
 			if(!hitscanning)
 				pixel_x = trajectory.return_px()
 				pixel_y = trajectory.return_py()
