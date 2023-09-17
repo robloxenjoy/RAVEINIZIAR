@@ -742,8 +742,8 @@
 		return ..()
 	var/zc = target.z != z
 	var/old = loc
-	if(zc)
-		before_z_change(old, target)
+//	if(zc)
+//		before_z_change(old, target)
 	. = ..()
 	if(QDELETED(src)) // we coulda bumped something
 		return
@@ -754,11 +754,17 @@
 		if(hitscan)
 			record_hitscan_start(RETURN_PRECISE_POINT(src))
 	if(zc)
-		after_z_change(old, target)
+		z_chungus_change(old, target)
 
-/obj/projectile/proc/after_z_change(atom/olcloc, atom/newloc)
+///obj/projectile/proc/after_z_change(atom/olcloc, atom/newloc)
 
-/obj/projectile/proc/before_z_change(atom/oldloc, atom/newloc)
+///obj/projectile/proc/before_z_change(atom/oldloc, atom/newloc)
+
+/obj/projectile/proc/z_chungus_change(atom/olcloc, atom/newloc)
+	if(olcloc.z < newloc.z)
+		get_step_multiz(src, UP)
+	else
+		get_step_multiz(src, DOWN)
 
 /obj/projectile/vv_edit_var(var_name, var_value)
 	switch(var_name)
