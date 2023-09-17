@@ -62,6 +62,6 @@
 			. += "hand_l_active"
 	else if(held_index == hud.mymob.active_hand_index)
 		if(!(held_index & RIGHT_HANDS))
-			. += "hand_r_active"
+			. += "hand_rr_active"
 		else
-			. += "hand_l_active"
+			. += "hand_ll_active"
