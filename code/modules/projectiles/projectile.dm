@@ -821,7 +821,7 @@
 			qdel(src)
 			return
 		if(T.z != loc.z)
-			var/old = loc
+//			var/old = loc
 //			before_z_change(loc, T)
 			trajectory_ignore_forcemove = TRUE
 			forceMove(T)
