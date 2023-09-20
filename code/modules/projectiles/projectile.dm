@@ -823,7 +823,7 @@
 		if(T.z != loc.z)
 //			var/old = loc
 //			before_z_change(loc, T)
-			z_chungus_change(loc, T)
+//			z_chungus_change(loc, T)
 			trajectory_ignore_forcemove = TRUE
 			forceMove(T)
 			trajectory_ignore_forcemove = FALSE
