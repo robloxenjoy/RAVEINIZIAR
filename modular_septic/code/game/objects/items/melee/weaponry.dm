@@ -41,12 +41,12 @@
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_pod/sound/eff/weapon/draw_default.ogg'
 	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
-	block_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
+	parry_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
 	havedurability = TRUE
 	durability = 210
 	carry_weight = 1.6 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
-	skill_blocking = SKILL_BUCKLER
+	skill_parrying = SKILL_BUCKLER
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	min_force = 9
