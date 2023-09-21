@@ -208,6 +208,12 @@
 	if(prob(70))
 		rammer.electrocute_act(30, src, flags = SHOCK_NOGLOVES)
 
+/obj/structure/flora/tree/chungus/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	return
+
 /obj/structure/flora/tree/pine/xmas
 	name = "xmas tree"
 	desc = "A wondrous decorated Christmas tree."

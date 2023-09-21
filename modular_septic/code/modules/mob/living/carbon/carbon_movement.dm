@@ -106,13 +106,13 @@
 		if(DICE_FAILURE)
 			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
 			if(head)
-				head.receive_damage(ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
-			else
-				take_bodypart_damage(ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
-		if(DICE_CRIT_FAILURE)
-			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
-			if(head)
 				head.receive_damage((ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)) * 2)
 			else
 				take_bodypart_damage((ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)) * 2)
+		if(DICE_CRIT_FAILURE)
+			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
+			if(head)
+				head.receive_damage((ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)) * 3)
+			else
+				take_bodypart_damage((ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)) * 3)
 	SEND_SIGNAL(src, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
