@@ -1035,9 +1035,9 @@
 						victim.emote("burp")
 						var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 						if(diceroll == DICE_FAILURE)
-							vomit(10, FALSE, FALSE)
+							victim.vomit(10, FALSE, FALSE)
 						if(diceroll == DICE_CRIT_FAILURE)
-							vomit(10, TRUE, FALSE)
+							victim.vomit(10, TRUE, FALSE)
 						victim.visible_message(span_pinkdang("[victim] is gut busted by [user]!"), \
 											span_pinkdang("I am was gut busted by [user]!"), \
 											span_hear("I hear the sound of flesh."))
