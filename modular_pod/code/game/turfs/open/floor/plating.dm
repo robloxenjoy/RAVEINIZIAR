@@ -41,7 +41,7 @@
 		user.adjustFatigueLoss(5)
 		playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 		sound_hint()
-
+/*
 /turf/open/floor/attack_hand_secondary(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
@@ -107,6 +107,9 @@
 				atrat.usedy = TRUE
 				addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
 */
+
+*/
+
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)
