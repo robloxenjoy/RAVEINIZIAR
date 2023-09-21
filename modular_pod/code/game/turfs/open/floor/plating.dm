@@ -877,7 +877,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "beartrap" = 2, "treelong" = 5, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
+		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "beartrap" = 2, "treelong" = 5, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "chungu" = 1, "nothing" = 70))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -937,6 +937,8 @@
 						new /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/acid(get_turf(src))
 			if("beartrap")
 				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+			if("chungu")
+				new /obj/structure/flora/tree/chungus(get_turf(src))
 
 /turf/open/floor/plating/polovich/greengryaz/norandomgen
 	randomgenerate = FALSE
@@ -1150,8 +1152,10 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystal" = 3, "thickets" = 2, "flametrap" = 2, "nothing" = 70))
+		var/state = pick_weight(list("crystal" = 4, "thickets" = 2, "flametrap" = 2, "chungu" = 2, "nothing" = 70))
 		switch(state)
+			if("nothing")
+				return
 			if("thickets")
 				new /obj/structure/flora/ausbushes/zarosli/midnight(get_turf(src))
 			if("crystal")
@@ -1167,6 +1171,8 @@
 						new /obj/structure/barricade/flora/crystal/purple(get_turf(src))
 			if("flametrap")
 				new /obj/structure/trap/fire(get_turf(src))
+			if("chungu")
+				new /obj/structure/flora/tree/chungus(get_turf(src))
 
 /turf/open/floor/plating/polovich/lightblue
 	name = "Blue Dirt"
@@ -1190,7 +1196,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystal" = 3, "thickets" = 2, "nothing" = 70))
+		var/state = pick_weight(list("crystal" = 3, "thickets" = 2, "chungu" = 2, "nothing" = 70))
 		switch(state)
 			if("thickets")
 				new /obj/structure/flora/ausbushes/zarosli/midnight(get_turf(src))
@@ -1205,6 +1211,8 @@
 						new /obj/structure/barricade/flora/crystal/blue(get_turf(src))
 					if(4)
 						new /obj/structure/barricade/flora/crystal/purple(get_turf(src))
+			if("chungu")
+				new /obj/structure/flora/tree/chungus(get_turf(src))
 
 /turf/open/floor/plating/polovich/woodennewblue
 	name = "Wooden Floor"

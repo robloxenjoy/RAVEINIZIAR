@@ -176,6 +176,38 @@
 	log_amount = 4
 	icon_state = "vevatree"
 
+/obj/structure/flora/tree/chungus
+	name = "Chungus Tree"
+	desc = "I'm starting to remember him..."
+	icon = 'icons/obj/flora/deadtrees.dmi'
+	icon_state = "chungtree_1"
+	log_amount = 0
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = 1
+	anchored = 1
+	opacity = 1
+//	var/havebranch = TRUE
+
+/obj/structure/flora/tree/chungus/Initialize(mapload)
+	. = ..()
+	icon_state = pick("chungtree_2", "chungtree_3", "chungtree_4", "chungtree_1")
+
+/obj/structure/flora/tree/chungus/attackby(obj/item/W, mob/living/carbon/user, params)
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.electrocute_act(30, src, flags = SHOCK_NOGLOVES)
+
+/obj/structure/flora/tree/chungus/on_rammed(mob/living/carbon/rammer)
+	rammer.ram_stun()
+	var/smash_sound = pick('modular_septic/sound/gore/smash1.ogg',
+						'modular_septic/sound/gore/smash2.ogg',
+						'modular_septic/sound/gore/smash3.ogg')
+	playsound(src, smash_sound, 75)
+	rammer.sound_hint()
+	sound_hint()
+	if(prob(70))
+		rammer.electrocute_act(30, src, flags = SHOCK_NOGLOVES)
+
 /obj/structure/flora/tree/pine/xmas
 	name = "xmas tree"
 	desc = "A wondrous decorated Christmas tree."
