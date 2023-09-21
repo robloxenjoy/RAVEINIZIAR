@@ -52,6 +52,7 @@ SUBSYSTEM_DEF(droning)
 		if((istype(area_player, /area/maintenance/polovich/forest)) || (istype(area_player, /area/medical/spawned)))
 //		if(SSoutdoor_effects.current_step_datum == /datum/time_of_day/midnight || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dusk || SSoutdoor_effects.current_step_datum == /datum/time_of_day/dawn)
 //		if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk) || (SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
+/*
 			if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight))
 				area_player.droning_sound = DRONING_PURENIGHT
 			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/night))
@@ -64,17 +65,15 @@ SUBSYSTEM_DEF(droning)
 				area_player.droning_sound = DRONING_PURENIGHT
 			else
 				area_player.droning_sound = DRONING_FOREST
+*/
+
+			if(isnight(SSoutdoor_effects.current_step_datum))
+				area_player.droning_sound = DRONING_PURENIGHT
+			else
+				area_player.droning_sound = DRONING_FOREST
 
 		if(istype(area_player, /area/maintenance/polovich/village))
-			if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight))
-				area_player.droning_sound = DRONING_PURENIGHT_AKT
-			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/night))
-				area_player.droning_sound = DRONING_PURENIGHT_AKT
-			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk))
-				area_player.droning_sound = DRONING_PURENIGHT_AKT
-			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
-				area_player.droning_sound = DRONING_PURENIGHT_AKT
-			else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawndawn))
+			if(isnight(SSoutdoor_effects.current_step_datum))
 				area_player.droning_sound = DRONING_PURENIGHT_AKT
 			else
 				area_player.droning_sound = DRONING_AKT
