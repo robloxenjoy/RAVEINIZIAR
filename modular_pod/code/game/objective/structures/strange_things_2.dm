@@ -977,6 +977,11 @@
 	max_integrity = 200
 	var/onn = FALSE
 	var/moneymoney = 64
+	var/datum/looping_sound/conveyor/crazy_soundloop
+
+/obj/structure/evilgenerator(mapload)
+	. = ..()
+	crazy_soundloop = new(src, FALSE)
 
 /obj/structure/evilgenerator/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
@@ -987,6 +992,7 @@
 			return
 		user.visible_message(span_notice("[user] toggles ON the [src]."),span_notice("You toggle ON the [src]."), span_hear("You hear the sound of something."))
 		onn = TRUE
+		crazy_soundloop.start()
 		addtimer(CALLBACK(src, .proc/eviling), 32 SECONDS)
 	if(user.a_intent == INTENT_GRAB)
 		if(moneymoney > 0)
@@ -1032,3 +1038,7 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		explosion(src, devastation_range = 5, heavy_impact_range = 6, light_impact_range = 9, adminlog = notify_admins)
 	qdel(src)
+
+/obj/structure/evilgenerator/Destroy()
+	. = ..()
+	QDEL_NULL(crazy_soundloop)

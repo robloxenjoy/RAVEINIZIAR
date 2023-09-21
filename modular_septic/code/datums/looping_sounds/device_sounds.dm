@@ -42,3 +42,10 @@
 	volume = 32
 	falloff_exponent = 18
 	falloff_distance = 3
+
+/datum/looping_sound/conveyor
+	mid_sounds = list('modular_septic/sound/machinery/conveyor_loop.ogg' = 1)
+	mid_length = 3 SECONDS
+	volume = 32
+	falloff_exponent = 18
+	falloff_distance = 3
