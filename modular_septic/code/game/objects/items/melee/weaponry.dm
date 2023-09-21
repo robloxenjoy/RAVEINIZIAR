@@ -24,11 +24,11 @@
 	wound_bonus = 0
 	bare_wound_bonus = 5
 
-/obj/item/shieldo
-	skill_blocking = SKILL_SHIELD
+/obj/item/melee/shieldo
+//	skill_blocking = SKILL_SHIELD
 	blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN | BLOCK_FLAG_PROJECTILE
 
-/obj/item/shieldo/buckler/wooden
+/obj/item/melee/shieldo/buckler/wooden
 	name = "Wooden Buckler"
 	desc = "It can save your ass."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
