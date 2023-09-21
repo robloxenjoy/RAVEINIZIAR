@@ -272,23 +272,6 @@
 	else
 		return ..()
 
-/// Checks to see if an atom can be area attacked, simple as
-/atom/proc/can_be_area_attacked(mob/user, obj/item/weapon, click_parameters)
-	return FALSE
-
-/area/can_be_area_attacked(mob/user, obj/item/weapon, click_parameters)
-	CRASH("funnily enough, areas are NOT supposed to have can_be_area_attacked() called on them!")
-
-/obj/can_be_area_attacked(mob/user, obj/item/weapon, click_parameters)
-	return ((obj_flags & CAN_BE_HIT) && mouse_opacity && density)
-
-/obj/item/can_be_area_attacked(mob/user, obj/item/weapon, click_parameters)
-	return FALSE
-
-/mob/living/can_be_area_attacked(mob/user, obj/item/weapon, click_parameters)
-	return TRUE
-
-
 /**
  * Last proc in the [/obj/item/proc/melee_attack_chain]
  *
@@ -323,43 +306,6 @@
 
 	return SECONDARY_ATTACK_CALL_NORMAL
 
-/**
- * If afterattack returns FALSE, this is called to try and salvage the attack if possible
- *
- * Arguments:
- * * atom/target - The thing that was hit
- * * mob/user - The mob doing the hitting
- * * click_parameters - is the params string from byond [/atom/proc/Click] code, see that documentation.
- */
-/obj/item/proc/area_attack(atom/target, mob/user, click_parameters)
-	. = FALSE
-	if(!can_area_attack)
-		return FALSE
-	var/mob/living/living_user = user
-	if(istype(living_user) && !living_user.combat_mode)
-		return FALSE
-	var/turf/adjacent_turf = get_turf_in_angle(get_angle(user, target), get_turf(user), 1)
-	if(!adjacent_turf)
-		return FALSE
-	SEND_SIGNAL(src, COMSIG_ITEM_AREA_ATTACK, adjacent_turf, user, click_parameters)
-	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AREA_ATTACK, adjacent_turf, src, click_parameters)
-	user.changeNext_move(CLICK_CD_MELEE)
-	user.do_area_attack_animation(target, area_attack_icon, area_attack_icon_state)
-	var/list/neighbors = list()
-	neighbors += adjacent_turf.contents
-	neighbors += adjacent_turf
-	neighbors = reverse_range(neighbors)
-	for(var/atom/neighboring_atom in neighbors)
-		if(neighboring_atom.invisibility > user.see_invisible)
-			continue
-		if(neighboring_atom.can_be_area_attacked(user, src, click_parameters) && user.CanReach(neighboring_atom, src))
-			melee_attack_chain(user, neighboring_atom, click_parameters)
-			. = TRUE
-			break
-	if(!.)
-		user.do_attack_animation(target, used_item = src, angled = TRUE)
-		playsound(loc, 'sound/weapons/effects/swing.ogg', get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
-
 /// Called if the target gets deleted by our attack
 /obj/item/proc/attack_qdeleted(atom/target, mob/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_QDELETED, target, user, proximity_flag, click_parameters)
@@ -371,13 +317,6 @@
 			return clamp((force + w_class) * 4, 30, 100)// Add the item's force to its weight class and multiply by 4, then clamp the value between 30 and 100
 		else
 			return clamp(w_class * 6, 10, 100) // Multiply the item's weight class by 6, then clamp the value between 10 and 100
-
-// Basically, the weapon will shake for a small amount of time when performing a melee attack
-/obj/item/proc/attacking_animation(angle = 15)
-	var/matrix/initial_transform = matrix(transform)
-	var/matrix/rotated_transform = transform.Turn(angle)
-	animate(src, transform = rotated_transform, time = 1, easing = BACK_EASING | EASE_IN)
-	animate(transform = initial_transform, time = 2, easing = SINE_EASING)
 
 /mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area, obj/item/bodypart/hit_bodypart)
 	if(!I.force && !length(I.attack_verb_simple) && !length(I.attack_verb_continuous))

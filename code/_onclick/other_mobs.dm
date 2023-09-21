@@ -41,7 +41,7 @@
 	SEND_SIGNAL(src, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, A, proximity_flag, modifiers)
 
 	if(!right_click_attack_chain(A, modifiers) && !dna?.species?.spec_unarmedattack(src, A, modifiers)) //Because species like monkeys dont use attack hand
-		return A.attack_hand(src, modifiers)
+		A.attack_hand(src, modifiers)
 
 
 
@@ -200,7 +200,7 @@
 /// Defaults to attack_hand or attack_hand_secondary. Override it when you don't want drones to do same stuff as humans.
 /atom/proc/attack_drone(mob/living/simple_animal/drone/user, list/modifiers)
 	if(!user.right_click_attack_chain(src, modifiers))
-		return attack_hand(user, modifiers)
+		attack_hand(user, modifiers)
 
 
 /*
@@ -227,7 +227,7 @@
 	if(LIVING_UNARMED_ATTACK_BLOCKED(attack_target))
 		return
 	if(dextrous && (isitem(attack_target) || !combat_mode))
-		. = attack_target.attack_hand(src, modifiers)
+		attack_target.attack_hand(src, modifiers)
 		update_inv_hands()
 	else
 		return ..()

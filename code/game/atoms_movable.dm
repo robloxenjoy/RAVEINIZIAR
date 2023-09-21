@@ -987,85 +987,72 @@
 /atom/movable/proc/relay_container_resist_act(mob/living/user, obj/container)
 	return
 
-/atom/movable/proc/do_attack_animation(atom/attacked_atom, visual_effect_icon, obj/item/used_item, no_effect = FALSE, fov_effect = TRUE, angled = FALSE)
-	//don't do an animation if attacking self
-	if((attacked_atom == src) || (get_turf(attacked_atom) == get_turf(src)))
-		return
 
+/atom/movable/proc/do_attack_animation(atom/attacked_atom, visual_effect_icon, obj/item/used_item, no_effect)
+	if(!no_effect && (visual_effect_icon || used_item))
+		do_item_attack_animation(attacked_atom, visual_effect_icon, used_item)
+
+	if(attacked_atom == src)
+		return //don't do an animation if attacking self
 	var/pixel_x_diff = 0
 	var/pixel_y_diff = 0
-	var/turn_angle = 0
-	if(angled)
-		var/angle = get_angle(src, attacked_atom)
-		pixel_x_diff = round(sin(angle) * (world.icon_size/4))
-		pixel_y_diff = round(cos(angle) * (world.icon_size/4))
-		if(angle <= 15)
-			turn_angle = angle
-		else if(angle <= 165)
-			turn_angle = 15
-		else if(angle <= 195)
-			turn_angle = 0
-		else if(angle <= 345)
-			turn_angle = -15
-		else
-			turn_angle = angle-360
-		turn_angle = round(turn_angle)
-//		if(fov_effect)
-//			play_fov_effect(get_turf_in_angle(angle, get_turf(src), 1), 5, "attack")
-	else
-		var/direction = get_dir(src, attacked_atom)
-		if(direction & NORTH)
-			pixel_y_diff = (world.icon_size/4)
-			turn_angle = 0
-		else if(direction & SOUTH)
-			pixel_y_diff = -(world.icon_size/4)
-			turn_angle = 0
-		if(direction & EAST)
-			pixel_x_diff = 8
-			turn_angle = 15
-		else if(direction & WEST)
-			pixel_x_diff = -(world.icon_size/4)
-			turn_angle = -15
-//		if(fov_effect)
-//			play_fov_effect(get_step(src, dir), 5, "attack")
+	var/turn_dir = 1
 
-	//I removed item attack animations here because i find them to be very ugly, add them back if you hate yourself
-	//Instead, the item itself does a shaking animation
-	if(!no_effect && used_item)
-		used_item.attacking_animation((turn_angle >= 0) ? 15 : -15)
+	var/direction = get_dir(src, attacked_atom)
+	if(direction & NORTH)
+		pixel_y_diff = 8
+		turn_dir = prob(50) ? -1 : 1
+	else if(direction & SOUTH)
+		pixel_y_diff = -8
+		turn_dir = prob(50) ? -1 : 1
+
+	if(direction & EAST)
+		pixel_x_diff = 8
+	else if(direction & WEST)
+		pixel_x_diff = -8
+		turn_dir = -1
 
 	var/matrix/initial_transform = matrix(transform)
-	var/matrix/rotated_transform = transform.Turn(turn_angle)
-	animate(src, transform = rotated_transform, time = 1, easing = BACK_EASING | EASE_IN, flags = ANIMATION_PARALLEL)
-	animate(src, pixel_x = pixel_x_diff, pixel_y = pixel_y_diff, time = 1, easing = BACK_EASING | EASE_IN, flags = ANIMATION_PARALLEL | ANIMATION_RELATIVE)
-	animate(pixel_x = -pixel_x_diff, pixel_y = -pixel_y_diff, transform=initial_transform, time = 2, easing = SINE_EASING, flags = ANIMATION_PARALLEL | ANIMATION_RELATIVE)
-	animate(transform = initial_transform, time = 2, easing = SINE_EASING, flags = ANIMATION_PARALLEL)
+	var/matrix/rotated_transform = transform.Turn(15 * turn_dir)
+	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, transform=rotated_transform, time = 1, easing=BACK_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
+	animate(pixel_x = pixel_x - pixel_x_diff, pixel_y = pixel_y - pixel_y_diff, transform=initial_transform, time = 2, easing=SINE_EASING, flags = ANIMATION_PARALLEL)
 
-/atom/movable/proc/do_area_attack_animation(atom/attacked_atom, icon = 'icons/effects/area_attack.dmi', icon_state = "slash_right")
-	var/image/attack_image = image(icon, src, icon_state, attacked_atom.layer + 0.01)
-	attack_image.plane = attacked_atom.plane + 1
-	attack_image.appearance_flags = APPEARANCE_UI
+/atom/movable/proc/do_item_attack_animation(atom/attacked_atom, visual_effect_icon, obj/item/used_item)
+	var/image/attack_image
+	if(visual_effect_icon)
+		attack_image = image('icons/effects/effects.dmi', attacked_atom, visual_effect_icon, attacked_atom.layer + 0.1)
+	else if(used_item)
+		attack_image = image(icon = used_item, loc = attacked_atom, layer = attacked_atom.layer + 0.1)
+		attack_image.plane = GAME_PLANE
+
+		// Scale the icon.
+		attack_image.transform *= 0.4
+		// The icon should not rotate.
+		attack_image.appearance_flags = APPEARANCE_UI
+
+		// Set the direction of the icon animation.
+		var/direction = get_dir(src, attacked_atom)
+		if(direction & NORTH)
+			attack_image.pixel_y = -12
+		else if(direction & SOUTH)
+			attack_image.pixel_y = 12
+
+		if(direction & EAST)
+			attack_image.pixel_x = -14
+		else if(direction & WEST)
+			attack_image.pixel_x = 14
+
+		if(!direction) // Attacked self?!
+			attack_image.pixel_z = 16
+
+	if(!attack_image)
+		return
+
 	flick_overlay(attack_image, GLOB.clients, 10)
-	var/direction = get_dir(src, attacked_atom)
-	var/angle = 0
-	var/target_pixel_x = 0
-	var/target_pixel_y = 0
 
-	if(!direction) // Attacked self?!
-		angle = 0
-		target_pixel_x = 0
-		target_pixel_y = 12
-	else
-		angle = get_angle(src, attacked_atom)
-		target_pixel_x = round(sin(angle) * world.icon_size)
-		target_pixel_y = round(cos(angle) * world.icon_size)
-
-	attack_image.transform = attack_image.transform.Turn(angle)
-	var/matrix/big_transform = new(attack_image.transform)
-	attack_image.transform *= 0.75
 	// And animate the attack!
-	animate(attack_image, alpha = 175, transform = big_transform, pixel_x = target_pixel_x, pixel_y = target_pixel_y, time = 3)
-	animate(time = 3)
+	animate(attack_image, alpha = 175, transform = matrix() * 0.75, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
+	animate(time = 1)
 	animate(alpha = 0, time = 3, easing = CIRCULAR_EASING|EASE_OUT)
 
 /atom/movable/vv_get_dropdown()

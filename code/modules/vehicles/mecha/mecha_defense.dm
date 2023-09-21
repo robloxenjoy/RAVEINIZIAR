@@ -372,7 +372,7 @@
 				visual_effect_icon = ATTACK_EFFECT_MECHFIRE
 			else if(damtype == TOX)
 				visual_effect_icon = ATTACK_EFFECT_MECHTOXIN
-	return ..()
+	..()
 
 /obj/vehicle/sealed/mecha/atom_destruction()
 	if(wreckage)

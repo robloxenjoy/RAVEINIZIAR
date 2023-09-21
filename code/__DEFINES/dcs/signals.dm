@@ -1337,8 +1337,6 @@
 #define COMSIG_ITEM_ATTACK_SECONDARY "item_pre_attack_secondary"
 ///from base of obj/item/afterattack(): (atom/target, mob/user, proximity_flag, click_parameters)
 #define COMSIG_ITEM_AFTERATTACK "item_afterattack"
-///from base of obj/item/area_attack(): (atom/target, obj/item/weapon, click_parameters)
-#define COMSIG_MOB_ITEM_AREA_ATTACK "mob_item_area_attack"
 ///from base of obj/item/afterattack_secondary(): (atom/target, mob/user, proximity_flag, click_parameters)
 #define COMSIG_ITEM_AFTERATTACK_SECONDARY "item_afterattack_secondary"
 ///from base of obj/item/attack_qdeleted(): (atom/target, mob/user, params)
@@ -1351,10 +1349,6 @@
 #define COMSIG_MOB_ITEM_AFTERATTACK "mob_item_afterattack"
 ///from base of obj/item/afterattack_secondary(): (atom/target, mob/user, proximity_flag, click_parameters)
 #define COMSIG_MOB_ITEM_AFTERATTACK_SECONDARY "mob_item_afterattack_secondary"
-///from base of mob/area_attack(): (atom/target, modifiers)
-#define COMSIG_MOB_ATTACK_AREA "mob_attack_area"
-///from base of obj/item/area_attack(): (atom/target, mob/user, click_parameters)
-#define COMSIG_ITEM_AREA_ATTACK "item_area_attack"
 ///from base of obj/item/attack_qdeleted(): (atom/target, mob/user, proximity_flag, click_parameters)
 #define COMSIG_MOB_ITEM_ATTACK_QDELETED "mob_item_attack_qdeleted"
 ///from base of mob/RangedAttack(): (atom/A, modifiers)

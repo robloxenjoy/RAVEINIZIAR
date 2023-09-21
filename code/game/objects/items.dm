@@ -99,11 +99,6 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/max_reagents = 150
 	var/how_eats = 10
 
-	///Whether or not this item can perform an area attack, when you fail to do a ranged attack
-	var/can_area_attack = TRUE
-	var/area_attack_icon = 'icons/effects/area_attack.dmi'
-	var/area_attack_icon_state = "slash_right"
-
 	///How large is the object, used for stuff like whether it can fit in backpacks or not
 	var/w_class = WEIGHT_CLASS_NORMAL
 	///This is used to determine on which slots an item can fit.
@@ -1431,41 +1426,3 @@ attack_basic_mob
 	if(SEND_SIGNAL(src, COMSIG_ITEM_OFFER_TAKEN, offerer, taker) & COMPONENT_OFFER_INTERRUPT)
 		return TRUE
 
-/atom/movable/proc/do_item_attack_animation(atom/attacked_atom, visual_effect_icon, obj/item/used_item)
-	var/image/attack_image
-	if(visual_effect_icon)
-		attack_image = image('icons/effects/effects.dmi', attacked_atom, visual_effect_icon, attacked_atom.layer + 0.1)
-	else if(used_item)
-		attack_image = image(icon = used_item, loc = attacked_atom, layer = attacked_atom.layer + 0.1)
-		attack_image.plane = GAME_PLANE_UPPER_FOV_HIDDEN
-
-		// Scale the icon.
-		attack_image.transform *= 0.4
-		// The icon should not rotate.
-		attack_image.appearance_flags = APPEARANCE_UI
-
-		// Set the direction of the icon animation.
-		var/direction = get_dir(src, attacked_atom)
-		if(direction & NORTH)
-			attack_image.pixel_y = -12
-		else if(direction & SOUTH)
-			attack_image.pixel_y = 12
-
-		if(direction & EAST)
-			attack_image.pixel_x = -14
-		else if(direction & WEST)
-			attack_image.pixel_x = 14
-
-		if(!direction) // Attacked self?!
-			attack_image.pixel_y = 12
-			attack_image.pixel_x = 5 * (prob(50) ? 1 : -1)
-
-	if(!attack_image)
-		return
-
-	flick_overlay(attack_image, GLOB.clients, 10)
-	var/matrix/copy_transform = new(transform)
-	// And animate the attack!
-	animate(attack_image, alpha = 175, transform = copy_transform.Scale(0.75), pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
-	animate(time = 1)
-	animate(alpha = 0, time = 3, easing = CIRCULAR_EASING|EASE_OUT)
