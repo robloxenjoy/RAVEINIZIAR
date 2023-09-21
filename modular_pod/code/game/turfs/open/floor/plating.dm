@@ -109,7 +109,7 @@
 					W.damageItem("HARD")
 					sound_hint()
 					playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
-						var/turf/open/floor/plating/polovich/roots/noroots = src
+					var/turf/open/floor/plating/polovich/roots/noroots = src
 					noroots.canstumble = FALSE
 
 	if(istype(W, /obj/item/atrat))
