@@ -153,7 +153,7 @@ SUBSYSTEM_DEF(outdoor_effects)
 	for(var/mob/living/carbon/human/H in world)
 		if(H.client)
 			var/area/areal = get_area(H)
-			SSdroning.area_entered(areal, H)
+			SSdroning.area_entered(areal, H.client)
 
 //	SSdroning.play_area_sound(area, user)
 
