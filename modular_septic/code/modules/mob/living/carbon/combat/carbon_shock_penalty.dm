@@ -33,7 +33,7 @@
 	//Oof!
 	if(wound_messages)
 		SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" Major Wound!"))
-	var/vomiting = FALSE
+//	var/vomiting = FALSE
 	switch(body_zone)
 		if(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE)
 			drop_all_held_items()
@@ -71,7 +71,10 @@
 				if(wound_messages)
 					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] got sec neuritis!"))
 		if(BODY_ZONE_PRECISE_VITALS)
-			vomiting = prob(80)
+//			vomiting = prob(80)
+			emote("fart")
+			shit(FALSE)
+			Stun(1 SECONDS)
 			flash_pain_major()
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] nauseated!"))
@@ -98,8 +101,8 @@
 	//OW!
 	if(LAZYACCESS(diceroll, RETURN_DICE_INDEX_DIFFERENCE) <= -5)
 		//vomit with blood
-		if(vomiting && (stat < DEAD))
-			vomit(10, TRUE, FALSE)
+//		if(vomiting && (stat < DEAD))
+//			vomit(10, TRUE, FALSE)
 		Unconscious(4 SECONDS)
 //		if(wound_messages)
 //			if((body_zone == BODY_ZONE_PRECISE_VITALS) && prob(10))
@@ -108,7 +111,7 @@
 //				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<u>Gut busted</u>!")]"))
 //			else
 //				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<u>Knock-out</u>!")]"))
-	else if(vomiting)
-		//vomit without blood
-		vomit(10, FALSE, FALSE)
+//	else if(vomiting)
+//		//vomit without blood
+//		vomit(10, FALSE, FALSE)
 	last_major_wound = world.time
