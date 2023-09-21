@@ -939,3 +939,96 @@
 	density = 1
 //	obj_flags = NONE
 	max_integrity = 300
+
+/obj/structure/column/evil
+	name = "Evil Architect"
+	desc = "Insert HEAD."
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "architect"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+	obj_flags = NONE
+	max_integrity = 1000
+
+/obj/structure/column/evil/attackby(obj/item/I, mob/living/carbon/user, params)
+	. = ..()
+	if(istype(I, /obj/item/bodypart/head))
+		if(user.a_intent != INTENT_DISARM)
+			return
+		var/obj/item/bodypart/head/M = I
+		user.visible_message(span_notice("[user] inserts [M] in [src]."),span_notice("You insert [M] in [src]."), span_hear("You hear the sound of inserting."))
+		sound_hint()
+		qdel(M)
+		new /obj/item/stack/eviljewel(get_turf(user), 32)
+		playsound(get_turf(src), 'modular_pod/sound/eff/evilarch.ogg', 100 , FALSE, FALSE)
+
+/obj/structure/evilgenerator
+	name = "Evil Generator"
+	desc = "ASVKIWONPDVIPWOANIVD"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "evil_generator"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+//	obj_flags = NONE
+	max_integrity = 200
+	var/onn = FALSE
+	var/moneymoney = 64
+
+/obj/structure/evilgenerator/attack_hand(mob/living/carbon/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(user.a_intent == INTENT_HARM)
+		if(onn)
+			return
+		user.visible_message(span_notice("[user] toggles ON the [src]."),span_notice("You toggle ON the [src]."), span_hear("You hear the sound of something."))
+		onn = TRUE
+		addtimer(CALLBACK(src, .proc/eviling), 32 SECONDS)
+	if(user.a_intent == INTENT_GRAB)
+		if(moneymoney > 0)
+			var/thing = tgui_input_list(user, "You want to take Evil Jewels?",, list("Yes!", "No!"))
+			if(!thing)
+				return
+			if(thing == "No!")
+				return
+			if(thing == "Yes!")
+				give_me_eviljewels(user)
+
+/obj/structure/evilgenerator/proc/give_me_eviljewels(mob/living/carbon/user)
+//	var/thingy = sanitize_name(stripped_input(user, "How much do you want to take Evil Jewels?", "I want..."), allow_numbers = TRUE, word_use = FALSE)
+	var/thingy = input("How much do you want to take Evil Jewels?", "I want...") as num|null
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if(moneymoney <= 0)
+		return
+	if(thingy > moneymoney)
+		to_chat(user, span_notice("Don't have that much!"))
+		return
+	if(thingy > 32)
+		to_chat(user, span_notice("Pick less!"))
+		return
+	moneymoney -= thingy
+	new /obj/item/stack/eviljewel(get_turf(user), thingy)
+	playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+
+/obj/structure/evilgenerator/proc/eviling()
+	if(QDELETED(src))
+		return
+	moneymoney += 32
+	addtimer(CALLBACK(src, .proc/eviling), 32 SECONDS)
+
+/obj/structure/evilgenerator/wrench_act(mob/living/user, obj/item/I)
+	..()
+	default_unfasten_wrench(user, I, 20)
+	return TRUE
+
+/obj/structure/evilgenerator/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		explosion(src, devastation_range = 5, heavy_impact_range = 6, light_impact_range = 9, adminlog = notify_admins)
+	qdel(src)
