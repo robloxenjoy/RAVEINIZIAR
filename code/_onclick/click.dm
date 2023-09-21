@@ -145,8 +145,6 @@
 		if(W)
 			W.melee_attack_chain(src, A, params)
 		else
-			if(ismob(A))
-				changeNext_move(CLICK_CD_MELEE)
 			UnarmedAttack(A, FALSE, modifiers)
 		return
 
@@ -159,23 +157,22 @@
 		if(W)
 			W.melee_attack_chain(src, A, params)
 		else
-			if(ismob(A))
-				changeNext_move(CLICK_CD_MELEE)
-			UnarmedAttack(A,1,modifiers)
+			UnarmedAttack(A, TRUE, modifiers)
 	else
 		if(W)
 			if(LAZYACCESS(modifiers, RIGHT_CLICK))
 				var/after_attack_secondary_result = W.afterattack_secondary(A, src, FALSE, params)
 
-				if(after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL)
-					W.afterattack(A, src, FALSE, params)
-			else
-				W.afterattack(A,src,0,params)
+				if((after_attack_secondary_result == SECONDARY_ATTACK_CALL_NORMAL) && !W.afterattack(A, src, FALSE, params))
+					W.area_attack(A, src, FALSE, params)
+			else if(!W.afterattack(A, src, FALSE, params))
+				W.area_attack(A, src, FALSE, params)
 		else
 			if(LAZYACCESS(modifiers, RIGHT_CLICK))
-				ranged_secondary_attack(A, modifiers)
-			else
-				RangedAttack(A,modifiers)
+				if(!ranged_secondary_attack(A, modifiers))
+					area_attack(A, modifiers)
+			else if(!RangedAttack(A, modifiers))
+				area_attack(A, modifiers)
 
 /// Is the atom obscured by a PREVENT_CLICK_UNDER_1 object above it
 /atom/proc/IsObscured()
@@ -311,6 +308,41 @@
 /mob/proc/ranged_secondary_attack(atom/target, modifiers)
 	if(SEND_SIGNAL(src, COMSIG_MOB_ATTACK_RANGED_SECONDARY, target, modifiers) & COMPONENT_CANCEL_ATTACK_CHAIN)
 		return TRUE
+
+/**
+ * Area attack:
+ *
+ * Triggered when ranged attack fails, will attempt to perform an attack
+ * on the closest atom in the direction to A.
+ */
+/mob/proc/area_attack(atom/target, modifiers)
+	. = FALSE
+	if(!can_area_attack)
+		return FALSE
+	var/mob/living/living_user = src
+	if(istype(living_user) && !living_user.combat_mode)
+		return FALSE
+	var/turf/adjacent_turf = get_turf_in_angle(get_angle(src, target), get_turf(src), 1)
+	if(!adjacent_turf)
+		return FALSE
+	SEND_SIGNAL(src, COMSIG_MOB_ATTACK_AREA, adjacent_turf, modifiers)
+	changeNext_move(CLICK_CD_MELEE)
+	do_area_attack_animation(target)
+	var/list/neighbors = list()
+	neighbors += adjacent_turf.contents
+	neighbors += adjacent_turf
+	neighbors = reverse_range(neighbors)
+	for(var/atom/neighboring_atom in neighbors)
+		if(neighboring_atom.invisibility > see_invisible)
+			continue
+		if(neighboring_atom.can_be_area_attacked(src, click_parameters = list2params(modifiers)) && CanReach(neighboring_atom))
+			UnarmedAttack(neighboring_atom, TRUE, modifiers)
+			. = TRUE
+			break
+	if(!.)
+		do_attack_animation(target, angled = TRUE)
+		playsound(loc, 'sound/weapons/effects/swing.ogg', 60, TRUE, extrarange = -1, falloff_distance = 0)
+
 
 /**
  * Middle click

@@ -27,7 +27,7 @@
 	adjustBruteLoss(5 + rand(1,9))
 	new /datum/forced_movement(src, get_step_away(user,src, 30), 1)
 
-/mob/living/carbon/alien/larva/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
+/mob/living/simple_animal/do_attack_animation(atom/attacked_atom, visual_effect_icon, obj/item/used_item, no_effect = FALSE, fov_effect = TRUE, angled = FALSE)
 	if(!no_effect && !visual_effect_icon)
 		visual_effect_icon = ATTACK_EFFECT_BITE
 	..()
