@@ -25,7 +25,7 @@
 /*
 /turf/open/alt_click_secondary(mob/user)
 	return look_into_distance(src, params)
-*/
+
 /turf/open/floor/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
@@ -106,7 +106,7 @@
 				new /atom/movable/fire(src, 21)
 				atrat.usedy = TRUE
 				addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
-*/
+
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)
