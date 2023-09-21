@@ -5,8 +5,8 @@
 //	var/sound/rain_thunder = sound()
 
 
-SUBSYSTEM_DEF(crazysounds)
-	name = "Crazysounds"
+SUBSYSTEM_DEF(crazysoundz)
+	name = "Crazysoundz"
 	priority = 2
 	wait = 59
 	flags = SS_TICKER
@@ -41,27 +41,32 @@ SUBSYSTEM_DEF(crazysounds)
 	..()
 */
 
-/datum/controller/subsystem/crazysounds/fire()
+/datum/controller/subsystem/crazysoundz/fire()
 	HandleSound()
 
-/datum/controller/subsystem/crazysounds/proc/StartSound()
+/datum/controller/subsystem/crazysoundz/proc/StartSound()
 	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
 		if(H.client)
 			H.start_crazy_sounds()
 
-/datum/controller/subsystem/crazysounds/proc/HandleSound()
+/datum/controller/subsystem/crazysoundz/proc/HandleSound()
+	var/crazysounds_file = 'sound/stalker/weather/wind_1.ogg'
+	if(isnight(SSoutdoor_effects.current_step_datum))
+		crazysounds_file = pick(SScrazysoundz.night)
+/*
 	if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/midnight))
-		crazysounds_file = pick(SScrazysounds.night)
+		var/crazysounds_file = pick(SScrazysounds.night)
 	else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/night))
-		crazysounds_file = pick(SScrazysounds.night)
+		var/crazysounds_file = pick(SScrazysounds.night)
 	else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk))
-		crazysounds_file = pick(SScrazysounds.night)
+		var/crazysounds_file = pick(SScrazysounds.night)
 	else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
-		crazysounds_file = pick(SScrazysounds.night)
+		var/crazysounds_file = pick(SScrazysounds.night)
 	else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawndawn))
-		crazysounds_file = pick(SScrazysounds.night)
+		var/crazysounds_file = pick(SScrazysounds.night)
+*/
 	else
-		crazysounds_file = pick(SSweatherr.day)
+		crazysounds_file = pick(SScrazysoundz.day)
 	var/cast_crazy_sound
 	if(prob(10))
 		cast_crazy_sound = 1
@@ -72,19 +77,19 @@ SUBSYSTEM_DEF(crazysounds)
 				H.crazysounds.file = crazysounds_file
 				H << H.crazysounds
 
-/datum/controller/subsystem/crazysounds/proc/StopSound()
+/datum/controller/subsystem/crazysoundz/proc/StopSound()
 	for(var/mob/living/carbon/human/H in world)
 		if(H.client)
 			H.crazysounds.file = null
 			H << H.crazysounds
 
-/mob/living/carbon/crazysounds/Login()
+/mob/living/carbon/human/Login()
 	..()
 	if(!client)
 		return
 	start_crazy_sounds()
 
-/mob/living/carbon/crazysounds/proc/start_crazy_sounds()
+/mob/living/carbon/human/proc/start_crazy_sounds()
 	crazysounds.file = null
 	crazysounds.wait = 1
 	crazysounds.volume = 100

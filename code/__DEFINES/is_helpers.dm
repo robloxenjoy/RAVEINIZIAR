@@ -20,6 +20,16 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 	/turf/open/openspace
 	)))
 
+GLOBAL_LIST_INIT(nighte, typecacheof(list(
+	/datum/time_of_day/midnight,
+	/datum/time_of_day/night,
+	/datum/time_of_day/dusk,
+	/datum/time_of_day/dawn,
+	/datum/time_of_day/dawndawn
+	)))
+
+#define isnight(A) (is_type_in_typecache(A, GLOB.nighte))
+
 #define isgroundlessturf(A) (is_type_in_typecache(A, GLOB.turfs_without_ground))
 
 #define isopenturf(A) (istype(A, /turf/open))

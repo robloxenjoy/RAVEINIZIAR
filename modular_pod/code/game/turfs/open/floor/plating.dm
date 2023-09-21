@@ -22,7 +22,10 @@
 
 /turf/open/floor/plating/polovich/break_tile()
 	return
-
+/*
+/turf/open/alt_click_secondary(mob/user)
+	return look_into_distance(src, params)
+*/
 /turf/open/floor/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
