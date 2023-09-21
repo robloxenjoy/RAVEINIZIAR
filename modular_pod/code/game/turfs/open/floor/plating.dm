@@ -111,14 +111,14 @@
 					playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 					var/turf/open/floor/plating/polovich/roots/noroots = src
 					noroots.canstumble = FALSE
-
+/*
 	if(istype(W, /obj/item/atrat))
 		var/obj/item/atrat/atrat = W
 		if(!atrat.usedy)
 			new /atom/movable/fire(src, 21)
 			atrat.usedy = TRUE
 			addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
-
+*/
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)
