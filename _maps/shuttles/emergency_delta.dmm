@@ -3,8 +3,8 @@
 "c" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
 "d" = (/obj/structure/table/reinforced,/obj/item/storage/pill_bottle/carbonylmethamphetamine,/obj/item/reagent_containers/food/drinks/soda_cans/lean,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "e" = (/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"f" = (/obj/machinery/door/metal_door/west{id_tag = "controller"},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
-"g" = (/obj/structure/closet/crate,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"f" = (/obj/machinery/door/metal_door/west{id_tag = "palace"},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
+"g" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/revolver/remis/nova/pluspee,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "h" = (/obj/structure/lampstand/fireholder,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "i" = (/turf/open/floor/plating/polovich/kapec/two,/area/shuttle/escape)
 "j" = (/obj/structure/village_screamer,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
@@ -20,10 +20,11 @@
 "t" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "u" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 "v" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/low_wall/reinforced,/area/shuttle/escape)
+"w" = (/obj/structure/fluff/statuestone,/turf/open/floor/plating/polovich/kapec,/area/shuttle/escape)
 
 (1,1,1) = {"
 bbbbbbbbb
-brkdbhgeb
+brkdbhgwb
 beeefeeeb
 bbbbbeeeb
 beeeeeehb

@@ -168,7 +168,7 @@
 	power_environ = TRUE
 	power_equip = TRUE
 	power_light = TRUE
-	outdoors = TRUE
+	outdoors = FALSE
 	static_lighting = TRUE
 	ambientsounds = null
 
