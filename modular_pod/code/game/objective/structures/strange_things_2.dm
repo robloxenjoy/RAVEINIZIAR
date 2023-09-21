@@ -979,7 +979,7 @@
 	var/moneymoney = 64
 	var/datum/looping_sound/conveyor/crazy_soundloop
 
-/obj/structure/evilgenerator(mapload)
+/obj/structure/evilgenerator/Initialize(mapload)
 	. = ..()
 	crazy_soundloop = new(src, FALSE)
 
@@ -1036,7 +1036,7 @@
 
 /obj/structure/evilgenerator/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		explosion(src, devastation_range = 5, heavy_impact_range = 6, light_impact_range = 9, adminlog = notify_admins)
+		explosion(src, devastation_range = 5, heavy_impact_range = 6, light_impact_range = 9)
 	qdel(src)
 
 /obj/structure/evilgenerator/Destroy()
