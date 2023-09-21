@@ -132,7 +132,10 @@
 	if(special_attack == SPECIAL_ATK_JUMP)
 		return attempt_jump(target, FALSE, modifiers)
 
-/mob/proc/alt_click_on_tertiary(atom/A, params)
+///mob/proc/alt_click_on_tertiary(atom/A, params)
+//	return look_into_distance(A, params)
+
+/mob/proc/alt_click_secondary(atom/A, params)
 	return look_into_distance(A, params)
 
 /mob/proc/shift_right_click_on(atom/A, params)

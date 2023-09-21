@@ -121,7 +121,7 @@ This will not clean any inverted reagents. Inverted reagents will still be corre
 	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return ..()
 	replace_beaker(user, BEAKER1)
-
+/*
 /obj/machinery/chem_mass_spec/alt_click_secondary(mob/living/user)
 	. = ..()
 	if(processing_reagents)
@@ -130,7 +130,7 @@ This will not clean any inverted reagents. Inverted reagents will still be corre
 	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	replace_beaker(user, BEAKER2)
-
+*/
 ///Gee how come you get two beakers?
 /*
  * Similar to other replace beaker procs, except now there are two of them!

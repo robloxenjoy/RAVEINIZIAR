@@ -4055,6 +4055,7 @@
 #include "modular_pod\code\game\objective\structures\strange_things.dm"
 #include "modular_pod\code\game\objective\structures\strange_things_2.dm"
 #include "modular_pod\code\game\turfs\open\floor\plating.dm"
+#include "modular_pod\code\modules\atmosphere_sounds\sounds_ultra.dm"
 #include "modular_pod\code\modules\clothing\suits\armor.dm"
 #include "modular_pod\code\modules\clothing\suits\labcoat.dm"
 #include "modular_pod\code\modules\items\itemary.dm"

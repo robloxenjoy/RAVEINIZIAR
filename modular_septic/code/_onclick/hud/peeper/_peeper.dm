@@ -40,7 +40,8 @@
 
 /datum/peeper/Destroy()
 	. = ..()
-	if(myhud?.peeper_active && myhud.mymob?.client)
+//	if(myhud?.peeper_active && myhud.mymob?.client)
+	if(myhud?.peeper_active)
 		myhud.mymob.close_peeper()
 	for(var/tab_type in peeper_tabs)
 		remove_peeper_tab(peeper_tabs[tab_type])

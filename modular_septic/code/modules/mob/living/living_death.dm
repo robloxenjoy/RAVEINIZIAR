@@ -7,6 +7,7 @@
 			if(deathsound_local)
 				SEND_SOUND(client, deathsound_local)
 			SSdroning.kill_droning(client)
+	close_peeper(src)
 	if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 		for(var/mob/living/carbon/human/M in range(7, src))
 			if(M != src && (src in view(M)))

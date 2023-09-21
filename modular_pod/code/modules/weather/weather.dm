@@ -28,8 +28,8 @@ SUBSYSTEM_DEF(weatherr)
 	var/list/thunder = list('sound/stalker/weather/thunder_1.ogg','sound/stalker/weather/thunder_2.ogg','sound/stalker/weather/thunder_3.ogg','sound/stalker/weather/thunder_4.ogg'\
 							,'sound/stalker/weather/thunder_5.ogg','sound/stalker/weather/thunder_6.ogg','sound/stalker/weather/thunder_7.ogg')
 
-	var/list/wind = list('sound/stalker/weather/wind_1.ogg','sound/stalker/weather/wind_2.ogg','sound/stalker/weather/wind_3.ogg','sound/stalker/weather/wind_4.ogg',\
-						'sound/stalker/weather/wind_5.ogg','sound/stalker/weather/wind_6.ogg')
+//	var/list/wind = list('sound/stalker/weather/wind_1.ogg','sound/stalker/weather/wind_2.ogg','sound/stalker/weather/wind_3.ogg','sound/stalker/weather/wind_4.ogg',\
+//						'sound/stalker/weather/wind_5.ogg','sound/stalker/weather/wind_6.ogg')
 
 
 /datum/controller/subsystem/weatherr/Initialize()
@@ -129,11 +129,11 @@ SUBSYSTEM_DEF(weatherr)
 	var/rain_thunder_file = pick(SSweatherr.thunder)
 	var/rain_wind_file = pick(SSweatherr.wind)
 	var/cast_rain = 0
-	var/cast_wind = 0
+//	var/cast_wind = 0
 	if(prob(10))
 		cast_rain = 1
-	if(prob(20))
-		cast_wind = 1
+//	if(prob(20))
+//		cast_wind = 1
 
 	for(var/mob/living/carbon/human/H in world)
 		if(H.client)
@@ -143,9 +143,9 @@ SUBSYSTEM_DEF(weatherr)
 			if(cast_rain)
 				H.rain_thunder.file = rain_thunder_file
 				H << H.rain_thunder
-			if(cast_wind)
-				H.rain_wind.file = rain_wind_file
-				H << H.rain_wind
+//			if(cast_wind)
+//				H.rain_wind.file = rain_wind_file
+//				H << H.rain_wind
 
 /datum/controller/subsystem/weatherr/proc/StopSound()
 	for(var/mob/living/carbon/human/H in world)
@@ -156,8 +156,8 @@ SUBSYSTEM_DEF(weatherr)
 			H << H.rain
 			H.rain_thunder.file = null
 			H << H.rain_thunder
-			H.rain_wind.file = null
-			H << H.rain_wind
+//			H.rain_wind.file = null
+//			H << H.rain_wind
 
 
 
