@@ -39,6 +39,8 @@
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
+		user.adjustFatigueLoss(5)
+		sound_hint()
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
