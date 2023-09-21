@@ -240,7 +240,8 @@
 		no_damage = FALSE
 	//only witnesses close by and the victim see a hit message.
 	log_combat(user, src, "attacked", attacking_item)
-	attacking_item.damageItem("SOFT")
+	if(attacking_item.havedurability)
+		attacking_item.damageItem("SOFT")
 	user.visible_message(span_danger("[user] hits [src] with [attacking_item][no_damage ? ", which doesn't leave a mark" : ""]!"), \
 		span_danger("You hit [src] with [attacking_item][no_damage ? ", which doesn't leave a mark" : ""]!"), null, COMBAT_MESSAGE_RANGE)
 

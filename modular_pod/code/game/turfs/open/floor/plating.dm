@@ -25,7 +25,7 @@
 /*
 /turf/open/alt_click_secondary(mob/user)
 	return look_into_distance(src, params)
-
+*/
 /turf/open/floor/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
@@ -34,7 +34,12 @@
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM) || (user.a_intent == INTENT_GRAB))
+	if(user.a_intent == INTENT_GRAB)
+		user.visible_message(span_notice("[user] trying to catch something."),span_notice("You try to catch something."), span_hear("You hear the sound of something."))
+//		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
+		user.changeNext_move(CLICK_CD_WRENCH)
+		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
+	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -50,7 +55,12 @@
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM) || (user.a_intent == INTENT_GRAB))
+	if(user.a_intent == INTENT_GRAB)
+		user.visible_message(span_notice("[user] trying to catch something."),span_notice("You try to catch something."), span_hear("You hear the sound of something."))
+//		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
+		user.changeNext_move(CLICK_CD_WRENCH)
+		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
+	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -62,50 +72,52 @@
 	. = ..()
 	if(.)
 		return
+/*
 	if(user.a_intent == INTENT_HELP)
 //		user.visible_message("<span class='notice'>\[user] touches the [src] with [W].</span>")
 		user.visible_message(span_notice("[user] touches the [src] with [W]."),span_notice("You touch the [src] with [W]."), span_hear("You hear the sound of touching."))
 		user.changeNext_move(CLICK_CD_WRENCH)
-	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_GRAB) || (user.a_intent == INTENT_DISARM))
+*/
+//	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_GRAB) || (user.a_intent == INTENT_DISARM))
 //		user.visible_message("<span class='notice'>\[user] beats the [src] with [W].</span>")
-		if(W.force)
-			if(W.get_sharpness())
-				user.visible_message(span_notice("[user] brandishing a [W]."),span_notice("You brandish a [W]."), span_hear("You hear the sound of swinging."))
-				user.changeNext_move(W.attack_delay)
-				user.adjustFatigueLoss(W.attack_fatigue_cost)
-				sound_hint()
-				if(W.force <= 16)
-					playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
-				else
-					playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
+	if(W.force)
+		if(W.get_sharpness())
+			user.visible_message(span_notice("[user] brandishing a [W]."),span_notice("You brandish a [W]."), span_hear("You hear the sound of swinging."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			sound_hint()
+			if(W.force <= 16)
+				playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
 			else
-				user.visible_message(span_notice("[user] beats the [src] with [W]."),span_notice("You beat the [src] with [W]."), span_hear("You hear the sound of beating the floor."))
-				user.changeNext_move(W.attack_delay)
-				user.adjustFatigueLoss(W.attack_fatigue_cost)
-				W.damageItem("SOFT")
-				playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
-				sound_hint()
-				if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
-					if(prob(W.force))
-						var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
-						new /atom/movable/fire(firefloor, 21)
-				if(istype(src, /turf/open/floor/plating/polovich/roots))
-					if(do_after(user, 3 SECONDS, target=src))
-						user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
-						user.changeNext_move(W.attack_delay)
-						user.adjustFatigueLoss(W.attack_fatigue_cost)
-						W.damageItem("HARD")
-						sound_hint()
-						playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
+				playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
+		else
+			user.visible_message(span_notice("[user] beats the [src] with [W]."),span_notice("You beat the [src] with [W]."), span_hear("You hear the sound of beating the floor."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(W.attack_fatigue_cost)
+			W.damageItem("SOFT")
+			playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
+			sound_hint()
+			if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
+				if(prob(W.force))
+					var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
+					new /atom/movable/fire(firefloor, 21)
+			if(istype(src, /turf/open/floor/plating/polovich/roots))
+				if(do_after(user, 3 SECONDS, target=src))
+					user.visible_message(span_notice("[user] sawed [src] with the [W]."),span_notice("You sawed [src] with the [W]."), span_hear("You hear the sound of a sawing."))
+					user.changeNext_move(W.attack_delay)
+					user.adjustFatigueLoss(W.attack_fatigue_cost)
+					W.damageItem("HARD")
+					sound_hint()
+					playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 						var/turf/open/floor/plating/polovich/roots/noroots = src
-						noroots.canstumble = FALSE
-/*
-		if(istype(W, /obj/item/atrat))
-			var/obj/item/atrat/atrat = W
-			if(!atrat.usedy)
-				new /atom/movable/fire(src, 21)
-				atrat.usedy = TRUE
-				addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
+					noroots.canstumble = FALSE
+
+	if(istype(W, /obj/item/atrat))
+		var/obj/item/atrat/atrat = W
+		if(!atrat.usedy)
+			new /atom/movable/fire(src, 21)
+			atrat.usedy = TRUE
+			addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
 
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
