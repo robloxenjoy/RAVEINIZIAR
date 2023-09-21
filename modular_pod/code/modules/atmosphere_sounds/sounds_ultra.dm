@@ -59,9 +59,9 @@ SUBSYSTEM_DEF(crazysounds)
 	else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawn))
 		crazysounds_file = pick(SSweatherr.night)
 	else if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dawndawn))
-		acrazysounds_file = pick(SSweatherr.night)
+		crazysounds_file = pick(SSweatherr.night)
 	else
-		crazysounds_file = = pick(SSweatherr.day)
+		crazysounds_file = pick(SSweatherr.day)
 	var/cast_crazy_sound
 	if(prob(10))
 		cast_crazy_sound = 1
