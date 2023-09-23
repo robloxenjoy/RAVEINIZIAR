@@ -70,103 +70,103 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Venturer"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/leader
 	name = "Leader Of Bandits"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/thief
 	name = "Thief"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/submercenary
 	name = "Subconscious Mercenary"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/outcombat
 	name = "Outcombat"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/slave
 	name = "Slave"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/manhunter
 	name = "Manhunter"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/slavekeeper
 	name = "Slavekeeper"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktliver
 	name = "Akt Liver"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktassertor
 	name = "Akt Assertor"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktnailer
 	name = "Akt Nailer"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktgranger
 	name = "Akt Granger"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktcurer
 	name = "Akt Curer"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktgargohelper
 	name = "Akt Accepter-helper"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktcontroller
 	name = "Akt Controller"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/alchemist
 	name = "Akt Al-Chemist"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/chaot
 	name = "Chaot"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
-	jobspawn_override = TRUE
+//	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/winepiller
 	name = "Winepiller"
