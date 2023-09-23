@@ -15,8 +15,8 @@
 	if (isnull(job))
 		return FALSE
 
-	if (job.faction != FACTION_STATION)
-		return FALSE
+//	if (job.faction != FACTION_STATION)     why are you did this?
+//		return FALSE
 
 	if (!preferences.set_job_preference_level(job, level))
 		return FALSE
