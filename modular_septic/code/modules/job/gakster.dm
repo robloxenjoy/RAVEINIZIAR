@@ -47,7 +47,7 @@
 	title = "Venturer"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
-	total_positions = 1
+	total_positions = 30
 	spawn_positions = 1
 	supervisors = "he's just traveling."
 	selection_color = "#38e38e"
