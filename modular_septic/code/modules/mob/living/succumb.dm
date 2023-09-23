@@ -49,19 +49,27 @@
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
-		if(!do_after(src, 5 SECONDS, target=src))
+		var/duration = (((GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE)) - 16 SECONDS) + 1)
+		if(!do_after(src, duration, target=src))
+			to_chat(src, span_danger(xbox_rage_msg()))
+			src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 			return
 		var/diceroll = diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
-		if(diceroll >= DICE_SUCCESS)
+		if(diceroll == DICE_SUCCESS)
 			for(var/obj/M in range(7, src))
 				if(M.istrap)
 					var/turf/crazyturf = get_turf(M)
-//					if(crazyturf.color)
-//						var/previous_color = crazyturf.color
 					crazyturf.color = "#f80000"
-					animate(crazyturf, color = initial(crazyturf.color), 100)
+					animate(crazyturf, color = initial(crazyturf.color), 50)
 					to_chat(src, span_steal("Noticed trap."))
-		else
+		if(diceroll == DICE_CRIT_SUCCESS)
+			for(var/obj/M in range(10, src))
+				if(M.istrap)
+					var/turf/crazyturf = get_turf(M)
+					crazyturf.color = "#f80000"
+					animate(crazyturf, color = initial(crazyturf.color), 70)
+					to_chat(src, span_steal("Noticed trap."))
+		if(diceroll <= DICE_FAILURE)
 			to_chat(src, span_steal("I am failed to notice anything."))
 
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
