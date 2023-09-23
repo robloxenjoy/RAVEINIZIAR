@@ -42,7 +42,7 @@
 
 	if(stat == CONSCIOUS)
 		vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1, button = TRUE)
-	
+
 /mob/living/carbon/human/verb/terrain(whispered as null)
 	set name = "Check Terrain"
 	set category = "Extra"
@@ -55,7 +55,7 @@
 		if(diceroll >= DICE_SUCCESS)
 			for(var/obj/M in range(7, src))
 				if(M.istrap)
-					var/crazyturf = get_turf(M)
+					var/turf/crazyturf = get_turf(M)
 //					if(crazyturf.color)
 //						var/previous_color = crazyturf.color
 					crazyturf.color = "#f80000"
