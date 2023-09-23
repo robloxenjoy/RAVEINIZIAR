@@ -222,10 +222,13 @@ SUBSYSTEM_DEF(ticker)
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
 //		if(player.ready == PLAYER_READY_TO_PLAY)
-		if(!is_akt_controller(player.mind.assigned_role))
-			QDEL_NULL(mode)
-			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
-			return FALSE
+//		if(!is_akt_controller(player.mind.assigned_role))
+//		if(player.mind && (job.title in player.mind.restricted_roles))
+		if(player.ready == PLAYER_READY_TO_PLAY && is_akt_controller(player.mind?.assigned_role))
+//			QDEL_NULL(mode)
+//			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
+//			return FALSE
+			continue
 
 	if(!GLOB.Debug2)
 		if(!can_continue)
