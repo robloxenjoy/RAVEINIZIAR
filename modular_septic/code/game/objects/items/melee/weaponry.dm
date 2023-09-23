@@ -45,8 +45,8 @@
 	havedurability = TRUE
 	durability = 210
 	carry_weight = 1.6 KILOGRAMS
-	skill_melee = SKILL_IMPACT_WEAPON
-	skill_parrying = SKILL_BUCKLER
+	skill_melee = SKILL_BUCKLER
+//	skill_parrying = SKILL_BUCKLER
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	min_force = 9
