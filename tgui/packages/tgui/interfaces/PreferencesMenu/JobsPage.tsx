@@ -408,7 +408,7 @@ export const JobsPage = () => {
                 height="100%"
                 className="PreferencesMenu__papersplease__left">
                 <FancyText
-                  text="Command"
+                  text="Over"
                   fontsize="400%" />
 
                 <Department

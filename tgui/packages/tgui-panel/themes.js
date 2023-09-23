@@ -6,9 +6,9 @@
 
 export const THEMES = ['dark'];
 
-const COLOR_DARK_BG = '#202020';
-const COLOR_DARK_BG_DARKER = '#171717';
-const COLOR_DARK_TEXT = '#a4bad6';
+const COLOR_DARK_BG = '#1e001d';
+const COLOR_DARK_BG_DARKER = '#0d000b';
+const COLOR_DARK_TEXT = '#531c1d';
 
 let setClientThemeTimer = null;
 

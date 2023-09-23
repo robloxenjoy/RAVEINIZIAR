@@ -223,6 +223,7 @@ SUBSYSTEM_DEF(ticker)
 		var/mob/dead/new_player/player = i
 //		if(player.ready == PLAYER_READY_TO_PLAY)
 		if(!is_akt_controller(player.mind.assigned_role))
+			QDEL_NULL(mode)
 			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
 			return FALSE
 
