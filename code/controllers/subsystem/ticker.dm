@@ -225,10 +225,11 @@ SUBSYSTEM_DEF(ticker)
 //		if(!is_akt_controller(player.mind.assigned_role))
 //		if(player.mind && (job.title in player.mind.restricted_roles))
 		if(player.ready == PLAYER_READY_TO_PLAY && is_akt_controller(player.mind?.assigned_role))
-//			QDEL_NULL(mode)
-//			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
-//			return FALSE
 			continue
+		else
+			QDEL_NULL(mode)
+			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
+			return FALSE
 
 	if(!GLOB.Debug2)
 		if(!can_continue)
