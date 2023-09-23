@@ -148,12 +148,13 @@ SUBSYSTEM_DEF(outdoor_effects)
 		new_step = time_cycle_steps[length(time_cycle_steps)]
 		next_step_datum = time_cycle_steps[3]
 
-	current_step_datum = new_step
-
 	for(var/mob/living/carbon/human/H in world)
 		if(H.client)
 			var/area/areal = get_area(H)
-			SSdroning.area_entered(areal, H.client)
+			SSdroning.play_area_sound(areal, H?.client)
+	//		SSdroning.area_entered(areal, H?.client)
+
+	current_step_datum = new_step
 
 //	SSdroning.play_area_sound(area, user)
 
