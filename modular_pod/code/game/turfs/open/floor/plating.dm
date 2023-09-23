@@ -877,7 +877,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "beartrap" = 2, "treelong" = 5, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "chungu" = 1, "nothing" = 70))
+		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "chungu" = 1, "nothing" = 60))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -935,8 +935,8 @@
 						new /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/coffee(get_turf(src))
 					if(2)
 						new /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/acid(get_turf(src))
-			if("beartrap")
-				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+//			if("beartrap")
+//				new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
 			if("chungu")
 				new /obj/structure/flora/tree/chungus(get_turf(src))
 
@@ -948,6 +948,8 @@
 	randomgenerate = FALSE
 	randomcolor = TRUE
 
+/turf/open/floor/plating/polovich/greengryaz/super
+
 /turf/open/floor/plating/polovich/greengryaz/super/Initialize(mapload)
 	. = ..()
 	dir = rand(0,8)
@@ -957,7 +959,7 @@
 
 	if(locate(/obj/structure/) in get_turf(src))
 		return
-	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "beartrap" = 3, "statuekas" = 1, "water" = 1, "nothing" = 70))
+	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "beartrap" = 2, "water" = 1, "nothing" = 50))
 	switch(state)
 		if("crystalbush")
 			new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -1152,7 +1154,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystal" = 4, "thickets" = 2, "flametrap" = 2, "chungu" = 2, "nothing" = 70))
+		var/state = pick_weight(list("crystal" = 4, "thickets" = 2, "flametrap" = 2, "chungu" = 2, "nothing" = 60))
 		switch(state)
 			if("nothing")
 				return
@@ -1196,7 +1198,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystal" = 3, "thickets" = 2, "chungu" = 2, "nothing" = 70))
+		var/state = pick_weight(list("crystal" = 3, "thickets" = 2, "chungu" = 2, "nothing" = 60))
 		switch(state)
 			if("thickets")
 				new /obj/structure/flora/ausbushes/zarosli/midnight(get_turf(src))
