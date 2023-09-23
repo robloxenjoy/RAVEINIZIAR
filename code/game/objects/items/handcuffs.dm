@@ -301,6 +301,7 @@
 	var/trap_damage = 45
 	var/crazy = TRUE
 	item_flags = NO_PIXEL_RANDOM_DROP
+	istrap = TRUE
 
 /obj/item/restraints/legcuffs/beartrap/Initialize(mapload)
 	. = ..()

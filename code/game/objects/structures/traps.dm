@@ -7,6 +7,7 @@
 	anchored = TRUE
 	alpha = 30 //initially quite hidden when not "recharging"
 	obj_flags = NONE
+	istrap = TRUE
 	var/flare_message = "<span class='warning'>the trap flares brightly!</span>"
 	var/last_trigger = 0
 	var/time_between_triggers = 600 //takes a minute to recharge

@@ -30,7 +30,6 @@ GLOBAL_LIST_INIT(nighte, typecacheof(list(
 
 GLOBAL_LIST_INIT(trapping, typecacheof(list(
 	/obj/item/restraints/legcuffs/beartrap,
-	/obj/effect/mine,
 	/obj/structure/trap
 	)))
 

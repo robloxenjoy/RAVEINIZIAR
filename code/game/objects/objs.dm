@@ -7,6 +7,7 @@
 
 	var/damtype = BRUTE
 	var/force = 0
+	var/istrap = FALSE
 
 	/// How good a given object is at causing wounds on carbons. Higher values equal better shots at creating serious wounds.
 	var/wound_bonus = 0
