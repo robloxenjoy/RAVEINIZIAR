@@ -244,7 +244,7 @@ SUBSYSTEM_DEF(ticker)
 //		if(!has_akt_controller)
 //			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
 //			return FALSE
-		if(ready_players < round(all_players/2))
+		if(ready_players <= round(all_players/2))
 			to_chat(world, "<B>NOT ENOUGH PLAYERS READY!</B>")
 			return FALSE
 
