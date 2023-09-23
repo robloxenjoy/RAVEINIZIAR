@@ -8,33 +8,33 @@ export const Assistant: Department = {
 };
 
 export const Captain: Department = {
-  head: "Captain",
+  head: "Over",
 };
 
 export const Cargo: Department = {
-  head: "Quartermaster",
+  head: "Outer",
 };
 
 export const Engineering: Department = {
-  head: "Chief Engineer",
+  head: "Chaotic",
 };
 
 export const Medical: Department = {
-  head: "Chief Medical Officer",
+  head: "Band",
 };
 
 export const Security: Department = {
-  head: "Head of Security",
+  head: "Bandit Camp",
 };
 
 export const Service: Department = {
-  head: "Head of Personnel",
+  head: "Mine",
 };
 
 export const Science: Department = {
-  head: "Research Director",
+  head: "Akt",
 };
 
 export const Silicon: Department = {
-  head: "AI",
+  head: "Super Autism",
 };

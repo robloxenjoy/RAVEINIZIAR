@@ -22,7 +22,7 @@
 
 /datum/time_of_day/sunrise
  name = "Sunrise"
- color = "#F598AB"
+ color = "#f5c0b9"
  start = 5 HOURS  //5:00:00 AM
 
 /datum/time_of_day/daytime
@@ -32,7 +32,7 @@
 
 /datum/time_of_day/sunset
  name = "Sunset"
- color = "#ff8a63"
+ color = "#ff6b46"
  start = 19 HOURS //7:00:00 PM
 
 /datum/time_of_day/dusk
@@ -48,7 +48,7 @@
 /datum/time_of_day/midnight
  name = "Midnight"
  color = "#000000"
- start = 22 HOURS //8:00:00 PM
+ start = 22 HOURS
 
 GLOBAL_VAR_INIT(GLOBAL_LIGHT_RANGE, 5)
 GLOBAL_LIST_EMPTY(SUNLIGHT_QUEUE_WORK)   /* turfs to be stateChecked */
@@ -148,13 +148,20 @@ SUBSYSTEM_DEF(outdoor_effects)
 		new_step = time_cycle_steps[length(time_cycle_steps)]
 		next_step_datum = time_cycle_steps[3]
 
-	for(var/mob/living/carbon/human/H in world)
-		if(H.client)
-			var/area/areal = get_area(H)
-			SSdroning.play_area_sound(areal, H?.client)
-	//		SSdroning.area_entered(areal, H?.client)
-
 	current_step_datum = new_step
+
+	if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/dusk))
+		for(var/mob/living/carbon/human/H in world)
+			if(H.client)
+				var/area/areal = get_area(H)
+				SSdroning.play_area_sound(areal, H?.client)
+	if(istype(SSoutdoor_effects.current_step_datum, /datum/time_of_day/sunrise))
+		for(var/mob/living/carbon/human/H in world)
+			if(H.client)
+				var/area/areal = get_area(H)
+				SSdroning.play_area_sound(areal, H?.client)
+
+	//		SSdroning.area_entered(areal, H?.client)
 
 //	SSdroning.play_area_sound(area, user)
 

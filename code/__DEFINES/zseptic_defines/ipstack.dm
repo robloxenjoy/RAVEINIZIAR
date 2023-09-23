@@ -1,2 +1,2 @@
 /// LOL
-#define DEFAULT_CLIENT_COUNTRY "Niger"
+#define DEFAULT_CLIENT_COUNTRY "Podzolsk"

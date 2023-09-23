@@ -408,36 +408,36 @@ export const JobsPage = () => {
                 height="100%"
                 className="PreferencesMenu__papersplease__left">
                 <FancyText
-                  text="Command"
+                  text="Over"
                   fontsize="400%" />
 
                 <Department
                   department={Departments.Captain}
-                  name="Command" />
+                  name="Over" />
 
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Security"
+                  text="Bandit Camp"
                   fontsize="400%" />
 
                 <Gap amount={12} />
 
                 <Department
                   department={Departments.Security}
-                  name="Security" />
+                  name="Bandit Camp" />
 
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Cargo"
+                  text="Chaotic"
                   fontsize="400%" />
 
                 <Gap amount={12} />
 
                 <Department
                   department={Departments.Cargo}
-                  name="Cargo" />
+                  name="Chaotic" />
 
               </Box>
 
@@ -452,22 +452,22 @@ export const JobsPage = () => {
                 height="100%"
                 className="PreferencesMenu__papersplease__right">
                 <FancyText
-                  text="Medical"
+                  text="Band"
                   fontsize="400%" />
 
                 <Department
                   department={Departments.Medical}
-                  name="Medical" />
+                  name="Band" />
 
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Service"
+                  text="Mine"
                   fontsize="400%" />
 
                 <Department
                   department={Departments.Service}
-                  name="Service" />
+                  name="Mine" />
 
                 <Gap amount={12} />
               </Box>
