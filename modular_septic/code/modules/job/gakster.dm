@@ -555,7 +555,7 @@
 
 	outfit = /datum/outfit/controller
 
-	display_order = JOB_DISPLAY_ORDER_OUTER
+	display_order = JOB_DISPLAY_ORDER_SCIENTIST
 	departments_list = list(
 		/datum/job_department/science,
 		)
