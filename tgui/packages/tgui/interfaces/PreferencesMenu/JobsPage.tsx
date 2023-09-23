@@ -470,6 +470,17 @@ export const JobsPage = () => {
                   name="Service" />
 
                 <Gap amount={12} />
+
+                <FancyText
+                  text="Akt"
+                  fontsize="400%" />
+
+                <Department
+                  department={Departments.Science}
+                  name="Science" />
+
+                <Gap amount={12} />
+
               </Box>
 
             </Stack.Item>
