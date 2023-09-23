@@ -49,17 +49,18 @@
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
-		if(!do_after(user, 5 SECONDS, target=src))
+		if(!do_after(src, 5 SECONDS, target=src))
 			return
 		var/diceroll = diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
 		if(diceroll >= DICE_SUCCESS)
-			var/trappo = (GLOB.trapping in range(7, src))
-			if(trappo)
-				trappo.color = "#f80000"
-				animate(trappo, color = null, 100)
-				to_chat(src, span_steal("I noticed something..."))
-			else
-				to_chat(src, span_steal("Hmmm... Here is nothing."))
+//			for(var/M as anything in GLOB.trapping)
+			for(var/obj/trappo as anything in GLOB.trapping)
+				if(trappo in range (7, src))
+					trappo.color = "#f80000"
+					animate(trappo, color = null, 100)
+					to_chat(src, span_steal("I noticed something..."))
+				else
+					to_chat(src, span_steal("Hmmm... Here is nothing."))
 
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
 	set hidden = TRUE
