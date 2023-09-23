@@ -1,10 +1,10 @@
 import { Job } from "../base";
-import { Service } from "../departments";
+import { Science } from "../departments";
 
 const AktController: Job = {
   name: "Akt Controller",
   description: "We need to lead this beautiful village.",
-  department: Service,
+  department: Science,
 };
 
 export default AktController;
