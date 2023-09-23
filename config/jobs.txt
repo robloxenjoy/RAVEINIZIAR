@@ -3,6 +3,7 @@
 #Job names must be identical to the title var of each job datum
 #Positions can be set to -1 to allow unlimited slots
 Captain=1,1
+Akt Controller=1,1
 Head of Personnel=1,1
 Head of Security=1,1
 Chief Engineer=1,1
@@ -10,6 +11,7 @@ Research Director=1,1
 Chief Medical Officer=1,1
 
 Assistant=-1,-1
+Venturer=-1,-1
 Prisoner=0,2
 
 Quartermaster=1,1
