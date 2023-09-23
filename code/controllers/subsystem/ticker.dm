@@ -218,17 +218,34 @@ SUBSYSTEM_DEF(ticker)
 	CHECK_TICK
 	can_continue = can_continue && SSjob.DivideOccupations() //Distribute jobs
 	CHECK_TICK
-
+/*
 	for(var/i in GLOB.new_player_list)
-		var/mob/dead/new_player/player = i
-//		if(player.ready == PLAYER_READY_TO_PLAY)
-//		if(!is_akt_controller(player.mind.assigned_role))
-//		if(player.mind && (job.title in player.mind.restricted_roles))
-		if(player.ready == PLAYER_READY_TO_PLAY && player.mind?.assigned_role.title == "Akt Controller")
-			continue
-		else
-			QDEL_NULL(mode)
-			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
+		var/sex_calculate = GLOB.new_player_list / 2
+		if(sex_calculate > )
+
+	var/has_akt_controller = FALSE
+	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
+  		if(player.ready == PLAYER_READY_TO_PLAY && is_akt_controller(player.mind?.assigned_role))
+  			has_akt_controller = TRUE
+		if(!has_akt_controller)
+ 			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
+			return FALSE
+*/
+
+	var/has_akt_controller = FALSE
+	var/ready_players = 0
+	var/all_players = 0
+	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
+		all_players++
+ 		if(player.ready == PLAYER_READY_TO_PLAY)
+   			ready_players++
+   		if(is_akt_controller(player.mind?.assigned_role))
+      		has_akt_controller = TRUE
+        if(!has_akt_controller)
+            to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
+			return FALSE
+     	if(ready_players < round(all_players/2))
+  			to_chat(world, "<B>NOT ENOUGH PLAYERS READY!</B>") 
 			return FALSE
 
 	if(!GLOB.Debug2)
