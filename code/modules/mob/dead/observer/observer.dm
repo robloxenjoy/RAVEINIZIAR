@@ -620,6 +620,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	character.faction |= "chaos"
 	character.key = key
+	character.mind.remove_all_antag_datums()
+	character.mind.wipe_memory()
 //	if(character.attributes)
 //	character.lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	character.attributes?.update_attributes()
