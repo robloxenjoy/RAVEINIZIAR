@@ -962,6 +962,8 @@
 		sound_hint()
 		qdel(M)
 		new /obj/item/stack/eviljewel(get_turf(user), 32)
+		new /obj/item/stack/eviljewel(get_turf(user), 32)
+		new /obj/item/stack/eviljewel(get_turf(user), 32)
 		playsound(get_turf(src), 'modular_pod/sound/eff/evilarch.ogg', 100 , FALSE, FALSE)
 
 /obj/structure/evilgenerator
