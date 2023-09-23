@@ -8,6 +8,7 @@
 	supervisors = "he's just suffering."
 	selection_color = "#596000"
 	exp_granted_type = EXP_TYPE_CREW
+	minimal_player_age = 6666
 
 	departments_list = null
 
