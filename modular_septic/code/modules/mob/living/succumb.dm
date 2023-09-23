@@ -55,9 +55,14 @@
 		if(diceroll >= DICE_SUCCESS)
 			for(var/obj/M in range(7, src))
 				if(M.istrap)
-					M.color = "#f80000"
-					animate(M, color = null, 100)
-					to_chat(src, span_steal("I noticed something."))
+					var/crazyturf = get_turf(M)
+//					if(crazyturf.color)
+//						var/previous_color = crazyturf.color
+					crazyturf.color = "#f80000"
+					animate(crazyturf, color = initial(crazyturf.color), 100)
+					to_chat(src, span_steal("Noticed trap."))
+		else
+			to_chat(src, span_steal("I am failed to notice anything."))
 
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
 	set hidden = TRUE
