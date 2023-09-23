@@ -46,6 +46,7 @@
 		STAT_ENDURANCE = list(-2, 1),
 		STAT_DEXTERITY = list(4, 5),
 		STAT_INTELLIGENCE = list(-3, 0),
+		STAT_PERCEPTION = list(-1, 3),
 		SKILL_BRAWLING = list(1, 2),
 		SKILL_WRESTLING = list(0, 1),
 		SKILL_STAFF = list(3, 5),

@@ -49,8 +49,8 @@
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
-		var/duration = (((GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE)) - 16 SECONDS) + 1)
-		if(!do_after(src, duration, target=src))
+//		var/duration = (((GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE)) - 16 SECONDS) + 1)
+		if(!do_after(src, 3 SECONDS, target=src))
 			to_chat(src, span_danger(xbox_rage_msg()))
 			src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 			return

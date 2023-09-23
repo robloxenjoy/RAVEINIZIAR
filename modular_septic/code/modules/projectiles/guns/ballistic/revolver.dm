@@ -194,4 +194,4 @@
 	can_spin = FALSE
 
 /obj/item/gun/ballistic/revolver/remis/paralyzer/empty
-	spawnwithmagazine = FALSE
+//	spawnwithmagazine = FALSE
