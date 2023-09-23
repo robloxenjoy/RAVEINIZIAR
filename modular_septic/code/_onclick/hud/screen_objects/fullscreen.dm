@@ -9,8 +9,9 @@
 /atom/movable/screen/fullscreen/impaired/right
 	icon_state = "impairedoverlay_right"
 
-/atom/movable/screen/fullscreen/impaired/podpol
+/atom/movable/screen/fullscreen/podpol
 	icon_state = "podpol"
+	alpha = 150
 
 /atom/movable/screen/fullscreen/traitor
 	icon_state = "mkultra"

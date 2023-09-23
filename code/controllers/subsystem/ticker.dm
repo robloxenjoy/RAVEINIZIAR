@@ -233,20 +233,24 @@ SUBSYSTEM_DEF(ticker)
 */
 
 //	var/has_akt_controller = FALSE
+
+/*
 	var/ready_players = 0
 	var/all_players = 0
 	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
 		all_players++
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			ready_players++
+		if(ready_players <= round(all_players/2))
+			to_chat(world, "<B>NOT ENOUGH PLAYERS READY!</B>")
+			return FALSE
+*/
+
 //			if(is_akt_controller(player.mind?.assigned_role))
 //				has_akt_controller = TRUE
 //		if(!has_akt_controller)
 //			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
 //			return FALSE
-		if(ready_players <= round(all_players/2))
-			to_chat(world, "<B>NOT ENOUGH PLAYERS READY!</B>")
-			return FALSE
 
 	if(!GLOB.Debug2)
 		if(!can_continue)
