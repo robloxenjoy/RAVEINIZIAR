@@ -224,7 +224,7 @@ SUBSYSTEM_DEF(ticker)
 //		if(player.ready == PLAYER_READY_TO_PLAY)
 //		if(!is_akt_controller(player.mind.assigned_role))
 //		if(player.mind && (job.title in player.mind.restricted_roles))
-		if(player.ready == PLAYER_READY_TO_PLAY && is_akt_controller(player.mind?.assigned_role))
+		if(player.ready == PLAYER_READY_TO_PLAY && player.mind?.assigned_role.title == "Akt Controller")
 			continue
 		else
 			QDEL_NULL(mode)
