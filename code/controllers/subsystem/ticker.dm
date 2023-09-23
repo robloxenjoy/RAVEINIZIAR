@@ -239,8 +239,8 @@ SUBSYSTEM_DEF(ticker)
 		all_players++
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			ready_players++
-		if(is_akt_controller(player.mind?.assigned_role))
-			has_akt_controller = TRUE
+			if(is_akt_controller(player.mind?.assigned_role))
+				has_akt_controller = TRUE
 		if(!has_akt_controller)
 			to_chat(world, "<B>WE NEED AKT CONTROLLER!</B>")
 			return FALSE
