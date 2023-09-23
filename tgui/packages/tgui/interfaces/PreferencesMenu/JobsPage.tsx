@@ -413,7 +413,7 @@ export const JobsPage = () => {
 
                 <Department
                   department={Departments.Captain}
-                  name="Over" />
+                  name="Command" />
 
                 <Gap amount={12} />
 
@@ -425,7 +425,7 @@ export const JobsPage = () => {
 
                 <Department
                   department={Departments.Security}
-                  name="Bandit Camp" />
+                  name="Security" />
 
                 <Gap amount={12} />
 
@@ -437,7 +437,7 @@ export const JobsPage = () => {
 
                 <Department
                   department={Departments.Cargo}
-                  name="Chaotic" />
+                  name="Cargo" />
 
               </Box>
 
@@ -457,7 +457,7 @@ export const JobsPage = () => {
 
                 <Department
                   department={Departments.Medical}
-                  name="Band" />
+                  name="Medical" />
 
                 <Gap amount={12} />
 
@@ -467,7 +467,7 @@ export const JobsPage = () => {
 
                 <Department
                   department={Departments.Service}
-                  name="Mine" />
+                  name="Service" />
 
                 <Gap amount={12} />
               </Box>
