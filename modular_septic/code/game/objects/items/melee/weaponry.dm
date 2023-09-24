@@ -26,7 +26,7 @@
 
 /obj/item/melee/shieldo
 //	skill_blocking = SKILL_SHIELD
-	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN | BLOCK_FLAG_PROJECTILE
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 
 /obj/item/melee/shieldo/buckler/wooden
 	name = "Wooden Buckler"
