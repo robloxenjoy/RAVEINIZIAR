@@ -50,7 +50,7 @@
 		if(iswallturf(turf_loc))
 			var/turf/closed/wall/wall_loc = turf_loc
 			if(!magical)
-				if(DT_PROB(3, delta_time))
+				if(DT_PROB(4, delta_time))
 					playsound(wall_loc, 'modular_septic/sound/effects/fire/fire_loop.ogg', 65, TRUE)
 				if(DT_PROB(max(0, fire_power - (100 - wall_loc.hardness)/4)/2, delta_time))
 					wall_loc.dismantle_wall(FALSE, FALSE)
