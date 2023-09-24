@@ -209,7 +209,7 @@
 				apply_damage_type(3, co2_damage_type) // Lets hurt em a little, let them know we mean business
 				if(world.time - co2overloadtime > 300) // They've been in here 30s now, lets start to kill them for their own good!
 					apply_damage_type(8, co2_damage_type)
-			if(prob(20)) // Lets give them some chance to know somethings not right though I guess.
+			if(prob(40)) // Lets give them some chance to know somethings not right though I guess.
 				emote("cough")
 		else
 			co2overloadtime = 0

@@ -15,6 +15,10 @@
 	if(reagents.has_reagent(/datum/reagent/toxin/lexorin, needs_metabolizing = TRUE))
 		return
 
+	if(HAS_TRAIT(src, TRAIT_CANTBREATH))
+		if(prob(60))
+			return
+
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
@@ -42,9 +46,12 @@
 	//Suffocation
 	if(losebreath >= 1) //You've missed a breath, take oxy damage
 		losebreath--
-		if(prob(10))
+		if(prob(30))
 			if(turf_loc?.liquids)
-				agony_gargle()
+				if(prob(50))
+					agony_gargle()
+				else
+					liquid_choke()
 			else
 				agony_gasp()
 		if(turf_loc?.liquids)
@@ -53,9 +60,9 @@
 				var/datum/reagents/temporary_holder = turf_loc.liquids.take_reagents_flat(CHOKE_REAGENTS_INGEST_ON_BREATH_AMOUNT)
 				temporary_holder.trans_to(src, temporary_holder.total_volume, methods = INGEST)
 				qdel(temporary_holder)
+//				emote("liquidchoke")
 				visible_message(span_warning("<b>[src]</b> chokes on liquids!"), \
 							span_userdanger("I'm choking on liquids!"))
-				emote("liquidchoke")
 		if(istype(loc, /obj/))
 			var/obj/loc_as_obj = loc
 			loc_as_obj.handle_internal_lifeform(src,0)
@@ -127,7 +134,7 @@
 
 	//OXYGEN
 	if(O2_partialpressure < safe_oxy_min) //Not enough oxygen
-		if(prob(20))
+		if(prob(40))
 			emote("gasp")
 		if(O2_partialpressure > 0)
 			var/ratio = 1 - O2_partialpressure/safe_oxy_min
@@ -156,7 +163,7 @@
 			adjustOxyLoss(3)
 			if(world.time - co2overloadtime > 300)
 				adjustOxyLoss(8)
-		if(prob(20))
+		if(prob(40))
 			emote("cough")
 
 	else
@@ -262,7 +269,7 @@
 		return FALSE
 	if(get_chem_effect(CE_STABLE) && lung_efficiency)
 		return FALSE
-	if(prob(20))
+	if(prob(40))
 		agony_gasp()
 	adjustOxyLoss(3)
 

@@ -468,7 +468,7 @@
 				temporary_holder.trans_to(carbon, temporary_holder.total_volume, methods = INGEST)
 				qdel(temporary_holder)
 				carbon.losebreath += 2
-				carbon.agony_gargle()
+				carbon.liquid_choke()
 				to_chat(carbon, span_userdanger("I fall in and swallow some liquid!"))
 		else
 			to_chat(fell, span_userdanger("I fall in the liquid!"))

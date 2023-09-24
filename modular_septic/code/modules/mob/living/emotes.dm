@@ -14,6 +14,10 @@
 /mob/living/proc/agony_gargle()
 	return
 
+// liquid choke
+/mob/living/proc/liquid_choke()
+	return
+
 // gasp
 /mob/living/proc/agony_gasp()
 	return

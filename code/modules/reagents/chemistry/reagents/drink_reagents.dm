@@ -300,7 +300,7 @@
 
 /datum/reagent/consumable/coffee/on_mob_metabolize(mob/living/L, delta_time, times_fired)
 	..()
-	L.add_chem_effect(CE_ENERGETIC, 2, "[type]")
+	L.add_chem_effect(CE_ENERGETIC, 3, "[type]")
 	L.add_chem_effect(CE_PULSE, 1, "[type]")
 
 /datum/reagent/consumable/coffee/on_mob_end_metabolize(mob/living/L)

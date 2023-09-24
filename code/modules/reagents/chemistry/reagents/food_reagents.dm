@@ -1047,7 +1047,7 @@
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/methamphetamine)
 	L.add_chem_effect(CE_ENERGETIC, 2, "[type]")
 //	L.adjustFatigueLoss(1 * REM * delta_time)
-	L.add_chem_effect(CE_OXYGENATED, 1, "[type]")
+	L.add_chem_effect(CE_OXYGENATED, 2, "[type]")
 //	L.adjustOxyLoss(-3 * REM * delta_time * normalise_creation_purity())
 	ADD_TRAIT(L, TRAIT_SHOCKIMMUNE, type)
 	ADD_TRAIT(L, TRAIT_NOFIRE, type)

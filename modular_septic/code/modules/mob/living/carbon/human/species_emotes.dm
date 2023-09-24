@@ -24,6 +24,11 @@
 		return FALSE
 	H.emote("gargle")
 
+/datum/species/proc/liquid_choke(mob/living/carbon/human/H)
+	if(!istype(H))
+		return FALSE
+	H.emote("liquidchoke")
+
 /datum/species/proc/agony_gasp(mob/living/carbon/human/H)
 	if(!istype(H))
 		return FALSE

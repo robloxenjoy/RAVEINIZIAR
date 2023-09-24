@@ -56,11 +56,11 @@
 	/// Can only code call this event instead of the player.
 	var/only_forced_audio = FALSE
 	/// The cooldown between the uses of the emote.
-	var/cooldown = 0.5 SECONDS
+	var/cooldown = 0.6 SECONDS
 	/// Does this message have a message that can be modified by the user?
 	var/can_message_change = FALSE
 	/// How long is the cooldown on the audio of the emote, if it has one?
-	var/audio_cooldown = 1 SECONDS
+	var/audio_cooldown = 0.5 SECONDS
 
 /datum/emote/New()
 	if (ispath(mob_type_allowed_typecache))

@@ -51,6 +51,21 @@
 	owner.cure_blind(TRAUMA_TRAIT)
 	..()
 
+/datum/brain_trauma/severe/blindness
+	name = "Cerebral Blindness"
+	desc = "Patient's brain is no longer connected to its eyes."
+	scan_desc = "extensive damage to the brain's occipital lobe"
+	gain_text = "<span class='warning'>You can't see!</span>"
+	lose_text = "<span class='notice'>Your vision returns.</span>"
+
+/datum/brain_trauma/severe/blindness/on_gain()
+	owner.become_blind(TRAUMA_TRAIT)
+	..()
+
+/datum/brain_trauma/severe/blindness/on_lose()
+	owner.cure_blind(TRAUMA_TRAIT)
+	..()
+
 /datum/brain_trauma/severe/paralysis
 	name = "Paralysis"
 	desc = "Patient's brain can no longer control part of its motor functions."
@@ -297,3 +312,33 @@
 /datum/brain_trauma/severe/hypnotic_trigger/proc/hypnotrigger()
 	to_chat(owner, span_warning("The words trigger something deep within you, and you feel your consciousness slipping away..."))
 	owner.apply_status_effect(/datum/status_effect/trance, rand(100,300), FALSE)
+
+/datum/brain_trauma/severe/dyslexia
+	name = "Dyslexia"
+	desc = "Patient is unable to read or write."
+	scan_desc = "dyslexia"
+	gain_text = span_warning("You have trouble reading or writing...")
+	lose_text = span_notice("You suddenly remember how to read and write.")
+
+/datum/brain_trauma/severe/dyslexia/on_gain()
+	ADD_TRAIT(owner, TRAIT_ILLITERATE, TRAUMA_TRAIT)
+	..()
+
+/datum/brain_trauma/severe/dyslexia/on_lose()
+	REMOVE_TRAIT(owner, TRAIT_ILLITERATE, TRAUMA_TRAIT)
+	..()
+
+/datum/brain_trauma/severe/halitus_deprivation
+	name = "Halitus Deprivation"
+	desc = "Patient is unable to breath."
+	scan_desc = "halitus deprivation"
+	gain_text = span_warning("You have trouble with breathing...")
+	lose_text = span_notice("You suddenly can breathe freely.")
+
+/datum/brain_trauma/severe/halitus_deprivation/on_gain()
+	ADD_TRAIT(owner, TRAIT_CANTBREATH, TRAUMA_TRAIT)
+	..()
+
+/datum/brain_trauma/severe/halitus_deprivation/on_lose()
+	REMOVE_TRAIT(owner, TRAIT_CANTBREATH, TRAUMA_TRAIT)
+	..()

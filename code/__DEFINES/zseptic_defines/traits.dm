@@ -49,6 +49,8 @@
 #define TRAIT_IMMUNITY_CRIPPLED "immunity_crippled"
 /// Can't read books, can't use certain machinery
 #define TRAIT_ILLITERATE "illiterate"
+/// Can't breath lol
+#define TRAIT_CANTBREATH "cant_breath"
 /// Is looking at distance (alt + mmb)
 #define TRAIT_LOOKING_INTO_DISTANCE "looking_into_distance"
 /// Currently being bitten by someone

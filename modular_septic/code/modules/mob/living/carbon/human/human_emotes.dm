@@ -14,6 +14,10 @@
 /mob/living/carbon/human/agony_gargle()
 	return dna?.species?.agony_gargle(src)
 
+// liquid choke
+/mob/living/carbon/human/liquid_choke()
+	return dna?.species?.liquid_choke(src)
+
 // gasp
 /mob/living/carbon/human/agony_gasp()
 	return dna?.species?.agony_gasp(src)
