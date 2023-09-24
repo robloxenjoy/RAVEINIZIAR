@@ -260,7 +260,7 @@
 	return FALSE
 
 /obj/item/stack/medical/suture/three
-	ammo = 3
+	amount = 3
 
 /obj/item/stack/medical/suture/medicated
 	icon_state = "suture_purp"
