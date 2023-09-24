@@ -522,3 +522,28 @@
 	if(QDELETED(src) || !usedy)
 		return
 	usedy = FALSE
+
+/obj/item/craftitem/foliage
+	name = "Foliage"
+	desc = "It was obtained from a crystal bush."
+	icon = 'icons/obj/flora/ausflora.dmi'
+	icon_state = "foliage"
+
+/obj/item/craftitem/foliage/attack_self(mob/living/carbon/user, modifiers)
+	. = ..()
+	if(user.a_intent != INTENT_GRAB)
+		return
+	var/time = 15 SECONDS
+	time -= (GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) * 0.75 SECONDS)
+	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	if(!do_after(user, time, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		return
+	user.visible_message(span_notice("[user] unties the [src]."),span_notice("You untie the [src]."), span_hear("You hear the sound of shag."))
+	user.changeNext_move(CLICK_CD_MELEE)
+	user.Immobilize(1 SECONDS)
+	sound_hint()
+	playsound(src,'sound/effects/shelest.ogg', 60, TRUE)
+	new /obj/item/stack/medical/suture/three(get_turf(src))
+	qdel(src)

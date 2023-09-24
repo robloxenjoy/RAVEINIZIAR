@@ -541,7 +541,7 @@
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(5)
 			sound_hint()
-//			new /obj/item/stack/medical/nanopaste/xap(get_turf(src))
+			new /obj/item/craftitem/foliage(get_turf(src))
 			playsound(loc,'modular_pod/sound/eff/hitgrass.ogg', 30, TRUE)
 			W.damageItem("SOFT")
 			qdel(src)
