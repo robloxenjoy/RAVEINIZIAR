@@ -486,7 +486,7 @@ export const JobsPage = () => {
                   fontsize="400%" />
 
                 <Department
-                  department={Departments.Science}
+                  department={Departments.Engineering}
                   name="Engineering" />
 
                 <Gap amount={12} />
