@@ -326,8 +326,12 @@
 	if(!owner || !can_dismember() || (wounding_dmg < DISMEMBER_MINIMUM_DAMAGE) || (wound_bonus == CANT_WOUND))
 		return FALSE
 
-	apply_dismember(wounding_type, TRUE, TRUE)
-	return TRUE
+	var/base_chance = wounding_dmg
+	base_chance += (get_damage() / max_damage * 50)
+
+	if(prob(base_chance))
+		apply_dismember(wounding_type, TRUE, TRUE)
+		return TRUE
 
 /**
  * Applies dismemberment from try_dismember
