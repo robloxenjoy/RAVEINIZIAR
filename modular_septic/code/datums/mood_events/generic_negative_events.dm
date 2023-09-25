@@ -82,7 +82,7 @@
 	mood_change = -2
 	timeout = 2 MINUTES
 
-/datum/mood_event/retardedt/harsh
+/datum/mood_event/retarded/harsh
 	description = span_danger("This retarded stench is awful!")
 	mood_change = -4
 

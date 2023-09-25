@@ -20,6 +20,8 @@
 		if(user.diceroll(blocking_score, context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 			playsound(user, pick(block_sound), get_clamped_volume(), extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
 			user.sound_hint()
+			if(durability)
+				damageItem("MEDIUM")
 			user.visible_message(span_danger("<b>[user]</b> blocks [attack_text] with [src]!"), \
 								span_userdanger("I block [attack_text] with [src]!"), \
 								vision_distance = COMBAT_MESSAGE_RANGE, \
@@ -49,6 +51,8 @@
 		if(user.diceroll(parrying_score, context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 			playsound(user, pick(parry_sound), get_clamped_volume(), extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
 			user.sound_hint()
+			if(durability)
+				damageItem("MEDIUM")
 			user.visible_message(span_danger("<b>[user]</b> parries [attack_text] with [src]!"), \
 								span_userdanger("I parry [attack_text] with [src]!"), \
 								vision_distance = COMBAT_MESSAGE_RANGE, \

@@ -203,8 +203,6 @@
 			victim.adjustFatigueLoss(5)
 			if(weapon.durability)
 				weapon.damageItem("MEDIUM")
-			if(durability)
-				damageItem("MEDIUM")
 			return FALSE
 		if(victim.check_parry(user, damage, "<b>[user]</b>'s [weapon.name]", "my [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
@@ -214,8 +212,6 @@
 			victim.adjustFatigueLoss(5)
 			if(weapon.durability)
 				weapon.damageItem("MEDIUM")
-			if(durability)
-				damageItem("MEDIUM")
 			return FALSE
 		if(victim.check_dodge(user, damage, "<b>[user]</b>'s [weapon.name]", "my [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
