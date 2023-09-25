@@ -1038,6 +1038,8 @@
 
 /obj/structure/evilgenerator/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
+		var/turf/explosionturf = get_turf(src)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
 		explosion(src, devastation_range = 5, heavy_impact_range = 6, light_impact_range = 9)
 	qdel(src)
 

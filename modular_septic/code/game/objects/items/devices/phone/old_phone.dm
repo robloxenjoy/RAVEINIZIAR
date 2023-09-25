@@ -242,6 +242,8 @@
 	number = "[rand(0,9)][rand(0,9)][rand(0,9)][rand(0,9)]-[rand(0,9)][rand(0,9)][rand(0,9)][rand(0,9)]"
 	if(GLOB.phone_list[number] == number)
 		log_bomber(src, "has been detected as the same phone number as another sim card, It has been exploded!")
+		var/turf/explosionturf = get_turf(src)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 100)
 		explosion(src, heavy_impact_range = 1, adminlog = TRUE, explosion_cause = src)
 		qdel(src)
 

@@ -139,6 +139,8 @@
 
 	SEND_SIGNAL(src, COMSIG_GRENADE_DETONATE, lanced_by)
 	if(ex_dev || ex_heavy || ex_light || ex_flame)
+		var/turf/explosionturf = get_turf(src)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 250)
 		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
 
 /obj/item/grenade/proc/update_mob()
@@ -185,7 +187,7 @@
 
 /obj/item/grenade/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/projectile/hit_projectile = hitby
-	if(damage && attack_type == PROJECTILE_ATTACK && hit_projectile.damage_type != STAMINA && prob(15))
+	if(damage && attack_type == PROJECTILE_ATTACK && hit_projectile.damage_type != STAMINA)
 		owner.visible_message(span_danger("[attack_text] hits [owner]'s [src], setting it off! What a shot!"))
 		var/turf/source_turf = get_turf(src)
 		log_game("A projectile ([hitby]) detonated a grenade held by [key_name(owner)] at [COORD(source_turf)]")
