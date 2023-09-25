@@ -79,8 +79,8 @@ SUBSYSTEM_DEF(droning)
 				area_player.droning_sound = DRONING_AKT
 
 		//kill the previous droning sound
-		kill_droning(area_player, listener)
-//		last_phase(area_player, listener)
+//		kill_droning(area_player, listener)
+		last_phase(area_player, listener)
 /*
 		if(!listener.mob.transition)
 			var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
@@ -120,7 +120,7 @@ SUBSYSTEM_DEF(droning)
 	dreamer.droning_sound = combat_music
 	dreamer.last_droning_sound = combat_music.file
 
-/datum/controller/subsystem/droning/proc/kill_droning(area/area_player, client/listener)
+/datum/controller/subsystem/droning/proc/last_phase(area/area_player, client/listener)
 	if(!area_player || !listener)
 		return
 	var/shouldskip = FALSE
@@ -142,11 +142,12 @@ SUBSYSTEM_DEF(droning)
 		while(sound_killer.volume > 0)
 			if(sound_killer.volume <= 0)
 				break
-			sound_killer.volume = max(sound_killer.volume - 2, 0)
+//			sound_killer.volume = max(sound_killer.volume - 2, 0)
+			sound_killer.volume = (sound_killer.volume - 2)
 //			SEND_SOUND(listener, sound_killer)
 			sound_killer.status = SOUND_UPDATE
 			SEND_SOUND(listener, sound_killer)
-			sleep(2.5)
+			sleep(1)
 		listener.droning_sound = null
 		listener.last_droning_sound = null
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
@@ -157,6 +158,16 @@ SUBSYSTEM_DEF(droning)
 		listener.droning_sound = droning
 		listener.last_droning_sound = area_player.droning_sound
 		SEND_SOUND(listener, droning)
+
+/datum/controller/subsystem/droning/proc/kill_droning(client/victim)
+	if(!victim?.droning_sound)
+		return
+	var/sound/sound_killer = sound()
+	sound_killer.channel = victim.droning_sound.channel
+	SEND_SOUND(victim, sound_killer)
+	victim.droning_sound = null
+	victim.last_droning_sound = null
+
 //	victim.mob.transition = FALSE
 
 /*
