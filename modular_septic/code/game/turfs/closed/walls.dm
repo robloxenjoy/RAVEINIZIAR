@@ -107,6 +107,9 @@
 	sheet_type = null
 	sheet_amount = null
 
+/turf/closed/wall/darkrock/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"
+
 /turf/closed/wall/mineral/wood
 	icon = 'modular_septic/icons/turf/tall/walls/wood.dmi'
 	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/wood_frill.dmi'

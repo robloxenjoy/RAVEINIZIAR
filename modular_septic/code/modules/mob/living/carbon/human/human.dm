@@ -254,3 +254,18 @@
 		. += "Move Mode: Sprint"
 	else
 		. += "Move Mode: [capitalize(m_intent)]"
+
+/mob/living/carbon/human/process()
+	. = ..()
+	if(stat == DEAD && rotting)
+		if(prob(50))
+			var/turf/my_turf = get_turf(src)
+			my_turf.pollute_turf(/datum/pollutant/miasma, 50)
+
+/mob/living/carbon/human/death(gibbed)
+	. = ..()
+	if(stat == DEAD)
+		addtimer(CALLBACK(src, .proc/rot), rand(15 MINUTES, 30 MINUTES))
+
+/mob/living/carbon/human/proc/rot()
+	rotting = TRUE

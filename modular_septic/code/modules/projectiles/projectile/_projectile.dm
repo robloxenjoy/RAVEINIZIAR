@@ -138,7 +138,7 @@
 		hity = target.pixel_y + rand(-8, 8)
 
 	var/final_hitsound
-	var/final_hitsound_volume = vol_by_damage()
+	var/final_hitsound_volume = 80
 	if(!nodamage && (damage_type == BRUTE || damage_type == BURN))
 		if(iswallturf(target_location) && ((target == target_location) || prob(50)) )
 			var/turf/closed/wall/wall = target_location
