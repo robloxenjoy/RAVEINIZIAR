@@ -123,29 +123,39 @@ SUBSYSTEM_DEF(droning)
 /datum/controller/subsystem/droning/proc/kill_droning(area/area_player, client/listener)
 	if(!area_player || !listener)
 		return
-//	if(!listener?.droning_sound)
-//		return
+	var/shouldskip = FALSE
+	if(!listener?.droning_sound)
+		shouldskip = TRUE
 //	victim.mob.transition = TRUE
-	var/sound/sound_killer = sound()
-	sound_killer.channel = listener.droning_sound.channel
-	while(sound_killer.volume > 0)
-		if(sound_killer.volume <= 0)
-			break
-		sound_killer.volume = max(sound_killer.volume - 2, 0)
-		SEND_SOUND(listener, sound_killer)
-		sleep(2.5)
-	listener.droning_sound = null
-	listener.last_droning_sound = null
+	if(shouldskip)
+		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
+		if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
+			droning.file = 'modular_septic/sound/insanity/lean.ogg'
+		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
+			droning.file = 'modular_pod/sound/mus/radioakt.ogg'
+		listener.droning_sound = droning
+		listener.last_droning_sound = area_player.droning_sound
+		SEND_SOUND(listener, droning)
+	else
+		var/sound/sound_killer = sound()
+		sound_killer.channel = listener.droning_sound.channel
+		while(sound_killer.volume > 0)
+			if(sound_killer.volume <= 0)
+				break
+			sound_killer.volume = max(sound_killer.volume - 2, 0)
+			SEND_SOUND(listener, sound_killer)
+			sleep(2.5)
+		listener.droning_sound = null
+		listener.last_droning_sound = null
+		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
+		if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
+			droning.file = 'modular_septic/sound/insanity/lean.ogg'
+		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
+			droning.file = 'modular_pod/sound/mus/radioakt.ogg'
+		listener.droning_sound = droning
+		listener.last_droning_sound = area_player.droning_sound
+		SEND_SOUND(listener, droning)
 //	victim.mob.transition = FALSE
-	var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
-	if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
-		droning.file = 'modular_septic/sound/insanity/lean.ogg'
-	if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
-		droning.file = 'modular_pod/sound/mus/radioakt.ogg'
-	listener.droning_sound = droning
-	listener.last_droning_sound = area_player.droning_sound
-	SEND_SOUND(listener, droning)
-//	SEND_SOUND(victim, sound_killer)
 
 /*
 /datum/controller/subsystem/droning/proc/transition(client/victim)
