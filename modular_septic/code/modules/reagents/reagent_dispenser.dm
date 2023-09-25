@@ -19,7 +19,7 @@
 	//change this later
 	if(violent)
 		var/turf/explosionturf = get_turf(src)
-		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 100)
 		explosion(src, heavy_impact_range = 1, light_impact_range = 5, flame_range = 5)
 		qdel(src)
 	else
@@ -31,7 +31,7 @@
 /obj/structure/reagent_dispensers/fueltank/large/boom(damage_type = BRUTE, violent = FALSE)
 	if(violent)
 		var/turf/explosionturf = get_turf(src)
-		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 100)
 		explosion(src, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 7, flame_range = 12)
 		qdel(src)
 	else

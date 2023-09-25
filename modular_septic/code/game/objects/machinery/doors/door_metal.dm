@@ -147,7 +147,7 @@
 	var/turf/doorturf = get_turf(src)
 	var/flying_dir = get_dir(user, source.loc)
 	var/turf/freeman = get_ranged_target_turf(user, flying_dir, 3)
-	doorturf.pollute_turf(/datum/pollutant/dust, 250)
+	doorturf.pollute_turf(/datum/pollutant/dust, 150)
 	generate_door_combo()
 	thrown_door.throw_at(freeman, range = 4, speed = 2)
 	sound_hint()

@@ -89,7 +89,7 @@
 
 /obj/effect/mine/explosive/mineEffect(mob/victim)
 	var/turf/explosionturf = get_turf(src)
-	explosionturf.pollute_turf(/datum/pollutant/dust, 250)
+	explosionturf.pollute_turf(/datum/pollutant/dust, 100)
 	explosion(src, range_devastation, range_heavy, range_light, range_flame, range_flash)
 
 /obj/effect/mine/stun

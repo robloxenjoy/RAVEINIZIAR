@@ -140,7 +140,7 @@
 	SEND_SIGNAL(src, COMSIG_GRENADE_DETONATE, lanced_by)
 	if(ex_dev || ex_heavy || ex_light || ex_flame)
 		var/turf/explosionturf = get_turf(src)
-		explosionturf.pollute_turf(/datum/pollutant/dust, 250)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 100)
 		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
 
 /obj/item/grenade/proc/update_mob()

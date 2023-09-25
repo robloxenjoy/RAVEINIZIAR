@@ -22,3 +22,5 @@
 	var/dodge_parry = DP_DODGE
 	/// Middle click special attacks
 	var/special_attack = SPECIAL_ATK_NONE
+
+	var/transition = FALSE
