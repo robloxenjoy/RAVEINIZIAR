@@ -41,6 +41,7 @@
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
 		TRAIT_FLUORIDE_STARE,
+		TRAIT_NIGHT_VISION,
 	)
 	attribute_sheet = /datum/attribute_holder/sheet/job/weakwillet
 	inherent_biotypes = MOB_ORGANIC | MOB_BEAST

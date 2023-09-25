@@ -314,7 +314,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(stat == DEAD)
 		ghostize(TRUE)
 		return TRUE
-	var/response = tgui_alert(usr, "Are you -sure- you want to ghost?\n(You are alive. You can't change your mind so choose wisely!!)","Are you sure you want to ghost?",list("Ghost","Stay In Body"))
+	var/response = tgui_alert(usr, "Are you -sure- you want to ghost?\n(You are alive, a little.)","Are you sure you want to ghost?",list("Ghost","Stay In Body"))
 	if(response != "Ghost")
 		return FALSE//didn't want to ghost after-all
 	ghostize(FALSE) // FALSE parameter is so we can never re-enter our body. U ded.
