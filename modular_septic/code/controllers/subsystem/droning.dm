@@ -139,11 +139,12 @@ SUBSYSTEM_DEF(droning)
 	else
 		var/sound/sound_killer = sound()
 		sound_killer.channel = listener.droning_sound.channel
+		sound_killer.volume = listener.droning_volume
 		while(sound_killer.volume > 0)
 			if(sound_killer.volume <= 0)
 				break
 //			sound_killer.volume = max(sound_killer.volume - 2, 0)
-			sound_killer.volume = (sound_killer.volume - 2)
+			sound_killer.volume = max(sound_killer.volume - 2, 0)
 //			SEND_SOUND(listener, sound_killer)
 			sound_killer.status = SOUND_UPDATE
 			SEND_SOUND(listener, sound_killer)
