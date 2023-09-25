@@ -872,7 +872,8 @@
 */
 
 	if(randomcolor)
-		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
+//		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
+		color = pick("#1f5d5b", "#41282c", "#412857", "#6c546d", "#713b49", "")
 
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
@@ -955,7 +956,7 @@
 	dir = rand(0,8)
 
 	if(randomcolor)
-		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
+		color = pick("#1f5d5b", "#41282c", "#412857", "#6c546d", "#713b49", "")
 
 	if(locate(/obj/structure/) in get_turf(src))
 		return
@@ -1150,7 +1151,8 @@
 	dir = rand(0,4)
 
 	if(randomcolor)
-		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
+		color = pick("#1f5d5b", "#41282c", "#412857", "#6c546d", "#713b49", "")
+
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
@@ -1194,7 +1196,8 @@
 	dir = rand(0,4)
 
 	if(randomcolor)
-		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
+		color = pick("#1f5d5b", "#41282c", "#412857", "#6c546d", "#713b49", "")
+
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
