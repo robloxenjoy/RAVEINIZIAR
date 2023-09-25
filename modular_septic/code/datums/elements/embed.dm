@@ -118,6 +118,8 @@
 	if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 		SEND_SIGNAL(projectile, COMSIG_PELLET_CLOUD_EMBEDDED, limb)
 	else if(embed_attempt & COMPONENT_EMBED_FAILURE)
+		if(shrapnel_type)
+			new shrapnel_type(get_turf(hit))
 		if(embed_attempt & COMPONENT_EMBED_STOPPED_BY_ARMOR)
 			SEND_SIGNAL(projectile, COMSIG_PELLET_CLOUD_STOPPED_BY_ARMOR, limb)
 		else if(embed_attempt & COMPONENT_EMBED_WENT_THROUGH)
