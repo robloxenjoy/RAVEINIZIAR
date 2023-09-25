@@ -13,6 +13,8 @@
 
 /obj/item/grenade/syndieminibomb/detonate(mob/living/lanced_by)
 	. = ..()
+	var/turf/explosionturf = get_turf(src)
+	explosionturf.pollute_turf(/datum/pollutant/dust, 100)
 	update_mob()
 	qdel(src)
 
@@ -42,6 +44,8 @@
 
 /obj/item/grenade/frag/detonate(mob/living/lanced_by)
 	. = ..()
+	var/turf/explosionturf = get_turf(src)
+	explosionturf.pollute_turf(/datum/pollutant/dust, 100)
 	update_mob()
 	qdel(src)
 

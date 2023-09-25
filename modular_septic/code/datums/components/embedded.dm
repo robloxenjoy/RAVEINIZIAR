@@ -99,8 +99,8 @@
 		LAZYREMOVE(injury.embedded_objects, weapon)
 	injury = null
 	. = ..()
-	for(var/obj/item/grab/grabber as anything in old_limb.grasped_by)
-		grabber.update_grab_mode()
+//	for(var/obj/item/grab/grabber as anything in old_limb.grasped_by)
+//		grabber.update_grab_mode()
 
 /datum/component/embedded/process(delta_time)
 	var/mob/living/carbon/victim = parent
