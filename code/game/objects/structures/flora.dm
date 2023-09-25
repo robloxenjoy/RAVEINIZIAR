@@ -11,6 +11,7 @@
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
+	var/randomcolor = FALSE
 
 /obj/structure/flora/tree/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
@@ -38,6 +39,11 @@
 					qdel(src)
 	else
 		return ..()
+
+/obj/structure/flora/tree/Initialize(mapload)
+	. = ..()
+	if(randomcolor)
+		color = color = pick("#F9F191", "#BBBBF2", "#FF5DAE", "#38FF48", "#81EADC", "")
 
 /obj/structure/flora/stump
 	name = "Stump"
@@ -73,6 +79,7 @@
 	density = 1
 	anchored = 1
 	opacity = 1
+	randomcolor = TRUE
 	var/havebranch = TRUE
 
 /obj/structure/flora/tree/evil/Initialize(mapload)
@@ -162,6 +169,7 @@
 	density = 1
 	anchored = 1
 	opacity = 1
+	randomcolor = TRUE
 
 /obj/structure/flora/tree/evil/long/Initialize(mapload)
 	. = ..()

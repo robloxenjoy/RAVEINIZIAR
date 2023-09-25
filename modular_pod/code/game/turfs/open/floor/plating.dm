@@ -873,7 +873,7 @@
 
 	if(randomcolor)
 //		color = pick("#ffb3bf", "#b7ffb9", "#c2c3ff", "")
-		color = pick("#1f5d5b", "#41282c", "#412857", "#6c546d", "#713b49", "")
+		color = pick("#F46B93", "#DA3DED", "#AF3FFF", "#844EFC", "#ED14C2", "")
 
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
