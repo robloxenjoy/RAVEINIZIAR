@@ -29,7 +29,6 @@
 	attack_fatigue_cost = 4.5
 	slot_flags = null
 	sharpness = NONE
-	parrying_modifier = 1
 	skill_melee = SKILL_IMPACT_WEAPON_TWOHANDED
 	readying_flags = READYING_FLAG_SOFT_TWO_HANDED
 	tetris_width = 32

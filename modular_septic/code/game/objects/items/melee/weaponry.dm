@@ -25,8 +25,8 @@
 	bare_wound_bonus = 5
 
 /obj/item/melee/shieldo
-//	skill_blocking = SKILL_SHIELD
-	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	skill_blocking = SKILL_SHIELD
+	blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 
 /obj/item/melee/shieldo/buckler/wooden
 	name = "Wooden Buckler"
@@ -44,9 +44,10 @@
 	parry_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
 	havedurability = TRUE
 	durability = 210
-	carry_weight = 1.6 KILOGRAMS
-	skill_melee = SKILL_BUCKLER
-//	skill_parrying = SKILL_BUCKLER
+	carry_weight = 3 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON
+	skill_blocking = SKILL_BUCKLER
+	blocking_modifier = 1
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	min_force = 9
@@ -120,6 +121,7 @@
 	attack_fatigue_cost = 6
 	attack_delay = 17
 	parrying_flags = BLOCK_FLAG_THROWN | BLOCK_FLAG_UNARMED
+	parrying_modifier = 0
 //	canrust = TRUE
 	havedurability = TRUE
 	durability = 180
@@ -155,6 +157,9 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	tetris_width = 32
 	tetris_height = 64
+
+/obj/item/melee/bita
+	parrying_modifier = 0
 
 /obj/item/melee/bita/pink
 	name = "Pink Lump"
