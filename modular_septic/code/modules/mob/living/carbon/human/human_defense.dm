@@ -678,7 +678,9 @@
 			var/dist_modifier = 0
 			//Point blank, very hard to miss
 			if(dist <= 1)
-				dist_modifier +=  10
+				dist_modifier += 10
+			if(firer.body_position == LYING_DOWN)
+				dist_modifier += 5
 /*
 				if(body_position == STANDING_UP)
 					if(stat != CONSCIOUS)

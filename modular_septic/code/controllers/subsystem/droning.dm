@@ -108,9 +108,15 @@ SUBSYSTEM_DEF(droning)
 		return
 	var/sound/sound_killer = sound()
 	sound_killer.channel = victim.droning_sound.channel
-	SEND_SOUND(victim, sound_killer)
+	while(sound_killer.volume > 0)
+		if(sound_killer.volume <= 0)
+			break
+		sound_killer.volume = max(sound_killer.volume - 2, 0)
+		SEND_SOUND(victim, sound_killer)
+		sleep(2.5)
 	victim.droning_sound = null
 	victim.last_droning_sound = null
+//	SEND_SOUND(victim, sound_killer)
 
 /*
 /datum/controller/subsystem/droning/proc/transition(client/victim)
