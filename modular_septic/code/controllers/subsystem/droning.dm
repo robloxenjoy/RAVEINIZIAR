@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(droning)
 	else
 		var/sound/sound_killer = sound()
 		sound_killer.channel = listener.droning_sound.channel
-		sound_killer.volume = listener.droning_sound.droning_volume
+		sound_killer.volume = area_player.droning_volume
 		while(sound_killer.volume > 0)
 			if(sound_killer.volume <= 0)
 				break
