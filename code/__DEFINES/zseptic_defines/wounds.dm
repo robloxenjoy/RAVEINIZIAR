@@ -7,7 +7,7 @@
 /// an attack must do this much damage after armor in order to roll for being a wound (so pressure damage/being on fire doesn't proc it)
 #define WOUND_MINIMUM_DAMAGE 5
 /// an attack must do this much damage after armor in order to be eliigible to dismember a suitably mushed bodypart
-#define DISMEMBER_MINIMUM_DAMAGE 7.5
+#define DISMEMBER_MINIMUM_DAMAGE 13
 /// If an attack rolls this high with their wound (including mods), we try to outright dismember the limb. Note 250 is incredibly hard to reach even with the maximum damage! (1/250 chance)
 #define WOUND_DISMEMBER_OUTRIGHT_THRESH 250
 /// If a limb has mangled flesh, these wounds are more likely to happen
