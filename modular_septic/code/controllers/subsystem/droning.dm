@@ -123,8 +123,8 @@ SUBSYSTEM_DEF(droning)
 /datum/controller/subsystem/droning/proc/kill_droning(area/area_player, client/listener)
 	if(!area_player || !listener)
 		return
-	if(!listener?.droning_sound)
-		return
+//	if(!listener?.droning_sound)
+//		return
 //	victim.mob.transition = TRUE
 	var/sound/sound_killer = sound()
 	sound_killer.channel = listener.droning_sound.channel
