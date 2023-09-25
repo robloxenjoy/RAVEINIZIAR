@@ -143,7 +143,7 @@ SUBSYSTEM_DEF(droning)
 			if(sound_killer.volume <= 0)
 				break
 			sound_killer.volume = max(sound_killer.volume - 2, 0)
-			SEND_SOUND(listener, sound_killer)
+//			SEND_SOUND(listener, sound_killer)
 			sleep(2.5)
 		listener.droning_sound = null
 		listener.last_droning_sound = null
