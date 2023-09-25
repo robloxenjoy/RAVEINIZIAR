@@ -323,7 +323,7 @@
  */
 /obj/item/bodypart/proc/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
 //	if(!owner || (limb_integrity > 0) || !can_dismember() || (wounding_dmg < DISMEMBER_MINIMUM_DAMAGE) || (wound_bonus == CANT_WOUND))
-	if(!owner || !can_dismember() || (limb_integrity > 25) || (mangled_state != BODYPART_MANGLED_FLESH) || (wounding_dmg < DISMEMBER_MINIMUM_DAMAGE) || (wound_bonus == CANT_WOUND))
+	if(!owner || !can_dismember() || (limb_integrity > 25) || get_mangled_state() != BODYPART_MANGLED_FLESH || (wounding_dmg < DISMEMBER_MINIMUM_DAMAGE) || (wound_bonus == CANT_WOUND))
 		return FALSE
 
 	var/base_chance = wounding_dmg
