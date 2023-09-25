@@ -2,9 +2,10 @@
 /datum/pollutant/carbon_air_pollution
 	name = "Carbon Air Pollution"
 	pollutant_flags = POLLUTANT_BREATHE_ACT
+	color = "#b49993"
 
 /datum/pollutant/carbon_air_pollution/breathe_act(mob/living/carbon/victim, amount)
-	if(amount <= 10)
+	if(amount <= 5)
 		return
 	victim.adjustToxLoss(1)
 	if(prob(amount))
@@ -20,7 +21,7 @@
 	filter_wear = 0.25
 
 /datum/pollutant/dust/breathe_act(mob/living/carbon/victim, amount)
-	if(amount <= 10)
+	if(amount <= 5)
 		return
 	if(prob(amount))
 		victim.losebreath += 3

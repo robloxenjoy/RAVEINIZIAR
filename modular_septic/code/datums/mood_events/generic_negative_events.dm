@@ -77,6 +77,15 @@
 	description = span_danger("This shitty stench is awful!")
 	mood_change = -6
 
+/datum/mood_event/retarded
+	description = span_warning("I smell something retarded!")
+	mood_change = -2
+	timeout = 2 MINUTES
+
+/datum/mood_event/retardedt/harsh
+	description = span_danger("This retarded stench is awful!")
+	mood_change = -4
+
 //WORST smell
 /datum/mood_event/incredible_gas
 	description = span_infection("Smells like someone ripped ass!")

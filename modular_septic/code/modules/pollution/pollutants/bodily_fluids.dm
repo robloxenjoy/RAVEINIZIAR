@@ -8,6 +8,16 @@
 	scent = "something metallic"
 	color = "#bf0057"
 
+/datum/pollutant/metallic_scent/breathe_act(mob/living/carbon/victim, amount)
+	var/message
+	switch(amount)
+		if(10 to INFINITY)
+			message = span_warning("I'm saturating with this blood...")
+			if(prob(25))
+				victim.adjust_bloodvolume(5)
+	if(message && prob(20))
+		to_chat(victim, message)
+
 ///Vomit
 /datum/pollutant/vomit
 	name = "Vomit"
@@ -17,6 +27,29 @@
 	scent = "vomit"
 	color = "#30600e"
 	thickness = 3
+
+/datum/pollutant/vomit/breathe_act(mob/living/carbon/victim, amount)
+	var/message
+	switch(amount)
+		if(0 to 10)
+			message = span_warning("What is this smell?!")
+			if(prob(15))
+				victim.emote("gag")
+			if(prob(10))
+				victim.vomit(rand(2, 5), prob(amount))
+		if(10 to 30)
+			message = span_warning("I'm gonna puke...")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded)
+			if(prob(25))
+				victim.vomit(rand(2, 5), prob(amount))
+		if(30 to INFINITY)
+			message = span_bolddanger("This stench is unbearable!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
+			victim.adjustToxLoss(1.5)
+			if(prob(35))
+				victim.vomit(rand(5, 10), prob(amount))
+	if(message && prob(20))
+		to_chat(victim, message)
 
 ///Cum
 /datum/pollutant/cum
@@ -37,6 +70,29 @@
 	scent = "stale urine"
 	color = "#fcbc2c"
 	thickness = 2
+
+/datum/pollutant/urine/breathe_act(mob/living/carbon/victim, amount)
+	var/message
+	switch(amount)
+		if(0 to 10)
+			message = span_warning("What is this smell?!")
+			if(prob(15))
+				victim.emote("gag")
+			if(prob(10))
+				victim.vomit(rand(2, 5), prob(amount))
+		if(10 to 30)
+			message = span_warning("I'm gonna puke... This smell...")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded)
+			if(prob(25))
+				victim.vomit(rand(2, 5), prob(amount))
+		if(30 to INFINITY)
+			message = span_bolddanger("This stench is unbearable!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
+			victim.adjustToxLoss(1.5)
+			if(prob(35))
+				victim.vomit(rand(5, 10), prob(amount))
+	if(message && prob(20))
+		to_chat(victim, message)
 
 /datum/pollutant/shit
 	name = "Shit"
