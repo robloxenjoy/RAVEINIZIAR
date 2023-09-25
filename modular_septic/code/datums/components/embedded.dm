@@ -252,5 +252,6 @@
 	if(!weapon.unembedded(victim, limb))
 		weapon.forceMove(victim.loc)
 		if(to_hands)
-			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hands, weapon)
+//			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hands, weapon)
+			INVOKE_ASYNC(to_hands, /mob.proc/put_in_active_hand, weapon)
 	qdel(src)
