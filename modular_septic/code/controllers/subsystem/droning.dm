@@ -148,7 +148,7 @@ SUBSYSTEM_DEF(droning)
 //			SEND_SOUND(listener, sound_killer)
 			sound_killer.status = SOUND_UPDATE
 			SEND_SOUND(listener, sound_killer)
-			sleep(1)
+			sleep(2.5)
 		listener.droning_sound = null
 		listener.last_droning_sound = null
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
