@@ -253,5 +253,10 @@
 		weapon.forceMove(victim.loc)
 		if(to_hands)
 //			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hands, weapon)
-			INVOKE_ASYNC(to_hands, /mob.proc/put_in_active_hand, weapon)
+//			INVOKE_ASYNC(to_hands, /mob.proc/put_in_active_hand, weapon)
+			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hand, weapon, active_hand_index)
+//		var/obj/item/bodypart/part_will_get_nulled = grasped_part
+//		if(QDELETED(part_will_get_nulled))
+//			return TRUE
+//		owner_will_get_nulled.put_in_hands(part_will_get_nulled)
 	qdel(src)

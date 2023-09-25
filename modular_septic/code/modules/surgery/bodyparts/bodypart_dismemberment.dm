@@ -327,7 +327,7 @@
 		return FALSE
 
 	var/base_chance = wounding_dmg
-	base_chance += (get_damage() / (max_damage * 50))
+	base_chance += (get_damage() / max_damage * 50)
 
 	if(prob(base_chance))
 		apply_dismember(wounding_type, TRUE, TRUE)

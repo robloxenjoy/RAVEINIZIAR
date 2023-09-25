@@ -404,4 +404,5 @@
 	if(!grasped_part || !LAZYACCESS(grasped_part.embedded_objects, 1))
 		return FALSE
 	SEND_SIGNAL(victim, COMSIG_CARBON_EMBED_RIP, grasped_part.embedded_objects[1], grasped_part, owner)
+//	qdel(active_grab)
 	return TRUE
