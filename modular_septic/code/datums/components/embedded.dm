@@ -100,8 +100,8 @@
 	injury = null
 	. = ..()
 	for(var/obj/item/grab/grabber as anything in old_limb.grasped_by)
-		grabber.stop_pulling
-//		grabber.update_grab_mode()
+		grabber.update_grab_mode()
+//		grabber.stop_pulling
 
 /datum/component/embedded/process(delta_time)
 	var/mob/living/carbon/victim = parent
