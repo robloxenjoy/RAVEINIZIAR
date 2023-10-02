@@ -115,49 +115,49 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktliver
-	name = "Akt Liver"
+	name = "Liver"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktassertor
-	name = "Akt Assertor"
+	name = "Assertor"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktnailer
-	name = "Akt Nailer"
+	name = "Nailer"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktgranger
-	name = "Akt Granger"
+	name = "Granger"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktcurer
-	name = "Akt Curer"
+	name = "Curer"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktgargohelper
-	name = "Akt Accepter-helper"
+	name = "Accepter-helper"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/aktcontroller
-	name = "Akt Controller"
+	name = "Controller"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/alchemist
-	name = "Akt Al-Chemist"
+	name = "Al-Chemist"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE

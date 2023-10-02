@@ -357,7 +357,7 @@
 
 
 /datum/job/aktliver
-	title = "Akt Liver"
+	title = "Liver"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 30
@@ -389,7 +389,7 @@
 	l_pocket = /obj/item/simcard
 
 /datum/job/aktassertor
-	title = "Akt Assertor"
+	title = "Assertor"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 10
@@ -421,7 +421,7 @@
 	l_pocket = /obj/item/simcard
 
 /datum/job/aktnailer
-	title = "Akt Nailer"
+	title = "Nailer"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 10
@@ -450,7 +450,7 @@
 	l_pocket = /obj/item/simcard
 
 /datum/job/aktgranger
-	title = "Akt Granger"
+	title = "Granger"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 6
@@ -482,7 +482,7 @@
 	l_pocket = /obj/item/simcard
 
 /datum/job/aktcurer
-	title = "Akt Curer"
+	title = "Curer"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 6
@@ -513,7 +513,7 @@
 	l_pocket = /obj/item/simcard
 
 /datum/job/aktgargohelper
-	title = "Akt Accepter-helper"
+	title = "Accepter-helper"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 6
@@ -544,7 +544,7 @@
 	shoes = /obj/item/clothing/shoes/barhatki
 
 /datum/job/aktcontroller
-	title = "Akt Controller"
+	title = "Controller"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 1
@@ -578,7 +578,7 @@
 //	r_hand = /obj/item/pinker_caller
 
 /datum/job/alchemist
-	title = "Akt Al-Chemist"
+	title = "Al-Chemist"
 	department_head = list("Head of Personnel")
 	faction = list(ROLE_AKT)
 	total_positions = 5
