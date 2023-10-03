@@ -878,7 +878,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "chungu" = 1, "nothing" = 60))
+		var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "water" = 1, "chungu" = 1, "nothing" = 40))
 		switch(state)
 			if("crystalbush")
 				new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -960,7 +960,7 @@
 
 	if(locate(/obj/structure/) in get_turf(src))
 		return
-	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "beartrap" = 2, "water" = 1, "nothing" = 50))
+	var/state = pick_weight(list("crystalbush" = 6, "shroom" = 4, "stump" = 5, "treelong" = 5, "tree" = 6, "goldishincrementum" = 3, "crystal" = 3, "ygro" = 2, "chaosbush" = 3, "statuekas" = 1, "beartrap" = 2, "water" = 1, "nothing" = 20))
 	switch(state)
 		if("crystalbush")
 			new /obj/structure/flora/ausbushes/crystal(get_turf(src))
@@ -1156,7 +1156,7 @@
 	if(randomgenerate)
 		if(locate(/obj/structure/) in get_turf(src))
 			return
-		var/state = pick_weight(list("crystal" = 4, "thickets" = 2, "flametrap" = 2, "chungu" = 2, "nothing" = 60))
+		var/state = pick_weight(list("crystal" = 4, "thickets" = 2, "flametrap" = 2, "chungu" = 2, "nothing" = 40))
 		switch(state)
 			if("nothing")
 				return
