@@ -27,9 +27,17 @@
 	var/list/species_blacklist
 	/// Which languages does the job require, associative to LANGUAGE_UNDERSTOOD or LANGUAGE_SPOKEN
 	var/list/required_languages = list(/datum/language/common = LANGUAGE_UNDERSTOOD|LANGUAGE_SPOKEN)
+	/// Explanation of work
+	var/job_work = null
 
 /datum/job/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
+	if(spawned.job_work)
+		var/information_sex = tgui_alert(spawned, "Do you want to learn about your role?",, list("Yes", "No"))
+		if(information_sex != "Yes" || !loc || QDELETED(spawned))
+			return
+		var/output_message = "<span class='infoplain'><div class='infobox'>[job_work]</div></span>"
+		to_chat(spawned, output_message)
 	if(spawned.attributes)
 		assign_attributes(spawned, player_client)
 	if(ishuman(spawned))

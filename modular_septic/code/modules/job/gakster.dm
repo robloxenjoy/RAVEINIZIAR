@@ -429,6 +429,7 @@
 	supervisors = "living in Akt!"
 	selection_color = "#8e4a57"
 	exp_granted_type = EXP_TYPE_CREW
+	job_work = "You are the guy which need to supply this village with everything it needs, with your own hands, from ladders to real weapons."
 
 	outfit = /datum/outfit/nailer
 

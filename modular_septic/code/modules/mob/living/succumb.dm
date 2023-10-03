@@ -72,6 +72,18 @@
 		if(diceroll <= DICE_FAILURE)
 			to_chat(src, span_steal("I am failed to notice anything."))
 
+/mob/living/carbon/human/verb/job_work(whispered as null)
+	set name = "Role"
+	set category = "Extra"
+	set desc = "You want?"
+
+	if(!job)
+		return
+	if(!job.job_work)
+		return
+	var/output_message = "<span class='infoplain'><div class='infobox'>[job_work]</div></span>"
+	to_chat(src, output_message)
+
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
 	set hidden = TRUE
 	set name = "Become Boar"
