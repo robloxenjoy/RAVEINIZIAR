@@ -193,8 +193,8 @@
 			if(!use(1))
 				to_chat(user, span_warning("All used up..."))
 				return
-			//suturing arteries is VERY hard
-			if(user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SURGERY)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			//suturing arteries is VERY hard (no)
+			if(user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SURGERY)+4, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 				to_chat(user, span_warning(fail_msg()))
 				return FALSE
 			user.visible_message(span_green("<b>[user]</b> sutures <b>[C]</b>'s [affecting.name] arteries with \the [src]."), \
@@ -216,7 +216,7 @@
 				to_chat(user, span_warning("All used up..."))
 				return
 			//suturing tendons is hard, but not as hard as arteries
-			if(user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SURGERY)+2, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			if(user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SURGERY)+5, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 				to_chat(user, span_warning(fail_msg()))
 				return FALSE
 			user.visible_message(span_green("<b>[user]</b> sutures <b>[C]</b>'s [affecting.name] tendons with \the [src]."), \
@@ -240,7 +240,7 @@
 			to_chat(user, span_warning("All used up..."))
 			return
 		//sutures aren't easy to use
-		if(user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SURGERY)+3, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SURGERY)+5, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 			to_chat(user, span_warning(fail_msg()))
 			return
 		injury.heal_damage(brute)

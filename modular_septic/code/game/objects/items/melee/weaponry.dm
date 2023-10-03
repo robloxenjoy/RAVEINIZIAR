@@ -864,8 +864,8 @@
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
 /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
-	name = "Steel Longsword"
-	desc = "Standard steel longsword. Very good."
+	name = "Steel Sword"
+	desc = "Standard steel sword. Very good."
 	icon_state = "steelsword"
 	inhand_icon_state = "steelsword"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
