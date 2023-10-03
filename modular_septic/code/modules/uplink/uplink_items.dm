@@ -138,7 +138,7 @@
 	purchasable_from = ALL
 
 /datum/uplink_item/dangerous/steelsword
-	name = "Steel Longsword"
+	name = "Steel Sword"
 	desc = "Can be good in good hands."
 	item = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 	cost = 11

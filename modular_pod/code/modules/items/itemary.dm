@@ -21,15 +21,29 @@
 	icon_state = "teether"
 
 /obj/item/craftorshit/thing
-	var/metallic = FALSE
+	var/ready_to_be = FALSE
+	var/will_be = null
 	var/statustate = "NOT_READY"
-	var/condition = 100
 	var/hits = 5
+	var/hardnessizm = DICE_SUCCESS
+
+/*
 	var/attached_handle = FALSE
 	var/attached_rings = FALSE
 	var/attached_gold = FALSE
 	var/attached_steel = FALSE
 	var/attached_silver = FALSE
+*/
+
+/obj/item/craftorshit/thing/examine(mob/user)
+	. = ..()
+	if(statustate)
+		if(statustate == "NOT_READY")
+			. += span_notice("Right now, this thing isn't ready for anything.")
+		if(statustate == "ARMOR")
+			. += span_notice("This thing is ready to be armor.")
+		if(statustate == "WEAPON")
+			. += span_notice("This thing is ready to be weapon.")
 
 /obj/item/craftorshit/thing/retarded
 	name = "Retarded Thing"
@@ -44,30 +58,77 @@
 	icon_state = "retardedthing_magic"
 
 /obj/item/craftorshit/thing/wooden
-	name = "Evil Wooden Thing"
+	name = "Wooden Thing"
 	desc = "Its strange. Can be used for crafting."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "woodenthing"
-	hits = 5
-	var/handle = FALSE
 
-/obj/item/craftorshit/thing/wooden/attackby(obj/item/I, mob/living/carbon/user, params)
+/obj/item/craftorshit/thing/steel
+	name = "Steel Thing"
+	desc = "Its strange. Can be used for crafting."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "steelthing"
+
+/obj/item/craftorshit/thing/iron
+	name = "Iron Thing"
+	desc = "Its strange. Can be used for crafting."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "ironthing"
+
+/obj/item/craftorshit/thing/attackby(obj/item/I, mob/living/carbon/user, params)
 	. = ..()
 	if(istype(I, /obj/item/craftorshit/instrument/swopper))
 		if(user.a_intent == INTENT_GRAB)
-			if(condition > 0)
-				if(statustate == "NOT_READY")
-					user.visible_message(span_notice("[user] readies the using of [src]."),span_notice("You ready the using of [src]."), span_hear("You hear the interesting sound."))
+			playsound(get_turf(src), 'sound/items/ratchet.ogg', 75 , FALSE, FALSE)
+			if(statustate == "NOT_READY")
+				user.visible_message(span_notice("[user] readies the using of [src]."),span_notice("You ready the using of [src]."), span_hear("You hear the interesting sound."))
+				statustate = "ARMOR"
+			else if(statustate == "ARMOR")
+				user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
+				statustate = "WEAPON"
+			else if(statustate == "WEAPON")
+				user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
+				statustate = "ARMOR"
+
+	else if(istype(I, /obj/item/melee/bita/hammer/stone))
+		if(user.a_intent == INTENT_HARM)
+			if(will_be == null)
+				if(statustate == "WEAPON")
+					weaponize(user)
+				else if(statustate == "ARMOR")
+					armorize(user)
+			else
+				playsound(get_turf(src), 'modular_pod/sound/eff/anvili.ogg', 75 , FALSE, FALSE)
+				if(hits > 0)
+					hits -= 1
+					user.visible_message(span_notice("[user] forges [src]."),span_notice("You forge [src]."), span_hear("You hear the sound of smithing."))
 					sound_hint()
-					statustate = "READY_HANDLE"
-				else if(statustate == "READY_HANDLE")
-					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
-					sound_hint()
-					statustate = "READY_OTHER"
-				else if(statustate == "READY_OTHER")
-					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
-					sound_hint()
-					statustate = "READY_HANDLE"
+					var/obj/item/melee/bita/hammer/stone/V = I
+					V.damageItem("HARD")
+					user.changeNext_move(V.attack_delay)
+					user.adjustFatigueLoss(10)
+				else
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll >= hardnessizm)
+						user.visible_message(span_notice("[user] forged the item!"),span_notice("You forge the item."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						var/obj/item/melee/bita/hammer/stone/V = I
+						V.damageItem("HARD")
+						user.changeNext_move(V.attack_delay)
+						user.adjustFatigueLoss(10)
+						new will_be(get_turf(src))
+						qdel(src)
+					else
+						user.visible_message(span_notice("[user] failed to forge something."),span_notice("You failed to forge something."), span_hear("You hear the sound of smithing."))
+						sound_hint()
+						var/obj/item/melee/bita/hammer/stone/V = I
+						V.damageItem("HARD")
+						user.changeNext_move(V.attack_delay)
+						user.adjustFatigueLoss(10)
+						new /obj/item/craftorshit/thing/retarded(get_turf(src))
+						qdel(src)
+
+/*
 	else if(istype(I, /obj/item/craftorshit/instrument/teether))
 		if(user.a_intent == INTENT_DISARM)
 			if(condition > 0)
@@ -95,39 +156,20 @@
 								user.adjustFatigueLoss(5)
 								new /obj/item/craftorshit/thing/retarded(get_turf(src))
 								qdel(src)
+*/
 
-/obj/item/craftorshit/thing/steel
-	name = "Steel Thing"
-	desc = "Its strange. Can be used for crafting."
-	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
-	icon_state = "steelthing"
-	metallic = TRUE
-	hits = 10
+///obj/item/craftorshit/thing/steel/attackby(obj/item/I, mob/living/carbon/user, params)
+//	. = ..()
 
-/obj/item/craftorshit/thing/steel/attackby(obj/item/I, mob/living/carbon/user, params)
-	. = ..()
-	if(istype(I, /obj/item/craftorshit/instrument/swopper))
-		if(user.a_intent == INTENT_GRAB)
-			if(condition > 0)
-				if(statustate == "NOT_READY")
-					user.visible_message(span_notice("[user] readies the using of [src]."),span_notice("You ready the using of [src]."), span_hear("You hear the interesting sound."))
-					sound_hint()
-					statustate = "READY_WEAPON"
-				else if(statustate == "READY_WEAPON")
-					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
-					sound_hint()
-					statustate = "READY_ARMOR"
-					hits = 10
-				else if(statustate == "READY_ARMOR")
-					user.visible_message(span_notice("[user] changes the way of using [src]."),span_notice("You changing the way of using [src]."), span_hear("You hear the interesting sound."))
-					sound_hint()
-					statustate = "READY_WEAPON"
-					hits = 10
-	else if(istype(I, /obj/item/craftorshit/instrument/teether))
+/*
+	if(istype(I, /obj/item/craftorshit/instrument/teether))
 		if(user.a_intent == INTENT_DISARM)
 			if(condition > 0)
-				if(statustate == "READY_ARMOR")
+				if(statustate == "ARMOR")
 					if(hits > 0)
+*/
+
+/*
 						if(!attached_rings)
 							hits -= 1
 							user.visible_message(span_notice("[user] sawing [src]."),span_notice("You saw [src]."), span_hear("You hear the interesting sound."))
@@ -150,10 +192,60 @@
 								user.adjustFatigueLoss(5)
 								new /obj/item/craftorshit/thing/retarded(get_turf(src))
 								qdel(src)
-	else if(istype(I, /obj/item/melee/bita/hammer/stone))
-		if(user.a_intent == INTENT_HARM)
-			if(condition > 0)
-				if(statustate == "READY_WEAPON")
+*/
+
+/obj/item/craftorshit/thing/proc/weaponize(mob/living/carbon/user)
+	var/thing = tgui_input_list(user, "What kind of weapon do you want to make?",, list("Sharp", "Blunt", "Unusual", ))
+	if(!thing)
+		return
+	if(will_be != null)
+		return
+	if(thing == "Sharp")
+		sharp_craft(user)
+//	if(thing == "Blunt")
+//		blunt_craft(user)
+//	if(thing == "Unusual")
+//		unusual_craft(user)
+
+/obj/item/craftorshit/thing/proc/armorize(mob/living/carbon/user)
+	var/thing = tgui_input_list(user, "What kind of armor do you want to make?",, list("Head", "Upper", "Under"))
+	if(!thing)
+		return
+	if(will_be != null)
+		return
+//	if(thing == "Head")
+//		head_craft(user)
+//	if(thing == "Upper")
+//		upper_craft(user)
+//	if(thing == "Under")
+//		under_craft(user)
+
+/obj/item/craftorshit/thing/proc/sharp_craft(mob/living/carbon/user)
+	var/thingy = tgui_input_list(user, "What kind of sharp weapon do you want to make?",, list("Steel Sword", "Steel Saber"))
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	switch(thingy)
+		if("Steel Sword")
+			if(!istype(src, /obj/item/craftorshit/thing/steel))
+				to_chat(user, span_notice("Need a different material to create this item."))
+				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+				return
+			will_be = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
+			hits = 10
+		if("Steel Saber")
+			if(!istype(src, /obj/item/craftorshit/thing/steel))
+				to_chat(user, span_notice("Need a different material to create this item."))
+				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+				return
+			will_be = /obj/item/changeable_attacks/slashstab/sabre/small/steel
+			hits = 7
+			hardnessizm = DICE_CRIT_SUCCESS
+		else
+			return
+
+/*
 					if(user.zone_selected == BODY_ZONE_PRECISE_L_HAND)
 						if(attached_handle)
 							if(hits > 0)
@@ -215,47 +307,8 @@
 									user.adjustFatigueLoss(10)
 									new /obj/item/craftorshit/thing/retarded(get_turf(src))
 									qdel(src)
-	else if(istype(I, /obj/item/craftorshit/thing/wooden))
-		if(user.a_intent == INTENT_DISARM)
-			if(condition > 0)
-				if(statustate == "READY_WEAPON")
-					if(attached_handle)
-						return
-					var/obj/item/craftorshit/thing/wooden/V = I
-					if(V.handle)
-						user.visible_message(span_notice("[user] attaches the handle to [src]."),span_notice("You attach the handle to [src]."), span_hear("You hear the sound of smithing."))
-						sound_hint()
-						attached_handle = TRUE
-						qdel(V)
-	else if(istype(I, /obj/item/craftorshit/thing/ouroboros))
-		if(user.a_intent == INTENT_DISARM)
-			if(condition > 0)
-				if(statustate == "READY_ARMOR")
-					if(attached_rings)
-						return
-					var/obj/item/craftorshit/thing/ouroboros/V = I
-					user.visible_message(span_notice("[user] attaches rings to [src]."),span_notice("You attach rings to [src]."), span_hear("You hear the sound of smithing."))
-					sound_hint()
-					attached_rings = TRUE
-					qdel(V)
-	else if(istype(I, /obj/item/craftorshit/thing/steel))
-		if(user.a_intent == INTENT_GRAB)
-			if(condition > 0)
-				if(statustate == "READY_ARMOR")
-					if(attached_steel)
-						return
-					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_SMITHING), context = DICE_CONTEXT_PHYSICAL)
-					if(diceroll >= DICE_SUCCESS)
-						user.visible_message(span_notice("[user] combined steel!"),span_notice("You combine the steel."), span_hear("You hear the sound of smithing."))
-						sound_hint()
-						user.changeNext_move(10)
-						user.adjustFatigueLoss(5)
-						attached_steel = TRUE
-					else
-						user.visible_message(span_notice("[user] failed to combine steel."),span_notice("You failed to combine steel."), span_hear("You hear the sound of smithing."))
-						sound_hint()
-						user.changeNext_move(10)
-						user.adjustFatigueLoss(5)
+
+
 
 /obj/item/craftorshit/thing/golden
 	name = "Golden Thing"
@@ -333,13 +386,6 @@
 									user.adjustFatigueLoss(10)
 									new /obj/item/craftorshit/thing/retarded(get_turf(src))
 									qdel(src)
-
-/obj/item/craftorshit/thing/iron
-	name = "Iron Thing"
-	desc = "Its strange. Can be used for crafting."
-	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
-	icon_state = "ironthing"
-	metallic = TRUE
 
 /obj/item/craftorshit/thing/silver
 	name = "Silver Thing"
@@ -429,6 +475,7 @@
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "ouro_rings"
 	metallic = TRUE
+*/
 
 /obj/item/melee/hehe/pickaxe/iron
 	name = "Iron Pickaxe"
