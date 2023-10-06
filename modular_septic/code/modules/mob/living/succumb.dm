@@ -77,11 +77,11 @@
 	set category = "Extra"
 	set desc = "You want?"
 
-	if(!job)
+	if(!src.mind?.assigned_role)
 		return
-	if(!job.job_work)
+	if(!src.mind?.assigned_role.job_work)
 		return
-	var/output_message = "<span class='infoplain'><div class='infobox'>[job_work]</div></span>"
+	var/output_message = "<span class='infoplain'><div class='infobox'>[src.mind?.assigned_role.job_work]</div></span>"
 	to_chat(src, output_message)
 
 /mob/living/carbon/human/proc/becomeboar(whispered as null)

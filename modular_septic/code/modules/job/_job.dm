@@ -32,11 +32,11 @@
 
 /datum/job/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
-	if(spawned.job_work)
+	if(spawned.mind?.assigned_role.job_work)
 		var/information_sex = tgui_alert(spawned, "Do you want to learn about your role?",, list("Yes", "No"))
-		if(information_sex != "Yes" || !loc || QDELETED(spawned))
+		if(information_sex != "Yes" || QDELETED(spawned))
 			return
-		var/output_message = "<span class='infoplain'><div class='infobox'>[job_work]</div></span>"
+		var/output_message = "<span class='infoplain'><div class='infobox'>[spawned.mind?.assigned_role.job_work]</div></span>"
 		to_chat(spawned, output_message)
 	if(spawned.attributes)
 		assign_attributes(spawned, player_client)
