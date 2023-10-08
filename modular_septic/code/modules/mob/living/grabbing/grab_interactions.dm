@@ -94,7 +94,6 @@
 		actions_done++
 	grab_hud?.update_appearance()
 	owner.changeNext_move(CLICK_CD_TAKEDOWN)
-	owner.sound_hint()
 	owner.adjustFatigueLoss(5)
 	playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 	return TRUE
@@ -122,35 +121,45 @@
 		if(nonlethal)
 			wrench_verb_singular = "twist"
 			wrench_verb = "twists"
+			owner.changeNext_move(CLICK_CD_WRENCH)
 		var/damage = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)
-		var/deal_wound_bonus = 10
+		var/deal_wound_bonus = 5
 		if(epic_success >= DICE_CRIT_SUCCESS)
-			deal_wound_bonus += 10
+			deal_wound_bonus += 5
 		if(!nonlethal)
-			grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
-			if(prob(2 + (GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH) - GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE))))
-				for(var/obj/item/organ/bone/bonee as anything in grasped_part.getorganslotlist(ORGAN_SLOT_BONE))
-					if(!bonee.is_broken())
-						bonee.compound_fracture()
-						playsound(victim, 'modular_septic/sound/gore/ouchie.ogg', 75, FALSE)
-		if(owner != victim)
-			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"), \
-							span_userdanger("<b>[owner]</b> [wrench_verb] my [grasped_part.name]![carbon_victim.wound_message]"), \
-							vision_distance = COMBAT_MESSAGE_RANGE, \
-							ignored_mobs = owner)
-			to_chat(owner, span_userdanger("I [wrench_verb_singular] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"))
-		else
-			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] [owner.p_their()] [grasped_part.name]![carbon_victim.wound_message]"), \
-							span_userdanger("I [wrench_verb_singular] my [grasped_part.name]![carbon_victim.wound_message]"), \
-							vision_distance = COMBAT_MESSAGE_RANGE)
-		SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
-		actions_done++
+			owner.changeNext_move(CLICK_CD_STRANGLE)
+			var/diceroll = diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
+			if(diceroll == DICE_SUCCESS)
+				if(!grasped_part.no_bone())
+					if((!grasped_part.is_dislocated() && !grasped_part.is_broken()))
+						grasped_part.force_wound_upwards(/datum/wound/blunt/moderate)
+			if(diceroll >= DICE_CRIT_SUCCESS)
+				if(!grasped_part.no_bone())
+					if((!grasped_part.is_dislocated() && !grasped_part.is_broken()))
+						grasped_part.force_wound_upwards(/datum/wound/blunt/severe)
+			if(diceroll <= DICE_FAILURE)
+				grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
+			if(owner != victim)
+				victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"), \
+								span_userdanger("<b>[owner]</b> [wrench_verb] my [grasped_part.name]![carbon_victim.wound_message]"), \
+								vision_distance = COMBAT_MESSAGE_RANGE, \
+								ignored_mobs = owner)
+				to_chat(owner, span_userdanger("I [wrench_verb_singular] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"))
+			else
+				victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] [owner.p_their()] [grasped_part.name]![carbon_victim.wound_message]"), \
+								span_userdanger("I [wrench_verb_singular] my [grasped_part.name]![carbon_victim.wound_message]"), \
+								vision_distance = COMBAT_MESSAGE_RANGE)
+			SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
+			actions_done++
 	else
 		var/wrench_verb_singular = "wrench"
 		var/damagee = (GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)/2)
 		grasped_part.receive_damage(brute = damagee, wound_bonus = 1, sharpness = NONE)
 		if(nonlethal)
 			wrench_verb_singular = "twist"
+			owner.changeNext_move(CLICK_CD_WRENCH)
+		else
+			owner.changeNext_move(CLICK_CD_STRANGLE)
 		if(owner != victim)
 			victim.visible_message(span_danger("<b>[owner]</b> tries to [wrench_verb_singular] <b>[victim]</b>'s [grasped_part.name]!"), \
 							span_userdanger("<b>[owner]</b> tries to [wrench_verb_singular] my [grasped_part.name]!"), \
@@ -163,8 +172,6 @@
 							vision_distance = COMBAT_MESSAGE_RANGE)
 	if(victim != owner)
 		victim.sound_hint()
-	owner.sound_hint()
-	owner.changeNext_move(CLICK_CD_WRENCH)
 	owner.adjustFatigueLoss(5)
 	playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 	return TRUE
@@ -393,7 +400,7 @@
 			victim.visible_message(span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in [owner.p_their()] [grasped_part.name]!"), \
 							span_pinkdang("I try to twist [grasped_part.embedded_objects[1]] in my [grasped_part.name]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
-	grasped_part.add_pain(10)
+	grasped_part.add_pain(15)
 	owner.changeNext_move(CLICK_CD_CLING)
 	owner.adjustFatigueLoss(10)
 	playsound(victim, 'modular_septic/sound/gore/twisting.ogg', 80, FALSE)

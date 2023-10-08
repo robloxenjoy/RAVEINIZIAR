@@ -297,6 +297,60 @@
 		shuffling.volume = 60
 		shuffling.sound_falloff_exponent = 20
 
+/obj/item/clothing/suit/armor/vest/fullcrazy/steel
+	name = "Steel Plate Armor"
+	desc = "Plate armor made of steel."
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	icon_state = "platearmor"
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	worn_icon_state = "platearmor"
+	body_parts_covered = CHEST|VITALS|GROIN|ARMS|NECK|LEGS
+	equip_sound = 'modular_septic/sound/armor/equip/armor_use_001.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/armor_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/armor_drop.ogg'
+	armor_broken_sound = "heavy"
+	armor_damaged_sound = "heavy"
+	max_integrity = 650
+	integrity_failure = 0.1
+	limb_integrity = 600
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	repairable_by = /obj/item/stack/ballistic
+	armor = list(MELEE = 1, \
+				BULLET = 1, \
+				LASER = 0, \
+				ENERGY = 20, \
+				BOMB = 20, \
+				BIO = 0, \
+				FIRE = 50, \
+				ACID = 0, \
+				WOUND = 10)
+	subarmor = list(SUBARMOR_FLAGS = NONE, \
+				EDGE_PROTECTION = 80, \
+				CRUSHING = 43, \
+				CUTTING = 43, \
+				PIERCING = 25, \
+				IMPALING = 29, \
+				LASER = 1, \
+				ENERGY = 0, \
+				BOMB = 15, \
+				BIO = 0, \
+				FIRE = 5, \
+				ACID = 0, \
+				MAGIC = 0, \
+				WOUND = 7, \
+				ORGAN = 7)
+	carry_weight = 8 KILOGRAMS
+
+/obj/item/clothing/suit/armor/vest/fullcrazy/steel/Initialize(mapload)
+	. = ..()
+	var/datum/component/shuffling/shuffling = GetComponent(/datum/component/shuffling)
+	if(shuffling)
+		shuffling.override_squeak_sounds = list('modular_septic/sound/armor/heavygear_stereo1.ogg'=1,
+												'modular_septic/sound/armor/heavygear_stereo2.ogg'=1,
+												'modular_septic/sound/armor/heavygear_stereo3.ogg'=1)
+		shuffling.volume = 60
+		shuffling.sound_falloff_exponent = 20
+
 /obj/item/clothing/head/helmet/golden/full
 	name = "Golden Helmet"
 	desc = "Orbicular golden helmet. It is very expensive."
