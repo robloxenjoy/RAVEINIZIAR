@@ -128,7 +128,7 @@
 			deal_wound_bonus += 5
 		if(!nonlethal)
 			owner.changeNext_move(CLICK_CD_STRANGLE)
-			var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
+			var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)+2, context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll == DICE_SUCCESS)
 				if(!grasped_part.no_bone())
 					if(!grasped_part.is_fractured())
@@ -139,18 +139,19 @@
 						grasped_part.force_wound_upwards(/datum/wound/blunt/severe)
 			if(diceroll <= DICE_FAILURE)
 				grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
-			if(owner != victim)
-				victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"), \
-								span_userdanger("<b>[owner]</b> [wrench_verb] my [grasped_part.name]![carbon_victim.wound_message]"), \
-								vision_distance = COMBAT_MESSAGE_RANGE, \
-								ignored_mobs = owner)
-				to_chat(owner, span_userdanger("I [wrench_verb_singular] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"))
-			else
-				victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] [owner.p_their()] [grasped_part.name]![carbon_victim.wound_message]"), \
-								span_userdanger("I [wrench_verb_singular] my [grasped_part.name]![carbon_victim.wound_message]"), \
-								vision_distance = COMBAT_MESSAGE_RANGE)
-			SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
-			actions_done++
+		if(owner != victim)
+			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"), \
+							span_userdanger("<b>[owner]</b> [wrench_verb] my [grasped_part.name]![carbon_victim.wound_message]"), \
+							vision_distance = COMBAT_MESSAGE_RANGE, \
+							ignored_mobs = owner)
+			to_chat(owner, span_userdanger("I [wrench_verb_singular] <b>[victim]</b>'s [grasped_part.name]![carbon_victim.wound_message]"))
+		else
+			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] [owner.p_their()] [grasped_part.name]![carbon_victim.wound_message]"), \
+							span_userdanger("I [wrench_verb_singular] my [grasped_part.name]![carbon_victim.wound_message]"), \
+							vision_distance = COMBAT_MESSAGE_RANGE)
+		playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
+		SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
+		actions_done++
 	else
 		var/wrench_verb_singular = "wrench"
 		var/damagee = (GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)/2)
@@ -173,7 +174,6 @@
 	if(victim != owner)
 		victim.sound_hint()
 	owner.adjustFatigueLoss(5)
-	playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 	return TRUE
 
 /obj/item/grab/proc/relocate_limb()
