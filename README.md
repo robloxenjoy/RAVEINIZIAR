@@ -4,7 +4,8 @@ My Discord Name - ra_ve_in
 
 * **JOIN US! Discord server:** https://discord.gg/wUPYTgJ4Th
 
-Mysterious survival server with challenging lore and more!
+Best place in all of SS13. 
+No idiots, no bullshit, lots of mechanics and our own sprites. Beauty.
 
 Father is a Bobstation.
 
