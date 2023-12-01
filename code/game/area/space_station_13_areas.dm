@@ -206,6 +206,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/maintenance/department/security
 	name = "Security Maintenance"
 	icon_state = "maint_sec"
+	droning_sound = DRONING_SEC
 
 /area/maintenance/department/security/upper
 	name = "Upper Security Maintenance"
@@ -372,6 +373,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/maintenance/radshelter/sec
 	name = "\improper Security Radstorm Shelter"
+	droning_sound = DRONING_SEC
 
 /area/maintenance/radshelter/service
 	name = "\improper Service Radstorm Shelter"
@@ -1286,6 +1288,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "armory"
 	ambience_index = AMBIENCE_DANGER
 	airlock_wires = /datum/wires/airlock/security
+	droning_sound = DRONING_SEC
 
 /area/ai_monitored/security/armory/upper
 	name = "Upper Armory"
