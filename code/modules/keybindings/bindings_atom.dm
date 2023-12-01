@@ -32,7 +32,7 @@
 	if(user?.movement_locked)
 		keybind_face_direction(movement_dir)
 	else
-		if(user.mob?)
+		if(user.mob)
 			if(user.mob?.a_intent != INTENT_GRAB)
 				return
 		user?.Move(get_step(src, movement_dir), movement_dir)
