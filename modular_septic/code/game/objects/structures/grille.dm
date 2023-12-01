@@ -1,55 +1,15 @@
 /obj/structure/grille
-	icon = 'modular_septic/icons/obj/structures/smooth_structures/tall/grille.dmi'
-	frill_icon = 'modular_septic/icons/obj/structures/smooth_structures/tall/grille_frill.dmi'
-	icon_state = "grille-0"
+	icon = 'modular_septic/icons/obj/structures/structures.dmi'
+	icon_state = "grille"
 	base_icon_state = "grille"
-	plane = GAME_PLANE
-	layer = CLOSED_TURF_LAYER
-	upper_frill_plane = ABOVE_GAME_PLANE
-	upper_frill_layer = ABOVE_ALL_MOB_LAYER
-	lower_frill_plane = GAME_PLANE_WINDOW
-	lower_frill_layer = ABOVE_MOB_LAYER
-	frill_uses_icon_state = TRUE
-	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_GRILLES)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_GRILLES)
-	obj_flags = CAN_BE_HIT|BLOCK_Z_OUT_DOWN|BLOCK_Z_OUT_UP|BLOCK_Z_IN_DOWN|BLOCK_Z_IN_UP
+	frill_icon = null
+	frill_uses_icon_state = FALSE
 	/// Whether or not this is a grille that goes above windows
 	var/window_grille = FALSE
 
 /obj/structure/grille/Initialize()
 	. = ..()
 	AddElement(/datum/element/conditional_brittle, "fireaxe")
-
-/obj/structure/grille/update_icon_state()
-	. = ..()
-	var/damage_state = ""
-	var/damage_percentage = clamp(CEILING((1 - atom_integrity/max_integrity) * 100, 25), 0, 75)
-	if(window_grille && (damage_percentage >= 25))
-		damage_state = "-d[damage_percentage]"
-	else if(damage_percentage >= 50)
-		damage_state = "-d50"
-	if(!isnull(smoothing_junction) && (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK)))
-		icon_state = "[base_icon_state][damage_state]-[smoothing_junction]"
-	else
-		icon_state = "[base_icon_state][damage_state]"
-
-/obj/structure/grille/set_smoothed_icon_state(new_junction)
-	. = smoothing_junction
-	smoothing_junction = new_junction
-	update_appearance(UPDATE_ICON)
-	var/damage_state = ""
-	var/damage_percentage = clamp(CEILING((1 - atom_integrity/max_integrity) * 100, 25), 0, 75)
-	if(window_grille && (damage_percentage >= 25))
-		damage_state = "-d[damage_percentage]"
-	else if(damage_percentage >= 50)
-		damage_state = "-d50"
-	cut_overlays()
-	SEND_SIGNAL(src, COMSIG_ATOM_SET_SMOOTHED_ICON_STATE, new_junction, "[base_icon_state][damage_state]")
-
-/obj/structure/grille/Moved(atom/OldLoc, Dir)
-	. = ..()
-	update_nearby_icons()
 
 /obj/structure/grille/Bumped(atom/movable/bumped_atom)
 	if(!ismob(bumped_atom))
@@ -79,11 +39,6 @@
 		else
 			return FALSE
 	return FALSE
-
-/obj/structure/grille/proc/update_nearby_icons()
-	update_appearance()
-	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
-		QUEUE_SMOOTH_NEIGHBORS(src)
 
 /obj/structure/grille/attack_foot(mob/living/carbon/human/user, list/modifiers)
 	. = ..()

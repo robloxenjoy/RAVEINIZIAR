@@ -9,6 +9,14 @@
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
 
+/turf/open/floor/plating/polovich/sky
+	name = "Sky"
+	desc = "High."
+	icon_state = "sky"
+
+/turf/open/floor/plating/polovich/sky/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	qdel(arrived)
+
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()
 	return list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5")
@@ -31,6 +39,8 @@
 	if(.)
 		return
 	if(user.a_intent == INTENT_HELP)
+		if(!can_attack_floor)
+			return
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
@@ -42,6 +52,8 @@
 		user.adjustFatigueLoss(5)
 		sound_hint()
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
+		if(!can_attack_floor)
+			return
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -54,6 +66,8 @@
 	if(.)
 		return
 	if(user.a_intent == INTENT_HELP)
+		if(!can_attack_floor)
+			return
 		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
@@ -63,6 +77,8 @@
 		user.changeNext_move(CLICK_CD_WRENCH)
 		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
+		if(!can_attack_floor)
+			return
 		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -70,7 +86,7 @@
 		playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 		sound_hint()
 
-/turf/open/floor/plating/polovich/attackby(obj/item/W, mob/living/carbon/user, params)
+/turf/open/floor/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
 	if(.)
 		return
@@ -93,6 +109,8 @@
 			else
 				playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
 		else
+			if(!can_attack_floor)
+				return
 			user.visible_message(span_notice("[user] beats the [src] with [W]."),span_notice("You beat the [src] with [W]."), span_hear("You hear the sound of beating the floor."))
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(W.attack_fatigue_cost)
@@ -125,6 +143,8 @@
 	. = ..()
 	if(.)
 		return
+	if(!can_attack_floor)
+		return
 	user.visible_message(span_notice("[user] bites the [src]."),span_notice("You bite the [src]."), span_hear("You hear the sound of biting."))
 	user.changeNext_move(CLICK_CD_BITE)
 	user.adjustFatigueLoss(5)
@@ -134,6 +154,8 @@
 /turf/open/floor/attack_foot(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)
+		return
+	if(!can_attack_floor)
 		return
 	user.visible_message(span_notice("[user] kicks the [src]."),span_notice("You kick the [src]."), span_hear("You hear the sound of kicking."))
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -378,6 +400,16 @@
 	name = "Greenish Floor"
 	desc = "This is cool."
 	icon_state = "typaya"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/stairingia
+	name = "Stairs"
+	desc = "This is cool."
+	icon_state = "stairing"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE
 	barefootstep = FOOTSTEP_STONE

@@ -10,10 +10,6 @@
 	var/inverse = 0 // For inverse dir frames like light fixtures.
 	var/pixel_shift //The amount of pixels
 
-/obj/item/wallframe/Initialize(mapload)
-	. = ..()
-	AddElement(/datum/element/wall_mount)
-
 /obj/item/wallframe/proc/try_build(turf/on_wall, mob/user)
 	if(get_dist(on_wall,user)>1)
 		return

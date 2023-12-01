@@ -16,6 +16,7 @@
 	. = ..()
 	SSlight_flickering.active_lights -= src
 
+/*
 /obj/machinery/light/update_icon(updates)
 	. = ..()
 	if(!wall_mounted)
@@ -59,6 +60,7 @@
 				else
 					plane = ABOVE_FRILL_PLANE_BLOOM
 					pixel_y = -2
+*/
 
 /obj/machinery/light/setDir(newdir)
 	. = ..()

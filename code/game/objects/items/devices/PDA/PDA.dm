@@ -137,6 +137,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	update_appearance()
 
+/*
 /obj/item/pda/equipped(mob/user, slot)
 	. = ..()
 	if(!equipped)
@@ -159,6 +160,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 					font_index = MODE_MONO
 					font_mode = FONT_MONO
 			equipped = TRUE
+
+*/
 
 /obj/item/pda/proc/update_label()
 	name = "PDA-[owner] ([ownjob])" //Name generalisation

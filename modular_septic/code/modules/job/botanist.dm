@@ -1,6 +1,5 @@
 /datum/job/botanist
-	total_positions = 0
-	spawn_positions = 0
+	title = "Seeder"
 	outfit = /datum/outfit/job/botanist/zoomtech
 
 /datum/outfit/job/botanist/zoomtech

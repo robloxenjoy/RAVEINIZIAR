@@ -1,13 +1,11 @@
 /turf/closed/wall
-	icon = 'modular_septic/icons/turf/tall/walls/victorian.dmi'
-	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/victorian_frill.dmi'
+	icon = 'modular_septic/icons/turf/walls/wall.dmi'
+	frill_icon = null
 	icon_state = "wall-0"
 	base_icon_state = "wall"
 	clingable = TRUE
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_LOW_WALLS)
-	decon_type = /turf/open/floor/plating/polovich/dirt/blueee
-	girder_type = null
 	var/mineable = TRUE
 	var/mine_hp = 8
 	var/ore_type = /obj/item/stone
@@ -66,9 +64,9 @@
 					mineturf.pollute_turf(/datum/pollutant/dust, 100)
 
 /turf/closed/wall/r_wall
-	icon = 'modular_septic/icons/turf/tall/walls/reinforced_victorian.dmi'
+	icon = 'modular_septic/icons/turf/walls/reinforced_wall.dmi'
 	desc = "Strong wall!"
-	frill_icon = 'modular_septic/icons/turf/tall/walls/frills/reinforced_victorian_frill.dmi'
+	frill_icon = null
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	mine_hp = 11

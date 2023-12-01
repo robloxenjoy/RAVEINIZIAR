@@ -338,7 +338,7 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
  * Cloth
  */
 
-/*
+
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("white jumpskirt", /obj/item/clothing/under/color/jumpskirt/white, 3), /*Ladies first*/ \
 	new/datum/stack_recipe("white jumpsuit", /obj/item/clothing/under/color/white, 3), \
@@ -377,7 +377,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("23x19 canvas", /obj/item/canvas/twentythree_nineteen, 4), \
 	new/datum/stack_recipe("23x23 canvas", /obj/item/canvas/twentythree_twentythree, 5), \
 	))
-*/
+
 
 /obj/item/stack/sheet/cloth
 	name = "Cloth"
@@ -393,25 +393,10 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	pickup_sound = 'sound/items/handling/cloth_pickup.ogg'
 	grind_results = list(/datum/reagent/cellulose = 20)
 
-/*
-/obj/item/stack/sheet/cloth/attack_hand_tertiary(mob/living/carbon/human/user, params)
-	. = ..()
-	if(src.amount == 1)
-		if(user.a_intent == INTENT_GRAB)
-			user.visible_message(span_notice("[user] start crafting..."),span_notice("You begin to craft bandages."), span_hear("You hear the sound of crafting."))
-			if(do_after(user, 100, target = src))
-				user.visible_message(span_notice("[user] crafted..."),span_notice("You crafted improvised bandages."), span_hear("You hear the sound of craft."))
-				user.changeNext_move(CLICK_CD_MELEE)
-				sound_hint()
-				new /obj/item/stack/medical/gauze/improvised/one(get_turf(src))
-				qdel(src)
-*/
 
-/*
 /obj/item/stack/sheet/cloth/get_main_recipes()
 	. = ..()
 	. += GLOB.cloth_recipes
-*/
 
 /obj/item/stack/sheet/cloth/ten
 	amount = 10

@@ -25,7 +25,6 @@
 
 /obj/structure/grille/Destroy()
 	update_cable_icons_on_turf(get_turf(src))
-	update_nearby_icons()
 	return ..()
 
 /obj/structure/grille/update_icon(updates)
@@ -33,11 +32,13 @@
 	if((updates & UPDATE_SMOOTHING) && (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK)))
 		QUEUE_SMOOTH(src)
 
+/*
 	if(window_grille)
 		if(islowwallturf(loc))
 			pixel_y = WINDOW_ON_FRAME_Y_OFFSET
 		else
 			pixel_y = WINDOW_OFF_FRAME_Y_OFFSET
+*/
 
 /obj/structure/grille/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
