@@ -14,21 +14,22 @@
 
 //Human Overlays Indexes/////////
 /* SEPTIC EDIT REMOVAL
-#define MUTATIONS_LAYER 31 //mutations. Tk headglows, cold resistance glow, etc
-#define BODY_BEHIND_LAYER 30 //certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LAYER 29 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define BODY_ADJ_LAYER 28 //certain mutantrace features (snout, body markings) that must appear above the body parts
-#define BODY_LAYER 27 //underwear, undershirts, socks, eyes, lips(makeup)
-#define FRONT_MUTATIONS_LAYER 26 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER 25 //damage indicators (cuts and burns)
-#define UNIFORM_LAYER 24
-#define ID_LAYER 23
-#define ID_CARD_LAYER 22
-#define HANDS_PART_LAYER 21
-#define GLOVES_LAYER 20
-#define SHOES_LAYER 19
-#define EARS_LAYER 18
-#define SUIT_LAYER 17
+#define MUTATIONS_LAYER 32 //mutations. Tk headglows, cold resistance glow, etc
+#define BODY_BEHIND_LAYER 31 //certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LAYER 30 //Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define BODY_ADJ_LAYER 29 //certain mutantrace features (snout, body markings) that must appear above the body parts
+#define BODY_LAYER 28 //underwear, undershirts, socks, eyes, lips(makeup)
+#define FRONT_MUTATIONS_LAYER 27 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER 26 //damage indicators (cuts and burns)
+#define UNIFORM_LAYER 25
+#define ID_LAYER 24
+#define ID_CARD_LAYER 23
+#define HANDS_PART_LAYER 22
+#define GLOVES_LAYER 21
+#define SHOES_LAYER 20
+#define EARS_LAYER 19
+#define SUIT_LAYER 18
+#define TABARD_LAYER 17
 #define GLASSES_LAYER 16
 #define BELT_LAYER 15 //Possible make this an overlay of somethign required to wear a belt?
 #define SUIT_STORE_LAYER 14
