@@ -46,10 +46,10 @@
 		var/mob/living/carbon/human/spawned_human = spawned
 		var/old_intent = spawned.a_intent
 		spawned.a_intent = INTENT_GRAB
-		if(spawned.ckey == "crazyduster")
-			if(ispighuman(spawned))
-				add_verb(spawned, list(
-					/mob/living/carbon/human/proc/becomeboar))
+//		if(spawned.ckey == "crazyduster")
+//			if(ispighuman(spawned))
+//				add_verb(spawned, list(
+//					/mob/living/carbon/human/proc/becomeboar))
 		//chipraps plushie
 		if(spawned.ckey == "chrapacz2000")
 			spawned.put_in_hands(new /obj/item/toy/plush/chipraps(spawned.drop_location()), FALSE)
