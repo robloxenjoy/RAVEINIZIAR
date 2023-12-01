@@ -49,23 +49,23 @@
 #define JOB_DISPLAY_ORDER_OUTER 36
 
 
-#define DEPARTMENT_UNASSIGNED "No..."
+#define DEPARTMENT_UNASSIGNED "Unassigned"
 #define DEPARTMENT_BITFLAG_SECURITY (1<<0)
-#define DEPARTMENT_SECURITY "Bandit Camp"
+#define DEPARTMENT_SECURITY "Security"
 #define DEPARTMENT_BITFLAG_COMMAND (1<<1)
-#define DEPARTMENT_COMMAND "Over"
+#define DEPARTMENT_COMMAND "Command"
 #define DEPARTMENT_BITFLAG_SERVICE (1<<2)
-#define DEPARTMENT_SERVICE "Mine"
+#define DEPARTMENT_SERVICE "Servic"
 #define DEPARTMENT_BITFLAG_CARGO (1<<3)
-#define DEPARTMENT_CARGO "Outer"
+#define DEPARTMENT_CARGO "Cargo"
 #define DEPARTMENT_BITFLAG_ENGINEERING (1<<4)
-#define DEPARTMENT_ENGINEERING "Chaotic"
+#define DEPARTMENT_ENGINEERING "Engineering"
 #define DEPARTMENT_BITFLAG_SCIENCE (1<<5)
-#define DEPARTMENT_SCIENCE "Akt"
+#define DEPARTMENT_SCIENCE "Science"
 #define DEPARTMENT_BITFLAG_MEDICAL (1<<6)
-#define DEPARTMENT_MEDICAL "Band"
+#define DEPARTMENT_MEDICAL "Medical"
 #define DEPARTMENT_BITFLAG_SILICON (1<<8)
-#define DEPARTMENT_SILICON "Super Autism"
+#define DEPARTMENT_SILICON "Silicon"
 
 /* Job datum job_flags */
 /// Whether the mob is announced on arrival.

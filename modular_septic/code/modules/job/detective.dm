@@ -1,5 +1,4 @@
 /datum/job/detective
-	title = "Sheriff"
 	total_positions = 0
 	spawn_positions = 0
 	outfit = /datum/outfit/job/detective/zoomtech

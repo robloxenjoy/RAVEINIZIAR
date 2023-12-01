@@ -1137,6 +1137,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambience_index = AMBIENCE_DANGER
 	airlock_wires = /datum/wires/airlock/security
 	sound_environment = SOUND_AREA_STANDARD_STATION
+	droning_sound = DRONING_SEC
 
 /area/security/office
 	name = "\improper Security Office"
