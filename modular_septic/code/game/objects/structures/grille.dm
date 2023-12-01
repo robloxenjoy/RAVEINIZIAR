@@ -12,7 +12,7 @@
 	frill_uses_icon_state = TRUE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_GRILLES)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_GRILLES)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_GRILLES)
 	obj_flags = CAN_BE_HIT|BLOCK_Z_OUT_DOWN|BLOCK_Z_OUT_UP|BLOCK_Z_IN_DOWN|BLOCK_Z_IN_UP
 	/// Whether or not this is a grille that goes above windows
 	var/window_grille = FALSE

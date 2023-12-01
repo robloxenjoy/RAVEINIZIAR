@@ -1,6 +1,5 @@
 /datum/job/cargo_technician
-	total_positions = 0
-	spawn_positions = 0
+	title = "Freighter"
 	outfit = /datum/outfit/job/cargo_tech/zoomtech
 
 /datum/outfit/job/cargo_tech/zoomtech

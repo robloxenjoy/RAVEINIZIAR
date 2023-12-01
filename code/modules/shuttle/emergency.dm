@@ -471,7 +471,7 @@
 				character.attributes.add_sheet(/datum/attribute_holder/sheet/job/outcombat)
 				character.height = HUMAN_HEIGHT_MEDIUM
 				character.skin_tone = "nox"
-				character.equipOutfit(/datum/outfit/pinker)
+//				character.equipOutfit(/datum/outfit/pinker)
 				character.put_in_hands(new /obj/item/gun/energy/remis/siren(character.drop_location()), FALSE)
 
 				var/list/mob/dead/observer/candidates = poll_ghost_candidates("Do you want to play as PINKER?", ROLE_SENTIENCE, FALSE, 100, POLL_IGNORE_SENTIENCE_POTION)

@@ -1229,12 +1229,6 @@
 		log_admin("[key_name(usr)] has added deadchat control to [src]")
 		message_admins(span_notice("[key_name(usr)] has added deadchat control to [src]"))
 
-	//MOJAVE MODULE OUTDOOR_EFFECTS -- BEGIN
-	if(href_list[VV_HK_EDIT_PARTICLES] && check_rights(R_VAREDIT))
-		var/client/C = usr.client
-		C?.open_particle_editor(src)
-	//MOJAVE MODULE OUTDOOR_EFFECTS -- END
-
 /obj/item/proc/do_pickup_animation(atom/target)
 	set waitfor = FALSE
 	if(!istype(loc, /turf))

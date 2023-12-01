@@ -1,4 +1,5 @@
 /*
+/*
 /datum/job/gakster
 	title = "Gakster Scavenger"
 	department_head = list("Head of Personnel")
@@ -778,3 +779,4 @@
 	pants = /obj/item/clothing/pants/pinker
 	id = /obj/item/key/podpol/woody/controller
 	shoes =/obj/item/clothing/shoes/frogshoes
+*/
