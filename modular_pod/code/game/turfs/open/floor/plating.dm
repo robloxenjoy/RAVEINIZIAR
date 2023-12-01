@@ -9,6 +9,14 @@
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
 
+/turf/open/floor/plating/polovich/sky
+	name = "Sky"
+	desc = "High."
+	icon_state = "sky"
+
+/turf/open/floor/plating/polovich/sky/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	qdel(arrived)
+
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()
 	return list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5")
@@ -378,6 +386,16 @@
 	name = "Greenish Floor"
 	desc = "This is cool."
 	icon_state = "typaya"
+	icon = 'modular_pod/icons/turf/floors.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/stairingia
+	name = "Stairs"
+	desc = "This is cool."
+	icon_state = "stairing"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE
 	barefootstep = FOOTSTEP_STONE

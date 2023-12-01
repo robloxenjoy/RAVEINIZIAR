@@ -32,6 +32,7 @@
 	limb_integrity = 0
 	// Assume that clothing isn't too weighty by default
 	carry_weight = 2 KILOGRAMS
+	equip_delay_self = 3
 
 /obj/item/clothing/update_overlays()
 	. = ..()
