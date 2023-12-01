@@ -28,7 +28,6 @@
 	outdoors = TRUE
 	static_lighting = TRUE
 	area_flags = NO_ALERTS
-	droning_sound = DRONING_FOREST
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 
@@ -79,5 +78,4 @@
 
 /area/maintenance/polovich/night
 	name = "Polovich Purenight"
-	droning_sound = DRONING_PURENIGHT
 	area_flags = NO_ALERTS
