@@ -13,7 +13,6 @@
 	novariants = FALSE
 	merge_type = /obj/item/stack/sheet/animalhide/human
 
-
 GLOBAL_LIST_INIT(human_recipes, list( \
 	new/datum/stack_recipe("bloated human costume", /obj/item/clothing/suit/hooded/bloated_human, 5), \
 	new/datum/stack_recipe("human skin hat", /obj/item/clothing/head/human_leather, 1), \
