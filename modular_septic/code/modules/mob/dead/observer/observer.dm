@@ -1,6 +1,6 @@
 //Ghosts will be reworked, but for now this will do
 /mob/dead/observer
-	var/can_rest = FALSE
+	var/can_rest = TRUE
 
 /mob/dead/observer/Initialize()
 	. = ..()
