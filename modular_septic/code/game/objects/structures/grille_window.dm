@@ -1,7 +1,7 @@
 /obj/structure/grille/window
 	name = "Window Grille"
-	desc = "Window with bars."
-	icon = 'modular_septic/icons/obj/structures/smooth_structures/reinforced_window.dmi'
-	icon_state = "reinforced_window-0"
-	base_icon_state = "reinforced_window"
+	desc = "Grille for windows."
+	icon = 'modular_septic/icons/obj/structures/structures.dmi'
+	icon_state = "grille"
+	base_icon_state = "grille"
 	window_grille = TRUE
