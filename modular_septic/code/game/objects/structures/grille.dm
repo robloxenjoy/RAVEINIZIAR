@@ -4,8 +4,6 @@
 	base_icon_state = "grille"
 	frill_icon = null
 	frill_uses_icon_state = FALSE
-	plane = GAME_PLANE
-	layer = CLOSED_TURF_LAYER
 	/// Whether or not this is a grille that goes above windows
 	var/window_grille = FALSE
 

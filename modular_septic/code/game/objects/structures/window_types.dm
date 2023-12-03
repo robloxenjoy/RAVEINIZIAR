@@ -15,8 +15,6 @@
 	icon = 'modular_septic/icons/obj/structures/smooth_structures/reinforced_window.dmi'
 	icon_state = "reinforced_window-0"
 	base_icon_state = "reinforced_window"
-	plane = GAME_PLANE_WINDOW
-	layer = WINDOW_FULLTILE_LAYER
 
 /obj/structure/window/reinforced/examine(mob/user)
 	. = ..()

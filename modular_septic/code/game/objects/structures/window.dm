@@ -2,15 +2,11 @@
 	icon = 'modular_septic/icons/obj/structures/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	plane = GAME_PLANE_ABOVE_WINDOW
-	layer = WINDOW_LOW_LAYER
 
 /obj/structure/window/fulltile
 	icon = 'modular_septic/icons/obj/structures/smooth_structures/window.dmi'
 	icon_state = "window-0"
 	base_icon_state = "window"
-	plane = GAME_PLANE_WINDOW
-	layer = WINDOW_FULLTILE_LAYER
 
 /obj/structure/window/attack_foot(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
