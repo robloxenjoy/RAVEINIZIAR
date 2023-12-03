@@ -1,6 +1,6 @@
 /obj/machinery/door/airlock
-	icon = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/omni.dmi'
-	overlays_file = 'modular_septic/icons/obj/machinery/tall/doors/airlocks/omni_overlays.dmi'
+	icon = 'modular_septic/icons/obj/machinery/doors/airlocks/station/maintenance.dmi'
+	overlays_file = 'modular_septic/icons/obj/machinery/doors/airlocks/station/maintenance_overlays.dmi'
 	greyscale_config = null
 	greyscale_colors = ""
 	doorOpen = 'modular_septic/sound/machinery/airlock_open.ogg'

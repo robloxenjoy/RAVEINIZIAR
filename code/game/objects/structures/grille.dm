@@ -25,7 +25,6 @@
 
 /obj/structure/grille/Destroy()
 	update_cable_icons_on_turf(get_turf(src))
-	update_nearby_icons()
 	return ..()
 
 /obj/structure/grille/update_icon(updates)
