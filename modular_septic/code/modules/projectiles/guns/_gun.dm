@@ -231,12 +231,10 @@
 	user.AddComponent(/datum/component/gunpoint, victim, src)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-/*
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	attack_fatigue_cost = 0
 	
 	return ..()
-*/
 
 /obj/item/gun/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
 	var/datum/component/gunpoint/existing_gunpoint = user.GetComponent(/datum/component/gunpoint)
@@ -256,6 +254,8 @@
 	if(QDELETED(target))
 		return
 	if(firing_burst)
+		return
+	if(user.a_intent != INTENT_HARM)
 		return
 	//It's adjacent, is the user, or is on the user's person
 	if(flag)

@@ -185,6 +185,7 @@
 		return
 	return ..()
 
+/*
 /obj/structure/window/attackby(obj/item/I, mob/living/user, params)
 	if(!can_be_reached(user))
 		return TRUE //skip the afterattack
@@ -234,6 +235,7 @@
 			return
 
 	return ..()
+*/
 
 /obj/structure/window/set_anchored(anchorvalue)
 	. = ..()
