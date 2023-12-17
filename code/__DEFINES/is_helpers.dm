@@ -20,10 +20,20 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 	/turf/open/openspace
 	)))
 
+GLOBAL_LIST_INIT(nighte, typecacheof(list(
+	/datum/time_of_day/midnight,
+	/datum/time_of_day/night,
+	/datum/time_of_day/dusk,
+	/datum/time_of_day/dawn,
+	/datum/time_of_day/dawndawn
+	)))
+
 GLOBAL_LIST_INIT(trapping, typecacheof(list(
 	/obj/item/restraints/legcuffs/beartrap,
 	/obj/structure/trap
 	)))
+
+#define isnight(A) (is_type_in_typecache(A, GLOB.nighte))
 
 #define istrap(A) (is_type_in_typecache(A, GLOB.trapping))
 

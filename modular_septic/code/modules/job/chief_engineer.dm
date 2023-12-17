@@ -1,5 +1,6 @@
 /datum/job/chief_engineer
-	title = "Great Engineer"
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/ce/zoomtech
 
 /datum/outfit/job/ce/zoomtech

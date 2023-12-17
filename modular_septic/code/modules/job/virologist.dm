@@ -1,5 +1,6 @@
 /datum/job/virologist
-	title = "Virologist"
+	total_positions = 0
+	spawn_positions = 0
 
 	outfit = /datum/outfit/job/virologist/zoomtech
 

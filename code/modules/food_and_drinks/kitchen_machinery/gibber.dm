@@ -1,5 +1,5 @@
 /obj/machinery/gibber
-	name = "gibber"
+	name = "Gormabalama"
 	desc = "The name isn't descriptive enough?"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "grinder"
@@ -33,10 +33,10 @@
 /obj/machinery/gibber/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Outputting <b>[meat_produced]</b> meat slab(s) after <b>[gibtime*0.1]</b> seconds of processing.")
+		. += span_notice("It wants to give you skins.")
 		for(var/obj/item/stock_parts/manipulator/M in component_parts)
 			if(M.rating >= 2)
-				. += span_notice("Gibber has been upgraded to process inorganic materials.")
+				. += span_notice("Gormabalama has been upgraded to process inorganic materials.")
 
 /obj/machinery/gibber/update_overlays()
 	. = ..()
@@ -78,7 +78,7 @@
 	if(user.pulling && isliving(user.pulling))
 		var/mob/living/L = user.pulling
 		if(!iscarbon(L))
-			to_chat(user, span_warning("This item is not suitable for the gibber!"))
+			to_chat(user, span_warning("This item is not suitable for the Gormabalama!"))
 			return
 		var/mob/living/carbon/C = L
 		if(C.buckled ||C.has_buckled_mobs())
@@ -91,13 +91,13 @@
 					to_chat(user, span_warning("Subject may not have abiotic items on!"))
 					return
 
-		user.visible_message(span_danger("[user] starts to put [C] into the gibber!"))
+		user.visible_message(span_danger("[user] starts to put [C] into the Gormabalama!"))
 
 		add_fingerprint(user)
 
 		if(do_after(user, gibtime, target = src))
 			if(C && user.pulling == C && !C.buckled && !C.has_buckled_mobs() && !occupant)
-				user.visible_message(span_danger("[user] stuffs [C] into the gibber!"))
+				user.visible_message(span_danger("[user] stuffs [C] into the Gormabalama!"))
 				C.forceMove(src)
 				set_occupant(C)
 				update_appearance()
@@ -105,6 +105,18 @@
 		startgibbing(user)
 
 /obj/machinery/gibber/attackby(obj/item/P, mob/user, params)
+	if(istype(P, /obj/item/grab))
+		return
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.belief == "Gutted")
+			to_chat(H, span_danger("Don't hit me, I'm your friend."))
+			return
+		else
+			to_chat(H, span_danger("Idiot, why did you put your hand on me."))
+			ADJUSTBRAINLOSS(H, BRAIN_DAMAGE_DEATH)
+			return
+
 	if(default_deconstruction_screwdriver(user, "grinder_open", "grinder", P))
 		return
 
@@ -116,6 +128,7 @@
 
 	else if(default_deconstruction_crowbar(P))
 		return
+
 	else
 		return ..()
 
@@ -139,11 +152,12 @@
 	if(operating)
 		return
 	if(!occupant)
-		audible_message(span_hear("You hear a loud metallic grinding sound."))
+		audible_message(span_hear("You hear a strange sound."))
+		//need add sound
 		return
 
 	use_power(1000)
-	audible_message(span_hear("You hear a loud squelchy grinding sound."))
+	audible_message(span_hear("You hear a loud strange sound."))
 	playsound(loc, 'sound/machines/juicer.ogg', 50, TRUE)
 	operating = TRUE
 	update_appearance()
@@ -162,7 +176,7 @@
 	var/typeofskin
 
 	var/obj/item/food/meat/slab/allmeat[meat_produced]
-	var/obj/item/stack/sheet/animalhide/skin
+	var/obj/item/skin/human/skin
 	var/list/datum/disease/diseases = mob_occupant.get_static_viruses()
 
 	if(ishuman(occupant))
@@ -204,7 +218,7 @@
 	qdel(mob_occupant)
 	addtimer(CALLBACK(src, .proc/make_meat, skin, allmeat, meat_produced, gibtype, diseases), gibtime)
 
-/obj/machinery/gibber/proc/make_meat(obj/item/stack/sheet/animalhide/skin, list/obj/item/food/meat/slab/allmeat, meat_produced, gibtype, list/datum/disease/diseases)
+/obj/machinery/gibber/proc/make_meat(obj/item/skin/human/skin, list/obj/item/food/meat/slab/allmeat, meat_produced, gibtype, list/datum/disease/diseases)
 	playsound(src.loc, 'sound/effects/splat.ogg', 50, TRUE)
 	operating = FALSE
 	var/turf/T = get_turf(src)

@@ -372,13 +372,6 @@
 
 		to_chat(usr, "[readout.Join()]")
 */
-
-/obj/item/proc/get_detail_tag() //this is for extra layers on clothes
-	return detail_tag
-
-/obj/item/proc/get_detail_color() //this is for extra layers on clothes
-	return detail_color
-
 /**
  * Rounds armor_value to nearest 10, divides it by 10 and then expresses it in roman numerals up to 10
  *

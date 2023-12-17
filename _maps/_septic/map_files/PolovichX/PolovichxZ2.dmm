@@ -341,7 +341,7 @@
 "gE" = (/obj/structure/closet/crate/wooden,/obj/item/melee/bita/hammer/stone,/obj/item/melee/bita/hammer/stone,/obj/item/melee/bita/hammer/stone,/obj/item/melee/bita/hammer/stone,/obj/item/melee/bita/hammer/stone,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "gF" = (/obj/effect/landmark/start/aktnailer,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "gG" = (/obj/structure/lampwall/service{dir = 4; putout = 0},/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
-"gH" = (/obj/structure/closet/crate/wooden,/obj/item/craftorshit/thing/steel,/obj/item/craftorshit/thing/iron,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
+"gH" = (/obj/structure/closet/crate/wooden,/obj/item/craftorshit/thing/steel,/obj/item/craftorshit/thing/iron,/obj/item/craftorshit/thing/golden,/obj/item/craftorshit/thing/silver,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "gI" = (/obj/structure/closet/crate/wooden,/obj/item/stone,/obj/item/stone,/obj/item/stone,/obj/item/stone,/obj/item/stone,/obj/item/stone,/turf/open/floor/plating/polovich/greenstone,/area/maintenance/polovich/village)
 "gJ" = (/obj/effect/landmark/start/aktnailer,/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)
 "gK" = (/obj/machinery/door/metal_door/wood_door/west{id_tag = "nailer"},/turf/open/floor/plating/polovich/greenstone{dir = 1},/area/maintenance/polovich/village)

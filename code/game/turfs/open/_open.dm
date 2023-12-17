@@ -6,7 +6,6 @@
 	var/barefootstep = null
 	var/clawfootstep = null
 	var/heavyfootstep = null
-	var/can_attack_floor = TRUE
 
 //direction is direction of travel of A
 /turf/open/zPassIn(atom/movable/A, direction, turf/source)

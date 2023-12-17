@@ -1,5 +1,6 @@
 /datum/job/doctor
-	title = "Medic"
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/doctor/zoomtech
 
 /datum/outfit/job/doctor/zoomtech

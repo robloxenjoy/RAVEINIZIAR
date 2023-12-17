@@ -1,8 +1,6 @@
 /obj/machinery/door/airlock
-	icon = 'modular_septic/icons/obj/machinery/doors/airlocks/station/maintenance.dmi'
-	overlays_file = 'modular_septic/icons/obj/machinery/doors/airlocks/station/maintenance_overlays.dmi'
-	greyscale_config = null
-	greyscale_colors = ""
+	greyscale_config = /datum/greyscale_config/airlocks/custom
+	greyscale_colors = "#a5a7ac#a5a7ac#969696#969696#5ea52c#6d6565#777777"
 	doorOpen = 'modular_septic/sound/machinery/airlock_open.ogg'
 	doorClose = 'modular_septic/sound/machinery/airlock_close.ogg'
 	boltUp = 'modular_septic/sound/machinery/airlock_bolt.ogg'
@@ -21,6 +19,7 @@
 						'modular_septic/sound/gore/smash3.ogg')
 	playsound(src, smash_sound, 75)
 	rammer.sound_hint()
+	sound_hint()
 
 /**
  * Generates the airlock's hacking datum.

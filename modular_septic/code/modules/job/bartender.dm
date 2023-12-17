@@ -1,5 +1,6 @@
 /datum/job/bartender
-	title = "Barman"
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/bartender/zoomtech
 
 /datum/outfit/job/bartender/zoomtech

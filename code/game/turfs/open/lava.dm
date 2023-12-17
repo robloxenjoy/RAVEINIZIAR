@@ -26,7 +26,6 @@
 	var/immunity_trait = TRAIT_LAVA_IMMUNE
 	/// objects with these flags won't burn.
 	var/immunity_resistance_flags = LAVA_PROOF
-	can_attack_floor = FALSE
 
 /turf/open/lava/ex_act(severity, target)
 	contents_explosion(severity, target)

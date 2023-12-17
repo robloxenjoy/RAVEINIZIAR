@@ -13,7 +13,7 @@
 		fluff = CONFIG_GET(string/flufftagline)
 	s += "<b>[station_name()]</b>"
 	s += " ("
-	s += "<a href='https://discord.gg/M2JSmtnGkH'>Discord</a>"
+	s += "<a href='https://discord.gg/wUPYTgJ4Th'>Discord</a>"
 	s += ")\]"
 	s += "<br>"
 	if(tagline)
@@ -39,7 +39,7 @@
 	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
 	if(hostedby)
-		features += "Hosted by [hostedby]"
+		features += "Hosted by <b>[hostedby]</b>"
 
 	if(LAZYLEN(features))
 		s += "\[[jointext(features, " | ")]"

@@ -1,7 +1,6 @@
 /datum/job/head_of_security
-	title = "Coordinator"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	outfit = /datum/outfit/job/hos/zoomtech
 

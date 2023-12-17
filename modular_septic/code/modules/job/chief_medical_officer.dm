@@ -1,5 +1,6 @@
 /datum/job/chief_medical_officer
-	title = "Great Medic"
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/cmo/zoomtech
 
 /datum/outfit/job/cmo/zoomtech

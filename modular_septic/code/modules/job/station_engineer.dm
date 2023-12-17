@@ -1,5 +1,7 @@
 /datum/job/station_engineer
-	title = "Engineer"
+	total_positions = 0
+	spawn_positions = 0
+
 	outfit = /datum/outfit/job/engineer/zoomtech
 
 /datum/outfit/job/engineer/zoomtech

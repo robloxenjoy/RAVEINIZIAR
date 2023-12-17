@@ -4,6 +4,9 @@
 /obj/machinery/infocom
 	name = "Infocom"
 	desc = "An information communication machine, a very creative name! It's a device used to dispense information when used, how do you know that? I don't fucking know, click on it to learn how."
+	icon = 'modular_septic/icons/obj/machinery/intercom.dmi'
+	icon_state = "infocom"
+	base_icon_state = "infocom"
 	plane = GAME_PLANE_UPPER
 	layer = WALL_OBJ_LAYER
 	density = FALSE

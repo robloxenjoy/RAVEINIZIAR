@@ -44,43 +44,36 @@
 /obj/item/clothing/suit/toggle/labcoat/paramedic
 	name = "paramedic's jacket"
 	desc = "A dark blue jacket for paramedics with reflective stripes."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "labcoat_paramedic"
 	inhand_icon_state = "labcoat_paramedic"
 
 /obj/item/clothing/suit/toggle/labcoat/mad
 	name = "\proper The Mad's labcoat"
 	desc = "It makes you look capable of konking someone on the noggin and shooting them into space."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "labgreen"
 	inhand_icon_state = "labgreen"
 
 /obj/item/clothing/suit/toggle/labcoat/genetics
 	name = "geneticist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a blue stripe on the shoulder."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "labcoat_gen"
 
 /obj/item/clothing/suit/toggle/labcoat/chemist
 	name = "chemist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "labcoat_chem"
 
 /obj/item/clothing/suit/toggle/labcoat/virologist
 	name = "virologist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a green stripe on the shoulder."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "labcoat_vir"
 
 /obj/item/clothing/suit/toggle/labcoat/science
 	name = "scientist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "labcoat_sci"
 
 /obj/item/clothing/suit/toggle/labcoat/roboticist
 	name = "roboticist labcoat"
 	desc = "More like an eccentric coat than a labcoat. Helps pass off bloodstains as part of the aesthetic. Comes with red shoulder pads."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "labcoat_robo"

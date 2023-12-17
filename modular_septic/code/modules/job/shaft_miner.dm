@@ -1,5 +1,6 @@
 /datum/job/shaft_miner
-	title = "Adventurer"
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/miner/zoomtech
 
 /datum/outfit/job/miner/zoomtech

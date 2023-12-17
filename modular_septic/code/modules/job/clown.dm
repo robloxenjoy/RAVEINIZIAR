@@ -1,5 +1,6 @@
 /datum/job/clown
-	title = "Jester"
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/clown/zoomtech
 
 /datum/outfit/job/clown/zoomtech
