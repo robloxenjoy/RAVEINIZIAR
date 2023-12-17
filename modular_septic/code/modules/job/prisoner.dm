@@ -1,4 +1,4 @@
 /datum/job/prisoner
-	title = "Jailed"
+	total_positions = 0
+	spawn_positions = 0
 	required_languages = null
-	outfit = /datum/outfit/job/prisoner

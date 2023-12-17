@@ -47,7 +47,7 @@
 	/// List of outfit datums/types indexed by team id, can be empty
 	var/list/outfits = list()
 	/// Default team outfit if `outfits[team]` is empty
-	var/default_outfit = null
+	var/default_outfit = /datum/outfit/venturer
 
 	/// Is the arena template loading in
 	var/loading = FALSE

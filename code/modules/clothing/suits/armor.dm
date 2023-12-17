@@ -67,7 +67,6 @@
 /obj/item/clothing/suit/armor/vest/blueshirt
 	name = "large armor vest"
 	desc = "A large, yet comfortable piece of armor, protecting you from some threats."
-	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "blueshift"
 	inhand_icon_state = "blueshift"
 	custom_premium_price = PAYCHECK_HARD

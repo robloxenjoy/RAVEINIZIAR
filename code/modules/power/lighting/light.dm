@@ -26,7 +26,7 @@
 	///Basically the alpha of the emitted light source
 	var/bulb_power = 1
 	///Default colour of the light.
-	var/bulb_colour = "#b9f0f9"
+	var/bulb_colour = "#f3fffa"
 	///LIGHT_OK, _EMPTY, _BURNED or _BROKEN
 	var/status = LIGHT_OK
 	///Should we flicker?
@@ -60,7 +60,7 @@
 	///Multiplier for this light's base brightness in emergency power mode
 	var/bulb_emergency_brightness_mul = 0.25
 	///Determines the colour of the light while it's in emergency mode
-	var/bulb_emergency_colour = "#ff3232"
+	var/bulb_emergency_colour = "#FF3232"
 	///The multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_mul = 0.75
 	///The minimum value for the light's power in emergency mode

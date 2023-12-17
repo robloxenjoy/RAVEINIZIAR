@@ -1,9 +1,13 @@
 /obj/machinery/firealarm
+	icon = 'modular_septic/icons/obj/machinery/fire_alarm.dmi'
+	icon_state = "fire0"
+	base_icon_state = "fire"
 	var/datum/looping_sound/fire_alarm/soundloop
 	var/datum/looping_sound/fire_alarm/sound
 
 /obj/machinery/firealarm/Initialize(mapload, dir, building)
 	. = ..()
+	AddElement(/datum/element/wall_mount)
 	soundloop = new(src, FALSE)
 
 /obj/machinery/firealarm/Destroy()

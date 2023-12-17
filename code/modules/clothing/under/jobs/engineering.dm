@@ -16,7 +16,6 @@
 /obj/item/clothing/under/rank/engineering/chief_engineer/skirt
 	name = "chief engineer's jumpskirt"
 	desc = "It's a high visibility jumpskirt given to those engineers insane enough to achieve the rank of \"Chief Engineer\". It has minor radiation shielding."
-	icon = 'icons/obj/clothing/under/engineering.dmi'
 	icon_state = "chief_skirt"
 	inhand_icon_state = "gy_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -48,7 +47,6 @@
 /obj/item/clothing/under/rank/engineering/engineer/hazard
 	name = "engineer's hazard jumpsuit"
 	desc = "A high visibility jumpsuit made from heat and radiation resistant materials."
-	icon = 'icons/obj/clothing/under/engineering.dmi'
 	icon_state = "hazard"
 	inhand_icon_state = "suit-orange"
 	alt_covers_chest = TRUE

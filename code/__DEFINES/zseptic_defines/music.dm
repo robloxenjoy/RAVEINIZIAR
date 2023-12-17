@@ -1,6 +1,4 @@
-#define DRONING_DEFAULT list('modular_pod/sound/mus/blue.ogg')
-
-#define DRONING_SEC list('modular_pod/sound/mus/ops1.ogg')
+#define DRONING_DEFAULT list('sound/ambience/shipambience.ogg')
 
 #define DRONING_COMBAT
 

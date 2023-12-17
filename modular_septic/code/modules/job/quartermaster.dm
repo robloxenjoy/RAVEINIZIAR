@@ -1,5 +1,6 @@
 /datum/job/quartermaster
-	title = "Dealer"
+	total_positions = 0
+	spawn_positions = 0
 	mind_traits = list(TRAIT_CAPITALIST_MOOD)
 
 	outfit = /datum/outfit/job/quartermaster/zoomtech

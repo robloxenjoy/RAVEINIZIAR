@@ -607,22 +607,6 @@ generate/load female uniform sprites matching all previously decided variables
 	if(worn_overlays?.len)
 		standing.overlays.Add(worn_overlays)
 
-	if(get_detail_tag())
-		var/mutable_appearance/pic = mutable_appearance(icon(file2use, "[t_state][get_detail_tag()]"), -layer2use)
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		standing.overlays.Add(pic)
-
-/*
-		if(!isinhands && coom == "f" && boobed)
-			pic = mutable_appearance(icon(file2use, "[t_state]_boob[get_detail_tag()]"), -layer2use)
-			pic.appearance_flags = RESET_COLOR
-			if(get_detail_color())
-				pic.color = get_detail_color()
-			standing.overlays.Add(pic)
-*/
-
 	standing = center_image(standing, isinhands ? inhand_x_dimension : worn_x_dimension, isinhands ? inhand_y_dimension : worn_y_dimension)
 
 	//Worn offsets

@@ -1,5 +1,7 @@
 /datum/job/cook
-	title = "Cook"
+	total_positions = 0
+	spawn_positions = 0
+
 	outfit = /datum/outfit/job/cook/zoomtech
 
 /datum/outfit/job/cook/zoomtech

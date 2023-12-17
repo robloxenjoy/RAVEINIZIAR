@@ -408,7 +408,7 @@ export const JobsPage = () => {
                 height="100%"
                 className="PreferencesMenu__papersplease__left">
                 <FancyText
-                  text="Command"
+                  text="Over"
                   fontsize="400%" />
 
                 <Department
@@ -418,7 +418,7 @@ export const JobsPage = () => {
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Security"
+                  text="Bandit Camp"
                   fontsize="400%" />
 
                 <Gap amount={12} />
@@ -430,7 +430,7 @@ export const JobsPage = () => {
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Cargo"
+                  text="Chaotic"
                   fontsize="400%" />
 
                 <Gap amount={12} />
@@ -452,7 +452,7 @@ export const JobsPage = () => {
                 height="100%"
                 className="PreferencesMenu__papersplease__right">
                 <FancyText
-                  text="Medical"
+                  text="Band"
                   fontsize="400%" />
 
                 <Department
@@ -462,7 +462,7 @@ export const JobsPage = () => {
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Service"
+                  text="Mine"
                   fontsize="400%" />
 
                 <Department
@@ -472,7 +472,7 @@ export const JobsPage = () => {
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Science"
+                  text="Akt"
                   fontsize="400%" />
 
                 <Department
@@ -482,7 +482,7 @@ export const JobsPage = () => {
                 <Gap amount={12} />
 
                 <FancyText
-                  text="Engineering"
+                  text="Outer"
                   fontsize="400%" />
 
                 <Department

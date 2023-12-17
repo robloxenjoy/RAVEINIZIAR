@@ -580,7 +580,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	//Maybe in the future we can add more <i>spooky</i> code here!
 	return
 
-/*
+
 /mob/dead/observer/verb/particlize()
 	set category = "Ghost"
 	set name = "Particlize"
@@ -628,9 +628,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	playsound(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100, FALSE)
 
 	return TRUE
-
-*/
-
 /*
 /mob/dead/observer/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"

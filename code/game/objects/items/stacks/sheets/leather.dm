@@ -13,6 +13,149 @@
 	novariants = FALSE
 	merge_type = /obj/item/stack/sheet/animalhide/human
 
+/obj/item/skin/human
+	name = "Human Leather"
+	desc = "It's creepy."
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "bigskin"
+	var/smallskin_amount = 5
+
+/obj/item/skin/human/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(user.a_intent == INTENT_HARM)
+		if(W.get_sharpness() && W.force > 0)
+			if(W.hitsound)
+				playsound(get_turf(src), W.hitsound, 100, FALSE, FALSE)
+			user.visible_message(span_notice("[user] begins to cut [src] with [W]."),span_notice("You begin to cut [src] with [W]."), span_hear("You hear the sound of cutting."))
+			if(do_after(user, 700/W.force, target = src))
+				user.visible_message(span_notice("[user] cuts [src] with the [W]."),span_notice("You cut [src] with the [W]."), span_hear("You hear the sound of cutting."))
+				user.changeNext_move(CLICK_CD_MELEE)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				sound_hint()
+				playsound(get_turf(src), 'sound/weapons/bladeslice.ogg', 100 , FALSE, FALSE)
+				for(var/i=1 to smallskin_amount)
+					new /obj/item/skin/human/small(get_turf(src))
+				qdel(src)
+
+	else if (user.a_intent == INTENT_GRAB)
+		if(istype(W, /obj/item/shard/crystal))
+			user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
+			var/time = 14 SECONDS
+			time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+			if(do_after(user, time, target = src))
+				if(user.zone_selected == BODY_ZONE_PRECISE_NECK)
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll > DICE_FAILURE)
+						user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+						user.changeNext_move(CLICK_CD_MELEE)
+						user.adjustFatigueLoss(10)
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+						new /obj/item/clothing/neck/leather_cloak(get_turf(src))
+						qdel(src)
+					else
+						user.visible_message(span_notice("[user] failed to craft..."),span_notice("You failed to craft..."), span_hear("You hear the sound of craft."))
+						user.changeNext_move(CLICK_CD_MELEE)
+						user.adjustFatigueLoss(10)
+						sound_hint()
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+						new /obj/item/craftorshit/thing/retarded(get_turf(src))
+						qdel(src)
+
+/obj/item/skin/human/small
+	name = "Human Leather"
+	desc = "A piece of human leather."
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "sheet-hide"
+
+/obj/item/skin/human/small/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/stack/grown/log/tree/evil/logg))
+		var/obj/item/stack/grown/log/tree/evil/logg/V = W
+		if(V.amount == 1)
+			user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
+			var/time = 13 SECONDS
+			time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+			if(do_after(user, time, target = src))
+				if(user.zone_selected == BODY_ZONE_CHEST)
+					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
+					if(diceroll > DICE_FAILURE)
+						user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+						user.changeNext_move(CLICK_CD_MELEE)
+						user.adjustFatigueLoss(10)
+						sound_hint()
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+						new /obj/item/clothing/suit/armor/vest/leatherbreast(get_turf(src))
+						qdel(src)
+					else
+						user.visible_message(span_notice("[user] failed to craft..."),span_notice("You failed to craft..."), span_hear("You hear the sound of craft."))
+						user.changeNext_move(CLICK_CD_MELEE)
+						user.adjustFatigueLoss(10)
+						sound_hint()
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+						new /obj/item/craftorshit/thing/retarded(get_turf(src))
+						qdel(src)
+
+/obj/item/skin/human/small/frogbrown
+	name = "Brown Frog Leather"
+	desc = "A piece of brown frog leather."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "frog_leatherthing"
+
+/obj/item/skin/human/small/frogbrown/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/skin/human/small/frogbrown))
+		user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
+		var/time = 13 SECONDS
+		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+		if(do_after(user, time, target = src))
+			if(user.zone_selected == BODY_ZONE_CHEST)
+				var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
+				if(diceroll > DICE_FAILURE)
+					user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+					user.changeNext_move(CLICK_CD_MELEE)
+					user.adjustFatigueLoss(10)
+					sound_hint()
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+					new /obj/item/clothing/suit/armor/vest/leatherbreastt(get_turf(src))
+					qdel(src)
+				else
+					user.visible_message(span_notice("[user] failed to craft..."),span_notice("You failed to craft..."), span_hear("You hear the sound of craft."))
+					user.changeNext_move(CLICK_CD_MELEE)
+					user.adjustFatigueLoss(10)
+					sound_hint()
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+					new /obj/item/craftorshit/thing/retarded(get_turf(src))
+					qdel(src)
+
+/obj/item/skin/human/small/frogreen
+	name = "Green Frog Leather"
+	desc = "A piece of green frog leather."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "frogreen_leatherthing"
+
+/obj/item/skin/human/small/frogreen/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/skin/human/small/frogreen))
+		user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
+		var/time = 13 SECONDS
+		time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)
+		if(do_after(user, time, target = src))
+			if((user.zone_selected == BODY_ZONE_PRECISE_L_FOOT) || (user.zone_selected == BODY_ZONE_PRECISE_R_FOOT))
+				var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
+				if(diceroll > DICE_FAILURE)
+					user.visible_message(span_notice("[user] craft..."),span_notice("You crafted..."), span_hear("You hear the sound of craft."))
+					user.changeNext_move(CLICK_CD_MELEE)
+					user.adjustFatigueLoss(10)
+					sound_hint()
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+					new /obj/item/clothing/shoes/frogshoes(get_turf(src))
+					qdel(src)
+				else
+					user.visible_message(span_notice("[user] failed to craft..."),span_notice("You failed to craft..."), span_hear("You hear the sound of craft."))
+					user.changeNext_move(CLICK_CD_MELEE)
+					user.adjustFatigueLoss(10)
+					sound_hint()
+//						playsound(get_turf(src), '', 100 , FALSE, FALSE)
+					new /obj/item/craftorshit/thing/retarded(get_turf(src))
+					qdel(src)
+
+/*
 GLOBAL_LIST_INIT(human_recipes, list( \
 	new/datum/stack_recipe("bloated human costume", /obj/item/clothing/suit/hooded/bloated_human, 5), \
 	new/datum/stack_recipe("human skin hat", /obj/item/clothing/head/human_leather, 1), \
@@ -21,6 +164,7 @@ GLOBAL_LIST_INIT(human_recipes, list( \
 /obj/item/stack/sheet/animalhide/human/get_main_recipes()
 	. = ..()
 	. += GLOB.human_recipes
+*/
 
 /obj/item/stack/sheet/animalhide/generic
 	name = "skin"

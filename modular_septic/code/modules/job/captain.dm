@@ -1,5 +1,6 @@
 /datum/job/captain
-	title = "Station Captain"
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/captain/mayor
 
 /datum/job/captain/get_captaincy_announcement(mob/living/captain)
