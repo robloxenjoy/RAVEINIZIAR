@@ -11,8 +11,6 @@
 		radio.keyslot = new radio_key
 		radio.listening = 0
 		radio.recalculateChannels()
-	AddElement(/datum/element/wall_mount)
-	update_appearance()
 
 /obj/machinery/airalarm/Destroy()
 	QDEL_NULL(radio)

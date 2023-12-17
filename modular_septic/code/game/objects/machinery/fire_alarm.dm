@@ -4,7 +4,6 @@
 
 /obj/machinery/firealarm/Initialize(mapload, dir, building)
 	. = ..()
-	AddElement(/datum/element/wall_mount)
 	soundloop = new(src, FALSE)
 
 /obj/machinery/firealarm/Destroy()
