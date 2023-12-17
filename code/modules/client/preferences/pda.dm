@@ -1,3 +1,4 @@
+/*
 /// The color of a PDA
 /datum/preference/color/pda_color
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
@@ -6,6 +7,8 @@
 
 /datum/preference/color/pda_color/create_default_value()
 	return COLOR_OLIVE
+
+*/
 
 /// The visual style of a PDA
 /datum/preference/choiced/pda_style

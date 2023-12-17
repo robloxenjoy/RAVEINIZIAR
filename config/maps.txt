@@ -14,11 +14,14 @@ Format:
 endmap
 
 map metastation
-	default
-	votable
 endmap
 
 map deltastation
+endmap
+
+map spacebox
+	default
+	votable
 endmap
 
 map kilostation

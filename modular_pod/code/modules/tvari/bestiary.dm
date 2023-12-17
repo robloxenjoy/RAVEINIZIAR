@@ -106,7 +106,7 @@
 	see_in_dark = 6
 	maxHealth = 50
 	health = 50
-	butcher_results = list(/obj/item/skin/human/small/frogbrown = 1)
+//	butcher_results = list(/obj/item/skin/human/small/frogbrown = 1)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -147,4 +147,4 @@
 	icon_state = "green_frog"
 	icon_living = "green_frog"
 	icon_dead = "green_frog_dead"
-	butcher_results = list(/obj/item/skin/human/small/frogreen = 1)
+//	butcher_results = list(/obj/item/skin/human/small/frogreen = 1)

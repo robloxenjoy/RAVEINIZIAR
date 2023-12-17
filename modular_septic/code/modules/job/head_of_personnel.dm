@@ -1,6 +1,5 @@
 /datum/job/head_of_personnel
-	total_positions = 0
-	spawn_positions = 0
+	title = "Head Of People"
 	outfit = /datum/outfit/job/hop/zoomtech
 
 /datum/outfit/job/hop/zoomtech

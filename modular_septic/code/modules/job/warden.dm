@@ -1,6 +1,7 @@
 /datum/job/warden
-	total_positions = 0
-	spawn_positions = 0
+	title = "Sheriff"
+	total_positions = 1
+	spawn_positions = 1
 
 	outfit = /datum/outfit/job/warden/zoomtech
 

@@ -3,14 +3,14 @@
 ## Enable/disable FoV
 USE_FIELD_OF_VISION
 
-## Whether or not to forcefully disable ERP
-USE_ERP
-
 ## Whether or not to forcefully disable atmos
 DISABLE_ATMOS
 
+## Whether or not to forcefully disable ERP
+USE_ERP
+
 ## Speed buff from sprinting
-SPRINT_SPEED 1
+SPRINT_SPEED 1.5
 
 ## Stamina cost per tile while sprinting
 SPRINT_STAMINA_COST 2
@@ -22,13 +22,13 @@ SPRINT_FATIGUE_COST 2
 #IPSTACK_API_KEY
 
 ## Server hub tagline
-SERVERTAGLINE [FUCK YOU ALL](https://discord.gg/wUPYTgJ4Th)
+SERVERTAGLINE https://discord.gg/wUPYTgJ4Th
 
 ## Basically tagline 2: Electric boogaloo
-FLUFFTAGLINE JOIN US IF YOU ARE BRAVE ENOUGH!
+FLUFFTAGLINE A fantasy universe whose legends are told in the nightmare of the wizard-fish. (514 BYOND VERSION)
 
 ## If this is set and someone gets caught by the panic bunker fail, this opens on their browser
-BUNKERTROLL https://cdn.discordapp.com/attachments/857026569670623253/857049663936659496/bemvindo.png
+BUNKERTROLL https://cdn.discordapp.com/attachments/1034046238296916009/1140631684853813298/2fd6e5821e9b2d1378995ee58736c27f.jpg
 
 ## If this is set and someone gets caught by IsBanned, this opens on their browser
-BANTROLL https://cdn.discordapp.com/attachments/857026569670623253/857049700930945085/banido.png
+BANTROLL https://cdn.discordapp.com/attachments/1034046238296916009/1140631684853813298/2fd6e5821e9b2d1378995ee58736c27f.jpg

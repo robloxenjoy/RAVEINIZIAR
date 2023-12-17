@@ -2,6 +2,7 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	skill_ranged = SKILL_PISTOL
 	carry_weight = 2.5 KILOGRAMS
+	attack_delay = 15
 	pickup_sound = 'modular_septic/sound/weapons/guns/generic_draw.ogg'
 	dry_fire_sound = 'modular_septic/sound/weapons/guns/empty.ogg'
 	/// Message when we dry fire (applies both to dry firing and failing to fire for other reasons)
@@ -232,6 +233,7 @@
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
 	attack_fatigue_cost = 0
+	
 	return ..()
 
 /obj/item/gun/afterattack_secondary(atom/target, mob/user, proximity_flag, click_parameters)
@@ -252,6 +254,8 @@
 	if(QDELETED(target))
 		return
 	if(firing_burst)
+		return
+	if(user.a_intent != INTENT_HARM)
 		return
 	//It's adjacent, is the user, or is on the user's person
 	if(flag)
@@ -302,7 +306,7 @@
 	var/bonus_spread = 0
 	var/loop_counter = 0
 	var/list/modifiers = params2list(params)
-	if(ishuman(user) && IS_HARM_INTENT(user, modifiers))
+	if(ishuman(user) && !IS_HARM_INTENT(user, modifiers))
 		var/mob/living/carbon/human/human_user = user
 		for(var/obj/item/gun/other_gun in human_user.held_items)
 			if((other_gun == src) || (other_gun.weapon_weight >= WEAPON_MEDIUM))

@@ -205,6 +205,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/last_force_string_check = 0
 	var/tip_timer
 
+	var/detail_tag
+	var/detail_color
+
 	///Determines who can shoot this
 	var/trigger_guard = TRIGGER_GUARD_NONE
 

@@ -1,6 +1,5 @@
 /datum/job/chemist
-	total_positions = 0
-	spawn_positions = 0
+	title = "Chemist"
 	outfit = /datum/outfit/job/chemist/zoomtech
 
 /datum/outfit/job/chemist/zoomtech

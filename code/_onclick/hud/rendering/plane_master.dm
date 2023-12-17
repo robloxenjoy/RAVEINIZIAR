@@ -130,10 +130,6 @@
 	. = ..()
 	add_filter("emissives", 1, alpha_mask_filter(render_source = EMISSIVE_RENDER_TARGET, flags = MASK_INVERSE))
 	add_filter("object_lighting", 2, alpha_mask_filter(render_source = O_LIGHTING_VISUAL_RENDER_TARGET, flags = MASK_INVERSE))
-	// Add our sunlight color
-	if(SSoutdoor_effects.initialized)
-		vis_contents +=  SSoutdoor_effects.sun_color //MOJAVE MODULE OUTDOOR_EFFECTS
-
 
 /**
  * Handles emissive overlays and emissive blockers.

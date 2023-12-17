@@ -23,31 +23,18 @@
 
 	var/totallums = 0
 	var/datum/lighting_corner/L
-	var/totalSunFalloff //MOJAVE MODULE OUTDOOR_EFFECTS
 	L = lighting_corner_NE
 	if (L)
 		totallums += L.lum_r + L.lum_b + L.lum_g
-		totalSunFalloff += L.sunFalloff //MOJAVE MODULE OUTDOOR_EFFECTS
 	L = lighting_corner_SE
 	if (L)
 		totallums += L.lum_r + L.lum_b + L.lum_g
-		totalSunFalloff += L.sunFalloff //MOJAVE MODULE OUTDOOR_EFFECTS
 	L = lighting_corner_SW
 	if (L)
 		totallums += L.lum_r + L.lum_b + L.lum_g
-		totalSunFalloff += L.sunFalloff //MOJAVE MODULE OUTDOOR_EFFECTS
 	L = lighting_corner_NW
 	if (L)
 		totallums += L.lum_r + L.lum_b + L.lum_g
-		totalSunFalloff += L.sunFalloff //MOJAVE MODULE OUTDOOR_EFFECTS
-
-	//MOJAVE MODULE OUTDOOR_EFFECTS -- BEGIN
-	/* if we are outside, full sunlight */
-	if(outdoor_effect && outdoor_effect.state) /* SKY_BLOCKED is 0 */
-		totalSunFalloff = 4
-	/* sunlight / 4 corners */
-	totallums += totalSunFalloff / 4
-	//MOJAVE MODULE OUTDOOR_EFFECTS	-- END
 
 	totallums /= 4 // 4 corners, each with 3 channels, get the average.
 
@@ -91,7 +78,6 @@
 		directional_opacity = ALL_CARDINALS
 		if(. != directional_opacity)
 			reconsider_lights()
-			reconsider_sunlight() //MOJAVE MODULE OUTDOOR_EFFECTS
 		return
 	directional_opacity = NONE
 	for(var/atom/movable/opacity_source as anything in opacity_sources)
@@ -102,7 +88,6 @@
 			break
 	if(. != directional_opacity && (. == ALL_CARDINALS || directional_opacity == ALL_CARDINALS))
 		reconsider_lights() //The lighting system only cares whether the tile is fully concealed from all directions or not.
-		reconsider_sunlight()//MOJAVE MODULE OUTDOOR_EFFECTS
 
 /turf/proc/change_area(area/old_area, area/new_area)
 	if(SSlighting.initialized)
