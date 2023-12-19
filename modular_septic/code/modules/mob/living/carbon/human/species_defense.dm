@@ -144,6 +144,8 @@
 				if(CS_DEFEND)
 					damage *= 0.75
 	if(user != victim)
+		if(!victim.lying_attack_check(user, weapon))
+			return FALSE
 		var/hit_modifier = weapon.melee_modifier+attack_skill_modifier+attack_skill_modifier
 		var/hit_zone_modifier = weapon.melee_zone_modifier
 		if(affecting)
@@ -171,13 +173,13 @@
 		var/strength_difference = max(0, weapon.minimum_strength-GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH))
 		diceroll = user.diceroll(skill_modifier+hit_modifier-strength_difference, context = DICE_CONTEXT_PHYSICAL)
 		if(diceroll == DICE_FAILURE)
-			damage *= 0.8
+			damage *= 0.5
 		if(diceroll == DICE_CRIT_FAILURE)
 			affecting = null
 		if(diceroll >= DICE_SUCCESS)
 			diceroll = user.diceroll(skill_modifier+hit_zone_modifier-strength_difference, context = DICE_CONTEXT_PHYSICAL)
-//		if(diceroll <= DICE_FAILURE)
-//			affecting = victim.get_bodypart(ran_zone(user.zone_selected, 0))
+			if(diceroll <= DICE_FAILURE)
+				affecting = victim.get_bodypart(ran_zone(user.zone_selected, 0))
 		if(victim.check_block())
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
@@ -358,6 +360,8 @@
 								list/modifiers)
 	if(!istype(user))
 		return
+	if(!victim.lying_attack_check(user))
+		return FALSE
 	CHECK_DNA_AND_SPECIES(user)
 	CHECK_DNA_AND_SPECIES(victim)
 

@@ -426,3 +426,93 @@
 	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.ogg'
 	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.ogg'
 	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.ogg'
+
+/obj/item/clothing/suit/armor/tabard
+	name = "Tabard"
+	desc = "Hope this will protect you."
+	color = null
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	icon_state = "tabard"
+	worn_icon = 'modular_pod/icons/mob/clothing/detailed/tabards.dmi'
+	worn_icon_state = "tabard"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	max_integrity = 480
+	integrity_failure = 0.1
+	limb_integrity = 460
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|VITALS|GROIN
+	slot_flags = ITEM_SLOT_OVERSUIT
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 20, \
+				CRUSHING = 15, \
+				CUTTING = 15, \
+				PIERCING = 20, \
+				IMPALING = 5, \
+				LASER = 3, \
+				ENERGY = 0, \
+				BOMB = 3, \
+				BIO = 0, \
+				FIRE = 3, \
+				ACID = 3, \
+				MAGIC = 0, \
+				WOUND = 10, \
+				ORGAN = 10)
+	strip_delay = 90
+	var/picked
+
+/obj/item/clothing/suit/armor/tabard/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/suit/armor/tabard/attack_self_secondary(mob/user, modifiers)
+	. = ..()
+	if(picked)
+		return
+	var/the_time = world.time
+	var/design = input(user, "Select a design.","Tabard Design") as null|anything in list("None", "Symbol", "Split", "Quadrants", "Boxes", "Diamonds")
+	if(!design)
+		return
+	if(world.time > (the_time + 30 SECONDS))
+		return
+	if(design == "Symbol")
+		design = null
+		design = input(user, "Select a symbol.","Tabard Design") as null|anything in list("chalice", "peace", "z", "v", "skull", "arrow")
+		if(!design)
+			return
+		design = "_[design]"
+	var/colorone = input(user, "Select a primary color.","Tabard Design") as color|null
+	if(!colorone)
+		return
+	var/colortwo
+	if(design != "None")
+		colortwo = input(user, "Select a secondary color.","Tabard Design") as color|null
+		if(!colortwo)
+			return
+	if(world.time > (the_time + 30 SECONDS))
+		return
+	picked = TRUE
+	if(design != "None")
+		detail_tag = design
+	switch(design)
+		if("Split")
+			detail_tag = "_spl"
+		if("Quadrants")
+			detail_tag = "_quad"
+		if("Boxes")
+			detail_tag = "_box"
+		if("Diamonds")
+			detail_tag = "_dim"
+	color = colorone
+	if(colortwo)
+		detail_color = colortwo
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_oversuit()

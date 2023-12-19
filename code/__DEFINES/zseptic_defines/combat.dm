@@ -108,3 +108,8 @@
 
 /// Default penalty for parrying dicerolls, normally lasts PARRYING_PENALTY_COOLDOWN_DURATION
 #define PARRYING_PENALTY 4
+
+#define WLENGTH_SHORT		1		//can only attack legs from the ground. must grab if standing to attack
+#define WLENGTH_NORMAL		2		//can only attack legs from ground. dont need to grab. maces, short swords, kicks
+#define WLENGTH_LONG		3		//can attack chest and down from the ground. dont need to grab. swords 2h axes
+#define WLENGTH_GREAT		4		//can attack any bodypart from ground. think spears

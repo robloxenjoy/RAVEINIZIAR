@@ -200,3 +200,38 @@
 	if(lying_angle != lying_prev)
 		update_transform()
 		lying_prev = lying_angle
+
+/mob/living/carbon/proc/lying_attack_check(var/mob/living/L, obj/item/I)
+	if(L == src)
+		return TRUE
+	var/CZ = FALSE
+	var/list/acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_VITALS, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
+	if((L.body_position != LYING_DOWN) && (body_position != LYING_DOWN)) //we are both standing
+		if(I)
+			if(I.weapon_long > WLENGTH_NORMAL)
+				CZ = TRUE
+			else //we have a short/medium weapon, so allow hitting legs
+				acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_VITALS, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
+		else
+			if(!CZ) //we are punching, no legs
+				acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_VITALS, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_MOUTH)
+	else if(!(L.body_position == LYING_DOWN) && (body_position == LYING_DOWN)) //we are prone, victim is standing
+		if(I)
+			if(I.weapon_long > WLENGTH_NORMAL)
+				CZ = TRUE
+			else
+				acceptable = list(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM,BODY_ZONE_PRECISE_R_HAND,BODY_ZONE_PRECISE_L_HAND,BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_VITALS, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
+		else
+			if(!CZ)
+				acceptable = list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
+	else
+		CZ = TRUE
+	if(CZ)
+		if( !(check_zone(L.zone_selected) in acceptable) )
+			to_chat(L, "<span class='warning'>I can't reach that.</span>")
+			return FALSE
+	else
+		if( !(L.zone_selected in acceptable) )
+			to_chat(L, "<span class='warning'>I can't reach that.</span>")
+			return FALSE
+	return TRUE

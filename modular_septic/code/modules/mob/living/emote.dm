@@ -122,13 +122,14 @@
 // Yawn
 /datum/emote/living/yawn/get_sound(mob/living/user)
 	if(ishuman(user))
-		if(!is_species(user, /datum/species/pighuman) && !is_species(user, /datum/species/boarhuman))
-			if(user.gender != FEMALE)
-				return "modular_septic/sound/emotes/yawn_male[rand(1,2)].ogg"
-			else
-				return "modular_septic/sound/emotes/yawn_female[rand(1,3)].ogg"
-		else
-			return "modular_pod/sound/eff/piggo.ogg"
+		switch(user.dna.species.id)
+			if(SPECIES_HUMAN)
+				if(user.gender != FEMALE)
+					return "modular_septic/sound/emotes/yawn_male[rand(1,2)].ogg"
+				else
+					return "modular_septic/sound/emotes/yawn_female[rand(1,3)].ogg"
+			if(SPECIES_PIGHUMAN)
+				return "modular_pod/sound/eff/piggo.ogg"
 	else
 		return ..()
 

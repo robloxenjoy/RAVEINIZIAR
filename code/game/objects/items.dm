@@ -93,8 +93,6 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	//Poisoning
 	var/poisoned_type
-	var/poisoned2_type
-	var/poisoned3_type
 	var/current_fucked_reagents = 0
 	var/max_reagents = 150
 	var/how_eats = 10
@@ -221,6 +219,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/list/juice_results
 
 	var/canMouseDown = FALSE
+
+	var/detail_tag
+	var/detail_color
 
 	/// Used in obj/item/examine to give additional notes on what the weapon does, separate from the predetermined output variables
 	var/offensive_notes
@@ -495,9 +496,11 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 					if(W.current_fucked_reagents > W.max_reagents)
 						W.current_fucked_reagents = W.max_reagents
 				else
+/*
 					if(R.type != W.poisoned_type)
 						current_fucked_reagents = 0
-					W.poisoned_type = R.type
+*/
+					W.poisoned_type += R.type
 					W.current_fucked_reagents += R.volume
 					reagents.remove_reagent(R.type, R.volume)
 					user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("You dip [W] in [src]!"))

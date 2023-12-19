@@ -38,6 +38,8 @@
 	var/canlockpick = FALSE
 	/// can dig? walls?
 	var/can_dig = FALSE
+	/// long???
+	var/weapon_long = WLENGTH_NORMAL
 
 	/**
 	 *  Modifier for block score

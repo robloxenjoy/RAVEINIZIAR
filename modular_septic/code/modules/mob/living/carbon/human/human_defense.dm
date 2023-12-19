@@ -266,6 +266,8 @@
 			chest_clothes = w_uniform
 		if(wear_suit && (wear_suit.body_parts_covered & CHEST))
 			chest_clothes = wear_suit
+		if(oversuit && (oversuit.body_parts_covered & CHEST))
+			chest_clothes = oversuit
 		if(chest_clothes)
 			torn_items |= chest_clothes
 
@@ -304,14 +306,6 @@
 			hand_clothes = wear_suit
 		if(hand_clothes)
 			torn_items |= hand_clothes
-
-	//OVERSUIT//
-	if(!def_zone || (def_zone == BODY_ZONE_CHEST))
-		var/obj/item/clothing/oversuit_clothes = null
-		if(oversuit && (oversuit.body_parts_covered & CHEST))
-			oversuit_clothes = oversuit
-		if(oversuit_clothes)
-			torn_items |= oversuit_clothes
 
 	//LEGS//
 	if(!def_zone || (def_zone in list(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)))

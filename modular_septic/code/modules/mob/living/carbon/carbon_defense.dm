@@ -104,6 +104,8 @@
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		to_chat(src, span_warning("Not possible."))
 		return
+	if(!target.lying_attack_check(src))
+		return
 	var/aiming_for_hand = (zone_selected in list(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND))
 	var/obj/item/held_item = target.get_active_held_item()
 	if(!aiming_for_hand || !held_item)

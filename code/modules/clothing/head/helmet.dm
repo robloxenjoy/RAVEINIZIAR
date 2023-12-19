@@ -282,11 +282,13 @@
 
 /obj/item/clothing/head/helmet/roman/fake
 	desc = "An ancient helmet made of plastic and leather."
+	icon = 'icons/obj/clothing/hats.dmi'
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/head/helmet/roman/legionnaire
 	name = "\improper Roman legionnaire helmet"
 	desc = "An ancient helmet made of bronze and leather. Has a red crest on top of it."
+icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "roman_c"
 	inhand_icon_state = "roman_c"
 
