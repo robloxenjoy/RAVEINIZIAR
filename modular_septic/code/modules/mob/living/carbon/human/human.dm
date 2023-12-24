@@ -265,7 +265,7 @@
 /mob/living/carbon/human/death(gibbed)
 	. = ..()
 	if(stat == DEAD)
-		addtimer(CALLBACK(src, .proc/rot), rand(15 MINUTES, 30 MINUTES))
+		addtimer(CALLBACK(src, .proc/rot), rand(10 MINUTES, 15 MINUTES))
 
 /mob/living/carbon/human/proc/rot()
 	rotting = TRUE

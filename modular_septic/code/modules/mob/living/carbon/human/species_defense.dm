@@ -286,19 +286,7 @@
 					subarmor_flags = subarmor_flags)
 		victim.damage_armor(damage+weapon.armor_damage_modifier, MELEE, weapon.damtype, sharpness, def_zone)
 		post_hit_effects(victim, user, affecting, weapon, damage, MELEE, weapon.damtype, sharpness, def_zone, intended_zone, modifiers)
-/*
-		if(weapon.reagents.total_volume > 0)
-			var/edgee_protection = 0
-			var/resultt = 0
-			edgee_protection = victim.get_edge_protection(hit_area)
-			resultt = (edgee_protection - weapon.edge_protection_penetration)
-			if(resultt <= 0)
-				for(var/list/L in weapon.poisoned)
-					victim.reagents?.add_reagent(L.type, 1)
-//			weapon.reagents.trans_to(victim, 1, methods = INJECT)
-*/
 
-	user.sound_hint()
 	victim.sound_hint()
 	victim.send_item_attack_message(weapon, user, hit_area, affecting)
 	SEND_SIGNAL(victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
@@ -733,30 +721,31 @@
 		return FALSE
 
 	if(target.stat == CONSCIOUS)
-		if(target.combat_mode)
-			if(target.dodge_parry == DP_PARRY)
-				if(target.usable_hands >= target.default_num_hands)
-					if(target.next_move < world.time)
-						if(!target.pulledby)
-							if(target != user)
-								var/empty_indexes = target.get_empty_held_indexes()
-								if(length(empty_indexes) >= 2)
-									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
-										var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
-										if(dicerollll >= DICE_SUCCESS)
-											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"), \
-														span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this with my hands!"), \
-														span_hear("I hear blocking!"), \
-														COMBAT_MESSAGE_RANGE, \
-														user)
-											to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"))
-											target.changeNext_move(CLICK_CD_GRABBING)
-											target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
-											target.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)
-											target.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
-											target.adjustFatigueLoss(5)
-											playsound(target.loc, 'modular_pod/sound/eff/punch 2.ogg', 70, TRUE)
-											return FALSE
+		if(!target.combat_mode)
+			return
+		if(target.dodge_parry == DP_PARRY)
+			if(target.usable_hands >= target.default_num_hands)
+				if(target.parrying_penalty_timer)
+					return
+				if(target.pulledby)
+					return
+				if(target == user)
+					return
+				var/empty_indexes = target.get_empty_held_indexes()
+				if(length(empty_indexes) >= 2)
+					if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
+						var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
+						if(dicerollll >= DICE_SUCCESS)
+							target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"), \
+									span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this with my hands!"), \
+									span_hear("I hear blocking!"), \
+									COMBAT_MESSAGE_RANGE, \
+									user)
+							to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"))
+							target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
+							target.adjustFatigueLoss(5)
+							playsound(target.loc, 'modular_pod/sound/eff/punch 2.ogg', 70, TRUE)
+							return FALSE
 
 	target.lastattacker = user.real_name
 	target.lastattackerckey = user.ckey
@@ -791,6 +780,8 @@
 	else
 		var/parsed_intended_zone = parse_zone(intended_zone)
 		if(user != target)
+			if(!lying_attack_check(user))
+				return
 			target.visible_message(span_danger("<b>[user]</b> aims for \the [parsed_intended_zone], but [attack_verb_continuous] <b>[target]</b>'s [hit_area] instead![target.wound_message]"), \
 							span_userdanger("<b>[user]</b> aims for \the [parsed_intended_zone], but [attack_verb_continuous] my [hit_area] instead![target.wound_message]"), \
 							span_hear("I hear a sickening sound of flesh hitting flesh!"), \

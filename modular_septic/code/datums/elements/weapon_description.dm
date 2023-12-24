@@ -61,7 +61,7 @@
 				readout += span_notice("<b>Covered in something...</b>")
 
 		if(source.weapon_long)
-			switch(weapon_long)
+			switch(source.weapon_long)
 				if(WLENGTH_SHORT)
 					readout += span_notice("<b>Length:</b> Short")
 				if(WLENGTH_NORMAL)
