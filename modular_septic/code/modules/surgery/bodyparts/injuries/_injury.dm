@@ -142,7 +142,7 @@
 
 //makes the injury get infected more when the victim is moving around
 /datum/injury/proc/movement_infect(mob/living/carbon/source)
-	if(parent_bodypart && prob(25) && infection_check())
+	if(parent_bodypart && prob(30) && infection_check())
 		adjust_germ_level(infection_rate)
 
 //special proc for when the parent bodypart receives some damage

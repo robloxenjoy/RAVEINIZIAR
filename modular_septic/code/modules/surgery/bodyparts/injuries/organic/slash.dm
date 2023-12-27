@@ -18,6 +18,7 @@
 
 /datum/injury/slash/deep
 	max_bleeding_stage = 3
+	infection_rate = 1.3
 	stages = list(
 		"ugly deep ripped cut" = 25,
 		"deep ripped cut" = 20,
@@ -30,6 +31,7 @@
 
 /datum/injury/slash/flesh
 	max_bleeding_stage = 4
+	infection_rate = 1.5
 	stages = list(
 		"ugly ripped flesh wound" = 35,
 		"ugly flesh wound" = 30,
@@ -42,6 +44,7 @@
 
 /datum/injury/slash/gaping
 	max_bleeding_stage = 3
+	infection_rate = 2
 	stages = list(
 		"gaping wound" = 50,
 		"large blood soaked clot" = 25,
@@ -53,6 +56,7 @@
 
 /datum/injury/slash/gaping_big
 	max_bleeding_stage = 3
+	infection_rate = 2.5
 	stages = list(
 		"big gaping wound" = 60,
 		"healing gaping wound" = 40,
@@ -64,6 +68,7 @@
 
 /datum/injury/slash/massive
 	max_bleeding_stage = 3
+	infection_rate = 2.5
 	stages = list(
 		"massive wound" = 70,
 		"massive healing wound" = 50,

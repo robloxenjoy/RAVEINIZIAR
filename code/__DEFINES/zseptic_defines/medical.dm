@@ -22,11 +22,11 @@
 #define GERM_LEVEL_MAXIMUM 1000
 
 /// Exposure to blood germ level per unit
-#define GERM_PER_UNIT_BLOOD 2
+#define GERM_PER_UNIT_BLOOD 4
 /// Exposure to piss germ level per unit
-#define GERM_PER_UNIT_PISS 2
+#define GERM_PER_UNIT_PISS 4
 /// Exposure to shit germ level per unit
-#define GERM_PER_UNIT_SHIT 5
+#define GERM_PER_UNIT_SHIT 8
 
 // ~sanitization defines, related to lowering germ level
 /// Sterilizine sanitization per unit

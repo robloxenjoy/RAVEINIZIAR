@@ -49,31 +49,51 @@
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
-//		var/duration = (((GET_MOB_ATTRIBUTE_VALUE(src, STAT_INTELLIGENCE)) - 16 SECONDS) + 1)
+		if(!client)
+			return
 		if(!do_after(src, 3 SECONDS, target=src))
 			to_chat(src, span_danger(xbox_rage_msg()))
 			src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 			return
 		var/diceroll = diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
 		if(diceroll == DICE_SUCCESS)
-			for(var/obj/M in range(7, src))
-				if(M.istrap)
-					var/turf/crazyturf = get_turf(M)
-					crazyturf.color = "#f80000"
-					animate(crazyturf, color = initial(crazyturf.color), 50)
-					to_chat(src, span_steal("Noticed trap."))
+			for(var/obj/visible_obj in view(7, src))
+				if((visible_obj.plane != GAME_PLANE_FOV_HIDDEN) && (visible_obj.istrap))
+					var/has_alpha = client.hud_used?.fov_holder?
+					if(has_alpha)
+						FOV_ANGLE_CHECK(src, visible_obj, continue, continue)
+					var/turf/obj_turf = get_turf(visible_obj)
+					if(!istype(obj_turf))
+						continue
+					var/datum/weakref/obj_ref = WEAKREF(visible_obj)
+					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
+					ghost.plane = GAME_PLANE_OBJECT_PERMANENCE
+					src.client.images -= object_permanence_images[obj_ref]
+					object_permanence_images[obj_ref] = ghost
+					src.client.images += ghost
+					to_chat(src, span_steal("I'm Noticed trap."))
+
 		if(diceroll == DICE_CRIT_SUCCESS)
-			for(var/obj/M in range(10, src))
-				if(M.istrap)
-					var/turf/crazyturf = get_turf(M)
-					crazyturf.color = "#f80000"
-					animate(crazyturf, color = initial(crazyturf.color), 70)
-					to_chat(src, span_steal("Noticed trap."))
+			for(var/obj/visible_obj in view(src))
+				if((visible_obj.plane != GAME_PLANE_FOV_HIDDEN) && (visible_obj.istrap))
+					var/has_alpha = client.hud_used?.fov_holder?
+					if(has_alpha)
+						FOV_ANGLE_CHECK(src, visible_obj, continue, continue)
+					var/turf/obj_turf = get_turf(visible_obj)
+					if(!istype(obj_turf))
+						continue
+					var/datum/weakref/obj_ref = WEAKREF(visible_obj)
+					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
+					ghost.plane = GAME_PLANE_OBJECT_PERMANENCE
+					src.client.images -= object_permanence_images[obj_ref]
+					object_permanence_images[obj_ref] = ghost
+					src.client.images += ghost
+
 		if(diceroll <= DICE_FAILURE)
-			to_chat(src, span_steal("I am failed to notice anything."))
+			to_chat(src, span_steal("I'm failed to notice anything."))
 
 /mob/living/carbon/human/verb/job_work(whispered as null)
-	set name = "Role"
+	set name = "Role Info"
 	set category = "Extra"
 	set desc = "You want?"
 
@@ -83,6 +103,20 @@
 		return
 	var/output_message = "<span class='infoplain'><div class='infobox'>[src.mind?.assigned_role.job_work]</div></span>"
 	to_chat(src, output_message)
+
+/mob/living/carbon/human/verb/up(whispered as null)
+	set name = "Move Up"
+	set category = "Extra"
+	set desc = "You want?"
+
+	go_somewhere(down = FALSE)
+
+/mob/living/carbon/human/verb/down(whispered as null)
+	set name = "Move Down"
+	set category = "Extra"
+	set desc = "You want?"
+
+	go_somewhere(down = TRUE)
 
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
 	set hidden = TRUE

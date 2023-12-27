@@ -10,6 +10,17 @@
 	)
 	difficulty = SKILL_DIFFICULTY_HARD
 
+/datum/attribute/skill/swimming
+	name = "Swimming"
+	desc = "Ability at swimming."
+	icon_state = "acrobatics"
+	category = SKILL_CATEGORY_COMBAT
+	governing_attribute = STAT_DEXTERITY
+	default_attributes = list(
+		STAT_DEXTERITY = -6,
+	)
+	difficulty = SKILL_DIFFICULTY_HARD
+
 // Skulduggery skills
 /datum/attribute/skill/pickpocket
 	name = "Pickpocketing"

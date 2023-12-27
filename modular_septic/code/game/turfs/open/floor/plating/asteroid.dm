@@ -140,6 +140,25 @@
 				if(3)
 					new /mob/living/simple_animal/pet/podozl/frog/green(get_turf(src))
 
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/river
+	name = "River"
+	frogs = FALSE
+	icon = 'modular_septic/icons/turf/floors/water.dmi'
+	icon_state = "riverwater_motion"
+	var/river_processing
+
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/river/Entered(atom/movable/AM, atom/oldLoc)
+	. = ..()
+	if(isliving(AM))
+		if(!river_processing)
+			river_processing = addtimer(CALLBACK(src, .proc/process_river), 5, TIMER_STOPPABLE)
+
+/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/river/proc/process_river()
+	river_processing = null
+	for(var/atom/movable/A in contents)
+		if((A.loc == src) && A.has_gravity())
+			A.ConveyorMove(dir)
+
 /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/coffee
 	name = "Shallow Coffee"
 	desc = "Looks wet... WHAT!"
@@ -160,6 +179,7 @@
 	heavyfootstep = FOOTSTEP_WATER
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
 	resistance_flags = FIRE_PROOF
+	frogs = FALSE
 
 /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/acid
 	name = "Shallow Acid"
@@ -181,6 +201,7 @@
 	heavyfootstep = FOOTSTEP_WATER
 	baseturfs = /turf/open/floor/plating/polovich/dirt/dark
 	resistance_flags = FIRE_PROOF
+	frogs = FALSE
 
 /turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm
 	name = "Water"

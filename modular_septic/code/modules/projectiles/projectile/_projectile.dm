@@ -26,6 +26,8 @@
 	var/ranged_zone_modifier = 0
 	/// Volume of the hitsound
 	var/hitsound_volume = 80
+
+	var/z_levelism = null
 	/// Stored visible message
 //	var/hit_text = ""
 	/// Stored target message

@@ -114,6 +114,7 @@
 
 // ~general combat skills
 #define SKILL_ACROBATICS /datum/attribute/skill/acrobatics
+#define SKILL_SWIMMING /datum/attribute/skill/swimming
 
 // ~skulduggery skills
 #define SKILL_PICKPOCKET /datum/attribute/skill/pickpocket

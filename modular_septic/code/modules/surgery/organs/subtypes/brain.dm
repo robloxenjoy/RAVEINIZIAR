@@ -19,7 +19,7 @@
 	low_threshold = BRAIN_DAMAGE_DEATH * 0.25
 	high_threshold = BRAIN_DAMAGE_DEATH * 0.75
 	pain_multiplier = 0 // We don't count towards bodypart pain for balance reasons
-	internal_damage_modifier = 4 // Brains are easy to hurty
+	internal_damage_modifier = 3.5 // Brains are easy to hurty
 
 	// head cavity volume is 6
 	organ_volume = 2

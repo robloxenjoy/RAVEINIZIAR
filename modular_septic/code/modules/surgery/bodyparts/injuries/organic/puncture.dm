@@ -16,6 +16,7 @@
 
 /datum/injury/puncture/flesh
 	max_bleeding_stage = 2
+	infection_rate = 1.3
 	stages = list(
 		"puncture wound" = 15,
 		"round blood soaked clot" = 5,
@@ -26,6 +27,7 @@
 
 /datum/injury/puncture/gaping
 	max_bleeding_stage = 3
+	infection_rate = 1.5
 	stages = list(
 		"gaping hole" = 30,
 		"large round blood soaked clot" = 15,
@@ -37,6 +39,7 @@
 
 /datum/injury/puncture/gaping_big
 	max_bleeding_stage = 3
+	infection_rate = 2
 	stages = list(
 		"big gaping hole" = 50,
 		"healing gaping hole" = 20,
@@ -48,6 +51,7 @@
 
 /datum/injury/puncture/massive
 	max_bleeding_stage = 3
+	infection_rate = 2.5
 	stages = list(
 		"massive hole" = 60,
 		"massive healing hole" = 30,

@@ -116,3 +116,84 @@
 			else
 				take_bodypart_damage((ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)) * 3)
 	SEND_SIGNAL(src, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
+
+/mob/living/carbon/human/proc/go_somewhere(down = FALSE)
+	if(incapacitated())
+		return
+	if(next_move > world.time)
+		playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		return
+	if(down)
+		var/turf/closed/waller = get_step_multiz(src, DOWN)
+		if(istype(waller))
+			to_chat(src, span_warning("I can't move down."))
+			return
+		var/turf/open/floore = get_step_multiz(src, DOWN)
+		var/turf/open/floord = get_turf(src)
+		if(!floore.liquids || (floore.liquids.liquid_state <= LIQUID_STATE_FULLTILE))
+			return
+		if(!floord.liquids || (floord.liquids.liquid_state < LIQUID_STATE_PUDDLE))
+			return
+		var/encumbrance_penalty = 0
+		switch(encumbrance)
+			if(ENCUMBRANCE_LIGHT)
+				encumbrance_penalty = 2
+			if(ENCUMBRANCE_MEDIUM)
+				encumbrance_penalty = 5
+			if(ENCUMBRANCE_HEAVY)
+				encumbrance_penalty = 10
+			if(ENCUMBRANCE_EXTREME)
+				encumbrance_penalty = 15
+		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_SWIMMING), context = DICE_CONTEXT_MENTAL)
+			switch(diceroll)
+				if(DICE_CRIT_SUCCESS)
+					src.adjustFatigueLoss(5 + encumbrance_penalty)
+					to_chat(src, span_notice("I move down perfectly."))
+					floore.forceMove(src)
+				if(DICE_SUCCESS)
+					src.adjustFatigueLoss(10 + encumbrance_penalty)
+					to_chat(src, span_notice("I move down succesfully."))
+					floore.forceMove(src)
+				if(DICE_FAILURE)
+					src.adjustFatigueLoss(10 + encumbrance_penalty)
+					to_chat(src, span_notice("I failed at moving down."))
+				if(DICE_CRIT_FAILURE)
+					src.adjustFatigueLoss(15 + encumbrance_penalty)
+					to_chat(src, span_notice("I horribly failed at moving down."))
+	else
+		var/turf/closed/waller = get_step_multiz(src, UP)
+		if(istype(waller))
+			to_chat(src, span_warning("I can't move up."))
+			return
+		var/turf/open/floore = get_step_multiz(src, UP)
+		var/turf/open/floord = get_turf(src)
+		if(!floore.liquids || (floore.liquids.liquid_state < LIQUID_STATE_PUDDLE))
+			return
+		if(!floord.liquids || (floord.liquids.liquid_state <= LIQUID_STATE_FULLTILE))
+			return
+		var/encumbrance_penalty = 0
+		switch(encumbrance)
+			if(ENCUMBRANCE_LIGHT)
+				encumbrance_penalty = 2
+			if(ENCUMBRANCE_MEDIUM)
+				encumbrance_penalty = 5
+			if(ENCUMBRANCE_HEAVY)
+				encumbrance_penalty = 10
+			if(ENCUMBRANCE_EXTREME)
+				encumbrance_penalty = 15
+		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_SWIMMING), context = DICE_CONTEXT_MENTAL)
+			switch(diceroll)
+				if(DICE_CRIT_SUCCESS)
+					src.adjustFatigueLoss(5 + encumbrance_penalty)
+					to_chat(src, span_notice("I move up perfectly."))
+					floore.forceMove(src)
+				if(DICE_SUCCESS)
+					src.adjustFatigueLoss(10 + encumbrance_penalty)
+					to_chat(src, span_notice("I move up succesfully."))
+					floore.forceMove(src)
+				if(DICE_FAILURE)
+					src.adjustFatigueLoss(10 + encumbrance_penalty)
+					to_chat(src, span_notice("I failed at moving up."))
+				if(DICE_CRIT_FAILURE)
+					src.adjustFatigueLoss(15 + encumbrance_penalty)
+					to_chat(src, span_notice("I horribly failed at moving up."))

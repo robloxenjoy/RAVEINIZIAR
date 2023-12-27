@@ -10,3 +10,11 @@
 	if(flags_1 & NO_SCREENTIPS_1)
 		return ""
 	return SCREENTIP_OPENSPACE(uppertext(name))
+
+/turf/open/openspace/on_hit(obj/projectile/P)
+	. = ..()
+	if(P.z_levelism)
+		if(P.z_levelism = TRUE)
+			get_step_multiz(P, UP)
+		else
+			get_step_multiz(P, DOWN)

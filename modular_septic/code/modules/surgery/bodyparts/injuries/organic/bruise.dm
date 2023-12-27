@@ -48,6 +48,7 @@
 		"mild hematoma" = 0
 		)
 	max_bleeding_stage = 4
+	infection_rate = 1.3
 	fade_away_time = INFINITY
 
 /datum/injury/bruise/monumental
@@ -62,4 +63,5 @@
 		"moderate hematoma" = 0
 		)
 	max_bleeding_stage = 4
+	infection_rate = 1.3
 	fade_away_time = INFINITY

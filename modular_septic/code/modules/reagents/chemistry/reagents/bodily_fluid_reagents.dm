@@ -89,6 +89,17 @@
 			else //ingest, patch or inject
 				exposed_mob.ForceContractDisease(strain)
 
+/datum/reagent/consumable/shit/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	M.adjust_disgust(1)
+
+/*
+	var/obj/item/bodypart/limb = M.get_bodypart(ran_zone())
+	for(var/datum/injury/injury as anything in M.limb.injuries)
+		if((injury.required_status == BODYPART_ORGANIC) && (injury.germ_level < SURGERY_GERM_MAXIMUM))
+			injury.adjust_germ_level(our_germ_level, maximum_germs = SURGERY_GERM_MAXIMUM)
+*/
+
 /datum/reagent/consumable/shit/expose_turf(turf/exposed_turf, reac_volume)//splash the blood all over the place
 	. = ..()
 	if(!istype(exposed_turf))
