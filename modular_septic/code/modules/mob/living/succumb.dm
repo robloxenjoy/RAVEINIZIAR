@@ -59,7 +59,7 @@
 		if(diceroll == DICE_SUCCESS)
 			for(var/obj/visible_obj in view(7, src))
 				if((visible_obj.plane != GAME_PLANE_FOV_HIDDEN) && (visible_obj.istrap))
-					var/has_alpha = client.hud_used?.fov_holder?
+					var/has_alpha = client.hud_used?.fov_holder?.alpha
 					if(has_alpha)
 						FOV_ANGLE_CHECK(src, visible_obj, continue, continue)
 					var/turf/obj_turf = get_turf(visible_obj)
@@ -76,7 +76,7 @@
 		if(diceroll == DICE_CRIT_SUCCESS)
 			for(var/obj/visible_obj in view(src))
 				if((visible_obj.plane != GAME_PLANE_FOV_HIDDEN) && (visible_obj.istrap))
-					var/has_alpha = client.hud_used?.fov_holder?
+					var/has_alpha = client.hud_used?.fov_holder?.alpha
 					if(has_alpha)
 						FOV_ANGLE_CHECK(src, visible_obj, continue, continue)
 					var/turf/obj_turf = get_turf(visible_obj)

@@ -14,7 +14,7 @@
 /turf/open/openspace/on_hit(obj/projectile/P)
 	. = ..()
 	if(P.z_levelism)
-		if(P.z_levelism = TRUE)
+		if(P.z_levelism == TRUE)
 			get_step_multiz(P, UP)
 		else
 			get_step_multiz(P, DOWN)
