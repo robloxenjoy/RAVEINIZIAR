@@ -288,7 +288,7 @@
 /obj/item/clothing/head/helmet/roman/legionnaire
 	name = "\improper Roman legionnaire helmet"
 	desc = "An ancient helmet made of bronze and leather. Has a red crest on top of it."
-icon = 'icons/obj/clothing/hats.dmi'
+	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "roman_c"
 	inhand_icon_state = "roman_c"
 

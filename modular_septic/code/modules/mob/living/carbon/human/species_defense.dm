@@ -780,8 +780,8 @@
 	else
 		var/parsed_intended_zone = parse_zone(intended_zone)
 		if(user != target)
-			if(!lying_attack_check(user))
-				return
+//			if(!lying_attack_check(user))
+//				return
 			target.visible_message(span_danger("<b>[user]</b> aims for \the [parsed_intended_zone], but [attack_verb_continuous] <b>[target]</b>'s [hit_area] instead![target.wound_message]"), \
 							span_userdanger("<b>[user]</b> aims for \the [parsed_intended_zone], but [attack_verb_continuous] my [hit_area] instead![target.wound_message]"), \
 							span_hear("I hear a sickening sound of flesh hitting flesh!"), \

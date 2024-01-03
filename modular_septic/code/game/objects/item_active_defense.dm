@@ -48,6 +48,15 @@
 		if(skill_parrying)
 			parrying_score = user.get_parrying_score(skill_parrying, parrying_modifier)
 		user.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
+/*
+		var/duraba = 0
+		if(durability)
+			duraba = durability/2
+		else
+			duraba = 0
+		var/diceroll = diceroll(CEILING(GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH)+duraba, context = DICE_CONTEXT_PHYSICAL))
+		if(GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH) + duraba > damage)
+*/
 		if(user.diceroll(parrying_score, context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 			playsound(user, pick(parry_sound), get_clamped_volume(), extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
 			user.sound_hint()

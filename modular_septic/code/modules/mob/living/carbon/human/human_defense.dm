@@ -710,12 +710,12 @@
 			if(check_shields(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)
 //				if(hitting_projectile.durability)
-//					hitting_projectile.damageItem("MEDIUM")
+//					hitting_projectile.damageItem("HARD")
 				return BULLET_ACT_HIT
 			if(check_parry(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)
 //				if(hitting_projectile.durability)
-//					hitting_projectile.damageItem("MEDIUM")
+//					hitting_projectile.damageItem("HARD")
 				return BULLET_ACT_HIT
 			if(check_dodge(hitting_projectile, hitting_projectile.damage, "\the [hitting_projectile]", BLOCK_FLAG_PROJECTILE) & COMPONENT_HIT_REACTION_BLOCK)
 				hitting_projectile.on_hit(src, 100, def_zone, piercing_hit)

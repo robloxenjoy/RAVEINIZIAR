@@ -110,11 +110,11 @@
 
 /datum/component/pellet_cloud/finalize()
 	var/obj/projectile/projectile = projectile_type
-	var/proj_name = initial(projectile.name)
+//	var/proj_name = initial(projectile.name)
 
 	for(var/atom/target in targets_hit)
-		var/num_hits = targets_hit[target]["hits"]
-		var/did_damage = targets_hit[target]["no damage"]
+//		var/num_hits = targets_hit[target]["hits"]
+//		var/did_damage = targets_hit[target]["no damage"]
 		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 		var/mob/living/carbon/carbon_target
 		if(iscarbon(target))
@@ -141,6 +141,7 @@
 				hit_part.damage_internal_organs(wound_type, damage_dealt, o_bonus, bo_bonus)
 				wound_info_by_part -= hit_part
 
+/*
 		var/wound_text = ""
 		//This is gonna get wacky
 		if(carbon_target)
@@ -186,6 +187,7 @@
 								vision_distance = COMBAT_MESSAGE_RANGE)
 		if(carbon_target)
 			SEND_SIGNAL(carbon_target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
+*/
 
 	for(var/mob/living/martyr as anything in purple_hearts)
 		if(martyr.stat == DEAD && martyr.client)

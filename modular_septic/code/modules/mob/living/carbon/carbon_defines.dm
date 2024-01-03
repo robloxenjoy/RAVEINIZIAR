@@ -77,7 +77,7 @@
 
 	// ~WEIGHT SYSTEM
 	/// Maximum weight we can carry, this point and beyond means maximum encumbrance
-	var/maximum_carry_weight = 50
+	var/maximum_carry_weight = 30
 	/// Weight we are currently carrying
 	var/carry_weight = 0
 	/// State of encumbrance we are in, cheaper to store this than keeping calling update_carry_weight()

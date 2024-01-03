@@ -59,35 +59,24 @@
 		if(diceroll == DICE_SUCCESS)
 			for(var/obj/visible_obj in view(7, src))
 				if((visible_obj.plane != GAME_PLANE_FOV_HIDDEN) && (visible_obj.istrap))
-					var/has_alpha = client.hud_used?.fov_holder?.alpha
-					if(has_alpha)
-						FOV_ANGLE_CHECK(src, visible_obj, continue, continue)
 					var/turf/obj_turf = get_turf(visible_obj)
 					if(!istype(obj_turf))
 						continue
-					var/datum/weakref/obj_ref = WEAKREF(visible_obj)
 					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
 					ghost.plane = GAME_PLANE_OBJECT_PERMANENCE
-					src.client.images -= object_permanence_images[obj_ref]
-					object_permanence_images[obj_ref] = ghost
 					src.client.images += ghost
-					to_chat(src, span_steal("I'm Noticed trap."))
+					to_chat(src, span_steal("I'm noticed a trap"))
 
 		if(diceroll == DICE_CRIT_SUCCESS)
 			for(var/obj/visible_obj in view(src))
 				if((visible_obj.plane != GAME_PLANE_FOV_HIDDEN) && (visible_obj.istrap))
-					var/has_alpha = client.hud_used?.fov_holder?.alpha
-					if(has_alpha)
-						FOV_ANGLE_CHECK(src, visible_obj, continue, continue)
 					var/turf/obj_turf = get_turf(visible_obj)
 					if(!istype(obj_turf))
 						continue
-					var/datum/weakref/obj_ref = WEAKREF(visible_obj)
 					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
 					ghost.plane = GAME_PLANE_OBJECT_PERMANENCE
-					src.client.images -= object_permanence_images[obj_ref]
-					object_permanence_images[obj_ref] = ghost
 					src.client.images += ghost
+					to_chat(src, span_steal("I'm noticed a trap"))
 
 		if(diceroll <= DICE_FAILURE)
 			to_chat(src, span_steal("I'm failed to notice anything."))
@@ -104,14 +93,14 @@
 	var/output_message = "<span class='infoplain'><div class='infobox'>[src.mind?.assigned_role.job_work]</div></span>"
 	to_chat(src, output_message)
 
-/mob/living/carbon/human/verb/up(whispered as null)
+/mob/living/carbon/human/verb/upp(whispered as null)
 	set name = "Move Up"
 	set category = "Extra"
 	set desc = "You want?"
 
 	go_somewhere(down = FALSE)
 
-/mob/living/carbon/human/verb/down(whispered as null)
+/mob/living/carbon/human/verb/downn(whispered as null)
 	set name = "Move Down"
 	set category = "Extra"
 	set desc = "You want?"

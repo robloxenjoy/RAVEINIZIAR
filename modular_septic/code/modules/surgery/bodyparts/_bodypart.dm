@@ -1076,8 +1076,9 @@
 		var/shock_penalty = min(SHOCK_PENALTY_CAP, FLOOR(pain/owner_endurance, 1))
 		if(shock_penalty)
 			owner.update_shock_penalty(shock_penalty)
-		var/final_crippling_threshold = CEILING((owner_endurance/ATTRIBUTE_MIDDLING) * crippling_threshold, 1)
-		if(pain >= final_crippling_threshold)
+//		var/final_crippling_threshold = CEILING((owner_endurance/ATTRIBUTE_MIDDLING) * crippling_threshold, 1)
+		if(get_damage() > limb_integrity/2)
+//		if(pain >= final_crippling_threshold)
 			owner.major_wound_effects(pain, body_zone, wound_messages)
 			update_cripple()
 
@@ -1164,7 +1165,7 @@
 		if((initial_wounding_type in list(WOUND_BLUNT, WOUND_SLASH, WOUND_PIERCE)) && (initial_wounding_dmg >= NERVE_MINIMUM_DAMAGE))
 			check_wounding(WOUND_NERVE, initial_wounding_dmg * (initial_wounding_type == WOUND_BLUNT ? 0.65 : (initial_wounding_type == WOUND_PIERCE ? 0.5 : 1)), wound_bonus, bare_wound_bonus)
 		if(initial_wounding_dmg >= SPILL_MINIMUM_DAMAGE)
-			check_wounding(WOUND_SPILL, initial_wounding_dmg * (initial_wounding_type == WOUND_PIERCE ? 0.75 : 1), wound_bonus, bare_wound_bonus)
+			check_wounding(WOUND_SPILL, initial_wounding_dmg * (initial_wounding_type == WOUND_PIERCE ? 0.5 : 1), wound_bonus, bare_wound_bonus)
 
 	/*
 	// END WOUND HANDLING
@@ -1267,16 +1268,16 @@
 	switch(wounding_type)
 		// Piercing damage is more likely to damage internal organs
 		if(WOUND_PIERCE)
-			organ_damage_minimum *= 0.50
+			organ_damage_minimum *= 0.5
 		// Slashing damage is *slightly* more likely to damage internal organs
 		if(WOUND_SLASH)
-			organ_damage_minimum *= 0.60
+			organ_damage_minimum *= 0.75
 		// Burn damage is unlikely to damage organs
 		if(WOUND_BURN)
-			organ_damage_minimum *= 1.7
+			organ_damage_minimum *= 1.5
 		// Organ damage minimum is assumed to be the case for blunt anyway
 		else
-			organ_damage_hit_minimum *= 1.2
+			organ_damage_hit_minimum *= 1
 
 	// Wounds can alter our odds of harming organs
 	for(var/datum/wound/oof as anything in wounds)

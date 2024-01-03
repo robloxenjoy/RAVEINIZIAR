@@ -121,8 +121,9 @@
 
 // Yawn
 /datum/emote/living/yawn/get_sound(mob/living/user)
-	if(ishuman(user))
-		switch(user.dna.species.id)
+	var/mob/living/carbon/human/human_user = user
+	if(istype(human_user))
+		switch(human_user.dna.species.id)
 			if(SPECIES_HUMAN)
 				if(user.gender != FEMALE)
 					return "modular_septic/sound/emotes/yawn_male[rand(1,2)].ogg"
