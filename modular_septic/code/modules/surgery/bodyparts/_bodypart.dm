@@ -1076,9 +1076,9 @@
 		var/shock_penalty = min(SHOCK_PENALTY_CAP, FLOOR(pain/owner_endurance, 1))
 		if(shock_penalty)
 			owner.update_shock_penalty(shock_penalty)
-//		var/final_crippling_threshold = CEILING((owner_endurance/ATTRIBUTE_MIDDLING) * crippling_threshold, 1)
-		if(get_damage() > limb_integrity/2)
-//		if(pain >= final_crippling_threshold)
+		var/final_crippling_threshold = CEILING((owner_endurance/ATTRIBUTE_MIDDLING) * crippling_threshold, 1)
+//		if(get_damage() > limb_integrity/2)
+		if(pain >= final_crippling_threshold)
 			owner.major_wound_effects(pain, body_zone, wound_messages)
 			update_cripple()
 
