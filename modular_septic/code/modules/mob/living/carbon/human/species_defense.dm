@@ -144,8 +144,8 @@
 				if(CS_DEFEND)
 					damage *= 0.75
 	if(user != victim)
-		if(!victim.lying_attack_check(user, weapon))
-			return FALSE
+//		if(!victim.lying_attack_check(user, weapon))
+//			return FALSE
 		var/hit_modifier = weapon.melee_modifier+attack_skill_modifier+attack_skill_modifier
 		var/hit_zone_modifier = weapon.melee_zone_modifier
 		if(affecting)
@@ -348,8 +348,8 @@
 								list/modifiers)
 	if(!istype(user))
 		return
-	if(!victim.lying_attack_check(user))
-		return FALSE
+//	if(!victim.lying_attack_check(user))
+//		return FALSE
 	CHECK_DNA_AND_SPECIES(user)
 	CHECK_DNA_AND_SPECIES(victim)
 
