@@ -75,7 +75,7 @@
 			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!", \
 			"GODDAMNIT!!!!", \
 			"FUCK!!!!", \
-			"PODPOL IS A PARODY OF DICKWEB!!!!", \
+			"CODEC IS A PARODY OF DICKWEB!!!!", \
 			"IVASHKA!!!!!", \
 		)
 		var/message = pick(fraggot_lines)
