@@ -348,7 +348,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set name = "Set Respawn Rate"
 	set category = "Admin"
 
-	var/newrespawnrate = input(usr, "Input new respawn rate in minutes", "Codec") as num|null
+	var/newrespawnrate = input(usr, "Input new respawn rate in minutes", "PODPOL") as num|null
 
 	if(!newrespawnrate)
 		return

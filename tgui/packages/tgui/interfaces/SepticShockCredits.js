@@ -7,7 +7,7 @@ export const SepticShockCredits = (props, context) => {
 
   return (
     <Window
-      title="Codec Credits"
+      title="Podpol Credits"
       width={450}
       height={700}
       theme="quake">
@@ -20,7 +20,7 @@ export const SepticShockCredits = (props, context) => {
           <Stack.Item>
             <Section title="Developers">
               <LabeledList>
-                <LabeledList.Item label="Rev1n">
+                <LabeledList.Item label="Ravein">
                   Me.
                 </LabeledList.Item>
                 <LabeledList.Item label="Bob">
