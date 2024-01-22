@@ -216,15 +216,15 @@
 					if(diceroll <= DICE_CRIT_FAILURE)
 						var/obj/item/organ/bone/ribs = chest.getorganslot(ORGAN_SLOT_BONE)
 						if(ribs)
-							if(!ribs.dislocate() && !ribs.fracture())
+							if(!ribs.fracture())
 								ribs.compound_fracture()
-							visible_message(span_danger("<b>[src]</b> botches the CPR, cracking <b>[target]</b>'s [ribs.name]!"), \
-										span_danger("I botch the CPR, cracking <b>[target]</b>'s [ribs.name]!"),
-										span_hear("I hear a loud crack!"),
-										ignored_mobs = target)
-							to_chat(target, span_userdanger("<b>[src]</b> botches the CPR and cracks my [ribs.name]!"))
-							playsound(target, 'modular_septic/sound/gore/ouchie.ogg', 75, FALSE)
-							SEND_SIGNAL(target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
+								visible_message(span_danger("<b>[src]</b> botches the CPR, cracking <b>[target]</b>'s [ribs.name]!"), \
+											span_danger("I botch the CPR, cracking <b>[target]</b>'s [ribs.name]!"),
+											span_hear("I hear a loud crack!"),
+											ignored_mobs = target)
+								to_chat(target, span_userdanger("<b>[src]</b> botches the CPR and cracks my [ribs.name]!"))
+								playsound(target, 'modular_septic/sound/gore/ouchie.ogg', 75, FALSE)
+								SEND_SIGNAL(target, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 
 /mob/living/carbon/human/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)
 	if(damage_type != BRUTE && damage_type != BURN)
