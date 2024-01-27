@@ -224,7 +224,7 @@
 		else
 			if(!CZ)
 				acceptable = list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
-	else if(L.body_position == LYING_DOWN) && (body_position != LYING_DOWN) //we are standing, victim is not
+	else if((L.body_position == LYING_DOWN) && (body_position != LYING_DOWN)) //we are standing, victim is not
 		if(I)
 			if(I.weapon_long > WLENGTH_NORMAL)
 				CZ = TRUE
