@@ -67,6 +67,7 @@
 /obj/item/clothing/head/hardhat/red/upgraded
 	name = "workplace-ready firefighter helmet"
 	desc = "By applying state of the art lighting technology to a fire helmet, and using photo-chemical hardening methods, this hardhat will protect you from robust workplace hazards."
+	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "hardhat0_purple"
 	inhand_icon_state = "hardhat0_purple"
 	light_range = 5

@@ -14,8 +14,6 @@ Format:
 endmap
 
 map metastation
-	default
-	votable
 endmap
 
 map deltastation
@@ -58,8 +56,6 @@ map polovich_third
 endmap
 
 map polovichx
+	default
+	votable
 endmap
-
-map warwar
-endmap
-

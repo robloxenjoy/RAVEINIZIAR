@@ -1,7 +1,8 @@
 /obj/item/organ/tongue/ethereal
 	name = "electric discharger"
 	desc = "A sophisticated ethereal organ, capable of synthesising speech via electrical discharge."
-	icon_state = "tongue-electro"
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "electrotongue"
 	say_mod = "crackles"
 	attack_verb_continuous = list("shocks", "jolts", "zaps")
 	attack_verb_simple = list("shock", "jolt", "zap")

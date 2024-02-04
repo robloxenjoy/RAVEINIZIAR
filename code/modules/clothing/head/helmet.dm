@@ -352,6 +352,7 @@
 /obj/item/clothing/head/helmet/knight/greyscale
 	name = "knight helmet"
 	desc = "A classic medieval helmet, if you hold it upside down you could see that it's actually a bucket."
+	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "knight_greyscale"
 	inhand_icon_state = "knight_greyscale"
 	armor = list(MELEE = 35, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, FIRE = 40, ACID = 40)

@@ -1,6 +1,7 @@
 /obj/item/organ/lungs/plasmaman
 	name = "plasma filter"
 	desc = "A spongy rib-shaped mass for filtering plasma from the air."
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "lungs-plasma"
 
 	safe_oxygen_min = 0 //We don't breath this

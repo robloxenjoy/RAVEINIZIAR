@@ -13,12 +13,11 @@
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
-	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_system = STATIC_LIGHT
 	light_range = 4
 	light_power = 1
 	light_on = FALSE
 	var/on = FALSE
-
 
 /obj/item/flashlight/Initialize(mapload)
 	. = ..()
@@ -34,7 +33,6 @@
 	set_light_on(on)
 	if(light_system == STATIC_LIGHT)
 		update_light()
-
 
 /obj/item/flashlight/attack_self(mob/user)
 	on = !on
@@ -372,7 +370,6 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A mining lantern."
 	light_range = 6 // luminosity when on
-	light_system = MOVABLE_LIGHT
 
 /obj/item/flashlight/lantern/heirloom_moth
 	name = "old lantern"

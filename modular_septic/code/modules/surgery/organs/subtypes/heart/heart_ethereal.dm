@@ -1,5 +1,6 @@
 /obj/item/organ/heart/ethereal
 	name = "Crystal core"
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "ethereal_heart" //Welp. At least it's more unique in functionaliy.
 	desc = "A crystal-like organ that functions similarly to a heart for Ethereals. It can revive its owner."
 	///Cooldown for the next time we can crystalize

@@ -1,6 +1,8 @@
 /datum/lighting_object
 	///the underlay we are currently applying to our turf to apply light
-	var/mutable_appearance/current_underlay
+//	var/mutable_appearance/current_underlay
+//	var/image/current_underlay
+	var/image/CU
 
 	///whether we are already in the SSlighting.objects_queue list
 	var/needs_update = FALSE
@@ -15,7 +17,21 @@
 		return
 	. = ..()
 
-	current_underlay = mutable_appearance(LIGHTING_ICON, "transparent", source.z, LIGHTING_PLANE, 255, RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
+//	var/image/CU = new()
+	CU = image(icon = LIGHTING_ICON, icon_state = "transparent")
+	CU.layer = source.z
+	CU.alpha = 255
+	CU.plane = LIGHTING_PLANE
+	CU.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+
+/*
+	CU.icon = LIGHTING_ICON
+	CU.icon_state = "transparent"
+	CU.layer = source.z
+	CU.plane = LIGHTING_PLANE
+	CU.alpha = 255
+	CU.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+*/
 
 	affected_turf = source
 	if (affected_turf.lighting_object)
@@ -38,7 +54,7 @@
 	if (isturf(affected_turf))
 		affected_turf.lighting_object = null
 		affected_turf.luminosity = 1
-		affected_turf.underlays -= current_underlay
+		affected_turf.underlays -= CU
 	affected_turf = null
 	return ..()
 
@@ -87,18 +103,27 @@
 
 	if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8))
 		//anything that passes the first case is very likely to pass the second, and addition is a little faster in this case
-		affected_turf.underlays -= current_underlay
-		current_underlay.icon_state = "transparent"
-		current_underlay.color = null
-		affected_turf.underlays += current_underlay
+		affected_turf.underlays -= CU
+		CU.icon_state = "transparent"
+		CU.color = null
+		affected_turf.underlays += CU
 	else if(!set_luminosity)
-		affected_turf.underlays -= current_underlay
-		current_underlay.icon_state = "dark"
-		current_underlay.color = null
-		affected_turf.underlays += current_underlay
+		affected_turf.underlays -= CU
+		CU.icon_state = "dark"
+		CU.color = null
+		affected_turf.underlays += CU
 	else
-		affected_turf.underlays -= current_underlay
-		current_underlay.icon_state = null
+		affected_turf.underlays -= CU
+		CU.icon_state = null
+/*
+		animate(CU, color = list(rr, rg, rb, 00, gr, gg, gb, 00, br, bg, bb, 00, ar, ag, ab, 00, 00, 00, 00, 01), time = 5)
+
+
+
+		. = 1 
+		if(max > 1)
+			. = 1/max
+		animate(current_underlay, color = rgb(lum_r * 255 * ., lum_g * 255 * ., lum_b * 255 * .), time = 5)
 		current_underlay.color = list(
 			rr, rg, rb, 00,
 			gr, gg, gb, 00,
@@ -106,7 +131,10 @@
 			ar, ag, ab, 00,
 			00, 00, 00, 01
 		)
+*/
 
-		affected_turf.underlays += current_underlay
+//		animate(CU, color = list(-rr, -rg, -rb, 00,-gr, -gg, -gb, 00,-br, -bg, -bb, 00,-ar, -ag, -ab, 00,01, 01, 01, 01), time = 5)
+		animate(CU, color = list(rr, rg, rb, 00, gr, gg, gb, 00, br, bg, bb, 00, ar, ag, ab, 00, 00, 00, 00, 01), time = 5)
+		affected_turf.underlays += CU
 
 	affected_turf.luminosity = set_luminosity
