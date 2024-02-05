@@ -120,7 +120,7 @@
 
 
 
-		. = 1 
+		. = 1
 		if(max > 1)
 			. = 1/max
 		animate(current_underlay, color = rgb(lum_r * 255 * ., lum_g * 255 * ., lum_b * 255 * .), time = 5)
@@ -134,7 +134,15 @@
 */
 
 //		animate(CU, color = list(-rr, -rg, -rb, 00,-gr, -gg, -gb, 00,-br, -bg, -bb, 00,-ar, -ag, -ab, 00,01, 01, 01, 01), time = 5)
-		animate(CU, color = list(rr, rg, rb, 00, gr, gg, gb, 00, br, bg, bb, 00, ar, ag, ab, 00, 00, 00, 00, 01), time = 5)
+//		animate(CU, color = list(rr, rg, rb, 00, gr, gg, gb, 00, br, bg, bb, 00, ar, ag, ab, 00, 00, 00, 00, 01), time = 5)
+		CU.color = list(
+			rr, rg, rb, 00,
+			gr, gg, gb, 00,
+			br, bg, bb, 00,
+			ar, ag, ab, 00,
+			00, 00, 00, 01
+		)
+
 		affected_turf.underlays += CU
 
 	affected_turf.luminosity = set_luminosity
