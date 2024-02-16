@@ -8,12 +8,12 @@ import { BooleanLike, classes, pureComponentHooks } from 'common/react';
 import { BoxProps, computeBoxClassName, computeBoxProps, unit } from './Box';
 
 export type FlexProps = BoxProps & {
-   direction?: string | BooleanLike;
-   wrap?: string | BooleanLike;
-   align?: string | BooleanLike;
-   justify?: string | BooleanLike;
-   inline?: BooleanLike;
- };
+  direction?: string | BooleanLike;
+  wrap?: string | BooleanLike;
+  align?: string | BooleanLike;
+  justify?: string | BooleanLike;
+  inline?: BooleanLike;
+};
 
 export const computeFlexClassName = (props: FlexProps) => {
   return classes([
@@ -63,12 +63,12 @@ export const Flex = props => {
 Flex.defaultHooks = pureComponentHooks;
 
 export type FlexItemProps = BoxProps & {
-   grow?: number;
-   order?: number;
-   shrink?: number;
-   basis?: string | BooleanLike;
-   align?: string | BooleanLike;
- };
+  grow?: number;
+  order?: number;
+  shrink?: number;
+  basis?: string | BooleanLike;
+  align?: string | BooleanLike;
+};
 
 export const computeFlexItemClassName = (props: FlexItemProps) => {
   return classes([

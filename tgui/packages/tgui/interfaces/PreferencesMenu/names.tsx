@@ -205,7 +205,7 @@ export const NameInput = (props: {
               tooltip="Alternate Names"
               tooltipPosition="bottom"
               style={{
-                background: "rgba(0, 0, 0, 0)",
+                background: "rgba(0, 0, 0, 0.7)",
                 position: "absolute",
                 right: "2px",
                 top: "50%",

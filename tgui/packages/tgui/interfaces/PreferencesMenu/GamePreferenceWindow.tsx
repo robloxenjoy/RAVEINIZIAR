@@ -5,7 +5,7 @@ import { GamePreferencesPage } from "./GamePreferencesPage";
 import { PageButton } from "./PageButton";
 import { useBackend, useLocalState } from "../../backend";
 import { GamePreferencesSelectedPage, PreferencesMenuData } from "./data";
-
+import { exhaustiveCheck } from "common/exhaustive";
 
 export const GamePreferenceWindow = (props: {
   startingPage?: GamePreferencesSelectedPage,
@@ -38,8 +38,7 @@ export const GamePreferenceWindow = (props: {
       title="Game Preferences"
       width={920}
       height={770}
-      theme="quake"
-    >
+      theme="mojavesun">
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item>

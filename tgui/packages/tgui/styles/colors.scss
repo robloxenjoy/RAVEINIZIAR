@@ -23,9 +23,6 @@ $pink: #e03997 !default;
 $brown: #a5673f !default;
 $grey: #767676 !default;
 $light-grey: #aaa !default;
-$paperplease: rgba(61, 47, 66, 0.6) !default;
-$quake: rgb(65, 175, 115) !default;
-$quake-light: rgb(165, 255, 200) !default;
 
 $primary: #4972a1 !default;
 $good: #5baa27 !default;
@@ -67,9 +64,6 @@ $_gen_map: (
   'average': $average,
   'bad': $bad,
   'label': $label,
-  'paperplease': $paperplease,
-  'quake': $quake,
-  'quake-light': $quake-light,
 );
 
 // Foreground color names for which to generate a color map
