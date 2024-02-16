@@ -3,8 +3,8 @@ import { multiline } from "common/string";
 
 export const TRAITOR_MECHANICAL_DESCRIPTION
    = multiline`
-      Start with an uplink to purchase your gear and take on your sinister
-      objectives. Ascend through the ranks and become an infamous legend.
+      Start with a set of sinister objectives and an uplink to purchase
+      items to get the job done.
    `;
 
 const Traitor: Antagonist = {

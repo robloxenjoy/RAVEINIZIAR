@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { AnimatedNumber, Box, Button, Modal, Section, Stack, Tabs } from '../components';
+import { AnimatedNumber, Box, Button, Flex, Modal, Section, Stack, Tabs } from '../components';
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
 
@@ -15,7 +15,7 @@ export const BlackMarketUplink = (props, context) => {
   } = data;
   return (
     <Window
-      width={670}
+      width={600}
       height={480}
       theme="hackerman">
       <ShipmentSelector />
@@ -41,8 +41,8 @@ export const BlackMarketUplink = (props, context) => {
             </Tabs.Tab>
           ))}
         </Tabs>
-        <Stack>
-          <Stack.Item>
+        <Flex>
+          <Flex.Item>
             <Tabs vertical>
               {categories.map(category => (
                 <Tabs.Tab
@@ -56,8 +56,8 @@ export const BlackMarketUplink = (props, context) => {
                 </Tabs.Tab>
               ))}
             </Tabs>
-          </Stack.Item>
-          <Stack.Item grow>
+          </Flex.Item>
+          <Flex.Item grow={1} basis={0}>
             {items.map(item => (
               <Box
                 key={item.name}
@@ -88,8 +88,8 @@ export const BlackMarketUplink = (props, context) => {
                 {item.desc}
               </Box>
             ))}
-          </Stack.Item>
-        </Stack>
+          </Flex.Item>
+        </Flex>
       </Window.Content>
     </Window>
   );
@@ -114,16 +114,16 @@ const ShipmentSelector = (props, context) => {
   });
   return (
     <Modal textAlign="center">
-      <Stack mb={1}>
+      <Flex mb={1}>
         {deliveryMethods.map(method => {
           if (method.name === 'LTSRBT' && !ltsrbt_built) {
             return null;
           }
           return (
-            <Stack.Item
+            <Flex.Item
               key={method.name}
               mx={1}
-              width="17.5rem">
+              width="250px">
               <Box fontSize="30px">
                 {method.name}
               </Box>
@@ -137,10 +137,10 @@ const ShipmentSelector = (props, context) => {
                 onClick={() => act('buy', {
                   method: method.name,
                 })} />
-            </Stack.Item>
+            </Flex.Item>
           );
         })}
-      </Stack>
+      </Flex>
       <Button
         content="Cancel"
         color="bad"

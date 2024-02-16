@@ -183,8 +183,8 @@ const GASES = [
   },
   {
     'id': 'no2',
-    'name': 'Nitrium',
-    'label': 'Nitrium',
+    'name': 'Nitryl',
+    'label': 'NO₂',
     'color': 'brown',
   },
   {
@@ -198,6 +198,12 @@ const GASES = [
     'name': 'BZ',
     'label': 'BZ',
     'color': 'mediumpurple',
+  },
+  {
+    'id': 'stim',
+    'name': 'Stimulum',
+    'label': 'Stimulum',
+    'color': 'darkviolet',
   },
   {
     'id': 'pluox',

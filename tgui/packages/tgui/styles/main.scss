@@ -47,7 +47,6 @@
 // Interfaces
 @include meta.load-css('./interfaces/ListInput.scss');
 @include meta.load-css('./interfaces/IntegratedCircuit.scss');
-@include meta.load-css('./interfaces/Uplink.scss');
 @include meta.load-css('./interfaces/AlertModal.scss');
 @include meta.load-css('./interfaces/CameraConsole.scss');
 @include meta.load-css('./interfaces/Changelog.scss');
@@ -60,10 +59,10 @@
 @include meta.load-css('./interfaces/PreferencesMenu.scss');
 @include meta.load-css('./interfaces/Roulette.scss');
 @include meta.load-css('./interfaces/Safe.scss');
-@include meta.load-css('./interfaces/StatsBrowser.scss');
 @include meta.load-css('./interfaces/TachyonArray.scss');
 @include meta.load-css('./interfaces/Techweb.scss');
 @include meta.load-css('./interfaces/RequestManager.scss');
+@include meta.load-css('./interfaces/Hacking.scss');
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');
@@ -72,9 +71,9 @@
 @include meta.load-css('./layouts/TitleBar.scss');
 @include meta.load-css('./layouts/Window.scss');
 
-// NT Theme
+// ZT Theme
 .Layout__content {
-  background-image: url('../assets/bg-nanotrasen.svg');
+  background-image: url('../assets/bg-zoomtech.svg');
   background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;

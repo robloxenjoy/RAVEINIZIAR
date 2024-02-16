@@ -20,6 +20,7 @@ export const FONTS_DISABLED = "Default";
 
 export const FONTS = [
   FONTS_DISABLED,
+  'Courier New',
   'Verdana',
   'Arial',
   'Arial Black',
@@ -28,6 +29,5 @@ export const FONTS = [
   'Lucida Sans Unicode',
   'Tahoma',
   'Trebuchet MS',
-  'Courier New',
   'Lucida Console',
 ];

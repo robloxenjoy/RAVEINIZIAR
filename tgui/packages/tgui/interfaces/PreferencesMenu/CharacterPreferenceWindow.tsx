@@ -9,11 +9,19 @@ import { JobsPage } from "./JobsPage";
 import { MainPage } from "./MainPage";
 import { SpeciesPage } from "./SpeciesPage";
 import { QuirksPage } from "./QuirksPage";
+import { LanguagesPage } from "./LanguagesPage";
+import { MarkingsPage } from "./MarkingsPage";
+import { AugmentsPage } from "./AugmentsPage";
+import { BackgroundPage } from "./BackgroundPage";
 
 enum Page {
-  Antags,
   Main,
+  Markings,
+  Augments,
+  Languages,
+  Background,
   Jobs,
+  Antags,
   Species,
   Quirks,
 }
@@ -57,18 +65,28 @@ export const CharacterPreferenceWindow = (props, context) => {
       break;
     case Page.Main:
       pageContents = (<MainPage
-      //  openSpecies={() => setCurrentPage(Page.Species)} MOJAVE SUN EDIT
+        openSpecies={() => setCurrentPage(Page.Species)}
       />);
-
       break;
     case Page.Species:
       pageContents = (<SpeciesPage
         closeSpecies={() => setCurrentPage(Page.Main)}
       />);
-
       break;
     case Page.Quirks:
       pageContents = <QuirksPage />;
+      break;
+    case Page.Languages:
+      pageContents = <LanguagesPage />;
+      break;
+    case Page.Markings:
+      pageContents = <MarkingsPage />;
+      break;
+    case Page.Augments:
+      pageContents = <AugmentsPage />;
+      break;
+    case Page.Background:
+      pageContents = <BackgroundPage />;
       break;
     default:
       exhaustiveCheck(currentPage);
@@ -77,9 +95,10 @@ export const CharacterPreferenceWindow = (props, context) => {
   return (
     <Window
       title="Character Preferences"
-      width={920}
+      width={1000}
       height={770}
-      theme="mojavesun">
+      theme="quake"
+    >
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>
@@ -94,11 +113,16 @@ export const CharacterPreferenceWindow = (props, context) => {
             />
           </Stack.Item>
 
-          {/* !data.content_unlocked && ( // MOJAVE SUN EDIT
+          {!data.content_unlocked && (
             <Stack.Item align="center">
-              Buy BYOND premium for more slots!
+              Buy BYOND premium for an extra 5 slots!
             </Stack.Item>
-          )*/}
+          )}
+          {!data.donator_rank && (
+            <Stack.Item align="center">
+              Make cool character
+            </Stack.Item>
+          )}
 
           <Stack.Divider />
 
@@ -111,7 +135,47 @@ export const CharacterPreferenceWindow = (props, context) => {
                   setPage={setCurrentPage}
                   otherActivePages={[Page.Species]}
                 >
-                  Character
+                  General
+                </PageButton>
+              </Stack.Item>
+
+              <Stack.Item grow>
+                <PageButton
+                  currentPage={currentPage}
+                  page={Page.Markings}
+                  setPage={setCurrentPage}
+                >
+                  Markings
+                </PageButton>
+              </Stack.Item>
+
+              <Stack.Item grow>
+                <PageButton
+                  currentPage={currentPage}
+                  page={Page.Augments}
+                  setPage={setCurrentPage}
+                >
+                  Augments
+                </PageButton>
+              </Stack.Item>
+
+              <Stack.Item grow>
+                <PageButton
+                  currentPage={currentPage}
+                  page={Page.Languages}
+                  setPage={setCurrentPage}
+                >
+                  Languages
+                </PageButton>
+              </Stack.Item>
+
+              <Stack.Item grow>
+                <PageButton
+                  currentPage={currentPage}
+                  page={Page.Background}
+                  setPage={setCurrentPage}
+                >
+                  Background
                 </PageButton>
               </Stack.Item>
 
@@ -121,35 +185,19 @@ export const CharacterPreferenceWindow = (props, context) => {
                   page={Page.Jobs}
                   setPage={setCurrentPage}
                 >
-                  {/*
-                    Fun fact: This isn't "Jobs" so that it intentionally
-                    catches your eyes, because it's really important!
-                  */}
-
-                  Factions
+                  Occupations
                 </PageButton>
               </Stack.Item>
-              {/*
+
               <Stack.Item grow>
                 <PageButton
                   currentPage={currentPage}
                   page={Page.Antags}
                   setPage={setCurrentPage}
                 >
-                  Antagonists
+                  Antagonism
                 </PageButton>
               </Stack.Item>
-
-              <Stack.Item grow>
-                <PageButton
-                  currentPage={currentPage}
-                  page={Page.Quirks}
-                  setPage={setCurrentPage}
-                >
-                  Quirks
-              </PageButton>
-
-              </Stack.Item>*/}
             </Stack>
           </Stack.Item>
 

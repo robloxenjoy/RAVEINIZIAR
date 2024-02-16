@@ -62,6 +62,7 @@ const typevars = (type) => {
       default_value: '',
     },
     { name: 'clothes_req', type: 'bool', options: null, default_value: false },
+    { name: 'cult_req', type: 'bool', options: null, default_value: false },
     { name: 'human_req', type: 'bool', options: null, default_value: false },
     {
       name: 'nonabstract_req',

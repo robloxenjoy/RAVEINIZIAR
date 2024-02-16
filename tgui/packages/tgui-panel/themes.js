@@ -4,11 +4,11 @@
  * @license MIT
  */
 
-export const THEMES = ['light', 'dark'];
+export const THEMES = ['dark'];
 
-const COLOR_DARK_BG = '#202020';
-const COLOR_DARK_BG_DARKER = '#171717';
-const COLOR_DARK_TEXT = '#a4bad6';
+const COLOR_DARK_BG = '#1e001d';
+const COLOR_DARK_BG_DARKER = '#0d000b';
+const COLOR_DARK_TEXT = '#531c1d';
 
 let setClientThemeTimer = null;
 
@@ -30,58 +30,7 @@ export const setClientTheme = name => {
   setClientThemeTimer = setTimeout(() => {
     Byond.command(`.output statbrowser:set_theme ${name}`);
   }, 1500);
-
-  if (name === 'light') {
-    return Byond.winset({
-      // Main windows
-      'infowindow.background-color': 'none',
-      'infowindow.text-color': '#000000',
-      'info.background-color': 'none',
-      'info.text-color': '#000000',
-      'browseroutput.background-color': 'none',
-      'browseroutput.text-color': '#000000',
-      'outputwindow.background-color': 'none',
-      'outputwindow.text-color': '#000000',
-      'mainwindow.background-color': 'none',
-      'split.background-color': 'none',
-      // Buttons
-      'changelog.background-color': 'none',
-      'changelog.text-color': '#000000',
-      'rules.background-color': 'none',
-      'rules.text-color': '#000000',
-      'wiki.background-color': 'none',
-      'wiki.text-color': '#000000',
-      'forum.background-color': 'none',
-      'forum.text-color': '#000000',
-      'github.background-color': 'none',
-      'github.text-color': '#000000',
-      'report-issue.background-color': 'none',
-      'report-issue.text-color': '#000000',
-      // Status and verb tabs
-      'output.background-color': 'none',
-      'output.text-color': '#000000',
-      'statwindow.background-color': 'none',
-      'statwindow.text-color': '#000000',
-      'stat.background-color': '#FFFFFF',
-      'stat.tab-background-color': 'none',
-      'stat.text-color': '#000000',
-      'stat.tab-text-color': '#000000',
-      'stat.prefix-color': '#000000',
-      'stat.suffix-color': '#000000',
-      // Say, OOC, me Buttons etc.
-      'saybutton.background-color': 'none',
-      'saybutton.text-color': '#000000',
-      'oocbutton.background-color': 'none',
-      'oocbutton.text-color': '#000000',
-      'mebutton.background-color': 'none',
-      'mebutton.text-color': '#000000',
-      'asset_cache_browser.background-color': 'none',
-      'asset_cache_browser.text-color': '#000000',
-      'tooltip.background-color': 'none',
-      'tooltip.text-color': '#000000',
-    });
-  }
-  if (name === 'dark') {
+  if (name === 'dark' || name === 'light') {
     Byond.winset({
       // Main windows
       'infowindow.background-color': COLOR_DARK_BG,
@@ -107,6 +56,10 @@ export const setClientTheme = name => {
       'github.text-color': COLOR_DARK_TEXT,
       'report-issue.background-color': '#492020',
       'report-issue.text-color': COLOR_DARK_TEXT,
+      'discord.background-color': '#2e6b49',
+      'discord.text-color': '#FFFFFF',
+      'codebase.background-color': '#2e6b49',
+      'codebase.text-color': '#FFFFFF',
       // Status and verb tabs
       'output.background-color': COLOR_DARK_BG_DARKER,
       'output.text-color': COLOR_DARK_TEXT,
@@ -120,11 +73,11 @@ export const setClientTheme = name => {
       'stat.suffix-color': COLOR_DARK_TEXT,
       // Say, OOC, me Buttons etc.
       'saybutton.background-color': COLOR_DARK_BG,
-      'saybutton.text-color': COLOR_DARK_TEXT,
+      'saybutton.text-color': '#a5ffc8',
       'oocbutton.background-color': COLOR_DARK_BG,
-      'oocbutton.text-color': COLOR_DARK_TEXT,
+      'oocbutton.text-color': '#a5ffc8',
       'mebutton.background-color': COLOR_DARK_BG,
-      'mebutton.text-color': COLOR_DARK_TEXT,
+      'mebutton.text-color': '#a5ffc8',
       'asset_cache_browser.background-color': COLOR_DARK_BG,
       'asset_cache_browser.text-color': COLOR_DARK_TEXT,
       'tooltip.background-color': COLOR_DARK_BG,

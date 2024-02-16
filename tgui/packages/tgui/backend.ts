@@ -253,7 +253,6 @@ type BackendState<TData> = {
     title: string,
     status: number,
     interface: string,
-    refreshing: boolean,
     window: {
       key: string,
       size: [number, number],
