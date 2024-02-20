@@ -215,7 +215,7 @@
 		else
 			if(!CZ) //we are punching, no legs
 				acceptable = list(BODY_ZONE_HEAD, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_VITALS, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_R_EYE,BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_MOUTH)
-	else if(!(L.body_position == LYING_DOWN) && (body_position == LYING_DOWN)) //we are prone, victim is standing
+	else if((L.body_position != LYING_DOWN) && (body_position == LYING_DOWN)) //we are prone, victim is standing
 		if(I)
 			if(I.weapon_long > WLENGTH_NORMAL)
 				CZ = TRUE
