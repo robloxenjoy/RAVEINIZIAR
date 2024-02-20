@@ -1,10 +1,10 @@
-import { CheckboxInput, Feature, FeatureColorInputNoMutant, FeatureDropdownInput, FeatureToggle } from "../base";
+import { CheckboxInput, FeatureColorInput, Feature, FeatureDropdownInput, FeatureToggle } from "../base";
 
 export const asaycolor: Feature<string> = {
   name: "Admin chat color",
   category: "ADMIN",
   description: "The color of your messages in Adminsay.",
-  component: FeatureColorInputNoMutant,
+  component: FeatureColorInput,
 };
 
 export const brief_outfit: Feature<string> = {
@@ -18,5 +18,12 @@ export const bypass_deadmin_in_centcom: FeatureToggle = {
   name: "Bypass deadmin options when in CentCom",
   category: "ADMIN",
   description: "Whether or not to always remain an admin when spawned in CentCom.",
+  component: CheckboxInput,
+};
+
+export const fast_mc_refresh: FeatureToggle = {
+  name: "Enable fast MC stat panel refreshes",
+  category: "ADMIN",
+  description: "Whether or not the MC tab of the Stat Panel refreshes fast. This is expensive so make sure you need it.",
   component: CheckboxInput,
 };

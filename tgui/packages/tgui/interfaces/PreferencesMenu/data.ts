@@ -1,6 +1,5 @@
 import { BooleanLike } from "common/react";
 import { sendAct } from "../../backend";
-import { Genital } from "./preferences/features/character_preferences/genitals";
 import { Gender } from "./preferences/gender";
 
 export enum Food {
@@ -21,7 +20,6 @@ export enum Food {
   Sugar = "SUGAR",
   Toxic = "TOXIC",
   Vegetables = "VEGETABLES",
-  Sewage = "SEWAGE",
 }
 
 export enum JobPriority {
@@ -36,8 +34,10 @@ export type Name = {
   group: string;
 };
 
-export type ServerSpeciesData = {
+export type Species = {
   name: string;
+  desc: string;
+  lore: string[];
   icon: string;
 
   use_skintones: BooleanLike;
@@ -45,9 +45,34 @@ export type ServerSpeciesData = {
 
   enabled_features: string[];
 
-  liked_food: Food[];
-  disliked_food: Food[];
-  toxic_food: Food[];
+  perks: {
+    positive: Perk[];
+    negative: Perk[];
+    neutral: Perk[];
+  };
+
+  diet?: {
+    liked_food: Food[];
+    disliked_food: Food[];
+    toxic_food: Food[];
+  };
+
+};
+
+export type Perk = {
+  ui_icon: string;
+  name: string;
+  description: string;
+};
+
+export type Department = {
+  head?: string;
+  full_name?: string; // Mojave Sun Edit - Department full_name
+};
+
+export type Job = {
+  description: string;
+  department: string;
 };
 
 export type Quirk = {
@@ -61,72 +86,6 @@ export type QuirkInfo = {
   max_positive_quirks: number;
   quirk_info: Record<string, Quirk>;
   quirk_blacklist: string[][];
-};
-
-export type Language = {
-  name: string;
-  description: string;
-  understand_type: number;
-  icon: string;
-  value_understand: number;
-  value_speak: number;
-  cant_learn_understand: boolean;
-  cant_learn_speak: boolean;
-  cant_forget: string;
-};
-
-export type Marking = {
-  name: string;
-  color: string;
-  marking_index: string;
-};
-
-export type MarkingZone = {
-  body_zone: string;
-  name: string;
-  markings_choices: string[];
-  markings: Marking[];
-  can_add_markings: boolean;
-};
-
-export type AugmentItem = {
-  category: string;
-  slot: string;
-  name: string;
-  description: string;
-  can_use_styles: boolean;
-  value: number;
-  cant_buy: string;
-};
-
-export type AugmentSlot = {
-  name: string;
-  items: AugmentItem[];
-};
-
-export type AugmentCategory = {
-  name: string;
-  slots: AugmentSlot[];
-};
-
-export type SelectedAugmentSlot = {
-  name: string;
-  item: AugmentItem;
-};
-
-export type SelectedAugmentStyle = {
-  name: string;
-  style: string;
-};
-
-export type Birthsign = {
-  name: string;
-  description: string;
-  icon: string;
-  patron_saint: string;
-  favored_profession: string;
-  value: number;
-  cant_buy: string;
 };
 
 export enum RandomSetting {
@@ -163,7 +122,6 @@ export enum Window {
 }
 
 export type PreferencesMenuData = {
-  character_preview_type: string,
   character_preview_view: string;
   character_profiles: (string | null)[];
 
@@ -182,7 +140,6 @@ export type PreferencesMenuData = {
 
     misc: {
       gender: Gender;
-      genitals: Genital;
       joblessrole: JoblessRole;
       species: string;
     };
@@ -191,7 +148,6 @@ export type PreferencesMenuData = {
   };
 
   content_unlocked: BooleanLike,
-  donator_rank: String,
 
   job_bans?: string[];
   job_days_left?: Record<string, number>;
@@ -203,23 +159,7 @@ export type PreferencesMenuData = {
 
   keybindings: Record<string, string[]>;
   overflow_role: string;
-
   selected_quirks: string[];
-  selected_languages: Language[];
-  unselected_languages: Language[];
-  maximum_customization_points: number;
-  language_balance: number;
-  marking_parts: MarkingZone[];
-  maximum_markings_per_limb: number;
-  body_marking_sets: string[];
-  selected_augments: SelectedAugmentSlot[];
-  selected_augments_styles: SelectedAugmentStyle[];
-  unselected_augments: AugmentCategory[];
-  unselected_augments_styles: string[];
-  augment_balance: number;
-  selected_birthsign: Birthsign;
-  unselected_birthsigns: Birthsign[];
-  birthsign_balance: number;
 
   antag_bans?: string[];
   antag_days_left?: Record<string, number>;
@@ -232,6 +172,10 @@ export type PreferencesMenuData = {
 };
 
 export type ServerData = {
+  jobs: {
+    departments: Record<string, Department>;
+    jobs: Record<string, Job>;
+  };
   names: {
     types: Record<string, Name>;
   };
@@ -239,6 +183,6 @@ export type ServerData = {
   random: {
     randomizable: string[];
   };
-  species: Record<string, ServerSpeciesData>;
+  species: Record<string, Species>;
   [otheyKey: string]: unknown;
 };

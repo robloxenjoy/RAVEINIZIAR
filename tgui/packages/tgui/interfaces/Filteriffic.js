@@ -141,33 +141,6 @@ const FilterFlagsEntry = (props, context) => {
   );
 };
 
-const FilterBlendModeEntry = (props, context) => {
-  const { name, value, filterName, filterType } = props;
-  const { act, data } = useBackend(context);
-
-  const filterInfo = data.filter_info;
-  const blend_modes = filterInfo[filterType]['blend_modes'];
-  let blend_name;
-  for (let i = 0; i < blend_modes.length; i++) {
-    if (value === blend_modes[i][blend_modes[i]]) {
-      blend_name = blend_modes[i];
-      break;
-    }
-  }
-
-  return (
-    <Dropdown
-      displayText={blend_name}
-      options={blend_modes}
-      onSelected={(value) => act('modify_filter_value', {
-        name: filterName,
-        new_data: {
-          [name]: value,
-        },
-      })} />
-  );
-};
-
 const FilterDataEntry = (props, context) => {
   const { name, value, hasValue, filterName } = props;
 
@@ -178,7 +151,6 @@ const FilterDataEntry = (props, context) => {
     color: <FilterColorEntry {...props} />,
     icon: <FilterIconEntry {...props} />,
     flags: <FilterFlagsEntry {...props} />,
-    blend_mode: <FilterBlendModeEntry {...props} />,
   };
 
   const filterEntryMap = {
@@ -187,7 +159,6 @@ const FilterDataEntry = (props, context) => {
     icon: 'icon',
     render_source: 'string',
     flags: 'flags',
-    blend_mode: 'blend_mode',
     size: 'float',
     color: 'color',
     offset: 'float',
@@ -197,7 +168,6 @@ const FilterDataEntry = (props, context) => {
     threshold: 'float',
     factor: 'float',
     repeat: 'int',
-    alpha: 'int',
   };
 
   return (

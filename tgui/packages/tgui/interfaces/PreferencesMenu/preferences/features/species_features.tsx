@@ -1,23 +1,28 @@
-import { CheckboxInput, FeatureColorInput, Feature, FeatureChoiced, FeatureDropdownInput } from "./base";
+import { FeatureColorInput, Feature, FeatureChoiced, FeatureDropdownInput } from "./base";
 
-export const left_eye_color: Feature<string> = {
-  name: "Left eye color",
+export const eye_color: Feature<string> = {
+  name: "Eye color",
+  component: FeatureDropdownInput, // MOJAVE SUN EDIT - Prefs
+};
+
+export const facial_hair_color: Feature<string> = {
+  name: "Facial hair color",
   component: FeatureColorInput,
 };
 
-export const right_eye_color: Feature<string> = {
-  name: "Right eye color",
-  component: FeatureColorInput,
+export const facial_hair_gradient: FeatureChoiced = {
+  name: "Facial hair gradient",
+  component: FeatureDropdownInput,
 };
 
-export const skin_tone_toggle: Feature<string> = {
-  name: "Use skintones",
-  component: CheckboxInput,
+export const facial_hair_gradient_color: Feature<string> = {
+  name: "Facial hair gradient color",
+  component: FeatureColorInput,
 };
 
 export const hair_color: Feature<string> = {
   name: "Hair color",
-  component: FeatureColorInput,
+  component: FeatureDropdownInput, // MOJAVE SUN EDIT - Prefs
 };
 
 export const hair_gradient: FeatureChoiced = {
@@ -30,10 +35,6 @@ export const hair_gradient_color: Feature<string> = {
   component: FeatureColorInput,
 };
 
-export const facial_hair_color: Feature<string> = {
-  name: "Facial hair color",
-  component: FeatureColorInput,
-};
 
 export const feature_human_ears: FeatureChoiced = {
   name: "Ears",
@@ -67,5 +68,10 @@ export const feature_mcolor: Feature<string> = {
 
 export const underwear_color: Feature<string> = {
   name: "Underwear color",
-  component: FeatureColorInput,
+  component: FeatureDropdownInput, // MOJAVE SUN EDIT - Prefs
+};
+
+export const feature_vampire_status: Feature<string> = {
+  name: "Vampire status",
+  component: FeatureDropdownInput,
 };

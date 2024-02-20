@@ -41,8 +41,7 @@ export const ChatTabs = (props, context) => {
               )}
               onClick={() => dispatch(changeChatPage({
                 pageId: page.id,
-              }))}
-              color="quake-light">
+              }))}>
               {page.name}
             </Tabs.Tab>
           ))}
@@ -55,11 +54,7 @@ export const ChatTabs = (props, context) => {
           onClick={() => {
             dispatch(addChatPage());
             dispatch(openChatSettings());
-          }}
-          style={{
-            "color": "#a5ffc8",
-          }}
-        />
+          }} />
       </Flex.Item>
     </Flex>
   );

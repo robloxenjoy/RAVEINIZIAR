@@ -113,14 +113,8 @@ const SLOTS: Record<
   },
 
   ears: {
-    displayName: "left ear",
+    displayName: "earwear",
     gridSpot: getGridSpotKey([1, 3]),
-    image: "inventory-ears.png",
-  },
-
-  ears_extra: {
-    displayName: "right ear",
-    gridSpot: getGridSpotKey([0, 3]),
     image: "inventory-ears.png",
   },
 
@@ -179,9 +173,9 @@ const SLOTS: Record<
   },
 
   suit_storage: {
-    displayName: "back 2",
+    displayName: "suit storage item",
     gridSpot: getGridSpotKey([4, 0]),
-    image: "inventory-back2.png",
+    image: "inventory-suit_storage.png",
   },
 
   id: {
@@ -197,7 +191,7 @@ const SLOTS: Record<
   },
 
   back: {
-    displayName: "back",
+    displayName: "backpack",
     gridSpot: getGridSpotKey([4, 3]),
     image: "inventory-back.png",
   },
@@ -212,24 +206,6 @@ const SLOTS: Record<
     displayName: "right pocket",
     gridSpot: getGridSpotKey([4, 5]),
     image: "inventory-pocket.png",
-  },
-
-  wrists: {
-    displayName: "wrists",
-    gridSpot: getGridSpotKey([3, 3]),
-    image: "inventory-wrists.png",
-  },
-
-  pants: {
-    displayName: "pants",
-    gridSpot: getGridSpotKey([3, 4]),
-    image: "inventory-pants.png",
-  },
-
-  oversuit: {
-    displayName: "oversuit",
-    gridSpot: getGridSpotKey([2, 0]),
-    image: "inventory-oversuit.png",
   },
 };
 
