@@ -24,6 +24,12 @@ $separator-color: colors.$primary !default;
   }
 }
 
+.Section__boundingbox {
+  position: relative;
+  padding: 0.25em;
+  border: base.em(2px) solid $separator-color;
+}
+
 .Section__title {
   position: relative;
   padding: 0.5em;

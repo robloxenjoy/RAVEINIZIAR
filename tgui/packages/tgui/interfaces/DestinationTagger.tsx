@@ -1,5 +1,3 @@
-import { flow } from 'common/fp';
-import { map, sortBy } from 'common/collections';
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
 import { Stack, Section, Button } from '../components';
@@ -7,30 +5,6 @@ import { Stack, Section, Button } from '../components';
 type DestinationTaggerData = {
   locations: string[];
   currentTag: number;
-};
-
-/**
- * Info about destinations that survives being re-ordered.
- */
-type DestinationInfo = {
-  name: string;
-  sorting_id: number;
-};
-
-/**
- * Sort destinations in alphabetical order,
- * and wrap them in a way that preserves what ID to return.
- * @param locations The raw, official list of destination tags.
- * @returns The alphetically sorted list of destinations.
- */
-const sortDestinations = (locations: string[]): DestinationInfo[] => {
-  return flow([
-    map<string, DestinationInfo>((name, index) => ({
-      name: name.toUpperCase(),
-      sorting_id: index + 1,
-    })),
-    sortBy<DestinationInfo>((dest) => dest.name),
-  ])(locations);
 };
 
 export const DestinationTagger = (props, context) => {
@@ -50,15 +24,15 @@ export const DestinationTagger = (props, context) => {
                   ? 'Please Select A Location'
                   : `Current Destination: ${locations[currentTag - 1]}`
               }>
-              {sortDestinations(locations).map((location) => {
+              {locations.map((location, index) => {
                 return (
                   <Button.Checkbox
-                    checked={currentTag === location.sorting_id}
+                    checked={locations[currentTag - 1] === location}
                     height={2}
-                    key={location.sorting_id}
-                    onClick={() => act('change', { index: location.sorting_id })}
+                    key={location}
+                    onClick={() => act('change', { index: index + 1 })}
                     width={15}>
-                    {location.name}
+                    {location.toUpperCase()}
                   </Button.Checkbox>
                 );
               })}

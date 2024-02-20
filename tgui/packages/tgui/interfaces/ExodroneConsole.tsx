@@ -4,7 +4,7 @@ import { Window } from '../layouts';
 import { resolveAsset } from '../assets';
 import { formatTime } from '../format';
 import { capitalize } from 'common/string';
-import nt_logo from '../assets/bg-nanotrasen.svg';
+import nt_logo from '../assets/bg-zoomtech.svg';
 import { Fragment } from 'inferno';
 
 type ExplorationEventData = {
@@ -159,7 +159,7 @@ export const ExodroneConsole = (props, context) => {
   ] = useLocalState(context, 'choosingTools', false);
 
   return (
-    <Window width={750} height={600}>
+    <Window width={650} height={500}>
       {!!signal_lost && <SignalLostModal />}
       {!!choosingTools && <ToolSelectionModal />}
       <Window.Content>
@@ -214,11 +214,11 @@ const DroneSelectionSection = (props: {
   const { all_drones } = props;
 
   return (
-    <Section fill scrollable title="Exploration Drone Listing">
+    <Section scrollable fill title="Exploration Drone Listing">
       <Stack vertical>
         {all_drones.map(drone => (
           <Fragment key={drone.ref}>
-            <Stack.Item>
+            <Stack.Item grow>
               <Stack fill>
                 <Stack.Item basis={10} fontFamily="monospace" fontSize="18px">
                   {drone.name}
@@ -234,10 +234,9 @@ const DroneSelectionSection = (props: {
                     "Controlled by another console."
                   ) || (
                     <Button
+                      content="Assume Control"
                       icon="plug"
-                      onClick={() => act("select_drone", { "drone_ref": drone.ref })}>
-                      Assume Control
-                    </Button>
+                      onClick={() => act("select_drone", { "drone_ref": drone.ref })} />
                   )}
                 </Stack.Item>
               </Stack>
@@ -333,7 +332,7 @@ const EquipmentBox = (props: {
               </Button>
             </Stack.Item>
             {!!configurable && (
-              <Stack.Item textAlign="right">
+              <Stack.Item mt={-9.4} textAlign="right">
                 <Button
                   onClick={() => act("remove_tool", { tool_type: cargo.name })}
                   color="danger"
@@ -426,28 +425,26 @@ const EquipmentGrid = (props: {
       </Stack.Item>
       <Stack.Item>
         <Section title="Cargo">
-          <Stack fill vertical>
-            <Stack.Item>
-              {!!configurable && (
-                <Button
-                  fluid
-                  color="average"
-                  icon="wrench"
-                  content="Install Tool"
-                  onClick={() => setChoosingTools(true)} />
-              )}
-            </Stack.Item>
-            <Stack.Item>
-              <Stack wrap="wrap" width={10}>
-                {cargo.map(cargo_element => (
-                  <EquipmentBox
-                    drone={props.drone}
-                    key={cargo_element.name}
-                    cargo={cargo_element} />
-                ))}
-              </Stack>
-            </Stack.Item>
-          </Stack>
+          <Stack.Item>
+            {!!configurable && (
+              <Button
+                fluid
+                color="average"
+                icon="wrench"
+                content="Install Tool"
+                onClick={() => setChoosingTools(true)} />
+            )}
+          </Stack.Item>
+          <Stack.Item>
+            <Stack wrap="wrap" width={10}>
+              {cargo.map(cargo_element => (
+                <EquipmentBox
+                  drone={props.drone}
+                  key={cargo_element.name}
+                  cargo={cargo_element} />
+              ))}
+            </Stack>
+          </Stack.Item>
         </Section>
       </Stack.Item>
     </Stack>
@@ -464,7 +461,7 @@ const DroneStatus = (props: {
   } = props;
 
   return (
-    <Stack ml={-45}>
+    <Stack ml={-40}>
       <Stack.Item color="label" mt={0.2}>
         Integrity:
       </Stack.Item>

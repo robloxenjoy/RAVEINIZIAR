@@ -46,9 +46,8 @@ export const Panel = (props, context) => {
               </Stack.Item>
               <Stack.Item>
                 <Button
-                  color="grey"
-                  selected={audio.visible}
                   icon="music"
+                  color={audio.visible ? 'quake-light' : 'quake'}
                   tooltip="Music player"
                   tooltipPosition="bottom-start"
                   onClick={() => audio.toggle()} />
@@ -56,7 +55,7 @@ export const Panel = (props, context) => {
               <Stack.Item>
                 <Button
                   icon={settings.visible ? 'times' : 'cog'}
-                  selected={settings.visible}
+                  color={settings.visible ? 'quake-light' : 'quake'}
                   tooltip={settings.visible
                     ? 'Close settings'
                     : 'Open settings'}
@@ -81,6 +80,9 @@ export const Panel = (props, context) => {
         <Stack.Item grow>
           <Section fill fitted position="relative">
             <Pane.Content scrollable>
+              {(!settings.visible && !audio.visible) && (
+                <img class="topimg" />
+              )}
               <ChatPanel lineHeight={settings.lineHeight} />
             </Pane.Content>
             <Notifications>

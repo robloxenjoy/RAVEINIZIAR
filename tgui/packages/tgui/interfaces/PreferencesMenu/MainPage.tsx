@@ -7,10 +7,12 @@ import { RandomizationButton } from "./RandomizationButton";
 import { ServerPreferencesFetcher } from "./ServerPreferencesFetcher";
 import { MultiNameInput, NameInput } from "./names";
 import { Gender, GENDERS } from "./preferences/gender";
+import { CharacterPreviewType } from "./preferences/features/game_preferences/preview_type";
 import features from "./preferences/features";
 import { FeatureChoicedServerData, FeatureValueInput } from "./preferences/features/base";
 import { filterMap, sortBy } from "common/collections";
 import { useRandomToggleState } from "./useRandomToggleState";
+import { Genital, GenitalsButton } from "./preferences/features/character_preferences/genitals";
 
 const CLOTHING_CELL_SIZE = 48;
 const CLOTHING_SIDEBAR_ROWS = 9;
@@ -21,23 +23,28 @@ const CLOTHING_SELECTION_MULTIPLIER = 5.2;
 
 const CharacterControls = (props: {
   handleRotate: () => void,
-  // handleOpenSpecies: () => void, MOJAVE SUN EDIT - Prefs
+  handleRotateLeft: () => void,
+  handleRotateRight: () => void,
+  handleOpenSpecies: () => void,
   gender: Gender,
   setGender: (gender: Gender) => void,
   showGender: boolean,
+  genitals: Genital,
+  setGenitals: (genitals: Genital) => void,
+  showGenitals: boolean,
 }) => {
   return (
     <Stack>
       <Stack.Item>
         <Button
-          onClick={props.handleRotate}
+          onClick={props.handleRotateLeft}
           fontSize="22px"
           icon="undo"
-          tooltip="Rotate"
+          tooltip="Rotate Left"
           tooltipPosition="top"
         />
       </Stack.Item>
-      {/* MOJAVE SUN EDIT - Prefs
+
       <Stack.Item>
         <Button
           onClick={props.handleOpenSpecies}
@@ -47,7 +54,7 @@ const CharacterControls = (props: {
           tooltipPosition="top"
         />
       </Stack.Item>
-      */}
+
       {props.showGender && (
         <Stack.Item>
           <GenderButton
@@ -56,6 +63,26 @@ const CharacterControls = (props: {
           />
         </Stack.Item>
       )}
+
+      {props.showGenitals && (
+        <Stack.Item>
+          <GenitalsButton
+            genitals={props.genitals}
+            handleSetGenitals={props.setGenitals}
+          />
+        </Stack.Item>
+      )}
+
+      <Stack.Item>
+        <Button
+          onClick={props.handleRotateRight}
+          fontSize="22px"
+          icon="redo"
+          tooltip="Rotate Right"
+          tooltipPosition="top"
+        />
+      </Stack.Item>
+
     </Stack>
   );
 };
@@ -92,7 +119,7 @@ const ChoicedSelection = (props: {
 
       height:
       `${CLOTHING_SELECTION_CELL_SIZE * CLOTHING_SELECTION_MULTIPLIER}px`,
-      width: `${CLOTHING_SELECTION_CELL_SIZE * CLOTHING_SELECTION_WIDTH}px`,
+      width: `${CLOTHING_SELECTION_CELL_SIZE * CLOTHING_SELECTION_WIDTH * 2}px`,
     }}>
       <Stack vertical fill>
         <Stack.Item>
@@ -137,6 +164,7 @@ const ChoicedSelection = (props: {
               {Object.entries(catalog.icons).map(([name, image], index) => {
                 return (
                   <Flex.Item
+                    mr={2}
                     key={index}
                     basis={`${CLOTHING_SELECTION_CELL_SIZE}px`}
                     style={{
@@ -157,6 +185,9 @@ const ChoicedSelection = (props: {
                     >
                       <Box className={classes(["preferences32x32", image, "centered-image"])} />
                     </Button>
+                    <Box>
+                      {name}
+                    </Box>
                   </Flex.Item>
                 );
               })}
@@ -181,7 +212,7 @@ const GenderButton = (props: {
       genderMenuOpen
         && (
           <Stack backgroundColor="white" ml={0.5} p={0.3}>
-            {[Gender.Male, Gender.Female].map(gender => { // MS13 EDIT -other
+            {[Gender.Male, Gender.Female].map(gender => {
               return (
                 <Stack.Item key={gender}>
                   <Button
@@ -241,7 +272,9 @@ const MainFeature = (props: {
   } = props;
 
   const supplementalFeature = catalog.supplemental_feature;
-
+  if (!catalog?.name) {
+    return (<b>No catalog for {currentValue}!</b>);
+  }
   return (
     <Popper options={{
       placement: "bottom-start",
@@ -393,7 +426,7 @@ const PreferenceList = (props: {
 };
 
 export const MainPage = (props: {
-//  openSpecies: () => void, MOJAVE SUN EDIT - Prefs
+  openSpecies: () => void,
 }, context) => {
   const { act, data } = useBackend<PreferencesMenuData>(context);
   const [currentClothingMenu, setCurrentClothingMenu]
@@ -414,8 +447,10 @@ export const MainPage = (props: {
       const contextualPreferences
         = data.character_preferences.secondary_features || [];
 
+      const game_preferences
+        = data.character_preferences.game_preferences || [];
+
       const mainFeatures = [
-        ...Object.entries(data.character_preferences.clothing),
         ...Object.entries(data.character_preferences.features)
           .filter(([featureName]) => {
             if (!currentSpeciesData) {
@@ -495,14 +530,25 @@ export const MainPage = (props: {
                 <Stack.Item>
                   <CharacterControls
                     gender={data.character_preferences.misc.gender}
-                    // handleOpenSpecies={props.openSpecies} MOJAVE SUN EDIT
-                    handleRotate={() => {
-                      act("rotate");
-                    }}
                     setGender={createSetPreference(act, "gender")}
                     showGender={
                       currentSpeciesData ? !!currentSpeciesData.sexes : true
                     }
+                    genitals={data.character_preferences.misc.genitals}
+                    setGenitals={createSetPreference(act, "genitals")}
+                    showGenitals={
+                      currentSpeciesData ? !!currentSpeciesData.sexes : true
+                    }
+                    handleOpenSpecies={props.openSpecies}
+                    handleRotate={() => {
+                      act("rotate");
+                    }}
+                    handleRotateLeft={() => {
+                      act("rotateleft");
+                    }}
+                    handleRotateRight={() => {
+                      act("rotateright");
+                    }}
                   />
                 </Stack.Item>
 
@@ -510,6 +556,18 @@ export const MainPage = (props: {
                   <CharacterPreview
                     height="100%"
                     id={data.character_preview_view} />
+                </Stack.Item>
+
+                <Stack.Item position="relative">
+                  <CharacterPreviewType
+                    character_preview_type={data.character_preview_type}
+                    handlePreviewJob={() => act('select_preview_type', {
+                      new_preview_type: 'Job',
+                    })}
+                    handlePreviewNaked={() => act('select_preview_type', {
+                      new_preview_type: 'Naked',
+                    })}
+                  />
                 </Stack.Item>
 
                 <Stack.Item position="relative">
@@ -588,6 +646,7 @@ export const MainPage = (props: {
                 />
               </Stack>
             </Stack.Item>
+
           </Stack>
         </>
       );

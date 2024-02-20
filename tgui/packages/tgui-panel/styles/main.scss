@@ -8,8 +8,8 @@
 
 @use '~tgui/styles/colors.scss';
 @use '~tgui/styles/base.scss' with (
-  $color-bg: #202020,
-  $color-bg-section: color.adjust(#202020, $lightness: -5%),
+  $color-bg: #000000,
+  $color-bg-section: color.adjust(#1e071c, $lightness: -5%),
   $color-bg-grad-spread: 0%,
 );
 
@@ -58,3 +58,28 @@
 
 // Goonchat styles
 @include meta.load-css('./goon/chat-dark.scss');
+
+// OS13 background ----- NO!!!!!!!!!!!!
+.Layout__content {
+  background-image: none;
+/*
+  background-image: url('../assets/chatbg.png');
+  background-size: 50%;
+  background-attachment: fixed;
+  background-repeat: repeat;
+*/
+}
+
+.topimg {
+  background-image: none;
+/*
+  background-image: url('../assets/chatshadow.png');
+  background-size: 50%;
+  position: fixed;
+  background-repeat: repeat-x;
+  pointer-events: none;
+  left: -5px;
+  top: 35px;
+  width: 100%;
+*/
+}
