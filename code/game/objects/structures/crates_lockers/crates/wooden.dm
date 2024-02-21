@@ -1,6 +1,6 @@
 /obj/structure/closet/crate/wooden
-	name = "Wooden Chest"
-	desc = "Works well."
+	name = "Деревянный Сундук"
+	desc = "Хорош и тяжёл."
 	material_drop = /obj/item/stack/sheet/mineral/wood
 	material_drop_amount = 6
 	icon_state = "wooden"

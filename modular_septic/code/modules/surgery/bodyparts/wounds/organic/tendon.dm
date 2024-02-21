@@ -1,5 +1,5 @@
 /datum/wound/tendon
-	name = "Torn Tendon"
+	name = "Порванное сухожилие"
 	sound_effect = 'modular_septic/sound/gore/tendon.ogg'
 	base_treat_time = 3 SECONDS
 	wound_type = WOUND_TENDON
@@ -32,10 +32,10 @@
 			tendon.dissect()
 		else
 			tendon.tear()
-	var/final_descriptive = "A tendon is [dissection ? "torn" : "damaged"]!"
+	var/final_descriptive = "Сухожилие [dissection ? "порвано" : "повреждено"]!"
 	// Achilles tendon is pretty significant
 	if(istype(tendon, TENDON_R_FOOT) || istype(tendon, TENDON_L_FOOT) || istype(tendon, TENDON_NECK))
-		final_descriptive = "\The [tendon] [tendon.p_are()] [dissection ? "torn" : "damaged"]!"
+		final_descriptive = "[tendon] [dissection ? "порвано" : "повреждено"]!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)

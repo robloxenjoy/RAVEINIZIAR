@@ -1,6 +1,6 @@
 /obj/item/organ/artery
-	name = "artery"
-	desc = "An artery is torn! Literally."
+	name = "Артерия"
+	desc = "Артерия порвана!"
 	icon_state = "artery"
 	base_icon_state = "artery"
 
@@ -125,8 +125,8 @@
 			owner.bleed(amount)
 			if(limb.current_gauze)
 				limb.seep_gauze(amount * limb.current_gauze.absorption_rate)
-			owner.visible_message(span_danger("<b>[owner]</b>'s [limb.name]'s [name] squirts blood!"), \
-							span_userdanger("Blood squirts from my [limb.name]'s [name]!"))
+			owner.visible_message(span_danger("<b>[owner]</b> [limb.name] [name] брыжет кровью!"), \
+							span_userdanger("Кровь брыжет из [limb.name] [name]!"))
 			owner.do_arterygush()
 			COOLDOWN_START(src, next_squirt, rand(squirt_delay_min_seconds, squirt_delay_max_seconds) SECONDS)
 		else

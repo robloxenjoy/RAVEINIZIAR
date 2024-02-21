@@ -1,6 +1,6 @@
 /obj/item/bodypart/neck
-	name = "throat"
-	desc = "Whoever did this was a real cutthroat."
+	name = "Шея"
+	desc = "Каким образом?"
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "neck"
 	base_icon_state = "neck"

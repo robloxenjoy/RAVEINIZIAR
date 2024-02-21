@@ -220,7 +220,7 @@
 	. = 0
 	switch(skin_tone)
 		if("caucasian1")
-			. = "efa6b2"
+			. = "ccbeb6"
 		if("caucasian2")
 			. = "d0a2b9"
 		if("caucasian3")

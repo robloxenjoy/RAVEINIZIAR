@@ -83,12 +83,12 @@
 		if(!L.mind && !L.client && !ismegafauna(L) && !istype(L, /mob/living/simple_animal/hostile/boss))
 			husks |= L
 	if(!length(husks))
-		to_chat(noob, "<span class='bobux'>You are unable to possess any creature. Kaotiks refunded.</span>")
+		to_chat(noob, "<span class='bobux'>Хм, не могу.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
-	var/mob/living/choice = input(noob, "I will take over a creature. Which one?", "Possession", null) as mob in husks
+	var/mob/living/choice = input(noob, "Возьму под контроль существо. Какое?", "Контроль", null) as mob in husks
 	if(!choice)
-		to_chat(noob, "<span class='bobux'>Kaotiks refunded.</span>")
+//		to_chat(noob, "<span class='bobux'>Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
 //	var/datum/mind/mind = choice.mind
@@ -125,11 +125,11 @@
 		if(H.mind)
 			possible_targets |= H
 	if(!LAZYLEN(possible_targets))
-		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
+//		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
 	if(GLOB.mercenary_list <= 0)
-		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
+//		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
 	var/input = tgui_input_list(noob, "I have contracted a subconscious mercenaries. Who is the first victim?", "Who should be killed?", possible_targets)
@@ -151,7 +151,7 @@
 				to_chat(noob, "<span class='bobux'>We have to wait for the creature to be killed. Pray that this dream have really good subconscious mercenaries.</span>")
 				return TRUE
 	else
-		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
+//		to_chat(noob, "<span class='bobux'>You are unable to send a subconscious mercenary. Kaotiks refunded.</span>")
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
 */

@@ -1,6 +1,6 @@
 /obj/item/bodypart/r_foot
-	name = "right foot"
-	desc = "Equals roughly 30.48 centimeters."
+	name = "Правая стопа"
+	desc = "Конечность."
 	icon_state = "default_human_r_foot"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")

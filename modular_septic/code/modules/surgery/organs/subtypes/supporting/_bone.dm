@@ -1,6 +1,6 @@
 /obj/item/organ/bone
-	name = "bone"
-	desc = "Bone apple tea."
+	name = "Кость"
+	desc = "Фосфор, кальций, магний..."
 	icon_state = "bone"
 	base_icon_state = "bone"
 	drop_sound = 'modular_septic/sound/gore/bone_drop.ogg'
@@ -22,8 +22,8 @@
 	nutriment_req = 0.15
 	hydration_req = 0.15
 
-	force = 5
-	throwforce = 5
+	force = 8
+	throwforce = 8
 
 	attaching_items = list(/obj/item/stack/medical/bone_gel)
 	healing_items = list(/obj/item/stack/medical/bone_gel)
@@ -81,15 +81,15 @@
 		return TRUE
 
 /obj/item/organ/bone/handle_cutting_away(obj/item/tool, mob/living/user, params)
-	user.visible_message(span_notice("<b>[user]</b> starts sawing \the [src] from \the [owner]..."), \
-					span_notice("I start sawing \the [src] from \the [owner]..."), \
+	user.visible_message(span_notice("<b>[user]</b> начинает отпиливать \[src] от \[owner]..."), \
+					span_notice("Я начинаю отпиливать \[src] от \[owner]..."), \
 					vision_distance = COMBAT_MESSAGE_RANGE)
-	owner.custom_pain("OH GOD! My [src] is being BROKEN AWAY!", 30, FALSE, owner.get_bodypart(current_zone))
+	owner.custom_pain("ХУЯСЕ! [src] разрушается!", 30, FALSE, owner.get_bodypart(current_zone))
 	if(!do_mob(user, owner, 8 SECONDS))
-		to_chat(user, span_warning("I must stand still!"))
+		to_chat(user, span_warning("Стоять смирно должен!"))
 		return TRUE
-	user.visible_message(span_notice("<b>[user]</b> saws \the [src] away."), \
-					span_notice("I saw \the [src] away."), \
+	user.visible_message(span_notice("<b>[user]</b> отпиливает \[src]."), \
+					span_notice("Я отпиливаю \[src]."), \
 					vision_distance = COMBAT_MESSAGE_RANGE)
 	organ_flags |= ORGAN_CUT_AWAY
 	return TRUE
@@ -117,8 +117,8 @@
 					active_trauma = owner.gain_trauma_type((damage >= maxHealth ? BRAIN_TRAUMA_SEVERE : BRAIN_TRAUMA_MILD), TRAUMA_RESILIENCE_WOUND)
 					COOLDOWN_START(src, next_trauma_cycle, (rand(100-WOUND_BONE_HEAD_TIME_VARIANCE, 100+WOUND_BONE_HEAD_TIME_VARIANCE) * 0.01 * 1.5 MINUTES * (damage/maxHealth)))
 				if(!HAS_TRAIT_FROM(owner, TRAIT_DISFIGURED, BRUTE))
-					owner.visible_message(span_danger("<b>[owner]</b>'s face turns into an unrecognizable, mangled mess!"), \
-								span_userdanger("<b>MY FACE IS HORRIBLY MANGLED!</b>"))
+					owner.visible_message(span_danger("<b>[owner]</b> лицо превращается в искалеченную массу!"), \
+								span_userdanger("<b>МОЁ ЛИЦО ИЗУВЕЧЕНО!</b>"))
 				ADD_TRAIT(owner, TRAIT_DISFIGURED, BRUTE)
 				var/obj/item/bodypart/face/face = owner.get_bodypart_nostump(BODY_ZONE_PRECISE_FACE)
 				if(face)
@@ -133,8 +133,8 @@
 			if(istype(held_item, /obj/item/offhand))
 				held_item = owner.get_active_held_item()
 			if(held_item && owner.dropItemToGround(held_item))
-				owner.visible_message(span_danger("<b>[owner]</b> drops [held_item] in shock!"), \
-					span_userdanger("The shock on my [name] causes me to drop [held_item]!"), \
+				owner.visible_message(span_danger("<b>[owner]</b> бросает [held_item] от шока!"), \
+					span_userdanger("Шок заставляет меня выбросить [held_item]!"), \
 					vision_distance = COMBAT_MESSAGE_RANGE)
 		if(owner.stat < UNCONSCIOUS)
 			if((damage >= medium_threshold) && (prev_damage < medium_threshold))
@@ -156,7 +156,7 @@
 					if(HAS_TRAIT(owner, tetraplegia))
 						paralyzed_limbs++
 				if((paralyzed_limbs >= 4) && (paralyzed_limbs < was_paralyzed_limbs))
-					to_chat(owner, span_green("I am no longer <b>tetraplegic</b>!"))
+					to_chat(owner, span_green("Я больше не <b>тетраплегик</b>!"))
 			if(active_trauma)
 				QDEL_NULL(active_trauma)
 
@@ -174,13 +174,13 @@
 				if(HAS_TRAIT(owner, tetraplegia))
 					paralyzed_limbs++
 			if(paralyzed_limbs < 4)
-				to_chat(owner, span_flashinguserdanger("I become <b>TETRAPLEGIC</b>!"))
+				to_chat(owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
 			for(var/tetraplegia in stephenhawking_traits)
 				ADD_TRAIT(owner, tetraplegia, NECK_FRACTURE_TRAIT)
 		if((limb.body_zone in list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE)) && !limb.getorganslot(ORGAN_SLOT_BONE))
 			if(!HAS_TRAIT_FROM(new_owner, TRAIT_DISFIGURED, BRUTE))
-				new_owner.visible_message(span_danger("<b>[owner]</b>'s face turns into an unrecognizable, mangled mess!"), \
-							span_userdanger("<b>MY FACE IS HORRIBLY MANGLED!</b>"))
+				new_owner.visible_message(span_danger("<b>[owner]</b> лицо превращается в искалеченную массу!"), \
+							span_userdanger("<b>МОЁ ЛИЦО ИЗУВЕЧЕНО!</b>"))
 			ADD_TRAIT(new_owner, TRAIT_DISFIGURED, BRUTE)
 			var/obj/item/bodypart/face/face = new_owner.get_bodypart_nostump(BODY_ZONE_PRECISE_FACE)
 			if(face)
@@ -200,13 +200,13 @@
 				if(HAS_TRAIT(organ_owner, tetraplegia))
 					paralyzed_limbs++
 			if(paralyzed_limbs < 4)
-				to_chat(organ_owner, span_flashinguserdanger("I become <b>TETRAPLEGIC</b>!"))
+				to_chat(organ_owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
 			for(var/tetraplegia in stephenhawking_traits)
 				ADD_TRAIT(organ_owner, tetraplegia, NECK_FRACTURE_TRAIT)
 		if((limb.body_zone in list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE)) && !limb.getorganslot(ORGAN_SLOT_BONE))
 			if(!HAS_TRAIT_FROM(organ_owner, TRAIT_DISFIGURED, BRUTE))
-				organ_owner.visible_message(span_danger("<b>[owner]</b>'s face turns into an unrecognizable, mangled mess!"), \
-							span_userdanger("<b>MY FACE IS HORRIBLY MANGLED!</b>"))
+				organ_owner.visible_message(span_danger("<b>[owner]</b> лицо превращается в искалеченную массу!"), \
+							span_userdanger("<b>МОЁ ЛИЦО ИЗУВЕЧЕНО!</b>"))
 			ADD_TRAIT(organ_owner, TRAIT_DISFIGURED, BRUTE)
 			var/obj/item/bodypart/face/face = organ_owner.get_bodypart_nostump(BODY_ZONE_PRECISE_FACE)
 			if(face)
@@ -234,7 +234,7 @@
 			var/obj/item/bodypart/limb = owner.get_bodypart(current_zone)
 			limb.add_pain(10)
 			if(prob(40))
-				to_chat(owner, span_userdanger("You feel a sharp pain in your body as your bones are reforming!"))
+				to_chat(owner, span_userdanger("Я чувствую острую боль в теле, ведь мои кости восстанавливаются!"))
 
 /obj/item/organ/bone/proc/reinforce(added_resistance = 5)
 	if(reinforced || (status != ORGAN_ORGANIC))
@@ -270,11 +270,11 @@
 	// With a bone wound, you have up to a 60% chance to proc pain on hit
 	if(prob(60 * (damage/maxHealth)))
 		if(prob(75 - (35 * damage/maxHealth)))
-			to_chat(owner, span_userdanger("The [damage >= medium_threshold ? "fracture" : "dislocation"] in my [limb.name] shoots with pain as i [punch_verb] [target]!"))
+			to_chat(owner, span_userdanger("[damage >= medium_threshold ? "Перелом" : "Вывих"] в [limb.name] отстреливает болью когда я [punch_verb] [target]!"))
 			limb.add_pain(10)
 		else
-			owner.visible_message(span_danger("<b>[owner]</b> weakly [punch_verb]es [target] with [owner.p_their()] broken [limb.name], recoiling in pain!"), \
-				span_userdanger("I fail to [punch_verb] [target] as the [damage >= medium_threshold ? "fracture" : "dislocation"] in my [limb.name] lights up pain!"), \
+			owner.visible_message(span_danger("<b>[owner]</b> слабо бьёт [target] с помощью сломанной [limb.name], отшатываясь в боли!"), \
+				span_userdanger("Я провалился в затее ударить [target], ведь [damage >= medium_threshold ? "перелом" : "вывих"] в [limb.name] загорается болью!"), \
 				vision_distance=COMBAT_MESSAGE_RANGE)
 			owner.agony_scream()
 			owner.Stun(0.5 SECONDS)
@@ -288,11 +288,11 @@
 	// With a bone wound, you have up to a 60% chance to proc pain on hit
 	if(prob(60 * (damage/maxHealth)))
 		if(prob(75 - (35 * damage/maxHealth)))
-			to_chat(owner, span_userdanger("The [damage >= medium_threshold ? "fracture" : "dislocation"] in your [limb.name] shoots with pain as you kick [target]!"))
+			to_chat(owner, span_userdanger("[damage >= medium_threshold ? "Перелом" : "Вывих"] в [limb.name] отстреливает болью когда я пытаюсь пнуть [target]!"))
 			limb.add_pain(10)
 		else
-			owner.visible_message(span_danger("<b>[owner]</b> weakly kicks [target] with [owner.p_their()] broken [limb.name], recoiling from pain!"), \
-				span_userdanger("You fail to kick [target] as the [damage >= medium_threshold ? "fracture" : "dislocation"] in your [limb.name] lights up in unbearable pain!"), \
+			owner.visible_message(span_danger("<b>[owner]</b> слабо пинает [target] с помощью сломанной [limb.name], отшатываясь в боли!"), \
+				span_userdanger("Я провалился в затее пнуть [target], ведь [damage >= medium_threshold ? "перелом" : "вывих"] в [limb.name] загорается болью!"), \
 				vision_distance=COMBAT_MESSAGE_RANGE)
 			owner.agony_scream()
 			owner.Stun(0.5 SECONDS)
@@ -306,11 +306,11 @@
 	// With a bone wound, you have up to a 60% chance to proc pain on hit
 	if(prob(60 * (damage/maxHealth)))
 		if(prob(75 - (35 * damage/maxHealth)))
-			to_chat(owner, span_userdanger("The [damage >= medium_threshold ? "fracture" : "dislocation"] in your [limb.name] shoots with pain as you bite [target]!"))
+			to_chat(owner, span_userdanger("[damage >= medium_threshold ? "Перелом" : "Вывих"] в [limb.name] отстреливает болью когда я пытаюсь пнуть [target]!"))
 			limb.add_pain(10)
 		else
-			owner.visible_message(span_danger("<b>[owner]</b> weakly bites [target] with [owner.p_their()] broken [limb.name], recoiling from pain!"), \
-				span_userdanger("You fail to bite [target] as the [damage >= medium_threshold ? "fracture" : "dislocation"] in your [limb.name] lights up in unbearable pain!"), \
+			owner.visible_message(span_danger("<b>[owner]</b> слабо кусает [target] с помощью сломанной [limb.name], отшатываясь в боли!"), \
+				span_userdanger("Я провалился в затее укусить [target], ведь [damage >= medium_threshold ? "перелом" : "вывих"] в [limb.name] загорается болью!"), \
 				vision_distance=COMBAT_MESSAGE_RANGE)
 			owner.agony_scream()
 			owner.Stun(0.5 SECONDS)
@@ -331,7 +331,7 @@
 	var/obj/item/bodypart/limb = source?.get_bodypart(current_zone)
 	if(!limb)
 		return
-	source.custom_pain("Staggering pain jolts through my [name]!", 30, affecting = limb)
+	source.custom_pain("Ошеломляющая боль пронзает [name]!", 30, affecting = limb)
 	source.Stumble(3 SECONDS)
 	source.Immobilize(2 SECONDS)
 	limb.damage_internal_organs(wounding_type = WOUND_PIERCE, amount = (rand(5, 10) * (damage/maxHealth)), forced = TRUE, wound_messages = FALSE)

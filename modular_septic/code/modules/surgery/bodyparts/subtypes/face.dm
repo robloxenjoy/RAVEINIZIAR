@@ -1,6 +1,6 @@
 /obj/item/bodypart/face
-	name = "face"
-	desc = "Won't you take me to, funkytown?"
+	name = "Лицо"
+	desc = "Новое. Для тебя."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "face"
 	base_icon_state = "face"

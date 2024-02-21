@@ -16,7 +16,7 @@
 	. = TRUE
 	if(single_use)
 		if(used_up)
-			to_chat(noob, "<span class='warning'> This thinq cannot be bought!</span>")
+			to_chat(noob, "<span class='warning'>Эта штучка не может быть куплена!</span>")
 			return FALSE
 		used_up = TRUE
 	if(ismob(noob))
@@ -31,17 +31,17 @@
 
 //check to see if the stupid bich can even buy this thing
 //accounts for bobux cost but you can slap other requirements here
-/datum/bobux_reward/proc/can_buy(client/noob, silent = FALSE, fail_message = "You don't have enough kaotiks to buy NAME!")
+/datum/bobux_reward/proc/can_buy(client/noob, silent = FALSE, fail_message = "Недостаточно ультр чтобы купить NAME!")
 	if(ismob(noob))
 		var/mob/M = noob
 		noob = M.client
 	if(!noob || !noob.prefs)
 		return FALSE
 	if(type in noob.mob?.mind?.bobux_bought)
-		to_chat(noob, "<span clas='bobux'>You have already bought this kaotik thinq!</span>")
+		to_chat(noob, "<span clas='bobux'>Я уже купил эту штучку!</span>")
 		return FALSE
 	if(!SSbobux.working)
-		to_chat(noob, "<span clas='bobux'>Kaotik System was crashed!</span>")
+		to_chat(noob, "<span clas='bobux'>Система ультр развалена!</span>")
 		return FALSE
 	if((noob?.prefs?.bobux_amount >= cost) && !unbuyable)
 		return TRUE

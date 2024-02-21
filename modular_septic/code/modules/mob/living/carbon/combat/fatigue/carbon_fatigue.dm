@@ -43,9 +43,9 @@
 
 /mob/living/carbon/proc/update_endurance_fatigue_modifier()
 	var/fatigue_modification = (GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)-ATTRIBUTE_MIDDLING)*10
-	var/desc = span_info("Endurance.")
+	var/desc = span_info("Стойкость.")
 	if(fatigue_modification > 0)
-		desc = span_green("Good endurance.")
+		desc = span_green("Хорошая стойкость.")
 	else if(fatigue_modification < 0)
-		desc = span_alert("Poor endurance.")
+		desc = span_alert("Плохая стойкость.")
 	add_or_update_variable_fatigue_modifier(/datum/fatigue_modifier/endurance, TRUE, fatigue_modification, desc)

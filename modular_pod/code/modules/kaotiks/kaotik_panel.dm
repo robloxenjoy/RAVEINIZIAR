@@ -2,7 +2,7 @@
 /datum/admins/proc/show_bobux_panel(mob/M in GLOB.mob_list)
 	set category = "Admin"
 	set desc = "Edit mobs's kaotik info"
-	set name = "Show Kaotik Panel"
+	set name = "Показать панель ультр"
 
 	if(!istype(M))
 		to_chat(usr, "This can only be used on instances of type /mob")
@@ -18,7 +18,7 @@
 /datum/admins/proc/destroykaotiks(mob/M in GLOB.mob_list)
 	set category = "Admin"
 	set desc = "Destroy them"
-	set name = "Destroy Kaotiks"
+	set name = "Разрушить ультры"
 
 //	message_admins("[noob] has destroyed the kaotik system!")
 //	log_admin("[noob] has destroyed the kaotik system!")
@@ -44,16 +44,16 @@
 
 /datum/mind/proc/bobux_panel()
 	if(!length(SSbobux.all_bobux_rewards))
-		alert("Not before round-start!", "0 Kaotik")
+		alert("Not before round-start!", "0 Ультр")
 		return
 	if(QDELETED(src))
-		alert("This mind doesn't have a mob, or is deleted! For some reason!", "0 Kaotik")
+		alert("Не получается!", "0 Ультр")
 		return
 	if(!SSbobux.working)
 		return
 	var/datum/preferences/prefs = current?.client?.prefs
 	if(!prefs)
-		alert("Unable to find preferences for [key]!", "0 Kaotik")
+		alert("Не получается с [key]!", "0 Ультр")
 		return
 
 	var/list/bobux_rewards = bobux_bought.Copy()
@@ -63,11 +63,11 @@
 		bobux_rewards |= initial(chungoose.name)
 	var/list/out = list(
 		"<B><span class='bobux'>[key]</span></B><br>\
-		<B>Bobux amount:</B> [prefs.bobux_amount ? prefs.bobux_amount : "No Kaotik"]<br>\
+		<B>Bobux amount:</B> [prefs.bobux_amount ? prefs.bobux_amount : "Нет ультр"]<br>\
 		<a href='?src=[REF(src)];bobux=set'>Set</a> \
 		<a href='?src=[REF(src)];bobux=add'>Add</a> \
 		<a href='?src=[REF(src)];bobux=remove'>Remove</a><br>\
-		<B>Bobux rewards bought:</B> [english_list(bobux_rewards, "Nothing", ", ")].</B>"
+		<B>Bobux rewards bought:</B> [english_list(bobux_rewards, "Ничего", ", ")].</B>"
 		)
 	var/datum/browser/panel = new(usr, "bobuxpanel", "", 300, 400)
 	panel.set_content(out.Join())

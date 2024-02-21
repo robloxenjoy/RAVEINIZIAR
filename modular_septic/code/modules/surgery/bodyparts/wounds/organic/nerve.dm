@@ -1,5 +1,5 @@
 /datum/wound/nerve
-	name = "Torn Nerve"
+	name = "Порванный нерв"
 	sound_effect = 'modular_septic/sound/gore/nerve.ogg'
 	base_treat_time = 3 SECONDS
 	wound_type = WOUND_NERVE
@@ -33,10 +33,10 @@
 			nerve.dissect()
 		else
 			nerve.tear()
-	var/final_descriptive = "A nerve is [dissection ? "torn" : "damaged"]!"
+	var/final_descriptive = "Нерв [dissection ? "порван" : "повреждён"]!"
 	// Sciatic is pretty significant
 	if(istype(nerve, NERVE_R_LEG) || istype(nerve, NERVE_L_LEG))
-		final_descriptive = "\The [nerve] [nerve.p_are()] [dissection ? "torn" : "damaged"]!"
+		final_descriptive = "[nerve] [dissection ? "порван" : "повреждён"]!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)

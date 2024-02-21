@@ -31,18 +31,18 @@
 	if(.)
 		return
 	if(user.a_intent == INTENT_HELP)
-		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
-//		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
+		user.visible_message(span_notice("[user] трогает [src]."),span_notice("Я трогаю [src]."), span_hear("Я слышу чё-то."))
+//		user.visible_message("<span class='notice'>\[user] трогает [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 	if(user.a_intent == INTENT_GRAB)
-		user.visible_message(span_notice("[user] trying to catch something."),span_notice("You try to catch something."), span_hear("You hear the sound of something."))
+		user.visible_message(span_notice("[user] размахивает рукой."),span_notice("Я размахиваю рукой."), span_hear("Я слышу чё-то."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
 		user.adjustFatigueLoss(5)
 		sound_hint()
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
-		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
+		user.visible_message(span_notice("[user] бьёт [src] рукой."),span_notice("Я бью [src] рукой."), span_hear("Я слышу стук."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.adjustFatigueLoss(5)
@@ -54,16 +54,16 @@
 	if(.)
 		return
 	if(user.a_intent == INTENT_HELP)
-		user.visible_message(span_notice("[user] touches the [src]."),span_notice("You touch the [src]."), span_hear("You hear the sound of touching."))
+		user.visible_message(span_notice("[user] трогает [src]."),span_notice("Я трогаю [src]."), span_hear("Я слышу чё-то."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 	if(user.a_intent == INTENT_GRAB)
-		user.visible_message(span_notice("[user] trying to catch something."),span_notice("You try to catch something."), span_hear("You hear the sound of something."))
+		user.visible_message(span_notice("[user] размахивает рукой."),span_notice("Я размахиваю рукой."), span_hear("Я слышу чё-то."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
-		user.visible_message(span_notice("[user] beats the [src] with hand."),span_notice("You beat the [src] with hand."), span_hear("You hear the sound of beating the floor."))
+		user.visible_message(span_notice("[user] бьёт [src] рукой."),span_notice("Я бью [src] рукой."), span_hear("Я слышу стук."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.adjustFatigueLoss(5)
@@ -76,15 +76,15 @@
 		return
 /*
 	if(user.a_intent == INTENT_HELP)
-//		user.visible_message("<span class='notice'>\[user] touches the [src] with [W].</span>")
-		user.visible_message(span_notice("[user] touches the [src] with [W]."),span_notice("You touch the [src] with [W]."), span_hear("You hear the sound of touching."))
+//		user.visible_message("<span class='notice'>\[user] трогает [src] с помощью [W].</span>")
+		user.visible_message(span_notice("[user] трогает [src] с помощью [W]."),span_notice("Я трогаю [src] с помощью [W]."), span_hear("Я слышу чё-то."))
 		user.changeNext_move(CLICK_CD_WRENCH)
 */
 //	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_GRAB) || (user.a_intent == INTENT_DISARM))
 //		user.visible_message("<span class='notice'>\[user] beats the [src] with [W].</span>")
 	if(W.force)
 		if(W.get_sharpness())
-			user.visible_message(span_notice("[user] brandishing a [W]."),span_notice("You brandish a [W]."), span_hear("You hear the sound of swinging."))
+			user.visible_message(span_notice("[user] размахивает с помощью [W]."),span_notice("Я размахиваю с помощью [W]."), span_hear("Я слышу взмах."))
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(W.attack_fatigue_cost)
 			sound_hint()
@@ -93,12 +93,13 @@
 			else
 				playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
 		else
-			user.visible_message(span_notice("[user] beats the [src] with [W]."),span_notice("You beat the [src] with [W]."), span_hear("You hear the sound of beating the floor."))
+			user.visible_message(span_notice("[user] бьёт [src] с помощью [W]."),span_notice("Я бью [src] с помощью [W]."), span_hear("Я слышу стук."))
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(W.attack_fatigue_cost)
 			W.damageItem("SOFT")
 			playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
 			sound_hint()
+/*
 			if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
 				if(prob(W.force))
 					var/turf/open/floor/plating/polovich/dirt/dark/bright/firefloor = src
@@ -113,7 +114,7 @@
 					playsound(get_turf(src), 'modular_septic/sound/effects/saw.ogg', 100 , FALSE, FALSE)
 					var/turf/open/floor/plating/polovich/roots/noroots = src
 					noroots.canstumble = FALSE
-/*
+
 	if(istype(W, /obj/item/atrat))
 		var/obj/item/atrat/atrat = W
 		if(!atrat.usedy)
@@ -121,11 +122,12 @@
 			atrat.usedy = TRUE
 			addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
 */
+
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
-	user.visible_message(span_notice("[user] bites the [src]."),span_notice("You bite the [src]."), span_hear("You hear the sound of biting."))
+	user.visible_message(span_notice("[user] кусает [src]."),span_notice("Я кусаю [src]."), span_hear("Я слышу чё-то."))
 	user.changeNext_move(CLICK_CD_BITE)
 	user.adjustFatigueLoss(5)
 	playsound(get_turf(src), 'sound/weapons/bite.ogg', 80 , FALSE, FALSE)
@@ -135,7 +137,7 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message(span_notice("[user] kicks the [src]."),span_notice("You kick the [src]."), span_hear("You hear the sound of kicking."))
+	user.visible_message(span_notice("[user] пинает [src]."),span_notice("Я пинаю [src]."), span_hear("Я слышу стук."))
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.adjustFatigueLoss(10)
 	playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
@@ -287,15 +289,15 @@
 	footstep = FOOTSTEP_PLATING
 
 /turf/open/floor/plating/polovich/steeldark
-	name = "Steel Floor"
-	desc = "DARK!"
+	name = "Пол"
+	desc = "Вот бы вырвать, и посмотреть что под этим."
 	icon_state = "steeldark"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_PLATING
 
 /turf/open/floor/plating/polovich/steeldarkk
-	name = "Steel Floor"
-	desc = "DARK!"
+	name = "Пол"
+	desc = "Вот бы вырвать, и посмотреть что под этим."
 	icon_state = "steeldark2"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_PLATING
@@ -1597,8 +1599,8 @@
 	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/slush
-	name = "Slush Floor"
-	desc = "This is so sad."
+	name = "Слякоть"
+	desc = "Так грустно."
 	icon_state = "muddymud"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_MEAT
@@ -1612,8 +1614,8 @@
 	dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/slushy
-	name = "Slush Floor"
-	desc = "This is so sad."
+	name = "Слякоть"
+	desc = "Так грустно."
 	icon_state = "mudacid"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_MEAT
