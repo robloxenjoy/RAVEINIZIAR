@@ -76,7 +76,9 @@
 /mob/proc/flash_screen_flash(power)
 	if(!hud_used?.pain_flash)
 		return
-	flick("flash_anim", hud_used.pain_flash)
+	switch(power)
+		if(5 to INFINITY)
+			flick("flash_anim", hud_used.pain_flash)
 
 /mob/proc/flash_darkness(power)
 	if(!hud_used?.pain_flash)

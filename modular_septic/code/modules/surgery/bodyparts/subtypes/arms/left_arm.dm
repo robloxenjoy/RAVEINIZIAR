@@ -1,9 +1,12 @@
 /obj/item/bodypart/l_arm
-	name = "Левая Рука"
-	desc = "Конечность."
+	name = "left arm"
+	desc = "The word 'sinister' stems originally from the \
+		Latin 'sinestra' (left hand), because the left hand was supposed to \
+		be possessed by the devil. This arm appears to be possessed by no \
+		one though."
 	icon_state = "default_human_l_arm"
-	attack_verb_continuous = list("шлёпает")
-	attack_verb_simple = list("шлёпать")
+	attack_verb_continuous = list("slaps")
+	attack_verb_simple = list("slap")
 	max_damage = 50
 	max_stamina_damage = 50
 	parent_body_zone = BODY_ZONE_CHEST
@@ -20,7 +23,7 @@
 	melee_hit_modifier = -1
 	melee_hit_zone_modifier = 0
 
-	amputation_point_name = "левое плечо"
+	amputation_point_name = "left shoulder"
 	bone_type = BONE_L_ARM
 	tendon_type = TENDON_L_ARM
 	artery_type = ARTERY_L_ARM

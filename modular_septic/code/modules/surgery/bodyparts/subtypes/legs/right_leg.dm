@@ -1,6 +1,8 @@
 /obj/item/bodypart/r_leg
-	name = "Правая нога"
-	desc = "Конечность."
+	name = "right leg"
+	desc = "You put your right leg in, your right leg out. In, out, in, out, \
+		shake it all about. And then it apparently detaches. \
+		The hokey pokey has certainly changed a lot since space colonisation."
 	icon_state = "default_human_r_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")

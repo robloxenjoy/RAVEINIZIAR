@@ -62,21 +62,21 @@
 	var/mob/living/carbon/our_fraggot = parent
 	if(our_fraggot.client)
 		var/static/list/fraggot_lines = list(
-			"БИГ ЧАНГУС ОЛОЛОЛ!!!", \
-			"УГАНДА НАКЛС АХХАХА!", \
-			"РЕДДЩИТ!!!!!!", \
-			"ЛГБТ!!!", \
-			"ГЕЙМИНГ!!!!", \
-			"ЛАЙФВЕБ!!!!", \
-			"ФАТАЛ!!!", \
-			"УЛЬТРЫ!!!", \
-			"СС14!!!", \
-			"СС14 ЛОЛ!!!", \
-			"АААААААААА БЛЯЯЯЯЯЯЯТЬ!!!!!", \
-			"ПИДОРАСЫ!!!!", \
-			"СУКИИИИ!!!!", \
-			"ПАРОДИЯ НА ЛАЙФВЕБ!!!!", \
-			"УЁБКИ СУКА!!!!!", \
+			"BIG CHUNGUS LOLOLOLOLLLLOLOLOLO!!!!", \
+			"UGANDA KNUCKLES LOLOLOLOL!", \
+			"REDDIT!!!!!!", \
+			"LGBT!!!", \
+			"GAMING!!!!", \
+			"GAYWEB!!!!", \
+			"FATAL!!!", \
+			"KAOTIKS!!!", \
+			"WHITE DREAM RUSSIAN SERVER!!!", \
+			"SS14 LOL!!!", \
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!", \
+			"GODDAMNIT!!!!", \
+			"FUCK!!!!", \
+			"PODPOL IS A PARODY OF DICKWEB!!!!", \
+			"IVASHKA!!!!!", \
 		)
 		var/message = pick(fraggot_lines)
 		if(DT_PROB(8, delta_time))

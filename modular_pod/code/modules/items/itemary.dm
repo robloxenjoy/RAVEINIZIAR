@@ -537,7 +537,7 @@
 		return
 	SSshuttle.emergency.request()
 	usedy = TRUE
-	user.client?.prefs?.adjust_bobux(100, "<span class='bobux'>I called the PINKER! +100 ультр!</span>")
+	user.client?.prefs?.adjust_bobux(100, "<span class='bobux'>I called the PINKER! +100 kaotiks!</span>")
 
 /obj/item/atrat
 	name = "Atrat"

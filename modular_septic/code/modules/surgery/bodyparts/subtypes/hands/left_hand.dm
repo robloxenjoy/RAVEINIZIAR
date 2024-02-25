@@ -1,6 +1,6 @@
 /obj/item/bodypart/l_hand
-	name = "Левая кисть"
-	desc = "Конечность."
+	name = "left hand"
+	desc = "In old english, left meant weak, guess they were onto something if you're finding this."
 	icon_state = "default_human_l_hand"
 	attack_verb_continuous = list("slaps", "punches")
 	attack_verb_simple = list("slap", "punch")

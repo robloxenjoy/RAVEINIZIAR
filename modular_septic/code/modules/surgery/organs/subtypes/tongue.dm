@@ -1,6 +1,6 @@
 /obj/item/organ/tongue
-	name = "Язык"
-	desc = "Понимаешь его?"
+	name = "tongue"
+	desc = "Cat got your tongue?"
 	icon_state = "tongue"
 	base_icon_state = "tongue"
 	zone = BODY_ZONE_PRECISE_MOUTH
@@ -15,8 +15,8 @@
 	nutriment_req = 0.5
 	hydration_req = 2
 
-	attack_verb_continuous = list("лижет", "шлёпает", "пиндосит", "базарит")
-	attack_verb_simple = list("лизать", "шлёпать", "пиндосить", "базарить")
+	attack_verb_continuous = list("licks", "slobbers", "slaps", "frenches", "tongues")
+	attack_verb_simple = list("lick", "slobber", "slap", "french", "tongue")
 	var/list/languages_possible
 	var/say_mod = null
 

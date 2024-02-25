@@ -298,39 +298,6 @@
 	tetris_width = 32
 	tetris_height = 32
 
-/obj/item/melee/bita/hammer/heavy
-	name = "Молот"
-	desc = "Крепкий, уже не молоток."
-	icon = 'modular_pod/icons/obj/items/weapons.dmi'
-	icon_state = "hammer"
-	inhand_icon_state = "hammer"
-	worn_icon = null
-	worn_icon_state = null
-	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
-	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
-	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
-	hitsound = list('modular_pod/sound/eff/weapon/blunty1.ogg', 'modular_pod/sound/eff/weapon/blunty2.ogg', 'modular_pod/sound/eff/weapon/blunty3.ogg')
-	havedurability = TRUE
-	durability = 180
-	carry_weight = 2 KILOGRAMS
-	skill_melee = SKILL_IMPACT_WEAPON
-	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
-	min_force = 10
-	force = 15
-	throwforce = 15
-	min_force_strength = 1
-	force_strength = 1.6
-	wound_bonus = 8
-	bare_wound_bonus = 8
-	throw_speed = 2
-	throw_range = 10
-	attack_verb_continuous = list("отбивает", "ударяет", "вмазывает", "хуярит")
-	attack_verb_simple = list("отбить", "ударить", "вмазать", "хуярить")
-	tetris_width = 32
-	tetris_height = 32
-
 /obj/item/melee/bita/macecircle
 	name = "Steel Mace"
 	desc = "One-handed steel mace."

@@ -102,12 +102,12 @@
 //	var/turf/turf_loc = loc
 	if(get_dist(turf_loc?.liquids,M) <= 1)
 		if(M.wear_mask && M.wear_mask.flags_cover & MASKCOVERSMOUTH)
-			visible_message(M, span_warning("Что-то мешает мне пить!"))
+			visible_message(M, span_warning("The mask is in the way!"))
 			return
 		var/datum/reagents/temporary_holder = turf_loc.liquids.take_reagents_flat(CHOKE_REAGENTS_INGEST_ON_BREATH_AMOUNT)
 		temporary_holder.trans_to(src, temporary_holder.total_volume, methods = INGEST)
 		qdel(temporary_holder)
-		visible_message(span_notice("[M] пьёт жидкость."))
+		visible_message(span_notice("[M] drinks the liquid."))
 		playsound(M.loc, 'sound/items/drink.ogg', rand(10, 50), TRUE)
 		return
 

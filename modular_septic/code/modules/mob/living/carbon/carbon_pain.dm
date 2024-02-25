@@ -104,11 +104,11 @@
 		var/message
 		switch(CEILING(maxbpshock, 1))
 			if(1 to 10)
-				message = "[damaged_bodypart.name] [burning ? "жжется" : "болит"]."
+				message = "My [damaged_bodypart.name] [burning ? "burns" : "hurts"]."
 			if(11 to 90)
-				message = "[damaged_bodypart.name] [burning ? "жжется" : "болит"] сильно!"
+				message = "My [damaged_bodypart.name] [burning ? "burns" : "hurts"] badly!"
 			if(91 to INFINITY)
-				message = "[pick("ЧТО ЗА БОЛЬ!", "О БОЖЕ!", "ЁБ ТВОЮ МАТЬ!")]! [damaged_bodypart.name] [burning ? "как будто горит" : "болит ебануто"]!"
+				message = "[pick("WHAT A PAIN!", "OH GOD!", "OH LORD!")]! My [damaged_bodypart.name] [damaged_bodypart.p_are()] [burning ? "on fire" : "hurting terribly"]!"
 		custom_pain(message, maxbpshock, TRUE, damaged_bodypart, TRUE)
 
 	// Damage to internal organs hurts a lot.

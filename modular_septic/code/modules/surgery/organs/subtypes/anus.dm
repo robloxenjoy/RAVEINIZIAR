@@ -1,6 +1,6 @@
 /obj/item/organ/anus
-	name = "Анус"
-	desc = "?"
+	name = "asshole"
+	desc = "Space asshole. In a truck, flying off a ridge. Space asshole. Smashing through a bridge."
 	icon = 'modular_septic/icons/obj/items/genitalia/asshole.dmi'
 	icon_state = "anus"
 	base_icon_state = "anus"

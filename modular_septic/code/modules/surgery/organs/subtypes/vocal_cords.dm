@@ -1,5 +1,5 @@
 /obj/item/organ/vocal_cords //organs that are activated through speech with the :x/MODE_KEY_VOCALCORDS channel
-	name = "Голосовые связки"
+	name = "vocal cords"
 	icon_state = "appendix"
 	zone = BODY_ZONE_PRECISE_MOUTH
 	organ_efficiency = list(ORGAN_SLOT_VOICE = 100)

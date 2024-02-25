@@ -1,9 +1,10 @@
 /obj/item/bodypart/r_arm
-	name = "Правая рука"
-	desc = "Конечность."
+	name = "right arm"
+	desc = "Over 87% of humans are right handed. That figure is much lower \
+		among humans missing their right arm."
 	icon_state = "default_human_r_arm"
-	attack_verb_continuous = list("шлёпает")
-	attack_verb_simple = list("шлёпать")
+	attack_verb_continuous = list("slaps")
+	attack_verb_simple = list("slap")
 	max_damage = 50
 	max_stamina_damage = 50
 	parent_body_zone = BODY_ZONE_CHEST
@@ -20,7 +21,7 @@
 	melee_hit_modifier = -1
 	melee_hit_zone_modifier = 0
 
-	amputation_point_name = "правое плечо"
+	amputation_point_name = "left shoulder"
 	bone_type = BONE_R_ARM
 	tendon_type = TENDON_R_ARM
 	artery_type = ARTERY_R_ARM

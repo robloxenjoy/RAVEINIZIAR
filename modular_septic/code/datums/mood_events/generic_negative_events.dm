@@ -1,35 +1,35 @@
 //Went to funkytown
 /datum/mood_event/face_off
-	description = span_necrosis("Ёб твою мать, У МЕНЯ НЕТ ЛИЦА!")
+	description = span_necrosis("Holy shit, my face is gone!")
 	mood_change = -5
 	timeout = 0
 
 //Turned into a brain
 /datum/mood_event/freakofnature
-	description = span_warning("ГДЕ МОЁ ТЕЛО?!")
+	description = span_warning("Where's is my body?! What did they do to me?!")
 	mood_change = -15
 	timeout = 10 MINUTES
 
 //Cringe filter
 /datum/mood_event/cringe
-	description = span_boldwarning("Я такой идиот.")
+	description = span_boldwarning("I tried to say something stupid.")
 	mood_change = -4
 	timeout = 5 MINUTES
 
 /datum/mood_event/ultracringe
-	description = span_boldwarning("Какой же я еблан!")
+	description = span_boldwarning("I am fucking retarded!")
 	mood_change = -8
 	timeout = 15 MINUTES
 
 //Pain mood
 /datum/mood_event/painbad
-	description = span_danger("Я чувствую много боли!")
+	description = span_danger("I am feeling so much pain!")
 	mood_change = -6
 	timeout = 3 MINUTES
 
 //Saw a badly injured crewmember
 /datum/mood_event/saw_injured
-	description = span_danger("Я видел омрачняющие вещи!")
+	description = span_danger("I have seen terrible things!")
 	mood_change = -3
 	timeout = 5 MINUTES
 
@@ -39,80 +39,79 @@
 
 //Saw a crewmember die
 /datum/mood_event/saw_dead
-	description = span_dead("Я видел умирающее существо...")
+	description = span_dead("I saw a dying creature...")
 	mood_change = -5
 	timeout = 10 MINUTES
 
 /datum/mood_event/saw_dead/lesser
-	description = span_dead("Ну, я видел умирающее существо.")
 	mood_change = -2
 	timeout = 5 MINUTES
 
 /datum/mood_event/saw_dead/good
-	description = span_dead("Я видел умирающее существо, круто!")
+	description = span_dead("I saw a dying creature, so nice!")
 	mood_change = 2
 	timeout = 5 MINUTES
 
 //Died
 /datum/mood_event/died
-	description = span_dead("<b>Я видел ничего, и я не хочу в это возвращаться!</b>")
+	description = span_dead("<b>I saw the afterlife, and I don't like it!</b>")
 	mood_change = -6
 	timeout = 10 MINUTES
 
 //Bad smell
 /datum/mood_event/miasma
-	description = span_warning("Пахнет пиздецом!")
+	description = span_warning("I smell something putrid!")
 	mood_change = -3
 	timeout = 2 MINUTES
 
 /datum/mood_event/miasma/harsh
-	description = span_danger("Пахнет пиздецом ебанутым!")
+	description = span_danger("This rotten stench is unbearable!")
 	mood_change = -6
 
 /datum/mood_event/shit
-	description = span_warning("Пахнет говном!")
+	description = span_warning("I smell something shitty!")
 	mood_change = -3
 	timeout = 2 MINUTES
 
 /datum/mood_event/shit/harsh
-	description = span_danger("Пахнет блять говном!")
+	description = span_danger("This shitty stench is awful!")
 	mood_change = -6
 
 /datum/mood_event/retarded
-	description = span_warning("Какой-то хуйнёй пахнет!")
+	description = span_warning("I smell something retarded!")
 	mood_change = -2
 	timeout = 2 MINUTES
 
 /datum/mood_event/retarded/harsh
-	description = span_danger("Какой-то блять хуйнёй пахнет!")
+	description = span_danger("This retarded stench is awful!")
 	mood_change = -4
 
 //WORST smell
 /datum/mood_event/incredible_gas
-	description = span_infection("Пахнет опасно!")
+	description = span_infection("Smells like someone ripped ass!")
 	mood_change = -4
 	timeout = 1 MINUTES
 
 /datum/mood_event/incredible_gas/harsh
-	description = span_infection("Ебануто пахнет!")
+	description = span_infection("Smells like rotten eggs and garbage!")
 	mood_change = -8
 
 /datum/mood_event/urinepoo_gas
-	description = span_infection("Пахнет какой-то хуйнёй!")
+	description = span_infection("Smells like someone pissed off and shitted off!")
 	mood_change = -5
 	timeout = 1 MINUTES
 
 /datum/mood_event/urinepoo_gas/harsh
-	description = span_infection("ОТВРАТИТЕЛЬНО! ПАХНЕТ ПРОСТО ОТВРАТИТЕЛЬНО!")
+	description = span_infection("DIGUSTING! SMELLS FUCKING DISGUSTING!")
 	mood_change = -9
 
 /datum/mood_event/sleeptime_gas
-	description = span_infection("Пахнет уютненько.")
+	description = span_infection("Delicious pancakes, warm cozy smell.")
 	mood_change = 1
 	timeout = 1 MINUTES
 
 /datum/mood_event/sleeptime_gas/harsh
-	description = span_infection("Какой хороший запах...")
+	description = span_infection("So good. So good smell...")
 	mood_change = 2
 
 /datum/mood_event/vilir
@@ -126,16 +125,15 @@
 
 //Ate shit
 /datum/mood_event/creampie/shitface
-	description = span_infection("Моё лицо в говне.")
+	description = span_infection("My face is covered in shit.")
 	mood_change = -2
 	timeout = 10 MINUTES
 
 //Gun pointed at us
 /datum/mood_event/gunpoint
-	description = span_userdanger("На Меня... Наставлено оружие!")
+	description = span_userdanger("There is a gun pointed at me!")
 	mood_change = -4
 
 //Embedded thing
 /datum/mood_event/embedded
-	description = span_userdanger("Во мне застряло что-то!")
 	mood_change = -4

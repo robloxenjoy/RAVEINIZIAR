@@ -1,5 +1,5 @@
 /datum/wound/artery
-	name = "Порванная артерия"
+	name = "Torn Artery"
 	sound_effect = list('modular_septic/sound/gore/artery1.ogg', \
 						'modular_septic/sound/gore/artery2.ogg', \
 						'modular_septic/sound/gore/artery3.ogg')
@@ -35,10 +35,10 @@
 			artery.dissect()
 		else
 			artery.tear()
-	var/final_descriptive = "Артерия [dissection ? "порвана" : "повреждена"]!"
+	var/final_descriptive = "An artery is [dissection ? "torn" : "damaged"]!"
 	// Carotid and aorta are pretty significantly dangerous
 	if(istype(artery, ARTERY_NECK) || istype(artery, ARTERY_CHEST) || istype(artery, ARTERY_VITALS))
-		final_descriptive = "[artery] [dissection ? "рассечена" : "повреждена"]!"
+		final_descriptive = "\The [artery] [artery.p_are()] [dissection ? "dissected" : "damaged"]!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)

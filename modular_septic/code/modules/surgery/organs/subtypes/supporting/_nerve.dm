@@ -1,6 +1,6 @@
 /obj/item/organ/nerve
-	name = "Нерв"
-	desc = "Тревожное зрелище."
+	name = "nerve"
+	desc = "An unnerving sight."
 	icon_state = "nerve"
 	base_icon_state = "nerve"
 

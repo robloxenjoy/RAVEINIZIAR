@@ -7,19 +7,19 @@
 						'modular_septic/sound/attack/punch3.ogg')
 	miss_sound = list('modular_septic/sound/attack/punchmiss.ogg')
 	attack_effect = ATTACK_EFFECT_PUNCH
-	attack_verb = "ударить"
-	var/attack_verb_continuous = "ударяет"
+	attack_verb = "punch"
+	var/attack_verb_continuous = "punches"
 	var/attack_sharpness = NONE
 	var/attack_armor_damage_modifier = 0
 	var/kick_effect = ATTACK_EFFECT_KICK
-	var/kick_verb = "пинать"
-	var/kick_verb_continuous = "пинает"
+	var/kick_verb = "kick"
+	var/kick_verb_continuous = "kicks"
 	var/kick_sharpness = NONE
 	var/kick_armor_damage_modifier = 0
 	var/kick_sound = 'modular_septic/sound/attack/kick.ogg'
 	var/bite_effect = ATTACK_EFFECT_BITE
-	var/bite_verb = "кусать"
-	var/bite_verb_continuous = "кусает"
+	var/bite_verb = "bite"
+	var/bite_verb_continuous = "bites"
 	var/bite_sharpness = NONE
 	var/bite_sound = list('modular_septic/sound/attack/bite1.ogg')
 	var/bite_armor_damage_modifier = 0
@@ -129,9 +129,6 @@
 					human_user.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
 					human_user.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)
 					human_user.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
-				if(CS_FURY)
-					attack_skill_modifier -= 3
-					attack_delay *= 0.8
 				if(CS_STRONG)
 					damage *= 1.5
 					attack_fatigue_cost *= 1.5
@@ -147,8 +144,8 @@
 				if(CS_DEFEND)
 					damage *= 0.75
 	if(user != victim)
-//		if(!victim.lying_attack_check(user, weapon))
-//			return FALSE
+		if(!victim.lying_attack_check(user, weapon))
+			return FALSE
 		var/hit_modifier = weapon.melee_modifier+attack_skill_modifier+attack_skill_modifier
 		var/hit_zone_modifier = weapon.melee_zone_modifier
 		if(affecting)
@@ -190,12 +187,12 @@
 			var/attack_message = "attack"
 			if(length(weapon.attack_verb_simple))
 				attack_message = pick(weapon.attack_verb_simple)
-			victim.visible_message(span_warning("<b>[victim]</b> блокирует <b>[user]</b>'s [attack_message] с помощью [user.p_their()] [weapon]!"), \
-							span_userdanger("Я блокирую <b>[user]</b>'s [attack_message] с помощью [user.p_their()] [weapon]!"), \
-							span_hear("Я слышу стук!"), \
+			victim.visible_message(span_warning("<b>[victim]</b> blocks <b>[user]</b>'s [attack_message] with [user.p_their()] [weapon]!"), \
+							span_userdanger("I block <b>[user]</b>'s [attack_message] with [user.p_their()] [weapon]!"), \
+							span_hear("I hear a swoosh!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("<b>[victim]</b> блокирует мою [attack_message] моим [weapon]!"))
+			to_chat(user, span_userdanger("<b>[victim]</b> blocks my [attack_message] with my [weapon]!"))
 			user.sound_hint()
 			if(weapon.durability)
 				weapon.damageItem("MEDIUM")
@@ -351,8 +348,8 @@
 								list/modifiers)
 	if(!istype(user))
 		return
-//	if(!victim.lying_attack_check(user))
-//		return FALSE
+	if(!victim.lying_attack_check(user))
+		return FALSE
 	CHECK_DNA_AND_SPECIES(user)
 	CHECK_DNA_AND_SPECIES(victim)
 
@@ -766,32 +763,32 @@
 	post_hit_effects(target, user, affecting, attack_effect, attack_damage, MELEE, user.dna.species.attack_type, NONE, def_zone, intended_zone, modifiers)
 	if(def_zone == intended_zone)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
-							span_userdanger("<b>[user]</b> [attack_verb_continuous] меня в [hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] <b>[target]</b>'s [hit_area]![target.wound_message]"), \
+							span_userdanger("<b>[user]</b> [attack_verb_continuous] my [hit_area]![target.wound_message]"), \
+							span_hear("I hear a sickening sound of flesh hitting flesh!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
-			to_chat(user, span_userdanger("Я [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
+			to_chat(user, span_userdanger("I [attack_verb] <b>[target]</b>'s [hit_area]![target.wound_message]"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] себя в \[hit_area]![target.wound_message]"), \
-							span_userdanger("Я [attack_verb] себя в \[hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] [user.p_themselves()] on \the [hit_area]![target.wound_message]"), \
+							span_userdanger("I [attack_verb] myself on \the [hit_area]![target.wound_message]"), \
+							span_hear("I hear a sickening sound of flesh hitting flesh!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 	else
 		var/parsed_intended_zone = parse_zone(intended_zone)
 		if(user != target)
 //			if(!lying_attack_check(user))
 //				return
-			target.visible_message(span_danger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
-							span_userdanger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] меня в [hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+			target.visible_message(span_danger("<b>[user]</b> aims for \the [parsed_intended_zone], but [attack_verb_continuous] <b>[target]</b>'s [hit_area] instead![target.wound_message]"), \
+							span_userdanger("<b>[user]</b> aims for \the [parsed_intended_zone], but [attack_verb_continuous] my [hit_area] instead![target.wound_message]"), \
+							span_hear("I hear a sickening sound of flesh hitting flesh!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
-			to_chat(user, span_userdanger("Я целю в [parsed_intended_zone], но [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
+			to_chat(user, span_userdanger("I aim for the [parsed_intended_zone], but [attack_verb] <b>[target]</b>'s [hit_area] instead![target.wound_message]"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] себя в\[hit_area]![target.wound_message]"), \
-							span_userdanger("Я целю в \[parsed_intended_zone], но [attack_verb] себя в \[hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+			target.visible_message(span_danger("<b>[user]</b> aims for \the [parsed_intended_zone], but [attack_verb_continuous] [user.p_themselves()] on \the [hit_area] instead![target.wound_message]"), \
+							span_userdanger("I aim for \the [parsed_intended_zone], but [attack_verb] myself on \the [hit_area] instead![target.wound_message]"), \
+							span_hear("I hear a sickening sound of flesh hitting flesh!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
 
@@ -827,8 +824,8 @@
 									list/modifiers)
 	if(!istype(user))
 		return
-//	if(!victim.lying_attack_check(user))
-//		return FALSE
+	if(!victim.lying_attack_check(user))
+		return FALSE
 	CHECK_DNA_AND_SPECIES(user)
 	CHECK_DNA_AND_SPECIES(victim)
 
@@ -845,8 +842,8 @@
 									list/modifiers)
 	if(!istype(user))
 		return
-//	if(!victim.lying_attack_check(user))
-//		return FALSE
+	if(!victim.lying_attack_check(user))
+		return FALSE
 	CHECK_DNA_AND_SPECIES(user)
 	CHECK_DNA_AND_SPECIES(victim)
 
@@ -880,11 +877,9 @@
 					if(resultt <= 0)
 						victim.reagents?.add_reagent(weapon.poisoned_type, weapon.how_eats)
 						weapon.current_fucked_reagents -= weapon.how_eats
-/*
 						victim.visible_message(span_green("[victim] got reagented by [user]!"), \
 											span_green("I am got reagented by [user]!"), \
 											span_hear("I hear the sound of combat."))
-*/
 
 	if(!sharpness)
 		if(victim.body_position != LYING_DOWN)
@@ -905,12 +900,12 @@
 										force = victim.move_force, \
 										callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
 		else
-			if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_LUCK), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 				var/turf/open/floor/plating/A = get_turf(victim)
 				victim.apply_damage(A.powerfloor, BRUTE, affected, victim.run_armor_check(affected, MELEE), wound_bonus = A.dangerfloor, sharpness = NONE)
-				victim.visible_message(span_pinkdang("[victim] [affected] ударяется об [A]!"), \
-									span_pinkdang("Чёрт, [affected] ударяется об [A]!"), \
-									span_hear("Я слышу звук плоти."))
+				victim.visible_message(span_pinkdang("[victim]'s [affected] crushed against [A]!"), \
+									span_pinkdang("My [affected] crushed against [A]!"), \
+									span_hear("I hear the sound of combat."))
 				playsound(get_turf(victim), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	realstunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
@@ -919,9 +914,6 @@
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	goodhits(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
-	if(damage > 5)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_WILL), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-			shake_camera(victim, 1, 1)
 	return TRUE
 
 /datum/species/proc/stunning(mob/living/carbon/human/victim, \
@@ -1020,12 +1012,12 @@
 								victim.Stun(1 SECONDS)
 							if(diceroll == DICE_CRIT_FAILURE)
 								victim.Stun(2 SECONDS)
-							victim.visible_message(span_pinkdang("[victim] получает удар в пах от [user]!"), \
-												span_pinkdang("Я получаю удар в пах от [user]!"), \
-												span_hear("Я слышу звук плоти."))
+							victim.visible_message(span_pinkdang("[victim] is gelding blowed by [user]!"), \
+												span_pinkdang("I am was gelding blowed by [user]!"), \
+												span_hear("I hear the sound of flesh."))
 							if(victim.stat >= UNCONSCIOUS)
 								return
-//							playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
+							playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
 			if(BODY_ZONE_PRECISE_VITALS)
 				var/protection = 0
 				var/resultt = 0
@@ -1042,9 +1034,9 @@
 							victim.vomit(10, FALSE, FALSE)
 						if(diceroll == DICE_CRIT_FAILURE)
 							victim.vomit(10, TRUE, FALSE)
-						victim.visible_message(span_pinkdang("[victim] получает удар по кишкам от [user]!"), \
-											span_pinkdang("Получает удар по кишкам от [user]!"), \
-											span_hear("Я слышу звук плоти."))
+						victim.visible_message(span_pinkdang("[victim] is gut busted by [user]!"), \
+											span_pinkdang("I am was gut busted by [user]!"), \
+											span_hear("I hear the sound of flesh."))
 						if(victim.stat >= UNCONSCIOUS)
 							return
 						playsound(get_turf(victim), 'modular_septic/sound/effects/gutbusted.ogg', 80, 0)
@@ -1098,14 +1090,14 @@
 				affected.open_incision()
 				for(var/obj/item/organ/bone/bonee as anything in affected.getorganslotlist(ORGAN_SLOT_BONE))
 					if(!bonee.is_broken())
-						victim.visible_message(span_pinkdang("[user] [weapon] надрезает [victim] [affected]!"), \
-											span_pinkdang("[user] [weapon] надрезает [affected]!"), \
-											span_hear("Я слышу звук плоти."))
+						victim.visible_message(span_pinkdang("[user]'s [weapon] incised [victim]'s [affected]!"), \
+											span_pinkdang("[user]'s [weapon] incised my [affected]!"), \
+											span_hear("I hear the sound of flesh being penetrated."))
 						playsound(get_turf(victim), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
 					else
-						victim.visible_message(span_pinkdang("[user] [weapon]  надрезает [victim] [affected]!"), \
-											span_pinkdang("[user] [weapon] надрезает [affected]!"), \
-											span_hear("Я слышу звук плоти."))
+						victim.visible_message(span_pinkdang("[user]'s [weapon] dissected [victim]'s [affected]!"), \
+											span_pinkdang("[user]'s [weapon] dissected my [affected]!"), \
+											span_hear("I hear the sound of flesh being penetrated."))
 						playsound(get_turf(victim), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
 			return TRUE
 		return FALSE
@@ -1136,9 +1128,9 @@
 			var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 				user.changeNext_move(0)
-				victim.visible_message(span_pinkdang("[user] [weapon] застревает в [victim] [affected]!"), \
-									span_pinkdang("[user] [weapon] застревает в [affected]!"), \
-									span_hear("Я слышу звук плоти."))
+				victim.visible_message(span_pinkdang("[user]'s [weapon] get[weapon.p_s()] stuck in [victim]'s [affected]!"), \
+									span_pinkdang("[user]'s [weapon]  get[weapon.p_s()] stuck in my [affected]!"), \
+									span_hear("I hear the sound of flesh being penetrated."))
 				victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
 				playsound(get_turf(victim), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
 				return TRUE

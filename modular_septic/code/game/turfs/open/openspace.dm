@@ -11,6 +11,15 @@
 		return ""
 	return SCREENTIP_OPENSPACE(uppertext(name))
 
+/obj/projectile/on_hit(atom/target)
+	. = ..()
+	if(target && isopenspaceturf(target))
+		if(z_levelism)
+			if(z_levelism == TRUE)
+				get_step_multiz(src, UP)
+			else
+				get_step_multiz(src, DOWN)
+
 /*
 /turf/open/openspace/on_hit(obj/projectile/P)
 	. = ..()

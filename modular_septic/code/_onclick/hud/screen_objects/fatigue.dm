@@ -11,7 +11,7 @@
 	if(isliving(usr))
 		var/mob/living/user = usr
 		var/msg = list("<span class='infoplain'><div class='infobox'>")
-		msg += span_notice("<EM>Усталость</EM>")
+		msg += span_notice("<EM>Fatigue</EM>")
 		if(LAZYLEN(user.fatigue_modification))
 			var/list/meaningful_fatigue_mods = list()
 			for(var/thing in user.fatigue_modification)
@@ -30,9 +30,9 @@
 				meaningful_fatigue_mods |= thing
 				msg += span_info("\n[left_symbols][modifier_desc][right_symbols]")
 			if(!LAZYLEN(meaningful_fatigue_mods))
-				msg += span_info("\nВ данный момент ничего на усталость мою не влияет.")
+				msg += span_info("\nNothing is affecting my fatigue at the moment.")
 		else
-			msg += span_info("\nВ данный момент ничего на усталость мою не влияет.")
+			msg += span_info("\nNothing is affecting my fatigue at the moment.")
 		msg += "</div></span>" //div infobox
 		to_chat(user, jointext(msg, ""))
 

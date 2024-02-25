@@ -32,10 +32,10 @@
 	if(broken || burnt)
 		. += span_notice("It looks damaged.")
 		return
-//	if(attachment_holes)
-//		. += span_notice("There are a few attachment holes for a new <i>tile</i> or reinforcement <i>rods</i>.")
-//	else
-//		. += span_notice("You might be able to build ontop of it with some <i>tiles</i>...")
+	if(attachment_holes)
+		. += span_notice("There are a few attachment holes for a new <i>tile</i> or reinforcement <i>rods</i>.")
+	else
+		. += span_notice("You might be able to build ontop of it with some <i>tiles</i>...")
 
 
 /turf/open/floor/plating/attackby(obj/item/C, mob/user, params)

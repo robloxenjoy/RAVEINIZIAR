@@ -710,7 +710,7 @@
 	if(istype(W, /obj/item/coin/stoneporridge))
 		user.visible_message(span_notice("[user] gives stone porridge to [src]."),span_notice("You gave stone porridge to [src]."), span_hear("You hear the sound of sacrificing."))
 		if(is_slave_job(user.mind.assigned_role))
-			user.client?.prefs?.adjust_bobux(5, "<span class='bobux'>I love these weird stone porridges. +5 ультр!</span>")
+			user.client?.prefs?.adjust_bobux(5, "<span class='bobux'>I love these weird stone porridges. +5 kaotiks!</span>")
 		var/obj/item/coin/stoneporridge/por = W
 		qdel(por)
 		var/drop = pick_weight(list("beef" = 6, "water" = 6, "lamp" = 5, "pickaxe" = 5, "gauze" = 5, "beer" = 5, "baggy" = 5))

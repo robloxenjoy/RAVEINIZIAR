@@ -56,9 +56,6 @@ map polovich_third
 endmap
 
 map polovichx
-endmap
-
-map copenhagen
 	default
 	votable
 endmap
