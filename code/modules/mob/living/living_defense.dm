@@ -102,8 +102,8 @@
 			log_combat(thrown_by, src, "threw and hit", thrown_item)
 		if(nosell_hit)
 			return ..()
-		visible_message(span_danger("[src] is hit by [thrown_item]!"), \
-						span_userdanger("You're hit by [thrown_item]!"))
+		visible_message(span_danger("[src] поражается [thrown_item]!"), \
+						span_userdanger("Я поражён [thrown_item]!"))
 		if(!thrown_item.throwforce)
 			return
 		var/armor = run_armor_check(zone, MELEE, "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].", thrown_item.armour_penetration, "", FALSE, thrown_item.weak_against_armour)

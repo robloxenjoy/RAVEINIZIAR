@@ -1,6 +1,6 @@
 /obj/item/bodypart/vitals
-	name = "vitals"
-	desc = "If someone lost this, yeah they're absolutely dead."
+	name = "Живот"
+	desc = "Тот, кто потерял это, скорее всего мёртв."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "vitals"
 	base_icon_state = "vitals"

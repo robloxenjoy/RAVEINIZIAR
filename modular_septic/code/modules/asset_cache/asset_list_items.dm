@@ -144,11 +144,8 @@
 		var/list/musics = list()
 //		musics |= DRONING_TAVERN
 //		musics |= DRONING_COMBAT
-		musics |= DRONING_FOREST
-		musics |= DRONING_PURENIGHT
+		musics |= DRONING_ARENA
 //		musics |= DRONING_CATACOMBS
-		musics |= DRONING_AKT
-		musics |= DRONING_PURENIGHT_AKT
 		music_files = musics
 
 /datum/asset/simple/music/send(client)

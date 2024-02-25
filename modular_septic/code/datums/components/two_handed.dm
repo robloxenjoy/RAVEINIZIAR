@@ -48,22 +48,22 @@
 		return
 	if(ismonkey(user))
 		if(require_twohands)
-			to_chat(user, span_notice("[parent] is too heavy and cumbersome for me to carry!"))
+			to_chat(user, span_notice("Слишком громоздко чтобы держать в одной руке!"))
 			user.dropItemToGround(parent, force=TRUE)
 		else
-			to_chat(user, span_notice("It's too heavy for me to wield fully..."))
+			to_chat(user, span_notice("Хммм..."))
 		return
 	if(user.get_inactive_held_item())
 		if(require_twohands)
-			to_chat(user, span_notice("[parent] is too cumbersome to carry in one hand!"))
+			to_chat(user, span_notice("Слишком громоздко чтобы держать в одной руке!"))
 			user.dropItemToGround(parent, force=TRUE)
 		else
-			to_chat(user, span_warning("I need my other hand to be empty!"))
+			to_chat(user, span_warning("Нужно чтобы другая рука была пустой!"))
 		return
 	if(user.usable_hands < 2)
 		if(require_twohands)
 			user.dropItemToGround(parent, force=TRUE)
-		to_chat(user, span_warning("I don't have enough intact hands."))
+		to_chat(user, span_warning("У меня недостаточно рабочих рук."))
 		return
 
 	// wield update status
@@ -90,13 +90,13 @@
 	parent_item.min_force_strength += min_force_strength
 	parent_item.force_strength += force_strength
 
-	parent_item.name = "wielded [parent_item.name]"
+//	parent_item.name = "wielded [parent_item.name]"
 	parent_item.update_appearance()
 
 	if(iscyborg(user))
 		to_chat(user, span_notice("I dedicate your module to [parent]."))
 	else
-		to_chat(user, span_notice("I grab [parent] with both hands."))
+		to_chat(user, span_notice("Я хватаю [parent] обеими руками."))
 		playsound(user, wieldnoise, wieldvolume, FALSE)
 		user.changeNext_move(CLICK_CD_MELEE)
 
@@ -106,8 +106,8 @@
 
 	// Let's reserve the other hand
 	offhand_item = new(user)
-	offhand_item.name = "[parent_item.name] - offhand"
-	offhand_item.desc = "A second grip on [parent_item]."
+//	offhand_item.name = "[parent_item.name] - offhand"
+	offhand_item.desc = "Второй хват на [parent_item]."
 	offhand_item.wielded = TRUE
 	offhand_item.layer = parent_item.layer - 0.05
 	RegisterSignal(offhand_item, COMSIG_ITEM_DROPPED, .proc/on_drop)
@@ -169,7 +169,7 @@
 			else if(require_twohands)
 				to_chat(user, span_notice("I drop [parent]."))
 			else
-				to_chat(user, span_notice("I am now carrying [parent] with one hand."))
+				to_chat(user, span_notice("Теперь я держу [parent] одной рукой."))
 
 	// Play sound if set
 //	if(unwieldsound)

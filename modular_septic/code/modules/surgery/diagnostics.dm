@@ -126,7 +126,7 @@
 	if(M.getStaminaLoss())
 		if(is_advanced)
 			if(is_literate)
-				render_list += "<span class='info ml-1'>Fatigue Level: [M.getStaminaLoss()/M.maxHealth * 100]%.</span>\n"
+				render_list += "<span class='info ml-1'>Уровень усталости: [M.getStaminaLoss()/M.maxHealth * 100]%.</span>\n"
 			else
 				render_list += "<span class='info ml-1'>AHUGDHG GHHGHBGBH: [M.getStaminaLoss()/M.maxHealth * 100]%.</span>\n"
 		else

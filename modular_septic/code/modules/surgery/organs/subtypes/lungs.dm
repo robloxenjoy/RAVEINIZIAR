@@ -1,6 +1,6 @@
 /obj/item/organ/lungs
-	name = "lung"
-	desc = "I can't breathe - Words that precede unfortunate events."
+	name = "Лёгкое"
+	desc = "Я не могу дышать - Слова, которые предшествуют несчастным событиям."
 	icon_state = "lung"
 	base_icon_state = "lung"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -8,11 +8,11 @@
 	organ_efficiency = list(ORGAN_SLOT_LUNGS = 50) // Most people have two lungs you dolt
 	side = RIGHT_SIDE
 
-	low_threshold_passed = span_warning("I feel short of breath.")
-	high_threshold_passed = span_warning("I feel some sort of constriction around my chest as my breathing becomes shallow and rapid.")
-	now_fixed = span_warning("My lungs seem to once again be able to hold air.")
-	low_threshold_cleared = span_info("I can breathe normally again.")
-	high_threshold_cleared = span_info("The constriction around my chest loosens as my breathing calms down.")
+	low_threshold_passed = span_warning("Я чувствую одышку...")
+	high_threshold_passed = span_warning("Я чувствую какое-то сжатие в груди, дыхание становится поверхностным.")
+	now_fixed = span_warning("Кажется, мои легкие снова способны удерживать воздух.")
+	low_threshold_cleared = span_info("Я снова могу нормально дышать.")
+	high_threshold_cleared = span_info("Стеснение вокруг моей груди ослабевает, когда мое дыхание успокаивается.")
 
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/medicine/salbutamol = 5)
 
@@ -119,8 +119,8 @@
 			return
 	else if(is_failing())
 		if(owner.stat == CONSCIOUS)
-			owner.visible_message(span_danger("<b>[owner]</b> grabs [owner.p_their()] throat, struggling for breath!"), \
-						span_userdanger("I CAN'T BREATHE!"))
+			owner.visible_message(span_danger("<b>[owner]</b> хватает себя за горло, борясь за дыхание!"), \
+						span_userdanger("Я НЕ МОГУ ДЫШАТЬ!"))
 		failed = TRUE
 	if(damage >= low_threshold)
 		var/do_i_cough = DT_PROB((damage < high_threshold) ? 2.5 : 5, delta_time) // between : past high

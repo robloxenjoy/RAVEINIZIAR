@@ -1,6 +1,6 @@
 /obj/item/organ/kidneys
-	name = "kidney"
-	desc = "The organ that hates stoners the most."
+	name = "Почка"
+	desc = "Добудь камни из этого."
 	icon_state = "kidneys"
 	base_icon_state = "kidney"
 

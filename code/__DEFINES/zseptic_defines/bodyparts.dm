@@ -5,30 +5,30 @@
 #define DEFAULT_BODYPART_ICON_ANIMAL 'modular_septic/icons/mob/carbon/animal_parts.dmi'
 
 // ~bodypart damage messages
-#define DEFAULT_NO_BRUTE_MSG "unbruised"
-#define DEFAULT_LIGHT_BRUTE_MSG "bruised"
-#define DEFAULT_MEDIUM_BRUTE_MSG "battered"
-#define DEFAULT_HEAVY_BRUTE_MSG "MANGLED"
+#define DEFAULT_NO_BRUTE_MSG "в здравии"
+#define DEFAULT_LIGHT_BRUTE_MSG "помято"
+#define DEFAULT_MEDIUM_BRUTE_MSG "покалечено"
+#define DEFAULT_HEAVY_BRUTE_MSG "ИСКРОМСАНО"
 
-#define DEFAULT_NO_BURN_MSG "unburnt"
-#define DEFAULT_LIGHT_BURN_MSG "numb"
-#define DEFAULT_MEDIUM_BURN_MSG "blistered"
-#define DEFAULT_HEAVY_BURN_MSG "CHARRED"
+#define DEFAULT_NO_BURN_MSG "в здравии"
+#define DEFAULT_LIGHT_BURN_MSG "красновато"
+#define DEFAULT_MEDIUM_BURN_MSG "в волдырях"
+#define DEFAULT_HEAVY_BURN_MSG "ОБУГЛЕННО"
 
-#define DEFAULT_NO_PAIN_MSG "painless"
-#define DEFAULT_LIGHT_PAIN_MSG "pain"
-#define DEFAULT_MEDIUM_PAIN_MSG "PAIN"
-#define DEFAULT_HEAVY_PAIN_MSG "AGONY"
+#define DEFAULT_NO_PAIN_MSG "безболезненно"
+#define DEFAULT_LIGHT_PAIN_MSG "боль"
+#define DEFAULT_MEDIUM_PAIN_MSG "БОЛЬ"
+#define DEFAULT_HEAVY_PAIN_MSG "АГОНИЯ"
 
-#define ROBOTIC_NO_BRUTE_MSG "unmarred"
-#define ROBOTIC_LIGHT_BRUTE_MSG "marred"
-#define ROBOTIC_MEDIUM_BRUTE_MSG "dented"
-#define ROBOTIC_HEAVY_BRUTE_MSG "DESTROYED"
+#define ROBOTIC_NO_BRUTE_MSG "в здравии"
+#define ROBOTIC_LIGHT_BRUTE_MSG "помято"
+#define ROBOTIC_MEDIUM_BRUTE_MSG "покалечено"
+#define ROBOTIC_HEAVY_BRUTE_MSG "ИСКРОМСАНО"
 
-#define ROBOTIC_NO_BURN_MSG "unscorched"
-#define ROBOTIC_LIGHT_BURN_MSG "scorched"
-#define ROBOTIC_MEDIUM_BURN_MSG "charred"
-#define ROBOTIC_HEAVY_BURN_MSG "SMOLDERING"
+#define ROBOTIC_NO_BURN_MSG "в здравии"
+#define ROBOTIC_LIGHT_BURN_MSG "красновато"
+#define ROBOTIC_MEDIUM_BURN_MSG "кипит"
+#define ROBOTIC_HEAVY_BURN_MSG "ОБУГЛЕННО"
 
 // ~cyborg limbs
 #define ROBOTIC_BRUTE_DMG_MULTIPLIER 0.9

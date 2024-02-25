@@ -97,7 +97,7 @@
 
 	body += "<br><br>"
 	body += "<A href='?_src_=holder;[HrefToken()];traitor=[REF(M)]'>Traitor panel</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];bobux=[REF(M)]'>Kaotiks</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];bobux=[REF(M)]'>Ультры</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];fatal=[REF(M)]'>Give Fatal</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];fatalremove=[REF(M)]'>Remove Fatal</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];narrateto=[REF(M)]'>Narrate to</A> | "

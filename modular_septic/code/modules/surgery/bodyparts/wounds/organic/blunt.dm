@@ -3,7 +3,7 @@
 	Blunt/Bone wounds
 */
 /datum/wound/blunt
-	name = "Blunt Wound"
+	name = "Тупая травма"
 	sound_effect = list('modular_septic/sound/gore/nasty1.ogg', 'modular_septic/sound/gore/nasty2.ogg')
 	base_treat_time = 6 SECONDS
 
@@ -14,7 +14,7 @@
 	Moderate - Joint dislocation
 */
 /datum/wound/blunt/moderate
-	name = "Joint Dislocation"
+	name = "Вывих"
 	desc = "Patient's bone has been unset from socket, causing pain and reduced motor function."
 	treat_text = "Recommended application of bonesetter to affected limb, though manual relocation by applying an aggressive grab to the patient and helpfully interacting with afflicted limb may suffice."
 	examine_desc = "is awkwardly jammed out of place"
@@ -39,10 +39,10 @@
 		break
 	if(bone)
 		bone.dislocate()
-	var/final_descriptive = "A bone is dislocated!"
+	var/final_descriptive = "Кость вывихнута!"
 	// Mandible is pretty significant
 	if(istype(bone, BONE_MOUTH))
-		final_descriptive = "\The [bone.joint_name] is dislocated!"
+		final_descriptive = "[bone.joint_name] вывихнута!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)
@@ -54,7 +54,7 @@
 	Severe (Hairline Fracture)
 */
 /datum/wound/blunt/severe
-	name = "Hairline Fracture"
+	name = "Трещина"
 	desc = "Patient's bone has suffered a crack in the foundation, causing serious pain and reduced limb functionality."
 	treat_text = "Recommended light surgical application of bone gel, though a sling of medical gauze will prevent worsening situation."
 	examine_desc = "appears grotesquely swollen, its attachment weakened"
@@ -78,10 +78,10 @@
 		break
 	if(bone)
 		bone.fracture()
-	var/final_descriptive = "A bone is fractured!"
+	var/final_descriptive = "Кость надломана!"
 	// Skull, ribcage and pelvis are pretty significant
 	if(istype(bone, BONE_HEAD) || istype(bone, BONE_GROIN) || istype(bone, BONE_CHEST))
-		final_descriptive = "\The [bone] is fractured!"
+		final_descriptive = "[bone] надломана!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)
@@ -91,7 +91,7 @@
 
 /// Compound Fracture (Critical Blunt)
 /datum/wound/blunt/critical
-	name = "Compound Fracture"
+	name = "Перелом"
 	desc = "Patient's bones have suffered multiple gruesome fractures, causing significant pain and near uselessness of limb."
 	treat_text = "Immediate binding of affected limb, followed by surgical intervention ASAP."
 	examine_desc = "is mangled and pulped, seemingly held together by tissue alone"
@@ -115,10 +115,10 @@
 		break
 	if(bone)
 		bone.compound_fracture()
-	var/final_descriptive = "A bone is shattered!"
+	var/final_descriptive = "Кость сломана!"
 	// Skull, ribcage and pelvis are pretty significant
 	if(istype(bone, BONE_HEAD) || istype(bone, BONE_GROIN) || istype(bone, BONE_CHEST))
-		final_descriptive = "\The [bone] is shattered!"
+		final_descriptive = "[bone] сломан!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 80 + 20 * severity, TRUE)

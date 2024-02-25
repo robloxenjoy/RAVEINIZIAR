@@ -86,7 +86,7 @@
 	user.visible_message(span_notice("[user] starts swallow [src]!"),span_notice("You begin to swallow [src]!"), span_hear("You hear the sound of swallow."))
 	if(do_after(user, 5 SECONDS, target = src))
 		to_chat(user, span_notice("You finish swallowing [src]."))
-		user.client?.prefs?.adjust_bobux(50, "<span class='bobux'>HALYAB EGG! +50 kaotiks!</span>")
+		user.client?.prefs?.adjust_bobux(50, "<span class='bobux'>HALYAB EGG! +50 ультр!</span>")
 		playsound(get_turf(src), 'modular_pod/sound/eff/eat.ogg', 100 , FALSE, FALSE)
 		SSdroning.kill_droning(user.client)
 		user.stop_sound_channel(CHANNEL_HEARTBEAT)
@@ -100,15 +100,15 @@
 		return
 	var/obj/item/bodypart/check_jaw = user.get_bodypart(BODY_ZONE_PRECISE_MOUTH)
 	if(!check_jaw)
-		to_chat(user, span_notice("I look at my phantom jaw and sigh."))
+		to_chat(user, span_notice("А, у меня же нет челюсти..."))
 		return
 	if(check_jaw?.bodypart_disabled)
-		to_chat(user, span_warning("My [check_jaw.name] is in no condition to be used."))
+		to_chat(user, span_warning("Моя [check_jaw.name] не в состоянии быть использована."))
 		return
-	user.visible_message(span_notice("[user] starts swallow [src]!"),span_notice("You begin to swallow [src]!"), span_hear("You hear the sound of swallowing."))
+	user.visible_message(span_notice("[user] начинать проглатывать [src]!"),span_notice("Я начинаю проглатывать [src]!"), span_hear("Я слышу звук проглатывания."))
 	if(do_after(user, 5 SECONDS, target = src))
 		to_chat(user, span_notice("You finish swallowing [src]."))
-		user.client?.prefs?.adjust_bobux(50, "<span class='bobux'>HALYAB EGG! +50 kaotiks!</span>")
+		user.client?.prefs?.adjust_bobux(50, "<span class='bobux'>HALYAB EGG! +50 ультр!</span>")
 		playsound(get_turf(src), 'modular_pod/sound/eff/eat.ogg', 100 , FALSE, FALSE)
 		SSdroning.kill_droning(user.client)
 		user.stop_sound_channel(CHANNEL_HEARTBEAT)

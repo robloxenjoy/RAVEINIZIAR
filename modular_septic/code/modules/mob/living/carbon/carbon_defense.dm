@@ -3,50 +3,52 @@
 		return
 	var/intended_zone = check_zone(user.zone_selected)
 	if(intended_zone == hit_bodypart.body_zone)
-		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "attacks"
-		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attack"
+		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "атакует"
+		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атаковать"
 
 		var/extra_wound_details = ""
 		var/message_hit_area = ""
 		if(hit_area)
-			message_hit_area = " on the [hit_area]"
-		var/attack_message_spectator = "<b>[user]</b> [message_verb_continuous] <b>[src]</b>[message_hit_area] with [I][extra_wound_details]![wound_message]"
-		var/attack_message_victim = "Something [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
-		var/attack_message_attacker = "I [message_verb_simple] something with [I]!"
+			message_hit_area = " в [hit_area]"
+		var/attack_message_spectator = "<b>[user]</b> [message_verb_continuous] <b>[src]</b>[message_hit_area] с помощью [I][extra_wound_details]![wound_message]"
+		var/attack_message_victim = "Кто-то [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
+		var/attack_message_attacker = "Я [message_verb_simple] кого-то с помощью [I]!"
 		if(user in fov_viewers(2, src))
-			attack_message_attacker = "I [message_verb_simple] <b>[src]</b>[message_hit_area] with [I]![wound_message]"
+			attack_message_attacker = "Я [message_verb_simple] <b>[src]</b>[message_hit_area] с помощью [I]![wound_message]"
 		if(src in fov_viewers(2, user))
-			attack_message_victim = "<b>[user]</b> [message_verb_continuous] me[message_hit_area] with [I][extra_wound_details]![wound_message]"
+			attack_message_victim = "<b>[user]</b> [message_verb_continuous] меня[message_hit_area] с помощью [I][extra_wound_details]![wound_message]"
 		if(user == src)
-			attack_message_victim = "I [message_verb_simple] myself[message_hit_area] with [I][extra_wound_details]![wound_message]"
+			attack_message_victim = "Я [message_verb_simple] самого себя[message_hit_area] с помощью [I][extra_wound_details]![wound_message]"
 		visible_message(span_danger("[attack_message_spectator]"),\
 			span_userdanger("[attack_message_victim]"),
-			span_hear("I hear a whoosh and a thud!"), \
+			span_hear("Я слышу свист и стук!"), \
 			vision_distance = COMBAT_MESSAGE_RANGE, \
 			ignored_mobs = user)
 		if(user != src)
 			to_chat(user, span_userdanger("[attack_message_attacker]"))
 	else
 		var/parsed_intended_zone = parse_zone(intended_zone)
-		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "attacks"
-		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attack"
+		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "атакует"
+		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атаковать"
+		var/message_verb_simple_two = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакую"
+		var/message_verb_simple_three = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакует"
 
 		var/extra_wound_details = ""
 		var/message_hit_area = ""
 		if(hit_area)
-			message_hit_area = " on the [hit_area]"
-		var/attack_message_spectator = "<b>[user]</b> tries to [message_verb_simple] <b>[src]</b> on the [parsed_intended_zone] with [I], but [message_verb_simple][message_hit_area][extra_wound_details] instead![wound_message]"
-		var/attack_message_victim = "Something [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
-		var/attack_message_attacker = "I [message_verb_simple] something with [I]!"
+			message_hit_area = " в [hit_area]"
+		var/attack_message_spectator = "<b>[user]</b> пытается [message_verb_simple] <b>[src]</b> в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple_three][message_hit_area][extra_wound_details]![wound_message]"
+		var/attack_message_victim = "Кто-то[message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
+		var/attack_message_attacker = "Я [message_verb_simple] кого-то с помощью [I]!"
 		if(user in fov_viewers(2, src))
-			attack_message_attacker = "I try to [message_verb_simple] <b>[src]</b> on the [parsed_intended_zone] with [I], but [message_verb_simple][message_hit_area][extra_wound_details] instead![wound_message]"
+			attack_message_attacker = "Я пытаюсь [message_verb_simple] <b>[src]</b> в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple_two][message_hit_area][extra_wound_details]![wound_message]"
 		if(src in fov_viewers(2, user))
-			attack_message_victim = "<b>[user]</b> tries to [message_verb_simple] me on the [parsed_intended_zone] with [I], but [message_verb_simple][message_hit_area][extra_wound_details] instead![wound_message]"
+			attack_message_victim = "<b>[user]</b> пытается [message_verb_simple] меня в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple][message_hit_area][extra_wound_details]![wound_message]"
 		if(user == src)
-			attack_message_victim = "I try to [message_verb_simple] myself on the [parsed_intended_zone] with [I], but [message_verb_simple][message_hit_area][extra_wound_details] instead![wound_message]"
+			attack_message_victim = "Я пытаюсь [message_verb_simple] самого себя в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple][message_hit_area][extra_wound_details]![wound_message]"
 		visible_message(span_danger("[attack_message_spectator]"),\
 			span_userdanger("[attack_message_victim]"),
-			span_hear("I hear a whoosh and a thud!"), \
+			span_hear("Я слышу свист и стук!"), \
 			vision_distance = COMBAT_MESSAGE_RANGE, \
 			ignored_mobs = user)
 		if(user != src)

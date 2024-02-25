@@ -1,8 +1,8 @@
 //Spleen: Regenerates blood over time
 //Without it, you cannot generate blood without transfusions.
 /obj/item/organ/spleen
-	name = "spleen"
-	desc = "The most underrated organ of the human body."
+	name = "Селезёнка"
+	desc = "Самый недооцененный орган человеческого тела."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "spleen"
 	zone = BODY_ZONE_CHEST

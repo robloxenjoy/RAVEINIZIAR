@@ -25,14 +25,14 @@
 	if(!.)
 		return
 	var/finger_amount = rand(1,2)
-	var/finger_type = "finger"
+	var/finger_type = "палец"
 	var/static/list/toe_zones = list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
 	if(new_limb.body_zone in toe_zones)
-		finger_type = "toe"
+		finger_type = "палец ноги"
 	if(finger_amount == 1)
-		finger_type = "a [finger_type]"
+		finger_type = "[finger_type]"
 	finger_type = capitalize(finger_type)
-	var/final_descriptive = "[finger_type][finger_amount > 1 ? "s" : ""] sail[finger_amount > 1 ? "" : "s"] off in an arc!"
+	var/final_descriptive = "[finger_amount > 1 ? "Пальцы" : "Палец"] [finger_amount > 1 ? "отрубаются" : "отрубается"]!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)

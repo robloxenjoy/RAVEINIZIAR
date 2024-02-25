@@ -12,7 +12,7 @@
 
 //Bay lighting engine shit, not in /code/modules/lighting because BYOND is being shit about it
 /// frequency, in 1/10ths of a second, of the lighting process
-#define LIGHTING_INTERVAL       5
+#define LIGHTING_INTERVAL       3
 
 #define MINIMUM_USEFUL_LIGHT_RANGE 1.4
 

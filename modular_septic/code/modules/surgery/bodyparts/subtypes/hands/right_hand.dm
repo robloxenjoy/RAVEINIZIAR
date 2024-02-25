@@ -1,6 +1,6 @@
 /obj/item/bodypart/r_hand
-	name = "right hand"
-	desc = "It probably wasn't the right hand."
+	name = "Правая кисть"
+	desc = "Конечность."
 	icon_state = "default_human_r_hand"
 	attack_verb_continuous = list("slaps", "punches")
 	attack_verb_simple = list("slap", "punch")

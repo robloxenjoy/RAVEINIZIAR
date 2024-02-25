@@ -1,8 +1,8 @@
 /obj/item/organ/appendix
-	name = "appendix"
+	name = "Аппендикс"
 	icon_state = "appendix"
 	base_icon_state = "appendix"
-	desc = "The most famous useless organ of the human body!"
+	desc = "Самый известный бесполезный орган человеческого тела!"
 	w_class = WEIGHT_CLASS_TINY
 
 	zone = BODY_ZONE_PRECISE_GROIN

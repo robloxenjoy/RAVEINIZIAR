@@ -1,79 +1,81 @@
 //hydration
 /datum/mood_event/thirsty
-	description = span_warning("I'm getting a bit thirsty.")
+	description = span_warning("Попить бы.")
 	mood_change = -4
 
 /datum/mood_event/dehydrated
-	description = span_boldwarning("I am dehydrated!")
+	description = span_boldwarning("Я обезвожен!")
 	mood_change = -6
 
 //nutrition
 /datum/mood_event/hungry
+	description = span_warning("Я голоден...")
 	mood_change = -4
 
 /datum/mood_event/starving
+	description = span_warning("Я голодаю!")
 	mood_change = -6
 
 //urination
 /datum/mood_event/needpiss
-	description = span_warning("I need to pee.")
+	description = span_warning("Мне нужно поссать.")
 	mood_change = -3
 
 /datum/mood_event/reallyneedpiss
-	description = span_boldwarning("My bladder is going to explode!")
+	description = span_boldwarning("Мой мочевой пузырь лопнет!")
 	mood_change = -5
 
 /datum/mood_event/pissed_self
-	description = span_necrosis("I have pissed myself. This day is ruined.")
+	description = span_necrosis("Я тупо себя обоссал сука.")
 	mood_change = -8
 	timeout = 10 MINUTES
 
 //defecation
 /datum/mood_event/needshit
-	description = span_warning("I need to poop.")
+	description = span_warning("Мне нужно посрать.")
 	mood_change = -3
 
 /datum/mood_event/reallyneedshit
-	description = span_boldwarning("My anus is ready to <b>SHIT!</b>")
+	description = span_boldwarning("Пора <b>СРАТЬ!</b>")
 	mood_change = -5
 
 /datum/mood_event/shat_self
-	description = span_necrosis("I have shat myself. This day is ruined.")
+	description = span_necrosis("Я просто обосрал себя.")
 	mood_change = -8
 	timeout = 10 MINUTES
 
 //hygiene
 /datum/mood_event/clean
-	description = span_nicegreen("I am so clean!")
+	description = span_nicegreen("Я такой чистый!")
 	mood_change = 2
 
 /datum/mood_event/needshower
-	description = span_warning("I need to shower.")
+	description = span_warning("Мне нужно помыться.")
 	mood_change = -2
 
 /datum/mood_event/reallyneedshower
-	description = span_infection("I am filthy.")
+	description = span_infection("Я грязный.")
 	mood_change = -4
 
 /datum/mood_event/smashplayer
-	description = span_necrosis("My stench is unbearable.")
+	description = span_necrosis("Вонь конечно блять...")
 	mood_change = -6
 
 //sex!
 /datum/mood_event/goodsex
-	description = span_nicegreen("Having sex felt really good.")
+	description = span_nicegreen("ВОТ ЭТО было заебись.")
 	mood_change = 4
 	timeout = 3 MINUTES
 
 /datum/mood_event/goodmasturbation
-	description = span_nicegreen("Masturbating felt really good.")
+	description = span_nicegreen("А это было нормально.")
 	mood_change = 2
 	timeout = 3 MINUTES
 
 /datum/mood_event/needsex
-	description = span_love("I feel horny.")
+	description = span_love("Я чувствую возбуждение.")
 	mood_change = -2
 
 /datum/mood_event/reallyneedsex
-	description = span_userlove("I want to be RAVAGED!")
+	description = span_userlove("Нужно ТРАХНУТЬСЯ!")
 	mood_change = -4
