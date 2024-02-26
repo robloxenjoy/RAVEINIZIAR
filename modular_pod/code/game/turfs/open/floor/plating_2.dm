@@ -85,3 +85,17 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
+
+/turf/open/floor/plating/polovich/codec/dirt/mud
+	name = "Грязь"
+	desc = "Она медлит тебя."
+	icon_state = "mud_dirt"
+	footstep = FOOTSTEP_MEAT
+	barefootstep = FOOTSTEP_MEAT
+	clawfootstep = FOOTSTEP_MEAT
+	heavyfootstep = FOOTSTEP_MEAT
+	slowdown = 1
+
+/turf/open/floor/plating/polovich/codec/dirt/mud/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
