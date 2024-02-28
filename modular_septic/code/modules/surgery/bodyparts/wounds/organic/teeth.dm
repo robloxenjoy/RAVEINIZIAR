@@ -2,7 +2,7 @@
 	Britification
 */
 /datum/wound/teeth
-	name = "Выбитый зуб"
+	name = "Dental Avulsion"
 	desc = "Patient's teeth have been violently ripped off due to blunt trauma."
 	occur_text = "has it's teeth sail off in an arc"
 	sound_effect = list('modular_septic/sound/gore/trauma1.ogg', \
@@ -27,7 +27,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/final_descriptive = "Зубы выбиваются!"
+	var/final_descriptive = "Teeth sail off in an arc!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)

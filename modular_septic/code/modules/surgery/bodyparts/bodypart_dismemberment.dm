@@ -380,11 +380,11 @@
 	if(add_descriptive)
 		switch(wounding_type)
 			if(WOUND_SLASH)
-				SEND_SIGNAL(was_owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<b><i>\ [name] отрубается!</i></b>")]"))
+				SEND_SIGNAL(was_owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<b><i>\The [name] is severed!</i></b>")]"))
 			if(WOUND_PIERCE, WOUND_BLUNT)
-				SEND_SIGNAL(was_owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<b><i>\ [name] разваливается!</i></b>")]"))
+				SEND_SIGNAL(was_owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<b><i>\The [name] is gored!</i></b>")]"))
 			if(WOUND_BURN)
-				SEND_SIGNAL(was_owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<b><i>\ [name] сжигается!</i></b>")]"))
+				SEND_SIGNAL(was_owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("<b><i>\The [name] is incinerated!</i></b>")]"))
 
 	//gibs on floor
 	if(wounding_type != WOUND_SLASH)

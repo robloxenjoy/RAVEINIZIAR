@@ -126,7 +126,7 @@
 				limb.receive_damage(stamina = pain_stam_pct * damage)
 			else
 				limb.receive_damage(brute = (1-pain_stam_pct) * damage, stamina = pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-			to_chat(victim, span_userdanger("[weapon] внутри [limb.name] заставляет болеть!"))
+			to_chat(victim, span_userdanger("\The [weapon] embedded in my [limb.name] hurts!"))
 
 	if(fall_chance)
 		var/fall_chance_current = DT_PROB_RATE(fall_chance / 100, delta_time) * 100
@@ -147,20 +147,20 @@
 		if(injury)
 			injury.open_injury((1-pain_stam_pct) * damage)
 			limb.receive_damage(stamina=pain_stam_pct * damage)
-			to_chat(victim, span_userdanger("[weapon] внутри [limb.name] [injury.get_desc()] заставляет болеть!"))
+			to_chat(victim, span_userdanger("\The [weapon] embedded in my [limb.name]'s [injury.get_desc()] jostles and stings"))
 		else
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-			to_chat(victim, span_userdanger("[weapon] внутри [limb.name] заставляет болеть!"))
+			to_chat(victim, span_userdanger("\The [weapon] embedded in my [limb.name] jostles and stings!"))
 
 /datum/component/embedded/weaponDeleted()
-//	var/mob/living/carbon/victim = parent
+	var/mob/living/carbon/victim = parent
 	LAZYREMOVE(limb.embedded_objects, weapon)
 	if(injury)
 		LAZYREMOVE(injury.embedded_objects, weapon)
 		LAZYREMOVE(injury.embedded_components, src)
 
-//	if(victim)
-//		to_chat(victim, span_userdanger("\The [weapon] that was embedded in my [limb.name] disappears!"))
+	if(victim)
+		to_chat(victim, span_userdanger("\The [weapon] that was embedded in my [limb.name] disappears!"))
 
 	qdel(src)
 
@@ -188,7 +188,14 @@
 
 /datum/component/embedded/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, mob/living/remover)
 	var/time_taken = rip_time * weapon.w_class * (victim == remover ? 2 : 1)
-	victim.visible_message(span_warning("[victim] пытается вырвать [weapon] из [limb.name]."),span_notice("Я пытаюсь вырвать [weapon] из [limb.name]..."))
+	if(remover == victim)
+		remover.visible_message(span_warning("<b>[remover]</b> attempts to remove [weapon] from [remover.p_their()] [limb.name]."), \
+				span_userdanger("I attempt to remove \the [weapon] from my [limb.name]..."))
+	else
+		victim.visible_message(span_warning("<b>[remover]</b> attempts to remove \the [weapon] from <b>[victim]</b>'s [limb.name]."), \
+				span_userdanger("<b>[remover]</b> attempts to remove \the [weapon] from my [limb.name]!"), \
+				ignored_mobs = remover)
+		to_chat(remover, span_userdanger("I attempt to remove \the [weapon] from <b>[victim]</b>'s [limb.name]..."))
 	if(!do_mob(user = remover, target = victim, time = time_taken))
 		return
 	if(!weapon || !limb || (weapon.loc != victim) || !(weapon in limb.embedded_objects))
@@ -205,10 +212,17 @@
 								stamina = pain_stam_pct * damage,\
 								sharpness = SHARP_EDGED)
 		victim.agony_scream()
+	if(remover == victim)
+		victim.visible_message(span_notice("<b>[remover]</b> successfully rips [weapon] [harmful ? "out" : "off"] of [remover.p_their()] [limb.name]!"), \
+				span_userdanger("You successfully remove [weapon] from your [limb.name]."))
+	else
+		victim.visible_message(span_notice("<b>[remover]</b> successfully rips [weapon] [harmful ? "out" : "off"] of <b>[limb.owner]</b>'s [limb.name]!"), \
+				span_userdanger("<b>[remover]</b> successfully removes \the [weapon] from my [limb.name]."), \
+				ignored_mobs = remover)
+		to_chat(remover, span_notice("I succesfully remove \the [weapon] from <b>[victim]</b>'s [limb.name]!"))
 	playsound(victim, 'modular_septic/sound/gore/pullout.ogg', 83, 0)
 	remover.changeNext_move(CLICK_CD_CLING)
 	remover.adjustFatigueLoss(5)
-	victim.visible_message(span_notice("[victim] вырывает [weapon] из [limb.name]!"), span_notice("Я вырываю [weapon] из [limb.name]."))
 	safeRemove(remover)
 
 /datum/component/embedded/fallOut()
@@ -221,7 +235,12 @@
 			limb.receive_damage(stamina = pain_stam_pct * damage)
 		else
 			limb.receive_damage(brute = (1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-	victim.visible_message(span_danger("[weapon] выпадывает из [victim.name] [limb.name]!"), span_userdanger("[weapon] выпадывает из [limb.name]!"))
+	if(injury)
+		victim.visible_message(span_danger("[weapon] falls [harmful ? "out" : "off"] of [victim.name]'s [limb.name]'s [injury.get_desc()]!"), \
+						span_userdanger("[weapon] falls [harmful ? "out" : "off"] of my [limb.name] 's [injury.get_desc()]!"))
+	else
+		victim.visible_message(span_danger("[weapon] falls [harmful ? "out" : "off"] of [victim.name]'s [limb.name]!"), \
+							span_userdanger("[weapon] falls [harmful ? "out" : "off"] of my [limb.name]!"))
 	safeRemove()
 
 /datum/component/embedded/safeRemove(mob/to_hands)

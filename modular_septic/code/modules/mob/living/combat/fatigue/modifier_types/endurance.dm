@@ -1,3 +1,3 @@
 /datum/fatigue_modifier/endurance
 	variable = TRUE
-	desc = span_info("Стойкость.")
+	desc = span_info("Endurance.")

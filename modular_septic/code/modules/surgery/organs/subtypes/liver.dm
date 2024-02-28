@@ -1,6 +1,6 @@
 /obj/item/organ/liver
-	name = "Печень"
-	desc = "Пей меньше."
+	name = "liver"
+	desc = "It's called liver, because it'd be weird for it to be called deader."
 	icon_state = "liver"
 	base_icon_state = "liver"
 	zone = BODY_ZONE_CHEST
@@ -68,24 +68,24 @@
 /obj/item/organ/liver/organ_failure(delta_time)
 	var/obj/item/bodypart/parent_bodypart = owner.get_bodypart(current_zone)
 	if(failure_time == 1)
-		owner.custom_pain("Я чувствую мучительную боль в животе!", 40, affecting = parent_bodypart, nopainloss = TRUE)
-		to_chat(owner,span_danger("Я чувствую мучительную боль в животе!"))
+		owner.custom_pain("I feel a gut-wrenching pain in my abdomen!", 40, affecting = parent_bodypart, nopainloss = TRUE)
+		to_chat(owner,span_danger("I feel a gut-wrenching pain in my abdomen!"))
 	switch(failure_time/LIVER_FAILURE_STAGE_SECONDS)
 		if(1)
-			owner.custom_pain("Я чувствую пронзительную боль в животе!", 60, affecting = parent_bodypart, nopainloss = TRUE)
+			owner.custom_pain("I feel a stabbing pain in my abdomen!", 60, affecting = parent_bodypart, nopainloss = TRUE)
 		if(2)
-			owner.custom_pain("Я чувствую жжение в животе!", 50, affecting = parent_bodypart, nopainloss = TRUE)
+			owner.custom_pain("I feel a burning sensation in my gut!", 50, affecting = parent_bodypart, nopainloss = TRUE)
 			owner.vomit()
 		if(3)
-			owner.custom_pain("Я чувствую болезненное жжение кислоты в горле", 40, affecting = parent_bodypart, nopainloss = TRUE)
+			owner.custom_pain("I feel painful acid burn in my throat!", 40, affecting = parent_bodypart, nopainloss = TRUE)
 			owner.vomit(blood = TRUE)
 		if(4)
-			owner.custom_pain("Невыносимая боль выбивает меня из колеи!", 100, affecting = parent_bodypart, nopainloss = TRUE)
+			owner.custom_pain("Overwhelming pain knocks me out!", 100, affecting = parent_bodypart, nopainloss = TRUE)
 			owner.vomit(blood = TRUE, distance = rand(1,2))
 			owner.agony_scream()
 			owner.AdjustUnconscious(2.5 SECONDS)
 		if(5)
-			owner.custom_pain("Моя внутренность как будто тает!", 120, affecting = parent_bodypart, nopainloss = TRUE)
+			owner.custom_pain("My insides are melting!", 120, affecting = parent_bodypart, nopainloss = TRUE)
 			owner.vomit(blood = TRUE, distance = rand(1,3))
 			owner.agony_scream()
 			owner.AdjustUnconscious(5 SECONDS)
@@ -130,11 +130,11 @@
 	var/eyes_amount = LAZYLEN(humie_owner.getorganslotlist(ORGAN_SLOT_EYES))
 	switch(failure_time)
 		if(0 to 3 * LIVER_FAILURE_STAGE_SECONDS - 1)
-			examine_list += span_notice("<b>[owner]</b> [eyes_amount > 1 ? "глаза" : "глаз"] немного [eyes_amount > 1 ? "желтоваые" : "желтоватый"].")
+			examine_list += span_notice("<b>[owner]</b>'s eye[eyes_amount > 1 ? "s" : ""] [eyes_amount > 1 ? "are" : "is"] slightly yellow.")
 		if(3 * LIVER_FAILURE_STAGE_SECONDS to 4 * LIVER_FAILURE_STAGE_SECONDS - 1)
-			examine_list += span_notice("<b>[owner]</b> [eyes_amount > 1 ? "глаза" : "глаз"] довольно [eyes_amount > 1 ? "жёлтые" : "жёлтый"].")
+			examine_list += span_notice("<b>[owner]</b>'s eye[eyes_amount > 1 ? "s" : ""] [eyes_amount > 1 ? "are" : "is"] completely yellow.")
 		if(4 * LIVER_FAILURE_STAGE_SECONDS to INFINITY)
-			examine_list += span_danger("<b>[owner]</b> [eyes_amount > 1 ? "глаза" : "глаз"] совсем [eyes_amount > 1 ? "жёлтые" : "жёлтый"].")
+			examine_list += span_danger("<b>[owner]</b>'s eye[eyes_amount > 1 ? "s" : ""] [eyes_amount > 1 ? "are" : "is"] completely yellow and swelling with pus.")
 
 /* Signal handler for the liver gaining the TRAIT_COMEDY_METABOLISM trait
  *

@@ -1,6 +1,6 @@
 /// Spilling wounds
 /datum/wound/spill
-	name = "Вырвано"
+	name = "Spill"
 	sound_effect = list('modular_septic/sound/gore/spill1.ogg', 'modular_septic/sound/gore/spill2.ogg')
 	severity = WOUND_SEVERITY_CRITICAL
 
@@ -9,7 +9,7 @@
 
 /// Brain spill
 /datum/wound/spill/brain
-	name = "Вырванный мозг"
+	name = "Brain Spill"
 	viable_zones = list(BODY_ZONE_HEAD)
 	severity = WOUND_SEVERITY_CRITICAL
 	threshold_minimum = 50
@@ -47,7 +47,7 @@
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 100, TRUE)
 		if(add_descriptive)
-			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_dead(" [span_big(" Мозг вырывается!")]"))
+			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_dead(" [span_big(" The brain is spilled!")]"))
 	new_limb.spilled = TRUE
 	victim.bleed(20)
 	INVOKE_ASYNC(src, .proc/debrain_animation, victim)
@@ -79,13 +79,13 @@
 	if(mushy_pea_brain.icon_state == "brain")
 		mushy_pea_brain.icon_state = "brain-mushed"
 		mushy_pea_brain.transform = mushy_pea_brain.transform.Scale(1, 1/0.3)
-		mushy_pea_brain.name = "Кашицеобразный [mushy_pea_brain.name]"
+		mushy_pea_brain.name = "mushy [mushy_pea_brain.name]"
 		mushy_pea_brain.desc += "\n"
-		mushy_pea_brain.desc += span_dead("<u>[mushy_pea_brain] видал лучшие дни...</u>")
+		mushy_pea_brain.desc += span_dead("<u>[mushy_pea_brain] has seen better days...</u>")
 
 /// Gut spill
 /datum/wound/spill/gut
-	name = "Вырывание кишок"
+	name = "Gut Spill"
 	viable_zones = list(BODY_ZONE_PRECISE_VITALS)
 	severity = WOUND_SEVERITY_CRITICAL
 	threshold_minimum = 25
@@ -122,7 +122,7 @@
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 100, TRUE)
 		if(add_descriptive)
-			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Кишки вырваны!")]"))
+			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("The guts are spilled!")]"))
 	new_limb.spilled = TRUE
 	victim.bleed(20)
 	victim.update_damage_overlays()
@@ -143,7 +143,7 @@
 	qdel(src)
 
 /datum/wound/spill/eyes
-	name = "Выпадение глаз"
+	name = "Eye Departure"
 	viable_zones = list(BODY_ZONE_PRECISE_FACE, BODY_ZONE_HEAD)
 	severity = WOUND_SEVERITY_CRITICAL
 	threshold_minimum = 50
@@ -175,7 +175,7 @@
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 100, TRUE)
 		if(add_descriptive)
-			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаза выпадают!")]"))
+			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("The eyes popped out!")]"))
 	new_limb.spilled = TRUE
 	victim.bleed(20)
 	victim.update_damage_overlays()

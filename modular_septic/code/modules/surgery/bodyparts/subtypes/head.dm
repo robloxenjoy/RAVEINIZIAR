@@ -1,6 +1,6 @@
 /obj/item/bodypart/head
-	name = "Голова"
-	desc = "Всему!"
+	name = "head"
+	desc = "Stop hitting my child in the head with a lead pipe!"
 	icon_state = "default_human_head"
 	max_damage = 75
 	max_stamina_damage = 75

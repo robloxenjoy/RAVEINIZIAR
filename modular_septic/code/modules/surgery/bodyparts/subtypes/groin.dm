@@ -1,6 +1,6 @@
 /obj/item/bodypart/groin
-	name = "Пах"
-	desc = "Больное место."
+	name = "groin"
+	desc = "Some say groin came from grynde, which is middle-ages speak for depression. Makes sense for the situation."
 	icon_state = "default_human_groin"
 	max_damage = 100
 	max_stamina_damage = 100

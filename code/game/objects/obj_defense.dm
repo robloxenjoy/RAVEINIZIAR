@@ -28,7 +28,7 @@
 	if(!QDELETED(src) && !take_damage(P.damage, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armour_penetration)) //Bullet on_hit effect might have already destroyed this object
 		no_damage = TRUE
 	if(P.suppressed != SUPPRESSED_VERY)
-		visible_message(span_danger("[src] поражается \ [P][no_damage ? ", и это не оставляет царапины" : ""]!"), null, null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_danger("[src] is hit by \a [P][no_damage ? ", which doesn't leave a mark" : ""]!"), null, null, COMBAT_MESSAGE_RANGE)
 
 /obj/attack_hulk(mob/living/carbon/human/user)
 	..()

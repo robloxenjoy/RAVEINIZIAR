@@ -1,8 +1,8 @@
 /obj/item/organ/eyes
-	name = "Глаз"
+	name = "eye"
 	icon_state = "eye"
 	base_icon_state = "eye"
-	desc = "Я вижу."
+	desc = "I see you!"
 	zone = BODY_ZONE_PRECISE_R_EYE
 	organ_efficiency = list(ORGAN_SLOT_EYES = 100) // we actually handle each eye individually, this is fine
 	w_class = WEIGHT_CLASS_TINY

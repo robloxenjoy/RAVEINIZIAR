@@ -18,12 +18,12 @@
 	var/mob/pulledby = null
 	var/initial_language_holder = /datum/language_holder
 	var/datum/language_holder/language_holder // Mindless mobs and objects need language too, some times. Mind holder takes prescedence.
-	var/verb_say = "говорит"
-	var/verb_ask = "спрашивает"
-	var/verb_exclaim = "восклицает"
-	var/verb_whisper = "шепчет"
-	var/verb_sing = "поёт"
-	var/verb_yell = "орёт"
+	var/verb_say = "says"
+	var/verb_ask = "asks"
+	var/verb_exclaim = "exclaims"
+	var/verb_whisper = "whispers"
+	var/verb_sing = "sings"
+	var/verb_yell = "yells"
 	var/speech_span
 	var/inertia_dir = 0
 	var/atom/inertia_last_loc
@@ -573,7 +573,7 @@
 	if(move_stacks > 0) //we want only the first Moved() call in the stack to send this signal, all the other ones have an incorrect old_loc
 		return
 	if(move_stacks < 0)
-//		stack_trace("move_stacks is negative in Moved()!")
+		stack_trace("move_stacks is negative in Moved()!")
 		move_stacks = 0 //setting it to 0 so that we dont get every movable with negative move_stacks runtiming on every movement
 
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, old_loc, movement_dir, forced, old_locs)

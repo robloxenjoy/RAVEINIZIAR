@@ -1,7 +1,7 @@
 /obj/item/organ/stomach
-	name = "Желудок"
+	name = "stomach"
 	icon_state = "stomach"
-	desc = "Что вообще жрать, чтобы это не умерло?"
+	desc = "When bariatric goes too far."
 	attack_verb_continuous = list("gores", "squishes", "slaps", "digests")
 	attack_verb_simple = list("gore", "squish", "slap", "digest")
 
