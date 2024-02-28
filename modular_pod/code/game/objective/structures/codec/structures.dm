@@ -24,22 +24,9 @@
 	light_power = 1
 	light_color = "#faf5e9"
 
-/obj/structure/codec/firething
-	name = "Светилище"
-	desc = "Это правда греет?"
-	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "lighter"
-	plane = GAME_PLANE_BLOOM
-	layer = FLY_LAYER
-	density = TRUE
-	anchored = TRUE
-	light_range = 4
-	light_power = 2
-	light_color = "#ffb04a"
-
 /obj/structure/codec/bulb/green
 	name = "Лампочка"
-	desc = "Как будет не светит, а наоборот."
+	desc = "Тускло светит, слабовато."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_green"
 	plane = GAME_PLANE_BLOOM
@@ -61,7 +48,7 @@
 	opacity = FALSE
 	var/open = FALSE
 	var/opaque_closed = FALSE
-	var/can_walk = TRUE
+	var/can_walk = FALSE
 	var/can_touch = TRUE
 	var/knocksound = 'sound/effects/Glassknock.ogg'
 
@@ -69,15 +56,7 @@
 	name = "Окно"
 	desc = "Может быть это грязь на нём. А может, оно просто зелёное."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
-	icon_state = "window_green-closed"
-	base_icon_state = "window_green"
-
-/obj/structure/codec/window/red
-	name = "Окно"
-	desc = "На нём не видно крови, но она там есть."
-	icon = 'modular_pod/icons/obj/things/things_2.dmi'
-	icon_state = "window_va-closed"
-	base_icon_state = "window_va"
+	icon_state = "window_green"
 
 /obj/structure/codec/window/proc/toggle()
 	open = !open
@@ -93,7 +72,7 @@
 	update_appearance()
 
 /obj/structure/codec/window/update_icon_state()
-	icon_state = "[base_icon_state]-[open ? "open" : "closed"]"
+	icon_state = "[icon_state]-[open ? "open" : "closed"]"
 	return ..()
 
 /obj/structure/codec/window/attack_hand_secondary(mob/living/user, list/modifiers)
@@ -162,7 +141,7 @@
 	set_opacity(0)
 	set_density(FALSE)
 	flags_1 &= ~PREVENT_CLICK_UNDER_1
-//	layer = initial(layer)
+	layer = initial(layer)
 	update_appearance()
 	set_opacity(0)
 	air_update_turf(TRUE, FALSE)
@@ -270,30 +249,3 @@
 	return
 
 #undef DOOR_CLOSE_WAIT
-
-/obj/structure/sign/poster/contraband/codec/o
-	name = "Гедвяница"
-	desc = "Считалось символом язычества, обозначающий падающее солнце как конец света. Теперь же это символ других фанатиков, и я думаю мы знаем про каких фанатиков мы говорим."
-	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "poster_o"
-
-/obj/structure/sign/poster/contraband/codec/ring
-	name = "Кольцо"
-	desc = "Ебать!"
-	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "symb_1"
-	rvat = FALSE
-
-/obj/structure/sign/poster/contraband/codec/strong
-	name = "Лик"
-	desc = "Прояви силу."
-	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "eviln"
-	rvat = FALSE
-
-/obj/structure/sign/poster/contraband/codec/painting/m
-	name = "Картина"
-	desc = "Пошлятина."
-	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "painting_1"
-	rvat = FALSE

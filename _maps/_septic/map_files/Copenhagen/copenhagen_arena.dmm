@@ -1,41 +1,26 @@
 "a" = (/turf/open/space/basic,/area/space)
 "c" = (/turf/closed/wall/codec/nocling,/area/maintenance/polovich/forest)
 "d" = (/obj/machinery/codec/door,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/groid,/area/maintenance/polovich/forest)
-"e" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest)
-"f" = (/turf/open/floor/plating/polovich/codec/fagut/three,/area/maintenance/polovich/forest)
-"g" = (/obj/structure/sign/poster/contraband/codec/o,/turf/closed/wall/codec/skulls,/area/maintenance/polovich/forest)
-"i" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/machinery/codec/door,/turf/open/floor/plating/polovich/codec/groid,/area/maintenance/polovich/forest)
-"j" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/structure/codec/bulb/green{dir = 1},/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest)
+"e" = (/obj/structure/codec/bulb/green{dir = 4},/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest)
+"f" = (/obj/structure/codec/window/green,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
 "n" = (/obj/structure/closet/crate,/obj/item/melee/bita/hammer/heavy,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/redizna/four,/area/maintenance/polovich/forest)
-"o" = (/obj/structure/codec/firething,/turf/open/floor/plating/polovich/codec/dirt/mud,/area/maintenance/polovich/forest)
-"p" = (/turf/open/floor/plating/polovich/asteroid/snow/river/nevado_surface/shallow/ankle/norm/badwater,/area/maintenance/polovich/forest)
+"p" = (/obj/structure/codec/bulb/green,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
 "q" = (/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/forest)
 "s" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest)
-"u" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/structure/codec/bulb/green{dir = 1},/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
-"v" = (/obj/structure/codec/firething,/turf/open/floor/plating/polovich/stonestone{dir = 1},/area/maintenance/polovich/forest)
 "w" = (/obj/effect/landmark/start/manhunter,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/redizna/five,/area/maintenance/polovich/forest)
-"x" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/cosmickick,/area/maintenance/polovich/forest)
 "y" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/redizna,/area/maintenance/polovich/forest)
 "A" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/redizna/five,/area/maintenance/polovich/forest)
-"B" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/machinery/codec/door,/turf/open/floor/plating/polovich/codec/fagut/three,/area/maintenance/polovich/forest)
 "C" = (/turf/closed/indestructible/splashscreen,/area/maintenance/polovich/forest)
-"D" = (/obj/structure/sign/poster/contraband/codec/strong,/turf/closed/wall/codec/skulls,/area/maintenance/polovich/forest)
-"E" = (/turf/open/floor/plating/polovich/codec/dirt/mud,/area/maintenance/polovich/forest)
 "F" = (/obj/structure/codec/lampala,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/redizna/four,/area/maintenance/polovich/forest)
 "H" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/redizna/two,/area/maintenance/polovich/forest)
-"I" = (/turf/closed/wall/codec/skulls,/area/maintenance/polovich/forest)
+"I" = (/obj/structure/codec/bulb/green{dir = 8},/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
 "J" = (/turf/closed/indestructible/start_area,/area/maintenance/polovich/forest)
-"K" = (/turf/open/floor/plating/polovich/stonestone{dir = 4},/area/maintenance/polovich/forest)
 "L" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/codec/redizna/three,/area/maintenance/polovich/forest)
-"M" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
 "O" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/closed/wall/codec/gra/nocling,/area/maintenance/polovich/forest)
-"P" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/structure/codec/window/green,/turf/open/floor/plating/polovich/codec/redizna/five,/area/maintenance/polovich/forest)
 "R" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
 "S" = (/obj/effect/landmark/start/new_player,/turf/open/floor/plating,/area/maintenance/polovich/forest)
-"U" = (/turf/open/floor/plating/polovich/codec/redizna,/area/maintenance/polovich/forest)
-"W" = (/turf/open/floor/plating/polovich/stonestone{dir = 1},/area/maintenance/polovich/forest)
-"X" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/structure/codec/bulb/green,/turf/open/floor/plating/polovich/steeldarkk,/area/maintenance/polovich/forest)
-"Z" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/obj/structure/codec/bulb/green,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
+"U" = (/obj/structure/codec/bulb/green{dir = 1},/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/steeldark,/area/maintenance/polovich/forest)
+"Z" = (/obj/effect/mapping_helpers/sunlight/pseudo_roof_setter/wood,/turf/open/floor/plating/polovich/slush,/area/maintenance/polovich/forest)
 
 (1,1,1) = {"
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -77,22 +62,22 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUUUUUUUUUUUUUUyyyyyyyyyyyyyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIIIIIIIIIIIIIyOOOOOOOOOOOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEEEEEEoEEEEIyOnAFHOHFAnOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEppEEEEEEEEIyOAwAHPHAwAOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEpppKWWWpEEIyOLALHOHLALOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEpopWKWvpEoIyOOiOOOOOdOOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEEKWKWWKWEEIyOjsOxxxORuOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEEDWWWWWWWKgOOssOOOOORsOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEEKKWKWWKWWfBRsRRsZRRseOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEEoWWWWWKKWgOOsROOOOOssOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEEpKWKvppvWIyOssOxxxOMROyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEppKWWEppEEIyOXsOxxxORZOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEppEEEEEEEEIyOOdOOOOOdOOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIEEEEoEEEEppIyOLALHOHLALOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUIIIIIIIIIIIIIyOAwAHPHAwAOyccccccccccccccccccccccccccccccccccccccccccccccc
-ccccccccccccccccccccccccccUUUUUUUUUUUUUcyOnAFHOHFAnOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyyyyyyyyyyyyyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOOOOOOOOOOOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOnAFHOHFAnOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOAwAHOHAwAOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOLALHOHLALOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOOdfOOOfdOOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOZsRRURRRZOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOssRRRRRRsOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOIRRsRRsseOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyORsssRRsssOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOssRsRRsRROyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOZsRRpRRRZOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOOdfOOOfdOOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOLALHOHLALOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOAwAHOHAwAOyccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccyOnAFHOHFAnOyccccccccccccccccccccccccccccccccccccccccccccccc
 ccccccccccccccccccccccccccccccccccccccccyOOOOOOOOOOOyccccccccccccccccccccccccccccccccccccccccccccccc
 ccccccccccccccccccccccccccccccccccccccccyyyyyyyyyyyyyccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc

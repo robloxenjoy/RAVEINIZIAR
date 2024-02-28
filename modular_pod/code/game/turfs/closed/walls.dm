@@ -19,20 +19,8 @@
 	icon = 'modular_pod/icons/turf/closed/wall_gra.dmi'
 	icon_state = "wall-0"
 	base_icon_state = "wall"
-	mine_hp = 7
+	mine_hp = 5
 
 /turf/closed/wall/codec/gra/nocling
 	desc = "Не особо то и страшная. Забраться тут нельзя."
-	clingable = FALSE
-
-/turf/closed/wall/codec/skulls
-	name = "Стена"
-	desc = "Вот это... Меня пугает."
-	icon = 'modular_pod/icons/turf/closed/wall_skulls.dmi'
-	icon_state = "wall-0"
-	base_icon_state = "wall"
-	mine_hp = 5
-
-/turf/closed/wall/codec/skulls
-	desc = "Вот это... Меня пугает. Забраться тут нельзя."
 	clingable = FALSE
