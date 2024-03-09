@@ -168,7 +168,7 @@
 	// voice muffling
 	if(stat == UNCONSCIOUS || stat == HARD_CRIT)
 		if(type & MSG_AUDIBLE) //audio
-			to_chat(src, "<I>... You can almost hear something ...</I>")
+			to_chat(src, "<I>... Я что-то слышу ...</I>")
 		return
 	to_chat(src, msg, avoid_highlighting = avoid_highlighting)
 
@@ -368,7 +368,7 @@
 		if(qdel_on_fail)
 			qdel(W)
 		else if(!disable_warning)
-			to_chat(src, span_warning("You are unable to equip that!"))
+			to_chat(src, span_warning("Не могу это экипировать."))
 		return FALSE
 	equip_to_slot(W, slot, initial, redraw_mob) //This proc should not ever fail.
 	return TRUE

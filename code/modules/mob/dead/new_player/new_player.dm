@@ -52,14 +52,14 @@
 
 	if(href_list["late_join"]) //This still exists for queue messages in chat
 		if(!SSticker?.IsRoundInProgress())
-			to_chat(usr, span_boldwarning("The round is either not ready, or has already finished..."))
+			to_chat(usr, span_boldwarning("Раунд не готов, или уже закончен."))
 			return
 		LateChoices()
 		return
 
 	if(href_list["SelectedJob"])
 		if(!SSticker?.IsRoundInProgress())
-			to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
+			to_chat(usr, span_danger("Раунд не готов, или уже закончен."))
 			return
 
 		if(SSlag_switch.measures[DISABLE_NON_OBSJOBS])

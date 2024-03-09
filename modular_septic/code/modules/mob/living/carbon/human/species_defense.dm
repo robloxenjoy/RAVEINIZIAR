@@ -190,8 +190,8 @@
 			var/attack_message = "attack"
 			if(length(weapon.attack_verb_simple))
 				attack_message = pick(weapon.attack_verb_simple)
-			victim.visible_message(span_warning("<b>[victim]</b> блокирует <b>[user]</b>'s [attack_message] с помощью [user.p_their()] [weapon]!"), \
-							span_userdanger("Я блокирую <b>[user]</b>'s [attack_message] с помощью [user.p_their()] [weapon]!"), \
+			victim.visible_message(span_warning("<b>[victim]</b> блокирует <b>[user]</b>'s [attack_message] с помощью [weapon]!"), \
+							span_userdanger("Я блокирую <b>[user]</b>'s [attack_message] с помощью [weapon]!"), \
 							span_hear("Я слышу стук!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
@@ -735,12 +735,12 @@
 									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
 										var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
 										if(dicerollll >= DICE_SUCCESS)
-											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"), \
-														span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I blocked this with my hands!"), \
-														span_hear("I hear blocking!"), \
+											target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] <b>[target]</b> [hit_area], но [target] блокирует руками!"), \
+														span_userdanger("<b>[user]</b> пытается [attack_verb] в [hit_area], но я блокирую руками!"), \
+														span_hear("Я слышу стук!"), \
 														COMBAT_MESSAGE_RANGE, \
 														user)
-											to_chat(user, span_userdanger("I try to [attack_verb] <b>[target]</b>'s [hit_area], but [target] blocked it with hands!"))
+											to_chat(user, span_userdanger("Я пытаюсь [attack_verb] <b>[target]</b> [hit_area], но [target] блокирует руками!"))
 											target.changeNext_move(CLICK_CD_GRABBING)
 											target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
 											target.adjustFatigueLoss(5)
@@ -773,8 +773,8 @@
 							ignored_mobs = user)
 			to_chat(user, span_userdanger("Я [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] себя в \[hit_area]![target.wound_message]"), \
-							span_userdanger("Я [attack_verb] себя в \[hit_area]![target.wound_message]"), \
+			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] себя в [hit_area]![target.wound_message]"), \
+							span_userdanger("Я [attack_verb] себя в [hit_area]![target.wound_message]"), \
 							span_hear("Я слышу звук плоти!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 	else
@@ -789,8 +789,8 @@
 							ignored_mobs = user)
 			to_chat(user, span_userdanger("Я целю в [parsed_intended_zone], но [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] себя в\[hit_area]![target.wound_message]"), \
-							span_userdanger("Я целю в \[parsed_intended_zone], но [attack_verb] себя в \[hit_area]![target.wound_message]"), \
+			target.visible_message(span_danger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] себя в [hit_area]![target.wound_message]"), \
+							span_userdanger("Я целю в \[parsed_intended_zone], но [attack_verb] себя в [hit_area]![target.wound_message]"), \
 							span_hear("Я слышу звук плоти!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)

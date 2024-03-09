@@ -168,7 +168,7 @@
 	if(!.)
 		return
 	if(!SSticker?.IsRoundInProgress())
-		to_chat(hud.mymob, span_boldwarning("The round is either not ready, or has already finished..."))
+		to_chat(hud.mymob, span_boldwarning("Раунд не готов, или уже закончен."))
 		return
 
 	//Determines Relevent Population Cap

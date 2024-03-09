@@ -34,7 +34,7 @@
 			examine_more = TRUE
 			result = examinify.examine_more(src)
 			if(!LAZYLEN(result))
-				result = list(span_notice("<i>I examine [examinify] closer, but find nothing of interest...</i>"))
+				result = list(span_notice("<i>Я рассматриваю [examinify] получше, но вроде не нахожу чего-либо интересного...</i>"))
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine(src)

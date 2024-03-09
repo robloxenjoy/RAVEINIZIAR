@@ -109,6 +109,8 @@
 	if(.)
 		return
 	if(user.a_intent != INTENT_GRAB)
+		if(open)
+			return
 		user.visible_message(span_notice("[user] стучит по [src]."), \
 			span_notice("Я стучу по [src]."))
 		user.changeNext_move(CLICK_CD_WRENCH)

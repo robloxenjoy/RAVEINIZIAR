@@ -147,7 +147,6 @@
 		user.changeNext_move(attack_delay)
 	if(attack_fatigue_cost)
 		user.adjustFatigueLoss(attack_fatigue_cost)
-	user.sound_hint()
 	weapon.damageItem("SOFT")
 	sound_hint()
 

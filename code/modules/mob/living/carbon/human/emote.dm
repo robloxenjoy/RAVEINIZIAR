@@ -3,8 +3,8 @@
 
 /datum/emote/living/carbon/human/cry
 	key = "cry"
-	key_third_person = "cries"
-	message = "cries."
+	key_third_person = "плачет"
+	message = "плачет."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/dap

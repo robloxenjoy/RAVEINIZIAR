@@ -321,7 +321,7 @@
 		return
 
 	if(GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH) >= 15)
-		visible_message(span_bigdanger("[src] rips the [I] apart!"))
+		visible_message(span_bigdanger("[src] рвёт [I] по частям!"))
 		sound_hint()
 		if(istype(I, /obj/item/restraints/handcuffs/cable/zipties))
 			playsound(src, broken_zipties, 75, FALSE)

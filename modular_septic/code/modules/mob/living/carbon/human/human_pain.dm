@@ -116,7 +116,7 @@
 
 		if(LB.get_bleed_rate())
 			if(LB.get_bleed_rate() > 1) //Totally arbitrary value
-				status += "<span class='danger'><b>КРОВОВЫЛИВАНИЕ</b></span>"
+				status += "<span class='danger'><b>КРОВОИЗЛИТИЕ</b></span>"
 			else
 				status += "<span class='danger'>КРОВОТЕЧЕНИЕ</span>"
 

@@ -56,25 +56,27 @@
 	var/visible_gender = p_they()
 	switch(visible_gender)
 		if("he")
-			visible_gender = "Man"
+			visible_gender = "Мужчина"
 		if("she")
-			visible_gender = "Woman"
+			visible_gender = "Женщина"
 		if("they")
-			visible_gender = "Creature"
+			visible_gender = "Существо"
 		else
-			visible_gender = "Thing"
+			visible_gender = "Нечто"
 	return visible_gender
 
 /mob/living/carbon/human/proc/get_age()
 	switch(age)
 		if(80 to INFINITY)
-			return "Geriatric"
+			return "Древний"
 		if(65 to 80)
-			return "Elderly"
-		if(50 to 65)
-			return "Old"
-		if(18 to 22)
-			return "Adult"
+			return "Дедовский"
+		if(34 to 65)
+			return "Старый"
+		if(28 to 33)
+			return "Взрослый"
+		if(18 to 27)
+			return "Молоднявый"
 		else
 			return ""
 
@@ -82,13 +84,15 @@
 	var/visible_gender = get_gender()
 	switch(age)
 		if(80 to INFINITY)
-			visible_gender = "[prefixed ? "A " : null]Geriatric [visible_gender]"
+			visible_gender = "Древний [visible_gender]"
 		if(65 to 80)
-			visible_gender = "[prefixed ? "An " : null]Elderly [visible_gender]"
-		if(50 to 65)
-			visible_gender = "[prefixed ? "An " : null]Old [visible_gender]"
-		if(18 to 22)
-			visible_gender = "[prefixed ? "A " : null]Adult [visible_gender]"
+			visible_gender = "Дедовский [visible_gender]"
+		if(34 to 65)
+			visible_gender = "Старый [visible_gender]"
+		if(28 to 33)
+			visible_gender = "Взрослый [visible_gender]"
+		if(18 to 27)
+			visible_gender = "Молоднявый [visible_gender]"
 		else
-			visible_gender = "[prefixed ? "A ": null][visible_gender]"
+			visible_gender = "[visible_gender]"
 	return lowercase ? lowertext(visible_gender) : visible_gender

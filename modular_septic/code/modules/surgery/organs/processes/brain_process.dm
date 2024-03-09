@@ -14,7 +14,7 @@
 	switch(effective_blood_oxygenation)
 		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
 			if(DT_PROB(2.5, delta_time))
-				to_chat(src, span_warning("<i>I feel [pick("dizzy","woozy","faint")].</i>"))
+				to_chat(src, span_warning("<i>Я чувствую себя [pick("около-пьяно","непонятно","слабо")].</i>"))
 			owner.adjustOxyLoss(round(0.005 * (BLOOD_VOLUME_NORMAL - effective_blood_oxygenation) * delta_time, 1))
 			damprob = is_stable? 10 : 30
 			if((brain.current_blood <= 0) && !brain.past_damage_threshold(2) && DT_PROB(damprob, delta_time))
@@ -23,7 +23,7 @@
 //			owner.blur_eyes(4)
 			if(DT_PROB(5, delta_time))
 				owner.Unconscious(rand(1,3) SECONDS)
-				to_chat(owner, span_userdanger("<i>I feel very [pick("dizzy","woozy","faint")]...</i>"))
+				to_chat(owner, span_userdanger("<i>Я чувствую себя реально [pick("около-пьяно","непонятно","слабо")]...</i>"))
 			owner.adjustOxyLoss(FLOOR(0.01 * (BLOOD_VOLUME_NORMAL - effective_blood_oxygenation) * delta_time, 1))
 			damprob = is_stable ? 15 : 50
 			if((brain.current_blood <= 0) && !brain.past_damage_threshold(4) && DT_PROB(damprob, delta_time))
@@ -32,7 +32,7 @@
 //			owner.blur_eyes(6)
 			if(DT_PROB(10, delta_time))
 				owner.Unconscious(rand(3,5) SECONDS)
-				to_chat(owner, span_userdanger("<i>I feel extremely [pick("dizzy","woozy","faint")]...</i>"))
+				to_chat(owner, span_userdanger("<i>Я чувствую себя совершенно [pick("ебануто","непонятно","ужасно")]...</i>"))
 			owner.adjustOxyLoss(2.5 * delta_time)
 			damprob = is_stable ? 40 : 75
 			if((brain.current_blood <= 0) && !brain.past_damage_threshold(6) && DT_PROB(damprob, delta_time))

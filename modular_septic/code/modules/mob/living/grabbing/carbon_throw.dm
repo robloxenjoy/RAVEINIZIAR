@@ -43,14 +43,14 @@
 		var/turf/new_target = get_turf_in_angle(angle, get_turf(src), world.view)
 		parsed_target = new_target.name
 	if(ismob(thrown_thing))
-		visible_message(span_danger("<b>[src]</b> throws <b>[thrown_thing]</b> at [parsed_target][power_throw ? " really hard!" : "."]"), \
-						span_userdanger("I throw <b>[thrown_thing]</b> at [parsed_target][power_throw ? " really hard!" : "."]"), \
+		visible_message(span_danger("<b>[src]</b> кидает <b>[thrown_thing]</b> в [parsed_target][power_throw ? " жёстко!" : "."]"), \
+						span_userdanger("Я кидаю <b>[thrown_thing]</b> в [parsed_target][power_throw ? " жёстко!" : "."]"), \
 						ignored_mobs = thrown_thing)
-		to_chat(thrown_thing, span_userdanger("<b>[src]</b> throws me really hard!"))
+		to_chat(thrown_thing, span_userdanger("<b>[src]</b> жёстко кидает меня!"))
 	else
-		visible_message(span_danger("<b>[src]</b> throws [thrown_thing] at [parsed_target][power_throw ? " really hard!" : "."]"), \
-						span_userdanger("I throw [thrown_thing] at [parsed_target][power_throw ? " really hard!" : "."]"))
-	log_message("has thrown [thrown_thing] at [parsed_target][power_throw ? " really hard" : ""]", LOG_ATTACK)
+		visible_message(span_danger("<b>[src]</b> кидает [thrown_thing] в [parsed_target][power_throw ? " жёстко!" : "."]"), \
+						span_userdanger("Я кидаю [thrown_thing] в [parsed_target][power_throw ? " жёстко!" : "."]"))
+	log_message("был кинут [thrown_thing] в [parsed_target][power_throw ? " жёстко" : ""]", LOG_ATTACK)
 	sound_hint()
 //	src.changeNext_move(CLICK_CD_CLING)
 	src.adjustFatigueLoss(5)

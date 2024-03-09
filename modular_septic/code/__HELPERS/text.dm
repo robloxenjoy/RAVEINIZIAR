@@ -66,7 +66,7 @@
 	return capitalize(pick(GLOB.denominator_last))
 
 /proc/click_fail_msg()
-	return span_alert(pick("Я не готов!", "Нет!", "Я сделал всё что возможно!", "Я не могу!", "Не сейчас!", "Да не щас!", "Да бля!", "Да блять не сейчас!"))
+	return span_grayd(pick("Я не готов!", "Нет!", "Я сделал всё что возможно!", "Я не могу!", "Не сейчас!", "Да не щас!", "Да бля!", "Да блять не сейчас!"))
 
 /proc/get_signs_from_number(num, index = 0)
 	var/signs = num

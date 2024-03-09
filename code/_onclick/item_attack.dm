@@ -328,13 +328,13 @@
 	if(hit_area)
 		message_hit_area = " в [hit_area]"
 	var/attack_message_spectator = "[src] [message_verb_continuous][message_hit_area] с помощью [I]!"
-	var/attack_message_victim = "Кто-то [message_verb_continuous] меня[message_hit_area] с помощью [I]!"
-	var/attack_message_attacker = "Я [message_verb_simple] [src][message_hit_area] с помощью [I]!"
+	var/attack_message_victim = "Кто-то [message_verb_continuous] меня в [message_hit_area] с помощью [I]!"
+	var/attack_message_attacker = "Я [message_verb_simple] [src] в [message_hit_area] с помощью [I]!"
 	if(user in viewers(src, null))
-		attack_message_spectator = "[user] [message_verb_continuous] [src][message_hit_area] с помощью [I]!"
-		attack_message_victim = "[user] [message_verb_continuous] меня[message_hit_area] с помощью [I]!"
+		attack_message_spectator = "[user] [message_verb_continuous] [src] в [message_hit_area] с помощью [I]!"
+		attack_message_victim = "[user] [message_verb_continuous] меня в [message_hit_area] с помощью [I]!"
 	if(user == src)
-		attack_message_victim = "Я [message_verb_simple] самого себя[message_hit_area] с помощью [I]"
+		attack_message_victim = "Я [message_verb_simple] самого себя в [message_hit_area] с помощью [I]"
 	visible_message(span_danger("[attack_message_spectator]"),\
 		span_userdanger("[attack_message_victim]"), null, COMBAT_MESSAGE_RANGE, user)
 	to_chat(user, span_danger("[attack_message_attacker]"))

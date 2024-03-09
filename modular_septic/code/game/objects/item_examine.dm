@@ -9,20 +9,20 @@
 
 	switch(germ_level)
 		if(0 to GERM_LEVEL_DIRTY)
-			. += "[p_They] [p_are] is clean."
+			. += "Это чисто."
 		if(GERM_LEVEL_DIRTY to GERM_LEVEL_FILTHY)
-			. += "[p_They] [p_are] a bit dirty."
+			. += "Это немного грязно."
 		if(GERM_LEVEL_FILTHY to GERM_LEVEL_SMASHPLAYER)
-			. += span_warning("[p_They] [p_are] filthy.")
+			. += span_warning("Это грязно.")
 		if(GERM_LEVEL_SMASHPLAYER to INFINITY)
-			. += span_warning("[p_They] [p_are] <b>foul</b>.")
+			. += span_warning("Это <b>очень</b> грязно.")
 
 	var/weight_text = weight_class_to_text(w_class)
-	. += "[p_Theyre] [prefix_a_or_an(weight_text)] [weight_text] item."
+	. += "Ну, по размерам [weight_text]."
 	if(isobserver(user))
-		. += "[p_They] weigh[p_s] exactly <b>[get_carry_weight()]kg</b>."
+		. += "Это весит около <b>[get_carry_weight()]кг</b>."
 	else if(user.is_holding(src))
-		. += "[p_They] weigh[p_s] around <b>[round_to_nearest(get_carry_weight(), 1)]kg</b>."
+		. += "Это весит около <b>[round_to_nearest(get_carry_weight(), 1)]кг</b>."
 
 	if(resistance_flags & INDESTRUCTIBLE)
 		. += "[p_They] seem[p_s] extremely robust! It'll probably withstand anything that could happen to it!"

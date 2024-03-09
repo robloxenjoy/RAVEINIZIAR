@@ -33,7 +33,7 @@
 		fancy_name = "<span style='color: [sanitized_chat_color];text-shadow: 0 0 3px [sanitized_chat_color];'>[name]</span>"
 	var/obscure_name = FALSE
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
-	var/obscure_species = (skipface || obscure_name || (name == "Unknown"))
+	var/obscure_species = (skipface || obscure_name || (name == "Неизвестный"))
 	var/obscured = check_obscured_slots()
 	var/distance = get_dist(user, src)
 	if(isliving(user))
@@ -44,21 +44,21 @@
 
 	. = list()
 	if(obscure_species)
-		. += "[icon2html(dna.species.examine_icon, user, "human")] <span class='info'>Oh, this is <EM>[obscure_name ? "Unknown" : fancy_name]</EM>, a <EM>Human</EM>?</span>"
+		. += "[icon2html(dna.species.examine_icon, user, "human")] <span class='info'>Ох, это же <EM>[obscure_name ? "Неизвестный" : fancy_name]</EM>, <EM>Человек</EM>!</span>"
 		if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 			if(!(obscured & ITEM_SLOT_NECK))
 				if(!wear_neck)
 					var/necky = get_bodypart_nostump(BODY_ZONE_PRECISE_NECK)
 					if(!LAZYLEN(clothingonpart(necky)))
-						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] IS A FATAL! [uppertext(src.p_they())] MUST BE KILLED!")
+						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] ФАТАЛ! ОН ДОЛЖЕН БЫТЬ УБИТ!")
 	else
-		. += "[icon2html(dna.species.examine_icon, user, dna.species.examine_icon_state)] <span class='info'>Oh, this is <EM>[obscure_name ? "Unknown" : fancy_name]</EM>, [prefix_a_or_an(dna.species.name)] <EM>[dna.species.name]</EM>!</span>"
+		. += "[icon2html(dna.species.examine_icon, user, dna.species.examine_icon_state)] <span class='info'>Ох, это же <EM>[obscure_name ? "Неизвестный" : fancy_name]</EM>, <EM>[dna.species.name]</EM>!</span>"
 		if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 			if(!(obscured & ITEM_SLOT_NECK))
 				if(!wear_neck)
 					var/necky = get_bodypart_nostump(BODY_ZONE_PRECISE_NECK)
 					if(!LAZYLEN(clothingonpart(necky)))
-						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] IS A FATAL! [uppertext(src.p_they())] MUST BE KILLED!")
+						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] ФАТАЛ! ОН ДОЛЖЕН БЫТЬ УБИТ!")
 	. += "<br><hr class='infohr'>"
 
 	//TODO: Add a social recordkeeping mechanic and datum to keep tracker of who the viewer knows
@@ -68,22 +68,22 @@
 	var/job_message = "<span class='info'>"
 	if(visible_job)
 		if(!skipface)
-			job_message += "I'm pretty sure [t_he] [t_is] [prefix_a_or_an(visible_job)] <b>[visible_job]</b>."
+			job_message += "Я уверен, он <b>[visible_job]</b>."
 		else
-			job_message += "I don't know [t_his] occupation."
+			job_message += "Я не знаю его роли."
 	. += job_message
 
 	var/visible_gender = t_he
 	switch(visible_gender)
 		if("he", "she", "am")
-			visible_gender = "[t_He] [t_is] [get_aged_gender(TRUE, TRUE)]."
+			visible_gender = "Его [get_aged_gender(TRUE, TRUE)]."
 		if("i")
-			visible_gender = "[t_He] [t_is] [get_aged_gender(TRUE, TRUE)]."
+			visible_gender = "Его [get_aged_gender(TRUE, TRUE)]."
 		else
 			if(user != src)
-				visible_gender = "I don't know their gender."
+				visible_gender = "Я не знаю его пола."
 			else
-				visible_gender = "I don't know my gender."
+				visible_gender = "Я не знаю свой пол."
 	. += visible_gender
 
 	//lips
@@ -237,7 +237,7 @@
 	var/list/missing = get_missing_limbs()
 	for(var/obj/item/bodypart/bodypart as anything in bodyparts)
 		if(bodypart.is_stump())
-			msg += "<span class='dead'><b>[t_His] [parse_zone(bodypart.body_zone)] is a stump!</b></span>"
+			msg += "<span class='dead'><b>Его [parse_zone(bodypart.body_zone)] просто огрызок!</b></span>"
 			//stumps count as missing
 			missing += bodypart.body_zone
 			stumps += bodypart.body_zone
@@ -246,23 +246,23 @@
 			if(!clothingonpart(bodypart) || !is_mouth_covered())
 				if(teeth < bodypart.max_teeth)
 					var/missing_teeth = bodypart.max_teeth - teeth
-					msg += "<span class='danger'>[t_His] [bodypart.name] is missing [missing_teeth] [missing_teeth == 1 ? "tooth" : "teeth"]!</span>"
+					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_teeth]!</span>"
 		var/max_fingers = bodypart.get_max_digits()
 		if(max_fingers)
 			var/fingers = bodypart.get_digits_amount()
-			var/finger_type = "finger"
+			var/finger_type = "палец руки"
 			var/static/list/toe_zones = list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
 			if(bodypart.body_zone in toe_zones)
-				finger_type = "toe"
+				finger_type = "палец ноги"
 			if(!LAZYLEN(clothingonpart(bodypart)))
 				if(fingers < max_fingers)
 					var/missing_fingers = max_fingers - fingers
-					msg += "<span class='danger'>[t_His] [bodypart.name] is missing [missing_fingers] [finger_type][missing_fingers > 1 ? "s" : ""]!</span>"
+					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_fingers] [finger_type]!</span>"
 	for(var/zone in missing)
 		//redundancy checks
 		if((GLOB.bodyzone_to_parent[zone] && ((GLOB.bodyzone_to_parent[zone] in missing) || (GLOB.bodyzone_to_parent[zone] in stumps))))
 			continue
-		msg += "<span class='dead'><b>[capitalize(t_his)] [parse_zone(zone)] is gone!</b></span>"
+		msg += "<span class='dead'><b>Его [parse_zone(zone)] потеряно!</b></span>"
 	var/damage_value = 0
 	if(!((user == src) && (src.hal_screwyhud == SCREWYHUD_HEALTHY))) //fake healthy
 		var/hyperbole = ((user == src) && (hal_screwyhud == SCREWYHUD_CRIT) ? 50 : 0)
@@ -273,12 +273,12 @@
 		damage_value = getBruteLoss() + getFireLoss() + getCloneLoss() + hyperbole + wound_injured
 		switch(damage_value)
 			if(5 to 25)
-				msg += "[t_He] [t_is] barely injured."
+				msg += "Он немного повреждён."
 			if(25 to 50)
-				msg += "[t_He] [t_is] <B>moderately</B> injured!"
+				msg += "Он <B>довольно</B> повреждён!"
 				get_aroused = FALSE
 			if(50 to INFINITY)
-				msg += "<B>[t_He] [t_is] severely injured!</B>"
+				msg += "<B>Он же тяжело ранен!</B>"
 				get_aroused = FALSE
 	var/datum/component/irradiated/irradiated = GetComponent(/datum/component/irradiated)
 	if(!skipface && (irradiated?.radiation_sickness >= RADIATION_SICKNESS_STAGE_1) && get_bodypart_nostump(BODY_ZONE_PRECISE_FACE))

@@ -340,7 +340,6 @@
 			human_target.w_uniform.add_fingerprint(src)
 
 	SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, src, zone_selected)
-	sound_hint()
 	target.sound_hint()
 
 	var/shove_power = (GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH)-GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE))

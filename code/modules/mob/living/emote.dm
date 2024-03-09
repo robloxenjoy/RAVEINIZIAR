@@ -54,8 +54,8 @@
 
 /datum/emote/living/cough
 	key = "cough"
-	key_third_person = "coughs"
-	message = "coughs!"
+	key_third_person = "кашляет"
+	message = "кашляет!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
@@ -218,9 +218,9 @@
 
 /datum/emote/living/laugh
 	key = "laugh"
-	key_third_person = "laughs"
-	message = "laughs."
-	message_mime = "laughs silently!"
+	key_third_person = "смеётся"
+	message = "смеётся."
+	message_mime = "смеётся тихонько!"
 	emote_type = EMOTE_AUDIBLE
 	audio_cooldown = 5 SECONDS
 	vary = TRUE

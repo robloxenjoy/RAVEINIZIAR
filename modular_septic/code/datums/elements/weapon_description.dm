@@ -2,8 +2,8 @@
 	. = ..()
 	if(!isitem(target)) // Do not attach this to anything that isn't an item
 		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_ATOM_TOPIC_EXAMINE, .proc/warning_label)
-	RegisterSignal(target, COMSIG_TOPIC, .proc/topic_handler)
+//	RegisterSignal(target, COMSIG_ATOM_TOPIC_EXAMINE, .proc/warning_label)
+//	RegisterSignal(target, COMSIG_TOPIC, .proc/topic_handler)
 	src.attached_proc = attached_proc
 
 /datum/element/weapon_description/Detach(datum/target)

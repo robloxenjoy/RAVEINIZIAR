@@ -549,7 +549,7 @@
 	damage = clamp(damage + amount, 0, maximum)
 	var/mess = check_damage_thresholds(owner)
 	if(!mess && (damage - prev_damage >= ORGAN_DAMAGE_NOTIFY_PLAYER))
-		mess = span_userdanger("Something inside my [parse_zone(current_zone)] hurts!")
+		mess = span_userdanger("Что-то внутри [parse_zone(current_zone)] болит!")
 	if(owner)
 		if(mess && !silent)
 			to_chat(owner, mess)

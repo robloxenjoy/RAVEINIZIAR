@@ -94,7 +94,7 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 	if(second)
 		secondT = " и [second] секунд[(second != 1)? "":""]"
 	if(minute < 60)
-		return "[minute] minute[(minute != 1)? "s":""][secondT]"
+		return "[minute] минут[(minute != 1)? "":""][secondT]"
 	var/hour = FLOOR(minute / 60, 1)
 	minute = MODULUS(minute, 60)
 	var/minuteT

@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 	to_chat(src, span_warning("You have died. Barring complete bodyloss, you can in most cases be revived by other players. If you do not wish to be brought back, use the \"Do Not Resuscitate\" verb in the ghost tab."))
 	*/
 	//SEPTIC EDIT BEGIN
-	to_chat(src, span_dead("I am past death's door!"))
+	to_chat(src, span_dead("Я умер."))
 	//SEPTIC EDIT END
 
 /mob/living/carbon/human/proc/makeSkeleton()

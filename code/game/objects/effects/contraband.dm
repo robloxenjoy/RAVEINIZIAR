@@ -75,10 +75,10 @@
 	. = ..()
 	if(random_basetype)
 		randomise(random_basetype)
-	if(!ruined)
-		original_name = name // can't use initial because of random posters
-		name = "poster - [name]"
-		desc = "A large piece of space-resistant printed paper. [desc]"
+//	if(!ruined)
+//		original_name = name // can't use initial because of random posters
+//		name = "poster - [name]"
+//		desc = "A large piece of space-resistant printed paper. [desc]"
 
 	AddElement(/datum/element/beauty, 300)
 

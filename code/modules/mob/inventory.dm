@@ -434,7 +434,7 @@
 		//SEPTIC EDIT END
 			return TRUE
 
-	to_chat(M, span_warning("You are unable to equip that!"))
+	to_chat(M, span_warning("Не могу это экипировать."))
 	return FALSE
 
 
