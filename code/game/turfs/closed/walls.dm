@@ -247,9 +247,9 @@
 			F.attach(src, user)
 		return TRUE
 	//Poster stuff
-	else if(istype(W, /obj/item/poster))
-		place_poster(W,user)
-		return TRUE
+//	else if(istype(W, /obj/item/poster))
+//		place_poster(W,user)
+//		return TRUE
 
 	return FALSE
 

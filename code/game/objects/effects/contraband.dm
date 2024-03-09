@@ -10,8 +10,8 @@
 	force = 0
 	resistance_flags = FLAMMABLE
 	var/poster_type
-	var/obj/structure/sign/poster/poster_structure
 
+/*
 /obj/item/poster/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
 	. = ..()
 	poster_structure = new_poster_structure
@@ -35,6 +35,7 @@
 /obj/item/poster/Destroy()
 	poster_structure = null
 	. = ..()
+*/
 
 /obj/item/poster/proc/react_to_deletion()
 	SIGNAL_HANDLER
@@ -134,11 +135,12 @@
 	forceMove(P)
 	return P
 
+/*
 //separated to reduce code duplication. Moved here for ease of reference and to unclutter r_wall/attackby()
 /turf/closed/wall/proc/place_poster(obj/item/poster/P, mob/user)
-	if(!P.poster_structure)
-		to_chat(user, span_warning("[P] has no poster... inside it? Inform a coder!"))
-		return
+//	if(!P.poster_structure)
+//		to_chat(user, span_warning("[P] has no poster... inside it? Inform a coder!"))
+//		return
 
 	// Deny placing posters on currently-diagonal walls, although the wall may change in the future.
 	if (smoothing_flags & SMOOTH_DIAGONAL_CORNERS)
@@ -159,7 +161,7 @@
 
 	to_chat(user, span_notice("You start placing the poster on the wall...") )
 
-	var/obj/structure/sign/poster/D = P.poster_structure
+//	var/obj/structure/sign/poster/D = P.poster_structure
 
 	var/temp_loc = get_turf(user)
 	flick("poster_being_set",D)
@@ -177,6 +179,8 @@
 
 	to_chat(user, span_notice("The poster falls down!"))
 	D.roll_and_drop(get_turf(user))
+
+*/
 
 // Various possible posters follow
 

@@ -64,6 +64,9 @@
 	if(exposed_obj.resistance_flags & ON_FIRE)
 		exposed_obj.extinguish()
 
+/datum/reagent/toxin/badwater/shallow/brown
+	color = "#8c6d50110" // rgb: 207, 54, 0
+
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
 	description = "A powerful poison derived from certain species of mushroom."

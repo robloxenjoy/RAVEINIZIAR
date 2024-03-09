@@ -326,8 +326,8 @@
 	bare_wound_bonus = 8
 	throw_speed = 2
 	throw_range = 10
-	attack_verb_continuous = list("отбивает", "ударяет", "вмазывает", "хуярит")
-	attack_verb_simple = list("отбить", "ударить", "вмазать", "хуярить")
+	attack_verb_continuous = list("отбивает", "ударяет", "вмазывает", "хуярит", "въёбывает")
+	attack_verb_simple = list("отбить", "ударить", "вмазать", "хуярить", "въебать")
 	tetris_width = 32
 	tetris_height = 32
 
@@ -1137,8 +1137,8 @@
 			embedding = list("pain_mult" = 6, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.2, "pain_stam_pct" = 0.6, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
 /obj/item/changeable_attacks/slashstab/knife/big/steel
-	name = "Steel Hunting Knife"
-	desc = "Use this as weapon!"
+	name = "Охотничий Нож"
+	desc = "Должен быть использован для охоты!"
 	icon_state = "bigknife_steel"
 	inhand_icon_state = "steelknife"
 	worn_icon = 'icons/mob/clothing/belt.dmi'
@@ -1150,6 +1150,8 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	attack_verb_continuous = list("режет", "нарезает", "атакует")
+	attack_verb_simple = list("резать", "нарезать", "атаковать")
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 10
@@ -1180,7 +1182,7 @@
 	. = ..()
 	switch(current_atk_mode)
 		if(SLASH_MODE)
-			to_chat(user, span_notice("I'm now stabbing them with the curved end of the [src]."))
+			to_chat(user, span_notice("Теперь я буду в них вонзать с помощью [src]."))
 			hitsound = stab_hitsound
 			min_force = 10
 			force = 17
@@ -1190,7 +1192,7 @@
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 8, "rip_time" = 3, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(STAB_MODE)
-			to_chat(user, span_notice("I'm now slicing them with the wide blade of the [src]."))
+			to_chat(user, span_notice("Теперь я буду их резать с помощью [src]."))
 			hitsound = slash_hitsound
 			min_force = 10
 			force = 17

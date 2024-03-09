@@ -32,6 +32,16 @@
 	liquids_are_immutable = FALSE
 	liquids_vaporizes = FALSE
 
+/obj/effect/spawner/liquid/dirty_water
+	name = "dirty water spawner"
+	liquid_list = list(
+		/datum/reagent/toxin/badwater/shallow/brown = 10,
+	)
+	liquid_no_react = FALSE
+	liquid_temperature = T0C-10
+	liquids_are_immutable = FALSE
+	liquids_vaporizes = FALSE
+
 /obj/effect/spawner/liquid/shallow/flood
 	name = "shallow liquid spawner"
 	liquid_list = list(

@@ -788,8 +788,8 @@
 	footstep = FOOTSTEP_PLATING
 
 /turf/open/floor/plating/polovich/stoneplitblue
-	name = "Stone Floor"
-	desc = "This is interesting."
+	name = "Пол"
+	desc = "Вот это вот... Уже интересно!"
 	icon_state = "stonebluei"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE
@@ -798,8 +798,8 @@
 	heavyfootstep = FOOTSTEP_STONE
 
 /turf/open/floor/plating/polovich/cosmickick
-	name = "Stone Floor"
-	desc = "This is interesting."
+	name = "Пол"
+	desc = "Вот это вот... Уже интересно!"
 	icon_state = "cosmicanomaly2"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE
@@ -808,8 +808,8 @@
 	heavyfootstep = FOOTSTEP_STONE
 
 /turf/open/floor/plating/polovich/cosmickickk
-	name = "Stone Floor"
-	desc = "This is interesting."
+	name = "Пол"
+	desc = "Вот это вот... Уже интересно!"
 	icon_state = "cosmicbrick"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE

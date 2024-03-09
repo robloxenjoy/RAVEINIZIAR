@@ -63,7 +63,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 
 /atom/movable/screen/lobby/button/settings
 	icon = 'modular_septic/icons/hud/lobby/settings.dmi'
-	screen_loc = "SOUTH:-6,CENTER:+218"
+	screen_loc = "SOUTH:+117,CENTER:-335"
 
 /atom/movable/screen/lobby/button/ready
 	icon = 'modular_septic/icons/hud/lobby/ready.dmi'
@@ -94,6 +94,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 	. = ..()
 	qdel(src)
 
+/*
 /atom/movable/screen/lobby/button/credits
 	icon = 'modular_septic/icons/hud/lobby/credits.dmi'
 	icon_state = "credits"
@@ -103,6 +104,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 /atom/movable/screen/lobby/button/credits/Click(location, control, params)
 	. = ..()
 	SScredits?.ui_interact(usr)
+*/
 
 /atom/movable/screen/lobby/button/crew_manifest
 	icon = 'modular_septic/icons/hud/lobby/crew_manifest_small.dmi'

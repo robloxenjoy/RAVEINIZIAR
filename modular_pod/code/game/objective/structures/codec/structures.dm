@@ -15,14 +15,14 @@
 	name = "Светилище"
 	desc = "Освещает комнату и просвещает твою гнилую душёнку."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
-	icon_state = "lampala"
+	icon_state = "svetilka"
 	plane = GAME_PLANE_BLOOM
 	layer = FLY_LAYER
 	density = TRUE
 	anchored = TRUE
 	light_range = 4
 	light_power = 1
-	light_color = "#faf5e9"
+	light_color = "#f9619f"
 
 /obj/structure/codec/firething
 	name = "Светилище"
@@ -78,6 +78,7 @@
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "window_va-closed"
 	base_icon_state = "window_va"
+	opaque_closed = TRUE
 
 /obj/structure/codec/window/proc/toggle()
 	open = !open
@@ -269,24 +270,30 @@
 /obj/machinery/codec/door/proc/unlock()
 	return
 
+/obj/machinery/codec/door/red
+	name = "Дверь"
+	desc = "ОБЫЧНАЯ!"
+	icon_state = "door_red1"
+	base_icon_state = "door_red"
+
 #undef DOOR_CLOSE_WAIT
 
 /obj/structure/sign/poster/contraband/codec/o
 	name = "Гедвяница"
-	desc = "Считалось символом язычества, обозначающий падающее солнце как конец света. Теперь же это символ других фанатиков, и я думаю мы знаем про каких фанатиков мы говорим."
+	desc = "Считалось символом язычества, обозначающий падающее солнце как конец света. Теперь же это символ других фанатиков, и я думаю, мы знаем про каких фанатиков мы говорим."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "poster_o"
 
 /obj/structure/sign/poster/contraband/codec/ring
 	name = "Кольцо"
-	desc = "Ебать!"
+	desc = "Это меня пугает!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "symb_1"
 	rvat = FALSE
 
 /obj/structure/sign/poster/contraband/codec/strong
 	name = "Лик"
-	desc = "Прояви силу."
+	desc = "Восславь силу в себе."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "eviln"
 	rvat = FALSE

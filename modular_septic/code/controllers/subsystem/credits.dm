@@ -1,3 +1,4 @@
+/*
 SUBSYSTEM_DEF(credits)
 	name = "Credits"
 	flags = SS_NO_INIT|SS_NO_FIRE
@@ -10,3 +11,4 @@ SUBSYSTEM_DEF(credits)
 
 /datum/controller/subsystem/credits/ui_state(mob/user)
 	return GLOB.always_state
+*/
