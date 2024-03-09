@@ -39,8 +39,8 @@ Include =
 Exclude = AUTOADMIN
 Edit =
 
-Name = Moderator
-Include = ADMIN
+Name = Overseer
+Include = @ ADMIN BAN STEALTH
 Exclude =
 Edit =
 
