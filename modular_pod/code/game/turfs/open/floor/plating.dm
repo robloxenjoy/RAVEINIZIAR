@@ -1522,8 +1522,8 @@
 	heavyfootstep = FOOTSTEP_METAL
 
 /turf/open/floor/plating/polovich/stonestone
-	name = "Old Floor"
-	desc = "This is brutal and ancient."
+	name = "Пол"
+	desc = "Брутально и древне. А ведь, ещё давно кто-то сражался на нём."
 	icon_state = "rockfloor"
 	icon = 'modular_pod/icons/turf/floors.dmi'
 	footstep = FOOTSTEP_STONE

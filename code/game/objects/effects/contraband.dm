@@ -63,6 +63,7 @@
 	var/ruined = FALSE
 	var/random_basetype
 	var/never_random = FALSE // used for the 'random' subclasses.
+	var/rvat = TRUE
 
 	var/poster_item_name = "hypothetical poster"
 	var/poster_item_desc = "This hypothetical poster item should not exist, let's be honest here."
@@ -115,7 +116,9 @@
 		return
 	if(ruined)
 		return
-	visible_message(span_notice("[user] rips [src] in a single, decisive motion!") )
+	if(!rvat)
+		return
+	visible_message(span_notice("[user] срывает [src] разом!") )
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
 
 	var/obj/structure/sign/poster/ripped/R = new(loc)

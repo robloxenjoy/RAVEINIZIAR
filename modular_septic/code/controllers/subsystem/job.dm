@@ -24,6 +24,7 @@
 //		var/day_of_the_week = lowertext(time2text(station_realtime, "Day")) // current weekday (text)
 //		introduction += span_infoplain("\nСегодня [DD][st_nd_rd_th(DD)] [month] [YYYY].")
 //		introduction += span_infoplain("\nЭто [prefix_a_or_an(day_of_the_week)] [day_of_the_week].")
+/*
 		if(ishuman(equipping))
 			var/mob/living/carbon/human/equipping_human = equipping
 			//assign random date of birth
@@ -31,7 +32,7 @@
 			equipping_human.day_born = rand(1, days_in_month(equipping_human.month_born))
 			var/birth_DD = equipping_human.day_born
 			var/birthday_month = month_text(equipping_human.month_born)
-			var/YYYY_born = YYYY-equipping_human.age
+//			var/YYYY_born = YYYY-equipping_human.age
 			var/lucky_or_unlucky = (job.departments_bitflags & DEPARTMENT_BITFLAG_UNPEOPLE ? "плохо что" : "хорошо что")
 			if((birth_DD == DD) && (month == birthday_month))
 				introduction += span_nicegreen(span_big("\nСегодня мой день рождения!"))
@@ -41,6 +42,7 @@
 												story_value = STORY_VALUE_LEGENDARY, \
 												memory_flags = MEMORY_FLAG_NOPERSISTENCE|MEMORY_SKIP_UNCONSCIOUS)
 			introduction += span_infoplain("\nЯ был [lucky_or_unlucky] рождён [equipping_human.age] лет назад.")
+*/
 		to_chat(player_client, introduction)
 
 	equipping.on_job_equipping(job)
