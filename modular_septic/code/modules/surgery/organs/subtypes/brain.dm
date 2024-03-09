@@ -1,6 +1,6 @@
 /obj/item/organ/brain
-	name = "brain"
-	desc = "A piece of juicy meat found in a person's head."
+	name = "Мозг"
+	desc = "Компактное скопление нейронов и синапсов."
 	icon_state = "brain"
 	throw_speed = 3
 	throw_range = 5
@@ -19,7 +19,7 @@
 	low_threshold = BRAIN_DAMAGE_DEATH * 0.25
 	high_threshold = BRAIN_DAMAGE_DEATH * 0.75
 	pain_multiplier = 0 // We don't count towards bodypart pain for balance reasons
-	internal_damage_modifier = 3.5 // Brains are easy to hurty
+	internal_damage_modifier = 3 // Brains are easy to hurty
 
 	// head cavity volume is 6
 	organ_volume = 2
@@ -52,7 +52,7 @@
 	name = initial(name)
 	if(new_owner.mind?.has_antag_datum(/datum/antagonist/changeling) && !no_id_transfer) //congrats, you're trapped in a body you don't control
 		if(brainmob && !(new_owner.stat == DEAD || (HAS_TRAIT(new_owner, TRAIT_DEATHCOMA))))
-			to_chat(brainmob, span_danger("I can't feel my body! I'm still just a brain!"))
+			to_chat(brainmob, span_danger("Не могу почувствовать тело! Я просто мозг!"))
 		forceMove(new_owner)
 		return
 
@@ -125,8 +125,8 @@
 		REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, CRIT_HEALTH_TRAIT)
 		return
 	if(owner.stat < UNCONSCIOUS)
-		owner.visible_message(span_danger("<b>[owner]</b> starts having a seizure!"), \
-							span_userdanger("I'm having a seizure!"))
+		owner.visible_message(span_danger("<b>[owner]</b> начинает биться в конвульсиях!"), \
+							span_userdanger("Я бьюсь в конвульсиях!"))
 	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, CRIT_HEALTH_TRAIT)
 	owner.Jitter(1000)
 	owner.Unconscious(4 SECONDS)
@@ -135,7 +135,7 @@
 	if(!ishuman(owner) || !is_failing())
 		return
 	if(owner.jitteriness >= 300)
-		examine_list += span_flashingdanger(span_big("<b>[owner]</b> is having a seizure!"))
+		examine_list += span_flashingdanger(span_big("<b>[owner]</b> бьётся в конвульсиях!"))
 
 /obj/item/organ/brain/can_heal(delta_time, times_fired)
 	. = TRUE
@@ -196,18 +196,18 @@
 	// Attempt to heal the brain
 	if(is_failing() && tool.is_drainable() && tool.reagents.has_reagent(/datum/reagent/medicine/mannitol))
 		if(brainmob?.health <= HEALTH_THRESHOLD_DEAD) //if the brain is fucked anyway, do nothing
-			to_chat(user, span_warning("[src] is far too damaged, there's nothing else i can do for it!"))
+			to_chat(user, span_warning("[src] слишком повреждён... И я ничего не смогу поделать с этим."))
 			return TRUE
 		if(!tool.reagents.has_reagent(/datum/reagent/medicine/mannitol, 10))
-			to_chat(user, span_warning("There's not enough mannitol in [tool] to restore [src]!"))
+			to_chat(user, span_warning("Недостаточно для лечения [src]!"))
 			return TRUE
-		user.visible_message(span_notice("<b>[user]</b> starts to pour the contents of [tool] onto [src]."),
-						span_notice("I start to slowly pour the contents of [tool] onto [src]."))
+		user.visible_message(span_notice("<b>[user]</b> начинается лить жидкость из [tool] на [src]."),
+						span_notice("Я начинаю лить жидкость из [tool] на [src]."))
 		if(!do_after(user, 5 SECONDS, src))
-			to_chat(user, span_warning("I failed to pour [tool] onto [src]!"))
+			to_chat(user, span_warning("Я провалился в своей затее!"))
 			return TRUE
-		user.visible_message(span_notice("<b>[user]</b> pours the contents of [tool] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), \
-						span_notice("I pour the contents of [tool] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
+		user.visible_message(span_notice("<b>[user]</b> льёт жидкость из [tool] на [src], заставляя его изменить свою первоначальную форму и приобрести более яркий оттенок розового."), \
+						span_notice("Я лью жидкость из [tool] на [src], заставляя его изменить свою первоначальную форму и приобрести более яркий оттенок розового."))
 		var/healby = tool.reagents.get_reagent_amount(/datum/reagent/medicine/mannitol)
 		applyOrganDamage(-healby*2) //heals 2 damage per unit of mannitol
 		tool.reagents.clear_reagents()
@@ -233,31 +233,31 @@
 /obj/item/organ/brain/handle_healing_item(obj/item/tool, mob/living/user, params)
 	var/obj/item/stack/stack = tool
 	if(organ_flags & (ORGAN_DESTROYED|ORGAN_DEAD))
-		to_chat(user, span_warning("\The [src] is damaged beyond the point of no return."))
+		to_chat(user, span_warning("\[src] повреждён до точки невозврата."))
 		return
 	if(!damage && !length(traumas))
-		to_chat(user, span_notice("\The [src] is in pristine quality already."))
+		to_chat(user, span_notice("\[src] уже в безупречном качестве."))
 		return
-	user.visible_message(span_notice("<b>[user]</b> starts healing \the [src]..."), \
-					span_notice("I start healing \the [src]..."), \
+	user.visible_message(span_notice("<b>[user]</b> начинает лечить \[src]..."), \
+					span_notice("Я начинаю лечить \[src]..."), \
 					vision_distance = COMBAT_MESSAGE_RANGE)
 	if(owner)
-		owner.custom_pain("OH GOD! There are needles inside my [src]!", 30, FALSE, owner.get_bodypart(current_zone))
+		owner.custom_pain("ЕБАТЬ! что-то дотрагивается до моего [src]!", 30, FALSE, owner.get_bodypart(current_zone))
 		if(!do_mob(user, owner, 5 SECONDS))
-			to_chat(user, span_warning("I must stand still!"))
+			to_chat(user, span_warning("Я должен стоять смирно!"))
 			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 			return
 	else
 		if(!do_after(user, 5 SECONDS, src))
-			to_chat(user, span_warning("I must stand still!"))
+			to_chat(user, span_warning("Я должен стоять смирно!"))
 			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 			return
 	if(istype(stack))
 		if(!stack.use(2))
-			to_chat(user, span_warning("I don't have enough to heal \the [src]!"))
+			to_chat(user, span_warning("У меня недостаточно для лечения \[src]!"))
 			return
-	user.visible_message(span_notice("<b>[user]</b> healing \the [src]."), \
-						span_notice("I heal \the [src]."))
+	user.visible_message(span_notice("<b>[user]</b> лечит \[src]."), \
+						span_notice("Я лечу \[src]."))
 	applyOrganDamage(-min(maxHealth/2, 50))
 	cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
 
@@ -269,13 +269,13 @@
 		. += span_info("It has a skillchip embedded in it.")
 	if((brainmob && (brainmob.client || brainmob.get_ghost())) || decoy_override)
 		if(is_failing())
-			. += span_info("It seems to still have a bit of energy within it, but it's rather damaged...")
+			. += span_info("Повреждено, но здесь всё ещё есть хоть какая-то энергия...")
 		else if(damage >= BRAIN_DAMAGE_DEATH*0.5)
-			. += span_info("I can feel the small spark of life still left in this one, but it's got some bruises.")
+			. += span_info("Чутка повреждено, но тут ещё есть искры жизни.")
 		else
-			. += span_info("I can feel the small spark of life still left in this one.")
+			. += span_info("Тут чувствуется искра жизни.")
 	else
-		. += span_info("This one is completely devoid of life.")
+		. += span_info("Это полностью лишено жизни.")
 
 /obj/item/organ/brain/Destroy(force)
 	if(brainmob)
@@ -356,11 +356,11 @@
 			return
 		var/brain_message
 		if(prev_damage < BRAIN_DAMAGE_MILD && damage >= BRAIN_DAMAGE_MILD)
-			brain_message = span_warning("I feel lightheaded.")
+			brain_message = span_warning("Чувствую головокружение...")
 		else if(prev_damage < BRAIN_DAMAGE_SEVERE && damage >= BRAIN_DAMAGE_SEVERE)
-			brain_message = span_warning("I feel less in control of my thoughts.")
+			brain_message = span_warning("Я как будто теряю контроль над мыслями!")
 		else if(prev_damage < (BRAIN_DAMAGE_DEATH - 20) && damage >= (BRAIN_DAMAGE_DEATH - 20) && damage < BRAIN_DAMAGE_DEATH)
-			brain_message = span_warning("I can feel my mind flickering on and off...")
+			brain_message = span_warning("МОЁ СОЗНАНИЕ МИГАЕТ!")
 		if(.)
 			. += "\n[brain_message]"
 		else
@@ -399,15 +399,15 @@
 	LAZYCLEARLIST(skillchips)
 
 /obj/item/organ/brain/proc/handle_lobotomy(obj/item/tool, mob/living/user, params)
-	user.visible_message(span_notice("<b>[user]</b> starts lobotomizing \the [src]..."), \
-					span_notice("I start lobotomizing \the [src]..."), \
+	user.visible_message(span_notice("<b>[user]</b> начинает лоботомизировать \[src]..."), \
+					span_notice("Я начинаю лоботомизировать \[src]..."), \
 					vision_distance = COMBAT_MESSAGE_RANGE)
 	owner.custom_pain("OH GOD! My [src] is being SLASHED IN TWAIN!", 30, FALSE, owner.get_bodypart(current_zone))
 	if(!do_mob(user, owner, 10 SECONDS))
-		to_chat(user, span_warning("I must stand still!"))
+		to_chat(user, span_warning("Я должен стоять смирно!"))
 		return TRUE
-	user.visible_message(span_notice("<b>[user]</b> lobotomizes \the [src]."), \
-					span_notice("I lobotomize \the [src]."), \
+	user.visible_message(span_notice("<b>[user]</b> лоботомизирует \[src]."), \
+					span_notice("Я лоботомизирую \[src]."), \
 					vision_distance = COMBAT_MESSAGE_RANGE)
 	switch(owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL))
 		// Cure all traumas, no penalties
@@ -454,7 +454,7 @@
 			LAZYSET(brainmob.status_traits, TRAIT_BADDNA, carbon_transferer.status_traits[TRAIT_BADDNA])
 	if(transferer.mind && transferer.mind.current)
 		transferer.mind.transfer_to(brainmob)
-	to_chat(brainmob, span_notice("I feel slightly disoriented. That's normal since i'm just a brain."))
+	to_chat(brainmob, span_notice("Чувствую себя очень странно. Наверное это нормально, ведь я теперь просто мозг, хотя я был им и раньше."))
 
 ////////////////////////////////////TRAUMAS////////////////////////////////////////
 /obj/item/organ/brain/proc/has_trauma_type(brain_trauma_type = /datum/brain_trauma, resilience = TRAUMA_RESILIENCE_ABSOLUTE)

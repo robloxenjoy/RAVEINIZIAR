@@ -2,16 +2,16 @@
 /mob/living/proc/toggle_special_attack(new_attack, silent = FALSE)
 	if(!ishuman(src))
 		if(!silent)
-			to_chat(src, div_infobox(span_warning("My inhuman form is incapable of doing special attacks.")))
+			to_chat(src, div_infobox(span_warning("Моя не человеческая форма не позволяет выполнять подобные выкрутасы.")))
 		return
 
 	if(!new_attack || new_attack == special_attack)
 		special_attack = SPECIAL_ATK_NONE
 		if(!silent)
 			var/message = "<span class='infoplain'><div class='infobox'>"
-			message += span_largeinfo("None")
+			message += span_largeinfo("Ничего")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("I will now attack my targets normally.\n(MMB will not perform special attacks)")
+			message += span_info("Я буду теперь атаковать их по-нормальному.\n(СКМ не будет выполнять специальные атаки)")
 			message += "</div></span>"
 			to_chat(src, message)
 	else
@@ -20,20 +20,20 @@
 			var/message = "<span class='infoplain'><div class='infobox'>"
 			switch(new_attack)
 				if(SPECIAL_ATK_KICK)
-					message += span_largeinfo("Kick")
+					message += span_largeinfo("Пинок")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("I will now try to kick my targets.\n(MMB to kick)")
+					message += span_info("Я теперь могу пинать их.\n(СКМ для пинка)")
 				if(SPECIAL_ATK_BITE)
-					message += span_largeinfo("Bite")
+					message += span_largeinfo("Укус")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("I will now try to bite my targets.\n(MMB to bite)")
+					message += span_info("Я теперь могу кусать их.\n(СКМ для укуса)")
 				if(SPECIAL_ATK_JUMP)
-					message += span_largeinfo("Jump")
+					message += span_largeinfo("Прыжок")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("I will now attempt to tackle at my targets.\n(MMB to jump at a target)")
+					message += span_info("Я теперь могу прыгать.\n(СКМ для прыжка)")
 				if(SPECIAL_ATK_STEAL)
-					message += span_largeinfo("Steal")
+					message += span_largeinfo("Кража")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("I will now attempt to steal from my targets.\n(MMB to pickpocket)")
+					message += span_info("Я теперь могу красть.\n(СКМ для кражи)")
 			message += "</div></span>"
 			to_chat(src, message)

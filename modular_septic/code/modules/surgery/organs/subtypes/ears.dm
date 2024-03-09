@@ -1,7 +1,7 @@
 /obj/item/organ/ears
-	name = "ear"
+	name = "Ухо"
 	icon_state = "ears"
-	desc = "There are three parts to the ear. Inner, middle and outer. Only one of these parts should be normally visible."
+	desc = "Как будто кто-то смотрит оттуда."
 
 	dna_block = DNA_EARS_BLOCK
 	mutantpart_key = "ears"

@@ -1,6 +1,6 @@
 /obj/item/bodypart/chest
-	name = "chest"
-	desc = "It's impolite to stare at someone's chest."
+	name = "Грудь"
+	desc = "Конечность."
 	icon_state = "default_human_chest"
 	max_damage = 100
 	max_stamina_damage = 100

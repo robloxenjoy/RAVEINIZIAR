@@ -1,7 +1,6 @@
 /obj/item/bodypart/l_leg
-	name = "left leg"
-	desc = "Some athletes prefer to tie their left shoelaces first for good \
-		luck. In this instance, it probably would not have helped."
+	name = "Левая нога"
+	desc = "Конечность."
 	icon_state = "default_human_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")

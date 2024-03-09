@@ -303,7 +303,7 @@
 			emote("burp")
 		if (prob(nitryl_pp) && nitryl_pp>10)
 			adjustOrganLoss(ORGAN_SLOT_LUNGS, nitryl_pp/2)
-			to_chat(src, span_notice("You feel a burning sensation in your chest"))
+			to_chat(src, span_notice("Я чувствую чё-то горячее в груди..."))
 		gas_breathed = breath_gases[/datum/gas/nitryl][MOLES]
 		if (gas_breathed > gas_stimulation_min)
 			reagents.add_reagent(/datum/reagent/nitryl,1)
@@ -313,12 +313,12 @@
 	// Freon
 		var/freon_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/freon][MOLES])
 		if (prob(freon_pp))
-			to_chat(src, span_alert("Your mouth feels like it's burning!"))
+			to_chat(src, span_alert("Мой рот как будто горит!"))
 		if (freon_pp >40)
 			emote("gasp")
 			adjustFireLoss(15)
 			if (prob(freon_pp/2))
-				to_chat(src, span_alert("Your throat closes up!"))
+				to_chat(src, span_alert("Моя глотка захлопывается!"))
 				silent = max(silent, 3)
 		else
 			adjustFireLoss(freon_pp/4)
@@ -332,7 +332,7 @@
 		var/healium_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/healium][MOLES])
 		if(healium_pp > gas_stimulation_min)
 			if(prob(15))
-				to_chat(src, span_alert("Your head starts spinning and your lungs burn!"))
+				to_chat(src, span_alert("Моя голова кружится и лёгкие мои горят!"))
 				healium_euphoria = EUPHORIA_ACTIVE
 				emote("gasp")
 		else
@@ -398,22 +398,22 @@
 					// At lower pp, give out a little warning
 					SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "smell")
 					if(prob(5))
-						to_chat(src, span_notice("There is an unpleasant smell in the air."))
+						to_chat(src, span_notice("Какой-то запах."))
 				if(5 to 15)
 					//At somewhat higher pp, warning becomes more obvious
 					if(prob(15))
-						to_chat(src, span_warning("You smell something horribly decayed inside this room."))
+						to_chat(src, span_warning("Чё-то ужасное чувствую, запах какой-то."))
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/bad_smell)
 				if(15 to 30)
 					//Small chance to vomit. By now, people have internals on anyway
 					if(prob(5))
-						to_chat(src, span_warning("The stench of rotting carcasses is unbearable!"))
+						to_chat(src, span_warning("Этот запах гниющего пиздеца отвратен!"))
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						vomit()
 				if(30 to INFINITY)
 					//Higher chance to vomit. Let the horror start
 					if(prob(15))
-						to_chat(src, span_warning("The stench of rotting carcasses is unbearable!"))
+						to_chat(src, span_warning("Этот запах гниющего пиздеца отвратен!"))
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						vomit()
 				else
@@ -508,7 +508,7 @@
 			apply_damage(cold_level_1_damage*cold_modifier, cold_damage_type, check_zone(BODY_ZONE_PRECISE_FACE))
 			lung.applyOrganDamage(heat_level_2_damage)
 		if((breath_temperature < cold_level_1_threshold) && prob(20))
-			to_chat(src, span_warning("I feel [cold_message] in my [lung]!"))
+			to_chat(src, span_warning("Я чувствую [cold_message] в моих [lung]!"))
 	// HEAT DAMAGE
 	if(!HAS_TRAIT(src, TRAIT_RESISTHEAT))
 		var/heat_modifier = dna.species.heatmod
@@ -521,7 +521,7 @@
 			apply_damage(heat_level_3_damage*heat_modifier, heat_damage_type, check_zone(BODY_ZONE_PRECISE_FACE))
 			lung.applyOrganDamage(heat_level_2_damage)
 		if((breath_temperature >= heat_level_1_threshold) && prob(20))
-			to_chat(src, span_warning("I feel [hot_message] in my [lung]!"))
+			to_chat(src, span_warning("Я чувствую [hot_message] в моих [lung]!"))
 
 	// The air you breathe out should match your body temperature
 	breath.temperature = bodytemperature

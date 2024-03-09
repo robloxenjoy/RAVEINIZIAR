@@ -140,7 +140,7 @@
 
 	if(harmful && prob(pain_chance_current))
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-		to_chat(victim, span_userdanger("[weapon] embedded in your [limb.name] hurts!"))
+		to_chat(victim, span_userdanger("[weapon] внутри [limb.name] заставляет болеть!"))
 
 	var/fall_chance_current = DT_PROB_RATE(fall_chance / 100, delta_time) * 100
 	if(victim.body_position == LYING_DOWN)
@@ -166,7 +166,7 @@
 	if(harmful && prob(chance))
 		var/damage = weapon.w_class * jostle_pain_mult
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-		to_chat(victim, span_userdanger("[weapon] embedded in your [limb.name] jostles and stings!"))
+		to_chat(victim, span_userdanger("[weapon] внутри [limb.name] заставляет болеть!"))
 
 /// Called when then item randomly falls out of a carbon. This handles the damage and descriptors, then calls safe_remove()
 /datum/component/embedded/proc/fallOut()
@@ -175,7 +175,7 @@
 	if(harmful)
 		var/damage = weapon.w_class * remove_pain_mult
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-	victim.visible_message(span_danger("[weapon] falls [harmful ? "out" : "off"] of [victim.name]'s [limb.name]!"), span_userdanger("[weapon] falls [harmful ? "out" : "off"] of your [limb.name]!"))
+	victim.visible_message(span_danger("[weapon] выпадывает из [victim.name] [limb.name]!"), span_userdanger("[weapon] выпадывает из [limb.name]!"))
 	safeRemove()
 
 
@@ -191,7 +191,7 @@
 
 /// everything async that ripOut used to do
 /datum/component/embedded/proc/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, time_taken)
-	victim.visible_message(span_warning("[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name]."),span_notice("You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)"))
+	victim.visible_message(span_warning("[victim] пытается вырвать [weapon] из [limb.name]."),span_notice("Я пытаюсь вырвать [weapon] из [limb.name]..."))
 	if(!do_after(victim, time_taken, target = victim))
 		return
 	if(!weapon || !limb || weapon.loc != victim || !(weapon in limb.embedded_objects))
@@ -203,7 +203,7 @@
 		victim.emote("scream")
 
 	playsound(victim, 'modular_septic/sound/gore/pullout.ogg', 83, 0)
-	victim.visible_message(span_notice("[victim] rips [weapon] [harmful ? "out" : "off"] of [victim.p_their()] [limb.name]!"), span_notice("You pulled [weapon] out of your [limb.name]."))
+	victim.visible_message(span_notice("[victim] вырывает [weapon] из [limb.name]!"), span_notice("Я вырываю [weapon] из [limb.name]."))
 	safeRemove(victim)
 
 /// This proc handles the final step and actual removal of an embedded/stuck item from a carbon, whether or not it was actually removed safely.
@@ -231,7 +231,7 @@
 	limb.embedded_objects -= weapon
 
 	if(victim)
-		to_chat(victim, span_userdanger("\The [weapon] that was embedded in your [limb.name] disappears!"))
+		to_chat(victim, span_userdanger("\[weapon] что был в [limb.name] пропадает!"))
 
 	qdel(src)
 

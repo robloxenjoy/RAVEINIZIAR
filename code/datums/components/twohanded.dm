@@ -175,7 +175,7 @@
 	if(iscyborg(user))
 		to_chat(user, span_notice("You dedicate your module to [parent]."))
 	else
-		to_chat(user, span_notice("You grab [parent] with both hands."))
+		to_chat(user, span_notice("Я хватаю [parent] обеими руками."))
 
 	// Play sound if one is set
 	if(wieldsound)

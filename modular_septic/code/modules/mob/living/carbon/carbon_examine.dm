@@ -182,25 +182,25 @@
 
 	if(!HAS_TRAIT(src, TRAIT_FLUORIDE_STARE))
 		if(!ismob(examined))
-			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> looks at [examined].")), \
-							span_notice("I look at [examined]."), \
+			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> смотрит на [examined].")), \
+							span_notice("Я смотрю на [examined]."), \
 							vision_distance = EYE_CONTACT_RANGE)
 		else
 			var/mob/mob_examined = examined
-			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> looks at \
+			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> смотрит на \
 							<span style='color: [mob_examined.chat_color];'><b>[examined]</b></span>.")), \
-							span_notice("I look at <b>[examined]</b>."), \
+							span_notice("Я смотрю на <b>[examined]</b>."), \
 							vision_distance = EYE_CONTACT_RANGE)
 	else
 		if(!ismob(examined))
-			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> fluoride stares [examined].")), \
-						span_notice("I fluoride stare <b>[examined]</b>."), \
+			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> интересно смотрит на [examined].")), \
+						span_notice("Я интересно смотрю на <b>[examined]</b>."), \
 						vision_distance = EYE_CONTACT_RANGE)
 		else
 			var/mob/mob_examined = examined
-			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> fluoride stares \
+			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> интересно смотрит на \
 						<span style='color: [mob_examined.chat_color];'><b>[examined]</b></span>.")), \
-						span_notice("I fluoride stare <b>[examined]</b>."), \
+						span_notice("Я интересно смотрю на <b>[examined]</b>."), \
 						vision_distance = EYE_CONTACT_RANGE)
 	if(HAS_TRAIT(src, TRAIT_HORROR_STARE))
 		if(!ismob(examined))

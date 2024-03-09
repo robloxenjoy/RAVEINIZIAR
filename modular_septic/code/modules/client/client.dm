@@ -29,7 +29,7 @@
 		else if(country == "Brazil")
 			message_admins(span_adminnotice("[key_name_admin(src)] is a based Brazilian!"))
 	if(mob)
-		broadcast_connection(reconnecting ? "reconnected to the server" : "connected the server")
+		broadcast_connection(reconnecting ? "заново присоединяется к серверу" : "присоединяется к серверу")
 	political_compass = new()
 	political_compass.owner = src
 	political_compass.load_path()
@@ -48,7 +48,7 @@
 	QDEL_NULL(nobody_wants_to_learn_matrix_math)
 //	QDEL_NULL(particool)
 
-/client/proc/broadcast_connection(connection_string = "connected to the server")
+/client/proc/broadcast_connection(connection_string = "присоединяется к серверу")
 	var/bling_bling = prefs?.donator_rank
 	for(var/client/player as anything in GLOB.clients)
 		if(player.prefs)
@@ -56,9 +56,9 @@
 			if(!(prefs.chat_toggles & CHAT_LOGIN_LOGOUT))
 				continue
 		if(bling_bling)
-			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>SERVER:</span> <b>[key]</b> has [connection_string].</span></span>")
+			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>СЕРВЕР:</span> <b>[key]</b> [connection_string].</span></span>")
 		else
-			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>SERVER:</span> <b>[key]</b> has [connection_string].</span>")
+			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>СЕРВЕР:</span> <b>[key]</b> [connection_string].</span>")
 
 /client/proc/broadcast_epicbunkerfail()
 	var/bling_bling = prefs?.donator_rank
@@ -68,9 +68,9 @@
 			if(!(prefs.chat_toggles & CHAT_LOGIN_LOGOUT))
 				continue
 		if(bling_bling)
-			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>SERVER:</span> Epic connection fail. Laugh at <b>[key]</b>.</span></span>")
+			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>СЕРВЕР:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
 		else
-			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>SERVER:</span> Epic connection fail. Laugh at <b>[key]</b>.</span></span>")
+			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>СЕРВЕР:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
 
 /client/proc/bruh_moment()
 	var/sound/bruh = sound('modular_septic/sound/memeshit/bruh.ogg', FALSE, 0, CHANNEL_LOBBYMUSIC, 100)

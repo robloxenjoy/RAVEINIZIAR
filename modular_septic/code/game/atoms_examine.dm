@@ -1,7 +1,7 @@
 // Generate the full examine string of this atom (including icon for goonchat)
 /atom/get_examine_string(mob/user, thats = FALSE)
 //	return "[icon2html(src, user)] [thats ? "That's ":""][thats ? "<EM><b>[get_examine_name(user)]</b></EM>" : get_examine_name(user)]"
-	return "[thats ? "That's ":""][thats ? "<EM><b>[get_examine_name(user)]</b></EM>" : get_examine_name(user)]"
+	return "Это <EM><b>[get_examine_name(user)]</b></EM>"
 
 // Calling on_examine()
 /atom/examine(mob/user)
@@ -27,7 +27,7 @@
 /atom/proc/topic_examine(mob/user)
 	. = list()
 	if(uses_integrity)
-		. += span_notice("<a href='?src=[REF(src)];integrity=1'>Integrity</a>")
+		. += span_notice("<a href='?src=[REF(src)];integrity=1'>Состояние</a>")
 	SEND_SIGNAL(src, COMSIG_ATOM_TOPIC_EXAMINE, user, .)
 
 /// Displayed after desc, but before examine child calls

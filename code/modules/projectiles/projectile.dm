@@ -284,9 +284,9 @@
 			if(hitsound)
 				var/volume = vol_by_damage()
 				playsound(src, hitsound, volume, TRUE, -1)
-			to_chat(L, span_userdanger("I'm hit by \the [src]!"))
-//			L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
-//					span_userdanger("You're hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
+			to_chat(L, span_userdanger("Я поражаюсь \ [src]!"))
+//			L.visible_message(span_danger("[L] поражается \ [src][organ_hit_text]!"), \
+//					span_userdanger("Я поражаюсь \ [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
 		L.on_hit(src)
 
 	var/reagent_note

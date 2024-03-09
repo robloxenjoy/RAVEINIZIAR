@@ -1,6 +1,6 @@
 /obj/item/bodypart/mouth
-	name = "jaw"
-	desc = "I have no mouth and i must scream."
+	name = "Челюсть"
+	desc = "У меня нет рта, но я должен кричать."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "jaw"
 	base_icon_state = "jaw"

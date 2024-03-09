@@ -11,10 +11,11 @@
 	if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 		for(var/mob/living/carbon/human/M in range(7, src))
 			if(M != src && (src in view(M)))
-//				to_chat(M, span_bobux("I have seen a death of fatal! +10 kaotiks!"))
+//				to_chat(M, span_bobux("Я видел смерть фатала! +10 ультр!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[src.real_name]", /datum/mood_event/fraggot/killed)
 				if(M.client?.prefs)
-					M.client.prefs.adjust_bobux(100, "<span class='bobux'>I have seen a death of fatal! +100 kaotiks!</span>")
+					M.client.prefs.adjust_bobux(100, "<span class='bobux'>Я видел смерть фатала! +100 ультр!</span>")
+/*
 	if(iswillet(src))
 		if(has_died)
 			return
@@ -22,7 +23,7 @@
 			if(M != src && (src in view(M)))
 				if(!iswillet(M))
 					M.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of weak willet! +10 kaotiks!</span>")
-
+*/
 
 /mob/living/revive(full_heal, admin_revive, excess_healing)
 	. = ..()

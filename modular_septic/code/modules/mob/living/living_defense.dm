@@ -15,8 +15,8 @@
 			log_combat(thrown_by, src, "threw and hit", thrown_item)
 		if(nosell_hit)
 			return ..()
-		visible_message(span_danger("<b>[src]</b> is hit by [thrown_item]!"), \
-						span_userdanger("I'm hit by [thrown_item]!"))
+		visible_message(span_danger("<b>[src]</b> поражается [thrown_item]!"), \
+						span_userdanger("Я поражаюсь [thrown_item]!"))
 		if(!thrown_item.throwforce)
 			return
 		var/sharpness = thrown_item.get_sharpness()
