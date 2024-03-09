@@ -73,12 +73,18 @@
 	base_icon_state = "window_green"
 
 /obj/structure/codec/window/red
-	name = "Окно"
+	name = "Красивое Окно"
 	desc = "На нём не видно крови, но она там есть."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "window_va-closed"
 	base_icon_state = "window_va"
 	opaque_closed = TRUE
+
+/obj/structure/codec/window/Initialize(mapload)
+	. = ..()
+	if(!open)
+		if(opaque_closed)
+			set_opacity(TRUE)
 
 /obj/structure/codec/window/proc/toggle()
 	open = !open
