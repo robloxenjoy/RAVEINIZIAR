@@ -1,3 +1,4 @@
+/*
 /datum/job/assistant
 	title = "Doggoned"
 	total_positions = 0
@@ -22,6 +23,7 @@
 	var/datum/disease/advance/doggoned_astheneia = new /datum/disease/advance/random(rand(1, 2), rand(1, 5))
 	doggoned_astheneia.name = "Doggoned Astheneia"
 	doggoned_astheneia.try_infect(spawned)
+*/
 
 /datum/outfit/job/assistant/zoomtech
 	name = "Stowaway"

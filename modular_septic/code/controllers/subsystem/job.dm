@@ -23,7 +23,7 @@
 //		var/month = lowertext(time2text(station_realtime, "Month")) // current month (text)
 //		var/day_of_the_week = lowertext(time2text(station_realtime, "Day")) // current weekday (text)
 //		introduction += span_infoplain("\nСегодня [DD][st_nd_rd_th(DD)] [month] [YYYY].")
-//		introduction += span_infoplain("\nЭто [prefix_a_or_an(day_of_the_week)] [day_of_the_week].")
+//		introduction += span_infoplain("\nЭто [day_of_the_week].")
 /*
 		if(ishuman(equipping))
 			var/mob/living/carbon/human/equipping_human = equipping

@@ -76,9 +76,9 @@
 	var/visible_gender = t_he
 	switch(visible_gender)
 		if("he", "she", "am")
-			visible_gender = "Его [get_aged_gender(TRUE, TRUE)]."
+			visible_gender = "Это [get_aged_gender(TRUE, TRUE)]."
 		if("i")
-			visible_gender = "Его [get_aged_gender(TRUE, TRUE)]."
+			visible_gender = "Это [get_aged_gender(TRUE, TRUE)]."
 		else
 			if(user != src)
 				visible_gender = "Я не знаю его пола."
@@ -330,15 +330,15 @@
 	if(user.attributes && (user != src))
 		switch(GET_MOB_SKILL_VALUE_RAW(user, STAT_STRENGTH)-GET_MOB_SKILL_VALUE_RAW(src, STAT_STRENGTH))
 			if(-INFINITY to -3)
-				msg += span_danger("[t_He] [t_is] much stronger than me.")
+				msg += span_danger("Он намного сильнее меня.")
 			if(-2, -1)
-				msg += "[t_He] [t_is] stronger than me."
+				msg += "Он сильнее меня."
 			if(0)
-				msg += span_notice("[t_He] [t_is] about as strong as me.")
+				msg += span_notice("Он также силён, как и я.")
 			if(1, 2)
-				msg += span_notice("[t_He] [t_is] weaker than me.")
+				msg += span_notice("Он слабее меня.")
 			if(3 to INFINITY)
-				msg += span_boldnotice("[t_He] [t_is] much weaker than me.")
+				msg += span_boldnotice("Он намного слабее меня.")
 	if(stat < DEAD)
 		if(src != user)
 			if(drunkenness && !skipface) //Drunkenness

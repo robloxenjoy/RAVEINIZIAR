@@ -1,5 +1,7 @@
+/*
 /datum/job/assistant
 	attribute_sheet = /datum/attribute_holder/sheet/job/beggar
+*/
 
 /datum/job/prisoner
 	attribute_sheet = /datum/attribute_holder/sheet/job/beggar
@@ -101,6 +103,9 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/janitor
 
 /datum/job/outcombat
+	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
+
+/datum/job/zek_glad
 	attribute_sheet = /datum/attribute_holder/sheet/job/outcombat
 
 /datum/job/manhunter

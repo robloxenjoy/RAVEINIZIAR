@@ -1,28 +1,36 @@
 /proc/parse_zone(zone)
 	switch(zone)
 		if(BODY_ZONE_PRECISE_L_EYE)
-			return "left eyelid"
+			return "Левая Глазница"
 		if(BODY_ZONE_PRECISE_R_EYE)
-			return "right eyelid"
+			return "Правая Глазница"
 		if(BODY_ZONE_PRECISE_MOUTH)
-			return "jaw"
+			return "Челюсть"
+		if(BODY_ZONE_HEAD)
+			return "Голова"
+		if(BODY_ZONE_CHEST)
+			return "Грудь"
+		if(BODY_ZONE_PRECISE_VITALS)
+			return "Живот"
+		if(BODY_ZONE_PRECISE_GROIN)
+			return "Пах"
 		if(BODY_ZONE_PRECISE_NECK)
-			return "throat"
+			return "Шея"
 		if(BODY_ZONE_PRECISE_R_HAND)
-			return "right hand"
+			return "Правая Кисть"
 		if(BODY_ZONE_PRECISE_L_HAND)
-			return "left hand"
+			return "Левая Кисть"
 		if(BODY_ZONE_L_ARM)
-			return "left arm"
+			return "Левая Рука"
 		if(BODY_ZONE_R_ARM)
-			return "right arm"
+			return "Правая Рука"
 		if(BODY_ZONE_L_LEG)
-			return "left leg"
+			return "Левая Нога"
 		if(BODY_ZONE_R_LEG)
-			return "right leg"
+			return "Правая Нога"
 		if(BODY_ZONE_PRECISE_L_FOOT)
-			return "left foot"
+			return "Левая Стопа"
 		if(BODY_ZONE_PRECISE_R_FOOT)
-			return "right foot"
+			return "Правая Стопа"
 		else
 			return zone

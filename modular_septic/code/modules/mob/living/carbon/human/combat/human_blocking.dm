@@ -1,7 +1,7 @@
 /mob/living/carbon/human/check_shields(atom/attacker, \
 									damage = 0, \
-									attack_text = "the attack", \
-									user_attack_text = "my attack", \
+									attack_text = "атаку", \
+									user_attack_text = "мою атаку", \
 									attacking_flags = BLOCK_FLAG_MELEE)
 	/// Can only block while conscious, can only block in combat mode, can't block more than once every second, can only block in parry mode
 	if((stat >= UNCONSCIOUS) || !combat_mode || !COOLDOWN_FINISHED(src, blocking_cooldown) || (dodge_parry != DP_PARRY))

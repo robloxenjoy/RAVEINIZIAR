@@ -1080,16 +1080,17 @@
 //outcombat
 /datum/attribute_holder/sheet/job/outcombat
 	attribute_variance = list(
-		STAT_STRENGTH = list(-1, 5),
-		STAT_ENDURANCE = list(-1, 5),
-		STAT_DEXTERITY = list(-1, 5),
-		STAT_INTELLIGENCE = list(-1, 5),
+		STAT_STRENGTH = list(-2, 5),
+		STAT_ENDURANCE = list(-2, 5),
+		STAT_DEXTERITY = list(-2, 5),
+		STAT_INTELLIGENCE = list(-2, 5),
 		SKILL_BRAWLING = list(-2, 6),
 		SKILL_WRESTLING = list(-2, 6),
 		SKILL_BUCKLER = list(-2, 6),
 		SKILL_SHIELD = list(-2, 6),
 		SKILL_IMPACT_WEAPON_TWOHANDED = list(-2, 6),
 		SKILL_IMPACT_WEAPON = list(-2, 6),
+		SKILL_KNIFE = list(-2, 6),
 		SKILL_SHOTGUN = list(-2, 6),
 		SKILL_SMG = list(-2, 6),
 		SKILL_PISTOL = list(-2, 6),
