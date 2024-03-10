@@ -1,6 +1,6 @@
 /obj/machinery/jukebox
-	name = "jukebox"
-	desc = "A classic music player."
+	name = "Музыкальный Автомат"
+	desc = "Классика."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "jukebox"
 	verb_say = "states"
@@ -14,6 +14,12 @@
 	/// Volume of the songs played
 	var/volume = 50
 	COOLDOWN_DECLARE(jukebox_error_cd)
+
+/obj/machinery/jukebox/indestructible
+	req_access = null
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	flags_1 = NODECONSTRUCT_1
 
 /obj/machinery/jukebox/disco
 	name = "radiant dance machine mark IV"

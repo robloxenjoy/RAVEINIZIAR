@@ -42,7 +42,6 @@
 	if(ishuman(spawned))
 		spawned.apply_status_effect(/datum/status_effect/gakster_dissociative_identity_disorder)
 
-*/
 /datum/job/venturer
 	title = "Venturer"
 	department_head = list("Head of Personnel")
@@ -707,7 +706,7 @@
 	if(strong_slave)
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/strongslave)
 		to_chat(H, span_achievementinteresting("I'm a strong slave, really strong!"))
-		to_chat(H, span_info("Even a hard life has its upsides... Maybe..."))
+		to_chat(H, span_info("Even a hard life has its upsides..."))
 	else
 		H.attributes?.add_sheet(/datum/attribute_holder/sheet/job/aktnailer)
 
@@ -778,3 +777,29 @@
 	pants = /obj/item/clothing/pants/pinker
 	id = /obj/item/key/podpol/woody/controller
 	shoes =/obj/item/clothing/shoes/frogshoes
+*/
+
+/datum/job/zek_glad
+	title = "Гладиаторский Зек"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	supervisors = "no-one"
+	selection_color = "#303234"
+
+	outfit = /datum/outfit/zek_glad
+
+	departments_list = list(
+		/datum/job_department/cargo,
+		)
+
+/datum/outfit/zek_glad
+	name = "Zekglad Uniform"
+
+	uniform = /obj/item/clothing/under/codec/purp
+	pants = /obj/item/clothing/pants/codec/purp
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/zek_glad/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(15))
+		head = /obj/item/clothing/head/helmet/codec/def_yel

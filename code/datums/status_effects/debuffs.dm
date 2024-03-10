@@ -101,15 +101,17 @@
 	if(!.)
 		return
 	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+	SSdroning.kill_droning(owner.client)
 
 /datum/status_effect/incapacitating/unconscious/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
+	if(owner && owner.client)
+		SSdroning.play_area_sound(get_area(owner), owner?.client)
 	return ..()
 
 /datum/status_effect/incapacitating/unconscious/tick()
 	if(owner.getStaminaLoss())
 		owner.adjustStaminaLoss(-0.3) //reduce stamina loss by 0.3 per tick, 6 per 2 seconds
-
 
 //SLEEPING
 /datum/status_effect/incapacitating/sleeping
@@ -123,6 +125,7 @@
 /datum/status_effect/incapacitating/sleeping/on_creation(mob/living/new_owner)
 	. = ..()
 	if(.)
+		SSdroning.kill_droning(owner.client)
 		if(iscarbon(owner)) //to avoid repeated istypes
 			carbon_owner = owner
 		if(ishuman(owner))
@@ -148,6 +151,8 @@
 	if(!HAS_TRAIT(owner, TRAIT_SLEEPIMMUNE))
 		REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, TRAIT_STATUS_EFFECT(id))
 		tick_interval = initial(tick_interval)
+	if(owner && owner.client)
+		SSdroning.play_area_sound(get_area(owner), owner?.client)
 	return ..()
 
 ///If the mob is sleeping and gain the TRAIT_SLEEPIMMUNE we remove the TRAIT_KNOCKEDOUT and stop the tick() from happening

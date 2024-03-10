@@ -75,7 +75,7 @@
 			flash_pain_major()
 			adjustOxyLoss((rand(30, 45)) - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
 			if(wound_messages)
-				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] [p_are()] деоксигенирован!"))
+				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] деоксигенирован!"))
 		if(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_R_ARM)
 			var/obj/item/held_item = get_item_for_held_index(RIGHT_HANDS)
 			if(held_item)

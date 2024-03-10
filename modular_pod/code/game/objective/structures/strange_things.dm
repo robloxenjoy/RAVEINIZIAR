@@ -703,6 +703,7 @@
 	explosion_block = 1
 	damage_deflection = 11
 
+/*
 /obj/structure/stone_eater/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
 	if(.)
@@ -729,6 +730,7 @@
 				new /obj/item/reagent_containers/food/drinks/bottle/beer(get_turf(user))
 			if("baggy")
 				new /obj/item/storage/backpack/baggy(get_turf(user))
+*/
 
 /obj/structure/stone_mixer
 	name = "Stone Mixer"

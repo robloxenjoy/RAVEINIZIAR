@@ -516,3 +516,41 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_oversuit()
+
+/obj/item/clothing/head/helmet/codec/def_yel
+	name = "Шлем"
+	desc = "Валькирия - под таким названием зарегистрирован этот шлем."
+	icon = 'modular_pod/icons/obj/clothing/hats.dmi'
+	icon_state = "yel_bik"
+	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
+	worn_icon_state = "yel_bik"
+	max_integrity = 400
+	limb_integrity = 400
+	body_parts_covered = HEAD|FACE|EYES|JAW
+	flags_inv = HIDEHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
+	flags_cover = HEADCOVERSEYES | PEPPERPROOF
+	repairable_by = /obj/item/stack/ballistic/plate
+	repairable_by_offhand = null
+	integrity_failure = 0.1
+	subarmor = list(SUBARMOR_FLAGS = NONE, \
+                EDGE_PROTECTION = 40, \
+                CRUSHING = 25, \
+                CUTTING = 25, \
+                PIERCING = 15, \
+                IMPALING = 9, \
+                LASER = 1, \
+                ENERGY = 0, \
+                BOMB = 8, \
+                BIO = 0, \
+                FIRE = 20, \
+                ACID = 2, \
+                MAGIC = 0, \
+                WOUND = 10, \
+                ORGAN = 4)
+	armor_broken_sound = "heavy"
+	armor_damaged_sound = "heavy_helmet"
+	armor_damaged_sound_local = "heavy_helmet"
+	carry_weight = 3.5 KILOGRAMS
+	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.ogg'
+	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.ogg'
+	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.ogg'

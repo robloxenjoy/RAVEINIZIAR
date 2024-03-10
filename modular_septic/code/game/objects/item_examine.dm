@@ -1,11 +1,11 @@
 // Nice examine stuff
 /obj/item/examine_chaser(mob/user)
 	. = list()
-	var/p_They = p_they(TRUE)
-	var/p_they = p_they()
-	var/p_Theyre = p_theyre(TRUE)
-	var/p_are = p_are()
-	var/p_s = p_s()
+//	var/p_They = p_they(TRUE)
+//	var/p_they = p_they()
+//	var/p_Theyre = p_theyre(TRUE)
+//	var/p_are = p_are()
+//	var/p_s = p_s()
 
 	switch(germ_level)
 		if(0 to GERM_LEVEL_DIRTY)
@@ -23,7 +23,7 @@
 		. += "Это весит около <b>[get_carry_weight()]кг</b>."
 	else if(user.is_holding(src))
 		. += "Это весит около <b>[round_to_nearest(get_carry_weight(), 1)]кг</b>."
-
+/*
 	if(resistance_flags & INDESTRUCTIBLE)
 		. += "[p_They] seem[p_s] extremely robust! It'll probably withstand anything that could happen to it!"
 	else
@@ -35,5 +35,5 @@
 			. += "[p_They] [p_are] made of cold-resistant materials."
 		if(resistance_flags & FIRE_PROOF)
 			. += "[p_They] [p_are] made of fire-retardant materials."
-
+*/
 	. += ..()
