@@ -42,9 +42,9 @@
 	LAZYSET(weapon.target_specific_diceroll, target, diceroll_modifier)
 	RegisterSignal(weapon, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED), .proc/cancel)
 
-	shooter.visible_message(span_danger("<b>[shooter]</b> aims [weapon] at <b>[target]</b>!"), \
-		span_danger("I aim [weapon]  at <b>[target]</b>!"), ignored_mobs = target)
-	to_chat(target, span_userdanger("<b>[shooter]</b> aims [weapon] at me!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> прицеливает [weapon] в <b>[target]</b>!"), \
+		span_danger("Я прицеливаю [weapon] в <b>[target]</b>!"), ignored_mobs = target)
+	to_chat(target, span_userdanger("<b>[shooter]</b> прицеливает [weapon] в меня!"))
 	apply_target_overlay()
 	add_memory_in_range(target, 7, MEMORY_GUNPOINT, list(DETAIL_PROTAGONIST = target, DETAIL_DEUTERAGONIST = shooter, DETAIL_WHAT_BY = weapon), story_value = STORY_VALUE_OKAY, memory_flags = MEMORY_CHECK_BLINDNESS)
 
@@ -108,8 +108,8 @@
 			steady_aim_timer = addtimer(CALLBACK(src, .proc/update_stage, 2), GUNPOINT_DELAY_STAGE_2, TIMER_STOPPABLE)
 		if(2)
 			if(!silent && (last_stage < stage))
-				to_chat(parent, span_danger("I steady [weapon] on <b>[target]</b>."))
-				to_chat(target, span_userdanger("<b>[parent]</b> has steadied [weapon] on me!"))
+				to_chat(parent, span_danger("Я стабилизрую прицел [weapon] на <b>[target]</b>."))
+				to_chat(target, span_userdanger("<b>[parent]</b> стабилизирует прицел [weapon] на мне!"))
 			diceroll_modifier = GUNPOINT_STAGE_2_MODIFIER
 			if(weapon.stage_two_aim_bonus)
 				diceroll_modifier += weapon.stage_two_aim_bonus
@@ -120,8 +120,8 @@
 			steady_aim_timer = addtimer(CALLBACK(src, .proc/update_stage, 3), GUNPOINT_DELAY_STAGE_3, TIMER_STOPPABLE)
 		if(3)
 			if(!silent && (last_stage < stage))
-				to_chat(parent, span_danger("I have fully steadied [weapon] on <b>[target]</b>."))
-				to_chat(target, span_userdanger("<b>[parent]</b> has fully steadied [weapon] on me!"))
+				to_chat(parent, span_danger("Я полностью стабилизирую прицел [weapon] на <b>[target]</b>."))
+				to_chat(target, span_userdanger("<b>[parent]</b> полностью стабилизирует прицел [weapon] на мне!"))
 			diceroll_modifier = GUNPOINT_STAGE_3_MODIFIER
 			if(weapon.stage_three_aim_bonus)
 				diceroll_modifier += weapon.stage_three_aim_bonus
@@ -223,16 +223,16 @@
 
 /datum/component/gunpoint/proc/unsteady_aim()
 	update_stage(max(0, stage-1))
-	var/final_message = span_warning("My aim unsteadies a bit.")
+	var/final_message = span_warning("Мой прицел немного дестабилизируется.")
 	switch(stage)
 		if(0)
-			final_message = span_warning("My aim unsteadies. It is <b>awful</b> now.")
+			final_message = span_warning("Мой прицел дестабилизируется. Это <b>ужасно</b> теперь.")
 		if(1)
-			final_message = span_warning("My aim unsteadies. It is poor now.")
+			final_message = span_warning("Мой прицел дестабилизируется. Это плохо теперь.")
 		if(2)
-			final_message = span_notice("My aim unsteadies. It is decent now.")
+			final_message = span_notice("Мой прицел дестабилизируется. Это прилично теперь.")
 		if(3)
-			final_message = span_notice("My aim unsteadies. It is still <b>great</b>.")
+			final_message = span_notice("Мой прицел дестабилизируется. Это всё ещё <b>прекрасно</b>.")
 	to_chat(parent, final_message)
 
 /datum/component/gunpoint/proc/apply_target_overlay()
