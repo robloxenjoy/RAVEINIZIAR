@@ -593,12 +593,12 @@
  */
 /atom/proc/get_examine_name(mob/user)
 	. = "[src]"
-/*
-	var/list/override = list(gender == PLURAL ? "some" : "a", " ", "[name]")
+
+	var/list/override = list("[name]")
 	if(article)
 		. = "[article] [src]"
 		override[EXAMINE_POSITION_ARTICLE] = article
-*/
+
 	if(SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, override) & COMPONENT_EXNAME_CHANGED)
 		. = override.Join("")
 

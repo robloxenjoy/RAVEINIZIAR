@@ -1,13 +1,13 @@
 /mob/proc/look_into_distance(atom/A, params)
 	if(!client)
-		to_chat(src, span_warning("[fail_msg(TRUE)] I can't do that."))
+		to_chat(src, span_warning("[fail_msg(TRUE)] Я не могу это сделать."))
 		return
 	if(HAS_TRAIT_FROM(src, TRAIT_LOOKING_INTO_DISTANCE, VERB_TRAIT))
 		unperform_zoom(A, params)
-		to_chat(src, span_notice("I stop looking into the distance."))
+		to_chat(src, span_notice("Я перестаю смотреть вдаль."))
 	else if((A in fov_view(world.view, src)) && (get_dist(src, A) <= world.view))
 		perform_zoom(A, params)
-		to_chat(src, span_notice("I start looking into the distance."))
+		to_chat(src, span_notice("Я смотрю вдаль."))
 
 /mob/proc/perform_zoom(atom/A, params, silent = FALSE)
 	if(!client)

@@ -29,7 +29,7 @@
 		if(LAZYACCESS(modifiers, MIDDLE_CLICK))
 			alt_click_on_tertiary(A)
 		else if(LAZYACCESS(modifiers, RIGHT_CLICK))
-			alt_click_on_secondary(A)
+			alt_click_on_secondaryy(A)
 		else
 			AltClickOn(A)
 		return
@@ -132,11 +132,12 @@
 	if(special_attack == SPECIAL_ATK_JUMP)
 		return attempt_jump(target, FALSE, modifiers)
 
-/mob/proc/alt_click_on_tertiary(atom/A, params)
-//	return look_into_distance(A, params)
 
-//mob/proc/alt_click_secondary(atom/A, params)
-//	return look_into_distance(A, params)
+/mob/proc/alt_click_on_tertiary(atom/A, params)
+	return
+
+/mob/proc/alt_click_on_secondaryy(atom/A, params)
+	return look_into_distance(A, params)
 
 /mob/proc/shift_right_click_on(atom/A, params)
 	if(!isitem(A))

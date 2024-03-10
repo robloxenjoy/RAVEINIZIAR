@@ -50,6 +50,19 @@
 	light_power = 1
 	light_color = "#cbe395"
 
+/obj/structure/codec/bulb/yellow
+	name = "Лампочка"
+	desc = "Правда ли нам нужен этот свет?"
+	icon = 'modular_pod/icons/obj/things/things_2.dmi'
+	icon_state = "bulb_def"
+	plane = GAME_PLANE_BLOOM
+	layer = FLY_LAYER
+	density = FALSE
+	anchored = TRUE
+	light_range = 3
+	light_power = 1
+	light_color = "#e3cf91"
+
 /obj/structure/codec/window
 	max_integrity = 800
 	integrity_failure = 0.1
@@ -312,3 +325,132 @@
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "painting_1"
 	rvat = FALSE
+
+/obj/structure/newgrille/codec
+	name = "Решётка"
+	desc = "Она здесь не без причины."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "grille"
+	density = TRUE
+	anchored = TRUE
+	var/electro = FALSE
+	var/openede = FALSE
+	var/special_openeda = FALSE
+	var/id = null
+	var/opaque_closed = FALSE
+	var/open = FALSE
+
+/obj/structure/newgrille/codec/Initialize(mapload)
+	. = ..()
+	if(special_openeda)
+		GLOB.button_slaves += src
+	if(!open)
+		if(opaque_closed)
+			set_opacity(TRUE)
+
+/obj/structure/newgrille/codec/Destroy()
+	GLOB.button_slaves.Remove(src)
+
+/obj/structure/newgrille/codec/Bumped(atom/movable/AM)
+	if(electro)
+		if(!ismob(AM))
+			return
+		var/mob/living/carbon/M = AM
+		M.electrocute_act(30, src, flags = SHOCK_NOGLOVES)
+
+/obj/structure/newgrille/codec/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(electro)
+		user.electrocute_act(30, src, flags = SHOCK_NOGLOVES)
+
+/obj/structure/newgrille/codec/proc/toggle()
+	if(!openede)
+		return
+	open = !open
+	if(open)
+		set_density(FALSE)
+		set_opacity(FALSE)
+	else
+		set_density(TRUE)
+		if(opaque_closed)
+			set_opacity(TRUE)
+
+	update_appearance()
+
+/obj/structure/newgrille/codec/update_icon_state()
+	if(openede)
+		icon_state = "[base_icon_state]-[open ? "open" : "closed"]"
+	return ..()
+
+/obj/structure/newgrille/codec/arena
+	electro = TRUE
+	special_openeda = TRUE
+	openede = TRUE
+	id = "arena"
+
+/obj/structure/buttona/codec
+	name = "Кнопка"
+	desc = "Интересно."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "buttona"
+	var/cooldown = FALSE
+	var/opens_grilles = FALSE
+	var/ultra_arena = FALSE
+	var/id = null
+	var/signal_got = FALSE
+	var/blocked = FALSE
+	var/should_block = FALSE
+	var/blue = FALSE
+	var/red = FALSE
+
+/obj/structure/buttona/codec/Initialize(mapload)
+	. = ..()
+	GLOB.buttons_masters += src
+
+/obj/structure/buttona/codec/Destroy()
+	GLOB.buttons_masters.Remove(src)
+
+/obj/structure/buttona/codec/attack_hand(mob/user)
+	if(user.a_intent != INTENT_DISARM)
+		return
+	if(cooldown)
+		return
+	cooldown = TRUE
+	if(opens_grilles)
+		if(ultra_arena)
+			for(var/obj/structure/buttona/codec/M in (GLOB.buttons_masters - src))
+				if(M.ultra_arena)
+					if(!M.signal_got)
+						M.signal_got = TRUE
+						if(red)
+							priority_announce("КРАСНЫЕ КНОПКУ НАЖАЛИ!", "КОПЕНГАГЕН", has_important_message = TRUE)
+							SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+						if(blue)
+							priority_announce("СИНИЕ КНОПКУ НАЖАЛИ!", "КОПЕНГАГЕН", has_important_message = TRUE)
+							SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+					else
+						if(signal_got)
+							ultra_arena = FALSE
+							M.ultra_arena = FALSE
+//					M.ultra_arena = FALSE
+//					INVOKE_ASYNC(M, proc/toggle)
+		else
+			if(blocked)
+				return
+			for(var/obj/structure/newgrille/codec/M in GLOB.button_slaves)
+				if(M.id == src.id)
+					INVOKE_ASYNC(M, /obj/structure/newgrille/codec.proc/toggle)
+					if(should_block)
+						blocked = TRUE
+	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
+
+/obj/structure/buttona/codec/arena/red
+	opens_grilles = TRUE
+	id = "arena"
+	ultra_arena = TRUE
+	red = TRUE
+
+/obj/structure/buttona/codec/arena/blue
+	opens_grilles = TRUE
+	id = "arena"
+	ultra_arena = TRUE
+	blue = TRUE
