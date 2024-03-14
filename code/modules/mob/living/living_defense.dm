@@ -379,9 +379,9 @@
 	else
 		adjustStaminaLoss(shock_damage)
 	visible_message(
-		span_danger("[src] was shocked by \the [source]!"), \
-		span_userdanger("You feel a powerful shock coursing through your body!"), \
-		span_hear("You hear a heavy electrical crack.") \
+		span_danger("[src] ударяется током об [source]!"), \
+		span_userdanger("ТО-О-О-К!"), \
+		span_hear("Я слышу что-то электрическое.") \
 	)
 	return shock_damage
 

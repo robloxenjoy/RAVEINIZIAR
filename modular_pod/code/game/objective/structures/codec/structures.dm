@@ -37,11 +37,69 @@
 	light_power = 2
 	light_color = "#ffb04a"
 
+/obj/structure/codec/bulb
+	var/flickering = FALSE
+	var/flickering_now = FALSE
+	var/flicker_prob = 3
+	var/random_flicker_amount = TRUE
+	var/flicker_amount = null
+	var/works = TRUE
+	var/cant_work = FALSE
+	var/cant_flicker = FALSE
+	var/enabled = TRUE
+
+/obj/structure/codec/bulb/update_icon_state()
+	if(enabled)
+		icon_state = "[base_icon_state]"
+		plane = GAME_PLANE_BLOOM
+		set_light_on(TRUE)
+	else
+		icon_state = "[base_icon_state]-disabled"
+		plane = GAME_PLANE
+		set_light_on(FALSE)
+	return ..()
+
+/obj/structure/codec/bulb/Initialize()
+	. = ..()
+	if(flickering)
+		if(prob(flicker_prob))
+			playsound(get_turf(src), 'modular_septic/sound/machinery/broken_bulb_sound.ogg', 50, FALSE, 0)
+			flicker(flicker_amount)
+
+/obj/structure/codec/bulb/proc/flicker(amount)
+	set waitfor = FALSE
+	if(flickering_now)
+		return
+	if(cant_flicker)
+		return
+	if(random_flicker_amount)
+		flicker_amount = rand(5,15)
+	flickering_now = TRUE
+	if(works)
+		for(var/i = 0; i < amount; i++)
+			if(!works)
+				break
+			if(cant_flicker)
+				break
+			enabled = !enabled
+			update(FALSE)
+			sleep(rand(3, 15))
+		enabled = FALSE
+		update(FALSE)
+	flickering_now = FALSE
+
+/obj/structure/codec/bulb/proc/update(trigger = TRUE)
+	. = ..()
+	if(cant_work)
+		cant_flicker = TRUE
+	update_appearance()
+
 /obj/structure/codec/bulb/green
 	name = "Лампочка"
 	desc = "Как будет не светит, а наоборот."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_green"
+	base_icon_state = "bulb_green"
 	plane = GAME_PLANE_BLOOM
 	layer = FLY_LAYER
 	density = FALSE
@@ -49,12 +107,14 @@
 	light_range = 3
 	light_power = 1
 	light_color = "#cbe395"
+	flickering = TRUE
 
 /obj/structure/codec/bulb/yellow
 	name = "Лампочка"
 	desc = "Правда ли нам нужен этот свет?"
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_def"
+	base_icon_state = "bulb_def"
 	plane = GAME_PLANE_BLOOM
 	layer = FLY_LAYER
 	density = FALSE
@@ -62,6 +122,7 @@
 	light_range = 3
 	light_power = 1
 	light_color = "#e3cf91"
+	flickering = TRUE
 
 /obj/structure/codec/window
 	max_integrity = 800
@@ -105,8 +166,13 @@
 		if(open)
 			set_density(FALSE)
 			set_opacity(FALSE)
+			air_update_turf(TRUE, FALSE)
 		else
+			for(var/atom/movable/M in get_turf(src))
+				if(M.density && M != src)
+					return
 			set_density(TRUE)
+			air_update_turf(TRUE, TRUE)
 			if(opaque_closed)
 				set_opacity(TRUE)
 
@@ -121,6 +187,12 @@
 	if(can_touch)
 		if(user.a_intent == INTENT_GRAB)
 //		playsound(loc, 'sound/effects/curtain.ogg', 50, TRUE)
+			if(!open)
+				user.visible_message(span_notice("[user] открывает [src]."), \
+									span_notice("Я открываю [src]."))
+			else
+				user.visible_message(span_notice("[user] закрывает [src]."), \
+						span_notice("Я закрываю [src]."))
 			toggle()
 
 /obj/structure/codec/window/attack_hand(mob/living/user, list/modifiers)
@@ -310,7 +382,7 @@
 	desc = "Это меня пугает!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "symb_1"
-	light_range = 1
+	light_range = 3
 	light_power = 2
 	light_color = "#f89852"
 
@@ -331,6 +403,7 @@
 	desc = "Она здесь не без причины."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "grille"
+	base_icon_state = "grille"
 	density = TRUE
 	anchored = TRUE
 	var/electro = FALSE
@@ -374,6 +447,7 @@
 		if(opaque_closed)
 			set_opacity(TRUE)
 
+	playsound(get_turf(src), 'modular_pod/sound/eff/open_grille.ogg', 100 , vary = FALSE, falloff_exponent = 18, falloff_distance = 2)
 	update_appearance()
 
 /obj/structure/newgrille/codec/update_icon_state()
@@ -415,6 +489,7 @@
 	if(cooldown)
 		return
 	cooldown = TRUE
+	visible_message("<span class = 'notice'>[user] нажимает на [src].</span>")
 	if(opens_grilles)
 		if(ultra_arena)
 			for(var/obj/structure/buttona/codec/M in (GLOB.buttons_masters - src))
@@ -431,8 +506,6 @@
 						if(signal_got)
 							ultra_arena = FALSE
 							M.ultra_arena = FALSE
-//					M.ultra_arena = FALSE
-//					INVOKE_ASYNC(M, proc/toggle)
 		else
 			if(blocked)
 				return
@@ -448,9 +521,11 @@
 	id = "arena"
 	ultra_arena = TRUE
 	red = TRUE
+	should_block = TRUE
 
 /obj/structure/buttona/codec/arena/blue
 	opens_grilles = TRUE
 	id = "arena"
 	ultra_arena = TRUE
 	blue = TRUE
+	should_block = TRUE
