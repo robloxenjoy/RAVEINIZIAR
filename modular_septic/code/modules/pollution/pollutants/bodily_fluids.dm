@@ -1,11 +1,11 @@
 ///Splashing blood makes a tiny bit of this
 /datum/pollutant/metallic_scent
-	name = "Metallic Scent"
+	name = "Металлический аромат"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL
 	smell_intensity = 2
 	thickness = 2
 	descriptor = SCENT_DESC_ODOR
-	scent = "something metallic"
+	scent = "что-то металлическое"
 	color = "#bf0057"
 
 /datum/pollutant/metallic_scent/breathe_act(mob/living/carbon/victim, amount)

@@ -13,11 +13,11 @@
 #define POLLUTION_TASK_DISSIPATE 2
 
 /// Smells bad
-#define SCENT_DESC_ODOR "odor"
+#define SCENT_DESC_ODOR "ужасный запах"
 /// Smells neutral
-#define SCENT_DESC_SMELL "smell"
+#define SCENT_DESC_SMELL "запах"
 /// Smells good
-#define SCENT_DESC_FRAGRANCE "fragrance"
+#define SCENT_DESC_FRAGRANCE "аромат"
 
 #define POLLUTION_DISSIPATION_PLANETARY_MULTIPLIER 3
 

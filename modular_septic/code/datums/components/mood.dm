@@ -15,7 +15,7 @@
 		if(H.belief != null)
 			msg += span_info("\nЯ поклоняюсь <b>[H.belief]</b>.")
 		if(H.mind.assigned_role)
-			msg += span_info("\nПо роли в этом месте, я [prefix_a_or_an(H.mind.assigned_role.title)] <b>[lowertext(H.mind.assigned_role.title)]</b>.")
+			msg += span_info("\nПо роли в этом месте, я <b>[lowertext(H.mind.assigned_role.title)]</b>.")
 		for(var/thing in H.mind.antag_datums)
 			var/datum/antagonist/antag = thing
 			msg += span_info("\nI am <span class='red'><span style='text-shadow: 0 0 3px #FF0000'>\a [lowertext(antag.name)]</span></span>.")

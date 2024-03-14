@@ -40,7 +40,7 @@
 /obj/structure/codec/bulb
 	var/flickering = FALSE
 	var/flickering_now = FALSE
-	var/flicker_prob = 3
+	var/flicker_prob = 5
 	var/random_flicker_amount = TRUE
 	var/flicker_amount = null
 	var/works = TRUE

@@ -130,6 +130,8 @@
 			return
 		var/turf/open/floore = get_step_multiz(src, DOWN)
 		var/turf/open/floord = get_turf(src)
+		if(!istype(floore))
+			return
 		if(!floore.liquids || (floore.liquids.liquid_state <= LIQUID_STATE_FULLTILE))
 			return
 		if(!floord.liquids || (floord.liquids.liquid_state < LIQUID_STATE_PUDDLE))
@@ -163,6 +165,8 @@
 			return
 		var/turf/open/floore = get_step_multiz(src, UP)
 		var/turf/open/floord = get_turf(src)
+		if(!istype(floore))
+			return
 		if(!floore.liquids || (floore.liquids.liquid_state < LIQUID_STATE_PUDDLE))
 			return
 		if(!floord.liquids || (floord.liquids.liquid_state <= LIQUID_STATE_FULLTILE))

@@ -29,7 +29,7 @@
 	scars_covered_by_clothes = FALSE
 
 	cavity_name = "oral cavity"
-	amputation_point_name = "face"
+	amputation_point_name = "лицо"
 	bone_type = BONE_MOUTH
 	tendon_type = TENDON_MOUTH
 	artery_type = ARTERY_MOUTH

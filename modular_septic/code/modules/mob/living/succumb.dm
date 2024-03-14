@@ -63,9 +63,9 @@
 					if(!istype(obj_turf))
 						continue
 					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
-					ghost.plane = GAME_PLANE_OBJECT_PERMANENCE
+					ghost.plane = POLLUTION_PLANE 
 					src.client.images += ghost
-					to_chat(src, span_steal("I'm noticed a trap"))
+					to_chat(src, span_steal("Я замечаю ловушку."))
 
 		if(diceroll == DICE_CRIT_SUCCESS)
 			for(var/obj/visible_obj in view(src))
@@ -74,12 +74,12 @@
 					if(!istype(obj_turf))
 						continue
 					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
-					ghost.plane = GAME_PLANE_OBJECT_PERMANENCE
+					ghost.plane = POLLUTION_PLANE 
 					src.client.images += ghost
-					to_chat(src, span_steal("I'm noticed a trap"))
+					to_chat(src, span_steal("Я замечаю ловушку."))
 
 		if(diceroll <= DICE_FAILURE)
-			to_chat(src, span_steal("I'm failed to notice anything."))
+			to_chat(src, span_steal("Не получается."))
 
 /mob/living/carbon/human/verb/job_work(whispered as null)
 	set name = "Role Info"

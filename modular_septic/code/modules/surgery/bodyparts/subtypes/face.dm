@@ -156,7 +156,7 @@
 	if(!owner)
 		name = initial(name)
 		if(real_name)
-			name = "[real_name]'s face"
+			name = "[real_name] лицо"
 	else
 		name = initial(name)
 
