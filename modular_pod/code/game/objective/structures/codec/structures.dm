@@ -310,21 +310,21 @@
 	desc = "Это меня пугает!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "symb_1"
-	rvat = FALSE
+	light_range = 4
+	light_power = 2
+	light_color = "#f89852"
 
 /obj/structure/sign/poster/contraband/codec/strong
 	name = "Лик"
 	desc = "Восславь силу в себе."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "eviln"
-	rvat = FALSE
 
 /obj/structure/sign/poster/contraband/codec/painting/m
 	name = "Картина"
-	desc = "Пошлятина."
+	desc = "Любовь."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "painting_1"
-	rvat = FALSE
 
 /obj/structure/newgrille/codec
 	name = "Решётка"

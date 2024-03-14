@@ -64,7 +64,7 @@
 	var/ruined = FALSE
 	var/random_basetype
 	var/never_random = FALSE // used for the 'random' subclasses.
-	var/rvat = TRUE
+	var/rvat = FALSE
 
 	var/poster_item_name = "hypothetical poster"
 	var/poster_item_desc = "This hypothetical poster item should not exist, let's be honest here."

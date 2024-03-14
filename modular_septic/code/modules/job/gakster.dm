@@ -780,7 +780,7 @@
 */
 
 /datum/job/zek_glad
-	title = "Гладиаторский Зек"
+	title = "Красный Гладиаторский Зек"
 	department_head = list("Head of Personnel")
 	faction = list("neutral", "swarmer")
 	supervisors = "no-one"
@@ -795,7 +795,32 @@
 /datum/outfit/zek_glad
 	name = "Zekglad Uniform"
 
-	uniform = /obj/item/clothing/under/codec/purp
+	uniform = /obj/item/clothing/under/codec/purp/area/red
+	pants = /obj/item/clothing/pants/codec/purp
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/zek_glad/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(15))
+		head = /obj/item/clothing/head/helmet/codec/def_yel
+
+/datum/job/zek_gladblue
+	title = "Синий Гладиаторский Зек"
+	department_head = list("Head of Personnel")
+	faction = list("neutral", "swarmer")
+	supervisors = "no-one"
+	selection_color = "#303234"
+
+	outfit = /datum/outfit/zek_gladblue
+
+	departments_list = list(
+		/datum/job_department/cargo,
+		)
+
+/datum/outfit/zek_gladblue
+	name = "Zekglad Uniform"
+
+	uniform = /obj/item/clothing/under/codec/purp/area/blue
 	pants = /obj/item/clothing/pants/codec/purp
 	shoes = /obj/item/clothing/shoes/jackboots
 

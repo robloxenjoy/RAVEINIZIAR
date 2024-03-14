@@ -37,12 +37,12 @@
 /// Displayed after examine child calls
 /atom/proc/examine_chaser(mob/user)
 	. = list()
-	if(custom_materials)
-		var/list/materials_list = list()
-		for(var/i in custom_materials)
-			var/datum/material/M = i
-			materials_list += "[M.name]"
-		. += "<u>[p_they(TRUE)] [p_are()] made out of [english_list(materials_list)]</u>."
+//	if(custom_materials)
+//		var/list/materials_list = list()
+//		for(var/i in custom_materials)
+//			var/datum/material/M = i
+//			materials_list += "[M.name]"
+//		. += "<u>[p_they(TRUE)] [p_are()] made out of [english_list(materials_list)]</u>."
 	if(reagents)
 		if(reagents.flags & TRANSPARENT)
 			. += "[p_they(TRUE)] contain[p_s()]:"
