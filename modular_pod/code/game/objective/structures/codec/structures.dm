@@ -310,7 +310,7 @@
 	desc = "Это меня пугает!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "symb_1"
-	light_range = 4
+	light_range = 1
 	light_power = 2
 	light_color = "#f89852"
 
