@@ -1,5 +1,5 @@
 /obj/item/bodypart/r_arm
-	name = "Правая рука"
+	name = "Правая Рука"
 	desc = "Конечность."
 	icon_state = "default_human_r_arm"
 	attack_verb_continuous = list("шлёпает")

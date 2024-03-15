@@ -1,5 +1,5 @@
 /obj/item/bodypart/l_eyelid
-	name = "Левая глазница"
+	name = "Левая Глазница"
 	desc = "Выглядит жутко."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "eyelid"

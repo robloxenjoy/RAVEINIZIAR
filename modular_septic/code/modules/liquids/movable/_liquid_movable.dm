@@ -367,7 +367,7 @@
 	set_height(new_height)
 	var/determined_new_state
 	//We add the turf height if it's possible to state calculations
-	new_height =  CEILING(new_height, 1)
+	new_height = CEILING(new_height, 1)
 	switch(new_height)
 		if(0 to LIQUID_ANKLES_LEVEL_HEIGHT-1)
 			determined_new_state = LIQUID_STATE_PUDDLE

@@ -1,5 +1,5 @@
 /obj/item/bodypart/l_leg
-	name = "Левая нога"
+	name = "Левая Нога"
 	desc = "Конечность."
 	icon_state = "default_human_l_leg"
 	attack_verb_continuous = list("kicks", "stomps")
