@@ -86,9 +86,7 @@
 		switch(rand(1,11))
 			if(1)
 				owner.vomit()
-			if(2,3)
-				owner.dizziness += 10
-			if(4,5)
+			if(2 to 5)
 				owner.add_confusion(10)
 				owner.blur_eyes(10)
 			if(6 to 9)

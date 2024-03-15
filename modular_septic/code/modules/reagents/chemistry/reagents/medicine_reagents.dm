@@ -38,7 +38,7 @@
 
 /datum/reagent/medicine/atropine/overdose_process(mob/living/M, delta_time, times_fired)
 	. = ..()
-	M.Dizzy(1 * REM * delta_time)
+//	M.Dizzy(1 * REM * delta_time)
 	M.Jitter(1 * REM * delta_time)
 	ADJUSTBRAINLOSS(M, 2 * REM * delta_time)
 
@@ -86,7 +86,7 @@
 	if(DT_PROB(20, delta_time))
 		M.drop_all_held_items()
 	if(DT_PROB(20, delta_time))
-		M.Dizzy(2)
+//		M.Dizzy(2)
 		M.Jitter(2)
 	return ..()
 

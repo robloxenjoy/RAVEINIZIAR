@@ -310,7 +310,7 @@
 				owner.add_confusion(2.5)
 				owner.stuttering += 1
 				owner.vomit(10, 0, 1, 0, 1, 0)
-			owner.Dizzy(5)
+//			owner.Dizzy(5)
 		if(owner.disgust >= DISGUST_LEVEL_DISGUSTED)
 			if(DT_PROB(13, delta_time))
 				owner.blur_eyes(3) //We need to add more shit down here

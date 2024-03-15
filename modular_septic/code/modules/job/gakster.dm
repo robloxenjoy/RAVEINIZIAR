@@ -780,7 +780,7 @@
 */
 
 /datum/job/zek_glad
-	title = "Красный Гладиаторский Зек"
+	title = "Red Zek"
 	department_head = list("Head of Personnel")
 	faction = list("neutral", "swarmer")
 	supervisors = "no-one"

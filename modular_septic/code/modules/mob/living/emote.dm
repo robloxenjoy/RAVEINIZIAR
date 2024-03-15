@@ -251,24 +251,26 @@
 /datum/emote/living/deathrattle
 	key = "deathrattle"
 	key_third_person = "deathrattles"
-	message = "makes a disgusting noise."
+	message = "делает ужасный звук."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
 
 /datum/emote/living/deathrattle/get_sound(mob/living/user)
-	if(ishuman(user))
-		if(is_species(user, /datum/species/human))
-			return "modular_septic/sound/emotes/deathgasp.ogg"
-		else if(is_species(user, /datum/species/pighuman) || is_species(user, /datum/species/boarhuman))
-			return "modular_pod/sound/eff/piggator.ogg"
-		else
-			return "modular_pod/sound/eff/willet_death.ogg"
+	var/mob/living/carbon/human/human_user = user
+	if(istype(human_user))
+		switch(human_user.dna.species.id)
+			if(SPECIES_HUMAN)
+				return "modular_septic/sound/emotes/deathgasp.ogg"
+			if(SPECIES_PIGHUMAN)
+				return "modular_pod/sound/eff/piggator.ogg"
+			if(SPECIES_WEAKWILLET)
+				return "modular_pod/sound/eff/willet_death.ogg"
 	else
 		return ..()
 
 /datum/emote/living/deathgasp
-	message = "makes a disgusting noise."
+	message = "делает ужасный звук."
 
 /datum/emote/living/crackaddict
 	key = "crackaddict"

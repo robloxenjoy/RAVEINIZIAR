@@ -123,7 +123,7 @@
 			owner.Jitter(5)
 			owner.blind_eyes(10)
 		if(4)
-			owner.dizziness += 10
+//			owner.dizziness += 10
 			owner.add_confusion(10)
 			owner.Jitter(10)
 			owner.stuttering += 10

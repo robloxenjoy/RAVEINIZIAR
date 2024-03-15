@@ -7,11 +7,11 @@
 	mood_change = -8
 
 /datum/mood_event/on_fire
-	description = "<span class='boldwarning'>I'M ON FIRE!!!</span>\n"
+	description = "<span class='boldwarning'>Я В ОГНЕ!</span>\n"
 	mood_change = -12
 
 /datum/mood_event/suffocation
-	description = "<span class='boldwarning'>CAN'T... BREATHE...</span>\n"
+	description = "<span class='boldwarning'>НЕ МОГУ ДЫШАТЬ...</span>\n"
 	mood_change = -12
 
 /datum/mood_event/burnt_thumb
@@ -73,7 +73,7 @@
 	timeout = 60 SECONDS
 
 /datum/mood_event/dismembered
-	description = "<span class='boldwarning'>AHH! I WAS USING THAT LIMB!</span>\n"
+	description = "<span class='boldwarning'>МНЕ НУЖНА БЫЛА ЭТА КОНЕЧНОСТЬ!</span>\n"
 	mood_change = -10
 	timeout = 8 MINUTES
 
@@ -83,7 +83,7 @@
 	timeout = 2 MINUTES
 
 /datum/mood_event/embedded
-	description = "<span class='boldwarning'>Pull it out!</span>\n"
+	description = "<span class='boldwarning'>Нужно это вытащить!</span>\n"
 	mood_change = -7
 
 /datum/mood_event/table
@@ -113,7 +113,7 @@
 
 /datum/mood_event/brain_damage/add_effects()
 	var/damage_message = pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage")
-	description = "<span class='warning'>Hurr durr... [damage_message]</span>\n"
+	description = "<span class='warning'>Брраа ббээ... [damage_message]</span>\n"
 
 /datum/mood_event/hulk //Entire duration of having the hulk mutation
 	description = "<span class='warning'>HULK SMASH!</span>\n"

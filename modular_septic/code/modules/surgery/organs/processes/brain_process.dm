@@ -41,7 +41,7 @@
 		if(-INFINITY to BLOOD_VOLUME_SURVIVE)
 //			owner.blur_eyes(6)
 			if((brain.current_blood <= 0) && DT_PROB(7.5, delta_time))
-				to_chat(owner, span_userdanger("<i>I feel [pick("heavy", "dehydrated", "empty")] and [pick("faint", "weak", "lightheaded", "dizzy")]!</i>"))
+				to_chat(owner, span_userdanger("<i>Я чувствую себя [pick("тяжело", "обезвоженным", "пустым")] и [pick("бледным", "слабым", "ветрено", "головокружительно")]!</i>"))
 			owner.adjustOxyLoss(5 * delta_time)
 			owner.Unconscious(rand(6,12) SECONDS)
 			damprob = is_stable ? 65 : 100

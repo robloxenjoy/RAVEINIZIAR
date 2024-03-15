@@ -109,7 +109,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = TRUE
 
 /obj/effect/landmark/start/zek_glad
-	name = "Красный Гладиаторский Зек"
+	name = "Red Zek"
 	icon_state = "Prisoner"
 	delete_after_roundstart = FALSE
 	jobspawn_override = TRUE
