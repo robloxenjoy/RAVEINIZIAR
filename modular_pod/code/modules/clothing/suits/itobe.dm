@@ -70,12 +70,12 @@
 
 /obj/item/clothing/under/codec/purp/area/red
 	picked = TRUE
-	detail_color = "#2d4ef8"
+	detail_color = "#f84e2d"
 	detail_tag = "_spl"
 
 /obj/item/clothing/under/codec/purp/area/blue
 	picked = TRUE
-	detail_color = "#f84e2d"
+	detail_color = "#2d4ef8"
 	detail_tag = "_spl"
 
 /obj/item/clothing/under/codec/purp/area/Initialize(mapload)
