@@ -336,8 +336,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	//SEPTIC EDIT END
 	// Initialize tgui panel
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
-	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
-	tgui_panel.initialize()
+//	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
+//	tgui_panel.initialize()
 
 	if(alert_mob_dupe_login && !holder)
 		var/dupe_login_message = "Your ComputerID has already logged in with another key this round, please log out of this one NOW or risk being banned!"
