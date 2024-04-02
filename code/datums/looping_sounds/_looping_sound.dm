@@ -114,7 +114,7 @@
 		UnregisterSignal(parent, COMSIG_PARENT_QDELETING)
 	parent = new_parent
 	if(parent)
-		RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_parent_del))
+		RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/handle_parent_del)
 
 /datum/looping_sound/proc/handle_parent_del(datum/source)
 	SIGNAL_HANDLER
