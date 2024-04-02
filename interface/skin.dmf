@@ -1,69 +1,25 @@
 macro "default"
 
-menu "menu"
-	elem
-		name = "&File"
-		command = ""
-		saved-params = "is-checked"
-	elem
-		name = "&Quick screenshot\tF2"
-		command = ".screenshot auto"
-		category = "&File"
-		saved-params = "is-checked"
-	elem
-		name = "&Save screenshot as...\tShift+F2"
-		command = ".screenshot"
-		category = "&File"
-		saved-params = "is-checked"
-	elem
-		name = ""
-		command = ""
-		category = "&File"
-		saved-params = "is-checked"
-	elem "reconnectbutton"
-		name = "&Reconnect"
-		command = ".reconnect"
-		category = "&File"
-		saved-params = "is-checked"
-	elem
-		name = "&Quit\tAlt-F4"
-		command = ".quit"
-		category = "&File"
-		saved-params = "is-checked"
-	elem
-		name = "&Help"
-		command = ""
-		saved-params = "is-checked"
-	elem
-		name = "&Admin Help\tF1"
-		command = "adminhelp"
-		category = "&Help"
-		saved-params = "is-checked"
-	elem
-		name = "&Hotkeys"
-		command = "hotkeys-help"
-		category = "&Help"
-		saved-params = "is-checked"
 
 window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
-		pos = 281,0
-		size = 640x440
+		pos = 0,0
+		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
 		is-default = true
-		saved-params = "pos;size;is-minimized;is-maximized"
+		saved-params = "pos;size;is-maximized;titlebar;can-resize;menu"
 		statusbar = false
 		is-maximized = true
-		icon = 'icons\\ss_32.png'
+		icon = 'icons\\tg_32.png'
 		macro = "default"
 		menu = "menu"
 	elem "split"
 		type = CHILD
 		pos = 3,0
-		size = 634x440
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -71,7 +27,7 @@ window "mainwindow"
 		left = "mapwindow"
 		right = "infowindow"
 		is-vert = true
-		show-splitter = false
+		splitter = 68
 	elem "asset_cache_browser"
 		type = BROWSER
 		pos = 0,0
@@ -93,12 +49,11 @@ window "mainwindow"
 window "mapwindow"
 	elem "mapwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 0,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		is-pane = true
-		saved-params = "pos;size;is-minimized;is-maximized"
 	elem "map"
 		type = MAP
 		pos = 0,0
@@ -110,38 +65,7 @@ window "mapwindow"
 		is-default = true
 		saved-params = "icon-size;zoom-mode"
 		style = ".center { text-align: center; }\n.maptext { font-family: 'Small Fonts'; font-size: 7px; -dm-text-outline: 1px black; color: white; line-height: 1.1; }\n.command_headset { font-weight: bold;\tfont-size: 8px; } .small { font-size: 6px; }\n.big { font-size: 8px; }\n.reallybig { font-size: 8px; }\n.extremelybig { font-size: 8px; }\n.greentext { color: #00ff00; font-size: 7px; }\n.redtext { color: #ff0000; font-size: 7px; }\n.clown { color: #ff69bf; font-size: 7px;  font-weight: bold; }\n.his_grace { color: #15d512; }\n.hypnophrase { color: #0d0d0d; font-weight: bold; }\n.yell { font-weight: bold; }\n.italics { font-size: 6px; }"
-	elem "lobbybrowser"
-		type = BROWSER
-		pos = 0,0
-		size = 640x480
-		anchor1 = 0,0
-		anchor2 = 100,100
-		background-color = none
-		is-visible = false
-		is-disabled = true
-		saved-params = ""
-		auto-format = false
-	elem "lobby_preview_map"
-		type = MAP
-		pos = 520,0
-		size = 120x480
-		anchor1 = 75,0
-		anchor2 = 100,100
-		right-click = true
-		saved-params = "zoom;letterbox;zoom-mode"
-		is-visible = false
-		is-disabled = true
-	elem "status_bar"
-		type = LABEL
-		pos = 0,464
-		size = 280x16
-		anchor1 = 0,100
-		is-visible = false
-		text = ""
-		align = left
-		background-color = #222222
-		text-color = #ffffff
-		border = line
+
 
 window "infowindow"
 	elem "infowindow"
@@ -151,16 +75,18 @@ window "infowindow"
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
-		saved-params = "pos;size;is-minimized;is-maximized"
+		saved-params = "pos;size"
 		is-pane = true
+		outer-size = 656x538
+		inner-size = 640x499
 	elem "info"
 		type = CHILD
-		pos = 0,30
-		size = 640x445
+		pos = 0,5
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
-		saved-params = ""
+		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
@@ -179,7 +105,7 @@ window "outputwindow"
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
-		size = 640x456
+		size = 635x440
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -189,7 +115,7 @@ window "outputwindow"
 	elem "output"
 		type = OUTPUT
 		pos = 0,0
-		size = 640x456
+		size = 635x440
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -213,13 +139,13 @@ window "outputwindow"
 window "statwindow"
 	elem "statwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 0,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		text-color = #d6dbd5
 		background-color = #000000
-		saved-params = "pos;size;is-minimized;is-maximized"
+		saved-params = "pos;size"
 		is-pane = true
 	elem "stat"
 		type = INFO
@@ -245,38 +171,42 @@ window "statwindow"
 window "popupwindow"
 	elem "popupwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 281,150
 		size = 120x120
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		is-visible = false
 		statusbar = false
 		can-resize = false
-		saved-params = "pos;size;is-minimized;is-maximized"
+		icon = 'icons\\tg_32.png'
 
 window "preferences_window"
 	elem "preferences_window"
 		type = MAIN
-		pos = 281,0
-		size = 1280x1000
+		pos = 372,150
+		size = 700x530
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		is-visible = false
 		statusbar = false
-		saved-params = "pos;size;is-minimized;is-maximized"
+		can-close = false
+		can-resize = false
+		icon = 'icons\\tg_32.png'
 	elem "preferences_browser"
 		type = BROWSER
 		pos = 0,0
-		size = 1280x1000
+		size = 700x530
 		anchor1 = 0,0
-		anchor2 = 100,100
+		anchor2 = 75,100
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
-		pos = 0,0
-		size = 340x240
-		anchor1 = 0,0
+		pos = 260,200
+		size = 140x192
+		anchor1 = 75,0
 		anchor2 = 100,100
 		background-color = #000000
-		is-visible = false
+		right-click = true
+		icon-size = 64
+		zoom-mode = "distort"
 
