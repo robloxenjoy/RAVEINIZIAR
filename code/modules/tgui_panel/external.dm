@@ -21,7 +21,7 @@
 	if (action == "No, switch to old ui")
 		winset(src, "output", "on-show=&is-disabled=0&is-visible=1")
 		winset(src, "browseroutput", "is-disabled=1;is-visible=0")
-		log_tgui(src, "Failed to fix.", context = "verb/fix_tgui_panel")
+//		log_tgui(src, "Failed to fix.", context = "verb/fix_tgui_panel")
 
 /client/proc/nuke_chat()
 	// Catch all solution (kick the whole thing in the pants)
