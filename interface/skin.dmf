@@ -145,6 +145,7 @@ window "statwindow"
 		anchor2 = -1,-1
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
+		background-color = #000000
 	elem "statbrowser"
 		type = BROWSER
 		pos = 0,0
@@ -153,6 +154,7 @@ window "statwindow"
 		anchor2 = 100,100
 		is-visible = false
 		saved-params = ""
+		background-color = #000000
 
 window "popupwindow"
 	elem "popupwindow"
