@@ -47,7 +47,7 @@
     'color-transparent-text': rgba(0, 0, 0, 0.5),
   ));
   @include meta.load-css('~tgui/styles/components/Input.scss', $with: (
-    'border-color': colors.fg(colors.$label),
+//    'border-color': colors.fg(colors.$label),
     'background-color': #ffffff,
   ));
   @include meta.load-css('~tgui/styles/components/NumberInput.scss');
@@ -68,7 +68,7 @@
   @include meta.load-css('~tgui/styles/layouts/Window.scss');
   @include meta.load-css('~tgui/styles/layouts/TitleBar.scss', $with: (
     'text-color': rgba(0, 0, 0, 0.75),
-    'background-color': base.$color-bg,
+//    'background-color': base.$color-bg,
     'shadow-color-core': rgba(0, 0, 0, 0.25),
   ));
 
