@@ -302,13 +302,12 @@
 		// Remove any slowdown from the cold
 		humi.remove_movespeed_modifier(/datum/movespeed_modifier/cold)
 		// Display alerts based on how hot it is
-		switch(humi.bodytemperature)
-			if(0 to 460)
-				humi.update_hud_bodytemperature(4)
-			if(461 to 700)
-				humi.update_hud_bodytemperature(5)
-			else
-				humi.update_hud_bodytemperature(6)
+		if(humi.bodytemperature in 0 to 460)
+			humi.update_hud_temperature(4)
+		else if(humi.bodytemperature in 461 to 700)
+			humi.update_hud_temperature(5)
+		else
+			humi.update_hud_temperature(6)
 	// Body temperature is too cold, and we do not have resist traits
 	else if(humi.bodytemperature < bodytemp_cold_damage_limit && !HAS_TRAIT(humi, TRAIT_RESISTCOLD))
 		// clear any hot moods and apply cold mood
@@ -317,13 +316,12 @@
 		// Apply cold slow down
 		humi.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/cold, multiplicative_slowdown = ((bodytemp_cold_damage_limit - humi.bodytemperature) / COLD_SLOWDOWN_FACTOR))
 		// Display alerts based how cold it is
-		switch(humi.bodytemperature)
-			if(201 to bodytemp_cold_damage_limit)
-				humi.update_hud_bodytemperature(2)
-			if(120 to 200)
-				humi.update_hud_bodytemperature(1)
-			else
-				humi.update_hud_bodytemperature(0)
+		if(humi.bodytemperature in 201 to bodytemp_cold_damage_limit)
+			humi.update_hud_bodytemperature(2)
+		else if(humi.bodytemperature in 120 to 200)
+			humi.update_hud_bodytemperature(1)
+		else
+			humi.update_hud_bodytemperature(0)
 	// We are not too hot nor cold, remove status and modifiers
 	else
 		humi.update_hud_bodytemperature(3)
@@ -344,23 +342,21 @@
 	// External temperature is too hot, and we do not have resist traits
 	if(area_temp > bodytemp_heat_damage_limit && !HAS_TRAIT(humi, TRAIT_RESISTHEAT))
 		// Display alerts based on how hot it is
-		switch(area_temp)
-			if(0 to 460)
-				humi.update_hud_temperature(4)
-			if(461 to 700)
-				humi.update_hud_temperature(5)
-			else
-				humi.update_hud_temperature(6)
+		if(area_temp in 0 to 460)
+			humi.update_hud_temperature(4)
+		if(area_temp in 461 to 700)
+			humi.update_hud_temperature(5)
+		else
+			humi.update_hud_temperature(6)
 	// Body temperature is too cold, and we do not have resist traits
 	else if(area_temp < bodytemp_cold_damage_limit && !HAS_TRAIT(humi, TRAIT_RESISTCOLD))
 		// Display alerts based how cold it is
-		switch(area_temp)
-			if(201 to bodytemp_cold_damage_limit)
-				humi.update_hud_temperature(2)
-			if(120 to 200)
-				humi.update_hud_temperature(1)
-			else
-				humi.update_hud_temperature(0)
+		if(area_temp in 201 to bodytemp_cold_damage_limit)
+			humi.update_hud_temperature(2)
+		else if(area_temp in 120 to 200)
+			humi.update_hud_temperature(1)
+		else
+			humi.update_hud_temperature(0)
 	// We are not too hot nor cold, remove status and modifiers
 	else
 		humi.update_hud_temperature(3)
