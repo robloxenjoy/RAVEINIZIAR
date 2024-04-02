@@ -158,7 +158,6 @@ window "statwindow"
 		font-style = "6"
 		text-color = #d6dbd5
 		background-color = #000000
-		is-default = true
 		saved-params = ""
 		highlight-color = #f9bb00
 		tab-text-color = #d6dbd5
