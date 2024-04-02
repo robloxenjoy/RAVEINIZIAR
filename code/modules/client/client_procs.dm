@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.directory[ckey] = src
 
 	// Instantiate tgui panel
-	tgui_panel = new(src)
+//	tgui_panel = new(src)
 
 	//set_right_click_menu_mode(TRUE) //SEPTIC EDIT REMOVAL
 
