@@ -89,6 +89,7 @@
 	flickering_now = FALSE
 
 /obj/structure/codec/bulb/proc/update(trigger = TRUE)
+	. = ..()
 	if(cant_work)
 		cant_flicker = TRUE
 	update_appearance()
