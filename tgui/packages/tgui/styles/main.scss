@@ -7,7 +7,7 @@
 @use './base.scss';
 
 // Core styles
-@include meta.load-css('./reset.scss');
+//@include meta.load-css('./reset.scss');
 
 // Atomic classes
 @include meta.load-css('./atomic/candystripe.scss');
