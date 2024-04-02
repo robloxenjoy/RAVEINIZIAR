@@ -139,31 +139,12 @@ window "outputwindow"
 window "statwindow"
 	elem "statwindow"
 		type = MAIN
-		pos = 0,0
-		size = 640x480
+		pos = 281,0
+		size = 340x240
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		text-color = #d6dbd5
-		background-color = #000000
-		saved-params = "pos;size"
+		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
-	elem "stat"
-		type = INFO
-		pos = 0,0
-		size = 640x480
-		anchor1 = 0,0
-		anchor2 = 100,100
-		font-size = 12
-		font-style = "6"
-		text-color = #d6dbd5
-		background-color = #000000
-		saved-params = ""
-		highlight-color = #f9bb00
-		tab-text-color = #d6dbd5
-		tab-background-color = #000000
-		tab-font-size = 20
-		prefix-color = #f9bb00
-		suffix-color = #d6dbd5
 
 window "popupwindow"
 	elem "popupwindow"
