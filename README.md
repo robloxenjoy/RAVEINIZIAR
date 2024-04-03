@@ -1,11 +1,10 @@
-## Raveinstation (PODPOL)
+## Подпол
 
-My Discord Name - ra_ve_in
+Мой ник в дискорде - ra_ve_in
 
-* **JOIN US! Discord server:** https://discord.gg/wUPYTgJ4Th
+* **Наш дискорд-сервер:** https://discord.gg/wUPYTgJ4Th
 
-Best place in all of SS13. 
-No idiots, no bullshit, lots of mechanics and our own sprites. Beauty.
+Механики, собственные спрайты, уникальная атмосфера и в игре и в коммьюнити.
 
-Father is a Bobstation.
+Отец Бобстанция.
 
