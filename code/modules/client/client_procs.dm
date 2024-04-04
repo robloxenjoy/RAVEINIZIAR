@@ -335,7 +335,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 //	src << browse_rsc(file('html/assets/statbg.png'))
 	//SEPTIC EDIT END
 	// Initialize tgui panel
-	src << browse(file('html/statbrowser.html'), "window=statbrowser")
+//	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 //	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
 //	tgui_panel.initialize()
 
