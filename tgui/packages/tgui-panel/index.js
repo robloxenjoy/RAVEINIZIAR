@@ -82,7 +82,7 @@ const setupApp = () => {
     }
     window.update(msg);
   }
-
+/*
   // Unhide the panel
   Byond.winset('output', {
     'is-visible': false,
@@ -117,6 +117,7 @@ const setupApp = () => {
       renderApp();
     });
   }
+*/
 };
 
 setupApp();
