@@ -336,7 +336,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	//SEPTIC EDIT END
 	// Initialize tgui panel
 	src << browse(file('html/statbrowser.html'), "window=statbrowser")
-	src << browse(file('html/browser.css'), "window=browseroutput")
+//	src << browse(file('html/browser.css'), "window=browseroutput")
 //	winset(src, "output", "on-show=&is-disabled=0&is-visible=1")
 //	winset(src, "browseroutput", "is-disabled=1;is-visible=0")
 //	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
