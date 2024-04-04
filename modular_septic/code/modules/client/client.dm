@@ -78,7 +78,7 @@
 	SEND_SOUND(src, bruh)
 
 /client/proc/bruh_and_kick()
-	stop_client_sounds()
+//	stop_client_sounds()
 	bruh_moment()
 	QDEL_IN(src, 4 SECONDS)
 /*

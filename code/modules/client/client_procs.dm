@@ -1218,6 +1218,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/mob/dead/observer/observer = mob
 	observer.ManualFollow(target)
 
+/*
 /client/verb/stop_client_sounds()
 	set name = "Stop Sounds"
 	set category = "OOC"
@@ -1225,3 +1226,4 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	SEND_SOUND(usr, sound(null))
 	tgui_panel?.stop_music()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Stop Self Sounds"))
+*/

@@ -13,15 +13,19 @@
 	var/broken = FALSE
 	var/initialized_at
 
+/*
 /datum/tgui_panel/New(client/client)
 	src.client = client
 	window = new(client, "browseroutput")
 	window.subscribe(src, .proc/on_message)
+*/
 
+/*
 /datum/tgui_panel/Del()
 	window.unsubscribe(src)
 	window.close()
 	return ..()
+*/
 
 /**
  * public
