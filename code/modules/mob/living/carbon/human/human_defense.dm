@@ -783,9 +783,9 @@
 				status += body_part.light_burn_msg
 
 			if(status == "")
-				status = "OK"
+				status = "ОК"
 		var/no_damage
-		if(status == "OK" || status == "no damage")
+		if(status == "ОК" || status == "no damage")
 			no_damage = TRUE
 		var/isdisabled = ""
 		if(body_part.bodypart_disabled)

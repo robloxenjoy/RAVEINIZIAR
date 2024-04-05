@@ -7,7 +7,7 @@
 // Sample font-size: DM: 8 CSS: 64px
 
 /client/script = {"<style>
-body					{font-family: "Eurostile Round Extended Medium";}
+body					{font-family: "Eurostile Round Extended Medium";	overflow: hidden;}
 
 h1, h2, h3, h4, h5, h6	{color: #a4a4a4;	font-family: "Eurostile Round Extended Medium";}
 
@@ -35,7 +35,7 @@ em						{font-style: normal;	font-weight: bold;}
 
 .name					{					font-weight: bold;}
 
-.say					{}
+.say					{color: #939277;}
 .deadsay				{color: #5c00e6;}
 .binarysay				{color: #20c20e;	background-color: #000000;}
 .binarysay a			{color: #00ff00;}
@@ -53,18 +53,17 @@ em						{font-style: normal;	font-weight: bold;}
 .centcomradio			{color: #686868;}
 .aiprivradio			{color: #ff00ff;}
 .redteamradio			{color: #ff0000;}
-.blueteamradio			{color: #0000ff;}
+.blueteamradio			{color: #4f6e73;}
 .greenteamradio			{color: #00ff00;}
 .yellowteamradio		{color: #d1ba22;}
 .gangradio				{color: #ac2ea1;}
 
-.yell					{					font-weight: bold;}
+.yell					{color: #a69277;	font-weight: bold;}
 
 .alert					{color: #e09579;}
 h1.alert, h2.alert		{color: #5a005a;}
 
 .emote					{}
-.yell					{font-weight: bold;}
 .lowpain				{color: #a4a562;}
 .lowestpain				{color: #a4a562; font-size: 85%;}
 .artery					{color: #9B5455;}
@@ -102,13 +101,13 @@ h1.alert, h2.alert		{color: #5a005a;}
 .smallnoticeital		{color: #718fa6; font-style: italic;	font-size: 90%;}
 .boldnotice				{color: #718fa6; font-weight: bold;}
 .hear					{color: #718fa6; font-style: italic;}
-.adminnotice			{color: #0000ff;}
+.adminnotice			{color: #4f6e73;}
 .adminhelp				{color: #ff0000;	font-weight: bold;}
 .unconscious			{color: #916f9a;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}
 .green					{color: #03ff39;}
 .red					{color: #FF0000;}
-.blue					{color: #0000FF;}
+.blue					{color: #4f6e73;}
 .yellow					{color: #d9d200;}
 .white					{color: rgb(199, 199, 199);}
 .nicegreen				{color: #14a833;}
@@ -162,9 +161,9 @@ h1.alert, h2.alert		{color: #5a005a;}
 .his_grace				{color: #15D512;	font-family: sans-serif;	font-style: italic;}
 .hypnophrase			{color: #3bb5d3;	font-weight: bold;}
 
-.phobia			{color: #ba653b;	font-weight: bold;}
+.phobia					{color: #ba653b;	font-weight: bold;}
 .icon					{height: 1em;	width: auto;}
-.infobox				{border: 1px; background: rgba(40, 40, 60, 0.5); margin: 2px 8px;}
+.infobox				{border: 1px; background: rgba(37, 51, 43, 0.5); margin: 2px 8px;}
 
 .infohr 				{border: 0; height: 1px; color: #bbbbff;}
 
@@ -206,7 +205,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 
 .effortlost				{color: #5df4ff; font-size: 110%;}
 
-.animatedpain 					{color: #BA55D3;font-size: 110%;}
+.animatedpain 			{color: #BA55D3;font-size: 110%;}
 
 .flashinguserdanger		{color: #BA55D3; font-size: 125%;}
 </style>"}
