@@ -28,11 +28,11 @@
 		msg += span_info("\nМой пол <i>[lowertext(H.gender)]</i>.")
 		msg += span_info("\nМоя раса <i>[lowertext(H.dna.species.name)]</i>.")
 		if(!(H.dna.species.exotic_blood))
-			msg += span_info("\nМоя группа крови <span class='artery'>[H.dna.blood_type]</span>.")
+			msg += span_info("\nМоя группа крови: <span class='artery'>[H.dna.blood_type]</span>.")
 		else
 			var/datum/reagent/blood_reagent = H.dna.species.exotic_blood
 			var/blood_name = initial(blood_reagent.name)
-			msg += span_info("\nМоя группа крови <span class='artery'>[blood_name]</span>.")
+			msg += span_info("\nМоя группа крови: <span class='artery'>[blood_name]</span>.")
 		if(!H.is_literate())
 			msg += span_info("\nЯ гордо неграмотен.")
 		if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
@@ -45,7 +45,7 @@
 				else
 					msg += span_info("\n<i><b><u>[quirk.name]</u></b></i>")
 	msg += "\n<br><hr class='infohr'>"
-	msg += span_notice("\n<EM>My feelings:</EM>") //Short term
+	msg += span_notice("\n<EM>Мои ощущения:</EM>") //Short term
 	var/left_symbols = get_signs_from_number(mood_level - 5, 1)
 	var/right_symbols = get_signs_from_number(mood_level - 5, 0)
 	if(HAS_TRAIT(user, TRAIT_CAPITALIST_MOOD) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CAPITALIST_MOOD)))

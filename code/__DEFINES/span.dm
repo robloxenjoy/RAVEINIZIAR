@@ -7,7 +7,7 @@
 #define span_adminooc(str) ("<span class='adminooc'>" + str + "</span>")
 #define span_adminsay(str) ("<span class='adminsay'>" + str + "</span>")
 #define span_aiprivradio(str) ("<span class='aiprivradio'>" + str + "</span>")
-#define span_grayd(str) ("<span class='graydar'>" + str + "</span>")
+#define span_grayd(str) ("<span class='grayd'>" + str + "</span>")
 #define span_alert(str) ("<span class='alert'>" + str + "</span>")
 #define span_alertalien(str) ("<span class='alertalien'>" + str + "</span>")
 #define span_alertsyndie(str) ("<span class='alertsyndie'>" + str + "</span>")

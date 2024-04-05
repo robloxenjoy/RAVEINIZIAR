@@ -268,23 +268,23 @@
 
 	if(nutrition < 100 && !blood && !force)
 		if(message)
-			visible_message(span_warning("[src] dry heaves!"), \
-							span_userdanger("You try to throw up, but there's nothing in your stomach!"))
+			visible_message(span_warning("[src] пытается блевануть!"), \
+							span_userdanger("Пытаюсь блевануть, но нечем!"))
 		if(stun)
 			Paralyze(200)
 		return TRUE
 
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
-			visible_message(span_danger("[src] throws up all over [p_them()]self!"), \
-							span_userdanger("You throw up all over yourself!"))
+			visible_message(span_danger("[src] выблёвывает всё на себя!"), \
+							span_userdanger("Я выблёвываю всё на себя!"))
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomitself)
 		distance = 0
 		if(blood)
 			AddComponent(/datum/component/creamed/blood)
 	else
 		if(message)
-			visible_message(span_danger("[src] throws up!"), span_userdanger("You throw up!"))
+			visible_message(span_danger("[src] блюёт!"), span_userdanger("Я блюю!"))
 			if(!isflyperson(src))
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
 

@@ -7,7 +7,7 @@
 // Sample font-size: DM: 8 CSS: 64px
 
 /client/script = {"<style>
-body					{font-family: "Eurostile Round Extended Medium";	overflow: hidden;}
+body					{font-family: "Eurostile Round Extended Medium";}
 
 h1, h2, h3, h4, h5, h6	{color: #a4a4a4;	font-family: "Eurostile Round Extended Medium";}
 
@@ -22,6 +22,8 @@ em						{font-style: normal;	font-weight: bold;}
 .italics				{					font-style: italic;}
 
 .bold					{					font-weight: bold;}
+
+.grayd {color: #8c8c8c;}
 
 .prefix					{					font-weight: bold;}
 .oocplain				{}
@@ -93,7 +95,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 .minorannounce			{					font-weight: bold;  font-size: 3;}
 .greenannounce			{color: #00ff00;	font-weight: bold;}
 .rose					{color: #ff5050;}
-.info					{color: #0000CC;}
+.info					{color: #7c6fc9;}
 .notice					{color: #718fa6;}
 .tinynotice				{color: #718fa6; font-size: 85%;}
 .tinynoticeital			{color: #718fa6; font-style: italic; font-size: 85%;}
