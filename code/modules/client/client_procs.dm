@@ -335,7 +335,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 //	src << browse_rsc(file('html/assets/statbg.png'))
 	//SEPTIC EDIT END
 	// Initialize tgui panel
-	src << browse(file('interface/chat.html'), "window=browseroutput")
+	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 //	src << browse(file('html/browser.css'), "window=browseroutput")
 //	winset(src, "output", "on-show=&is-disabled=0&is-visible=1")
 //	winset(src, "browseroutput", "is-disabled=1;is-visible=0")
