@@ -4058,7 +4058,6 @@
 #include "code\modules\zombie\organs.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
-#include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "modular_pod\code\game\area\areas\polovich.dm"
 #include "modular_pod\code\game\objective\structures\strange_things.dm"
