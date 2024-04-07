@@ -170,12 +170,12 @@
 	assets = list(
 		"playeroptions.css" = 'html/browser/playeroptions.css'
 	)
-
+/*
 /datum/asset/simple/chatpodpol
 	assets = list(
 		"cssfile" = file("interface/cs.css"),
 	)
-
+*/
 /datum/asset/simple/namespaced/common
 	assets = list("padlock.png" = 'icons/ui_icons/common/padlock.png')
 	parents = list("common.css" = 'html/browser/common.css')
