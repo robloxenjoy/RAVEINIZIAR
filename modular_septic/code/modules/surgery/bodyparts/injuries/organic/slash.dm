@@ -9,23 +9,23 @@
 	// The major cut types have the max_bleeding_stage set to the clot stage (which is accordingly given the "blood soaked" descriptor).
 	max_bleeding_stage = 3
 	stages = list(
-		"ugly ripped cut" = 20,
-		"ripped cut" = 10,
-		"cut" = 5,
-		"healing cut" = 2,
-		"small scab" = 0
+		"уродский порез" = 20,
+		"надорванный порез" = 10,
+		"порез" = 5,
+		"мелкий порез" = 2,
+		"малюткин порез" = 0
 		)
 
 /datum/injury/slash/deep
 	max_bleeding_stage = 3
 	infection_rate = 1.3
 	stages = list(
-		"ugly deep ripped cut" = 25,
-		"deep ripped cut" = 20,
-		"deep cut" = 15,
-		"clotted cut" = 8,
-		"scab" = 2,
-		"fresh scar" = 0
+		"глубокий порез" = 25,
+		"уродский порез" = 20,
+		"надорванный порез" = 15,
+		"порез" = 8,
+		"мелкий порез" = 2,
+		"малюткин порез" = 0
 		)
 	fade_away_time = INFINITY
 
@@ -33,12 +33,12 @@
 	max_bleeding_stage = 4
 	infection_rate = 1.5
 	stages = list(
-		"ugly ripped flesh wound" = 35,
-		"ugly flesh wound" = 30,
-		"flesh wound" = 25,
-		"blood soaked clot" = 15,
-		"large scab" = 5,
-		"fresh scar" = 0
+		"уродское рассечение" = 35,
+		"ублюдочный разрез" = 30,
+		"глубокий порез" = 25,
+		"надорванный порез" = 15,
+		"порез" = 5,
+		"мелкий порез" = 0
 		)
 	fade_away_time = INFINITY
 
@@ -46,11 +46,11 @@
 	max_bleeding_stage = 3
 	infection_rate = 2
 	stages = list(
-		"gaping wound" = 50,
-		"large blood soaked clot" = 25,
-		"blood soaked clot" = 15,
-		"small angry scar" = 5,
-		"small straight scar" = 0
+		"кровавый полумесяц" = 50,
+		"глубокий порез" = 25,
+		"надорванный порез" = 15,
+		"порез" = 5,
+		"прямой порез" = 0
 		)
 	fade_away_time = INFINITY
 
@@ -58,11 +58,11 @@
 	max_bleeding_stage = 3
 	infection_rate = 2.5
 	stages = list(
-		"big gaping wound" = 60,
-		"healing gaping wound" = 40,
-		"large blood soaked clot" = 25,
-		"large angry scar" = 10,
-		"large straight scar" = 0
+		"большой полумесяц" = 60,
+		"серьёзное рассечение" = 40,
+		"глубокий порез" = 25,
+		"надорванный порез" = 10,
+		"прямой порез" = 0
 		)
 	fade_away_time = INFINITY
 
@@ -70,10 +70,10 @@
 	max_bleeding_stage = 3
 	infection_rate = 2.5
 	stages = list(
-		"massive wound" = 70,
-		"massive healing wound" = 50,
-		"massive blood soaked clot" = 25,
-		"massive angry scar" = 10,
-		"massive jagged scar" = 0
+		"серьёзный разруб" = 70,
+		"серьёзный полумесяц" = 50,
+		"глубокий порез" = 25,
+		"большой злостный порез" = 10,
+		"зубчатый порез" = 0
 		)
 	fade_away_time = INFINITY

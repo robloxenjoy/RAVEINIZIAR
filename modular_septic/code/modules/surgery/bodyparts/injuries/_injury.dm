@@ -90,7 +90,7 @@
 
 /datum/injury/proc/get_desc(count = TRUE)
 	if(count && (amount > 1))
-		return "[desc]s"
+		return "[desc]"
 	return desc
 
 /datum/injury/proc/get_bleed_rate_of_change()

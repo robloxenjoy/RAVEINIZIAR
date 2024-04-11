@@ -25,7 +25,7 @@
 			msg += span_info("\nЯ <i>правша</i>.")
 		else if(H.handed_flags & LEFT_HANDED)
 			msg += span_info("\nЯ <i>левша</i>.")
-		msg += span_info("\nМой пол <i>[lowertext(H.gender)]</i>.")
+		msg += span_info("\nМой пол... <i>Под</i>.")
 		msg += span_info("\nМоя раса <i>[lowertext(H.dna.species.name)]</i>.")
 		if(!(H.dna.species.exotic_blood))
 			msg += span_info("\nМоя группа крови: <span class='artery'>[H.dna.blood_type]</span>.")
@@ -73,7 +73,7 @@
 	else
 		switch(mood_level)
 			if(1)
-				msg += span_boldwarning("\n[left_symbols]Этот день ебанутен![right_symbols]")
+				msg += span_boldwarning("\n[left_symbols]Этот путь ебанутен![right_symbols]")
 			if(2)
 				msg += span_boldwarning("\n[left_symbols]Я чувствую себя ужасно.[right_symbols]")
 			if(3)
@@ -89,7 +89,7 @@
 			if(8)
 				msg += span_nicegreen("\n[left_symbols]Я чувствую себя круто.[right_symbols]")
 			if(9)
-				msg += span_nicegreen("\n[left_symbols]Этот день прекрасен![right_symbols]")
+				msg += span_nicegreen("\n[left_symbols]Этот путь прекрасен![right_symbols]")
 			else
 				msg += span_nicegreen("\n[left_symbols]Я в норме.[right_symbols]")
 	msg += span_notice("\n<EM>Мои мысли:</EM>")//All moodlets

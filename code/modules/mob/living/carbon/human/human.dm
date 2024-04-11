@@ -51,6 +51,7 @@
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
 	QDEL_LIST(bioware)
+//	SShumannpc.processing -= src
 	GLOB.human_list -= src
 	return ..()
 /* SEPTIC EDIT REMOVAL

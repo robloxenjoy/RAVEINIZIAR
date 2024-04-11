@@ -13,7 +13,7 @@
 #define DEFAULT_NO_BURN_MSG "в здравии"
 #define DEFAULT_LIGHT_BURN_MSG "красновато"
 #define DEFAULT_MEDIUM_BURN_MSG "в волдырях"
-#define DEFAULT_HEAVY_BURN_MSG "ОБУГЛЕННО"
+#define DEFAULT_HEAVY_BURN_MSG "ОБУГЛЕНО"
 
 #define DEFAULT_NO_PAIN_MSG "безболезненно"
 #define DEFAULT_LIGHT_PAIN_MSG "боль"
@@ -28,7 +28,7 @@
 #define ROBOTIC_NO_BURN_MSG "в здравии"
 #define ROBOTIC_LIGHT_BURN_MSG "красновато"
 #define ROBOTIC_MEDIUM_BURN_MSG "кипит"
-#define ROBOTIC_HEAVY_BURN_MSG "ОБУГЛЕННО"
+#define ROBOTIC_HEAVY_BURN_MSG "ОБУГЛЕНО"
 
 // ~cyborg limbs
 #define ROBOTIC_BRUTE_DMG_MULTIPLIER 0.9

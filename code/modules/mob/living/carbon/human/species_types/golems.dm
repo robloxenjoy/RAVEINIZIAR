@@ -677,7 +677,7 @@
 /datum/species/golem/bananium/spec_death(gibbed, mob/living/carbon/human/H)
 	playsound(get_turf(H), 'sound/misc/sadtrombone.ogg', 70, FALSE)
 
-/datum/species/golem/bananium/proc/handle_speech(datum/source, list/speech_args)
+/datum/species/golem/bananium/handle_speech(datum/source, list/speech_args)
 	SIGNAL_HANDLER
 	speech_args[SPEECH_SPANS] |= SPAN_CLOWN
 

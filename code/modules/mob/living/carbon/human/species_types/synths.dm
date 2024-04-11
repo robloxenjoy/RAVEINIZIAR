@@ -131,7 +131,7 @@
 		return ..()
 
 
-/datum/species/synth/proc/handle_speech(datum/source, list/speech_args)
+/datum/species/synth/handle_speech(datum/source, list/speech_args)
 	SIGNAL_HANDLER
 	if (isliving(source)) // yeah it's gonna be living but just to be clean
 		var/mob/living/L = source
