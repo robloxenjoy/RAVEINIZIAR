@@ -165,9 +165,9 @@ h1.alert, h2.alert		{color: #5a005a;}
 
 .phobia					{color: #ba653b;	font-weight: bold;}
 .icon					{height: 1em;	width: auto;}
-.infobox				{border: 1px; background: rgba(37, 51, 43, 0.5); margin: 2px 8px;}
+.infobox				{border: 1px; background: rgba(65, 45, 80, 0.3); margin: 2px 8px;}
 
-.infohr 				{border: 0; height: 1px; color: #bbbbff;}
+.infohr 				{border: 0; height: 1px; color: #be7d64;}
 
 .memo					{color: #638500;	text-align: center;}
 .memoedit				{text-align: center;	font-size: 2;}
