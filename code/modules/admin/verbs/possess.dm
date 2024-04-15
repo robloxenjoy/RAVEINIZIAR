@@ -1,6 +1,6 @@
 /proc/possess(obj/O in world)
 	set name = "Possess Obj"
-	set category = "Object"
+	set category = null
 
 	if((O.obj_flags & DANGEROUS_POSSESSION) && CONFIG_GET(flag/forbid_singulo_possession))
 		to_chat(usr, "[O] is too powerful for you to possess.", confidential = TRUE)
@@ -28,7 +28,7 @@
 
 /proc/release()
 	set name = "Release Obj"
-	set category = "Object"
+	set category = null
 
 	if(!usr.control_object) //lest we are banished to the nullspace realm.
 		return

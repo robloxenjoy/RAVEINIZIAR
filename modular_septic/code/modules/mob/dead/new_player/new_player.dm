@@ -64,7 +64,7 @@
 			client.age_ch = 34
 		client.age_ch = age
 		chooseRole()
-	if("Случайно!")
+	else if("Случайно!")
 		client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт")
 		client.age_ch = rand(18, 100)
 		chooseRole()
@@ -93,7 +93,7 @@
 				character.age = client.age_ch
 				character.truerole = "Капнобатай"
 				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-	if("Роль другая")
+	else if("Роль другая")
 		chooseRole()
-	if("Да нахуй заново сделаю")
+	else if("Да нахуй заново сделаю")
 		return FALSE
