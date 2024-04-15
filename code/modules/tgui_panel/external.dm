@@ -12,7 +12,7 @@
  /*
 /client/verb/fix_tgui_panel()
 	set name = "Fix chat"
-	set category = "OOC"
+	set category = null
 	var/action
 	log_tgui(src, "Started fixing.", context = "verb/fix_tgui_panel")
 

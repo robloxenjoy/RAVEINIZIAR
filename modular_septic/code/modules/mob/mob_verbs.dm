@@ -1,6 +1,6 @@
 /mob/verb/examinate(atom/examinify as mob|obj|turf in view())
 	set name = "Examine"
-	set category = "IC"
+	set category = null
 
 	if(isturf(examinify) && !(sight & SEE_TURFS) && !(examinify in view(client ? client.view : world.view, src)))
 		return

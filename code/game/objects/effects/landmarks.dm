@@ -1,3 +1,23 @@
+/obj/effect/landing
+	name = "landmark"
+	anchored = TRUE
+	plane = GAME_PLANE
+	layer = TURF_LAYER
+	invisibility = INVISIBILITY_ABSTRACT
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	var/spending = 5
+
+/obj/effect/landing/Initialize(mapload)
+	. = ..()
+	GLOB.jobber_list += src
+
+/obj/effect/landing/Destroy()
+	GLOB.jobber_list -= src
+	return ..()
+
+/obj/effect/landing/kapno
+	name = "kapno"
+
 /obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'

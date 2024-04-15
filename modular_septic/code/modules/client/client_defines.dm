@@ -12,3 +12,8 @@
 	var/last_droning_sound
 	/// Current ambient track
 	var/sound/droning_sound
+
+	/// CHARACTER 
+	var/name_ch = null
+	var/age_ch = null
+	var/role_ch = null

@@ -406,7 +406,7 @@
 
 /mob/living/verb/stop_pulling1()
 	set name = "Stop Pulling"
-	set category = "IC"
+	set category = null
 	stop_pulling()
 
 //same as above
@@ -473,7 +473,7 @@
 
 /mob/living/proc/mob_sleep()
 	set name = "Sleep"
-	set category = "IC"
+	set category = null
 
 	if(IsSleeping())
 		to_chat(src, span_warning("You are already sleeping!"))
@@ -517,7 +517,7 @@
 
 /mob/living/proc/toggle_resting()
 	set name = "Rest"
-	set category = "IC"
+	set category = null
 
 	set_resting(!resting, FALSE)
 
@@ -930,7 +930,7 @@
 
 /mob/living/verb/resist()
 	set name = "Resist"
-	set category = "IC"
+	set category = null
 
 	if(!can_resist())
 		//SEPTIC EDIT BEGIN

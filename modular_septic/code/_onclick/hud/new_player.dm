@@ -61,9 +61,17 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 	icon = 'modular_septic/icons/hud/lobby/character_setup.dmi'
 	screen_loc = "SOUTH:+53,CENTER:-335"
 
+/atom/movable/screen/lobby/button/character_setup/Initialize(mapload)
+	. = ..()
+	qdel(src)
+
 /atom/movable/screen/lobby/button/settings
 	icon = 'modular_septic/icons/hud/lobby/settings.dmi'
 	screen_loc = "SOUTH:+117,CENTER:-335"
+
+/atom/movable/screen/lobby/button/settings/Initialize(mapload)
+	. = ..()
+	qdel(src)
 
 /atom/movable/screen/lobby/button/ready
 	icon = 'modular_septic/icons/hud/lobby/ready.dmi'
@@ -76,6 +84,10 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 	if(ready)
 		to_chat(usr, div_infobox(span_boldwarning(FUCKING_IDIOT_MESSAGE)))
 
+/atom/movable/screen/lobby/button/ready/Initialize(mapload)
+	. = ..()
+	qdel(src)
+
 /atom/movable/screen/lobby/button/join
 	icon = 'modular_septic/icons/hud/lobby/join.dmi'
 	screen_loc = "SOUTH:-6,CENTER:-335"
@@ -83,6 +95,10 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/lobby)
 /atom/movable/screen/lobby/button/join/Click(location, control, params)
 	. = ..()
 	to_chat(usr, div_infobox(span_boldwarning(FUCKING_IDIOT_MESSAGE)))
+
+/atom/movable/screen/lobby/button/join/Initialize(mapload)
+	. = ..()
+	qdel(src)
 
 #undef FUCKING_IDIOT_MESSAGE
 

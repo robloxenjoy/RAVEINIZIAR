@@ -1,5 +1,5 @@
 /client/verb/politicalcompass()
 	set name = "Political Compass"
-	set category = "OOC"
+	set category = null
 
 	political_compass.ui_interact(mob)

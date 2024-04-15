@@ -60,7 +60,7 @@ em						{font-style: normal;	font-weight: bold;}
 .yellowteamradio		{color: #d1ba22;}
 .gangradio				{color: #ac2ea1;}
 
-.yell					{color: #a69277;	font-weight: bold;}
+.yell					{color: #b39277;	font-weight: bold;}
 
 .alert					{color: #e09579;}
 h1.alert, h2.alert		{color: #5a005a;}
@@ -165,7 +165,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 
 .phobia					{color: #ba653b;	font-weight: bold;}
 .icon					{height: 1em;	width: auto;}
-.infobox				{border: 1px; background: rgba(65, 45, 80, 0.3); margin: 2px 8px;}
+.infobox				{border: 1px; background: rgba(44, 27, 48, 0.3); margin: 2px 8px;}
 
 .infohr 				{border: 0; height: 1px; color: #be7d64;}
 

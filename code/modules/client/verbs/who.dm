@@ -1,10 +1,10 @@
 #define DEFAULT_WHO_CELLS_PER_ROW 4
 
 /client/verb/who()
-	set name = "Who"
+	set name = "Кто?"
 	set category = "OOC"
 
-	var/msg = "<b>Current Players:</b>\n"
+	var/msg = "<b>Кол-во игроков:</b>\n"
 
 	var/list/Lines = list()
 	var/columns_per_row = DEFAULT_WHO_CELLS_PER_ROW
@@ -20,21 +20,21 @@
 				if(C.holder && C.holder.fakekey)
 					entry += " <i>(as [C.holder.fakekey])</i>"
 				if (isnewplayer(C.mob))
-					entry += " - <font color='darkgray'><b>In Lobby</b></font>"
+					entry += " - <font color='darkgray'><b>В лобби</b></font>"
 				else
-					entry += " - Playing as [C.mob.real_name]"
+					entry += " - Играет как [C.mob.real_name]"
 					switch(C.mob.stat)
 						if(UNCONSCIOUS, HARD_CRIT)
-							entry += " - <font color='darkgray'><b>Unconscious</b></font>"
+							entry += " - <font color='darkgray'><b>Без сознания</b></font>"
 						if(DEAD)
 							if(isobserver(C.mob))
 								var/mob/dead/observer/O = C.mob
 								if(O.started_as_observer)
-									entry += " - <font color='gray'>Observing</font>"
+									entry += " - <font color='gray'>Не жив</font>"
 								else
-									entry += " - <font color='black'><b>DEAD</b></font>"
+									entry += " - <font color='black'><b>МЁРТВ</b></font>"
 							else
-								entry += " - <font color='black'><b>DEAD</b></font>"
+								entry += " - <font color='black'><b>МЁРТВ</b></font>"
 					if(is_special_character(C.mob))
 						entry += " - <b><font color='red'>Antagonist</font></b>"
 				entry += " [ADMIN_QUE(C.mob)]"

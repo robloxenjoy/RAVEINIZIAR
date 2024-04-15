@@ -172,7 +172,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 /client/verb/motd()
 	set name = "MOTD"
-	set category = "OOC"
+	set category = null
 	set desc ="Check the Message of the Day"
 
 	var/motd = global.config.motd
@@ -183,7 +183,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 /client/proc/self_notes()
 	set name = "View Admin Remarks"
-	set category = "OOC"
+	set category = null
 	set desc = "View the notes that admins have written about you"
 
 	if(!CONFIG_GET(flag/see_own_notes))
@@ -194,7 +194,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 /client/proc/self_playtime()
 	set name = "View tracked playtime"
-	set category = "OOC"
+	set category = null
 	set desc = "View the amount of playtime for roles the server has tracked."
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
@@ -206,7 +206,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 // Ignore verb
 /client/verb/select_ignore()
 	set name = "Ignore"
-	set category = "OOC"
+	set category = null
 	set desc ="Ignore a player's messages on the OOC channel"
 
 	// Make a list to choose players from
@@ -288,7 +288,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 // Unignore verb
 /client/verb/select_unignore()
 	set name = "Unignore"
-	set category = "OOC"
+	set category = null
 	set desc = "Stop ignoring a player's messages on the OOC channel"
 
 	// Check if we've ignored any players
@@ -325,21 +325,21 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 /client/proc/show_previous_roundend_report()
 	set name = "Your Last Round"
-	set category = "OOC"
+	set category = null
 	set desc = "View the last round end report you've seen"
 
 	SSticker.show_roundend_report(src, report_type = PERSONAL_LAST_ROUND)
 
 /client/proc/show_servers_last_roundend_report()
 	set name = "Server's Last Round"
-	set category = "OOC"
+	set category = null
 	set desc = "View the last round end report from this server"
 
 	SSticker.show_roundend_report(src, report_type = SERVER_LAST_ROUND)
 
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"
-	set category = "OOC"
+	set category = null
 	set desc = "Fit the width of the map window to match the viewport"
 
 	// Fetch aspect ratio
@@ -402,7 +402,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 /client/verb/policy()
 	set name = "Show Policy"
 	set desc = "Show special server rules related to your current character."
-	set category = "OOC"
+	set category = null
 
 	//Collect keywords
 	var/list/keywords = mob.get_policy_keywords()

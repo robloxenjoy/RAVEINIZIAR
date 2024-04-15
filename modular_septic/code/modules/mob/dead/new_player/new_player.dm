@@ -45,3 +45,54 @@
 	popup.add_stylesheet("playeroptions", 'html/browser/playeroptions.css')
 	popup.set_content(jointext(dat, ""))
 	popup.open(FALSE) // 0 is passed to open so that it doesn't use the onclose() proc
+
+/mob/dead/new_player/verb/playthis()
+	set name = "Играть"
+	set category = "OOC"
+
+	if(!isnewplayer(src))
+		return
+	if(!client)
+		return
+	alert("Кто ты?",,"Щас узнаем!","Случайно")
+	if("Щам узнаем!")
+		var/name = input("Какое имя?", "") as text
+		client.name_ch = name
+		var/age = input("Сколько лет?", "") as num
+		if(age < 18 && age > 100)
+			alert("Теперь по-нормальному.")
+			client.age_ch = 34
+		client.age_ch = age
+		chooseRole()
+	if("Случайно!")
+		client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт")
+		client.age_ch = rand(18, 100)
+		chooseRole()
+
+/mob/dead/new_player/proc/chooseRole()
+	if(!isnewplayer(src))
+		return
+	if(!client)
+		return
+	var/rolevich = input("Какая роль?", "") as text
+	switch(rolevich)
+		if("Капнобатай")
+			client.role_ch = "kapno"
+		else
+			alert("Непонятно. Давай ещё раз.")
+	dolboEbism()
+
+/mob/dead/new_player/proc/dolboEbism()
+	alert("Не хочешь всё сначала?",,"Нормально всё!","Роль другая","Всё сначала")
+	if("Нормально всё!")
+		for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
+			if(spawn_point.name == client.role_ch)
+				var/mob/living/carbon/human/character = new(spawn_point.loc)
+				character.real_name = client.role_ch
+				character.age = client.age_ch
+				character.truerole = "Капнобатай"
+				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
+	if("Роль другая")
+		chooseRole()
+	if("Всё сначала")
+		playthis()

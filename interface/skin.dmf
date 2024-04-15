@@ -10,7 +10,7 @@ window "mainwindow"
 		anchor2 = -1,-1
 		background-color = #000000
 		is-default = true
-		saved-params = "pos;size;is-maximized;titlebar;can-resize;menu"
+		saved-params = "pos;size;is-maximized;titlebar;menu"
 		statusbar = false
 		is-maximized = true
 		icon = 'icons\\tg_32.png'

@@ -1,5 +1,5 @@
 /client/who()
-	set name = "Who"
+	set name = "Кто?"
 	set category = "OOC"
 /*
 	if(!check_rights(R_ADMIN))
@@ -8,7 +8,9 @@
 	if(!SSwho?.who_datum)
 		to_chat(src, span_warning("The who subsystem has not been loaded yet."))
 		return
+/*
 	SSwho?.who_datum?.ui_interact(mob)
+*/
 
 /client/adminwho()
 	set category = "Admin"

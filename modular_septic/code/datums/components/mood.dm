@@ -11,11 +11,11 @@
 		if(H.chat_color)
 			fancy_name = "<span style='color: [sanitized_chat_color];text-shadow: 0 0 3px [sanitized_chat_color];'>[H.real_name]</span>"
 		msg += span_info("\nЯ помню своё имя, это <b>[fancy_name]</b>.")
-		msg += span_info("\nМне <b>[H.age]</b> лет.")
+		msg += span_info("\nПо годам, <b>[H.age]</b>.")
 		if(H.belief != null)
 			msg += span_info("\nЯ поклоняюсь <b>[H.belief]</b>.")
 		if(H.mind.assigned_role)
-			msg += span_info("\nПо роли в этом месте, я <b>[lowertext(H.mind.assigned_role.title)]</b>.")
+			msg += span_info("\nПо роли в этом месте, я <b>[lowertext(H.truerole)]</b>.")
 		for(var/thing in H.mind.antag_datums)
 			var/datum/antagonist/antag = thing
 			msg += span_info("\nI am <span class='red'><span style='text-shadow: 0 0 3px #FF0000'>\a [lowertext(antag.name)]</span></span>.")

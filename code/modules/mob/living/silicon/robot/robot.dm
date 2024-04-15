@@ -382,7 +382,7 @@
 
 /mob/living/silicon/robot/mode()
 	set name = "Activate Held Object"
-	set category = "IC"
+	set category = null
 	set src = usr
 
 	if(incapacitated())

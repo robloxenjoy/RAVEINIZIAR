@@ -989,7 +989,7 @@
 
 /mob/living/silicon/ai/up()
 	set name = "Move Upwards"
-	set category = "IC"
+	set category = null
 
 	if(zMove(UP, TRUE))
 		to_chat(src, span_notice("You move upwards."))

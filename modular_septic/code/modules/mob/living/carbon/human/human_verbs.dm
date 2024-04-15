@@ -1,7 +1,7 @@
 /// Hide mutant bodyparts
 /mob/living/carbon/human/proc/hide_furry_shit()
 	set name = "Hide Mutant Bodyparts"
-	set category = "IC"
+	set category = null
 
 	if(incapacitated())
 		to_chat(src, span_warning("I can't do that right now."))

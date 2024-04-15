@@ -492,7 +492,7 @@
 /* SEPTIC EDIT REMOVAL
 /mob/verb/examinate(atom/examinify as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
 	set name = "Examine"
-	set category = "IC"
+	set category = null
 
 	if(isturf(examinify) && !(sight & SEE_TURFS) && !(examinify in view(client ? client.view : world.view, src)))
 		// shift-click catcher may issue examinate() calls for out-of-sight turfs
@@ -728,7 +728,7 @@
  /*
 /mob/verb/abandon_mob()
 	set name = "Respawn"
-	set category = "OOC"
+	set category = null
 
 	if (CONFIG_GET(flag/norespawn) && (!check_rights_for(usr.client, R_ADMIN) || tgui_alert(usr, "Respawn configs disabled. Do you want to use your permissions to circumvent it?", "Respawn", list("Yes", "No")) != "Yes"))
 		return
@@ -764,7 +764,7 @@
  */
 /mob/verb/cancel_camera()
 	set name = "Cancel Camera View"
-	set category = "OOC"
+	set category = null
 	reset_perspective(null)
 	unset_machine()
 
@@ -1305,7 +1305,7 @@
 ///Show the language menu for this mob
 /mob/verb/open_language_menu()
 	set name = "Open Language Menu"
-	set category = "IC"
+	set category = null
 
 	var/datum/language_holder/H = get_language_holder()
 	H.open_language_menu(usr)
@@ -1404,7 +1404,7 @@
 
 ///Shows a tgui window with memories
 /mob/verb/memory()
-	set name = "Memories"
+	set name = "Память"
 	set category = "IC"
 	set desc = "View your character's memories."
 	if(!mind)

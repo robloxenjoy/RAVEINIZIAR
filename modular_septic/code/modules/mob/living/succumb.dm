@@ -1,6 +1,6 @@
 /mob/living/verb/succumb(whispered as null)
 	set name = "sabdasdbasdn"
-	set category = "IC"
+	set category = null
 	set desc = "so shitty."
 
 	return FALSE

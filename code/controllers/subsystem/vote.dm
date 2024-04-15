@@ -222,7 +222,7 @@ SUBSYSTEM_DEF(vote)
 	return FALSE
 
 /mob/verb/vote()
-	set category = "OOC"
+	set category = null
 	set name = "Vote"
 	SSvote.ui_interact(usr)
 
