@@ -17,6 +17,8 @@
 
 /obj/effect/landing/kapno
 	name = "kapno"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "spawnerr"
 
 /obj/effect/landmark
 	name = "landmark"

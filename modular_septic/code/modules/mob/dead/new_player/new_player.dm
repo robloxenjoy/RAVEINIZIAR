@@ -86,5 +86,6 @@
 				character.age = client.age_ch
 				character.truerole = "Капнобатай"
 				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-	else if("Давай-ка другую")
+				character.key = key
+	else
 		chooseRole()
