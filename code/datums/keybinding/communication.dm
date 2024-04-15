@@ -3,7 +3,7 @@
 
 /datum/keybinding/client/communication/say
 	hotkey_keys = list("T")
-	name = "Say"
+	name = "Говорить"
 	full_name = "IC Say"
 	keybind_signal = COMSIG_KB_CLIENT_SAY_DOWN
 
@@ -15,6 +15,6 @@
 
 /datum/keybinding/client/communication/me
 	hotkey_keys = list("M")
-	name = "Me"
+	name = "Я"
 	full_name = "Custom Emote (/Me)"
 	keybind_signal = COMSIG_KB_CLIENT_ME_DOWN

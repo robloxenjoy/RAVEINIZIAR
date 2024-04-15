@@ -17,6 +17,9 @@
 		TRAIT_CAN_STRIP,
 		TRAIT_CAN_USE_FLIGHT_POTION,
 	)
+	species_traits = list(
+		NO_UNDERWEAR,
+	)
 	liked_food = JUNKFOOD | FRIED
 	disliked_food = GROSS | RAW | CLOTH | SEWAGE
 	limbs_id = "human"

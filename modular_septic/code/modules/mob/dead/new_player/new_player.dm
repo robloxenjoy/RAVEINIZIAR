@@ -83,7 +83,9 @@
 			if(spawn_point.name == client.role_ch)
 				var/mob/living/carbon/human/character = new(spawn_point.loc)
 				character.set_species(/datum/species/human)
-				character.real_name = client.role_ch
+				character.gender = MALE
+				character.genitals = "Male"
+				character.real_name = client.name_ch
 				character.age = client.age_ch
 				character.truerole = "Капнобатай"
 				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
