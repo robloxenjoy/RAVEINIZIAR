@@ -73,7 +73,7 @@
 	if(client.age_ch < 18 && client.age_ch > 100)
 		alert("Теперь по-нормальному.")
 		client.age_ch = 34
-	if(length(client.name_ch) > 30 || < 1)
+	if((length(client.name_ch) > 30) || (length(client.name_ch) < 1))
 		alert("По-нормальному блять.")
 		client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт")
 	var/rolevich = input("Какая роль?", "") as text
