@@ -54,15 +54,12 @@
 		return
 	if(!client)
 		return
-	alert("Кто ты?",,"Щас узнаем!","Случайно")
-	if("Щам узнаем!")
-		var/name = input("Какое имя?", "") as text
-		client.name_ch = name
-		var/age = input("Сколько лет?", "") as num
-		client.age_ch = age
-	else if("Случайно!")
-		client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт")
-		client.age_ch = rand(18, 100)
+	if(client.ready_char)
+		return
+	client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Харамец", "Анклав", "Арсен")
+	client.age_ch = rand(18, 100)
+	client.ready_char = TRUE
+	alert("Я вспомнил кто я!")
 	chooseRole()
 
 /mob/dead/new_player/proc/chooseRole()
@@ -70,12 +67,6 @@
 		return
 	if(!client)
 		return
-	if(client.age_ch < 18 && client.age_ch > 100)
-		alert("Теперь по-нормальному.")
-		client.age_ch = 34
-	if((length(client.name_ch) > 30) || (length(client.name_ch) < 1))
-		alert("По-нормальному блять.")
-		client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт")
 	var/rolevich = input("Какая роль?", "") as text
 	switch(rolevich)
 		if("Капнобатай")
@@ -86,8 +77,8 @@
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
-	alert("Не хочешь всё сначала?",,"Нормально всё!","Роль другая","Да нахуй заново сделаю")
-	if("Нормально всё!")
+	alert("Может другую роль?",,"Играем уже!","Давай-ка другую")
+	if("Играем уже!")
 		for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 			if(spawn_point.name == client.role_ch)
 				var/mob/living/carbon/human/character = new(spawn_point.loc)
@@ -95,7 +86,5 @@
 				character.age = client.age_ch
 				character.truerole = "Капнобатай"
 				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-	else if("Роль другая")
+	else if("Давай-ка другую")
 		chooseRole()
-	else if("Да нахуй заново сделаю")
-		return FALSE

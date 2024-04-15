@@ -17,3 +17,4 @@
 	var/name_ch = null
 	var/age_ch = null
 	var/role_ch = null
+	var/ready_char = FALSE
