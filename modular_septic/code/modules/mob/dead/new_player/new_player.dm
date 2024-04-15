@@ -59,21 +59,23 @@
 		var/name = input("Какое имя?", "") as text
 		client.name_ch = name
 		var/age = input("Сколько лет?", "") as num
-		if(age < 18 && age > 100)
-			alert("Теперь по-нормальному.")
-			client.age_ch = 34
 		client.age_ch = age
-		chooseRole()
 	else if("Случайно!")
 		client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт")
 		client.age_ch = rand(18, 100)
-		chooseRole()
+	chooseRole()
 
 /mob/dead/new_player/proc/chooseRole()
 	if(!isnewplayer(src))
 		return
 	if(!client)
 		return
+	if(client.age_ch < 18 && client.age_ch > 100)
+		alert("Теперь по-нормальному.")
+		client.age_ch = 34
+	if(length(client.name_ch) > 30 || < 1)
+		alert("По-нормальному блять.")
+		client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт")
 	var/rolevich = input("Какая роль?", "") as text
 	switch(rolevich)
 		if("Капнобатай")
