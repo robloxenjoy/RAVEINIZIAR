@@ -254,7 +254,7 @@
 		. += "Move Mode: Sprint"
 	else
 		. += "Move Mode: [capitalize(m_intent)]"
-
+/*
 /mob/living/carbon/human/process()
 	. = ..()
 	if(stat == DEAD && rotting)
@@ -269,3 +269,4 @@
 
 /mob/living/carbon/human/proc/rot()
 	rotting = TRUE
+*/

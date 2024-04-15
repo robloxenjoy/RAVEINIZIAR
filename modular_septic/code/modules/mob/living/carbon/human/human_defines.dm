@@ -46,8 +46,6 @@
 	/// Subtract this from parry sccore
 	var/parrying_penalty = 0
 
-	var/rotting = FALSE //dead body stink
-
 	// ~DATE OF BIRTH VARIABLES
 	/// Day of the month born
 	var/day_born = 1

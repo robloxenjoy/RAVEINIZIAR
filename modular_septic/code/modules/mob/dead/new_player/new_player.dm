@@ -67,12 +67,12 @@
 		return
 	if(!client)
 		return
-	var/rolevich = input("Какая роль?", "") as text
+	var/rolevich = input("Стоп, а какая роль?", "") as text
 	switch(rolevich)
 		if("Капнобатай")
 			client.role_ch = "kapno"
 		else
-			alert("Непонятно. Роль капнобатая.")
+			alert("Непонятно. Роль обычного капнобатая.")
 			client.role_ch = "kapno"
 	dolboEbism()
 
@@ -82,10 +82,21 @@
 		for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 			if(spawn_point.name == client.role_ch)
 				var/mob/living/carbon/human/character = new(spawn_point.loc)
+				character.set_species(/datum/species/human)
 				character.real_name = client.role_ch
 				character.age = client.age_ch
 				character.truerole = "Капнобатай"
 				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
+				mind.active = FALSE
+				mind.transfer_to(character)
+				mind.set_original_character(character)
 				character.key = key
+				qdel(src)
+				character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
+				var/area/joined_area = get_area(character.loc)
+				if(joined_area)
+					joined_area.on_joining_game(character)
+				to_chat(character, span_notice("Я продолжаю искать свой верный путь."))
 	else
-		chooseRole()
+		client.ready_char = FALSE
+		return FALSE
