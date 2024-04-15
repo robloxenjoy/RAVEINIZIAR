@@ -134,7 +134,7 @@
 
 /obj/item/paper/verb/rename()
 	set name = "Rename paper"
-	set category = "Object"
+	set category = null
 	set src in usr
 
 	if(!usr.can_read(src) || usr.incapacitated(TRUE, TRUE) || (isobserver(usr) && !isAdminGhostAI(usr)))

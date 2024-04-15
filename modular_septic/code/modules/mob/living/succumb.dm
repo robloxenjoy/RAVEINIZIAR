@@ -36,16 +36,16 @@
 */
 
 /mob/living/carbon/human/verb/vomited(whispered as null)
-	set name = "Vomit"
-	set category = "Extra"
+	set name = "Блевать"
+	set category = "Экстра"
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
 		vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1, button = TRUE)
 
 /mob/living/carbon/human/verb/terrain(whispered as null)
-	set name = "Check Terrain"
-	set category = "Extra"
+	set name = "Проверка территории"
+	set category = "Экстра"
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
@@ -82,8 +82,8 @@
 			to_chat(src, span_steal("Не получается."))
 
 /mob/living/carbon/human/verb/job_work(whispered as null)
-	set name = "Role Info"
-	set category = "Extra"
+	set name = "Роль"
+	set category = "Экстра"
 	set desc = "You want?"
 
 	if(!src.mind?.assigned_role)
@@ -94,15 +94,15 @@
 	to_chat(src, output_message)
 
 /mob/living/carbon/human/verb/upp(whispered as null)
-	set name = "Move Up"
-	set category = "Extra"
+	set name = "Вверх"
+	set category = "Экстра"
 	set desc = "You want?"
 
 	go_somewhere(down = FALSE)
 
 /mob/living/carbon/human/verb/downn(whispered as null)
-	set name = "Move Down"
-	set category = "Extra"
+	set name = "Вниз"
+	set category = "Экстра"
 	set desc = "You want?"
 
 	go_somewhere(down = TRUE)
@@ -110,7 +110,7 @@
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
 	set hidden = TRUE
 	set name = "Become Boar"
-	set category = "Extra"
+	set category = null
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)

@@ -325,7 +325,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"
-	set category = "Object"
+	set category = null
 	set src in oview(1)
 
 	if(!isturf(loc) || usr.stat != CONSCIOUS || HAS_TRAIT(usr, TRAIT_HANDS_BLOCKED))
@@ -804,7 +804,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 /obj/item/verb/verb_pickup()
 	set src in oview(1)
-	set category = "Object"
+	set category = null
 	set name = "Pick up"
 
 	if(usr.incapacitated() || !Adjacent(usr))

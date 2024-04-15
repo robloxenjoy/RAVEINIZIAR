@@ -632,7 +632,7 @@
  */
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
 	set name = "Point To"
-	set category = "Object"
+	set category = null
 	/* SEPTIC EDIT REMOVAL
 	if(client && !(A in view(client.view, src)))
 	*/
@@ -700,7 +700,7 @@
  */
 /mob/verb/mode()
 	set name = "Activate Held Object"
-	set category = "Object"
+	set category = null
 	set src = usr
 
 	if(ismecha(loc))

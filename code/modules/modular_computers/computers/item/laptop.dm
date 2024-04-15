@@ -54,7 +54,7 @@
 
 /obj/item/modular_computer/laptop/verb/open_computer()
 	set name = "Toggle Open"
-	set category = "Object"
+	set category = null
 	set src in view(1)
 
 	try_toggle_open(usr)

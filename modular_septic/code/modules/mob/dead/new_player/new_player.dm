@@ -79,11 +79,12 @@
 		if("Капнобатай")
 			client.role_ch = "kapno"
 		else
-			alert("Непонятно. Давай ещё раз.")
+			alert("Непонятно. Роль капнобатая.")
+			client.role_ch = "kapno"
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
-	alert("Не хочешь всё сначала?",,"Нормально всё!","Роль другая","Всё сначала")
+	alert("Не хочешь всё сначала?",,"Нормально всё!","Роль другая","Да нахуй заново сделаю")
 	if("Нормально всё!")
 		for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 			if(spawn_point.name == client.role_ch)
@@ -94,5 +95,5 @@
 				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 	if("Роль другая")
 		chooseRole()
-	if("Всё сначала")
-		playthis()
+	if("Да нахуй заново сделаю")
+		return FALSE

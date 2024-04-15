@@ -25,7 +25,7 @@
 /// Moves a mob upwards in z level
 /mob/verb/up()
 	set name = "Move Upwards"
-	set category = "IC.ZTravel"
+	set category = null
 
 	if(HAS_TRAIT_FROM(src, TRAIT_MOVE_FLOATING, CLINGING_TRAIT))
 		to_chat(src, span_warning("Can't do that while climbing."))
@@ -45,7 +45,7 @@
 /// Moves a mob down a z level
 /mob/verb/down()
 	set name = "Move Downwards"
-	set category = "IC.ZTravel"
+	set category = null
 
 	if(HAS_TRAIT_FROM(src, TRAIT_MOVE_FLOATING, CLINGING_TRAIT))
 		to_chat(src, span_warning("Can't do that while climbing."))
