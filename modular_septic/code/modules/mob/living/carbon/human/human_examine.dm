@@ -552,7 +552,7 @@
 		for(var/thing in limb.embedded_objects)
 			var/obj/item/embedded = thing
 			if(embedded.isEmbedHarmless())
-				damaged_bodypart_text += "<span class='info'>[t_He] [t_has] [icon2html(embedded, user)] \a [embedded] stuck to [t_his] [limb.name]!</span>"
+				damaged_bodypart_text += "<span class='info'>У него [icon2html(embedded, user)] \[embedded] застряло в его [limb.name]!</span>"
 
 		for(var/i in limb.wounds)
 			var/datum/wound/iter_wound = i
@@ -570,7 +570,7 @@
 		else
 			var/hurted = limb.get_injuries_desc()
 			if(hurted)
-				damaged_bodypart_text += "<span class='danger'>[t_He] [t_has] [hurted] on [t_his] [limb.name].</span>"
+				damaged_bodypart_text += "<span class='danger'>У него [hurted] на его [limb.name].</span>"
 
 		if(distance <= 1)
 			if(HAS_TRAIT(limb, TRAIT_ROTTEN))
