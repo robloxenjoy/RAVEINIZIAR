@@ -56,6 +56,9 @@
 		return
 	if(client.ready_char)
 		return
+	if(SSticker.current_state < GAME_STATE_PLAYING)
+		alert("Игрушка пока не началась.")
+		return
 	client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Харамец", "Анклав", "Арсен")
 	client.age_ch = rand(18, 100)
 	client.ready_char = TRUE

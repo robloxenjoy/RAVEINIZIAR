@@ -41,6 +41,7 @@
 	. = ..()
 //	if(mob)
 //		broadcast_connection(connection_string = "disconnected from the server")
+	ready_char = FALSE
 	QDEL_NULL(droning_sound)
 	last_droning_sound = null
 	QDEL_NULL(political_compass)
@@ -48,7 +49,7 @@
 	QDEL_NULL(nobody_wants_to_learn_matrix_math)
 //	QDEL_NULL(particool)
 
-/client/proc/broadcast_connection(connection_string = "присоединяется к серверу")
+/client/proc/broadcast_connection(connection_string = "присоединяется")
 	var/bling_bling = prefs?.donator_rank
 	for(var/client/player as anything in GLOB.clients)
 		if(player.prefs)

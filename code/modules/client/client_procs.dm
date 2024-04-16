@@ -418,7 +418,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			SSdroning.play_area_sound(current_area, mob.client)
 */
 		if (!stealth_admin)
-			deadchat_broadcast(" has reconnected.", "<b>[mob][mob.get_realname_string()]</b>", follow_target = mob, turf_target = get_turf(mob), message_type = DEADCHAT_LOGIN_LOGOUT, admin_only=!announce_leave)
+			deadchat_broadcast(" рекконеткнулся.", "<b>[mob][mob.get_realname_string()]</b>", follow_target = mob, turf_target = get_turf(mob), message_type = DEADCHAT_LOGIN_LOGOUT, admin_only=!announce_leave)
 	add_verbs_from_config()
 
 	// This needs to be before the client age from db is updated as it'll be updated by then.
