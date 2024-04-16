@@ -35,7 +35,7 @@
 
 /// Advanced examine stuff
 /obj/item/organ/examine_more(mob/user)
-	. = list(span_notice("<i>I examine <EM>[src]</EM> closer, and note the following...</i>"), "<br><hr class='infohr'>")
+	. = list(span_notice("<i>Я осматриваю <EM>[src]</EM> ближе, и замечаю...</i>"), "<br><hr class='infohr'>")
 	. |= surgical_examine(user)
 
 /obj/item/organ/proc/surgical_examine(mob/user)

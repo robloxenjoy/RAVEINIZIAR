@@ -512,7 +512,7 @@
 		if(HAS_TRAIT(living_user, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
-	. = list(span_notice("<i>I examine <EM>[obscure_name ? "Unknown" : fancy_name]</EM> closer, and note the following...</i>"), "<br><hr class='infohr'>")
+	. = list(span_notice("<i>Я осматриваю <EM>[obscure_name ? "Неизвестный" : fancy_name]</EM> ближе, и замечаю...</i>"), "<br><hr class='infohr'>")
 
 	var/box = ""
 	var/t_He = p_they(TRUE)
@@ -566,7 +566,7 @@
 			if(istype(clothing_thing) && (clothing_thing.clothing_flags & THICKMATERIAL))
 				thicc = TRUE
 			if(limb.get_bleed_rate() && !thicc)
-				damaged_bodypart_text += "<span class='warning'>[t_He] [t_has] blood soaking through [t_his] [hidden.name] around [t_his] [limb.name]!</span>"
+				damaged_bodypart_text += "<span class='warning'>У него кровь сочится из его [hidden.name] около его [limb.name]!</span>"
 		else
 			var/hurted = limb.get_injuries_desc()
 			if(hurted)
@@ -588,7 +588,7 @@
 	if(length(damaged_bodypart_text))
 		box += jointext(damaged_bodypart_text, "\n")
 	else
-		box += "<span class='info'>[t_He] [t_has] no visibly damaged bodyparts.</span>"
+		box += "<span class='info'>У него нет заметных ран.</span>"
 	. += box
 	if(on_examined_check(user, TRUE))
 		user.on_examine_atom(src, TRUE)

@@ -40,8 +40,8 @@
 	name = "Cerebral Blindness"
 	desc = "Patient's brain is no longer connected to its eyes."
 	scan_desc = "extensive damage to the brain's occipital lobe"
-	gain_text = "<span class='warning'>You can't see!</span>"
-	lose_text = "<span class='notice'>Your vision returns.</span>"
+	gain_text = "<span class='warning'>Я не могу видеть!</span>"
+	lose_text = "<span class='notice'>Моё зрение возвращается.</span>"
 
 /datum/brain_trauma/severe/blindness/on_gain()
 	owner.become_blind(TRAUMA_TRAIT)
@@ -55,8 +55,8 @@
 	name = "Cerebral Blindness"
 	desc = "Patient's brain is no longer connected to its eyes."
 	scan_desc = "extensive damage to the brain's occipital lobe"
-	gain_text = "<span class='warning'>You can't see!</span>"
-	lose_text = "<span class='notice'>Your vision returns.</span>"
+	gain_text = "<span class='warning'>Я не могу видеть!</span>"
+	lose_text = "<span class='notice'>Моё зрение возвращается.</span>"
 
 /datum/brain_trauma/severe/blindness/on_gain()
 	owner.become_blind(TRAUMA_TRAIT)

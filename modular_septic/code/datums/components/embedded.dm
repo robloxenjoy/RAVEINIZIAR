@@ -50,8 +50,8 @@
 	weapon.forceMove(victim)
 	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), .proc/weaponDeleted)
 	if(!silence_message)
-		victim.visible_message(span_danger("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "on"] <b>[victim]</b>'s [limb.name]!"), \
-					span_userdanger("[weapon] [harmful ? "embeds" : "sticks"] itself [harmful ? "in" : "on"] my [limb.name]!"))
+		victim.visible_message(span_danger("[weapon] [harmful ? "застревает" : "застревает"] [harmful ? "в" : "на"] <b>[victim]</b> [limb.name]!"), \
+					span_userdanger("[weapon] [harmful ? "застревает" : "застревает"] [harmful ? "в" : "на"] [limb.name]!"))
 
 	var/damage = weapon.throwforce
 	if(harmful)

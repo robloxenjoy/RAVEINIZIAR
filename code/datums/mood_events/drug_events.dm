@@ -1,18 +1,18 @@
 /datum/mood_event/high
 	mood_change = 6
-	description = "<span class='nicegreen'>Woooow duudeeeeee... I'm tripping baaalls...</span>\n"
+	description = "<span class='nicegreen'>Вот это эффект!</span>\n"
 
 /datum/mood_event/stoned
 	mood_change = 6
 	description = "<span class='nicegreen'>I'm sooooo stooooooooooooned...</span>\n"
 
 /datum/mood_event/smoked
-	description = "<span class='nicegreen'>I have had a smoke recently.</span>\n"
+	description = "<span class='nicegreen'>Покурил недавно.</span>\n"
 	mood_change = 2
 	timeout = 6 MINUTES
 
 /datum/mood_event/wrong_brand
-	description = "<span class='warning'>I hate that brand of cigarettes.</span>\n"
+	description = "<span class='warning'>Я ненавижу эту марку сигарет.</span>\n"
 	mood_change = -2
 	timeout = 6 MINUTES
 
@@ -21,7 +21,7 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/overdose/add_effects(drug_name)
-	description = "<span class='warning'>I think I took a bit too much of that [drug_name]!</span>\n"
+	description = "<span class='warning'>Думаю, я принял слишком много [drug_name]!</span>\n"
 
 /datum/mood_event/withdrawal_light
 	mood_change = -2

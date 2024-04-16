@@ -61,8 +61,8 @@
 				temporary_holder.trans_to(src, temporary_holder.total_volume, methods = INGEST)
 				qdel(temporary_holder)
 //				emote("liquidchoke")
-				visible_message(span_warning("<b>[src]</b> chokes on liquids!"), \
-							span_userdanger("I'm choking on liquids!"))
+				visible_message(span_warning("<b>[src]</b> захлёбывается в жидкости!"), \
+							span_userdanger("Я захлёбываюсь в жидкости!"))
 		if(istype(loc, /obj/))
 			var/obj/loc_as_obj = loc
 			loc_as_obj.handle_internal_lifeform(src,0)

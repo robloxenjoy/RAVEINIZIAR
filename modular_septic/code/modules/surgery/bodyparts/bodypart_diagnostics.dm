@@ -43,7 +43,7 @@
 
 /// Advanced examine stuff
 /obj/item/bodypart/examine_more(mob/user)
-	. = list(span_notice("<i>I examine <EM>[src]</EM> closer, and note the following...</i>"), "<br><hr class='infohr'>")
+	. = list(span_notice("<i>Я осматриваю <EM>[src]</EM> ближе, и замечаю...</i>"), "<br><hr class='infohr'>")
 	. |= surgical_examine(user)
 
 /obj/item/bodypart/proc/surgical_examine(mob/user)
@@ -104,33 +104,33 @@
 			this_injury_desc = "<span style='color: [COLOR_PALE_RED_GRAY];'>[this_injury_desc]</span>"
 		if(injury.is_bleeding())
 			if(is_artery_torn())
-				this_injury_desc = "<b><i><span class='artery'>blood-gushing</span></i></b> [this_injury_desc]"
+				this_injury_desc = "<b><i><span class='artery'>кровохлестающий</span></i></b> [this_injury_desc]"
 			//Completely arbitrary value
 			else if(injury.get_bleed_rate() > 1)
-				this_injury_desc = "<b><i>badly bleeding</i></b> [this_injury_desc]"
+				this_injury_desc = "<b><i>сильно кровоточит</i></b> [this_injury_desc]"
 			else
-				this_injury_desc = "<b>bleeding</b> [this_injury_desc]"
+				this_injury_desc = "<b>кровоточит</b> [this_injury_desc]"
 		if(injury.is_clamped())
-			this_injury_desc = "<span style='color: [COLOR_SILVER]'>clamped</span> [this_injury_desc]"
+			this_injury_desc = "<span style='color: [COLOR_SILVER]'>зажатый</span> [this_injury_desc]"
 		if(injury.is_sutured())
-			this_injury_desc = "<span style='color: [COLOR_MODERATE_BLUE]'>sutured</span> [this_injury_desc]"
+			this_injury_desc = "<span style='color: [COLOR_MODERATE_BLUE]'>зашитый</span> [this_injury_desc]"
 		if(injury.is_bandaged())
-			this_injury_desc = "<span style='color: [COLOR_ASSEMBLY_WHITE]'>bandaged</span> [this_injury_desc]"
+			this_injury_desc = "<span style='color: [COLOR_ASSEMBLY_WHITE]'>перевязанный</span> [this_injury_desc]"
 		if(injury.is_salved())
-			this_injury_desc = "<span class='nicegreen'>salved</span> [this_injury_desc]"
+			this_injury_desc = "<span class='nicegreen'>спасённый</span> [this_injury_desc]"
 		if(injury.is_disinfected())
-			this_injury_desc = "<span style='color: [COLOR_BLUE_LIGHT]'>disinfected</span> [this_injury_desc]"
+			this_injury_desc = "<span style='color: [COLOR_BLUE_LIGHT]'>продезинфицированный</span> [this_injury_desc]"
 
 		if(injury.germ_level >= INFECTION_LEVEL_TWO)
-			this_injury_desc = "<span class='necrosis'><b>pus-ridden</b></span> [this_injury_desc]"
+			this_injury_desc = "<span class='necrosis'><b>гнойный</b></span> [this_injury_desc]"
 		else if(injury.germ_level >= INFECTION_LEVEL_ONE)
-			this_injury_desc = "<span class='infection'>inflamed</span> [this_injury_desc]"
+			this_injury_desc = "<span class='infection'>воспалённый</span> [this_injury_desc]"
 
 		if(length(injury.embedded_objects))
 			var/list/embed_strings = list()
 			for(var/obj/item/embedded_item as anything in injury.embedded_objects)
-				embed_strings += "\a [embedded_item]"
-			this_injury_desc += "<span style='color: [COLOR_STRONG_MAGENTA]'> with [english_list(embed_strings)] poking out of [injury.amount > 1 ? "them" : "it"]</span>"
+				embed_strings += "\ [embedded_item]"
+			this_injury_desc += "<span style='color: [COLOR_STRONG_MAGENTA]'> с [english_list(embed_strings)] торчащим [injury.amount > 1 ? "из них" : "из этого"]</span>"
 
 		if(injury_descriptors[this_injury_desc])
 			injury_descriptors[this_injury_desc] += injury.amount
@@ -139,10 +139,10 @@
 
 	if(!is_robotic_limb())
 		if(CHECK_MULTIPLE_BITFIELDS(how_open(), SURGERY_INCISED|SURGERY_RETRACTED))
-			var/bone_name = GLOB.bones_by_path[bone_type] ? GLOB.bones_by_path[bone_type].name : "bone"
+			var/bone_name = GLOB.bones_by_path[bone_type] ? GLOB.bones_by_path[bone_type].name : "кость"
 			if(is_fractured())
-				bone_name = "fractured [bone_name]"
-			injury_descriptors["[bone_name] exposed"] = 1
+				bone_name = "сломанный [bone_name]"
+			injury_descriptors["[bone_name] обнаженный"] = 1
 			if(!is_encased() || (CHECK_BITFIELD(how_open(), SURGERY_BROKEN)))
 				var/list/bits = list()
 				for(var/obj/item/organ/organ as anything in get_organs())
@@ -151,24 +151,19 @@
 						continue
 					bits += visible_state
 				if(bits.len)
-					injury_descriptors["[english_list(bits)] visible in the wounds"] = 1
+					injury_descriptors["[english_list(bits)] виднеется в ране"] = 1
 
 	for(var/injury in injury_descriptors)
 		var/final_text = injury
-		if(injury_descriptors[injury] > 1)
-			if(findtext(final_text, "[COLOR_PALE_RED_GRAY];"))
-				final_text += "<span style='color: [COLOR_PALE_RED_GRAY];'>s</span>"
-			else
-				final_text += "s"
 		switch(injury_descriptors[injury])
 			if(-INFINITY to 1)
-				final_text = "a [final_text]"
+				final_text = "[final_text]"
 			if(2)
-				final_text = "a pair of [final_text]"
+				final_text = "пару [final_text]"
 			if(3 to 5)
-				final_text = "several [final_text]"
+				final_text = "несколько [final_text]"
 			if(6 to INFINITY)
-				final_text = "a ton of [final_text]"
+				final_text = "множество [final_text]"
 		flavor_text += final_text
 	if(length(flavor_text))
 		return english_list(flavor_text)
@@ -178,9 +173,9 @@
 	user.visible_message(span_notice("[user] starts inspecting [owner]'s [name] carefully."))
 	var/ouchies = get_injuries_desc()
 	if(ouchies)
-		to_chat(user, span_warning("I find [get_injuries_desc()]."))
+		to_chat(user, span_warning("Я нахожу [get_injuries_desc()]."))
 	else
-		to_chat(user, span_notice("I can't find any visible wounds."))
+		to_chat(user, span_notice("Не могу найти какие-либо раны."))
 
 	to_chat(user, span_notice("Checking skin now..."))
 	if(!do_mob(user, owner, 1 SECONDS))
@@ -189,20 +184,20 @@
 
 	var/list/badness = list()
 	if(owner.getShockStage() >= SHOCK_STAGE_2)
-		badness |= "clammy and cool to the touch"
+		badness |= "липкая и прохладная на ощупь"
 	if(owner.getToxLoss() >= 25)
-		badness |= "jaundiced"
+		badness |= "желтушная"
 	if(owner.get_blood_oxygenation() <= BLOOD_VOLUME_OKAY)
-		badness |= "turning blue"
+		badness |= "становится голубоватой"
 	if(owner.get_blood_circulation() <= BLOOD_VOLUME_OKAY + 70)
-		badness |= "very pale"
+		badness |= "очень бледная"
 	if(is_dead())
-		badness |= "rotting"
+		badness |= "гниющая"
 
 	if(!length(badness))
-		to_chat(user, span_notice("[owner]'s skin is normal."))
+		to_chat(user, span_notice("[owner] кожа в норме."))
 	else
-		to_chat(user, span_warning("[owner]'s skin is [english_list(badness)]."))
+		to_chat(user, span_warning("[owner] кожа [english_list(badness)]."))
 
 	if(bone_needed())
 		to_chat(user, span_notice("Checking bones now..."))

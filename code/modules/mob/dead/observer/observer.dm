@@ -1020,7 +1020,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/examine_more(mob/user)
 	if(!isAdminObserver(user))
 		return ..()
-	. = list(span_notice("<i>You examine [src] closer, and note the following...</i>"))
+	. = list(span_notice("<i>Я осматриваю [src] ближе, и замечаю...</i>"))
 	. += list("\t>[span_admin("[ADMIN_FULLMONTY(src)]")]")
 
 

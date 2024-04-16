@@ -20,11 +20,11 @@
 	timeout = 2 MINUTES
 
 /datum/mood_event/cold
-	description = "<span class='warning'>It's way too cold in here.</span>\n"
+	description = "<span class='warning'>Здесь слишком холодно.</span>\n"
 	mood_change = -5
 
 /datum/mood_event/hot
-	description = "<span class='warning'>It's getting hot in here.</span>\n"
+	description = "<span class='warning'>Здесь слишком горячо.</span>\n"
 	mood_change = -5
 
 /datum/mood_event/creampie
@@ -33,7 +33,7 @@
 	timeout = 3 MINUTES
 
 /datum/mood_event/slipped
-	description = "<span class='warning'>I slipped. I should be more careful next time...</span>\n"
+	description = "<span class='warning'>Я подскользнулся...</span>\n"
 	mood_change = -2
 	timeout = 3 MINUTES
 

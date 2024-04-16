@@ -109,7 +109,7 @@
 					if(HAS_TRAIT(owner, tetraplegia))
 						paralyzed_limbs++
 				if(paralyzed_limbs < 4)
-					to_chat(owner, span_flashinguserdanger("I become <b>TETRAPLEGIC</b>!"))
+					to_chat(owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
 				for(var/tetraplegia in stephenhawking_traits)
 					ADD_TRAIT(owner, tetraplegia, NECK_FRACTURE_TRAIT)
 			if(limb.body_zone in list(BODY_ZONE_PRECISE_FACE, BODY_ZONE_HEAD))

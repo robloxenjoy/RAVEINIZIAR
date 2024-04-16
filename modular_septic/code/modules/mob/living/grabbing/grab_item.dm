@@ -47,12 +47,12 @@
 /// Examining (examining the grab hud thing will examine this instead)
 /obj/item/grab/examine(mob/user)
 	. = ..()
-	var/grabbing_wording = (bite_grab ? "Biting" : "Grabbing")
+	var/grabbing_wording = (bite_grab ? "Кусает" : "Хватает")
 	if(grasped_part)
 		if(!bite_grab && LAZYLEN(grasped_part.embedded_objects))
-			. += span_alert("[grabbing_wording] [grasped_part.embedded_objects[1]] embedded in <b>[victim]</b>'s [grasped_part.name].")
+			. += span_alert("[grabbing_wording] [grasped_part.embedded_objects[1]] застрявший в <b>[victim]</b> [grasped_part.name].")
 		else
-			. += span_alert("[grabbing_wording] <b>[victim]</b> by [victim.p_their()] [parse_zone(grasped_zone)].")
+			. += span_alert("[grabbing_wording] <b>[victim]</b> за [parse_zone(grasped_zone)].")
 	else if(victim)
 		. += span_alert("[grabbing_wording] <b>[victim]</b>.")
 	switch(grab_mode)
@@ -76,15 +76,15 @@
 	if(owner)
 		if(victim)
 			playsound(victim, 'modular_septic/sound/attack/thudswoosh.ogg', 50, 1, -1)
-			var/grab_wording = (bite_grab ? "biting" : "grabbing")
+			var/grab_wording = (bite_grab ? "кусать" : "держать")
 			if(owner == victim)
-				victim.visible_message(span_warning("<b>[owner]</b> stops [grab_wording] [victim.p_themselves()] by [victim.p_their()] [grasped_part.name]!"),\
-											span_notice("I stop [grab_wording] myself by my [grasped_part.name]!"))
+				victim.visible_message(span_warning("<b>[owner]</b> прекращает [grab_wording] себя за [grasped_part.name]!"),\
+											span_notice("Я прекращаю [grab_wording] себя за [grasped_part.name]!"))
 			else
-				victim.visible_message(span_danger("<b>[owner]</b> stops [grab_wording] <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]": ""]!"),\
-										span_userdanger("<b>[owner]</b> stops [grab_wording] me[grasped_part ? " by my [grasped_part.name]" : ""]!"),\
+				victim.visible_message(span_danger("<b>[owner]</b> прекращает [grab_wording] <b>[victim]</b>[grasped_part ? " за[grasped_part.name]": ""]!"),\
+										span_userdanger("<b>[owner]</b> прекращает [grab_wording] меня[grasped_part ? " за [grasped_part.name]" : ""]!"),\
 										ignored_mobs = owner)
-				to_chat(owner, span_danger("I stop [grab_wording] <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"))
+				to_chat(owner, span_danger("Я прекращаю [grab_wording] <b>[victim]</b>[grasped_part ? " за [grasped_part.name]" : ""]!"))
 		//Let's only stop pulling if we have no other hand grasping the victim
 		var/stop_pulling = TRUE
 		var/list/potential_grabs = owner.held_items | owner.get_item_by_slot(ITEM_SLOT_MASK)
@@ -267,28 +267,28 @@
 		return FALSE
 	if(owner == victim)
 		if(biting_grab)
-			victim.visible_message(span_danger("<b>[owner]</b> bites [owner.p_their()] [grasped_part.name]!"), \
-						span_userdanger("I bite my [grasped_part.name]!"), \
+			victim.visible_message(span_danger("<b>[owner]</b> кусает [grasped_part.name]!"), \
+						span_userdanger("Я кусаю [grasped_part.name]!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE)
 		else
-			victim.visible_message(span_danger("<b>[owner]</b> хватает [owner.p_their()] [grasped_part.name]."), \
-						span_userdanger("I grab hold of my [grasped_part.name] tightly."), \
+			victim.visible_message(span_danger("<b>[owner]</b> хватает [grasped_part.name]."), \
+						span_userdanger("Я хватаю [grasped_part.name] крепко."), \
 						vision_distance = COMBAT_MESSAGE_RANGE)
 	else
 		if(biting_grab)
-			victim.visible_message(span_danger("<b>[owner]</b> bites <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"),\
-									span_userdanger("I am bitten [grasped_part ? "on my [grasped_part.name] " : ""]by <b>[owner]</b>!"), \
-									span_warning("I hear a gnawing sound."),\
+			victim.visible_message(span_danger("<b>[owner]</b> кусает <b>[victim]</b>[grasped_part ? " за [grasped_part.name]" : ""]!"),\
+									span_userdanger("Меня кусает [grasped_part ? "за [grasped_part.name] " : ""] <b>[owner]</b>!"), \
+									span_warning("Я слышку кусаку."),\
 									vision_distance = COMBAT_MESSAGE_RANGE, \
 									ignored_mobs = owner)
-			to_chat(owner, span_userdanger("I bite <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"))
+			to_chat(owner, span_userdanger("Я кусаю <b>[victim]</b>[grasped_part ? " за [grasped_part.name]" : ""]!"))
 		else
-			victim.visible_message(span_danger("<b>[owner]</b> хватает <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"),\
-									span_userdanger("I am grasped [grasped_part ? "on my [grasped_part.name] " : ""]by <b>[owner]</b>!"), \
-									span_warning("I hear a shuffling sound."),\
+			victim.visible_message(span_danger("<b>[owner]</b> хватает <b>[victim]</b>[grasped_part ? " за [grasped_part.name]" : ""]!"),\
+									span_userdanger("Я хватаю [grasped_part ? "за [grasped_part.name] " : ""] <b>[owner]</b>!"), \
+									span_warning("Я слышу потасовку."),\
 									vision_distance = COMBAT_MESSAGE_RANGE, \
 									ignored_mobs = owner)
-			to_chat(owner, span_userdanger("I grab <b>[victim]</b>[grasped_part ? " by [victim.p_their()] [grasped_part.name]" : ""]!"))
+			to_chat(owner, span_userdanger("Я хватаю <b>[victim]</b>[grasped_part ? " за [grasped_part.name]" : ""]!"))
 	return TRUE
 
 /// Creates the hud object we are tied to

@@ -85,6 +85,7 @@
 				character.set_species(/datum/species/human)
 				character.gender = MALE
 				character.genitals = "Male"
+				character.chat_color = ""
 				character.real_name = client.name_ch
 				character.age = client.age_ch
 				character.truerole = "Капнобатай"

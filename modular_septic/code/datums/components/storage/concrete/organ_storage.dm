@@ -348,7 +348,7 @@
 		if(!carbon_parent.IsUnconscious() && (carbon_parent.get_chem_effect(CE_PAINKILLER) < 50))
 			carbon_parent.death_scream()
 			if(!CHECK_BITFIELD(O.organ_flags, ORGAN_CUT_AWAY))
-				carbon_parent.custom_pain("MY [capitalize(O.name)] HURTS!", rand(30, 40))
+				carbon_parent.custom_pain("БОЖЕ! [capitalize(O.name)] БОЛИТ!", rand(30, 40))
 		var/violent_bone_removal = FALSE
 		if(!CHECK_BITFIELD(O.organ_flags, ORGAN_CUT_AWAY) && bodypart_affected)
 			if(istype(O, /obj/item/organ/bone))

@@ -160,7 +160,7 @@
 	if(!LAZYLEN(visible_scars))
 		return ..()
 
-	. = list(span_notice("<i>I examine [src] closer, and note the following...</i></span>"), "<br><hr class='infohr'>")
+	. = list(span_notice("<i>Я осматриваю [src] ближе, и замечаю...</i></span>"), "<br><hr class='infohr'>")
 	for(var/i in visible_scars)
 		var/datum/scar/S = i
 		var/scar_text = S.get_examine_description(user)

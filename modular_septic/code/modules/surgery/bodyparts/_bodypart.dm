@@ -1317,7 +1317,7 @@
 		victim.applyOrganDamage(damage_amt, silent = (damage_amt >= 15))
 	if(owner)
 		if(damage_amt >= 15)
-			owner.custom_pain("<b>MY [uppertext(victim.name)] HURTS!</b>", rand(25, 35), affecting = src, nopainloss = TRUE)
+			owner.custom_pain("<b>БОЖЕ! [uppertext(victim.name)] БОЛИТ!</b>", rand(25, 35), affecting = src, nopainloss = TRUE)
 		if(wound_messages)
 			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" <b>Орган повреждён!</b>"))
 	return TRUE
@@ -1345,7 +1345,7 @@
 			var/datum/injury/compatible_injury = pick(compatible_injuries)
 			compatible_injury.open_injury(damage)
 			if(owner && wound_messages && prob(25 + damage))
-				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_warning(" \The [compatible_injury.get_desc()] на [src] ухудшается!"))
+				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_warning(" \[compatible_injury.get_desc()] на [src] ухудшается!"))
 			last_injury = compatible_injury
 			. = compatible_injury
 

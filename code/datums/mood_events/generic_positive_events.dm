@@ -1,5 +1,5 @@
 /datum/mood_event/hug
-	description = "<span class='nicegreen'>Hugs are nice.</span>\n"
+	description = "<span class='nicegreen'>Обнимашки это круто.</span>\n"
 	mood_change = 1
 	timeout = 2 MINUTES
 
@@ -46,7 +46,7 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/exercise
-	description = "<span class='nicegreen'>Working out releases those endorphins!</span>\n"
+	description = "<span class='nicegreen'>Упражнения выработали эндорфины!</span>\n"
 	mood_change = 2
 	timeout = 5 MINUTES
 
@@ -66,7 +66,7 @@
 	special_screen_replace = FALSE
 
 /datum/mood_event/saved_life
-	description = "<span class='nicegreen'>It feels good to save a life.</span>\n"
+	description = "<span class='nicegreen'>Спасать жизни - прекрасно.</span>\n"
 	mood_change = 6
 	timeout = 8 MINUTES
 
@@ -80,7 +80,7 @@
 	timeout = 2 MINUTES
 
 /datum/mood_event/focused
-	description = "<span class='nicegreen'>I have a goal, and I will reach it, whatever it takes!</span>\n" //Used for syndies, nukeops etc so they can focus on their goals
+	description = "<span class='nicegreen'>У меня есть цель поважнее всего этого!</span>\n" //Used for syndies, nukeops etc so they can focus on their goals
 	mood_change = 4
 	hidden = TRUE
 
@@ -125,12 +125,12 @@
 	mood_change = 1
 
 /datum/mood_event/goodmusic
-	description = "<span class='nicegreen'>There is something soothing about this music.</span>\n"
+	description = "<span class='nicegreen'>Есть что-то славное в этой музыке.</span>\n"
 	mood_change = 3
 	timeout = 60 SECONDS
 
 /datum/mood_event/chemical_euphoria
-	description = "<span class='nicegreen'>Heh...hehehe...hehe...</span>\n"
+	description = "<span class='nicegreen'>Хехе...</span>\n"
 	mood_change = 4
 
 /datum/mood_event/chemical_laughter
