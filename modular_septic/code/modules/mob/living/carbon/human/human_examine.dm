@@ -64,11 +64,11 @@
 	//TODO: Add a social recordkeeping mechanic and datum to keep tracker of who the viewer knows
 	//This will do it for now, i guess
 //	var/visible_job = get_assignment(if_no_id = "", if_no_job = "", hand_first = FALSE)
-	var/visible_job = mind?.assigned_role.title
+	var/visible_job = truerole
 	var/job_message = "<span class='info'>"
-	if(visible_job)
+	if(truerole)
 		if(!skipface)
-			job_message += "Я уверен, он <b>[visible_job]</b>."
+			job_message += "Я уверен, он <b>[truerole]</b>."
 		else
 			job_message += "Я не знаю его роли."
 	. += job_message

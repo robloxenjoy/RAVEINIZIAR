@@ -175,7 +175,7 @@
 
 	real_name = carbon?.real_name
 	if( (carbon && (HAS_TRAIT(carbon, TRAIT_HUSK) || HAS_TRAIT(carbon, TRAIT_DISFIGURED)) ) || HAS_TRAIT(src, TRAIT_HUSK) || HAS_TRAIT(src, TRAIT_DISFIGURED))
-		real_name = "Unknown"
+		real_name = "Неизвестный"
 
 /obj/item/bodypart/face/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	if(!isinhands)

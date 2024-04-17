@@ -1,5 +1,7 @@
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()
+	return
+/*
 	if(href_list["armor"])
 		if((get_dist(src, usr) > 1) && !usr.DirectAccess(src))
 			to_chat(usr, span_warning("I can't inspect it clearly at this distance."))
@@ -37,3 +39,4 @@
 		readout += "</div></span>" //div infobox
 
 		to_chat(usr, "[readout.Join()]")
+*/

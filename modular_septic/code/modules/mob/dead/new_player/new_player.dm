@@ -80,7 +80,7 @@
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
-	alert("Может другую роль?",,"Играем уже!","Давай-ка другую")
+	alert("А может была другая роль?",,"Играем уже!","Да вроде другая...")
 	if("Играем уже!")
 		for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 			if(spawn_point.name == client.role_ch)
@@ -115,6 +115,6 @@
 					joined_area.on_joining_game(character)
 				to_chat(character, span_notice("Я продолжаю искать свой верный путь."))
 				character.attributes?.update_attributes()
-	else
+	if("Да вроде другая...")
 		client.ready_char = FALSE
 		return FALSE

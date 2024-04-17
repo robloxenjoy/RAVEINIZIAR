@@ -1005,7 +1005,7 @@
 
 	if(!brute && !burn && !stamina)
 		if(wound_messages && reduced && (initial_brute || initial_burn))
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowpain(" Damage is <b>stopped</b> by armor!"))
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowpain(" Урон <b>остановлен</b> бронёй!"))
 		return FALSE
 
 	/*
@@ -1102,9 +1102,9 @@
 			stack_trace("Failed to create injury with [brute] brute damage and [wounding_type] wounding type!")
 	if(wound_messages && (reduced || (sharpness && (initial_wounding_type == WOUND_BLUNT))) )
 		if(reduced)
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowpain(" Damage is softened by armor!"))
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowpain(" Удар смягчён бронёй!"))
 		else
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowestpain(" Damage is <i>barely</i> softened by armor!"))
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowestpain(" Удар <i>чутка</i> смягчён бронёй!"))
 
 	// We've dealt the physical damages, if there's room lets apply the stamina damage.
 	if(stamina)

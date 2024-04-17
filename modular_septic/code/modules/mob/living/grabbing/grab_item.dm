@@ -47,7 +47,7 @@
 /// Examining (examining the grab hud thing will examine this instead)
 /obj/item/grab/examine(mob/user)
 	. = ..()
-	var/grabbing_wording = (bite_grab ? "Кусает" : "Хватает")
+	var/grabbing_wording = (bite_grab ? "Кусает" : "Держит")
 	if(grasped_part)
 		if(!bite_grab && LAZYLEN(grasped_part.embedded_objects))
 			. += span_alert("[grabbing_wording] [grasped_part.embedded_objects[1]] застрявший в <b>[victim]</b> [grasped_part.name].")

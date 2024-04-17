@@ -29,7 +29,7 @@
 		else if(country == "Brazil")
 			message_admins(span_adminnotice("[key_name_admin(src)] is a based Brazilian!"))
 	if(mob)
-		broadcast_connection(reconnecting ? "заново присоединяется к серверу" : "присоединяется к серверу")
+		broadcast_connection(reconnecting ? "заново присоединяется" : "присоединяется")
 	political_compass = new()
 	political_compass.owner = src
 	political_compass.load_path()

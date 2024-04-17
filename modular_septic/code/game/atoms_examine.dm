@@ -1,7 +1,7 @@
 // Generate the full examine string of this atom (including icon for goonchat)
 /atom/get_examine_string(mob/user, thats = FALSE)
 //	return "[icon2html(src, user)] [thats ? "That's ":""][thats ? "<EM><b>[get_examine_name(user)]</b></EM>" : get_examine_name(user)]"
-	return "Это <EM><b>[get_examine_name(user)]</b></EM>"
+	return "<EM><b>[get_examine_name(user)]</b></EM>"
 
 // Calling on_examine()
 /atom/examine(mob/user)

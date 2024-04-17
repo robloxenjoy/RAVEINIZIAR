@@ -13,7 +13,7 @@
 	if(flags & COMPONENT_NO_EXAMINATE)
 		return
 	else if(flags & COMPONENT_EXAMINATE_BLIND)
-		to_chat(src, span_warning("Something is there but i can't see it!"))
+		to_chat(src, span_warning("Там что-то есть но я не могу увидеть!"))
 		return
 	var/atom/distance_referee = examinify
 	if(isitem(examinify))

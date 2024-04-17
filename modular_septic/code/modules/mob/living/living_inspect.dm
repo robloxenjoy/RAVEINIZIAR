@@ -1,7 +1,7 @@
 /mob/living/blind_examine_check(atom/examined_thing)
 	//need to be next to something and awake
 	if(!Adjacent(examined_thing) || incapacitated())
-		to_chat(src, span_warning("Something is there, but i can't see it!"))
+		to_chat(src, span_warning("Там что-то есть но я не могу увидеть!"))
 		return FALSE
 
 	//you can examine things you're holding directly, but you can't examine other things if your hands are full

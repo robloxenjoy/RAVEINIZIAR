@@ -65,7 +65,7 @@ em						{font-style: normal;	font-weight: bold;}
 .alert					{color: #e09579;}
 h1.alert, h2.alert		{color: #5a005a;}
 
-.emote					{}
+.emote					{color: #939277; font-style: italic;}
 .lowpain				{color: #a4a562;}
 .lowestpain				{color: #a4a562; font-size: 85%;}
 .artery					{color: #9B5455;}
