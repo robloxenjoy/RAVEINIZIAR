@@ -86,6 +86,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 .shitty					{color: #815131;}
 .cummy					{color: #fffae8;}
 .femcummy				{color: #fffcf0;}
+.meatymeat              {color: #904643;}
 .tinydanger				{color: #750000; font-size: 85%;}
 .smalldanger			{color: #750000; font-size: 90%;}
 .warning				{color: #5d0046; font-style: italic;}
@@ -165,7 +166,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 
 .phobia					{color: #ba653b;	font-weight: bold;}
 .icon					{height: 1em;	width: auto;}
-.infobox				{border: 1px; background: rgba(92, 0, 0, 0.3); margin: 2px 8px;}
+.infobox				{border: 1px; background: rgba(25, 25, 25, 0.3); margin: 2px 8px;}
 
 .infohr 				{border: 0; height: 1px; color: #be7d64;}
 

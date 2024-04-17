@@ -69,14 +69,14 @@
 
 /mob/living/carbon/proc/defecate()
 	set name = "Посрать"
-	set category = "IC.Hygiene"
+	set category = "IC.Гигиена"
 	set desc = "Answer the call of nature."
 
 	shit(TRUE)
 
 /mob/living/carbon/proc/urinate()
 	set name = "Поссать"
-	set category = "IC.Hygiene"
+	set category = "IC.Гигиена"
 	set desc = "Answer the call of nature."
 
 	piss(TRUE)

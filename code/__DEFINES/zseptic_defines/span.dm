@@ -19,6 +19,7 @@
 #define span_shitty(str) ("<span class='shitty'>" + str + "</span>")
 #define span_cummy(str) ("<span class='cummy'>" + str + "</span>")
 #define span_femcummy(str) ("<span class='femcummy'>" + str + "</span>")
+#define span_meatymeat(str) ("<span class='meatymeat'>" + str + "</span>")
 #define span_flashinguserdanger(str) ("<span class='flashinguserdanger'>" + str + "</span>")
 #define span_flashingdanger(str) ("<span class='flashingdanger'>" + str + "</span>")
 #define span_flashingbigdanger(str) ("<span class='flashingdanger'>" + str + "</span>")

@@ -1,10 +1,10 @@
 /obj/item/organ/bone/chest
-	name = "ribcage"
-	desc = "Despite all my rage, i'm just a rib in a cage."
+	name = "Грудная Клетка"
+	desc = "Из рёбер."
 	icon_state = "ribcage"
 	base_icon_state = "ribcage"
 	zone = BODY_ZONE_CHEST
-	joint_name = "ribs"
+	joint_name = "рёбра"
 	bone_flags = BONE_JOINTED|BONE_ENCASING
 	wound_resistance = 10
 

@@ -544,7 +544,7 @@
 					hidden = clothes
 					break
 			if(hidden)
-				damaged_bodypart_text += "<span class='info'>[t_His] [limb.name] is covered up by [hidden.name]."
+				damaged_bodypart_text += "<span class='info'>[limb.name] прикрыто благодаря [hidden.name]."
 
 		if(limb.etching && !hidden)
 			damaged_bodypart_text += "<span class='warning'>[t_His] [limb.name] has \"[limb.etching]\" etched on it!</span>"
@@ -566,25 +566,25 @@
 			if(istype(clothing_thing) && (clothing_thing.clothing_flags & THICKMATERIAL))
 				thicc = TRUE
 			if(limb.get_bleed_rate() && !thicc)
-				damaged_bodypart_text += "<span class='warning'>У него кровь сочится из его [hidden.name] около его [limb.name]!</span>"
+				damaged_bodypart_text += "<span class='warning'>У него кровь сочится из его [hidden.name] около его <span class='meatymeat'>[limb.name]</span>!</span>"
 		else
 			var/hurted = limb.get_injuries_desc()
 			if(hurted)
-				damaged_bodypart_text += "<span class='danger'>У него [hurted] на его [limb.name].</span>"
+				damaged_bodypart_text += "<span class='danger'>У него [hurted] на его <span class='meatymeat'>[limb.name]</span>.</span>"
 
 		if(distance <= 1)
 			if(HAS_TRAIT(limb, TRAIT_ROTTEN))
-				damaged_bodypart_text += "<span class='necrosis'><B>[t_His] [limb.name] is gangrenous!</B></span>"
+				damaged_bodypart_text += "<span class='necrosis'><B><span class='meatymeat'>[limb.name]</span> гангренозно!</B></span>"
 			if(HAS_TRAIT(limb, TRAIT_DEFORMED))
-				damaged_bodypart_text += "<span class='danger'><B>[t_His] [limb.name] is gruesomely deformed!</B></span>"
+				damaged_bodypart_text += "<span class='danger'><B><span class='meatymeat'>[limb.name]</span> ужасно деформировано!</B></span>"
 			if(limb.is_compound_fractured())
-				damaged_bodypart_text += "<span class='danger'><B><U>[t_His] [limb.name] is flaccid and swollen!</U></B></span>"
+				damaged_bodypart_text += "<span class='danger'><B><U><span class='meatymeat'>[limb.name]</span> довольно вялое и опухшее!</U></B></span>"
 			else if(limb.is_fractured())
-				damaged_bodypart_text += "<span class='danger'><B>[t_His] [limb.name] is dented and swollen!</B></span>"
+				damaged_bodypart_text += "<span class='danger'><B><span class='meatymeat'>[limb.name]</span> помятое и опухшее!</B></span>"
 			else if(limb.is_dislocated())
-				damaged_bodypart_text += "<span class='alert'>[t_His] [limb.name] is dislocated!</span>"
+				damaged_bodypart_text += "<span class='alert'><span class='meatymeat'>[limb.name]</span> выхвинуто!</span>"
 		else if(HAS_TRAIT(limb, TRAIT_ROTTEN) || HAS_TRAIT(limb, TRAIT_DEFORMED) || limb.is_fractured() || limb.is_dislocated())
-			damaged_bodypart_text += "<span class='alert'>[t_His] [limb.name] seems to be in poor condition.</span>"
+			damaged_bodypart_text += "<span class='alert'>[limb.name] в плохом состоянии.</span>"
 	if(length(damaged_bodypart_text))
 		box += jointext(damaged_bodypart_text, "\n")
 	else

@@ -81,7 +81,7 @@
 	var/final_descriptive = "Кость надломана!"
 	// Skull, ribcage and pelvis are pretty significant
 	if(istype(bone, BONE_HEAD) || istype(bone, BONE_GROIN) || istype(bone, BONE_CHEST))
-		final_descriptive = "[bone] надломана!"
+		final_descriptive = "[bone] надломано!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)

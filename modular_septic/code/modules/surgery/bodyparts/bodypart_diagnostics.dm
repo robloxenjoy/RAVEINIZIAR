@@ -107,9 +107,9 @@
 				this_injury_desc = "<b><i><span class='artery'>кровохлестающий</span></i></b> [this_injury_desc]"
 			//Completely arbitrary value
 			else if(injury.get_bleed_rate() > 1)
-				this_injury_desc = "<b><i>сильно кровоточит</i></b> [this_injury_desc]"
+				this_injury_desc = "<b><i>сильно кровоточащий</i></b> [this_injury_desc]"
 			else
-				this_injury_desc = "<b>кровоточит</b> [this_injury_desc]"
+				this_injury_desc = "<b>кровоточащий</b> [this_injury_desc]"
 		if(injury.is_clamped())
 			this_injury_desc = "<span style='color: [COLOR_SILVER]'>зажатый</span> [this_injury_desc]"
 		if(injury.is_sutured())
@@ -207,15 +207,15 @@
 
 		var/bone_name = GLOB.bones_by_path[bone_type].name
 		if(bone_missing())
-			to_chat(user, span_warning("The [name] is missing it's [bone_name]!"))
+			to_chat(user, span_warning("[name] не имеет [bone_name]!"))
 		else if(is_dislocated())
 			var/joint_name = GLOB.bones_by_path[bone_type].joint_name
-			to_chat(user, span_warning("The [joint_name] is dislocated!"))
+			to_chat(user, span_warning("[joint_name] вывихнуто!"))
 		else if(is_fractured())
-			to_chat(user, span_warning("The [bone_name] in [name] moves slightly when I poke it!"))
-			owner.custom_pain("My [name] hurts when poked.", 25, affecting = src)
+			to_chat(user, span_warning("[bone_name] в [name] немного выдвигается!"))
+			owner.custom_pain("[name] болит при прикосновении.", 25, affecting = src)
 		else
-			to_chat(user, span_notice("The [bone_name] in [name] is OK."))
+			to_chat(user, span_notice("[bone_name] в [name] в порядке."))
 
 	if(tendon_needed() || artery_needed())
 		to_chat(user, span_notice("Checking tendons and arteries now..."))
