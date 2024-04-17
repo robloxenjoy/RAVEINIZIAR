@@ -77,7 +77,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 .bigdanger				{color: #c51e1e; font-size: 140%;}
 .steal					{color: #3a1b4e;}
 .bobux					{color: #e86e0a; font-size: 3;}
-.danger					{color: #930000;}
+.danger					{color: #8c3000;}
 .cyanicdream			{color: #1ad06f;}
 .infection				{color: #77c72b;}
 .necrosis				{color: #497a1a;}
@@ -86,23 +86,23 @@ h1.alert, h2.alert		{color: #5a005a;}
 .shitty					{color: #815131;}
 .cummy					{color: #fffae8;}
 .femcummy				{color: #fffcf0;}
-.tinydanger				{color: #930000; font-size: 85%;}
-.smalldanger			{color: #930000; font-size: 90%;}
-.warning				{color: #930000; font-style: italic;}
-.boldwarning			{color: #930000; font-style: italic; font-weight: bold}
+.tinydanger				{color: #750000; font-size: 85%;}
+.smalldanger			{color: #750000; font-size: 90%;}
+.warning				{color: #5d0046; font-style: italic;}
+.boldwarning			{color: #5d0046; font-style: italic; font-weight: bold}
 .announce				{color: #228b22;	font-weight: bold;}
-.boldannounce			{color: #930000;	font-weight: bold;}
+.boldannounce			{color: #5d0046;	font-weight: bold;}
 .minorannounce			{					font-weight: bold;  font-size: 3;}
 .greenannounce			{color: #00ff00;	font-weight: bold;}
 .rose					{color: #ff5050;}
-.info					{color: #7c6fc9;}
-.notice					{color: #718fa6;}
-.tinynotice				{color: #718fa6; font-size: 85%;}
-.tinynoticeital			{color: #718fa6; font-style: italic; font-size: 85%;}
-.smallnotice			{color: #718fa6; font-size: 90%;}
-.smallnoticeital		{color: #718fa6; font-style: italic;	font-size: 90%;}
-.boldnotice				{color: #718fa6; font-weight: bold;}
-.hear					{color: #718fa6; font-style: italic;}
+.info					{color: #726765;}
+.notice					{color: #726765;}
+.tinynotice				{color: #726765; font-size: 85%;}
+.tinynoticeital			{color: #726765; font-style: italic; font-size: 85%;}
+.smallnotice			{color: #726765; font-size: 90%;}
+.smallnoticeital		{color: #726765; font-style: italic;	font-size: 90%;}
+.boldnotice				{color: #726765; font-weight: bold;}
+.hear					{color: #726765; font-style: italic;}
 .adminnotice			{color: #4f6e73;}
 .adminhelp				{color: #ff0000;	font-weight: bold;}
 .unconscious			{color: #916f9a;	font-weight: bold;}
@@ -165,7 +165,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 
 .phobia					{color: #ba653b;	font-weight: bold;}
 .icon					{height: 1em;	width: auto;}
-.infobox				{border: 1px; background: rgba(44, 27, 48, 0.3); margin: 2px 8px;}
+.infobox				{border: 1px; background: rgba(92, 0, 0, 0.3); margin: 2px 8px;}
 
 .infohr 				{border: 0; height: 1px; color: #be7d64;}
 
