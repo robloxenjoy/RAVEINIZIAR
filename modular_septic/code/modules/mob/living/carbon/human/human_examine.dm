@@ -246,7 +246,7 @@
 			if(!clothingonpart(bodypart) || !is_mouth_covered())
 				if(teeth < bodypart.max_teeth)
 					var/missing_teeth = bodypart.max_teeth - teeth
-					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_teeth]!</span>"
+					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_teeth] зубов!</span>"
 		var/max_fingers = bodypart.get_max_digits()
 		if(max_fingers)
 			var/fingers = bodypart.get_digits_amount()
