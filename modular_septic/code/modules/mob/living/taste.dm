@@ -13,15 +13,14 @@
 		// We dont want to spam the same message over and over again at the
 		// person. Give it a bit of a buffer.
 		if((hallucination > 50) && prob(25))
-			text_output = pick("spiders","dreams","nightmares","the future","the past","victory",\
-			"defeat","pain","bliss","revenge","poison","time","space","death","life","truth","lies","justice","memory",\
-			"regrets","my soul","suffering","music","noise","blood","hunger","the american way", "torment")
+			text_output = pick("сны","кошмары","прошлое","будущее","победу",\
+			"проигрыш","боль","месть","яд","время","космос","смерть","жизнь","правду","ложь","воспоминания")
 		if(text_output != last_taste_text || (world.time >= last_taste_time + 100))
 			// "something indescribable" -> too many tastes, not enough flavor.
 			if(mob_biotypes & MOB_ROBOTIC)
 				to_chat(src, span_notice("My taste receptors sense [text_output]."))
 			else
-				to_chat(src, span_notice("I can taste [text_output]."))
+				to_chat(src, span_notice("Я ощущаю [text_output]."))
 
 			last_taste_time = world.time
 			last_taste_text = text_output

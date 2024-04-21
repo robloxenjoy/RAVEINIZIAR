@@ -12,7 +12,7 @@
 	var/obscured = check_obscured_slots()
 
 	. = list()
-	. += "<span class='infoplain'><div class='infobox'><span class='info'>Oh, this is [icon2html(src, user)] \a <EM>[src]</EM>!</span>"
+	. += "<span class='infoplain'><div class='infobox'><span class='info'>Ой, а это [icon2html(src, user)] <EM>[src]</EM>!</span>"
 
 	. += "<span class='info'>"
 	if(handcuffed && !(obscured & ITEM_SLOT_HANDCUFFED) && !(handcuffed.item_flags & EXAMINE_SKIP) && !(handcuffed.item_flags & EXAMINE_SKIP))

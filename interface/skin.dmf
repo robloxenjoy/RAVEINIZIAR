@@ -19,7 +19,7 @@ window "mainwindow"
 	elem "split"
 		type = CHILD
 		pos = 3,0
-		size = 640x480
+		size = 634x440
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -27,7 +27,7 @@ window "mainwindow"
 		left = "mapwindow"
 		right = "infowindow"
 		is-vert = true
-		splitter = 68
+		show-splitter = false
 	elem "asset_cache_browser"
 		type = BROWSER
 		pos = 0,0
@@ -81,8 +81,8 @@ window "infowindow"
 		inner-size = 640x499
 	elem "info"
 		type = CHILD
-		pos = 0,5
-		size = 640x480
+		pos = 0,30
+		size = 640x445
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -90,7 +90,8 @@ window "infowindow"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
-		splitter = 25
+		splitter = 27.5
+		show-splitter = false
 
 window "outputwindow"
 	elem "outputwindow"
@@ -122,6 +123,7 @@ window "outputwindow"
 		is-default = true
 		max-lines = 30
 		enable-http-images = true
+		show-splitter = false
 	elem "input"
 		type = INPUT
 		pos = 0,445

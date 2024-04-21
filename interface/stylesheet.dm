@@ -182,7 +182,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 
 .monkeyhive				{color: #774704;}
 .monkeylead				{color: #774704;	font-size: 2;}
-.infoplain				{}
+.infoplain				{color: #6a2e41;}
 
 .userlove				{color: #ff57cd; font-style: italic; font-size: 110%;}
 

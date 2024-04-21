@@ -203,7 +203,7 @@
 		owner.heartbeat_sound = BEAT_SLOW
 		SEND_SOUND(owner, slowbeat)
 		if(cardiac_arrest || nervous_failure)
-			to_chat(owner, span_notice("I feel the grim reaper's cold gaze..."))
+			to_chat(owner, span_notice("Я чувствую глубинный холод, я не хочу умирать."))
 		return
 	if((owner.heartbeat_sound == BEAT_SLOW) && !cardiac_arrest && !nervous_failure && !(pressure < SOUND_MINIMUM_PRESSURE))
 		owner.stop_sound_channel(CHANNEL_HEARTBEAT)

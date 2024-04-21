@@ -332,9 +332,9 @@
 						span_notice("<b>I check myself.</b>"))
 
 	var/list/return_text = list("<span class='infoplain'><div class='infobox'>")
-	return_text += span_notice("<EM>Let's see how I am doing.</EM>")
+	return_text += span_notice("<EM>Узнаем как я.</EM>")
 	if(stat < DEAD)
-		return_text += span_notice("\nI am still alive[stat < UNCONSCIOUS ? "" : ", but i am [HAS_TRAIT(src, TRAIT_TRYINGTOSLEEP) ? "sleeping" :"unconscious"]"].")
+		return_text += span_notice("\nЯ всё ещё жив[stat < UNCONSCIOUS ? "" : ", but i am [HAS_TRAIT(src, TRAIT_TRYINGTOSLEEP) ? "sleeping" :"unconscious"]"].")
 	else
 		return_text += span_dead("\nI am dead.")
 	for(var/X in ALL_BODYPARTS_CHECKSELF)
