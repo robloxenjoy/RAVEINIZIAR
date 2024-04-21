@@ -8,6 +8,7 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
+	baseturfs = /turf/open/floor/plating/polovich/dirt/blueee
 
 /*
 /turf/open/floor/plating/polovich/setup_broken_states()

@@ -8,6 +8,7 @@
 	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_LOW_WALLS)
 	decon_type = /turf/open/floor/plating/polovich/dirt/blueee
 	girder_type = null
+	baseturfs = /turf/open/floor/plating/polovich/dirt/blueee
 	var/mineable = TRUE
 	var/mine_hp = 8
 	var/ore_type = /obj/item/stone
