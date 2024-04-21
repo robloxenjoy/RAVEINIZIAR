@@ -107,7 +107,7 @@
 		if(!SSticker.start_immediately)
 			var/localhost_addresses = list("127.0.0.1", "::1")
 			if(!(isnull(usr.client.address) || (usr.client.address in localhost_addresses)))
-				if(tgui_alert(usr, "Are you sure you want to start the round?","Start Now",list("Start Now","Cancel")) != "Start Now")
+				if(alert(usr, "Are you sure you want to start the round?","Start Now",list("Start Now","Cancel")) != "Start Now")
 					return FALSE
 			SSticker.start_immediately = TRUE
 			log_admin("[usr.key] has started the game.")

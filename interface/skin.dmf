@@ -5,7 +5,7 @@ window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
 		pos = 0,0
-		size = 640x440
+		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
@@ -19,7 +19,7 @@ window "mainwindow"
 	elem "split"
 		type = CHILD
 		pos = 3,0
-		size = 634x440
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -81,8 +81,8 @@ window "infowindow"
 		inner-size = 640x499
 	elem "info"
 		type = CHILD
-		pos = 0,30
-		size = 640x445
+		pos = 0,5
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -90,13 +90,12 @@ window "infowindow"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
-		splitter = 27.5
 		show-splitter = false
 
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 0,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -106,7 +105,7 @@ window "outputwindow"
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
-		size = 640x456
+		size = 635x440
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
@@ -116,14 +115,13 @@ window "outputwindow"
 	elem "output"
 		type = OUTPUT
 		pos = 0,0
-		size = 640x456
+		size = 635x440
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #000000
 		is-default = true
 		max-lines = 30
 		enable-http-images = true
-		show-splitter = false
 	elem "input"
 		type = INPUT
 		pos = 0,445
@@ -199,4 +197,3 @@ window "preferences_window"
 		right-click = true
 		icon-size = 64
 		zoom-mode = "distort"
-
