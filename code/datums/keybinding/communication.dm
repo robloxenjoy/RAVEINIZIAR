@@ -3,8 +3,8 @@
 
 /datum/keybinding/client/communication/say
 	hotkey_keys = list("T")
-	name = "Говорить"
-	full_name = "IC Say"
+	name = "Say"
+	full_name = "IC Говорить"
 	keybind_signal = COMSIG_KB_CLIENT_SAY_DOWN
 
 /datum/keybinding/client/communication/ooc

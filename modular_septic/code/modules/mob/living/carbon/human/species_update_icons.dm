@@ -277,7 +277,7 @@
 			if(RE)
 				right_overlay = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', RE.eye_icon_state, -BODY_LAYER)
 				if(EYECOLOR in species_traits)
-					right_overlay.color = sanitize_hexcolor(species_human.right_eye_color, 6, TRUE)
+					right_overlay.color = "#000000"
 				if(RE.overlay_ignore_lighting && !(obscured & ITEM_SLOT_EYES))
 					right_emissive = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', RE.eye_icon_state)
 					right_emissive.plane = EMISSIVE_PLANE
@@ -288,7 +288,7 @@
 			if(LE)
 				left_overlay = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', LE.eye_icon_state, -BODY_LAYER)
 				if(EYECOLOR in species_traits)
-					left_overlay.color = sanitize_hexcolor(species_human.left_eye_color, 6, TRUE)
+					left_overlay.color = "#000000"
 				if(LE.overlay_ignore_lighting && !(obscured & ITEM_SLOT_EYES))
 					left_emissive = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', LE.eye_icon_state)
 					left_emissive.plane = EMISSIVE_PLANE

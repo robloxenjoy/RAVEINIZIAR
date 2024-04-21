@@ -782,7 +782,7 @@ generate/load female uniform sprites matching all previously decided variables
 			if(RE)
 				var/image/right_overlay = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, RE.eye_icon_state, -BODY_LAYER)
 				if(EYECOLOR in dna.species.species_traits)
-					right_overlay.color = sanitize_hexcolor(right_eye_color, 6, TRUE)
+					right_overlay.color = "#000000"
 				eye_overlay.add_overlay(right_overlay)
 				if(RE.overlay_ignore_lighting && !(obscured & ITEM_SLOT_EYES))
 					var/image/right_emissive = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, RE.eye_icon_state, -BODY_LAYER)
@@ -793,7 +793,7 @@ generate/load female uniform sprites matching all previously decided variables
 			if(LE)
 				var/image/left_overlay = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, LE.eye_icon_state, -BODY_LAYER)
 				if(EYECOLOR in dna.species.species_traits)
-					left_overlay.color = sanitize_hexcolor(left_eye_color, 6, TRUE)
+					left_overlay.color = "#000000"
 				eye_overlay.add_overlay(left_overlay)
 				if(LE.overlay_ignore_lighting && !(obscured & ITEM_SLOT_EYES))
 					var/image/left_emissive = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, LE.eye_icon_state, -BODY_LAYER)

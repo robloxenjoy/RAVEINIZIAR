@@ -261,13 +261,13 @@
 	var/obj/item/organ/eyes/actual_right_eye = locate(/obj/item/organ/eyes) in right_eye
 	if(actual_left_eye)
 		left_eye_overlay = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, actual_left_eye.eye_icon_state, -BODY_LAYER)
-		left_eye_overlay.color = actual_left_eye.eye_color
+		left_eye_overlay.color = "#000000"
 	else
 		left_eye_overlay = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, "eye-left-missing", -BODY_LAYER)
 
 	if(actual_right_eye)
 		right_eye_overlay = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, actual_right_eye.eye_icon_state, -BODY_LAYER)
-		right_eye_overlay.color = actual_right_eye.eye_color
+		right_eye_overlay.color = "#000000"
 	else
 		right_eye_overlay = image('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', null, "eye-right-missing", -BODY_LAYER)
 
