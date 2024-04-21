@@ -1268,16 +1268,16 @@
 	switch(wounding_type)
 		// Piercing damage is more likely to damage internal organs
 		if(WOUND_PIERCE)
-			organ_damage_minimum *= 0.5
+			organ_damage_minimum *= 0.7
 		// Slashing damage is *slightly* more likely to damage internal organs
 		if(WOUND_SLASH)
-			organ_damage_minimum *= 0.75
+			organ_damage_minimum *= 0.9
 		// Burn damage is unlikely to damage organs
 		if(WOUND_BURN)
 			organ_damage_minimum *= 1.5
 		// Organ damage minimum is assumed to be the case for blunt anyway
 		else
-			organ_damage_hit_minimum *= 1
+			organ_damage_hit_minimum *= 1.1
 
 	// Wounds can alter our odds of harming organs
 	for(var/datum/wound/oof as anything in wounds)
@@ -1293,7 +1293,7 @@
 	if(!forced && (!(cur_damage >= organ_damaged_required) || !(damage_amt >= organ_damage_minimum)))
 		return FALSE
 
-	var/organ_hit_chance = 30 * (damage_amt/organ_damage_minimum)
+	var/organ_hit_chance = 25 * (damage_amt/organ_damage_minimum)
 	// Bones getting in the way aaaaah
 	var/modifier = 1
 	var/list/bones = list()
@@ -1314,7 +1314,7 @@
 	var/obj/item/organ/victim = pick_weight(internal_organs)
 	damage_amt = max(0, CEILING((damage_amt * victim.internal_damage_modifier) - victim.internal_damage_reduction, 1))
 	if(damage_amt >= 1)
-		victim.applyOrganDamage(damage_amt, silent = (damage_amt >= 15))
+		victim.applyOrganDamage(damage_amt, silent = (damage_amt >= 10))
 	if(owner)
 		if(damage_amt >= 15)
 			owner.custom_pain("<b>БОЖЕ! [uppertext(victim.name)] БОЛИТ!</b>", rand(25, 35), affecting = src, nopainloss = TRUE)
