@@ -34,7 +34,7 @@
 	/// Set to a hex code to override a mob's eye color
 	var/eye_color = ""
 	/// Used to store the owner's original eye color, before we got inserted
-	var/old_eye_color = "ffffff"
+	var/old_eye_color = "#000000"
 	var/eye_icon_state = "eye"
 	var/flash_protect = FLASH_PROTECTION_NONE
 	var/see_invisible = SEE_INVISIBLE_LIVING

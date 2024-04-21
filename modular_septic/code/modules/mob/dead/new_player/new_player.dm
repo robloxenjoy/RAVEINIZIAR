@@ -100,6 +100,15 @@
 					character.age = client.age_ch
 					character.left_eye_color = random_eye_color()
 					character.right_eye_color = character.left_eye_color
+					for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
+						if(initial(organ_eyes.eye_color))
+							continue
+						if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
+							organ_eyes.eye_color = left_eye_color
+							organ_eyes.old_eye_color = left_eye_color
+						else
+							organ_eyes.eye_color = right_eye_color
+							organ_eyes.old_eye_color = right_eye_color
 					character.truerole = "Капнобатай"
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 					mind.active = FALSE
@@ -127,11 +136,6 @@
 					character.update_hair()
 					character.update_body_parts()
 					character.update_mutations_overlay()
-					character.update_eyes()
-					character.update_sight()
-					character.update_tint()
-					if(character.has_dna())
-						character.dna.species.handle_body(character)
 
 		if("Да вроде другая...")
 			client.ready_char = FALSE
