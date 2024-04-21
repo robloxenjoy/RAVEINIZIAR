@@ -136,6 +136,7 @@
 					character.update_hair()
 					character.update_body_parts()
 					character.update_mutations_overlay()
+					character.update_body_parts_head_only()
 
 		if("Да вроде другая...")
 			client.ready_char = FALSE
