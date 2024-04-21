@@ -1,5 +1,7 @@
 /obj/effect/landing
 	name = "landmark"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "spawnerr"
 	anchored = TRUE
 	plane = GAME_PLANE
 	layer = TURF_LAYER
@@ -17,8 +19,18 @@
 
 /obj/effect/landing/kapno
 	name = "kapno"
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "spawnerr"
+
+/obj/effect/landing/oper
+	name = "oper"
+
+/obj/effect/landing/slave
+	name = "slave"
+
+/obj/effect/landing/overlord
+	name = "overlord"
+
+/obj/effect/landing/bodyguard
+	name = "bodyguard"
 
 /obj/effect/landmark
 	name = "landmark"
