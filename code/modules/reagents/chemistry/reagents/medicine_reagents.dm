@@ -251,7 +251,7 @@
 
 /datum/reagent/medicine/rezadone/overdose_process(mob/living/M, delta_time, times_fired)
 	M.adjustToxLoss(1 * REM * delta_time, 0)
-	M.Dizzy(5 * REM * delta_time)
+//	M.Dizzy(5 * REM * delta_time)
 	M.Jitter(5 * REM * delta_time)
 	..()
 	. = TRUE
@@ -629,7 +629,7 @@
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M, delta_time, times_fired)
 	if(DT_PROB(18, delta_time))
 		M.drop_all_held_items()
-		M.Dizzy(2)
+//		M.Dizzy(2)
 		M.Jitter(2)
 	..()
 */
@@ -773,14 +773,14 @@
 		. = TRUE
 	M.losebreath = 0
 	if(DT_PROB(10, delta_time))
-		M.Dizzy(5)
+//		M.Dizzy(5)
 		M.Jitter(5)
 	..()
 
 /datum/reagent/medicine/atropine/overdose_process(mob/living/M, delta_time, times_fired)
 	M.adjustToxLoss(0.5 * REM * delta_time, 0)
 	. = TRUE
-	M.Dizzy(1 * REM * delta_time)
+//	M.Dizzy(1 * REM * delta_time)
 	M.Jitter(1 * REM * delta_time)
 	..()
 */
@@ -1213,7 +1213,7 @@
 	metabolizer.AdjustAllImmobility(-20 * REM * delta_time)
 	metabolizer.adjustStaminaLoss(-10 * REM * delta_time, 0)
 	metabolizer.Jitter(10 * REM * delta_time)
-	metabolizer.Dizzy(10 * REM * delta_time)
+//	metabolizer.Dizzy(10 * REM * delta_time)
 	return TRUE
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_metabolize(mob/living/L)
@@ -1227,7 +1227,7 @@
 	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	REMOVE_TRAIT(L, TRAIT_STUNRESISTANCE, type)
 	L.remove_movespeed_mod_immunities(type, /datum/movespeed_modifier/damage_slowdown)
-	L.Dizzy(0)
+//	L.Dizzy(0)
 	L.Jitter(0)
 
 /datum/reagent/medicine/changelingadrenaline/overdose_process(mob/living/metabolizer, delta_time, times_fired)
@@ -1340,7 +1340,7 @@
 		if(1 to 40)
 			M.jitteriness = min(M.jitteriness + (1 * REM * delta_time), 10)
 			M.stuttering = min(M.stuttering + (1 * REM * delta_time), 10)
-			M.Dizzy(5 * REM * delta_time)
+//			M.Dizzy(5 * REM * delta_time)
 			if(DT_PROB(30, delta_time))
 				M.losebreath++
 		if(41 to 80)
@@ -1348,7 +1348,7 @@
 			M.adjustStaminaLoss(0.1 * REM * delta_time, 0)
 			M.jitteriness = min(M.jitteriness + (1 * REM * delta_time), 20)
 			M.stuttering = min(M.stuttering + (1 * REM * delta_time), 20)
-			M.Dizzy(10 * REM * delta_time)
+//			M.Dizzy(10 * REM * delta_time)
 			if(DT_PROB(30, delta_time))
 				M.losebreath++
 			if(DT_PROB(10, delta_time))

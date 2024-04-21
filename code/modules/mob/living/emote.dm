@@ -429,7 +429,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/custom
-	key = "я"
+	key = "Я"
 	key_third_person = "custom"
 	message = null
 

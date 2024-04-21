@@ -311,9 +311,9 @@
 				owner.stuttering += 1
 				owner.vomit(10, 0, 1, 0, 1, 0)
 //			owner.Dizzy(5)
-		if(owner.disgust >= DISGUST_LEVEL_DISGUSTED)
-			if(DT_PROB(13, delta_time))
-				owner.blur_eyes(3) //We need to add more shit down here
+//		if(owner.disgust >= DISGUST_LEVEL_DISGUSTED)
+//			if(DT_PROB(13, delta_time))
+//				owner.blur_eyes(3) //We need to add more shit down here
 		owner.adjust_disgust(-0.25 * combined_disgust_metabolism * delta_time)
 	switch(owner.disgust)
 		if(0 to DISGUST_LEVEL_GROSS)

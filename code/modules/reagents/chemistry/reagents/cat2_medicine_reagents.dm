@@ -538,7 +538,7 @@
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, max(volume/10, 1) * REM * delta_time) // your heart is barely keeping up!
 
 		H.Jitter(rand(0, 2) * REM * delta_time)
-		H.Dizzy(rand(0, 2) * REM * delta_time)
+//		H.Dizzy(rand(0, 2) * REM * delta_time)
 
 		if(DT_PROB(18, delta_time))
 			to_chat(H,span_danger("Your body is trying to give up, but your heart is still beating!"))

@@ -59,8 +59,11 @@
 	if(SSticker.current_state < GAME_STATE_PLAYING)
 		alert("Игрушка пока не началась.")
 		return
-	client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Харамец", "Анклав", "Арсен")
-	client.age_ch = rand(18, 100)
+	client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Арсен", "Харамец", "Анклав")
+	if(prob(70))
+		client.age_ch = rand(18, 40)
+	else
+		client.age_ch = rand(18, 100)
 	client.ready_char = TRUE
 	alert("Я вспомнил кто я!")
 	chooseRole()
@@ -80,41 +83,50 @@
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
-	alert("А может была другая роль?",,"Играем уже!","Да вроде другая...")
-	if("Играем уже!")
-		for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
-			if(spawn_point.name == client.role_ch)
-				var/mob/living/carbon/human/character = new(spawn_point.loc)
+	var/crazyalert = alert("А может была другая роль?",,"Продолжаем уже!","Да вроде другая...")
+	switch(crazyalert)
+		if("Продолжаем уже!")
+			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
+				if(spawn_point.name == client.role_ch)
+					var/mob/living/carbon/human/character = new(spawn_point.loc)
 
-				character.set_species(/datum/species/human)
-				character.gender = MALE
-				character.genitals = GENITALS_MALE
-				character.body_type = MALE
-				character.chat_color = ""
-				character.real_name = client.name_ch
-				character.age = client.age_ch
-				character.truerole = "Капнобатай"
-				character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-				mind.active = FALSE
-				mind.transfer_to(character)
-				mind.set_original_character(character)
-				character.key = key
-				qdel(src)
+					character.set_species(/datum/species/human)
+					character.gender = MALE
+					character.genitals = GENITALS_MALE
+					character.body_type = MALE
+					character.chat_color = ""
+					character.real_name = client.name_ch
+					character.age = client.age_ch
+					character.left_eye_color = "#000000"
+					character.right_eye_color = "#000000"
+					character.truerole = "Капнобатай"
+					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
+					mind.active = FALSE
+					mind.transfer_to(character)
+					mind.set_original_character(character)
+					character.key = key
+					qdel(src)
 
-				var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
-				if(!babble)
-					character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/gakster.ogg')
-				else
-					babble.babble_sound_override = 'modular_septic/sound/voice/babble/gakster.ogg'
-					babble.volume = BABBLE_DEFAULT_VOLUME
-					babble.duration = BABBLE_DEFAULT_DURATION
+					var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
+					if(!babble)
+						character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/gakster.ogg')
+					else
+						babble.babble_sound_override = 'modular_septic/sound/voice/babble/gakster.ogg'
+						babble.volume = BABBLE_DEFAULT_VOLUME
+						babble.duration = BABBLE_DEFAULT_DURATION
 
-				character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-				var/area/joined_area = get_area(character.loc)
-				if(joined_area)
-					joined_area.on_joining_game(character)
-				to_chat(character, span_notice("Я продолжаю искать свой верный путь."))
-				character.attributes?.update_attributes()
-	if("Да вроде другая...")
-		client.ready_char = FALSE
-		return FALSE
+					character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
+					var/area/joined_area = get_area(character.loc)
+					if(joined_area)
+						joined_area.on_joining_game(character)
+					to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
+
+					character.attributes?.update_attributes()
+					character.update_body()
+					character.update_hair()
+					character.update_body_parts()
+					character.update_mutations_overlay()
+
+		if("Да вроде другая...")
+			client.ready_char = FALSE
+			return FALSE

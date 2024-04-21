@@ -15,6 +15,6 @@
 
 /datum/status_effect/incredible_gas/tick()
 	. = ..()
-	owner.blur_eyes(1)
+//	owner.blur_eyes(1)
 	if(prob(25))
 		owner.emote("cry")
