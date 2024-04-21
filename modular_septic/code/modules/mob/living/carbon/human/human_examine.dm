@@ -64,7 +64,6 @@
 	//TODO: Add a social recordkeeping mechanic and datum to keep tracker of who the viewer knows
 	//This will do it for now, i guess
 //	var/visible_job = get_assignment(if_no_id = "", if_no_job = "", hand_first = FALSE)
-	var/visible_job = truerole
 	var/job_message = "<span class='info'>"
 	if(truerole)
 		if(!skipface)
@@ -515,12 +514,9 @@
 	. = list(span_notice("<i>Я осматриваю <EM>[obscure_name ? "Неизвестный" : fancy_name]</EM> ближе, и замечаю...</i>"), "<br><hr class='infohr'>")
 
 	var/box = ""
-	var/t_He = p_they(TRUE)
 	var/distance = get_dist(user, src)
 
 	var/t_His = p_their(TRUE)
-	var/t_his = p_their()
-	var/t_has = p_have()
 
 	var/list/damaged_bodypart_text = list()
 	var/list/clothing = list(head, wear_mask, wear_neck, wear_suit, w_uniform, wear_id, belt, back, s_store, ears, ears_extra, gloves, shoes)

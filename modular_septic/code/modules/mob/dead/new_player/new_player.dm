@@ -104,11 +104,11 @@
 						if(initial(organ_eyes.eye_color))
 							continue
 						if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
-							organ_eyes.eye_color = left_eye_color
-							organ_eyes.old_eye_color = left_eye_color
+							organ_eyes.eye_color = character.left_eye_color
+							organ_eyes.old_eye_color = character.left_eye_color
 						else
-							organ_eyes.eye_color = right_eye_color
-							organ_eyes.old_eye_color = right_eye_color
+							organ_eyes.eye_color = character.right_eye_color
+							organ_eyes.old_eye_color = character.right_eye_color
 					character.truerole = "Капнобатай"
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 					mind.active = FALSE
