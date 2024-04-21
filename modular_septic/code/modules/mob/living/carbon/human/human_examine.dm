@@ -150,13 +150,13 @@
 			. += "[t_He] [t_has] <b>[gloves.get_examine_string(user)]</b> on [t_his] hands."
 		else if(!(obscured & ITEM_SLOT_GLOVES) && num_hands)
 			if(blood_in_hands)
-				. += "<span class='warning'>[t_He] [t_has][num_hands > 1 ? "" : " a"] <span class='bloody'><b>blood-stained</b></span> hand[num_hands > 1 ? "s" : ""]!</span>"
+				. += "<span class='warning'>У него <span class='bloody'><b>в крови</b></span> [num_hands > 1 ? "руки" : "рука"]!</span>"
 			if(shit_in_hands)
-				. += "<span class='warning'>[t_He] [t_has][num_hands > 1 ? "" : " a"] <span class='shitty'><b>shit-stained</b></span> hand[num_hands > 1 ? "s" : ""]!</span>"
+				. += "<span class='warning'>У него <span class='shitty'><b>в говне</b></span> hand[num_hands > 1 ? "руки" : "рука"]!</span>"
 			if(cum_in_hands)
-				. += "<span class='warning'>[t_He] [t_has][num_hands > 1 ? "" : " a"] <span class='cummy'><b>cum-stained</b></span> hand[num_hands > 1 ? "s" : ""]!</span>"
+				. += "<span class='warning'>У него <span class='cummy'><b>в сперме</b></span> hand[num_hands > 1 ? "руки" : "рука"]!</span>"
 			if(femcum_in_hands)
-				. += "<span class='warning'>[t_He] [t_has][num_hands > 1 ? "" : " a"] <span class='femcummy'><b>femcum-stained</b></span> hand[num_hands > 1 ? "s" : ""]!</span>"
+				. += "<span class='warning'>У него <span class='femcummy'><b>в женской сперме</b></span> hand[num_hands > 1 ? "руки" : "рука"]!</span>"
 
 	//handcuffed
 	if(handcuffed && !(obscured & ITEM_SLOT_HANDCUFFED) && !(handcuffed.item_flags & EXAMINE_SKIP))
@@ -322,9 +322,9 @@
 	//dirtiness
 	switch(germ_level)
 		if(GERM_LEVEL_FILTHY to GERM_LEVEL_SMASHPLAYER)
-			msg += "[t_He] looks filthy!"
+			msg += "Он выглядит грязно!"
 		if(GERM_LEVEL_SMASHPLAYER to INFINITY)
-			msg += "<b>Good lord, [t_he] stinks!</b>"
+			msg += "<b>Боже, он воняет!</b>"
 	//strength diff
 	if(user.attributes && (user != src))
 		switch(GET_MOB_SKILL_VALUE_RAW(user, STAT_STRENGTH)-GET_MOB_SKILL_VALUE_RAW(src, STAT_STRENGTH))

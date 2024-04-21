@@ -17,8 +17,8 @@
 
 /datum/emote/living/carbon/clap
 	key = "clap"
-	key_third_person = "claps"
-	message = "claps."
+	key_third_person = "хлопает"
+	message = "хлопает."
 	muzzle_ignore = TRUE
 	hands_use_check = TRUE
 	emote_type = EMOTE_AUDIBLE
@@ -63,8 +63,8 @@
 
 /datum/emote/living/carbon/moan
 	key = "moan"
-	key_third_person = "moans"
-	message = "moans!"
+	key_third_person = "стонет"
+	message = "стонет!"
 	message_mime = "appears to moan!"
 	emote_type = EMOTE_AUDIBLE
 	

@@ -192,7 +192,7 @@
 		return
 	if(can_push)
 		user.changeNext_move(CLICK_CD_MELEE)
-		to_chat(user, span_notice("You push the wall but nothing happens!"))
+		to_chat(user, span_notice("Я толкаю стену но ничего не происходит."))
 		playsound(src, 'sound/weapons/genhit.ogg', 25, TRUE)
 		add_fingerprint(user)
 

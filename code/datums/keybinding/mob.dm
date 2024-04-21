@@ -15,7 +15,7 @@
 		return
 	var/mob/M = user.mob
 	if(!M.pulling)
-		to_chat(user, span_notice("You are not pulling anything."))
+		to_chat(user, span_notice("Я ничего не тащу."))
 	else
 		M.stop_pulling()
 	return TRUE

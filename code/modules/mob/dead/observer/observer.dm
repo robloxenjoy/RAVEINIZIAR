@@ -304,7 +304,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 /mob/living/verb/ghost()
-	set category = "OOC"
+	set category = null
 	set name = "Ghostize"
 	set desc = "Are you want?"
 
@@ -582,7 +582,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 /mob/dead/observer/verb/particlize()
-	set category = "Ghost"
+	set category = null
 	set name = "Particlize"
 	set desc = "Are you want?"
 

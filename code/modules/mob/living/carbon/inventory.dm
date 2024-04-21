@@ -165,22 +165,22 @@
 /mob/living/carbon/proc/give()
 	var/obj/item/offered_item = get_active_held_item()
 	if(!offered_item)
-		to_chat(src, span_warning("You're not holding anything to give!"))
+		to_chat(src, span_warning("Ничего не держу дабы дать!"))
 		return
 
 	if(IS_DEAD_OR_INCAP(src))
-		to_chat(src, span_warning("You're unable to offer anything in your current state!"))
+		to_chat(src, span_warning("Не могу что-либо передать!"))
 		return
 
 	if(has_status_effect(STATUS_EFFECT_OFFERING))
-		to_chat(src, span_warning("You're already offering up something!"))
+		to_chat(src, span_warning("Уже что-то предлагаю!"))
 		return
 
 	if(offered_item.on_offered(src)) // see if the item interrupts with its own behavior
 		return
 
-	visible_message(span_notice("[src] is offering [offered_item]."), \
-					span_notice("You offer [offered_item]."), null, 2)
+	visible_message(span_notice("[src] передаёт [offered_item]."), \
+					span_notice("Я передаю [offered_item]."), null, 2)
 
 	apply_status_effect(STATUS_EFFECT_OFFERING, offered_item)
 
