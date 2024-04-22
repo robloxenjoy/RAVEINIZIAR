@@ -6,6 +6,8 @@
 // BUT you have to use PX font sizes with are on a x8 scale of these font sizes
 // Sample font-size: DM: 8 CSS: 64px
 
+var/list/special_fonts_crazy = list('interface/fonts/eurostile-round-extended-medium.ttf')
+
 /client/script = {"<style>
 body					{font-family: "Eurostile Round Extended Medium";}
 
