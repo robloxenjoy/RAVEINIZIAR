@@ -90,7 +90,7 @@ window "infowindow"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
-		show-splitter = false
+		show-splitter = true
 
 window "outputwindow"
 	elem "outputwindow"
