@@ -122,20 +122,20 @@
 		if(BLOOD_VOLUME_EXCESS to BLOOD_VOLUME_MAX_LETHAL)
 			owner.status_flags &= ~BLEEDOUT
 			if(DT_PROB(7.5, delta_time))
-				to_chat(owner, span_userdanger("Blood starts to tear my arteries apart!"))
+				to_chat(owner, span_userdanger("Кровь рвёт мои артерии!"))
 				var/obj/item/bodypart/artery_popper = pick(owner.bodyparts)
 				if(!artery_popper.is_artery_torn())
 					artery_popper.force_wound_upwards(/datum/wound/artery)
 		if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
 			owner.status_flags &= ~BLEEDOUT
 			if(DT_PROB(5, delta_time))
-				to_chat(owner, span_warning("My arteries feel terribly bloated."))
+				to_chat(owner, span_warning("Мои артерии заполнены."))
 		if(-INFINITY to BLOOD_VOLUME_SURVIVE)
 			if(!(owner.status_flags & BLEEDOUT))
 				owner.status_flags |= BLEEDOUT
-				to_chat(owner, span_userdanger("My organs feel outrageously heavy!"))
+				to_chat(owner, span_userdanger("Мои органы кажутся невероятно тяжелыми!"))
 			else if(DT_PROB(2.5, delta_time))
-				to_chat(owner, span_userdanger("Not... Enough... Blood..."))
+				to_chat(owner, span_userdanger("Недостаточно... Крови..."))
 		else
 			owner.status_flags &= ~BLEEDOUT
 

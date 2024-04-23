@@ -13,8 +13,8 @@
 	icon_state = "dexterity"
 
 /datum/attribute/stat/endurance
-	name = "Здоровье"
-	shorthand = "ЗД"
+	name = "Стойкость"
+	shorthand = "СТ"
 	desc = "Endurance measures your capability at handling pain, disease and other physical hardships. \
 		Favorite attribute of the masochist."
 	icon_state = "endurance"

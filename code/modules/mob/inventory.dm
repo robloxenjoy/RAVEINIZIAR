@@ -444,7 +444,7 @@
 
 	var/obj/item/I = get_active_held_item()
 	if(!I)
-		to_chat(src, span_warning("You are not holding anything to equip!"))
+		to_chat(src, span_warning("Дабы надеть, ничего не держу!"))
 		return
 	if (temporarilyRemoveItemFromInventory(I) && !QDELETED(I))
 		if(I.equip_to_best_slot(src))
