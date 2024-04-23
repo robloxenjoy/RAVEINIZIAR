@@ -103,7 +103,6 @@
 	// Limb not mangled
 	if((new_limb.get_mangled_state() != BODYPART_MANGLED_FLESH) && (new_limb.get_mangled_state() != BODYPART_MANGLED_BOTH))
 		return FALSE
-/*
 	var/gaping_wound = FALSE
 	for(var/datum/injury/injury as anything in new_limb.injuries)
 		if(injury.get_bleed_rate() && (injury.damage_per_injury() >= 20))
@@ -112,7 +111,6 @@
 	// No sufficiently open wound
 	if(!gaping_wound)
 		return FALSE
-*/
 
 /datum/wound/spill/gut/apply_wound(obj/item/bodypart/new_limb, silent, datum/wound/old_wound, smited, add_descriptive)
 	. = ..()

@@ -6,10 +6,10 @@
 	organ_efficiency = list(ORGAN_SLOT_HEART = 100)
 	w_class = WEIGHT_CLASS_SMALL
 
-	low_threshold_passed = span_info("Prickles of pain appear then die out from within my chest...")
-	high_threshold_passed = span_warning("Something inside my chest hurts, and the pain isn't subsiding. I am breathing far faster than before.")
-	now_fixed = span_info("My heart begins to beat again.")
-	high_threshold_cleared = span_info("The pain in my chest has died down, and my breathing becomes more relaxed.")
+	low_threshold_passed = span_info("Появляются покалывания боли и затухают в груди...")
+	high_threshold_passed = span_warning("Что-то внутри груди болит, и боль не утихает. Я дышу гораздо быстрее, чем раньше.")
+	now_fixed = span_info("Моё сердце снова бьётся.")
+	high_threshold_cleared = span_info("Боль в груди утихла, и дыхание стало более расслабленным.")
 
 	attack_verb_continuous = list("beats", "thumps")
 	attack_verb_simple = list("beat", "thump")

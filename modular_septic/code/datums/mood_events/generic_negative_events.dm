@@ -55,7 +55,7 @@
 
 //Died
 /datum/mood_event/died
-	description = span_dead("<b>Я видел ничего, и я не хочу в это возвращаться!</b>")
+	description = span_dead("<b>Я знаю что такое НИЧЕГО.</b>")
 	mood_change = -6
 	timeout = 10 MINUTES
 

@@ -1293,7 +1293,7 @@
 	if(!forced && (!(cur_damage >= organ_damaged_required) || !(damage_amt >= organ_damage_minimum)))
 		return FALSE
 
-	var/organ_hit_chance = 25 * (damage_amt/organ_damage_minimum)
+	var/organ_hit_chance = 30 * (damage_amt/organ_damage_minimum)
 	// Bones getting in the way aaaaah
 	var/modifier = 1
 	var/list/bones = list()
@@ -1316,7 +1316,7 @@
 	if(damage_amt >= 1)
 		victim.applyOrganDamage(damage_amt, silent = (damage_amt >= 10))
 	if(owner)
-		if(damage_amt >= 15)
+		if(damage_amt >= 10)
 			owner.custom_pain("<b>БОЖЕ! [uppertext(victim.name)] БОЛИТ!</b>", rand(25, 35), affecting = src, nopainloss = TRUE)
 		if(wound_messages)
 			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" <b>Орган повреждён!</b>"))

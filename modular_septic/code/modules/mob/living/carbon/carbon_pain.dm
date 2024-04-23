@@ -204,10 +204,10 @@
 		 * possibility of a feedback loop from custom_pain() being called with a positive power, incrementing pain on a limb,
 		 * which triggers this proc, which calls custom_pain(), etc. Make sure you call it with nopainloss = TRUE in these cases!
 		 */
-		custom_pain("[pick("It hurts so much", "I really need some painkillers", "Ooh, the pain")]!", 10, nopainloss = TRUE)
+		custom_pain("[pick("Это болит так сильно", "Мне нужно обезболивающее", "О боже, боль")]!", 10, nopainloss = TRUE)
 
 	if((shock_stage >= SHOCK_STAGE_2) && (previous_shock_stage < SHOCK_STAGE_2))
-		visible_message("is having trouble keeping [p_their()] eyes open.", visible_message_flags = EMOTE_MESSAGE)
+		visible_message("пульсирует.", visible_message_flags = EMOTE_MESSAGE)
 		//Attempt to inject combat cocktail for the first time
 		endorphinate()
 

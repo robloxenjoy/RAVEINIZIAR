@@ -2,7 +2,7 @@
 /datum/admins/proc/show_bobux_panel(mob/M in GLOB.mob_list)
 	set category = "Admin"
 	set desc = "Edit mobs's kaotik info"
-	set name = "Показать панель ультр"
+	set name = "Показать панель каотиков"
 
 	if(!istype(M))
 		to_chat(usr, "This can only be used on instances of type /mob")
@@ -18,7 +18,7 @@
 /datum/admins/proc/destroykaotiks(mob/M in GLOB.mob_list)
 	set category = "Admin"
 	set desc = "Destroy them"
-	set name = "Разрушить ультры"
+	set name = "Разрушить каотики"
 
 //	message_admins("[noob] has destroyed the kaotik system!")
 //	log_admin("[noob] has destroyed the kaotik system!")

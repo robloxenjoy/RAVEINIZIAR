@@ -41,7 +41,7 @@
 		to_chat(noob, "<span clas='bobux'>Я уже купил эту штучку!</span>")
 		return FALSE
 	if(!SSbobux.working)
-		to_chat(noob, "<span clas='bobux'>Система ультр развалена!</span>")
+		to_chat(noob, "<span clas='bobux'>Каотичная Система развалена!</span>")
 		return FALSE
 	if((noob?.prefs?.bobux_amount >= cost) && !unbuyable)
 		return TRUE
