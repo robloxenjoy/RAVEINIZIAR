@@ -1,6 +1,6 @@
 //subsystem to handle topic shit as well as other miscellaneous stuff
 SUBSYSTEM_DEF(bobux)
-	name = "Ультры"
+	name = "Каотики"
 	init_order = INIT_ORDER_DEFAULT
 	flags = SS_NO_FIRE
 	var/list/datum/bobux_reward/all_bobux_rewards = list()
@@ -33,7 +33,7 @@ SUBSYSTEM_DEF(bobux)
 		return FALSE
 	var/list/dat = GetDat(noob)
 	winshow(noob, "kaotik_window", TRUE)
-	var/datum/browser/popup = new(noob, "kaotik_window", "<div align='center'>ультры</div>", 400, 800)
+	var/datum/browser/popup = new(noob, "kaotik_window", "<div align='center'>Каотики</div>", 400, 800)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 	onclose(noob.mob, "kaotik_window", src)
@@ -41,15 +41,15 @@ SUBSYSTEM_DEF(bobux)
 /datum/controller/subsystem/bobux/proc/GetDat(client/noob)
 	var/list/dat = list()
 	var/datum/preferences/pref_source = noob.prefs
-	dat += "<center><b>Меню ультр</b></center><br>"
-	dat += "<center>В данный момент у меня <b>[pref_source.bobux_amount]</b> ультр.</center><br>"
+	dat += "<center><b>Меню Каотиков</b></center><br>"
+	dat += "<center>В данный момент у меня <b>[pref_source.bobux_amount]</b> каотиков.</center><br>"
 	dat += "<center><a href='?src=\ref[src];task=close'>Done</a></center>"
 	dat += "<hr>"
 	for(var/aaa in bobux_rewards_buyable)
 		var/datum/bobux_reward/comicao = aaa
 		dat += "<span class='bobux'><b>[comicao.name]</b></span><br>"
 		dat += "[comicao.desc]</span><br>"
-		dat += "<a href='?src=\ref[src];task=buy;id=[comicao.id]'>Купить</a> ([comicao.cost] ультр)"
+		dat += "<a href='?src=\ref[src];task=buy;id=[comicao.id]'>Купить</a> ([comicao.cost] Каотиков)"
 		dat += "<hr>"
 	return dat
 

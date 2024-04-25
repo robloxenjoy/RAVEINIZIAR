@@ -44,16 +44,16 @@
 
 /datum/mind/proc/bobux_panel()
 	if(!length(SSbobux.all_bobux_rewards))
-		alert("Not before round-start!", "0 Ультр")
+		alert("Not before round-start!", "0 Каотиков")
 		return
 	if(QDELETED(src))
-		alert("Не получается!", "0 Ультр")
+		alert("Не получается!", "0 Каотиков")
 		return
 	if(!SSbobux.working)
 		return
 	var/datum/preferences/prefs = current?.client?.prefs
 	if(!prefs)
-		alert("Не получается с [key]!", "0 Ультр")
+		alert("Не получается с [key]!", "0 Каотиков")
 		return
 
 	var/list/bobux_rewards = bobux_bought.Copy()
@@ -63,7 +63,7 @@
 		bobux_rewards |= initial(chungoose.name)
 	var/list/out = list(
 		"<B><span class='bobux'>[key]</span></B><br>\
-		<B>Bobux amount:</B> [prefs.bobux_amount ? prefs.bobux_amount : "Нет ультр"]<br>\
+		<B>Bobux amount:</B> [prefs.bobux_amount ? prefs.bobux_amount : "Нет Каотиков"]<br>\
 		<a href='?src=[REF(src)];bobux=set'>Set</a> \
 		<a href='?src=[REF(src)];bobux=add'>Add</a> \
 		<a href='?src=[REF(src)];bobux=remove'>Remove</a><br>\

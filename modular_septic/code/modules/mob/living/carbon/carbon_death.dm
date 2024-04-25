@@ -29,7 +29,7 @@
 	if(!has_died)
 		if(iswillet(src))
 			return
-		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>Я мёртв! -10 ультр!</span>")
+		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>Я мёртв! -10 Каотиков!</span>")
 	if(is_merc_job(src))
 		GLOB.mercenary_list -= 1
 //	client?.prefs?.adjust_bobux(-1)
