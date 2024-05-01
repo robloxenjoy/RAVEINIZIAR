@@ -232,14 +232,14 @@
 				to_chat(user, span_notice("Need a different material to create this item."))
 				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 				return
-			will_be = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
+			will_be = /obj/item/podpol_weapon/sword
 			hits = 10
 		if("Steel Saber")
 			if(!istype(src, /obj/item/craftorshit/thing/steel))
 				to_chat(user, span_notice("Need a different material to create this item."))
 				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 				return
-			will_be = /obj/item/changeable_attacks/slashstab/sabre/small/steel
+			will_be = /obj/item/podpol_weapon/sword
 			hits = 7
 			hardnessizm = DICE_CRIT_SUCCESS
 		else

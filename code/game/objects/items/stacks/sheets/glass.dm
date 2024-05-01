@@ -384,8 +384,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 //	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.ogg', 'modular_septic/sound/weapons/melee/baton2.ogg', 'modular_septic/sound/weapons/melee/baton3.ogg')
 //	var/current_atk_mode = null
 
-#define slashh 1
-#define stabb 2
+/*
 
 /obj/item/shard/crystal
 	var/current_atk_mode = slashh
@@ -510,4 +509,4 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 //	weld_material = /obj/item/stack/sheet/plasmaglass
 
-
+*/

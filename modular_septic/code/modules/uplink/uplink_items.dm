@@ -140,7 +140,7 @@
 /datum/uplink_item/dangerous/steelsword
 	name = "Steel Sword"
 	desc = "Can be good in good hands."
-	item = /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
+	item = /obj/item/podpol_weapon/sword
 	cost = 11
 	purchasable_from = ALL
 

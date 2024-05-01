@@ -42,6 +42,8 @@
 		var/angle = get_angle(src, target)
 		var/turf/new_target = get_turf_in_angle(angle, get_turf(src), world.view)
 		parsed_target = new_target.name
+	if(look_now & LOOKING_UP)
+		thrown_thing.z = src.z+1
 	if(ismob(thrown_thing))
 		visible_message(span_danger("<b>[src]</b> кидает <b>[thrown_thing]</b> в [parsed_target][power_throw ? " жёстко!" : "."]"), \
 						span_userdanger("Я кидаю <b>[thrown_thing]</b> в [parsed_target][power_throw ? " жёстко!" : "."]"), \
@@ -52,7 +54,7 @@
 						span_userdanger("Я кидаю [thrown_thing] в [parsed_target][power_throw ? " жёстко!" : "."]"))
 	log_message("был кинут [thrown_thing] в [parsed_target][power_throw ? " жёстко" : ""]", LOG_ATTACK)
 	sound_hint()
-//	src.changeNext_move(CLICK_CD_CLING)
+	src.changeNext_move(CLICK_CD_CLING)
 	src.adjustFatigueLoss(5)
 	newtonian_move(get_dir(target, src))
 	var/final_throw_range = thrown_thing.throw_range

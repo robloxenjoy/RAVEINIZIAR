@@ -229,7 +229,7 @@
 
 /datum/bartering_recipe/kukri
     outputs = list(
-        /obj/item/changeable_attacks/sword/kukri = 1
+        /obj/item/podpol_weapon/sword = 1
     )
     inputs = list(
         /obj/item/bodypart/r_arm = 1,

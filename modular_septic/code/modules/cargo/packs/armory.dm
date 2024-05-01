@@ -356,6 +356,6 @@
 	desc = "A premium kukri with a sling to fit to any belt, makes clean cuts against both flesh and underbrush, It's not likely you'd encounter the latter."
 	cost = 20 DOLLARS
 	contains = list(
-		/obj/item/changeable_attacks/sword/kukri
+		/obj/item/podpol_weapon/sword
 	)
 	crate_name = "kukri"

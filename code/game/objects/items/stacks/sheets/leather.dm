@@ -37,7 +37,7 @@
 				qdel(src)
 
 	else if (user.a_intent == INTENT_GRAB)
-		if(istype(W, /obj/item/shard/crystal))
+		if(istype(W, /obj/item/podpol_weapon/sword))
 			user.visible_message(span_notice("[user] starts to craft."),span_notice("You start to craft something."), span_hear("You hear the sound of crafting."))
 			var/time = 14 SECONDS
 			time -= (GET_MOB_SKILL_VALUE(user, SKILL_MASONRY) * 0.75 SECONDS)

@@ -7,3 +7,7 @@
 #define FIXEYE_INACTIVE	(1<<2)
 /// Fixeye cannot change dir
 #define FIXEYE_LOCKED (1<<3)
+
+#define LOOKING_UP (1<<0)
+
+#define LOOKING_DOWN (1<<1)

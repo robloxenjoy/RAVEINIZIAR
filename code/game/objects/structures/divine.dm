@@ -33,12 +33,12 @@
 //		var/result = rand(1, 2)
 //		switch(result)
 //			if(1)
-		new /obj/item/changeable_attacks/slashstab/sabre/small/steel(get_turf(user))
+		new /obj/item/podpol_weapon/sword(get_turf(user))
 		visible_message(span_danger("This is my gift."))
 
 /*
 			if(2)
-				if(!HAS_TRAIT(user, TRAIT_LYNXER)) 
+				if(!HAS_TRAIT(user, TRAIT_LYNXER))
 					ADD_TRAIT(user, TRAIT_LYNXER, name)
 					add_verb(user, /mob/living/carbon/human/verb/belynx)
 					to_chat(user, span_achievementrare("Yes, now you can become a lynx!"))

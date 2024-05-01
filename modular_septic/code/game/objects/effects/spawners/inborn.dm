@@ -21,7 +21,7 @@
 	r_pocket = /obj/item/keycard/inborn
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
-	r_hand = /obj/item/changeable_attacks/sword/kukri
+//	r_hand = /obj/item/changeable_attacks/sword/kukri
 
 
 /obj/effect/mob_spawn/human/inborn/attack_ghost(mob/user)

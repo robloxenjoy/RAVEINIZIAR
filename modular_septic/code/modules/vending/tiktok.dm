@@ -180,7 +180,7 @@
 		/obj/item/melee/bita/evil = 10,
 		/obj/item/melee/bita/macecircle = 10,
 		/obj/item/knife/combat/goldenmisericorde = 10,
-		/obj/item/changeable_attacks/slashstabbash/sword/big/bronze = 10,
+		/obj/item/podpol_weapon/sword = 10,
 		/obj/item/gun/ballistic/automatic/pistol/remis/ppk = 10,
 		/obj/item/gun/ballistic/shotgun/bolas = 10,
 	)

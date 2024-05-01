@@ -117,3 +117,8 @@
 	var/tetris_width
 	/// Height we occupy on the hud - Keep null to generate based on w_class
 	var/tetris_height
+
+	var/wielded_inhand_state_melee = FALSE
+
+	var/choose_attack_intent = FALSE
+	var/current_attack_intent = null

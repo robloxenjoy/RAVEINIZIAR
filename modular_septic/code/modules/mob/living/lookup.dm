@@ -29,7 +29,7 @@
 	var/turf/ceiling = get_step_multiz(src, UP)
 	if(!istype(ceiling)) //We are at the highest z-level
 		if(!silent)
-			to_chat(src, span_warning("I can't see through the ceiling above me."))
+			to_chat(src, span_warning("Есть потолок."))
 		end_look_up(TRUE)
 		return
 	else if(!istransparentturf(ceiling)) //There is no turf we can look through above us
@@ -44,12 +44,13 @@
 					break
 		if(!istransparentturf(ceiling))
 			if(!silent)
-				to_chat(src, span_warning("I can't see through \the [ceiling] above me."))
+				to_chat(src, span_warning("Я не могу смотреть сквозь [ceiling] сверху меня."))
 			return
 	if(!silent)
-		to_chat(src, span_notice("I start looking up."))
+		to_chat(src, span_notice("Я начинаю смотреть вверх."))
 	reset_perspective(ceiling)
 	hud_used?.lookup?.name = "stop looking up"
+	look_now = LOOKING_UP
 
 /mob/living/stop_look_up()
 	reset_perspective()
@@ -57,10 +58,11 @@
 
 /mob/living/end_look_up(silent = TRUE)
 	stop_look_up()
+	look_now = NONE
 	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	if(!silent)
-		to_chat(src, span_notice("I stop looking up."))
+		to_chat(src, span_notice("Я прекращаю смотреть вверх."))
 
 /mob/living/look_down()
 	if(client.perspective != MOB_PERSPECTIVE) //We are already looking up or down
@@ -81,7 +83,7 @@
 	var/turf/lower_level = get_step_multiz(src, DOWN)
 	if(!lower_level) //We are at the lowest z-level.
 		if(!silent)
-			to_chat(src, span_warning("I can't see through the floor below me."))
+			to_chat(src, span_warning("Я не могу смотреть сквозь пол."))
 		end_look_down(TRUE)
 		return
 	else if(!istransparentturf(floor)) //There is no turf we can look through below us
@@ -98,12 +100,13 @@
 					break
 		if(!istransparentturf(floor))
 			if(!silent)
-				to_chat(src, span_warning("I can't see through \the [floor] below me."))
+				to_chat(src, span_warning("Я не могу смотреть сквозь [floor]."))
 			return
 	if(!silent)
-		to_chat(src, span_notice("I start looking down."))
+		to_chat(src, span_notice("Я начинаю смотреть вниз."))
 	reset_perspective(lower_level)
 	hud_used?.lookup?.name = "stop looking down"
+	look_now = LOOKING_DOWN
 
 /mob/living/stop_look_down()
 	reset_perspective()
@@ -111,7 +114,8 @@
 
 /mob/living/end_look_down(silent = TRUE)
 	stop_look_down()
+	look_now = NONE
 	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	if(!silent)
-		to_chat(src, span_notice("I stop looking down."))
+		to_chat(src, span_notice("Я прекращаю смотреть вниз."))

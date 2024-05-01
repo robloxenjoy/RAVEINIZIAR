@@ -793,7 +793,7 @@
 		if("steel hunting knife")
 			if(moneymoney < 65)
 				return
-			new /obj/item/changeable_attacks/slashstab/knife/big/steel(get_turf(user))
+			new /obj/item/podpol_weapon/sword(get_turf(user))
 			moneymoney -= 65
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 		if("square lockpick")

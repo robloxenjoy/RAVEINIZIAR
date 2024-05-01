@@ -427,61 +427,104 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
-/obj/item/changeable_attacks
-	name = "a fucked up retarded weapon"
-	desc = "report thgis to a retard dev if you see it"
+/obj/item
 	var/slash_hitsound = list('modular_septic/sound/weapons/melee/slasher1.ogg', 'modular_septic/sound/weapons/melee/slasher2.ogg', 'modular_septic/sound/weapons/melee/slasher3.ogg')
 	var/stab_hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 	var/bash_hitsound = list('modular_septic/sound/weapons/melee/baton1.ogg', 'modular_septic/sound/weapons/melee/baton2.ogg', 'modular_septic/sound/weapons/melee/baton3.ogg')
-	var/current_atk_mode = null
-	var/wielded_inhand_state = FALSE
 
-/obj/item/changeable_attacks/examine(mob/user)
+/obj/item/examine(mob/user)
 	. = ..()
-	switch(current_atk_mode)
-		if(SLASH_MODE)
-			. += span_notice("Сейчас режущим.")
-		if(STAB_MODE)
-			. += span_notice("Сейчас вонзанием.")
-		if(BASH_MODE)
-			. += span_notice("Сейчас отбитием.")
+	if(choose_attack_intent)
+		switch(current_attack_intent)
+			if(SLASH_ATTACKING)
+				. += span_notice("Сейчас порезом.")
+			if(STAB_ATTACKING)
+				. += span_notice("Сейчас вонзанием.")
+			if(BASH_ATTACKING)
+				. += span_notice("Сейчас отбитием.")
 
-/obj/item/changeable_attacks/attack_self(mob/user, modifiers)
+/obj/item/attack_self(mob/user, modifiers)
 	. = ..()
-	swap_intents(user)
+	if(choose_attack_intent)
+		swap_intents(user)
 
-/obj/item/changeable_attacks/dropped(mob/user, silent)
+/obj/item/proc/swap_intents(mob/user)
+	if(choose_attack_intent)
+		user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
+
+/obj/item/update_icon(updates)
 	. = ..()
-	current_atk_mode = initial(current_atk_mode)
-
-/obj/item/changeable_attacks/proc/swap_intents(mob/user)
-	if(isnull(current_atk_mode))
-		to_chat(user, span_warning("There's no other ways to attack with this weapon."))
-		return
-	user.playsound_local(get_turf(src), 'modular_septic/sound/weapons/melee/swap_intent.ogg', 5, FALSE)
-
-/obj/item/changeable_attacks/Initialize(mapload)
-	. = ..()
-	if(current_atk_mode == SLASH_MODE)
-		hitsound = slash_hitsound
-	if(current_atk_mode == STAB_MODE)
-		hitsound = stab_hitsound
-	if(current_atk_mode == BASH_MODE)
-		hitsound = bash_hitsound
-
-/obj/item/changeable_attacks/update_icon(updates)
-	. = ..()
-	if(wielded_inhand_state)
+	if(wielded_inhand_state_melee)
 		if(SEND_SIGNAL(src, COMSIG_TWOHANDED_WIELD_CHECK))
 			inhand_icon_state = "[initial(inhand_icon_state)]_wielded"
 		else
 			inhand_icon_state = "[initial(inhand_icon_state)]"
-/*
-/obj/item/changeable_attacks/equipped(mob/living/carbon/human/user, slot)
+
+/obj/item/podpol_weapon/sword
+	name = "Меч"
+	desc = "Острая сталь, древняя сила."
+	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
+	icon_state = "skin_cleaver"
+	inhand_icon_state = "skin_cleaver"
+	choose_attack_intent = TRUE
+	current_attack_intent = SLASH_MODE
+	slash_hitsound = list('modular_septic/sound/weapons/melee/heavysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash3.ogg')
+	pickup_sound = 'modular_septic/sound/weapons/melee/heavysharp_deploy.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/heavysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish3.ogg')
+	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
+	min_force = 10
+	force = 25
+	min_force_strength = 1.3
+	wound_bonus = 5
+	bare_wound_bonus = 1
+	force_strength = 2.5
+	min_throwforce = 4
+	throwforce = 8
+	min_throwforce_strength = 1
+	throwforce_strength = 1.5
+	parrying_modifier = 1
+	w_class = WEIGHT_CLASS_BULKY
+	sharpness = SHARP_EDGED
+	skill_melee = SKILL_SHORTSWORD
+	carry_weight = 2.5 KILOGRAMS
+	tetris_width = 32
+	tetris_height = 96
+	slot_flags = null
+
+/obj/item/podpol_weapon/sword/swap_intents(mob/user)
 	. = ..()
-	if(slot == ITEM_SLOT_HANDS)
-		swap_intents(user)
-*/
+	switch(current_attack_intent)
+		if(SLASH_MODE)
+			to_chat(user, span_notice("Теперь я буду вонзать в них с помощью [src]."))
+			hitsound = stab_hitsound
+			min_force = 8
+			force = 10
+			min_force_strength = 1.5
+			force_strength = 2
+			current_attack_intent = STAB_MODE
+			sharpness = SHARP_POINTY
+		if(STAB_MODE)
+			to_chat(user, span_notice("Теперь я буду бить их рукоятью с помощью [src]."))
+			hitsound = bash_hitsound
+			min_force = 6
+			force = 9
+			min_force_strength = 0.65
+			force_strength = 1.65
+			current_attack_intent = BASH_MODE
+			sharpness = NONE
+		if(BASH_MODE)
+			to_chat(user, span_notice("Теперь я буду резать их с помощью [src]."))
+			hitsound = slash_hitsound
+			min_force = 13
+			force = 25
+			min_force_strength = 1.3
+			force_strength = 2.5
+			current_attack_intent = SLASH_MODE
+			sharpness = SHARP_EDGED
+
+/*
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"
 	desc = "A Nice Sword."
@@ -1201,6 +1244,7 @@
 			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 15, "jostle_chance" = 3.2, "pain_stam_pct" = 0.6, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+*/
 
 /obj/item/kukri
 	name = "Kukri"

@@ -86,6 +86,14 @@
 /// Able to block thrown mobs
 #define BLOCK_FLAG_LEAP (1<<4)
 
+/// ATTACKING FLAGS
+
+#define SLASH_ATTACKING 1
+
+#define STAB_ATTACKING 2
+
+#define BASH_ATTACKING 3
+
 // ~projectile diceroll stuff
 /// How much we multiply the initial skills and stats by for the diceroll
 #define PROJECTILE_DICEROLL_ATTRIBUTE_MULTIPLIER 1.25

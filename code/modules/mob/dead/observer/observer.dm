@@ -613,7 +613,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		character.height = HUMAN_HEIGHT_TALLEST
 //		ADD_TRAIT(character, TRAIT_GIANT, GENETIC_MUTATION)
 		if(prob(65))
-			character.put_in_hands(new /obj/item/changeable_attacks/slashstabbash/axe/big/steel(character.drop_location()), FALSE)
+			character.put_in_hands(new /obj/item/podpol_weapon/sword(character.drop_location()), FALSE)
 	else
 //		character.attributes.add_sheet(/datum/attribute_holder/sheet/job/weakwillet)
 		character.height = HUMAN_HEIGHT_SHORTEST

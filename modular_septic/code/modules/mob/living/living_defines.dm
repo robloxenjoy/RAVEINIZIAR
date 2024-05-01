@@ -29,3 +29,4 @@
 	var/bad_ic_count = 0
 
 	var/has_died = FALSE
+	var/look_now = NONE
