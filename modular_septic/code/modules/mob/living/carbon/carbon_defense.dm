@@ -348,23 +348,23 @@
 		shove_power *= (shover.limb_efficiency/LIMB_EFFICIENCY_OPTIMAL)
 
 	if((shove_power <= 0) || (target.combat_mode && (target in fov_viewers(2, src)) && (shove_power < 3)))
-		visible_message(span_danger("<b>[src]</b> tries to shove <b>[target]</b>, but [target.p_they()] regains balance!"),
-					span_userdanger("I try to shove <b>[target]</b>, but [target.p_they()] regains balance!"),
-					span_hear("I hear some shuffling."),
+		visible_message(span_danger("<b>[src]</b> пытается толкнуть <b>[target]</b>, но тот восстанавливает баланс!"),
+					span_userdanger("Я пытаюсь толкнуть <b>[target]</b>, но тот восстанавливает баланс!"),
+					span_hear("Я слышу суматоху."),
 					vision_distance = COMBAT_MESSAGE_RANGE,
 					ignored_mobs = target)
-		to_chat(target, span_userdanger("<b>[src]</b> tries to shove me, but i regain my balance!"))
+		to_chat(target, span_userdanger("<b>[src]</b> пытается толкнуть меня, но я восстанавливаю баланс!"))
 		return
 
 	var/shovedir = get_dir(src, target)
 	var/turf/shove_target = get_edge_target_turf(target, shovedir)
 	var/shove_distance = max(FLOOR(shove_power/2, 1), 1)
-	visible_message(span_danger("<b>[src]</b> shoves <b>[target]</b>!"), \
-				span_userdanger("I shove <b>[target]</b>!"), \
-				span_hear("I hear some shuffling!"), \
+	visible_message(span_danger("<b>[src]</b> толкает <b>[target]</b>!"), \
+				span_userdanger("Я толкаю <b>[target]</b>!"), \
+				span_hear("Я слышу суматоху!"), \
 				vision_distance = COMBAT_MESSAGE_RANGE, \
 				ignored_mobs = target)
-	to_chat(target, span_userdanger("<b>[src]</b> shoves me!"))
+	to_chat(target, span_userdanger("<b>[src]</b> толкает меня!"))
 	target.adjustFatigueLoss(3)
 	target.safe_throw_at(shove_target, shove_distance, 3, src, callback = CALLBACK(target, /mob/living/carbon/proc/handle_knockback, get_turf(target)))
 
@@ -384,19 +384,19 @@
 
 	var/obj/item/bodypart/pulsating_cock = get_bodypart(check_zone(user.zone_selected))
 	if(!pulsating_cock)
-		to_chat(user, span_warning("I cannot measure [self ? "my" : p_their()] pulse without \a [parse_zone(user.zone_selected)]."))
+		to_chat(user, span_warning("Не могу прощупать пульс без [parse_zone(user.zone_selected)]."))
 		return
 	if(!user.canUseTopic(src, TRUE) || DOING_INTERACTION_WITH_TARGET(user, src))
-		to_chat(user, span_warning("I'm unable to check [self ? "my" : "<b>[src]</b>'s"] pulse.</"))
+		to_chat(user, span_warning("Я не могу проверить пульс."))
 		return
 
 	add_fingerprint(user)
 	if(!self)
-		user.visible_message(span_notice("<b>[user]</b> puts \his hand on <b>[src]</b>'s wrist and begins counting their pulse."),\
-		span_notice("I begin counting <b>[src]</b>'s pulse..."))
+		user.visible_message(span_notice("<b>[user]</b> кладёт свою руку на запястье <b>[src]</b> и начинает считать пульс."),\
+		span_notice("Я начинаю прощупывать пульс <b>[src]</b>..."))
 	else
-		user.visible_message(span_notice("<b>[user]</b> begins counting their own pulse."),\
-		span_notice("I begin counting my pulse..."))
+		user.visible_message(span_notice("<b>[user]</b> начинает прощупывать свой пульс."),\
+		span_notice("Я начинаю прощупывать свой пульс..."))
 
 	for(var/thing in diseases)
 		var/datum/disease/disease = thing
@@ -408,19 +408,19 @@
 			ContactContractDisease(disease)
 
 	if(!do_mob(user, src, 0.5 SECONDS))
-		to_chat(user, span_warning("I failed to check [self ? "my" : "<b>[src]</b>'s"] pulse."))
+		to_chat(user, span_warning("Я не проверяю пульс."))
 		return
 
 	if(pulse)
-		to_chat(user, span_notice("[self ? "I have a" : "<b>[src]</b> has a"] pulse! Counting..."))
+		to_chat(user, span_notice("Есть пульс! Считаю..."))
 	else
-		to_chat(user, span_danger("[self ? "I have no" : "<b>[src]</b> has no"] pulse!"))
+		to_chat(user, span_danger("Нет пульса!"))
 		return
 
 	if(do_mob(user, src, 2.5 SECONDS))
-		to_chat(user, span_notice("[self ? "My" : "<b>[src]</b>'s"] pulse is approximately <b>[src.get_pulse(GETPULSE_BASIC)] BPM</b>."))
+		to_chat(user, span_notice("Пульс около <b>[src.get_pulse(GETPULSE_BASIC)] BPM</b>."))
 	else
-		to_chat(user, span_warning("I failed to check [self ? "my" : "<b>[src]</b>'s"] pulse."))
+		to_chat(user, span_warning("Не проверяю пульс."))
 
 /mob/living/carbon/proc/handle_knockback(turf/starting_turf)
 	var/distance = 0
