@@ -49,6 +49,10 @@ GLOBAL_LIST_INIT(trapping, typecacheof(list(
 
 #define isclosedturf(A) (istype(A, /turf/closed))
 
+#define ispodpolturf(A) (istype(A, /turf/podpol))
+
+#define ispodpolwall(A) (istype(A, /turf/podpol/wall))
+
 #define isindestructiblewall(A) (istype(A, /turf/closed/indestructible))
 
 #define iswallturf(A) (istype(A, /turf/closed/wall))

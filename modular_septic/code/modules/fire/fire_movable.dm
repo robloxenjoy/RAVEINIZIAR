@@ -46,20 +46,18 @@
 	if(!istype(turf_loc)) //This can happen, how I'm not sure
 		qdel(src)
 		return
-	if(isclosedturf(turf_loc))
-		if(iswallturf(turf_loc))
-			var/turf/closed/wall/wall_loc = turf_loc
-			if(!magical)
-				if(DT_PROB(4, delta_time))
-					playsound(wall_loc, 'modular_septic/sound/effects/fire/fire_loop.ogg', 65, TRUE)
-				if(DT_PROB(max(0, fire_power - (100 - wall_loc.hardness)/4)/2, delta_time))
-					wall_loc.dismantle_wall(FALSE, FALSE)
+	if(ispodpolwall(turf_loc))
+		var/turf/podpol/wall/wall_loc = turf_loc
 		if(!magical)
-			if(prob(50))
-				add_power(1)
-			else
-				reduce_power(1)
-		return
+			if(DT_PROB(4, delta_time))
+				playsound(wall_loc, 'modular_septic/sound/effects/fire/fire_loop.ogg', 65, TRUE)
+//			if(DT_PROB(max(0, fire_power - (100 - wall_loc.hardness)/4)/2, delta_time))
+//				wall_loc.dismantle_wall(FALSE, FALSE)
+	if(!magical)
+		if(prob(50))
+			add_power(1)
+		else
+			reduce_power(1)
 	var/turf/open/open_turf = turf_loc
 	//If we have an active hotspot, let it do the damage instead and lets not lose power
 	if(open_turf.active_hotspot)
@@ -80,8 +78,8 @@
 	if(DT_PROB(3, delta_time))
 		playsound(open_turf, 'modular_septic/sound/effects/fire/fire_loop.ogg', 65, TRUE)
 	if(!magical)
-		if(DT_PROB(fire_power/2, delta_time))
-			open_turf.burn_tile()
+//		if(DT_PROB(fire_power/2, delta_time))
+//			open_turf.burn_tile()
 		if(DT_PROB(fire_power/2, delta_time))
 			var/list/arthur_brown = list()
 			for(var/turf/neighbor_turf in range(1, turf_loc))

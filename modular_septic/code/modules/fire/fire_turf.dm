@@ -7,7 +7,7 @@
 /turf/examine(mob/user)
 	. = ..()
 	if(turf_fire)
-		. += span_danger("Holy shit, [src] is on <b>fire</b>!")
+		. += span_danger("Боже! [src] в <b>огне</b>!")
 
 /turf/proc/ignite_turf_fire(power)
 	if(flammability <= 0)

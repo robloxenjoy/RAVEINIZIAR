@@ -1,5 +1,6 @@
 /turf/podpol
 	name = "Стена"
+	desc = "Стрёмно!"
 	icon = 'icons/wall.dmi'
 	icon_state = "wall"
 	base_icon_state = "wall"
@@ -8,7 +9,7 @@
 	var/special_dir = FALSE
 	var/base_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
 
-/turf/podpol/proc/update_icon_turf()
+/turf/podpol/proc/update_icon_wall()
 	icon_state = state2
 	var/list/surround = list(0, 0, 0, 0) //up, down, right, left
 	if(istype(locate(x, y + 1, z), type))
@@ -68,5 +69,5 @@
 /turf/podpol/wall/Destroy()
 	new base_turf(src)
 	for(var/turf/podpol/wall/F in oview(1, base_turf))
-		F.update_icon_turf()
+		F.update_icon_wall()
 	..()
