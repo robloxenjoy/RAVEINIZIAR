@@ -32,7 +32,7 @@
 
 /datum/component/interactable/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, PROC_REF(mousedrop))
-	RegisterSignal(parent, COMSIG_INTERACTABLE_TRY_INTERACT, .proc/try_interact)
+	RegisterSignal(parent, COMSIG_INTERACTABLE_TRY_INTERACT, PROC_REF(try_interact))
 	RegisterSignal(parent, COMSIG_INTERACTABLE_COOLDOWN, .proc/on_cooldown)
 	RegisterSignal(parent, COMSIG_INTERACTABLE_SEX_COOLDOWN, .proc/on_sex_cooldown)
 
