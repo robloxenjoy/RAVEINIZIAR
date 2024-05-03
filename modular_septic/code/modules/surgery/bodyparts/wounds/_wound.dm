@@ -209,7 +209,7 @@
 		return
 
 	victim = new_limb.owner
-	RegisterSignal(victim, COMSIG_PARENT_QDELETING, .proc/null_victim)
+	RegisterSignal(victim, COMSIG_PARENT_QDELETING, PROC_REF(null_victim))
 	set_limb(new_limb)
 	LAZYADD(victim.all_wounds, src)
 	LAZYADD(limb.wounds, src)
@@ -297,7 +297,7 @@
 	if(limb)
 		UnregisterSignal(limb, COMSIG_PARENT_QDELETING)
 	limb = new_value
-	RegisterSignal(new_value, COMSIG_PARENT_QDELETING, .proc/source_died)
+	RegisterSignal(new_value, COMSIG_PARENT_QDELETING, PROC_REF(source_died))
 	if(. && disabling)
 		var/obj/item/bodypart/old_limb = .
 		REMOVE_TRAIT(old_limb, TRAIT_PARALYSIS, src)

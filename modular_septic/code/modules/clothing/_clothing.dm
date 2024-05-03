@@ -147,12 +147,12 @@
 		return
 
 	var/zone_name = parse_zone(def_zone)
-	var/break_verb = ((damage_type == BRUTE) ? "torn" : "burnt")
+	var/break_verb = ((damage_type == BRUTE) ? "ломается" : "сгорает")
 
 	if(iscarbon(loc))
 		var/mob/living/carbon/carbon = loc
-		carbon.visible_message(span_danger("The [zone_name] on [carbon]'s [src.name] is [break_verb] away!"), \
-							span_userdanger("The [zone_name] on my [src.name] is [break_verb] away!"), \
+		carbon.visible_message(span_danger("[zone_name] на [carbon] [src.name] [break_verb]!"), \
+							span_userdanger("[zone_name] на [src.name] [break_verb]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 		RegisterSignal(carbon, COMSIG_MOVABLE_MOVED, .proc/bristle, override = TRUE)
 

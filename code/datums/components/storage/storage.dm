@@ -304,7 +304,7 @@
 			return FALSE
 	//SEPTIC EDIT END
 	A.add_fingerprint(M)
-	to_chat(M, span_notice("You start dumping out [parent]."))
+	to_chat(M, span_notice("Я начинаю выбрасывать [parent]."))
 	var/turf/T = get_turf(A)
 	var/list/things = contents()
 	var/datum/progressbar/progress = new(M, length(things), T)

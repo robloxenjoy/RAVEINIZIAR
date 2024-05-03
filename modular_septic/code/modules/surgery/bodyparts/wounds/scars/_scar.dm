@@ -50,7 +50,7 @@
 	if(!W.scar_keyword)
 		return
 	limb = BP
-	RegisterSignal(limb, COMSIG_PARENT_QDELETING, .proc/limb_gone)
+	RegisterSignal(limb, COMSIG_PARENT_QDELETING, PROC_REF(limb_gone))
 
 	severity = W.severity
 	if(limb.owner)
@@ -94,7 +94,7 @@
 		return
 
 	limb = BP
-	RegisterSignal(limb, COMSIG_PARENT_QDELETING, .proc/limb_gone)
+	RegisterSignal(limb, COMSIG_PARENT_QDELETING, PROC_REF(limb_gone))
 	if(limb.owner)
 		victim = limb.owner
 		if(victim.get_biological_state() != biology)

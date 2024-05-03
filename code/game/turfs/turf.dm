@@ -438,14 +438,13 @@ GLOBAL_LIST_EMPTY(station_turfs)
 /turf/proc/Bless()
 	new /obj/effect/blessing(src)
 
-/*
 /turf/storage_contents_dump_act(datum/component/storage/src_object, mob/user)
 	. = ..()
 	if(.)
 		return
 	return
 	if(length(src_object.contents()))
-		to_chat(usr, span_notice("You start dumping out the contents..."))
+		to_chat(usr, span_notice("Я начинаю выбрасывать..."))
 		if(!do_after(usr,20,target=src_object.parent))
 			return FALSE
 
@@ -456,7 +455,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	progress.end_progress()
 
 	return TRUE
-*/
 
 //////////////////////////////
 //Distance procs

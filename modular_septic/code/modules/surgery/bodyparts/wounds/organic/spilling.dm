@@ -50,7 +50,7 @@
 			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_dead(" [span_big(" Мозг вырывается!")]"))
 	new_limb.spilled = TRUE
 	victim.bleed(20)
-	INVOKE_ASYNC(src, .proc/debrain_animation, victim)
+	INVOKE_ASYNC(src, PROC_REF(debrain_animation), victim)
 	qdel(src)
 
 /datum/wound/spill/brain/proc/debrain_animation(mob/living/carbon/debrained)
