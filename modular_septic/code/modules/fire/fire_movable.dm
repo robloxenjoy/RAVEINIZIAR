@@ -1,6 +1,6 @@
 /atom/movable/fire
 	name = "Fire"
-	desc = "I'll take you to burn."
+	desc = "Я тебя съем."
 	icon = 'modular_septic/icons/effects/fire/fire.dmi'
 	icon_state = "fire_small"
 	plane = GAME_PLANE_BLOOM
@@ -55,7 +55,10 @@
 				if(DT_PROB(max(0, fire_power - (100 - wall_loc.hardness)/4)/2, delta_time))
 					wall_loc.dismantle_wall(FALSE, FALSE)
 		if(!magical)
-			reduce_power(1)
+			if(prob(50))
+				add_power(1)
+			else
+				reduce_power(1)
 		return
 	var/turf/open/open_turf = turf_loc
 	//If we have an active hotspot, let it do the damage instead and lets not lose power
@@ -65,7 +68,10 @@
 		if(!process_waste())
 			qdel(src)
 			return
-		reduce_power(1)
+		if(prob(50))
+			add_power(1)
+		else
+			reduce_power(1)
 		if(open_turf.air.temperature < TURF_FIRE_REQUIRED_TEMP)
 			reduce_power(TURF_FIRE_POWER_LOSS_ON_LOW_TEMP)
 	open_turf.hotspot_expose(TURF_FIRE_TEMP_BASE + (TURF_FIRE_TEMP_INCREMENT_PER_POWER*fire_power), TURF_FIRE_VOLUME)

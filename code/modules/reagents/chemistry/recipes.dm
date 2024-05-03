@@ -22,7 +22,7 @@
 	///Determines if a chemical reaction can occur inside a mob
 	var/mob_react = TRUE
 	///The message shown to nearby people upon mixing, if applicable
-	var/mix_message = "The solution begins to bubble."
+	var/mix_message = "Раствор начинает пузыриться."
 	///The sound played upon mixing, if applicable
 	var/mix_sound = 'sound/effects/bubbles.ogg'
 

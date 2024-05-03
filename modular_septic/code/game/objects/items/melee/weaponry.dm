@@ -485,6 +485,7 @@
 	min_throwforce_strength = 1
 	throwforce_strength = 1.5
 	parrying_modifier = 1
+	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_EDGED
 	skill_melee = SKILL_SHORTSWORD
@@ -503,6 +504,7 @@
 			force = 10
 			min_force_strength = 1.5
 			force_strength = 2
+			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
 		if(STAB_MODE)
@@ -521,6 +523,7 @@
 			force = 25
 			min_force_strength = 1.3
 			force_strength = 2.5
+			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
 

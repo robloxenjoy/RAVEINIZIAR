@@ -195,7 +195,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 	radio = _radio
 	source = M
 	if(istype(M))
-		name = radio.anonymize ? "Unknown" : M.GetVoice()
+		name = radio.anonymize ? "Неизвестный" : M.GetVoice()
 		verb_say = M.verb_say
 		verb_ask = M.verb_ask
 		verb_exclaim = M.verb_exclaim
@@ -209,7 +209,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		if(findjob)
 			job = findjob.fields["rank"]
 		else
-			job = "Unknown"
+			job = "Неизвестный"
 	else if(iscarbon(M))  // Carbon nonhuman
 		job = "No ID"
 	else if(isAI(M))  // AI

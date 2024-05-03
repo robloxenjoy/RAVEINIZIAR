@@ -22,7 +22,7 @@
 	var/probability = get_surgery_location_modifier(target)
 	//self-surgery is hard
 	if(target == user)
-		probability *= 0.75
+		probability *= 0.9
 	return probability * step.success_multiplier
 
 /proc/get_location_accessible(mob/M, location)

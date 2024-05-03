@@ -9,7 +9,7 @@
 /datum/keybinding/client/communication/whisper
 	hotkey_keys = list("Y")
 	name = "Шептать"
-	full_name = "IC Whisper"
+	full_name = "IC Шептать"
 	keybind_signal = COMSIG_KB_CLIENT_WHISPER_DOWN
 
 /datum/keybinding/client/communication/whisper/down(client/user)

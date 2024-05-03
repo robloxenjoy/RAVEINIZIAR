@@ -1,7 +1,7 @@
 /// Any humanoid (non-Xeno) mob, such as humans, plasmamen, lizards.
 /mob/living/carbon/human
-	name = "Unknown"
-	real_name = "Unknown"
+	name = "Неизвестный"
+	real_name = "Неизвестный"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "human_basic"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE|LONG_GLIDE

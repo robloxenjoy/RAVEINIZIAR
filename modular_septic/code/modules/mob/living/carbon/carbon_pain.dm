@@ -220,7 +220,7 @@
 		custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "My whole body is going numb")]!", 40, nopainloss = TRUE)
 
 	if((shock_stage >= SHOCK_STAGE_4) && (previous_shock_stage < SHOCK_STAGE_4))
-		visible_message("becomes limp.", visible_message_flags = EMOTE_MESSAGE)
+		visible_message("становится обмякшим.", visible_message_flags = EMOTE_MESSAGE)
 		Immobilize(rand(2, 5) SECONDS)
 		//Attempt to inject combat cocktail a second time
 		endorphinate()

@@ -186,7 +186,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(70 to INFINITY)
 			return "elderly"
 		else
-			return "unknown"
+			return "неизвестный"
 
 
 ///Timed action involving two mobs, the user and the target. interaction_key is the assoc key under which the do_after is capped under, and the max interaction count is how many of this interaction you can do at once.

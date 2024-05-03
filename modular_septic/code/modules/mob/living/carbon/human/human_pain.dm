@@ -1,6 +1,6 @@
 /mob/living/carbon/human/check_self_for_injuries(detailed = FALSE)
 	if(stat < UNCONSCIOUS)
-		visible_message("<span class='notice'><b>[src]</b> осматривает [p_themselves()].</span>", \
+		visible_message("<span class='notice'><b>[src]</b> осматривает себя.</span>", \
 						"<span class='notice'><b>Я осматриваю себя.</b></span>")
 
 	var/list/return_text = list("<span class='infoplain'><div class='infobox'>")
