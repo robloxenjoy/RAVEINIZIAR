@@ -322,7 +322,7 @@
 
 /turf/open/floor/plating/polovich/way/reborn
 	name = "Пол"
-	icon_state = "reborn
+	icon_state = "reborn"
 	footstep = FOOTSTEP_CRUMBLE
 	barefootstep = FOOTSTEP_CRUMBLE
 	clawfootstep = FOOTSTEP_CRUMBLE
