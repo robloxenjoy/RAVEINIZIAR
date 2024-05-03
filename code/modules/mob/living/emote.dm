@@ -178,9 +178,9 @@
 	message = "grins."
 
 /datum/emote/living/groan
-	key = "groan"
-	key_third_person = "groans"
-	message = "groans!"
+	key = "стон"
+	key_third_person = "стонет"
+	message = "стонет!"
 	message_mime = "appears to groan!"
 	emote_type = EMOTE_AUDIBLE
 

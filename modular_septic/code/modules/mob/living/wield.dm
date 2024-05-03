@@ -4,7 +4,7 @@
 	if(istype(active))
 		return active.wield_act(src)
 	else
-		to_chat(src, span_warning("I have nothing to wield!"))
+		to_chat(src, span_warning("Мне нечего обхватывать!"))
 		return FALSE
 
 /mob/living/proc/wield_ui_on()
