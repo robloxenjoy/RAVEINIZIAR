@@ -104,8 +104,8 @@
 
 	RegisterSignal(parent, list(COMSIG_CLICK_ALT, COMSIG_ATOM_ATTACK_HAND_SECONDARY), .proc/on_open_storage_click)
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY_SECONDARY, .proc/on_open_storage_attackby)
-	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, .proc/mousedrop_onto)
-	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO, .proc/mousedrop_receive)
+	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, PROC_REF(mousedrop_onto))
+	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
 
 	update_actions()
 
