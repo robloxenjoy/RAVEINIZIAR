@@ -238,7 +238,7 @@
 			set_color_from_reagents()
 
 /atom/movable/liquid/proc/process_evaporation()
-	if(immutable || !vaporizes || my_turf.liquids_group || (liquid_state != LIQUID_STATE_PUDDLE))
+	if(immutable || !vaporizes || my_turf.liquids_group || (liquid_state == LIQUID_STATE_PUDDLE) || (liquid_state == LIQUID_STATE_FULLTILE))
 		SSliquids.evaporation_queue -= my_turf
 		return
 	//See if any of our reagents evaporates

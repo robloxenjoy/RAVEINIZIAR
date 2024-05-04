@@ -265,8 +265,8 @@
 /turf/proc/process_immutable_liquid()
 	var/any_share = FALSE
 	var/turf/neighbor //faster declaration
-	for(var/turf/t in oview(1, src))
-		if(!t.liquid_can_pass())
+	for(var/turf/turf in oview(1, src))
+		if(!turf.liquid_can_pass())
 			continue
 		neighbor = turf
 		if(can_share_liquids_with(neighbor))

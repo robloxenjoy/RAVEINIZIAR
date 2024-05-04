@@ -123,10 +123,14 @@
 	if(next_move > world.time)
 		playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
+	if(fatigueloss >= SPRINT_MAX_FATIGUELOSS)
+		to_chat(src, span_warning("Я слишком уставший!"))
+		playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		return
 	if(down)
 		var/turf/closed/waller = get_step_multiz(src, DOWN)
 		if(istype(waller))
-			to_chat(src, span_warning("I can't move down."))
+			to_chat(src, span_warning("Я не могу погрузиться."))
 			return
 		var/turf/open/floore = get_step_multiz(src, DOWN)
 		var/turf/open/floord = get_turf(src)
@@ -148,20 +152,21 @@
 				encumbrance_penalty = 15
 		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_SWIMMING), context = DICE_CONTEXT_MENTAL)
 		if(DICE_CRIT_SUCCESS)
-			src.adjustFatigueLoss(5 + encumbrance_penalty)
-			to_chat(src, span_notice("I move down perfectly."))
+			src.adjustFatigueLoss(3 + encumbrance_penalty)
+			to_chat(src, span_notice("Я прекрасно погружаюсь."))
 			forceMove(floore)
 		if(DICE_SUCCESS)
-			src.adjustFatigueLoss(10 + encumbrance_penalty)
-			to_chat(src, span_notice("I move down succesfully."))
+			src.adjustFatigueLoss(5 + encumbrance_penalty)
+			to_chat(src, span_notice("Я успешно погружаюсь."))
 			forceMove(floore)
 		if(diceroll <= DICE_FAILURE)
-			src.adjustFatigueLoss(15 + encumbrance_penalty)
-			to_chat(src, span_notice("I failed at moving down."))
+			src.adjustFatigueLoss(10 + encumbrance_penalty)
+			to_chat(src, span_notice("Я плоховато погружаюсь."))
+			forceMove(floore)
 	else
 		var/turf/closed/waller = get_step_multiz(src, UP)
 		if(istype(waller))
-			to_chat(src, span_warning("I can't move up."))
+			to_chat(src, span_warning("Я не могу всплыть."))
 			return
 		var/turf/open/floore = get_step_multiz(src, UP)
 		var/turf/open/floord = get_turf(src)
@@ -172,28 +177,33 @@
 		if(!floord.liquids || (floord.liquids.liquid_state <= LIQUID_STATE_FULLTILE))
 			return
 		var/encumbrance_penalty = 0
+		var/encumbrance_cancer = 0
 		switch(encumbrance)
 			if(ENCUMBRANCE_LIGHT)
 				encumbrance_penalty = 2
 			if(ENCUMBRANCE_MEDIUM)
 				encumbrance_penalty = 5
+				encumbrance_cancer = 5
 			if(ENCUMBRANCE_HEAVY)
 				encumbrance_penalty = 10
+				encumbrance_cancer = 10
 			if(ENCUMBRANCE_EXTREME)
 				encumbrance_penalty = 15
-		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_SWIMMING), context = DICE_CONTEXT_MENTAL)
+				encumbrance_cancer = 15
+		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_SWIMMING)-encumbrance_cancer, context = DICE_CONTEXT_MENTAL)
 		switch(diceroll)
 			if(DICE_CRIT_SUCCESS)
 				src.adjustFatigueLoss(5 + encumbrance_penalty)
-				to_chat(src, span_notice("I move up perfectly."))
+				to_chat(src, span_notice("Я прекрасно всплываю."))
 				forceMove(floore)
 			if(DICE_SUCCESS)
 				src.adjustFatigueLoss(10 + encumbrance_penalty)
-				to_chat(src, span_notice("I move up succesfully."))
+				to_chat(src, span_notice("Я успешно всплываю."))
 				forceMove(floore)
 			if(DICE_FAILURE)
 				src.adjustFatigueLoss(10 + encumbrance_penalty)
-				to_chat(src, span_notice("I failed at moving up."))
+				to_chat(src, span_notice("Я плоховато всплываю."))
+				forceMove(floore)
 			if(DICE_CRIT_FAILURE)
 				src.adjustFatigueLoss(15 + encumbrance_penalty)
-				to_chat(src, span_notice("I horribly failed at moving up."))
+				to_chat(src, span_notice("У меня не получается всплыть."))
