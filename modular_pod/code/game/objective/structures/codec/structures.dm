@@ -38,6 +38,7 @@
 	light_color = "#ffb04a"
 
 /obj/structure/codec/bulb
+/*
 	var/flickering = FALSE
 	var/flickering_now = FALSE
 	var/flicker_prob = 5
@@ -92,6 +93,7 @@
 	if(cant_work)
 		cant_flicker = TRUE
 	update_appearance()
+*/
 
 /obj/structure/codec/bulb/green
 	name = "Лампочка"
@@ -106,7 +108,6 @@
 	light_range = 3
 	light_power = 1
 	light_color = "#cbe395"
-	flickering = TRUE
 
 /obj/structure/codec/bulb/yellow
 	name = "Лампочка"
@@ -121,7 +122,6 @@
 	light_range = 3
 	light_power = 1
 	light_color = "#e3cf91"
-	flickering = TRUE
 
 /obj/structure/codec/window
 	max_integrity = 800

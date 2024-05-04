@@ -5,6 +5,10 @@
 	icon_state = "wall"
 	base_icon_state = "wall"
 	density = TRUE
+	layer = CLOSED_TURF_LAYER
+	opacity = TRUE
+	blocks_air = TRUE
+	pass_flags_self = PASSCLOSEDTURF
 	var/wallis = TRUE
 	var/state1 = "wall1"
 	var/state2 = "wall2"

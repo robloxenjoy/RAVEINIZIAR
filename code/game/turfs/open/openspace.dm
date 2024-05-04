@@ -12,8 +12,8 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	vis_flags = VIS_INHERIT_ID
 
 /turf/open/openspace
-	name = "open space"
-	desc = "Watch your step!"
+	name = "Открытое пространство"
+	desc = "Главное не упасть!"
 	icon_state = "invisible"
 //	baseturfs = /turf/open/openspace
 	can_atmos_pass_vertical = ATMOS_PASS_YES
