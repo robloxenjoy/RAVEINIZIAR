@@ -71,3 +71,6 @@
 	for(var/turf/podpol/wall/F in oview(1, base_turf))
 		F.update_icon_wall()
 	..()
+
+/turf/podpol/wall/darkyw
+	icon = 'modular_pod/icons/turf/closed/europ.dmi'
