@@ -123,6 +123,7 @@
 	if(next_move > world.time)
 		playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
+	var/fatigueloss = getFatigueLoss()
 	if(fatigueloss >= SPRINT_MAX_FATIGUELOSS)
 		to_chat(src, span_warning("Я слишком уставший!"))
 		playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
