@@ -762,9 +762,9 @@
 
 /obj/projectile/proc/z_chungus_change(atom/olcloc, atom/newloc)
 	if(olcloc.z < newloc.z)
-		get_step_multiz(src, UP)
+		src.z+1
 	else
-		get_step_multiz(src, DOWN)
+		src.z-1
 
 /obj/projectile/vv_edit_var(var_name, var_value)
 	switch(var_name)
