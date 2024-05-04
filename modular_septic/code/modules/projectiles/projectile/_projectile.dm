@@ -43,6 +43,8 @@
 		return PROJECTILE_PIERCE_PHASE
 	if(projectile_piercing & A.pass_flags_self)
 		return PROJECTILE_PIERCE_HIT
+	if(isopenspaceturf(A))
+		return PROJECTILE_PIERCE_PHASE
 	if(ismovable(A))
 		var/atom/movable/AM = A
 		if(AM.throwing)

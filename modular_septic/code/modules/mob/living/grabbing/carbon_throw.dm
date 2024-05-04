@@ -43,6 +43,8 @@
 		var/turf/new_target = get_turf_in_angle(angle, get_turf(src), world.view)
 		parsed_target = new_target.name
 	if(look_now & LOOKING_UP)
+		if(ismob(thrown_thing))
+			return
 		thrown_thing.z = src.z+1
 	if(ismob(thrown_thing))
 		visible_message(span_danger("<b>[src]</b> кидает <b>[thrown_thing]</b> в [parsed_target][power_throw ? " жёстко!" : "."]"), \

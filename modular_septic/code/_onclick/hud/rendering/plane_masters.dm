@@ -1,4 +1,5 @@
 /// Small openspace blur
+/*
 /atom/movable/screen/plane_master/openspace
 	render_target = OPENSPACE_PLANE_RENDER_TARGET
 
@@ -13,6 +14,7 @@
 /atom/movable/screen/plane_master/openspace_backdrop
 	blend_mode = BLEND_MULTIPLY
 	blend_mode_override = BLEND_MULTIPLY
+*/
 
 /// For any transparent multi-z tiles we want to render that are not open spaces
 /atom/movable/screen/plane_master/transparent_floor
@@ -187,7 +189,7 @@
 	remove_filter("frill_blocker_openspace")
 	if(istype(mymob) && mymob.client && !mymob.client.prefs.read_preference(/datum/preference/toggle/frills_over_floors))
 		add_filter("frill_blocker_floor", 2, alpha_mask_filter(render_source = FLOOR_PLANE_RENDER_TARGET, flags = MASK_INVERSE))
-		add_filter("frill_blocker_openspace", 3, alpha_mask_filter(render_source = OPENSPACE_PLANE_RENDER_TARGET, flags = MASK_INVERSE))
+//		add_filter("frill_blocker_openspace", 3, alpha_mask_filter(render_source = OPENSPACE_PLANE_RENDER_TARGET, flags = MASK_INVERSE))
 
 //sometimes, things need to render above wall frills
 /atom/movable/screen/plane_master/frill_above
