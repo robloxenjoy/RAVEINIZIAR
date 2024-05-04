@@ -132,6 +132,7 @@
 	density = TRUE
 	anchored = TRUE
 	opacity = FALSE
+	obj_flags = CAN_BE_HIT|BLOCK_Z_OUT_DOWN|BLOCK_Z_OUT_UP|BLOCK_Z_IN_DOWN|BLOCK_Z_IN_UP
 	var/open = FALSE
 	var/opaque_closed = FALSE
 	var/can_walk = TRUE
@@ -227,6 +228,7 @@
 	density = TRUE
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
+	obj_flags = CAN_BE_HIT|BLOCK_Z_OUT_DOWN|BLOCK_Z_OUT_UP|BLOCK_Z_IN_DOWN|BLOCK_Z_IN_UP
 	var/doorOpen = 'modular_septic/sound/doors/door_metal_open.ogg'
 	var/doorClose = 'modular_septic/sound/doors/door_metal_close.ogg'
 	var/doorDeni = list('modular_septic/sound/doors/door_metal_try1.ogg', 'modular_septic/sound/doors/door_metal_try2.ogg')

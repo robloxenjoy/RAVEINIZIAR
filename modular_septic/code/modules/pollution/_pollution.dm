@@ -139,13 +139,12 @@
 	var/list/sharing_turfs = list()
 	var/list/already_processed_cache = SSpollution.processed_this_run
 	var/list/potential_activers = list()
-	for(var/turf/open/open_turf in oview(1, src))
-		if(open_turf.pollution_can_pass())
-			if(!already_processed_cache[open_turf])
-				if(can_share_pollution_with(open_turf))
-					sharing_turfs[open_turf] = TRUE
-				else
-					potential_activers[open_turf] = TRUE
+	for(var/turf/open/open_turf as anything in my_turf.atmos_adjacent_turfs)
+		if(!already_processed_cache[open_turf])
+			if(can_share_pollution_with(open_turf))
+				sharing_turfs[open_turf] = TRUE
+			else
+				potential_activers[open_turf] = TRUE
 	if(!sharing_turfs.len)
 		SET_UNACTIVE_POLLUTION(src)
 		return
@@ -236,8 +235,7 @@
 
 /// Atmos adjacency has been updated on this turf, see if it affects any of our pollutants
 /turf/proc/update_adjacent_pollution()
-	for(var/turf/open/open_turf in oview(1, src))
-		if(open_turf.pollution_can_pass())
-			if(!open_turf.pollution)
-				continue
+	for(var/turf/open/open_turf as anything in atmos_adjacent_turfs)
+		if(!open_turf.pollution)
+			continue
 		SET_ACTIVE_POLLUTION(open_turf.pollution)

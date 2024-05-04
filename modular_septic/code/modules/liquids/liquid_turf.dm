@@ -64,9 +64,8 @@
 	//Check atmos adjacency to cut off any disconnected groups
 	if(liquids_group)
 		var/assoc_atmos_turfs = list()
-		for(var/turf/F in oview(1, src))
-			if(F.liquid_can_pass())
-				assoc_atmos_turfs[F] = TRUE
+		for(var/neighbor in get_atmos_adjacent_turfs())
+			assoc_atmos_turfs[neighbor] = TRUE
 		//Check any cardinals that may have a matching group
 		var/turf/connection //faster declaration
 		for(var/direction in GLOB.cardinals)
@@ -232,18 +231,19 @@
 /turf/proc/process_liquid_cell()
 	if(!liquids)
 		if(!liquids_group)
-			for(var/turf/t in oview(1, src))
-				if(t.liquid_can_pass())
-					if(t.liquids)
-						if(t.liquids.immutable)
-							SSliquids.active_immutables[t] = TRUE
-						else if(t.can_share_liquids_with(src))
-							if(t.liquids_group)
-								liquids_group = new(liquid_height)
-								liquids_group.add_to_group(src)
-							SSliquids.add_active_turf(t)
-							SSliquids.remove_active_turf(src)
-							break
+			var/turf/neighbor //faster declaration
+			for(var/t in get_atmos_adjacent_turfs())
+				neighbor = t
+				if(neighbor.liquids)
+					if(neighbor.liquids.immutable)
+						SSliquids.active_immutables[neighbor] = TRUE
+					else if(neighbor.can_share_liquids_with(src))
+						if(neighbor.liquids_group)
+							liquids_group = new(liquid_height)
+							liquids_group.add_to_group(src)
+						SSliquids.add_active_turf(neighbor)
+						SSliquids.remove_active_turf(src)
+						break
 		SSliquids.remove_active_turf(src)
 		return
 	if(!liquids_group)
@@ -260,13 +260,15 @@
 
 /turf/proc/process_immutable_liquid()
 	var/any_share = FALSE
-	for(var/turf/turf in oview(1, src))
-		if(turf.liquid_can_pass())
-			if(can_share_liquids_with(turf))
-				//Move this elsewhere sometime later?
-				if(turf.liquids && (turf.liquids.liquid_height > liquids.liquid_height))
-					continue
-				any_share = TRUE
-				turf.add_liquid_list(liquids.reagent_list, TRUE, liquids.temperature)
+	var/turf/neighbor //faster declaration
+	for(var/turf in get_atmos_adjacent_turfs())
+		neighbor = turf
+		if(can_share_liquids_with(neighbor))
+			//Move this elsewhere sometime later?
+			if(neighbor.liquids && (neighbor.liquids.liquid_height > liquids.liquid_height))
+				continue
+			any_share = TRUE
+			neighbor.add_liquid_list(liquids.reagent_list, TRUE, liquids.temperature)
 	if(!any_share)
 		SSliquids.active_immutables -= src
+

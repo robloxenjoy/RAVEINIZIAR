@@ -91,10 +91,10 @@ h1.alert, h2.alert		{color: #5a005a;}
 .meatymeat              {color: #904643;}
 .tinydanger				{color: #750000; font-size: 85%;}
 .smalldanger			{color: #750000; font-size: 90%;}
-.warning				{color: #5d0046; font-style: italic;}
-.boldwarning			{color: #5d0046; font-style: italic; font-weight: bold}
+.warning				{color: #6e1058; font-style: italic;}
+.boldwarning			{color: #6e1058; font-style: italic; font-weight: bold}
 .announce				{color: #228b22;	font-weight: bold;}
-.boldannounce			{color: #5d0046;	font-weight: bold;}
+.boldannounce			{color: #6e1058;	font-weight: bold;}
 .minorannounce			{					font-weight: bold;  font-size: 3;}
 .greenannounce			{color: #00ff00;	font-weight: bold;}
 .rose					{color: #ff5050;}

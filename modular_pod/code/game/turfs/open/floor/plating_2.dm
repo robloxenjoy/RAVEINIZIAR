@@ -7,9 +7,10 @@
 			B.set_light(1.4, 0.6, LIGHT_COLOR_LAVA) //barely anything!
 */
 
+/*
 /turf/open
-	blocks_pollution = FALSE
-	blocks_liquid = FALSE
+	var/blocks_pollution = FALSE
+	var/blocks_liquid = FALSE
 
 /turf/proc/liquid_can_pass()
 	if(blocks_liquid)
@@ -20,6 +21,7 @@
 	if(blocks_pollution)
 		return FALSE
 	return TRUE
+*/
 
 /turf/open/floor/plating/polovich/codec
 	name = "Пол"
