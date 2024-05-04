@@ -11,7 +11,6 @@
 		return ""
 	return SCREENTIP_OPENSPACE(uppertext(name))
 
-/*
 /turf/open/openspace/on_hit(obj/projectile/P)
 	. = ..()
 	if(P.z_levelism)
@@ -19,4 +18,3 @@
 			get_step_multiz(P, UP)
 		else
 			get_step_multiz(P, DOWN)
-*/
