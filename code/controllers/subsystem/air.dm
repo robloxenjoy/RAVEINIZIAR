@@ -76,14 +76,13 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/Initialize(timeofday)
 	map_loading = FALSE
-	gas_reactions = init_gas_reactions()
+//	gas_reactions = init_gas_reactions()
 
-	setup_allturfs()
-	setup_atmos_machinery()
-	setup_pipenets()
-	setup_turf_visuals()
+//	setup_allturfs()
+//	setup_atmos_machinery()
+//	setup_pipenets()
+//	setup_turf_visuals()
 	return ..()
-
 
 /datum/controller/subsystem/air/fire(resumed = FALSE)
 	var/timer = TICK_USAGE_REAL

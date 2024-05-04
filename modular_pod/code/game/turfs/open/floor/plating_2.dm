@@ -1,3 +1,26 @@
+/*
+/proc/set_basalt_light(turf/open/floor/B)
+	switch(B.icon_state)
+		if("basalt1", "basalt2", "basalt3")
+			B.set_light(2, 0.6, LIGHT_COLOR_LAVA) //more light
+		if("basalt5", "basalt9")
+			B.set_light(1.4, 0.6, LIGHT_COLOR_LAVA) //barely anything!
+*/
+
+/turf/open
+	blocks_pollution = FALSE
+	blocks_liquid = FALSE
+
+/turf/proc/liquid_can_pass()
+	if(blocks_liquid)
+		return FALSE
+	return TRUE
+
+/turf/proc/pollution_can_pass()
+	if(blocks_pollution)
+		return FALSE
+	return TRUE
+
 /turf/open/floor/plating/polovich/codec
 	name = "Пол"
 	desc = "Ебанутый пацан."

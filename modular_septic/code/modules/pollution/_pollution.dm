@@ -139,7 +139,9 @@
 	var/list/sharing_turfs = list()
 	var/list/already_processed_cache = SSpollution.processed_this_run
 	var/list/potential_activers = list()
-	for(var/turf/open/open_turf as anything in my_turf.atmos_adjacent_turfs)
+	for(var/turf/open/open_turf in oview(1, src))
+		if(!open_turf.pollution_can_pass())
+			continue
 		if(!already_processed_cache[open_turf])
 			if(can_share_pollution_with(open_turf))
 				sharing_turfs[open_turf] = TRUE
@@ -226,16 +228,18 @@
 	if(!total_thickness || total_thickness < POLLUTANT_APPEARANCE_THICKNESS_THRESHOLD)
 		return
 
-	var/mutable_appearance/overlay = mutable_appearance('modular_septic/icons/effects/pollution/pollution.dmi', "smoke", FLY_LAYER, POLLUTION_PLANE, appearance_flags = KEEP_APART | RESET_TRANSFORM | RESET_COLOR)
-	overlay.pixel_x = -32
-	overlay.pixel_y = -32
+	var/mutable_appearance/overlay = mutable_appearance('modular_pod/icons/obj/things/things_3.dmi', "smoke", FLY_LAYER, POLLUTION_PLANE, appearance_flags = KEEP_APART | RESET_TRANSFORM | RESET_COLOR)
+//	overlay.pixel_x = -32
+//	overlay.pixel_y = -32
 	overlay.alpha = FLOOR(pollutant.alpha * total_thickness * THICKNESS_ALPHA_COEFFICIENT, 1)
 	overlay.color = pollutant.color
 	return overlay
 
 /// Atmos adjacency has been updated on this turf, see if it affects any of our pollutants
 /turf/proc/update_adjacent_pollution()
-	for(var/turf/open/open_turf as anything in atmos_adjacent_turfs)
+	for(var/turf/open/open_turf in oview(1, src))
+		if(!open_turf.pollution_can_pass())
+			continue
 		if(!open_turf.pollution)
 			continue
 		SET_ACTIVE_POLLUTION(open_turf.pollution)

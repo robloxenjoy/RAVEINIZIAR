@@ -64,8 +64,10 @@
 	//Check atmos adjacency to cut off any disconnected groups
 	if(liquids_group)
 		var/assoc_atmos_turfs = list()
-		for(var/neighbor in get_atmos_adjacent_turfs())
-			assoc_atmos_turfs[neighbor] = TRUE
+		for(var/turf/F in oview(1, src))
+			if(!F.liquid_can_pass())
+				continue
+			assoc_atmos_turfs[F] = TRUE
 		//Check any cardinals that may have a matching group
 		var/turf/connection //faster declaration
 		for(var/direction in GLOB.cardinals)
@@ -232,7 +234,9 @@
 	if(!liquids)
 		if(!liquids_group)
 			var/turf/neighbor //faster declaration
-			for(var/t in get_atmos_adjacent_turfs())
+			for(var/turf/t in oview(1, src))
+				if(!t.liquid_can_pass())
+					continue
 				neighbor = t
 				if(neighbor.liquids)
 					if(neighbor.liquids.immutable)
@@ -261,7 +265,9 @@
 /turf/proc/process_immutable_liquid()
 	var/any_share = FALSE
 	var/turf/neighbor //faster declaration
-	for(var/turf in get_atmos_adjacent_turfs())
+	for(var/turf/t in oview(1, src))
+		if(!t.liquid_can_pass())
+			continue
 		neighbor = turf
 		if(can_share_liquids_with(neighbor))
 			//Move this elsewhere sometime later?

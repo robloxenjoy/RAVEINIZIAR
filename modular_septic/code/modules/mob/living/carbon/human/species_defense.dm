@@ -1097,13 +1097,13 @@
 			if(resultt <= 0)
 				affected.open_incision()
 				for(var/obj/item/organ/bone/bonee as anything in affected.getorganslotlist(ORGAN_SLOT_BONE))
-					if(!bonee.is_broken())
+					if(bonee.is_broken())
 						victim.visible_message(span_pinkdang("[user] [weapon] надрезает [victim] [affected]!"), \
 											span_pinkdang("[user] [weapon] надрезает [affected]!"), \
 											span_hear("Я слышу звук плоти."))
 						playsound(get_turf(victim), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
 					else
-						victim.visible_message(span_pinkdang("[user] [weapon]  надрезает [victim] [affected]!"), \
+						victim.visible_message(span_pinkdang("[user] [weapon] надрезает [victim] [affected]!"), \
 											span_pinkdang("[user] [weapon] надрезает [affected]!"), \
 											span_hear("Я слышу звук плоти."))
 						playsound(get_turf(victim), 'modular_septic/sound/gore/dissection.ogg', 80, 0)

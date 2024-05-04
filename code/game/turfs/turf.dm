@@ -26,6 +26,8 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
 
 	var/blocks_air = FALSE
+	var/blocks_pollution = TRUE
+	var/blocks_liquid = TRUE
 
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes
 
