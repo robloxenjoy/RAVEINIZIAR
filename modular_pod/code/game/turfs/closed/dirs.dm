@@ -4,12 +4,19 @@
 	icon = 'icons/wall.dmi'
 	icon_state = "wall"
 	base_icon_state = "wall"
+	density = TRUE
+	var/wallis = TRUE
 	var/state1 = "wall1"
 	var/state2 = "wall2"
 	var/special_dir = FALSE
 	var/base_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
 
-/turf/podpol/proc/update_icon_wall()
+/turf/podpol/Initialize(mapload)
+	. = ..()
+	if(wallis)
+		update_icon_pod()
+
+/turf/podpol/proc/update_icon_pod()
 	icon_state = state2
 	var/list/surround = list(0, 0, 0, 0) //up, down, right, left
 	if(istype(locate(x, y + 1, z), type))
@@ -69,7 +76,7 @@
 /turf/podpol/wall/Destroy()
 	new base_turf(src)
 	for(var/turf/podpol/wall/F in oview(1, base_turf))
-		F.update_icon_wall()
+		F.update_icon_pod()
 	..()
 
 /turf/podpol/wall/darkyw

@@ -20,7 +20,7 @@
 
 	RegisterSignal(target, COMSIG_ATOM_ATTACK_HAND, .proc/attack_hand)
 	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/on_examine)
-	RegisterSignal(target, COMSIG_MOUSEDROPPED_ONTO, .proc/mousedrop_receive)
+	RegisterSignal(target, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
 	RegisterSignal(target, COMSIG_ATOM_BUMPED, .proc/try_speedrun)
 	ADD_TRAIT(target, TRAIT_CLIMBABLE, ELEMENT_TRAIT(type))
 

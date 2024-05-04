@@ -32,7 +32,7 @@
 	//Climb down
 	if((dropping_turf.turf_height - src.turf_height >= TURF_HEIGHT_BLOCK_THRESHOLD) || (dropping_turf.z > src.z))
 		if(user == dropping)
-			dropping.visible_message(span_notice("<b>[user]</b> начинается спускаться к [src]"), \
+			dropping.visible_message(span_notice("<b>[user]</b> начинает спускаться к [src]"), \
 								span_notice("Я начинаю спускаться к [src]."))
 		else
 			dropping.visible_message(span_warning("<b>[user]</b> начинает спускать <b>[dropping]</b> к [src]"), \
@@ -45,7 +45,7 @@
 		if(!dropping_turf.type == /turf/closed)
 //			if(user.body_position != LYING_DOWN)
 			if(user == dropping)
-				dropping.visible_message(span_notice("<b>[user]</b> начинается забираться на [src]"), \
+				dropping.visible_message(span_notice("<b>[user]</b> начинает забираться на [src]"), \
 								span_notice("Я начинаю забираться на [src]."))
 			else
 				dropping.visible_message(span_warning("<b>[user]</b> начинает забирать <b>[dropping]</b> на [src]"), \
