@@ -305,12 +305,10 @@
 	if(dna.species.use_skintones && skin_tone == "albino")
 		apparent_blood_volume -= ALBINO_BLOOD_REDUCTION // enough to knock you down one tier
 	switch(apparent_blood_volume)
-		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
-			msg += "[t_His] skin is pale."
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			msg += "<B>[t_His] skin is very pale.</B>"
+			msg += "<B>Он бледный, как поганка.</B>"
 		if(-INFINITY to BLOOD_VOLUME_BAD)
-			msg += "<span class='artery'><B>[t_His] skin is extremely pale and sickly.</B></span>"
+			msg += "<span class='artery'><B>Его кожа нездорово бледная.</B></span>"
 
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		msg += "[t_He] [t_is] emitting a gentle blue glow!"
@@ -333,7 +331,7 @@
 			if(-2, -1)
 				msg += "Он сильнее меня."
 			if(0)
-				msg += span_notice("Он также силён, как и я.")
+				msg += span_notice("Он по силе как и я.")
 			if(1, 2)
 				msg += span_notice("Он слабее меня.")
 			if(3 to INFINITY)

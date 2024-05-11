@@ -16,7 +16,7 @@
 		SSdroning.area_entered(current_area, client)
 */
 /area/maintenance/polovich/forest
-	name = "Polovich Forest"
+	name = "Polovich Earth"
 //	base_lighting_alpha = 255
 //	power_light = FALSE
 //	power_equip = FALSE
@@ -26,9 +26,9 @@
 	power_equip = FALSE
 	power_light = FALSE
 	outdoors = TRUE
-	static_lighting = TRUE
+	static_lighting = FALSE
 	area_flags = NO_ALERTS
-	droning_sound = DRONING_ARENA
+	droning_sound = DRONING_POLOVICHSTAN
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 

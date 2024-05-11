@@ -1,0 +1,6 @@
+{
+    "map_name": "subwater",
+    "map_path": "_maps/_podpol/map_files/special",
+    "map_file": "subwater.dmm",
+	"traits": [{"Up": 1}, {"Down": -1}]
+}

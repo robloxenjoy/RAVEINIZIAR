@@ -527,6 +527,91 @@
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
 
+/obj/item/podpol_weapon/sword/steel
+	name = "Меч"
+	desc = "Сталь, древняя сила."
+	icon_state = "sword"
+	inhand_icon_state = "steelsword"
+	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
+	worn_icon_state = "steelsabre"
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
+	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.ogg', 'modular_septic/sound/weapons/melee/slashflesh2.ogg', 'modular_septic/sound/weapons/melee/slashflesh3.ogg')
+	choose_attack_intent = TRUE
+	current_attack_intent = SLASH_MODE
+	min_force = 15
+	force = 24
+	min_force_strength = 1
+	force_strength = 1.4
+	min_throwforce = 5
+	throwforce = 8
+	throwforce_strength = 1.5
+	wound_bonus = 10
+	bare_wound_bonus = 7
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	sharpness = SHARP_EDGED
+	parrying_modifier = 1
+	skill_melee = SKILL_LONGSWORD
+	carry_weight = 2 KILOGRAMS
+	attack_fatigue_cost = 9
+	attack_delay = 23
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+//	canrust = TRUE
+//	rustbegin = 4000
+	havedurability = TRUE
+	durability = 250
+	tetris_width = 32
+	tetris_height = 96
+	wielded_inhand_state = TRUE
+
+/obj/item/podpol_weapon/sword/swap_intents(mob/user)
+	. = ..()
+	switch(current_attack_intent)
+		if(SLASH_MODE)
+			to_chat(user, span_notice("Теперь я буду вонзать в них с помощью [src]."))
+			hitsound = stab_hitsound
+			min_force = 14
+			force = 19
+			min_force_strength = 1
+			force_strength = 1.3
+			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+			current_attack_intent = STAB_MODE
+			sharpness = SHARP_POINTY
+		if(STAB_MODE)
+			to_chat(user, span_notice("Теперь я буду бить их рукоятью с помощью [src]."))
+			hitsound = bash_hitsound
+			min_force = 7
+			force = 13
+			min_force_strength = 0.65
+			force_strength = 1.3
+			wound_bonus = 7
+			bare_wound_bonus = 2
+			attack_fatigue_cost = 8
+			min_throwforce = 5
+			throwforce = 8
+			throwforce_strength = 1.5
+			attack_delay = 20
+			current_attack_intent = BASH_MODE
+			sharpness = NONE
+		if(BASH_MODE)
+			to_chat(user, span_notice("Теперь я буду резать их с помощью [src]."))
+			hitsound = slash_hitsound
+			min_force = 15
+			force = 24
+			min_force_strength = 1
+			force_strength = 1.4
+			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+			current_attack_intent = SLASH_MODE
+			sharpness = SHARP_EDGED
+
 /*
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"

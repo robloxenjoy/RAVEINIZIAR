@@ -224,6 +224,10 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
 
+/turf/open/floor/plating/polovich/way/waterfloor/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/way/fish
 	name = "Пол"
 	icon_state = "fish"
@@ -369,6 +373,10 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
 
+/turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
 /turf/open/floor/plating/polovich/way/stone
 	name = "Пол"
 	icon_state = "stone"
@@ -444,12 +452,12 @@
 	footstep = FOOTSTEP_PLATING
 
 /turf/open/floor/plating/polovich/way/beautry
-	name = "Пол"
+	name = "Красивый Пол"
 	icon_state = "beautry"
-	footstep = FOOTSTEP_WOOD
-	barefootstep = FOOTSTEP_WOOD_BAREFOOT
-	clawfootstep = FOOTSTEP_WOOD_CLAW
-	heavyfootstep = FOOTSTEP_WOOD
+	footstep = FOOTSTEP_CARPET
+	barefootstep = FOOTSTEP_CARPET_BAREFOOT
+	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	resistance_flags = FLAMMABLE
 
 /turf/open/floor/plating/polovich/way/dirtun
@@ -459,3 +467,155 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/way/dirtun/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/way/dirtun2
+	name = "Грязь"
+	icon_state = "dirtun2"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/way/dirtun3
+	name = "Грязь"
+	icon_state = "dirtun3"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/way/pheno
+	name = "Грязь"
+	icon_state = "pheno"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/way/dyingmud
+	name = "Грязь"
+	icon_state = "dyingmud"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/way/dyingmud/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/way/evilmud
+	name = "Грязь"
+	icon_state = "evilmud"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/way/evilmud/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/way/stoneold
+	name = "Пол"
+	icon_state = "stoneold"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/exoticf
+	name = "Пол"
+	icon_state = "exoticf"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/hotstone5
+	name = "Пол"
+	icon_state = "hotstone5"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/sota
+	name = "Пол"
+	icon_state = "sota"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/stoner2
+	name = "Пол"
+	icon_state = "stoner2"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/hotstone4
+	name = "Пол"
+	icon_state = "hotstone4"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/hotstone3
+	name = "Пол"
+	icon_state = "hotstone3"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/beautry2
+	name = "Красивый Пол"
+	icon_state = "beautry2"
+	footstep = FOOTSTEP_CARPET
+	barefootstep = FOOTSTEP_CARPET_BAREFOOT
+	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/way/beautry3
+	name = "Красивый Пол"
+	icon_state = "beautry3"
+	footstep = FOOTSTEP_CARPET
+	barefootstep = FOOTSTEP_CARPET_BAREFOOT
+	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/way/korvutic
+	name = "Пол"
+	icon_state = "korvutic"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/way/exoticwood2
+	name = "Пол"
+	icon_state = "exoticwood2"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/way/metalla
+	name = "Пол"
+	icon_state = "metalla"
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL

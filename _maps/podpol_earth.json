@@ -1,0 +1,35 @@
+{
+	"version": 1,
+	"map_name": "PodEarth",
+	"map_path": "_septic/_podpol/map_files/earth",
+	"map_file": [
+		"podpol_earth.dmm"
+	],
+	"station_name": "Collapse",
+	"respawn_allowed": true,
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"surface_ruin_levels": 0,
+	"surface_empty_levels": 0,
+	"cave_ruin_levels": 0,
+	"cave_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_baluarte",
+		"emergency": "emergency_delta"
+	},
+	"traits": [
+		{
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace"
+		},
+		{
+			"Down": -1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/closed/wall/purple/nocling"
+		}
+	],
+	"minetype": "none"
+}

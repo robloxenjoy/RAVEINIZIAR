@@ -85,3 +85,9 @@
 
 /turf/podpol/wall/darkyw
 	icon = 'modular_pod/icons/turf/closed/europ.dmi'
+
+/turf/podpol/wall/grewich
+	icon = 'modular_pod/icons/turf/closed/grewich.dmi'
+
+/turf/podpol/wall/steel
+	icon = 'modular_pod/icons/turf/closed/steel.dmi'

@@ -144,7 +144,7 @@
 		var/list/musics = list()
 //		musics |= DRONING_TAVERN
 //		musics |= DRONING_COMBAT
-		musics |= DRONING_ARENA
+		musics |= DRONING_POLOVICHSTAN
 //		musics |= DRONING_CATACOMBS
 		music_files = musics
 

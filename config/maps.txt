@@ -59,6 +59,9 @@ map polovichx
 endmap
 
 map copenhagen
+endmap
+
+map podpol_earth
 	default
 	votable
 endmap
