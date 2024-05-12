@@ -268,6 +268,8 @@ Used by the AI doomsday and the self-destruct nuke.
 	INIT_ANNOUNCE("Loading [config.map_name]...")
 	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
 
+	var/list/otherZ = list()
+
 	#ifndef SPECIALMAP
 	otherZ += load_map_config("_maps/_podpol/map_files/special/smallforest.json")
 	#endif

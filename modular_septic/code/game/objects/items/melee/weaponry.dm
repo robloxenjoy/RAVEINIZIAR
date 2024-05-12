@@ -461,71 +461,6 @@
 			inhand_icon_state = "[initial(inhand_icon_state)]"
 
 /obj/item/podpol_weapon/sword
-	name = "Меч"
-	desc = "Острая сталь, древняя сила."
-	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
-	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
-	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
-	icon_state = "skin_cleaver"
-	inhand_icon_state = "skin_cleaver"
-	choose_attack_intent = TRUE
-	current_attack_intent = SLASH_MODE
-	slash_hitsound = list('modular_septic/sound/weapons/melee/heavysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_slash3.ogg')
-	pickup_sound = 'modular_septic/sound/weapons/melee/heavysharp_deploy.ogg'
-	miss_sound = list('modular_septic/sound/weapons/melee/heavysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavysharp_swish3.ogg')
-	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
-	min_force = 10
-	force = 25
-	min_force_strength = 1.3
-	wound_bonus = 5
-	bare_wound_bonus = 1
-	force_strength = 2.5
-	min_throwforce = 4
-	throwforce = 8
-	min_throwforce_strength = 1
-	throwforce_strength = 1.5
-	parrying_modifier = 1
-	embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
-	w_class = WEIGHT_CLASS_BULKY
-	sharpness = SHARP_EDGED
-	skill_melee = SKILL_SHORTSWORD
-	carry_weight = 2.5 KILOGRAMS
-	tetris_width = 32
-	tetris_height = 96
-	slot_flags = null
-
-/obj/item/podpol_weapon/sword/swap_intents(mob/user)
-	. = ..()
-	switch(current_attack_intent)
-		if(SLASH_MODE)
-			to_chat(user, span_notice("Теперь я буду вонзать в них с помощью [src]."))
-			hitsound = stab_hitsound
-			min_force = 8
-			force = 10
-			min_force_strength = 1.5
-			force_strength = 2
-			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
-			current_attack_intent = STAB_MODE
-			sharpness = SHARP_POINTY
-		if(STAB_MODE)
-			to_chat(user, span_notice("Теперь я буду бить их рукоятью с помощью [src]."))
-			hitsound = bash_hitsound
-			min_force = 6
-			force = 9
-			min_force_strength = 0.65
-			force_strength = 1.65
-			current_attack_intent = BASH_MODE
-			sharpness = NONE
-		if(BASH_MODE)
-			to_chat(user, span_notice("Теперь я буду резать их с помощью [src]."))
-			hitsound = slash_hitsound
-			min_force = 13
-			force = 25
-			min_force_strength = 1.3
-			force_strength = 2.5
-			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
-			current_attack_intent = SLASH_MODE
-			sharpness = SHARP_EDGED
 
 /obj/item/podpol_weapon/sword/steel
 	name = "Меч"
@@ -570,7 +505,7 @@
 	durability = 250
 	tetris_width = 32
 	tetris_height = 96
-	wielded_inhand_state = TRUE
+	wielded_inhand_state_melee = TRUE
 
 /obj/item/podpol_weapon/sword/swap_intents(mob/user)
 	. = ..()
