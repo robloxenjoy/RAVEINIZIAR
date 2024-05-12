@@ -1,7 +1,7 @@
 {
 	"version": 1,
 	"map_name": "Podpol Earth",
-	"map_path": "_podpol/map_files/earth",
+	"map_path": "_podpol/map_files/Podpol Earth",
 	"map_file": "podpol_earth.dmm",
 	"station_name": "Collapse",
 	"respawn_allowed": true,
