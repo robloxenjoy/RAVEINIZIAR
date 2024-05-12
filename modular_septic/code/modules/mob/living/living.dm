@@ -93,8 +93,8 @@
 				apply_damage(ouch, damagetype = BRUTE, def_zone = pick(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_PRECISE_R_FOOT))
 			CombatKnockdown(levels * 25, levels * 1 SECONDS)
 		if(DICE_FAILURE)
-			visible_message(span_danger("<b>[src]</b> crashes into [T]!"), \
-						span_userdanger("I crash into [T]!"))
+			visible_message(span_danger("<b>[src]</b> врезается в [T]!"), \
+						span_userdanger("Я врезаюсь в [T]!"))
 			var/ouch = (levels * 3.5) ** 2
 			var/list/oofzones = pick(list(BODY_ZONE_PRECISE_L_FOOT, BODY_ZONE_L_LEG), list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_R_LEG), list(BODY_ZONE_HEAD))
 			for(var/limb in oofzones)

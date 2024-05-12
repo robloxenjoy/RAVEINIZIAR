@@ -1,7 +1,7 @@
 {
 	"version": 1,
 	"map_name": "PodEarth",
-	"map_path": "_septic/_podpol/map_files/earth",
+	"map_path": "_podpol/map_files/earth",
 	"map_file": [
 		"podpol_earth.dmm"
 	],
