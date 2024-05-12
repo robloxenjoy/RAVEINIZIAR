@@ -271,7 +271,7 @@ Used by the AI doomsday and the self-destruct nuke.
 	var/list/otherZ = list()
 
 	#ifndef SPECIALMAP
-	otherZ += load_map_config("_maps/_podpol/map_files/special/smallforest.json")
+	otherZ += load_map_config("_maps/_podpol/map_files/special/subwater.json")
 	#endif
 
 	if(otherZ.len)
