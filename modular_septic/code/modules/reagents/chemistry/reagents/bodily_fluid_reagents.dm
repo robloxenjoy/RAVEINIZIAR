@@ -1,6 +1,6 @@
 //BLOOD
 /datum/reagent/blood
-	taste_description = "something metallic"
+	taste_description = "нечто металлическое"
 
 /datum/reagent/blood/expose_obj(obj/exposed_obj, reac_volume)
 	. = ..()

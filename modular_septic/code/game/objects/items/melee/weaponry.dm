@@ -478,6 +478,7 @@
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
 	slash_hitsound = list('modular_septic/sound/weapons/melee/slashflesh.ogg', 'modular_septic/sound/weapons/melee/slashflesh2.ogg', 'modular_septic/sound/weapons/melee/slashflesh3.ogg')
+	hitsound = slash_hitsound
 	choose_attack_intent = TRUE
 	current_attack_intent = SLASH_MODE
 	min_force = 15
