@@ -619,3 +619,19 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
+
+/turf/open/floor/plating/polovich/way/painstone
+	name = "Пол"
+	icon_state = "painstone"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/hotstone22
+	name = "Пол"
+	icon_state = "hotstone22"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE

@@ -49,7 +49,7 @@
 	var/cutting_tool = /obj/item/weldingtool
 	var/open_sound = 'sound/machines/closet_open.ogg'
 	var/close_sound = 'sound/machines/closet_close.ogg'
-	var/open_sound_volume = 35
+	var/open_sound_volume = 40
 	var/close_sound_volume = 50
 	var/material_drop = /obj/item/stack/sheet/iron
 	var/material_drop_amount = 2
