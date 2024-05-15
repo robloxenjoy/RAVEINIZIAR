@@ -15,7 +15,7 @@
 	use(user, TRUE)
 
 /obj/structure/wayto/podpol/proc/use(mob/living/carbon/human/user, going_up = TRUE, is_ghost = FALSE)
-	if(user.trulerole != "Капнобатай")
+	if(user.truerole != "Капнобатай")
 		to_chat(user, span_notice("Меня там пацаны не примут."))
 		return
 	if(!in_range(src, user) || user.incapacitated())
@@ -28,7 +28,7 @@
 	if(up)
 		var/turf/above_turf = SSmapping.get_turf_above(get_turf(src))
 		user.forceMove(above_turf)
-	if(below)
+	if(down)
 		var/turf/below_turf = SSmapping.get_turf_below(get_turf(src))
 		user.forceMove(below_turf)
 
