@@ -915,6 +915,7 @@
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	realstunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	stumbling(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+	confusioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 //	staminy(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
@@ -936,7 +937,7 @@
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
 	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 		if(user_end >= 3)
 			victim.Immobilize(2 SECONDS)
 		else
@@ -988,6 +989,25 @@
 			victim.Stumble(3 SECONDS)
 		else
 			victim.Stumble(1 SECONDS)
+	return TRUE
+
+/datum/species/proc/confusioner(mob/living/carbon/human/victim, \
+							mob/living/carbon/human/user, \
+							obj/item/bodypart/affected, \
+							obj/item/weapon, \
+							damage = 0, \
+							damage_flag = MELEE, \
+							damage_type = BRUTE, \
+							sharpness = NONE,
+							def_zone = BODY_ZONE_CHEST, \
+							intended_zone = BODY_ZONE_CHEST, \
+							list/modifiers)
+	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
+	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(user_end >= 3)
+			victim.add_confusion(6)
+		else
+			victim.add_confusion(3)
 	return TRUE
 
 /datum/species/proc/goodhits(mob/living/carbon/human/victim, \
@@ -1101,12 +1121,12 @@
 						victim.visible_message(span_pinkdang("[user] [weapon] надрезает [victim] [affected]!"), \
 											span_pinkdang("[user] [weapon] надрезает [affected]!"), \
 											span_hear("Я слышу звук плоти."))
-						playsound(get_turf(victim), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
+						playsound(get_turf(victim), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
 					else
 						victim.visible_message(span_pinkdang("[user] [weapon] надрезает [victim] [affected]!"), \
 											span_pinkdang("[user] [weapon] надрезает [affected]!"), \
 											span_hear("Я слышу звук плоти."))
-						playsound(get_turf(victim), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
+						playsound(get_turf(victim), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
 			return TRUE
 		return FALSE
 	return FALSE
@@ -1135,7 +1155,7 @@
 		if(resultt <= 5)
 			var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
-				user.changeNext_move(0)
+//				user.changeNext_move(0)
 				victim.visible_message(span_pinkdang("[user] [weapon] застревает в [victim] [affected]!"), \
 									span_pinkdang("[user] [weapon] застревает в [affected]!"), \
 									span_hear("Я слышу звук плоти."))
