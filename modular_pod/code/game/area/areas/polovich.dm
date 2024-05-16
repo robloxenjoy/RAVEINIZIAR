@@ -35,6 +35,7 @@
 	max_ambience_cooldown = 95 SECONDS
 
 /area/maintenance/polovich/forest/inner
+	static_lighting = TRUE
 	base_lighting_alpha = 0
 	icon_state = "polovich_inner"
 

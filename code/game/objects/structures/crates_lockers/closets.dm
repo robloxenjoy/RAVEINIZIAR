@@ -23,7 +23,7 @@
 	/// X position of the closet door hinge
 	var/door_hinge_x = -6.5
 	/// Amount of time it takes for the door animation to play
-	var/door_anim_time = 1.5 // set to 0 to make the door not animate at all
+	var/door_anim_time = 0 // set to 0 to make the door not animate at all
 
 	/// Controls whether a door overlay should be applied using the icon_door value as the icon state
 	var/enable_door_overlay = TRUE
