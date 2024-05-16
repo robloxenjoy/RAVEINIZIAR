@@ -84,6 +84,9 @@
 	desc = "Завораживающе."
 	density = 1
 	anchored = 1
+	light_range = 4
+	light_power = 1
+	light_color = "#e19644"
 
 /obj/structure/lighterfire/New()
 	..()
