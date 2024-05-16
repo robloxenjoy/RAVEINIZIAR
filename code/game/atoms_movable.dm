@@ -51,6 +51,7 @@
 	  * I reccomend you use the movetype_handler system and not modify this directly, especially for living mobs.
 	  */
 	var/movement_type = GROUND
+	var/list/particle_holders
 
 	var/atom/movable/pulling
 	var/grab_state = 0
@@ -108,6 +109,7 @@
 	QDEL_NULL(proximity_monitor)
 	QDEL_NULL(language_holder)
 	QDEL_NULL(em_block)
+	QDEL_LIST_ASSOC(particle_holders)
 
 	unbuckle_all_mobs(force = TRUE)
 
@@ -1279,3 +1281,26 @@
 */
 /atom/movable/proc/keybind_face_direction(direction)
 	setDir(direction)
+
+/atom/movable/proc/add_particle_holder(key = "particles", holder_type = /atom/movable/particle_holder)
+	var/atom/particle_holder = new holder_type()
+	vis_contents += particle_holder
+	LAZYADDASSOC(particle_holders, key, particle_holder)
+
+/atom/movable/proc/remove_particle_holder(key = "particles")
+	if(!LAZYACCESS(particle_holders, key))
+		return
+	vis_contents -= particle_holders[key]
+	LAZYREMOVE(particle_holders, key)
+
+/atom/movable/particle_holder
+	appearance_flags = RESET_ALPHA|RESET_COLOR|RESET_TRANSFORM|KEEP_APART
+	vis_flags = NONE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/atom/movable/particle_holder/fire_embers
+	plane = ABOVE_FRILL_PLANE_BLOOM
+
+/atom/movable/particle_holder/fire_embers/Initialize(mapload)
+	. = ..()
+	particles = new /particles/fire_embers()

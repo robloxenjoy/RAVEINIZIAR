@@ -60,3 +60,31 @@
 	icon_state = "holodos"
 	open_sound = 'modular_pod/sound/eff/open_holodos.ogg'
 	close_sound = 'modular_pod/sound/eff/close_holodos.ogg'
+
+/particles/fire_embers
+	icon_state = list("spark"=5,"cross"=1,"curl"=1)
+	width = 64
+	height = 128
+	count = 150
+	spawning = 10
+	lifespan = 3 SECONDS
+	fade = 1 SECONDS
+	color = 0
+	color_change = 0.1
+	gradient = list("#FBDB28", "#FCE6B6", "#FF532B")
+	position = generator("box", list(-16,-12,-32), list(16,32,32), NORMAL_RAND)
+	drift = generator("vector", list(-0.1,0), list(0.1,0.2), UNIFORM_RAND)
+	scale = generator("vector", list(0.5,0.5), list(2,2), NORMAL_RAND)
+	spin = generator("num", list(-30,30), NORMAL_RAND)
+
+/obj/structure/lighterfire
+	name = "Бочка"
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "barrel"
+	desc = "Завораживающе."
+	density = 1
+	anchored = 1
+
+/obj/structure/lighterfire/New()
+	..()
+	add_particle_holder("embers", /atom/movable/particle_holder/fire_embers)

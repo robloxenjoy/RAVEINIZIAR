@@ -34,6 +34,9 @@
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 
+/area/maintenance/polovich/forest/inner
+	base_lighting_alpha = 0
+
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
 

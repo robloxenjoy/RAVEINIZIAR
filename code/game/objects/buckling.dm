@@ -311,13 +311,13 @@
 	. = buckle_mob(M, check_loc = check_loc)
 	if(.)
 		if(M == user)
-			M.visible_message(span_notice("[M] buckles [M.p_them()]self to [src]."),\
-				span_notice("You buckle yourself to [src]."),\
-				span_hear("You hear metal clanking."))
+			M.visible_message(span_notice("[M] пристёгивает себя к [src]."),\
+				span_notice("Я пристёгиваюсь к [src]."),\
+				span_hear("Слышу чё-то."))
 		else
-			M.visible_message(span_warning("[user] buckles [M] to [src]!"),\
-				span_warning("[user] buckles you to [src]!"),\
-				span_hear("You hear metal clanking."))
+			M.visible_message(span_warning("[user] пристёгивает [M] к [src]!"),\
+				span_warning("[user] пристёгивает меня к [src]!"),\
+				span_hear("Слышу чё-то."))
 /**
  * Handles a user unbuckling a mob from src and sends a visible_message
  *

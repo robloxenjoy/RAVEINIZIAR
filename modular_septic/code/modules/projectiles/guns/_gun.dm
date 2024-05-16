@@ -282,10 +282,10 @@
 
 	if(check_botched(user, target))
 		return
-
+/*
 	if(user.z != target.z)
 		target = get_turf(target)
-
+*/
 	if(get_dist(user, target) < 2)
 		if(istype(user))
 			if(iscarbon(target))
