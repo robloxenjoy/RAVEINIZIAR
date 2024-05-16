@@ -1,40 +1,42 @@
 "a" = (/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "b" = (/turf/closed/wall/purple/nocling/hard_to_break,/area/maintenance/polovich/catacombs)
 "c" = (/turf/open/floor/plating/polovich/greengryaz,/area/maintenance/polovich/catacombs)
-"d" = (/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest)
+"d" = (/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
 "e" = (/turf/closed/indestructible/start_area,/area/start)
-"f" = (/obj/structure/table/goody,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest)
+"f" = (/obj/structure/table/goody,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
 "g" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest)
 "h" = (/obj/effect/landmark/start/new_player,/turf/open/floor/plating,/area/start)
 "i" = (/turf/closed/indestructible/splashscreen,/area/start)
-"l" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
-"m" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest)
 "n" = (/turf/open/floor/plating/polovich/way/redd,/area/maintenance/polovich/forest)
-"o" = (/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest)
+"o" = (/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
 "p" = (/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
-"t" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest)
-"w" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
-"x" = (/obj/structure/closet/crate/freezer/podozl,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest)
-"y" = (/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest)
-"z" = (/turf/open/floor/plating/polovich/way/deadmeat_full,/area/maintenance/polovich/forest)
-"A" = (/turf/open/floor/plating/polovich/way/deadmeat,/area/maintenance/polovich/forest)
+"r" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
+"t" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
+"w" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/inner)
+"x" = (/obj/structure/closet/crate/freezer/podozl,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
+"y" = (/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
+"z" = (/turf/open/floor/plating/polovich/way/deadmeat_full,/area/maintenance/polovich/forest/inner)
+"A" = (/turf/open/floor/plating/polovich/way/deadmeat,/area/maintenance/polovich/forest/inner)
 "D" = (/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest)
 "E" = (/turf/open/floor/plating/polovich/way/mud,/area/maintenance/polovich/forest)
 "F" = (/obj/structure/stairs/south,/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
-"H" = (/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest)
-"J" = (/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest)
-"K" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest)
+"H" = (/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
+"J" = (/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
+"K" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
 "L" = (/obj/structure/wayto/podpol,/turf/open/floor/plating/polovich/way/legend,/area/maintenance/polovich/forest)
 "M" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
-"N" = (/obj/structure/wayto/podpol/up,/turf/open/floor/plating/polovich/way/ancstone,/area/maintenance/polovich/forest)
-"O" = (/obj/structure/closet/crate/freezer/podozl,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest)
+"N" = (/obj/structure/wayto/podpol/up,/turf/open/floor/plating/polovich/way/ancstone,/area/maintenance/polovich/forest/inner)
+"O" = (/obj/structure/closet/crate/freezer/podozl,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
+"P" = (/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest/inner)
 "Q" = (/obj/structure/sign/poster/contraband/codec/ring,/turf/podpol/wall/grewich,/area/maintenance/polovich/forest)
 "R" = (/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
-"S" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest)
-"T" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest)
+"S" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
+"T" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
 "U" = (/obj/effect/landing/kapno,/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
-"W" = (/obj/structure/table/goody,/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest)
+"V" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/inner)
+"W" = (/obj/structure/table/goody,/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
 "X" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest)
+"Y" = (/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/inner)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -139,16 +141,16 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDDDDDDDDDDDDDDaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDOxDoyKooKyppDaaaaaaaaaaaa
-bbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdTDfyyooyyzpDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDJJDWoomoopppDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdDDoooooolApDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdHHoyyooopppDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdHtoyKooyyzpDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFaaaaaaaaaaDdDDoooooyKppDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXXaaaaaaaaaaDJJDfooNoopzpDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDJSDfyKooopppDaaaaaaaaaaaa
-bcceeeeeeeheeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDxxDoKyomopAwDaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDOxPoyKooKyYYDaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdTPfyyooyyzYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDJJPWoorooYYYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdPPooooooVAYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdHHoyyoooYYYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdHtoyKooyyzYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFaaaaaaaaaaDdPPoooooyKYYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXXaaaaaaaaaaDJJPfooNooYzYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDJSPfyKoooYYYDaaaaaaaaaaaa
+bcceeeeeeeheeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDxxPoKyoroYAwDaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDDDDDDDDDDDDDDaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

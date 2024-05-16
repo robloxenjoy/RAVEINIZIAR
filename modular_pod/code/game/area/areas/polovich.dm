@@ -36,6 +36,7 @@
 
 /area/maintenance/polovich/forest/inner
 	base_lighting_alpha = 0
+	icon_state = "polovich_inner"
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
