@@ -1005,9 +1005,9 @@
 	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
 	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
 		if(user_end >= 3)
-			victim.add_confusion(6)
-		else
 			victim.add_confusion(3)
+		else
+			victim.add_confusion(1)
 	return TRUE
 
 /datum/species/proc/goodhits(mob/living/carbon/human/victim, \

@@ -405,9 +405,9 @@
 	message = "waves."
 
 /datum/emote/living/whimper
-	key = "whimper"
-	key_third_person = "whimpers"
-	message = "whimpers."
+	key = "хныкать"
+	key_third_person = "хнычет"
+	message = "хнычет."
 	message_mime = "appears hurt."
 	emote_type = EMOTE_AUDIBLE
 

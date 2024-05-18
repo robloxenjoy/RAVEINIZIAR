@@ -170,7 +170,7 @@
 	light_range = 2
 	light_power = 2
 	light_color = "#00dd78"
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
@@ -185,7 +185,7 @@
 	light_color = "#ff460e"
 	light_range = 2
 	light_power = 2
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
@@ -200,7 +200,7 @@
 	light_color = "#008eff"
 	light_range = 2
 	light_power = 2
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
@@ -215,7 +215,7 @@
 	light_color = "#e252ea"
 	light_range = 2
 	light_power = 2
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'

@@ -526,7 +526,7 @@
 	if(germ_level >= INFECTION_LEVEL_THREE && !CHECK_BITFIELD(limb_flags, BODYPART_DEAD))
 		kill_limb()
 		if(owner && owner.stat < DEAD)
-			to_chat(owner, span_userdanger("I can't feel my [name] anymore..."))
+			to_chat(owner, span_userdanger("Я больше не могу чувствовать [name]..."))
 	consider_processing()
 
 /// General handling of infections

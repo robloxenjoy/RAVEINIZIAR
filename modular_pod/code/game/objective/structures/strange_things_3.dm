@@ -56,6 +56,7 @@
 /obj/structure/closet/crate/freezer/podozl
 	name = "Холодильник"
 	desc = "В таком состоянии... Каким-то образом охлаждает."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "holodos"
 	open_sound = 'modular_pod/sound/eff/open_holodos.ogg'
 	close_sound = 'modular_pod/sound/eff/close_holodos.ogg'
