@@ -1068,7 +1068,7 @@
 								victim.emote("fart")
 								var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_WILL), context = DICE_CONTEXT_MENTAL)
 								if(diceroll <= DICE_FAILURE)
-									shit(FALSE)
+									victim.shit(FALSE)
 							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 							if(diceroll == DICE_FAILURE)
 								victim.vomit(10, FALSE, FALSE)
