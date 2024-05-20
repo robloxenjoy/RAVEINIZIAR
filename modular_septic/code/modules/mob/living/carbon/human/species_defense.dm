@@ -909,7 +909,7 @@
 				var/turf/open/floor/plating/A = get_turf(victim)
 				victim.apply_damage(A.powerfloor, BRUTE, affected, victim.run_armor_check(affected, MELEE), wound_bonus = A.dangerfloor, sharpness = NONE)
 				victim.visible_message(span_pinkdang("[victim] [affected] ударяется об [A]!"), \
-									span_pinkdang("Чёрт, [affected] ударяется об [A]!"), \
+									span_pinkdang("Оу! [affected] ударяется об [A]!"), \
 									span_hear("Я слышу звук плоти."))
 				playsound(get_turf(victim), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
@@ -920,6 +920,7 @@
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	goodhits(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+	affected.another_special_destroying(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	if(damage > 5)
 		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_WILL), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 			shake_camera(victim, 1, 1)
@@ -936,12 +937,13 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
-		if(user_end >= 3)
-			victim.Immobilize(2 SECONDS)
-		else
-			victim.Immobilize(1 SECONDS)
+	if(damage > 5)
+		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			if(user_end >= 3)
+				victim.Immobilize(2 SECONDS)
+			else
+				victim.Immobilize(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/realstunning(mob/living/carbon/human/victim, \
@@ -955,21 +957,22 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
-		var/protection = 0
-		var/resultt = 0
-		if(!istype(weapon))
-			protection = victim.getarmor(affected, MELEE)
-			resultt = (protection - damage)
-		else
-			protection = victim.getsubarmor(affected, CRUSHING)
-			resultt = (protection - weapon.armour_penetration)
-			if(resultt <= 0)
-				if(user_str >= 3)
-					victim.Stun(2 SECONDS)
-				else
-					victim.Stun(1 SECONDS)
+	if(damage > 5)
+		var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			var/protection = 0
+			var/resultt = 0
+			if(!istype(weapon))
+				protection = victim.getarmor(affected, MELEE)
+				resultt = (protection - damage)
+			else
+				protection = victim.getsubarmor(affected, CRUSHING)
+				resultt = (protection - weapon.armour_penetration)
+				if(resultt <= 0)
+					if(user_str >= 3)
+						victim.Stun(2 SECONDS)
+					else
+						victim.Stun(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/stumbling(mob/living/carbon/human/victim, \
@@ -983,12 +986,13 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
-		if(user_end >= 3)
-			victim.Stumble(3 SECONDS)
-		else
-			victim.Stumble(1 SECONDS)
+	if(damage > 5)
+		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			if(user_end >= 3)
+				victim.Stumble(3 SECONDS)
+			else
+				victim.Stumble(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/confusioner(mob/living/carbon/human/victim, \
@@ -1002,12 +1006,13 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-	if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
-		if(user_end >= 3)
-			victim.add_confusion(3)
-		else
-			victim.add_confusion(1)
+	if(damage > 5)
+		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			if(user_end >= 3)
+				victim.add_confusion(3)
+			else
+				victim.add_confusion(1)
 	return TRUE
 
 /datum/species/proc/goodhits(mob/living/carbon/human/victim, \
@@ -1021,10 +1026,33 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
-		switch(def_zone)
-			if(BODY_ZONE_PRECISE_GROIN)
-				if((victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY) || (victim.getorganslotefficiency(ORGAN_SLOT_PENIS) > ORGAN_FAILING_EFFICIENCY))
+	if(damage > 5)
+		if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
+			switch(def_zone)
+				if(BODY_ZONE_PRECISE_GROIN)
+					if((victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY) || (victim.getorganslotefficiency(ORGAN_SLOT_PENIS) > ORGAN_FAILING_EFFICIENCY))
+						var/protection = 0
+						var/resultt = 0
+						if(!istype(weapon))
+							protection = victim.getarmor(affected, MELEE)
+							resultt = (protection - damage)
+						else
+							protection = victim.getsubarmor(affected, CRUSHING)
+							resultt = (protection - weapon.armour_penetration)
+							if(resultt <= 0)
+								victim.Stumble(10 SECONDS)
+								var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+								if(diceroll == DICE_FAILURE)
+									victim.Stun(1 SECONDS)
+								if(diceroll == DICE_CRIT_FAILURE)
+									victim.Stun(2 SECONDS)
+								victim.visible_message(span_pinkdang("[victim] получает удар в пах от [user]!"), \
+													span_pinkdang("Я получаю удар в пах от [user]!"), \
+													span_hear("Я слышу звук плоти."))
+								if(victim.stat >= UNCONSCIOUS)
+									return
+	//							playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
+				if(BODY_ZONE_PRECISE_VITALS)
 					var/protection = 0
 					var/resultt = 0
 					if(!istype(weapon))
@@ -1034,46 +1062,24 @@
 						protection = victim.getsubarmor(affected, CRUSHING)
 						resultt = (protection - weapon.armour_penetration)
 						if(resultt <= 0)
-							victim.Stumble(10 SECONDS)
+							if(prob(50))
+								victim.emote("burp")
+							else
+								victim.emote("fart")
+								var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_WILL), context = DICE_CONTEXT_MENTAL)
+								if(diceroll <= DICE_FAILURE)
+									shit(FALSE)
 							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 							if(diceroll == DICE_FAILURE)
-								victim.Stun(1 SECONDS)
+								victim.vomit(10, FALSE, FALSE)
 							if(diceroll == DICE_CRIT_FAILURE)
-								victim.Stun(2 SECONDS)
-							victim.visible_message(span_pinkdang("[victim] получает удар в пах от [user]!"), \
-												span_pinkdang("Я получаю удар в пах от [user]!"), \
+								victim.vomit(10, TRUE, FALSE)
+							victim.visible_message(span_pinkdang("[victim] получает удар по кишкам от [user]!"), \
+												span_pinkdang("Получает удар по кишкам от [user]!"), \
 												span_hear("Я слышу звук плоти."))
 							if(victim.stat >= UNCONSCIOUS)
 								return
-//							playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
-			if(BODY_ZONE_PRECISE_VITALS)
-				var/protection = 0
-				var/resultt = 0
-				if(!istype(weapon))
-					protection = victim.getarmor(affected, MELEE)
-					resultt = (protection - damage)
-				else
-					protection = victim.getsubarmor(affected, CRUSHING)
-					resultt = (protection - weapon.armour_penetration)
-					if(resultt <= 0)
-						if(prob(50))
-							victim.emote("burp")
-						else
-							victim.emote("fart")
-							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_WILL), context = DICE_CONTEXT_MENTAL)
-							if(diceroll <= DICE_FAILURE)
-								shit(FALSE)
-						var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
-						if(diceroll == DICE_FAILURE)
-							victim.vomit(10, FALSE, FALSE)
-						if(diceroll == DICE_CRIT_FAILURE)
-							victim.vomit(10, TRUE, FALSE)
-						victim.visible_message(span_pinkdang("[victim] получает удар по кишкам от [user]!"), \
-											span_pinkdang("Получает удар по кишкам от [user]!"), \
-											span_hear("Я слышу звук плоти."))
-						if(victim.stat >= UNCONSCIOUS)
-							return
-						playsound(get_turf(victim), 'modular_septic/sound/effects/gutbusted.ogg', 80, 0)
+							playsound(get_turf(victim), 'modular_septic/sound/effects/gutbusted.ogg', 80, 0)
 	return TRUE
 
 /*
