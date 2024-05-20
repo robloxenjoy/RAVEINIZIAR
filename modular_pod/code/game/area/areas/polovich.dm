@@ -26,7 +26,7 @@
 	power_equip = FALSE
 	power_light = FALSE
 	outdoors = TRUE
-	static_lighting = TRUE
+	static_lighting = FALSE
 	base_lighting_alpha = 255
 //	area_has_base_lighting = TRUE
 	area_flags = NO_ALERTS

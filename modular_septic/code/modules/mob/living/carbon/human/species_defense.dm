@@ -905,7 +905,7 @@
 										force = victim.move_force, \
 										callback = CALLBACK(victim, /mob/living/carbon/proc/handle_knockback, get_turf(victim)))
 		else
-			if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_LUCK), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+			if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_LUCK), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 				var/turf/open/floor/plating/A = get_turf(victim)
 				victim.apply_damage(A.powerfloor, BRUTE, affected, victim.run_armor_check(affected, MELEE), wound_bonus = A.dangerfloor, sharpness = NONE)
 				victim.visible_message(span_pinkdang("[victim] [affected] ударяется об [A]!"), \
@@ -939,7 +939,7 @@
 							list/modifiers)
 	if(damage > 5)
 		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 			if(user_end >= 3)
 				victim.Immobilize(2 SECONDS)
 			else
@@ -959,7 +959,7 @@
 							list/modifiers)
 	if(damage > 5)
 		var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 			var/protection = 0
 			var/resultt = 0
 			if(!istype(weapon))
@@ -988,7 +988,7 @@
 							list/modifiers)
 	if(damage > 5)
 		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 			if(user_end >= 3)
 				victim.Stumble(3 SECONDS)
 			else
@@ -1008,7 +1008,7 @@
 							list/modifiers)
 	if(damage > 5)
 		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_PHYSICAL) <= DICE_FAILURE)
+		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 			if(user_end >= 3)
 				victim.add_confusion(3)
 			else
@@ -1118,8 +1118,8 @@
 						list/modifiers)
 	if(!istype(weapon) || (!sharpness))
 		return FALSE
-	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
-	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL)
+	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_MENTAL)
+	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
 		if(!affected.get_incision(TRUE))
 			var/edge_protection = 0

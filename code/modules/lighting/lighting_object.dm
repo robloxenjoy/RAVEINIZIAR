@@ -23,6 +23,7 @@
 	CU.alpha = 255
 	CU.plane = LIGHTING_PLANE
 	CU.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+	CU.mouse_opacity = 0
 
 /*
 	CU.icon = LIGHTING_ICON
