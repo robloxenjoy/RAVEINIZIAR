@@ -217,12 +217,7 @@
 	if (!frommob.ckey)
 		return FALSE
 
-	var/question = ""
-	if (tomob.ckey)
-		question = "This mob already has a user ([tomob.key]) in control of it! "
-	question += "Are you sure you want to place [frommob.name]([frommob.key]) in control of [tomob.name]?"
-
-	var/ask = alert(usr, question, "Place ghost in control of mob?", list("Yes", "No"))
+	var/ask = alert(usr, "Place ghost in control of mob?", "Sometimes things are just that important", "Yes", "No")
 	if (ask != "Yes")
 		return TRUE
 

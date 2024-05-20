@@ -180,7 +180,7 @@
 		name = initial(name)
 		for(var/obj/item/bodypart/face/noface in src)
 			if(noface.real_name)
-				name = "[noface.real_name]'s head"
+				name = "[noface.real_name] голова"
 				break
 	else
 		name = initial(name)

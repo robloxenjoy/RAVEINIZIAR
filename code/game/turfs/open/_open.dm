@@ -6,6 +6,7 @@
 	var/barefootstep = null
 	var/clawfootstep = null
 	var/heavyfootstep = null
+	var/special_temp = null
 
 //direction is direction of travel of A
 /turf/open/zPassIn(atom/movable/A, direction, turf/source)
@@ -172,7 +173,10 @@
 	. = air.heat_capacity()
 
 /turf/open/GetTemperature()
-	. = air.temperature
+	if(special_temp)
+		. = special_temp
+	else
+		. = air.temperature
 
 /turf/open/TakeTemperature(temp)
 	air.temperature += temp

@@ -103,8 +103,8 @@ GLOBAL_LIST_INIT(global_wound_types, list(\
 	WOUND_TENDON = list(/datum/wound/tendon/dissect, /datum/wound/tendon/tear),
 	WOUND_NERVE = list(/datum/wound/nerve/dissect, /datum/wound/nerve/tear),
 	WOUND_TEETH = list(/datum/wound/teeth),
-	WOUND_DIGITS = list(/datum/wound/digits),
-	WOUND_SPILL = list(/datum/wound/spill/brain, /datum/wound/spill/gut, /datum/wound/spill/eyes)))
+	WOUND_DIGITS = list(/datum/wound/digits)))
+//	WOUND_SPILL = list(/datum/wound/spill/brain, /datum/wound/spill/gut, /datum/wound/spill/eyes)))
 
 // every single type of wound that can be rolled naturally, in case you need to pull a random one
 GLOBAL_LIST_INIT(global_all_wound_types, \
@@ -118,10 +118,12 @@ GLOBAL_LIST_INIT(global_all_wound_types, \
 	/datum/wound/nerve/dissect, \
 	/datum/wound/nerve/tear, \
 	/datum/wound/teeth, \
-	/datum/wound/digits, \
+	/datum/wound/digits))
+/*
 	/datum/wound/spill/brain, \
 	/datum/wound/spill/eyes, \
 	/datum/wound/spill/gut))
+*/
 
 // ~random wound balance defines
 /// how quickly sanitization removes infestation and decays per second

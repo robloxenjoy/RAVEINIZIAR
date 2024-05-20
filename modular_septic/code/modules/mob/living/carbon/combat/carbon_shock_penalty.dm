@@ -73,7 +73,7 @@
 						SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] теряет сознание!"))
 		if(BODY_ZONE_PRECISE_NECK)
 			flash_pain_major()
-			adjustOxyLoss((rand(30, 45)) - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
+			adjustOxyLoss((rand(20, 45)) - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] деоксигенирован!"))
 		if(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_R_ARM)
@@ -96,6 +96,7 @@
 				flash_pain_major()
 				if(wound_messages)
 					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] спазмирован!"))
+/*
 		if(BODY_ZONE_PRECISE_VITALS)
 //			vomiting = prob(80)
 			emote("fart")
@@ -104,7 +105,8 @@
 			flash_pain_major()
 			if(wound_messages)
 				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] тошнит!"))
-		if(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
+*/
+		if(BODY_ZONE_PRECISE_VITALS, BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
 			flash_pain_major()
 			Daze(3 SECONDS)
 //			blur_eyes(3)

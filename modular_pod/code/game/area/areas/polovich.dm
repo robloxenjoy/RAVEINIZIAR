@@ -26,7 +26,7 @@
 	power_equip = FALSE
 	power_light = FALSE
 	outdoors = TRUE
-	static_lighting = FALSE
+	static_lighting = TRUE
 	base_lighting_alpha = 255
 //	area_has_base_lighting = TRUE
 	area_flags = NO_ALERTS
@@ -36,7 +36,7 @@
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
-	base_lighting_alpha = 0
+	base_lighting_alpha = 1
 	icon_state = "polovich_inner"
 
 /area/maintenance/polovich/forest/forestspawn

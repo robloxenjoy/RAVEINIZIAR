@@ -4089,6 +4089,7 @@
 #include "modular_pod\code\modules\outdoor_effects\code\modules\admin\verbs\adminevents.dm"
 #include "modular_pod\code\modules\outdoor_effects\code\modules\particool\particool.dm"
 #include "modular_pod\code\modules\outdoor_effects\code\modules\sunlight\sunlight_object.dm"
+#include "modular_pod\code\modules\retarded_combat\combata.dm"
 #include "modular_pod\code\modules\tendance\tendance.dm"
 #include "modular_pod\code\modules\torches\lamps.dm"
 #include "modular_pod\code\modules\tvari\bestiary.dm"
