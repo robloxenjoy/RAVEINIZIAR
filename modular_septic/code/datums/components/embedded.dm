@@ -188,7 +188,14 @@
 
 /datum/component/embedded/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, mob/living/remover)
 	var/time_taken = rip_time * weapon.w_class * (victim == remover ? 2 : 1)
-	victim.visible_message(span_warning("[victim] пытается вырвать [weapon] из [limb.name]."),span_notice("Я пытаюсь вырвать [weapon] из [limb.name]..."))
+	if(remover == victim)
+		remover.visible_message(span_warning("<b>[remover]</b> пытается вырвать [weapon] из [limb.name]."), \
+				span_userdanger("Я пытаюсь вырвать [weapon] из [limb.name]..."))
+	else
+		victim.visible_message(span_warning("<b>[remover]</b> пытается вырвать [weapon] из <b>[victim]</b> [limb.name]."), \
+				span_userdanger("<b>[remover]</b> пытается вырвать [weapon] из [limb.name]!"), \
+				ignored_mobs = remover)
+		to_chat(remover, span_userdanger("Я пытаюсь вырвать [weapon] из <b>[victim]</b> [limb.name]..."))
 	if(!do_mob(user = remover, target = victim, time = time_taken))
 		return
 	if(!weapon || !limb || (weapon.loc != victim) || !(weapon in limb.embedded_objects))

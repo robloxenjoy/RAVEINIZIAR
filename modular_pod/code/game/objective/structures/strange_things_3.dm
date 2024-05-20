@@ -110,4 +110,4 @@
 /obj/structure/lighterfire/New()
 	..()
 	add_particle_holder("embers", /atom/movable/particle_holder/fire_embers)
-	add_particle_holder("embers", /atom/movable/particle_holder/fire_smoke)
+	add_particle_holder("smoke", /atom/movable/particle_holder/fire_smoke)

@@ -15,7 +15,7 @@
 				if(resultt <= 0)
 					var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 					if(brain)
-						brain.applyOrganDamage(damage/2)
+						brain.applyOrganDamage(damage/1.1)
 
 /obj/item/bodypart/r_eyelid/another_special_destroying(mob/living/carbon/human/owner, mob/living/carbon/human/user, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, def_zone = BODY_ZONE_CHEST, intended_zone = BODY_ZONE_CHEST, wound_messages = TRUE, list/modifiers)
 	if(damage_flag == MELEE)
@@ -28,7 +28,7 @@
 				if(resultt <= 0)
 					var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 					if(brain)
-						brain.applyOrganDamage(damage/2)
+						brain.applyOrganDamage(damage/1.1)
 
 /obj/item/bodypart/l_eyelid/another_special_destroying(mob/living/carbon/human/owner, mob/living/carbon/human/user, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, def_zone = BODY_ZONE_CHEST, intended_zone = BODY_ZONE_CHEST, wound_messages = TRUE, list/modifiers)
 	if(damage_flag == MELEE)
@@ -40,4 +40,4 @@
 				resultt = (edge_protection - weapon.edge_protection_penetration)
 				if(resultt <= 0)
 					var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
-					brain.applyOrganDamage(damage/2)
+					brain.applyOrganDamage(damage/1.1)
