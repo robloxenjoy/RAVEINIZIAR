@@ -22,14 +22,6 @@
 			if(damage > 10)
 				var/mob/living/carbon/human/living_target = target
 				var/obj/item/bodypart/hit_limb
-				hit_limb = living_target.get_bodypart_nostump(living_target.check_limb_hit(def_zone))
-				if(hit_limb == (BODY_ZONE_PRECISE_MOUTH || BODY_ZONE_PRECISE_L_EYE || BODY_ZONE_PRECISE_R_EYE))
-					if(blocked != 100)
-						var/damage_dealt = damage - (damage * (blocked/100)) - reduced
-						if(damage_dealt > edge_protection)
-							var/obj/item/organ/brain/brain = living_target.getorganslot(ORGAN_SLOT_BRAIN)
-							if(brain)
-								brain.applyOrganDamage(damage/1.1)
 				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_SUCCESS)
 					living_target.Immobilize(2 SECONDS)
 				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_SUCCESS)
