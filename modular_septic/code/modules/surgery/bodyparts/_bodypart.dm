@@ -1083,11 +1083,11 @@
 
 	if(body_zone in list(BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_R_EYE))
 		if(blocked != 100)
-			var/damage_dealt = damage - (damage * (blocked/100)) - reduced
+			var/damage_dealt = brute - (brute * (blocked/100)) - reduced
 			if(damage_dealt > edge_protection)
 				var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 				if(brain)
-					brain.applyOrganDamage(damage/1.1)
+					brain.applyOrganDamage(brute/1.1)
 
 	// Damage our injuries before we create new ones
 	for(var/datum/injury/iter_injury as anything in injuries)
