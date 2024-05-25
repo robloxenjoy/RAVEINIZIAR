@@ -1085,9 +1085,13 @@
 		if(blocked != 100)
 			var/damage_dealt = brute - (brute * (blocked/100)) - reduced
 			if(damage_dealt > edge_protection)
-				var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
-				if(brain)
-					brain.applyOrganDamage(brute/1.1)
+				if((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
+					if(brute > 10)
+						var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
+						if(brain)
+							brain.applyOrganDamage(brute/1.1)
+
+	special_gore()
 
 	// Damage our injuries before we create new ones
 	for(var/datum/injury/iter_injury as anything in injuries)

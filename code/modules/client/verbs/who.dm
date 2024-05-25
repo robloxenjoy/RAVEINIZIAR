@@ -4,38 +4,9 @@
 	set name = "Кто?"
 	set category = "OOC"
 
-	var/msg = "<b>Текущее кол-во игроков:</b>\n"
-
-	var/list/Lines = list()
-	var/columns_per_row = DEFAULT_WHO_CELLS_PER_ROW
-
-	if(holder)
-		for(var/client/client in GLOB.clients)
-			var/entry = "[client.key]"
-			if(client.holder && client.holder.fakekey)
-				entry += " <i>(как [client.holder.fakekey])</i>"
-			entry += " ([round(client.avgping, 1)]мс)"
-			Lines += entry
-	else
-		for(var/client/client in GLOB.clients)
-			if(client.holder && client.holder.fakekey)
-				Lines += "[client.holder.fakekey] ([round(client.avgping, 1)]мс)"
-			else
-				Lines += "[client.key] ([round(client.avgping, 1)]мс)"
-
-	var/num_lines = 0
-	msg += "<table style='width: 100%; table-layout: fixed'><tr>"
-	for(var/line in sort_list(Lines))
-		msg += "<td>[line]</td>"
-
-		num_lines += 1
-		if (num_lines == columns_per_row)
-			num_lines = 0
-			msg += "</tr><tr>"
-	msg += "</tr></table>"
-
-	msg += "<b>Всего игроков: [length(Lines)]</b>"
-	to_chat(src, "<span class='infoplain'>[msg]</span>")
+	for(var/client/Player)
+//    	usr << Player
+		to_chat(src, "<span class='infoplain'>[Player]</span>")
 
 /client/verb/adminwho()
 	set category = "Admin"

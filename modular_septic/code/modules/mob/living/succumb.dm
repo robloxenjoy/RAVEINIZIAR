@@ -63,7 +63,7 @@
 					if(!istype(obj_turf))
 						continue
 					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
-					ghost.plane = POLLUTION_PLANE 
+					ghost.plane = POLLUTION_PLANE
 					src.client.images += ghost
 					to_chat(src, span_steal("Я замечаю ловушку."))
 
@@ -74,7 +74,7 @@
 					if(!istype(obj_turf))
 						continue
 					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
-					ghost.plane = POLLUTION_PLANE 
+					ghost.plane = POLLUTION_PLANE
 					src.client.images += ghost
 					to_chat(src, span_steal("Я замечаю ловушку."))
 

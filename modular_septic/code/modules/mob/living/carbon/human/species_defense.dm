@@ -920,8 +920,8 @@
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	goodhits(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
-	affected.another_special_destroying(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
-	if(damage > 5)
+//	affected.another_special_destroying(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+	if(damage > 8)
 		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_WILL), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 			shake_camera(victim, 1, 1)
 	return TRUE
@@ -937,13 +937,22 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(damage > 5)
-		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-			if(user_end >= 3)
-				victim.Immobilize(2 SECONDS)
-			else
-				victim.Immobilize(1 SECONDS)
+	if(damage > 8)
+		var/protection = 0
+		var/resultt = 0
+		if(!istype(weapon))
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - damage)
+		else
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - weapon.edge_protection_penetration)
+			if(damage > resultt)
+				var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
+				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
+					if(user_end >= 3)
+						victim.Immobilize(2 SECONDS)
+					else
+						victim.Immobilize(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/realstunning(mob/living/carbon/human/victim, \
@@ -957,18 +966,18 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(damage > 5)
-		var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-			var/protection = 0
-			var/resultt = 0
-			if(!istype(weapon))
-				protection = victim.getarmor(affected, MELEE)
-				resultt = (protection - damage)
-			else
-				protection = victim.getsubarmor(affected, CRUSHING)
-				resultt = (protection - weapon.armour_penetration)
-				if(resultt <= 0)
+	if(damage > 8)
+		var/protection = 0
+		var/resultt = 0
+		if(!istype(weapon))
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - damage)
+		else
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - weapon.edge_protection_penetration)
+			if(damage > resultt)
+				var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
+				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 					if(user_str >= 3)
 						victim.Stun(2 SECONDS)
 					else
@@ -986,13 +995,22 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(damage > 5)
-		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-			if(user_end >= 3)
-				victim.Stumble(3 SECONDS)
-			else
-				victim.Stumble(1 SECONDS)
+	if(damage > 8)
+		var/protection = 0
+		var/resultt = 0
+		if(!istype(weapon))
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - damage)
+		else
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - weapon.edge_protection_penetration)
+			if(damage > resultt)
+				var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
+				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
+					if(user_end >= 3)
+						victim.Stumble(3 SECONDS)
+					else
+						victim.Stumble(1 SECONDS)
 	return TRUE
 
 /datum/species/proc/confusioner(mob/living/carbon/human/victim, \
@@ -1006,13 +1024,22 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(damage > 5)
-		var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-		if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-			if(user_end >= 3)
-				victim.add_confusion(3)
-			else
-				victim.add_confusion(1)
+	if(damage > 8)
+		var/protection = 0
+		var/resultt = 0
+		if(!istype(weapon))
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - damage)
+		else
+			protection = victim.get_edge_protection(affected)
+			resultt = (protection - weapon.edge_protection_penetration)
+			if(damage > resultt)
+				var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
+				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
+					if(user_end >= 3)
+						victim.add_confusion(3)
+					else
+						victim.add_confusion(1)
 	return TRUE
 
 /datum/species/proc/goodhits(mob/living/carbon/human/victim, \
@@ -1026,7 +1053,7 @@
 							def_zone = BODY_ZONE_CHEST, \
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
-	if(damage > 5)
+	if(damage > 8)
 		if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 			switch(def_zone)
 				if(BODY_ZONE_PRECISE_GROIN)
@@ -1034,12 +1061,12 @@
 						var/protection = 0
 						var/resultt = 0
 						if(!istype(weapon))
-							protection = victim.getarmor(affected, MELEE)
+							protection = victim.get_edge_protection(affected)
 							resultt = (protection - damage)
 						else
-							protection = victim.getsubarmor(affected, CRUSHING)
-							resultt = (protection - weapon.armour_penetration)
-							if(resultt <= 0)
+							protection = victim.get_edge_protection(affected)
+							resultt = (protection - weapon.edge_protection_penetration)
+							if(damage > resultt)
 								victim.Stumble(10 SECONDS)
 								var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 								if(diceroll == DICE_FAILURE)
@@ -1051,17 +1078,17 @@
 													span_hear("Я слышу звук плоти."))
 								if(victim.stat >= UNCONSCIOUS)
 									return
-	//							playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
+								playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
 				if(BODY_ZONE_PRECISE_VITALS)
 					var/protection = 0
 					var/resultt = 0
 					if(!istype(weapon))
-						protection = victim.getarmor(affected, MELEE)
+						protection = victim.get_edge_protection(affected)
 						resultt = (protection - damage)
 					else
-						protection = victim.getsubarmor(affected, CRUSHING)
-						resultt = (protection - weapon.armour_penetration)
-						if(resultt <= 0)
+						protection = victim.get_edge_protection(affected)
+						resultt = (protection - weapon.edge_protection_penetration)
+						if(damage > resultt)
 							if(prob(50))
 								victim.emote("burp")
 							else
@@ -1164,7 +1191,7 @@
 		var/resultt = 0
 		edge_protection = victim.get_edge_protection(affected)
 		resultt = (edge_protection - weapon.edge_protection_penetration)
-		if(resultt <= 5)
+		if(damage > resultt)
 			var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 //				user.changeNext_move(0)

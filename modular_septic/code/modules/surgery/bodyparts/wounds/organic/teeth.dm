@@ -27,11 +27,15 @@
 	. = ..()
 	if(!.)
 		return
-	var/final_descriptive = "Зубы выбиваются!"
+	var/random_number_chungas = (rand(1,4))
+	if(random_number_chungas > 1)
+		var/final_descriptive = "Зубы выбиваются!"
+	else
+		var/final_descriptive = "Зуб выбивается!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)
 		if(add_descriptive)
 			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [final_descriptive]"))
-	new_limb.knock_out_teeth(rand(1,4))
+	new_limb.knock_out_teeth(random_number_chungas)
 	qdel(src)
