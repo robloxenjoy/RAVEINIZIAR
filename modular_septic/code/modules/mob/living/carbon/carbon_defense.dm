@@ -198,18 +198,6 @@
 				return TERTIARY_ATTACK_CANCEL_ATTACK_CHAIN
 	return ..()
 
-/mob/living/carbon/on_hit(obj/projectile/P, damage, blocked, reduced, affected, edge_protection)
-	. = ..()
-	SEND_SIGNAL(src, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
-	var/hit_limb = get_bodypart_nostump(check_limb_hit(affected))
-	if(hit_limb == (BODY_ZONE_PRECISE_MOUTH || BODY_ZONE_PRECISE_L_EYE || BODY_ZONE_PRECISE_R_EYE))
-		if(blocked != 100)
-			var/damage_dealt = damage - (damage * (blocked/100)) - reduced
-			if(damage_dealt > edge_protection)
-				var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
-				if(brain)
-					brain.applyOrganDamage(damage/1.1)
-
 /mob/living/carbon/get_organic_health()
 	. = getMaxHealth()
 	for(var/obj/item/bodypart/bodypart in bodyparts)
