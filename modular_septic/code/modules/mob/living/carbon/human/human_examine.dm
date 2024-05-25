@@ -384,7 +384,7 @@
 				msg += "[t_He] appear[p_s()] to not be responding to noises."
 			if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
 				msg += "[t_He] [t_is] flushed and wheezing."
-			if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
+			if(bodytemperature <= dna.species.bodytemp_cold_damage_limit)
 				msg += "[t_He] [t_is] shivering."
 			if(HAS_TRAIT(user, TRAIT_SPIRITUAL))
 				msg += "[t_He] [t_has] a holy aura about [t_him]."

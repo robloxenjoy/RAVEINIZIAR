@@ -279,3 +279,46 @@
 /mob/living/carbon/proc/check_breath_temperature(datum/gas_mixture/breath, lung_efficiency, list/lungs, datum/organ_process/lung_process)
 	// The air you breathe out should match your body temperature
 	breath.temperature = bodytemperature
+	if(bodytemperature <= BODYTEMP_COLD_DAMAGE_LIMIT)
+		var/breath_effect_prob = 100
+		if(prob(50))
+			emote("shiver")
+		if(prob(breath_effect_prob))
+			if(is_mouth_covered())
+				return
+			emit_breath_particle(src, /particles/fog/breath)
+
+/mob/living/carbon/proc/emit_breath_particle(mob/living/carbon/human/breather, particle_type)
+	ASSERT(ispath(particle_type, /particles))
+
+	var/atom/movable/particle_holder/holder = new(breather, particle_type)
+	var/particles/breath_particle = holder.particles
+	var/breath_dir = breather.dir
+
+	var/list/particle_grav = list(0, 0.1, 0)
+	var/list/particle_pos = list(0, 10, 0)
+	if(breath_dir & NORTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Layer it behind the mob since we're facing away from the camera
+		holder.pixel_w -= 4
+		holder.pixel_y += 4
+	if(breath_dir & WEST)
+		particle_grav[1] = -0.2
+		particle_pos[1] = -5
+		breath_particle.rotation = -45
+	if(breath_dir & EAST)
+		particle_grav[1] = 0.2
+		particle_pos[1] = 5
+		breath_particle.rotation = 45
+	if(breath_dir & SOUTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Shouldn't be necessary but just for parity
+		holder.pixel_w += 4
+		holder.pixel_y -= 4
+
+	breath_particle.gravity = particle_grav
+	breath_particle.position = particle_pos
+
+	QDEL_IN(holder, breath_particle.lifespan)

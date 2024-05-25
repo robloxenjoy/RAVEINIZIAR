@@ -1298,16 +1298,23 @@
 	vis_flags = NONE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/atom/movable/particle_holder/fire_embers
+/atom/movable/particle_holder/fire
 	plane = ABOVE_FRILL_PLANE_BLOOM
 
-/atom/movable/particle_holder/fire_embers/Initialize(mapload)
+/atom/movable/particle_holder/fire/Initialize(mapload)
 	. = ..()
-	particles = new /particles/fire_embers()
+	particles = new /particles/fire()
 
 /atom/movable/particle_holder/fire_smoke
 	plane = ABOVE_FRILL_PLANE_BLOOM
 
 /atom/movable/particle_holder/fire_smoke/Initialize(mapload)
 	. = ..()
-	particles = new /particles/fire_smoke()
+	particles = new /particles/smoke()
+
+/atom/movable/particle_holder/breath
+	plane = ABOVE_FRILL_PLANE_BLOOM
+
+/atom/movable/particle_holder/breath/Initialize(mapload)
+	. = ..()
+	particles = new /particles/fog/breath()

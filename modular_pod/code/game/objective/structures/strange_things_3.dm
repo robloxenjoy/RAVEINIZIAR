@@ -62,39 +62,36 @@
 	close_sound = 'modular_pod/sound/eff/close_holodos.ogg'
 	door_anim_time = 0
 
-/particles/fire_embers
-	icon_state = list("spark"=5,"cross"=1,"curl"=1)
-	width = 64
-	height = 128
-	count = 150
-	spawning = 12
-	lifespan = 3 SECONDS
+/particles/fire
+	icon = 'icons/effects/particles/bonfire.dmi'
+	icon_state = "bonfire"
+	width = 100
+	height = 100
+	count = 1000
+	spawning = 4
+	lifespan = 0.7 SECONDS
 	fade = 1 SECONDS
-	color = 0
-	color_change = 0.1
-	gradient = list("#FBDB28", "#FCE6B6", "#FF532B")
-	position = generator("box", list(-16,-12,-32), list(16,32,32), NORMAL_RAND)
-	drift = generator("vector", list(-0.1,0), list(0.1,0.2), UNIFORM_RAND)
-	scale = generator("vector", list(0.5,0.5), list(2,2), NORMAL_RAND)
-	spin = generator("num", list(-30,30), NORMAL_RAND)
+	grow = -0.01
+	velocity = list(0, 0)
+	position = generator("circle", 0, 16, NORMAL_RAND)
+	drift = generator("vector", list(0, -0.2), list(0, 0.2))
+	gravity = list(0, 0.95)
+	scale = generator("vector", list(0.3, 0.3), list(1,1), NORMAL_RAND)
+	rotation = 30
+	spin = generator("num", -20, 20)
 
-//smoke of the fire
-/particles/fire_smoke
-	icon_state = list("puff"=5,"puff_oval"=2,"puff_ball"=2)
-	width = 64
-	height = 128
-	count = 200
-	spawning = 10
-	lifespan = 2 SECONDS
-	fade = 1 SECONDS
-	color = 0
-	color_change = 0.05
-	gradient = list("#dadada", "#5e5e5e", "#3a3a3a")
-	position = generator("box", list(-16,0,-32), list(16,32,32), NORMAL_RAND)
-	drift = generator("vector", list(-0.1,0), list(0.1,0.05), UNIFORM_RAND)
-	scale = generator("vector", list(0.5,0.5), list(2,2), NORMAL_RAND)
-	grow = generator("vector", list(-0.1,-0.1), list(0.1,0.1), NORMAL_RAND)
-	spin = generator("num", list(-15,15), NORMAL_RAND)
+/particles/fog
+	icon = 'icons/effects/particles/smoke.dmi'
+	icon_state = list("chill_1" = 2, "chill_2" = 2, "chill_3" = 1)
+
+/particles/fog/breath
+	count = 1
+	spawning = 1
+	lifespan = 1 SECONDS
+	fade = 0.5 SECONDS
+	grow = 0.05
+	spin = 2
+	color = "#fcffff77"
 
 /obj/structure/lighterfire
 	name = "Бочка"
@@ -109,5 +106,5 @@
 
 /obj/structure/lighterfire/New()
 	..()
-	add_particle_holder("embers", /atom/movable/particle_holder/fire_embers)
+	add_particle_holder("embers", /atom/movable/particle_holder/fire)
 	add_particle_holder("smoke", /atom/movable/particle_holder/fire_smoke)

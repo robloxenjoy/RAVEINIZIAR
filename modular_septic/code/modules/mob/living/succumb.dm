@@ -80,7 +80,7 @@
 
 		if(diceroll <= DICE_FAILURE)
 			to_chat(src, span_steal("Не получается."))
-
+/*
 /mob/living/carbon/human/verb/job_work(whispered as null)
 	set name = "Роль"
 	set category = "Экстра"
@@ -92,7 +92,7 @@
 		return
 	var/output_message = "<span class='infoplain'><div class='infobox'>[src.mind?.assigned_role.job_work]</div></span>"
 	to_chat(src, output_message)
-
+*/
 /mob/living/carbon/human/verb/upp(whispered as null)
 	set name = "Вверх"
 	set category = "Экстра"

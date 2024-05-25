@@ -59,7 +59,7 @@
 	if(SSticker.current_state < GAME_STATE_PLAYING)
 		alert("Игрушка пока не началась.")
 		return
-	client.name_ch = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Арсен", "Харамец", "Анклав")
+	client.name_ch = name_generate()
 	if(prob(70))
 		client.age_ch = rand(18, 40)
 	else
@@ -67,6 +67,21 @@
 	client.ready_char = TRUE
 	alert("Я вспомнил кто я!")
 	chooseRole()
+
+/mob/dead/new_player/proc/name_generate()
+	var/special_name
+	var/first_thing = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Арсен", "Харамец", "Анклав", "Флакон", "Торнер", "Вэб", "Хвакс", "Койлер", "Бойд", "Хэкс", "Гекс", "Сакрец")
+	special_name = "[first_thing]"
+	if(prob(40))
+		var/second_thing = pick("Мун", "Стоун", "Лик", "Варп")
+		special_name = "[first_thing] [second_thing]"
+	if(prob(10))
+		var/third_thing = pick("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
+		if(second_thing)
+			special_name = "[first_thing] [second_thing] [third_thing]"
+		else
+			special_name = "[first_thing] [third_thing]"
+	return special_name
 
 /mob/dead/new_player/proc/chooseRole()
 	if(!isnewplayer(src))
@@ -118,7 +133,13 @@
 					var/area/joined_area = get_area(character.loc)
 					if(joined_area)
 						joined_area.on_joining_game(character)
+					var/obj/item/organ/brain/brain = character.getorganslot(ORGAN_SLOT_BRAIN)
+					if(brain)
+						(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
+					character.gain_extra_effort(1, TRUE)
 					to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
+					for(var/obj/item/organ/genital/genital in character.internal_organs)
+						genital.build_from_dna(character.dna, genital.mutantpart_key)
 
 					character.attributes?.update_attributes()
 					character.update_body()

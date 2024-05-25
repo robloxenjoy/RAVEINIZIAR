@@ -301,9 +301,9 @@
 	message = "shakes their head."
 
 /datum/emote/living/shiver
-	key = "shiver"
-	key_third_person = "shiver"
-	message = "shivers."
+	key = "дрожь"
+	key_third_person = "дрожь"
+	message = "дрожит."
 
 /datum/emote/living/sigh
 	key = "sigh"
