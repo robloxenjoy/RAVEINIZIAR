@@ -28,10 +28,11 @@
 	if(!.)
 		return
 	var/random_number_chungas = (rand(1,4))
+	var/final_descriptive
 	if(random_number_chungas > 1)
-		var/final_descriptive = "Зубы выбиваются!"
+		final_descriptive = "Зубы выбиваются!"
 	else
-		var/final_descriptive = "Зуб выбивается!"
+		final_descriptive = "Зуб выбивается!"
 	if(victim)
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 70 + 20 * severity, TRUE)

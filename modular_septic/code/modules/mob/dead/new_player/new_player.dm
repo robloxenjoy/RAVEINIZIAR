@@ -70,13 +70,15 @@
 
 /mob/dead/new_player/proc/name_generate()
 	var/special_name
+	var/second_thing = null
+	var/third_thing = null
 	var/first_thing = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Арсен", "Харамец", "Анклав", "Флакон", "Торнер", "Вэб", "Хвакс", "Койлер", "Бойд", "Хэкс", "Гекс", "Сакрец")
 	special_name = "[first_thing]"
 	if(prob(40))
-		var/second_thing = pick("Мун", "Стоун", "Лик", "Варп")
+		second_thing = pick("Мун", "Стоун", "Лик", "Варп")
 		special_name = "[first_thing] [second_thing]"
 	if(prob(10))
-		var/third_thing = pick("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
+		third_thing = pick("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
 		if(second_thing)
 			special_name = "[first_thing] [second_thing] [third_thing]"
 		else
