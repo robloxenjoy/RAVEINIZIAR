@@ -176,26 +176,25 @@
 	default_unfasten_wrench(user, I, 2 SECONDS)
 	return TRUE
 
-
 /obj/item/plate/oven_tray
 	name = "oven tray"
 	desc = "Time to bake cookies!"
 	icon_state = "oven_tray"
 	max_items = 6
 
-
 /particles/smoke
 	icon = 'icons/effects/particles/smoke.dmi'
 	icon_state = list("smoke_1" = 1, "smoke_2" = 1, "smoke_3" = 2)
-	width = 100
-	height = 100
-	count = 1000
+	width = 64
+	height = 128
+	count = 150
 	spawning = 4
-	lifespan = 1.5 SECONDS
+	lifespan = 2 SECONDS
 	fade = 1 SECONDS
 	velocity = list(0, 0.4, 0)
 	position = list(6, 0, 0)
 	drift = generator("sphere", 0, 2, NORMAL_RAND)
+	position = generator("box", list(-16,-12,-32), list(16,32,32), NORMAL_RAND)
 	friction = 0.2
 	gravity = list(0, 0.95)
 	grow = 0.05
@@ -205,11 +204,9 @@
 	velocity = list(0, 0.3, 0)
 	friction = 0.25
 
-
 /particles/smoke/steam
 	icon_state = list("steam_1" = 1, "steam_2" = 1, "steam_3" = 2)
 	fade = 1.5 SECONDS
-
 
 #undef OVEN_SMOKE_STATE_NONE
 #undef OVEN_SMOKE_STATE_GOOD

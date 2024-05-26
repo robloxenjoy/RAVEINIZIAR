@@ -39,10 +39,10 @@
 					var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 					brain.applyOrganDamage(damage/1.1)
 
-/obj/item/bodypart/proc/special_gore(mob/living/carbon/human/owner, mob/living/carbon/human/user, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, def_zone = BODY_ZONE_CHEST, intended_zone = BODY_ZONE_CHEST, wound_messages = TRUE, list/modifiers)
+/obj/item/bodypart/proc/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
 	return
 
-/obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, mob/living/carbon/human/user, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, def_zone = BODY_ZONE_CHEST, intended_zone = BODY_ZONE_CHEST, wound_messages = TRUE, list/modifiers)
+/obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
 	if(damage > 8)
 		if(prob(50))
 			return FALSE
@@ -59,19 +59,36 @@
 				qdel(eyeb)
 				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
 
-/obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, mob/living/carbon/human/user, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, def_zone = BODY_ZONE_CHEST, intended_zone = BODY_ZONE_CHEST, wound_messages = TRUE, list/modifiers)
+/obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
 	if(damage > 8)
 		if(prob(50))
 			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
 		if(edge_protection <= 0)
-			if(!src.getorganslot(ORGAN_SLOT_EYES))
-				return FALSE
-			var/list/eyes = getorganslotlist(ORGAN_SLOT_EYES)
+			var/list/eyes = getorganslot(ORGAN_SLOT_EYES)
 			var/obj/item/organ/eyeb
 			if(eyeb in eyes)
 				eyeb.Remove(eyeb.owner)
+				if(QDELETED(eyeb))
+					continue
 				eyeb.organ_flags |= ORGAN_CUT_AWAY
 				qdel(eyeb)
 				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
+
+/obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
+	if(damage > 8)
+		var/list/intestines = getorganslotlist(ORGAN_SLOT_INTESTINES)
+		for(var/obj/item/organ/gut in intestines)
+			gut.Remove(gut.owner)
+			if(QDELETED(gut))
+				continue
+			gut.organ_flags |= ORGAN_CUT_AWAY
+			var/turf/drop_location = owner.drop_location()
+			if(istype(drop_location))
+				gut.forceMove(owner.drop_location())
+				owner.AddComponent(/datum/component/rope, gut, 'modular_septic/icons/effects/beam.dmi', "gut_beam2", 3, TRUE, /obj/effect/ebeam/gut, CALLBACK(owner, /mob/living/carbon/proc/gut_cut))
+			else
+				qdel(gut)
+		for(var/obj/item/grab/grabber as anything in grasped_by)
+			grabber.update_grab_mode()
