@@ -142,7 +142,7 @@
 			var/bone_name = GLOB.bones_by_path[bone_type] ? GLOB.bones_by_path[bone_type].name : "кость"
 			if(is_fractured())
 				bone_name = "сломанный [bone_name]"
-			injury_descriptors["[bone_name] обнаженный"] = 1
+			injury_descriptors["[bone_name] обнажённый"] = 1
 			if(!is_encased() || (CHECK_BITFIELD(how_open(), SURGERY_BROKEN)))
 				var/list/bits = list()
 				for(var/obj/item/organ/organ as anything in get_organs())
