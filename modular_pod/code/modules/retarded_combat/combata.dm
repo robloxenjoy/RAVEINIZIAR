@@ -71,6 +71,9 @@
 			eyeb.organ_flags |= ORGAN_CUT_AWAY
 			qdel(eyeb)
 			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
+			owner.custom_pain("МОЙ ЛЕВЫЙ ГЛАЗ!", rand(30, 40), affecting = src)
+			if(!owner.IsUnconscious() || (owner.get_chem_effect(CE_PAINKILLER) < 50))
+				owner.death_scream()
 
 /obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
@@ -85,6 +88,9 @@
 			eyeb.organ_flags |= ORGAN_CUT_AWAY
 			qdel(eyeb)
 			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
+			owner.custom_pain("МОЙ ПРАВЫЙ ГЛАЗ!", rand(30, 40), affecting = src)
+			if(!owner.IsUnconscious() || (owner.get_chem_effect(CE_PAINKILLER) < 50))
+				owner.death_scream()
 
 /obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
