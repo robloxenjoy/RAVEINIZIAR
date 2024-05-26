@@ -1081,16 +1081,6 @@
 			owner.major_wound_effects(pain, body_zone, wound_messages)
 			update_cripple()
 
-	if(body_zone in list(BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_R_EYE))
-		if(blocked != 100)
-			var/damage_dealt = brute - (brute * (blocked/100)) - reduced
-			if(damage_dealt > edge_protection)
-				if((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
-					if(brute > 10)
-						var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
-						if(brain)
-							brain.applyOrganDamage(brute/1.1)
-
 	special_gore(owner, src, brute, sharpness)
 
 	// Damage our injuries before we create new ones

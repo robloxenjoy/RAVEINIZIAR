@@ -918,7 +918,7 @@
 	confusioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 //	staminy(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	embedding(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
-	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
+//	incisioner(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	goodhits(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 //	affected.another_special_destroying(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	if(damage > 8)
@@ -1131,6 +1131,7 @@
 	return TRUE
 */
 
+/*
 /datum/species/proc/incisioner(mob/living/carbon/human/victim, \
 						mob/living/carbon/human/user, \
 						obj/item/bodypart/affected, \
@@ -1169,6 +1170,7 @@
 			return TRUE
 		return FALSE
 	return FALSE
+*/
 
 /datum/species/proc/embedding(mob/living/carbon/human/victim, \
 						mob/living/carbon/human/user, \

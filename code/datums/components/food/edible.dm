@@ -294,7 +294,7 @@ Behavior that's still missing from this component that original food items had t
 			return
 		else if(fullness > 500)
 			message_to_nearby_audience = span_notice("[eater] нехотя ест [parent].")
-			message_to_consumer = span_notice("Я нехотя [eatverb] ест [parent].")
+			message_to_consumer = span_notice("Я нехотя [eatverb] [parent].")
 		else if(fullness > 150)
 			message_to_nearby_audience = span_notice("[eater] ест [parent].")
 			message_to_consumer = span_notice("Я [eatverb] [parent].")
