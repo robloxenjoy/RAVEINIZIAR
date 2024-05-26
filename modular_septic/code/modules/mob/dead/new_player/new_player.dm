@@ -106,7 +106,13 @@
 			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 				if(spawn_point.name == client.role_ch)
 					var/mob/living/carbon/human/character = new(spawn_point.loc)
+					client.mind.active = FALSE
+					client.mind.transfer_to(character)
+					client.mind.set_original_character(character)
+					character.age = client.age_ch
+					character.real_name = client.name_ch
 					spawn_point.spawn_me(src, character)
+					qdel(src)
 		if("Да вроде другая...")
 			client.ready_char = FALSE
 			return FALSE
