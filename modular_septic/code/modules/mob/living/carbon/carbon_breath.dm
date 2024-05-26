@@ -33,7 +33,7 @@
 		//so you're going to miss a breath
 		if(HAS_TRAIT(src, TRAIT_HOLDING_BREATH) || HAS_TRAIT(src, TRAIT_MAGIC_CHOKE) || \
 			(undergoing_cardiac_arrest() && !get_chem_effect(CE_STABLE)) || \
-			(pulledby?.grab_state >= GRAB_KILL) || HAS_TRAIT(src, TRAIT_CANTBREATH) \
+			(pulledby?.grab_state >= GRAB_KILL) || HAS_TRAIT(src, TRAIT_CANTBREATH) || \
 			turf_loc?.liquids && !HAS_TRAIT(src, TRAIT_WATER_BREATHING) && ((body_position == LYING_DOWN && turf_loc.liquids.liquid_state >= LIQUID_STATE_WAIST) || (body_position == STANDING_UP && turf_loc.liquids.liquid_state >= LIQUID_STATE_FULLTILE)) )
 			losebreath++
 
