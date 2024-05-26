@@ -103,52 +103,10 @@
 	var/crazyalert = alert("А может была другая роль?",,"Продолжаем уже!","Да вроде другая...")
 	switch(crazyalert)
 		if("Продолжаем уже!")
-			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
-				if(spawn_point.name == client.role_ch)
-					var/mob/living/carbon/human/character = new(spawn_point.loc)
-
-					character.set_species(/datum/species/human)
-					character.gender = MALE
-					character.genitals = GENITALS_MALE
-					character.body_type = MALE
-					character.chat_color = ""
-					character.real_name = client.name_ch
-					character.name = character.real_name
-					character.age = client.age_ch
-					character.truerole = "Капнобатай"
-					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-					mind.active = FALSE
-					mind.transfer_to(character)
-					mind.set_original_character(character)
-					character.key = key
-					qdel(src)
-
-					var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
-					if(!babble)
-						character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/gakster.ogg')
-					else
-						babble.babble_sound_override = 'modular_septic/sound/voice/babble/gakster.ogg'
-						babble.volume = BABBLE_DEFAULT_VOLUME
-						babble.duration = BABBLE_DEFAULT_DURATION
-
-					character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-					var/area/joined_area = get_area(character.loc)
-					if(joined_area)
-						joined_area.on_joining_game(character)
-					var/obj/item/organ/brain/brain = character.getorganslot(ORGAN_SLOT_BRAIN)
-					if(brain)
-						(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
-					character.gain_extra_effort(1, TRUE)
-					to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
-					for(var/obj/item/organ/genital/genital in character.internal_organs)
-						genital.build_from_dna(character.dna, genital.mutantpart_key)
-
-					character.attributes?.update_attributes()
-					character.update_body()
-					character.update_hair()
-					character.update_body_parts()
-					character.update_mutations_overlay()
-
+			var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list
+			if(spawn_point.name == client.role_ch)
+				var/mob/living/carbon/human/character = new(spawn_point.loc)
+				spawn_point.spawn_me(character)
 		if("Да вроде другая...")
 			client.ready_char = FALSE
 			return FALSE
