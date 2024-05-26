@@ -32,43 +32,6 @@
 /obj/effect/landing/bodyguard
 	name = "bodyguard"
 
-/obj/effect/landing/proc/spawn_me(mob/living/carbon/human/chungus)
-	chungus.set_species(/datum/species/human)
-	chungus.gender = MALE
-	chungus.genitals = GENITALS_MALE
-	chungus.body_type = MALE
-	chungus.chat_color = ""
-	chungus.name = chungus.real_name
-	chungus.truerole = "Капнобатай"
-	chungus.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-
-	var/datum/component/babble/babble = chungus.GetComponent(/datum/component/babble)
-	if(!babble)
-		chungus.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/gakster.ogg')
-	else
-		babble.babble_sound_override = 'modular_septic/sound/voice/babble/gakster.ogg'
-		babble.volume = BABBLE_DEFAULT_VOLUME
-		babble.duration = BABBLE_DEFAULT_DURATION
-
-	chungus.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	var/area/joined_area = get_area(chungus.loc)
-	if(joined_area)
-		joined_area.on_joining_game(chungus)
-	var/obj/item/organ/brain/brain = chungus.getorganslot(ORGAN_SLOT_BRAIN)
-	if(brain)
-		(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(chungus, STAT_ENDURANCE))
-	chungus.gain_extra_effort(1, TRUE)
-	to_chat(chungus, span_dead("Я продолжаю искать свой верный путь."))
-/*
-	for(var/obj/item/organ/genital/genital in chungus.internal_organs)
-		genital.build_from_dna(chungus.dna, genital.mutantpart_key)
-*/
-	chungus.attributes?.update_attributes()
-	chungus.update_body()
-	chungus.update_hair()
-	chungus.update_body_parts()
-	chungus.update_mutations_overlay()
-
 /obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'
