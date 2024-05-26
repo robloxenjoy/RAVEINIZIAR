@@ -33,9 +33,3 @@
 					living_target.Stumble(3 SECONDS)
 				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 					living_target.add_confusion(3)
-				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_SUCCESS)
-					if(!hit_limb.get_incision(TRUE))
-						if(blocked != 100)
-							var/damage_dealt = damage - (damage * (blocked/100)) - reduced
-							if(damage_dealt > edge_protection)
-								hit_limb.open_incision()

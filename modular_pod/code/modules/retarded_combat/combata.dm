@@ -50,7 +50,7 @@
 				var/resultt = 0
 				edge_protection = owner.get_edge_protection(affected)
 				if(resultt <= 0)
-					open_incision()
+					src.open_incision(owner)
 					SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Рассечено!")]"))
 					for(var/obj/item/organ/bone/bonee as anything in getorganslotlist(ORGAN_SLOT_BONE))
 						if(bonee.is_broken())
@@ -66,15 +66,11 @@
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
 		if(edge_protection <= 0)
-			var/list/eyes = getorganslot(ORGAN_SLOT_EYES)
-			for(var/obj/item/organ/eyeb in eyes)
-				eyeb.Remove(eyeb.owner)
-				if(QDELETED(eyeb))
-					continue
-					eyeb.Remove(eyeb.owner)
-					eyeb.organ_flags |= ORGAN_CUT_AWAY
-					qdel(eyeb)
-					SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
+			var/obj/item/organ/eyes/eyeb = getorganslot(ORGAN_SLOT_EYES)
+			eyeb.Remove(eyeb.owner)
+			eyeb.organ_flags |= ORGAN_CUT_AWAY
+			qdel(eyeb)
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
 
 /obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
@@ -84,14 +80,11 @@
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
 		if(edge_protection <= 0)
-			var/list/eyes = getorganslot(ORGAN_SLOT_EYES)
-			for(var/obj/item/organ/eyeb in eyes)
-				eyeb.Remove(eyeb.owner)
-				if(QDELETED(eyeb))
-					continue
-				eyeb.organ_flags |= ORGAN_CUT_AWAY
-				qdel(eyeb)
-				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
+			var/obj/item/organ/eyes/eyeb = getorganslot(ORGAN_SLOT_EYES)
+			eyeb.Remove(eyeb.owner)
+			eyeb.organ_flags |= ORGAN_CUT_AWAY
+			qdel(eyeb)
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
 
 /obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
