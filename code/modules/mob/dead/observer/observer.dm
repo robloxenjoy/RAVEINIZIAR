@@ -592,6 +592,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(src, span_info("Я всё ещё жив."))
 		return FALSE
 
+	client.ready_char = FALSE
 	SSdroning.kill_droning(client)
 	var/mob/dead/new_player/M = new /mob/dead/new_player()
 	M.ckey = ckey
