@@ -17,6 +17,7 @@
 
 	if(HAS_TRAIT(src, TRAIT_CANTBREATH))
 		check_failed_breath(special = TRUE)
+		return FALSE
 
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
