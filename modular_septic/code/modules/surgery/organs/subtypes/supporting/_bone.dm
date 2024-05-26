@@ -115,7 +115,7 @@
 				var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 				if(brain)
 					brain.applyOrganDamage(rand(20, 50))
-				var/fuckbrain = diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+				var/fuckbrain = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 				if(fuckbrain <= DICE_SUCCESS)
 					owner.gain_trauma(/datum/brain_trauma/severe/halitus_deprivation)
 			if(limb.body_zone in list(BODY_ZONE_PRECISE_FACE, BODY_ZONE_HEAD))

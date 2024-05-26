@@ -21,7 +21,6 @@
 		if(ishuman(living_targett))
 			if(damage > 10)
 				var/mob/living/carbon/human/living_target = target
-				var/obj/item/bodypart/hit_limb
 				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_SUCCESS)
 					living_target.Immobilize(2 SECONDS)
 				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_SUCCESS)
@@ -29,7 +28,7 @@
 						var/damage_dealt = damage - (damage * (blocked/100)) - reduced
 						if(damage_dealt > edge_protection)
 							living_target.Stun(2 SECONDS)
-				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_DEXTERITY)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
+				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_DEXTERITY), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 					living_target.Stumble(3 SECONDS)
-				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
+				if(living_target.diceroll(GET_MOB_ATTRIBUTE_VALUE(living_target, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 					living_target.add_confusion(3)

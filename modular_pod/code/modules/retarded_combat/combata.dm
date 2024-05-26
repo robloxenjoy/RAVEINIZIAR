@@ -46,7 +46,6 @@
 			if(prob(50))
 				return FALSE
 			var/edge_protection = 0
-			var/resultt = 0
 			edge_protection = owner.get_edge_protection(affected)
 			if(resultt <= 0)
 				src.open_incision(owner)
