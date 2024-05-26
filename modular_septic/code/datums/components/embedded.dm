@@ -48,7 +48,7 @@
 	var/mob/living/carbon/victim = parent
 	LAZYADD(limb.embedded_objects, weapon)
 	weapon.forceMove(victim)
-	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), .proc/weaponDeleted)
+	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(weaponDeleted))
 	if(!silence_message)
 		victim.visible_message(span_danger("[weapon] [harmful ? "застревает" : "застревает"] [harmful ? "в" : "на"] <b>[victim]</b> [limb.name]!"), \
 					span_userdanger("[weapon] [harmful ? "застревает" : "застревает"] [harmful ? "в" : "на"] [limb.name]!"))
@@ -249,7 +249,7 @@
 	if(!weapon.unembedded(victim, limb))
 		weapon.forceMove(victim.loc)
 		if(to_hands)
-			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hands, weapon)
+			INVOKE_ASYNC(to_hands, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 //			INVOKE_ASYNC(to_hands, /mob.proc/put_in_active_hand, weapon)
 //			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hand, weapon, active_hand)
 //		var/obj/item/bodypart/part_will_get_nulled = grasped_part
