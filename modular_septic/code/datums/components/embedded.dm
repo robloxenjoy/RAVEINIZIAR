@@ -212,6 +212,14 @@
 								stamina = pain_stam_pct * damage,\
 								sharpness = SHARP_EDGED)
 		victim.agony_scream()
+	if(remover == victim)
+		victim.visible_message(span_notice("<b>[remover]</b> вырывает [weapon] из [limb.name]!"), \
+				span_userdanger("Я вырываю [weapon] из [limb.name]."))
+	else
+		victim.visible_message(span_notice("<b>[remover]</b> вырывает [weapon] из <b>[limb.owner]</b> [limb.name]!"), \
+				span_userdanger("<b>[remover]</b> вырывает [weapon] из [limb.name]."), \
+				ignored_mobs = remover)
+		to_chat(remover, span_notice("Я вырываю [weapon] из <b>[victim]</b> [limb.name]!"))
 	playsound(victim, 'modular_septic/sound/gore/pullout.ogg', 83, 0)
 	remover.changeNext_move(CLICK_CD_CLING)
 	remover.adjustFatigueLoss(5)
