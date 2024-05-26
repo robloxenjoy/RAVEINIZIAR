@@ -59,7 +59,7 @@
 				qdel(eyeb)
 				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
 
-/obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0 sharpness = NONE, wound_messages = TRUE)
+/obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	if(damage > 8)
 		if(prob(50))
 			return FALSE
