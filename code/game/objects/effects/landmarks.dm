@@ -32,7 +32,7 @@
 /obj/effect/landing/bodyguard
 	name = "bodyguard"
 
-/obj/effect/landing/proc/spawn_me(client, mob/living/carbon/human/chungus)
+/obj/effect/landing/proc/spawn_me(mob/living/carbon/human/chungus)
 	chungus.set_species(/datum/species/human)
 	chungus.gender = MALE
 	chungus.genitals = GENITALS_MALE

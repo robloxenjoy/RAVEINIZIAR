@@ -112,7 +112,7 @@
 					character.key = key
 					character.age = client.age_ch
 					character.real_name = client.name_ch
-					spawn_point.spawn_me(src, character)
+					spawn_point.spawn_me(character)
 					qdel(src)
 		if("Да вроде другая...")
 			client.ready_char = FALSE
