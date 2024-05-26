@@ -41,7 +41,6 @@
 	chungus.name = chungus.real_name
 	chungus.truerole = "Капнобатай"
 	chungus.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-	chungus.key = client.key
 
 	var/datum/component/babble/babble = chungus.GetComponent(/datum/component/babble)
 	if(!babble)
