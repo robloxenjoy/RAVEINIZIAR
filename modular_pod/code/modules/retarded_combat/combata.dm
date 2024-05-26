@@ -61,18 +61,13 @@
 
 /obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	if(damage > 8)
-		if(prob(50))
-			return FALSE
-		var/edge_protection = 0
-		edge_protection = owner.get_edge_protection(src)
-		if(edge_protection <= 0)
-			var/list/eyes = getorganslot(ORGAN_SLOT_EYES)
-			var/obj/item/organ/eyeb
-			if(eyeb in eyes)
-				eyeb.Remove(eyeb.owner)
-				eyeb.organ_flags |= ORGAN_CUT_AWAY
-				qdel(eyeb)
-				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
+		var/list/eyes = getorganslot(ORGAN_SLOT_EYES)
+		var/obj/item/organ/eyeb
+		if(eyeb in eyes)
+			eyeb.Remove(eyeb.owner)
+			eyeb.organ_flags |= ORGAN_CUT_AWAY
+			qdel(eyeb)
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
 
 /obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	if(damage > 8)
@@ -82,6 +77,12 @@
 			if(QDELETED(gut))
 				continue
 			gut.organ_flags |= ORGAN_CUT_AWAY
+			var/sound_effect = list('modular_septic/sound/gore/spill1.ogg', 'modular_septic/sound/gore/spill2.ogg')
+			playsound(owner, pick(sound_effect), 100, TRUE)
+			spilled = TRUE
+			owner.bleed(20)
+			owner.update_damage_overlays()
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Кишки вырваны!")]"))
 			var/turf/drop_location = owner.drop_location()
 			if(istype(drop_location))
 				gut.forceMove(owner.drop_location())
