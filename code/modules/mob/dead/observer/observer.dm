@@ -584,14 +584,20 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 /mob/dead/observer/verb/particlize()
-	set category = null
-	set name = "Particlize"
+	set category = "Ghost"
+	set name = "Возрождение"
 	set desc = "Are you want?"
 
 	if(stat != DEAD)
-		to_chat(src, span_info("Somehow, I'm still alive."))
+		to_chat(src, span_info("Я всё ещё жив."))
 		return FALSE
 
+	SSdroning.kill_droning(client)
+	var/mob/dead/new_player/M = new /mob/dead/new_player()
+	M.ckey = ckey
+	qdel(src)
+
+/*
 	var/obj/effect/landmark/tendance/willet/K = locate() in world
 	var/mob/living/carbon/human/species/weakwillet/character = new(K.loc)
 
@@ -630,6 +636,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	playsound(character, 'modular_pod/sound/eff/DSBOSPN.ogg', 100, FALSE)
 
 	return TRUE
+*/
 /*
 /mob/dead/observer/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"

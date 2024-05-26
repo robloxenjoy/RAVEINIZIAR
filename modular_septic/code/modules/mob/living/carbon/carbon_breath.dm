@@ -15,10 +15,6 @@
 	if(reagents.has_reagent(/datum/reagent/toxin/lexorin, needs_metabolizing = TRUE))
 		return
 
-	if(HAS_TRAIT(src, TRAIT_CANTBREATH))
-		check_failed_breath(special = TRUE)
-		return FALSE
-
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
@@ -37,7 +33,7 @@
 		//so you're going to miss a breath
 		if(HAS_TRAIT(src, TRAIT_HOLDING_BREATH) || HAS_TRAIT(src, TRAIT_MAGIC_CHOKE) || \
 			(undergoing_cardiac_arrest() && !get_chem_effect(CE_STABLE)) || \
-			(pulledby?.grab_state >= GRAB_KILL) || \
+			(pulledby?.grab_state >= GRAB_KILL) || HAS_TRAIT(src, TRAIT_CANTBREATH) \
 			turf_loc?.liquids && !HAS_TRAIT(src, TRAIT_WATER_BREATHING) && ((body_position == LYING_DOWN && turf_loc.liquids.liquid_state >= LIQUID_STATE_WAIST) || (body_position == STANDING_UP && turf_loc.liquids.liquid_state >= LIQUID_STATE_FULLTILE)) )
 			losebreath++
 
@@ -264,15 +260,11 @@
 	loc.assume_air(breath)
 	air_update_turf(FALSE, FALSE)
 
-/mob/living/carbon/proc/check_failed_breath(datum/gas_mixture/breath, lung_efficiency = 0, list/lungs, datum/organ_process/lung_process, var/special = FALSE)
+/mob/living/carbon/proc/check_failed_breath(datum/gas_mixture/breath, lung_efficiency = 0, list/lungs, datum/organ_process/lung_process)
 	if(get_chem_effect(CE_OXYGENATED))
 		return FALSE
-	if(!special)
-		if(get_chem_effect(CE_STABLE) && lung_efficiency)
-			return FALSE
-	else
-		if(get_chem_effect(CE_STABLE))
-			return FALSE
+	if(get_chem_effect(CE_STABLE) && lung_efficiency)
+		return FALSE
 	if(prob(70))
 		agony_gasp()
 	adjustOxyLoss(3)
