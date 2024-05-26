@@ -16,8 +16,7 @@
 		return
 
 	if(HAS_TRAIT(src, TRAIT_CANTBREATH))
-		if(prob(60))
-			return
+		check_failed_breath(special = TRUE)
 
 	if(istype(loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
@@ -264,12 +263,16 @@
 	loc.assume_air(breath)
 	air_update_turf(FALSE, FALSE)
 
-/mob/living/carbon/proc/check_failed_breath(datum/gas_mixture/breath, lung_efficiency = 0, list/lungs, datum/organ_process/lung_process)
+/mob/living/carbon/proc/check_failed_breath(datum/gas_mixture/breath, lung_efficiency = 0, list/lungs, datum/organ_process/lung_process, var/special = FALSE)
 	if(get_chem_effect(CE_OXYGENATED))
 		return FALSE
-	if(get_chem_effect(CE_STABLE) && lung_efficiency)
-		return FALSE
-	if(prob(40))
+	if(!special)
+		if(get_chem_effect(CE_STABLE) && lung_efficiency)
+			return FALSE
+	else
+		if(get_chem_effect(CE_STABLE))
+			return FALSE
+	if(prob(70))
 		agony_gasp()
 	adjustOxyLoss(3)
 
