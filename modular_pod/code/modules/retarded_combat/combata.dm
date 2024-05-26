@@ -39,10 +39,10 @@
 					var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 					brain.applyOrganDamage(damage/1.1)
 
-/obj/item/bodypart/proc/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
+/obj/item/bodypart/proc/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	return
 
-/obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
+/obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	if(damage > 8)
 		if(prob(50))
 			return FALSE
@@ -59,7 +59,7 @@
 				qdel(eyeb)
 				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
 
-/obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
+/obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0 sharpness = NONE, wound_messages = TRUE)
 	if(damage > 8)
 		if(prob(50))
 			return FALSE
@@ -70,13 +70,11 @@
 			var/obj/item/organ/eyeb
 			if(eyeb in eyes)
 				eyeb.Remove(eyeb.owner)
-				if(QDELETED(eyeb))
-					continue
 				eyeb.organ_flags |= ORGAN_CUT_AWAY
 				qdel(eyeb)
 				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
 
-/obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, obj/item/weapon, damage = 0, damage_flag = MELEE, damage_type = BRUTE, sharpness = NONE, wound_messages = TRUE, list/modifiers)
+/obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	if(damage > 8)
 		var/list/intestines = getorganslotlist(ORGAN_SLOT_INTESTINES)
 		for(var/obj/item/organ/gut in intestines)

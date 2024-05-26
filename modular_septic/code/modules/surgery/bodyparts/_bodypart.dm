@@ -1091,7 +1091,7 @@
 						if(brain)
 							brain.applyOrganDamage(brute/1.1)
 
-	special_gore(owner, affected, weapon, damage, damage_flag, damage_type, sharpness, modifiers)
+	special_gore(owner, src, brute, sharpness)
 
 	// Damage our injuries before we create new ones
 	for(var/datum/injury/iter_injury as anything in injuries)
