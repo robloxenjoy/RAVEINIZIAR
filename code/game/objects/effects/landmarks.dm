@@ -32,22 +32,22 @@
 /obj/effect/landing/bodyguard
 	name = "bodyguard"
 
-/obj/effect/landing/proc/spawn_me(mob/living/carbon/human/chungus)
+/obj/effect/landing/proc/spawn_me(mob, mob/living/carbon/human/chungus)
 	chungus.set_species(/datum/species/human)
 	chungus.gender = MALE
 	chungus.genitals = GENITALS_MALE
 	chungus.body_type = MALE
 	chungus.chat_color = ""
-	chungus.real_name = chungus.client?.name_ch
+	chungus.real_name = mob.client?.name_ch
 	chungus.name = chungus.real_name
-	chungus.age = chungus.client?.age_ch
+	chungus.age = mob.client?.age_ch
 	chungus.truerole = "Капнобатай"
 	chungus.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
-	mind.active = FALSE
-	mind.transfer_to(chungus)
-	mind.set_original_chungus(chungus)
+	mob.mind.active = FALSE
+	mob.mind.transfer_to(chungus)
+	mob.mind.set_original_character(chungus)
 	chungus.key = key
-	qdel(src)
+	qdel(mob)
 
 	var/datum/component/babble/babble = chungus.GetComponent(/datum/component/babble)
 	if(!babble)

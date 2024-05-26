@@ -103,10 +103,10 @@
 	var/crazyalert = alert("А может была другая роль?",,"Продолжаем уже!","Да вроде другая...")
 	switch(crazyalert)
 		if("Продолжаем уже!")
-			var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list
-			if(spawn_point.name == client.role_ch)
-				var/mob/living/carbon/human/character = new(spawn_point.loc)
-				spawn_point.spawn_me(character)
+			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
+				if(spawn_point.name == client.role_ch)
+					var/mob/living/carbon/human/character = new(spawn_point.loc)
+					spawn_point.spawn_me(src, character)
 		if("Да вроде другая...")
 			client.ready_char = FALSE
 			return FALSE
