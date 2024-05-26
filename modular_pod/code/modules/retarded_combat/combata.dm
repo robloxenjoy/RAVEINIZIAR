@@ -43,20 +43,19 @@
 /obj/item/bodypart/proc/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	if(damage > 8)
 		if(sharpness)
-			if(!get_incision(TRUE))
-				if(prob(50))
-					return FALSE
-				var/edge_protection = 0
-				var/resultt = 0
-				edge_protection = owner.get_edge_protection(affected)
-				if(resultt <= 0)
-					src.open_incision(owner)
-					SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Рассечено!")]"))
-					for(var/obj/item/organ/bone/bonee as anything in getorganslotlist(ORGAN_SLOT_BONE))
-						if(bonee.is_broken())
-							playsound(get_turf(owner), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
-						else
-							playsound(get_turf(owner), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
+			if(prob(50))
+				return FALSE
+			var/edge_protection = 0
+			var/resultt = 0
+			edge_protection = owner.get_edge_protection(affected)
+			if(resultt <= 0)
+				src.open_incision(owner)
+				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Надрез!")]"))
+				for(var/obj/item/organ/bone/bonee as anything in getorganslotlist(ORGAN_SLOT_BONE))
+					if(bonee.is_broken())
+						playsound(get_turf(owner), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
+					else
+						playsound(get_turf(owner), 'modular_septic/sound/gore/flesh1.ogg', 80, 0)
 
 /obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
