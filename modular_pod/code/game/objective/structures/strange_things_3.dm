@@ -111,10 +111,9 @@
 /datum/looping_sound/musicloop
 	mid_sounds = list('modular_pod/sound/mus/boombox.ogg' = 1)
 	mid_length = 161 SECONDS
-	volume = 80
-	extra_range = 3
+	volume = 70
 	falloff_exponent = 10
-	falloff_distance = 5
+	falloff_distance = 3
 
 /obj/item/musicshit/boombox
 	name = "Бумбокс"
@@ -126,11 +125,11 @@
 
 /obj/item/musicshit/boombox/Initialize(mapload)
 	. = ..()
-	soundloop = new(src, FALSE)
+	soundloop = new(src,  FALSE)
 
 /obj/item/musicshit/boombox/Destroy()
-	. = ..()
 	QDEL_NULL(soundloop)
+	. = ..()
 
 /obj/item/musicshit/boombox/attack_self(mob/user)
 	. = ..()
@@ -139,7 +138,24 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(playc)
 		soundloop.stop()
+//		STOP_PROCESSING(SSobj, src)
 		playc = FALSE
 	else
 		soundloop.start()
+//		START_PROCESSING(SSobj, src)
 		playc = TRUE
+
+/*
+/obj/item/musicshit/boombox/process()
+	if(playc)
+		for(var/mob/M in range(10, src))
+			if(!M || !M.client)
+				continue
+			playsound(get_turf(src), 'modular_pod/sound/mus/boombox.ogg', volume = 60, falloff_exponent = 11, falloff_distance = 3, channel = CHANNEL_JUKEBOX, use_reverb = TRUE)
+			playc = TRUE
+	else
+		for(var/mob/L in range(10, src))
+			if(!L || !L.client)
+				continue
+			L.stop_sound_channel(CHANNEL_JUKEBOX)
+*/
