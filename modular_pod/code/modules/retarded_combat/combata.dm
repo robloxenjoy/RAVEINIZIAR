@@ -61,7 +61,7 @@
 	if(damage > 10)
 		if(!getorganslot(ORGAN_SLOT_EYES))
 			return FALSE
-		if((get_mangled_state() != BODYPART_MANGLED_FLESH) && (get_mangled_state() != BODYPART_MANGLED_BOTH))
+		if(limb_integrity > (max_damage/3))
 			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
@@ -80,7 +80,7 @@
 	if(damage > 10)
 		if(!getorganslot(ORGAN_SLOT_EYES))
 			return FALSE
-		if((get_mangled_state() != BODYPART_MANGLED_FLESH) && (get_mangled_state() != BODYPART_MANGLED_BOTH))
+		if(limb_integrity > (max_damage/3))
 			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
@@ -104,7 +104,7 @@
 				return FALSE
 			if(spilled)
 				return FALSE
-			if((get_mangled_state() != BODYPART_MANGLED_FLESH) && (get_mangled_state() != BODYPART_MANGLED_BOTH))
+			if(limb_integrity > (max_damage/3))
 				return FALSE
 			var/gaping_wound = FALSE
 			for(var/datum/injury/injury as anything in injuries)
