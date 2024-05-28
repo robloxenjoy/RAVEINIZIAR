@@ -59,7 +59,9 @@
 /obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
 	if(damage > 10)
-		if(prob(50))
+		if(!getorganslot(ORGAN_SLOT_EYES))
+			return FALSE
+		if((get_mangled_state() != BODYPART_MANGLED_FLESH) && (get_mangled_state() != BODYPART_MANGLED_BOTH))
 			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
@@ -76,7 +78,9 @@
 /obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
 	if(damage > 10)
-		if(prob(50))
+		if(!getorganslot(ORGAN_SLOT_EYES))
+			return FALSE
+		if((get_mangled_state() != BODYPART_MANGLED_FLESH) && (get_mangled_state() != BODYPART_MANGLED_BOTH))
 			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
@@ -93,8 +97,6 @@
 /obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
 	if(damage > 10)
-		if(prob(50))
-			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
 		if(edge_protection <= 0)
