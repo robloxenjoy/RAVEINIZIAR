@@ -187,7 +187,7 @@
 	icon_state = list("smoke_1" = 1, "smoke_2" = 1, "smoke_3" = 2)
 	width = 64
 	height = 128
-	count = 150
+	count = 100
 	spawning = 4
 	lifespan = 2 SECONDS
 	fade = 1 SECONDS

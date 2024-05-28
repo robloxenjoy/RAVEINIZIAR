@@ -67,7 +67,7 @@
 	icon_state = "bonfire"
 	width = 64
 	height = 128
-	count = 150
+	count = 100
 	spawning = 7
 	lifespan = 2 SECONDS
 	fade = 1 SECONDS
@@ -107,3 +107,76 @@
 	..()
 	add_particle_holder("embers", /atom/movable/particle_holder/fire)
 	add_particle_holder("smoke", /atom/movable/particle_holder/fire_smoke)
+
+/datum/looping_sound/musicloop
+	mid_sounds = list()
+	mid_length = 60
+	volume = 80
+	extra_range = 3
+	falloff_exponent = 10
+	falloff_distance = 5
+
+/obj/item/musicshit/boombox
+	name = "Бумбокс"
+	desc = "А это уже другое дело."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "boombox"
+	var/datum/looping_sound/musicloop/soundloop
+	var/curfile
+	var/playing = FALSE
+	var/loaded = TRUE
+	var/already = FALSE
+
+/obj/item/musicshit/boombox/Initialize(mapload)
+	. = ..()
+	soundloop = new(list(src), FALSE)
+
+/obj/item/musicshit/boombox/Destroy()
+	. = ..()
+	QDEL_NULL(soundloop)
+
+/obj/item/musicshit/boombox/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(already)
+		user.changeNext_move(CLICK_CD_MELEE)
+		if(!playing)
+			if(curfile)
+				playing = TRUE
+				soundloop.mid_sounds = list(curfile)
+				soundloop.cursound = null
+				soundloop.start()
+		else
+			playing = FALSE
+			already = FALSE
+			soundloop.stop()
+	else
+		if(loc != user)
+			return
+		if(!user.ckey)
+			return
+		if(playing)
+			return
+		var/infile = input(user, "Выбрать новый музон", src) as null|file
+		user.changeNext_move(CLICK_CD_MELEE)
+		if(!infile)
+			return
+		if(!loaded)
+			return
+
+		var/filename = "[infile]"
+		var/file_ext = lowertext(copytext(filename, -4))
+		var/file_size = length(infile)
+
+		if(file_ext != ".ogg")
+			to_chat(user, "<span class='warning'>Должен быть формат OGG.</span>")
+			return
+		if(file_size > 6485760)
+			to_chat(user, "<span class='warning'>6 МБ максимум.</span>")
+			return
+		fcopy(infile,"data/jukeboxuploads/[user.ckey]/[filename]")
+		curfile = file("data/jukeboxuploads/[user.ckey]/[filename]")
+
+		loaded = FALSE
+		already = TRUE
