@@ -135,15 +135,15 @@
 	. = ..()
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
 	if(playc)
+		playc = FALSE
 		soundloop.stop()
 //		STOP_PROCESSING(SSobj, src)
-		playc = FALSE
 	else
-		soundloop.start()
-//		START_PROCESSING(SSobj, src)
 		playc = TRUE
+		soundloop.start()
+	user.changeNext_move(CLICK_CD_MELEE)
+//		START_PROCESSING(SSobj, src)
 
 /*
 /obj/item/musicshit/boombox/process()
