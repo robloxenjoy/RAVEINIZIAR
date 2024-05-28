@@ -16,10 +16,6 @@
 	s += "<a href='https://discord.gg/wUPYTgJ4Th'>Discord</a>"
 	s += ")\]"
 	s += "<br>"
-	s += "ХУЯЧЬТЕ!"
-	s += "ХУЯРЬТЕ!"
-	s += "ДОБЫВАЙТЕ КАОТИКИ!"
-	s += "МОЛИТЕСЬ ЕБАННОМУ ЗАЙЦУ!"
 	if(tagline)
 		s += "[tagline]<br>"
 	if(fluff)
