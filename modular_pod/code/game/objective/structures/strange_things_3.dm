@@ -145,7 +145,6 @@
 			if(curfile)
 				playing = TRUE
 				soundloop.mid_sounds = list(curfile)
-				soundloop.cursound = null
 				soundloop.start()
 		else
 			playing = FALSE
