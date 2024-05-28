@@ -16,13 +16,17 @@
 	s += "<a href='https://discord.gg/wUPYTgJ4Th'>Discord</a>"
 	s += ")\]"
 	s += "<br>"
+	s += "ХУЯЧЬТЕ!"
+	s += "ХУЯРЬТЕ!"
+	s += "ДОБЫВАЙТЕ КАОТИКИ!"
+	s += "МОЛИТЕСЬ ЕБАННОМУ ЗАЙЦУ!"
 	if(tagline)
 		s += "[tagline]<br>"
 	if(fluff)
 		s += "<i>[fluff]</i><br>"
 
 	if(!GLOB.enter_allowed)
-		features += "Closed"
+		features += "Закрыто"
 
 	var/players = length(GLOB.clients)
 
@@ -32,14 +36,14 @@
 		popcaptext = "/[popcap]"
 
 	if(players > 1)
-		features += "[players][popcaptext] players"
+		features += "[players][popcaptext] игроков"
 	else if(players == 1)
-		features += "[players][popcaptext] player"
+		features += "[players][popcaptext] игрок"
 
 	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
 	if(hostedby)
-		features += "Hosted by <b>[hostedby]</b>"
+		features += "Сделано <b>[hostedby]</b>"
 
 	if(LAZYLEN(features))
 		s += "\[[jointext(features, " | ")]"

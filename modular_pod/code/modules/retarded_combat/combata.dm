@@ -59,9 +59,11 @@
 /obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
 	if(damage > 10)
+		if(prob(50))
+			return FALSE
 		if(!getorganslot(ORGAN_SLOT_EYES))
 			return FALSE
-		if(limb_integrity < (max_damage/3))
+		if(limb_integrity < (max_damage/2))
 			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
@@ -78,9 +80,11 @@
 /obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
 	if(damage > 10)
+		if(prob(50))
+			return FALSE
 		if(!getorganslot(ORGAN_SLOT_EYES))
 			return FALSE
-		if(limb_integrity < (max_damage/3))
+		if(limb_integrity < (max_damage/2))
 			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
@@ -97,6 +101,8 @@
 /obj/item/bodypart/vitals/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
 	if(damage > 10)
+		if(prob(50))
+			return FALSE
 		var/edge_protection = 0
 		edge_protection = owner.get_edge_protection(src)
 		if(edge_protection <= 0)
@@ -104,7 +110,7 @@
 				return FALSE
 			if(spilled)
 				return FALSE
-			if(limb_integrity < (max_damage/3))
+			if(limb_integrity < (max_damage/2))
 				return FALSE
 			var/gaping_wound = FALSE
 			for(var/datum/injury/injury as anything in injuries)
