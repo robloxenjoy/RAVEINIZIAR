@@ -58,7 +58,7 @@
 
 /obj/item/bodypart/l_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
-	if(damage > 8)
+	if(damage > 10)
 		if(prob(50))
 			return FALSE
 		var/edge_protection = 0
@@ -75,7 +75,7 @@
 
 /obj/item/bodypart/r_eyelid/special_gore(mob/living/carbon/human/owner, obj/item/bodypart/affected, damage = 0, sharpness = NONE, wound_messages = TRUE)
 	. = ..()
-	if(damage > 8)
+	if(damage > 10)
 		if(prob(50))
 			return FALSE
 		var/edge_protection = 0
