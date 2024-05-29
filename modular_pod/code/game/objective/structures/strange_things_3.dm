@@ -159,3 +159,45 @@
 				continue
 			L.stop_sound_channel(CHANNEL_JUKEBOX)
 */
+
+/obj/structure/chair/podpolsit
+	name = "Трон"
+	desc = "Пора узнать, что такое сила."
+	icon = 'modular_pod/icons/obj/things/things_5.dmi'
+	icon_state = "sit"
+	max_integrity = 10000
+
+/obj/structure/chair/podpolsit/deconstruct()
+	new /obj/item/podpol_weapon/sword/steel(get_turf(src))
+
+/obj/structure/chair/podpolsit/post_buckle_mob(mob/living/M)
+	. = ..()
+	if(iscarbon(M))
+		user.visible_message(span_notice("[user] усаживается на [src]."),span_notice("Я усаживаюсь на [src]."), span_hear("Я слышу чё-то."))
+		if(do_after(M, 3 SECONDS, target=src))
+			to_chat(M, span_meatymeat("Я ощущаю какой-то пиздец!"))
+			M.fully_heal(TRUE)
+
+/obj/structure/column/power
+	name = "Статуя"
+	desc = "То, что внушает страх."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "power"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	anchored = 1
+	density = 1
+	obj_flags = NONE
+	max_integrity = 1000
+
+/obj/effect/turf_decal/tile/metalpodpol
+	name = "Плитка"
+	icon = 'modular_pod/icons/obj/thing/things_3.dmi'
+	icon_state = "metal1"
+	layer = TURF_PLATING_DECAL_LAYER
+	alpha = 255
+
+/obj/effect/turf_decal/tile/metalpodpol/Initialize(mapload)
+	. = ..()
+	if(prob(50))
+		icon_state = "metal2"

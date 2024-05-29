@@ -150,6 +150,25 @@
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
 
+/turf/open/floor/plating/polovich/way/mud/Initialize(mapload)
+	. = ..()
+	var/turf/south = get_step(get_turf(src), SOUTH)
+	var/turf/north = get_step(get_turf(src), NORTH)
+	var/turf/west = get_step(get_turf(src), WEST)
+	var/turf/east = get_step(get_turf(src), EAST)
+	if(locate(/turf/open/floor/plating/polovich/way/muddy) in south)
+		if(prob(20))
+			new /turf/open/floor/plating/polovich/way/mud(get_turf(south))
+	if(locate(/turf/open/floor/plating/polovich/way/muddy) in north)
+		if(prob(20))
+			new /turf/open/floor/plating/polovich/way/mud(get_turf(north))
+	if(locate(/turf/open/floor/plating/polovich/way/muddy) in north)
+		if(prob(70))
+			new /turf/open/floor/plating/polovich/way/mud(get_turf(east))
+	if(locate(/turf/open/floor/plating/polovich/way/muddy) in north)
+		if(prob(70))
+			new /turf/open/floor/plating/polovich/way/mud(get_turf(west))
+
 /turf/open/floor/plating/polovich/way/specialblue
 	name = "Пол"
 	icon_state = "specialblue"
@@ -372,10 +391,25 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
+	var/finished = FALSE
 
+/*
 /turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+*/
+
+/turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
+	. = ..()
+	var/near_t = range(2, src)
+	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
+		if(prob(20))
+			new /turf/open/floor/plating/polovich/way/redd(get_turf(generat))
+		if(prob(50))
+			new /turf/open/floor/plating/polovich/way/dyingmud(get_turf(generat))
+		if(prob(30))
+			new /turf/open/floor/plating/polovich/way/mud(get_turf(generat))
+		finished = TRUE
 
 /turf/open/floor/plating/polovich/way/stone
 	name = "Пол"
@@ -507,6 +541,12 @@
 /turf/open/floor/plating/polovich/way/dyingmud/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
+	var/near_t = range(2, src)
+	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
+		if(!generat.finished)
+			continue
+		if(prob(60))
+			new /turf/open/floor/plating/polovich/way/dyingmud(get_turf(generat))
 
 /turf/open/floor/plating/polovich/way/evilmud
 	name = "Грязь"
@@ -631,6 +671,31 @@
 /turf/open/floor/plating/polovich/way/hotstone22
 	name = "Пол"
 	icon_state = "hotstone22"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/painwood
+	name = "Пол"
+	icon_state = "painwood"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+
+/turf/open/floor/plating/polovich/way/uzstone
+	name = "Пол"
+	icon_state = "uzstone"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+
+/turf/open/floor/plating/polovich/way/ystone
+	name = "Пол"
+	icon_state = "ystone"
 	footstep = FOOTSTEP_STONE
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE

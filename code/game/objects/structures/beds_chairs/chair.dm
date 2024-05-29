@@ -15,13 +15,15 @@
 	var/buildstackamount = 1
 	var/item_chair = /obj/item/chair // if null it can't be picked up
 
-
+/*
 /obj/structure/chair/examine(mob/user)
 	. = ..()
 	. += span_notice("It's held together by a couple of <b>bolts</b>.")
 	if(!has_buckled_mobs() && can_buckle)
 		. += span_notice("While standing on [src], drag and drop your sprite onto [src] to buckle to it.")
+*/
 
+/*
 /obj/structure/chair/Initialize(mapload)
 	. = ..()
 	if(!anchored) //why would you put these on the shuttle?
@@ -54,6 +56,7 @@
 
 /obj/structure/chair/proc/RemoveFromLatejoin()
 	SSjob.latejoin_trackers -= src //These may be here due to the arrivals shuttle
+*/
 
 /obj/structure/chair/deconstruct()
 	// If we have materials, and don't have the NOCONSTRUCT flag
@@ -106,12 +109,13 @@
 	deconstruct()
 	return TRUE
 
+/*
 /obj/structure/chair/attack_tk(mob/user)
 	if(!anchored || has_buckled_mobs() || !isturf(user.loc))
 		return ..()
 	setDir(turn(dir,-90))
 	return COMPONENT_CANCEL_ATTACK_CHAIN
-
+*/
 
 /obj/structure/chair/proc/handle_rotation(direction)
 	handle_layer()
@@ -289,7 +293,7 @@
 
 /obj/structure/chair/stool/narsie_act()
 	return
-
+/*
 /obj/structure/chair/MouseDrop(over_object, src_location, over_location)
 	. = ..()
 	if(over_object == usr && Adjacent(usr))
@@ -303,7 +307,7 @@
 		TransferComponents(C)
 		usr.put_in_hands(C)
 		qdel(src)
-
+*/
 /obj/structure/chair/user_buckle_mob(mob/living/M, mob/user, check_loc = TRUE)
 	return ..()
 
