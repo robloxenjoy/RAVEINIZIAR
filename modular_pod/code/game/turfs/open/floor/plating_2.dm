@@ -157,16 +157,16 @@
 	var/turf/west = get_step(get_turf(src), WEST)
 	var/turf/east = get_step(get_turf(src), EAST)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in south)
-		if(prob(20))
+		if(prob(10))
 			south.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in north)
-		if(prob(20))
+		if(prob(10))
 			north.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in east)
-		if(prob(70))
+		if(prob(60))
 			east.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in west)
-		if(prob(70))
+		if(prob(60))
 			west.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/specialblue
@@ -403,12 +403,13 @@
 	. = ..()
 	var/near_t = range(2, src)
 	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
-		if(prob(20))
-			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/redd, null, CHANGETURF_IGNORE_AIR)
-		if(prob(30))
-			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
-		if(prob(30))
-			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
+		if(prob(50))
+			if(prob(20))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/redd, null, CHANGETURF_IGNORE_AIR)
+			if(prob(30))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
+			if(prob(30))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 		finished = TRUE
 
 /turf/open/floor/plating/polovich/way/stone
@@ -547,6 +548,7 @@
 			continue
 		if(prob(20))
 			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
+			dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/way/evilmud
 	name = "Грязь"
