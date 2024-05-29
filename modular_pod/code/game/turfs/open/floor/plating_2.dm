@@ -163,10 +163,10 @@
 		if(prob(10))
 			north.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in east)
-		if(prob(60))
+		if(prob(50))
 			east.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in west)
-		if(prob(60))
+		if(prob(50))
 			west.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/specialblue
@@ -404,11 +404,12 @@
 	var/near_t = range(2, src)
 	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
 		if(prob(50))
-			if(prob(20))
+			if(prob(10))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/redd, null, CHANGETURF_IGNORE_AIR)
-			if(prob(30))
+			if(prob(20))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
-			if(prob(30))
+				generat.dir = rand(0,4)
+			if(prob(20))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 		finished = TRUE
 
@@ -546,7 +547,7 @@
 	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
 		if(!generat.finished)
 			continue
-		if(prob(20))
+		if(prob(10))
 			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
 			dir = rand(0,4)
 

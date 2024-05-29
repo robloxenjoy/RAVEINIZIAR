@@ -367,12 +367,12 @@
 
 //Copium
 /datum/reagent/medicine/copium
-	name = "Copium"
+	name = "Копиум"
 	description = "The strongest painkiller. \
 				Highly addictive, easily overdoseable at 15u."
 	ph = 6.9
 	reagent_state = GAS
-	metabolization_rate = REAGENTS_METABOLISM*0.5
+	metabolization_rate = REAGENTS_METABOLISM*0.10
 	self_consuming = TRUE //Does not get processed by the liver
 	color = "#d364ff100"
 	overdose_threshold = 15
@@ -388,14 +388,14 @@
 /datum/reagent/medicine/copium/on_mob_metabolize(mob/living/L)
 	. = ..()
 	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_start.ogg', 100)
-	to_chat(L, span_achievementneutral("My skin feels numb and I can't feel pain anymore."))
+	to_chat(L, span_achievementneutral("Моя кожа онемела, и я больше не чувствую боли."))
 	L.add_chem_effect(CE_PULSE, -2, "[type]")
 	L.add_chem_effect(CE_PAINKILLER, 200, "[type]")
 
 /datum/reagent/medicine/copium/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.playsound_local(L, 'modular_septic/sound/insanity/painhuff_end.ogg', 100)
-	to_chat(L, span_achievementneutral("My skin doesn't feel numb anymore."))
+	to_chat(L, span_achievementneutral("Моя кожа больше не онемевшая."))
 	L.remove_chem_effect(CE_PAINKILLER, "[type]")
 	L.remove_chem_effect(CE_PULSE, "[type]")
 

@@ -24,5 +24,5 @@
 
 /// Called when an overdose starts
 /datum/reagent/overdose_start(mob/living/M)
-	to_chat(M, span_userdanger("I feel like i took too much of [name]!"))
+	to_chat(M, span_userdanger("Я принял слишком много [name]!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)

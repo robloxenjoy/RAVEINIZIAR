@@ -173,10 +173,15 @@
 /obj/structure/chair/podpolsit/post_buckle_mob(mob/living/M)
 	. = ..()
 	if(iscarbon(M))
+		M.pixel_y += 5
 		M.visible_message(span_notice("[M] усаживается на [src]."),span_notice("Я усаживаюсь на [src]."), span_hear("Я слышу чё-то."))
 		if(do_after(M, 3 SECONDS, target=src))
 			to_chat(M, span_meatymeat("Я ощущаю какой-то пиздец!"))
 			M.fully_heal(TRUE)
+
+/obj/structure/chair/podpolsit/post_unbuckle_mob(mob/living/M)
+	if(iscarbon(M))
+		M.pixel_y -= 5
 
 /obj/structure/column/power
 	name = "Статуя"

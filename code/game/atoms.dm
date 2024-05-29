@@ -639,29 +639,29 @@
 		var/list/materials_list = list()
 		for(var/datum/material/current_material as anything in custom_materials)
 			materials_list += "[current_material.name]"
-		. += "<u>It is made out of [english_list(materials_list)]</u>."
+		. += "<u>Это сделано из [english_list(materials_list)]</u>."
 	if(reagents)
 		if(reagents.flags & TRANSPARENT)
-			. += "It contains:"
+			. += "Тут внутри:"
 			if(length(reagents.reagent_list))
 				if(user.can_see_reagents()) //Show each individual reagent
 					for(var/datum/reagent/current_reagent as anything in reagents.reagent_list)
-						. += "[round(current_reagent.volume, 0.01)] units of [current_reagent.name]"
+						. += "[round(current_reagent.volume, 0.01)] юнитов [current_reagent.name]"
 					if(reagents.is_reacting)
-						. += span_warning("It is currently reacting!")
-					. += span_notice("The solution's pH is [round(reagents.ph, 0.01)] and has a temperature of [reagents.chem_temp]K.")
+						. += span_warning("Там какая-то реакция!")
+					. += span_notice("pH это [round(reagents.ph, 0.01)] и температура [reagents.chem_temp].")
 				else //Otherwise, just show the total volume
 					var/total_volume = 0
 					for(var/datum/reagent/current_reagent as anything in reagents.reagent_list)
 						total_volume += current_reagent.volume
-					. += "[total_volume] units of various reagents"
+					. += "[total_volume] юнитов различных реагентов"
 			else
 				. += "Nothing."
 		else if(reagents.flags & AMOUNT_VISIBLE)
 			if(reagents.total_volume)
-				. += span_notice("It has [reagents.total_volume] unit\s left.")
+				. += span_notice("Тут осталось [reagents.total_volume] юнитов.")
 			else
-				. += span_danger("It's empty.")
+				. += span_danger("Тут пусто хуюсто.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 /**
@@ -783,7 +783,7 @@
 		return
 	if(buckle_message_cooldown <= world.time)
 		buckle_message_cooldown = world.time + 50
-		to_chat(user, span_warning("You can't move while buckled to [src]!"))
+		to_chat(user, span_warning("Не могу двигаться пока я на [src]!"))
 	return
 
 /**
