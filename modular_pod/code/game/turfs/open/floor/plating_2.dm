@@ -158,16 +158,16 @@
 	var/turf/east = get_step(get_turf(src), EAST)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in south)
 		if(prob(20))
-			new /turf/open/floor/plating/polovich/way/mud(get_turf(south))
+			south.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/muddy) in north)
 		if(prob(20))
-			new /turf/open/floor/plating/polovich/way/mud(get_turf(north))
-	if(locate(/turf/open/floor/plating/polovich/way/muddy) in north)
+			north.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
+	if(locate(/turf/open/floor/plating/polovich/way/muddy) in east)
 		if(prob(70))
-			new /turf/open/floor/plating/polovich/way/mud(get_turf(east))
-	if(locate(/turf/open/floor/plating/polovich/way/muddy) in north)
+			east.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
+	if(locate(/turf/open/floor/plating/polovich/way/muddy) in west)
 		if(prob(70))
-			new /turf/open/floor/plating/polovich/way/mud(get_turf(west))
+			west.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/specialblue
 	name = "Пол"
@@ -404,11 +404,11 @@
 	var/near_t = range(2, src)
 	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
 		if(prob(20))
-			new /turf/open/floor/plating/polovich/way/redd(get_turf(generat))
-		if(prob(50))
-			new /turf/open/floor/plating/polovich/way/dyingmud(get_turf(generat))
+			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/redd, null, CHANGETURF_IGNORE_AIR)
 		if(prob(30))
-			new /turf/open/floor/plating/polovich/way/mud(get_turf(generat))
+			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
+		if(prob(30))
+			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)
 		finished = TRUE
 
 /turf/open/floor/plating/polovich/way/stone
@@ -545,8 +545,8 @@
 	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
 		if(!generat.finished)
 			continue
-		if(prob(60))
-			new /turf/open/floor/plating/polovich/way/dyingmud(get_turf(generat))
+		if(prob(20))
+			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/evilmud
 	name = "Грязь"

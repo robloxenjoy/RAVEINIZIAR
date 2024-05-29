@@ -309,6 +309,7 @@
 			return FALSE
 
 	. = buckle_mob(M, check_loc = check_loc)
+/*
 	if(.)
 		if(M == user)
 			M.visible_message(span_notice("[M] пристёгивает себя к [src]."),\
@@ -318,6 +319,7 @@
 			M.visible_message(span_warning("[user] пристёгивает [M] к [src]!"),\
 				span_warning("[user] пристёгивает меня к [src]!"),\
 				span_hear("Слышу чё-то."))
+*/
 /**
  * Handles a user unbuckling a mob from src and sends a visible_message
  *
@@ -330,6 +332,7 @@
 /atom/movable/proc/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	var/mob/living/M = unbuckle_mob(buckled_mob)
 	if(M)
+/*
 		if(M != user)
 			M.visible_message(span_notice("[user] unbuckles [M] from [src]."),\
 				span_notice("[user] unbuckles you from [src]."),\
@@ -338,6 +341,7 @@
 			M.visible_message(span_notice("[M] unbuckles [M.p_them()]self from [src]."),\
 				span_notice("You unbuckle yourself from [src]."),\
 				span_hear("You hear metal clanking."))
+*/
 		if(unbuckle_sound)
 			playsound(src, unbuckle_sound, 65, FALSE)
 		add_fingerprint(user)
