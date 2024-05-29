@@ -7,20 +7,29 @@
 "g" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest)
 "h" = (/obj/effect/landmark/start/new_player,/turf/open/floor/plating,/area/start)
 "i" = (/turf/closed/indestructible/splashscreen,/area/start)
+"k" = (/obj/structure/column/power,/turf/open/floor/plating/polovich/way/painwood,/area/maintenance/polovich/forest)
+"l" = (/turf/open/floor/plating/polovich/way/monumental{dir = 1},/area/maintenance/polovich/forest)
+"m" = (/obj/structure/chair/podpolsit,/turf/open/floor/plating/polovich/way/painwood,/area/maintenance/polovich/forest)
 "n" = (/turf/open/floor/plating/polovich/way/redd,/area/maintenance/polovich/forest)
 "o" = (/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
 "p" = (/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
+"q" = (/turf/open/floor/plating/polovich/way/monumental{dir = 4},/area/maintenance/polovich/forest)
 "r" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
+"s" = (/turf/open/floor/plating/polovich/way/ancfire,/area/maintenance/polovich/forest)
 "t" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
+"v" = (/turf/open/floor/plating/polovich/way/monumental{dir = 8},/area/maintenance/polovich/forest)
 "w" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/inner)
 "x" = (/obj/structure/closet/crate/freezer/podozl,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "y" = (/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
 "z" = (/turf/open/floor/plating/polovich/way/deadmeat_full,/area/maintenance/polovich/forest/inner)
 "A" = (/turf/open/floor/plating/polovich/way/deadmeat,/area/maintenance/polovich/forest/inner)
+"B" = (/turf/open/floor/plating/polovich/way/monumental,/area/maintenance/polovich/forest)
+"C" = (/turf/open/floor/plating/polovich/way/ravein,/area/maintenance/polovich/forest)
 "D" = (/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest)
 "E" = (/turf/open/floor/plating/polovich/way/mud,/area/maintenance/polovich/forest)
 "F" = (/obj/structure/stairs/south,/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "H" = (/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
+"I" = (/obj/effect/landing/kapno,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
 "J" = (/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "K" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
 "L" = (/obj/structure/wayto/podpol,/turf/open/floor/plating/polovich/way/legend,/area/maintenance/polovich/forest)
@@ -32,7 +41,7 @@
 "R" = (/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
 "S" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "T" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
-"U" = (/obj/effect/landing/kapno,/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
+"U" = (/turf/open/floor/plating/polovich/way/painwood,/area/maintenance/polovich/forest)
 "V" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/inner)
 "W" = (/obj/structure/table/goody,/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
 "X" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest)
@@ -131,21 +140,21 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagUUUUUUUUUUgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagUUUkmkUUUUgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagCvqCCvqCUCgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagClBCClBCUCgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagUUUUUUUUUUgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagggggUCUCUCgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasssssUCUCUCgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDDDDDDDDDDDDDDaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDOxPoyKooKyYYDaaaaaaaaaaaa
 bbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdTPfyyooyyzYDaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDJJPWoorooYYYDaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdPPooooooVAYDaaaaaaaaaaaa
-bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdHHoyyoooYYYDaaaaaaaaaaaa
+bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdHHoyyoIoYYYDaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaDdHtoyKooyyzYDaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFFaaaaaaaaaaDdPPoooooyKYYDaaaaaaaaaaaa
 bcceeeeeeeeeeeeeeeeebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaXXaaaaaaaaaaDJJPfooNooYzYDaaaaaaaaaaaa
@@ -264,12 +273,12 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRRRRREEEEaagaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMMMMMaaaaaaaaaaapREEaEEEagaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMMMMMaaaaaaaaaappRREEEEEagaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMMMMMaaaaaaaaaapQnRRaEEEpgaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMMMMMaaaaaaaaaapnnRRRURRpgaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMMMMMaaaaaaaaaapEEEEpRpppgaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMMMMMaaaaaaaaaapEEappRpppgaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapREEaEEEagaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaappRREEEEEagaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapQnRRaEEEpgaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaapnnRRRRRRpgaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMaaaaaaaaaaapEEEEpRpppgaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaMMaaaaaaaaaaapEEappRpppgaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRRRRRRLRaagaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaappppRpaagaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaappRpaagaaaaaaaaaaaaaa
