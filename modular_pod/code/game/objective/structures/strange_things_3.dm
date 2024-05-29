@@ -173,7 +173,7 @@
 /obj/structure/chair/podpolsit/post_buckle_mob(mob/living/M)
 	. = ..()
 	if(iscarbon(M))
-		user.visible_message(span_notice("[user] усаживается на [src]."),span_notice("Я усаживаюсь на [src]."), span_hear("Я слышу чё-то."))
+		M.visible_message(span_notice("[M] усаживается на [src]."),span_notice("Я усаживаюсь на [src]."), span_hear("Я слышу чё-то."))
 		if(do_after(M, 3 SECONDS, target=src))
 			to_chat(M, span_meatymeat("Я ощущаю какой-то пиздец!"))
 			M.fully_heal(TRUE)
@@ -192,7 +192,7 @@
 
 /obj/effect/turf_decal/tile/metalpodpol
 	name = "Плитка"
-	icon = 'modular_pod/icons/obj/thing/things_3.dmi'
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "metal1"
 	layer = TURF_PLATING_DECAL_LAYER
 	alpha = 255
