@@ -178,7 +178,7 @@
 					if(defer_change)
 						flags = CHANGETURF_DEFER_CHANGE
 					var/turf/open/mined = ScrapeAway(null, flags)
-					addtimer(CALLBACK(src, TYPE_PROC_REF(AfterChange), flags, old_type), 1, TIMER_UNIQUE)
+					addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, AfterChange), flags, old_type), 1, TIMER_UNIQUE)
 					playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)
