@@ -239,7 +239,8 @@
 		var/mob/living/carbon/M = rammer
 		var/obj/item/bodypart/affecting = M.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
 		if(affecting)
-			if(!LAZYLEN(clothingonpart(affecting)))
+			var/cloth_cover = LAZYLEN(M.clothingonpart(affecting))
+			if(!cloth_cover)
 				M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
 //				affecting.receive_damage(brute = 10, sharpness = SHARP_POINTY)
 				M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)

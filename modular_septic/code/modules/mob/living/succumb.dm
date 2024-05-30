@@ -59,7 +59,7 @@
 		if(diceroll == DICE_SUCCESS)
 			for(var/obj/visible_obj in view(7, src))
 				var/list/found_obj = list()
-				if(visible_obj.pane == GAME_PLANE_FOV_HIDDEN)
+				if(visible_obj.plane == GAME_PLANE_FOV_HIDDEN)
 					continue
 				if(!visible_obj.istrap)
 					continue
