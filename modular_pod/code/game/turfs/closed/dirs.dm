@@ -93,6 +93,7 @@
 	var/mine_hp = 8
 	var/ore_type = /obj/item/stone
 	var/ore_amount = 1
+	var/defer_change = TRUE
 
 /turf/podpol/wall/on_rammed(mob/living/carbon/rammer)
 	rammer.ram_stun()
@@ -177,7 +178,7 @@
 					if(defer_change)
 						flags = CHANGETURF_DEFER_CHANGE
 					var/turf/open/mined = ScrapeAway(null, flags)
-					addtimer(CALLBACK(src, .proc/AfterChange, flags, old_type), 1, TIMER_UNIQUE)
+					addtimer(CALLBACK(src, TYPE_PROC_REF(AfterChange, flags, old_type)), 1, TIMER_UNIQUE)
 					playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)

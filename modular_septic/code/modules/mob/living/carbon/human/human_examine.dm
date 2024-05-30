@@ -7,25 +7,11 @@
 	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 		get_aroused = TRUE
 
-	var/t_He = p_they(TRUE)
 	var/t_he = p_they()
-	var/t_His = p_their(TRUE)
-	var/t_his = p_their()
-	var/t_him = p_them()
-	var/t_has = p_have()
 	var/t_is = p_are()
-	var/t_isnt = "[t_is]n't"
-	var/t_es = p_es()
 	if(user == src)
-		t_He = "I"
 		t_he = "i"
-		t_His = "My"
-		t_his = "my"
-		t_him = "me"
-		t_has = "have"
 		t_is = "am"
-		t_isnt = "am not"
-		t_es = ""
 
 	var/sanitized_chat_color = sanitize_hexcolor(chat_color)
 	var/fancy_name = name
@@ -369,11 +355,11 @@
 				msg += "[t_He] seem[p_s()] winded."
 			if(getToxLoss() >= 10)
 				msg += "[t_He] seem[p_s()] sickly."
-*/
+
 			if(mood.sanity <= SANITY_DISTURBED)
 				msg += "Видно, что психически не в порядке."
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
-/*
+
 			if(is_blind())
 				msg += "[t_He] appear[p_s()] to be staring off into space."
 			if(HAS_TRAIT(src, TRAIT_DEAF))
