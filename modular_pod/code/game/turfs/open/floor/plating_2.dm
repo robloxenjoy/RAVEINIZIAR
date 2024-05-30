@@ -404,7 +404,7 @@
 /turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
 	. = ..()
 	if(flora)
-		if(prob(50))
+		if(prob(15))
 			new /obj/structure/flora/ausbushes/cactus(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)

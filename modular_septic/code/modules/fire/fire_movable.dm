@@ -84,7 +84,7 @@
 		if(DT_PROB(fire_power, delta_time))
 			var/list/arthur_brown = list()
 			for(var/turf/neighbor_turf in range(1, turf_loc))
-				if(neighbor_turf.turf_fire || !prob(neighbor_turf.flammability) \
+				if(!prob(neighbor_turf.flammability) \
 					|| isopenspaceturf(neighbor_turf) || isspaceturf(neighbor_turf))
 					continue
 				arthur_brown += neighbor_turf

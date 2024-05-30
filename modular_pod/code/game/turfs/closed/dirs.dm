@@ -8,7 +8,7 @@
 	var/state1 = "wall1"
 	var/state2 = "wall2"
 	var/special_dir = FALSE
-	var/base_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
+	baseturfs = /turf/open/floor/plating/polovich/codec/dirt/mud
 
 /turf/podpol/Initialize(mapload)
 	. = ..()
@@ -73,8 +73,8 @@
 			dir = WEST
 
 /turf/podpol/wall/Destroy()
-	new base_turf(src)
-	for(var/turf/podpol/wall/F in oview(1, base_turf))
+//	new base_turf(src)
+	for(var/turf/podpol/wall/F in oview(1, src))
 		F.update_icon_pod()
 	..()
 
@@ -105,7 +105,8 @@
 
 /turf/podpol/wall/ex_act(severity, target)
 	if(target == src)
-		qdel(src)
+//		qdel(src)
+		ChangeTurf(/turf/open/floor/plating/polovich/codec/dirt/mud, null, CHANGETURF_IGNORE_AIR)
 		return
 
 	switch(severity)
@@ -115,10 +116,10 @@
 			NT.contents_explosion(severity, target)
 			return
 		if(EXPLODE_HEAVY)
-			qdel(src)
+			ChangeTurf(/turf/open/floor/plating/polovich/codec/dirt/mud, null, CHANGETURF_IGNORE_AIR)
 		if(EXPLODE_LIGHT)
 			if (prob(hardness))
-				qdel(src)
+				ChangeTurf(/turf/open/floor/plating/polovich/codec/dirt/mud, null, CHANGETURF_IGNORE_AIR)
 	if(!density)
 		..()
 

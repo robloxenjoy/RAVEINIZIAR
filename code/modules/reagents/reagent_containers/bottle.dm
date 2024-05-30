@@ -1,8 +1,8 @@
 //Not to be confused with /obj/item/reagent_containers/food/drinks/bottle
 
 /obj/item/reagent_containers/glass/bottle
-	name = "bottle"
-	desc = "A small bottle."
+	name = "Бутылёк"
+	desc = "Маленький бутылёк."
 	icon_state = "bottle"
 	fill_icon_state = "bottle"
 	inhand_icon_state = "atoxinbottle"
@@ -43,8 +43,8 @@
 	list_reagents = list(/datum/reagent/toxin/spewium = 30)
 
 /obj/item/reagent_containers/glass/bottle/morphine
-	name = "morphine bottle"
-	desc = "A small bottle of morphine."
+	name = "Бутылёк (морфин)"
+	desc = "Бутылёк. По сути, здесь морфин."
 	icon = 'icons/obj/chemical.dmi'
 	list_reagents = list(/datum/reagent/medicine/morphine = 30)
 

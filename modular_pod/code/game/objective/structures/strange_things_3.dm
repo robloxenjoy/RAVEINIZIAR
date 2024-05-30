@@ -20,8 +20,8 @@
 		return
 	if(!in_range(src, user) || user.incapacitated())
 		return
-	if(user.loc != loc)
-		return
+//	if(user.loc != loc)
+//		return
 	if(!do_after(user, 5, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
 		return
@@ -253,9 +253,6 @@
 		. += span_notice("Кактус высушен.")
 
 /obj/structure/flora/ausbushes/cactus/attackby(obj/item/W, mob/living/carbon/user, params)
-	. = ..()
-	if(.)
-		return
 	if(!W.sharpness)
 		if(istype(W, /obj/item/reagent_containers))
 			var/obj/item/reagent_containers/RG = W
