@@ -234,22 +234,21 @@
 	if(prob(50))
 		icon_state = "cactus2"
 
-/obj/structure/flora/ausbushes/cactus/on_density(mob/living/carbon/rammer)
-	if(iscarbon(rammer))
-		var/mob/living/carbon/M = rammer
-		var/obj/item/bodypart/affecting = M.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
-		if(affecting)
-			var/cloth_cover = LAZYLEN(M.clothingonpart(affecting))
-			if(!cloth_cover)
-				M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
+/obj/structure/flora/ausbushes/cactus/on_density(mob/living/carbon/human/rammer)
+	var/mob/living/carbon/human/M = rammer
+	var/obj/item/bodypart/affecting = M.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
+	if(affecting)
+		var/cloth_cover = LAZYLEN(M.clothingonpart(affecting))
+		if(!cloth_cover)
+			M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
 //				affecting.receive_damage(brute = 10, sharpness = SHARP_POINTY)
-				M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
-				affecting.adjust_germ_level(100)
-				if(M.get_chem_effect(CE_PAINKILLER) < 30)
-					to_chat(M, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
-					M.agony_scream()
-			else
-				to_chat(M, span_meatymeat("[src] чуть не уколол меня!"))
+			M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
+			affecting.adjust_germ_level(100)
+			if(M.get_chem_effect(CE_PAINKILLER) < 30)
+				to_chat(M, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
+				M.agony_scream()
+		else
+			to_chat(M, span_meatymeat("[src] чуть не уколол меня!"))
 
 /obj/structure/flora/ausbushes/cactus/examine(mob/user)
 	. = ..()
