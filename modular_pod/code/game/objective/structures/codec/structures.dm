@@ -105,7 +105,7 @@
 	layer = FLY_LAYER
 	density = FALSE
 	anchored = TRUE
-	max_integirty = 100
+	max_integrity = 100
 	light_range = 3
 	light_power = 1
 	light_color = "#cbe395"
@@ -120,7 +120,7 @@
 	layer = FLY_LAYER
 	density = FALSE
 	anchored = TRUE
-	max_integirty = 100
+	max_integrity = 100
 	light_range = 3
 	light_power = 1
 	light_color = "#e3cf91"
