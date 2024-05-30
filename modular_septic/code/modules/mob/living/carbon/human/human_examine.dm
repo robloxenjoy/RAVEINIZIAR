@@ -8,10 +8,8 @@
 		get_aroused = TRUE
 
 	var/t_he = p_they()
-	var/t_is = p_are()
 	if(user == src)
 		t_he = "i"
-		t_is = "am"
 
 	var/sanitized_chat_color = sanitize_hexcolor(chat_color)
 	var/fancy_name = name
@@ -84,7 +82,7 @@
 		if(LAZYLEN(covered_lips))
 			. += "Вот блять, его губы покрыты [english_list(covered_lips)]!"
 		if(belief == "Hadot")
-			. += "There are lynx whiskers near [t_his] mouth"
+			. += "У него усы ебанутые."
 
 	//head
 	if(head && !(obscured & ITEM_SLOT_HEAD) && !(head.item_flags & EXAMINE_SKIP) && !(head.item_flags & ABSTRACT))
@@ -490,8 +488,6 @@
 
 	var/box = ""
 	var/distance = get_dist(user, src)
-
-	var/t_His = p_their(TRUE)
 
 	var/list/damaged_bodypart_text = list()
 	var/list/clothing = list(head, wear_mask, wear_neck, wear_suit, w_uniform, wear_id, belt, back, s_store, ears, ears_extra, gloves, shoes)
