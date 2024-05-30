@@ -247,7 +247,7 @@
 
 /obj/structure/flora/ausbushes/cactus/examine(mob/user)
 	. = ..()
-	if([reagents.total_volume] > 0)
+	if(reagents.total_volume > 0)
 		. += span_notice("Кактус не полностью высушен.")
 	else
 		. += span_notice("Кактус высушен.")
