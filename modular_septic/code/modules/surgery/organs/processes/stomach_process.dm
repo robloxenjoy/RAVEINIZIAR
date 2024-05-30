@@ -309,7 +309,7 @@
 			if(DT_PROB(pukeprob, delta_time)) //iT hAndLeS mOrE ThaN PukInG
 				owner.add_confusion(2.5)
 				owner.stuttering += 1
-				owner.vomit(10, 0, 1, 0, 1, 0)
+				owner.vomit(100, 0, 1, 0, 1, 0)
 //			owner.Dizzy(5)
 //		if(owner.disgust >= DISGUST_LEVEL_DISGUSTED)
 //			if(DT_PROB(13, delta_time))

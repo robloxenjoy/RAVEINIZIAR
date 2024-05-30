@@ -12,7 +12,7 @@
 		if(DT_PROB(RAD_MOB_PISS_PROB, delta_time))
 			source.piss(FALSE)
 		if(DT_PROB(RAD_MOB_VOMIT_PROB, delta_time))
-			source.vomit(10, TRUE)
+			source.vomit(100, TRUE)
 
 	// Fever
 	if(radiation_sickness >= RADIATION_SICKNESS_STAGE_3)
@@ -39,7 +39,7 @@
 	if(radiation_sickness >= RADIATION_SICKNESS_STAGE_6)
 		if(DT_PROB(RAD_MOB_MUTATE_PROB, delta_time))
 			to_chat(source, span_userdanger("I mutate!"))
-			source.easy_random_mutate(NEGATIVE + MINOR_NEGATIVE) 
+			source.easy_random_mutate(NEGATIVE + MINOR_NEGATIVE)
 			source.agony_gasp()
 			source.domutcheck()
 		if(!(source.hairstyle == "Bald") && (HAIR in species_traits))

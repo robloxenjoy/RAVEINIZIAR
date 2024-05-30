@@ -1098,9 +1098,9 @@
 									victim.shit(FALSE)
 							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 							if(diceroll == DICE_FAILURE)
-								victim.vomit(10, FALSE, FALSE)
+								victim.vomit(100, FALSE, FALSE)
 							if(diceroll == DICE_CRIT_FAILURE)
-								victim.vomit(10, TRUE, FALSE)
+								victim.vomit(100, TRUE, FALSE)
 							victim.visible_message(span_pinkdang("[victim] получает удар по кишкам от [user]!"), \
 												span_pinkdang("Получает удар по кишкам от [user]!"), \
 												span_hear("Я слышу звук плоти."))

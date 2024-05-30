@@ -222,3 +222,39 @@
 	. = ..()
 	if(!. && isopenturf(exposed_turf))
 		exposed_turf.pollute_turf(/datum/pollutant/vilir, reac_volume)
+
+/datum/reagent/consumable/vomit
+	name = "Рвота"
+	description = "Чё-то зелёное и ужасное."
+	taste_description = "блевотня"
+	reagent_state = LIQUID
+	color = "#a3a919100"
+	liquid_evaporation_rate = 3
+	ph = 6.6
+
+/datum/reagent/consumable/vomit/expose_atom(atom/exposed_atom, reac_volume)
+	. = ..()
+	if(!.)
+		exposed_atom.adjust_germ_level(5 * reac_volume)
+
+/datum/reagent/consumable/vomit/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	M.adjust_disgust(1)
+
+/*
+	var/obj/item/bodypart/limb = M.get_bodypart(ran_zone())
+	for(var/datum/injury/injury as anything in M.limb.injuries)
+		if((injury.required_status == BODYPART_ORGANIC) && (injury.germ_level < SURGERY_GERM_MAXIMUM))
+			injury.adjust_germ_level(our_germ_level, maximum_germs = SURGERY_GERM_MAXIMUM)
+*/
+
+/datum/reagent/consumable/vomit/expose_turf(turf/exposed_turf, reac_volume)//splash the blood all over the place
+	. = ..()
+	if(!. && isopenturf(exposed_turf))
+		exposed_turf.pollute_turf(/datum/pollutant/vomit, reac_volume)
+
+/datum/reagent/consumable/vomit/purple
+	color = "#afc319100"
+
+/datum/reagent/consumable/vomit/toxic
+	color = "#a3a919100"

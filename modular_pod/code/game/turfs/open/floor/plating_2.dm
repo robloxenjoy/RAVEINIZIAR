@@ -401,9 +401,9 @@
 
 /turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
 	. = ..()
-	var/near_t = range(2, src)
-	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
-		if(prob(50))
+	if(prob(40))
+		var/near_t = range(1, src)
+		for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
 			if(prob(10))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/redd, null, CHANGETURF_IGNORE_AIR)
 			if(prob(20))
@@ -543,7 +543,7 @@
 /turf/open/floor/plating/polovich/way/dyingmud/Initialize(mapload)
 	. = ..()
 	dir = rand(0,4)
-	var/near_t = range(2, src)
+	var/near_t = range(1, src)
 	for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
 		if(!generat.finished)
 			continue

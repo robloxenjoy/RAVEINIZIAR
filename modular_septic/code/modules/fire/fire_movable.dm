@@ -51,10 +51,11 @@
 		if(!magical)
 			if(DT_PROB(4, delta_time))
 				playsound(wall_loc, 'modular_septic/sound/effects/fire/fire_loop.ogg', 65, TRUE)
+				wall_loc.ignite_turf_fire(CEILING(fire_power/2, 1))
 //			if(DT_PROB(max(0, fire_power - (100 - wall_loc.hardness)/4)/2, delta_time))
 //				wall_loc.dismantle_wall(FALSE, FALSE)
 	if(!magical)
-		if(prob(50))
+		if(prob(20))
 			add_power(1)
 		else
 			reduce_power(1)
@@ -66,7 +67,7 @@
 		if(!process_waste())
 			qdel(src)
 			return
-		if(prob(50))
+		if(prob(20))
 			add_power(1)
 		else
 			reduce_power(1)
@@ -80,7 +81,7 @@
 	if(!magical)
 //		if(DT_PROB(fire_power/2, delta_time))
 //			open_turf.burn_tile()
-		if(DT_PROB(fire_power/2, delta_time))
+		if(DT_PROB(fire_power, delta_time))
 			var/list/arthur_brown = list()
 			for(var/turf/neighbor_turf in range(1, turf_loc))
 				if(neighbor_turf.turf_fire || !prob(neighbor_turf.flammability) \

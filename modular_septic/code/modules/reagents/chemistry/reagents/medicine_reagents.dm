@@ -44,9 +44,9 @@
 
 //Powerful painkiller
 /datum/reagent/medicine/morphine
-	name = "Morphine"
+	name = "Морфин"
 	description = "A powerful yet highly addictive painkiller. Causes drowsyness. Overdosing causes jitteryness and muscle spasms."
-	metabolization_rate = 0.4 * REAGENTS_METABOLISM
+	metabolization_rate = 0.10 * REAGENTS_METABOLISM
 	overdose_threshold = OVERDOSE_STANDARD
 	addiction_types = list(/datum/addiction/opiods = 15)
 
@@ -61,14 +61,18 @@
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(current_cycle >= 5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
+	if(DT_PROB(20, delta_time))
+		M.drop_all_held_items()
+	if(DT_PROB(5, delta_time))
+		M.Jitter(2)
 	switch(current_cycle)
 		if(4)
-			to_chat(M, span_warning("I feel a little tired...") )
+			to_chat(M, span_warning("Чувствую себя хорошенько...") )
 			if(prob(20))
 				M.HeadRape(3 SECONDS)
 				M.Stumble(2 SECONDS)
 		if(12)
-			to_chat(M, span_warning("I feel tired...") )
+			to_chat(M, span_warning("Ух, как же это всё... Воздушно, приятно.") )
 			if(prob(30))
 				M.HeadRape(3 SECONDS)
 				M.Stumble(4 SECONDS)
@@ -83,11 +87,6 @@
 
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M, delta_time, times_fired)
 	M.drowsyness += 1 * REM * delta_time
-	if(DT_PROB(20, delta_time))
-		M.drop_all_held_items()
-	if(DT_PROB(20, delta_time))
-//		M.Dizzy(2)
-		M.Jitter(2)
 	return ..()
 
 //Slight painkiller, stabilizes pulse
@@ -398,6 +397,11 @@
 	to_chat(L, span_achievementneutral("Моя кожа больше не онемевшая."))
 	L.remove_chem_effect(CE_PAINKILLER, "[type]")
 	L.remove_chem_effect(CE_PULSE, "[type]")
+
+/datum/reagent/medicine/copium/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(current_cycle >= 5)
+		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name)
+	return ..()
 
 //Radiation sickness medication
 /datum/reagent/medicine/potass_iodide

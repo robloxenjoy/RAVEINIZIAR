@@ -45,26 +45,26 @@
 //		. += "<u>[p_they(TRUE)] [p_are()] made out of [english_list(materials_list)]</u>."
 	if(reagents)
 		if(reagents.flags & TRANSPARENT)
-			. += "[p_they(TRUE)] contain[p_s()]:"
+			. += "Это содержит:"
 			if(length(reagents.reagent_list))
 				if(user.can_see_reagents()) //Show each individual reagent
 					for(var/datum/reagent/R in reagents.reagent_list)
-						. += "[round(R.volume, 0.01)] units of [R.name]"
+						. += "[round(R.volume, 0.01)] юнитов [R.name]"
 					if(reagents.is_reacting)
-						. += span_warning("It is currently reacting!")
-					. += span_notice("The solution's pH is [round(reagents.ph, 0.01)] and has a temperature of [reagents.chem_temp]K.")
+						. += span_warning("В данный момент, там реакция!")
+					. += span_notice("pH [round(reagents.ph, 0.01)] и температура [reagents.chem_temp].")
 				else //Otherwise, just show the total volume
 					var/total_volume = 0
 					for(var/datum/reagent/R in reagents.reagent_list)
 						total_volume += R.volume
-					. += "[total_volume] units of various reagents"
+					. += "[total_volume] юнитов различных реагентов."
 			else
-				. += "Nothing."
+				. += "Ничего."
 		else if(reagents.flags & AMOUNT_VISIBLE)
 			if(reagents.total_volume)
-				. += span_notice("[p_they(TRUE)] [p_have()] [reagents.total_volume] unit\s left.")
+				. += span_notice("Там осталось [reagents.total_volume] юнитов.")
 			else
-				. += span_danger("[p_they(TRUE)] [p_are()] empty.")
+				. += span_danger("Это пусто.")
 
 /// Override this to impede examine messages etc
 /atom/proc/on_examined_check(mob/user, examine_more = FALSE)

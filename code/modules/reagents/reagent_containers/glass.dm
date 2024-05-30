@@ -17,22 +17,22 @@
 		return
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, span_warning("[src] is empty!"))
+		to_chat(user, span_warning("[src] пусто!"))
 		return
 
 	if(istype(M))
 		if(M != user)
-			M.visible_message(span_danger("[user] attempts to feed [M] something from [src]."), \
-						span_userdanger("[user] attempts to feed you something from [src]."))
+			M.visible_message(span_danger("[user] пытается напоить [M] из [src]."), \
+						span_userdanger("[user] пытается меня напоить из [src]."))
 			if(!do_mob(user, M))
 				return
 			if(!reagents || !reagents.total_volume)
 				return // The drink might be empty after the delay, such as by spam-feeding
-			M.visible_message(span_danger("[user] feeds [M] something from [src]."), \
-						span_userdanger("[user] feeds you something from [src]."))
+			M.visible_message(span_danger("[user] поит [M] из [src]."), \
+						span_userdanger("[user] поит меня из [src]."))
 			log_combat(user, M, "fed", reagents.log_list())
 		else
-			to_chat(user, span_notice("You swallow a gulp of [src]."))
+			to_chat(user, span_notice("Я делаю глоток из [src]."))
 		SEND_SIGNAL(src, COMSIG_GLASS_DRANK, M, user)
 		addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
@@ -58,27 +58,27 @@
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("[src] is empty!"))
+			to_chat(user, span_warning("[src] пусто!"))
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, span_warning("[target] is full."))
+			to_chat(user, span_warning("[target] полно."))
 			return
 
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
+		to_chat(user, span_notice("Я переливаю [trans] юнитов в [target]."))
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
-			to_chat(user, span_warning("[target] is empty and can't be refilled!"))
+			to_chat(user, span_warning("[target] пусто!"))
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, span_warning("[src] is full."))
+			to_chat(user, span_warning("[src] полно."))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
+		to_chat(user, span_notice("Я наполняю [src] [trans] юнитами из [target]."))
 
 /obj/item/reagent_containers/glass/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()

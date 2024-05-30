@@ -245,7 +245,7 @@
 			coomer.emote("fart")
 			coomer.shit(FALSE)
 			coomer.piss(FALSE)
-			coomer.vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)
+			coomer.vomit(lost_nutrition = 100, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)
 //		coomer.moan()
 //		coomer.cum()
 //		coomer.handle_user_climax()

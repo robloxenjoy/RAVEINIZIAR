@@ -41,7 +41,7 @@
 			register_for_interview()
 			return
 
-	to_chat(src, span_warning("В OOC кнопка Играть - разберёшься."))
+	to_chat(src, span_bigdanger("В OOC кнопка Играть - разберёшься."))
 
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()

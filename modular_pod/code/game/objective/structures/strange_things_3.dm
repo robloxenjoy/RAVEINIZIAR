@@ -176,6 +176,9 @@
 		M.pixel_y += 5
 		M.visible_message(span_notice("[M] усаживается на [src]."),span_notice("Я усаживаюсь на [src]."), span_hear("Я слышу чё-то."))
 		if(do_after(M, 3 SECONDS, target=src))
+			if(!M.buckled)
+				to_chat(M, span_meatymeat("Надо на трон сесть!"))
+				return
 			to_chat(M, span_meatymeat("Я ощущаю какой-то пиздец!"))
 			M.fully_heal(TRUE)
 

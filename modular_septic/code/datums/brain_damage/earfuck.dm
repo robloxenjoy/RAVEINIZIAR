@@ -56,7 +56,7 @@
 			switch_minds(TRUE)
 			qdel(src)
 		switch_minds(FALSE)
-		owner.vomit(10, blood = FALSE, stun = TRUE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
+		owner.vomit(100, blood = FALSE, stun = TRUE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
 		switch_minds(FALSE, TRUE, rand(3, 12), FALSE)
 		qdel(src)
 		return
@@ -99,7 +99,7 @@
 	if(current_controller != OWNER) //it would be funny to cure a guy only to be left with the other personality, but it seems too cruel
 		to_chat(owner, span_boldwarning("The intruder is forcibly removed!"))
 		switch_minds(TRUE)
-		owner.vomit(10, blood = TRUE, stun = TRUE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
+		owner.vomit(100, blood = TRUE, stun = TRUE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
 	QDEL_NULL(stranger_backseat)
 	QDEL_NULL(owner_backseat)
 	return ..()

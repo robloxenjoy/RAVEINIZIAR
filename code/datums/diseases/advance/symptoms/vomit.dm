@@ -64,4 +64,4 @@ Bonus
 			vomit(M)
 
 /datum/symptom/vomit/proc/vomit(mob/living/carbon/M)
-	M.vomit(20, vomit_blood, distance = proj_vomit)
+	M.vomit(100, vomit_blood, distance = proj_vomit)

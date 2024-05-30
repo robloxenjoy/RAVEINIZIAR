@@ -348,7 +348,7 @@
 
 	var/mob/living/carbon/was_owner = owner
 	if((body_zone == BODY_ZONE_PRECISE_GROIN) && prob(50))
-		was_owner.vomit(15, TRUE, TRUE)
+		was_owner.vomit(100, TRUE, TRUE)
 	if(prob(50))
 		was_owner.add_confusion(15)
 	if(prob(80))

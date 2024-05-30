@@ -598,7 +598,13 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	return TRUE
 
 /turf/proc/add_vomit_floor(mob/living/M, toxvomit = NONE, purge_ratio = 0.1)
-
+	if(toxvomit == VOMIT_PURPLE)
+		add_liquid(/datum/reagent/consumable/vomit/purple, 3)
+	else if(toxvomit == VOMIT_TOXIC)
+		add_liquid(/datum/reagent/consumable/vomit/toxic, 3)
+	else
+		add_liquid(/datum/reagent/consumable/vomit, 3)
+/*
 	var/obj/effect/decal/cleanable/vomit/V = new /obj/effect/decal/cleanable/vomit(src, M.get_static_viruses())
 
 	//if the vomit combined, apply toxicity and reagents to the old vomit
@@ -613,6 +619,7 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		V.icon_state = "vomittox_[pick(1,4)]"
 	if (purge_ratio && iscarbon(M))
 		clear_reagents_to_vomit_pool(M, V, purge_ratio)
+*/
 
 /proc/clear_reagents_to_vomit_pool(mob/living/carbon/M, obj/effect/decal/cleanable/vomit/V, purge_ratio = 0.1)
 	var/obj/item/organ/stomach/belly = M.getorganslot(ORGAN_SLOT_STOMACH)

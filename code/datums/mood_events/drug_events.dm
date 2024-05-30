@@ -48,28 +48,28 @@
 	description = "<span class='boldwarning'>[drug_name]! [drug_name]! [drug_name]!</span>\n"
 
 /datum/mood_event/happiness_drug
-	description = "<span class='nicegreen'>Can't feel a thing...</span>\n"
+	description = "<span class='nicegreen'>Ни о чём не думаю. К лучшему ли это?</span>\n"
 	mood_change = 50
 
 /datum/mood_event/happiness_drug_good_od
-	description = "<span class='nicegreen'>YES! YES!! YES!!!</span>\n"
+	description = "<span class='nicegreen'>ДА, О ДА-ДА!</span>\n"
 	mood_change = 100
 	timeout = 30 SECONDS
 	special_screen_obj = "mood_happiness_good"
 
 /datum/mood_event/happiness_drug_bad_od
-	description = "<span class='boldwarning'>NO! NO!! NO!!!</span>\n"
+	description = "<span class='boldwarning'>О НЕТ! БОЖЕ, НЕТ!</span>\n"
 	mood_change = -100
 	timeout = 30 SECONDS
 	special_screen_obj = "mood_happiness_bad"
 
 /datum/mood_event/narcotic_medium
-	description = "<span class='nicegreen'>I feel comfortably numb.</span>\n"
+	description = "<span class='nicegreen'>Чувствую приятное онемение.</span>\n"
 	mood_change = 4
 	timeout = 3 MINUTES
 
 /datum/mood_event/narcotic_heavy
-	description = "<span class='nicegreen'>I feel like I'm wrapped up in cotton!</span>\n"
+	description = "<span class='nicegreen'>Я как будто укутан матерью и женой!</span>\n"
 	mood_change = 9
 	timeout = 3 MINUTES
 
