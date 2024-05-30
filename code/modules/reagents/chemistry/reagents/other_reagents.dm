@@ -147,7 +147,7 @@
 	src.data = cached_data
 
 /datum/reagent/water
-	name = "Water"
+	name = "Вода"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha)
 	taste_description = "water"

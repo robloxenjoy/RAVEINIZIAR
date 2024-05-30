@@ -58,23 +58,23 @@
 		return ..()
 
 	if(!LAZYACCESS(damage_by_parts, user.zone_selected))
-		to_chat(user, span_warning("[src]'s [capitalize(parse_zone(user.zone_selected))] is not broken."))
+		to_chat(user, span_warning("[src] [capitalize(parse_zone(user.zone_selected))] не сломано."))
 		return TRUE
 	var/obj/item/stack/stack = attacking_item
 	if(stack.amount < 1)
-		to_chat(user, span_warning("Not enough [stack.name] to repair [src]."))
+		to_chat(user, span_warning("Недостаточно [stack.name] дабы починить [src]."))
 		return TRUE
 	var/obj/item/stack/offhand_stack
 	if(repairable_by_offhand)
 		offhand_stack = user.get_inactive_held_item()
 		var/obj/item/stack/ghost_stack = repairable_by_offhand
 		if(!istype(offhand_stack, repairable_by_offhand))
-			to_chat(user, span_warning("I also need [initial(ghost_stack.name)] to repair [src]."))
+			to_chat(user, span_warning("Мне также нужно [initial(ghost_stack.name)] дабы починить [src]."))
 			return TRUE
 		if(offhand_stack.amount < 1)
-			to_chat(user, span_warning("Not enough [offhand_stack.name] to repair [src]."))
+			to_chat(user, span_warning("Недостаточно [offhand_stack.name] дабы починить [src]."))
 			return TRUE
-	to_chat(user, span_notice("I begin fixing the damage on [src] with [stack]..."))
+	to_chat(user, span_notice("Начинаю чинить урон на [src] с помощью [stack]..."))
 	if(!do_after(user, 5 SECONDS, src) || !stack.use(1) || (offhand_stack && !offhand_stack.use(1)))
 		to_chat(user, span_warning(fail_msg()))
 		return TRUE
@@ -168,12 +168,12 @@
 
 	switch(zones_disabled)
 		if(1)
-			name = "damaged [initial(name)]"
+			name = "Повреждённое [initial(name)]"
 		if(2)
-			name = "mangy [initial(name)]"
+			name = "Убогое [initial(name)]"
 		// take better care of your shit, dude
 		if(3 to INFINITY)
-			name = "battered [initial(name)]"
+			name = "Избитое [initial(name)]"
 
 	update_clothes_damaged_state(CLOTHING_DAMAGED)
 	update_appearance()
@@ -188,14 +188,14 @@
 	damage_by_parts = null
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-		to_chat(user, span_notice("I fix the damage on [src]."))
+		to_chat(user, span_notice("Я чиню урон на [src]."))
 	update_appearance()
 
 /obj/item/clothing/bristle(mob/living/wearer)
 	if(prob(0.2))
 		if(!istype(wearer))
 			return
-		to_chat(wearer, span_warning("The damaged threads on my [src.name] chafe!"))
+		to_chat(wearer, span_warning("Повреждённые куски на [src.name] натираются!"))
 
 /obj/item/clothing/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
 	if(atom_integrity <= 0)
@@ -216,7 +216,7 @@
 	slot_flags = initial(slot_flags)
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-		to_chat(user, span_notice("I fix the damage on [src]'s [parse_zone(def_zone)]."))
+		to_chat(user, span_notice("Я чиню урон на [src] [parse_zone(def_zone)]."))
 	switch(zones_disabled)
 		if(1)
 			name = "damaged [initial(name)]"

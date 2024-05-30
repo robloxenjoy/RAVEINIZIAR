@@ -128,6 +128,7 @@
 /turf/open/floor/plating/polovich/way
 	icon = 'modular_pod/icons/turf/floors_3.dmi'
 	desc = "Ничего интересного."
+	baseturfs = /turf/open/floor/plating/polovich/way/dirt
 
 /turf/open/floor/plating/polovich/way/soft
 	name = "Пол"
@@ -392,6 +393,7 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
 	var/finished = FALSE
+	var/flora = TRUE
 
 /*
 /turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
@@ -401,6 +403,9 @@
 
 /turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
 	. = ..()
+	if(flora)
+		if(prob(50))
+			new /obj/structure/flora/ausbushes/cactus(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)

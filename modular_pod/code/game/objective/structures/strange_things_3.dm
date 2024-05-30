@@ -209,3 +209,72 @@
 	. = ..()
 	if(prob(50))
 		icon_state = "metal2"
+
+/obj/structure/flora/ausbushes/cactus
+	name = "Кактус"
+	desc = "Сука колючий. Воды бы набрать с него."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "cactus1"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	resistance_flags = FLAMMABLE
+	density = TRUE
+	anchored = TRUE
+	opacity = FALSE
+
+/obj/structure/flora/ausbushes/cactus/Initialize(mapload)
+	. = ..()
+	create_reagents(100, NO_REACT)
+	reagents.add_reagent(/datum/reagent/water, 50)
+	if(prob(50))
+		icon_state = "cactus2"
+
+/obj/structure/flora/ausbushes/cactus/Bump(atom/A)
+	. = ..()
+	if(iscarbon(A))
+		var/mob/living/carbon/M = A
+		var/obj/item/bodypart/affecting = M.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
+		if(affecting)
+			if(get_location_accessible(M, affecting))
+				M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
+				affecting.receive_damage(brute = 10, sharpness = SHARP_POINTY)
+				affecting.adjust_germ_level(100)
+				if(M.get_chem_effect(CE_PAINKILLER) < 30)
+					to_chat(M, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
+					M.agony_scream()
+			else
+				to_chat(M, span_meatymeat("[src] чуть не уколол меня!"))
+
+/obj/structure/flora/ausbushes/cactus/examine(mob/user)
+	. = ..()
+	if([reagents.total_volume] > 0)
+		. += span_notice("Кактус не полностью высушен.")
+	else
+		. += span_notice("Кактус высушен.")
+
+/obj/structure/flora/ausbushes/cactus/attackby(obj/item/W, mob/living/carbon/user, params)
+	. = ..()
+	if(.)
+		return
+	if(!W.sharpness)
+		if(istype(W, /obj/item/reagent_containers))
+			var/obj/item/reagent_containers/RG = W
+			if(reagents.total_volume <= 0)
+				to_chat(user, span_notice("[src] высушен."))
+				return FALSE
+			if(RG.is_refillable())
+				if(!RG.reagents.holder_full())
+					reagents.trans_to(RG, RG.amount_per_transfer_from_this, transfered_by = user)
+					to_chat(user, span_notice("Я наполняю [RG] из [src]."))
+					return TRUE
+				to_chat(user, span_notice("[RG] полно."))
+				return FALSE
+	else
+		if(W.force >= 5)
+			user.visible_message(span_notice("[user] срезает [src]."),span_notice("Я срезаю [src]."), span_hear("Я слышу рубку."))
+			user.changeNext_move(W.attack_delay)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+			playsound(loc,'modular_pod/sound/eff/hitcrazy.ogg', 30, TRUE)
+			W.damageItem("SOFT")
+			qdel(src)

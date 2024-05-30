@@ -73,12 +73,12 @@
 	if(owner)
 		if((burn_dam >= max_damage) && !HAS_TRAIT_FROM(owner, TRAIT_DISFIGURED, BURN))
 			owner.visible_message(span_danger("<b>[owner] лицо превращается в обгоревшую кашу!</b>"), \
-								span_userdanger("<b>MY FACE MELTS AWAY!</b>"))
+								span_userdanger("<b>МОЁ ЛИЦО РАСПЛАВИЛОСЬ!</b>"))
 			ADD_TRAIT(owner, TRAIT_DISFIGURED, BURN)
 			ADD_TRAIT(src, TRAIT_DISFIGURED, BURN)
 		if((brute_dam >= max_damage) && !HAS_TRAIT_FROM(owner, TRAIT_DISFIGURED, BRUTE))
 			owner.visible_message(span_danger("<b>[owner] лицо превращается в изувеченное месиво!</b>"), \
-								span_userdanger("<b>MY FACE IS MANGLED!</b>"))
+								span_userdanger("<b>МОЁ ЛИЦО РАЗЪЁБАННО!</b>"))
 			ADD_TRAIT(owner, TRAIT_DISFIGURED, BRUTE)
 			ADD_TRAIT(src, TRAIT_DISFIGURED, BRUTE)
 

@@ -1,6 +1,6 @@
 /obj/structure/railing
-	name = "Wooden Railing"
-	desc = "Basic railing meant to protect idiots like you from falling."
+	name = "Забор"
+	desc = "И против чего это?"
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
