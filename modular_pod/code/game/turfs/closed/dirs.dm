@@ -8,7 +8,8 @@
 	var/state1 = "wall1"
 	var/state2 = "wall2"
 	var/special_dir = FALSE
-	baseturfs = /turf/open/floor/plating/polovich/codec/dirt/mud
+	baseturfs = null
+	var/personal_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
 
 /turf/podpol/Initialize(mapload)
 	. = ..()
@@ -73,8 +74,8 @@
 			dir = WEST
 
 /turf/podpol/wall/Destroy()
-//	new base_turf(src)
-	for(var/turf/podpol/wall/F in oview(1, src))
+	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
+	for(var/turf/podpol/wall/F in oview(1, personal_turf))
 		F.update_icon_pod()
 	..()
 
@@ -112,6 +113,7 @@
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
 			//SN src = null
+			ChangeTurf(/turf/open/floor/plating/polovich/codec/dirt/mud, null, CHANGETURF_IGNORE_AIR)
 			var/turf/NT = ScrapeAway()
 			NT.contents_explosion(severity, target)
 			return

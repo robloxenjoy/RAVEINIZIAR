@@ -128,11 +128,24 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message(span_notice("[user] кусает [src]."),span_notice("Я кусаю [src]."), span_hear("Я слышу чё-то."))
-	user.changeNext_move(CLICK_CD_BITE)
-	user.adjustFatigueLoss(5)
-	playsound(get_turf(src), 'sound/weapons/bite.ogg', 80 , FALSE, FALSE)
-	sound_hint()
+	var/turf/turf_loc = get_turf(src)
+//	var/turf/turf_loc = loc
+	if(get_dist(turf_loc?.liquids,M) <= 1)
+		if(M.wear_mask && M.wear_mask.flags_cover & MASKCOVERSMOUTH)
+			visible_message(M, span_warning("Что-то мешает мне пить!"))
+			return
+		var/datum/reagents/temporary_holder = turf_loc.liquids.take_reagents_flat(CHOKE_REAGENTS_INGEST_ON_BREATH_AMOUNT)
+		temporary_holder.trans_to(src, temporary_holder.total_volume, methods = INGEST)
+		qdel(temporary_holder)
+		visible_message(span_notice("[M] пьёт жидкость."))
+		playsound(M.loc, 'sound/items/drink.ogg', rand(10, 50), TRUE)
+		return
+	else
+		user.visible_message(span_notice("[user] кусает [src]."),span_notice("Я кусаю [src]."), span_hear("Я слышу чё-то."))
+		user.changeNext_move(CLICK_CD_BITE)
+		user.adjustFatigueLoss(5)
+		playsound(get_turf(src), 'sound/weapons/bite.ogg', 80 , FALSE, FALSE)
+		sound_hint()
 
 /turf/open/floor/attack_foot(mob/living/carbon/human/user, list/modifiers)
 	. = ..()

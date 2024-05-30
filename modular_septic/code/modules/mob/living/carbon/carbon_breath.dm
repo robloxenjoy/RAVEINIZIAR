@@ -93,20 +93,6 @@
 
 	check_breath(breath, lung_efficiency, lungs, lung_process)
 
-/turf/attack_jaw(mob/living/carbon/M as mob)
-	var/turf/turf_loc = get_turf(src)
-//	var/turf/turf_loc = loc
-	if(get_dist(turf_loc?.liquids,M) <= 1)
-		if(M.wear_mask && M.wear_mask.flags_cover & MASKCOVERSMOUTH)
-			visible_message(M, span_warning("Что-то мешает мне пить!"))
-			return
-		var/datum/reagents/temporary_holder = turf_loc.liquids.take_reagents_flat(CHOKE_REAGENTS_INGEST_ON_BREATH_AMOUNT)
-		temporary_holder.trans_to(src, temporary_holder.total_volume, methods = INGEST)
-		qdel(temporary_holder)
-		visible_message(span_notice("[M] пьёт жидкость."))
-		playsound(M.loc, 'sound/items/drink.ogg', rand(10, 50), TRUE)
-		return
-
 /// Third link in a breath chain, calls handle_breath_temperature()
 /mob/living/carbon/check_breath(datum/gas_mixture/breath, lung_efficiency = 0, list/lungs, datum/organ_process/lung_process)
 	if(!breath || (breath.total_moles() <= 0) || (lung_efficiency < lung_process.failing_threshold) || !LAZYLEN(lungs))

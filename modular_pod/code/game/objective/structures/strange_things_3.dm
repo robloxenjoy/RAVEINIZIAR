@@ -203,14 +203,14 @@
 	obj_flags = NONE
 	max_integrity = 1000
 
-/obj/effect/turf_decal/tile/metalpodpol
+/obj/effect/decal/metalpodpol
 	name = "Плитка"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "metal1"
 	layer = TURF_PLATING_DECAL_LAYER
 	alpha = 255
 
-/obj/effect/turf_decal/tile/metalpodpol/Initialize(mapload)
+/obj/effect/decal/metalpodpol/Initialize(mapload)
 	. = ..()
 	if(prob(50))
 		icon_state = "metal2"
@@ -229,7 +229,7 @@
 
 /obj/structure/flora/ausbushes/cactus/Initialize(mapload)
 	. = ..()
-	create_reagents(100, NO_REACT)
+	create_reagents(50, INJECTABLE | DRAINABLE)
 	reagents.add_reagent(/datum/reagent/water, 50)
 	if(prob(50))
 		icon_state = "cactus2"
@@ -239,9 +239,10 @@
 		var/mob/living/carbon/M = rammer
 		var/obj/item/bodypart/affecting = M.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
 		if(affecting)
-			if(get_location_accessible(M, affecting))
+			if(!LAZYLEN(clothingonpart(affecting)))
 				M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
-				affecting.receive_damage(brute = 10, sharpness = SHARP_POINTY)
+//				affecting.receive_damage(brute = 10, sharpness = SHARP_POINTY)
+				M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
 				affecting.adjust_germ_level(100)
 				if(M.get_chem_effect(CE_PAINKILLER) < 30)
 					to_chat(M, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
@@ -257,6 +258,7 @@
 		. += span_notice("Кактус высушен.")
 
 /obj/structure/flora/ausbushes/cactus/attackby(obj/item/W, mob/living/carbon/user, params)
+/*
 	if(!W.sharpness)
 		if(istype(W, /obj/item/reagent_containers))
 			var/obj/item/reagent_containers/RG = W
@@ -270,12 +272,18 @@
 					return TRUE
 				to_chat(user, span_notice("[RG] полно."))
 				return FALSE
-	else
+*/
+	if(W.sharpness)
 		if(W.force >= 5)
 			user.visible_message(span_notice("[user] срезает [src]."),span_notice("Я срезаю [src]."), span_hear("Я слышу рубку."))
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(5)
 			sound_hint()
-			playsound(loc,'modular_pod/sound/eff/hitcrazy.ogg', 30, TRUE)
 			W.damageItem("SOFT")
-			qdel(src)
+			deconstruct(FALSE)
+
+/obj/structure/flora/ausbushes/cactus/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		chem_splash(loc, 3, list(reagents))
+		playsound(loc,'modular_pod/sound/eff/hitcrazy.ogg', 30, TRUE)
+	qdel(src)

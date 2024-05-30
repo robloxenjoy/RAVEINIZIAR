@@ -381,7 +381,7 @@
 		if(needs_lungs() && (distance <= 2) && (losebreath || undergoing_cardiac_arrest() || undergoing_nervous_system_failure()) )
 			msg += "Он не дышит."
 		if(getorganslot(ORGAN_SLOT_BRAIN))
-			if(!key || !ai_controller || !client)
+			if(!key || !client)
 				msg += "<span class='dead'>Он не в себе.</span>"
 /*
 	var/scar_severity = 0

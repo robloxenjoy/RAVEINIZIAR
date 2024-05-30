@@ -11,7 +11,7 @@
 	rupture()
 
 /obj/structure/reagent_dispensers/proc/rupture()
-	audible_message(span_danger("[src] audibly ruptures!"))
+	audible_message(span_danger("[src] разрывается!"))
 	chem_splash(loc, 3, list(reagents))
 	qdel(src)
 

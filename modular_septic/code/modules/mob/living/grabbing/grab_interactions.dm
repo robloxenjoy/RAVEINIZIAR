@@ -122,7 +122,7 @@
 			wrench_verb = "крутит"
 			wrench_verb_dayn = "кручу"
 			owner.changeNext_move(CLICK_CD_WRENCH)
-		var/damage = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)
+		var/damageee = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)
 		var/deal_wound_bonus = 5
 		if(epic_success >= DICE_CRIT_SUCCESS)
 			deal_wound_bonus += 5
@@ -134,7 +134,8 @@
 					if(!grasped_part.is_fractured())
 						grasped_part.force_wound_upwards(/datum/wound/blunt/severe)
 			if(diceroll <= DICE_FAILURE)
-				grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
+				victim.apply_damage(damageee, BRUTE, grasped_part, wound_bonus = deal_wound_bonus, sharpness = NONE)
+//				grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
 		if(owner != victim)
 			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_userdanger("<b>[owner]</b> [wrench_verb] [grasped_part.name]![carbon_victim.wound_message]"), \
@@ -151,7 +152,7 @@
 	else
 		var/wrench_verb_singular = "выкрутить"
 		var/damagee = (GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)/2)
-		grasped_part.receive_damage(brute = damagee, wound_bonus = 1, sharpness = NONE)
+		victim.apply_damage(damagee, BRUTE, grasped_part, wound_bonus = 1, sharpness = NONE)
 		if(nonlethal)
 			wrench_verb_singular = "крутить"
 			owner.changeNext_move(CLICK_CD_WRENCH)
@@ -196,7 +197,8 @@
 		epic_success = owner.diceroll(GET_MOB_SKILL_VALUE(owner, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
 	if(epic_success >= DICE_SUCCESS)
 		var/damage = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)/2
-		grasped_part.receive_damage(brute = damage, sharpness = NONE)
+		victim.apply_damage(damage, BRUTE, grasped_part, sharpness = NONE)
+//		grasped_part.receive_damage(brute = damage, sharpness = NONE)
 		for(var/obj/item/organ/bone/bone as anything in grasped_part.getorganslotlist(ORGAN_SLOT_BONE))
 			if(bone.bone_flags & BONE_JOINTED)
 				bone.relocate()
@@ -217,7 +219,8 @@
 		var/deal_wound_bonus = 5
 		if(epic_success <= DICE_CRIT_FAILURE)
 			deal_wound_bonus += 5
-		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
+		victim.apply_damage(damage, BRUTE, grasped_part, wound_bonus = deal_wound_bonus, sharpness = NONE)
+//		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
 		if(owner != victim)
 			victim.visible_message(span_danger("<b>[owner]</b> болезненно крутит <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_userdanger("<b>[owner]</b> болезненно крутит [grasped_part.name]![carbon_victim.wound_message]"), \
@@ -325,7 +328,8 @@
 		var/deal_wound_bonus = 5
 		if(epic_success >= DICE_CRIT_SUCCESS)
 			deal_wound_bonus += 5
-		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = owner.dna.species.bite_sharpness)
+		victim.apply_damage(damage, BRUTE, grasped_part, wound_bonus = deal_wound_bonus, sharpness = owner.dna.species.bite_sharpness)
+//		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = owner.dna.species.bite_sharpness)
 		if(owner != victim)
 			victim.visible_message(span_danger("<b>[owner]</b> кусает <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_userdanger("<b>[owner]</b> кусает [grasped_part.name]![carbon_victim.wound_message]"), \
@@ -367,11 +371,12 @@
 	if(owner == victim)
 		epic_success = max(epic_success, DICE_SUCCESS)
 	if(epic_success >= DICE_SUCCESS)
-		var/damage = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)
+		var/damagea = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)
 		var/deal_wound_bonus = 5
 		if(epic_success >= DICE_SUCCESS)
 			deal_wound_bonus += 5
-		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = SHARP_POINTY)
+		victim.apply_damage(damagea, BRUTE, grasped_part, wound_bonus = deal_wound_bonus, sharpness = SHARP_POINTY)
+//		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = SHARP_POINTY)
 		if(owner != victim)
 			victim.visible_message(span_pinkdang("[owner] крутит [grasped_part.embedded_objects[1]] в [victim] [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_pinkdang("[owner] крутит [grasped_part.embedded_objects[1]] в [grasped_part.name]![carbon_victim.wound_message]"), \
@@ -385,7 +390,8 @@
 		SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 		actions_done++
 	else
-		grasped_part.receive_damage(brute = 3, wound_bonus = 2, sharpness = SHARP_POINTY)
+		victim.apply_damage(3, BRUTE, grasped_part, wound_bonus = 2, sharpness = SHARP_POINTY)
+//		grasped_part.receive_damage(brute = 3, wound_bonus = 2, sharpness = SHARP_POINTY)
 		if(owner != victim)
 			victim.visible_message(span_pinkdang("[owner] пытается крутить [grasped_part.embedded_objects[1]] в [victim] [grasped_part.name]!"), \
 							span_pinkdang("[owner] пытается крутить [grasped_part.embedded_objects[1]] в [grasped_part.name]!"), \

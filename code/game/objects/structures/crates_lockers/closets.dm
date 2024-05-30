@@ -220,7 +220,7 @@
 	for(var/mob/living/L in T)
 		if(L.anchored || horizontal && L.mob_size > MOB_SIZE_TINY && L.density)
 			if(user)
-				to_chat(user, span_danger("There's something too large in [src], preventing it from closing."))
+				to_chat(user, span_danger("Что-то слишком большое в [src], это мешает закрыть."))
 			return FALSE
 	return TRUE
 

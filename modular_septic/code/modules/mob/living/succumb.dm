@@ -58,14 +58,22 @@
 		var/diceroll = diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
 		if(diceroll == DICE_SUCCESS)
 			for(var/obj/visible_obj in view(7, src))
-				if((visible_obj.plane != GAME_PLANE_FOV_HIDDEN) && (visible_obj.istrap))
-					var/turf/obj_turf = get_turf(visible_obj)
-					if(!istype(obj_turf))
-						continue
-					var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
-					ghost.plane = POLLUTION_PLANE
-					src.client.images += ghost
-					to_chat(src, span_steal("Я замечаю ловушку."))
+				var/list/found_obj = list()
+				if(visible_obj.pane == GAME_PLANE_FOV_HIDDEN)
+					continue
+				if(!visible_obj.istrap)
+					continue
+				var/turf/obj_turf = get_turf(visible_obj)
+				if(!istype(obj_turf))
+					continue
+				found_obj += visible_obj
+				var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
+				ghost.plane = POLLUTION_PLANE
+				src.client.images += ghost
+				if(length(found_obj) <= 0)
+					to_chat(src, span_steal("Я не замечаю ничего подозрительного."))
+				else
+					to_chat(src, span_steal("Я замечаю что-то."))
 
 		if(diceroll == DICE_CRIT_SUCCESS)
 			for(var/obj/visible_obj in view(src))
@@ -79,7 +87,7 @@
 					to_chat(src, span_steal("Я замечаю ловушку."))
 
 		if(diceroll <= DICE_FAILURE)
-			to_chat(src, span_steal("Не получается."))
+			to_chat(src, span_steal("Не получается проверить территорию."))
 /*
 /mob/living/carbon/human/verb/job_work(whispered as null)
 	set name = "Роль"
