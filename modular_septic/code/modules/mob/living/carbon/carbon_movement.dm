@@ -80,6 +80,8 @@
 	. = ..()
 	if(((combat_flags & COMBAT_FLAG_SPRINTING) || HAS_TRAIT(src, TRAIT_STUMBLE)) && !A.CanPass(src, get_dir(A, src)))
 		A.on_rammed(src)
+	if(!A.CanPass(src, get_dir(A, src)))
+		A.on_density(src)
 
 /mob/living/carbon/proc/ram_stun()
 	//Deal with knockdown

@@ -173,10 +173,11 @@
 /turf/open/floor/plating/polovich/way/specialblue
 	name = "Пол"
 	icon_state = "specialblue"
-	footstep = FOOTSTEP_STONE
-	barefootstep = FOOTSTEP_STONE
-	clawfootstep = FOOTSTEP_STONE
-	heavyfootstep = FOOTSTEP_STONE
+	footstep = FOOTSTEP_CARPET
+	barefootstep = FOOTSTEP_CARPET_BAREFOOT
+	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	resistance_flags = FLAMMABLE
 
 /turf/open/floor/plating/polovich/way/cirbricks
 	name = "Пол"
@@ -206,6 +207,9 @@
 	name = "Пол"
 	icon_state = "cirfire"
 	footstep = FOOTSTEP_PLATING
+	light_range = 1
+	light_power = 1
+	light_color = "#d4ba52"
 
 /turf/open/floor/plating/polovich/way/ancfire
 	name = "Пол"
@@ -405,6 +409,8 @@
 	. = ..()
 	if(flora)
 		if(prob(15))
+			if(locate(/obj/) in get_turf(src))
+				return
 			new /obj/structure/flora/ausbushes/cactus(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)

@@ -5,6 +5,8 @@
 	icon_state = "podpol"
 	anchored = TRUE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
+	pixel_x = -16
+	pixel_y = -16
 	var/up = FALSE
 	var/down = TRUE
 
@@ -36,6 +38,9 @@
 	icon_state = "podpol2"
 	up = TRUE
 	down = FALSE
+	light_range = 2
+	light_power = 1
+	light_color = "#e1dfe1"
 
 /obj/structure/table/goody
 	name = "Стол"
@@ -229,10 +234,9 @@
 	if(prob(50))
 		icon_state = "cactus2"
 
-/obj/structure/flora/ausbushes/cactus/Bump(atom/A)
-	. = ..()
-	if(iscarbon(A))
-		var/mob/living/carbon/M = A
+/obj/structure/flora/ausbushes/cactus/on_density(mob/living/carbon/rammer)
+	if(iscarbon(rammer))
+		var/mob/living/carbon/M = rammer
 		var/obj/item/bodypart/affecting = M.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
 		if(affecting)
 			if(get_location_accessible(M, affecting))

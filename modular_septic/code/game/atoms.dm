@@ -47,6 +47,9 @@
 /atom/proc/on_rammed(mob/living/carbon/rammer)
 	return FALSE
 
+/atom/proc/on_density(mob/living/carbon/rammer)
+	return FALSE
+
 /// Returns a hitsound for when a projectile impacts us
 /atom/proc/get_projectile_hitsound(obj/projectile/projectile)
 	return projectile.hitsound

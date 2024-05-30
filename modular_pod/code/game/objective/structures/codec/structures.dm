@@ -105,6 +105,7 @@
 	layer = FLY_LAYER
 	density = FALSE
 	anchored = TRUE
+	max_integirty = 100
 	light_range = 3
 	light_power = 1
 	light_color = "#cbe395"
@@ -119,6 +120,7 @@
 	layer = FLY_LAYER
 	density = FALSE
 	anchored = TRUE
+	max_integirty = 100
 	light_range = 3
 	light_power = 1
 	light_color = "#e3cf91"
@@ -369,6 +371,15 @@
 	desc = "ОБЫЧНАЯ!"
 	icon_state = "door_red1"
 	base_icon_state = "door_red"
+
+/obj/machinery/codec/door/kapno
+	name = "Дверь"
+	desc = "Старая! Уебанская!"
+	icon_state = "door_kapno1"
+	base_icon_state = "door_kapno"
+	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
+	doorClose = 'modular_septic/sound/doors/wood/door_wooden_close.ogg'
+	doorDeni = 'modular_septic/sound/doors/wood/door_wooden_try.ogg'
 
 #undef DOOR_CLOSE_WAIT
 
