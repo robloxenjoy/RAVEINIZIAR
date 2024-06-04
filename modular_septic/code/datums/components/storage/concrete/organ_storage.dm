@@ -381,7 +381,7 @@
 	if(ismecha(M.loc)) // stops inventory actions in a mech
 		return FALSE
 	if(using_right_now)
-		to_chat(M, span_warning("Someome already opened it!"))
+		to_chat(M, span_warning("Кто-то уже открыл это!"))
 		return FALSE
 	// this must come before the screen objects only block, dunno why it wasn't before
 	var/mob/living/L = M
