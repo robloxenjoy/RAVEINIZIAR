@@ -254,7 +254,7 @@
 		exposed_turf.pollute_turf(/datum/pollutant/vomit, reac_volume)
 
 /datum/reagent/consumable/vomit/purple
-	color = "#afc31980"
+	color = "#afc319100"
 
 /datum/reagent/consumable/vomit/toxic
-	color = "#a3a91980"
+	color = "#a3a919100"

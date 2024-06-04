@@ -77,7 +77,7 @@
 
 		if(diceroll == DICE_CRIT_SUCCESS)
 			for(var/obj/visible_obj in view(src))
-				var/turf/obj_turf = get_turf(visible_obj)
+				var/list/found_obj = list()
 				if(visible_obj.plane == GAME_PLANE_FOV_HIDDEN)
 					continue
 				if(!visible_obj.istrap)
@@ -85,6 +85,7 @@
 				var/turf/obj_turf = get_turf(visible_obj)
 				if(!istype(obj_turf))
 					continue
+				found_obj += visible_obj
 				var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
 				ghost.plane = POLLUTION_PLANE
 				src.client.images += ghost

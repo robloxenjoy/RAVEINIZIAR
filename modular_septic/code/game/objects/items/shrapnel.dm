@@ -1,5 +1,5 @@
 /obj/item/shrapnel
-	name = "Осколок"
+	name = "Оскколок"
 	desc = "Сначала вошло, потом вышло."
 	icon = 'modular_septic/icons/obj/items/shrapnel.dmi'
 	icon_state = "shrapnel"
