@@ -228,7 +228,7 @@
 	description = "Чё-то зелёное и ужасное."
 	taste_description = "блевотня"
 	reagent_state = LIQUID
-	color = "#a3a91980"
+	color = "#a3a919100"
 	liquid_evaporation_rate = 3
 	ph = 6.6
 
@@ -254,7 +254,47 @@
 		exposed_turf.pollute_turf(/datum/pollutant/vomit, reac_volume)
 
 /datum/reagent/consumable/vomit/purple
+	name = "Рвота"
+	description = "Чё-то фиолетовое и ужасное."
+	taste_description = "блевотня"
+	reagent_state = LIQUID
 	color = "#afc319100"
+	liquid_evaporation_rate = 3
+	ph = 6.6
+
+/datum/reagent/consumable/vomit/purple/expose_atom(atom/exposed_atom, reac_volume)
+	. = ..()
+	if(!.)
+		exposed_atom.adjust_germ_level(5 * reac_volume)
+
+/datum/reagent/consumable/vomit/purple/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	M.adjust_disgust(1)
+
+/datum/reagent/consumable/vomit/purple/expose_turf(turf/exposed_turf, reac_volume)//splash the blood all over the place
+	. = ..()
+	if(!. && isopenturf(exposed_turf))
+		exposed_turf.pollute_turf(/datum/pollutant/vomit, reac_volume)
 
 /datum/reagent/consumable/vomit/toxic
+	name = "Рвота"
+	description = "Чё-то зелёное и ужасное."
+	taste_description = "блевотня"
+	reagent_state = LIQUID
 	color = "#a3a919100"
+	liquid_evaporation_rate = 3
+	ph = 6.6
+
+/datum/reagent/consumable/vomit/toxic/expose_atom(atom/exposed_atom, reac_volume)
+	. = ..()
+	if(!.)
+		exposed_atom.adjust_germ_level(5 * reac_volume)
+
+/datum/reagent/consumable/vomit/toxic/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	M.adjust_disgust(1)
+
+/datum/reagent/consumable/vomit/toxic/expose_turf(turf/exposed_turf, reac_volume)//splash the blood all over the place
+	. = ..()
+	if(!. && isopenturf(exposed_turf))
+		exposed_turf.pollute_turf(/datum/pollutant/vomit, reac_volume)

@@ -125,9 +125,9 @@
 
 					var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
 					if(!babble)
-						character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/gakster.ogg')
+						character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
 					else
-						babble.babble_sound_override = 'modular_septic/sound/voice/babble/gakster.ogg'
+						babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
 						babble.volume = BABBLE_DEFAULT_VOLUME
 						babble.duration = BABBLE_DEFAULT_DURATION
 
