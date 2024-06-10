@@ -8,7 +8,7 @@
 	var/state1 = "wall1"
 	var/state2 = "wall2"
 	var/special_dir = FALSE
-	baseturfs = null
+	baseturfs = /turf/open/floor/plating/polovich/codec/dirt/mud
 	var/personal_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
 
 /turf/podpol/Initialize(mapload)

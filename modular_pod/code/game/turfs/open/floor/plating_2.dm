@@ -150,6 +150,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
+	var/finished = FALSE
 
 /turf/open/floor/plating/polovich/way/mud/Initialize(mapload)
 	. = ..()
@@ -487,6 +488,7 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
+	var/finished = FALSE
 
 /turf/open/floor/plating/polovich/way/platier
 	name = "Пол"
@@ -550,6 +552,7 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
+	var/finished = FALSE
 
 /turf/open/floor/plating/polovich/way/dyingmud/Initialize(mapload)
 	. = ..()
