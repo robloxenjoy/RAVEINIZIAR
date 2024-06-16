@@ -11,7 +11,7 @@
 			var/message = "<span class='infoplain'><div class='infobox'>"
 			message += span_largeinfo("Ничего")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("Я буду теперь атаковать их по-нормальному.\n(СКМ не будет выполнять специальные атаки)")
+			message += span_info("Теперь всё по-нормальному.\n(СКМ не будет выполнять специальные действия)")
 			message += "</div></span>"
 			to_chat(src, message)
 	else
