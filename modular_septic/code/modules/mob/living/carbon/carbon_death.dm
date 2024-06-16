@@ -41,13 +41,12 @@
 			if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
 			else
-				var/faction_check = faction_check_mobber(H)
 /*
 				for(var/F in pod_faction)
 					if(F == "уёбышь")
 						continue
 */
-				if(H.faction_check_mobber(src, TRUE))
+				if(H.faction_check_mober(src, TRUE))
 					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
 				else
 					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>Я видел умирающего врага! +10 каотиков!</span>")
