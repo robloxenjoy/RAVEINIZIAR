@@ -38,6 +38,7 @@
 	timeout = 5 MINUTES
 
 //Saw a crewmember die
+
 /datum/mood_event/saw_dead
 	description = span_dead("Я видел умирающее существо...")
 	mood_change = -5
@@ -52,6 +53,11 @@
 	description = span_dead("Я видел умирающее существо, круто!")
 	mood_change = 2
 	timeout = 5 MINUTES
+
+/datum/mood_event/saw_dead/friend
+	description = span_dead("Я видел умирающего товарища...")
+	mood_change = -5
+	timeout = 10 MINUTES
 
 //Died
 /datum/mood_event/died

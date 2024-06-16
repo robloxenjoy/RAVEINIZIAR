@@ -27,26 +27,33 @@
 		heart.Stop()
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "died", /datum/mood_event/died)
 	if(!has_died)
-		if(iswillet(src))
-			return
+//		if(iswillet(src))
+//			return
 		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>Я мёртв! -10 Каотиков!</span>")
 	if(is_merc_job(src))
 		GLOB.mercenary_list -= 1
 //	client?.prefs?.adjust_bobux(-1)
-	if(!iswillet(src))
-		for(var/mob/living/carbon/human/H in range(src))
-			if(H != src && (src in view(H)))
-				if(iswillet(H))
-					if(has_died)
-						return
-					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
-				if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
-					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
-				else
-					if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) < ATTRIBUTE_MIDDLING)
-						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
+//	if(!iswillet(src))
+	for(var/mob/living/carbon/human/H in range(src))
+		if(H != src && (src in view(H)))
+			if(has_died)
+				return
+			if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
+			else
+				for(var/F in pod_faction)
+					if(F == "уёбышь")
+						continue
+					if(F in H.pod_faction)
+						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
 					else
-						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
+						H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>Я видел умирающего врага! +10 каотиков!</span>")
+//					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
+
+//				if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) < ATTRIBUTE_MIDDLING)
+//					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
+//				else
+//					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
 /*
 	if(iswillet(src))
 		for(var/mob/living/carbon/human/M in range(7, src))
