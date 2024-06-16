@@ -116,7 +116,7 @@
 					character.name = character.real_name
 					character.age = client.age_ch
 					character.truerole = "Капнобатай"
-					pod_faction = list("капнобатай")
+					character.pod_faction = list("капнобатай")
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 					mind.active = FALSE
 					mind.transfer_to(character)
