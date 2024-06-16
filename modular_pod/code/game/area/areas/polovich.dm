@@ -33,32 +33,6 @@
 	droning_sound = DRONING_POLOVICHSTAN
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
-	var/mode = "day"
-
-/area/maintenance/polovich/forest/Initialize()
-	..()
-	GLOB.sunlights += src
-	mode = GLOB.tod
-
-/area/maintenance/polovich/forest/Destroy()
-	STOP_PROCESSING(SStodchange,src)
-	GLOB.sunlights -= src
-	. = ..()
-
-/area/maintenance/polovich/forest/proc/update()
-	if(mode == GLOB.tod)
-		return
-	mode = GLOB.tod
-	switch(mode)
-		if("night")
-			animate(base_lighting_color, color = pick("#100a18", "#0c0412", "#0f0012"), time = 20 SECONDS)
-		if("dusk")
-			animate(base_lighting_color, color = pick("#c26f56", "#c05271", "#b84933"), time = 20 SECONDS)
-		if("dawn")
-			animate(base_lighting_color, color = pick("#394579", "#49385d", "#3a1537"), time = 20 SECONDS)
-		if("day")
-			animate(base_lighting_color, color = pick("#dbbfbf", "#ddd7bd", "#add1b0", "#a4c0ca", "#ae9dc6", "#d09fbf"), time = 20 SECONDS)
-//	set_light(brightness, light_power, light_color)
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
