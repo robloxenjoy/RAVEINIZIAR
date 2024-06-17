@@ -84,6 +84,9 @@ SUBSYSTEM_DEF(droning)
 		//kill the previous droning sound
 //		kill_droning(area_player, listener)
 		last_phase(area_player, listener)
+	else
+		if(listener?.droning_sound)
+			kill_droning(listener)
 /*
 		if(!listener.mob.transition)
 			var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
