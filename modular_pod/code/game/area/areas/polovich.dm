@@ -38,6 +38,10 @@
 	static_lighting = TRUE
 	base_lighting_alpha = 1
 	icon_state = "polovich_inner"
+	min_ambience_cooldown = 50 SECONDS
+	max_ambience_cooldown = 75 SECONDS
+	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
+	droning_sound = null
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
