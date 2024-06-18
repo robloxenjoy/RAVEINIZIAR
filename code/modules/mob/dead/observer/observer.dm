@@ -363,7 +363,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	return TRUE
 
 /mob/dead/observer/verb/reenter_corpse()
-	set category = "Ghost"
+//	set category = "Ghost"
 	set name = "Re-enter Corpse"
 	if(!client)
 		return
@@ -433,7 +433,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		SEND_SOUND(src, sound(sound))
 
 /mob/dead/observer/proc/dead_tele()
-	set category = "Ghost"
+//	set category = "Ghost"
 	set name = "Teleport"
 	set desc= "Teleport to a location"
 	if(!isobserver(usr))
@@ -461,7 +461,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()
-	set category = "Ghost"
+//	set category = "Ghost"
 	set name = "Orbit" // "Haunt"
 	set desc = "Follow and orbit a mob."
 
@@ -504,7 +504,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	animate(src, pixel_y = base_pixel_y + 2, time = 1 SECONDS, loop = -1)
 
 /mob/dead/observer/verb/jumptomob() //Moves the ghost instead of just changing the ghosts's eye -Nodrak
-	set category = "Ghost"
+//	set category = "Ghost"
 	set name = "Jump to Mob"
 	set desc = "Teleport to a mob"
 
@@ -568,7 +568,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 */
 
 /mob/dead/observer/verb/boo()
-	set category = "Ghost"
+//	set category = "Ghost"
 	set name = "Boo!"
 	set desc= "Scare your crew members because of boredom!"
 
@@ -584,7 +584,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 /mob/dead/observer/verb/particlize()
-	set category = "Ghost"
+	set category = "Конец"
 	set name = "Возрождение"
 	set desc = "Are you want?"
 
@@ -936,7 +936,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/dead/observer/verb/observe()
 	set name = "Observe"
-	set category = "Ghost"
+//	set category = "Ghost"
 
 	if(!isobserver(usr)) //Make sure they're an observer!
 		return
@@ -1079,7 +1079,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	minigames_menu.ui_interact(src)
 */
 /mob/dead/observer/proc/tray_view()
-	set category = "Ghost"
+//	set category = "Ghost"
 	set name = "T-ray view"
 	set desc = "Toggles a view of sub-floor objects"
 

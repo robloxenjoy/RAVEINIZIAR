@@ -6,7 +6,7 @@
 
 	for(var/client/Player)
 //    	usr << Player
-		to_chat(src, "<span class='infoplain'>[Player]</span>")
+		to_chat(src, "<span class='infoplain'>[Player.ckey]</span>")
 
 /client/verb/adminwho()
 	set category = "Admin"
