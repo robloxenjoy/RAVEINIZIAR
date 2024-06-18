@@ -207,3 +207,9 @@
 
 /turf/podpol/wall/steel/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
+
+/turf/podpol/wall/stal
+	icon = 'modular_pod/icons/turf/closed/stal.dmi'
+
+/turf/podpol/wall/stal/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"

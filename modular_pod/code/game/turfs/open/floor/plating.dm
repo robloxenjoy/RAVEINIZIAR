@@ -1,3 +1,9 @@
+/turf/open/floor
+	var/special_floor = FALSE
+
+/turf/open/floor/proc/special_thing()
+	return
+
 /turf/open/floor/plating/polovich
 	name = "Violet Floor"
 	desc = "This is cool."
@@ -36,12 +42,15 @@
 //		user.visible_message("<span class='notice'>\[user] трогает [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 	if(user.a_intent == INTENT_GRAB)
-		user.visible_message(span_notice("[user] размахивает рукой."),span_notice("Я размахиваю рукой."), span_hear("Я слышу чё-то."))
+		if(!special_floor)
+			user.visible_message(span_notice("[user] размахивает рукой."),span_notice("Я размахиваю рукой."), span_hear("Я слышу чё-то."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
-		user.changeNext_move(CLICK_CD_WRENCH)
-		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
-		user.adjustFatigueLoss(5)
-		sound_hint()
+			user.changeNext_move(CLICK_CD_WRENCH)
+			playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
+			user.adjustFatigueLoss(5)
+			sound_hint()
+		else
+			special_thing(user)
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
 		user.visible_message(span_notice("[user] бьёт [src] рукой."),span_notice("Я бью [src] рукой."), span_hear("Я слышу стук."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")

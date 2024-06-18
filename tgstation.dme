@@ -4069,6 +4069,7 @@
 #include "modular_pod\code\game\turfs\closed\walls.dm"
 #include "modular_pod\code\game\turfs\open\floor\plating.dm"
 #include "modular_pod\code\game\turfs\open\floor\plating_2.dm"
+#include "modular_pod\code\game\turfs\open\floor\plating_3.dm"
 #include "modular_pod\code\modules\clothing\suits\armor.dm"
 #include "modular_pod\code\modules\clothing\suits\itobe.dm"
 #include "modular_pod\code\modules\clothing\suits\labcoat.dm"

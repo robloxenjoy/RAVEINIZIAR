@@ -32,6 +32,23 @@
 /obj/effect/landing/bodyguard
 	name = "bodyguard"
 
+/obj/effect/special_landing
+	name = "landmark"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "spawnerr"
+	anchored = TRUE
+	plane = GAME_PLANE
+	layer = TURF_LAYER
+	invisibility = INVISIBILITY_ABSTRACT
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+//	var/crazy_id = null
+/*
+/obj/effect/special_landing/station
+	crazy_id = "station"
+
+/obj/effect/special_landing/earth
+	crazy_id = "earth"
+*/
 /obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'
