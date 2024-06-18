@@ -46,10 +46,14 @@
 					if(F == "уёбышь")
 						continue
 */
-				if(H.faction_check_mober(src, TRUE))
-					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
-				else
-					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>Я видел умирающего врага! +10 каотиков!</span>")
+//				if(faction_check_mober(H, TRUE))
+				for(var/F in pod_faction)
+					if(F == "уёбышь")
+						continue
+					if(F == H.pod_faction)
+						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
+					else
+						H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>Я видел умирающего врага! +10 каотиков!</span>")
 //					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
 
 //				if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) < ATTRIBUTE_MIDDLING)

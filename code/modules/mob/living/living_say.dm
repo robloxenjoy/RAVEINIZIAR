@@ -462,7 +462,7 @@ GLOBAL_LIST_INIT(message_modes_stat_limits, list(
 		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
 			. = "shakily signs"
 		else
-			. = "stammers"
+			. = "заикается"
 	else if(derpspeech)
 		if(HAS_TRAIT(src, TRAIT_SIGN_LANG))
 			. = "incoherently signs"
