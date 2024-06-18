@@ -153,9 +153,9 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/gasp
-	key = "gasp"
-	key_third_person = "gasps"
-	message = "gasps!"
+	key = "задыхаться"
+	key_third_person = "задыхается"
+	message = "задыхается!"
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = HARD_CRIT
 
