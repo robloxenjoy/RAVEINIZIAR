@@ -62,6 +62,9 @@ map copenhagen
 endmap
 
 map podpol_earth
+endmap
+
+map podpol_earthstation
 	default
 	votable
 endmap
