@@ -64,13 +64,13 @@ Behavior that's still missing from this component that original food items had t
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/examine)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_ANIMAL, .proc/UseByAnimal)
-	RegisterSignal(parent, COMSIG_ATOM_CHECKPARTS, .proc/OnCraft)
-	RegisterSignal(parent, COMSIG_ATOM_CREATEDBY_PROCESSING, .proc/OnProcessed)
-	RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_COOKED, .proc/OnMicrowaveCooked)
-	RegisterSignal(parent, COMSIG_EDIBLE_INGREDIENT_ADDED, .proc/edible_ingredient_added)
-	RegisterSignal(parent, COMSIG_OOZE_EAT_ATOM, .proc/on_ooze_eat)
+	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(examine))
+	RegisterSignals(parent, COMSIG_ATOM_ATTACK_ANIMAL, PROC_REF(UseByAnimal))
+	RegisterSignal(parent, COMSIG_ATOM_CHECKPARTS, PROC_REF(OnCraft))
+	RegisterSignal(parent, COMSIG_ATOM_CREATEDBY_PROCESSING, PROC_REF(OnProcessed))
+	RegisterSignal(parent, COMSIG_FOOD_INGREDIENT_ADDED, PROC_REF(edible_ingredient_added))
+	RegisterSignal(parent, COMSIG_OOZE_EAT_ATOM, PROC_REF(on_ooze_eat))
+	RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_COOKED, PROC_REF(OnMicrowaveCooked))
 
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
@@ -78,17 +78,17 @@ Behavior that's still missing from this component that original food items had t
 	AddComponent(/datum/component/connect_loc_behalf, parent, loc_connections)
 
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/UseFromHand)
-		RegisterSignal(parent, COMSIG_ITEM_FRIED, .proc/OnFried)
-		RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, .proc/OnMicrowaved)
-		RegisterSignal(parent, COMSIG_ITEM_USED_AS_INGREDIENT, .proc/used_to_customize)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(UseFromHand))
+		RegisterSignal(parent, COMSIG_ITEM_FRIED, PROC_REF(OnFried))
+		RegisterSignal(parent, COMSIG_ITEM_MICROWAVE_ACT, PROC_REF(OnMicrowaved))
+		RegisterSignal(parent, COMSIG_ITEM_USED_AS_INGREDIENT, PROC_REF(used_to_customize))
 
 		var/obj/item/item = parent
 		if (!item.grind_results)
 			item.grind_results = list() //If this doesn't already exist, add it as an empty list. This is needed for the grinder to accept it.
 
 	else if(isturf(parent) || isstructure(parent))
-		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/TryToEatIt)
+		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(TryToEatIt))
 
 	src.bite_consumption = bite_consumption
 	src.food_flags = food_flags
@@ -157,11 +157,11 @@ Behavior that's still missing from this component that original food items had t
 			if (0)
 				return
 			if(1)
-				examine_list += "[parent] was bitten by someone!"
+				examine_list += "[parent] было откусано кем-то!"
 			if(2,3)
-				examine_list += "[parent] was bitten [bitecount] times!"
+				examine_list += "[parent] было откусано [bitecount] раз!"
 			else
-				examine_list += "[parent] was bitten multiple times!"
+				examine_list += "[parent] было откусано несколько раз!"
 
 /datum/component/edible/proc/UseFromHand(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER

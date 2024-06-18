@@ -228,7 +228,7 @@
 	description = "Чё-то зелёное и ужасное."
 	taste_description = "блевотня"
 	reagent_state = LIQUID
-	color = "#a3a91980"
+	color = "#92cd4880"
 	liquid_evaporation_rate = 3
 	ph = 6.6
 
@@ -281,7 +281,7 @@
 	description = "Чё-то зелёное и ужасное."
 	taste_description = "блевотня"
 	reagent_state = LIQUID
-	color = "#a3a91980"
+	color = "#92cd4880"
 	liquid_evaporation_rate = 3
 	ph = 6.6
 

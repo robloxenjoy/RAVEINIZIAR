@@ -1,5 +1,5 @@
 /obj/projectile/blood
-	name = "blood splatter"
+	name = "Кровавый сгусток"
 	icon = 'modular_septic/icons/obj/items/guns/projectiles/blood.dmi'
 	icon_state = "hitsplatter1"
 	base_icon_state = "hitsplatter"

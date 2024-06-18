@@ -1,6 +1,6 @@
 //Blood splattering, taken from hippiestation
 /obj/effect/decal/cleanable/blood/hitsplatter
-	name = "blood splatter"
+	name = "Кровавое пятно"
 	pass_flags = PASSTABLE
 	icon = 'modular_septic/icons/effects/blood.dmi'
 	icon_state = "hitsplatter1"

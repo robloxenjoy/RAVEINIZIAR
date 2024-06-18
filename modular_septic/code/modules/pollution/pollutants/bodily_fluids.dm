@@ -25,7 +25,7 @@
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
 	scent = "блевотина"
-	color = "#789433"
+	color = "#92cd48"
 	thickness = 3
 
 /datum/pollutant/vomit/breathe_act(mob/living/carbon/victim, amount)

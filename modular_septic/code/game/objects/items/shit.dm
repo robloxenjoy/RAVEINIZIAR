@@ -48,7 +48,7 @@
 	//shit on face, yum
 	if(ishuman(eater))
 		eater.AddComponent(/datum/component/creamed/shit)
-		if(prob(1))
+		if(prob(5))
 			eater.gain_extra_effort(1, FALSE)
 
 /obj/item/shit/proc/on_entered(datum/source, atom/movable/movable)
