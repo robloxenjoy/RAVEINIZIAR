@@ -8,8 +8,8 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
-	light_range = 1
-	light_power = 1
+	light_range = 3
+	light_power = 3
 	light_color = "#c2281b"
 
 /turf/open/floor/plating/polovich/way/station/mystic

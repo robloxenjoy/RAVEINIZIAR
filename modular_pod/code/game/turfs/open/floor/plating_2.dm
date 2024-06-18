@@ -208,8 +208,8 @@
 	name = "Пол"
 	icon_state = "cirfire"
 	footstep = FOOTSTEP_PLATING
-	light_range = 1
-	light_power = 1
+	light_range = 2
+	light_power = 2
 	light_color = "#d4ba52"
 
 /turf/open/floor/plating/polovich/way/ancfire
