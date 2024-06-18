@@ -1,7 +1,7 @@
 #define DEFAULT_WHO_CELLS_PER_ROW 4
 
 /client/verb/who()
-	set name = "Кто?"
+	set name = "Кто"
 	set category = "OOC"
 
 	for(var/client/Player)

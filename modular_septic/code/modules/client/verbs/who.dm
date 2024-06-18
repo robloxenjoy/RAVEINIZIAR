@@ -1,5 +1,5 @@
 /client/who()
-	set name = "Кто?"
+	set name = "Кто"
 	set category = "OOC"
 /*
 	if(!check_rights(R_ADMIN))
