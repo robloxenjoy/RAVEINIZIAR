@@ -27,7 +27,7 @@
 	for(var/turf/open/floor/plating/polovich/way/station/mystic/crazy/spawn_point in world)
 		if(spawn_point.crazy_id == "earth")
 			user.visible_message(span_meatymeat("[user] телепортируется!"),span_meatymeat("Я телепортируюсь!"), span_hear("Я слышу чё-то."))
-			user.forceMove(spawn_point.loc)
+			user.forceMove(spawn_point)
 
 /turf/open/floor/plating/polovich/way/station/mystic/crazy/back
 	crazy_id = "earth"
@@ -36,7 +36,7 @@
 	for(var/turf/open/floor/plating/polovich/way/station/mystic/crazy/spawn_point in world)
 		if(spawn_point.crazy_id == "station")
 			user.visible_message(span_meatymeat("[user] телепортируется!"),span_meatymeat("Я телепортируюсь!"), span_hear("Я слышу чё-то."))
-			user.forceMove(spawn_point.loc)
+			user.forceMove(spawn_point)
 
 /turf/open/floor/plating/polovich/way/station/notgood
 	icon_state = "notgood"
