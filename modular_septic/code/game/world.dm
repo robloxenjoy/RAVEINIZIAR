@@ -13,7 +13,7 @@
 		fluff = CONFIG_GET(string/flufftagline)
 	s += "<b>[station_name()]</b>"
 	s += " ("
-	s += "<a href='https://discord.gg/hhEFU4Pw48'>Discord</a>"
+	s += "<a href='https://discord.gg/zX7RCNqzvm'>Discord</a>"
 	s += ")\]"
 	s += "<br>"
 	if(tagline)
