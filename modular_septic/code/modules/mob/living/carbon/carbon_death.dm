@@ -41,19 +41,10 @@
 			if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
 			else
-/*
-				for(var/F in pod_faction)
-					if(F == "уёбышь")
-						continue
-*/
-//				if(faction_check_mober(H, TRUE))
-				for(var/F in pod_faction)
-					if(F == "уёбышь")
-						continue
-					if(F == H.pod_faction)
-						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
-					else
-						H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>Я видел умирающего врага! +10 каотиков!</span>")
+				if(pod_faction == H.pod_faction)
+					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
+				else
+					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>Я видел умирающего врага! +10 каотиков!</span>")
 //					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
 
 //				if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) < ATTRIBUTE_MIDDLING)
@@ -85,14 +76,3 @@
 	set_heartattack(FALSE)
 	if(is_merc_job(src))
 		GLOB.mercenary_list += 1
-
-/mob/living/carbon/proc/faction_check_mober(mob/living/carbon/target, exact_match)
-	if(exact_match) //if we need an exact match, we need to do some bullfuckery.
-		var/list/faction_src = pod_faction.Copy()
-		var/list/faction_target = target.faction.Copy()
-		if(!("[REF(src)]" in faction_target)) //if they don't have our ref faction, remove it from our factions list.
-			faction_src -= "[REF(src)]" //if we don't do this, we'll never have an exact match.
-		if(!("[REF(target)]" in faction_src))
-			faction_target -= "[REF(target)]" //same thing here.
-		return faction_check(faction_src, faction_target, TRUE)
-	return faction_check(pod_faction, target.pod_faction, FALSE)

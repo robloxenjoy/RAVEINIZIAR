@@ -361,7 +361,7 @@
 			close_trap()
 			ridden_vehicle.visible_message(span_danger("[ridden_vehicle] triggers \the [src]."))
 
-	if(!thrown_at || L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
+	if(L.throwing || L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
 		snap = FALSE
 // owner.throwing
 	var/def_zone = BODY_ZONE_CHEST

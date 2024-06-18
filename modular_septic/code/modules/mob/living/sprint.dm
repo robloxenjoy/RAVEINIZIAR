@@ -17,13 +17,13 @@
 /mob/living/proc/toggle_sprint()
 	if(HAS_TRAIT(src, TRAIT_SPRINT_LOCKED))
 		if(!(combat_flags & COMBAT_FLAG_SPRINT_ACTIVE))
-			to_chat(src, span_warning("I can't sprint!"))
+			to_chat(src, span_warning("Я не могу бежать!"))
 		combat_flags ^= COMBAT_FLAG_SPRINT_ACTIVE
 		hud_used?.sprint?.update_appearance()
 		return
 	combat_flags ^= COMBAT_FLAG_SPRINT_ACTIVE
 	if(usable_legs < default_num_legs)
-		to_chat(src, span_warning("Not enough legs!"))
+		to_chat(src, span_warning("Недостаточно ног!"))
 		return
 	if(CHECK_BITFIELD(combat_flags, COMBAT_FLAG_SPRINT_ACTIVE))
 		playsound_local(src, 'modular_septic/sound/effects/sprintactivate.ogg', 70, FALSE, pressure_affected = FALSE)
