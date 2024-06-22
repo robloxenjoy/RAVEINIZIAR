@@ -117,7 +117,7 @@
 					character.age = client.age_ch
 					character.truerole = "Капнобатай"
 					character.pod_faction = "капнобатай"
-					switch(character.trulerole)
+					switch(character.truerole)
 						if("Капнобатай")
 							if(prob(10))
 								character.equipOutfit(/datum/outfit/kapnofather)

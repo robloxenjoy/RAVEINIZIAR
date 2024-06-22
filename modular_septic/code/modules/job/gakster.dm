@@ -795,7 +795,7 @@
 /datum/outfit/zek_glad
 	name = "Zekglad Uniform"
 
-	uniform = /obj/item/clothing/under/codec/purp/area/red
+//	uniform = /obj/item/clothing/under/codec/purp/area/red
 	pants = /obj/item/clothing/pants/codec/purp
 	shoes = /obj/item/clothing/shoes/jackboots
 
@@ -820,7 +820,7 @@
 /datum/outfit/zek_gladblue
 	name = "Zekglad Uniform"
 
-	uniform = /obj/item/clothing/under/codec/purp/area/blue
+//	uniform = /obj/item/clothing/under/codec/purp/area/blue
 	pants = /obj/item/clothing/pants/codec/purp
 	shoes = /obj/item/clothing/shoes/jackboots
 
