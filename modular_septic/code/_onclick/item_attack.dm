@@ -244,6 +244,9 @@
 		if(user_strength < CEILING(minimum_strength * 2, 1))
 			unready_weapon(user)
 			return
+	if(readying_flags & READYING_FLAG_JUSTCAUSE)
+		unready_weapon(user)
+		return
 
 /// The equivalent of [/obj/item/proc/attack] but for alternate attacks, AKA middle clicking
 /obj/item/proc/attack_tertiary(mob/living/victim, mob/living/user, params)
@@ -274,7 +277,7 @@
 		return
 
 	if(HAS_TRAIT_FROM(src, TRAIT_WEAPON_UNREADY, ATTACKING_TRAIT))
-		to_chat(user, span_danger("Я готов - [src] нет!"))
+		to_chat(user, span_danger("Я готов, [src] - нет!"))
 		return
 
 	var/user_strength = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
@@ -298,6 +301,9 @@
 		if(user_strength < CEILING(minimum_strength * 2, 1))
 			unready_weapon(user)
 			return
+	if(readying_flags & READYING_FLAG_JUSTCAUSE)
+		unready_weapon(user)
+		return
 
 /obj/item/afterattack(atom/target, mob/user, proximity_flag, params)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, params) & COMPONENT_CANCEL_ATTACK_CHAIN)
@@ -342,3 +348,5 @@
 
 /obj/item/proc/ready_message(mob/living/user)
 	to_chat(user, span_danger("Я готовлю [src]!"))
+	if(ready_sound)
+		playsound(user, ready_sound, get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)

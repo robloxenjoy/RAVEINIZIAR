@@ -27,10 +27,11 @@
 /obj/item/melee/shieldo
 	skill_blocking = SKILL_SHIELD
 	blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	parrying_modifier = null
 
 /obj/item/melee/shieldo/buckler/wooden
-	name = "Wooden Buckler"
-	desc = "It can save your ass."
+	name = "Деревянный Баклер"
+	desc = "Может спасти мой зад."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "buckler"
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
@@ -59,8 +60,8 @@
 	bare_wound_bonus = 4
 	throw_speed = 2
 	throw_range = 10
-	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks", "shields")
-	attack_verb_simple = list("bash", "batter", "bludgeon", "whack", "shields")
+	attack_verb_continuous = list("вмазывает", "ударяет")
+	attack_verb_simple = list("вмазать", "ударить")
 	tetris_width = 64
 	tetris_height = 64
 
@@ -264,7 +265,37 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	tetris_width = 32
 	tetris_height = 64
-
+/*
+/obj/item/melee/bita/cep/iron
+	name = "Цеп"
+	desc = "Из железа."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "flail_iron"
+	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
+	inhand_icon_state = "cep_iron"
+	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
+	drop_sound = ''
+	miss_sound = list(
+	pickup_sound = '
+	ready_sound = ''
+	min_force = 7
+	force = 16
+	throwforce = 5
+	min_force_strength = 1.1
+	force_strength = 1.5
+	wound_bonus = 8
+	bare_wound_bonus = 5
+	armor_damage_modifier = 1
+	havedurability = TRUE
+	durability = 190
+	carry_weight = 1 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	worn_icon_state = "classic_baton"
+	skill_melee = SKILL_FLAIL
+	tetris_width = 32
+	tetris_height = 64
+*/
 /obj/item/melee/bita/hammer/stone
 	name = "Stone Hammer"
 	desc = "Good for smithing and killing."

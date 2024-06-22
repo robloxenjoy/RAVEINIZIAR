@@ -187,15 +187,15 @@
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
-			var/attack_message = "attack"
+			var/attack_message = "атака"
 			if(length(weapon.attack_verb_simple))
 				attack_message = pick(weapon.attack_verb_simple)
-			victim.visible_message(span_warning("<b>[victim]</b> блокирует <b>[user]</b>'s [attack_message] с помощью [weapon]!"), \
-							span_userdanger("Я блокирую <b>[user]</b>'s [attack_message] с помощью [weapon]!"), \
+			victim.visible_message(span_warning("<b>[victim]</b> блокирует <b>[user]</b> [attack_message] с помощью [weapon]!"), \
+							span_userdanger("Я блокирую <b>[user]</b> [attack_message] с помощью [weapon]!"), \
 							span_hear("Я слышу стук!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("<b>[victim]</b> блокирует мою [attack_message] моим [weapon]!"))
+			to_chat(user, span_userdanger("<b>[victim]</b> блокирует [attack_message]!"))
 			user.sound_hint()
 			if(weapon.durability)
 				weapon.damageItem("MEDIUM")
