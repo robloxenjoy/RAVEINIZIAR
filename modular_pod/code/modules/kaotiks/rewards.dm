@@ -1,4 +1,5 @@
 //the rewards themselves
+/*
 /datum/bobux_reward/become_traitor
 	name = "Become A Dream Terrorist"
 	desc = "Become a dream terrorist. It's time to parasitize this warlock dream!"
@@ -15,42 +16,77 @@
 	. = ..()
 	var/mob/living/carbon/human/H = noob.mob
 	H.mind.add_antag_datum(new /datum/antagonist/traitor())
+*/
 
-/datum/bobux_reward/stat_boost
-	name = "Boost Stats"
-	desc = "Improve all stats by one point."
-	buy_message = "<b>I become more awesome.</span>"
+/datum/bobux_reward/stat_str
+	name = "+1 СЛ"
+	desc = "Увеличить силу."
+	buy_message = "<b>Я становлюсь СИЛЬНЕЕ БЛЯТЬ!</span>"
 	id = "statboost"
-	cost = 80
+	cost = 50
 
-/datum/bobux_reward/stat_boost/can_buy(client/noob, silent, fail_message)
+/datum/bobux_reward/stat_str/can_buy(client/noob, silent, fail_message)
 	. = ..()
 	if(!noob.mob.attributes)
 		return FALSE
 	if(. && ishuman(noob.mob) && noob.mob.mind)
 		return TRUE
 
-/datum/bobux_reward/stat_boost/on_buy(client/noob)
+/datum/bobux_reward/stat_str/on_buy(client/noob)
 	. = ..()
 	var/list/stat_modification = list( \
 	STAT_STRENGTH = 1, \
-	STAT_ENDURANCE = 1, \
-	STAT_DEXTERITY = 1, \
-	STAT_INTELLIGENCE = 1, \
-	STAT_PERCEPTION = 1, \
-	STAT_WILL = 1, \
-	STAT_LUCK = 1, \
 	)
-	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik, TRUE, stat_modification)
-//	for(var/stat in noob.mob.mind.mob_stats)
-//		noob.mob.mind.mob_stats[stat].level += 1
+	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik/str, TRUE, stat_modification)
+
+/datum/bobux_reward/stat_end
+	name = "+1 ЗД"
+	desc = "Увеличить здоровье."
+	buy_message = "<b>Я становлюсь ЗДОРОВЕЕ БЛЯТЬ!</span>"
+	id = "statboost"
+	cost = 50
+
+/datum/bobux_reward/stat_end/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	if(!noob.mob.attributes)
+		return FALSE
+	if(. && ishuman(noob.mob) && noob.mob.mind)
+		return TRUE
+
+/datum/bobux_reward/stat_end/on_buy(client/noob)
+	. = ..()
+	var/list/stat_modification = list( \
+	STAT_ENDURANCE = 1, \
+	)
+	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik/end, TRUE, stat_modification)
+
+/datum/bobux_reward/stat_dex
+	name = "+1 ЛВ"
+	desc = "Увеличить ловкость."
+	buy_message = "<b>Я становлюсь ЛОВЧЕ БЛЯТЬ!</span>"
+	id = "statboost"
+	cost = 50
+
+/datum/bobux_reward/stat_dex/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	if(!noob.mob.attributes)
+		return FALSE
+	if(. && ishuman(noob.mob) && noob.mob.mind)
+		return TRUE
+
+/datum/bobux_reward/stat_dex/on_buy(client/noob)
+	. = ..()
+	var/list/stat_modification = list( \
+	STAT_DEXTERITY = 1, \
+	)
+	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik/dex, TRUE, stat_modification)
 
 /datum/bobux_reward/combat_boost
-	name = "Combat Boost"
-	desc = "Improve melee and ranged skills."
-	buy_message = "<b>I become better at combat.</span>"
+	name = "Улучшить боевой настрой"
+	desc = "Увеличивает навыки ближнего боя."
+	buy_message = "<b>Я становлюсь лучше в ближнем бою!</span>"
 	id = "combatboost"
-	cost = 80
+	cost = 100
 
 /datum/bobux_reward/combat_boost/can_buy(client/noob, silent, fail_message)
 	. = ..()
@@ -59,8 +95,25 @@
 
 /datum/bobux_reward/combat_boost/on_buy(client/noob)
 	. = ..()
-	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik)
+	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik/melee)
 
+/datum/bobux_reward/combat_boost/range
+	name = "Улучшить боевой настрой"
+	desc = "Увеличивает навыки дальнего боя."
+	buy_message = "<b>Я становлюсь лучше в дальнем бою!</span>"
+	id = "combatboost"
+	cost = 100
+
+/datum/bobux_reward/combat_boost/range/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	if(. && ishuman(noob.mob) && noob.mob.mind)
+		return TRUE
+
+/datum/bobux_reward/combat_boost/range/on_buy(client/noob)
+	. = ..()
+	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik/range)
+
+/*
 /datum/bobux_reward/possess_mob
 	name = "Possess Mob"
 	desc = "Possess a mindless mob, if you're a ghost."
@@ -102,7 +155,7 @@
 //			stat.level = mind.mob_stats[stat.type].level
 	to_chat(noob, "<span class='deadsay'>I have taken over [choice].</span>")
 
-/*
+
 /datum/bobux_reward/bounty_hunter
 	name = "Subconscious Mercenary"
 	desc = "Sure, you need help of subconscious mercenary."
@@ -157,16 +210,16 @@
 */
 
 /datum/bobux_reward/market_crash
-	name = "Market Crash"
-	desc = "Destroy the kaotik system."
-	buy_message = "You're a big guy."
+	name = "Разрушить каотичную систему"
+	desc = "А чё бы нет?"
+	buy_message = "Я ахуеннен."
 	id = "market_crash"
 	cost = 300
 	single_use = TRUE
 
 /datum/bobux_reward/market_crash/on_buy(client/noob)
 	. = ..()
-	to_chat(world, "<span class='userdanger'><span class='big bold'>The kaotik system was destroyed by [noob.key]!</span></span>")
+	to_chat(world, "<span class='userdanger'><span class='big bold'>Каотичная Система была разрушена [noob.key]!</span></span>")
 	SSbobux.working = FALSE
 /*
 //	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
@@ -220,9 +273,9 @@
 */
 
 /datum/bobux_reward/farto
-	name = "Chungus Prank"
-	desc = "Make everyone PPFV."
-	buy_message = "I'M PPVF!!!!!!!"
+	name = "Пранк Чангуса"
+	desc = "Заставит всех ООПБ!"
+	buy_message = "Я сын чангуса!"
 	id = "fart"
 	cost = 100
 //	single_use = TRUE
@@ -236,10 +289,10 @@
 //		return FALSE
 	message_admins("[noob] has made everyone PPFV.")
 	log_admin("[noob] has made everyone PPFV.")
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] has made everyone pee, poo, fart and vomit!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] заставляет всех ООПБ - обоссаться, обосраться, пердануть и блевануть!</span>")
 //	var/cumsound = pick('modular_pod/sound/eff/coom.ogg','modular_pod/sound/eff/bobcoomer.ogg')
 //	SEND_SOUND(world, sound(cumsound, volume = 50))
-	to_chat(world, "<span class='reallybig hypnophrase'>I'M PPFV!!!!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>Я ООПБ!!!!</span>")
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
 		if(coomer.mind)
 			coomer.emote("fart")
@@ -251,9 +304,9 @@
 //		coomer.handle_user_climax()
 
 /datum/bobux_reward/goodmood
-	name = "Funny Day"
-	desc = "Make everyone happier!"
-	buy_message = "<b>I am so good!</span>"
+	name = "Весёлый день"
+	desc = "Сделай всех счастливее!"
+	buy_message = "<b>А я хорош!</span>"
 	id = "funnyday"
 	cost = 100
 	infinite_buy = TRUE
@@ -262,11 +315,12 @@
 	..()
 	message_admins("[noob] has made everyone happier.")
 	log_admin("[noob] has made everyone happier.")
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] has made everyone happier! So cute :3</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] делает всех счастливее! Заебись!</span>")
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
 		if(coomer.mind)
 			SEND_SIGNAL(coomer, COMSIG_ADD_MOOD_EVENT, "funnyday", /datum/mood_event/koatik)
 
+/*
 /datum/bobux_reward/respawn
 	name = "Respawn"
 	desc = "Just forget all about it."
@@ -285,3 +339,4 @@
 //	noob.stop_sound_channel(CHANNEL_HEARTBEAT)
 	var/mob/dead/new_player/M = new /mob/dead/new_player()
 	M.ckey = noob.ckey
+*/

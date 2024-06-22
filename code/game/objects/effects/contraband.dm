@@ -373,8 +373,8 @@
 	icon_state = "poster33_legit"
 
 /obj/structure/sign/poster/official/no_erp
-	name = "Man"
-	desc = "Strange green man."
+	name = "Капнобатай"
+	desc = "Странноватое ебало мужчины. Довольно древнее фото настоящего капнобатая тех времён..."
 	icon_state = "poster34_legit"
 
 /obj/structure/sign/poster/official/wtf_is_co2

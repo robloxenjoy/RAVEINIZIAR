@@ -24,3 +24,4 @@
 	var/special_attack = SPECIAL_ATK_NONE
 
 	var/transition = FALSE
+	var/special_zvanie = null

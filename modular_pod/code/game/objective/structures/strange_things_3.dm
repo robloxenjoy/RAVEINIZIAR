@@ -287,3 +287,14 @@
 		chem_splash(loc, 3, list(reagents))
 		playsound(loc,'modular_pod/sound/eff/hitcrazy.ogg', 30, TRUE)
 	qdel(src)
+
+/obj/structure/wiresa
+	name = "Провода"
+	desc = "ЛУЧШЕ не лезть."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "wires"
+//	plane = GAME_PLANE
+	layer = 1
+	density = FALSE
+	anchored = TRUE
+	opacity = FALSE

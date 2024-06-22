@@ -36,7 +36,7 @@
 		if(ispath(attribute_type, SKILL))
 			plagiarist.raw_attribute_list[attribute_type] = clamp(plagiarist.raw_attribute_list[attribute_type] + rand(-2, 2), plagiarist.skill_min, plagiarist.skill_max)
 
-/datum/attribute_holder/sheet/kaotik
+/datum/attribute_holder/sheet/kaotik/melee
 	attribute_default = 0
 	skill_default = null
 	raw_attribute_list = list(
@@ -51,6 +51,12 @@
 		SKILL_LONGSWORD = 5,
 		SKILL_RAPIER = 5,
 		SKILL_LONGSWORD = 5,
+	)
+
+/datum/attribute_holder/sheet/kaotik/range
+	attribute_default = 0
+	skill_default = null
+	raw_attribute_list = list(
 		SKILL_PISTOL = 5,
 		SKILL_SMG = 5,
 		SKILL_RIFLE = 5,
@@ -59,6 +65,7 @@
 		SKILL_THROWING = 5,
 	)
 
+/*
 /datum/attribute_holder/sheet/kaotik/on_add(datum/attribute_holder/plagiarist)
 	. = ..()
 	//we will always have at least 0 in these skills, this is intentional
@@ -71,3 +78,4 @@
 	for(var/attribute_type in magic_attribute_variations)
 		if(ispath(attribute_type, SKILL))
 			plagiarist.raw_attribute_list[attribute_type] = clamp(plagiarist.raw_attribute_list[attribute_type] + rand(-2, 2), plagiarist.skill_min, plagiarist.skill_max)
+*/

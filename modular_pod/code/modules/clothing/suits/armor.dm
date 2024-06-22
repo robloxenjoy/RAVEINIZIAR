@@ -118,8 +118,8 @@
 		shuffling.sound_falloff_exponent = 20
 
 /obj/item/clothing/suit/armor/vest/bulletproofer
-	name = "Light Bulletproofer"
-	desc = "It will probably stop the bullet."
+	name = "Лёгкий Бронежилет"
+	desc = "Должно защитить от пуль мелкого калибра."
 	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
@@ -133,7 +133,7 @@
 	max_integrity = 450
 	integrity_failure = 0.1
 	limb_integrity = 400
-	body_parts_covered = CHEST|VITALS|GROIN
+	body_parts_covered = CHEST|VITALS|GROIN|NECK
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
 				EDGE_PROTECTION = 10, \

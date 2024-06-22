@@ -51,7 +51,10 @@
 	var/job_message = "<span class='info'>"
 	if(truerole)
 		if(!skipface)
-			job_message += "Я уверен, он <b>[truerole]</b>."
+			if(!special_zvanie)
+				job_message += "Я уверен, он <b>[truerole]</b>."
+			else
+				job_message += "Я уверен, он <b>[truerole]</b>. Ну и ого, он <span class='yellowteamradio'><b>[special_zvanie]</b></span>"
 		else
 			job_message += "Я не знаю его роли."
 	. += job_message

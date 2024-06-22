@@ -16,7 +16,7 @@
 	carry_weight = 300 GRAMS
 	can_adjust = FALSE
 	body_parts_covered = CHEST|VITALS|ARMS
-
+/*
 	var/picked
 
 /obj/item/clothing/under/codec/purp/update_icon()
@@ -81,7 +81,7 @@
 /obj/item/clothing/under/codec/purp/area/Initialize(mapload)
 	. = ..()
 	update_icon()
-
+*/
 // ШТАНИШКИ
 
 /obj/item/clothing/pants/codec/purp

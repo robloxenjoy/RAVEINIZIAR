@@ -109,8 +109,8 @@
 
 // USP
 /obj/item/gun/ballistic/automatic/pistol/cortes //corruptable gun
-	name = "\improper Cortes .45"
-	desc = "A lavish pistol for a lavish life."
+	name = "Кортес"
+	desc = "Этим пользуются либо бандосы, либо профи."
 	icon = 'modular_septic/icons/obj/items/guns/pistol.dmi'
 	icon_state = "USP"
 	base_icon_state = "USP"

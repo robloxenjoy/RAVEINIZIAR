@@ -117,6 +117,13 @@
 					character.age = client.age_ch
 					character.truerole = "Капнобатай"
 					character.pod_faction = "капнобатай"
+					switch(character.trulerole)
+						if("Капнобатай")
+							if(prob(10))
+								character.equipOutfit(/datum/outfit/kapnofather)
+								character.special_zvanie = "Отец Капнобатаев"
+							else
+								character.equipOutfit(/datum/outfit/kapno)
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 					mind.active = FALSE
 					mind.transfer_to(character)
@@ -149,6 +156,24 @@
 					character.update_hair()
 					character.update_body_parts()
 					character.update_mutations_overlay()
+
 		if("Да вроде другая...")
 			client.ready_char = FALSE
 			return FALSE
+
+/datum/outfit/kapno
+	name = "Kapno Uniform"
+
+	uniform = /obj/item/clothing/under/codec/purp
+	pants = /obj/item/clothing/pants/codec/purp
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/kapnofather
+	name = "Kapnofather Uniform"
+
+	uniform = null
+	r_pocket = /obj/item/key/podpol/woody/kapnokey
+	belt = /obj/item/gun/ballistic/automatic/pistol/cortes
+	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
+	pants = /obj/item/clothing/pants/codec/purp
+	shoes = /obj/item/clothing/shoes/jackboots

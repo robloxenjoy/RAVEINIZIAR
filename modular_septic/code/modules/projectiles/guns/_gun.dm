@@ -220,7 +220,7 @@
 
 /obj/item/gun/attack_secondary(mob/living/victim, mob/living/user, params)
 	if(user == victim)
-		to_chat(user, span_warning("I can't hold myself up!"))
+		to_chat(user, span_warning("Я не могу прицеливаться в себя!"))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	var/datum/component/gunpoint/existing_gunpoint = user.GetComponent(/datum/component/gunpoint)
 	if(user.GetComponent(/datum/component/gunpoint))
@@ -242,7 +242,7 @@
 	if(!isliving(target))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	if(user == target)
-		to_chat(user, span_warning("I can't hold myself up!"))
+		to_chat(user, span_warning("Я не могу прицеливаться в себя!"))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 	user.AddComponent(/datum/component/gunpoint, target, src)
@@ -470,11 +470,11 @@
 	. = list()
 	switch(weapon_weight)
 		if(WEAPON_HEAVY)
-			. += span_notice("<b>Тяжесть Оружия:</b> Тяжёлая")
+			. += span_notice("<b>Тяжесть Оружия:</b> Тяжёлое")
 		if(WEAPON_MEDIUM)
-			. += span_notice("<b>Тяжесть Оружия:</b> Средняя")
+			. += span_notice("<b>Тяжесть Оружия:</b> Среднее")
 		if(WEAPON_LIGHT)
-			. += span_notice("<b>Тяжесть Оружия:</b> Лёгкая")
+			. += span_notice("<b>Тяжесть Оружия:</b> Лёгкое")
 		else
 			. += span_notice("<b>Тяжесть Оружия:</b> НЕИЗВЕСТНО")
 

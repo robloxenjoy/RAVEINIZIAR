@@ -209,7 +209,7 @@
 
 /mob/living/carbon/help_shake_act(mob/living/carbon/M)
 	if(on_fire)
-		to_chat(M, span_warning("I can't put [p_them()] out with just my bare hands!"))
+		to_chat(M, span_warning("Я не могу потушить его своими руками!"))
 		return
 
 	if(M == src && check_self_for_injuries())
@@ -218,14 +218,14 @@
 	//Shake them up
 	if(body_position == LYING_DOWN)
 		if(buckled)
-			to_chat(M, span_warning("I need to unbuckle <b>[src]</b> first to do that!"))
+			to_chat(M, span_warning("Мне нужно отстегнуть <b>[src]</b> чтобы сделать это!"))
 			return
-		M.visible_message(span_notice("<b>[M]</b> shakes <b>[src]</b> trying to get [p_them()] up!"), \
-						span_notice("I shake <b>[src]</b> trying to get [p_them()] up!"), \
-						span_hear("I hear the rustling of clothes."), \
+		M.visible_message(span_notice("<b>[M]</b> трясёт <b>[src]</b> дабы поднять его!"), \
+						span_notice("Я трясу <b>[src]</b> дабы поднять его!"), \
+						span_hear("Я слышу чё-то."), \
 						DEFAULT_MESSAGE_RANGE, \
 						src)
-		to_chat(src, span_notice("<b>[M]</b> shakes me to get me up!"))
+		to_chat(src, span_notice("<b>[M]</b> трясёт меня дабы поднять!"))
 		AdjustStun(-60)
 		AdjustKnockdown(-60)
 		AdjustUnconscious(-60)
@@ -237,12 +237,13 @@
 			get_up(TRUE)
 		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 	//Headpat them
+/*
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD)
 		headpat_act(M)
 	//Hug them
 	else
 		hug_act(M)
-
+*/
 	// Shake animation
 	if(incapacitated())
 		var/direction = prob(50) ? -1 : 1

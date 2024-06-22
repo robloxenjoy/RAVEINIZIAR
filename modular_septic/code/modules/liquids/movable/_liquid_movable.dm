@@ -426,7 +426,7 @@
 						if(!(carbon.shoes?.clothing_flags & NOSLIP))
 							carbon.Move(dest_turf, direction)
 							if(prob(60) && carbon.body_position != LYING_DOWN)
-								to_chat(carbon, span_userdanger("The current knocks me down!"))
+								to_chat(carbon, span_userdanger("Волна сбивает меня!"))
 								carbon.CombatKnockdown(25, 5 SECONDS, 5 SECONDS)
 					else
 						movable.Move(dest_turf, direction)

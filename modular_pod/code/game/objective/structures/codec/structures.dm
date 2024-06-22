@@ -346,8 +346,10 @@
 		return
 	if(density)
 		open()
+		layer = ABOVE_OBJ_LAYER
 	else
 		close()
+		layer = FLY_LAYER
 
 /obj/machinery/codec/door/update_icon_state()
 	icon_state = "[base_icon_state][density]"
@@ -380,6 +382,18 @@
 	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
 	doorClose = 'modular_septic/sound/doors/wood/door_wooden_close.ogg'
 	doorDeni = 'modular_septic/sound/doors/wood/door_wooden_try.ogg'
+	autoclose = TRUE
+
+/obj/machinery/codec/door/kapno/father
+	locked = TRUE
+	key_worthy = TRUE
+	id_tag = "kapnoroom"
+
+/obj/item/key/podpol/woody/kapnokey
+	name = "Ключ"
+	desc = "К комнатке отца Капнобатаев."
+	icon_state = "key_father"
+	id_tag = "kapnoroom"
 
 #undef DOOR_CLOSE_WAIT
 
