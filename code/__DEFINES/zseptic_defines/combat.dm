@@ -74,6 +74,8 @@
  */
 #define READYING_FLAG_BOW_BEHAVIOR (1<<2)
 
+#define READYING_FLAG_JUSTCAUSE (1<<1)
+
 // ~blocking/parrying behavior flags
 /// Able to block melee attacks that use items
 #define BLOCK_FLAG_MELEE (1<<0)

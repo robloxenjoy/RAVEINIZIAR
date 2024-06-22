@@ -122,3 +122,4 @@
 
 	var/choose_attack_intent = FALSE
 	var/current_attack_intent = null
+	var/ready_sound = null
