@@ -314,8 +314,8 @@
 
 // BALLS DESTROYER
 /obj/item/gun/ballistic/shotgun/bolas
-	name = "\improper Destruidor de Bolas 4-gauge shotgun"
-	desc = "Holy shit. That's a big fucking shotgun."
+	name = "Дробовик 4-Калибра"
+	desc = "Гигантский, ебанутый дробаш!"
 	icon = 'modular_septic/icons/obj/items/guns/48x32.dmi'
 	icon_state = "bolas"
 	base_icon_state = "bolas"

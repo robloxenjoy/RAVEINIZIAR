@@ -478,8 +478,8 @@
 */
 
 /obj/item/melee/hehe/pickaxe/iron
-	name = "Iron Pickaxe"
-	desc = "GET THE STONES, SLAVE!"
+	name = "Кирка"
+	desc = "КОПАЙ РАБ!"
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
