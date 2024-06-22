@@ -42,6 +42,7 @@
 			return
 
 	to_chat(src, span_bigdanger("В OOC кнопка Играть - разберёшься."))
+	to_chat(src, span_bigdanger("Дискорд сервер - https://discord.gg/zX7RCNqzvm"))
 
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
