@@ -22,7 +22,7 @@
 	name = "+1 СЛ"
 	desc = "Увеличить силу."
 	buy_message = "<b>Я становлюсь СИЛЬНЕЕ БЛЯТЬ!</span>"
-	id = "statboost"
+	id = "strboost"
 	cost = 50
 
 /datum/bobux_reward/stat_str/can_buy(client/noob, silent, fail_message)
@@ -40,10 +40,10 @@
 	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik/str, TRUE, stat_modification)
 
 /datum/bobux_reward/stat_end
-	name = "+1 ЗД"
+	name = "+1 СТ"
 	desc = "Увеличить здоровье."
 	buy_message = "<b>Я становлюсь ЗДОРОВЕЕ БЛЯТЬ!</span>"
-	id = "statboost"
+	id = "endboost"
 	cost = 50
 
 /datum/bobux_reward/stat_end/can_buy(client/noob, silent, fail_message)
@@ -64,7 +64,7 @@
 	name = "+1 ЛВ"
 	desc = "Увеличить ловкость."
 	buy_message = "<b>Я становлюсь ЛОВЧЕ БЛЯТЬ!</span>"
-	id = "statboost"
+	id = "dexboost"
 	cost = 50
 
 /datum/bobux_reward/stat_dex/can_buy(client/noob, silent, fail_message)

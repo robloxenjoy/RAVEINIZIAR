@@ -51,6 +51,7 @@
 		SKILL_LONGSWORD = 5,
 		SKILL_RAPIER = 5,
 		SKILL_LONGSWORD = 5,
+		SKILL_BUCKLER = 5,
 	)
 
 /datum/attribute_holder/sheet/kaotik/range
