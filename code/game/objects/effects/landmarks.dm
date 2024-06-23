@@ -20,6 +20,9 @@
 /obj/effect/landing/kapno
 	name = "kapno"
 
+/obj/effect/landing/konch
+	name = "konch"
+
 /obj/effect/landing/oper
 	name = "oper"
 

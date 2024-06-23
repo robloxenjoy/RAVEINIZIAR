@@ -9,4 +9,5 @@
 		if(!(I.item_flags & NO_PIXEL_RANDOM_DROP))
 			I.do_messy(duration = 2)
 		I.remove_filter("hover_outline")
-		I.sound_hint()
+		if(!silent)
+			I.sound_hint()

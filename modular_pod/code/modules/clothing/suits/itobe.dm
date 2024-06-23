@@ -99,3 +99,9 @@
 	repairable_by = /obj/item/stack/ballistic
 	carry_weight = 400 GRAMS
 	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 2)
+
+/obj/item/clothing/under/codec/purp/black
+	color = "#151414"
+
+/obj/item/clothing/pants/codec/purp/black
+	color = "#151414"

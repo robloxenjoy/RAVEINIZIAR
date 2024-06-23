@@ -16,7 +16,8 @@
 	canSmoothWith = list(SMOOTH_GROUP_CARPET_PURPLEE)
 
 /turf/open/floor/carpet/blackk
-	desc = "Black carpet."
+	name = "Ковёр"
+	desc = "Ковёр как ахуенный ковёр."
 	icon = 'modular_pod/icons/turf/smooth/carpet_black.dmi'
 	icon_state = "carpet-255"
 	base_icon_state = "carpet"

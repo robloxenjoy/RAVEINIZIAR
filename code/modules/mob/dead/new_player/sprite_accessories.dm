@@ -118,6 +118,7 @@
 
 /datum/sprite_accessory/hair/bedhead2
 	name = "Bedhead 2"
+	icon = 'modular_septic/icons/mob/human/sprite_accessory/human_face.dmi'
 	icon_state = "hair_bedheadv2"
 
 /datum/sprite_accessory/hair/bedhead3

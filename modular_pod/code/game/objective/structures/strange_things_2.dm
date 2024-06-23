@@ -887,8 +887,8 @@
 	frame = null
 
 /obj/structure/table/oldwood
-	name = "Table"
-	desc = "Old."
+	name = "Стол"
+	desc = "Староватый сучёнышь."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "table_old"
 	smoothing_flags = NONE

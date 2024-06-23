@@ -1,69 +1,37 @@
 /mob/living/carbon/steal_this(mob/living/carbon/target, proximity_flag, list/modifiers, hit_zone)
-	//We can't jump if it's the same damn tile
-	//TODO: Multi-z jumping when certain requirements are met
-/*
-	if(get_dist(src, target) < 1)
-		return FALSE
-*/
-	//Not while thrown/jumping
-
-
-
-//	if(throwing)
-//		return FALSE
-	//Not while knocked down
 
 	if(!target)
 		return FALSE
-/*
-	if(body_position != STANDING_UP)
-		to_chat(span_warning("I need to stand up."))
-		return FALSE
-*/
-	//Not while buckled
-/*
-	if(buckled)
-		to_chat(span_warning("I need to unbuckle."))
-		return FALSE
-*/
-/*
-	var/range = FLOOR(GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH)/(ATTRIBUTE_MIDDLING/2), 1)
-	if(range < 1)
-		to_chat(src, span_warning("I'm too weak to do this..."))
-		return FALSE
-	if(ismob(jump_target))
-		visible_message(span_warning("<b>[src]</b> jumps at <b>[jump_target]</b>!"), \
-					span_userdanger("I jump at <b>[jump_target]</b>!"), \
-					ignored_mobs = jump_target)
-		to_chat(jump_target, span_userdanger("<b>[src]</b> jumps at me!"))
-	else
-		visible_message(span_warning("<b>[src]</b> jumps at [jump_target]!"), \
-					span_userdanger("I jump at [jump_target]!"))
-*/
-//	jump_grunt()
-//	sound_hint()
-//	safe_throw_at(jump_target, range, throw_speed, src, FALSE, callback = CALLBACK(src, .proc/jump_callback))
 
-	if(src.get_active_hand() != null)
+	if(body_position != STANDING_UP)
+		to_chat(span_warning("Мне бы встать."))
+		return FALSE
+/*
+	if(get_active_hand() != null)
+		return
+*/
+	if(!get_empty_held_indexes())
+		to_chat(src, span_warning("Мне бы руками!"))
 		return
 
+/*
 	if(target.combat_mode)
 		to_chat(src, "<span class='danger'>Intimidates...</span>")
 		return
-
+*/
 //	var/mob/living/carbon/human/L = user
 	var/mob/living/carbon/human/C = target
 //	var/hit_zone = L.zone_selected
 
 	if(C == src)
-		to_chat(src, span_warning("I can't steal anything from myself."))
+		to_chat(src, span_warning("Нахуя мне самого себя красть?"))
 		return
 
 //	var/obj/item/bodypart/BP = C.get_bodypart(check_zone(user.zone_selected))
 //	var/obj/item/bodypart/affecting = C.get_bodypart(hit_zone)
-	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(src.zone_selected))
+	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(zone_selected))
 	if(!affecting || affecting == ORGAN_DESTROYED)
-		to_chat(src, "<span class='necrosis'>That limb is missing!</span>")
+		to_chat(src, "<span class='necrosis'>Эта конечность отсутствует!</span>")
 		return
 /*
 	if(user.vice == "Kleptomaniac")
@@ -74,24 +42,34 @@
 */
 //	var/list/rolled = roll3d6(user,SKILL_STEAL,null)
 	var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)
-	var/obj/whatwillitsteal = null
+//	var/obj/whatwillitsteal = null
 	if(diceroll == DICE_CRIT_FAILURE)
-		src.visible_message(span_steal("[src] caught stealing!"),span_steal("You got caught stealing! Very bad!"), span_hear("You hear the sound of tripping."))
+		src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
 		src.Immobilize(2 SECONDS)
 		src.changeNext_move(CLICK_CD_MELEE)
 		sound_hint()
 		return
 
 	if(diceroll == DICE_FAILURE)
-		src.visible_message(span_steal("[src] caught stealing."),span_steal("You got caught stealing, bad."), span_hear("You hear the sound of turmoil."))
+		src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
 		src.changeNext_move(CLICK_CD_MELEE)
 		sound_hint()
-		return
 
-//	var/hit_zone = L.zone_selected
-	if(diceroll >= DICE_SUCCESS)
-		switch(hit_zone)
+		switch(affecting)
 			if(BODY_ZONE_CHEST)
+				if(C.wear_suit)
+					var/obj/shit = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+					C.dropItemToGround(shit, force = TRUE, silent = TRUE)
+					put_in_active_hand(shit)
+
+	if(diceroll >= DICE_SUCCESS)
+		switch(affecting)
+			if(BODY_ZONE_CHEST)
+				if(C.wear_suit)
+					var/obj/shit = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+					C.dropItemToGround(shit, force = TRUE, silent = TRUE)
+					put_in_active_hand(shit)
+/*
 				if(C.r_store)
 					whatwillitsteal = C.r_store
 				else
@@ -115,6 +93,7 @@
 				else
 					to_chat(src, span_steal("There is nothing!"))
 					return
+*/
 /*
 			if(BODY_ZONE_PRECISE_R_HAND || BODY_ZONE_PRECISE_L_HAND)
 				if(C.wrist_l)
@@ -136,11 +115,10 @@
 //			S.desc = whatwillitsteal.desc
 //			C.doUnEquip(whatwillitsteal)
 //		target.u_equip(whatwillitsteal)
-	C.dropItemToGround(whatwillitsteal, force = TRUE, silent = TRUE)
-	src.put_in_active_hand(whatwillitsteal)
 //			C.equip_to_slot(S, slot_it_will_go)
 //			to_chat(src, span_steal("I stealed the [S.name] from [C]!"))
 
+/*
 /obj/item/stolen
 	name = "none"
 	desc = "none"
@@ -150,6 +128,7 @@
 	to_chat(user, "<span class='danger'>Подождите, а где...</span>")
 //	user << 'sound/lfwbsounds/stolen.ogg'
 	qdel(src)
+*/
 /*
 /mob/living/carbon/proc/jump_callback()
 	sound_hint()

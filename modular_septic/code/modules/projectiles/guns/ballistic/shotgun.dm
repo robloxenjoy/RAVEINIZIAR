@@ -69,8 +69,8 @@
 
 // The legendary
 /obj/item/gun/ballistic/shotgun/doublebarrel/bobox
-	name = "Bobox shotgun"
-	desc = "A legendary shotgun with a simple combination of two barrels, not ideal, but a powerful weapon in the filthiest, unskilled hands."
+	name = "Бобокс"
+	desc = "Легендарная хуйня."
 	icon = 'modular_septic/icons/obj/items/guns/shotgun.dmi'
 	inhand_icon_state = "bobox"
 	base_icon_state = "bobox"

@@ -384,6 +384,16 @@
 	doorDeni = 'modular_septic/sound/doors/wood/door_wooden_try.ogg'
 	autoclose = TRUE
 
+/obj/machinery/codec/door/konch
+	name = "Дверь"
+	desc = "Вроде не особо старая! Уебанская!"
+	icon_state = "door_konch1"
+	base_icon_state = "door_konch"
+	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
+	doorClose = 'modular_septic/sound/doors/wood/door_wooden_close.ogg'
+	doorDeni = 'modular_septic/sound/doors/wood/door_wooden_try.ogg'
+	autoclose = TRUE
+
 /obj/machinery/codec/door/kapno/father
 	locked = TRUE
 	key_worthy = TRUE

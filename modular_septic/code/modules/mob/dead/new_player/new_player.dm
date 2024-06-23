@@ -75,7 +75,7 @@
 	var/first_thing = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Арсен", "Харамец", "Анклав", "Флакон", "Торнер", "Вэб", "Хвакс", "Койлер", "Бойд", "Хэкс", "Гекс", "Сакрец")
 	special_name = "[first_thing]"
 	if(prob(40))
-		second_thing = pick("Мун", "Стоун", "Лик", "Варп")
+		second_thing = pick("Мун", "Стоун", "Блэк", "Блок")
 		special_name = "[first_thing] [second_thing]"
 	if(prob(10))
 		third_thing = pick("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
@@ -94,6 +94,8 @@
 	switch(rolevich)
 		if("Капнобатай")
 			client.role_ch = "kapno"
+		if("Конченный")
+			client.role_ch = "konch"
 		else
 			alert("Непонятно. Роль обычного капнобатая.")
 			client.role_ch = "kapno"
@@ -115,8 +117,15 @@
 					character.real_name = client.name_ch
 					character.name = character.real_name
 					character.age = client.age_ch
-					character.truerole = "Капнобатай"
-					character.pod_faction = "капнобатай"
+					switch(client.role_ch)
+						if("kapno")
+							character.truerole = "Капнобатай"
+							character.pod_faction = "капнобатай"
+							character.hairstyle = "Bedhead 2"
+							character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
+						if("konch")
+							character.truerole = "Конченный"
+							character.pod_faction = "конченный"
 					switch(character.truerole)
 						if("Капнобатай")
 							if(prob(10))
@@ -124,6 +133,8 @@
 								character.special_zvanie = "Отец Капнобатаев"
 							else
 								character.equipOutfit(/datum/outfit/kapno)
+						if("Конченный")
+							character.equipOutfit(/datum/outfit/konch)
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 					mind.active = FALSE
 					mind.transfer_to(character)
@@ -148,6 +159,10 @@
 						(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
 					character.gain_extra_effort(1, TRUE)
 					to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
+					if(character.special_zvanie)
+						switch(character.special_zvanie)
+							if("Отец Капнобатаев")
+								to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
 //					for(var/obj/item/organ/genital/genital in character.internal_organs)
 //						genital.build_from_dna(character.dna, genital.mutantpart_key)
 
@@ -176,4 +191,11 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/cortes
 	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	pants = /obj/item/clothing/pants/codec/purp
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/konch
+	name = "Konch Uniform"
+
+	uniform = /obj/item/clothing/under/codec/purp/black
+	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots

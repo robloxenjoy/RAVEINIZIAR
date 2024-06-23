@@ -383,8 +383,8 @@
 	icon_state = "poster35_legit"
 
 /obj/structure/sign/poster/official/dick_gum
-	name = "Negative"
-	desc = "Green Shit."
+	name = "Постер"
+	desc = "Нечто негативное."
 	icon_state = "poster36_legit"
 
 /obj/structure/sign/poster/official/process
