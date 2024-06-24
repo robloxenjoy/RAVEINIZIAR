@@ -13,17 +13,17 @@
 
 	var/reagent_text
 	user.visible_message(
-		span_danger("[user] splashes the contents of [src] onto [target][punctuation]"), \
-		span_danger("You splash the contents of [src] onto [target][punctuation]"), \
+		span_danger("[user] выливает [src] на [target][punctuation]"), \
+		span_danger("Я выливаю [src] на [target][punctuation]"), \
 		ignored_mobs = target, \
 	)
 
 	if (ismob(target))
 		var/mob/target_mob = target
 		target_mob.show_message(
-			span_userdanger("[user] splash the contents of [src] onto you!"), \
+			span_userdanger("[user] выливает [src] на меня!"), \
 			MSG_VISUAL, \
-			span_userdanger("You feel drenched!"), \
+			span_userdanger("Чувствую себя промокшим!"), \
 		)
 
 	for(var/datum/reagent/reagent as anything in reagents.reagent_list)
@@ -53,7 +53,7 @@
 		return FALSE
 	//Use an extinguisher first
 	if(liquids.fire_state)
-		to_chat(user, span_warning("I can't scoop it! It's on fire!"))
+		to_chat(user, span_warning("Я не могу набрать это! Это в огне!"))
 		return TRUE
 /*
 	if(liquids.liquid_state <= LIQUID_STATE_PUDDLE)
@@ -62,14 +62,14 @@
 */
 	var/free_space = my_container.reagents.maximum_volume - my_container.reagents.total_volume
 	if(free_space <= 0)
-		to_chat(user, span_warning("I can't fit any more reagents inside [my_container]!"))
+		to_chat(user, span_warning("Не могу поместить больше в [my_container]!"))
 		return TRUE
 	var/desired_transfer = my_container.amount_per_transfer_from_this
 	if(desired_transfer > free_space)
 		desired_transfer = free_space
 	var/datum/reagents/temporary_holder = liquids.take_reagents_flat(desired_transfer)
 	temporary_holder.trans_to(my_container.reagents, temporary_holder.total_volume)
-	to_chat(user, span_notice("I scoop up a some liquids with [my_container]."))
+	to_chat(user, span_notice("Я набираю немного с помощью [my_container]."))
 	qdel(temporary_holder)
 	user.changeNext_move(my_container.attack_delay)
 	return TRUE

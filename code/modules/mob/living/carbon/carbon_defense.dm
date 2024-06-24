@@ -74,8 +74,8 @@
 		var/obj/item/I = AM
 		I.attack_hand(src)
 		if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-			visible_message(span_warning("[src] catches [I]!"), \
-							span_userdanger("You catch [I] in mid-air!"))
+			visible_message(span_warning("[src] ловит [I]!"), \
+							span_userdanger("Я ловлю [I]!"))
 			throw_mode_off(THROW_MODE_TOGGLE)
 			return TRUE
 	return ..()

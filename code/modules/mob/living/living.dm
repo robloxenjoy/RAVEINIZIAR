@@ -317,13 +317,13 @@
 			if(ishuman(M))
 				var/mob/living/carbon/human/grabbed_human = M
 				var/grabbed_by_hands = (zone_selected == "l_arm" || zone_selected == "r_arm") && grabbed_human.usable_hands > 0
-				M.visible_message(span_warning("[src] grabs [M] [grabbed_by_hands ? "by their hands":"passively"]!"), \
-								span_warning("[src] grabs you [grabbed_by_hands ? "by your hands":"passively"]!"), null, null, src)
-				to_chat(src, span_notice("You grab [M] [grabbed_by_hands ? "by their hands":"passively"]!"))
+				M.visible_message(span_warning("[src] хватает [M] [grabbed_by_hands ? "за руку":"пассивно"]!"), \
+								span_warning("[src] хватает меня [grabbed_by_hands ? "за руку":"пассивно"]!"), null, null, src)
+				to_chat(src, span_notice("Я хватаю [M] [grabbed_by_hands ? "за руку":"пассивно"]!"))
 			else
-				M.visible_message(span_warning("[src] grabs [M] passively!"), \
-								span_warning("[src] grabs you passively!"), null, null, src)
-				to_chat(src, span_notice("You grab [M] passively!"))
+				M.visible_message(span_warning("[src] хватает [M] пассивно!"), \
+								span_warning("[src] хватает меня пассивно!"), null, null, src)
+				to_chat(src, span_notice("Я хватаю [M] пассивно!"))
 
 		if(!iscarbon(src))
 			M.LAssailant = null
@@ -421,11 +421,11 @@
 	//SEPTIC EDIT BEGIN
 	if(isliving(A))
 		var/mob/living/living_atom = A
-		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> points at <span style='color: [living_atom.chat_color];'><b>[living_atom]</b></span>.</span>", \
-						span_notice("I point at <b>[living_atom]</b>."))
+		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> показывает на <span style='color: [living_atom.chat_color];'><b>[living_atom]</b></span>.</span>", \
+						span_notice("Я показываю на <b>[living_atom]</b>."))
 	else
-		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> points at <b>[A]</b>.</span>", \
-						span_notice("I point at <b>[A]</b>."))
+		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> показывает на <b>[A]</b>.</span>", \
+						span_notice("Я показываю на <b>[A]</b>."))
 	//SEPTIC EDIT END
 	return TRUE
 

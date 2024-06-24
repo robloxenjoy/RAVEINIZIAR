@@ -40,7 +40,7 @@
 		return
 
 	if(zMove(UP, TRUE, ventcrawling_mob))
-		to_chat(src, span_notice("I move upwards."))
+		to_chat(src, span_notice("Поднимаюсь вверх."))
 
 /// Moves a mob down a z level
 /mob/verb/down()
@@ -54,4 +54,4 @@
 	var/ventcrawling_mob = HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING)
 
 	if(zMove(DOWN, TRUE, ventcrawling_mob))
-		to_chat(src, span_notice("I move downwards."))
+		to_chat(src, span_notice("Опускаюсь вниз."))

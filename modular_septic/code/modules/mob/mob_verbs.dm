@@ -22,7 +22,7 @@
 			distance_referee = examinify_item.stored_in
 	var/too_far_away = !isnull(examinify.maximum_examine_distance) && (get_dist(src, distance_referee) > examinify.maximum_examine_distance)
 	if(!isobserver(src) && too_far_away)
-		to_chat(src, span_warning("It's too far away."))
+		to_chat(src, span_warning("Это слишком далеко."))
 		return
 	var/list/result
 	var/examine_more = FALSE
