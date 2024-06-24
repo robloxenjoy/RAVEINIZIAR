@@ -1,6 +1,6 @@
 /datum/species
-	punchdamagelow = 8
-	punchdamagehigh = 12
+	punchdamagelow = 12
+	punchdamagehigh = 15
 	punchstunthreshold = 16
 	attack_sound = list('modular_septic/sound/attack/punch1.ogg',
 						'modular_septic/sound/attack/punch2.ogg',
@@ -496,7 +496,7 @@
 	var/attack_verb_continuous
 	var/attack_effect
 	var/attack_sharpness
-	var/attack_fatigue_cost = 4
+	var/attack_fatigue_cost = 3
 	var/attack_delay = CLICK_CD_MELEE
 	var/attack_skill_modifier = 0
 	switch(special_attack)
@@ -511,14 +511,14 @@
 			attack_delay *= 2
 		if(SPECIAL_ATK_KICK)
 			attack_skill_modifier -= 2
-			attack_damage *= 2
+			attack_damage *= 1.2
 			attack_armor_damage = user.dna.species.kick_armor_damage_modifier
 			attack_verb = pick(user.dna.species.kick_verb)
 			attack_verb_continuous = pick(user.dna.species.kick_verb_continuous)
 			attack_effect = pick(user.dna.species.kick_effect)
 			attack_sharpness = user.dna.species.kick_sharpness
-			attack_fatigue_cost *= 2
-			attack_delay *= 2
+			attack_fatigue_cost *= 1.8
+			attack_delay *= 1.8
 		else
 			attack_armor_damage = user.dna.species.attack_armor_damage_modifier
 			attack_verb = pick(user.dna.species.attack_verb)
