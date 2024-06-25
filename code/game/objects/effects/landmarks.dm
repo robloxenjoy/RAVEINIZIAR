@@ -52,6 +52,18 @@
 /obj/effect/special_landing/earth
 	crazy_id = "earth"
 */
+
+/obj/effect/combat
+	name = "удар"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "combat"
+	anchored = TRUE
+	plane = POLLUTION_PLANE
+	layer = FLOAT_LAYER
+//	invisibility = INVISIBILITY_ABSTRACT
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	alpha = 100
+
 /obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'

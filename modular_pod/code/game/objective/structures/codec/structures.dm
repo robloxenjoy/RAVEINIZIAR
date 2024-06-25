@@ -298,7 +298,6 @@
 	return TRUE
 
 /obj/machinery/codec/door/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
 	if(!COOLDOWN_FINISHED(src, key_cooldown))
 		to_chat(user, span_warning("Нужно успокоиться."))
 		return

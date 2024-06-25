@@ -291,7 +291,7 @@
 /obj/item/gun/ballistic/drop_bolt(mob/user)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, bolt_drop_sound_vary)
 	if(user)
-		to_chat(user, span_notice("I drop the [bolt_wording] of [src]."))
+		to_chat(user, span_notice("Я опускаю [bolt_wording] [src]."))
 	chamber_round()
 	bolt_locked = FALSE
 	update_appearance()

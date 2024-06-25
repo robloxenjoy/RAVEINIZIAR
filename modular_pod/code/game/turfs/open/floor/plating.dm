@@ -133,6 +133,28 @@
 			addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
 */
 
+/turf/open/floor/plating/polovich/attackby_secondary(obj/item/W, mob/living/carbon/human/user, params)
+	. = ..()
+	if(.)
+		return
+	if(user.combat_style == CS_GUARD)
+		if(!do_after(user, 3 SECONDS, target=src))
+			to_chat(user, span_danger(xbox_rage_msg()))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+			return
+/*
+		if(!combat_mode)
+			to_chat(user, span_danger("Надо бы серьёзнее отнестись"))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+			return
+*/
+		var/datum/component/guard/existing_guard = user.GetComponent(/datum/component/guard)
+		if(user.GetComponent(/datum/component/guard))
+			existing_guard.cancel()
+
+		user.AddComponent(/datum/component/guard, src, W)
+		W.guard_ready = TRUE
+
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
 	if(.)

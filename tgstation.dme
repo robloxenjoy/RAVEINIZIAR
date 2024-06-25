@@ -4369,6 +4369,7 @@
 #include "modular_septic\code\datums\components\forensics.dm"
 #include "modular_septic\code\datums\components\fraggot.dm"
 #include "modular_septic\code\datums\components\grillable.dm"
+#include "modular_septic\code\datums\components\guard.dm"
 #include "modular_septic\code\datums\components\gunpoint.dm"
 #include "modular_septic\code\datums\components\interactable.dm"
 #include "modular_septic\code\datums\components\irradiated.dm"

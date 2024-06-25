@@ -37,10 +37,10 @@
 	src.target = target
 	src.weapon = weapon
 
-	RegisterSignal(target, COMSIG_MOB_FIRED_GUN, .proc/trigger_reaction)
+	RegisterSignal(target, COMSIG_MOB_FIRED_GUN, PROC_REF(trigger_reaction))
 
 	LAZYSET(weapon.target_specific_diceroll, target, diceroll_modifier)
-	RegisterSignal(weapon, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED), .proc/cancel)
+	RegisterSignal(weapon, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED), PROC_REF(cancel))
 
 	shooter.visible_message(span_danger("<b>[shooter]</b> прицеливает [weapon] в <b>[target]</b>!"), \
 		span_danger("Я прицеливаю [weapon] в <b>[target]</b>!"), ignored_mobs = target)
@@ -68,14 +68,14 @@
 	SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gunpoint", /datum/mood_event/gunpoint)
 	if(steady_aim_timer)
 		deltimer(steady_aim_timer)
-	steady_aim_timer = addtimer(CALLBACK(src, .proc/update_stage, 2), GUNPOINT_DELAY_STAGE_2, TIMER_STOPPABLE)
+	steady_aim_timer = addtimer(CALLBACK(src, PROC_REF(update_stage), 2), GUNPOINT_DELAY_STAGE_2, TIMER_STOPPABLE)
 
 /datum/component/gunpoint/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/check_deescalate)
-	RegisterSignal(parent, COMSIG_MOB_APPLY_DAMAGE, .proc/flinch)
-	RegisterSignal(parent, COMSIG_MOB_ATTACK_HAND, .proc/check_shove)
-	RegisterSignal(parent, COMSIG_MOB_FIRED_GUN, .proc/gun_fired)
-	RegisterSignal(parent, list(COMSIG_LIVING_START_PULL, COMSIG_MOVABLE_BUMP), .proc/check_bump)
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(check_deescalate))
+	RegisterSignal(parent, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(flinch))
+	RegisterSignal(parent, COMSIG_MOB_ATTACK_HAND, PROC_REF(check_shove))
+	RegisterSignal(parent, COMSIG_MOB_FIRED_GUN, PROC_REF(gun_fired))
+	RegisterSignal(parent, list(COMSIG_LIVING_START_PULL, COMSIG_MOVABLE_BUMP), PROC_REF(check_bump))
 
 /datum/component/gunpoint/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
@@ -96,7 +96,7 @@
 			if(steady_aim_timer)
 				deltimer(steady_aim_timer)
 				steady_aim_timer = null
-			steady_aim_timer = addtimer(CALLBACK(src, .proc/update_stage, 1), GUNPOINT_DELAY_STAGE_1, TIMER_STOPPABLE)
+			steady_aim_timer = addtimer(CALLBACK(src, PROC_REF(update_stage), 1), GUNPOINT_DELAY_STAGE_1, TIMER_STOPPABLE)
 		if(1)
 			diceroll_modifier = GUNPOINT_STAGE_1_MODIFIER
 			if(weapon.stage_one_aim_bonus)
@@ -105,7 +105,7 @@
 			if(steady_aim_timer && (last_stage < stage))
 				deltimer(steady_aim_timer)
 				steady_aim_timer = null
-			steady_aim_timer = addtimer(CALLBACK(src, .proc/update_stage, 2), GUNPOINT_DELAY_STAGE_2, TIMER_STOPPABLE)
+			steady_aim_timer = addtimer(CALLBACK(src, PROC_REF(update_stage), 2), GUNPOINT_DELAY_STAGE_2, TIMER_STOPPABLE)
 		if(2)
 			if(!silent && (last_stage < stage))
 				to_chat(parent, span_danger("Я стабилизрую прицел [weapon] на <b>[target]</b>."))
@@ -117,7 +117,7 @@
 			if(steady_aim_timer)
 				deltimer(steady_aim_timer)
 				steady_aim_timer = null
-			steady_aim_timer = addtimer(CALLBACK(src, .proc/update_stage, 3), GUNPOINT_DELAY_STAGE_3, TIMER_STOPPABLE)
+			steady_aim_timer = addtimer(CALLBACK(src, PROC_REF(update_stage), 3), GUNPOINT_DELAY_STAGE_3, TIMER_STOPPABLE)
 		if(3)
 			if(!silent && (last_stage < stage))
 				to_chat(parent, span_danger("Я полностью стабилизирую прицел [weapon] на <b>[target]</b>."))
@@ -138,9 +138,9 @@
 	point_of_no_return = TRUE
 	unsteady_aim()
 	if(!weapon.can_trigger_gun(shooter) || !weapon.can_shoot() || (weapon.weapon_weight == WEAPON_HEAVY && shooter.get_inactive_held_item()))
-		shooter.visible_message(span_danger("<b>[shooter]</b> fumbles [weapon]!"), \
-							span_danger("I fumble [weapon] and fail to fire at <b>[target]</b>!"), ignored_mobs = target)
-		to_chat(target, span_userdanger("<b>[shooter]</b> fumbles [weapon] and fails to fire at me!"))
+		shooter.visible_message(span_danger("<b>[shooter]</b> мешкается с [weapon]!"), \
+							span_danger("Я мешкаюсь с [weapon] и не получается произвести выстрел в <b>[target]</b>!"), ignored_mobs = target)
+		to_chat(target, span_userdanger("<b>[shooter]</b> мешкается с [weapon] и проваливает попытку произвести выстрел в меня!"))
 		qdel(src)
 		return
 
@@ -155,17 +155,17 @@
 	var/mob/living/shooter = parent
 	if(shooter.combat_mode)
 		return
-	shooter.visible_message(span_danger("<b>[shooter]</b> bumps into <b>[bumper]</b> and fumbles [shooter.p_their()] aim!"), \
-		span_danger("I bump into <b>[bumper]</b> and fumble my aim!"), ignored_mobs = bumper)
-	to_chat(bumper, span_userdanger("<b>[shooter]</b> bumps into me and fumbles [shooter.p_their()] aim!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> врезается в <b>[bumper]</b> и нарушает прицеливание!"), \
+		span_danger("Я врезаюсь в <b>[bumper]</b> и нарушаю своё прицеливание!"), ignored_mobs = bumper)
+	to_chat(bumper, span_userdanger("<b>[shooter]</b> врезается в меня и нарушает своё прицеливание!"))
 	qdel(src)
 
 /datum/component/gunpoint/check_shove(mob/living/carbon/shooter, mob/shooter_again, mob/living/shover, datum/martial_art/attacker_style, modifiers)
 	if(shooter.combat_mode)
 		return
-	shooter.visible_message(span_danger("<b>[shooter]</b> bumps into <b>[shover]</b> and fumbles [shooter.p_their()] aim!"), \
-						span_danger("I bump into <b>[shover]</b> and fumble my aim!"), ignored_mobs = shover)
-	to_chat(shover, span_userdanger("<b>[shooter]</b> bumps into me and fumbles [shooter.p_their()] aim!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> врезается в <b>[shover]</b> и нарушает прицеливание!"), \
+						span_danger("Я врезаюсь в <b>[shover]</b> и нарушаю своё прицеливание!"), ignored_mobs = shover)
+	to_chat(shover, span_userdanger("<b>[shooter]</b> врезается в меня и нарушает своё прицеливание!"))
 	qdel(src)
 
 /datum/component/gunpoint/check_deescalate()
@@ -197,15 +197,15 @@
 	if(shooter.combat_mode)
 		flinch_chance /= 2
 	if(prob(flinch_chance))
-		shooter.visible_message(span_danger("<b>[shooter]</b> flinches!"), \
-			span_danger("I flinch!"))
-		INVOKE_ASYNC(src, .proc/async_trigger_reaction)
+		shooter.visible_message(span_danger("<b>[shooter]</b> вздрагивает!"), \
+			span_danger("Я вздрагиваю!"))
+		INVOKE_ASYNC(src, PROC_REF(async_trigger_reaction))
 
 /datum/component/gunpoint/cancel()
 	var/mob/living/shooter = parent
-	shooter.visible_message(span_danger("<b>[shooter]</b> breaks [shooter.p_their()] aim on <b>[target]</b>!"), \
-		span_danger("I stop aiming [weapon] at <b>[target]</b>."), ignored_mobs = target)
-	to_chat(target, span_userdanger("<b>[shooter]</b> breaks [shooter.p_their()] aim on me!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> перестаёт целиться в <b>[target]</b>!"), \
+		span_danger("Я перестаю целить [weapon] в <b>[target]</b>."), ignored_mobs = target)
+	to_chat(target, span_userdanger("<b>[shooter]</b> перестаёт целиться в меня!"))
 
 	if(weapon.aim_spare_sound)
 		var/picked_sound = pick(weapon.aim_spare_sound)

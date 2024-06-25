@@ -226,6 +226,7 @@
 	density = TRUE
 	anchored = TRUE
 	opacity = FALSE
+	var/proj_pass_rate = 100
 
 /obj/structure/flora/ausbushes/cactus/Initialize(mapload)
 	. = ..()
@@ -287,6 +288,20 @@
 		chem_splash(loc, 3, list(reagents))
 		playsound(loc,'modular_pod/sound/eff/hitcrazy.ogg', 30, TRUE)
 	qdel(src)
+
+/obj/structure/flora/ausbushes/cactus/CanAllowThrough(atom/movable/mover, border_dir)//So bullets will fly over and stuff.
+	. = ..()
+	if(locate(/obj/structure/flora/ausbushes/cactus) in get_turf(mover))
+		return TRUE
+	else if(istype(mover, /obj/projectile))
+		if(!anchored)
+			return TRUE
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(proj_pass_rate))
+			return TRUE
+		return FALSE
 
 /obj/structure/wiresa
 	name = "Провода"

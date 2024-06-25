@@ -105,6 +105,8 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/carbon_user = user
 		carbon_user.update_eyes()
+	if(guard_ready)
+		guard_ready = FALSE
 
 //embedding stuff
 /obj/item/embedded(atom/embedded_target, obj/item/bodypart/part)
