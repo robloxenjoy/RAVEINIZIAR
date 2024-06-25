@@ -11,8 +11,8 @@
 	src.use_large_steam_sprite = use_large_steam_sprite
 	src.pollutant_type = pollutant_type
 
-	RegisterSignal(parent, COMSIG_ITEM_GRILLED, .proc/OnGrill)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/OnExamine)
+	RegisterSignal(parent, COMSIG_ITEM_GRILLED, PROC_REF(OnGrill))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(OnExamine))
 
 /datum/component/grillable/OnGrill(datum/source, atom/used_grill, delta_time = 1)
 	. = COMPONENT_HANDLED_GRILLING

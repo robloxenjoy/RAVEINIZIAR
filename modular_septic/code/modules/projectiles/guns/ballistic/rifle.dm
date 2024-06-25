@@ -256,7 +256,7 @@
 
 /obj/item/gun/ballistic/automatic/remis/steyr/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_GUNPOINT_GUN_AIM_STRESS_SOUNDED, .proc/aimed_sounding)
+	RegisterSignal(src, COMSIG_GUNPOINT_GUN_AIM_STRESS_SOUNDED, PROC_REF(aimed_sounding))
 
 /obj/item/gun/ballistic/automatic/remis/steyr/Destroy()
 	UnregisterSignal(src, COMSIG_GUNPOINT_GUN_AIM_STRESS_SOUNDED)

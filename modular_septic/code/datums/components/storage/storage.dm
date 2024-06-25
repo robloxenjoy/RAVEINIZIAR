@@ -25,7 +25,7 @@
 	. = ..()
 	if(.)
 		return
-	RegisterSignal(parent, COMSIG_STORAGE_BLOCK_USER_TAKE, .proc/should_block_user_take)
+	RegisterSignal(parent, COMSIG_STORAGE_BLOCK_USER_TAKE, PROC_REF(should_block_user_take))
 
 /datum/component/storage/orient2hud()
 	var/atom/real_location = real_location()

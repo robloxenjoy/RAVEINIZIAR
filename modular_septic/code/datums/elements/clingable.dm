@@ -16,9 +16,9 @@
 	src.clinging_skill = clinging_skill
 	src.clinging_requirement = clinging_requirement
 	src.clinging_sound = clinging_sound
-	RegisterSignal(target, COMSIG_ATOM_ATTACK_HAND_TERTIARY, .proc/on_attack_hand)
-	RegisterSignal(target, COMSIG_CLINGABLE_CHECK, .proc/clingable_check)
-	RegisterSignal(target, COMSIG_CLINGABLE_CLING_SOUNDING, .proc/play_clinging_sound)
+	RegisterSignal(target, COMSIG_ATOM_ATTACK_HAND_TERTIARY, PROC_REF(on_attack_hand))
+	RegisterSignal(target, COMSIG_CLINGABLE_CHECK, PROC_REF(clingable_check))
+	RegisterSignal(target, COMSIG_CLINGABLE_CLING_SOUNDING, PROC_REF(play_clinging_sound))
 
 /datum/element/clingable/Detach(datum/source)
 	. = ..()

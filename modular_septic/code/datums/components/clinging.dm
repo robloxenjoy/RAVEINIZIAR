@@ -19,13 +19,13 @@
 		qdel(src)
 		return
 	RegisterClinging()
-	RegisterSignal(clinging_grab, COMSIG_PARENT_QDELETING, .proc/qdel_void)
-	RegisterSignal(clinging_grab, COMSIG_PARENT_EXAMINE, .proc/grab_examine)
+	RegisterSignal(clinging_grab, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
+	RegisterSignal(clinging_grab, COMSIG_PARENT_EXAMINE, PROC_REF(grab_examine))
 	RegisterSignal(clinging_grab, COMSIG_MOUSEDROP_ONTO, PROC_REF(grab_mousedrop_onto))
 	SEND_SIGNAL(carbon_parent, COMSIG_FIXEYE_DISABLE, TRUE, TRUE)
-	RegisterSignal(carbon_parent, COMSIG_ATOM_DIR_CHANGE, .proc/deny_dir_change)
+	RegisterSignal(carbon_parent, COMSIG_ATOM_DIR_CHANGE, PROC_REF(deny_dir_change))
 	RegisterSignal(carbon_parent, COMSIG_MOUSEDROP_ONTO, PROC_REF(carbon_mousedrop_onto))
-	RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, .proc/parent_moved)
+	RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 	ADD_TRAIT(carbon_parent, TRAIT_FORCED_STANDING, CLINGING_TRAIT)
 	ADD_TRAIT(carbon_parent, TRAIT_IMMOBILIZED, CLINGING_TRAIT)
 	ADD_TRAIT(carbon_parent, TRAIT_NO_FLOATING_ANIM, CLINGING_TRAIT)
@@ -60,7 +60,7 @@
 /datum/component/clinging/proc/RegisterClinging()
 	if(!clinging_to)
 		return
-	RegisterSignal(clinging_to, COMSIG_PARENT_QDELETING, .proc/qdel_void)
+	RegisterSignal(clinging_to, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
 
 /datum/component/clinging/proc/UnregisterClinging()
 	if(!clinging_to)
@@ -85,18 +85,18 @@
 		if(HAS_TRAIT(clinging_to, TRAIT_CLIMBABLE))
 			return
 		. = COMPONENT_NO_MOUSEDROP
-		INVOKE_ASYNC(src, .proc/try_going_up)
+		INVOKE_ASYNC(src, PROC_REF(try_going_up))
 	//User to clinging turf = Go up
 	else if(get_turf(clinging_to) == over)
 		var/turf/cling_turf = get_turf(clinging_to)
 		if(HAS_TRAIT(cling_turf, TRAIT_CLIMBABLE))
 			return
 		. = COMPONENT_NO_MOUSEDROP
-		INVOKE_ASYNC(src, .proc/try_going_up)
+		INVOKE_ASYNC(src, PROC_REF(try_going_up))
 	//User to turf below user's turf = Go down
 	else if(below_turf == over)
 		. = COMPONENT_NO_MOUSEDROP
-		INVOKE_ASYNC(src, .proc/try_going_down)
+		INVOKE_ASYNC(src, PROC_REF(try_going_down))
 	//User to turf adjacent to user and clinger = Move to turf
 	else if(isturf(over) && over.Adjacent(user) && over.Adjacent(clinging_to))
 		. = COMPONENT_NO_MOUSEDROP
@@ -115,11 +115,11 @@
 	//Grab to turf below user = Go down
 	if((get_turf(user) == over) || (below_turf == over))
 		. = COMPONENT_NO_MOUSEDROP
-		INVOKE_ASYNC(src, .proc/try_going_down)
+		INVOKE_ASYNC(src, PROC_REF(try_going_down))
 	//Grab to atom adjacent to user = Cling to the new atom
 	else if(over.Adjacent(user))
 		. = COMPONENT_NO_MOUSEDROP
-		INVOKE_ASYNC(src, .proc/try_clinging_to, over)
+		INVOKE_ASYNC(src, PROC_REF(try_clinging_to), over)
 
 /datum/component/clinging/proc/try_clinging_to(atom/over)
 	var/mob/living/carbon/carbon_parent = parent
@@ -129,7 +129,7 @@
 		carbon_parent.face_atom(over)
 		clinging_to = over
 		RegisterClinging()
-		RegisterSignal(carbon_parent, COMSIG_ATOM_DIR_CHANGE, .proc/deny_dir_change)
+		RegisterSignal(carbon_parent, COMSIG_ATOM_DIR_CHANGE, PROC_REF(deny_dir_change))
 		to_chat(carbon_parent, span_notice("I cling onto [over]."))
 		SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
 	else
@@ -139,8 +139,8 @@
 	var/mob/living/carbon/carbon_parent = parent
 	var/time = max(0, (35 - (GET_MOB_ATTRIBUTE_VALUE(carbon_parent, STAT_DEXTERITY)+GET_MOB_SKILL_VALUE(carbon_parent, SKILL_ACROBATICS)))/2)
 	cling_valid = TRUE
-	RegisterSignal(clinging_to, COMSIG_CLICK, .proc/cancel_cling)
-	if(!do_after(carbon_parent, time, clinging_to, extra_checks = CALLBACK(src, .proc/did_not_cancel_cling)))
+	RegisterSignal(clinging_to, COMSIG_CLICK, PROC_REF(cancel_cling))
+	if(!do_after(carbon_parent, time, clinging_to, extra_checks = CALLBACK(src, PROC_REF(did_not_cancel_cling))))
 		UnregisterSignal(clinging_to, COMSIG_CLICK)
 		to_chat(carbon_parent, span_warning(fail_msg()))
 		carbon_parent.playsound_local(get_turf(carbon_parent), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
@@ -154,7 +154,7 @@
 	else
 		to_chat(carbon_parent, span_warning(fail_msg()))
 		carbon_parent.playsound_local(get_turf(carbon_parent), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
-	RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, .proc/parent_moved)
+	RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 
 /datum/component/clinging/proc/try_going_up()
 	var/mob/living/carbon/carbon_parent = parent
@@ -188,8 +188,8 @@
 		return
 	var/time = max(0, 50 - (GET_MOB_ATTRIBUTE_VALUE(carbon_parent, STAT_DEXTERITY)+GET_MOB_SKILL_VALUE(carbon_parent, SKILL_ACROBATICS)))
 	cling_valid = TRUE
-	RegisterSignal(clinging_to, COMSIG_CLICK, .proc/cancel_cling)
-	if(!do_after(carbon_parent, time, clinging_to, extra_checks = CALLBACK(src, .proc/did_not_cancel_cling)))
+	RegisterSignal(clinging_to, COMSIG_CLICK, PROC_REF(cancel_cling))
+	if(!do_after(carbon_parent, time, clinging_to, extra_checks = CALLBACK(src, PROC_REF(did_not_cancel_cling))))
 		UnregisterSignal(clinging_to, COMSIG_CLICK)
 		to_chat(span_warning(fail_msg()))
 		carbon_parent.playsound_local(get_turf(carbon_parent), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
@@ -204,7 +204,7 @@
 	UnregisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED)
 	//We somehow fucked up, despite all our checks! Do nothing.
 	if(!carbon_parent.zMove(UP, TRUE))
-		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, .proc/parent_moved)
+		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 		return
 	UnregisterClinging()
 	clinging_to = new_clinger
@@ -218,7 +218,7 @@
 	else if(new_clinger?.Adjacent(carbon_parent))
 		SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
 		to_chat(carbon_parent, span_notice("I cling onto [clinging_to]."))
-		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, .proc/parent_moved)
+		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 		RegisterClinging()
 
 /datum/component/clinging/proc/try_going_down()
@@ -249,8 +249,8 @@
 		to_chat(carbon_parent, span_warning("I don't have much to hold onto..."))
 	var/time = max(0, 45 - (GET_MOB_ATTRIBUTE_VALUE(carbon_parent, STAT_DEXTERITY)+GET_MOB_SKILL_VALUE(carbon_parent, SKILL_ACROBATICS)))
 	cling_valid = TRUE
-	RegisterSignal(clinging_to, COMSIG_CLICK, .proc/cancel_cling)
-	if(!do_after(carbon_parent, time, clinging_to, extra_checks = CALLBACK(src, .proc/did_not_cancel_cling)))
+	RegisterSignal(clinging_to, COMSIG_CLICK, PROC_REF(cancel_cling))
+	if(!do_after(carbon_parent, time, clinging_to, extra_checks = CALLBACK(src, PROC_REF(did_not_cancel_cling))))
 		UnregisterSignal(clinging_to, COMSIG_CLICK)
 		to_chat(span_warning(fail_msg()))
 		carbon_parent.playsound_local(get_turf(carbon_parent), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
@@ -269,7 +269,7 @@
 	//This proc will already do z fall logic if necessary
 	UnregisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED)
 	if(!carbon_parent.zMove(DOWN, TRUE))
-		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, .proc/parent_moved)
+		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 		return
 	UnregisterClinging()
 	clinging_to = new_clinger
@@ -281,7 +281,7 @@
 	else if(new_clinger?.Adjacent(carbon_parent))
 		SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
 		to_chat(carbon_parent, span_notice("I cling onto [clinging_to]."))
-		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, .proc/parent_moved)
+		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 		RegisterClinging()
 
 /datum/component/clinging/proc/cancel_cling()

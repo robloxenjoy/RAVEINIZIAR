@@ -39,7 +39,7 @@
 /datum/speech_modifier/proc/add_speech_modifier(mob/living/carbon/new_owner)
 	affected_mob = new_owner
 	LAZYADD(affected_mob.speech_modifiers, src)
-	RegisterSignal(affected_mob, COMSIG_MOB_SAY, .proc/handle_speech)
+	RegisterSignal(affected_mob, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	after_add()
 
 /datum/speech_modifier/proc/before_remove()

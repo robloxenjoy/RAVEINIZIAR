@@ -56,7 +56,7 @@
 	if(say_mod && new_owner.dna?.species)
 		new_owner.dna.species.say_mod = say_mod
 	if(modifies_speech)
-		RegisterSignal(new_owner, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(new_owner, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	new_owner.UnregisterSignal(new_owner, COMSIG_MOB_SAY)
 
 	/* This could be slightly simpler, by making the removal of the
@@ -72,7 +72,7 @@
 	. = ..()
 	if(say_mod && old_owner.dna?.species)
 		old_owner.dna.species.say_mod = initial(old_owner.dna.species.say_mod)
-	UnregisterSignal(old_owner, COMSIG_MOB_SAY, .proc/handle_speech)
+	UnregisterSignal(old_owner, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	old_owner.RegisterSignal(old_owner, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
 	REMOVE_TRAIT(old_owner, TRAIT_AGEUSIA, ORGAN_TRAIT)
 	// Carbons by default start with NO_TONGUE_TRAIT caused TRAIT_AGEUSIA

@@ -31,13 +31,13 @@
 /datum/component/shuffling/Initialize(custom_sounds, volume_override, chance_override, step_delay_override, extrarange, falloff_exponent, fallof_distance)
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_BLOB_ACT, COMSIG_ATOM_HULK_ATTACK, COMSIG_PARENT_ATTACKBY), .proc/play_squeak)
-	RegisterSignal(parent, list(COMSIG_MOVABLE_BUMP, COMSIG_MOVABLE_IMPACT, COMSIG_PROJECTILE_BEFORE_FIRE), .proc/play_squeak)
+	RegisterSignal(parent, list(COMSIG_ATOM_ENTERED, COMSIG_ATOM_BLOB_ACT, COMSIG_ATOM_HULK_ATTACK, COMSIG_PARENT_ATTACKBY), PROC_REF(play_squeak))
+	RegisterSignal(parent, list(COMSIG_MOVABLE_BUMP, COMSIG_MOVABLE_IMPACT, COMSIG_PROJECTILE_BEFORE_FIRE), PROC_REF(play_squeak))
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/play_squeak_moved)
 	if(isitem(parent))
-		RegisterSignal(parent, list(COMSIG_ITEM_ATTACK, COMSIG_ITEM_ATTACK_OBJ, COMSIG_ITEM_HIT_REACT), .proc/play_squeak)
+		RegisterSignal(parent, list(COMSIG_ITEM_ATTACK, COMSIG_ITEM_ATTACK_OBJ, COMSIG_ITEM_HIT_REACT), PROC_REF(play_squeak))
 		if(istype(parent, /obj/item/clothing/shoes || /obj/item/clothing/suit))
-			RegisterSignal(parent, COMSIG_SHOES_STEP_ACTION, .proc/step_squeak)
+			RegisterSignal(parent, COMSIG_SHOES_STEP_ACTION, PROC_REF(step_squeak))
 	AddComponent(/datum/component/connect_loc_behalf, parent, movable_connections)
 
 	override_squeak_sounds = custom_sounds

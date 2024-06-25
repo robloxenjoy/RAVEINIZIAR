@@ -1,7 +1,7 @@
 /mob/living/ComponentInitialize()
 	. = ..()
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_SPRINT_LOCKED), .proc/on_sprint_locked_gain)
-	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_SPRINT_LOCKED), .proc/on_sprint_locked_loss)
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_SPRINT_LOCKED), PROC_REF(on_sprint_locked_gain))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_SPRINT_LOCKED), PROC_REF(on_sprint_locked_loss))
 
 /mob/living/proc/on_sprint_locked_gain()
 	disable_sprint()

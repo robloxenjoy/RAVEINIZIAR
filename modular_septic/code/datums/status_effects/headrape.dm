@@ -29,7 +29,7 @@
 
 /datum/status_effect/incapacitating/headrape/Destroy()
 	if(!QDELETED(filter_plate))
-		INVOKE_ASYNC(src, .proc/end_animation)
+		INVOKE_ASYNC(src, PROC_REF(end_animation))
 		QDEL_IN(tinnitus, 4 SECONDS)
 	else
 		qdel(tinnitus)
@@ -64,12 +64,12 @@
 			var/list/filter_params = filters_handled[filter_name]
 			filter_plate.add_filter(filter_name, STARTING_FILTER_PRIORITY+1-filter_index, filter_params)
 	if(!QDELETED(filter_plate))
-		INVOKE_ASYNC(src, .proc/perform_animation)
+		INVOKE_ASYNC(src, PROC_REF(perform_animation))
 
 /datum/status_effect/incapacitating/headrape/tick()
 	. = ..()
 	if(!QDELETED(filter_plate))
-		INVOKE_ASYNC(src, .proc/perform_animation)
+		INVOKE_ASYNC(src, PROC_REF(perform_animation))
 
 /datum/status_effect/incapacitating/headrape/proc/perform_animation()
 	for(var/filter_name in filters_handled)

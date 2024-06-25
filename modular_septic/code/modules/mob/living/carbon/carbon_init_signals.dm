@@ -1,20 +1,20 @@
 /mob/living/carbon/register_init_signals()
 	. = ..()
 	// Stimulant chemical stuff
-	RegisterSignal(src, SIGNAL_ADDCHEMEFFECT(CE_SPEED), .proc/receive_speedboost)
-	RegisterSignal(src, SIGNAL_REMOVECHEMEFFECT(CE_SPEED), .proc/remove_speedboost)
+	RegisterSignal(src, SIGNAL_ADDCHEMEFFECT(CE_SPEED), PROC_REF(receive_speedboost))
+	RegisterSignal(src, SIGNAL_REMOVECHEMEFFECT(CE_SPEED), PROC_REF(remove_speedboost))
 	// Death's door stuff
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_DEATHS_DOOR), .proc/entered_deaths_door)
-	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_DEATHS_DOOR), .proc/left_deaths_door)
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_DEATHS_DOOR), PROC_REF(entered_deaths_door))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_DEATHS_DOOR), PROC_REF(left_deaths_door))
 	// Basic speed stuff
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_BASIC_SPEED_HALVED), .proc/basic_speed_halved)
-	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_BASIC_SPEED_HALVED), .proc/basic_speed_unhalved)
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_BASIC_SPEED_HALVED), PROC_REF(basic_speed_halved))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_BASIC_SPEED_HALVED), PROC_REF(basic_speed_unhalved))
 	// I LOVE LEAN!
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_LEAN), .proc/started_leaning)
-	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_LEAN), .proc/stopped_leaning)
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_LEAN), .proc/started_leaning))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_LEAN), .proc/stopped_leaning))
 	// Combat message stuff
-	RegisterSignal(src, COMSIG_CARBON_CLEAR_WOUND_MESSAGE, .proc/clear_wound_message)
-	RegisterSignal(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, .proc/add_to_wound_message)
+	RegisterSignal(src, COMSIG_CARBON_CLEAR_WOUND_MESSAGE, PROC_REF(clear_wound_message))
+	RegisterSignal(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, PROC_REF(add_to_wound_message))
 
 /mob/living/carbon/on_floored_start()
 	if(body_position == STANDING_UP) //force them on the ground

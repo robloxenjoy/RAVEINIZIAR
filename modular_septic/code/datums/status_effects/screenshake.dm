@@ -7,7 +7,7 @@
 
 /datum/status_effect/thug_shaker/on_apply()
 	. = ..()
-	RegisterSignal(owner, COMSIG_LIVING_SET_COMBAT_MODE, .proc/check_thug_shaker)
+	RegisterSignal(owner, COMSIG_LIVING_SET_COMBAT_MODE, PROC_REF(check_thug_shaker))
 	check_thug_shaker()
 
 /datum/status_effect/thug_shaker/on_remove()

@@ -25,10 +25,10 @@
 
 	//See mouse_status definition for the reason for this
 	if(mouse_status == AUTOFIRE_MOUSEUP)
-		RegisterSignal(clicker, COMSIG_CLIENT_MOUSEUP, .proc/on_mouse_up)
+		RegisterSignal(clicker, COMSIG_CLIENT_MOUSEUP, PROC_REF(on_mouse_up))
 		mouse_status = AUTOFIRE_MOUSEDOWN
 
-	RegisterSignal(shooter, COMSIG_MOB_SWAP_HANDS, .proc/stop_autofiring)
+	RegisterSignal(shooter, COMSIG_MOB_SWAP_HANDS, PROC_REF(stop_autofiring))
 	if(isgun(parent))
 		var/obj/item/gun/gun = parent
 		//This is needed because the minigun has a do_after before firing and signals are async
@@ -42,7 +42,7 @@
 		return //If it fails, such as when the gun is empty, then there's no need to schedule a second shot.
 
 	START_PROCESSING(SSprojectiles, src)
-	RegisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG, .proc/on_mouse_drag)
+	RegisterSignal(clicker, COMSIG_CLIENT_MOUSEDRAG, PROC_REF(on_mouse_drag))
 
 /datum/component/automatic_fire/stop_autofiring(datum/source, atom/object, turf/location, control, params)
 	if(autofire_stat != AUTOFIRE_STAT_FIRING)

@@ -52,10 +52,10 @@
 	return ..()
 
 /datum/component/irradiated/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/on_clean)
-	RegisterSignal(parent, COMSIG_GEIGER_COUNTER_SCAN, .proc/on_geiger_counter_scan)
+	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_clean))
+	RegisterSignal(parent, COMSIG_GEIGER_COUNTER_SCAN, PROC_REF(on_geiger_counter_scan))
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_RADIOACTIVE_PULSE_SENT, .proc/pulse_sent)
+		RegisterSignal(parent, COMSIG_RADIOACTIVE_PULSE_SENT, PROC_REF(pulse_sent))
 
 /datum/component/irradiated/process(delta_time)
 	if(!CAN_IRRADIATE(parent))

@@ -218,16 +218,16 @@
 	if(!new_victim || !new_owner)
 		return
 	owner = new_owner
-	RegisterSignal(new_owner, COMSIG_PARENT_QDELETING, .proc/qdel_void)
+	RegisterSignal(new_owner, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
 	victim = new_victim
 	if(owner != victim)
-		RegisterSignal(owner, COMSIG_MOVABLE_SET_GRAB_STATE, .proc/new_grab_state)
+		RegisterSignal(owner, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(new_grab_state)
 		if(owner.grab_state < GRAB_AGGRESSIVE)
 			owner.setGrabState(GRAB_AGGRESSIVE)
 			owner.set_pull_offsets(new_victim, owner.grab_state)
-		RegisterSignal(victim, COMSIG_PARENT_QDELETING, .proc/qdel_void)
-		RegisterSignal(victim, COMSIG_ATOM_NO_LONGER_PULLED, .proc/qdel_void)
-		RegisterSignal(victim, COMSIG_CARBON_REMOVE_LIMB, .proc/check_delimb)
+		RegisterSignal(victim, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
+		RegisterSignal(victim, COMSIG_ATOM_NO_LONGER_PULLED, PROC_REF(qdel_void))
+		RegisterSignal(victim, COMSIG_CARBON_REMOVE_LIMB, PROC_REF(check_delimb))
 
 	grasped_zone = new_owner.zone_selected
 	if(grasped_zone in list(BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_R_EYE))
@@ -237,7 +237,7 @@
 	if(new_part)
 		grasped_part = new_part
 		LAZYADD(grasped_part.grasped_by, src)
-		RegisterSignal(grasped_part, COMSIG_PARENT_QDELETING, .proc/qdel_void)
+		RegisterSignal(grasped_part, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
 		// Bloody hands if the part is bleeding
 		if(!biting_grab)
 			if(grasped_part.get_bleed_rate(FALSE))

@@ -17,15 +17,15 @@
 
 /datum/component/fixeye/RegisterWithParent()
 	var/mob/living/source = parent
-	RegisterSignal(source, COMSIG_FIXEYE_TOGGLE, .proc/user_toggle_fixeye)
-	RegisterSignal(source, COMSIG_FIXEYE_DISABLE, .proc/safe_disable_fixeye)
-	RegisterSignal(source, COMSIG_FIXEYE_ENABLE, .proc/safe_enable_fixeye)
-	RegisterSignal(source, COMSIG_FIXEYE_LOCK, .proc/lock_fixeye)
-	RegisterSignal(source, COMSIG_FIXEYE_UNLOCK, .proc/unlock_fixeye)
-	RegisterSignal(source, COMSIG_LIVING_DEATH, .proc/on_death)
-	RegisterSignal(source, COMSIG_MOB_LOGOUT, .proc/on_logout)
-	RegisterSignal(source, COMSIG_MOB_HUD_CREATED, .proc/on_mob_hud_created)
-	RegisterSignal(source, COMSIG_FIXEYE_CHECK, .proc/check_flags)
+	RegisterSignal(source, COMSIG_FIXEYE_TOGGLE, PROC_REF(user_toggle_fixeye))
+	RegisterSignal(source, COMSIG_FIXEYE_DISABLE, PROC_REF(safe_disable_fixeye))
+	RegisterSignal(source, COMSIG_FIXEYE_ENABLE, PROC_REF(safe_enable_fixeye))
+	RegisterSignal(source, COMSIG_FIXEYE_LOCK, PROC_REF(lock_fixeye))
+	RegisterSignal(source, COMSIG_FIXEYE_UNLOCK, PROC_REF(unlock_fixeye))
+	RegisterSignal(source, COMSIG_LIVING_DEATH, PROC_REF(on_death))
+	RegisterSignal(source, COMSIG_MOB_LOGOUT, PROC_REF(on_logout))
+	RegisterSignal(source, COMSIG_MOB_HUD_CREATED, PROC_REF(on_mob_hud_created))
+	RegisterSignal(source, COMSIG_FIXEYE_CHECK, PROC_REF(check_flags))
 	if(source.client)
 		on_mob_hud_created(source)
 
@@ -96,9 +96,9 @@
 	if(!silent)
 		source.playsound_local(source, 'modular_septic/sound/interface/fixeye_on.ogg', 25, FALSE, pressure_affected = FALSE)
 	facedir = source.dir
-	RegisterSignal(source, COMSIG_ATOM_DIR_CHANGE, .proc/on_dir_change)
-	RegisterSignal(source, COMSIG_MOB_CLIENT_MOVED, .proc/on_client_move)
-	RegisterSignal(source, COMSIG_MOB_CLICKON, .proc/on_clickon)
+	RegisterSignal(source, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_dir_change))
+	RegisterSignal(source, COMSIG_MOB_CLIENT_MOVED, PROC_REF(on_client_move))
+	RegisterSignal(source, COMSIG_MOB_CLICKON, PROC_REF(on_clickon))
 	if(hud_icon)
 		hud_icon.fixed_eye = TRUE
 		hud_icon.update_appearance()
@@ -207,4 +207,4 @@
 			else
 				new_dir = NORTH
 	source.setDir(new_dir)
-	RegisterSignal(source, COMSIG_ATOM_DIR_CHANGE, .proc/on_dir_change)
+	RegisterSignal(source, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_dir_change))

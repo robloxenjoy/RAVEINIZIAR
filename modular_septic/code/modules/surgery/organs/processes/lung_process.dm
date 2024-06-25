@@ -35,7 +35,7 @@
 				owner.visible_message(span_danger("<b>[owner]</b> гипервентилирует!"), \
 					span_userdanger("Мне нужно больше воздуха!"))
 			owner.Knockdown(8 SECONDS)
-			INVOKE_ASYNC(src, .proc/gasp_spam, owner)
+			INVOKE_ASYNC(src, PROC_REF(gasp_spam), owner)
 		if(DT_PROB(2, delta_time))
 //			owner.blur_eyes(5)
 			owner.set_confusion(owner.get_confusion() + 16)

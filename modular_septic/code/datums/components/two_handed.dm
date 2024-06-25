@@ -35,7 +35,7 @@
 
 /datum/component/two_handed/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD_CHECK, .proc/wield_check)
+	RegisterSignal(parent, COMSIG_TWOHANDED_WIELD_CHECK, PROC_REF(wield_check))
 	ADD_TRAIT(parent, TRAIT_NEEDS_TWO_HANDS, "[REF(src)]")
 
 /datum/component/two_handed/UnregisterFromParent()
@@ -73,7 +73,7 @@
 
 	wielded = TRUE
 	ADD_TRAIT(parent, TRAIT_WIELDED, "[REF(src)]")
-	RegisterSignal(user, COMSIG_MOB_SWAP_HANDS, .proc/on_swap_hands)
+	RegisterSignal(user, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
 
 	// update item stats and name
 	var/obj/item/parent_item = parent
@@ -110,8 +110,8 @@
 	offhand_item.desc = "Второй хват на [parent_item]."
 	offhand_item.wielded = TRUE
 	offhand_item.layer = parent_item.layer - 0.05
-	RegisterSignal(offhand_item, COMSIG_ITEM_DROPPED, .proc/on_drop)
-	RegisterSignal(offhand_item, COMSIG_PARENT_QDELETING, .proc/on_destroy)
+	RegisterSignal(offhand_item, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
+	RegisterSignal(offhand_item, COMSIG_PARENT_QDELETING, PROC_REF(on_destroy))
 	user.put_in_inactive_hand(offhand_item)
 	user.wield_ui_on()
 	return TRUE

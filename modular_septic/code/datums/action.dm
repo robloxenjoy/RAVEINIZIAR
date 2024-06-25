@@ -12,7 +12,7 @@
 				return
 			Remove(owner)
 		owner = granted_to
-		RegisterSignal(owner, COMSIG_PARENT_QDELETING, .proc/owner_deleted)
+		RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_deleted))
 		LAZYADD(granted_to.actions, src)
 		granted_to.update_action_buttons()
 		return

@@ -43,11 +43,11 @@
 			else
 				spread = round(((i / num_pellets) - 0.5) * distro)
 
-		RegisterSignal(shell.loaded_projectile, COMSIG_PELLET_CLOUD_EMBEDDED, .proc/projectile_embedded)
-		RegisterSignal(shell.loaded_projectile, COMSIG_PELLET_CLOUD_STOPPED_BY_ARMOR, .proc/projectile_stopped_by_armor)
-		RegisterSignal(shell.loaded_projectile, COMSIG_PELLET_CLOUD_WENT_THROUGH, .proc/projectile_went_through)
-		RegisterSignal(shell.loaded_projectile, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/pellet_hit)
-		RegisterSignal(shell.loaded_projectile, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), .proc/pellet_range)
+		RegisterSignal(shell.loaded_projectile, COMSIG_PELLET_CLOUD_EMBEDDED, PROC_REF(projectile_embedded))
+		RegisterSignal(shell.loaded_projectile, COMSIG_PELLET_CLOUD_STOPPED_BY_ARMOR, PROC_REF(projectile_stopped_by_armor))
+		RegisterSignal(shell.loaded_projectile, COMSIG_PELLET_CLOUD_WENT_THROUGH, PROC_REF(projectile_went_through))
+		RegisterSignal(shell.loaded_projectile, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
+		RegisterSignal(shell.loaded_projectile, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 		shell.loaded_projectile.damage = original_damage
 		shell.loaded_projectile.wound_bonus = original_wb
 		shell.loaded_projectile.bare_wound_bonus = original_bwb
@@ -102,7 +102,7 @@
 
 	LAZYADDASSOC(targets_hit[target], "hits", 1)
 	if(targets_hit[target]["hits"] == 1)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/on_target_qdel, override = TRUE)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override = TRUE)
 	LAZYSET(targets_hit[target], "no damage", no_damage)
 	UnregisterSignal(projectile, list(COMSIG_PARENT_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
 	if(terminated == num_pellets)

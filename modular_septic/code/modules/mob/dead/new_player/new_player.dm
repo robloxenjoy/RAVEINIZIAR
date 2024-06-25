@@ -117,6 +117,22 @@
 					character.real_name = client.name_ch
 					character.name = character.real_name
 					character.age = client.age_ch
+					character.handed_flags = DEFAULT_HANDEDNESS
+
+					character.left_eye_color = pick("#000000", "#1f120f")
+					character.right_eye_color = pick("#000000", "#1f120f")
+					for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
+						if(initial(organ_eyes.eye_color))
+							continue
+						if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
+							organ_eyes.eye_color = pick("#000000", "#1f120f")
+							organ_eyes.old_eye_color = pick("#000000", "#1f120f")
+						else
+							organ_eyes.eye_color = pick("#000000", "#1f120f")
+							organ_eyes.old_eye_color = pick("#000000", "#1f120f")
+					character.dna.features["body_size"] = BODY_SIZE_NORMAL
+					character.dna.update_body_size()
+
 					switch(client.role_ch)
 						if("kapno")
 							character.truerole = "Капнобатай"
@@ -136,6 +152,11 @@
 						if("Конченный")
 							character.equipOutfit(/datum/outfit/konch)
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
+
+					for(var/obj/item/organ/genital/genital in character.internal_organs)
+						genital.Remove(character.)
+						qdel(genital)
+
 					mind.active = FALSE
 					mind.transfer_to(character)
 					mind.set_original_character(character)
@@ -159,6 +180,7 @@
 						(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
 					character.gain_extra_effort(1, TRUE)
 					to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
+					character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
 					if(character.special_zvanie)
 						switch(character.special_zvanie)
 							if("Отец Капнобатаев")
@@ -166,6 +188,7 @@
 //					for(var/obj/item/organ/genital/genital in character.internal_organs)
 //						genital.build_from_dna(character.dna, genital.mutantpart_key)
 
+					character.dna.update_dna_identity()
 					character.attributes?.update_attributes()
 					character.update_body()
 					character.update_hair()

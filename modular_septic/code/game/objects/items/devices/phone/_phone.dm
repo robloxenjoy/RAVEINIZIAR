@@ -143,7 +143,7 @@
 			return
 	if(phone_flags & PHONE_RECEIVING_INPUT)
 		return
-	INVOKE_ASYNC(src, .proc/dial_menu, user)
+	INVOKE_ASYNC(src, PROC_REF(dial_menu), user)
 
 /obj/item/cellphone/attack_self_secondary(mob/user, modifiers)
 	. = ..()
@@ -173,7 +173,7 @@
 			return
 	if(phone_flags & PHONE_RECEIVING_INPUT)
 		return
-	INVOKE_ASYNC(src, .proc/options_menu, user)
+	INVOKE_ASYNC(src, PROC_REF(options_menu), user)
 
 /obj/item/cellphone/attackby(obj/item/attacking_item, mob/living/user, params)
 	. = ..()

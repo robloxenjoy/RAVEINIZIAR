@@ -42,8 +42,8 @@
 
 /datum/component/turf_z_transparency/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_TURF_MULTIZ_NEW, .proc/on_multiz_turf_new)
-	RegisterSignal(parent, COMSIG_TURF_MULTIZ_DEL, .proc/on_multiz_turf_del)
+	RegisterSignal(parent, COMSIG_TURF_MULTIZ_NEW, PROC_REF(on_multiz_turf_new))
+	RegisterSignal(parent, COMSIG_TURF_MULTIZ_DEL, PROC_REF(on_multiz_turf_del))
 
 /datum/component/turf_z_transparency/UnregisterFromParent()
 	. = ..()

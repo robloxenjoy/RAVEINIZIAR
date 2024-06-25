@@ -1,9 +1,9 @@
 /mob/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_TYPING_INDICATOR), .proc/update_typing_indicator)
-	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_TYPING_INDICATOR), .proc/update_typing_indicator)
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_SSD_INDICATOR), .proc/update_ssd_indicator)
-	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_SSD_INDICATOR), .proc/update_ssd_indicator)
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_TYPING_INDICATOR), PROC_REF(update_typing_indicator))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_TYPING_INDICATOR), PROC_REF(update_typing_indicator))
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_SSD_INDICATOR), PROC_REF(update_ssd_indicator))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_SSD_INDICATOR), PROC_REF(update_ssd_indicator))
 
 /mob/proc/update_typing_indicator()
 	var/bubble_icon = "default"

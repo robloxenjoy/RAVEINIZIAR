@@ -21,8 +21,8 @@
 	if(!can_look_up())
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
-	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_up, TRUE) //We stop looking up if we move
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/start_look_up, TRUE) //We start looking again after we move
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_look_up, TRUE)) //We stop looking up if we move
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_up, TRUE)) //We start looking again after we move
 	start_look_up(FALSE)
 
 /mob/living/start_look_up(silent = TRUE)
@@ -74,8 +74,8 @@
 	if(!can_look_up()) //if we cant look up, we cant look down.
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
-	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_down, TRUE) //We stop looking down if we move.
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/start_look_down, TRUE) //We start looking again after we move.
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_look_down, TRUE)) //We stop looking down if we move.
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_down, TRUE)) //We start looking again after we move.
 	start_look_down()
 
 /mob/living/start_look_down(silent = TRUE)

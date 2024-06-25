@@ -154,7 +154,7 @@
 		carbon.visible_message(span_danger("[zone_name] на [carbon] [src.name] [break_verb]!"), \
 							span_userdanger("[zone_name] на [src.name] [break_verb]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
-		RegisterSignal(carbon, COMSIG_MOVABLE_MOVED, .proc/bristle, override = TRUE)
+		RegisterSignal(carbon, COMSIG_MOVABLE_MOVED, PROC_REF(bristle), override = TRUE)
 
 	zones_disabled++
 	for(var/bitflag in zone2body_parts_covered(def_zone))

@@ -23,7 +23,7 @@
 	if(!HAS_TRAIT(target, TRAIT_DANCING))
 		start_animation(target)
 	ADD_TRAIT(target, TRAIT_DANCING, trait_source)
-	RegisterSignal(target, dancing_stop_signals, .proc/stop_dancing)
+	RegisterSignal(target, dancing_stop_signals, PROC_REF(stop_dancing))
 
 /datum/element/dancing/Detach(datum/source, datum/target, trait_source)
 	. = ..()

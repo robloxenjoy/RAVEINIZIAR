@@ -15,8 +15,8 @@
 	src.attached_proc = attached_proc
 	src.inventory_icon = inventory_icon
 	src.world_icon = world_icon
-	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON, .proc/update_icon)
-	RegisterSignal(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_STORAGE_ENTERED, COMSIG_ITEM_DROPPED, COMSIG_STORAGE_EXITED), .proc/inventory_updated)
+	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON, PROC_REF(update_icon))
+	RegisterSignal(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_STORAGE_ENTERED, COMSIG_ITEM_DROPPED, COMSIG_STORAGE_EXITED), PROC_REF(inventory_updated))
 	target.update_appearance(UPDATE_ICON)
 
 /datum/element/world_icon/Detach(atom/source)

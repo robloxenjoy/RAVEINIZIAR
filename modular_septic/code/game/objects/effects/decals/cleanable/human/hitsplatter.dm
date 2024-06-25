@@ -23,7 +23,7 @@
 	if(!direction)
 		direction = pick(GLOB.alldirs)
 	//we need to return IMMEDIATELY to avoid bonkers stuff
-	INVOKE_ASYNC(src, .proc/squirt_process, direction, range, instant)
+	INVOKE_ASYNC(src, PROC_REF(squirt_process), direction, range, instant)
 	return TRUE
 
 /obj/effect/decal/cleanable/blood/hitsplatter/proc/squirt_process(direction, range, instant = FALSE)

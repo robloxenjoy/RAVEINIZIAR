@@ -451,7 +451,7 @@
 	if(!can_shoot())
 		shoot_with_empty_chamber(shooter)
 		return NONE
-	INVOKE_ASYNC(src, .proc/do_autofire_shot, source, target, shooter, params)
+	INVOKE_ASYNC(src, PROC_REF(do_autofire_shot), source, target, shooter, params)
 	return COMPONENT_AUTOFIRE_SHOT_SUCCESS //All is well, we can continue shooting
 
 /obj/item/gun/shoot_with_empty_chamber(mob/living/user as mob|obj)
@@ -508,9 +508,9 @@
 
 /obj/item/gun/proc/firing_animation(mob/user, burst_fire = FALSE)
 	if(gunshot_animation_information)
-		INVOKE_ASYNC(src, .proc/gunshot_animation, user, burst_fire)
+		INVOKE_ASYNC(src, PROC_REF(gunshot_animation), user, burst_fire)
 	if(recoil_animation_information)
-		INVOKE_ASYNC(src, .proc/recoil_animation, user, burst_fire)
+		INVOKE_ASYNC(src, PROC_REF(recoil_animation), user, burst_fire)
 
 // wARNING: For some god forsaken reason, the recoil animation conflicts pretty badly with the gunshot, as the gunshot refuses to get angled
 /obj/item/gun/proc/gunshot_animation(mob/user, burst_fire = FALSE)

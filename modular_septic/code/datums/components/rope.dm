@@ -49,12 +49,12 @@
 
 /datum/component/rope/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_ROPE_CHECK_ROPED, .proc/is_roped)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/parent_moved)
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/parent_qdeleted)
-	RegisterSignal(roped, COMSIG_ROPE_CHECK_ROPED, .proc/is_roped)
-	RegisterSignal(roped, COMSIG_MOVABLE_MOVED, .proc/roped_moved)
-	RegisterSignal(roped, COMSIG_PARENT_QDELETING, .proc/roped_qdeleted)
+	RegisterSignal(parent, COMSIG_ROPE_CHECK_ROPED, PROC_REF(is_roped))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(parent_qdeleted))
+	RegisterSignal(roped, COMSIG_ROPE_CHECK_ROPED, PROC_REF(is_roped))
+	RegisterSignal(roped, COMSIG_MOVABLE_MOVED, PROC_REF(roped_moved))
+	RegisterSignal(roped, COMSIG_PARENT_QDELETING, PROC_REF(roped_qdeleted))
 
 /datum/component/rope/UnregisterFromParent()
 	. = ..()
@@ -131,7 +131,7 @@
 
 /datum/component/rope/proc/create_beam(atom/beam_owner, atom/beam_target)
 	rope_beam = beam_owner.Beam(beam_target, icon_state, icon, INFINITY, maximum_rope_distance, beam_type, connect_loc)
-	RegisterSignal(rope_beam, COMSIG_PARENT_QDELETING, .proc/rope_beam_broken)
+	RegisterSignal(rope_beam, COMSIG_PARENT_QDELETING, PROC_REF(rope_beam_broken))
 	return TRUE
 
 /datum/component/rope/proc/rope_beam_broken(datum/beam/source)

@@ -498,16 +498,16 @@
 	my_turf = new_turf
 	new_turf.liquids = src
 	loc = new_turf
-	RegisterSignal(my_turf, COMSIG_ATOM_ENTERED, .proc/movable_entered)
-	RegisterSignal(my_turf, COMSIG_TURF_MOB_FALL, .proc/mob_fall)
+	RegisterSignal(my_turf, COMSIG_ATOM_ENTERED, PROC_REF(movable_entered))
+	RegisterSignal(my_turf, COMSIG_TURF_MOB_FALL, PROC_REF(mob_fall))
 
 //STRICTLY FOR IMMUTABLE USE
 /atom/movable/liquid/proc/add_turf(turf/added_turf)
 	added_turf.liquids = src
 	added_turf.vis_contents += src
 	SSliquids.active_immutables[added_turf] = TRUE
-	RegisterSignal(added_turf, COMSIG_ATOM_ENTERED, .proc/movable_entered)
-	RegisterSignal(added_turf, COMSIG_TURF_MOB_FALL, .proc/mob_fall)
+	RegisterSignal(added_turf, COMSIG_ATOM_ENTERED, PROC_REF(movable_entered))
+	RegisterSignal(added_turf, COMSIG_TURF_MOB_FALL, PROC_REF(mob_fall))
 
 /atom/movable/liquid/proc/remove_turf(turf/removed_turf)
 	SSliquids.active_immutables -= removed_turf
