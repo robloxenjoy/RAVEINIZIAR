@@ -82,8 +82,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return
 //	if(href_list["reload_tguipanel"])
 //		nuke_chat()
-//	if(href_list["reload_statbrowser"])
-//		src << browse(file('html/statbrowser.html'), "window=statbrowser")
+	if(href_list["reload_statbrowser"])
+		src << browse(file('html/statbrowser.html'), "window=statbrowser")
 	// Log all hrefs
 	log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
 
@@ -335,11 +335,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 //	src << browse_rsc(file('html/assets/statbg.png'))
 	//SEPTIC EDIT END
 	// Initialize tgui panel
-//	src << browse(file('html/statbrowser.html'), "window=statbrowser")
+	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 //	src << browse(file('html/browser.css'), "window=browseroutput")
 //	winset(src, "output", "on-show=&is-disabled=0&is-visible=1")
 //	winset(src, "browseroutput", "is-disabled=1;is-visible=0")
-//	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 15 SECONDS)
 //	tgui_panel.initialize()
 
 	if(alert_mob_dupe_login && !holder)
@@ -1134,7 +1134,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/proc/check_panel_loaded()
 	if(statbrowser_ready)
 		return
-	to_chat(src, span_userdanger("Statpanel failed to load, click <a href='?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel "))
+	to_chat(src, span_userdanger("Хуйня не прогрузилась, нажми <a href='?src=[REF(src)];reload_statbrowser=1'>сюда</a> чтобы перезагрузить."))
 
 /**
  * Initializes dropdown menus on client
