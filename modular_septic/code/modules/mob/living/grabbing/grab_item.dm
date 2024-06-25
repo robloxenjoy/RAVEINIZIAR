@@ -221,7 +221,7 @@
 	RegisterSignal(new_owner, COMSIG_PARENT_QDELETING, PROC_REF(qdel_void))
 	victim = new_victim
 	if(owner != victim)
-		RegisterSignal(owner, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(new_grab_state)
+		RegisterSignal(owner, COMSIG_MOVABLE_SET_GRAB_STATE, PROC_REF(new_grab_state))
 		if(owner.grab_state < GRAB_AGGRESSIVE)
 			owner.setGrabState(GRAB_AGGRESSIVE)
 			owner.set_pull_offsets(new_victim, owner.grab_state)
