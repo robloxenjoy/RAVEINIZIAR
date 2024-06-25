@@ -22,7 +22,7 @@
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
 	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_look_up), TRUE) //We stop looking up if we move
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_up) TRUE) //We start looking again after we move
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_up), TRUE) //We start looking again after we move
 	start_look_up(FALSE)
 
 /mob/living/start_look_up(silent = TRUE)
