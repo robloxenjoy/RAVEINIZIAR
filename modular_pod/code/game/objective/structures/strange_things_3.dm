@@ -248,12 +248,14 @@
 */
 			var/obj/item/cactus_needle
 			cactus_needle = new /obj/item/cactus_needle(loc)
-			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = TRUE, silent = FALSE)
+			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = TRUE, silent = TRUE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 				M.visible_message(span_pinkdang("Иголка застревает в [M] [affecting]!"), \
 									span_pinkdang("Иголка застревает в [affecting]!"), \
 									span_hear("Я слышу звук плоти."))
-
+			else
+				M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
+				affecting.adjust_germ_level(100)
 			if(M.get_chem_effect(CE_PAINKILLER) < 30)
 				to_chat(M, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
 				M.agony_scream()
