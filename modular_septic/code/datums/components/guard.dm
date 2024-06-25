@@ -26,7 +26,7 @@
 		span_danger("Я готовлю атаку!"), ignored_mobs = target)
 	apply_target_overlay()
 
-	guarder.apply_status_effect(STATUS_EFFECT_HOLDUP, guarder)
+//	guarder.apply_status_effect(STATUS_EFFECT_HOLDUP, guarder)
 
 	if(get_dist(guarder, target) > 1)
 		cancel()
@@ -37,14 +37,18 @@
 	if(guarder.get_active_held_item() != weapon)
 		cancel()
 
+	if(locate(/mob/living) in target)
+		var/mob/living/enemy = locate(/mob/living) in target
+		hitchungus(enemy)
+
 /datum/component/guard/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(check_deescalate))
-	RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(hitchungus))
+//	RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(hitchungus))
 	RegisterSignal(parent, list(COMSIG_LIVING_START_PULL, COMSIG_MOVABLE_BUMP), PROC_REF(check_bump))
 
 /datum/component/guard/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
-	UnregisterSignal(parent, COMSIG_ATOM_ENTERED)
+//	UnregisterSignal(parent, COMSIG_ATOM_ENTERED)
 	UnregisterSignal(parent, list(COMSIG_LIVING_START_PULL, COMSIG_MOVABLE_BUMP))
 
 /datum/component/guard/proc/check_bump(atom/source, atom/bumper)
