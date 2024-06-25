@@ -25,7 +25,7 @@
 /datum/reagent/consumable/piss
 	name = "Urine"
 	description = "Liquid human waste. Disgusting."
-	taste_description = "bad stale beer"
+	taste_description = "плохое пиво"
 	reagent_state = LIQUID
 	color = COLOR_YELLOW_PISS
 	liquid_evaporation_rate = 7

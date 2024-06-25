@@ -8,13 +8,12 @@
 	scent = "что-то металлическое"
 	color = "#bf0057"
 
-/datum/pollutant/metallic_scent/breathe_act(mob/living/carbon/victim, amount)
+/datum/pollutant/metallic_scent/smell_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
 		if(10 to INFINITY)
-			message = span_warning("I'm saturating with this blood...")
-			if(prob(25))
-				victim.adjust_bloodvolume(5)
+			message = span_warning("Я насыщаюсь кровью...")
+			victim.adjust_bloodvolume(5)
 	if(message && prob(20))
 		to_chat(victim, message)
 
@@ -28,7 +27,7 @@
 	color = "#92cd48"
 	thickness = 3
 
-/datum/pollutant/vomit/breathe_act(mob/living/carbon/victim, amount)
+/datum/pollutant/vomit/smell_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
 		if(0 to 10)
@@ -71,7 +70,7 @@
 	color = "#fcbc2c"
 	thickness = 2
 
-/datum/pollutant/urine/breathe_act(mob/living/carbon/victim, amount)
+/datum/pollutant/urine/smell_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
 		if(0 to 10)

@@ -242,9 +242,17 @@
 		var/cloth_cover = LAZYLEN(M.clothingonpart(affecting))
 		if(!cloth_cover)
 			M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
-//				affecting.receive_damage(brute = 10, sharpness = SHARP_POINTY)
+/*
 			M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
 			affecting.adjust_germ_level(100)
+*/
+			new var/obj/item/cactus_needle/cactus_needle(get_turf(src))
+			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = FALSE, silent = FALSE)
+			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
+				victim.visible_message(span_pinkdang("Иголка застревает в [victim] [affecting]!"), \
+									span_pinkdang("Иголка застревает в [affecting]!"), \
+									span_hear("Я слышу звук плоти."))
+
 			if(M.get_chem_effect(CE_PAINKILLER) < 30)
 				to_chat(M, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
 				M.agony_scream()
@@ -302,6 +310,39 @@
 		if(prob(proj_pass_rate))
 			return TRUE
 		return FALSE
+
+/obj/item/cactus_needle
+	name = "Иголка Кактуса"
+	desc = "Наверное, можно... Уколоть кого-нибудь?"
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "needle"
+	inhand_icon_state = null
+	worn_icon_state = null
+	hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
+	w_class = WEIGHT_CLASS_SMALL
+	wound_bonus = 1
+	bare_wound_bonus = 3
+	min_force = 1
+	force = 6
+	min_force_strength = 1
+	throwforce = 5
+	force_strength = 1.2
+	sharpness = SHARP_POINTY
+	embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 38, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+	skill_melee = SKILL_KNIFE
+	carry_weight = 0.5 KILOGRAMS
+	attack_fatigue_cost = 4
+	attack_delay = 10
+	parrying_flags = null
+	parrying_modifier = null
+	havedurability = TRUE
+	durability = 50
+	tetris_width = 16
+	tetris_height = 32
+	canlockpick = TRUE
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("тыкает", "иголит", "укалывает")
+	attack_verb_simple = list("тыкать", "иголить", "укалывать")
 
 /obj/structure/wiresa
 	name = "Провода"
