@@ -3,7 +3,7 @@
 
 	var/turf/target
 	var/obj/item/weapon
-	var/target_overlay
+	var/obj/target_overlay
 
 /datum/component/guard/Destroy(force, silent)
 	remove_target_overlay()
@@ -33,6 +33,8 @@
 	if(get_dist(guarder, weapon) > 0)
 		cancel()
 	if(!weapon.guard_ready)
+		cancel()
+	if(guarder.get_active_held_item() != weapon)
 		cancel()
 
 /datum/component/guard/RegisterWithParent()
@@ -86,4 +88,4 @@
 /datum/component/guard/proc/remove_target_overlay()
 	if(!target_overlay)
 		return
-	qdel(target_overlay)
+	target_overlay = null
