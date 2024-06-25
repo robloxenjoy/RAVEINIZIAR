@@ -21,6 +21,10 @@
 		NO_UNDERWEAR,
 		EYECOLOR,
 		HAIR,
+		FACEHAIR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
 	)
 	liked_food = JUNKFOOD | FRIED
 	disliked_food = GROSS | RAW | CLOTH | SEWAGE
