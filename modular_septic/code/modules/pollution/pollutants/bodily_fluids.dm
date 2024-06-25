@@ -1,14 +1,14 @@
 ///Splashing blood makes a tiny bit of this
 /datum/pollutant/metallic_scent
 	name = "Металлический аромат"
-	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL
+	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL | POLLUTANT_BREATHE_ACT
 	smell_intensity = 2
 	thickness = 2
 	descriptor = SCENT_DESC_ODOR
 	scent = "что-то металлическое"
 	color = "#bf0057"
 
-/datum/pollutant/metallic_scent/smell_act(mob/living/carbon/victim, amount)
+/datum/pollutant/metallic_scent/breathe_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
 		if(10 to INFINITY)
@@ -20,14 +20,14 @@
 ///Vomit
 /datum/pollutant/vomit
 	name = "Блевотня"
-	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
+	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
 	scent = "блевотина"
 	color = "#92cd48"
 	thickness = 3
 
-/datum/pollutant/vomit/smell_act(mob/living/carbon/victim, amount)
+/datum/pollutant/vomit/breathe_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
 		if(0 to 10)
@@ -56,21 +56,21 @@
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
 	smell_intensity = 1
 	descriptor = SCENT_DESC_ODOR
-	scent = "stale cum"
+	scent = "сперма"
 	color = "#FFFFFF"
 	thickness = 2
 
 ///Piss
 /datum/pollutant/urine
 	name = "Моча"
-	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
+	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
 	scent = "моча"
 	color = "#fcbc2c"
 	thickness = 2
 
-/datum/pollutant/urine/smell_act(mob/living/carbon/victim, amount)
+/datum/pollutant/urine/breathe_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
 		if(0 to 10)

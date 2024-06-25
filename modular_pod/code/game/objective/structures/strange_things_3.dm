@@ -250,7 +250,7 @@
 			new cactus_needle(get_turf(src))
 			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = FALSE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
-				victim.visible_message(span_pinkdang("Иголка застревает в [victim] [affecting]!"), \
+				M.visible_message(span_pinkdang("Иголка застревает в [M] [affecting]!"), \
 									span_pinkdang("Иголка застревает в [affecting]!"), \
 									span_hear("Я слышу звук плоти."))
 
