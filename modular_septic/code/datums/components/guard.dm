@@ -34,7 +34,7 @@
 		cancel()
 	if(!weapon.guard_ready)
 		cancel()
-	if(guarder.get_active_held_item() != weapon)
+	if(!guarder.is_holding(weapon))
 		cancel()
 
 	if(locate(/mob/living) in target)
