@@ -80,7 +80,7 @@
 		playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 		sound_hint()
 
-/turf/open/floor/plating/polovich/attackby(obj/item/W, mob/living/carbon/user, params)
+/turf/open/floor/plating/polovich/attackby(obj/item/W, mob/living/carbon/user, params, list/modifiers)
 	. = ..()
 	if(.)
 		return
