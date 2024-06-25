@@ -335,7 +335,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 //	src << browse_rsc(file('html/assets/statbg.png'))
 	//SEPTIC EDIT END
 	// Initialize tgui panel
-	src << browse(file('html/statbrowser.html'), "window=statbrowser")
+//	src << browse(file('html/statbrowser.html'), "window=statbrowser")
 //	src << browse(file('html/browser.css'), "window=browseroutput")
 //	winset(src, "output", "on-show=&is-disabled=0&is-visible=1")
 //	winset(src, "browseroutput", "is-disabled=1;is-visible=0")
@@ -463,8 +463,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(prefs.lastchangelog != GLOB.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
 		if(CONFIG_GET(flag/aggressive_changelog))
 			changelog()
-		else
-			winset(src, "infowindow.changelog", "font-style=bold")
+//		else
+//			winset(src, "infowindow.changelog", "font-style=bold")
 
 	if(ckey in GLOB.clientmessages)
 		for(var/message in GLOB.clientmessages[ckey])

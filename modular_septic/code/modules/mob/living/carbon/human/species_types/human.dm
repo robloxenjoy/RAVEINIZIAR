@@ -19,6 +19,8 @@
 	)
 	species_traits = list(
 		NO_UNDERWEAR,
+		EYECOLOR,
+		HAIR,
 	)
 	liked_food = JUNKFOOD | FRIED
 	disliked_food = GROSS | RAW | CLOTH | SEWAGE
