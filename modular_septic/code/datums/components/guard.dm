@@ -90,9 +90,11 @@
 		target.cut_overlay(target_overlay)
 	target_overlay = mutable_appearance('icons/effects/landmarks_static.dmi', "combat", FLOAT_LAYER, POLLUTION_PLANE, 100)
 	target.add_overlay(target_overlay)
+	RegisterSignal(target_overlay, COMSIG_ATOM_ENTERED, PROC_REF(hitchungus))
 
 /datum/component/guard/proc/remove_target_overlay()
 	if(!target_overlay)
 		return
 	target.cut_overlay(target_overlay)
 	target_overlay = null
+	UnregisterSignal(target_overlay, COMSIG_ATOM_ENTERED)
