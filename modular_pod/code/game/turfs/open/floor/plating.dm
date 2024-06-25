@@ -84,31 +84,41 @@
 	. = ..()
 	if(.)
 		return
-/*
-	if(user.a_intent == INTENT_HELP)
-//		user.visible_message("<span class='notice'>\[user] трогает [src] с помощью [W].</span>")
-		user.visible_message(span_notice("[user] трогает [src] с помощью [W]."),span_notice("Я трогаю [src] с помощью [W]."), span_hear("Я слышу чё-то."))
-		user.changeNext_move(CLICK_CD_WRENCH)
-*/
-//	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_GRAB) || (user.a_intent == INTENT_DISARM))
-//		user.visible_message("<span class='notice'>\[user] beats the [src] with [W].</span>")
 	if(W.force)
-		if(W.get_sharpness())
-			user.visible_message(span_notice("[user] размахивает с помощью [W]."),span_notice("Я размахиваю с помощью [W]."), span_hear("Я слышу взмах."))
-			user.changeNext_move(W.attack_delay)
-			user.adjustFatigueLoss(W.attack_fatigue_cost)
-			sound_hint()
-			if(W.force <= 16)
-				playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
-			else
-				playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
+		if(LAZYACCESS(modifiers, RIGHT_CLICK) && (user.combat_style == CS_GUARD))
+			if(!do_after(user, 3 SECONDS, target=src))
+				to_chat(user, span_danger(xbox_rage_msg()))
+				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+				return
+	/*
+			if(!combat_mode)
+				to_chat(user, span_danger("Надо бы серьёзнее отнестись"))
+				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+				return
+	*/
+			var/datum/component/guard/existing_guard = user.GetComponent(/datum/component/guard)
+			if(user.GetComponent(/datum/component/guard))
+				existing_guard.cancel()
+
+			user.AddComponent(/datum/component/guard, src, W)
+			W.guard_ready = TRUE
 		else
-			user.visible_message(span_notice("[user] бьёт [src] с помощью [W]."),span_notice("Я бью [src] с помощью [W]."), span_hear("Я слышу стук."))
-			user.changeNext_move(W.attack_delay)
-			user.adjustFatigueLoss(W.attack_fatigue_cost)
-			W.damageItem("SOFT")
-			playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
-			sound_hint()
+			if(W.get_sharpness())
+				user.visible_message(span_notice("[user] размахивает с помощью [W]."),span_notice("Я размахиваю с помощью [W]."), span_hear("Я слышу взмах."))
+				user.changeNext_move(W.attack_delay)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				sound_hint()
+				if(W.force <= 16)
+					playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
+				else
+					playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
+			else
+				user.visible_message(span_notice("[user] бьёт [src] с помощью [W]."),span_notice("Я бью [src] с помощью [W]."), span_hear("Я слышу стук."))
+				user.changeNext_move(W.attack_delay)
+				user.adjustFatigueLoss(W.attack_fatigue_cost)
+				W.damageItem("SOFT")
+				playsound(get_turf(src), 'sound/effects/slamflooritem.ogg', 90 , FALSE, FALSE)
+				sound_hint()
 /*
 			if(istype(src, /turf/open/floor/plating/polovich/dirt/dark/bright))
 				if(prob(W.force))
@@ -132,28 +142,6 @@
 			atrat.usedy = TRUE
 			addtimer(CALLBACK(atrat, .proc/restart_use), 50 SECONDS)
 */
-
-/turf/open/floor/plating/polovich/attackby_secondary(obj/item/W, mob/living/carbon/human/user, params)
-	. = ..()
-	if(.)
-		return
-	if(user.combat_style == CS_GUARD)
-		if(!do_after(user, 3 SECONDS, target=src))
-			to_chat(user, span_danger(xbox_rage_msg()))
-			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
-			return
-/*
-		if(!combat_mode)
-			to_chat(user, span_danger("Надо бы серьёзнее отнестись"))
-			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
-			return
-*/
-		var/datum/component/guard/existing_guard = user.GetComponent(/datum/component/guard)
-		if(user.GetComponent(/datum/component/guard))
-			existing_guard.cancel()
-
-		user.AddComponent(/datum/component/guard, src, W)
-		W.guard_ready = TRUE
 
 /turf/open/floor/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()

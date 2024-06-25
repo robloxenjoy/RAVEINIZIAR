@@ -666,7 +666,7 @@
 			to_chat(user, span_userdanger("Я пытаюсь [attack_verb] <b>[target]</b> [hit_area], но эта конечность отсутствует!"))
 		else
 			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] себя в [hit_area], но эта конечность отсутствует!"), \
-							span_userdanger("Я пытаюсь [attack_verb] my [hit_area], но эта конечность отсутствует!!"), \
+							span_userdanger("Я пытаюсь [attack_verb] себя в [hit_area], но эта конечность отсутствует!!"), \
 							span_hear("Я слышу свист!"), \
 							COMBAT_MESSAGE_RANGE)
 		log_combat(user, target, "attempted to [attack_verb], limb missing")
@@ -676,7 +676,7 @@
 		playsound(target.loc, user.dna.species.miss_sound, 60, TRUE, -1)
 		if(user != target)
 			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] <b>[target]</b> [hit_area], но промахивается!"), \
-							span_userdanger("<b>[user]</b> пытается [attack_verb] my [hit_area], но промахивается!"), \
+							span_userdanger("<b>[user]</b> пытается [attack_verb] меня в [hit_area], но промахивается!"), \
 							span_hear("Я hear a swoosh!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
