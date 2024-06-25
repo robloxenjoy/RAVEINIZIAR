@@ -7,6 +7,7 @@
 
 /datum/component/guard/Destroy(force, silent)
 	remove_target_overlay()
+	STOP_PROCESSING(SSobj, src)
 	if(weapon)
 		weapon.guard_ready = FALSE
 	return ..()
@@ -37,6 +38,9 @@
 	if(!guarder.is_holding(weapon))
 		cancel()
 
+	START_PROCESSING(SSobj, src)
+
+/datum/component/guard/process(delta_time = SSOBJ_DT)
 	if(locate(/mob/living) in target)
 		var/mob/living/enemy = locate(/mob/living) in target
 		hitchungus(enemy)
@@ -73,6 +77,7 @@
 
 	qdel(src)
 	remove_target_overlay()
+	STOP_PROCESSING(SSobj, src)
 
 /datum/component/guard/proc/hitchungus(atom/movable/arrived)
 	SIGNAL_HANDLER
@@ -90,11 +95,11 @@
 		target.cut_overlay(target_overlay)
 	target_overlay = mutable_appearance('icons/effects/landmarks_static.dmi', "combat", FLOAT_LAYER, POLLUTION_PLANE, 100)
 	target.add_overlay(target_overlay)
-	RegisterSignal(target_overlay, COMSIG_ATOM_ENTERED, PROC_REF(hitchungus))
+//	RegisterSignal(target_overlay, COMSIG_ATOM_ENTERED, PROC_REF(hitchungus))
 
 /datum/component/guard/proc/remove_target_overlay()
 	if(!target_overlay)
 		return
 	target.cut_overlay(target_overlay)
 	target_overlay = null
-	UnregisterSignal(target_overlay, COMSIG_ATOM_ENTERED)
+//	UnregisterSignal(target_overlay, COMSIG_ATOM_ENTERED)
