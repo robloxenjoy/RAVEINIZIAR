@@ -3,7 +3,7 @@
 
 	var/turf/target
 	var/obj/item/weapon
-	var/obj/target_overlay
+	var/mutable_appearance/target_overlay
 
 /datum/component/guard/Destroy(force, silent)
 	remove_target_overlay()
@@ -82,10 +82,13 @@
 		cancel()
 
 /datum/component/guard/proc/apply_target_overlay()
-	target_overlay = /obj/effect/combat
-	new /obj/effect/combat(get_turf(target))
+	if(target_overlay)
+		target.cut_overlay(target_overlay)
+	target_overlay = mutable_appearance('icons/effects/landmarks_static.dmi', "combat", FLOAT_LAYER, POLLUTION_PLANE, 100)
+	target.add_overlay(target_overlay)
 
 /datum/component/guard/proc/remove_target_overlay()
 	if(!target_overlay)
 		return
+	target.cut_overlay(target_overlay)
 	target_overlay = null
