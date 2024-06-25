@@ -80,11 +80,12 @@
 		playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
 		sound_hint()
 
-/turf/open/floor/plating/polovich/attackby(obj/item/W, mob/living/carbon/user, params, list/modifiers)
+/turf/open/floor/plating/polovich/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
 	if(.)
 		return
 	if(W.force)
+		var/list/modifiers = params2list(params)
 		if(LAZYACCESS(modifiers, RIGHT_CLICK) && (user.combat_style == CS_GUARD))
 			if(!do_after(user, 3 SECONDS, target=src))
 				to_chat(user, span_danger(xbox_rage_msg()))

@@ -17,9 +17,9 @@
 	hands_use_check = TRUE
 
 /datum/emote/living/burp
-	key = "burp"
-	key_third_person = "burps"
-	message = "burps."
+	key = "рыгать"
+	key_third_person = "рыгает"
+	message = "рыгает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/choke
