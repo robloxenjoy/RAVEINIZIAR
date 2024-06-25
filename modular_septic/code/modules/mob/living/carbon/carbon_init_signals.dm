@@ -10,8 +10,8 @@
 	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_BASIC_SPEED_HALVED), PROC_REF(basic_speed_halved))
 	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_BASIC_SPEED_HALVED), PROC_REF(basic_speed_unhalved))
 	// I LOVE LEAN!
-	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_LEAN), .proc/started_leaning))
-	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_LEAN), .proc/stopped_leaning))
+	RegisterSignal(src, SIGNAL_ADDTRAIT(TRAIT_LEAN), PROC_REF(started_leaning))
+	RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_LEAN), PROC_REF(stopped_leaning))
 	// Combat message stuff
 	RegisterSignal(src, COMSIG_CARBON_CLEAR_WOUND_MESSAGE, PROC_REF(clear_wound_message))
 	RegisterSignal(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, PROC_REF(add_to_wound_message))
