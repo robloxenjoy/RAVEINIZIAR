@@ -241,7 +241,6 @@
 	if(affecting)
 		var/cloth_cover = LAZYLEN(M.clothingonpart(affecting))
 		if(!cloth_cover)
-			M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
 /*
 			M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
 			affecting.adjust_germ_level(100)
@@ -250,10 +249,12 @@
 			cactus_needle = new /obj/item/cactus_needle(loc)
 			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = TRUE, silent = TRUE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
-				M.visible_message(span_pinkdang("Иголка застревает в [M] [affecting]!"), \
-									span_pinkdang("Иголка застревает в [affecting]!"), \
+				M.visible_message(span_pinkdang("Игла застревает в [M] [affecting]!"), \
+									span_pinkdang("Игла застревает в [affecting]!"), \
 									span_hear("Я слышу звук плоти."))
 			else
+				qdel(cactus_needle)
+				M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
 				M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
 				affecting.adjust_germ_level(100)
 			if(M.get_chem_effect(CE_PAINKILLER) < 30)
@@ -315,7 +316,7 @@
 		return FALSE
 
 /obj/item/cactus_needle
-	name = "Иголка Кактуса"
+	name = "Игла Кактуса"
 	desc = "Наверное, можно... Уколоть кого-нибудь?"
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "needle"
@@ -327,11 +328,9 @@
 	bare_wound_bonus = 3
 	min_force = 1
 	force = 6
-	min_force_strength = 1
 	throwforce = 5
-	force_strength = 1.2
 	sharpness = SHARP_POINTY
-	embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 38, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+	embedding = list("pain_mult" = 6, "rip_time" = 1, "embed_chance" = 70, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 	skill_melee = SKILL_KNIFE
 	carry_weight = 0.5 KILOGRAMS
 	attack_fatigue_cost = 4
@@ -339,7 +338,7 @@
 	parrying_flags = null
 	parrying_modifier = null
 	havedurability = TRUE
-	durability = 50
+	durability = 10
 	tetris_width = 16
 	tetris_height = 32
 	canlockpick = TRUE

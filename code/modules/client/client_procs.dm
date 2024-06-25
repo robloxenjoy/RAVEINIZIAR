@@ -1134,6 +1134,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 /client/proc/check_panel_loaded()
 	if(statbrowser_ready)
 		return
+	src << browse(file('html/statbrowser.html'), "window=statbrowser")
+	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded_twice)), 5 SECONDS)
+//	to_chat(src, span_userdanger("Хуйня не прогрузилась, нажми <a href='?src=[REF(src)];reload_statbrowser=1'>сюда</a> чтобы перезагрузить."))
+
+/client/proc/check_panel_loaded_twice()
+	if(statbrowser_ready)
+		return
 	to_chat(src, span_userdanger("Хуйня не прогрузилась, нажми <a href='?src=[REF(src)];reload_statbrowser=1'>сюда</a> чтобы перезагрузить."))
 
 /**
