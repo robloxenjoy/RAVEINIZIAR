@@ -248,7 +248,7 @@
 */
 			var/obj/item/cactus_needle
 			cactus_needle = new /obj/item/cactus_needle(loc)
-			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = FALSE, silent = FALSE)
+			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = TRUE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 				M.visible_message(span_pinkdang("Иголка застревает в [M] [affecting]!"), \
 									span_pinkdang("Иголка застревает в [affecting]!"), \

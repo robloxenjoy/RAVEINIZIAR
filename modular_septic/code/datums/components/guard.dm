@@ -29,11 +29,11 @@
 	guarder.apply_status_effect(STATUS_EFFECT_HOLDUP, guarder)
 
 	if(get_dist(guarder, target) > 1)
-		qdel(src)
+		cancel()
 	if(get_dist(guarder, weapon) > 0)
-		qdel(src)
+		cancel()
 	if(!weapon.guard_ready)
-		qdel(src)
+		cancel()
 
 /datum/component/guard/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(check_deescalate))
@@ -52,10 +52,10 @@
 	shooter.visible_message(span_danger("<b>[shooter]</b> врезается в <b>[bumper]</b> и нарушает стражу!"), \
 		span_danger("Я врезаюсь в <b>[bumper]</b> и нарушаю свою стражу!"), ignored_mobs = bumper)
 	to_chat(bumper, span_userdanger("<b>[shooter]</b> врезается в меня и нарушает свою стражу!"))
-	qdel(src)
+	cancel()
 
 /datum/component/guard/proc/check_deescalate()
-	if(get_dist(parent, target) > 1)
+	if(get_dist(parent, target) > 0)
 		cancel()
 		return
 
@@ -66,6 +66,7 @@
 	weapon.guard_ready = FALSE
 
 	qdel(src)
+	remove_target_overlay()
 
 /datum/component/guard/proc/hitchungus(atom/movable/arrived)
 	SIGNAL_HANDLER
@@ -76,7 +77,7 @@
 	if(istype(walker))
 		SET_HARM_INTENT(guarder)
 		guarder.ClickOn(walker)
-		qdel(src)
+		cancel()
 
 /datum/component/guard/proc/apply_target_overlay()
 	target_overlay = /obj/effect/combat
