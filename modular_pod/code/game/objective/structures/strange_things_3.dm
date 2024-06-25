@@ -246,7 +246,8 @@
 			M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
 			affecting.adjust_germ_level(100)
 */
-			new var/obj/item/cactus_needle/cactus_needle(get_turf(src))
+			var/obj/item/cactus_needle/cactus_needle
+			new cactus_needle(get_turf(src))
 			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = FALSE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 				victim.visible_message(span_pinkdang("Иголка застревает в [victim] [affecting]!"), \
