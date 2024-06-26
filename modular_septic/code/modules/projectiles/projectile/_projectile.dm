@@ -46,8 +46,13 @@
 		return PROJECTILE_PIERCE_PHASE
 	if(projectile_piercing & A.pass_flags_self)
 		return PROJECTILE_PIERCE_HIT
-//	if(isopenspaceturf(A))
-//		return PROJECTILE_PIERCE_PHASE
+	if(isopenspaceturf(A))
+		if(z_levelism)
+			if(z_levelism == TRUE)
+				get_step_multiz(src, UP)
+			else
+				get_step_multiz(src, DOWN)
+			return PROJECTILE_PIERCE_PHASE
 	if(ismovable(A))
 		var/atom/movable/AM = A
 		if(AM.throwing)
@@ -271,7 +276,7 @@
 		return TRUE
 	if(!isliving(target))
 		if(isturf(target)) // non dense turfs
-			return can_hit_turfs && direct_target
+			return can_hit_turfs //&& direct_target
 		if(target.layer < PROJECTILE_HIT_THRESHHOLD_LAYER)
 			return FALSE
 		else if(!direct_target) // non dense objects do not get hit unless specifically clicked
