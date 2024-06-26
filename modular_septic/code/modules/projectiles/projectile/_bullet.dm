@@ -18,7 +18,7 @@
 	. = ..()
 	if(isopenspaceturf(target))
 		if(z_levelism)
-			if(P.z_levelism == TRUE)
+			if(z_levelism == TRUE)
 				get_step_multiz(src, UP)
 			else
 				get_step_multiz(src, DOWN)
