@@ -11,15 +11,12 @@
 	. = ..()
 	//this is really dumb but hey, it works i guess
 	if(body_position == STANDING_UP && loc == NewLoc && has_gravity(loc))
-		changeNext_move(0.5, TRUE)
 		if(shoes)
 			SEND_SIGNAL(shoes, COMSIG_SHOES_STEP_ACTION)
 		if(w_uniform)
 			SEND_SIGNAL(w_uniform, COMSIG_SHOES_STEP_ACTION)
 		if(wear_suit)
 			SEND_SIGNAL(wear_suit, COMSIG_SHOES_STEP_ACTION)
-	if(body_position == LYING_DOWN && loc == NewLoc)
-		changeNext_move(1, TRUE)
 
 ////	RAIN OVERLAY CODE	////
 /*

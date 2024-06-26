@@ -5,6 +5,7 @@
 	icon_state = "podpol"
 	anchored = TRUE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	pixel_x = -16
 	pixel_y = -16
 	var/up = FALSE
@@ -29,10 +30,22 @@
 		return
 	if(up)
 		var/turf/above_turf = SSmapping.get_turf_above(get_turf(src))
+		var/atom/movable/AM
+		if(user.pulling)
+			AM = user.pulling
+			AM.forceMove(T)
 		user.forceMove(above_turf)
+		if(AM)
+			user.start_pulling(AM)
 	if(down)
 		var/turf/below_turf = SSmapping.get_turf_below(get_turf(src))
+		var/atom/movable/AM
+		if(user.pulling)
+			AM = user.pulling
+			AM.forceMove(below_turf)
 		user.forceMove(below_turf)
+		if(AM)
+			user.start_pulling(AM)
 
 /obj/structure/wayto/podpol/up
 	icon_state = "podpol2"

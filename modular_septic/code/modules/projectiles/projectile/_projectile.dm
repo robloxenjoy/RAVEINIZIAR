@@ -158,6 +158,7 @@
 				playsound(wall, final_hitsound, final_hitsound_volume, TRUE, -1)
 
 			return BULLET_ACT_HIT
+/*
 		else if(isfloorturf(target_location) && (target == target_location))
 			var/turf/open/floor/floor = target_location
 			if(impact_effect_type)
@@ -171,6 +172,7 @@
 				playsound(floor, final_hitsound, final_hitsound_volume, TRUE, -1)
 
 			return BULLET_ACT_HIT
+*/
 
 	final_hitsound = target.get_projectile_hitsound(src)
 	//awful snowfake

@@ -883,7 +883,7 @@
 		set_angle(get_angle(src, targloc) + spread)
 
 	if(isliving(source) && length(modifiers))
-		var/list/calculated = calculate_projectile_angle_and_pixel_offsets(source, modifiers)
+		var/list/calculated = calculate_projectile_angle_and_pixel_offsets(source, target_loc && target, modifiers)
 		p_x = calculated[2]
 		p_y = calculated[3]
 

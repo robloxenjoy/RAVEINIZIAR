@@ -7,13 +7,14 @@
 	var/amount = 0
 	for(var/client/Player)
 //    	usr << Player
-		if(iscarbon(Player.mob))
-			if(istype(Player.mob, /mob/living/carbon/human))
-				var/mob/living/carbon/human/C = Player
-				to_chat(src, "<span class='infoplain'>[C.ckey], [C.truerole].</span>")
+		if(ishuman(Player.mob))
+//			if(istype(Player.mob, /mob/living/carbon/human))
+//				var/mob/living/carbon/human/C = Player
+			to_chat(src, "<span class='infoplain'>[Player.ckey], [Player.truerole?].</span>")
+			amount += 1
 		else
 			to_chat(src, "<span class='infoplain'>[Player.ckey].</span>")
-		amount += 1
+			amount += 1
 	to_chat(src, "<span class='infoplain'>Количество: [amount]</span>")
 
 /client/verb/adminwho()
