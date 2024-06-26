@@ -27,6 +27,7 @@
 	/// Volume of the hitsound
 	var/hitsound_volume = 80
 
+	var/can_hit_turfs = FALSE
 	var/z_levelism = null
 
 	/// Stored visible message
@@ -255,10 +256,10 @@
 /obj/projectile/can_hit_target(atom/target, direct_target = FALSE, ignore_loc = FALSE, cross_failed = FALSE)
 	if(QDELETED(target) || impacted[target])
 		return FALSE
-	if(!ignore_loc && (loc != target.loc))
+	if(!ignore_loc && (loc != target.loc) && !(can_hit_turfs && direct_target && loc == target))
 		return FALSE
-	if(isopenspaceturf(target))
-		return FALSE
+//	if(isopenspaceturf(target))
+//		return FALSE
 	// if pass_flags match, pass through entirely - unless direct target is set.
 	if((target.pass_flags_self & pass_flags) && !direct_target)
 		return FALSE
@@ -269,6 +270,8 @@
 	if(target.density || cross_failed) //This thing blocks projectiles, hit it regardless of layer/mob stuns/etc.
 		return TRUE
 	if(!isliving(target))
+		if(isturf(target)) // non dense turfs
+			return can_hit_turfs && direct_target
 		if(target.layer < PROJECTILE_HIT_THRESHHOLD_LAYER)
 			return FALSE
 		else if(!direct_target) // non dense objects do not get hit unless specifically clicked

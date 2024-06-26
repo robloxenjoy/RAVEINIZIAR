@@ -126,7 +126,7 @@
 	UnregisterSignal(source, COMSIG_FOV_SHOW)
 	UnregisterSignal(source, COMSIG_LIVING_SET_BODY_POSITION)
 	UnregisterSignal(source, COMSIG_MOVABLE_MOVED)
-	UnregisterSignal(source, COMSIG_ATOM_DIR_CHANGE)
+	UnregisterSignal(source, COMSIG_ATOM_POST_DIR_CHANGE)
 	UnregisterSignal(source, COMSIG_ATOM_UPDATE_APPEARANCE)
 
 /**
@@ -174,7 +174,7 @@
 		RegisterSignal(source, COMSIG_FOV_SHOW, PROC_REF(show_fov), override = TRUE)
 		RegisterSignal(source, COMSIG_LIVING_SET_BODY_POSITION, PROC_REF(update_body_position), override = TRUE)
 		RegisterSignal(source, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_moved), override = TRUE)
-		RegisterSignal(source, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_dir_change), override = TRUE)
+		RegisterSignal(source, COMSIG_ATOM_POST_DIR_CHANGE, PROC_REF(on_dir_change), override = TRUE)
 		if(iscyborg(source))
 			RegisterSignal(source, COMSIG_ATOM_UPDATE_APPEARANCE, PROC_REF(manual_centered_render_source), override = TRUE)
 	var/atom/A = source
@@ -255,7 +255,7 @@
 	UnregisterSignal(source, COMSIG_FOV_SHOW)
 	UnregisterSignal(source, COMSIG_LIVING_SET_BODY_POSITION)
 	UnregisterSignal(source, COMSIG_MOVABLE_MOVED)
-	UnregisterSignal(source, COMSIG_ATOM_DIR_CHANGE)
+	UnregisterSignal(source, COMSIG_ATOM_POST_DIR_CHANGE)
 	UnregisterSignal(source, COMSIG_ATOM_UPDATE_APPEARANCE)
 	if(length(nested_locs))
 		UNREGISTER_NESTED_LOCS(nested_locs, COMSIG_MOVABLE_MOVED, 1)
