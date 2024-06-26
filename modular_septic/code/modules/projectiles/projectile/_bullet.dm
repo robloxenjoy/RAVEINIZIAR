@@ -16,6 +16,12 @@
 
 /obj/projectile/bullet/on_hit(atom/target, blocked, pierce_hit, reduced, edge_protection)
 	. = ..()
+	if(isopenspaceturf(target))
+		if(z_levelism)
+			if(P.z_levelism == TRUE)
+				get_step_multiz(src, UP)
+			else
+				get_step_multiz(src, DOWN)
 	if(. && isliving(target))
 		var/mob/living/living_targett = target
 		if(ishuman(living_targett))
