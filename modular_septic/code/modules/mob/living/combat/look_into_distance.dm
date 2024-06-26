@@ -38,10 +38,11 @@
 		x_offset = distance*world.icon_size
 	if(direction & WEST)
 		x_offset = -distance*world.icon_size
-	animate(client, pixel_x += x_offset, pixel_y += y_offset, 0.5 SECONDS)
+	client.pixel_x += x_offset
+	client.pixel_y += y_offset
 
 //	animate(client, pixel_x = world.icon_size*_x, pixel_y = world.icon_size*_y, 0.5 SECONDS)
-	hud_used?.fov_holder?.screen_loc = "WEST+4:[-_x],SOUTH+1:[-_y]"
+	hud_used?.fov_holder?.screen_loc = "WEST+4:[-x_offset],SOUTH+1:[-y_offset]"
 	if(!silent)
 		playsound_local(src, 'modular_septic/sound/interface/zoom_in.ogg', 25, FALSE, pressure_affected = FALSE)
 
