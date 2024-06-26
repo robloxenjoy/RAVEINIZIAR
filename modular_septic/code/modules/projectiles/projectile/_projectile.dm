@@ -164,7 +164,7 @@
 				playsound(wall, final_hitsound, final_hitsound_volume, TRUE, -1)
 
 			return BULLET_ACT_HIT
-/*
+
 		else if(isfloorturf(target_location) && (target == target_location))
 			var/turf/open/floor/floor = target_location
 			if(impact_effect_type)
@@ -178,7 +178,6 @@
 				playsound(floor, final_hitsound, final_hitsound_volume, TRUE, -1)
 
 			return BULLET_ACT_HIT
-*/
 
 	final_hitsound = target.get_projectile_hitsound(src)
 	//awful snowfake
@@ -244,7 +243,7 @@
 		bare_wound_bonus = max(0, bare_wound_bonus + wound_falloff_tile)
 	if(embedding)
 		embedding["embed_chance"] += embed_falloff_tile
-	if(range <= 0)
+	if(range <= 0 && loc)
 		on_range()
 
 /obj/projectile/on_range()
