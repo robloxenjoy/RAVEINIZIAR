@@ -275,3 +275,4 @@
 #define SSMACHINES_DT (SSmachines.wait/10)
 #define SSMOBS_DT (SSmobs.wait/10)
 #define SSOBJ_DT (SSobj.wait/10)
+#define SSGUARD_DT (SSobj.wait/5)

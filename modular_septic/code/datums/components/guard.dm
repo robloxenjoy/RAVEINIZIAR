@@ -40,7 +40,7 @@
 
 	START_PROCESSING(SSobj, src)
 
-/datum/component/guard/process(delta_time = SSOBJ_DT)
+/datum/component/guard/process(delta_time = SSGUARD_DT)
 	if(locate(/mob/living) in target)
 		var/mob/living/enemy = locate(/mob/living) in target
 		hitchungus(enemy)
@@ -56,6 +56,8 @@
 	UnregisterSignal(parent, list(COMSIG_LIVING_START_PULL, COMSIG_MOVABLE_BUMP))
 
 /datum/component/guard/proc/check_bump(atom/source, atom/bumper)
+	SIGNAL_HANDLER
+
 	var/mob/living/shooter = parent
 	if(shooter.combat_mode)
 		return
@@ -65,11 +67,15 @@
 	cancel()
 
 /datum/component/guard/proc/check_deescalate()
-	if(get_dist(parent, target) > 0)
-		cancel()
-		return
+	SIGNAL_HANDLER
+
+//	if(get_dist(parent, target) > 0)
+	cancel()
+	return
 
 /datum/component/guard/proc/cancel()
+	SIGNAL_HANDLER
+
 	var/mob/living/guarder = parent
 	guarder.visible_message(span_danger("<b>[guarder]</b> перестаёт сторожить!"), \
 		span_danger("Я перестаю сторожить."), ignored_mobs = target)
@@ -81,6 +87,7 @@
 
 /datum/component/guard/proc/hitchungus(atom/movable/arrived)
 	SIGNAL_HANDLER
+
 	if(!isliving(arrived))
 		return
 	var/mob/living/carbon/human/guarder = parent
@@ -91,6 +98,8 @@
 		cancel()
 
 /datum/component/guard/proc/apply_target_overlay()
+	SIGNAL_HANDLER
+
 	if(target_overlay)
 		target.cut_overlay(target_overlay)
 	target_overlay = mutable_appearance('icons/effects/landmarks_static.dmi', "combat", FLOAT_LAYER, POLLUTION_PLANE, 100)
@@ -98,6 +107,8 @@
 //	RegisterSignal(target_overlay, COMSIG_ATOM_ENTERED, PROC_REF(hitchungus))
 
 /datum/component/guard/proc/remove_target_overlay()
+	SIGNAL_HANDLER
+
 	if(!target_overlay)
 		return
 	target.cut_overlay(target_overlay)

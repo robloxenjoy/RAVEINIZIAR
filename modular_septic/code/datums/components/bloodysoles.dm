@@ -148,11 +148,11 @@
 		femcummy_feet = mutable_appearance('modular_septic/icons/effects/femcum.dmi', "shoefemcum", SHOES_LAYER)
 		femcummy_feet.color = COLOR_WHITE_FEMCUM
 
-	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/on_clean)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_moved)
-	RegisterSignal(parent, COMSIG_STEP_ON_BLOOD, .proc/on_step_blood)
-	RegisterSignal(parent, COMSIG_CARBON_UNEQUIP_SHOECOVER, .proc/unequip_shoecover)
-	RegisterSignal(parent, COMSIG_CARBON_EQUIP_SHOECOVER, .proc/equip_shoecover)
+	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(on_clean))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
+	RegisterSignal(parent, COMSIG_STEP_ON_BLOOD, PROC_REF(on_step_blood))
+	RegisterSignal(parent, COMSIG_CARBON_UNEQUIP_SHOECOVER, PROC_REF(unequip_shoecover))
+	RegisterSignal(parent, COMSIG_CARBON_EQUIP_SHOECOVER, PROC_REF(equip_shoecover))
 
 /datum/component/bloodysoles/feet/update_icon()
 	if(ishuman(wielder))
