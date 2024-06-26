@@ -9,7 +9,8 @@
 //    	usr << Player
 		if(iscarbon(Player.mob))
 			if(istype(Player.mob, /mob/living/carbon/human))
-				to_chat(src, "<span class='infoplain'>[Player.ckey], [Player.truerole].</span>")
+				var/mob/living/carbon/human/C = Player
+				to_chat(src, "<span class='infoplain'>[C.ckey], [C.truerole].</span>")
 		else
 			to_chat(src, "<span class='infoplain'>[Player.ckey].</span>")
 		amount += 1
