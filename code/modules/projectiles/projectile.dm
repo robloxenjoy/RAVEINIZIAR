@@ -743,8 +743,9 @@
 	var/zc = target.z != z
 //	if(zc)
 //		Bresenham3D(src.x, src.y, src.z, target.x, target.y, target.z)
-	if(zc)
-		before_z_change(old, target)
+	var/old = loc
+//	if(zc)
+//		before_z_change(old, target)
 	. = ..()
 	if(QDELETED(src)) // we coulda bumped something
 		return
