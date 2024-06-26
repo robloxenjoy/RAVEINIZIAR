@@ -27,7 +27,7 @@
 	if(!infinite_buy)
 		noob.mob?.mind?.bobux_bought |= type
 	if(buy_message)
-		to_chat(noob, "<span class='bobux'>[buy_message]</span>")
+		to_chat(noob, "<span class='warning'>[buy_message]</span>")
 
 //check to see if the stupid bich can even buy this thing
 //accounts for bobux cost but you can slap other requirements here
@@ -38,16 +38,16 @@
 	if(!noob || !noob.prefs)
 		return FALSE
 	if(type in noob.mob?.mind?.bobux_bought)
-		to_chat(noob, "<span clas='bobux'>Я уже купил эту штучку!</span>")
+		to_chat(noob, "<span clas='warning'>Я уже купил эту штучку!</span>")
 		return FALSE
 	if(!SSbobux.working)
-		to_chat(noob, "<span clas='bobux'>Каотичная Система развалена!</span>")
+		to_chat(noob, "<span clas='warning'>Каотичная Система развалена!</span>")
 		return FALSE
 	if((noob?.prefs?.bobux_amount >= cost) && !unbuyable)
 		return TRUE
 	else if(!silent)
 		fail_message = replacetextEx(fail_message, "NAME", "[name]")
-		to_chat(noob, "<span class='bobux'>[fail_message]</span>")
+		to_chat(noob, "<span class='warning'>[fail_message]</span>")
 		return FALSE
 
 //buying the fucking thing itself

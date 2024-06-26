@@ -6,7 +6,7 @@
 	base_icon_state = "poo"
 	germ_level = GERM_LEVEL_MAXIMUM
 	//crewmates be putting out massive turds
-	carry_weight = 500 GRAMS
+	carry_weight = 85 GRAMS
 	var/static/list/crossed_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)

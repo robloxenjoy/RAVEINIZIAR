@@ -39,6 +39,8 @@
 //	niqqerlay = null
 
 /datum/component/fraggot/proc/fraggot_died(mob/living/carbon/human/our_fraggot)
+	SIGNAL_HANDLER
+
 	if(!QDELETED(our_fraggot))
 //		our_fraggot.gib()
 		to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")]ФАТАЛ [our_fraggot.real_name] [our_fraggot.truerole] УМЕР![emoji_parse(":chaos:")]</span></span>")
