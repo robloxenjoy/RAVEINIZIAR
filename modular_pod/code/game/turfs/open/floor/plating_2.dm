@@ -134,6 +134,7 @@
 	name = "Пол"
 	icon_state = "soft"
 	footstep = FOOTSTEP_PLATING
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/goldenwise
 	name = "Пол"
@@ -142,6 +143,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/mud
 	name = "Грязь"
@@ -187,6 +189,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/cirspecial
 	name = "Пол"
@@ -195,6 +198,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/cirspecial2
 	name = "Пол"
@@ -203,6 +207,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/cirfire
 	name = "Пол"
@@ -211,11 +216,13 @@
 	light_range = 2
 	light_power = 2
 	light_color = "#d4ba52"
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/ancfire
 	name = "Пол"
 	icon_state = "ancfire"
 	footstep = FOOTSTEP_PLATING
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/nightbricks
 	name = "Пол"
@@ -224,6 +231,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/rust
 	name = "Пол"
@@ -232,6 +240,7 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/monumental
 	name = "Пол"
@@ -240,6 +249,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/waterfloor
 	name = "Грязь"
@@ -260,6 +270,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/non
 	name = "Грязь"
@@ -284,6 +295,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/stoner
 	name = "Пол"
@@ -292,6 +304,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/legend
 	name = "Пол"
@@ -300,6 +313,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/deadmeat
 	name = "Тело"
@@ -332,6 +346,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/slimebegin
 	name = "Зелень"
@@ -373,6 +388,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/reborn
 	name = "Пол"
@@ -381,6 +397,7 @@
 	barefootstep = FOOTSTEP_CRUMBLE
 	clawfootstep = FOOTSTEP_CRUMBLE
 	heavyfootstep = FOOTSTEP_CRUMBLE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/dirt
 	name = "Грязь"
@@ -432,6 +449,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/hotstone2
 	name = "Пол"
@@ -440,6 +458,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/hotstone
 	name = "Пол"
@@ -448,6 +467,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/wisestone
 	name = "Пол"
@@ -456,6 +476,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/vomitdirt
 	name = "Грязь"
@@ -494,11 +515,13 @@
 	name = "Пол"
 	icon_state = "platier"
 	footstep = FOOTSTEP_PLATING
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/platrie
 	name = "Пол"
 	icon_state = "platrie"
 	footstep = FOOTSTEP_PLATING
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/beautry
 	name = "Красивый Пол"
@@ -584,6 +607,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/exoticf
 	name = "Пол"
@@ -592,6 +616,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/hotstone5
 	name = "Пол"
@@ -600,6 +625,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/sota
 	name = "Пол"
@@ -608,6 +634,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/stoner2
 	name = "Пол"
@@ -616,6 +643,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/hotstone4
 	name = "Пол"
@@ -624,6 +652,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/hotstone3
 	name = "Пол"
@@ -632,6 +661,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/beautry2
 	name = "Красивый Пол"
@@ -659,6 +689,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/exoticwood2
 	name = "Пол"
@@ -668,6 +699,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/metalla
 	name = "Пол"
@@ -676,6 +708,7 @@
 	barefootstep = FOOTSTEP_METAL
 	clawfootstep = FOOTSTEP_METAL
 	heavyfootstep = FOOTSTEP_METAL
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/painstone
 	name = "Пол"
@@ -684,6 +717,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/hotstone22
 	name = "Пол"
@@ -692,6 +726,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/painwood
 	name = "Пол"
@@ -701,6 +736,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/uzstone
 	name = "Пол"
@@ -709,6 +745,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/ystone
 	name = "Пол"
@@ -717,3 +754,4 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15

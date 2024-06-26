@@ -47,3 +47,4 @@
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
 		to_chat(src, span_warning("Всё начнётся через... [tl > 0 ? "[DisplayTimeText(tl)]" : "скоро"]."))
+	to_chat(src, span_dead("Смертей в мире: [GLOB.world_deaths_crazy]"))

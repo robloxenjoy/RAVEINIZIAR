@@ -93,12 +93,12 @@
 	var/rolevich = input("Стоп, а какая роль?", "") as text
 	switch(rolevich)
 		if("Капнобатай")
-			client.role_ch = "kapno"
+			client.role_ch = "капнобатай"
 		if("Конченный")
-			client.role_ch = "konch"
+			client.role_ch = "конченный"
 		else
 			alert("Непонятно. Роль обычного капнобатая.")
-			client.role_ch = "kapno"
+			client.role_ch = "капнобатай"
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
@@ -134,14 +134,20 @@
 					character.dna.update_body_size()
 
 					switch(client.role_ch)
-						if("kapno")
+						if("капнобатай")
 							character.truerole = "Капнобатай"
 							character.pod_faction = "капнобатай"
 							character.hairstyle = "Bedhead 2"
+							character.facial_hairstyle = "Shaved"
 							character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
-						if("konch")
+						if("конченный")
 							character.truerole = "Конченный"
 							character.pod_faction = "конченный"
+							character.hairstyle = "Bald"
+							character.facial_hairstyle = "Shaved"
+							character.left_eye_color = pick("#c30000")
+							character.right_eye_color = pick("#c30000")
+//							character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
 					switch(character.truerole)
 						if("Капнобатай")
 							if(prob(10))

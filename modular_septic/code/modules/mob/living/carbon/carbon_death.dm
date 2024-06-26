@@ -30,6 +30,7 @@
 //		if(iswillet(src))
 //			return
 		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>Я мёртв! -10 Каотиков!</span>")
+		GLOB.world_deaths_crazy += 1
 	if(is_merc_job(src))
 		GLOB.mercenary_list -= 1
 //	client?.prefs?.adjust_bobux(-1)
@@ -74,5 +75,6 @@
 	. = ..()
 	// We are alive - We need our pulse back!
 	set_heartattack(FALSE)
+	GLOB.world_deaths_crazy -= 1
 	if(is_merc_job(src))
 		GLOB.mercenary_list += 1

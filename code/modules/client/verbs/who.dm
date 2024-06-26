@@ -4,9 +4,16 @@
 	set name = "Кто"
 	set category = "OOC"
 
+	var/amount = 0
 	for(var/client/Player)
 //    	usr << Player
-		to_chat(src, "<span class='infoplain'>[Player.ckey]</span>")
+		if(iscarbon(Player.mob))
+			if(istype(Player.mob, /mob/living/carbon/human))
+				to_chat(src, "<span class='infoplain'>[Player.ckey], [Player.truerole].</span>")
+		else
+			to_chat(src, "<span class='infoplain'>[Player.ckey].</span>")
+		amount += 1
+	to_chat(src, "<span class='infoplain'>Количество: [amount]</span>")
 
 /client/verb/adminwho()
 	set category = "Admin"

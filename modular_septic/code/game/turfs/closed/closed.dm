@@ -6,6 +6,7 @@
 	lower_frill_plane = GAME_PLANE_ABOVE_WINDOW
 	lower_frill_layer = ABOVE_DOOR_LAYER
 	var/powerwall = 10
+	var/dangerwall = 5
 
 /turf/closed/on_rammed(mob/living/carbon/rammer)
 	rammer.ram_stun()
@@ -32,7 +33,7 @@
 					var/obj/item/bodypart/head = GR.get_bodypart(BODY_ZONE_HEAD)
 					var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerwall)
 					GR.visible_message(span_pinkdang("[user] бьёт [GR] головой об [src]!"))
-					head.receive_damage(brute = damage, wound_bonus = 2, sharpness = null)
+					head.receive_damage(brute = damage, wound_bonus = dangerwall, sharpness = null)
 					user.changeNext_move(CLICK_CD_GRABBING)
 					user.adjustFatigueLoss(10)
 					playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)

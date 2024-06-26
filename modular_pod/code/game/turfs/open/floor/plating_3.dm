@@ -11,6 +11,7 @@
 	light_range = 3
 	light_power = 3
 	light_color = "#c2281b"
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/station/mystic
 	icon_state = "mystic"
@@ -18,6 +19,7 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/station/mystic/crazy
 	var/crazy_id = "station"
@@ -44,18 +46,22 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/station/enga
 	icon_state = "enga"
 	footstep = FOOTSTEP_PLATING
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/station/enga2
 	icon_state = "enga2"
 	footstep = FOOTSTEP_PLATING
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/station/web
 	icon_state = "web"
 	footstep = FOOTSTEP_PLATING
+	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/station/wayt
 	icon_state = "wayt"
@@ -63,3 +69,4 @@
 	barefootstep = FOOTSTEP_STONE
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15

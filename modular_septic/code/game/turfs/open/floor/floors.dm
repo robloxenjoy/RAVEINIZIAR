@@ -18,7 +18,7 @@
 					if(head)
 						var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerfloor)
 						GR.visible_message(span_pinkdang("[user] бьёт [GR] головой об [src]!"))
-						head.receive_damage(brute = damage, wound_bonus = 2, sharpness = null)
+						head.receive_damage(brute = damage, wound_bonus = dangerfloor, sharpness = null)
 						user.changeNext_move(CLICK_CD_GRABBING)
 						user.adjustFatigueLoss(10)
 						playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)

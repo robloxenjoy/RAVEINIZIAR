@@ -18,10 +18,10 @@
 	return ..()
 
 /obj/effect/landing/kapno
-	name = "kapno"
+	name = "капнобатай"
 
 /obj/effect/landing/konch
-	name = "konch"
+	name = "конченный"
 
 /obj/effect/landing/oper
 	name = "oper"
