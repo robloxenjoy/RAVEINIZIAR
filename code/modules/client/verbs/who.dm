@@ -10,7 +10,7 @@
 		if(ishuman(Player.mob))
 //			if(istype(Player.mob, /mob/living/carbon/human))
 //				var/mob/living/carbon/human/C = Player
-			to_chat(src, "<span class='infoplain'>[Player.ckey], [Player.truerole?].</span>")
+			to_chat(src, "<span class='infoplain'>[Player.ckey], [Player?.truerole].</span>")
 			amount += 1
 		else
 			to_chat(src, "<span class='infoplain'>[Player.ckey].</span>")
