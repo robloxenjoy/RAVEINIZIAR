@@ -47,11 +47,13 @@
 
 /datum/component/guard/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(check_deescalate))
+	RegisterSignal(parent, COMSIG_MOB_SWAP_HANDS, PROC_REF(cancel))
 //	RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(hitchungus))
 	RegisterSignal(parent, list(COMSIG_LIVING_START_PULL, COMSIG_MOVABLE_BUMP), PROC_REF(check_bump))
 
 /datum/component/guard/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
+	UnregisterSignal(parent, COMSIG_MOB_SWAP_HANDS)
 //	UnregisterSignal(parent, COMSIG_ATOM_ENTERED)
 	UnregisterSignal(parent, list(COMSIG_LIVING_START_PULL, COMSIG_MOVABLE_BUMP))
 
