@@ -33,7 +33,7 @@
 		var/atom/movable/AM
 		if(user.pulling)
 			AM = user.pulling
-			AM.forceMove(T)
+			AM.forceMove(above_turf)
 		user.forceMove(above_turf)
 		if(AM)
 			user.start_pulling(AM)

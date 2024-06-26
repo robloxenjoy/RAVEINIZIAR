@@ -740,10 +740,10 @@
 /obj/projectile/forceMove(atom/target)
 	if(!isloc(target) || !isloc(loc) || !z)
 		return ..()
-	var/zc = target.z != z
+//	var/zc = target.z != z
 //	if(zc)
 //		Bresenham3D(src.x, src.y, src.z, target.x, target.y, target.z)
-	var/old = loc
+//	var/old = loc
 //	if(zc)
 //		before_z_change(old, target)
 	. = ..()
@@ -883,7 +883,7 @@
 		set_angle(get_angle(src, targloc) + spread)
 
 	if(isliving(source) && length(modifiers))
-		var/list/calculated = calculate_projectile_angle_and_pixel_offsets(source, target_loc && target, modifiers)
+		var/list/calculated = calculate_projectile_angle_and_pixel_offsets(source, targloc && target, modifiers)
 		p_x = calculated[2]
 		p_y = calculated[3]
 
