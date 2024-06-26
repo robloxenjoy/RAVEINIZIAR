@@ -17,7 +17,7 @@
 	SEND_SIGNAL(src, COMSIG_FIXEYE_ENABLE, TRUE, TRUE)
 	SEND_SIGNAL(src, COMSIG_FIXEYE_LOCK)
 	RegisterSignal(src, COMSIG_MOB_LOGOUT, PROC_REF(kill_zoom), override = TRUE)
-/
+
 	var/distance = min(get_dist(src, A), 11)
 	var/direction = get_dir(src, A)
 	var/x_offset = 0
