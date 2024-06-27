@@ -41,6 +41,8 @@
 	START_PROCESSING(SSobj, src)
 
 /datum/component/guard/process(delta_time = SSGUARD_DT)
+	if(parent.combat_style != CS_GUARD)
+		cancel()
 	if(locate(/mob/living) in target)
 		var/mob/living/enemy = locate(/mob/living) in target
 		hitchungus(enemy)
