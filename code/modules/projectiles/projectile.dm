@@ -135,7 +135,7 @@
 	///Whether or not our bullet lacks penetrative power, and is easily stopped by armor.
 	var/weak_against_armour = FALSE
 	var/projectile_type = /obj/projectile
-	var/range = 50 //This will de-increment every step. When 0, it will deletze the projectile.
+	var/range = 30 //This will de-increment every step. When 0, it will deletze the projectile.
 	var/decayedRange //stores original range
 	var/reflect_range_decrease = 5 //amount of original range that falls off when reflecting, so it doesn't go forever
 	var/reflectable = NONE // Can it be reflected or not?
@@ -450,12 +450,15 @@
  * 5. Nothing
  */
 /obj/projectile/proc/select_target(turf/T, atom/target, atom/bumped)
-	// 1. original
+	// 1. special bumped border object check
+	if((bumped?.flags_1 & ON_BORDER_1) && can_hit_target(bumped, original == bumped, FALSE, TRUE))
+		return bumped
+	// 2. original
 	if(can_hit_target(original, TRUE, FALSE, original == bumped))
 		return original
 	var/list/atom/possible = list() // let's define these ONCE
 	var/list/atom/considering = list()
-	// 2. mobs
+	// 3. mobs
 	possible = typecache_filter_list(T, GLOB.typecache_living) // living only
 	for(var/i in possible)
 		if(!can_hit_target(i, i == original, TRUE, i == bumped))
@@ -465,17 +468,17 @@
 		var/mob/living/M = pick(considering)
 		return M.lowest_buckled_mob()
 	considering.len = 0
-	// 3. objs and other dense things
+	// 4. objs and other dense things
 	for(var/i in T.contents)
 		if(!can_hit_target(i, i == original, TRUE, i == bumped))
 			continue
 		considering += i
 	if(considering.len)
 		return pick(considering)
-	// 4. turf
+	// 5. turf
 	if(can_hit_target(T, T == original, TRUE, T == bumped))
 		return T
-	// 5. nothing
+	// 6. nothing
 		// (returns null)
 
 //Returns true if the target atom is on our current turf and above the right layer
