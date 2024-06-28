@@ -89,8 +89,8 @@
 			if(!active && pin)
 				user.transferItemToLoc(pin, user.loc)
 				user.put_in_hands(pin)
-				user.visible_message(span_red("[user] pulls the pin from the [src]!"),
-							span_warning("I pull the pin from the [src]."))
+				user.visible_message(span_red("[user] вытаскивает чеку из [src]!"),
+							span_warning("Я вытаскиваю чеку из [src]."))
 				pin = null
 				arm_grenade(user)
 				update_appearance(UPDATE_ICON)
@@ -140,11 +140,11 @@
 		return
 	if(istype(I, /obj/item/pin))
 		if(grenade_spooned)
-			to_chat(user, span_colossus("I'm fucked."))
+			to_chat(user, span_colossus("Стоп, это уже..."))
 			user.client?.give_award(/datum/award/achievement/misc/imfucked, user)
 		else if(grenade_flags & GRENADE_PINNED)
 			if(pin)
-				to_chat(user, span_warning("Oh. It already has a pin."))
+				to_chat(user, span_warning("Тут уже чека."))
 			else if(I.type != initial(pin))
 				var/obj/item/pin/other_pin = I.type
 				to_chat(user, span_warning("This Isn't the right pin, where'd I get a [initial(other_pin.name)]?"))
@@ -152,8 +152,8 @@
 				pin = I
 				user.transferItemToLoc(I, src, TRUE)
 				active = FALSE
-				user.visible_message(span_warning("[user] puts the pin back into the [src]!"), \
-							span_warning("I put the pin back into the [src]."))
+				user.visible_message(span_warning("[user] устанавливает чеку на [src]!"), \
+							span_warning("Я устанавливаю чеку на [src]."))
 				playsound(I, 'modular_septic/sound/weapons/grenade_safety.ogg', 65, FALSE)
 				update_appearance(UPDATE_ICON)
 	else if((grenade_flags & GRENADE_FUSED) && I.get_temperature() && !active && !botch_check(user))
@@ -187,8 +187,8 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/pin
-	name = "grenade pin"
-	desc = "The detonation pin of a grenade, usually found on a grenade before It's armed."
+	name = "Чека Гранаты"
+	desc = "Можно вставить обратно."
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "pin"
 	drop_sound = 'modular_septic/sound/items/coin_drop.ogg'

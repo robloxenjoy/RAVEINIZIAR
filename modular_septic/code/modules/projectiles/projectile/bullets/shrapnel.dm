@@ -1,13 +1,13 @@
 /obj/projectile/bullet/shrapnel
-	name = "flying shrapnel shard"
+	name = "Летящий осколок"
 	icon_state = "shrapnel"
 	base_icon_state = "shrapnel"
-	damage = 15
-	range = 7
+	damage = 18
+	range = 8
 	weak_against_armour = TRUE
 	dismemberment = 0
 	ricochets_max = 1
-	ricochet_chance = 1
+	ricochet_chance = 10
 	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 60
 	hit_prone_targets = TRUE
