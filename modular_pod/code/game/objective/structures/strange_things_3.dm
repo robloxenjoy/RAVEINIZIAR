@@ -373,7 +373,7 @@
 /obj/structure/kaotikmachine
 	name = "Каотическая Машина"
 	desc = "ПОКУПКА СНАРЯГИ!"
-	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "kaotik_machine"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
@@ -391,10 +391,8 @@
 		return
 	if(!lockeda)
 		if(user.client?.prefs)
-			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Другое", "Ничего")
+			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Другое")
 			if(!thing)
-				return
-			if(thing == "Ничего")
 				return
 			if(thing == "Холодное оружие")
 				melee_find(user)

@@ -229,7 +229,7 @@
 	opacity = TRUE
 	density = TRUE
 	plane = ABOVE_GAME_PLANE
-	layer = FLY_LAYER
+	layer = OBJ_LAYER
 	obj_flags = CAN_BE_HIT|BLOCK_Z_OUT_DOWN|BLOCK_Z_OUT_UP|BLOCK_Z_IN_DOWN|BLOCK_Z_IN_UP
 	var/doorOpen = 'modular_septic/sound/doors/door_metal_open.ogg'
 	var/doorClose = 'modular_septic/sound/doors/door_metal_close.ogg'
@@ -241,6 +241,7 @@
 	COOLDOWN_DECLARE(open_cooldown)
 	var/locked = FALSE
 	var/autoclose = FALSE
+	var/autolock = FALSE
 	var/visible = TRUE
 
 /obj/machinery/codec/door/proc/open(mob/user)
@@ -258,6 +259,7 @@
 		return
 	set_opacity(0)
 	set_density(FALSE)
+	layer = BELOW_MOB_LAYER
 	flags_1 &= ~PREVENT_CLICK_UNDER_1
 //	layer = initial(layer)
 	update_appearance()
@@ -280,6 +282,7 @@
 				autoclose_in(DOOR_CLOSE_WAIT)
 			return
 	set_density(TRUE)
+	layer = OBJ_LAYER
 	flags_1 |= PREVENT_CLICK_UNDER_1
 	update_appearance()
 	if(visible)
@@ -345,10 +348,8 @@
 		return
 	if(density)
 		open()
-		layer = ABOVE_OBJ_LAYER
 	else
 		close()
-		layer = FLY_LAYER
 
 /obj/machinery/codec/door/update_icon_state()
 	icon_state = "[base_icon_state][density]"
@@ -357,9 +358,13 @@
 /obj/machinery/codec/door/proc/autoclose()
 	if(!QDELETED(src) && !density && !locked && autoclose)
 		close()
+		if(autolock)
+			if(locked)
+				return
+			locked = TRUE
 
 /obj/machinery/codec/door/proc/autoclose_in(wait)
-	addtimer(CALLBACK(src, .proc/autoclose), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(autoclose)), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
 
 /obj/machinery/codec/door/proc/lock()
 	return
@@ -392,6 +397,9 @@
 	doorClose = 'modular_septic/sound/doors/wood/door_wooden_close.ogg'
 	doorDeni = 'modular_septic/sound/doors/wood/door_wooden_try.ogg'
 	autoclose = TRUE
+	locked = TRUE
+	key_worthy = TRUE
+	id_tag = "konchkey"
 
 /obj/machinery/codec/door/kapno/father
 	locked = TRUE
@@ -403,6 +411,18 @@
 	desc = "К комнатке отца Капнобатаев."
 	icon_state = "key_father"
 	id_tag = "kapnoroom"
+
+/obj/item/key/podpol/woody/kapnodvorkey
+	name = "Ключ"
+	desc = "К двери двора Капнобатаев."
+	icon_state = "key_father"
+	id_tag = "kapnodvor"
+
+/obj/item/key/podpol/woody/konchkey
+	name = "Ключ"
+	desc = "К двери двора Капнобатаев."
+	icon_state = "key_konch"
+	id_tag = "konchkey"
 
 #undef DOOR_CLOSE_WAIT
 

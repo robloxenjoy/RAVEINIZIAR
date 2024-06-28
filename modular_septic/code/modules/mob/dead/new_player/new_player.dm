@@ -119,19 +119,7 @@
 					character.age = client.age_ch
 					character.handed_flags = DEFAULT_HANDEDNESS
 
-					character.left_eye_color = pick("#000000", "#1f120f")
-					character.right_eye_color = pick("#000000", "#1f120f")
-					for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
-						if(initial(organ_eyes.eye_color))
-							continue
-						if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
-							organ_eyes.eye_color = pick("#000000", "#1f120f")
-							organ_eyes.old_eye_color = pick("#000000", "#1f120f")
-						else
-							organ_eyes.eye_color = pick("#000000", "#1f120f")
-							organ_eyes.old_eye_color = pick("#000000", "#1f120f")
-					character.dna.features["body_size"] = BODY_SIZE_NORMAL
-					character.dna.update_body_size()
+					var/eye_coloring = pick("#000000", "#1f120f")
 
 					switch(client.role_ch)
 						if("капнобатай")
@@ -145,8 +133,7 @@
 							character.pod_faction = "конченный"
 							character.hairstyle = "Bald"
 							character.facial_hairstyle = "Shaved"
-							character.left_eye_color = pick("#c30000")
-							character.right_eye_color = pick("#c30000")
+							eye_coloring = "#c30000"
 //							character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
 					switch(character.truerole)
 						if("Капнобатай")
@@ -158,6 +145,18 @@
 						if("Конченный")
 							character.equipOutfit(/datum/outfit/konch)
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
+
+					character.left_eye_color = eye_coloring
+					character.right_eye_color = eye_coloring
+					for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
+						if(initial(organ_eyes.eye_color))
+							continue
+						if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
+							organ_eyes.eye_color = eye_color
+							organ_eyes.old_eye_color = eye_color
+						else
+							organ_eyes.eye_color = eye_color
+							organ_eyes.old_eye_color = eye_color
 
 					for(var/obj/item/organ/genital/genital in character.internal_organs)
 						genital.Remove(character.)
@@ -193,7 +192,8 @@
 								to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
 //					for(var/obj/item/organ/genital/genital in character.internal_organs)
 //						genital.build_from_dna(character.dna, genital.mutantpart_key)
-
+					character.dna.features["body_size"] = BODY_SIZE_NORMAL
+					character.dna.update_body_size()
 					character.dna.update_dna_identity()
 					character.attributes?.update_attributes()
 					character.update_body()
@@ -208,6 +208,7 @@
 /datum/outfit/kapno
 	name = "Kapno Uniform"
 
+	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
 	uniform = /obj/item/clothing/under/codec/purp
 	pants = /obj/item/clothing/pants/codec/purp
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -225,6 +226,7 @@
 /datum/outfit/konch
 	name = "Konch Uniform"
 
+	l_pocket = /obj/item/key/podpol/woody/konchkey
 	uniform = /obj/item/clothing/under/codec/purp/black
 	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots
