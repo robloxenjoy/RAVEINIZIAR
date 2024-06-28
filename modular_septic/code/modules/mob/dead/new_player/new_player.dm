@@ -156,7 +156,7 @@
 							organ_eyes.old_eye_color = eye_coloring
 						else
 							organ_eyes.eye_color = eye_coloring
-							organ_eyes.old_eye_color = eeye_coloring
+							organ_eyes.old_eye_color = eye_coloring
 
 					for(var/obj/item/organ/genital/genital in character.internal_organs)
 						genital.Remove(character.)
