@@ -34,13 +34,14 @@ SUBSYSTEM_DEF(title)
 	if(!file_path)
 		file_path = "icons/runtime/default_title.dmi"
 
-	if(file_path == "[global.config.directory]/title_screens/images/podpol.dmi")
-		SSticker.login_music = "[global.config.directory]/title_music/sounds/dark-river-remastered.ogg"
+	if(file_path == "[global.config.directory]/title_screens/images/podpolcrazy.dmi")
+		SSticker.login_music = "[global.config.directory]/title_music/sounds/crazy.ogg"
+/*
 	else if(file_path == "[global.config.directory]/title_screens/images/podozl.dmi")
 		SSticker.login_music = "[global.config.directory]/title_music/sounds/cosmic.ogg"
 	else if(file_path == "[global.config.directory]/title_screens/images/podpolz.dmi")
 		SSticker.login_music = "[global.config.directory]/title_music/sounds/dawn.ogg"
-
+*/
 	for(var/mob/dead/new_player/P as anything in GLOB.new_player_list)
 		if(P.client)
 			P.client.playtitlemusic()
