@@ -391,7 +391,7 @@
 		return
 	if(!lockeda)
 		if(user.client?.prefs)
-			var/thing = alert(user, "Чего я хочу?",, "Холодное оружие", "Огнестрельное оружие", "Другое", "Ничего")
+			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Другое", "Ничего")
 			if(!thing)
 				return
 			if(thing == "Ничего")
