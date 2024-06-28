@@ -253,7 +253,7 @@
 //		if(istype(turf_loc))
 //			visible_message(span_danger("[src] hits [turf_loc]!"))
 	if(isturf(loc))
-		explosion(src, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 2, flame_range = 3)
+//		explosion(src, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 2, flame_range = 3)
 		process_hit(loc, loc, loc)
 	if(!QDELETED(src))
 		qdel(src)
@@ -307,34 +307,41 @@
 	return FLOOR(rand(min_damage*10, damage*10)/10, DAMAGE_PRECISION)
 
 /// I had to unfuck this due to the wack way our hud works
-/proc/calculate_projectile_angle_and_pixel_offsets(mob/user, modifiers)
-	var/p_x = 0
-	var/p_y = 0
+/proc/calculate_projectile_angle_and_pixel_offsets(atom/source, atom/target, modifiers)
 	var/angle = 0
-	if(LAZYACCESS(modifiers, ICON_X))
-		p_x = text2num(LAZYACCESS(modifiers, ICON_X))
-	if(LAZYACCESS(modifiers, ICON_Y))
-		p_y = text2num(LAZYACCESS(modifiers, ICON_Y))
-	if(LAZYACCESS(modifiers, SCREEN_LOC))
-		//Split screen-loc up into X+Pixel_X and Y+Pixel_Y
-		var/list/screen_loc_params = splittext(LAZYACCESS(modifiers, SCREEN_LOC), ",")
+	var/p_x = LAZYACCESS(modifiers, ICON_X) ? text2num(LAZYACCESS(modifiers, ICON_X)) : world.icon_size / 2 // ICON_(X|Y) are measured from the bottom left corner of the icon.
+	var/p_y = LAZYACCESS(modifiers, ICON_Y) ? text2num(LAZYACCESS(modifiers, ICON_Y)) : world.icon_size / 2 // This centers the target if modifiers aren't passed.
 
-		//Split X+Pixel_X up into list(X, Pixel_X)
-		var/list/screen_loc_X = splittext(screen_loc_params[1],":")
+	if(target)
+		var/turf/source_loc = get_turf(source)
+		var/turf/target_loc = get_turf(target)
+		var/dx = ((target_loc.x - source_loc.x) * world.icon_size) + (target.pixel_x - source.pixel_x) + (p_x - (world.icon_size / 2))
+		var/dy = ((target_loc.y - source_loc.y) * world.icon_size) + (target.pixel_y - source.pixel_y) + (p_y - (world.icon_size / 2))
 
-		//Split Y+Pixel_Y up into list(Y, Pixel_Y)
-		var/list/screen_loc_Y = splittext(screen_loc_params[2],":")
-		var/x = text2num(screen_loc_X[1]) * 32 + text2num(screen_loc_X[2]) - 32
-		var/y = text2num(screen_loc_Y[1]) * 32 + text2num(screen_loc_Y[2]) - 32
+		angle = ATAN2(dy, dx)
+		return list(angle, p_x, p_y)
 
-		//Calculate the "resolution" of screen based on client's view and world's icon size. This will work if the user can view more tiles than average.
-		var/list/screenview = getviewsize(user.client.view)
-		var/screenviewX = screenview[1] * world.icon_size
-		var/screenviewY = screenview[2] * world.icon_size
-		var/ox = round(screenviewX/2) - user.client.pixel_x //"origin" x
-		var/oy = round(screenviewY/2) - user.client.pixel_y //"origin" y
-		if(screenview[1] == 22)
-			ox += world.icon_size/2
-			oy += world.icon_size/2
-		angle = ATAN2(y - oy, x - ox)
+	if(!ismob(source) || !LAZYACCESS(modifiers, SCREEN_LOC))
+		CRASH("Can't make trajectory calculations without a target or click modifiers and a client.")
+
+	var/mob/user = source
+	if(!user.client)
+		CRASH("Can't make trajectory calculations without a target or click modifiers and a client.")
+
+	//Split screen-loc up into X+Pixel_X and Y+Pixel_Y
+	var/list/screen_loc_params = splittext(LAZYACCESS(modifiers, SCREEN_LOC), ",")
+	//Split X+Pixel_X up into list(X, Pixel_X)
+	var/list/screen_loc_X = splittext(screen_loc_params[1],":")
+	//Split Y+Pixel_Y up into list(Y, Pixel_Y)
+	var/list/screen_loc_Y = splittext(screen_loc_params[2],":")
+
+	var/tx = (text2num(screen_loc_X[1]) - 1) * world.icon_size + text2num(screen_loc_X[2])
+	var/ty = (text2num(screen_loc_Y[1]) - 1) * world.icon_size + text2num(screen_loc_Y[2])
+
+	//Calculate the "resolution" of screen based on client's view and world's icon size. This will work if the user can view more tiles than average.
+	var/list/screenview = view_to_pixels(user.client.view)
+
+	var/ox = round(screenview[1] / 2) - user.client.pixel_x //"origin" x
+	var/oy = round(screenview[2] / 2) - user.client.pixel_y //"origin" y
+	angle = ATAN2(tx - oy, ty - ox)
 	return list(angle, p_x, p_y)

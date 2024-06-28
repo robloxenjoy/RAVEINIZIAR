@@ -168,7 +168,7 @@
 	///How much we want to drop the embed_chance value, if we can embed, per tile, for falloff purposes
 	var/embed_falloff_tile
 	var/static/list/projectile_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /obj/projectile/Initialize(mapload)
@@ -699,6 +699,8 @@
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_FIRE)
 	if(hitscan)
 		process_hitscan()
+		if(QDELETED(src))
+			return
 	if(!(datum_flags & DF_ISPROCESSING))
 		START_PROCESSING(SSprojectiles, src)
 	pixel_move(1, FALSE) //move it now!
@@ -803,6 +805,9 @@
 				qdel(src)
 			return //Kill!
 		pixel_move(1, TRUE)
+		// No kevinz I do not care that this is a hitscan weapon, it is not allowed to travel 100 turfs in a tick
+		if(CHECK_TICK && QDELETED(src))
+			return
 
 /obj/projectile/proc/pixel_move(trajectory_multiplier, hitscanning = FALSE)
 	if(!loc || !trajectory)
@@ -821,16 +826,14 @@
 		trajectory.increment(trajectory_multiplier)
 		var/turf/T = trajectory.return_turf()
 		if(!istype(T))
+			// step back to the last valid turf before we Destroy
+			trajectory.increment(-trajectory_multiplier)
 			qdel(src)
 			return
 		if(T.z != loc.z)
-//			var/old = loc
-//			before_z_change(loc, T)
-//			z_chungus_change(loc, T)
 			trajectory_ignore_forcemove = TRUE
 			forceMove(T)
 			trajectory_ignore_forcemove = FALSE
-//			after_z_change(old, loc)
 			if(!hitscanning)
 				pixel_x = trajectory.return_px()
 				pixel_y = trajectory.return_py()
@@ -878,7 +881,9 @@
 	trajectory_ignore_forcemove = TRUE
 	forceMove(get_turf(source))
 	trajectory_ignore_forcemove = FALSE
-	starting = get_turf(source)
+	starting = curloc
+	pixel_x = source.pixel_x
+	pixel_y = source.pixel_y
 	original = target
 	if(targloc || !length(modifiers))
 		yo = targloc.y - curloc.y
