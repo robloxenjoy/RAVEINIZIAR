@@ -152,11 +152,11 @@
 						if(initial(organ_eyes.eye_color))
 							continue
 						if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
-							organ_eyes.eye_color = eye_color
-							organ_eyes.old_eye_color = eye_color
+							organ_eyes.eye_color = eye_coloring
+							organ_eyes.old_eye_color = eye_coloring
 						else
-							organ_eyes.eye_color = eye_color
-							organ_eyes.old_eye_color = eye_color
+							organ_eyes.eye_color = eye_coloring
+							organ_eyes.old_eye_color = eeye_coloring
 
 					for(var/obj/item/organ/genital/genital in character.internal_organs)
 						genital.Remove(character.)
