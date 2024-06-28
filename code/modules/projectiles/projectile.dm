@@ -884,7 +884,8 @@
 	starting = curloc
 	pixel_x = source.pixel_x
 	pixel_y = source.pixel_y
-	original = target
+//	original = target
+	target = targloc
 	if(targloc || !length(modifiers))
 		yo = targloc.y - curloc.y
 		xo = targloc.x - curloc.x
