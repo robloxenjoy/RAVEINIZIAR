@@ -349,7 +349,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	min_force = 10
-	force = 15
+	force = 16
 	throwforce = 15
 	min_force_strength = 1
 	force_strength = 1.6

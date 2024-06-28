@@ -369,3 +369,145 @@
 	density = FALSE
 	anchored = TRUE
 	opacity = FALSE
+
+/obj/structure/kaotikmachine
+	name = "Каотическая Машина"
+	desc = "ПОКУПКА СНАРЯГИ!"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "kaotik_machine"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	anchored = 1
+	density = 1
+	obj_flags = NONE
+	var/lockeda = FALSE
+
+/obj/structure/kaotikmachine/attack_hand(mob/living/carbon/human/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(!user.client)
+		return
+	if(!lockeda)
+		if(user.client?.prefs)
+			var/thing = alert(user, "Чего я хочу?",, "Холодное оружие", "Огнестрельное оружие", "Другое", "Ничего")
+			if(!thing)
+				return
+			if(thing == "Ничего")
+				return
+			if(thing == "Холодное оружие")
+				melee_find(user)
+			if(thing == "Огнестрельное оружие")
+				guns_find(user)
+			if(thing == "Другое")
+				other_find(user)
+
+/obj/structure/kaotikmachine/proc/melee_find(mob/living/carbon/human/user)
+	var/list/meleelist = list("Меч (40)", "Щит (20)", "Молоток (30)")
+	var/thingy = input(user, "Что за оружие я хочу?", "Я хочу...") as null|anything in sort_list(meleelist)
+	var/datum/preferences/pref_source = user.client?.prefs
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
+		to_chat(user, span_meatymeat("Нужны каотики!"))
+		return
+	switch(thingy)
+		if("Меч (40)")
+			if(pref_source.bobux_amount < 40)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/podpol_weapon/sword/steel(get_turf(user))
+			pref_source.bobux_amount -= 40
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Щит (20)")
+			if(pref_source.bobux_amount < 20)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/melee/shieldo/buckler/wooden(get_turf(user))
+			pref_source.bobux_amount -= 20
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Молоток (30)")
+			if(pref_source.bobux_amount < 30)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/melee/bita/hammer/heavy(get_turf(user))
+			pref_source.bobux_amount -= 30
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		else
+			return
+
+/obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
+	var/list/gunslist = list("Бобокс (80)", "Револьвер Нова (70)", "Винтовка СВД (100)")
+	var/thingy = input(user, "Что за оружие я хочу?", "Я хочу...") as null|anything in sort_list(gunslist)
+	var/datum/preferences/pref_source = user.client?.prefs
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
+		to_chat(user, span_meatymeat("Нужны каотики!"))
+		return
+	switch(thingy)
+		if("Бобокс (80)")
+			if(pref_source.bobux_amount < 80)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
+			pref_source.bobux_amount -= 80
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Револьвер Нова (70)")
+			if(pref_source.bobux_amount < 70)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
+			pref_source.bobux_amount -= 70
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Винтовка СВД (100)")
+			if(pref_source.bobux_amount < 100)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/gun/ballistic/automatic/remis/svd(get_turf(user))
+			pref_source.bobux_amount -= 100
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		else
+			return
+
+/obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
+	var/list/otherlist = list("Шлем (30)", "Лёгкий Бронежилет (40)")
+	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/datum/preferences/pref_source = user.client?.prefs
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
+		to_chat(user, span_meatymeat("Нужны каотики!"))
+		return
+	switch(thingy)
+		if("Шлем (30)")
+			if(pref_source.bobux_amount < 30)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/clothing/head/helmet/codec/def_yel(get_turf(user))
+			pref_source.bobux_amount -= 30
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Лёгкий Бронежилет (40)")
+			if(pref_source.bobux_amount < 40)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/clothing/suit/armor/vest/bulletproofer(get_turf(user))
+			pref_source.bobux_amount -= 40
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		else
+			return

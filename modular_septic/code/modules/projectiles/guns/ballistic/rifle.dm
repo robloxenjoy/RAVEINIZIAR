@@ -301,9 +301,8 @@
 
 // 7.62x54R Lampiao sniper-rifle
 /obj/item/gun/ballistic/automatic/remis/svd
-	name = "\proper Lampiao semi-automatic designated marksman rifle"
-	desc = "A Lampiao sniper-rifle firing in 7.62x54R, the design allows for comfortable medium and long range combat, and unconventional, but effective CQC against armored targets. \
-	 Has a dovetail mount for a PSO-1M2-1 4x24 scope and a threaded barrel for a sound-suppressor. "
+	name = "Винтовка СВД"
+	desc = "Дистанция - залог успеха."
 	icon = 'modular_septic/icons/obj/items/guns/64x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/rifle_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/guns/inhands/rifle_righthand.dmi'

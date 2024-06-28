@@ -1629,9 +1629,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	var/bobux_amount = rand(1,10)
 	if(prob(50))
 		message = pick(messages_positive)
-		message += " +[bobux_amount] bobux!"
+		message += " +[bobux_amount] каотиков!"
 	else
 		message = pick(messages_negative)
-		message += " -[bobux_amount] bobux!"
+		message += " -[bobux_amount] каотиков!"
 	to_chat(C, "<span class='bobux'>[message]</span>")
 	qdel(src)

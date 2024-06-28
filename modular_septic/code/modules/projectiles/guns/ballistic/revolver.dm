@@ -96,8 +96,8 @@
 
 // NAMBU REVOLVER
 /obj/item/gun/ballistic/revolver/remis/nova
-	name = "\improper Nova Seguranca M62 revolver"
-	desc = "A stained, antique revolver with an unknown insignia on the side."
+	name = "Револьвер Нова"
+	desc = "Старый, причудливый."
 	icon_state = "newnambu"
 	base_icon_state = "newnambu"
 	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_lefthand.dmi'
