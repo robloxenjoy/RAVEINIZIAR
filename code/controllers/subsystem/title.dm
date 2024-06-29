@@ -38,9 +38,9 @@ SUBSYSTEM_DEF(title)
 		file_path = "icons/misc/podpolobby_crazy.dmi"
 
 	if(lobbyworld == "normal")
-		SSticker.login_music = pick('modular_septic/protection.ogg', 'modular_septic/algerian.ogg', 'modular_septic/dark river.ogg')
+		SSticker.login_music = pick('modular_septic/protection.ogg', 'modular_septic/algerian.ogg')
 	else
-		SSticker.login_music = 'modular_septic/crazy.ogg'
+		SSticker.login_music = 'modular_septic/dark river.ogg'
 
 //	if(file_path == "[global.config.directory]/title_screens/images/podpolcrazy.dmi")
 //		SSticker.login_music = "[global.config.directory]/title_music/sounds/crazy.ogg"
