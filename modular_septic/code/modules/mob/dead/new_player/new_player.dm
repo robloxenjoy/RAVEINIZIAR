@@ -146,20 +146,17 @@
 							character.equipOutfit(/datum/outfit/konch)
 					character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 
-					character.left_eye_color = eye_coloring
-					character.right_eye_color = eye_coloring
 					for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
-						if(initial(organ_eyes.eye_color))
-							continue
+//						if(initial(organ_eyes.eye_color))
+//							continue
 						if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
-							character.eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
+							character.left_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
 							organ_eyes.old_eye_color = eye_coloring
 							character.dna.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
 						else
-							character.eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
+							character.right_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
 							organ_eyes.old_eye_color = eye_coloring
 							character.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
-
 					for(var/obj/item/organ/genital/genital in character.internal_organs)
 						genital.Remove(character.)
 						qdel(genital)
