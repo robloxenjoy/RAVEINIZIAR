@@ -3,7 +3,7 @@
 /obj/effect/lobby_image
 	name = "Подпол"
 	desc = "MMO-Roguelike."
-	icon = 'icons/misc/fullscreen.dmi'
+	icon = 'icons/misc/podpolobby.dmi'
 	icon_state = "podpolt"
 	screen_loc = "WEST,SOUTH"
 	plane = 300
