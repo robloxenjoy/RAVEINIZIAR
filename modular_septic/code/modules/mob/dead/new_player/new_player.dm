@@ -218,6 +218,7 @@
 
 	uniform = null
 	r_pocket = /obj/item/key/podpol/woody/kapnokey
+	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
 	belt = /obj/item/gun/ballistic/automatic/pistol/cortes
 	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	pants = /obj/item/clothing/pants/codec/purp

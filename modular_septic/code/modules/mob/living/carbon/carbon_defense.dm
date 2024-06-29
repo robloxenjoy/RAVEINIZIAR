@@ -159,33 +159,33 @@
 	//disarm succesful
 	if(diceroll >= DICE_SUCCESS)
 		if(weapon_go_fwoosh)
-			visible_message(span_danger("<b>[src]</b> tries to grab [held_item] from <b>[target]</b>, and it flies out of [target.p_their()] hands!"), \
-						span_userdanger("I try to grab <b>[target]</b>'s [held_item], but it flies out of my reach!"), \
-						span_danger("I hear some loud shuffling, and something dropping forcefully on the ground!"), \
+			visible_message(span_danger("<b>[src]</b> пытается схватить [held_item] у <b>[target]</b>, но [held_item] отлетает!"), \
+						span_userdanger("Я пытаюсь схватить <b>[target]</b> [held_item], но [held_item] отлетает!"), \
+						span_danger("Я слышу хуйню!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = target)
-			to_chat(target, span_userdanger("<b>[src]</b> grabs my [held_item], and it flies out of my hands!"))
+			to_chat(target, span_userdanger("<b>[src]</b> пытается схватить [held_item], но [held_item] отлетает от меня!"))
 			if(target.dropItemToGround(held_item))
 				var/turf/target_turf = get_edge_target_turf(held_item, direction)
 				held_item.throw_at(target_turf, held_item.throw_range, held_item.throw_speed, src, FALSE)
 		else
-			visible_message(span_danger("<b>[src]</b> disarms \the [held_item] away from <b>[target]</b>!"), \
-						span_userdanger("I disarm \the [held_item] away from <b>[target]</b>!"), \
-						span_danger("I hear some loud shuffling!"), \
+			visible_message(span_danger("<b>[src]</b> обезоруживает [held_item] от <b>[target]</b>!"), \
+						span_userdanger("Я обезоруживаю [held_item] от <b>[target]</b>!"), \
+						span_danger("Я слышу хуйню!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = target)
-			to_chat(target, span_userdanger("<b>[src]</b> diarms \the [held_item] away from me!"))
+			to_chat(target, span_userdanger("<b>[src]</b> обезоруживает [held_item] от меня!"))
 			if(target.dropItemToGround(held_item))
 				put_in_active_hand(held_item)
 		return
 	//epic disarm fail
 	else
-		visible_message(span_danger("<b>[src]</b> tries to disarm \the [held_item] from <b>[target]</b>, but fumbles and misses!"),
-					span_userdanger("I try to disarm \the [held_item] from <b>[target]</b>'s, but fumble and miss!"),
-					span_danger("I hear some loud shuffling!"),
+		visible_message(span_danger("<b>[src]</b> пытается обезоружить [held_item] от <b>[target]</b>, но мешкается и промахивается!"),
+					span_userdanger("Я пытаюсь обезоружить [held_item] от <b>[target]</b>, но мешкаюсь и промахиваюсь!"),
+					span_danger("Я слышу хуйню!"),
 					vision_distance = COMBAT_MESSAGE_RANGE,
 					ignored_mobs = target)
-		to_chat(target, span_userdanger("<b>[src]</b> tries to disarm \the [held_item] from me, but fumbles and misses!"))
+		to_chat(target, span_userdanger("<b>[src]</b> пытается обезоружить [held_item] от меня, но мешкается и промахивается!"))
 		return
 
 /mob/living/carbon/attackby_tertiary(obj/item/weapon, mob/living/user, params)

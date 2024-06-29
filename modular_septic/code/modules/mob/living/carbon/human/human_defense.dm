@@ -677,6 +677,8 @@
 				dist_modifier += 10
 			if(firer.body_position == LYING_DOWN)
 				dist_modifier += 5
+			if(firer.combat_mode)
+				dist_modifier += 5
 /*
 				if(body_position == STANDING_UP)
 					if(stat != CONSCIOUS)
