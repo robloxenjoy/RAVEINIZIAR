@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(title)
 */
 //	if(length(title_screens))
 //		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
-
+	var/lobbyworld
 	if(prob(70))
 		lobbyworld = "normal"
 		file_path = "icons/misc/podpolobby.dmi"
