@@ -244,7 +244,7 @@
 	var/autolock = FALSE
 	var/visible = TRUE
 
-/obj/machinery/codec/door/proc/open(mob/user)
+/obj/machinery/codec/door/proc/open(mob/living/carbon/user)
 	if(!COOLDOWN_FINISHED(src, open_cooldown))
 		return
 	if(!density)
@@ -340,7 +340,7 @@
 		return TRUE
 	return ..()
 
-/obj/machinery/codec/door/attack_hand(mob/user, list/modifiers)
+/obj/machinery/codec/door/attack_hand(mob/living/carbon/user, list/modifiers)
 	. = ..()
 	if(.)
 		return

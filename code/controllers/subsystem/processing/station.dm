@@ -39,8 +39,8 @@ PROCESSING_SUBSYSTEM_DEF(station)
 				log_game(message)
 				message_admins(message)
 				continue
-
-			setup_trait(station_trait_path)
+			if(station_trait_path)
+				setup_trait(station_trait_path)
 
 		return
 
@@ -49,8 +49,9 @@ PROCESSING_SUBSYSTEM_DEF(station)
 
 		// If forced, (probably debugging), just set it up now, keep it out of the pool.
 		if(initial(trait_typepath.force))
-			setup_trait(trait_typepath)
-			continue
+			if(trait_typepath)
+				setup_trait(trait_typepath)
+				continue
 
 		if(initial(trait_typepath.trait_flags) & STATION_TRAIT_ABSTRACT)
 			continue //Dont add abstract ones to it
