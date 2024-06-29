@@ -737,7 +737,7 @@
 
 /atom/movable/screen/mood/attack_tk()
 	return
-
+/*
 /atom/movable/screen/splash
 	icon = 'icons/blank_title.png'
 	icon_state = ""
@@ -784,7 +784,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/splash)
 		holder = null
 	return ..()
 
-
+*/
 /atom/movable/screen/component_button
 	var/atom/movable/screen/parent
 

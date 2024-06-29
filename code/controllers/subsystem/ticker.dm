@@ -114,7 +114,7 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 */
-	if(world.lobbyworld = "normal")
+	if(world.lobbyworld == "normal")
 		login_music = pick('modular_septic/protection.ogg', 'modular_septic/algerian.ogg', 'modular_septic/dark river.ogg')
 	else
 		login_music = 'modular_septic/crazy.ogg'
