@@ -1,5 +1,5 @@
-/var/obj/effect/lobby_image = new/obj/effect/lobby_image()
-
+///var/obj/effect/lobby_image = new/obj/effect/lobby_image()
+/*
 /obj/effect/lobby_image
 	name = "Подпол"
 	desc = "MMO-Roguelike."
@@ -13,6 +13,7 @@
 		icon_state = "podpolt"
 	else
 		icon_state = "podpolcrazy"
+*/
 //	overlays += /obj/effect/lobby_grain
 //	desc = vessel_name()
 

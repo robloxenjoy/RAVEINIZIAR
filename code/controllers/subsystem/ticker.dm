@@ -57,7 +57,6 @@ SUBSYSTEM_DEF(ticker)
 
 	/// Why an emergency shuttle was called
 	var/emergency_reason
-	var/lobbyworld = null
 
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 /*
@@ -116,15 +115,6 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 */
-	if(prob(70))
-		lobbyworld = "normal"
-	else
-		lobbyworld = "crazy"
-
-	if(lobbyworld == "normal")
-		login_music = pick('modular_septic/protection.ogg', 'modular_septic/algerian.ogg', 'modular_septic/dark river.ogg')
-	else
-		login_music = 'modular_septic/crazy.ogg'
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase = generate_code_phrase(return_list=TRUE)
 

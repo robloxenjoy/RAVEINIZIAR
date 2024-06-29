@@ -18,21 +18,29 @@ SUBSYSTEM_DEF(title)
 			previous_icon = new(previous_icon)
 	fdel("data/previous_title.dat")
 
-	var/list/provisional_title_screens = flist("[global.config.directory]/title_screens/images/")
-	var/list/title_screens = list()
-	var/use_rare_screens = prob(1)
-
+//	var/list/provisional_title_screens = flist("[global.config.directory]/title_screens/images/")
+//	var/list/title_screens = list()
+//	var/use_rare_screens = prob(1)
+/*
 	for(var/S in provisional_title_screens)
 		var/list/L = splittext(S,"+")
 		if((L.len == 1 && (L[1] != "exclude" && L[1] != "blank.png"))|| (L.len > 1 && ((use_rare_screens && lowertext(L[1]) == "rare") || (lowertext(L[1]) == lowertext(SSmapping.config.map_name)))))
 			title_screens += S
+*/
+//	if(length(title_screens))
+//		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
 
-	if(length(title_screens))
-		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
+	if(prob(70))
+		lobbyworld = "normal"
+		file_path = "icons/misc/podpolobby.dmi"
+	else
+		lobbyworld = "crazy"
+		file_path = "icons/misc/podpolobby_crazy.dmi"
 
-
-	if(!file_path)
-		file_path = "icons/runtime/default_title.dmi"
+	if(lobbyworld == "normal")
+		SSticker.login_music = pick('modular_septic/protection.ogg', 'modular_septic/algerian.ogg', 'modular_septic/dark river.ogg')
+	else
+		SSticker.login_music = 'modular_septic/crazy.ogg'
 
 //	if(file_path == "[global.config.directory]/title_screens/images/podpolcrazy.dmi")
 //		SSticker.login_music = "[global.config.directory]/title_music/sounds/crazy.ogg"

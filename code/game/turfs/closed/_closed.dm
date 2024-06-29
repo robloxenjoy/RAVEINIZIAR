@@ -70,7 +70,7 @@
 
 /turf/closed/indestructible/oldshuttle/corner
 	icon_state = "corner"
-/*
+
 /turf/closed/indestructible/splashscreen
 	name = "Space Station 13"
 	desc = null
@@ -105,7 +105,7 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 			if(NAMEOF(src, icon))
 				SStitle.icon = icon
 				handle_generic_titlescreen_sizes()
-*/
+
 /turf/closed/indestructible/start_area
 	name = null
 	desc = null
