@@ -1,5 +1,5 @@
 /client/adminwho()
-	set category = "Admin"
+	set category = null
 	set name = "Adminwho"
 
 	if(!SSwho?.adminwho_datum)
