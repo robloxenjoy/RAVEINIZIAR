@@ -19,6 +19,7 @@
 	hub_password = "kMZy3U5jJHSiBQjr"
 	name = "/tg/ Station 13"
 	fps = 40
+	var/lobbyworld = null
 #ifdef FIND_REF_NO_CHECK_TICK
 	loop_checks = FALSE
 #endif

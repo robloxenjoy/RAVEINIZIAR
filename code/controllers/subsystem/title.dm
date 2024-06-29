@@ -34,8 +34,8 @@ SUBSYSTEM_DEF(title)
 	if(!file_path)
 		file_path = "icons/runtime/default_title.dmi"
 
-	if(file_path == "[global.config.directory]/title_screens/images/podpolcrazy.dmi")
-		SSticker.login_music = "[global.config.directory]/title_music/sounds/crazy.ogg"
+//	if(file_path == "[global.config.directory]/title_screens/images/podpolcrazy.dmi")
+//		SSticker.login_music = "[global.config.directory]/title_music/sounds/crazy.ogg"
 /*
 	else if(file_path == "[global.config.directory]/title_screens/images/podozl.dmi")
 		SSticker.login_music = "[global.config.directory]/title_music/sounds/cosmic.ogg"

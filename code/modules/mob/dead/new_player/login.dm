@@ -1,3 +1,23 @@
+/var/obj/effect/lobby_image = new/obj/effect/lobby_image()
+
+/obj/effect/lobby_image
+	name = "Подпол"
+	desc = "MMO-Roguelike."
+	icon = 'icons/misc/fullscreen.dmi'
+	icon_state = "podpolt"
+	screen_loc = "WEST,SOUTH"
+	plane = 300
+
+/obj/effect/lobby_image/New()
+	if(prob(70))
+		icon_state = "podpolt"
+		world.lobbyworld = "normal"
+	else
+		icon_state = "podpolcrazy"
+		world.lobbyworld = "crazy"
+//	overlays += /obj/effect/lobby_grain
+//	desc = vessel_name()
+
 /mob/dead/new_player/Login()
 	if(!client)
 		return

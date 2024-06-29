@@ -17,7 +17,6 @@ SUBSYSTEM_DEF(ticker)
 	var/datum/game_mode/mode = null
 
 	var/login_music //music played in pregame lobby
-	var/efn_login_music
 	var/round_end_sound //music/jingle played when the world reboots
 	var/round_end_sound_sent = TRUE //If all clients have loaded it
 
@@ -74,7 +73,7 @@ SUBSYSTEM_DEF(ticker)
 		"wma" = TRUE,
 		"aiff" = TRUE,
 	)
-
+/*
 	var/list/provisional_title_music = flist("[global.config.directory]/title_music/sounds/")
 	var/list/music = list()
 	var/use_rare_music = prob(1)
@@ -114,7 +113,11 @@ SUBSYSTEM_DEF(ticker)
 		login_music = pick(music)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
-
+*/
+	if(world.lobbyworld = "normal")
+		login_music = pick('modular_septic/protection.ogg', 'modular_septic/algerian.ogg', 'modular_septic/dark river.ogg')
+	else
+		login_music = 'modular_septic/crazy.ogg'
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase = generate_code_phrase(return_list=TRUE)
 
