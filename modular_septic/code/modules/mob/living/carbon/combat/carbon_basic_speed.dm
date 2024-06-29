@@ -25,7 +25,7 @@
 	var/speed_modifier = (base_speed.multiplicative_slowdown/ATTRIBUTE_MIDDLING*(dex-ATTRIBUTE_MIDDLING))
 	// We are faster than average, decrease the speed modifier
 	if(speed_modifier >= 0)
-		speed_modifier *= stance_efficiency/150
+		speed_modifier *= stance_efficiency/130
 	// We are slower than average, increase the speed modifier
 	else
 		speed_modifier *= LIMB_EFFICIENCY_OPTIMAL/max(20, stance_efficiency)

@@ -38,8 +38,11 @@
 	Stun(5 SECONDS)
 	fatigue_grunt()
 	//rip
-	if(diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_CRIT_FAILURE)
-		set_heartattack(TRUE)
+	var/obj/item/organ/heart/H = getorganslot(ORGAN_SLOT_HEART)
+	if(H)
+		if((getorganslotefficiency(ORGAN_SLOT_HEART) < ORGAN_BRUISED_EFFICIENCY) || age >= 50)
+			if(diceroll(GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_CRIT_FAILURE)
+				set_heartattack(TRUE)
 
 /mob/living/carbon/proc/update_endurance_fatigue_modifier()
 	var/fatigue_modification = (GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)-ATTRIBUTE_MIDDLING)*10
