@@ -66,6 +66,11 @@
 		return
 	flick("purplenig", hud_used.pain_flash)
 
+/mob/proc/flash_kaosgain()
+	if(!hud_used?.pain_flash)
+		return
+	flick("kaosgain", hud_used.pain_flash)
+
 /mob/proc/flash_pain_mental(power)
 	if(!hud_used?.pain_flash)
 		return
