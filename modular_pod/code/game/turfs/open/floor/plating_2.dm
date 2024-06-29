@@ -757,3 +757,26 @@
 	clawfootstep = FOOTSTEP_STONE
 	heavyfootstep = FOOTSTEP_STONE
 	powerfloor = 15
+
+/turf/open/floor/plating/polovich/way/kaos
+	name = "Хаос"
+	desc = "ПОДПОЛ. MMO-ROGUELIKE."
+	icon_state = "kaos1"
+	icon = 'modular_pod/icons/turf/floors_4.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
+
+/turf/open/floor/plating/polovich/way/kaos/se
+	icon_state = "kaos2"
+
+/turf/open/floor/plating/polovich/way/kaos/th
+	icon_state = "kaos3"
+
+/turf/open/floor/plating/polovich/way/kaos/fo
+	icon_state = "kaos4"
+
+/turf/open/floor/plating/polovich/way/kaos/fi
+	icon_state = "kaos5"

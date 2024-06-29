@@ -517,3 +517,26 @@
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
+
+/obj/structure/kaos/blackwindow
+	name = "Чёрное Зеркало"
+	desc = "?"
+	icon = 'modular_pod/icons/turf/floors_4.dmi'
+	icon_state = "blackwindow"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	obj_flags = NONE
+	anchored = TRUE
+	density = TRUE
+	var/lightchoose
+
+/obj/structure/kaos/blackwindow/Initialize(mapload)
+	. = ..()
+	lightchoose = rand(1, 2)
+	switch(lightchoose)
+		if(1)
+			set_light(8, 3, "#b90000")
+		if(2)
+			set_light(8, 3, "#b900b9")
+//		if(3)
+//			set_light(4, 3, "#b90000")
