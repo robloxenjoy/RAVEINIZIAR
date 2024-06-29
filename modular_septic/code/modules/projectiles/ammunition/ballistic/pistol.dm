@@ -17,6 +17,8 @@
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/c9mm
 
 /obj/item/ammo_casing/c45
+	name = ".45 Гильза"
+	desc = "Гильра калибра .45."
 	icon_state = "c45"
 	base_icon_state = "c45"
 	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.ogg')

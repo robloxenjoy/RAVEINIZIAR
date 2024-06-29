@@ -24,7 +24,7 @@
 	var/list/dispensible_stacks = list(/obj/item/ammo_box/magazine/ammo_stack/shotgun/bolas/loaded,
 									/obj/item/ammo_box/magazine/ammo_stack/shotgun/bolas/slugs/loaded,
 									/obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded,
-									/obj/item/ammo_box/magazine/ammo_stack/shotgun/slugs/loaded,
+									/obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded,
 									/obj/item/ammo_box/magazine/ammo_stack/a276/loaded,
 									/obj/item/ammo_box/magazine/ammo_stack/c38/loaded,
 									/obj/item/ammo_box/magazine/ammo_stack/c38/pluspee/loaded,

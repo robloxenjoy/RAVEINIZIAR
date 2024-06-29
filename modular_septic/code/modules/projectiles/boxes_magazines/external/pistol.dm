@@ -31,7 +31,7 @@
 	icon_state = "[base_icon_state]-[min(round(ammo_count(), 2), 8)]"
 
 /obj/item/ammo_box/magazine/u45
-	name = "pistol magazine (.45)"
+	name = "Пистолетный Магазин"
 	icon = 'modular_septic/icons/obj/items/ammo/pistol.dmi'
 	icon_state = "usp"
 	base_icon_state = "usp"
@@ -46,7 +46,6 @@
 /obj/item/ammo_box/magazine/u45/update_icon_state()
 	. = ..()
 	icon_state = "[base_icon_state]-[min(round(ammo_count(), 2), 8)]"
-
 
 /obj/item/ammo_box/magazine/combatmaster9mm
 	name = "frag master magazine (9mm)"

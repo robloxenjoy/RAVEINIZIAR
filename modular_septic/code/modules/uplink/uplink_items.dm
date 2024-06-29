@@ -263,7 +263,7 @@
 /datum/uplink_item/ammo/shotgunstack/slugs
 	name = "12-gauge slug shells"
 	desc = "A stack of 8 12-gauge shotgun slug shells. Pierces light armor."
-	item = /obj/item/ammo_box/magazine/ammo_stack/shotgun/slugs/loaded
+	item = /obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded
 	cost = 2
 
 /datum/uplink_item/ammo/shotgun
