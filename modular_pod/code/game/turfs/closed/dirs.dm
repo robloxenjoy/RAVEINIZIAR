@@ -7,7 +7,6 @@
 	var/wallis = TRUE
 	var/state1 = "wall1"
 	var/state2 = "wall2"
-	var/special_dir = FALSE
 	baseturfs = /turf/open/floor/plating/polovich/codec/dirt/mud
 	var/personal_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
 
@@ -29,10 +28,7 @@
 		surround[4] = 1
 	switch(list2params(surround))
 		if("1&0&0&0")
-			icon_state = "[base_icon_state]_north"
-			if(special_dir)
-				if(dir)
-					dir = rand(0, 4)
+			dir = NORTH
 		if("0&1&0&0")
 			dir = SOUTH
 		if("0&0&1&0")

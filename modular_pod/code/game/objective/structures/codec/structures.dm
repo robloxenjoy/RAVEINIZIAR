@@ -254,8 +254,7 @@
 		sound_hint()
 		COOLDOWN_START(src, open_cooldown, open_cooldown_duration)
 		if(user)
-			user.visible_message(span_danger("[user] трясёт ручку [src]."), \
-								span_notice("Заперто!"))
+			visible_message("<span class = 'notice'>[user] трясёт ручку [src].</span>")
 		return
 	set_opacity(0)
 	set_density(FALSE)
