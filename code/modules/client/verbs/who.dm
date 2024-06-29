@@ -18,7 +18,7 @@
 	to_chat(src, "<span class='infoplain'>Количество: [amount]</span>")
 
 /client/verb/adminwho()
-	set category = "Admin"
+	set category = null
 	set name = "Adminwho"
 
 	var/msg = "<b>Current Admins:</b>\n"
