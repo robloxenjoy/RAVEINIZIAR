@@ -1,6 +1,6 @@
 /obj/effect/decal/cleanable/blood
-	name = "blood"
-	desc = "It's red and gooey. Perhaps it's the chef's cooking?"
+	name = "Кровь"
+	desc = "Повсюду."
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "floor1"
 	random_icon_states = list("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "floor7")
@@ -78,9 +78,9 @@
 	drydesc = "Some old bloody tracks left by wheels. Machines are evil, perhaps."
 
 /obj/effect/decal/cleanable/trail_holder //not a child of blood on purpose
-	name = "blood"
+	name = "Кровь"
 	icon = 'icons/effects/blood.dmi'
-	desc = "Your instincts say you shouldn't be following these."
+	desc = "Что-то внутри меня говорит, что не надо идти дальше."
 	beauty = -50
 	var/list/existing_dirs = list()
 
@@ -88,8 +88,8 @@
 	return TRUE
 
 /obj/effect/decal/cleanable/blood/gibs
-	name = "gibs"
-	desc = "They look bloody and gruesome."
+	name = "Мясо"
+	desc = "Хуясо."
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "gib1"
 	layer = LOW_OBJ_LAYER
@@ -97,8 +97,8 @@
 	mergeable_decal = FALSE
 	turf_loc_check = FALSE
 
-	dryname = "rotting gibs"
-	drydesc = "They look bloody and gruesome while some terrible smell fills the air."
+	dryname = "Гнилое Мясо"
+	drydesc = "Гнилое хуясо."
 
 /obj/effect/decal/cleanable/blood/gibs/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()
@@ -187,8 +187,8 @@
 	dry()
 
 /obj/effect/decal/cleanable/blood/drip
-	name = "drips of blood"
-	desc = "It's red."
+	name = "Капля Крови"
+	desc = "Красно-красно."
 	icon_state = "drip5" //using drip5 since the others tend to blend in with pipes & wires.
 	random_icon_states = list("drip1","drip2","drip3","drip4","drip5")
 	bloodiness = 0
@@ -202,8 +202,8 @@
 
 //BLOODY FOOTPRINTS
 /obj/effect/decal/cleanable/blood/footprints
-	name = "footprints"
-	desc = "WHOSE FOOTPRINTS ARE THESE?"
+	name = "Следы"
+	desc = "Кровавые."
 	icon = 'icons/effects/footprints.dmi'
 	icon_state = "blood1"
 	random_icon_states = null
@@ -217,8 +217,8 @@
 	/// List of species that have made footprints here.
 	var/list/species_types = list()
 
-	dryname = "dried footprints"
-	drydesc = "HMM... SOMEONE WAS HERE!"
+	dryname = "Грязные Следы"
+	drydesc = "Кровавые, грязные следы!"
 
 /obj/effect/decal/cleanable/blood/footprints/Initialize(mapload)
 	. = ..()

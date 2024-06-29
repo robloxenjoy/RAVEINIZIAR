@@ -330,6 +330,7 @@
 	barefootstep = FOOTSTEP_MEAT
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
+	var/finished = FALSE
 
 /turf/open/floor/plating/polovich/way/ravein
 	name = "Тело"

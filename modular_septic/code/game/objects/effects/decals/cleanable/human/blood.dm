@@ -1,6 +1,6 @@
 /obj/effect/decal/cleanable/blood
-	name = "blood"
-	desc = "It's red and gooey."
+	name = "Кровь"
+	desc = "Красиво и страшно."
 	icon = 'modular_septic/icons/effects/blood.dmi'
 	icon_state = "floor1"
 	random_icon_states = list("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", \

@@ -127,7 +127,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 		if(!addedbind)
 			notadded += kb
-	save_preferences() //Save the players pref so that new keys that were set to Unbound as default are permanently stored
+//	save_preferences() //Save the players pref so that new keys that were set to Unbound as default are permanently stored
 	if(length(notadded))
 		addtimer(CALLBACK(src, .proc/announce_conflict, notadded), 5 SECONDS)
 
@@ -229,7 +229,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				save_character()
 		default_slot = old_default_slot
 		max_save_slots = old_max_save_slots
-		save_preferences()
+//		save_preferences()
 
 	return TRUE
 

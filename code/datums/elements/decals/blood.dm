@@ -5,11 +5,13 @@
 		return ELEMENT_INCOMPATIBLE
 
 	. = ..()
+/*
 	RegisterSignal(target, COMSIG_ATOM_GET_EXAMINE_NAME, PROC_REF(get_examine_name), TRUE)
 
 /datum/element/decal/blood/Detach(atom/source)
 	UnregisterSignal(source, COMSIG_ATOM_GET_EXAMINE_NAME)
 	return ..()
+*/
 
 /datum/element/decal/blood/generate_appearance(_icon, _icon_state, _dir, _plane, _layer, _color, _alpha, _smoothing, source)
 	var/obj/item/I = source
@@ -35,8 +37,9 @@
 		pic = mutable_appearance(blood_splatter_icon, I.icon_state)
 		blood_splatter_appearances[index] = pic
 	return TRUE
-
+/*
 /datum/element/decal/blood/proc/get_examine_name(atom/source, mob/user, list/override)
 	SIGNAL_HANDLER
 
 	override[EXAMINE_POSITION_BEFORE] = "окровавленный"
+*/

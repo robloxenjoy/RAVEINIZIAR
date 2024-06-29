@@ -119,9 +119,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 					addedbind = TRUE
 		if(!addedbind)
 			notadded += kb
-	if(length(notadded))
-		addtimer(CALLBACK(src, .proc/announce_conflict, notadded), 5 SECONDS)
+//	if(length(notadded))
+//		addtimer(CALLBACK(src, .proc/announce_conflict, notadded), 5 SECONDS)
 
+/*
 /datum/preferences/proc/announce_conflict(list/notadded)
 	to_chat(parent, "<span class='alertwarning'>KEYBINDING CONFLICT</span>\n\
 					<span class='alertwarning'>There are new <a href='?_src_=prefs;preference=tab;tab=[PREF_TAB_KEYBINDINGS]'>keybindings</a> that default to keys you've already bound. These will be unbound.</span>")
@@ -129,6 +130,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		var/datum/keybinding/conflicted = item
 		to_chat(parent, "<span class='danger'>[conflicted.category]: [conflicted.full_name] needs updating</span>")
 		LAZYADD(key_bindings["Unbound"], conflicted.name) // set it to unbound to prevent this from opening up again in the future
+*/
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
