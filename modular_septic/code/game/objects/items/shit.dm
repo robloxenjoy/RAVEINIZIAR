@@ -48,6 +48,8 @@
 	//shit on face, yum
 	if(ishuman(eater))
 		eater.AddComponent(/datum/component/creamed/shit)
+		eater.client?.prefs.adjust_bobux(5, "<span class='bobux'>Я откусил говно! +5 Каотиков!</span>")
+		M.flash_kaosgain()
 		if(prob(5))
 			eater.gain_extra_effort(1, FALSE)
 

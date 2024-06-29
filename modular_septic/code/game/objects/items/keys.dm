@@ -1,8 +1,9 @@
+/*
 /obj/item/key/examine(mob/user)
 	. = ..()
 	if(id_tag)
 		. += span_notice("[p_theyre(TRUE)] tagged with \"[id_tag]\".")
-
+*/
 /obj/item/key/proc/door_allowed(obj/machinery/door/door)
 	if(id_tag == door.id_tag)
 		return TRUE

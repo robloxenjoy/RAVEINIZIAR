@@ -15,6 +15,7 @@
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[src.real_name]", /datum/mood_event/fraggot/killed)
 				if(M.client?.prefs)
 					M.client.prefs.adjust_bobux(100, "<span class='bobux'>Я видел смерть фатала! +100 Каотиков!</span>")
+					M.flash_kaosgain()
 /*
 	if(iswillet(src))
 		if(has_died)

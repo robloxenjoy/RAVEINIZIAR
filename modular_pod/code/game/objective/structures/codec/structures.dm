@@ -253,8 +253,7 @@
 		playsound(src, doorDeni, 70, FALSE)
 		sound_hint()
 		COOLDOWN_START(src, open_cooldown, open_cooldown_duration)
-		if(user)
-			visible_message("<span class = 'notice'>[user] трясёт ручку [src].</span>")
+		user.visible_message(span_notice("<b>[user]</b> трясёт ручку [src].</span>"))
 		return
 	set_opacity(0)
 	set_density(FALSE)

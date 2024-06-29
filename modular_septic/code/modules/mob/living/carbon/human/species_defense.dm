@@ -782,15 +782,15 @@
 		if(user != target)
 //			if(!lying_attack_check(user))
 //				return
-			target.visible_message(span_danger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
-							span_userdanger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] меня в [hit_area]![target.wound_message]"), \
+			target.visible_message(span_danger("<b>[user]</b> целит в [parsed_intended_zone], но [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
+							span_userdanger("<b>[user]</b> целит в [parsed_intended_zone], но [attack_verb_continuous] меня в [hit_area]![target.wound_message]"), \
 							span_hear("Я слышу звук плоти!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
 			to_chat(user, span_userdanger("Я целю в [parsed_intended_zone], но [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> целит в \[parsed_intended_zone], но [attack_verb_continuous] себя в [hit_area]![target.wound_message]"), \
-							span_userdanger("Я целю в \[parsed_intended_zone], но [attack_verb] себя в [hit_area]![target.wound_message]"), \
+			target.visible_message(span_danger("<b>[user]</b> целит в [parsed_intended_zone], но [attack_verb_continuous] себя в [hit_area]![target.wound_message]"), \
+							span_userdanger("Я целю в [parsed_intended_zone], но [attack_verb] себя в [hit_area]![target.wound_message]"), \
 							span_hear("Я слышу звук плоти!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)

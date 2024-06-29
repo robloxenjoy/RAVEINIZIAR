@@ -22,7 +22,8 @@
 	RegisterSignal(our_fraggot, COMSIG_LIVING_DEATH, PROC_REF(fraggot_died))
 //	RegisterSignal(our_fraggot, COMSIG_PARENT_PREQDELETED, PROC_REF(fraggot_deleted))
 	ADD_TRAIT(our_fraggot, TRAIT_FRAGGOT, "fraggot")
-	our_fraggot.client?.prefs?.adjust_bobux(-10)
+//	our_fraggot.client?.prefs?.adjust_bobux(-10)
+	our_fraggot.client?.prefs?.adjust_bobux(-10, "<span class='bobux'>Блять, я фатал! -10 Каотиков!</span>")
 	START_PROCESSING(SSfraggots, src)
 //	niqqerlay = our_fraggot.overlay_fullscreen("niqqer", /atom/movable/screen/fullscreen/niqqer)
 
