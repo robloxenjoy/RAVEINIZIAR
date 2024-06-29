@@ -289,7 +289,7 @@
 	bobux_amount += amount
 	if(parent && message)
 		to_chat(parent, "<span class='bobux'>[message]</span>")
-	if(amount > 0)
+//	if(amount > 0)
 //		if(parent)
 //			if(isobserver(parent))
 //				return
