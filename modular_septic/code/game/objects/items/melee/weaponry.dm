@@ -538,6 +538,8 @@
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state_melee = TRUE
+	attack_verb_continuous = list("режет")
+	attack_verb_simple = list("резать")
 
 /obj/item/podpol_weapon/sword/swap_intents(mob/user)
 	. = ..()
@@ -552,6 +554,8 @@
 			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
+			attack_verb_continuous = list("вонзает")
+			attack_verb_simple = list("вонзать")
 		if(STAB_MODE)
 			to_chat(user, span_notice("Теперь я буду бить их рукоятью с помощью [src]."))
 			hitsound = bash_hitsound
@@ -568,6 +572,8 @@
 			attack_delay = 20
 			current_attack_intent = BASH_MODE
 			sharpness = NONE
+			attack_verb_continuous = list("стукает")
+			attack_verb_simple = list("стукаит")
 		if(BASH_MODE)
 			to_chat(user, span_notice("Теперь я буду резать их с помощью [src]."))
 			hitsound = slash_hitsound
@@ -578,6 +584,8 @@
 			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
+			attack_verb_continuous = list("режет")
+			attack_verb_simple = list("резать")
 
 /*
 /obj/item/changeable_attacks/sword
