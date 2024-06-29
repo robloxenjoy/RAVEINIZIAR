@@ -57,8 +57,10 @@ SUBSYSTEM_DEF(ticker)
 
 	/// Why an emergency shuttle was called
 	var/emergency_reason
+	var/lobbyworld = null
 
 /datum/controller/subsystem/ticker/Initialize(timeofday)
+/*
 	var/list/byond_sound_formats = list(
 		"mid" = TRUE,
 		"midi" = TRUE,
@@ -73,7 +75,7 @@ SUBSYSTEM_DEF(ticker)
 		"wma" = TRUE,
 		"aiff" = TRUE,
 	)
-/*
+
 	var/list/provisional_title_music = flist("[global.config.directory]/title_music/sounds/")
 	var/list/music = list()
 	var/use_rare_music = prob(1)
@@ -114,7 +116,12 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 */
-	if(world.lobbyworld == "normal")
+	if(prob(70))
+		lobbyworld = "normal"
+	else
+		lobbyworld = "crazy"
+
+	if(lobbyworld == "normal")
 		login_music = pick('modular_septic/protection.ogg', 'modular_septic/algerian.ogg', 'modular_septic/dark river.ogg')
 	else
 		login_music = 'modular_septic/crazy.ogg'
@@ -490,8 +497,8 @@ SUBSYSTEM_DEF(ticker)
 			qdel(player)
 			living.notransform = TRUE
 			if(living.client)
-				var/atom/movable/screen/splash/S = new(null, living.client, TRUE)
-				S.Fade(TRUE)
+//				var/atom/movable/screen/splash/S = new(null, living.client, TRUE)
+//				S.Fade(TRUE)
 				living.client.init_verbs()
 			livings += living
 	if(livings.len)

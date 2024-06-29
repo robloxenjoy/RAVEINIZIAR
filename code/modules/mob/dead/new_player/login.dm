@@ -9,12 +9,10 @@
 	plane = 300
 
 /obj/effect/lobby_image/New()
-	if(prob(70))
+	if(SSticker.lobbyworld == "normal")
 		icon_state = "podpolt"
-		world.lobbyworld = "normal"
 	else
 		icon_state = "podpolcrazy"
-		world.lobbyworld = "crazy"
 //	overlays += /obj/effect/lobby_grain
 //	desc = vessel_name()
 
