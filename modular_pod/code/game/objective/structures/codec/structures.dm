@@ -345,7 +345,7 @@
 	if(.)
 		return
 	if(density)
-		open()
+		open(user)
 	else
 		close()
 
