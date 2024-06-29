@@ -438,7 +438,7 @@
 			if(prob(20))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/dyingmud, null, CHANGETURF_IGNORE_AIR)
 				generat.dir = rand(0,4)
-			if(prob(30))
+			if(prob(20))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/deadmeat_full, null, CHANGETURF_IGNORE_AIR)
 			if(prob(20))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/mud, null, CHANGETURF_IGNORE_AIR)

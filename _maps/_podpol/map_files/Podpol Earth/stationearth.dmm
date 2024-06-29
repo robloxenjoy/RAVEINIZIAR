@@ -28,7 +28,7 @@
 "pQ" = (/obj/structure/closet/crate/wooden,/obj/item/melee/bita/hammer/heavy,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest)
 "qh" = (/obj/effect/landing/konch,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
 "qC" = (/turf/open/floor/plating/polovich/way/ravein,/area/maintenance/polovich/catacombs)
-"sz" = (/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
+"sz" = (/turf/open/floor/plating/polovich/way/stoner2,/area/maintenance/polovich/forest/inner)
 "sG" = (/turf/podpol/wall/steel,/area/maintenance/polovich/catacombs)
 "td" = (/obj/structure/sign/poster/contraband/codec/ring,/turf/podpol/wall/grewich,/area/maintenance/polovich/forest)
 "tk" = (/turf/open/floor/plating/polovich/way/lifemeat,/area/maintenance/polovich/forest)
@@ -46,7 +46,7 @@
 "Ay" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
 "Cm" = (/turf/open/floor/plating/polovich/way/lifemeat2,/area/maintenance/polovich/forest)
 "DS" = (/obj/structure/railing{dir = 8},/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
-"EG" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
+"EG" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/stoner2,/area/maintenance/polovich/forest/inner)
 "EO" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/shotgun/bolas,/turf/open/floor/plating/polovich/way/wisestone,/area/maintenance/polovich/forest)
 "Fx" = (/obj/structure/stairs{dir = 4},/turf/open/floor/plating/polovich/way/uzstone,/area/maintenance/polovich/forest)
 "Gm" = (/obj/machinery/codec/door/kapno,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
@@ -73,7 +73,7 @@
 "Rb" = (/turf/open/floor/plating/polovich/way/ravein,/area/maintenance/polovich/forest)
 "Rz" = (/turf/podpol/wall/stal,/area/maintenance/polovich/forest/inner)
 "RT" = (/turf/open/floor/plating/polovich/way/monumental,/area/maintenance/polovich/forest)
-"RX" = (/obj/effect/landing/kapno,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/inner)
+"RX" = (/obj/effect/landing/kapno,/turf/open/floor/plating/polovich/way/stoner2,/area/maintenance/polovich/forest/inner)
 "Si" = (/obj/structure/chair/sofa/left,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest)
 "UH" = (/turf/open/floor/plating/polovich/way/lifemeat3,/area/maintenance/polovich/forest)
 "UO" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/copium,/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
@@ -84,7 +84,7 @@
 "Yt" = (/obj/effect/decal/metalpodpol,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
 "YE" = (/obj/structure/chair/podpolsit,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest)
 "Zo" = (/turf/open/floor/plating/polovich/way/wisestone,/area/maintenance/polovich/forest)
-"Zz" = (/obj/structure/wayto/podpol/up,/turf/open/floor/plating/polovich/way/ancstone,/area/maintenance/polovich/forest/inner)
+"Zz" = (/obj/structure/wayto/podpol/up,/turf/open/floor/plating/polovich/way/stoner2,/area/maintenance/polovich/forest/inner)
 
 (1,1,1) = {"
 gegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeuUuUuUuUuUuUuUuUuUuUuU
