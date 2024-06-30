@@ -2801,7 +2801,7 @@
 						if(PIXEL_SCALING_3X)
 							pixel_size = PIXEL_SCALING_AUTO
 					user.client.view_size.apply() //Let's winset() it so it actually works
-
+/*
 				if("scaling_method")
 					switch(scaling_method)
 						if(SCALING_METHOD_NORMAL)
@@ -2811,7 +2811,7 @@
 						if(SCALING_METHOD_BLUR)
 							scaling_method = SCALING_METHOD_NORMAL
 					user.client.view_size.setZoomMode()
-
+*/
 				if("save")
 					save_preferences()
 					save_character()

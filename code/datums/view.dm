@@ -15,7 +15,7 @@
 /datum/view_data/proc/setDefault(string)
 	default = string
 	apply()
-
+/*
 /datum/view_data/proc/safeApplyFormat()
 	if(isZooming())
 		assertFormat()
@@ -30,7 +30,7 @@
 
 /datum/view_data/proc/setZoomMode()
 	winset(chief, "mapwindow.map", "zoom-mode=[chief.prefs.read_preference(/datum/preference/choiced/scaling_method)]")
-
+*/
 /datum/view_data/proc/isZooming()
 	return (width || height)
 
@@ -79,7 +79,7 @@
 
 /datum/view_data/proc/apply()
 	chief.change_view(getView())
-	safeApplyFormat()
+//	safeApplyFormat()
 
 /datum/view_data/proc/supress()
 	is_suppressed = TRUE

@@ -144,7 +144,7 @@
 	icon_state = "granat"
 	bite_consumption_mod = 3
 	bite_consumption = 6
-	eat_time = 2
+	eat_time = 4
 	foodtypes = FRUIT
 	grind_results = list(/datum/reagent/consumable/granat = 5)
 	food_reagents = list(/datum/reagent/consumable/granat = 4)

@@ -495,8 +495,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		initialize_menus()
 
 	view_size = new(src, getScreenSize(prefs.read_preference(/datum/preference/toggle/widescreen)))
-	view_size.resetFormat()
-	view_size.setZoomMode()
+//	view_size.resetFormat()
+//	view_size.setZoomMode()
 	Master.UpdateTickRate()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CLIENT_CONNECT, src)
 
