@@ -29,7 +29,7 @@
 
 	if(density && flags_1 & ON_BORDER_1) // blocks normal movement from and to the direction it's facing.
 		var/static/list/loc_connections = list(
-			COMSIG_ATOM_EXIT = .proc/on_exit,
+			COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 		)
 		AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -64,13 +64,13 @@
 		I.play_tool_sound(src, 100)
 		deconstruct()
 		return TRUE
-
+/*
 /obj/structure/railing/deconstruct(disassembled)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		var/obj/item/stack/rods/rod = new /obj/item/stack/rods(drop_location(), 3)
 		transfer_fingerprints_to(rod)
 	return ..()
-
+*/
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -85,7 +85,7 @@
 /obj/structure/railing/CanPass(atom/movable/mover, border_dir)
 	. = ..()
 	if(border_dir & dir)
-		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+		return . || mover.movement_type & (FLYING | FLOATING)
 	return TRUE
 
 /obj/structure/railing/proc/on_exit(datum/source, atom/movable/leaving, direction)
