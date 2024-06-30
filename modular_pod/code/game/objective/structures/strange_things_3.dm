@@ -359,6 +359,30 @@
 	attack_verb_continuous = list("тыкает", "иголит", "укалывает")
 	attack_verb_simple = list("тыкать", "иголить", "укалывать")
 
+/obj/structure/flora/ausbushes/granat
+	name = "Гранат"
+	desc = "Прекрасный фрукт, чудом сохранивший свою пользу."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "granat"
+//	plane = ABOVE_GAME_PLANE
+//	layer = FLY_LAYER
+	resistance_flags = FLAMMABLE
+	density = FALSE
+	anchored = TRUE
+	opacity = FALSE
+	var/granats = 3
+
+/obj/structure/flora/ausbushes/granat/attack_hand(mob/living/carbon/human/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	user.visible_message(span_notice("[user] отрывает от [src] кусок."),span_notice("Я отрываю от [src] кусок."), span_hear("Я слышу собирание."))
+	var/obj/item/granat = new /obj/item/food/grown/granat(loc)
+	user.put_in_active_hand(granat)
+	granats--
+	if(granats <= 0)
+		qdel(src)
+
 /obj/structure/wiresa
 	name = "Провода"
 	desc = "ЛУЧШЕ не лезть."

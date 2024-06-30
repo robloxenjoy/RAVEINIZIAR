@@ -553,6 +553,13 @@
 	taste_description = "aguo"
 	taste_mult = 9
 
+/datum/reagent/consumable/granat
+	name = "Гранатовая мякоть"
+	description = "Вкусная мякоть."
+	color = "#9a000085"
+	taste_description = "сладкая мякоть граната"
+	taste_mult = 8
+
 /datum/reagent/consumable/bluecherryjelly
 	name = "Blue Cherry Jelly"
 	description = "Blue and tastier kind of cherry jelly."

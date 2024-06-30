@@ -136,6 +136,23 @@
 	if(GET_MOB_SKILL_VALUE(user, SKILL_AGRICULTURE) > ATTRIBUTE_MIDDLING)
 		. += "<span class='warning'>It's a lie berry...</span>"
 
+/obj/item/food/grown/granat
+	seed = /obj/item/seeds/cherry/blue
+	name = "Кусок Граната"
+	desc = "Эта гранатина спелая, вкусная."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "granat"
+	bite_consumption_mod = 3
+	bite_consumption = 6
+	eat_time = 2
+	foodtypes = FRUIT
+	grind_results = list(/datum/reagent/consumable/granat = 5)
+	food_reagents = list(/datum/reagent/consumable/granat = 4)
+	tastes = list("гранат" = 1, "сладость" = 1)
+	wine_power = 50
+	tetris_width = 32
+	tetris_height = 32
+
 //Cherry Bulbs
 /obj/item/seeds/cherry/bulb
 	name = "pack of cherry bulb pits"
