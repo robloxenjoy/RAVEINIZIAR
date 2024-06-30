@@ -14,7 +14,7 @@
 	else if(HAS_TRAIT_FROM(src, TRAIT_INCAPACITATED, FATIGUE))
 		REMOVE_TRAIT(src, TRAIT_INCAPACITATED, FATIGUE)
 		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, FATIGUE)
-		REMOVE_TRAIT(src, TRAIT_FLOORED, FATIGUE)
+//		REMOVE_TRAIT(src, TRAIT_FLOORED, FATIGUE)
 
 /mob/living/carbon/handle_fatigue(delta_time, times_fired)
 	//regenerate fatigue if possible
@@ -33,9 +33,9 @@
 		return
 	ADD_TRAIT(src, TRAIT_INCAPACITATED, FATIGUE)
 	ADD_TRAIT(src, TRAIT_IMMOBILIZED, FATIGUE)
-	ADD_TRAIT(src, TRAIT_FLOORED, FATIGUE)
+//	ADD_TRAIT(src, TRAIT_FLOORED, FATIGUE)
 	setFatigueLoss(FATIGUE_CRIT_THRESHOLD + 20, FALSE)
-	Stun(5 SECONDS)
+	Stun(7 SECONDS)
 	fatigue_grunt()
 	//rip
 	if(ishuman(src))
