@@ -20,13 +20,13 @@
 		eater.satiety -= junkiness
 	playsound(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE)
 	if(owner.reagents.total_volume)
-		var/jaw_efficiency = 100
 		if(iscarbon(eater))
 			var/obj/item/bodypart/jaw = eater.get_bodypart_nostump(BODY_ZONE_PRECISE_MOUTH)
-			jaw_efficiency = jaw?.limb_efficiency
-		if(jaw_efficiency <= LIMB_EFFICIENCY_DISABLING)
-			to_chat(feeder, span_warning("Their jaw is far too inefficient to take a bite."))
-			return
+			if(jaw)
+				var/jaw_efficiency = jaw?.limb_efficiency
+				if(jaw_efficiency < LIMB_EFFICIENCY_DISABLING)
+					to_chat(feeder, span_warning("Челюсть нездорова."))
+					return
 		SEND_SIGNAL(parent, COMSIG_FOOD_EATEN, eater, feeder, bitecount, bite_consumption)
 		var/fraction = min(bite_consumption / owner.reagents.total_volume, 1)
 		owner.reagents.trans_to(eater, CEILING(bite_consumption * (jaw_efficiency/LIMB_EFFICIENCY_OPTIMAL), 1), transfered_by = feeder, methods = INGEST)

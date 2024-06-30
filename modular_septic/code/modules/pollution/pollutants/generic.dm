@@ -1,10 +1,10 @@
 ///Smoke coming from cigarettes and fires
 /datum/pollutant/smoke
-	name = "Smoke"
+	name = "Дым"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL | POLLUTANT_BREATHE_ACT
 	smell_intensity = 1
 	descriptor = SCENT_DESC_SMELL
-	scent = "smoke"
+	scent = "дым"
 
 /datum/pollutant/smoke/breathe_act(mob/living/carbon/victim, amount)
 	if(amount <= 30)

@@ -24,7 +24,7 @@
 /// ditto but for tendon wounds
 #define TENDON_MINIMUM_DAMAGE 10
 /// ditto but for internal organ damage
-#define ORGAN_MINIMUM_DAMAGE 13
+#define ORGAN_MINIMUM_DAMAGE 12.5
 /// ditto but for teeth
 #define TEETH_MINIMUM_DAMAGE 15
 /// ditto but for kids named finger

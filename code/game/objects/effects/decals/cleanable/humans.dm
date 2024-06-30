@@ -193,8 +193,8 @@
 	random_icon_states = list("drip1","drip2","drip3","drip4","drip5")
 	bloodiness = 0
 	var/drips = 1
-	dryname = "drips of blood"
-	drydesc = "It's red."
+	dryname = "Капля Крови"
+	drydesc = "Красно-красно."
 
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
 	return TRUE

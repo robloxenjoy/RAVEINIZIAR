@@ -94,6 +94,8 @@
 		update_fire_state()
 
 /atom/movable/fire/proc/process_waste()
+	if(QDELETED(src))
+		return
 	if(isclosedturf(loc))
 		return TRUE
 	var/turf/open/open_turf = loc

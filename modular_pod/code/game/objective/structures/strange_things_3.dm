@@ -379,6 +379,7 @@
 	user.visible_message(span_notice("[user] отрывает от [src] кусок."),span_notice("Я отрываю от [src] кусок."), span_hear("Я слышу собирание."))
 	var/obj/item/granat = new /obj/item/food/grown/granat(loc)
 	user.put_in_active_hand(granat)
+	user.changeNext_move(5)
 	granats--
 	if(granats <= 0)
 		qdel(src)
