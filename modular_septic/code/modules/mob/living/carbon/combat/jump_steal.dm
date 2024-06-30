@@ -42,7 +42,7 @@
 */
 //	var/list/rolled = roll3d6(user,SKILL_STEAL,null)
 	var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)
-	var/time = (15 SECONDS - (GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET)) + 1 SECONDS)
+	var/time = (5 SECONDS - ((GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET)/2)) + 1 SECONDS)
 //	var/obj/whatwillitsteal = null
 	if(diceroll == DICE_CRIT_FAILURE)
 		src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
