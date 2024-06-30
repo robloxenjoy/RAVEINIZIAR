@@ -287,9 +287,9 @@
 /obj/item/clothing/examine(mob/user)
 	. = ..()
 	if(damaged_clothes == CLOTHING_SHREDDED)
-		. += span_warning("<b>[p_theyre(TRUE)] completely shredded and require[p_s()] mending before [p_they()] can be worn again!</b>")
+		. += span_warning("<b>[src] полностью сломано и не может быть надето!</b>")
 		return
-
+/*
 	switch (max_heat_protection_temperature)
 		if (400 to 1000)
 			. += "[src] offers the wearer limited protection from fire."
@@ -297,17 +297,17 @@
 			. += "[src] offers the wearer some protection from fire."
 		if (1601 to 35000)
 			. += "[src] offers the wearer robust protection from fire."
-
+*/
 	for(var/zone in damage_by_parts)
 		var/pct_damage_part = damage_by_parts[zone] / limb_integrity * 100
 		var/zone_name = parse_zone(zone)
 		switch(pct_damage_part)
 			if(100 to INFINITY)
-				. += span_warning("<b>The [zone_name] is useless and requires mending!</b>")
+				. += span_warning("<b>Зона [zone_name] разрушена!</b>")
 			if(60 to 99)
-				. += span_warning("The [zone_name] is heavily shredded!")
+				. += span_warning("Зона [zone_name] сильно повреждена!")
 			if(30 to 59)
-				. += span_danger("The [zone_name] is partially shredded.")
+				. += span_danger("Зона [zone_name] немного повреждена.")
 
 	var/datum/component/storage/pockets = GetComponent(/datum/component/storage)
 	if(pockets)

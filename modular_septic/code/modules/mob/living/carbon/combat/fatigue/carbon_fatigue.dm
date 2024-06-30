@@ -21,7 +21,7 @@
 	if(combat_mode || !COOLDOWN_FINISHED(src, fatigue_regen_cooldown) || (max_fatigue - fatigue <= 0))
 		return
 	var/regen_multiplier = (body_position == LYING_DOWN ? FATIGUE_REGEN_LYING_MULTIPLIER : 1.3)
-	regen_multiplier *= (get_chem_effect(CE_ENERGETIC))
+	regen_multiplier *= (1.3 + get_chem_effect(CE_ENERGETIC))
 	adjustFatigueLoss(-FATIGUE_REGEN_FACTOR * regen_multiplier * delta_time)
 
 /mob/living/carbon/proc/enter_fatiguecrit()
