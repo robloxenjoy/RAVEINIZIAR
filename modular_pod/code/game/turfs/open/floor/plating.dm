@@ -87,7 +87,7 @@
 	if(W.force)
 		var/list/modifiers = params2list(params)
 		if(LAZYACCESS(modifiers, RIGHT_CLICK) && (user.combat_style == CS_GUARD))
-			if(!do_after(user, 3 SECONDS, target=src))
+			if(!do_after(user, 1 SECONDS, target=src))
 				to_chat(user, span_danger(xbox_rage_msg()))
 				user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 				return
