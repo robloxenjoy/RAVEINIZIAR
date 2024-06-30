@@ -1,6 +1,12 @@
-/mob/living/carbon/steal_this(mob/living/carbon/target, proximity_flag, list/modifiers, hit_zone)
-
+/mob/living/carbon/steal_this(atom/target, proximity_flag, list/modifiers, hit_zone)
 	if(!target)
+		return FALSE
+/*
+	if(!iscarbon(target))
+		return FALSE
+*/
+	var/mob/living/carbon/C = target
+	if(!C)
 		return FALSE
 
 	if(body_position != STANDING_UP)
@@ -12,7 +18,7 @@
 */
 	if(!get_empty_held_indexes())
 		to_chat(src, span_warning("Мне бы руками!"))
-		return
+		return FALSE
 
 /*
 	if(target.combat_mode)
@@ -20,19 +26,13 @@
 		return
 */
 //	var/mob/living/carbon/human/L = user
-	var/mob/living/carbon/human/C = target
 //	var/hit_zone = L.zone_selected
-
 	if(C == src)
 		to_chat(src, span_warning("Нахуя мне самого себя обкрадывать?"))
-		return
+		return FALSE
 
 //	var/obj/item/bodypart/BP = C.get_bodypart(check_zone(user.zone_selected))
 //	var/obj/item/bodypart/affecting = C.get_bodypart(hit_zone)
-	var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(zone_selected))
-	if(!affecting || affecting == ORGAN_DESTROYED)
-		to_chat(src, "<span class='necrosis'>Эта конечность отсутствует!</span>")
-		return
 /*
 	if(user.vice == "Kleptomaniac")
 		user.clear_event("vice")
@@ -52,11 +52,11 @@
 		return
 
 	if(diceroll >= DICE_FAILURE)
-		if(do_mob(src, target, time))
+		if(do_after(src, time, target=C))
 			src.visible_message(span_steal("[src] обкрадывает [target]!"),span_steal("Я обкрадываю [target]!"), span_hear("Слышу чё-то."))
 			src.changeNext_move(CLICK_CD_MELEE)
 			sound_hint()
-			target.unequip_everything()
+			C.unequip_everything()
 
 /*
 		switch(affecting)
@@ -196,7 +196,7 @@
 //			Immobilize(1 SECONDS)
 		if(DICE_FAILURE)
 			adjustFatigueLoss(30)
-			Immobilize(1 SECONDS)
+			Immobilize(0.5 SECONDS)
 		if(DICE_CRIT_FAILURE)
 			adjustFatigueLoss(45)
 			CombatKnockdown(75, 2 SECONDS)

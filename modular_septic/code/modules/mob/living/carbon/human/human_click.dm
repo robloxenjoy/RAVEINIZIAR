@@ -8,8 +8,8 @@
 			if(SPECIAL_ATK_BITE)
 				unarmed_jaw(attack_target, proximity_flag, modifiers)
 			if(SPECIAL_ATK_STEAL)
-				var/mob/living/carbon/target = attack_target
-				steal_this(target, proximity_flag, modifiers, hit_zone)
+//				var/mob/living/carbon/target = attack_target
+				steal_this(attack_target, proximity_flag, modifiers, hit_zone)
 			if(SPECIAL_ATK_NONE)
 				if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
 					if(src == attack_target)

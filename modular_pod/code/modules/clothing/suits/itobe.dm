@@ -12,7 +12,7 @@
 	inhand_icon_state = "soldat"
 	armor_broken_sound = "light"
 	armor_damaged_sound = "light"
-	armor = list(MELEE = 2, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 2)
+	armor = list(MELEE = 1, BULLET = 1, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 2, ACID = 2, WOUND = 1)
 	carry_weight = 300 GRAMS
 	can_adjust = FALSE
 	body_parts_covered = CHEST|VITALS|ARMS
@@ -98,7 +98,7 @@
 	limb_integrity = 90
 	repairable_by = /obj/item/stack/ballistic
 	carry_weight = 400 GRAMS
-	armor = list(MELEE = 3, BULLET = 3, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 5, ACID = 5, WOUND = 2)
+	armor = list(MELEE = 1, BULLET = 1, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 2, ACID = 2, WOUND = 1)
 
 /obj/item/clothing/under/codec/purp/black
 	color = "#151414"

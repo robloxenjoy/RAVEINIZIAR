@@ -102,6 +102,7 @@
 	else
 		if(active_held_item)
 			if(LAZYACCESS(modifiers, MIDDLE_CLICK))
+				ranged_tertiary_attack(A, modifiers)
 				var/after_attack_tertiary_result = active_held_item.afterattack_tertiary(A, src, FALSE, params)
 				if(after_attack_tertiary_result == TERTIARY_ATTACK_CALL_NORMAL)
 					active_held_item.afterattack(A, src, FALSE, params)
@@ -131,7 +132,6 @@
 		return TRUE
 	if(special_attack == SPECIAL_ATK_JUMP)
 		return attempt_jump(target, FALSE, modifiers)
-
 
 /mob/proc/alt_click_on_tertiary(atom/A, params)
 	return
