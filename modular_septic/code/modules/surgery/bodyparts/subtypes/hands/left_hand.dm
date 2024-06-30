@@ -25,7 +25,6 @@
 	bone_type = BONE_L_HAND
 	tendon_type = TENDON_L_HAND
 	artery_type = ARTERY_L_HAND
-	nerve_type = NERVE_L_HAND
 	starting_digits = list(
 		"thumb" = /obj/item/digit/finger/thumb,
 		"index finger" = /obj/item/digit/finger/index,

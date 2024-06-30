@@ -31,7 +31,7 @@
 	/// Organic or robotic
 	var/status = BODYPART_ORGANIC
 	/// General bodypart flags, such as - is it necrotic, does it leave stumps behind, etc
-	var/limb_flags = BODYPART_EDIBLE|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_HAS_ARTERY
+	var/limb_flags = BODYPART_EDIBLE|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_ARTERY
 	/// How efficient this limb is at performing... whatever it performs
 	var/limb_efficiency = 100
 	/// Needs to get processed on next life() tick
@@ -178,9 +178,6 @@
 	var/artery_type = /obj/item/organ/artery
 	/// tendon organ base type
 	var/tendon_type = /obj/item/organ/tendon
-	/// nerve organ base type
-	var/nerve_type = /obj/item/organ/nerve
-
 	/// If someone has written something stupid on us
 	var/etching = ""
 
@@ -409,8 +406,6 @@
 		create_bone()
 	if(CHECK_BITFIELD(limb_flags, BODYPART_HAS_TENDON))
 		create_tendon()
-	if(CHECK_BITFIELD(limb_flags, BODYPART_HAS_NERVE))
-		create_nerve()
 	if(CHECK_BITFIELD(limb_flags, BODYPART_HAS_ARTERY))
 		create_artery()
 	if(max_teeth)
@@ -429,12 +424,6 @@
 		var/obj/item/organ/tendon = new tendon_type(src)
 		if(owner)
 			tendon.Insert(owner)
-
-/obj/item/bodypart/proc/create_nerve()
-	if(ispath(nerve_type))
-		var/obj/item/organ/nerve = new nerve_type(src)
-		if(owner)
-			nerve.Insert(owner)
 
 /obj/item/bodypart/proc/create_artery()
 	if(ispath(artery_type))
@@ -917,17 +906,19 @@
 		return remove_pain(abs(diff), updating_health, required_status)
 
 /// Returns how much pain we are dealing with right now, taking other damage types into account
-/obj/item/bodypart/proc/get_shock(painkiller_included = FALSE, nerve_included = TRUE)
+/obj/item/bodypart/proc/get_shock(painkiller_included = FALSE)
 	if(!can_feel_pain())
 		return 0
 	//Multiply our total pain damage by this
 	var/multiplier = 1
 	if(LAZYLEN(grasped_by))
 		//Being grasped lowers the pain just a bit
-		multiplier *= 0.75
+		multiplier *= 0.60
+/*
 	if(nerve_included && CHECK_BITFIELD(limb_flags, BODYPART_HAS_NERVE))
 		//Nerves heavily affect pain
 		multiplier *= (getorganslotefficiency(ORGAN_SLOT_NERVE)/ORGAN_OPTIMAL_EFFICIENCY)
+*/
 	if(multiplier <= 0)
 		return 0
 	var/constant_pain = 0
@@ -1182,8 +1173,6 @@
 			check_wounding(WOUND_ARTERY, initial_wounding_dmg * (initial_wounding_type == WOUND_PIERCE ? 0.75 : 1), wound_bonus, bare_wound_bonus)
 		if((initial_wounding_type in list(WOUND_BLUNT, WOUND_SLASH, WOUND_PIERCE)) && (initial_wounding_dmg >= TENDON_MINIMUM_DAMAGE))
 			check_wounding(WOUND_TENDON, initial_wounding_dmg * (initial_wounding_type == WOUND_BLUNT ? 0.5 : (initial_wounding_type == WOUND_PIERCE ? 0.75 : 1)), wound_bonus, bare_wound_bonus)
-		if((initial_wounding_type in list(WOUND_BLUNT, WOUND_SLASH, WOUND_PIERCE)) && (initial_wounding_dmg >= NERVE_MINIMUM_DAMAGE))
-			check_wounding(WOUND_NERVE, initial_wounding_dmg * (initial_wounding_type == WOUND_BLUNT ? 0.65 : (initial_wounding_type == WOUND_PIERCE ? 0.5 : 1)), wound_bonus, bare_wound_bonus)
 
 	/*
 	// END WOUND HANDLING
@@ -1666,11 +1655,8 @@
 	var/divisor = 0
 	limb_efficiency = 0
 	if(CHECK_BITFIELD(limb_flags, BODYPART_HAS_TENDON))
-		divisor += 1
+		divisor += 2
 		limb_efficiency += getorganslotefficiency(ORGAN_SLOT_TENDON)
-	if(CHECK_BITFIELD(limb_flags, BODYPART_HAS_NERVE))
-		divisor += 1
-		limb_efficiency += getorganslotefficiency(ORGAN_SLOT_NERVE)
 	if(divisor)
 		limb_efficiency /= divisor
 	// no tendon, nerve nor artery!
@@ -1698,7 +1684,7 @@
 		for(var/obj/item/organ/bone/bone as anything in getorganslotlist(ORGAN_SLOT_BONE))
 			broken_factor = max(broken_factor, bone.damage/bone.maxHealth)
 	// passing any of these checks means we are absolutely worthless
-	if(!functional || is_cut_away() || bone_missing() || tendon_missing() || nerve_missing() || artery_missing())
+	if(!functional || is_cut_away() || bone_missing() || tendon_missing() || artery_missing())
 		limb_efficiency = 0
 	else if((broken_factor > 0.75) || (broken_factor - splint_factor > 0))
 		limb_efficiency = 0
@@ -2103,7 +2089,7 @@
 		return
 	var/mob/living/carbon/our_owner = owner //dropping nulls the limb
 	for(var/obj/item/organ/organ as anything in get_organs())
-		if(istype(organ, /obj/item/organ/tendon) || istype(organ, /obj/item/organ/artery) || istype(organ, /obj/item/organ/nerve) || istype(organ, /obj/item/organ/bone))
+		if(istype(organ, /obj/item/organ/tendon) || istype(organ, /obj/item/organ/artery) || istype(organ, /obj/item/organ/bone))
 			organ.Remove(our_owner, special = TRUE)
 			qdel(organ)
 			continue
@@ -2250,27 +2236,6 @@
 	. = FALSE
 	for(var/obj/item/organ/tendon/tendon as anything in getorganslotlist(ORGAN_SLOT_TENDON))
 		if(tendon.is_broken())
-			return TRUE
-
-/obj/item/bodypart/proc/nerve_needed()
-	return CHECK_BITFIELD(limb_flags, BODYPART_HAS_NERVE)
-
-/obj/item/bodypart/proc/no_nerve()
-	return (!getorganslot(ORGAN_SLOT_NERVE))
-
-/obj/item/bodypart/proc/nerve_missing()
-	return (nerve_needed() && no_nerve())
-
-/obj/item/bodypart/proc/is_nerve_torn()
-	. = FALSE
-	for(var/obj/item/organ/nerve/nerve as anything in getorganslotlist(ORGAN_SLOT_NERVE))
-		if(nerve.is_bruised())
-			return TRUE
-
-/obj/item/bodypart/proc/is_nerve_dissected()
-	. = FALSE
-	for(var/obj/item/organ/nerve/nerve as anything in getorganslotlist(ORGAN_SLOT_NERVE))
-		if(nerve.is_broken())
 			return TRUE
 
 /obj/item/bodypart/proc/artery_needed()

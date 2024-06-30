@@ -30,7 +30,7 @@ GLOBAL_PROTECT(poll_options)
 	if(!poll)
 		return
 	if(!SSdbcore.Connect())
-		to_chat(src, span_danger("Failed to establish database connection."))
+//		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 	switch(poll.poll_type)
 		if(POLLTYPE_OPTION)
@@ -320,7 +320,7 @@ GLOBAL_PROTECT(poll_options)
  */
 /mob/dead/new_player/proc/vote_on_poll_handler(datum/poll_question/poll, href_list)
 	if(!SSdbcore.Connect())
-		to_chat(src, span_danger("Failed to establish database connection."))
+//		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 	if(!poll || !href_list)
 		return
@@ -387,7 +387,7 @@ GLOBAL_PROTECT(poll_options)
  */
 /mob/dead/new_player/proc/vote_on_poll_option(datum/poll_question/poll, href_list, admin_rank, sql_poll_id, vote_id)
 	if(!SSdbcore.Connect())
-		to_chat(src, span_danger("Failed to establish database connection."))
+//		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 	if(IsAdminAdvancedProcCall())
 		return
@@ -419,7 +419,7 @@ GLOBAL_PROTECT(poll_options)
  */
 /mob/dead/new_player/proc/vote_on_poll_text(href_list, admin_rank, sql_poll_id, vote_id)
 	if(!SSdbcore.Connect())
-		to_chat(src, span_danger("Failed to establish database connection."))
+//		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 	if(IsAdminAdvancedProcCall())
 		return
@@ -451,7 +451,7 @@ GLOBAL_PROTECT(poll_options)
  */
 /mob/dead/new_player/proc/vote_on_poll_rating(datum/poll_question/poll, list/href_list, admin_rank, sql_poll_id)
 	if(!SSdbcore.Connect())
-		to_chat(src, span_danger("Failed to establish database connection."))
+//		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 	if(IsAdminAdvancedProcCall())
 		return
@@ -494,7 +494,7 @@ GLOBAL_PROTECT(poll_options)
  */
 /mob/dead/new_player/proc/vote_on_poll_multi(datum/poll_question/poll, list/href_list, admin_rank, sql_poll_id)
 	if(!SSdbcore.Connect())
-		to_chat(src, span_danger("Failed to establish database connection."))
+//		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 	if(IsAdminAdvancedProcCall())
 		return
@@ -541,7 +541,7 @@ GLOBAL_PROTECT(poll_options)
  */
 /mob/dead/new_player/proc/vote_on_poll_irv(datum/poll_question/poll, list/href_list, admin_rank, sql_poll_id)
 	if(!SSdbcore.Connect())
-		to_chat(src, span_danger("Failed to establish database connection."))
+//		to_chat(src, span_danger("Failed to establish database connection."))
 		return
 	if(IsAdminAdvancedProcCall())
 		return

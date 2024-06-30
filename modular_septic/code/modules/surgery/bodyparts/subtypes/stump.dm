@@ -38,8 +38,7 @@
 /obj/item/bodypart/stump/drop_limb(special = FALSE, dismembered = FALSE, ignore_child_limbs = FALSE, destroyed = FALSE, wounding_type = WOUND_SLASH)
 	return ..(destroyed = TRUE)
 
-/obj/item/bodypart/stump/get_shock(painkiller_included, nerve_included)
-	nerve_included = FALSE
+/obj/item/bodypart/stump/get_shock(painkiller_included)
 	return ..()
 
 /obj/item/bodypart/stump/is_stump()
@@ -56,7 +55,6 @@
 	bone_type = parent.bone_type
 	artery_type = parent.artery_type
 	tendon_type = parent.tendon_type
-	nerve_type = parent.nerve_type
 	cavity_name = parent.cavity_name
 	dismemberment_sounds = parent.dismemberment_sounds?.Copy()
 	melee_hit_modifier = parent.melee_hit_modifier
@@ -68,7 +66,7 @@
 	max_stamina_damage = parent.max_stamina_damage
 	status = parent.status
 	limb_flags = parent.limb_flags
-	limb_flags &= ~(BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_VITAL)
+	limb_flags &= ~(BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_VITAL)
 	animal_origin = parent.animal_origin
 	for(var/obj/item/organ/artery/artery in parent.getorganslotlist(ORGAN_SLOT_ARTERY))
 		var/obj/item/organ/artery/copycat = new artery.type(src)

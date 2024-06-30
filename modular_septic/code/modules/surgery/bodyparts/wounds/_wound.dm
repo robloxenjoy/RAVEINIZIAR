@@ -173,11 +173,6 @@
 				var/obj/item/organ/tendon/tendon = thing
 				if(tendon.damage < tendon.maxHealth)
 					epic_fail = FALSE
-		if(WOUND_NERVE)
-			for(var/thing in new_limb.getorganslotlist(ORGAN_SLOT_NERVE))
-				var/obj/item/organ/nerve/nerve = thing
-				if(nerve.damage < nerve.maxHealth)
-					epic_fail = FALSE
 		else
 			epic_fail = FALSE
 	if(epic_fail)

@@ -134,9 +134,6 @@
 		if(LB.is_tendon_torn())
 			status += "<span class='userdanger'><b>СУХОЖИЛИЕ</b></span>"
 
-		if(LB.is_nerve_torn())
-			status += "<span class='userdanger'><b>НЕРВ</b></span>"
-
 		if(LB.is_cut_away())
 			status += "<span class='userdanger'><b>ОТСОЕДИНЕНО</b></span>"
 

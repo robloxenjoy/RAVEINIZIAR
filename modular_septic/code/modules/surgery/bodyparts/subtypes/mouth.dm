@@ -9,7 +9,7 @@
 	parent_body_zone = BODY_ZONE_HEAD
 	body_zone = BODY_ZONE_PRECISE_MOUTH
 	body_part = JAW
-	limb_flags = BODYPART_EDIBLE|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_HAS_ARTERY
+	limb_flags = BODYPART_EDIBLE|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_ARTERY
 	max_damage = 50
 	max_stamina_damage = 50
 	wound_resistance = -5
@@ -33,7 +33,6 @@
 	bone_type = BONE_MOUTH
 	tendon_type = TENDON_MOUTH
 	artery_type = ARTERY_MOUTH
-	nerve_type = NERVE_MOUTH
 
 	/// Sticky tape muting us
 	var/obj/item/stack/sticky_tape/tapered = null

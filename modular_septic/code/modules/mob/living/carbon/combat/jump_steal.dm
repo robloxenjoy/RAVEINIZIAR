@@ -24,7 +24,7 @@
 //	var/hit_zone = L.zone_selected
 
 	if(C == src)
-		to_chat(src, span_warning("Нахуя мне самого себя красть?"))
+		to_chat(src, span_warning("Нахуя мне самого себя обкрадывать?"))
 		return
 
 //	var/obj/item/bodypart/BP = C.get_bodypart(check_zone(user.zone_selected))
@@ -42,6 +42,7 @@
 */
 //	var/list/rolled = roll3d6(user,SKILL_STEAL,null)
 	var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)
+	var/time = (15 SECONDS - (GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET)) + 1 SECONDS)
 //	var/obj/whatwillitsteal = null
 	if(diceroll == DICE_CRIT_FAILURE)
 		src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
@@ -50,11 +51,14 @@
 		sound_hint()
 		return
 
-	if(diceroll == DICE_FAILURE)
-		src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
-		src.changeNext_move(CLICK_CD_MELEE)
-		sound_hint()
+	if(diceroll >= DICE_FAILURE)
+		if(do_mob(src, target, time))
+			src.visible_message(span_steal("[src] обкрадывает [target]!"),span_steal("Я обкрадываю [target]!"), span_hear("Слышу чё-то."))
+			src.changeNext_move(CLICK_CD_MELEE)
+			sound_hint()
+			target.unequip_everything()
 
+/*
 		switch(affecting)
 			if(BODY_ZONE_CHEST)
 				if(C.wear_suit)
@@ -69,7 +73,7 @@
 					var/obj/shit = C.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 					C.dropItemToGround(shit, force = TRUE, silent = TRUE)
 					put_in_active_hand(shit)
-/*
+
 				if(C.r_store)
 					whatwillitsteal = C.r_store
 				else

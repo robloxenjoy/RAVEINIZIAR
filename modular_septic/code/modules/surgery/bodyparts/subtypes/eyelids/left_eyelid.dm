@@ -9,7 +9,7 @@
 	parent_body_zone = BODY_ZONE_HEAD
 	body_zone = BODY_ZONE_PRECISE_L_EYE
 	body_part = EYE_LEFT
-	limb_flags = BODYPART_EDIBLE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_HAS_ARTERY
+	limb_flags = BODYPART_EDIBLE|BODYPART_HAS_TENDON|BODYPART_HAS_ARTERY
 	w_class = WEIGHT_CLASS_TINY
 	max_damage = 30
 	max_stamina_damage = 30
@@ -31,7 +31,6 @@
 	amputation_point_name = "орбита"
 	tendon_type = TENDON_L_EYE
 	artery_type = ARTERY_L_EYE
-	nerve_type = NERVE_L_EYE
 
 /obj/item/bodypart/l_eyelid/get_limb_icon(dropped)
 	if(dropped && !isbodypart(loc))

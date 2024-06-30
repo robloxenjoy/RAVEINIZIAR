@@ -21,7 +21,6 @@ GLOBAL_LIST_INIT(organ_process_order, list(
 	ORGAN_SLOT_VOICE,
 	ORGAN_SLOT_ARTERY,
 	ORGAN_SLOT_TENDON,
-	ORGAN_SLOT_NERVE,
 	ORGAN_SLOT_BONE,
 	ORGAN_SLOT_ADAMANTINE_RESONATOR,
 	ORGAN_SLOT_HEART_AID,
@@ -61,5 +60,4 @@ GLOBAL_LIST_INIT(organ_process_datum_order, list(
 
 GLOBAL_LIST_INIT_TYPED(bones_by_path, /obj/item/organ/bone, setup_bones())
 GLOBAL_LIST_INIT_TYPED(tendons_by_path, /obj/item/organ/tendon, setup_tendons())
-GLOBAL_LIST_INIT_TYPED(nerves_by_path, /obj/item/organ/nerve, setup_nerves())
 GLOBAL_LIST_INIT_TYPED(arteries_by_path, /obj/item/organ/artery, setup_arteries())

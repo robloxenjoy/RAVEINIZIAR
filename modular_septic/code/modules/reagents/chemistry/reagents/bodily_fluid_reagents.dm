@@ -23,8 +23,8 @@
 
 //PISS
 /datum/reagent/consumable/piss
-	name = "Urine"
-	description = "Liquid human waste. Disgusting."
+	name = "Моча"
+	description = "Жидкий человеческий отход."
 	taste_description = "плохое пиво"
 	reagent_state = LIQUID
 	color = COLOR_YELLOW_PISS
@@ -52,8 +52,8 @@
 //SHIT
 /datum/reagent/consumable/shit
 	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
-	name = "Excrement"
-	description = "Solid human waste. Disgusting."
+	name = "Экскремент"
+	description = "Твёрдый человеческий отход."
 	taste_description = "literal shit"
 	reagent_state = LIQUID
 	color = COLOR_BROWN_SHIT

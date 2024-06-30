@@ -25,7 +25,6 @@
 	bone_type = BONE_R_LEG
 	tendon_type = TENDON_R_LEG
 	artery_type = ARTERY_R_LEG
-	nerve_type = NERVE_R_LEG
 
 /obj/item/bodypart/r_leg/set_owner(new_owner)
 	. = ..()

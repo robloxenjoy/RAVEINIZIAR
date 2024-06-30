@@ -13,7 +13,6 @@
 	oldorgans |= human.getorganslotlistzone(ORGAN_SLOT_BONE, old_bodypart.body_zone)
 	oldorgans |= human.getorganslotlistzone(ORGAN_SLOT_TENDON, old_bodypart.body_zone)
 	oldorgans |= human.getorganslotlistzone(ORGAN_SLOT_ARTERY, old_bodypart.body_zone)
-	oldorgans |= human.getorganslotlistzone(ORGAN_SLOT_NERVE, old_bodypart.body_zone)
 	for(var/obj/item/organ/organ as anything in oldorgans)
 		organ.Remove(human, TRUE)
 		qdel(organ)

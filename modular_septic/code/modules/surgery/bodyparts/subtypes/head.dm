@@ -12,7 +12,7 @@
 	px_x = 0
 	px_y = -8
 	stam_damage_coeff = 1
-	limb_flags = BODYPART_EDIBLE|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_HAS_ARTERY //stump should be handled by the neck
+	limb_flags = BODYPART_EDIBLE|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_ARTERY //stump should be handled by the neck
 	children_zones = list(BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_MOUTH)
 	gender_rendering = TRUE
 
@@ -27,7 +27,6 @@
 	bone_type = BONE_HEAD
 	tendon_type = TENDON_HEAD
 	artery_type = ARTERY_HEAD
-	nerve_type = NERVE_HEAD
 
 	throw_range = 3 //bowling
 	maxdam_wound_penalty = 20 //somewhat hard to hit this cap, better of trying to hit the neck

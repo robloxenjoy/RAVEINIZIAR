@@ -12,7 +12,7 @@
 	stam_damage_coeff = 1
 	maxdam_wound_penalty = 20 //hard to hit this cap
 	dismemberable = FALSE
-	limb_flags = BODYPART_EDIBLE|BODYPART_NO_STUMP|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_HAS_ARTERY
+	limb_flags = BODYPART_EDIBLE|BODYPART_NO_STUMP|BODYPART_HAS_TENDON|BODYPART_HAS_ARTERY
 	children_zones = list(BODY_ZONE_PRECISE_GROIN)
 	gender_rendering = TRUE
 
@@ -26,7 +26,6 @@
 	amputation_point_name = "thoracic spine"
 	tendon_type = TENDON_VITALS
 	artery_type = ARTERY_VITALS
-	nerve_type = NERVE_VITALS
 
 	spilled_overlay = "gut_busted"
 

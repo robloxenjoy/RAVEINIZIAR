@@ -96,7 +96,6 @@
 
 /obj/structure/beast/songster/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/organ/nerve/neck/robot(get_turf(src))
 		new /obj/effect/decal/cleanable/vomit(get_turf(src))
 		playsound(src,'modular_pod/sound/eff/death_sing.ogg', 50, TRUE)
 		song_over()

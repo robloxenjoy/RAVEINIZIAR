@@ -24,7 +24,6 @@
 	bone_type = BONE_L_FOOT
 	tendon_type = TENDON_L_FOOT
 	artery_type = ARTERY_L_FOOT
-	nerve_type = NERVE_L_FOOT
 	starting_digits = list(
 		"big toe" = /obj/item/digit/toe/big,
 		"index toe" = /obj/item/digit/toe/index,

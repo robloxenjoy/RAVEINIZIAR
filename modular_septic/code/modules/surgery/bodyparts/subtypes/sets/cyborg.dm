@@ -10,7 +10,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -32,7 +32,6 @@
 
 	bone_type = /obj/item/organ/bone/r_arm/robot
 	tendon_type = /obj/item/organ/tendon/r_arm/robot
-	nerve_type = /obj/item/organ/nerve/r_arm/robot
 	artery_type = /obj/item/organ/artery/r_arm/robot
 
 /obj/item/bodypart/r_arm/robot/nochildren
@@ -46,7 +45,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -67,7 +66,6 @@
 
 	bone_type = /obj/item/organ/bone/r_hand/robot
 	tendon_type = /obj/item/organ/tendon/r_hand/robot
-	nerve_type = /obj/item/organ/nerve/r_hand/robot
 	artery_type = /obj/item/organ/artery/r_hand/robot
 
 /obj/item/bodypart/l_arm/robot
@@ -78,7 +76,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -100,7 +98,6 @@
 
 	bone_type = /obj/item/organ/bone/l_arm/robot
 	tendon_type = /obj/item/organ/tendon/l_arm/robot
-	nerve_type = /obj/item/organ/nerve/l_arm/robot
 	artery_type = /obj/item/organ/artery/l_arm/robot
 
 /obj/item/bodypart/l_arm/robot/nochildren
@@ -114,7 +111,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -133,7 +130,6 @@
 
 	bone_type = /obj/item/organ/bone/l_hand/robot
 	tendon_type = /obj/item/organ/tendon/l_hand/robot
-	nerve_type = /obj/item/organ/nerve/l_hand/robot
 	artery_type = /obj/item/organ/artery/l_hand/robot
 
 /obj/item/bodypart/r_leg/robot
@@ -144,7 +140,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -166,7 +162,6 @@
 
 	bone_type = /obj/item/organ/bone/r_leg/robot
 	tendon_type = /obj/item/organ/tendon/r_leg/robot
-	nerve_type = /obj/item/organ/nerve/r_leg/robot
 	artery_type = /obj/item/organ/artery/r_leg/robot
 
 /obj/item/bodypart/r_leg/robot/nochildren
@@ -180,7 +175,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -201,7 +196,6 @@
 
 	bone_type = /obj/item/organ/bone/r_foot/robot
 	tendon_type = /obj/item/organ/tendon/r_foot/robot
-	nerve_type = /obj/item/organ/nerve/r_foot/robot
 	artery_type = /obj/item/organ/artery/r_foot/robot
 
 /obj/item/bodypart/l_leg/robot
@@ -212,7 +206,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -234,7 +228,6 @@
 
 	bone_type = /obj/item/organ/bone/l_leg/robot
 	tendon_type = /obj/item/organ/tendon/l_leg/robot
-	nerve_type = /obj/item/organ/nerve/l_leg/robot
 	artery_type = /obj/item/organ/artery/l_leg/robot
 
 /obj/item/bodypart/l_leg/robot/nochildren
@@ -248,7 +241,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -269,7 +262,6 @@
 
 	bone_type = /obj/item/organ/bone/l_foot/robot
 	tendon_type = /obj/item/organ/tendon/l_foot/robot
-	nerve_type = /obj/item/organ/nerve/l_foot/robot
 	artery_type = /obj/item/organ/artery/l_foot/robot
 
 /obj/item/bodypart/groin/robot
@@ -280,7 +272,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -301,7 +293,6 @@
 
 	bone_type = /obj/item/organ/bone/groin/robot
 	tendon_type = /obj/item/organ/tendon/groin/robot
-	nerve_type = /obj/item/organ/nerve/groin/robot
 	artery_type = /obj/item/organ/artery/groin/robot
 
 /obj/item/bodypart/vitals/robot
@@ -311,7 +302,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -332,7 +323,6 @@
 	starting_children = list(/obj/item/bodypart/groin/robot)
 
 	tendon_type = /obj/item/organ/tendon/vitals/robot
-	nerve_type = /obj/item/organ/nerve/vitals/robot
 	artery_type = /obj/item/organ/artery/vitals/robot
 
 /obj/item/bodypart/chest/robot
@@ -343,7 +333,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -365,7 +355,6 @@
 
 	bone_type = /obj/item/organ/bone/chest/robot
 	tendon_type = /obj/item/organ/tendon/chest/robot
-	nerve_type = /obj/item/organ/nerve/chest/robot
 	artery_type = /obj/item/organ/artery/chest/robot
 
 	var/wired = FALSE
@@ -459,7 +448,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -481,7 +470,6 @@
 
 	bone_type = /obj/item/organ/bone/neck/robot
 	tendon_type = /obj/item/organ/tendon/neck/robot
-	nerve_type = /obj/item/organ/nerve/neck/robot
 	artery_type = /obj/item/organ/artery/neck/robot
 
 /obj/item/bodypart/neck/robotic/nochildren
@@ -494,7 +482,7 @@
 	icon_state = "eye-c"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -514,7 +502,6 @@
 	advanced_rendering = FALSE
 
 	tendon_type = /obj/item/organ/tendon/l_eye/robot
-	nerve_type = /obj/item/organ/nerve/l_eye/robot
 	artery_type = /obj/item/organ/artery/l_eye/robot
 
 /obj/item/bodypart/r_eyelid/robotic
@@ -524,7 +511,7 @@
 	icon_state = "eye-c"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -544,7 +531,6 @@
 	advanced_rendering = FALSE
 
 	tendon_type = /obj/item/organ/tendon/r_eye/robot
-	nerve_type = /obj/item/organ/nerve/r_eye/robot
 	artery_type = /obj/item/organ/artery/r_eye/robot
 
 /obj/item/bodypart/face/robotic
@@ -580,7 +566,7 @@
 	icon_state = "jaw-c"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -601,7 +587,6 @@
 
 	bone_type = /obj/item/organ/bone/mouth/robot
 	tendon_type = /obj/item/organ/tendon/mouth/robot
-	nerve_type = /obj/item/organ/nerve/mouth/robot
 	artery_type = /obj/item/organ/artery/mouth/robot
 
 /obj/item/bodypart/head/robot
@@ -612,7 +597,7 @@
 	inhand_icon_state = "buildpipe"
 	flags_1 = CONDUCT_1
 	status = BODYPART_ROBOTIC
-	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE
+	limb_flags = BODYPART_SYNTHETIC|BODYPART_NO_STUMP|BODYPART_HAS_BONE|BODYPART_HAS_TENDON
 
 	brute_reduction = 5
 	burn_reduction = 5
@@ -634,7 +619,6 @@
 
 	bone_type = /obj/item/organ/bone/head/robot
 	tendon_type = /obj/item/organ/tendon/head/robot
-	nerve_type = /obj/item/organ/nerve/head/robot
 	artery_type = /obj/item/organ/artery/head/robot
 
 	var/obj/item/assembly/flash/handheld/flash1 = null

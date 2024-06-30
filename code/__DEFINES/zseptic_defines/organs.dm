@@ -80,7 +80,6 @@
 // ~organ slots
 #define ORGAN_SLOT_BONE "bone"
 #define ORGAN_SLOT_TENDON "tendon"
-#define ORGAN_SLOT_NERVE "nerve"
 #define ORGAN_SLOT_ARTERY "artery"
 #define ORGAN_SLOT_ADAMANTINE_RESONATOR "adamantine resonator"
 #define ORGAN_SLOT_APPENDIX "appendix"
@@ -200,26 +199,6 @@
 #define TENDON_L_FOOT /obj/item/organ/tendon/l_foot
 #define TENDON_R_LEG /obj/item/organ/tendon/r_leg
 #define TENDON_R_FOOT /obj/item/organ/tendon/r_foot
-
-// ~nerves
-#define NERVE_MAX_HEALTH 100
-
-#define NERVE_L_EYE /obj/item/organ/nerve/l_eye
-#define NERVE_R_EYE /obj/item/organ/nerve/r_eye
-#define NERVE_HEAD /obj/item/organ/nerve/head
-#define NERVE_MOUTH /obj/item/organ/nerve/mouth
-#define NERVE_NECK /obj/item/organ/nerve/neck
-#define NERVE_CHEST /obj/item/organ/nerve/chest
-#define NERVE_VITALS /obj/item/organ/nerve/vitals
-#define NERVE_GROIN	/obj/item/organ/nerve/groin
-#define NERVE_L_ARM /obj/item/organ/nerve/l_arm
-#define NERVE_L_HAND /obj/item/organ/nerve/l_hand
-#define NERVE_R_ARM	/obj/item/organ/nerve/r_arm
-#define NERVE_R_HAND /obj/item/organ/nerve/r_hand
-#define NERVE_L_LEG	/obj/item/organ/nerve/l_leg
-#define NERVE_L_FOOT /obj/item/organ/nerve/l_foot
-#define NERVE_R_LEG /obj/item/organ/nerve/r_leg
-#define NERVE_R_FOOT /obj/item/organ/nerve/r_foot
 
 // ~arteries
 #define ARTERY_MAX_HEALTH 100

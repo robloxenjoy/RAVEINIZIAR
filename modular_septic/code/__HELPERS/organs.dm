@@ -10,12 +10,6 @@
 	for(var/obj/item/organ/tendon as anything in init_subtypes(/obj/item/organ/tendon))
 		.[tendon.type] = tendon
 
-/proc/setup_nerves()
-	. = list()
-	.[/obj/item/organ/nerve] = new /obj/item/organ/nerve()
-	for(var/obj/item/organ/nerve as anything in init_subtypes(/obj/item/organ/nerve))
-		.[nerve.type] = nerve
-
 /proc/setup_arteries()
 	. = list()
 	.[/obj/item/organ/artery] = new /obj/item/organ/artery()

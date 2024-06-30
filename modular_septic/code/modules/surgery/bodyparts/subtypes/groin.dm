@@ -11,7 +11,7 @@
 	px_y = 4
 	stam_damage_coeff = 1
 	maxdam_wound_penalty = 20 //hard to hit this cap
-	limb_flags = BODYPART_EDIBLE|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_NERVE|BODYPART_HAS_ARTERY
+	limb_flags = BODYPART_EDIBLE|BODYPART_HAS_BONE|BODYPART_HAS_TENDON|BODYPART_HAS_ARTERY
 	children_zones = list(BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
 	gender_rendering = TRUE
 
@@ -26,7 +26,6 @@
 	bone_type = BONE_GROIN
 	tendon_type = TENDON_GROIN
 	artery_type = ARTERY_GROIN
-	nerve_type = NERVE_GROIN
 
 /obj/item/bodypart/groin/halber
 	max_damage = 130

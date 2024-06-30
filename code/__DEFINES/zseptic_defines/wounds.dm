@@ -23,10 +23,8 @@
 #define ARTERY_MINIMUM_DAMAGE 10
 /// ditto but for tendon wounds
 #define TENDON_MINIMUM_DAMAGE 10
-/// ditto but for nerve wounds
-#define NERVE_MINIMUM_DAMAGE 15
 /// ditto but for internal organ damage
-#define ORGAN_MINIMUM_DAMAGE 12.5
+#define ORGAN_MINIMUM_DAMAGE 13
 /// ditto but for teeth
 #define TEETH_MINIMUM_DAMAGE 15
 /// ditto but for kids named finger
@@ -55,20 +53,18 @@
 #define WOUND_ARTERY 2
 /// any sharp weapon, edged or pointy, can cause tendons to be torn
 #define WOUND_TENDON 3
-/// any sharp weapon, edged or pointy, can cause nerves to be torn
-#define WOUND_NERVE 4
 /// britification lol
-#define WOUND_TEETH 5
+#define WOUND_TEETH 4
 /// fingers or toes
-#define WOUND_DIGITS 6
+#define WOUND_DIGITS 5
 /// any kind of organ spilling
-#define WOUND_SPILL 7
+#define WOUND_SPILL 6
 /// any brute weapon/attack with sharpness = SHARP_EDGED. rolls for slash wounds
-#define WOUND_SLASH 8
+#define WOUND_SLASH 7
 /// any brute weapon/attack with sharpness = SHARP_POINTY. rolls for piercing wounds
-#define WOUND_PIERCE 9
+#define WOUND_PIERCE 8
 /// any concentrated burn attack (lasers really). rolls for burning wounds
-#define WOUND_BURN 10
+#define WOUND_BURN 9
 
 // ~determination second wind defines
 // How much determination reagent to add each time someone gains a new wound in [/datum/wound/proc/second_wind]
@@ -101,7 +97,6 @@ GLOBAL_LIST_INIT(global_wound_types, list(\
 	WOUND_BLUNT = list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate),
 	WOUND_ARTERY = list(/datum/wound/artery/dissect, /datum/wound/artery/tear),
 	WOUND_TENDON = list(/datum/wound/tendon/dissect, /datum/wound/tendon/tear),
-	WOUND_NERVE = list(/datum/wound/nerve/dissect, /datum/wound/nerve/tear),
 	WOUND_TEETH = list(/datum/wound/teeth),
 	WOUND_DIGITS = list(/datum/wound/digits)))
 //	WOUND_SPILL = list(/datum/wound/spill/brain, /datum/wound/spill/gut, /datum/wound/spill/eyes)))
@@ -115,8 +110,6 @@ GLOBAL_LIST_INIT(global_all_wound_types, \
 	/datum/wound/artery/tear,
 	/datum/wound/tendon/dissect, \
 	/datum/wound/tendon/tear,
-	/datum/wound/nerve/dissect, \
-	/datum/wound/nerve/tear, \
 	/datum/wound/teeth, \
 	/datum/wound/digits))
 /*

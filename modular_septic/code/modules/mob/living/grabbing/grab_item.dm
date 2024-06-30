@@ -81,7 +81,7 @@
 				victim.visible_message(span_warning("<b>[owner]</b> прекращает [grab_wording] себя за [grasped_part.name]!"),\
 											span_notice("Я прекращаю [grab_wording] себя за [grasped_part.name]!"))
 			else
-				victim.visible_message(span_danger("<b>[owner]</b> прекращает [grab_wording] <b>[victim]</b>[grasped_part ? " за[grasped_part.name]": ""]!"),\
+				victim.visible_message(span_danger("<b>[owner]</b> прекращает [grab_wording] <b>[victim]</b>[grasped_part ? " за [grasped_part.name]": ""]!"),\
 										span_userdanger("<b>[owner]</b> прекращает [grab_wording] меня[grasped_part ? " за [grasped_part.name]" : ""]!"),\
 										ignored_mobs = owner)
 				to_chat(owner, span_danger("Я прекращаю [grab_wording] <b>[victim]</b>[grasped_part ? " за [grasped_part.name]" : ""]!"))

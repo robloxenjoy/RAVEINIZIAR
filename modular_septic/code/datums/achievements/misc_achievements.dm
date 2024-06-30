@@ -16,12 +16,6 @@
 	database_id = MEDAL_NKILLER
 	achievement_quality = ACHIEVEMENT_GOOD
 
-/datum/award/achievement/misc/nervous
-	name = "Nervous"
-	desc = "You lost your nerve."
-	database_id = MEDAL_NERVOUS
-	achievement_quality = ACHIEVEMENT_BAD
-
 /datum/award/achievement/misc/look_mom_no_anesthesia
 	name = "Look Mom, No Anesthesia"
 	desc = "Anesthesia is for pussies!"

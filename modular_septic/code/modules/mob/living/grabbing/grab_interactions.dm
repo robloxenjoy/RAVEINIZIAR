@@ -195,7 +195,7 @@
 		epic_success = owner.diceroll(GET_MOB_SKILL_VALUE(owner, SKILL_MEDICINE), context = DICE_CONTEXT_PHYSICAL)
 	else
 		epic_success = owner.diceroll(GET_MOB_SKILL_VALUE(owner, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
-	if(epic_success >= DICE_SUCCESS)
+	if(epic_success >= DICE_FAILURE)
 		var/damage = GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)/2
 		victim.apply_damage(damage, BRUTE, grasped_part, sharpness = NONE)
 //		grasped_part.receive_damage(brute = damage, sharpness = NONE)
