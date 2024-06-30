@@ -41,18 +41,18 @@
 		SKILL_PICKPOCKET
 */
 //	var/list/rolled = roll3d6(user,SKILL_STEAL,null)
-	var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)
 	var/time = (5 SECONDS - ((GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET)/2)) + 1 SECONDS)
 //	var/obj/whatwillitsteal = null
-	if(diceroll == DICE_CRIT_FAILURE)
-		src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
-		src.Immobilize(2 SECONDS)
-		src.changeNext_move(CLICK_CD_MELEE)
-		sound_hint()
-		return
+	if(do_after(src, time, target=C))
+		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)
+		if(diceroll == DICE_CRIT_FAILURE)
+			src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
+			src.Immobilize(2 SECONDS)
+			src.changeNext_move(CLICK_CD_MELEE)
+			sound_hint()
+			return
 
-	if(diceroll >= DICE_FAILURE)
-		if(do_after(src, time, target=C))
+		if(diceroll >= DICE_FAILURE)
 			src.visible_message(span_steal("[src] обкрадывает [target]!"),span_steal("Я обкрадываю [target]!"), span_hear("Слышу чё-то."))
 			src.changeNext_move(CLICK_CD_MELEE)
 			sound_hint()

@@ -790,3 +790,6 @@
 
 /turf/open/floor/plating/polovich/way/kaos/fi
 	icon_state = "kaos5"
+
+/turf/open/floor/plating/polovich/way/kaos/si
+	icon_state = "kaos6"
