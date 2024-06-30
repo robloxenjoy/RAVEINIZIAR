@@ -5037,6 +5037,7 @@
 #include "modular_septic\code\modules\mob\living\carbon\combat\carbon_shock_penalty.dm"
 #include "modular_septic\code\modules\mob\living\carbon\combat\carbon_weight.dm"
 #include "modular_septic\code\modules\mob\living\carbon\combat\combat_style.dm"
+#include "modular_septic\code\modules\mob\living\carbon\combat\jump_steal.dm"
 #include "modular_septic\code\modules\mob\living\carbon\combat\special_attack.dm"
 #include "modular_septic\code\modules\mob\living\carbon\combat\fatigue\carbon_fatigue.dm"
 #include "modular_septic\code\modules\mob\living\carbon\human\damage_procs.dm"

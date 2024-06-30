@@ -42,14 +42,14 @@
 		buildstack = _buildstack
 	AddElement(/datum/element/climbable)
 	RegisterSignal(src, COMSIG_CARBON_DISARM_COLLIDE, .proc/table_carbon)
-
+/*
 /obj/structure/table/examine(mob/user)
 	. = ..()
 	. += deconstruction_hints(user)
 
 /obj/structure/table/proc/deconstruction_hints(mob/user)
 	return span_notice("The top is <b>screwed</b> on, but the main <b>bolts</b> are also visible.")
-
+*/
 /obj/structure/table/update_icon(updates=ALL)
 	. = ..()
 	if((updates & UPDATE_SMOOTHING) && (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK)))
