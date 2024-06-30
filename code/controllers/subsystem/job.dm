@@ -74,7 +74,7 @@ SUBSYSTEM_DEF(job)
 		SetupOccupations()
 	if(CONFIG_GET(flag/load_jobs_from_txt))
 		LoadJobs()
-	set_overflow_role(CONFIG_GET(string/overflow_job))
+//	set_overflow_role(CONFIG_GET(string/overflow_job))
 	return ..()
 
 

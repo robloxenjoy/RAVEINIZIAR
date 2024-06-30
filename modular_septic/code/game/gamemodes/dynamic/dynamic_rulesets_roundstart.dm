@@ -49,7 +49,7 @@
 			job.total_positions = 64
 			job.spawn_positions = 64
 			SSjob.joinable_occupations += job
-			SSjob.set_overflow_role(job.title)
+//			SSjob.set_overflow_role(job.title)
 		else if(istype(job, /datum/job/ladax))
 			SSjob.name_occupations[job.title] = job
 			ladax_department.add_job(job)
