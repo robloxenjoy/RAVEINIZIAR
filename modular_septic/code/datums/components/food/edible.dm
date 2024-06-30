@@ -23,8 +23,7 @@
 		if(iscarbon(eater))
 			var/obj/item/bodypart/jaw = eater.get_bodypart_nostump(BODY_ZONE_PRECISE_MOUTH)
 			if(jaw)
-				var/jaw_efficiency = jaw?.limb_efficiency
-				if(jaw_efficiency < LIMB_EFFICIENCY_DISABLING)
+				if(jaw?.limb_efficiency < LIMB_EFFICIENCY_DISABLING)
 					to_chat(feeder, span_warning("Челюсть нездорова."))
 					return
 		SEND_SIGNAL(parent, COMSIG_FOOD_EATEN, eater, feeder, bitecount, bite_consumption)
