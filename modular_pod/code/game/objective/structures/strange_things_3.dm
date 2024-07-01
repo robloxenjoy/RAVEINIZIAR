@@ -377,12 +377,16 @@
 	if(.)
 		return
 	user.visible_message(span_notice("[user] отрывает от [src] кусок."),span_notice("Я отрываю от [src] кусок."), span_hear("Я слышу собирание."))
+	playsound(loc,'modular_pod/sound/eff/tearthing.ogg', 30, TRUE)
 	var/obj/item/granat = new /obj/item/food/grown/granat(loc)
 	user.put_in_active_hand(granat)
 	user.changeNext_move(5)
 	granats--
 	if(granats <= 0)
 		qdel(src)
+
+/obj/structure/flora/ausbushes/granat/attackby(obj/item/W, mob/living/carbon/user, params)
+	return
 
 /obj/structure/wiresa
 	name = "Провода"
