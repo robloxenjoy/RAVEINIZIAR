@@ -2,11 +2,11 @@
 
 #define DRONING_COMBAT
 
-#define DRONING_POLOVICHSTAN list('modular_septic/sound/music/droning/unatko.ogg', 'modular_pod/sound/mus/earth_destroyed.ogg')
+#define DRONING_POLOVICHSTAN list('modular_pod/sound/mus/droning/titan.ogg')
 
 #define DRONING_NIGHTVILL list('modular_pod/sound/mus/thief.ogg')
 
-#define DRONING_AKT list('modular_septic/sound/music/droning/unatko.ogg')
+#define DRONING_AKT
 
 #define DRONING_CHAOT list('modular_septic/sound/music/droning/gothic.ogg')
 

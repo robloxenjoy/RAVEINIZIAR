@@ -34,6 +34,28 @@
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 
+/area/maintenance/polovich/forest/Entered(atom/movable/arrived, area/old_area)
+	. = ..()
+	var/mob/living/living_arrived = arrived
+	if(istype(living_arrived) && living_arrived.client)
+		living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
+
+/area/maintenance/polovich/forest/Exited(atom/movable/gone, direction)
+	. = ..()
+	var/mob/living/living_gone = gone
+	if(istype(living_gone))
+		living_gone.clear_fullscreen("redfog")
+
+/area/maintenance/polovich/forest/on_joining_game(mob/living/boarder)
+	. = ..()
+	if(istype(boarder) && boarder.client)
+		boarder.overlay_fullscreen("surface", /obj/screen/fullscreen/surface)
+
+/area/maintenance/polovich/forest/reconnect_game(mob/living/boarder)
+	. = ..()
+	if(istype(boarder) && boarder.client)
+		boarder.overlay_fullscreen("surface", /obj/screen/fullscreen/surface)
+
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
 	base_lighting_alpha = 1
