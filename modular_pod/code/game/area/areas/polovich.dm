@@ -33,7 +33,7 @@
 	droning_sound = DRONING_POLOVICHSTAN
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
-	var/specialfog = TRUE
+	var/specialfog = FALSE
 
 /area/maintenance/polovich/forest/Entered(atom/movable/arrived, area/old_area)
 	. = ..()
@@ -69,7 +69,6 @@
 	max_ambience_cooldown = 75 SECONDS
 	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
 	droning_sound = null
-	specialfog = FALSE
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
