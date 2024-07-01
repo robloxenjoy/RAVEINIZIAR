@@ -280,7 +280,7 @@
 			var/nono = "[global.config.directory]/nolegsnoarms.txt"
 			if(key in world.file2list(nono))
 				var/obj/item/bodypart/affectingg = get_bodypart(LIMB_BODYPARTS)
-				if(affecting)
+				if(affectingg)
 					qdel(affectingg)
 			var/nojaw = "[global.config.directory]/nojaw.txt"
 			if(key in world.file2list(nojaw))
