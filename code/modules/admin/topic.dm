@@ -1225,9 +1225,17 @@
 		if(!check_rights(R_ADMIN))
 			return
 
+
 		var/mob/living/M = locate(href_list["takegame"])
 		if(M.client)
+			var/crazyalert = alert("Захуячить его?",,"Да!","Нет.")
+			if(crazyalert != "Да!")
+				return
 			WRITE_FILE(file("[global.config.directory]/noplay.txt"), M.key)
+			var/funny = CONFIG_GET(string/bantroll)
+			if(funny)
+				DIRECT_OUTPUT(M.client, link(funny))
+				qdel(M.client)
 
 	else if(href_list["bobux"])
 		if(!check_rights(R_ADMIN))
