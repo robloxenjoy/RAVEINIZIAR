@@ -59,7 +59,7 @@ window "mapwindow"
 		pos = 0,0
 		size = 640x480
 		zoom = 0
-		zoom-mode = distort
+		zoom-mode = normal
 		anchor1 = 0,0
 		anchor2 = 100,100
 		font-family = "Arial"
