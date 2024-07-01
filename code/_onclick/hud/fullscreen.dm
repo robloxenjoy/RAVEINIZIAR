@@ -96,6 +96,9 @@
 	alpha = 170
 //	color = "#ffd1a4"
 
+/atom/movable/screen/fullscreen/foge/earth
+	icon_state = "poor_earth"
+
 /atom/movable/screen/fullscreen/brute
 	icon_state = "brutedamageoverlay"
 	layer = UI_DAMAGE_LAYER

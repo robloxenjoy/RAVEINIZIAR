@@ -40,7 +40,7 @@
 	if(specialfog)
 		var/mob/living/living_arrived = arrived
 		if(istype(living_arrived) && living_arrived.client)
-			living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
+			living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
 
 /area/maintenance/polovich/forest/Exited(atom/movable/gone, direction)
 	. = ..()
@@ -53,13 +53,13 @@
 	. = ..()
 	if(specialfog)
 		if(istype(boarder) && boarder.client)
-			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
+			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
 
 /area/maintenance/polovich/forest/reconnect_game(mob/living/boarder)
 	. = ..()
 	if(specialfog)
 		if(istype(boarder) && boarder.client)
-			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
+			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
