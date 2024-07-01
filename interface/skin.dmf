@@ -58,7 +58,7 @@ window "mapwindow"
 		type = MAP
 		pos = 0,0
 		size = 640x480
-		zoom = 1
+		zoom = 0
 		zoom-mode = normal
 		anchor1 = 0,0
 		anchor2 = 100,100
