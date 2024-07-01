@@ -122,6 +122,7 @@
 						character.name = character.real_name
 						character.age = client.age_ch
 						character.handed_flags = DEFAULT_HANDEDNESS
+						character.fully_heal(TRUE)
 
 						var/eye_coloring = pick("#000000", "#1f120f")
 
@@ -162,7 +163,7 @@
 								organ_eyes.old_eye_color = eye_coloring
 								character.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
 						for(var/obj/item/organ/genital/genital in character.internal_organs)
-							genital.Remove(character.)
+							genital.Remove(character)
 							qdel(genital)
 
 						mind.active = FALSE

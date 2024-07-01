@@ -438,7 +438,7 @@
 						continue
 					if(prob(90))
 						new /obj/structure/flora/ausbushes/cactus(get_turf(near_tt))
-		if(prob(7))
+		if(prob(5))
 			if(locate(/obj/) in get_turf(src))
 				return
 			new /obj/structure/flora/ausbushes/granat(get_turf(src))
