@@ -2,7 +2,7 @@
 
 #define DRONING_COMBAT
 
-#define DRONING_POLOVICHSTAN list('modular_pod/sound/mus/droning/titan.ogg')
+#define DRONING_POLOVICHSTAN list('modular_pod/sound/mus/titan.ogg')
 
 #define DRONING_NIGHTVILL list('modular_pod/sound/mus/thief.ogg')
 

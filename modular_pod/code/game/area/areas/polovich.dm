@@ -49,12 +49,12 @@
 /area/maintenance/polovich/forest/on_joining_game(mob/living/boarder)
 	. = ..()
 	if(istype(boarder) && boarder.client)
-		boarder.overlay_fullscreen("surface", /obj/screen/fullscreen/surface)
+		boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 
 /area/maintenance/polovich/forest/reconnect_game(mob/living/boarder)
 	. = ..()
 	if(istype(boarder) && boarder.client)
-		boarder.overlay_fullscreen("surface", /obj/screen/fullscreen/surface)
+		boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
