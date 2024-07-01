@@ -1,8 +1,9 @@
 /client/New(TopicData)
+	var/funny = CONFIG_GET(string/bantroll)
 	if(key in world.file2list("[global.config.directory]/noplay.txt"))
 		should_not_play = TRUE
+		DIRECT_OUTPUT(src, link(funny))
 		qdel(src)
-	var/funny = CONFIG_GET(string/bantroll)
 	var/list/isbanned = world.IsBanned(key, address, computer_id, connection)
 	var/reconnecting = FALSE
 	if(GLOB.player_details[ckey])
