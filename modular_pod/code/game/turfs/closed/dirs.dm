@@ -70,6 +70,8 @@
 			dir = WEST
 
 /turf/podpol/wall/Destroy()
+	if(cantbreak)
+		return
 	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
 	for(var/turf/podpol/wall/F in oview(1, personal_turf))
 		F.update_icon_pod()
@@ -84,6 +86,7 @@
 	density = TRUE
 	layer = CLOSED_TURF_LAYER
 	opacity = TRUE
+	var/cantbreak = FALSE
 	var/powerwall = 10
 	var/hardness = 40
 	var/mineable = TRUE
@@ -101,6 +104,8 @@
 	rammer.sound_hint()
 
 /turf/podpol/wall/ex_act(severity, target)
+	if(cantbreak)
+		return
 	if(target == src)
 //		qdel(src)
 		ChangeTurf(/turf/open/floor/plating/polovich/codec/dirt/mud, null, CHANGETURF_IGNORE_AIR)
@@ -200,6 +205,8 @@
 
 /turf/podpol/wall/steel
 	icon = 'modular_pod/icons/turf/closed/steel.dmi'
+	cantbreak = TRUE
+	mineable = FALSE
 
 /turf/podpol/wall/steel/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
