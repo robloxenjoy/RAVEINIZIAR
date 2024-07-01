@@ -1,10 +1,15 @@
 /client/New(TopicData)
+	if(key in world.file2list("[global.config.directory]/noplay.txt"))
+		should_not_play = TRUE
+		qdel(src)
 	var/funny = CONFIG_GET(string/bantroll)
 	var/list/isbanned = world.IsBanned(key, address, computer_id, connection)
 	var/reconnecting = FALSE
 	if(GLOB.player_details[ckey])
 		reconnecting = TRUE
 	. = ..()
+	if(key in world.file2list("[global.config.directory]/nosay.txt"))
+		should_not_say = TRUE
 	if(length(isbanned) && !check_rights(R_ADMIN))
 		var/list/ban_details = is_banned_from_with_details(ckey, address, computer_id, "Server")
 		for(var/i in ban_details)

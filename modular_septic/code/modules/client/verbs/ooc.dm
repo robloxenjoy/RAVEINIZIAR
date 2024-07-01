@@ -22,6 +22,9 @@
 	if(is_banned_from(ckey, "OOC"))
 		to_chat(src, span_danger("You have been banned from OOC."))
 		return
+	if(should_not_say)
+		to_chat(src, span_danger("Мне не нужно разговаривать."))
+		return
 	if(QDELETED(src))
 		return
 

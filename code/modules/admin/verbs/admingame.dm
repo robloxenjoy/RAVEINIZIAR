@@ -100,6 +100,7 @@
 	body += "<A href='?_src_=holder;[HrefToken()];bobux=[REF(M)]'>Каотики</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];fatal=[REF(M)]'>Сделать фаталом</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];fatalremove=[REF(M)]'>Убрать фатала</A> | "
+	body += "<A href='?_src_=holder;[HrefToken()];takegame=[REF(M)]'>Забрать возможность играть</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];narrateto=[REF(M)]'>Narrate to</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];subtlemessage=[REF(M)]'>Subtle message</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];playsoundto=[REF(M)]'>Play sound to</A> | "

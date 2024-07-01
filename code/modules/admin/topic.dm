@@ -294,15 +294,16 @@
 			if(!check_if_greater_rights_than(M.client))
 				to_chat(usr, span_danger("Error: They have more rights than you do."), confidential = TRUE)
 				return
-			if(tgui_alert(usr, "Kick [key_name(M)]?", "Confirm", list("Yes", "No")) != "Yes")
-				return
+			var/crazyalert = alert("Кикнуть его?",,"Да!","Нет.")
 			if(!M)
 				to_chat(usr, span_danger("Error: [M] no longer exists!"), confidential = TRUE)
 				return
 			if(!M.client)
 				to_chat(usr, span_danger("Error: [M] no longer has a client!"), confidential = TRUE)
 				return
-			to_chat(M, span_danger("You have been kicked from the server by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"]."), confidential = TRUE)
+			if(crazyalert != "Да!")
+				return
+			to_chat(M, span_danger("You have been kicked from the server."), confidential = TRUE)
 			log_admin("[key_name(usr)] kicked [key_name(M)].")
 			message_admins(span_adminnotice("[key_name_admin(usr)] kicked [key_name_admin(M)]."))
 			//SEPTIC EDIT BEGIN
@@ -1220,14 +1221,22 @@
 		if(HAS_TRAIT(M, TRAIT_FRAGGOT))
 			qdel(M.GetComponent(/datum/component/fraggot))
 
+	else if(href_list["takegame"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/mob/living/M = locate(href_list["takegame"])
+		if(M.client)
+			WRITE_FILE(file("[global.config.directory]/noplay.txt"), M.key)
+
 	else if(href_list["bobux"])
 		if(!check_rights(R_ADMIN))
 			return
-		
+
 		var/mob/M = locate(href_list["bobux"])
 		if(!M?.mind)
 			return
-		
+
 		show_bobux_panel(M)
 
 	else if(href_list["skill"])

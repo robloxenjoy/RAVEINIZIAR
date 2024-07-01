@@ -20,8 +20,10 @@
 
 /client/proc/do_fullscreen(activate = FALSE)
 	if(activate)
+		fullscren_enabled = TRUE
 		winset(src, "mainwindow", "is-maximized=true;can-resize=false;titlebar=false;statusbar=false;menu=false")
 	else
+		fullscren_enabled = FALSE
 		winset(src, "mainwindow", "is-maximized=false;can-resize=true;titlebar=true;statusbar=false;menu=menu")
 	addtimer(CALLBACK(src, .verb/fit_viewport), 5 SECONDS)
 

@@ -13,8 +13,11 @@
 	/// Current ambient track
 	var/sound/droning_sound
 
-	/// CHARACTER 
+	/// CHARACTER
 	var/name_ch = null
 	var/age_ch = null
 	var/role_ch = null
 	var/ready_char = FALSE
+	var/should_not_play = FALSE
+	var/should_not_say = FALSE
+	var/fullscren_enabled

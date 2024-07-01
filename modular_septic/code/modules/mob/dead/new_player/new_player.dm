@@ -56,6 +56,9 @@
 		return
 	if(client.ready_char)
 		return
+	if(client.should_not_play)
+		alert("Ой, как жаль... Я не могу продолжать свой путь.")
+		return
 	if(SSticker.current_state < GAME_STATE_PLAYING)
 		alert("Игрушка пока не началась.")
 		return
@@ -186,6 +189,23 @@
 						character.gain_extra_effort(1, TRUE)
 						to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
 						character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
+
+						if(character.key in world.file2list("[global.config.directory]/fraggots.txt"))
+							character.AddComponent(/datum/component/fraggot)
+						if(character.key in world.file2list("[global.config.directory]/nolegsnoarms.txt"))
+							for (var/_limb in character.bodyparts)
+								var/obj/item/bodypart/limb = _limb
+								if(limb.body_part == HEADTHINGS || limb.body_part == TORSOTHINGS)
+									continue
+								limb.Remove(character)
+								qdel(limb)
+						if(character.key in world.file2list("[global.config.directory]/nojaw.txt"))
+							for (var/_limb in character.bodyparts)
+								var/obj/item/bodypart/limb = _limb
+								if(limb.body_part == JAW)
+									limb.Remove(character)
+									qdel(limb)
+
 						if(character.special_zvanie)
 							switch(character.special_zvanie)
 								if("Отец Капнобатаев")

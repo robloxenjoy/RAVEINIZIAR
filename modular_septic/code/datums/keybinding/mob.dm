@@ -68,4 +68,7 @@
 
 /datum/keybinding/mob/fullscreen/down(client/client)
 	. = ..()
-	client.do_fullscreen()
+	if(client.fullscren_enabled)
+		client.do_fullscreen(FALSE)
+	else
+		client.do_fullscreen(TRUE)

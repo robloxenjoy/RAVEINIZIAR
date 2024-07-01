@@ -13,8 +13,10 @@
 /datum/component/fraggot/RegisterWithParent()
 	var/mob/living/carbon/human/our_fraggot = parent
 //	our_fraggot.attributes?.add_diceroll_modifier(/datum/diceroll_modifier/fraggot)
-	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
-		SEND_SIGNAL(human, COMSIG_ADD_MOOD_EVENT, "[our_fraggot.real_name]", /datum/mood_event/fraggot, our_fraggot)
+
+//	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
+//		SEND_SIGNAL(human, COMSIG_ADD_MOOD_EVENT, "[our_fraggot.real_name]", /datum/mood_event/fraggot, our_fraggot)
+
 //	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list))
 	SEND_SOUND(world, sound('modular_pod/sound/eff/kill_her_now_kill_her_now.ogg', volume = 60))
 	to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")][our_fraggot.real_name] [our_fraggot.truerole] ФАТАЛ! УБЕЙТЕ ЭТУ СУЩЕСТВО![emoji_parse(":chaos:")]</span></span>")
@@ -34,8 +36,8 @@
 //	UnregisterSignal(our_fraggot, COMSIG_PARENT_PREQDELETED)
 //	UnregisterSignal(our_fraggot, COMSIG_PARENT_EXAMINE)
 	REMOVE_TRAIT(our_fraggot, TRAIT_FRAGGOT, "fraggot")
-	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
-		SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
+//	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
+//		SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
 //	our_fraggot.clear_fullscreen("niqqer")
 //	niqqerlay = null
 
@@ -46,8 +48,8 @@
 //		our_fraggot.gib()
 		to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")]ФАТАЛ [our_fraggot.real_name] [our_fraggot.truerole] УМЕР![emoji_parse(":chaos:")]</span></span>")
 		SEND_SOUND(world, sound('modular_pod/sound/eff/fataldeath.ogg'))
-		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
-			SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
+//		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
+//			SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")
 		our_fraggot.gib()
 /*
 /datum/component/fraggot/proc/fraggot_deleted(mob/living/carbon/human/our_fraggot)
@@ -76,6 +78,7 @@
 			"СС14!!!", \
 			"СС14 ЛОЛ!!!", \
 			"АААААААААА БЛЯЯЯЯЯЯЯТЬ!!!!!", \
+			"ВКОНТАКТЕ! ВКОНТАКТЕ БЛЯТЬ!!!", \
 			"ПИДОРАСЫ!!!!", \
 			"СУКИИИИ!!!!", \
 			"ПАРОДИЯ НА ЛАЙФВЕБ!!!!", \
@@ -96,7 +99,7 @@
 			'modular_septic/sound/memeshit/youstupid.ogg',
 		)
 		if(DT_PROB(8, delta_time))
-			our_fraggot.playsound_local(get_turf(our_fraggot), pick(fraggot_sounds), 40)
+			our_fraggot.playsound_local(get_turf(our_fraggot), pick(fraggot_sounds), 30)
 //			var/sound/annoying = sound(pick(fraggot_sounds), FALSE, 0, CHANNEL_LOBBYMUSIC, 100)
 //			SEND_SOUND(our_fraggot.client, annoying)
 //		if(DT_PROB(0.25, delta_time))
