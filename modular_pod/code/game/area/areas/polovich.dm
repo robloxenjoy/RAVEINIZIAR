@@ -33,28 +33,33 @@
 	droning_sound = DRONING_POLOVICHSTAN
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
+	var/specialfog = TRUE
 
 /area/maintenance/polovich/forest/Entered(atom/movable/arrived, area/old_area)
 	. = ..()
-	var/mob/living/living_arrived = arrived
-	if(istype(living_arrived) && living_arrived.client)
-		living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
+	if(specialfog)
+		var/mob/living/living_arrived = arrived
+		if(istype(living_arrived) && living_arrived.client)
+			living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 
 /area/maintenance/polovich/forest/Exited(atom/movable/gone, direction)
 	. = ..()
-	var/mob/living/living_gone = gone
-	if(istype(living_gone))
-		living_gone.clear_fullscreen("redfog")
+	if(specialfog)
+		var/mob/living/living_gone = gone
+		if(istype(living_gone))
+			living_gone.clear_fullscreen("redfog")
 
 /area/maintenance/polovich/forest/on_joining_game(mob/living/boarder)
 	. = ..()
-	if(istype(boarder) && boarder.client)
-		boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
+	if(specialfog)
+		if(istype(boarder) && boarder.client)
+			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 
 /area/maintenance/polovich/forest/reconnect_game(mob/living/boarder)
 	. = ..()
-	if(istype(boarder) && boarder.client)
-		boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
+	if(specialfog)
+		if(istype(boarder) && boarder.client)
+			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
@@ -64,6 +69,7 @@
 	max_ambience_cooldown = 75 SECONDS
 	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
 	droning_sound = null
+	specialfog = FALSE
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
