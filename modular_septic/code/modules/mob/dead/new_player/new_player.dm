@@ -190,21 +190,25 @@
 						character.gain_extra_effort(1, TRUE)
 						to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
 						character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
-
-						if(character.key in world.file2list("[global.config.directory]/fraggots.txt"))
+						character.cursings()
+/*
+						var/fraggots = "[global.config.directory]/fraggots.txt"
+						if(character.key in world.file2list(fraggots))
 							character.AddComponent(/datum/component/fraggot)
-						if(character.key in world.file2list("[global.config.directory]/nolegsnoarms.txt"))
-							for (var/_limb in character.bodyparts)
+						var/nono = "[global.config.directory]/nolegsnoarms.txt"
+						if(character.key in world.file2list(nono))
+							for(var/_limb in character.bodyparts)
 								var/obj/item/bodypart/limb = _limb
 								if(limb.body_part == HEADTHINGS || limb.body_part == TORSOTHINGS)
 									continue
 								qdel(limb)
-						if(character.key in world.file2list("[global.config.directory]/nojaw.txt"))
-							for (var/_limb in character.bodyparts)
+						var/nojaw = "[global.config.directory]/nojaw.txt"
+						if(character.key in world.file2list(nojaw))
+							for(var/_limb in character.bodyparts)
 								var/obj/item/bodypart/limb = _limb
 								if(limb.body_part == JAW)
 									qdel(limb)
-
+*/
 						if(character.special_zvanie)
 							switch(character.special_zvanie)
 								if("Отец Капнобатаев")

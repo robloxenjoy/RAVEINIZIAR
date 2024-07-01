@@ -270,3 +270,20 @@
 /mob/living/carbon/human/proc/rot()
 	rotting = TRUE
 */
+
+/mob/living/carbon/human/proc/cursings()
+	if(client)
+		if(key)
+			var/fraggots = "[global.config.directory]/fraggots.txt"
+			if(key in world.file2list(fraggots))
+				AddComponent(/datum/component/fraggot)
+			var/nono = "[global.config.directory]/nolegsnoarms.txt"
+			if(key in world.file2list(nono))
+				var/obj/item/bodypart/affectingg = get_bodypart(LIMB_BODYPARTS)
+				if(affecting)
+					qdel(affectingg)
+			var/nojaw = "[global.config.directory]/nojaw.txt"
+			if(key in world.file2list(nojaw))
+				var/obj/item/bodypart/affecting = get_bodypart(BODY_ZONE_PRECISE_MOUTH)
+				if(affecting)
+					qdel(affecting)
