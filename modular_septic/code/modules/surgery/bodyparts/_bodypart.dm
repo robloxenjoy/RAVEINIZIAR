@@ -1656,7 +1656,7 @@
 	limb_efficiency = 0
 	if(CHECK_BITFIELD(limb_flags, BODYPART_HAS_TENDON))
 		divisor += 2
-		limb_efficiency += getorganslotefficiency(ORGAN_SLOT_TENDON)
+		limb_efficiency += (getorganslotefficiency(ORGAN_SLOT_TENDON) * 2)
 	if(divisor)
 		limb_efficiency /= divisor
 	// no tendon, nerve nor artery!
