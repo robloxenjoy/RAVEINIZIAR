@@ -249,10 +249,11 @@
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
 	C?.set_macros()
 	real_name = pref_species.random_name(gender,1)
-	if(!loaded_preferences_successfully)
-		save_preferences()
-	save_character() //let's save this new random character so it doesn't keep generating new ones.
-	menuoptions = list()
+	if(C)
+		if(!loaded_preferences_successfully)
+			save_preferences()
+		save_character() //let's save this new random character so it doesn't keep generating new ones.
+		menuoptions = list()
 	return
 
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='15%'>"

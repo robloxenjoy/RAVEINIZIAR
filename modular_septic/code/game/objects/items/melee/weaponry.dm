@@ -573,7 +573,7 @@
 			current_attack_intent = BASH_MODE
 			sharpness = NONE
 			attack_verb_continuous = list("стукает")
-			attack_verb_simple = list("стукаит")
+			attack_verb_simple = list("стукать")
 		if(BASH_MODE)
 			to_chat(user, span_notice("Теперь я буду резать их с помощью [src]."))
 			hitsound = slash_hitsound

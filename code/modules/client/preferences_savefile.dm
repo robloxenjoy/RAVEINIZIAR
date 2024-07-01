@@ -232,7 +232,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 //		save_preferences()
 
 	return TRUE
-
+/*
 /datum/preferences/proc/save_preferences()
 	if(!path)
 		return FALSE
@@ -268,7 +268,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["favorite_outfits"], favorite_outfits)
 	WRITE_FILE(S["bobux_amount"], bobux_amount)
 	return TRUE
-
+*/
 /datum/preferences/proc/load_character(slot)
 	SHOULD_NOT_SLEEP(TRUE)
 
@@ -338,7 +338,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	validate_quirks()
 
 	return TRUE
-
+/*
 /datum/preferences/proc/save_character()
 	SHOULD_NOT_SLEEP(TRUE)
 
@@ -384,7 +384,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//SEPTIC EDIT END
 
 	return TRUE
-
+*/
 /datum/preferences/proc/sanitize_be_special(list/input_be_special)
 	var/list/output = list()
 

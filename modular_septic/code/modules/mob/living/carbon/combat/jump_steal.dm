@@ -10,7 +10,7 @@
 		return FALSE
 
 	if(body_position != STANDING_UP)
-		to_chat(span_warning("Мне бы встать."))
+		to_chat(src, span_warning("Мне бы встать."))
 		return FALSE
 /*
 	if(get_active_hand() != null)

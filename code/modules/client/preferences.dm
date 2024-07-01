@@ -118,9 +118,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		apply_all_client_preferences()
 		C.set_macros()
 
-	if(!loaded_preferences_successfully)
-		save_preferences()
-	save_character() //let's save this new random character so it doesn't keep generating new ones.
+		if(!loaded_preferences_successfully)
+			save_preferences()
+		save_character() //let's save this new random character so it doesn't keep generating new ones.
 
 /datum/preferences/ui_interact(mob/user, datum/tgui/ui)
 	// If you leave and come back, re-register the character preview

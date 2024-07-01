@@ -84,7 +84,7 @@
 		active = TRUE
 		owner.setGrabState(GRAB_NECK) //don't take GRAB_NECK literally
 		owner.set_pull_offsets(victim, owner.grab_state)
-		victim.visible_message(span_danger("<b>[owner]</b> начинаеть прижимать <b>[victim]</b>!"), \
+		victim.visible_message(span_danger("<b>[owner]</b> начинает прижимать <b>[victim]</b>!"), \
 						span_userdanger("<b>[owner]</b> начинает прижимать меня!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = owner)
