@@ -201,8 +201,8 @@
 	RegisterSignal(src, COMSIG_ITEM_GRILLED, .proc/OnGrill)
 
 /obj/item/food/badrecipe/moldy
-	name = "moldy mess"
-	desc = "A rancid, disgusting culture of mold and ants. Somewhere under there, at <i>some point,</i> there was food."
+	name = "Хуйня"
+	desc = "Какая-то отвратительная кашица."
 	food_reagents = list(/datum/reagent/consumable/mold = 30)
 
 /obj/item/food/badrecipe/moldy/bacteria

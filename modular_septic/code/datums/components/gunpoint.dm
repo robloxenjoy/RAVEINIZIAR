@@ -108,7 +108,7 @@
 			steady_aim_timer = addtimer(CALLBACK(src, PROC_REF(update_stage), 2), GUNPOINT_DELAY_STAGE_2, TIMER_STOPPABLE)
 		if(2)
 			if(!silent && (last_stage < stage))
-				to_chat(parent, span_danger("Я стабилизрую прицел [weapon] на <b>[target]</b>."))
+				to_chat(parent, span_danger("Я стабилизирую прицел [weapon] на <b>[target]</b>."))
 				to_chat(target, span_userdanger("<b>[parent]</b> стабилизирует прицел [weapon] на мне!"))
 			diceroll_modifier = GUNPOINT_STAGE_2_MODIFIER
 			if(weapon.stage_two_aim_bonus)

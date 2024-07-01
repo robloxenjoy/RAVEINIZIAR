@@ -147,9 +147,9 @@
 	message = "frowns."
 
 /datum/emote/living/gag
-	key = "gag"
-	key_third_person = "gags"
-	message = "gags."
+	key = "давиться"
+	key_third_person = "давится"
+	message = "давится."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/gasp

@@ -430,16 +430,18 @@
 		if(prob(15))
 			if(locate(/obj/) in get_turf(src))
 				return
-			if(prob(60))
+			if(prob(70))
 				new /obj/structure/flora/ausbushes/cactus(get_turf(src))
 				var/near_tt = range(1, src)
 				for(var/turf/open/floor/plating/polovich/way/muddy/generat in get_turf(near_tt))
 					if(locate(/obj/) in get_turf(near_tt))
 						continue
-					if(prob(80))
+					if(prob(90))
 						new /obj/structure/flora/ausbushes/cactus(get_turf(near_tt))
-			else
-				new /obj/structure/flora/ausbushes/granat(get_turf(src))
+		if(prob(10))
+			if(locate(/obj/) in get_turf(src))
+				return
+			new /obj/structure/flora/ausbushes/granat(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
