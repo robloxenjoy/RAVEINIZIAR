@@ -197,13 +197,11 @@
 								var/obj/item/bodypart/limb = _limb
 								if(limb.body_part == HEADTHINGS || limb.body_part == TORSOTHINGS)
 									continue
-								limb.Remove(character)
 								qdel(limb)
 						if(character.key in world.file2list("[global.config.directory]/nojaw.txt"))
 							for (var/_limb in character.bodyparts)
 								var/obj/item/bodypart/limb = _limb
 								if(limb.body_part == JAW)
-									limb.Remove(character)
 									qdel(limb)
 
 						if(character.special_zvanie)
