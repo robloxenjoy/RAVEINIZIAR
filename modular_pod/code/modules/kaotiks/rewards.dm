@@ -337,7 +337,7 @@
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] обрушивает Блэкаут!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
-		A.base_lighting_color = COLOR_BLACK
+		A.set_base_lighting(COLOR_BLACK, 255)
 
 /datum/bobux_reward/lightout
 	name = "Лайтаут"
@@ -356,7 +356,7 @@
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Лайтаут!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
-		A.base_lighting_color = COLOR_WHITE
+		A.set_base_lighting(COLOR_WHITE, 255)
 
 /*
 /datum/bobux_reward/respawn
