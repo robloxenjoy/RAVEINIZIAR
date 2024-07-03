@@ -376,6 +376,9 @@
 	. = ..()
 	if(.)
 		return
+	if(!do_after(user, 2 SECONDS, target = src))
+		to_chat(user, span_danger(xbox_rage_msg()))
+		return
 	user.visible_message(span_notice("[user] отрывает от [src] кусок."),span_notice("Я отрываю от [src] кусок."), span_hear("Я слышу собирание."))
 	playsound(loc,'modular_pod/sound/eff/tearthing.ogg', 30, TRUE)
 	var/obj/item/granat = new /obj/item/food/grown/granat(loc)
@@ -410,6 +413,9 @@
 	anchored = 1
 	density = 1
 	obj_flags = NONE
+	light_range = 4
+	light_power = 1
+	light_color = "#8e0000"
 	var/lockeda = FALSE
 
 /obj/structure/kaotikmachine/attack_hand(mob/living/carbon/human/user, list/modifiers)
