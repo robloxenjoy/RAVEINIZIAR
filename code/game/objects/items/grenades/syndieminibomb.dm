@@ -10,7 +10,6 @@
 	ex_light = 4
 	ex_flame = 2
 
-
 /obj/item/grenade/syndieminibomb/detonate(mob/living/lanced_by)
 	. = ..()
 	var/turf/explosionturf = get_turf(src)

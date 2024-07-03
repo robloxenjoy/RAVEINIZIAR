@@ -320,6 +320,44 @@
 		if(coomer.mind)
 			SEND_SIGNAL(coomer, COMSIG_ADD_MOOD_EVENT, "funnyday", /datum/mood_event/koatik)
 
+/datum/bobux_reward/blackout
+	name = "Блэкаут"
+	desc = "Жалкая имитация, но всё ещё страшная!"
+	buy_message = "<b>Пизда!</span>"
+	id = "blackout"
+	cost = 500
+
+/datum/bobux_reward/blackout/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	for(var/area/maintenance/polovich/forest/A in world)
+		if(A.base_lighting_color != COLOR_WHITE)
+			return FALSE
+
+/datum/bobux_reward/blackout/on_buy(client/noob)
+	..()
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] обрушивает Блэкаут!</span>")
+	for(var/area/maintenance/polovich/forest/A in world)
+		A.base_lighting_color = COLOR_BLACK
+
+/datum/bobux_reward/lightout
+	name = "Лайтаут"
+	desc = "Вернуть свет!"
+	buy_message = "<b>Отлично-отлично!</span>"
+	id = "lightout"
+	cost = 200
+
+/datum/bobux_reward/lightout/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	for(var/area/maintenance/polovich/forest/A in world)
+		if(A.base_lighting_color != COLOR_BLACK)
+			return FALSE
+
+/datum/bobux_reward/lightout/on_buy(client/noob)
+	..()
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Лайтаут!</span>")
+	for(var/area/maintenance/polovich/forest/A in world)
+		A.base_lighting_color = COLOR_WHITE
+
 /*
 /datum/bobux_reward/respawn
 	name = "Respawn"
