@@ -420,18 +420,20 @@
 		return
 	if(!lockeda)
 		if(user.client?.prefs)
-			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Другое")
+			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Броня", "Другое")
 			if(!thing)
 				return
 			if(thing == "Холодное оружие")
 				melee_find(user)
 			if(thing == "Огнестрельное оружие")
 				guns_find(user)
+			if(thing == "Броня")
+				armor_find(user)
 			if(thing == "Другое")
 				other_find(user)
 
 /obj/structure/kaotikmachine/proc/melee_find(mob/living/carbon/human/user)
-	var/list/meleelist = list("Меч (40)", "Щит (20)", "Молоток (30)")
+	var/list/meleelist = list("Меч (40)", "Щит (20)", "Молоток (30)", "Цеп (40)")
 	var/thingy = input(user, "Что за оружие я хочу?", "Я хочу...") as null|anything in sort_list(meleelist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -464,6 +466,14 @@
 				return
 			new /obj/item/melee/bita/hammer/heavy(get_turf(user))
 			pref_source.bobux_amount -= 30
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Цеп (40)")
+			if(pref_source.bobux_amount < 40)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/melee/bita/cep/iron(get_turf(user))
+			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
@@ -508,9 +518,9 @@
 		else
 			return
 
-/obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Шлем (30)", "Лёгкий Бронежилет (40)", "Осколочная Граната (70)")
-	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+/obj/structure/kaotikmachine/proc/armor_find(mob/living/carbon/user)
+	var/list/otherlist = list("Шлем (30)", "Лёгкий Бронежилет (50)", "Кольчуга (40)")
+	var/thingy = input(user, "Что за броню я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
@@ -528,14 +538,37 @@
 			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Лёгкий Бронежилет (40)")
-			if(pref_source.bobux_amount < 40)
+		if("Лёгкий Бронежилет (50)")
+			if(pref_source.bobux_amount < 50)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
 				return
 			new /obj/item/clothing/suit/armor/vest/bulletproofer(get_turf(user))
+			pref_source.bobux_amount -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Кольчуга (40)")
+			if(pref_source.bobux_amount < 40)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/clothing/suit/armor/vest/chainmail/steel(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
+		else
+			return
+
+/obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
+	var/list/otherlist = list("Осколочная Граната (70)")
+	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/datum/preferences/pref_source = user.client?.prefs
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
+		to_chat(user, span_meatymeat("Нужны каотики!"))
+		return
+	switch(thingy)
 		if("Осколочная Граната (70)")
 			if(pref_source.bobux_amount < 70)
 				to_chat(user, span_meatymeat("Нужны каотики!"))

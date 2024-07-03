@@ -34,6 +34,7 @@
 
 /obj/item/shit/proc/on_eat_from(mob/living/carbon/eater, mob/living/feeder)
 	//contract bad
+/*
 	var/datum/disease/advance/random/random_dysentery = new()
 	var/static/list/funny_names
 	if(!funny_names)
@@ -45,6 +46,7 @@
 	random_dysentery.hopelessness = "Considerable"
 	random_dysentery.severity = DISEASE_SEVERITY_HARMFUL
 	random_dysentery.try_infect(eater)
+*/
 	//shit on face, yum
 	if(ishuman(eater))
 		eater.AddComponent(/datum/component/creamed/shit)

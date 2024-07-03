@@ -25,9 +25,9 @@
 	bare_wound_bonus = 5
 
 /obj/item/melee/shieldo
-	skill_blocking = SKILL_SHIELD
-	blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	parrying_modifier = null
+	skill_parrying = SKILL_SHIELD
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	parrying_modifier = 1
 
 /obj/item/melee/shieldo/buckler/wooden
 	name = "Деревянный Баклер"
@@ -42,13 +42,13 @@
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_pod/sound/eff/weapon/draw_default.ogg'
 	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
-	block_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
+	parry_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
 	havedurability = TRUE
 	durability = 210
 	carry_weight = 3 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
-	skill_blocking = SKILL_BUCKLER
-	blocking_modifier = 1
+//	skill_blocking = SKILL_BUCKLER
+//	blocking_modifier = 1
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	min_force = 9
@@ -265,7 +265,7 @@
 	skill_melee = SKILL_IMPACT_WEAPON
 	tetris_width = 32
 	tetris_height = 64
-/*
+
 /obj/item/melee/bita/cep/iron
 	name = "Цеп"
 	desc = "Из железа."
@@ -274,28 +274,32 @@
 	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
 	inhand_icon_state = "cep_iron"
-	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
-	drop_sound = ''
-	miss_sound = list(
-	pickup_sound = '
-	ready_sound = ''
-	min_force = 7
-	force = 16
+	hitsound = list('modular_pod/sound/eff/weapon/blunty1.ogg', 'modular_pod/sound/eff/weapon/blunty2.ogg', 'modular_pod/sound/eff/weapon/blunty3.ogg')
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	miss_sound = 'modular_pod/sound/eff/weapon/flail_swing.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
+	ready_sound = 'modular_pod/sound/eff/weapon/flail_ready.ogg'
+	readying_flags = READYING_FLAG_JUSTCAUSE
+	parrying_modifier = null
+	min_force = 5
+	force = 20
 	throwforce = 5
 	min_force_strength = 1.1
 	force_strength = 1.5
 	wound_bonus = 8
 	bare_wound_bonus = 5
 	armor_damage_modifier = 1
+	attack_fatigue_cost = 9
+	attack_delay = 18
 	havedurability = TRUE
-	durability = 190
+	durability = 210
 	carry_weight = 1 KILOGRAMS
 	slot_flags = ITEM_SLOT_BELT
 	worn_icon_state = "classic_baton"
 	skill_melee = SKILL_FLAIL
 	tetris_width = 32
 	tetris_height = 64
-*/
+
 /obj/item/melee/bita/hammer/stone
 	name = "Stone Hammer"
 	desc = "Good for smithing and killing."

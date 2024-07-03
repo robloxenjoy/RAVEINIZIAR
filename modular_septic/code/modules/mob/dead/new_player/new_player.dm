@@ -148,7 +148,11 @@
 								else
 									character.equipOutfit(/datum/outfit/kapno)
 							if("Конченный")
-								character.equipOutfit(/datum/outfit/konch)
+								if(prob(10))
+									character.equipOutfit(/datum/outfit/mostkonch)
+									character.special_zvanie = "Самый Конченный"
+								else
+									character.equipOutfit(/datum/outfit/konch)
 						character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 
 						for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
@@ -213,6 +217,8 @@
 							switch(character.special_zvanie)
 								if("Отец Капнобатаев")
 									to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
+								if("Самый Конченный")
+									to_chat(character, span_yellowteamradio("Я Самый Конченный!"))
 	//					for(var/obj/item/organ/genital/genital in character.internal_organs)
 	//						genital.build_from_dna(character.dna, genital.mutantpart_key)
 						character.dna.features["body_size"] = BODY_SIZE_NORMAL
@@ -254,3 +260,15 @@
 	uniform = /obj/item/clothing/under/codec/purp/black
 	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/outfit/mostkonch
+	name = "Mostkonch Uniform"
+
+
+	l_pocket = /obj/item/key/podpol/woody/konchkey
+	uniform = /obj/item/clothing/under/codec/purp/black
+	pants = /obj/item/clothing/pants/codec/purp/black
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/melee/bita/cep/iron
+	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
+	back = /obj/item/melee/shieldo/buckler/wooden

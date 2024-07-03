@@ -64,8 +64,8 @@
 	strip_delay = 90
 
 /obj/item/clothing/suit/armor/vest/chainmail/steel
-	name = "Steel Chainmail Armor"
-	desc = "Armor made of steel rings. Ouroboros-rings."
+	name = "Кольчуга"
+	desc = "Кольчуга из стальных Уроборос-колец."
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
 	icon_state = "steel_chainmail"
 	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
