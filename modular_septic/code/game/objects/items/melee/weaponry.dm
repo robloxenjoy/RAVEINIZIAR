@@ -599,7 +599,7 @@
 	inhand_icon_state = "spear_wooden"
 	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
-	range = 2
+	reach = 2
 	min_force = 15
 	force = 20
 	min_force_strength = 1
