@@ -222,6 +222,7 @@ Medical HUD! Basic mode needs suit sensors on.
 	holder = hud_list[FRIENDO_HUD]
 	var/icon/IC = icon(icon, icon_state, dir)
 	holder.pixel_y = IC.Height() - world.icon_size
+	holder.icon = 'icons/mob/hud.dmi'
 	holder.icon_state = "my_friend"
 
 /***********************************************
