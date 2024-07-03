@@ -160,8 +160,8 @@
 	icon_state = "shine_whiteblack_three"
 
 /obj/item/crystal/green
-	name = "Crystal"
-	desc = "Thanks to this, the dark light will be filled with bright light."
+	name = "Кристалл"
+	desc = "Он ебать какой древний, и нам повезло его увидеть здесь."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "green_crystal"
 	worn_icon = null
@@ -181,9 +181,9 @@
 	icon_state = "red_crystal"
 	worn_icon = null
 	worn_icon_state = null
-	light_color = "#ff460e"
 	light_range = 2
 	light_power = 2
+	light_color = "#ff460e"
 	light_system = STATIC_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
