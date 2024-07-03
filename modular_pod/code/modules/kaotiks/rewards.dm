@@ -331,7 +331,7 @@
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(A.static_lighting)
-			return FALSE
+			return
 
 /datum/bobux_reward/blackout/on_buy(client/noob)
 	..()
@@ -352,7 +352,7 @@
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(!A.static_lighting)
-			return FALSE
+			return
 
 /datum/bobux_reward/lightout/on_buy(client/noob)
 	..()
