@@ -439,7 +439,7 @@
 				other_find(user)
 
 /obj/structure/kaotikmachine/proc/melee_find(mob/living/carbon/human/user)
-	var/list/meleelist = list("Меч (40)", "Щит (20)", "Молоток (30)", "Цеп (40)")
+	var/list/meleelist = list("Меч (40)", "Баклер (20)", "Молоток (30)", "Цеп (40)")
 	var/thingy = input(user, "Что за оружие я хочу?", "Я хочу...") as null|anything in sort_list(meleelist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -458,7 +458,7 @@
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Щит (20)")
+		if("Баклер (20)")
 			if(pref_source.bobux_amount < 20)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
 				return

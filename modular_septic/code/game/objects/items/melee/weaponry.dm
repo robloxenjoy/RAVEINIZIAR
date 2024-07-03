@@ -25,9 +25,10 @@
 	bare_wound_bonus = 5
 
 /obj/item/melee/shieldo
-	skill_parrying = SKILL_SHIELD
-	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	parrying_modifier = 1
+	skill_blocking = SKILL_SHIELD
+	blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	blocking_modifier = 1
+	parrying_modifier = null
 
 /obj/item/melee/shieldo/buckler/wooden
 	name = "Деревянный Баклер"
@@ -42,12 +43,12 @@
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
 	pickup_sound = 'modular_pod/sound/eff/weapon/draw_default.ogg'
 	hitsound = list('modular_pod/sound/eff/weapon/blunt1.ogg', 'modular_pod/sound/eff/weapon/blunt2.ogg')
-	parry_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
+	block_sound = list('modular_pod/sound/eff/weapon/block_shield.ogg')
 	havedurability = TRUE
 	durability = 210
 	carry_weight = 3 KILOGRAMS
 	skill_melee = SKILL_IMPACT_WEAPON
-//	skill_blocking = SKILL_BUCKLER
+	skill_blocking = SKILL_BUCKLER
 //	blocking_modifier = 1
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
