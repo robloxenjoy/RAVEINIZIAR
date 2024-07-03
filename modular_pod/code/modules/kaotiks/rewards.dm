@@ -337,8 +337,10 @@
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] обрушивает Блэкаут!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
-		A.static_lighting = TRUE
 		A.set_base_lighting(new_alpha = 1)
+		A.static_lighting = TRUE
+		A.static_lighting = FALSE
+		A.static_lighting = TRUE
 
 /datum/bobux_reward/lightout
 	name = "Лайтаут"
