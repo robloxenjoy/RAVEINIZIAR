@@ -211,7 +211,7 @@
 						character.dna.update_body_size()
 						character.dna.update_dna_identity()
 						character.attributes?.update_attributes()
-						character.regenerate_icons
+						character.regenerate_icons()
 
 		if("Да вроде другая...")
 			client.ready_char = FALSE

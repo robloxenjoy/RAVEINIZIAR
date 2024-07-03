@@ -29,7 +29,7 @@
 
 //	guarder.apply_status_effect(STATUS_EFFECT_HOLDUP, guarder)
 
-	var/reachh = reach.weapon
+	var/reachh = weapon.reach
 	if(get_dist(guarder, target) > reachh)
 		cancel()
 	if(get_dist(guarder, weapon) > 0)
