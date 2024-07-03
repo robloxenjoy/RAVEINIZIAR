@@ -220,6 +220,11 @@
 									to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
 								if("Самый Конченный")
 									to_chat(character, span_yellowteamradio("Я Самый Конченный!"))
+
+						var/datum/atom_hud/antag/custom_hud
+						var/custom_hud_state = "my_friend"
+						custom_hud.join_hud(character)
+						set_antag_hud(character, custom_hud_state)
 	//					for(var/obj/item/organ/genital/genital in character.internal_organs)
 	//						genital.build_from_dna(character.dna, genital.mutantpart_key)
 						character.dna.features["body_size"] = BODY_SIZE_NORMAL
