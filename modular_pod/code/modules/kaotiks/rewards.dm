@@ -331,7 +331,7 @@
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(A.static_lighting)
-			return
+			return FALSE
 
 /datum/bobux_reward/blackout/on_buy(client/noob)
 	..()
@@ -339,7 +339,7 @@
 	for(var/area/maintenance/polovich/forest/A in world)
 		A.set_base_lighting(new_alpha = 1)
 		A.static_lighting = TRUE
-		A.create_area_lighting_objects
+		A.create_area_lighting_objects()
 
 /datum/bobux_reward/lightout
 	name = "Лайтаут"
@@ -352,7 +352,7 @@
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(!A.static_lighting)
-			return
+			return FALSE
 
 /datum/bobux_reward/lightout/on_buy(client/noob)
 	..()
