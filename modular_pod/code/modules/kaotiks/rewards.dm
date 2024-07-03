@@ -330,14 +330,15 @@
 /datum/bobux_reward/blackout/can_buy(client/noob, silent, fail_message)
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
-		if(A.base_lighting_color != COLOR_WHITE)
-			return FALSE
+		if(A.static_lighting)
+			return
 
 /datum/bobux_reward/blackout/on_buy(client/noob)
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] обрушивает Блэкаут!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
-		A.set_base_lighting(COLOR_BLACK, 255)
+		A.static_lighting = TRUE
+		A.set_base_lighting(new_alpha = 1)
 
 /datum/bobux_reward/lightout
 	name = "Лайтаут"
@@ -349,14 +350,15 @@
 /datum/bobux_reward/lightout/can_buy(client/noob, silent, fail_message)
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
-		if(A.base_lighting_color != COLOR_BLACK)
-			return FALSE
+		if(!A.static_lighting)
+			return
 
 /datum/bobux_reward/lightout/on_buy(client/noob)
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Лайтаут!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
-		A.set_base_lighting(COLOR_WHITE, 255)
+		A.static_lighting = FALSE
+		A.set_base_lighting(new_alpha = 255)
 
 /*
 /datum/bobux_reward/respawn

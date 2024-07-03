@@ -169,6 +169,7 @@
 	light_range = 2
 	light_power = 2
 	light_color = "#00dd78"
+	force = 10
 	light_system = STATIC_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
@@ -184,6 +185,7 @@
 	light_range = 2
 	light_power = 2
 	light_color = "#ff460e"
+	force = 10
 	light_system = STATIC_LIGHT
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	drop_sound = 'modular_pod/sound/eff/drop_crystal.ogg'
