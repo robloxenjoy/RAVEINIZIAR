@@ -591,6 +591,45 @@
 			attack_verb_continuous = list("режет")
 			attack_verb_simple = list("резать")
 
+/obj/item/podpol_weapon/spear/wooden
+	name = "Копьё"
+	desc = "Сделано из дерева, так что сломается скоро."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "wood_spear"
+	inhand_icon_state = "spear_wooden"
+	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
+	range = 2
+	min_force = 15
+	force = 20
+	min_force_strength = 1
+	force_strength = 1.4
+	min_throwforce = 10
+	throwforce = 20
+	throwforce_strength = 1.5
+	wound_bonus = 10
+	bare_wound_bonus = 7
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	parrying_modifier = 1
+	skill_melee = SKILL_SPEAR
+	carry_weight = 2 KILOGRAMS
+	attack_fatigue_cost = 9
+	attack_delay = 20
+	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
+	havedurability = TRUE
+	durability = 100
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
+	hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
+	w_class = WEIGHT_CLASS_BULKY
+	sharpness = SHARP_POINTY
+	embedding = list("pain_mult" = 6, "rip_time" = 1.5, "embed_chance" = 38, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+	slot_flags = null
+	attack_verb_continuous = list("тычет", "вонзает")
+	attack_verb_simple = list("тыкать", "вонзать")
+
 /*
 /obj/item/changeable_attacks/sword
 	name = "Nice Sword"

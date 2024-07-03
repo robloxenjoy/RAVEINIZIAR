@@ -142,18 +142,19 @@
 	//							character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
 						switch(character.truerole)
 							if("Капнобатай")
+								character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
 								if(prob(10))
 									character.equipOutfit(/datum/outfit/kapnofather)
 									character.special_zvanie = "Отец Капнобатаев"
 								else
 									character.equipOutfit(/datum/outfit/kapno)
 							if("Конченный")
+								character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/konch)
 								if(prob(10))
 									character.equipOutfit(/datum/outfit/mostkonch)
 									character.special_zvanie = "Самый Конченный"
 								else
 									character.equipOutfit(/datum/outfit/konch)
-						character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/venturer)
 
 						for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
 	//						if(initial(organ_eyes.eye_color))
