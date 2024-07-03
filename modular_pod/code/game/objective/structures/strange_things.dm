@@ -175,8 +175,8 @@
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 
 /obj/item/crystal/red
-	name = "Crystal"
-	desc = "Thanks to this, the dark light will be filled with bright light."
+	name = "Кристалл"
+	desc = "Он ебать какой древний, и нам повезло его увидеть здесь."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "red_crystal"
 	worn_icon = null
