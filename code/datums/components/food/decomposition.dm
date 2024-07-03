@@ -23,7 +23,7 @@
 	/// Use for determining what kind of item the food decomposes into.
 	var/decomp_result
 	/// Does our food attract ants?
-	var/produce_ants = TRUE
+	var/produce_ants = FALSE
 	/// Used for examining
 	var/examine_type = DECOMP_EXAM_NORMAL
 
@@ -114,7 +114,7 @@
 	if(produce_ants)
 		new /obj/effect/decal/cleanable/ants(decomp.loc)
 	new decomp_result(decomp.loc)
-	decomp.visible_message("<span class='necrosis'>[decomp] gets overtaken by cosmic spiders! Gross!</span>")
+	decomp.visible_message("<span class='necrosis'>[decomp] сгнивает окончательно!</span>")
 	qdel(decomp)
 	return
 
