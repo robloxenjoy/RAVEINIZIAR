@@ -239,15 +239,15 @@
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
 	belt = /obj/item/gun/ballistic/automatic/pistol/cortes
 	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
-	pants = /obj/item/clothing/pants/codec/purp
+	pants = /obj/item/clothing/pants/codec/purp/red
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/konch
 	name = "Konch Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/konchkey
-	uniform = /obj/item/clothing/under/codec/purp/black
-	pants = /obj/item/clothing/pants/codec/purp/black
+	uniform = /obj/item/clothing/under/codec/purp/red
+	pants = /obj/item/clothing/pants/codec/purp/red
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/mostkonch

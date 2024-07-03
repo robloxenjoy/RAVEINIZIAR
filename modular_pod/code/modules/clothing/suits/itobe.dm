@@ -105,3 +105,9 @@
 
 /obj/item/clothing/pants/codec/purp/black
 	color = "#151414"
+
+/obj/item/clothing/under/codec/purp/red
+	color = "#933400"
+
+/obj/item/clothing/pants/codec/purp/red
+	color = "#933400"
