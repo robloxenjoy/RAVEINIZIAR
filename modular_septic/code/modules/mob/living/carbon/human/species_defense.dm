@@ -1200,7 +1200,8 @@
 				victim.visible_message(span_pinkdang("[user] [weapon] застревает в [victim] [affected]!"), \
 									span_pinkdang("[user] [weapon] застревает в [affected]!"), \
 									span_hear("Я слышу звук плоти."))
-				victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
+				if(get_dist(user, target) <= 1)
+					victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
 				playsound(get_turf(victim), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)
 				return TRUE
 			return FALSE

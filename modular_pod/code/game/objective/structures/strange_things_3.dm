@@ -413,8 +413,8 @@
 	anchored = 1
 	density = 1
 	obj_flags = NONE
-	light_range = 4
-	light_power = 1
+	light_range = 5
+	light_power = 2
 	light_color = "#8e0000"
 	var/lockeda = FALSE
 

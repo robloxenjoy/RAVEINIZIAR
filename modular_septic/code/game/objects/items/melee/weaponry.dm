@@ -610,7 +610,7 @@
 	wound_bonus = 10
 	bare_wound_bonus = 7
 	flags_1 = CONDUCT_1
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	parrying_modifier = 1
 	skill_melee = SKILL_SPEAR
 	carry_weight = 2 KILOGRAMS
@@ -623,7 +623,6 @@
 	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
-	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_POINTY
 	embedding = list("pain_mult" = 6, "rip_time" = 1.5, "embed_chance" = 38, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 	slot_flags = null
