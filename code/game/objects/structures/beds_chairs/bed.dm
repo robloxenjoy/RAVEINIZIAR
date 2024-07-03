@@ -21,12 +21,12 @@
 	var/buildstacktype = /obj/item/stack/sheet/iron
 	var/buildstackamount = 2
 	var/bolts = TRUE
-
+/*
 /obj/structure/bed/examine(mob/user)
 	. = ..()
 	if(bolts)
 		. += span_notice("It's held together by a couple of <b>bolts</b>.")
-
+*/
 /obj/structure/bed/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(buildstacktype)

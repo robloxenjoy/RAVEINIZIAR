@@ -277,7 +277,7 @@
 			if(RE)
 				right_overlay = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', RE.eye_icon_state, -BODY_LAYER)
 				if(EYECOLOR in species_traits)
-					right_overlay.color = "#000000"
+					right_overlay.color = sanitize_hexcolor(species_human.right_eye_color, 6, TRUE)
 				if(RE.overlay_ignore_lighting && !(obscured & ITEM_SLOT_EYES))
 					right_emissive = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', RE.eye_icon_state)
 					right_emissive.plane = EMISSIVE_PLANE
@@ -288,7 +288,7 @@
 			if(LE)
 				left_overlay = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', LE.eye_icon_state, -BODY_LAYER)
 				if(EYECOLOR in species_traits)
-					left_overlay.color = "#000000"
+					left_overlay.color = sanitize_hexcolor(species_human.left_eye_color, 6, TRUE)
 				if(LE.overlay_ignore_lighting && !(obscured & ITEM_SLOT_EYES))
 					left_emissive = mutable_appearance('modular_septic/icons/mob/human/sprite_accessory/human_face.dmi', LE.eye_icon_state)
 					left_emissive.plane = EMISSIVE_PLANE
@@ -803,7 +803,21 @@
 		H.overlays_standing[GORE_LAYER] = gore
 
 	H.apply_overlay(GORE_LAYER)
+/*
+/datum/species/proc/handle_sign_overlays(mob/living/carbon/human/H)
+	H.remove_overlay(SIGN_LAYER)
 
+	var/mutable_appearance/sign_overlays = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "blank", -SIGN_LAYER)
+	var/image/damage
+	damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_[bodypart.body_zone]_[bodypart.brutestate]0")
+	damage.layer = -SIGN_LAYER
+	sign_overlays.add_overlay(damage)
+	if(length(sign_overlays.overlays))
+		sign_overlays = apply_height_filters(sign_overlays, H.height)
+		H.overlays_standing[SIGN_LAYER] = sign_overlays
+
+	H.apply_overlay(SIGN_LAYER)
+*/
 /datum/species/proc/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	returned["mcolor"] = random_color()

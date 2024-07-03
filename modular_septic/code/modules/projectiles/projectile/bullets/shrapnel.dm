@@ -3,11 +3,11 @@
 	icon_state = "shrapnel"
 	base_icon_state = "shrapnel"
 	damage = 18
-	range = 8
+	range = 15
 	weak_against_armour = TRUE
 	dismemberment = 0
 	ricochets_max = 1
-	ricochet_chance = 10
+	ricochet_chance = 15
 	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 60
 	hit_prone_targets = TRUE

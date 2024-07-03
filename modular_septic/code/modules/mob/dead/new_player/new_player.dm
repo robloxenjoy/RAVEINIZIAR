@@ -196,7 +196,7 @@
 						to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
 						character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
 						character.cursings()
-						character.friendroles()
+//						character.friendroles()
 
 						if(character.special_zvanie)
 							switch(character.special_zvanie)
@@ -211,10 +211,7 @@
 						character.dna.update_body_size()
 						character.dna.update_dna_identity()
 						character.attributes?.update_attributes()
-						character.update_body()
-						character.update_hair()
-						character.update_body_parts()
-						character.update_mutations_overlay()
+						character.regenerate_icons
 
 		if("Да вроде другая...")
 			client.ready_char = FALSE
