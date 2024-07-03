@@ -196,6 +196,7 @@
 						to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
 						character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
 						character.cursings()
+						character.friendroles()
 
 						if(character.special_zvanie)
 							switch(character.special_zvanie)
@@ -203,10 +204,6 @@
 									to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
 								if("Самый Конченный")
 									to_chat(character, span_yellowteamradio("Я Самый Конченный!"))
-
-						var/datum/atom_hud/antag/custom_hud = GLOB.huds[ANTAG_HUD_BRO]
-						custom_hud.join_hud(character)
-						set_antag_hud(character, "my_friend")
 
 	//					for(var/obj/item/organ/genital/genital in character.internal_organs)
 	//						genital.build_from_dna(character.dna, genital.mutantpart_key)
@@ -227,8 +224,8 @@
 	name = "Kapno Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
-	uniform = /obj/item/clothing/under/codec/purp
-	pants = /obj/item/clothing/pants/codec/purp
+	uniform = /obj/item/clothing/under/codec/purp/red
+	pants = /obj/item/clothing/pants/codec/purp/red
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/kapnofather
@@ -246,8 +243,8 @@
 	name = "Konch Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/konchkey
-	uniform = /obj/item/clothing/under/codec/purp/red
-	pants = /obj/item/clothing/pants/codec/purp/red
+	uniform = /obj/item/clothing/under/codec/purp/black
+	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/mostkonch
