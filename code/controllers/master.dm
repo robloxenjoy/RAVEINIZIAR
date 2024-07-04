@@ -245,7 +245,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		world.sleep_offline = TRUE
 	sleep(1)
 
-	GenShit()
+//	GenShit()
 
 	if(sleep_offline_after_initializations && CONFIG_GET(flag/resume_after_initializations))
 		world.sleep_offline = FALSE
@@ -650,7 +650,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	for (var/thing in subsystems)
 		var/datum/controller/subsystem/SS = thing
 		SS.OnConfigLoad()
-
+/*
 /datum/controller/master/proc/GenShit()
 	//var/list/prohibitedDirs = list(list(EAST, WEST), list(EAST, SOUTHWEST), list(WEST, SOUTHEAST), list(NORTH, SOUTH), list(SOUTHWEST, SOUTHEAST), list(NORTHEAST, SOUTHWEST))
 	for(var/turf/open/floor/plating/polovich/way/cavero/D in GLOB.dirt_gen_list)
@@ -752,4 +752,5 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			if(prob(1) && (D.z < 7))
 				var/selectedOW = /obj/structure/oldways/xom
 				new selectedOW(D)
+*/
 */

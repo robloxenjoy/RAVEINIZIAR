@@ -10,6 +10,7 @@
 	var/datum/political_compass/political_compass
 	/// Used by the area music system to avoid repeating tracks
 	var/last_droning_sound
+	var/last_area_sound
 	/// Current ambient track
 	var/sound/droning_sound
 

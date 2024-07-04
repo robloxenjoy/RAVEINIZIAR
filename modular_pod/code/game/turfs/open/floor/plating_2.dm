@@ -779,6 +779,38 @@
 	heavyfootstep = FOOTSTEP_STONE
 	powerfloor = 15
 
+/turf/open/floor/plating/polovich/way/cavero1/Initialize(mapload)
+	. = ..()
+/*
+	if(flora)
+		if(prob(15))
+			if(locate(/obj/) in get_turf(src))
+				return
+			if(prob(70))
+				new /obj/structure/flora/ausbushes/cactus(get_turf(src))
+				var/near_tt = range(1, src)
+				for(var/turf/open/floor/plating/polovich/way/muddy/generat in get_turf(near_tt))
+					if(locate(/obj/) in get_turf(near_tt))
+						continue
+					if(prob(90))
+						new /obj/structure/flora/ausbushes/cactus(get_turf(near_tt))
+		if(prob(5))
+			if(locate(/obj/) in get_turf(src))
+				return
+			new /obj/structure/flora/ausbushes/granat(get_turf(src))
+*/
+	if(prob(40))
+		var/near_t = range(1, src)
+		for(var/turf/open/floor/plating/polovich/way/cavero2/generat in near_t)
+			if(prob(20))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+			if(prob(20))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+			if(prob(20))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+			if(prob(20))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+
 /turf/open/floor/plating/polovich/way/cavero2
 	name = "Пол"
 	icon_state = "cavero2"
@@ -795,25 +827,29 @@
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
-	var/allowedExist = TRUE
 
-/turf/open/floor/plating/polovich/way/cavero/New()
-	if(istype(loc, /area/maintenance/polovich/forest/cave))
-		var/list/prohibitedDirs = list(list(EAST, WEST), list(EAST, SOUTHWEST), list(WEST, SOUTHEAST), list(NORTH, SOUTH), list(SOUTHWEST, SOUTHEAST), list(NORTHEAST, SOUTHWEST))
-		for(var/list/L in prohibitedDirs)
-			var/turf/firstDir = get_step(src, L[1])
-			var/turf/secondDir = get_step(src, L[2])
-			if(firstDir && secondDir)
-				if(firstDir.density && secondDir.density)
-					break;
-				for(var/obj/A in firstDir.contents)
-					if(A.density)
-						break;
-				for(var/obj/A in secondDir.contents)
-					if(A.density)
-						break;
-		GLOB.dirt_gen_list += src
-	..()
+/turf/open/floor/plating/polovich/way/cavero/Initialize(mapload)
+	. = ..()
+	var/turf/south = get_step(get_turf(src), SOUTH)
+	var/turf/north = get_step(get_turf(src), NORTH)
+	var/turf/west = get_step(get_turf(src), WEST)
+	var/turf/east = get_step(get_turf(src), EAST)
+
+	if(prob(60))
+		new /obj/effect/decal/grassgood(get_turf(src))
+
+	if(locate(/turf/open/floor/plating/polovich/way/cavero) in south)
+		if(prob(20))
+			south.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+	if(locate(/turf/open/floor/plating/polovich/way/cavero) in north)
+		if(prob(20))
+			north.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+	if(locate(/turf/open/floor/plating/polovich/way/cavero) in east)
+		if(prob(20))
+			east.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+	if(locate(/turf/open/floor/plating/polovich/way/cavero) in west)
+		if(prob(20))
+			west.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/blackstoner2
 	name = "Пол"

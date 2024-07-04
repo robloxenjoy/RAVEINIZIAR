@@ -228,6 +228,18 @@
 	if(prob(50))
 		icon_state = "metal2"
 
+/obj/effect/decal/grassgood
+	name = "Травка"
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "grass1"
+	layer = TURF_PLATING_DECAL_LAYER
+	alpha = 255
+
+/obj/effect/decal/grassgood/Initialize(mapload)
+	. = ..()
+	if(prob(50))
+		icon_state = "grass2"
+
 /obj/structure/flora/ausbushes/cactus
 	name = "Кактус"
 	desc = "Сука колючий. Воды бы набрать с него."

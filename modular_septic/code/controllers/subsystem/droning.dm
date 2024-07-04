@@ -132,6 +132,7 @@ SUBSYSTEM_DEF(droning)
 	var/shouldskip = FALSE
 	if(!listener?.droning_sound)
 		shouldskip = TRUE
+	listener.last_area_sound = area_player
 //	victim.mob.transition = TRUE
 	if(shouldskip)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
@@ -143,11 +144,14 @@ SUBSYSTEM_DEF(droning)
 		listener.last_droning_sound = area_player.droning_sound
 		SEND_SOUND(listener, droning)
 	else
+		var/previous = area_player
 		var/sound/sound_killer = sound()
 		sound_killer.channel = listener.droning_sound.channel
 		sound_killer.volume = area_player.droning_volume
 		while(sound_killer.volume > 0)
 			if(sound_killer.volume <= 0)
+				break
+			if(last_area_sound != area_player)
 				break
 //			sound_killer.volume = max(sound_killer.volume - 2, 0)
 			sound_killer.volume = max(sound_killer.volume - 1, 0)
