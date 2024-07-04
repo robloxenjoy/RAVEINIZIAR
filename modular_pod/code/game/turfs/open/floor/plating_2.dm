@@ -815,7 +815,7 @@
 	powerfloor = 15
 
 /turf/open/floor/plating/polovich/way/cavero
-	name = "Пол"
+	name = "Грязь"
 	icon_state = "cavero"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -824,26 +824,14 @@
 
 /turf/open/floor/plating/polovich/way/cavero/Initialize(mapload)
 	. = ..()
-	var/turf/south = get_step(get_turf(src), SOUTH)
-	var/turf/north = get_step(get_turf(src), NORTH)
-	var/turf/west = get_step(get_turf(src), WEST)
-	var/turf/east = get_step(get_turf(src), EAST)
-
 	if(prob(30))
 		new /obj/effect/decal/grassgood(get_turf(src))
 
-	if(locate(/turf/open/floor/plating/polovich/way/cavero) in south)
-		if(prob(70))
-			south.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
-	if(locate(/turf/open/floor/plating/polovich/way/cavero) in north)
-		if(prob(70))
-			north.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
-	if(locate(/turf/open/floor/plating/polovich/way/cavero) in east)
-		if(prob(70))
-			east.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
-	if(locate(/turf/open/floor/plating/polovich/way/cavero) in west)
-		if(prob(70))
-			west.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+	if(prob(40))
+		var/near_t = range(1, src)
+		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
+			if(prob(20))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/blackstoner2
 	name = "Пол"
