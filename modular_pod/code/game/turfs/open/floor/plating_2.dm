@@ -812,7 +812,7 @@
 				for(var/obj/A in secondDir.contents)
 					if(A.density)
 						break;
-		dirt_gen_list += src
+		GLOB.dirt_gen_list += src
 	..()
 
 /turf/open/floor/plating/polovich/way/blackstoner2

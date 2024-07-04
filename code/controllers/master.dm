@@ -653,7 +653,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 /datum/controller/master/proc/GenShit()
 	//var/list/prohibitedDirs = list(list(EAST, WEST), list(EAST, SOUTHWEST), list(WEST, SOUTHEAST), list(NORTH, SOUTH), list(SOUTHWEST, SOUTHEAST), list(NORTHEAST, SOUTHWEST))
-	for(var/turf/open/floor/plating/polovich/way/cavero/D in dirt_gen_list)
+	for(var/turf/open/floor/plating/polovich/way/cavero/D in GLOB.dirt_gen_list)
 		if(prob(50))
 			continue
 		for(var/turf/T in range(1, D))
@@ -691,14 +691,16 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			new selectedItem(D)
 
 		if(prob(30))
+			var/near_tt = range(1, D)
+			for(var/turf/open/floor/plating/polovich/way/generat in get_turf(near_tt))
 			if(prob(25))
 				D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
-			T.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 		else
 			if(prob(20))
 				if(prob(25))
 					D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
-				T.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
 
 		if(D.allowedExist)
 			for(var/turf/open/floor/plating/polovich/way/cavero/DT in range(1, D))
