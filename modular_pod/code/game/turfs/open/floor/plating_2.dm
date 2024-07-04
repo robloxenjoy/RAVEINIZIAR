@@ -802,13 +802,7 @@
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/cavero2/generat in near_t)
-			if(prob(20))
-				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
-			if(prob(20))
-				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
-			if(prob(20))
-				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
-			if(prob(20))
+			if(prob(50))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/cavero2
@@ -835,20 +829,20 @@
 	var/turf/west = get_step(get_turf(src), WEST)
 	var/turf/east = get_step(get_turf(src), EAST)
 
-	if(prob(60))
+	if(prob(30))
 		new /obj/effect/decal/grassgood(get_turf(src))
 
 	if(locate(/turf/open/floor/plating/polovich/way/cavero) in south)
-		if(prob(20))
+		if(prob(70))
 			south.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/cavero) in north)
-		if(prob(20))
+		if(prob(70))
 			north.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/cavero) in east)
-		if(prob(20))
+		if(prob(70))
 			east.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 	if(locate(/turf/open/floor/plating/polovich/way/cavero) in west)
-		if(prob(20))
+		if(prob(70))
 			west.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/blackstoner2
