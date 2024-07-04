@@ -43,7 +43,7 @@ SUBSYSTEM_DEF(bobux)
 	var/datum/preferences/pref_source = noob.prefs
 	dat += "<center><b>Меню Каотиков</b></center><br>"
 	dat += "<center>В данный момент у меня <b>[pref_source.bobux_amount]</b> каотиков.</center><br>"
-	dat += "<center><a href='?src=\ref[src];task=close'>Done</a></center>"
+	dat += "<center><a href='?src=\ref[src];task=close'>Заебись</a></center>"
 	dat += "<hr>"
 	for(var/aaa in bobux_rewards_buyable)
 		var/datum/bobux_reward/comicao = aaa

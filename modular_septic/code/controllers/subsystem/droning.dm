@@ -132,7 +132,6 @@ SUBSYSTEM_DEF(droning)
 	var/shouldskip = FALSE
 	if(!listener?.droning_sound)
 		shouldskip = TRUE
-	listener.last_area_sound = area_player
 //	victim.mob.transition = TRUE
 	if(shouldskip)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)

@@ -637,3 +637,49 @@
 	light_range = 4
 	light_power = 2
 	light_color = "#0017ff"
+
+/obj/item/paperpodpol
+	name = "Бумажка"
+	desc = "Нужно ли мне подобное читать?"
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "paper"
+	resistance_flags = FLAMMABLE
+	drop_sound = 'sound/items/handling/paper_drop.ogg'
+	pickup_sound = 'sound/items/handling/paper_pickup.ogg'
+	throw_range = 1
+	throw_speed = 1
+	throwforce = 0
+	w_class = WEIGHT_CLASS_TINY
+	var/info
+
+/obj/item/paperpodpol/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
+	readshit(user)
+
+/obj/item/paperpodpol/attack_self(mod/user)
+//	user << browse_rsc('html/book.png')
+	if(!user.client || !user.hud_used)
+		return
+//	if(!user.hud_used.reads)
+//		return
+	if(!user.can_read(src))
+		return
+	if(in_range(user, src) || isobserver(user))
+//		var/obj/screen/read/R = user.hud_used.reads
+//		user.hud_used.reads.icon_state = "scrap"
+//		user.hud_used.reads.show()
+		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
+					<html><head><style type=\"text/css\">
+					body { background-repeat: repeat; }</style></head><body scroll=yes>"}
+		dat += "[info]<br>"
+		dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
+		dat += "</body></html>"
+		user << browse(dat, "window=reading;size=460x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=1")
+		onclose(user, "reading", src)
+	else
+		return "<span class='warning'>Слишком далеко.</span>"
+
+/obj/item/paperpodpol/first
+	info = "Я потерялся в этой хуйне. Свет дурманит меня, лучше бы оказался во тьме. Я насчитал уже 30 узоров на этом... На этой... Не знаю что это. Кажись, я понял, что они недооценивают меня, я осознал это. Пора спать."
