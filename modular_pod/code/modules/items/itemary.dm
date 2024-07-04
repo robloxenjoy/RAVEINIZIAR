@@ -517,8 +517,8 @@
 	tetris_height = 64
 	slot_flags = ITEM_SLOT_BELT
 	can_dig = TRUE
-	attack_verb_continuous = list("stabs", "mines", "jabs")
-	attack_verb_simple = list("stab", "mine", "jab")
+	attack_verb_continuous = list("вонзает", "копает")
+	attack_verb_simple = list("вонзать", "копать")
 
 /obj/item/pinker_caller
 	name = "PINKER Caller"
