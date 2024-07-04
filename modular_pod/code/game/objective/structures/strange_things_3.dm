@@ -637,6 +637,7 @@
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "wallight"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	var/lightchoose
 
 /obj/structure/sign/poster/contraband/codec/lians/Initialize(mapload)
 	. = ..()
