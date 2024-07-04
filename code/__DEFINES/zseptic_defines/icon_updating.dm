@@ -1,3 +1,4 @@
+#define ROLES_LAYER 44
 #define MUTATIONS_LAYER 43 //Mutations that appear behind the body - headglows, cold resistance glow, etc
 #define BODYPARTS_EXTENSION_BEHIND_LAYER 42 //Essentially, tits and the infamous dixel
 #define BODY_BEHIND_LAYER 41 //Certain mutantrace features (tail when looking south) that must appear behind the body parts

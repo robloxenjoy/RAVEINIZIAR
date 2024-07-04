@@ -829,6 +829,9 @@
 /mob/living/carbon/human/update_gore_overlays()
 	return dna?.species?.handle_gore_overlays(src)
 
+/mob/living/carbon/human/update_sign_overlays()
+	return dna?.species?.handle_sign_overlays(src)
+
 /mob/living/carbon/human/update_fire(fire_icon = "generic_mob_burning")
 	remove_overlay(FIRE_LAYER)
 

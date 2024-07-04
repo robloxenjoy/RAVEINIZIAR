@@ -130,6 +130,7 @@
 			owner.changeNext_move(CLICK_CD_STRANGLE)
 			var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH)+2, context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll >= DICE_SUCCESS)
+				victim.apply_damage(damageee, BRUTE, grasped_part, wound_bonus = deal_wound_bonus, sharpness = NONE)
 				if(!grasped_part.no_bone())
 					if(!grasped_part.is_fractured())
 						grasped_part.force_wound_upwards(/datum/wound/blunt/severe)
@@ -144,7 +145,7 @@
 			to_chat(owner, span_userdanger("Я [wrench_verb_dayn] <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"))
 		else
 			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] [grasped_part.name]![carbon_victim.wound_message]"), \
-							span_userdanger("Я [wrench_verb_dayn] [grasped_part.name]![carbon_victim.wound_message]"), \
+							span_userdanger("<b>[owner]</b> [wrench_verb_dayn] [grasped_part.name]![carbon_victim.wound_message]"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 		playsound(victim, 'modular_septic/sound/attack/twist.ogg', 75, FALSE)
 		SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)

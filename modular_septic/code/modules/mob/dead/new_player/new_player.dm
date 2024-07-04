@@ -212,6 +212,7 @@
 						character.dna.update_dna_identity()
 						character.attributes?.update_attributes()
 						character.regenerate_icons()
+						character.update_sign_overlays()
 
 		if("Да вроде другая...")
 			client.ready_char = FALSE

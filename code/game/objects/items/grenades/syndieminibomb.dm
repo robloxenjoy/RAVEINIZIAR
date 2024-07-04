@@ -31,7 +31,7 @@
 	icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
 	shrapnel_radius = 4
-	ex_heavy = 1
+	ex_heavy = 2
 	ex_light = 3
 	ex_flame = 2
 

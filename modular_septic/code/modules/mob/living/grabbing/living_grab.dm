@@ -48,10 +48,10 @@
 		var/mob/M = AM
 		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!supress_message && !(iscarbon(AM) && HAS_TRAIT(src, TRAIT_STRONG_GRABBER)))
-			M.visible_message(span_warning("<b>[src]</b> grabs <b>[M]</b> passively!"), \
-							span_userdanger("<b>[src]</b> grabs me passively!"), \
+			M.visible_message(span_warning("<b>[src]</b> хватает <b>[M]</b> пассивно!"), \
+							span_userdanger("<b>[src]</b> хватает меня пассивно!"), \
 							ignored_mobs = src)
-			to_chat(src, span_notice("I grab <b>[M]</b> passively!"))
+			to_chat(src, span_notice("Я хватаю <b>[M]</b> пассивно!"))
 		M.LAssailant = WEAKREF(src)
 		if(isliving(M))
 			var/mob/living/L = M
@@ -77,7 +77,9 @@
 	if(user == src)
 		attempt_self_grab(biting_grab)
 		return FALSE
-	if(anchored || !isturf(user.loc))
+//	if(anchored || !isturf(user.loc))
+//		return FALSE
+	if(anchored)
 		return FALSE
 	if(!user.pulling || (user.pulling != src))
 		var/helpful = IS_HELP_INTENT(user, null)

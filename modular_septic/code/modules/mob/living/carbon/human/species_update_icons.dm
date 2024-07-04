@@ -803,21 +803,25 @@
 		H.overlays_standing[GORE_LAYER] = gore
 
 	H.apply_overlay(GORE_LAYER)
-/*
-/datum/species/proc/handle_sign_overlays(mob/living/carbon/human/H)
-	H.remove_overlay(SIGN_LAYER)
 
-	var/mutable_appearance/sign_overlays = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "blank", -SIGN_LAYER)
+/datum/species/proc/handle_sign_overlays(mob/living/carbon/human/H)
+	H.remove_overlay(ROLES_LAYER)
+
+	var/mutable_appearance/sign_overlays = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "blank", -ROLES_LAYER)
 	var/image/damage
-	damage = mutable_appearance('modular_septic/icons/mob/human/overlays/damage.dmi', "[bodypart.dmg_overlay_type]_[bodypart.body_zone]_[bodypart.brutestate]0")
-	damage.layer = -SIGN_LAYER
+	switch(H.truerole)
+		if("Капнобатай")
+			damage = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno")
+		if("Конченный")
+			damage = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch")
+	damage.layer = -ROLES_LAYER
 	sign_overlays.add_overlay(damage)
 	if(length(sign_overlays.overlays))
 		sign_overlays = apply_height_filters(sign_overlays, H.height)
-		H.overlays_standing[SIGN_LAYER] = sign_overlays
+		H.overlays_standing[ROLES_LAYER] = sign_overlays
 
-	H.apply_overlay(SIGN_LAYER)
-*/
+	H.apply_overlay(ROLES_LAYER)
+
 /datum/species/proc/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	returned["mcolor"] = random_color()

@@ -326,5 +326,21 @@
 
 	apply_overlay(GORE_LAYER)
 
+/mob/living/carbon/proc/update_sign_overlays()
+	remove_overlay(ROLES_LAYER)
+
+	var/mutable_appearance/sign_overlays = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "blank", -ROLES_LAYER)
+	var/image/damage
+	switch(H.truerole)
+		if("Капнобатай")
+			damage = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno")
+		if("Конченный")
+			damage = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch")
+	damage.layer = -ROLES_LAYER
+	sign_overlays.add_overlay(damage)
+	overlays_standing[ROLES_LAYER] = sign_overlays
+
+	apply_overlay(ROLES_LAYER)
+
 /mob/living/carbon/proc/update_smelly()
 	remove_overlay(SMELL_LAYER)
