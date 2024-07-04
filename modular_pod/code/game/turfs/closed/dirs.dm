@@ -221,9 +221,16 @@
 
 /turf/podpol/wall/shroom
 	icon = 'modular_pod/icons/turf/closed/cavero.dmi'
+	var/random = TRUE
 
 /turf/podpol/wall/shroom/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,5)].ogg"
+
+/turf/podpol/wall/shroom/Initialize(mapload)
+	. = ..()
+	if(random)
+		if(prob(30))
+			new /obj/structure/sign/poster/contraband/codec/lians(get_turf(src))
 
 /turf/podpol/wall/caver
 	icon = 'modular_pod/icons/turf/closed/mount.dmi'
