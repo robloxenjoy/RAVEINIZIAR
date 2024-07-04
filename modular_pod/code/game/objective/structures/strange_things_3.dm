@@ -222,6 +222,7 @@
 	icon_state = "metal1"
 	layer = TURF_PLATING_DECAL_LAYER
 	alpha = 255
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/effect/decal/metalpodpol/Initialize(mapload)
 	. = ..()
@@ -234,6 +235,7 @@
 	icon_state = "grass1"
 	layer = TURF_PLATING_DECAL_LAYER
 	alpha = 255
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/effect/decal/grassgood/Initialize(mapload)
 	. = ..()
@@ -634,9 +636,18 @@
 	desc = "Сколько жизней спасла..."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "wallight"
-	light_range = 4
-	light_power = 2
-	light_color = "#0017ff"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/obj/structure/sign/poster/contraband/codec/lians/Initialize(mapload)
+	. = ..()
+	lightchoose = rand(1, 3)
+	switch(lightchoose)
+		if(1)
+			set_light(4, 2, "#0017ff")
+		if(2)
+			set_light(4, 2, "#008dff")
+		if(2)
+			set_light(4, 2, "#3c00ff")
 
 /obj/item/paperpodpol
 	name = "Бумажка"
@@ -670,13 +681,11 @@
 //		var/obj/screen/read/R = user.hud_used.reads
 //		user.hud_used.reads.icon_state = "scrap"
 //		user.hud_used.reads.show()
-		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
-					<html><head><style type=\"text/css\">
-					body { background-repeat: repeat; }</style></head><body scroll=yes>"}
+		var/dat = list()
 		dat += "[info]<br>"
-		dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
+//		dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
 		dat += "</body></html>"
-		user << browse(dat, "window=reading;size=460x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=1")
+		user << browse(dat, "window=reading;size=600x400;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1")
 		onclose(user, "reading", src)
 	else
 		return "<span class='warning'>Слишком далеко.</span>"

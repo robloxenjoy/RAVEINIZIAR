@@ -830,7 +830,7 @@
 
 /turf/open/floor/plating/polovich/way/cavero/Initialize(mapload)
 	. = ..()
-	if(prob(30))
+	if(prob(20))
 		new /obj/effect/decal/grassgood(get_turf(src))
 
 	if(prob(40))
@@ -838,6 +838,11 @@
 		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
 			if(prob(20))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+	if(prob(20))
+		var/near_t = range(1, src)
+		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
+			if(prob(30))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/blackstoner2
 	name = "Пол"
