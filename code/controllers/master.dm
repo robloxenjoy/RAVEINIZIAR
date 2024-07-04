@@ -697,6 +697,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			for(var/turf/open/floor/plating/polovich/way/generat in get_turf(near_tt))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 		else
+			var/near_tt = range(1, D)
 			if(prob(25))
 				D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
 			for(var/turf/open/floor/plating/polovich/way/generat in get_turf(near_tt))
