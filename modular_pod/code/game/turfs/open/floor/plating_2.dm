@@ -317,6 +317,7 @@
 
 /turf/open/floor/plating/polovich/way/deadmeat
 	name = "Тело"
+	desc = "Интересно."
 	icon_state = "deadmeat"
 	footstep = FOOTSTEP_MEAT
 	barefootstep = FOOTSTEP_MEAT
@@ -325,6 +326,7 @@
 
 /turf/open/floor/plating/polovich/way/deadmeat_full
 	name = "Тело"
+	desc = "Интересно."
 	icon_state = "deadmeat_full"
 	footstep = FOOTSTEP_MEAT
 	barefootstep = FOOTSTEP_MEAT
@@ -334,6 +336,7 @@
 
 /turf/open/floor/plating/polovich/way/ravein
 	name = "Тело"
+	desc = "Интересно."
 	icon_state = "ravein"
 	footstep = FOOTSTEP_MEAT
 	barefootstep = FOOTSTEP_MEAT
@@ -359,6 +362,7 @@
 
 /turf/open/floor/plating/polovich/way/lifemeat
 	name = "Тело"
+	desc = "Интересно."
 	icon_state = "lifemeat"
 	footstep = FOOTSTEP_MEAT
 	barefootstep = FOOTSTEP_MEAT
@@ -367,6 +371,7 @@
 
 /turf/open/floor/plating/polovich/way/lifemeat2
 	name = "Тело"
+	desc = "Интересно."
 	icon_state = "lifemeat2"
 	footstep = FOOTSTEP_MEAT
 	barefootstep = FOOTSTEP_MEAT
@@ -375,6 +380,7 @@
 
 /turf/open/floor/plating/polovich/way/lifemeat3
 	name = "Тело"
+	desc = "Интересно."
 	icon_state = "lifemeat3"
 	footstep = FOOTSTEP_MEAT
 	barefootstep = FOOTSTEP_MEAT
