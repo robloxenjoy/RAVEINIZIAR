@@ -151,7 +151,7 @@ SUBSYSTEM_DEF(droning)
 		while(sound_killer.volume > 0)
 			if(sound_killer.volume <= 0)
 				break
-			if(last_area_sound != area_player)
+			if(listener.last_area_sound != area_player)
 				break
 //			sound_killer.volume = max(sound_killer.volume - 2, 0)
 			sound_killer.volume = max(sound_killer.volume - 1, 0)
