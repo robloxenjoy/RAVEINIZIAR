@@ -142,8 +142,10 @@
 	//							character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
 						switch(character.truerole)
 							if("Капнобатай")
-								var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
-								character.add_overlay(appearance)
+//								var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
+//								character.add_overlay(appearance)
+								var/image/sign = image('modular_septic/icons/mob/human/overlays/signs.dmi', character, "kapno", ROLES_LAYER)
+								sign.plane = GAME_PLANE_FOV_HIDDEN
 								character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
 								if(prob(10))
 									character.equipOutfit(/datum/outfit/kapnofather)
