@@ -145,7 +145,7 @@
 //		musics |= DRONING_TAVERN
 //		musics |= DRONING_COMBAT
 		musics |= DRONING_POLOVICHSTAN
-//		musics |= DRONING_CATACOMBS
+		musics |= DRONING_CAVER
 		music_files = musics
 
 /datum/asset/simple/music/send(client)

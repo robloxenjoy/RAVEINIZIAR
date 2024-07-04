@@ -31,9 +31,11 @@
 //	area_has_base_lighting = TRUE
 	area_flags = NO_ALERTS
 	droning_sound = DRONING_POLOVICHSTAN
+	ambientsounds = list('modular_pod/sound/ambi_sounds_out/attackers.ogg', 'modular_pod/sound/ambi_sounds_out/swing.ogg', 'modular_pod/sound/ambi_sounds_out/going.ogg')
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 	var/specialfog = FALSE
+	var/lighting_out = TRUE
 
 /area/maintenance/polovich/forest/Entered(atom/movable/arrived, area/old_area)
 	. = ..()
@@ -69,6 +71,17 @@
 	max_ambience_cooldown = 75 SECONDS
 	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
 	droning_sound = null
+	lighting_out = FALSE
+
+/area/maintenance/polovich/forest/cave
+	static_lighting = TRUE
+	base_lighting_alpha = 1
+	icon_state = "polovich_inner"
+	min_ambience_cooldown = 60 SECONDS
+	max_ambience_cooldown = 95 SECONDS
+	ambientsounds = list('modular_pod/sound/ambi_sounds_out/attackers.ogg', 'modular_pod/sound/ambi_sounds_out/swing.ogg', 'modular_pod/sound/ambi_sounds_out/going.ogg')
+	droning_sound = DRONING_CAVER
+	lighting_out = FALSE
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"

@@ -67,8 +67,8 @@
 	tetris_height = 64
 
 /obj/item/stone
-	name = "Stone"
-	desc = "Solid and small."
+	name = "Камень"
+	desc = "Твёрдый камушек."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "stone"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
@@ -88,8 +88,8 @@
 	bare_wound_bonus = 4
 	throw_speed = 2
 	throw_range = 9
-	attack_verb_continuous = list("bashes", "batters", "bludgeons", "whacks")
-	attack_verb_simple = list("bash", "batter", "bludgeon", "whack")
+	attack_verb_continuous = list("ударяет", "хуячит")
+	attack_verb_simple = list("ударить", "хуячить")
 	tetris_width = 32
 	tetris_height = 32
 

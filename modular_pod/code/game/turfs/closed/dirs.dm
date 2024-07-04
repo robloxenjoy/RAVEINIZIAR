@@ -216,3 +216,95 @@
 
 /turf/podpol/wall/stal/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
+
+/turf/podpol/wall/caver
+	icon = 'modular_pod/icons/turf/closed/mount.dmi'
+	var/random = TRUE
+
+/turf/podpol/wall/caver/Initialize(mapload)
+	. = ..()
+	if(random)
+		if(prob(30))
+			new /obj/structure/sign/poster/contraband/codec/lians(get_turf(src))
+
+/turf/podpol/wall/caver/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
+/*
+/turf/open/floor/plating/polovich/way/evilcaver
+	name = "Грязь"
+	icon = 'modular_pod/icons/turf/closed/caverfloor'
+	icon_state = "evilmud"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+	var/wallis = TRUE
+	var/cantbreak = TRUE
+
+/turf/open/floor/plating/polovich/way/evilcaver/Initialize(mapload)
+	. = ..()
+	if(wallis)
+		update_icon_pod()
+
+/turf/open/floor/plating/polovich/way/evilcaver/proc/update_icon_pod()
+	icon_state = state2
+	var/list/surround = list(0, 0, 0, 0) //up, down, right, left
+	if(istype(locate(x, y + 1, z), type))
+		surround[1] = 1
+	if(istype(locate(x, y - 1, z), type))
+		surround[2] = 1
+	if(istype(locate(x + 1, y, z), type))
+		surround[3] = 1
+	if(istype(locate(x - 1, y, z), type))
+		surround[4] = 1
+	switch(list2params(surround))
+		if("1&0&0&0")
+			dir = NORTH
+		if("0&1&0&0")
+			dir = SOUTH
+		if("0&0&1&0")
+			dir = EAST
+		if("0&0&0&1")
+			dir = WEST
+		if("0&1&0&1")
+			dir = NORTHWEST
+		if("1&0&0&1")
+			dir = SOUTHWEST
+		if("0&1&1&0")
+			dir = NORTHEAST
+		if("1&0&1&0")
+			dir = SOUTHEAST
+
+		if("1&0&1&1")
+			icon_state = state1
+			dir = SOUTHEAST
+		if("0&1&1&1")
+			icon_state = state1
+			dir = SOUTHWEST
+		if("1&1&1&0")
+			icon_state = state1
+			dir = NORTHEAST
+		if("1&1&0&1")
+			icon_state = state1
+			dir = NORTHWEST
+		if("1&1&0&0")
+			icon_state = state1
+			dir = SOUTH
+		if("0&0&1&1")
+			icon_state = state1
+			dir = NORTH
+		if("1&1&1&1")
+			icon_state = state1
+			dir = EAST
+		else
+			icon_state = state1
+			dir = WEST
+
+/turf/open/floor/plating/polovich/way/evilcaver/Destroy()
+	if(cantbreak)
+		return
+	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
+	for(var/turf/open/floor/plating/polovich/way/evilcaver/F in oview(1, personal_turf))
+		F.update_icon_pod()
+	..()
+*/

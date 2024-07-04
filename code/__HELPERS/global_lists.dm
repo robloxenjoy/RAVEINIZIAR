@@ -1,7 +1,6 @@
 //////////////////////////
 /////Initial Building/////
 //////////////////////////
-
 /proc/make_datum_references_lists()
 	//hair
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/hair, GLOB.hairstyles_list, GLOB.hairstyles_male_list, GLOB.hairstyles_female_list)

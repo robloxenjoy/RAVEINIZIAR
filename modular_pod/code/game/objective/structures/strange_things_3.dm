@@ -611,8 +611,17 @@
 	lightchoose = rand(1, 2)
 	switch(lightchoose)
 		if(1)
-			set_light(8, 3, "#b90000")
+			set_light(8, 4, "#b90000")
 		if(2)
-			set_light(8, 3, "#b900b9")
+			set_light(8, 4, "#b900b9")
 //		if(3)
 //			set_light(4, 3, "#b90000")
+
+/obj/structure/sign/poster/contraband/codec/lians
+	name = "Карза"
+	desc = "Сколько жизней спасла..."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "wallight"
+	light_range = 4
+	light_power = 2
+	light_color = "#0017ff"

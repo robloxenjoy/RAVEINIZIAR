@@ -770,6 +770,60 @@
 	heavyfootstep = FOOTSTEP_STONE
 	powerfloor = 15
 
+/turf/open/floor/plating/polovich/way/cavero1
+	name = "Пол"
+	icon_state = "cavero1"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
+
+/turf/open/floor/plating/polovich/way/cavero2
+	name = "Пол"
+	icon_state = "cavero2"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
+
+/turf/open/floor/plating/polovich/way/cavero
+	name = "Пол"
+	icon_state = "cavero"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+	var/allowedExist = TRUE
+
+/turf/open/floor/plating/polovich/way/cavero/New()
+	if(istype(loc, /area/maintenance/polovich/forest/cave))
+		var/list/prohibitedDirs = list(list(EAST, WEST), list(EAST, SOUTHWEST), list(WEST, SOUTHEAST), list(NORTH, SOUTH), list(SOUTHWEST, SOUTHEAST), list(NORTHEAST, SOUTHWEST))
+		for(var/list/L in prohibitedDirs)
+			var/turf/firstDir = get_step(src, L[1])
+			var/turf/secondDir = get_step(src, L[2])
+			if(firstDir && secondDir)
+				if(firstDir.density && secondDir.density)
+					break;
+				for(var/obj/A in firstDir.contents)
+					if(A.density)
+						break;
+				for(var/obj/A in secondDir.contents)
+					if(A.density)
+						break;
+		dirt_gen_list += src
+	..()
+
+/turf/open/floor/plating/polovich/way/blackstoner2
+	name = "Пол"
+	icon_state = "blackstoner2"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 15
+
 /turf/open/floor/plating/polovich/way/kaos
 	name = "Хаос"
 	desc = "ПОДПОЛ. MMO-ROGUELIKE."

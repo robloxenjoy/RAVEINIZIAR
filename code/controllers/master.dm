@@ -245,6 +245,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		world.sleep_offline = TRUE
 	sleep(1)
 
+	GenShit()
+
 	if(sleep_offline_after_initializations && CONFIG_GET(flag/resume_after_initializations))
 		world.sleep_offline = FALSE
 	initializations_finished_with_no_players_logged_in = initialized_tod < REALTIMEOFDAY - 10
@@ -648,3 +650,103 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	for (var/thing in subsystems)
 		var/datum/controller/subsystem/SS = thing
 		SS.OnConfigLoad()
+
+/datum/controller/master/proc/GenShit()
+	//var/list/prohibitedDirs = list(list(EAST, WEST), list(EAST, SOUTHWEST), list(WEST, SOUTHEAST), list(NORTH, SOUTH), list(SOUTHWEST, SOUTHEAST), list(NORTHEAST, SOUTHWEST))
+	for(var/turf/open/floor/plating/polovich/way/cavero/D in dirt_gen_list)
+		if(prob(50))
+			continue
+		for(var/turf/T in range(1, D))
+			if(T?.density)
+				D.allowedExist = FALSE
+				break;
+/*
+		if(prob(65))
+			var/go = 1
+			for(var/obj/O in D)
+				if(O.density)
+					go = 0
+			if(go)
+				var/selectedMushroomType2 = pick(/obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/zheleznyak ,/obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/ovrajnik, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/zelegreeb, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/bezglaznik,/obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/barhovik ,/obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/krovnik, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/corniy, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/gryab,/obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/morfiannik, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/podgnylnik, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/ljutogreeb, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/otorvyannik, /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/plumphelmet)
+				new selectedMushroomType2(D)
+*/
+		if(prob(18))
+			new /obj/item/stone(D)
+//		if(prob(20))
+//			var/selectedGrassType = /obj/structure/lifeweb/grass
+//			new selectedGrassType(D)
+		if(prob(3))
+			if(prob(1))
+				if(prob(1))
+					var/selectedItem = /obj/item/melee/bita/hammer/heavy
+					new selectedItem(D)
+			else if(prob(3))
+				var/selectedItem = /obj/item/podpol_weapon/sword/steel
+				new selectedItem(D)
+			else if(prob(5))
+				var/selectedItem = /obj/item/podpol_weapon/spear/wooden
+				new selectedItem(D)
+		if(prob(2))
+			var/selectedItem = /obj/item/shit
+			new selectedItem(D)
+
+		if(prob(30))
+			if(prob(25))
+				D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+			T.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+		else
+			if(prob(20))
+				if(prob(25))
+					D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+				T.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+
+		if(D.allowedExist)
+			for(var/turf/open/floor/plating/polovich/way/cavero/DT in range(1, D))
+				DT.allowedExist = FALSE
+			if(prob(48))
+				var/selectedFloraType
+				if(prob(4))
+					selectedFloraType = pick(/obj/structure/flora/ausbushes/cactus)
+					new selectedFloraType(D)
+				else
+					if(prob(80))
+						selectedFloraType = pick(/obj/structure/flora/ausbushes/cactus)
+						var/obj/O = new selectedFloraType(D)
+						if(prob(50))
+							if(prob(50))
+								var/matrix/M = matrix()
+								M.Scale(1, 1.25)
+								O.transform = M
+							else
+								var/matrix/M = matrix()
+								M.Scale(1.25, 1)
+								O.transform = M
+						if(prob(35))
+							O.color = pick("#7cc47c", "#c47c7c")
+/*
+					else
+						if(prob(65) && (D.z < 7))
+							var/selectedRegurgitator = pick(/obj/effect/regurgitator, /obj/effect/trap)
+							new selectedRegurgitator(D)
+						else
+							new /obj/structure/lifeweb/tallshroom(D)
+*/
+/*				continue
+
+			if(prob(20))
+				var/selectedStoneType = pick(/obj/structure/rack/lwtable/stone/s1,/obj/structure/rack/lwtable/stone/s2,/obj/structure/rack/lwtable/stone/s3,/obj/structure/rack/lwtable/stone/s4,/obj/structure/rack/lwtable/stone/s5,/obj/structure/rack/lwtable/stone/s6,/obj/structure/rack/lwtable/stone/s7)
+				new selectedStoneType(D)
+				continue
+			if(prob(20))
+				var/firepool = /obj/structure/campfire/firepool
+				new firepool(D)
+			if(prob(1) && (D.z < 7))
+				var/hive = /obj/structure/bee_hive
+				new hive(D)
+			if(prob(2))
+				var/selectedSarcophagus = /obj/structure/closet/crate/sarcophagus
+				new selectedSarcophagus(D)
+			if(prob(1) && (D.z < 7))
+				var/selectedOW = /obj/structure/oldways/xom
+				new selectedOW(D)
+*/

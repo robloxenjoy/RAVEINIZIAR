@@ -337,6 +337,8 @@
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] обрушивает Блэкаут!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
+		if(!A.lighting_out)
+			continue
 		A.set_base_lighting(new_alpha = 1)
 		A.static_lighting = TRUE
 		A.create_area_lighting_objects()
@@ -358,6 +360,8 @@
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Лайтаут!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
+		if(!A.lighting_out)
+			continue
 		A.static_lighting = FALSE
 		A.set_base_lighting(new_alpha = 255)
 		A.remove_area_lighting_objects()
