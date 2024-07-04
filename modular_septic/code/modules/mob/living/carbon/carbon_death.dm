@@ -45,7 +45,7 @@
 				if(pod_faction == H.pod_faction)
 					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
 				else
-					H.client?.prefs?.adjust_bobux(15, "<span class='bobux'>Я видел умирающего врага! +15 каотиков!</span>")
+					H.client?.prefs?.adjust_bobux(20, "<span class='bobux'>Я видел умирающего врага! +20 каотиков!</span>")
 					H.flash_kaosgain()
 //					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
 

@@ -247,7 +247,7 @@
 /datum/outfit/mostkonch
 	name = "Mostkonch Uniform"
 
-
+	mask = /obj/item/clothing/mask/gas/ballisticarmor
 	l_pocket = /obj/item/key/podpol/woody/konchkey
 	uniform = /obj/item/clothing/under/codec/purp/black
 	pants = /obj/item/clothing/pants/codec/purp/black

@@ -547,7 +547,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/armor_find(mob/living/carbon/user)
-	var/list/otherlist = list("Шлем (30)", "Лёгкий Бронежилет (50)", "Кольчуга (40)")
+	var/list/otherlist = list("Шлем (50)", "Лёгкий Бронежилет (50)", "Кольчуга (50)", "Перчатки (30)", "Баллистическая Маска (40)")
 	var/thingy = input(user, "Что за броню я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -558,12 +558,12 @@
 		to_chat(user, span_meatymeat("Нужны каотики!"))
 		return
 	switch(thingy)
-		if("Шлем (30)")
-			if(pref_source.bobux_amount < 30)
+		if("Шлем (50)")
+			if(pref_source.bobux_amount < 50)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
 				return
 			new /obj/item/clothing/head/helmet/codec/def_yel(get_turf(user))
-			pref_source.bobux_amount -= 30
+			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Лёгкий Бронежилет (50)")
@@ -574,11 +574,27 @@
 			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Кольчуга (40)")
-			if(pref_source.bobux_amount < 40)
+		if("Кольчуга (50)")
+			if(pref_source.bobux_amount < 50)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
 				return
 			new /obj/item/clothing/suit/armor/vest/chainmail/steel(get_turf(user))
+			pref_source.bobux_amount -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Перчатки (30)")
+			if(pref_source.bobux_amount < 30)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/clothing/gloves/thickleather(get_turf(user))
+			pref_source.bobux_amount -= 30
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Баллистическая Маска (40)")
+			if(pref_source.bobux_amount < 40)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/clothing/mask/gas/ballisticarmor(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
@@ -649,7 +665,7 @@
 			set_light(4, 2, "#008dff")
 		if(2)
 			set_light(4, 2, "#3c00ff")
-
+/*
 /obj/item/paperpodpol
 	name = "Бумажка"
 	desc = "Нужно ли мне подобное читать?"
@@ -693,3 +709,4 @@
 
 /obj/item/paperpodpol/first
 	info = "Я потерялся в этой хуйне. Свет дурманит меня, лучше бы оказался во тьме. Я насчитал уже 30 узоров на этом... На этой... Не знаю что это. Кажись, я понял, что они недооценивают меня, я осознал это. Пора спать."
+*/
