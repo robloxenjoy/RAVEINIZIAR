@@ -213,6 +213,8 @@
 
 /turf/podpol/wall/stal
 	icon = 'modular_pod/icons/turf/closed/stal.dmi'
+	cantbreak = TRUE
+	mineable = FALSE
 
 /turf/podpol/wall/stal/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"

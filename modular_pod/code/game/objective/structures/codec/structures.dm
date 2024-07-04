@@ -276,9 +276,13 @@
 		return TRUE
 	for(var/atom/movable/M in get_turf(src))
 		if(M.density && M != src) //something is blocking the door
-			if(autoclose)
-				autoclose_in(DOOR_CLOSE_WAIT)
+//			if(autoclose)
+//				autoclose_in(DOOR_CLOSE_WAIT)
 			return
+
+//	if(locate(/obj/) in get_turf(src))
+//		return
+
 	set_density(TRUE)
 	layer = OBJ_LAYER
 	flags_1 |= PREVENT_CLICK_UNDER_1
