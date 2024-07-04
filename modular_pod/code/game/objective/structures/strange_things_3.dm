@@ -658,9 +658,9 @@
 		return
 	readshit(user)
 
-/obj/item/paperpodpol/proc/readshit(mod/user)
+/obj/item/paperpodpol/proc/readshit(mob/user)
 //	user << browse_rsc('html/book.png')
-	if(!user.client || !user.hud_used)
+	if(!user.client)
 		return
 //	if(!user.hud_used.reads)
 //		return
