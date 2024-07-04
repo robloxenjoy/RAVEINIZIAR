@@ -692,14 +692,14 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 		if(prob(30))
 			var/near_tt = range(1, D)
-			for(var/turf/open/floor/plating/polovich/way/generat in get_turf(near_tt))
 			if(prob(25))
 				D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
-			generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
+			for(var/turf/open/floor/plating/polovich/way/generat in get_turf(near_tt))
+				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero2, null, CHANGETURF_IGNORE_AIR)
 		else
-			if(prob(20))
-				if(prob(25))
-					D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+			if(prob(25))
+				D.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+			for(var/turf/open/floor/plating/polovich/way/generat in get_turf(near_tt))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
 
 		if(D.allowedExist)
