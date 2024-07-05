@@ -281,7 +281,10 @@
 
 //	if(locate(/obj/) in get_turf(src))
 //		return
-
+	if(autolock)
+		if(locked)
+			return
+		locked = TRUE
 	set_density(TRUE)
 	flags_1 |= PREVENT_CLICK_UNDER_1
 	update_appearance()
