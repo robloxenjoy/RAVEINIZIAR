@@ -727,15 +727,6 @@
 	anchored = TRUE
 	opacity = FALSE
 
-/obj/structure/barbwire/Initialize(mapload)
-	. = ..()
-	dir = rand(0,4)
-	update_appearance()
-
-	if(traps)
-		if(prob(2))
-			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
-
 /obj/structure/barbwire/ComponentInitialize()
 	. = ..()
 	var/static/list/loc_connections = list(
