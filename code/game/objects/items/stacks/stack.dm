@@ -155,14 +155,14 @@
 		return
 	if(singular_name)
 		if(get_amount()>1)
-			. += "There are [get_amount()] [singular_name]\s in the stack."
+			. += "тут [get_amount()] [singular_name] собрано."
 		else
-			. += "There is [get_amount()] [singular_name] in the stack."
+			. += "Тут [get_amount()] [singular_name] собран."
 	else if(get_amount()>1)
-		. += "There are [get_amount()] in the stack."
+		. += "Тут [get_amount()] собрано."
 	else
-		. += "There is [get_amount()] in the stack."
-	. += span_notice("<b>Right-click</b> with an empty hand to take a custom amount.")
+		. += "Тут [get_amount()] собран."
+//	. += span_notice("<b>Right-click</b> with an empty hand to take a custom amount.")
 
 /obj/item/stack/proc/get_amount()
 	if(is_cyborg)
@@ -549,7 +549,7 @@
 	if(can_merge(W))
 		var/obj/item/stack/S = W
 		if(merge(S))
-			to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
+			to_chat(user, span_notice("[S.name] тепеь [S.get_amount()] [S.singular_name]."))
 	else
 		. = ..()
 

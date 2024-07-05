@@ -731,7 +731,7 @@
 	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(dont_step),
-		COMSIG_ATOM_EXITED = PROC_REF(on_uncrossed),
+		COMSIG_ATOM_EXIT = PROC_REF(on_uncrossed),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

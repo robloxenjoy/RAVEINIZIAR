@@ -101,8 +101,8 @@
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_green"
 	base_icon_state = "bulb_green"
-	plane = GAME_PLANE_BLOOM
-	layer = FLY_LAYER
+//	plane = GAME_PLANE_BLOOM
+//	layer = FLY_LAYER
 	density = FALSE
 	anchored = TRUE
 	max_integrity = 100
@@ -116,8 +116,8 @@
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_def"
 	base_icon_state = "bulb_def"
-	plane = GAME_PLANE_BLOOM
-	layer = FLY_LAYER
+//	plane = GAME_PLANE_BLOOM
+//	layer = FLY_LAYER
 	density = FALSE
 	anchored = TRUE
 	max_integrity = 100
@@ -228,8 +228,8 @@
 	base_icon_state = "door_blue"
 	opacity = TRUE
 	density = TRUE
-	plane = ABOVE_GAME_PLANE
-	layer = OBJ_LAYER
+//	plane = ABOVE_GAME_PLANE
+	layer = BELOW_MOB_LAYER
 	obj_flags = CAN_BE_HIT|BLOCK_Z_OUT_DOWN|BLOCK_Z_OUT_UP|BLOCK_Z_IN_DOWN|BLOCK_Z_IN_UP
 	var/doorOpen = 'modular_septic/sound/doors/door_metal_open.ogg'
 	var/doorClose = 'modular_septic/sound/doors/door_metal_close.ogg'
@@ -257,7 +257,6 @@
 		return
 	set_opacity(0)
 	set_density(FALSE)
-	layer = BELOW_MOB_LAYER
 	flags_1 &= ~PREVENT_CLICK_UNDER_1
 //	layer = initial(layer)
 	update_appearance()
@@ -284,7 +283,6 @@
 //		return
 
 	set_density(TRUE)
-	layer = OBJ_LAYER
 	flags_1 |= PREVENT_CLICK_UNDER_1
 	update_appearance()
 	if(visible)

@@ -80,19 +80,19 @@
 		return
 	var/obj/item/ammo_casing/ammo_casing = attacking_item
 	if(!ammo_casing.stack_type)
-		to_chat(user, span_warning("[ammo_casing] can't be stacked."))
+		to_chat(user, span_warning("[ammo_casing] не может быть собрано."))
 		return
 	if(!stack_type)
-		to_chat(user, span_warning("[src] can't be stacked."))
+		to_chat(user, span_warning("[src] не может быть собрано"))
 		return
 	if(caliber != ammo_casing.caliber)
-		to_chat(user, span_warning("I can't stack different calibers."))
+		to_chat(user, span_warning("Не могу собрать разные калибры."))
 		return
 	if(stack_type != ammo_casing.stack_type)
-		to_chat(user, span_warning("I can't stack [ammo_casing] with [src]."))
+		to_chat(user, span_warning("Не могу собрать [ammo_casing] с [src]."))
 		return
 	if(!loaded_projectile || !ammo_casing.loaded_projectile)
-		to_chat(user, span_warning("I can't stack empty casings."))
+		to_chat(user, span_warning("Не могу собирать пустые гильзы."))
 		return
 	var/obj/item/ammo_box/magazine/ammo_stack = new stack_type(drop_location())
 	user.transferItemToLoc(src, ammo_stack, silent = TRUE)
@@ -101,4 +101,4 @@
 	ammo_stack.give_round(ammo_casing)
 	user.put_in_hands(ammo_stack)
 	ammo_stack.update_appearance()
-	to_chat(user, span_notice("[src] has been stacked with [ammo_casing]."))
+	to_chat(user, span_notice("[src] собрано с [ammo_casing]."))

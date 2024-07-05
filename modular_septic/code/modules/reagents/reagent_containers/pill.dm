@@ -32,7 +32,7 @@
 	list_reagents = list(/datum/reagent/medicine/c2/probital = 10)
 
 /obj/item/reagent_containers/pill/carbonylmethamphetamine
-	name = "Белая Табдлетка"
+	name = "Белая Таблетка"
 	desc = "Наверняка полезная."
 	icon = 'modular_septic/icons/obj/items/firstaid.dmi'
 	icon_state = "pep-pill"
