@@ -594,7 +594,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)" "Кирка (50)")
+	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)", "Кирка (50)")
 	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
