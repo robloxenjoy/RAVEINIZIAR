@@ -81,7 +81,7 @@
 		playsound(src, 'modular_septic/sound/effects/gassy.ogg', 90, TRUE, 8, 0.9)
 		var/turf/gassyturf = get_turf(src)
 		if(istype(gassyturf))
-			gassyturf.pollute_turf(/datum/pollutant/incredible_gas, 1500)
+			gassyturf.pollute_turf(/datum/pollutant/incredible_gas, 2000)
 
 /obj/item/grenade/gas/urinepoo_gas
 	name = "Газовая Граната"
@@ -115,7 +115,7 @@
 		playsound(src, 'modular_septic/sound/effects/gassy.ogg', 90, TRUE, 8, 0.9)
 		var/turf/gassyturf = get_turf(src)
 		if(istype(gassyturf))
-			gassyturf.pollute_turf(/datum/pollutant/urinepoo_gas, 1500)
+			gassyturf.pollute_turf(/datum/pollutant/urinepoo_gas, 2000)
 
 /obj/item/grenade/gas/sleeptime_gas
 	name = "Газовая Граната"
@@ -149,7 +149,7 @@
 		playsound(src, 'modular_septic/sound/effects/gassy.ogg', 90, TRUE, 8, 0.9)
 		var/turf/gassyturf = get_turf(src)
 		if(istype(gassyturf))
-			gassyturf.pollute_turf(/datum/pollutant/sleeptime_gas, 1500)
+			gassyturf.pollute_turf(/datum/pollutant/sleeptime_gas, 2000)
 
 /obj/item/grenade/frag/impact
 	name = "impact grenade"

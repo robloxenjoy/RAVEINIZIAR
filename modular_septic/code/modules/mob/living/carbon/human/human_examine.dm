@@ -230,7 +230,12 @@
 			if(!clothingonpart(bodypart) || !is_mouth_covered())
 				if(teeth < bodypart.max_teeth)
 					var/missing_teeth = bodypart.max_teeth - teeth
-					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_teeth] зубов!</span>"
+					var/number_teeth
+					if(missing_teeth < 2)
+						number_teeth = "зуб"
+					else
+						number_teeth = "зубов"
+					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_teeth] [number_teeth]!</span>"
 		var/max_fingers = bodypart.get_max_digits()
 		if(max_fingers)
 			var/fingers = bodypart.get_digits_amount()
@@ -238,7 +243,12 @@
 			if(!LAZYLEN(clothingonpart(bodypart)))
 				if(fingers < max_fingers)
 					var/missing_fingers = max_fingers - fingers
-					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_fingers]!</span>"
+					var/number_fingers
+					if(missing_fingers < 2)
+						number_fingers = "палец"
+					else
+						number_fingers = "пальцев"
+					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_fingers] [number_fingers]!</span>"
 	for(var/zone in missing)
 		//redundancy checks
 		if((GLOB.bodyzone_to_parent[zone] && ((GLOB.bodyzone_to_parent[zone] in missing) || (GLOB.bodyzone_to_parent[zone] in stumps))))
