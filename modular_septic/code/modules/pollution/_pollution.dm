@@ -98,7 +98,7 @@
 		qdel(src)
 		return
 	if(planetary_multiplier && istype(my_turf) && my_turf.planetary_atmos) //Dissipate faster on planetary atmos
-		amount_to_scrub *= 2
+		amount_to_scrub *= 1.5
 	for(var/type in pollutants)
 		pollutants[type] -= amount_to_scrub * pollutants[type] / total_amount
 	total_amount -= amount_to_scrub

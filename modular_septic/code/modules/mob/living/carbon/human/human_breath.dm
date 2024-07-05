@@ -380,7 +380,7 @@
 			var/existing = reagents.get_reagent_amount(/datum/reagent/hypernoblium)
 			reagents.add_reagent(/datum/reagent/hypernoblium,max(0, 1 - existing))
 		breath_gases[/datum/gas/hypernoblium][MOLES]-=gas_breathed
-
+/*
 	// Miasma
 		if (breath_gases[/datum/gas/miasma] && suffers_miasma)
 			var/miasma_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/miasma][MOLES])
@@ -428,6 +428,7 @@
 		// Clear out moods when no miasma at all
 		else
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "smell")
+*/
 
 		if (n2o_euphoria == EUPHORIA_ACTIVE || healium_euphoria == EUPHORIA_ACTIVE)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "chemical_euphoria", /datum/mood_event/chemical_euphoria)
@@ -441,6 +442,7 @@
 
 		check_breath_temperature(breath, lung_efficiency, lungs, lung_process)
 		breath.garbage_collect()
+
 
 	return TRUE
 

@@ -19,13 +19,15 @@
 
 /obj/effect/landing/kapno
 	name = "капнобатай"
+	spending = 9999
 
 /obj/effect/landing/konch
 	name = "конченный"
+	spending = 9999
 
 /obj/effect/landing/svogod
 	name = "бог сво"
-	spending = 2
+	spending = 1
 
 /obj/effect/landing/oper
 	name = "oper"

@@ -63,12 +63,12 @@
 
 ///IG grenades
 /datum/pollutant/incredible_gas
-	name = "Incredible Gas"
+	name = "Ебанутый Газ"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL | POLLUTANT_BREATHE_ACT
 	smell_intensity = 4
 	thickness = 2
 	descriptor = SCENT_DESC_ODOR
-	scent = "rotten eggs and garbage"
+	scent = "смерть и кислота"
 	color = "#00DA00"
 	filter_wear = 1
 
@@ -76,22 +76,22 @@
 	var/message
 	switch(amount)
 		if(0 to 3)
-			message = span_warning("What is this smell?!")
+			message = span_warning("Чё за запах?!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/incredible_gas)
 			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
 			victim.adjustToxLoss(2)
-			if(prob(50))
+			if(prob(60))
 				victim.vomit(40, blood = prob(amount), stun = FALSE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
 		if(3 to 10)
-			message = span_warning("This is vile!")
+			message = span_warning("Этот запах страшен!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/incredible_gas/harsh)
 			victim.apply_status_effect(/datum/status_effect/incredible_gas)
 			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 4)
 			victim.adjustToxLoss(4)
-			if(prob(60))
+			if(prob(75))
 				victim.vomit(50, blood = prob(amount*3), stun = TRUE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
 		if(10 to INFINITY)
-			message = span_bolddanger("This is INCREDIBLY disgusting!")
+			message = span_bolddanger("Этот запах ЕБАНУТО ОПАСЕН!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/incredible_gas/harsh)
 			victim.apply_status_effect(/datum/status_effect/incredible_gas)
 			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 8)

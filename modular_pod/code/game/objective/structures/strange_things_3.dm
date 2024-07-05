@@ -761,3 +761,23 @@
 		else
 			H.visible_message(span_meatymeat("[H] вырывается из [src]!"))
 			return
+
+/obj/item/barbsetup
+	name = "Установщик"
+	desc = "Таким вот можно установить проволоку."
+	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
+	icon_state = "setupper"
+	inhand_icon_state = null
+	worn_icon_state = null
+	hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
+	w_class = WEIGHT_CLASS_BULKY
+	wound_bonus = 1
+	bare_wound_bonus = 3
+	min_force = 1
+	force = 8
+	throwforce = 5
+	carry_weight = 4 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("бьёт")
+	attack_verb_simple = list("бить")
+	var/zaryad = 3

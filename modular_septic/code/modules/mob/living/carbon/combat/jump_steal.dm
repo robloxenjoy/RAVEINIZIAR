@@ -50,6 +50,7 @@
 			src.Immobilize(2 SECONDS)
 			src.changeNext_move(CLICK_CD_MELEE)
 			sound_hint()
+			C.unequip_everything()
 			return
 
 		if(diceroll >= DICE_FAILURE)
@@ -57,6 +58,9 @@
 			src.changeNext_move(CLICK_CD_MELEE)
 			sound_hint()
 			C.unequip_everything()
+	else
+		to_chat(src, span_danger(xbox_rage_msg()))
+		src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 
 /*
 		switch(affecting)

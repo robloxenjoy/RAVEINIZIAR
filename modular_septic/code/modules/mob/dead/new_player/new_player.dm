@@ -117,145 +117,137 @@
 			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 				if(client)
 					if(spawn_point.name == client.role_ch)
-						if(spawn_point.spending)
-							if(spawn_point.spending <= 0)
-								alert("Больше нет слотов.")
-								client.ready_char = FALSE
-								return FALSE
-							else
-								spawn_point.spending--
-						var/mob/living/carbon/human/character = new(spawn_point.loc)
-						character.set_species(/datum/species/human)
-						character.gender = MALE
-						character.genitals = GENITALS_MALE
-						character.body_type = MALE
-						character.chat_color = ""
-						character.real_name = client.name_ch
-						character.name = character.real_name
-						character.age = client.age_ch
-						character.handed_flags = DEFAULT_HANDEDNESS
-						character.fully_heal(TRUE)
+						if(spawn_point.spending > 0)
+							spawn_point.spending--
+							var/mob/living/carbon/human/character = new(spawn_point.loc)
+							character.set_species(/datum/species/human)
+							character.gender = MALE
+							character.genitals = GENITALS_MALE
+							character.body_type = MALE
+							character.chat_color = ""
+							character.real_name = client.name_ch
+							character.name = character.real_name
+							character.age = client.age_ch
+							character.handed_flags = DEFAULT_HANDEDNESS
+							character.fully_heal(TRUE)
 
-						var/eye_coloring = pick("#000000", "#1f120f")
+							var/eye_coloring = pick("#000000", "#1f120f")
 
-						switch(client.role_ch)
-							if("капнобатай")
-								character.truerole = "Капнобатай"
-								character.pod_faction = "капнобатай"
-								character.hairstyle = "Bedhead 2"
-								character.facial_hairstyle = "Shaved"
-								character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
-							if("конченный")
-								character.truerole = "Конченный"
-								character.pod_faction = "конченный"
-								character.hairstyle = "Bald"
-								character.facial_hairstyle = "Shaved"
-								eye_coloring = "#c30000"
-	//							character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
-						switch(character.truerole)
-							if("Капнобатай")
-								var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
-								character.add_overlay(appearance)
-								character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
-								if(prob(10))
-									character.equipOutfit(/datum/outfit/kapnofather)
-									character.special_zvanie = "Отец Капнобатаев"
-								else
-									character.equipOutfit(/datum/outfit/kapno)
-							if("Конченный")
-								var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
-								character.add_overlay(appearance)
-								character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/konch)
-								if(prob(10))
-									character.equipOutfit(/datum/outfit/mostkonch)
-									character.special_zvanie = "Самый Конченный"
-								else
-									character.equipOutfit(/datum/outfit/konch)
-							if("Бог СВО")
-								character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
-								character.equipOutfit(/datum/outfit/svogod)
-						for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
-	//						if(initial(organ_eyes.eye_color))
-	//							continue
-							if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
-								character.left_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
-								organ_eyes.old_eye_color = eye_coloring
-								character.dna.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
-							else
-								character.right_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
-								organ_eyes.old_eye_color = eye_coloring
-								character.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
-
-						for(var/obj/item/organ/genital/genital in character.internal_organs)
-							genital.Remove(character)
-							qdel(genital)
-/*
-						var/min_dicksize = 1
-						var/max_dicksize = 20
-						var/min_breastsize = 1
-						var/max_breastsize = 7
-						character.dna.features["penis_size"] = clamp(rand(min_dicksize, max_dicksize), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)
-						character.dna.features["penis_girth"] = clamp(character.dna.features["penis_size"] - 3, PENIS_MIN_GIRTH, PENIS_MAX_GIRTH)
-						character.dna.features["breasts_size"] = clamp(rand(min_breastsize, max_breastsize), BREASTS_MIN_SIZE, BREASTS_MAX_SIZE)
-						character.dna.features["breasts_lactation"] = FALSE
-						character.dna.features["penis_circumcised"] = FALSE
-						for(var/obj/item/organ/genital/genital in character.internal_organs)
-							genital.build_from_dna(character.dna, genital.mutantpart_key)
-*/
-						mind.active = FALSE
-						mind.transfer_to(character)
-						mind.set_original_character(character)
-						character.key = key
-						qdel(src)
-
-						var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
-						if(!babble)
+							switch(client.role_ch)
+								if("капнобатай")
+									character.truerole = "Капнобатай"
+									character.pod_faction = "капнобатай"
+									character.hairstyle = "Bedhead 2"
+									character.facial_hairstyle = "Shaved"
+									character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
+								if("конченный")
+									character.truerole = "Конченный"
+									character.pod_faction = "конченный"
+									character.hairstyle = "Bald"
+									character.facial_hairstyle = "Shaved"
+									eye_coloring = "#c30000"
+								if("бог сво")
+									character.truerole = "Бог СВО"
+									character.pod_faction = "бог сво"
+									character.hairstyle = "Bedhead 2"
+									character.facial_hairstyle = "Shaved"
+									character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
 							switch(character.truerole)
 								if("Капнобатай")
-									character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
+									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
+									character.add_overlay(appearance)
+									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
+									if(prob(10))
+										character.equipOutfit(/datum/outfit/kapnofather)
+										character.special_zvanie = "Отец Капнобатаев"
+									else
+										character.equipOutfit(/datum/outfit/kapno)
 								if("Конченный")
-									character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
+									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
+									character.add_overlay(appearance)
+									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/konch)
+									if(prob(10))
+										character.equipOutfit(/datum/outfit/mostkonch)
+										character.special_zvanie = "Самый Конченный"
+									else
+										character.equipOutfit(/datum/outfit/konch)
+								if("Бог СВО")
+									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
+									character.equipOutfit(/datum/outfit/svogod)
+							for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
+		//						if(initial(organ_eyes.eye_color))
+		//							continue
+								if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
+									character.left_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
+									organ_eyes.old_eye_color = eye_coloring
+									character.dna.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
 								else
-									character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
+									character.right_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
+									organ_eyes.old_eye_color = eye_coloring
+									character.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
+
+							for(var/obj/item/organ/genital/genital in character.internal_organs)
+								genital.Remove(character)
+								qdel(genital)
+
+							mind.active = FALSE
+							mind.transfer_to(character)
+							mind.set_original_character(character)
+							character.key = key
+							qdel(src)
+
+							var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
+							if(!babble)
+								switch(character.truerole)
+									if("Капнобатай")
+										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
+									if("Конченный")
+										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
+									else
+										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
+							else
+								switch(character.truerole)
+									if("Капнобатай")
+										babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
+									if("Конченный")
+										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
+									else
+										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_agender.ogg'
+								babble.volume = BABBLE_DEFAULT_VOLUME
+								babble.duration = BABBLE_DEFAULT_DURATION
+
+							character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
+							var/area/joined_area = get_area(character.loc)
+							if(joined_area)
+								joined_area.on_joining_game(character)
+							var/obj/item/organ/brain/brain = character.getorganslot(ORGAN_SLOT_BRAIN)
+							if(brain)
+								(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
+							character.gain_extra_effort(1, TRUE)
+							to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
+							character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
+							character.cursings()
+	//						character.friendroles()
+
+							if(character.special_zvanie)
+								switch(character.special_zvanie)
+									if("Отец Капнобатаев")
+										to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
+									if("Самый Конченный")
+										to_chat(character, span_yellowteamradio("Я Самый Конченный!"))
+
+		//					for(var/obj/item/organ/genital/genital in character.internal_organs)
+		//						genital.build_from_dna(character.dna, genital.mutantpart_key)
+							character.dna.features["body_size"] = BODY_SIZE_NORMAL
+							character.dna.update_body_size()
+							character.dna.update_dna_identity()
+							character.attributes?.update_attributes()
+							character.regenerate_icons()
+
 						else
-							switch(character.truerole)
-								if("Капнобатай")
-									babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
-								if("Конченный")
-									babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
-								else
-									babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_agender.ogg'
-							babble.volume = BABBLE_DEFAULT_VOLUME
-							babble.duration = BABBLE_DEFAULT_DURATION
-
-						character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-						var/area/joined_area = get_area(character.loc)
-						if(joined_area)
-							joined_area.on_joining_game(character)
-						var/obj/item/organ/brain/brain = character.getorganslot(ORGAN_SLOT_BRAIN)
-						if(brain)
-							(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
-						character.gain_extra_effort(1, TRUE)
-						to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
-						character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
-						character.cursings()
-//						character.friendroles()
-
-						if(character.special_zvanie)
-							switch(character.special_zvanie)
-								if("Отец Капнобатаев")
-									to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
-								if("Самый Конченный")
-									to_chat(character, span_yellowteamradio("Я Самый Конченный!"))
-
-	//					for(var/obj/item/organ/genital/genital in character.internal_organs)
-	//						genital.build_from_dna(character.dna, genital.mutantpart_key)
-						character.dna.features["body_size"] = BODY_SIZE_NORMAL
-						character.dna.update_body_size()
-						character.dna.update_dna_identity()
-						character.attributes?.update_attributes()
-						character.regenerate_icons()
-
+							alert("Больше нет слотов.")
+							client.ready_char = FALSE
+							return FALSE
 		if("Да вроде другая...")
 			client.ready_char = FALSE
 			return FALSE

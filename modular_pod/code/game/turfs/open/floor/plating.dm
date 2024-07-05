@@ -104,6 +104,26 @@
 			user.AddComponent(/datum/component/guard, src, W)
 			W.guard_ready = TRUE
 		else
+			if(istype(W, /obj/item/barbsetup))
+				if(istype(loc, /area/maintenance/polovich/forest/inner))
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
+				if(locate(/obj/structure/) in get_turf(src))
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
+				var/obj/item/barbsetup/T = W
+				if(do_after(user, 2 SECONDS, target=src))
+					T.zaryad--
+					new /obj/structure/barbwire(get_turf(src))
+					user.changeNext_move(5)
+					sound_hint()
+					if(T.zaryad <= 0)
+						qdel(T)
+				else
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 			if(W.get_sharpness())
 				user.visible_message(span_notice("[user] размахивает с помощью [W]."),span_notice("Я размахиваю с помощью [W]."), span_hear("Я слышу взмах."))
 				user.changeNext_move(W.attack_delay)
