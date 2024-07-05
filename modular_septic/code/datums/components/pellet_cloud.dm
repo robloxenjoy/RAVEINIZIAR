@@ -134,10 +134,10 @@
 				var/bw_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_BW_BONUS]
 				// sharpness is handled in the wound rolling
 				var/wound_type = (initial(projectile.damage_type) == BRUTE) ? WOUND_BLUNT : WOUND_BURN
-				hit_part.painless_wound_roll(wound_type, damage_dealt, w_bonus, bw_bonus, sharpness)
 				var/o_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_O_BONUS]
 				var/bo_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_BO_BONUS]
 				var/sharpness = wound_info_by_part[hit_part][CLOUD_POSITION_SHARPNESS]
+				hit_part.painless_wound_roll(wound_type, damage_dealt, w_bonus, bw_bonus, sharpness)
 				hit_part.damage_internal_organs(wound_type, damage_dealt, o_bonus, bo_bonus)
 				wound_info_by_part -= hit_part
 
