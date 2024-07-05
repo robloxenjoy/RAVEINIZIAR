@@ -678,9 +678,12 @@
 /obj/structure/blockrole
 	name = "Опа"
 	desc = "Нельзя дальше."
-	icon = null
-	icon_state = null
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "turboa"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	anchored = 1
+	obj_flags = NONE
 	var/allow_role = null
 
 /obj/structure/blockrole/CanAllowThrough(atom/movable/mover, border_dir)
