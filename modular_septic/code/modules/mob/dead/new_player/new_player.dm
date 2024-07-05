@@ -210,9 +210,21 @@
 
 						var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
 						if(!babble)
-							character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
+							switch(character.truerole)
+								if("Капнобатай")
+									character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
+								if("Конченный")
+									character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
+								else
+									character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
 						else
-							babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
+							switch(character.truerole)
+								if("Капнобатай")
+									babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
+								if("Конченный")
+									babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
+								else
+									babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_agender.ogg'
 							babble.volume = BABBLE_DEFAULT_VOLUME
 							babble.duration = BABBLE_DEFAULT_DURATION
 

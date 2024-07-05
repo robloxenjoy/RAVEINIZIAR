@@ -30,7 +30,7 @@
 
 /datum/component/babble/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_MOB_POST_SAY, .proc/after_say)
+	RegisterSignal(parent, COMSIG_MOB_POST_SAY, PROC_REF(after_say))
 
 /datum/component/babble/UnregisterFromParent()
 	. = ..()
@@ -40,7 +40,7 @@
 	SIGNAL_HANDLER
 
 	last_babble = world.time
-	INVOKE_ASYNC(src, .proc/handle_babbling, babbler, speech_args, speech_spans, speech_mods)
+	INVOKE_ASYNC(src, PROC_REF(handle_babbling), babbler, speech_args, speech_spans, speech_mods)
 
 /datum/component/babble/proc/handle_babbling(mob/babbler, list/speech_args, list/speech_spans, list/speech_mods)
 	var/message = speech_args[SPEECH_MESSAGE]
