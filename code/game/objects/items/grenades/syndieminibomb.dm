@@ -13,8 +13,7 @@
 /obj/item/grenade/syndieminibomb/detonate(mob/living/lanced_by)
 	. = ..()
 	var/turf/explosionturf = get_turf(src)
-	explosionturf.pollute_turf(/datum/pollutant/dust, 100)
-	update_mob()
+	explosionturf.pollute_turf(/datum/pollutant/dust, 200)
 	qdel(src)
 
 /obj/item/grenade/syndieminibomb/concussion
@@ -31,8 +30,8 @@
 	icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
 	shrapnel_radius = 4
-	ex_heavy = 2
-	ex_light = 3
+	ex_heavy = 3
+	ex_light = 4
 	ex_flame = 2
 
 /obj/item/grenade/frag/mega
@@ -44,8 +43,7 @@
 /obj/item/grenade/frag/detonate(mob/living/lanced_by)
 	. = ..()
 	var/turf/explosionturf = get_turf(src)
-	explosionturf.pollute_turf(/datum/pollutant/dust, 100)
-	update_mob()
+	explosionturf.pollute_turf(/datum/pollutant/dust, 200)
 	qdel(src)
 
 /obj/item/grenade/gluon

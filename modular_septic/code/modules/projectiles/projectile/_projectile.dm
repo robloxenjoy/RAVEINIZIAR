@@ -252,9 +252,8 @@
 //		var/turf/turf_loc = get_turf(src)
 //		if(istype(turf_loc))
 //			visible_message(span_danger("[src] hits [turf_loc]!"))
-	if(isturf(loc))
-//		explosion(src, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 2, flame_range = 3)
-		process_hit(loc, loc, loc)
+//	if(isturf(loc))
+//		process_hit(loc, loc, loc)
 	if(!QDELETED(src))
 		qdel(src)
 

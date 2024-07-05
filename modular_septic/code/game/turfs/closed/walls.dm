@@ -64,7 +64,7 @@
 					playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)
-					mineturf.pollute_turf(/datum/pollutant/dust, 100)
+					mineturf.pollute_turf(/datum/pollutant/dust, 200)
 
 /turf/closed/wall/r_wall
 	icon = 'modular_septic/icons/turf/tall/walls/reinforced_victorian.dmi'

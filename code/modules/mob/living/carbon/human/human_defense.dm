@@ -450,10 +450,10 @@
 				damage_clothes(400 - bomb_armor, BRUTE, BOMB)
 
 		if (EXPLODE_HEAVY)
-			brute_loss = 60
-			burn_loss = 60
+			brute_loss = 70
+			burn_loss = 70
 			if(bomb_armor)
-				brute_loss = 30*(2 - round(bomb_armor*0.01, 0.05))
+				brute_loss = 40*(2 - round(bomb_armor*0.01, 0.05))
 				burn_loss = brute_loss //damage gets reduced from 120 to up to 60 combined brute+burn
 			damage_clothes(200 - bomb_armor, BRUTE, BOMB)
 			if (ears && !HAS_TRAIT_FROM(src, TRAIT_DEAF, CLOTHING_TRAIT))
@@ -462,9 +462,9 @@
 			Knockdown(200 - (bomb_armor * 1.6)) //between ~4 and ~20 seconds of knockdown depending on bomb armor
 
 		if(EXPLODE_LIGHT)
-			brute_loss = 30
+			brute_loss = 50
 			if(bomb_armor)
-				brute_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
+				brute_loss = 25*(2 - round(bomb_armor*0.01, 0.05))
 			damage_clothes(max(50 - bomb_armor, 0), BRUTE, BOMB)
 			if (ears && !HAS_TRAIT_FROM(src, TRAIT_DEAF, CLOTHING_TRAIT))
 				ears.adjustEarDamage(15,60)

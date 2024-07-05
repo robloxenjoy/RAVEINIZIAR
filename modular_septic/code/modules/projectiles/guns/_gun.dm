@@ -5,7 +5,7 @@
 	pickup_sound = 'modular_septic/sound/weapons/guns/generic_draw.ogg'
 	dry_fire_sound = 'modular_septic/sound/weapons/guns/empty.ogg'
 	/// Message when we dry fire (applies both to dry firing and failing to fire for other reasons)
-	var/dry_fire_message = span_danger("*click*")
+	var/dry_fire_message = span_danger("*клик*")
 	/// Volume of dry_fire_sound
 	var/dry_fire_sound_volume = 30
 	/// Whether to vary dry_fire_sound or not
