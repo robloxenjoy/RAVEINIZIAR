@@ -92,7 +92,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/isAxe = FALSE
 
 	//Poisoning
-	var/poisoned_type
+	var/poisoned_type = null
 	var/current_fucked_reagents = 0
 	var/max_reagents = 150
 	var/how_eats = 10
@@ -489,13 +489,14 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(reagents.total_volume > 0)
 			for(var/datum/reagent/R in reagents.reagent_list)
 				if(!W.poisoned_type)
-//					W.poisoned_type = R.type
-					W.poisoned_type = R
+//					W.poisoned_type = R
+					W.poisoned_type = R.type
 					W.current_fucked_reagents += R.volume
-					reagents.remove_reagent(R.type, R.volume)
-					user.visible_message(span_danger("[user] окунает [W] в [src]!"), span_danger("Я окунаю [W] в [src]!"))
 					if(W.current_fucked_reagents > W.max_reagents)
+						var/ohfuck = W.current_fucked_reagents - W.max_reagents
 						W.current_fucked_reagents = W.max_reagents
+					reagents.remove_reagent(R.type, ohfuck)
+					user.visible_message(span_danger("[user] окунает [W] в [src]!"), span_danger("Я окунаю [W] в [src]!"))
 /*
 				else
 /*

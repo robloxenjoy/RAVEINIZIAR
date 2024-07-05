@@ -880,6 +880,8 @@
 					if(resultt <= 0)
 						victim.reagents?.add_reagent(weapon.poisoned_type, weapon.how_eats)
 						weapon.current_fucked_reagents -= weapon.how_eats
+						if(weapon.current_fucked_reagents <= 0)
+							W.poisoned_type = null
 /*
 						victim.visible_message(span_green("[victim] got reagented by [user]!"), \
 											span_green("I am got reagented by [user]!"), \
