@@ -25,8 +25,9 @@
 		return
 //	if(user.loc != loc)
 //		return
-	if(!do_after(user, 5, target = src))
+	if(!do_after(user, 4, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 	if(up)
 		var/turf/above_turf = SSmapping.get_turf_above(get_turf(src))
