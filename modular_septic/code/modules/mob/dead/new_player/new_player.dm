@@ -102,6 +102,7 @@
 		if("Бог СВО")
 			if(GLOB.world_deaths_crazy < 20)
 				alert("Недостаточно смертей в мире.")
+				client.ready_char = FALSE
 				return
 			client.role_ch = "бог сво"
 		else
