@@ -757,7 +757,7 @@
 			var/obj/item/bodypart/affecting = H.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
 			H.apply_damage(10, BRUTE, affecting, wound_bonus = 5, sharpness = SHARP_EDGED)
 			affecting.adjust_germ_level(50)
-			return
+			return COMPONENT_ATOM_BLOCK_EXIT
 		else
 			H.visible_message(span_meatymeat("[H] вырывается из [src]!"))
-			return COMPONENT_ATOM_BLOCK_EXIT
+			return
