@@ -910,18 +910,18 @@
 /obj/machinery/examine(mob/user)
 	. = ..()
 	if(machine_stat & BROKEN)
-		. += span_notice("It looks broken and non-functional.")
+		. += span_notice("Выглядит сломано.")
 	if(!(resistance_flags & INDESTRUCTIBLE))
 		if(resistance_flags & ON_FIRE)
-			. += span_warning("It's on fire!")
+			. += span_warning("Это в огне!")
 		var/healthpercent = (atom_integrity/max_integrity) * 100
 		switch(healthpercent)
 			if(50 to 99)
-				. += "It looks slightly damaged."
+				. += "Слегка повреждено."
 			if(25 to 50)
-				. += "It appears heavily damaged."
+				. += "Сильно повреждено."
 			if(0 to 25)
-				. += span_warning("It's falling apart!")
+				. += span_warning("Разваливается!")
 	if(user.research_scanner && component_parts)
 		. += display_parts(user, TRUE)
 
