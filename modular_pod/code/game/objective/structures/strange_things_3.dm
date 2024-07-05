@@ -517,6 +517,9 @@
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
 		to_chat(user, span_meatymeat("Нужны каотики!"))
 		return
+	if(GLOB.world_deaths_crazy < 30)
+		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
+		return
 	switch(thingy)
 		if("Бобокс (80)")
 			if(pref_source.bobux_amount < 80)
@@ -556,6 +559,9 @@
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
 		to_chat(user, span_meatymeat("Нужны каотики!"))
 		return
+	if(GLOB.world_deaths_crazy < 20)
+		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
+		return
 	switch(thingy)
 		if("Лёгкий Бронежилет (50)")
 			if(pref_source.bobux_amount < 50)
@@ -593,7 +599,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)", "Кирка (50)")
+	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)", "Кирка (50)", "Установщик (40)")
 	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -602,6 +608,9 @@
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
 		to_chat(user, span_meatymeat("Нужны каотики!"))
+		return
+	if(GLOB.world_deaths_crazy < 15)
+		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
 		return
 	switch(thingy)
 		if("Осколочная Граната (70)")
@@ -626,6 +635,14 @@
 				return
 			new /obj/item/melee/hehe/pickaxe/iron(get_turf(user))
 			pref_source.bobux_amount -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Установщик (40)")
+			if(pref_source.bobux_amount < 40)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/barbsetup(get_turf(user))
+			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
@@ -725,6 +742,7 @@
 	density = FALSE
 	anchored = TRUE
 	opacity = FALSE
+	istrap = TRUE
 
 /obj/structure/barbwire/ComponentInitialize()
 	. = ..()

@@ -293,6 +293,10 @@
 				return FALSE
 			if(L.body_position != LYING_DOWN)
 				return TRUE
+		else
+			if(L.body_position != STANDING_UP)
+				if(prob(50))
+					return TRUE
 	return TRUE
 
 /obj/projectile/vol_by_damage()

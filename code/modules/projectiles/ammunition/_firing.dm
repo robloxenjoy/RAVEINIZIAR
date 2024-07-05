@@ -63,9 +63,8 @@
 		new firing_effect_type(get_turf(src), firing_dir)
 
 	var/direct_target
-	if(targloc == curloc)
-		if(target) //if the target is right on our location we'll skip the travelling code in the proj's fire()
-			direct_target = target
+	if(target && curloc.Adjacent(targloc, target=targloc, mover=src))
+		direct_target = target
 	if(!direct_target)
 		var/modifiers = params2list(params)
 		loaded_projectile.preparePixelProjectile(target, user, modifiers, spread)
