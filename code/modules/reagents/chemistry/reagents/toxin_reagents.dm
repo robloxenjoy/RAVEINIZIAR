@@ -729,7 +729,7 @@
 	if(DT_PROB(2.5, delta_time))
 		M.losebreath += 1
 	if(DT_PROB(4, delta_time))
-		to_chat(M, span_danger("You feel horrendously weak!"))
+		to_chat(M, span_danger("Какой же я слабый!"))
 		M.Stun(40)
 		M.adjustToxLoss(2*REM * normalise_creation_purity(), 0)
 	return ..()
@@ -801,8 +801,8 @@
 			if(3)
 				if(!C.undergoing_cardiac_arrest() && C.can_heartattack())
 					C.set_heartattack(TRUE)
-					if(C.stat == CONSCIOUS)
-						C.visible_message(span_userdanger("[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!"))
+//					if(C.stat == CONSCIOUS)
+//						C.visible_message(span_userdanger("[C] clutches at [C.p_their()] chest as if [C.p_their()] heart stopped!"))
 				else
 					C.losebreath += 10
 					C.adjustOxyLoss(rand(5,25), 0)
@@ -983,8 +983,8 @@
 		to_chat(C, span_userdanger("You feel something lumpy come up as you vomit."))
 
 /datum/reagent/toxin/curare
-	name = "Curare"
-	description = "Causes slight toxin damage followed by chain-stunning and oxygen damage."
+	name = "Поров"
+	description = "Яд."
 	reagent_state = LIQUID
 	color = "#19191990"
 	metabolization_rate = 0.125 * REAGENTS_METABOLISM

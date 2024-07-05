@@ -419,6 +419,11 @@
 	name = "urine bottle"
 	list_reagents = list(/datum/reagent/consumable/piss = 30)
 
+/obj/item/reagent_containers/glass/bottle/porov
+	name = "Бутылёк (поров)"
+	desc = "Бутылёк. По сути, здесь поров."
+	list_reagents = list(/datum/reagent/toxin/curare = 30)
+
 /obj/item/reagent_containers/glass/bottle/sperm
 	name = "sperm bottle"
 	list_reagents = list(/datum/reagent/consumable/cum = 30)
