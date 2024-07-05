@@ -17,7 +17,7 @@
 	hands_use_check = TRUE
 
 /datum/emote/living/burp
-	key = "рыгать"
+	key = "burp"
 	key_third_person = "рыгает"
 	message = "рыгает."
 	emote_type = EMOTE_AUDIBLE
@@ -147,13 +147,13 @@
 	message = "frowns."
 
 /datum/emote/living/gag
-	key = "давиться"
+	key = "gag"
 	key_third_person = "давится"
 	message = "давится."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/gasp
-	key = "задыхаться"
+	key = "gasp"
 	key_third_person = "задыхается"
 	message = "задыхается!"
 	emote_type = EMOTE_AUDIBLE
@@ -178,7 +178,7 @@
 	message = "grins."
 
 /datum/emote/living/groan
-	key = "стон"
+	key = "groan"
 	key_third_person = "стонет"
 	message = "стонет!"
 	message_mime = "appears to groan!"
@@ -323,8 +323,8 @@
 
 /datum/emote/living/sneeze
 	key = "sneeze"
-	key_third_person = "sneezes"
-	message = "sneezes."
+	key_third_person = "чихает"
+	message = "чихает."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/smug
@@ -334,14 +334,14 @@
 
 /datum/emote/living/sniff
 	key = "sniff"
-	key_third_person = "sniffs"
-	message = "sniffs."
+	key_third_person = "принюхивается"
+	message = "принюхивается."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/snore
 	key = "snore"
-	key_third_person = "snores"
-	message = "snores."
+	key_third_person = "храпит"
+	message = "храпит."
 	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
@@ -405,7 +405,7 @@
 	message = "waves."
 
 /datum/emote/living/whimper
-	key = "хныкать"
+	key = "whimper"
 	key_third_person = "хнычет"
 	message = "хнычет."
 	message_mime = "appears hurt."
@@ -429,7 +429,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/custom
-	key = "Я"
+	key = "custom"
 	key_third_person = "custom"
 	message = null
 

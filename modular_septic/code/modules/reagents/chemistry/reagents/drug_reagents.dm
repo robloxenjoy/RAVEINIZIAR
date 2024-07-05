@@ -121,7 +121,7 @@
 		lean_monster.flash_pain_mental(100)
 
 /datum/reagent/drug/carbonylmethamphetamine
-	name = "carbonylmethamphetamine"
+	name = "карбонилметамфетамин"
 	description = "finally some good fucking drugs."
 	reagent_state = LIQUID
 	taste_description = "grape"
@@ -135,7 +135,7 @@
 	crack_addict.crack_addict()
 	crack_addict.attributes?.add_attribute_modifier(/datum/attribute_modifier/crack_addict, TRUE)
 	crack_addict.playsound_local(crack_addict, 'modular_septic/sound/insanity/bass.ogg', 100)
-	to_chat(crack_addict, span_achievementrare("My brain swells and my muscles become faster."))
+	to_chat(crack_addict, span_achievementrare("Что-то с мозгом... А состояние мускул меняется."))
 	crack_addict.flash_pain_manic(100)
 	var/client/C = crack_addict.client
 	var/intensity = 12

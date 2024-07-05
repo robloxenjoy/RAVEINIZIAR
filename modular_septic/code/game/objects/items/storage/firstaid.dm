@@ -218,8 +218,8 @@
 	update_appearance()
 
 /obj/item/storage/pill_bottle/carbonylmethamphetamine
-	name = "carbonylmethamphetamine pill bottle"
-	desc = "Pills stated to increase your fervor in combat, just chew and drink water."
+	name = "Баночка Карбонилметамфетамина"
+	desc = "Просто проглоти."
 	icon = 'modular_septic/icons/obj/items/firstaid.dmi'
 	icon_state = "pep"
 	base_icon_state = "pep"

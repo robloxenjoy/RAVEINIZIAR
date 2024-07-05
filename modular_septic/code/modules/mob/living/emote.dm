@@ -125,7 +125,7 @@
 	if(istype(human_user))
 		switch(human_user.dna.species.id)
 			if(SPECIES_HUMAN)
-				if(user.gender != FEMALE)
+				if(human_user.gender != FEMALE)
 					return "modular_septic/sound/emotes/yawn_male[rand(1,2)].ogg"
 				else
 					return "modular_septic/sound/emotes/yawn_female[rand(1,3)].ogg"
@@ -149,7 +149,7 @@
 
 /datum/emote/living/carbon/human/scream
 	key = "scream"
-	key_third_person = "screams"
+	key_third_person = "кричит"
 	message = "кричит!"
 	message_mime = "acts out a scream!"
 	emote_type = EMOTE_AUDIBLE
@@ -274,8 +274,8 @@
 
 /datum/emote/living/crackaddict
 	key = "crackaddict"
-	key_third_person = "joyful laughs"
-	message = "feels joyful."
+	key_third_person = "забавится"
+	message = "забавится."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
