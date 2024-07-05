@@ -125,10 +125,8 @@
 	max_ambience_cooldown = 95 SECONDS
 
 /area/maintenance/polovich/chaot
-	droning_sound = DRONING_CHAOT
 
 /area/maintenance/polovich/forest/rain/chaot
-	droning_sound = DRONING_CHAOT
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 
@@ -136,5 +134,4 @@
 
 /area/maintenance/polovich/night
 	name = "Polovich Purenight"
-	droning_sound = DRONING_PURENIGHT
 	area_flags = NO_ALERTS
