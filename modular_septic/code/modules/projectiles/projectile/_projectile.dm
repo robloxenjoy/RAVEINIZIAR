@@ -252,8 +252,8 @@
 //		var/turf/turf_loc = get_turf(src)
 //		if(istype(turf_loc))
 //			visible_message(span_danger("[src] hits [turf_loc]!"))
-//	if(isturf(loc))
-//		process_hit(loc, loc, loc)
+	if(isturf(loc))
+		process_hit(loc, loc, loc)
 	if(!QDELETED(src))
 		qdel(src)
 

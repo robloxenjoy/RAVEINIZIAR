@@ -137,6 +137,8 @@
 			if(diceroll <= DICE_FAILURE)
 				victim.apply_damage(damageee, BRUTE, grasped_part, wound_bonus = deal_wound_bonus, sharpness = NONE)
 //				grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = NONE)
+		if(QDELETED(src))
+			return
 		if(owner != victim)
 			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb] <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
 							span_userdanger("<b>[owner]</b> [wrench_verb] [grasped_part.name]![carbon_victim.wound_message]"), \

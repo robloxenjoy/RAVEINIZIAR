@@ -5,6 +5,9 @@
 	if(!iscarbon(target))
 		return FALSE
 */
+	if(!isliving(target))
+		return FALSE
+
 	var/mob/living/carbon/C = target
 	if(!C)
 		return FALSE
@@ -163,11 +166,11 @@
 		return FALSE
 	//Not while knocked down
 	if(body_position != STANDING_UP)
-		to_chat(span_warning("Мне нужно встать."))
+		to_chat(src, span_warning("Мне нужно встать."))
 		return FALSE
 	//Not while buckled
 	if(buckled)
-		to_chat(span_warning("Отстегнуться мне нужно."))
+		to_chat(src, span_warning("Отстегнуться мне нужно."))
 		return FALSE
 	var/range = FLOOR(GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH)/(ATTRIBUTE_MIDDLING/2), 1)
 	if(range < 1)

@@ -1056,7 +1056,7 @@
 							intended_zone = BODY_ZONE_CHEST, \
 							list/modifiers)
 	if(damage > 8)
-		if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
+		if(user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL) >= DICE_SUCCESS)
 			switch(def_zone)
 				if(BODY_ZONE_PRECISE_GROIN)
 					if((victim.getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY) || (victim.getorganslotefficiency(ORGAN_SLOT_PENIS) > ORGAN_FAILING_EFFICIENCY))

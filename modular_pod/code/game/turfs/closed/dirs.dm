@@ -73,8 +73,8 @@
 	if(cantbreak)
 		return
 	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
-	for(var/turf/podpol/wall/F in oview(1, personal_turf))
-		F.update_icon_pod()
+//	for(var/turf/podpol/wall/F in oview(1, personal_turf))
+//		F.update_icon_pod()
 	..()
 
 /turf/podpol/wall

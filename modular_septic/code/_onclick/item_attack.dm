@@ -349,4 +349,4 @@
 /obj/item/proc/ready_message(mob/living/user)
 	to_chat(user, span_danger("Я готовлю [src]!"))
 	if(ready_sound)
-		playsound(user, ready_sound, get_clamped_volume(), TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
+		playsound(user, ready_sound, 70, TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)

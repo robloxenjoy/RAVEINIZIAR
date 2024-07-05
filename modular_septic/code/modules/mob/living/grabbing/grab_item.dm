@@ -142,6 +142,8 @@
 				bite_limb()
 			if(GM_GUTBUSTED)
 				tear_off_gut()
+	if(QDELETED(src))
+		return
 	for(var/obj/item/grab/grabber in (owner.held_items | owner.get_item_by_slot(ITEM_SLOT_MASK)))
 		grabber.update_grab_mode()
 

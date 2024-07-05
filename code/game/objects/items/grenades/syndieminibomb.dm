@@ -44,7 +44,8 @@
 	. = ..()
 	var/turf/explosionturf = get_turf(src)
 	explosionturf.pollute_turf(/datum/pollutant/dust, 200)
-	qdel(src)
+	if(!QDELETED(src))
+		qdel(src)
 
 /obj/item/grenade/gluon
 	desc = "An advanced grenade that releases a harmful stream of gluons inducing radiation in those nearby. These gluon streams will also make victims feel exhausted, and induce shivering. This extreme coldness will also likely wet any nearby floors."
