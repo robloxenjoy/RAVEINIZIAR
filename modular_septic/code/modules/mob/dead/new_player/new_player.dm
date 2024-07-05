@@ -152,6 +152,7 @@
 									character.hairstyle = "Bedhead 2"
 									character.facial_hairstyle = "Shaved"
 									character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
+									character.kaotiks_body = 100
 							switch(character.truerole)
 								if("Капнобатай")
 									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)

@@ -231,3 +231,4 @@
 
 	var/interaction_range = 1 //how far a mob has to be to interact with something, defaulted to 1 tile
 	var/truerole
+	var/kaotiks_body = 20
