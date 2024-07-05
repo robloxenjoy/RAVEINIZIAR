@@ -79,10 +79,10 @@
 	icon_state = "songster"
 	plane = ABOVE_GAME_PLANE
 	layer = FLY_LAYER
-	var/enabled = FALSE
-	var/list/rangers = list()
-	var/volume = 50
-
+//	var/enabled = FALSE
+//	var/list/rangers = list()
+//	var/volume = 50
+/*
 /obj/structure/beast/songster/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
@@ -132,7 +132,7 @@
 				if(!L || !L.client)
 					continue
 				L.stop_sound_channel(CHANNEL_JUKEBOX)
-
+*/
 /obj/structure/halo
 	name = "Halo"
 	desc = "Where does it come from?"

@@ -689,7 +689,7 @@
 /obj/structure/blockrole/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(ishuman(mover))
-		var/mobj/living/carbon/human/H = mover
+		var/mob/living/carbon/human/H = mover
 		if(H.truerole == allow_role)
 			return TRUE
 	return FALSE
