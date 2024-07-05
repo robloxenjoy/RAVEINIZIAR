@@ -68,7 +68,7 @@
 	timeout = 4 MINUTES
 
 /datum/mood_event/gross_food
-	description = "<span class='warning'>>Мне действительно эта еда не нравится.</span>\n"
+	description = "<span class='warning'>Мне действительно эта еда не нравится.</span>\n"
 	mood_change = -2
 	timeout = 4 MINUTES
 
