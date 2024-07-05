@@ -600,13 +600,13 @@
 	inhand_icon_state = "spear_wooden"
 	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
-	reach = 2
+//	reach = 2
 	min_force = 15
 	force = 20
 	min_force_strength = 1
 	force_strength = 1.4
-	min_throwforce = 10
-	throwforce = 20
+	min_throwforce = 15
+	throwforce = 23
 	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 7

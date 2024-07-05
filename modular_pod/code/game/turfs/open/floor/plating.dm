@@ -109,7 +109,7 @@
 					to_chat(user, span_danger(xbox_rage_msg()))
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return
-				if(locate(/obj/) in get_turf(src))
+				if(locate(/obj/structure/) in get_turf(src))
 					to_chat(user, span_danger(xbox_rage_msg()))
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return

@@ -17,6 +17,10 @@
 		return
 	use(user, TRUE)
 
+/obj/structure/wayto/podpol/attackby(obj/item/I, mob/living/user, params)
+	use(user, TRUE)
+	return TRUE
+
 /obj/structure/wayto/podpol/proc/use(mob/living/carbon/human/user, going_up = TRUE, is_ghost = FALSE)
 	if(user.truerole != "Капнобатай")
 		to_chat(user, span_notice("Меня там пацаны не примут."))

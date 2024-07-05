@@ -7,6 +7,9 @@
 	stamina = 20
 	sharpness = NONE
 
+/obj/projectile/bullet/pellet
+	organ_bonus = 0
+
 /obj/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
 	damage = 5
@@ -57,8 +60,9 @@
 /obj/projectile/bullet/pellet/shotgun_flechette
 	name = "12g flechette"
 	damage = 13
+	organ_bonus = 0
 	wound_bonus = -3
-	bare_wound_bonus = 0
+	bare_wound_bonus = 3
 	wound_falloff_tile = -1
 	edge_protection_penetration = 4
 	subtractible_armour_penetration = 4

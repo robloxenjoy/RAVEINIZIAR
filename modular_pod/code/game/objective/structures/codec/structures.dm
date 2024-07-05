@@ -140,6 +140,7 @@
 	var/can_walk = TRUE
 	var/can_touch = TRUE
 	var/knocksound = 'sound/effects/Glassknock.ogg'
+	var/proj_pass_rate = 100
 
 /obj/structure/codec/window/green
 	name = "Окно"
@@ -218,6 +219,18 @@
 			return TRUE
 	return ..()
 
+/obj/structure/codec/window/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(istype(mover, /obj/projectile))
+		if(!anchored)
+			return TRUE
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(proj_pass_rate))
+			return TRUE
+		return FALSE
+
 #define DOOR_CLOSE_WAIT 60
 
 /obj/machinery/codec/door
@@ -234,6 +247,7 @@
 	var/doorOpen = 'modular_septic/sound/doors/door_metal_open.ogg'
 	var/doorClose = 'modular_septic/sound/doors/door_metal_close.ogg'
 	var/doorDeni = list('modular_septic/sound/doors/door_metal_try1.ogg', 'modular_septic/sound/doors/door_metal_try2.ogg')
+	var/kicksuccess = 'modular_septic/sound/doors/smod_freeman.ogg'
 	COOLDOWN_DECLARE(key_cooldown)
 	var/key_cooldown_duration = 1 SECONDS
 	var/key_worthy = FALSE
@@ -243,6 +257,23 @@
 	var/autoclose = FALSE
 	var/autolock = FALSE
 	var/visible = TRUE
+
+/obj/machinery/codec/door/attack_foot(mob/user)
+	. = ..()
+	if(!density)
+		return
+	gordan_freeman_speedrunner(user, src)
+
+/obj/machinery/codec/door/proc/gordan_freeman_speedrunner(mob/living/user)
+	if(!isliving(user) || !user.Adjacent(src) || user.incapacitated())
+		return
+	playsound(src, kicksuccess, 90, FALSE, 2)
+	sound_hint()
+	src.visible_message(span_danger("[user] пинает [src]!"))
+//	to_chat(user, span_danger("Я пинаю [src]."))
+	user.changeNext_move(CLICK_CD_WRENCH)
+	if(!locked)
+		open()
 
 /obj/machinery/codec/door/proc/open(mob/living/carbon/user)
 	if(!COOLDOWN_FINISHED(src, open_cooldown))
@@ -306,6 +337,8 @@
 /obj/machinery/codec/door/attackby(obj/item/I, mob/living/user, params)
 	if(!COOLDOWN_FINISHED(src, key_cooldown))
 		to_chat(user, span_warning("Нужно успокоиться."))
+		return
+	if(!density)
 		return
 	if(istype(I, /obj/item/key) && key_worthy)
 		var/obj/item/key/key = I

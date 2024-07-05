@@ -106,6 +106,7 @@
 /turf/podpol/wall/ex_act(severity, target)
 	if(cantbreak)
 		return
+/*
 	if(target == src)
 //		qdel(src)
 		ChangeTurf(/turf/open/floor/plating/polovich/codec/dirt/mud, null, CHANGETURF_IGNORE_AIR)
@@ -123,8 +124,9 @@
 		if(EXPLODE_LIGHT)
 			if (prob(hardness))
 				ChangeTurf(/turf/open/floor/plating/polovich/codec/dirt/mud, null, CHANGETURF_IGNORE_AIR)
-	if(!density)
-		..()
+*/
+//	if(!density)
+//		..()
 
 /turf/podpol/wall/attackby(obj/item/W, mob/living/carbon/user, params)
 	. = ..()
