@@ -17,6 +17,7 @@
 "hH" = (/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
 "hL" = (/turf/open/floor/plating/polovich/way/station/mystic/crazy,/area/maintenance/polovich/forest/inner)
 "hQ" = (/obj/structure/wayto/podpol,/turf/open/floor/plating/polovich/way/hotstone4,/area/maintenance/polovich/forest)
+"id" = (/obj/effect/spawner/random/structure/maphelp/fire/inferno/ten/magic,/turf/open/floor/plating/polovich/way/cavero,/area/maintenance/polovich/forest/cave)
 "jd" = (/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/inner)
 "jY" = (/obj/structure/chair/sofa/right,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
 "km" = (/obj/structure/table/goody,/obj/item/podpol_weapon/spear/wooden,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
@@ -89,6 +90,7 @@
 "OV" = (/obj/structure/codec/bulb/green{dir = 4},/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "Pa" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
 "Pl" = (/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/inner)
+"Po" = (/obj/effect/landing/svogod,/turf/open/floor/plating/polovich/way/cavero,/area/maintenance/polovich/forest/cave)
 "Qm" = (/obj/structure/railing,/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "Qp" = (/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest)
 "Rb" = (/turf/open/floor/plating/polovich/way/ravein,/area/maintenance/polovich/forest)
@@ -205,7 +207,7 @@ gegegegegegegegegegegegegegegegegegegegegegegegegegegegevSvSvSvSvSvSRTRTRTRTRTRT
 gegegegegegegegegegegegegegegegegegegegegegegegegegegeOAOAzgzgzgzgzgRTRTRTRTRTRTRTRTRTRTRTRTRTOAOAgegegegegegegegeWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVnQnQnQnQnQnQnQnQnQnQnQnQ
 gegegegegegegegegegegegegegegegegegegegegegegegegegeOAOARTRTzgzgzgzgzgRTRTRTRTRTRTRTRTRTRTRTRTRTRTOAgegegegegegegegeWTWTWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVnQnQnQnQnQnQnQnQnQnQnQnQ
 gegegegegegegegegegegegegegegegegegegegegegegegegegegeOAOARTRTzgzgzgzgzgRTRTRTRTRTRTRTzgRTRTRTRTRTOAOAOAOAOAOAOAgeWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
-gegegegegegegegegegegegegegegegegegegegegegegegegegegegeOARTRTzgzgzgzgzgRTRTRTRTRTRTRTzgzgzgzgRTRTRTRTRTRTRTRTOAgegegegegeWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
+gegegegegegegegegegegegegegegegegegegegegegegegegegegegeOARTRTzgzgzgzgzgRTRTRTRTRTRTRTidzgPozgRTRTRTRTRTRTRTRTOAgegegegegeWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 gegegegegegegegegegegegegegegegegegegegegegegegegegegegeOARTRTzgzgzgzgzgzgRTRTRTRTRTRTzgzgzgzgRTzgRTzgRTzgRTRTOAgegeWTgegegegegeWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVqVqVqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 qVgegegegegegegegegegegegegegegegegegegegegegegegegegeOARTRTRTRTRTzgzgzgzgzgRTRTRTRTRTRTzgzgzgzgzgRTzgRTzgRTRTOAgegeWTgegegegeWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 qVgegegegegegegegegegegegegegeqVqVqVgegeqVgegegegegegeOARTRTRTRTRTzgzgzgzgzgzgRTRTRTzgzgzgzgzgzgzgRTzgRTzgRTRTOAgegegegeWTgeWTgeWTgegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
