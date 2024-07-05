@@ -90,7 +90,7 @@
 	var/powerwall = 10
 	var/hardness = 40
 	var/mineable = TRUE
-	var/mine_hp = 8
+	var/mine_hp = 7
 	var/ore_type = /obj/item/stone
 	var/ore_amount = 1
 	var/defer_change = TRUE
@@ -223,6 +223,9 @@
 
 /turf/podpol/wall/shroom
 	icon = 'modular_pod/icons/turf/closed/cavero.dmi'
+	mine_hp = 5
+	baseturfs = /turf/open/floor/plating/polovich/way/dirtyd
+	personal_turf = /turf/open/floor/plating/polovich/way/dirtyd
 	var/random = TRUE
 
 /turf/podpol/wall/shroom/get_projectile_hitsound(obj/projectile/projectile)

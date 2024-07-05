@@ -132,7 +132,7 @@
 							character.fully_heal(TRUE)
 
 							var/eye_coloring = pick("#000000", "#1f120f")
-
+							var/height = HUMAN_HEIGHT_MEDIUM
 							switch(client.role_ch)
 								if("капнобатай")
 									character.truerole = "Капнобатай"
@@ -151,8 +151,9 @@
 									character.pod_faction = "бог сво"
 									character.hairstyle = "Bedhead 2"
 									character.facial_hairstyle = "Shaved"
-									character.hair_color = pick("#00ff00")
+									character.hair_color = pick("#ff0aff")
 									character.kaotiks_body = 100
+									height = HUMAN_HEIGHT_TALLEST
 							switch(character.truerole)
 								if("Капнобатай")
 									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
@@ -239,6 +240,7 @@
 
 		//					for(var/obj/item/organ/genital/genital in character.internal_organs)
 		//						genital.build_from_dna(character.dna, genital.mutantpart_key)
+							character.height = height
 							character.dna.features["body_size"] = BODY_SIZE_NORMAL
 							character.dna.update_body_size()
 							character.dna.update_dna_identity()

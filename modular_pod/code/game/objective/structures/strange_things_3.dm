@@ -675,6 +675,25 @@
 //		if(3)
 //			set_light(4, 3, "#b90000")
 
+/obj/structure/blockrole
+	name = "Опа"
+	desc = "Нельзя дальше."
+	icon = null
+	icon_state = null
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	var/allow_role = null
+
+/obj/structure/blockrole/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(ishuman(mover))
+		var/mobj/living/carbon/human/H = mover
+		if(H.truerole == allow_role)
+			return TRUE
+	return FALSE
+
+/obj/structure/blockrole/konch
+	allow_role = "Конченный"
+
 /obj/structure/sign/poster/contraband/codec/lians
 	name = "Карза"
 	desc = "Сколько жизней спасла..."
@@ -791,6 +810,7 @@
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "setupper"
 	inhand_icon_state = null
+	worn_icon = null
 	worn_icon_state = null
 	hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 	w_class = WEIGHT_CLASS_BULKY
