@@ -214,7 +214,7 @@
 	desc = "А чё бы нет?"
 	buy_message = "Я ахуеннен."
 	id = "market_crash"
-	cost = 300
+	cost = 700
 	single_use = TRUE
 
 /datum/bobux_reward/market_crash/on_buy(client/noob)
@@ -277,7 +277,7 @@
 	desc = "Заставит всех ООПБ!"
 	buy_message = "Я сын чангуса!"
 	id = "fart"
-	cost = 100
+	cost = 200
 //	single_use = TRUE
 	infinite_buy = TRUE
 
