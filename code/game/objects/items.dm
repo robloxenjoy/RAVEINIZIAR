@@ -489,12 +489,14 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(reagents.total_volume > 0)
 			for(var/datum/reagent/R in reagents.reagent_list)
 				if(!W.poisoned_type)
-					W.poisoned_type = R.type
+//					W.poisoned_type = R.type
+					W.poisoned_type = R
 					W.current_fucked_reagents += R.volume
 					reagents.remove_reagent(R.type, R.volume)
 					user.visible_message(span_danger("[user] окунает [W] в [src]!"), span_danger("Я окунаю [W] в [src]!"))
 					if(W.current_fucked_reagents > W.max_reagents)
 						W.current_fucked_reagents = W.max_reagents
+/*
 				else
 /*
 					if(R.type != W.poisoned_type)
@@ -503,9 +505,10 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 					W.poisoned_type += R.type
 					W.current_fucked_reagents += R.volume
 					reagents.remove_reagent(R.type, R.volume)
-					user.visible_message(span_danger("[user] окунает [W] в [src]!"), span_danger("Я окунаею [W] в [src]!"))
+					user.visible_message(span_danger("[user] окунает [W] в [src]!"), span_danger("Я окунаю [W] в [src]!"))
 					if(W.current_fucked_reagents > W.max_reagents)
 						W.current_fucked_reagents = W.max_reagents
+*/
 		else
 			to_chat(user, span_notice("Здесь нет реагентов!"))
 

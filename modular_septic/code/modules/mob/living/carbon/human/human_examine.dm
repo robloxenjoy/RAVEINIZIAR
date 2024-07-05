@@ -234,14 +234,11 @@
 		var/max_fingers = bodypart.get_max_digits()
 		if(max_fingers)
 			var/fingers = bodypart.get_digits_amount()
-			var/finger_type = "палец руки"
 			var/static/list/toe_zones = list(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
-			if(bodypart.body_zone in toe_zones)
-				finger_type = "палец ноги"
 			if(!LAZYLEN(clothingonpart(bodypart)))
 				if(fingers < max_fingers)
 					var/missing_fingers = max_fingers - fingers
-					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_fingers] [finger_type]!</span>"
+					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_fingers]!</span>"
 	for(var/zone in missing)
 		//redundancy checks
 		if((GLOB.bodyzone_to_parent[zone] && ((GLOB.bodyzone_to_parent[zone] in missing) || (GLOB.bodyzone_to_parent[zone] in stumps))))
