@@ -50,8 +50,8 @@
 	det_time = 1.5 SECONDS
 
 /obj/item/grenade/gas/incredible_gas
-	name = "IG gas grenade"
-	desc = "Cool IG - incredible gas grenade."
+	name = "Газовая Граната"
+	desc = "IG-Type - поблёскивает на корпусе."
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "syndicate"
 	base_icon_state = "syndicate"
@@ -74,7 +74,7 @@
 		flick("[base_icon_state]_open", src)
 		sleep(1.3)
 		icon_state = "[initial(icon_state)]_active"
-		addtimer(CALLBACK(src, .proc/annoying_fucking_beeping), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(annoying_fucking_beeping)), 5 SECONDS)
 
 /obj/item/grenade/gas/incredible_gas/proc/annoying_fucking_beeping()
 	if(active)
@@ -84,8 +84,8 @@
 			gassyturf.pollute_turf(/datum/pollutant/incredible_gas, 1000)
 
 /obj/item/grenade/gas/urinepoo_gas
-	name = "UP gas grenade"
-	desc = "Cool UP - urinepoo gas grenade."
+	name = "Газовая Граната"
+	desc = "UP-Type - поблёскивает на корпусе.."
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "syndicate"
 	base_icon_state = "syndicate"
@@ -108,7 +108,7 @@
 		flick("[base_icon_state]_open", src)
 		sleep(1.3)
 		icon_state = "[initial(icon_state)]_active"
-		addtimer(CALLBACK(src, .proc/annoying_fucking_beeping), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(annoying_fucking_beeping)), 5 SECONDS)
 
 /obj/item/grenade/gas/urinepoo_gas/proc/annoying_fucking_beeping()
 	if(active)
@@ -118,8 +118,8 @@
 			gassyturf.pollute_turf(/datum/pollutant/urinepoo_gas, 1000)
 
 /obj/item/grenade/gas/sleeptime_gas
-	name = "SP gas grenade"
-	desc = "Cool SP - sleeptime gas grenade."
+	name = "Газовая Граната"
+	desc = "SP-Type - поблёскивает на корпусе."
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "syndicate"
 	base_icon_state = "syndicate"
@@ -142,7 +142,7 @@
 		flick("[base_icon_state]_open", src)
 		sleep(1.3)
 		icon_state = "[initial(icon_state)]_active"
-		addtimer(CALLBACK(src, .proc/annoying_fucking_beeping), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(annoying_fucking_beeping)), 5 SECONDS)
 
 /obj/item/grenade/gas/sleeptime_gas/proc/annoying_fucking_beeping()
 	if(active)

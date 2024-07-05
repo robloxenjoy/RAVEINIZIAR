@@ -225,9 +225,10 @@
 	name = "Kapno Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
-	uniform = /obj/item/clothing/under/codec/purp/red
-	pants = /obj/item/clothing/pants/codec/purp/red
+	uniform = /obj/item/clothing/under/codec/purp
+	pants = /obj/item/clothing/pants/codec/purp
 	shoes = /obj/item/clothing/shoes/jackboots
+	suit = /obj/item/clothing/suit/armor/roba
 
 /datum/outfit/kapnofather
 	name = "Kapnofather Uniform"
@@ -236,9 +237,11 @@
 	r_pocket = /obj/item/key/podpol/woody/kapnokey
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
 	belt = /obj/item/gun/ballistic/automatic/pistol/cortes
-	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
+	suit = /obj/item/clothing/suit/armor/roba
+	oversuit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	pants = /obj/item/clothing/pants/codec/purp/red
 	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/helmet/codec/def_yel
 
 /datum/outfit/konch
 	name = "Konch Uniform"

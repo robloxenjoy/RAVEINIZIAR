@@ -527,7 +527,7 @@
 	max_integrity = 400
 	limb_integrity = 400
 	body_parts_covered = HEAD|FACE|EYES|JAW
-	flags_inv = HIDEHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
+	flags_inv = HIDEHAIR|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
 	flags_cover = HEADCOVERSEYES | PEPPERPROOF
 	repairable_by = /obj/item/stack/ballistic/plate
 	repairable_by_offhand = null
@@ -554,3 +554,35 @@
 	equip_sound = 'modular_septic/sound/armor/equip/helmet_use.ogg'
 	pickup_sound = 'modular_septic/sound/armor/equip/helmet_pickup.ogg'
 	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.ogg'
+
+/obj/item/clothing/suit/armor/roba
+	name = "Роба"
+	desc = "Главное, что цвет хороший."
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	icon_state = "kapno"
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	worn_icon_state = "kapnob"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	max_integrity = 180
+	integrity_failure = 0.1
+	limb_integrity = 150
+	body_parts_covered = CHEST|VITALS|GROIN|NECK|LEGS|ARMS
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 2, \
+				CRUSHING = 1, \
+				CUTTING = 5, \
+				PIERCING = 2, \
+				IMPALING = 2, \
+				LASER = 1, \
+				ENERGY = 0, \
+				BOMB = 0, \
+				BIO = 0, \
+				FIRE = 1, \
+				ACID = 1, \
+				MAGIC = 0, \
+				WOUND = 3, \
+				ORGAN = 1)
+	strip_delay = 90

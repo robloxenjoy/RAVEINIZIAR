@@ -547,7 +547,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/armor_find(mob/living/carbon/user)
-	var/list/otherlist = list("Шлем (50)", "Лёгкий Бронежилет (50)", "Кольчуга (50)", "Перчатки (30)", "Баллистическая Маска (40)")
+	var/list/otherlist = list("Лёгкий Бронежилет (50)", "Кольчуга (50)", "Перчатки (30)", "Баллистическая Маска (40)")
 	var/thingy = input(user, "Что за броню я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -558,14 +558,6 @@
 		to_chat(user, span_meatymeat("Нужны каотики!"))
 		return
 	switch(thingy)
-		if("Шлем (50)")
-			if(pref_source.bobux_amount < 50)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
-				return
-			new /obj/item/clothing/head/helmet/codec/def_yel(get_turf(user))
-			pref_source.bobux_amount -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Лёгкий Бронежилет (50)")
 			if(pref_source.bobux_amount < 50)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
@@ -602,7 +594,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Осколочная Граната (70)", "Кирка (50)")
+	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)" "Кирка (50)")
 	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -619,6 +611,14 @@
 				return
 			new /obj/item/grenade/frag(get_turf(user))
 			pref_source.bobux_amount -= 70
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Газовая Граната (50)")
+			if(pref_source.bobux_amount < 50)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/grenade/gas/incredible_gas(get_turf(user))
+			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Кирка (50)")
@@ -718,3 +718,59 @@
 /obj/item/paperpodpol/first
 	info = "Я потерялся в этой хуйне. Свет дурманит меня, лучше бы оказался во тьме. Я насчитал уже 30 узоров на этом... На этой... Не знаю что это. Кажись, я понял, что они недооценивают меня, я осознал это. Пора спать."
 */
+/obj/structure/barbwire
+	name = "Колючая Проволока"
+	desc = "НЕ ЛЕЗЬ."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "barbwire"
+	density = FALSE
+	anchored = TRUE
+	opacity = FALSE
+
+/obj/structure/barbwire/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+	update_appearance()
+
+	if(traps)
+		if(prob(2))
+			new /obj/item/restraints/legcuffs/beartrap(get_turf(src))
+
+/obj/structure/barbwire/ComponentInitialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(dont_step),
+		COMSIG_ATOM_EXITED = PROC_REF(on_uncrossed),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/barbwire/proc/dont_step(datum/source, atom/movable/AM, thrown_at = FALSE)
+	SIGNAL_HANDLER
+	if(!isturf(loc) || !isliving(AM))
+		return
+	var/mob/living/L = AM
+	if(!thrown_at && L.movement_type & (FLYING|FLOATING))
+		return
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		var/obj/item/bodypart/affecting = C.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
+		C.visible_message(span_meatymeat("[C] ранится об [src]!"),span_meatymeat("Я ранюсь об [src]!"), span_hear("Я слышу звуки плоти."))
+		C.apply_damage(10, BRUTE, affecting, wound_bonus = 5, sharpness = SHARP_EDGED)
+		affecting.adjust_germ_level(50)
+		playsound(get_turf(src), 'modular_septic/sound/weapons/melee/sharpy1.ogg', 100 , FALSE, FALSE)
+
+/obj/structure/barbwire/proc/on_uncrossed(datum/source, atom/movable/gone, direction)
+	SIGNAL_HANDLER
+	if(ishuman(gone))
+		var/mob/living/carbon/human/H = M
+		if(prob(50))
+			H.visible_message(span_meatymeat("[H] пытается вырваться из [src]!"))
+			var/obj/item/bodypart/affecting = H.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
+			H.apply_damage(10, BRUTE, affecting, wound_bonus = 5, sharpness = SHARP_EDGED)
+			affecting.adjust_germ_level(50)
+			return FALSE
+		else
+			H.visible_message(span_meatymeat("[H] вырывается из [src]!"))
+			return TRUE
+
+	return ..()

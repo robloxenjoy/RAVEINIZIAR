@@ -74,7 +74,7 @@
 		user.mind?.add_memory(MEMORY_BOMB_PRIMED, list(DETAIL_BOMB_TYPE = src), story_value = STORY_VALUE_OKAY)
 	active = TRUE
 	if(grenade_flags & GRENADE_BUTTONED)
-		to_chat(user, span_warning("I press the arming button on the [src]."))
+		to_chat(user, span_warning("Запускаю [src] с помощью кнопки."))
 	if(!(grenade_flags & GRENADE_PINNED))
 		spoon_grenade()
 	update_appearance(UPDATE_ICON)
@@ -115,7 +115,7 @@
 		playsound(user, 'modular_septic/sound/weapons/bomb_press.ogg', 35, FALSE)
 		pressing_button()
 		update_appearance(UPDATE_ICON)
-		addtimer(CALLBACK(src, .proc/pressing_button), button_press_time)
+		addtimer(CALLBACK(src, PROC_REF(pressing_button)), button_press_time)
 
 	if(!active && (grenade_flags & GRENADE_BUTTONED))
 		arm_grenade(user)
@@ -165,7 +165,7 @@
 /obj/item/grenade/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	. = ..()
 	if(!(grenade_flags & GRENADE_IMPACT) && (grenade_flags & GRENADE_PINNED) && active && !grenade_spooned)
-		addtimer(CALLBACK(src, .proc/spoon_grenade), spoon_time)
+		addtimer(CALLBACK(src, PROC_REF(spoon_grenade)), spoon_time)
 
 /obj/item/grenade/dropped(mob/user, silent)
 	. = ..()
@@ -183,7 +183,7 @@
 		sound_hint()
 		playsound(src, spoon_sound, 60, FALSE)
 	SEND_SIGNAL(src, COMSIG_GRENADE_ARMED, det_time)
-	det_timer = addtimer(CALLBACK(src, .proc/detonate), det_time, TIMER_STOPPABLE)
+	det_timer = addtimer(CALLBACK(src, PROC_REF(detonate)), det_time, TIMER_STOPPABLE)
 	update_appearance(UPDATE_ICON)
 
 /obj/item/pin
