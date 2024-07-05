@@ -39,7 +39,7 @@
 "oP" = (/turf/open/floor/plating/polovich/way/deadmeat_full,/area/maintenance/polovich/forest/inner)
 "pd" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "pq" = (/turf/open/floor/plating/polovich/way/monumental{dir = 4},/area/maintenance/polovich/forest/cave)
-"pF" = (/obj/structure/table/oldwood,/obj/item/storage/pill_bottle/carbonylmethamphetamine,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
+"pF" = (/obj/structure/table/oldwood,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
 "pQ" = (/obj/structure/closet/crate/wooden,/obj/item/melee/bita/hammer/heavy,/obj/item/melee/bita/hammer/heavy,/obj/item/melee/bita/hammer/heavy,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
 "pX" = (/obj/structure/barbwire{dir = 8},/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
 "qh" = (/obj/effect/landing/konch,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/inner)

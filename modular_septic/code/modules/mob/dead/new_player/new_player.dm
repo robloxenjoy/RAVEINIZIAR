@@ -270,7 +270,7 @@
 	uniform = null
 	r_pocket = /obj/item/key/podpol/woody/kapnokey
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
-	belt = /obj/item/gun/ballistic/automatic/pistol/cortes
+	belt = /obj/item/podpol_weapon/sword/steel
 	suit = /obj/item/clothing/suit/armor/roba
 	oversuit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	pants = /obj/item/clothing/pants/codec/purp/red
@@ -281,6 +281,7 @@
 	name = "Konch Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/konchkey
+	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
 	uniform = /obj/item/clothing/under/codec/purp/black
 	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots
