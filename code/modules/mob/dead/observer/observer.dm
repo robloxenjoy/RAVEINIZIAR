@@ -593,6 +593,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 
 	client.ready_char = FALSE
+	SSdroning.kill_loop(client)
 	SSdroning.kill_droning(client)
 	var/mob/dead/new_player/M = new /mob/dead/new_player()
 	M.ckey = ckey

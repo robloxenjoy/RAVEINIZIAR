@@ -12,6 +12,7 @@
 	var/last_droning_sound
 	/// Current ambient track
 	var/sound/droning_sound
+	var/loop_sound = FALSE
 
 	/// CHARACTER
 	var/name_ch = null
