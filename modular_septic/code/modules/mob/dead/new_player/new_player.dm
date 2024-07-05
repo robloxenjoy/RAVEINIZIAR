@@ -151,7 +151,7 @@
 									character.pod_faction = "бог сво"
 									character.hairstyle = "Bedhead 2"
 									character.facial_hairstyle = "Shaved"
-									character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
+									character.hair_color = pick("#00ff00")
 									character.kaotiks_body = 100
 							switch(character.truerole)
 								if("Капнобатай")
