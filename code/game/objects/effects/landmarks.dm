@@ -7,7 +7,7 @@
 	layer = TURF_LAYER
 	invisibility = INVISIBILITY_ABSTRACT
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	var/spending = 5
+	var/spending = null
 
 /obj/effect/landing/Initialize(mapload)
 	. = ..()
@@ -22,6 +22,10 @@
 
 /obj/effect/landing/konch
 	name = "конченный"
+
+/obj/effect/landing/svogod
+	name = "бог сво"
+	spending = 2
 
 /obj/effect/landing/oper
 	name = "oper"

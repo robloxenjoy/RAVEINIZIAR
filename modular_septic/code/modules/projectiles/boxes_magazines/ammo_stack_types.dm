@@ -169,7 +169,7 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/a762svd
-	name = "7.62x54R rounds"
+	name = "7.62 патроны"
 	icon_state = "c762-1"
 	base_icon_state = "c762"
 //	world_icon_state = "762-casing"

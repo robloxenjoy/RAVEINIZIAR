@@ -99,6 +99,11 @@
 			client.role_ch = "капнобатай"
 		if("Конченный")
 			client.role_ch = "конченный"
+		if("Бог СВО")
+			if(GLOB.world_deaths_crazy < 20)
+				alert("Недостаточно смертей в мире.")
+				return
+			client.role_ch = "бог сво"
 		else
 			alert("Непонятно. Роль обычного капнобатая.")
 			client.role_ch = "капнобатай"
@@ -111,8 +116,14 @@
 			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 				if(client)
 					if(spawn_point.name == client.role_ch)
+						if(spawn_point.spending)
+							if(spawn_point.spending <= 0)
+								alert("Больше нет слотов.")
+								client.ready_char = FALSE
+								return FALSE
+							else
+								spawn_point.spending--
 						var/mob/living/carbon/human/character = new(spawn_point.loc)
-
 						character.set_species(/datum/species/human)
 						character.gender = MALE
 						character.genitals = GENITALS_MALE
@@ -159,7 +170,9 @@
 									character.special_zvanie = "Самый Конченный"
 								else
 									character.equipOutfit(/datum/outfit/konch)
-
+							if("Бог СВО")
+								character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
+								character.equipOutfit(/datum/outfit/svogod)
 						for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
 	//						if(initial(organ_eyes.eye_color))
 	//							continue
@@ -262,3 +275,11 @@
 	belt = /obj/item/melee/bita/cep/iron
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	back = /obj/item/melee/shieldo/buckler/wooden
+
+/datum/outfit/svogod
+	name = "Svogod Uniform"
+
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
+	back = /obj/item/storage/belt/military/itobe/svo
+	suit_store = /obj/item/gun/ballistic/automatic/remis/svd

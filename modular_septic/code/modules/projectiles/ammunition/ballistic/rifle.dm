@@ -55,8 +55,8 @@
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/a556steyr
 
 /obj/item/ammo_casing/a762svd
-	name = "7.62x54R bullet casing"
-	desc = "A 7.62x54R bullet casing."
+	name = "Патрон 7.62"
+	desc = "Большой."
 	icon_state = "c762"
 	base_icon_state = "c762"
 //	world_icon_state = "762-casing"
@@ -65,8 +65,8 @@
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/a762svd
 
 /obj/item/ammo_casing/a762svd/ap
-	name = "7.62x54R black-tip bullet casing"
-	desc = "A 7.62x54R black-tip bullet casing."
+	name = "Патрон 7.62 БП"
+	desc = "Большой."
 //	world_icon_state = "762b-casing"
 	caliber = CALIBER_54R
 	projectile_type = /obj/projectile/bullet/a762svd/ap
