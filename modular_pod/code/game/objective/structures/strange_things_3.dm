@@ -753,7 +753,7 @@
 /obj/structure/barbwire/proc/on_uncrossed(datum/source, atom/movable/gone, direction)
 	SIGNAL_HANDLER
 	if(ishuman(gone))
-		var/mob/living/carbon/human/H = M
+		var/mob/living/carbon/human/H = gone
 		if(prob(50))
 			H.visible_message(span_meatymeat("[H] пытается вырваться из [src]!"))
 			var/obj/item/bodypart/affecting = H.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
@@ -763,5 +763,3 @@
 		else
 			H.visible_message(span_meatymeat("[H] вырывается из [src]!"))
 			return TRUE
-
-	return ..()
