@@ -1,6 +1,6 @@
 /obj/item/organ/genital/penis
-	name = "knob"
-	desc = "I staple tapeworms on my penis, so the flesh will drink brainjuice from your fetus."
+	name = "Член"
+	desc = "Какого хуя."
 	icon = 'modular_septic/icons/obj/items/genitalia/knob.dmi'
 	icon_state = "penis"
 	base_icon_state = "penis"
@@ -42,12 +42,12 @@
 		else
 			size_suffix = "4"
 	return size_suffix
-
+/*
 /obj/item/organ/genital/penis/update_icon_state()
 	. = ..()
 	//ignore the arousal state of the knob
 	icon_state = "[base_icon_state][sprite_suffix ? "_[copytext(sprite_suffix, 1, length(sprite_suffix)-1)]" : ""]"
-
+*/
 /*
 /obj/item/organ/genital/penis/update_icon_state()
 	. = ..()

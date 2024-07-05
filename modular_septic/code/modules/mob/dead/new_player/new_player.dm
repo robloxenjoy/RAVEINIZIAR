@@ -185,9 +185,22 @@
 								character.right_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
 								organ_eyes.old_eye_color = eye_coloring
 								character.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
+/*
 						for(var/obj/item/organ/genital/genital in character.internal_organs)
 							genital.Remove(character)
 							qdel(genital)
+*/
+						var/min_dicksize = 1
+						var/max_dicksize = 20
+						var/min_breastsize = 1
+						var/max_breastsize = 7
+						character.dna.features["penis_size"] = clamp(rand(min_dicksize, max_dicksize), PENIS_MIN_LENGTH, PENIS_MAX_LENGTH)
+						character.dna.features["penis_girth"] = clamp(character.dna.features["penis_size"] - 3, PENIS_MIN_GIRTH, PENIS_MAX_GIRTH)
+						character.dna.features["breasts_size"] = clamp(rand(min_breastsize, max_breastsize), BREASTS_MIN_SIZE, BREASTS_MAX_SIZE)
+						character.dna.features["breasts_lactation"] = FALSE
+						character.dna.features["penis_circumcised"] = FALSE
+						for(var/obj/item/organ/genital/genital in character.internal_organs)
+							genital.build_from_dna(character.dna, genital.mutantpart_key)
 
 						mind.active = FALSE
 						mind.transfer_to(character)
