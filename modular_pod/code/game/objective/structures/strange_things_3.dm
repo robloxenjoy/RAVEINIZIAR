@@ -760,3 +760,4 @@
 			return
 		else
 			H.visible_message(span_meatymeat("[H] вырывается из [src]!"))
+			return COMPONENT_ATOM_BLOCK_EXIT
