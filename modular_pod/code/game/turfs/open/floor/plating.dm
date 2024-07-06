@@ -144,7 +144,8 @@
 					return
 				if(do_after(user, 2 SECONDS, target=src))
 //					var/john = T.install_mine
-					new var/obj/structure/mineexplosive/based/yes(get_turf(src))
+					var/obj/structure/mineexplosive/based/yes = new(get_turf(src))
+//					new yes(get_turf(src))
 					yes.mineid = T.id_mine
 					qdel(T)
 					user.visible_message(span_meatymeat("[user] устанавливает [mine]."), span_meatymeat("Я устанавливаю [mine]."), span_hear("Я слышу постройку."))
