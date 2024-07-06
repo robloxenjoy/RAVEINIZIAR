@@ -944,6 +944,7 @@
 	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
 		shrapnel_initialized = TRUE
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+	SEND_SIGNAL(src, COMSIG_GRENADE_DETONATE, lanced_by)
 	if(ex_dev || ex_heavy || ex_light || ex_flame)
 		var/turf/explosionturf = get_turf(src)
 		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
