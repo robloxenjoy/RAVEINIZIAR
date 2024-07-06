@@ -142,7 +142,7 @@
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return
 				if(do_after(user, 2 SECONDS, target=src))
-					var/mine = new /obj/structure/mineexplosive(get_turf(src))
+					var/obj/structure/mineexplosive/mine = new /obj/structure/mineexplosive(get_turf(src))
 					mine.mineid = T.id_mine
 					qdel(T)
 					user.visible_message(span_meatymeat("[user] устанавливает [mine]."), span_meatymeat("Я устанавливаю [mine]."), span_hear("Я слышу постройку."))
