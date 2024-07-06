@@ -807,7 +807,7 @@
 		var/mob/living/carbon/human/H = gone
 		if(prob(50))
 			H.visible_message(span_meatymeat("[H] пытается вырваться из [src]!"))
-			var/obj/item/bodypart/affecting = H.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
+			var/obj/item/bodypart/affecting = H.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
 			H.apply_damage(10, BRUTE, affecting, wound_bonus = 5, sharpness = SHARP_EDGED)
 			affecting.adjust_germ_level(50)
 			return COMPONENT_ATOM_BLOCK_EXIT
