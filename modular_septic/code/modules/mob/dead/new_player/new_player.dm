@@ -119,7 +119,7 @@
 					if(spawn_point.name == client.role_ch)
 						if(spawn_point.spending > 0)
 							spawn_point.spending--
-							var/mob/living/carbon/human/character = new(spawn_point.loc)
+							var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
 							character.set_species(/datum/species/human)
 							character.gender = MALE
 							character.genitals = GENITALS_MALE
