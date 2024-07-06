@@ -114,7 +114,7 @@
 /// Above this point in fatigueloss, we enter fatiguecrit
 #define FATIGUE_CRIT_THRESHOLD 100
 /// Above this point in fatigueloss, halve basic speed and dodge
-#define FATIGUE_HALVE_MOVE 65
+#define FATIGUE_HALVE_MOVE 55
 
 /// Default penalty for parrying dicerolls, normally lasts PARRYING_PENALTY_COOLDOWN_DURATION
 #define PARRYING_PENALTY 4
