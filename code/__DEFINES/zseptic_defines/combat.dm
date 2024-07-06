@@ -108,9 +108,9 @@
 /// How much to multiply fatigue regen when lying down
 #define FATIGUE_REGEN_LYING_MULTIPLIER 3
 /// Default maximum fatigue for a mob
-#define DEFAULT_MAX_FATIGUE 150
+#define DEFAULT_MAX_FATIGUE 170
 /// This is the lowest fatigue amount we can reach ever
-#define FATIGUE_MINIMUM -100
+#define FATIGUE_MINIMUM -170
 /// Above this point in fatigueloss, we enter fatiguecrit
 #define FATIGUE_CRIT_THRESHOLD 100
 /// Above this point in fatigueloss, halve basic speed and dodge
