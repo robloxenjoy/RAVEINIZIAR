@@ -869,8 +869,8 @@
 		for(var/obj/structure/mineexplosive/M in world)
 			if(M.mineid != src.id_detonator)
 				continue
-			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/structure/mineexplosive/, detonate))
-//			INVOKE_ASYNC(M, /obj/structure/mineexplosive.proc/detonate)
+//			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/structure/mineexplosive/, detonate))
+			INVOKE_ASYNC(M, /obj/structure/mineexplosive.proc/detonate)
 
 /obj/item/minesetup
 	name = "Мина"
@@ -879,7 +879,7 @@
 	icon_state = "mine"
 	inhand_icon_state = null
 	worn_icon = null
-	worn_icon_state = null
+	worn_icon_state = "shard"
 	w_class = WEIGHT_CLASS_BULKY
 	wound_bonus = 1
 	bare_wound_bonus = 3
