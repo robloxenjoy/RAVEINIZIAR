@@ -34,8 +34,9 @@
 	ADD_TRAIT(src, TRAIT_INCAPACITATED, FATIGUE)
 	ADD_TRAIT(src, TRAIT_IMMOBILIZED, FATIGUE)
 //	ADD_TRAIT(src, TRAIT_FLOORED, FATIGUE)
-	setFatigueLoss(FATIGUE_CRIT_THRESHOLD + 20, FALSE)
-	Stun(7 SECONDS)
+//	setFatigueLoss(FATIGUE_CRIT_THRESHOLD + 20, FALSE)
+	setFatigueLoss(90, FALSE)
+	Stun(8 SECONDS)
 	fatigue_grunt()
 	//rip
 	if(ishuman(src))

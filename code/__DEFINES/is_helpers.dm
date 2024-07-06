@@ -204,6 +204,8 @@ GLOBAL_LIST_INIT(piggers, typecacheof(list(
 
 #define islandmine(A) (istype(A, /obj/effect/mine))
 
+#define iscrazymine(A) (istype(A, /obj/structure/mineexplosive))
+
 #define issupplypod(A) (istype(A, /obj/structure/closet/supplypod))
 
 #define isammocasing(A) (istype(A, /obj/item/ammo_casing))

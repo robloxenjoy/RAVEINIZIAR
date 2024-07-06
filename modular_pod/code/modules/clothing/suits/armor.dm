@@ -571,11 +571,11 @@
 	body_parts_covered = CHEST|VITALS|GROIN|NECK|LEGS|ARMS
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
-				EDGE_PROTECTION = 2, \
+				EDGE_PROTECTION = 1, \
 				CRUSHING = 1, \
-				CUTTING = 5, \
-				PIERCING = 2, \
-				IMPALING = 2, \
+				CUTTING = 1, \
+				PIERCING = 1, \
+				IMPALING = 1, \
 				LASER = 1, \
 				ENERGY = 0, \
 				BOMB = 0, \
@@ -583,6 +583,6 @@
 				FIRE = 1, \
 				ACID = 1, \
 				MAGIC = 0, \
-				WOUND = 3, \
+				WOUND = 1, \
 				ORGAN = 1)
 	strip_delay = 90
