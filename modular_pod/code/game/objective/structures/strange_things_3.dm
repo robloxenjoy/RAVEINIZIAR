@@ -948,6 +948,8 @@
 		var/turf/explosionturf = get_turf(src)
 		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
 		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+		if(!QDELETED(src))
+			qdel(src)
 
 /obj/structure/mineexplosive/based
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mine
