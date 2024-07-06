@@ -126,6 +126,7 @@
 				else
 					to_chat(user, span_danger(xbox_rage_msg()))
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
 
 			if(istype(W, /obj/item/minesetup))
 				if(istype(loc, /area/maintenance/polovich/forest/inner))
@@ -152,6 +153,7 @@
 				else
 					to_chat(user, span_danger(xbox_rage_msg()))
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
 
 			if(W.get_sharpness())
 				user.visible_message(span_notice("[user] размахивает с помощью [W]."),span_notice("Я размахиваю с помощью [W]."), span_hear("Я слышу взмах."))

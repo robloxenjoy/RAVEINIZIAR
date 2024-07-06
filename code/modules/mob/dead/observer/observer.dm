@@ -12,7 +12,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	stat = DEAD
 	density = FALSE
 	see_invisible = SEE_INVISIBLE_OBSERVER
-	see_in_dark = 2
+	see_in_dark = 0
 	lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
 	invisibility = INVISIBILITY_OBSERVER
 	hud_type = /datum/hud/ghost
@@ -331,7 +331,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(response != "Ghost")
 		return
 	ghostize(FALSE)
-
+/*
 /mob/dead/observer/Move(NewLoc, direct, glide_size_override = 32)
 	if(updatedir)
 		setDir(direct)//only update dir if we actually need it, so overlays won't spin on base sprites that don't have directions of their own
@@ -339,7 +339,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(glide_size_override)
 		set_glide_size(glide_size_override)
 	if(NewLoc)
-		abstract_move(NewLoc)
+//		abstract_move(NewLoc)
 		update_parallax_contents()
 	else
 		var/turf/destination = get_turf(src)
@@ -356,12 +356,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		else if((direct & WEST) && x > 1)
 			destination = get_step(destination, WEST)
 
-		abstract_move(destination)//Get out of closets and such as a ghost
-
+//		abstract_move(destination)//Get out of closets and such as a ghost
+/*
 /mob/dead/observer/forceMove(atom/destination)
 	abstract_move(destination) // move like the wind
 	return TRUE
-
+*/
+*/
 /mob/dead/observer/verb/reenter_corpse()
 //	set category = "Ghost"
 	set name = "Re-enter Corpse"
@@ -433,7 +434,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		SEND_SOUND(src, sound(sound))
 
 /mob/dead/observer/proc/dead_tele()
-//	set category = "Ghost"
+	set category = null
 	set name = "Teleport"
 	set desc= "Teleport to a location"
 	if(!isobserver(usr))
@@ -461,7 +462,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()
-//	set category = "Ghost"
+	set category = null
 	set name = "Orbit" // "Haunt"
 	set desc = "Follow and orbit a mob."
 
@@ -504,7 +505,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	animate(src, pixel_y = base_pixel_y + 2, time = 1 SECONDS, loop = -1)
 
 /mob/dead/observer/verb/jumptomob() //Moves the ghost instead of just changing the ghosts's eye -Nodrak
-//	set category = "Ghost"
+	set category = null
 	set name = "Jump to Mob"
 	set desc = "Teleport to a mob"
 

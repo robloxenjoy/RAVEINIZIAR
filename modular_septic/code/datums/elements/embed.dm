@@ -108,7 +108,7 @@
 
 	var/obj/item/payload = new payload_type(get_turf(hit))
 	if(istype(payload, /obj/item/shrapnel/bullet))
-		payload.name = "Летящий [projectile.name] осколок"
+		payload.name = "[projectile.name] осколок"
 	payload.embedding = projectile.embedding
 	payload.embedding["embed_chance"] = 100 //if we got this far, we passed projectile embed checks
 	payload.updateEmbedding()
