@@ -31,7 +31,7 @@
 				if(W.can_dig)
 					user.visible_message(span_notice("[user] strikes the [src] with [W]."),span_notice("You strike the [src] with [W]."), span_hear("You hear the sound of mining."))
 					user.changeNext_move(W.attack_delay)
-					user.adjustFatigueLoss(10)
+					user.adjustFatigueLoss(8)
 					W.damageItem(10)
 					playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.ogg', 90 , FALSE, FALSE)
 					user.sound_hint()
@@ -52,7 +52,7 @@
 				if(W.can_dig)
 					user.visible_message(span_notice("[user] ruins the [src] with [W]."),span_notice("You ruin the [src] with [W]."), span_hear("You hear the sound of mining."))
 					user.changeNext_move(W.attack_delay)
-					user.adjustFatigueLoss(10)
+					user.adjustFatigueLoss(8)
 					W.damageItem(10)
 					user.sound_hint()
 					var/flags = NONE

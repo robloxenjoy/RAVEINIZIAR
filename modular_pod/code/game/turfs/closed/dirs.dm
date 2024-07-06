@@ -90,7 +90,7 @@
 	var/powerwall = 10
 	var/hardness = 40
 	var/mineable = TRUE
-	var/mine_hp = 7
+	var/mine_hp = 4
 	var/ore_type = /obj/item/stone
 	var/ore_amount = 1
 	var/defer_change = TRUE
@@ -155,7 +155,7 @@
 				if(W.can_dig)
 					user.visible_message(span_notice("[user] копает [src] с помощью [W]."),span_notice("Я копаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
 					user.changeNext_move(W.attack_delay)
-					user.adjustFatigueLoss(10)
+					user.adjustFatigueLoss(8)
 					W.damageItem(10)
 					playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.ogg', 90 , FALSE, FALSE)
 					user.sound_hint()
@@ -176,7 +176,7 @@
 				if(W.can_dig)
 					user.visible_message(span_notice("[user] разрушает [src] с помощью [W]."),span_notice("Я разрушаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
 					user.changeNext_move(W.attack_delay)
-					user.adjustFatigueLoss(10)
+					user.adjustFatigueLoss(8)
 					W.damageItem(10)
 					user.sound_hint()
 					var/flags = NONE
@@ -223,7 +223,7 @@
 
 /turf/podpol/wall/shroom
 	icon = 'modular_pod/icons/turf/closed/cavero.dmi'
-	mine_hp = 5
+	mine_hp = 2
 	baseturfs = /turf/open/floor/plating/polovich/way/dirtyd
 	personal_turf = /turf/open/floor/plating/polovich/way/dirtyd
 	var/random = TRUE
