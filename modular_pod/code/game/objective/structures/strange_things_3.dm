@@ -892,6 +892,7 @@
 		to_chat(user, span_danger("Нет детонатора внутри!"))
 		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
+	GLOB.minenew += 1
 	var/obj/item/detonatormine/detonatorr = new /obj/item/detonatormine(get_turf(user))
 	user.put_in_hands(detonatorr)
 	detonator--
@@ -899,7 +900,6 @@
 	id_mine = idd
 	detonatorr.id_detonator = id_mine
 	to_chat(user, span_notice("Я достаю детонатор."))
-	GLOB.minenew += 1
 	user.changeNext_move(CLICK_CD_MELEE)
 
 /obj/structure/mineexplosive
