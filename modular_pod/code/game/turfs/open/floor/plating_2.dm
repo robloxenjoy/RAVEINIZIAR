@@ -878,3 +878,12 @@
 
 /turf/open/floor/plating/polovich/way/kaos/si
 	icon_state = "kaos6"
+
+/turf/open/floor/plating/polovich/way/kaos/se
+	icon_state = "kaos7"
+
+/turf/open/floor/plating/polovich/way/kaos/ei
+	icon_state = "kaos8"
+
+/turf/open/floor/plating/polovich/way/kaos/ni
+	icon_state = "kaos9"
