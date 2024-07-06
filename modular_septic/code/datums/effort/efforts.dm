@@ -73,7 +73,7 @@
 /datum/effort/perception
 	name = "+2 ВС"
 	gain_message = span_effortgained("Я чувствую себя зорким.")
-	lose_message = span_effortlost("Я чувствую себя близорукм.")
+	lose_message = span_effortlost("Я чувствую себя близоруким.")
 
 /datum/effort/perception/can_use(mob/user)
 	if(!user.attributes)

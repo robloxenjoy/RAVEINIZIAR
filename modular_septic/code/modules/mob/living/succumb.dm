@@ -70,10 +70,11 @@
 				var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
 				ghost.plane = POLLUTION_PLANE
 				src.client.images += ghost
-				if(length(found_obj) <= 0)
-					to_chat(src, span_steal("Я не замечаю ничего подозрительного."))
-				else
+				if(LAZYLEN(found_obj))
 					to_chat(src, span_steal("Я замечаю что-то."))
+				else
+					to_chat(src, span_steal("Я не замечаю ничего подозрительного."))
+
 
 		if(diceroll == DICE_CRIT_SUCCESS)
 			for(var/obj/visible_obj in view(src))
@@ -89,10 +90,10 @@
 				var/image/ghost = image('modular_septic/icons/hud/screen_gen.dmi', obj_turf, "whatwasthat", FLOAT_LAYER)
 				ghost.plane = POLLUTION_PLANE
 				src.client.images += ghost
-				if(length(found_obj) <= 0)
-					to_chat(src, span_steal("Я не замечаю ничего подозрительного."))
-				else
+				if(LAZYLEN(found_obj))
 					to_chat(src, span_steal("Я замечаю что-то."))
+				else
+					to_chat(src, span_steal("Я не замечаю ничего подозрительного."))
 
 		if(diceroll <= DICE_FAILURE)
 			to_chat(src, span_steal("Не получается проверить территорию."))

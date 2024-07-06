@@ -869,7 +869,8 @@
 		for(var/obj/structure/mineexplosive/M in world)
 			if(M.mineid != src.id_detonator)
 				continue
-			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/structure/mineexplosive/, detonate))
+//			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/structure/mineexplosive/, detonate))
+			INVOKE_ASYNC(M, /obj/structure/mineexplosive.proc/detonate)
 
 /obj/item/minesetup
 	name = "Мина"
