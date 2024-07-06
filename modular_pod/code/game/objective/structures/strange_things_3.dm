@@ -723,6 +723,31 @@
 			set_light(4, 2, "#008dff")
 		if(2)
 			set_light(4, 2, "#3c00ff")
+
+/obj/structure/medica
+	name = "Медика"
+	desc = "Чтобы Медика вылечила меня, достаточно всего лишь..."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "medica"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	anchored = 1
+	density = 0
+	obj_flags = NONE
+	light_range = 3
+	light_power = 2
+	light_color = "#75a743"
+
+/obj/structure/medica/attackby(obj/item/W, mob/living/carbon/user, params)
+	return
+
+/obj/structure/medica/attack_hand(mob/living/carbon/human/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(do_after(user, 3 SECONDS, target=src))
+		to_chat(M, span_meatymeat("Я ощущаю какой-то пиздец!"))
+		user.fully_heal(TRUE)
+
 /*
 /obj/item/paperpodpol
 	name = "Бумажка"
