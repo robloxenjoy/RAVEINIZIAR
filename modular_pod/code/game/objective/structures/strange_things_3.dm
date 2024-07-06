@@ -869,8 +869,8 @@
 		for(var/obj/structure/mineexplosive/M in world)
 			if(M.mineid != src.id_detonator)
 				continue
-//			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/structure/mineexplosive/, detonate))
-			INVOKE_ASYNC(M, /obj/structure/mineexplosive.proc/detonate)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/structure/mineexplosive/, detonate))
+//			INVOKE_ASYNC(M, /obj/structure/mineexplosive.proc/detonate)
 
 /obj/item/minesetup
 	name = "Мина"
@@ -890,6 +890,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb_continuous = list("бьёт")
 	attack_verb_simple = list("бить")
+	var/install_mine = /obj/structure/mineexplosive/based
 	var/detonator = 1
 	var/id_mine = null
 
