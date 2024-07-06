@@ -148,7 +148,7 @@
 //					new yes(get_turf(src))
 					yes.mineid = T.id_mine
 					qdel(T)
-					user.visible_message(span_meatymeat("[user] устанавливает [mine]."), span_meatymeat("Я устанавливаю [mine]."), span_hear("Я слышу постройку."))
+					user.visible_message(span_meatymeat("[user] устанавливает [yes]."), span_meatymeat("Я устанавливаю [yes]."), span_hear("Я слышу постройку."))
 					user.changeNext_move(5)
 					sound_hint()
 					return
