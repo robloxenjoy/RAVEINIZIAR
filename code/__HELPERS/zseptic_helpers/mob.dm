@@ -4,6 +4,8 @@
 			return "Левая Глазница"
 		if(BODY_ZONE_PRECISE_R_EYE)
 			return "Правая Глазница"
+		if(BODY_ZONE_PRECISE_FACE)
+			return "Лицо"
 		if(BODY_ZONE_PRECISE_MOUTH)
 			return "Челюсть"
 		if(BODY_ZONE_HEAD)

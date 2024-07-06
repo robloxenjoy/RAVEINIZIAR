@@ -8,8 +8,8 @@
 	body_zone = BODY_ZONE_PRECISE_L_HAND
 	body_part = HAND_LEFT
 	render_layer = HANDS_PART_LAYER
-	max_damage = 30
-	max_stamina_damage = 30
+	max_damage = 40
+	max_stamina_damage = 40
 	held_index = LEFT_HANDS
 	px_x = -6
 	px_y = -3

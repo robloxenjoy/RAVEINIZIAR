@@ -7,8 +7,8 @@
 	parent_body_zone = BODY_ZONE_R_LEG
 	body_zone = BODY_ZONE_PRECISE_R_FOOT
 	body_part = FOOT_RIGHT
-	max_damage = 30
-	max_stamina_damage = 30
+	max_damage = 40
+	max_stamina_damage = 40
 	stance_index = 4
 	px_x = -2
 	px_y = 9
