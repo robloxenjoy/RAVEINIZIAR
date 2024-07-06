@@ -795,7 +795,7 @@
 		return
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
-		var/obj/item/bodypart/affecting = C.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
+		var/obj/item/bodypart/affecting = C.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
 		C.visible_message(span_meatymeat("[C] ранится об [src]!"),span_meatymeat("Я ранюсь об [src]!"), span_hear("Я слышу звуки плоти."))
 		C.apply_damage(10, BRUTE, affecting, wound_bonus = 5, sharpness = SHARP_EDGED)
 		affecting.adjust_germ_level(50)
