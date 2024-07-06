@@ -62,9 +62,9 @@
 
 	to_chat(src, span_bigdanger("В OOC кнопка Играть - разберёшься."))
 	to_chat(src, span_bigdanger("Дискорд сервер - https://discord.gg/zX7RCNqzvm"))
+	if(GLOB.world_deaths_crazy > 0)
+		to_chat(src, span_dead("Смертей в мире: [GLOB.world_deaths_crazy]"))
 
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
 		to_chat(src, span_warning("Всё начнётся через... [tl > 0 ? "[DisplayTimeText(tl)]" : "скоро"]."))
-	if(GLOB.world_deaths_crazy > 0)
-		to_chat(src, span_dead("Смертей в мире: [GLOB.world_deaths_crazy]"))

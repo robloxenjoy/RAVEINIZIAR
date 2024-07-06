@@ -77,6 +77,6 @@
 	. = ..()
 	// We are alive - We need our pulse back!
 	set_heartattack(FALSE)
-	GLOB.world_deaths_crazy -= 1
+//	GLOB.world_deaths_crazy -= 1
 	if(is_merc_job(src))
 		GLOB.mercenary_list += 1

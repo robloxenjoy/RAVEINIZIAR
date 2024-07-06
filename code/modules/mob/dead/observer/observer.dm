@@ -458,7 +458,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		to_chat(usr, span_warning("No area available."))
 		return
 
-	usr.abstract_move(pick(L))
+//	usr.abstract_move(pick(L))
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()
@@ -530,7 +530,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/turf/destination_turf = get_turf(destination_mob) //Turf of the destination mob
 
 	if(isturf(destination_turf))
-		source_mob.abstract_move(destination_turf)
+//		source_mob.abstract_move(destination_turf)
 		source_mob.update_parallax_contents()
 	else
 		to_chat(source_mob, span_danger("This mob is not located in the game world."))
