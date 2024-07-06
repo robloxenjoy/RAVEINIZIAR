@@ -143,7 +143,7 @@
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return
 				if(do_after(user, 2 SECONDS, target=src))
-					var/mine = T.install_mine
+					var/obj/structure/mineexplosive/mine = T.install_mine
 					new mine(get_turf(src))
 					mine.mineid = T.id_mine
 					qdel(T)
