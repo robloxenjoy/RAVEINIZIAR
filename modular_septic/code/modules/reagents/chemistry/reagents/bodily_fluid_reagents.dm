@@ -54,7 +54,7 @@
 	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
 	name = "Экскремент"
 	description = "Твёрдый человеческий отход."
-	taste_description = "literal shit"
+	taste_description = "говно"
 	reagent_state = LIQUID
 	color = COLOR_BROWN_SHIT
 	liquid_evaporation_rate = 3

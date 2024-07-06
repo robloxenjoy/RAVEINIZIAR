@@ -153,7 +153,9 @@
 									character.facial_hairstyle = "Shaved"
 									character.hair_color = pick("#ff0aff")
 									character.kaotiks_body = 100
-									height = HUMAN_HEIGHT_TALLEST
+									character.real_name = "Бог СВО"
+									character.name = character.real_name
+									character.height = HUMAN_HEIGHT_TALLEST
 							switch(character.truerole)
 								if("Капнобатай")
 									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)

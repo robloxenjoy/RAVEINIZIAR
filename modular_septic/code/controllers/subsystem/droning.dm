@@ -181,6 +181,9 @@ SUBSYSTEM_DEF(droning)
 		var/sound/loop_sound = sound(pick(retard), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
 		SEND_SOUND(dreamer, loop_sound)
 		dreamer.loop_sound = TRUE
+	else
+		if(dreamer?.loop_sound)
+			kill_loop(dreamer)
 
 /*
 	var/retard = null

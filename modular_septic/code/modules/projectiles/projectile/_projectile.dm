@@ -1,5 +1,5 @@
 /obj/projectile
-	speed = 0.3
+	speed = 0.2
 	icon = 'modular_septic/icons/obj/items/guns/projectiles/projectiles.dmi'
 	icon_state = "bullet"
 	/// Minimum damage this projectile can do

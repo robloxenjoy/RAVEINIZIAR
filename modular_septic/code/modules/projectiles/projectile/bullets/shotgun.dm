@@ -42,8 +42,8 @@
 	subtractible_armour_penetration = 20
 
 /obj/projectile/bullet/pellet/shotgun_buckshot
-	name = "12g pellet"
-	damage = 15
+	name = "12G дробь"
+	damage = 16
 	wound_bonus = 5
 	bare_wound_bonus = 5
 	wound_falloff_tile = 0
