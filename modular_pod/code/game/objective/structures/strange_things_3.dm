@@ -815,7 +815,6 @@
 	inhand_icon_state = null
 	worn_icon = null
 	worn_icon_state = null
-	hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 	w_class = WEIGHT_CLASS_BULKY
 	wound_bonus = 1
 	bare_wound_bonus = 3
@@ -827,3 +826,122 @@
 	attack_verb_continuous = list("бьёт")
 	attack_verb_simple = list("бить")
 	var/zaryad = 3
+
+/obj/item/detonatormine
+	name = "Детонатор"
+	desc = "Для моей мины."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "detonator"
+	inhand_icon_state = "flashbang"
+	worn_icon_state = "grenade"
+	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon = null
+	worn_icon_state = null
+	w_class = WEIGHT_CLASS_SMALL
+	wound_bonus = 1
+	bare_wound_bonus = 1
+	min_force = 1
+	force = 2
+	throwforce = 1
+	carry_weight = 0.5 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("бьёт")
+	attack_verb_simple = list("бить")
+	var/id_detonator = null
+
+/obj/item/detonatormine/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(id_detonator)
+		user.visible_message(span_meatymeat("[user] нажимает на [src]."))
+		user.changeNext_move(CLICK_CD_MELEE)
+		for(var/obj/structure/mineexplosive/M in world)
+			if(M.mineid != src.id_detonator)
+				continue
+			INVOKE_ASYNC(user, TYPE_PROC_REF(/obj/structure/mineexplosive, detonate), M)
+
+/obj/item/minesetup
+	name = "Мина"
+	desc = "Ещё нужен детонатор. Он, вроде как, внутри."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "mine"
+	inhand_icon_state = null
+	worn_icon = null
+	worn_icon_state = null
+	w_class = WEIGHT_CLASS_BULKY
+	wound_bonus = 1
+	bare_wound_bonus = 3
+	min_force = 1
+	force = 8
+	throwforce = 5
+	carry_weight = 3 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("бьёт")
+	attack_verb_simple = list("бить")
+	var/detonator = 1
+	var/id_mine = null
+
+/obj/item/minesetup/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(!detonator)
+		to_chat(user, span_danger("Нет детонатора внутри!"))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		return
+	var/detonatorr = new /obj/item/detonatormine(get_turf(user))
+	user.put_in_hands(detonatorr)
+	detonator--
+	var/idd = GLOB.minenew
+	id_mine = idd
+	detonatorr.id_detonator = id_mine
+	to_chat(user, span_notice("Я достаю детонатор."))
+	GLOB.minenew += 1
+	user.changeNext_move(CLICK_CD_MELEE)
+
+/obj/structure/mineexplosive
+	name = "Мина"
+	desc = "НЕ ЛЕЗЬ."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "installed"
+	density = FALSE
+	anchored = TRUE
+	opacity = FALSE
+	istrap = TRUE
+	var/mineid = null
+	var/ex_dev = 0
+	///how big of a heavy explosion radius on prime
+	var/ex_heavy = 0
+	///how big of a light explosion radius on prime
+	var/ex_light = 0
+	///how big of a flame explosion radius on prime
+	var/ex_flame = 0
+	// dealing with creating a [/datum/component/pellet_cloud] on detonate
+	/// if set, will spew out projectiles of this type
+	var/shrapnel_type
+	/// the higher this number, the more projectiles are created as shrapnel
+	var/shrapnel_radius
+	/// Did we add the component responsible for spawning sharpnel to this?
+	var/shrapnel_initialized
+
+/obj/structure/mineexplosive/attackby(obj/item/W, mob/living/carbon/user, params)
+	return
+
+/obj/structure/mineexplosive/proc/detonate(mob/living/lanced_by)
+	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+		shrapnel_initialized = TRUE
+		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+	if(ex_dev || ex_heavy || ex_light || ex_flame)
+		var/turf/explosionturf = get_turf(src)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
+		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+
+/obj/structure/mineexplosive/based
+	shrapnel_type = /obj/projectile/bullet/shrapnel/mine
+	shrapnel_radius = 4
+	ex_heavy = 2
+	ex_light = 5
+	ex_flame = 3

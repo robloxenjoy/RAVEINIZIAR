@@ -124,7 +124,7 @@
 	/*SEPTIC EDIT REMOVAL
 	icon_state = initial(icon_state) + "_active"*/
 	SEND_SIGNAL(src, COMSIG_GRENADE_ARMED, det_time, delayoverride)
-	addtimer(CALLBACK(src, .proc/detonate), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src, PROC_REF(detonate)), isnull(delayoverride)? det_time : delayoverride)
 
 /**
  * detonate (formerly prime) refers to when the grenade actually delivers its payload (whether or not a boom/bang/detonation is involved)
@@ -140,7 +140,7 @@
 	SEND_SIGNAL(src, COMSIG_GRENADE_DETONATE, lanced_by)
 	if(ex_dev || ex_heavy || ex_light || ex_flame)
 		var/turf/explosionturf = get_turf(src)
-		explosionturf.pollute_turf(/datum/pollutant/dust, 100)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
 		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
 
 /obj/item/grenade/proc/update_mob()

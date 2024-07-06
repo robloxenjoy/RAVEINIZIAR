@@ -23,3 +23,18 @@
 	. = ..()
 	if(state_variation)
 		icon_state = "[base_icon_state][rand(1, state_variation)]"
+
+/obj/projectile/bullet/shrapnel/mine
+	name = "Летящий осколок"
+	damage = 20
+	range = 15
+	weak_against_armour = FALSE
+	dismemberment = 0
+	ricochets_max = 1
+	ricochet_chance = 10
+	shrapnel_type = /obj/item/shrapnel
+	ricochet_incidence_leeway = 60
+	hit_prone_targets = TRUE
+	sharpness = SHARP_POINTY
+	wound_bonus = 30
+	embedding = list(embed_chance=75, ignore_throwspeed_threshold=TRUE, fall_chance=1)

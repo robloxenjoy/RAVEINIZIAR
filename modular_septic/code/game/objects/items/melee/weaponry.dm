@@ -298,6 +298,8 @@
 	slot_flags = ITEM_SLOT_BELT
 	worn_icon_state = "classic_baton"
 	skill_melee = SKILL_FLAIL
+	attack_verb_continuous = list("бьёт")
+	attack_verb_simple = list("бить")
 	tetris_width = 32
 	tetris_height = 64
 
