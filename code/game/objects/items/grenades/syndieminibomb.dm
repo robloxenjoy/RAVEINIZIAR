@@ -41,9 +41,10 @@
 	shrapnel_radius = 12
 
 /obj/item/grenade/frag/detonate(mob/living/lanced_by)
-	. = ..()
 	var/turf/explosionturf = get_turf(src)
-	explosionturf.pollute_turf(/datum/pollutant/dust, 200)
+	if(explosionturf)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
+	. = ..()
 	if(!QDELETED(src))
 		qdel(src)
 

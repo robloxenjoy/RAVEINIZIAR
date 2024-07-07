@@ -268,10 +268,9 @@
 		icon_state = "cactus2"
 
 /obj/structure/flora/ausbushes/cactus/on_density(mob/living/carbon/human/rammer)
-	var/mob/living/carbon/human/M = rammer
-	var/obj/item/bodypart/affecting = M.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
+	var/obj/item/bodypart/affecting = rammer.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
 	if(affecting)
-		var/cloth_cover = LAZYLEN(M.clothingonpart(affecting))
+		var/cloth_cover = LAZYLEN(rammer.clothingonpart(affecting))
 		if(!cloth_cover)
 /*
 			M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
@@ -281,19 +280,19 @@
 			cactus_needle = new /obj/item/cactus_needle(loc)
 			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = TRUE, silent = TRUE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
-				M.visible_message(span_pinkdang("Игла застревает в [M] [affecting]!"), \
+				rammer.visible_message(span_pinkdang("Игла застревает в [rammer] [affecting]!"), \
 									span_pinkdang("Игла застревает в [affecting]!"), \
 									span_hear("Я слышу звук плоти."))
 			else
 				qdel(cactus_needle)
-				M.visible_message(span_meatymeat("[M] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
-				M.apply_damage(10, BRUTE, affecting, wound_bonus = 2, sharpness = SHARP_POINTY)
+				rammer.visible_message(span_meatymeat("[rammer] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
+				rammer.apply_damage(10, BRUTE, affecting, rammer.run_armor_check(affecting, MELEE), wound_bonus = 2, sharpness = SHARP_POINTY)
 				affecting.adjust_germ_level(100)
-			if(M.get_chem_effect(CE_PAINKILLER) < 30)
-				to_chat(M, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
-				M.agony_scream()
+			if(rammer.get_chem_effect(CE_PAINKILLER) < 30)
+				to_chat(rammer, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
+				rammer.agony_scream()
 		else
-			to_chat(M, span_meatymeat("[src] чуть не уколол меня!"))
+			to_chat(rammer, span_meatymeat("[src] чуть не уколол меня!"))
 
 /obj/structure/flora/ausbushes/cactus/examine(mob/user)
 	. = ..()
@@ -822,7 +821,7 @@
 		var/mob/living/carbon/C = L
 		var/obj/item/bodypart/affecting = C.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
 		C.visible_message(span_meatymeat("[C] ранится об [src]!"),span_meatymeat("Я ранюсь об [src]!"), span_hear("Я слышу звуки плоти."))
-		C.apply_damage(10, BRUTE, affecting, wound_bonus = 5, sharpness = SHARP_EDGED)
+		C.apply_damage(10, BRUTE, affecting, C.run_armor_check(affecting, MELEE), wound_bonus = 5, sharpness = SHARP_EDGED)
 		affecting.adjust_germ_level(50)
 		playsound(get_turf(src), 'modular_septic/sound/weapons/melee/sharpy1.ogg', 100 , FALSE, FALSE)
 
@@ -833,7 +832,7 @@
 		if(prob(50))
 			H.visible_message(span_meatymeat("[H] пытается вырваться из [src]!"))
 			var/obj/item/bodypart/affecting = H.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
-			H.apply_damage(10, BRUTE, affecting, wound_bonus = 5, sharpness = SHARP_EDGED)
+			H.apply_damage(10, BRUTE, affecting, C.run_armor_check(affecting, MELEE), wound_bonus = 5, sharpness = SHARP_EDGED)
 			affecting.adjust_germ_level(50)
 			return COMPONENT_ATOM_BLOCK_EXIT
 		else
