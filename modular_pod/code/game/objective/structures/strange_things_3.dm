@@ -744,7 +744,7 @@
 	if(.)
 		return
 	if(do_after(user, 3 SECONDS, target=src))
-		to_chat(M, span_meatymeat("Я ощущаю какой-то пиздец!"))
+		to_chat(user, span_meatymeat("Я ощущаю какой-то пиздец!"))
 		user.fully_heal(TRUE)
 
 /*
@@ -832,7 +832,7 @@
 		if(prob(50))
 			H.visible_message(span_meatymeat("[H] пытается вырваться из [src]!"))
 			var/obj/item/bodypart/affecting = H.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
-			H.apply_damage(10, BRUTE, affecting, C.run_armor_check(affecting, MELEE), wound_bonus = 5, sharpness = SHARP_EDGED)
+			H.apply_damage(10, BRUTE, affecting, H.run_armor_check(affecting, MELEE), wound_bonus = 5, sharpness = SHARP_EDGED)
 			affecting.adjust_germ_level(50)
 			return COMPONENT_ATOM_BLOCK_EXIT
 		else
