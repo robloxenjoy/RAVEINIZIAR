@@ -533,9 +533,9 @@
 	repairable_by_offhand = null
 	integrity_failure = 0.1
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
-                EDGE_PROTECTION = 40, \
+                EDGE_PROTECTION = 45, \
                 CRUSHING = 25, \
-                CUTTING = 25, \
+                CUTTING = 30, \
                 PIERCING = 15, \
                 IMPALING = 9, \
                 LASER = 1, \

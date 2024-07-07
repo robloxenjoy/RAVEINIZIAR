@@ -43,6 +43,8 @@
 	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	inhand_icon_state = "ordinator_mask"
+	max_integrity = 200
+	limb_integrity = 200
 	body_parts_covered = FACE | JAW
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
 	flags_inv = HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
