@@ -114,7 +114,7 @@
 					ADD_TRAIT(owner, tetraplegia, NECK_FRACTURE_TRAIT)
 				var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 				if(brain)
-					brain.applyOrganDamage(rand(20, 50))
+					brain.applyOrganDamage(rand(40, 90))
 				var/fuckbrain = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 				if(fuckbrain <= DICE_SUCCESS)
 					owner.gain_trauma(/datum/brain_trauma/severe/halitus_deprivation)
