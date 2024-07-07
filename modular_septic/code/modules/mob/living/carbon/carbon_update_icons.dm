@@ -219,7 +219,7 @@
 	if(changed)
 		SEND_SIGNAL(src, COMSIG_PAUSE_FLOATING_ANIM, 0.3 SECONDS)
 		animate(src, transform = ntransform, time = (lying_prev == 0 || lying_angle == 0) ? 2 : 0, pixel_y = final_pixel_y, dir = final_dir, easing = (EASE_IN|EASE_OUT))
-		addtimer(CALLBACK(src, .proc/update_shadow), 2)
+		addtimer(CALLBACK(src, PROC_REF(update_shadow)), 2)
 
 /mob/living/carbon/update_shadow()
 	vis_contents -= get_mob_shadow(NORMAL_MOB_SHADOW)

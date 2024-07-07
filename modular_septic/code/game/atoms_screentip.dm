@@ -7,7 +7,7 @@
 	// Screentips
 	if((screentip_flags & SCREENTIP_ON_MOUSE_CLICK) && (usr.hud_used?.screentips_enabled))
 		// This is VERY dumb
-		addtimer(CALLBACK(src, .proc/update_screentip, usr, params, SCREENTIP_ON_MOUSE_CLICK), 1)
+		addtimer(CALLBACK(src, PROC_REF(update_screentip), usr, params, SCREENTIP_ON_MOUSE_CLICK), 1)
 
 /atom/MouseEntered(location, control, params)
 	. = ..()

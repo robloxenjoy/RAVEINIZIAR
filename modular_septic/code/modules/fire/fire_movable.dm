@@ -18,7 +18,7 @@
 	var/current_fire_state
 	/// Used for connect_loc element
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /atom/movable/fire/Initialize(mapload, power)

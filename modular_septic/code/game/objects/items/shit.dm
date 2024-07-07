@@ -8,7 +8,7 @@
 	//crewmates be putting out massive turds
 	carry_weight = 85 GRAMS
 	var/static/list/crossed_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /obj/item/shit/Initialize()
@@ -18,7 +18,7 @@
 		initial_reagents = list(/datum/reagent/consumable/shit = 15), \
 		foodtypes = TOXIC|GROSS|SEWAGE, \
 		volume = 115, \
-		after_eat = CALLBACK(src, .proc/on_eat_from))
+		after_eat = CALLBACK(src, PROC_REF(on_eat_from)))
 	AddElement(/datum/element/connect_loc, crossed_connections)
 	AddElement(/datum/element/pollution_emitter, /datum/pollutant/shit, 30)
 

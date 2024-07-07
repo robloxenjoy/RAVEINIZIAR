@@ -166,7 +166,7 @@
 			initial_reagents = food_reagents, \
 			foodtypes = RAW|MEAT|GROSS, \
 			volume = reagent_vol, \
-			after_eat = CALLBACK(src, .proc/on_eat_from))
+			after_eat = CALLBACK(src, PROC_REF(on_eat_from)))
 	update_appearance()
 
 /obj/item/organ/Destroy()

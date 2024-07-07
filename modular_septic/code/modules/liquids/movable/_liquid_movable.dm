@@ -40,8 +40,8 @@
 	var/temperature = T20C
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/movable_entered,
-		COMSIG_TURF_MOB_FALL = .proc/mob_fall,
+		COMSIG_ATOM_ENTERED = PROC_REF(movable_entered),
+		COMSIG_TURF_MOB_FALL = PROC_REF(mob_fall),
 	)
 
 /atom/movable/liquid/Initialize(mapload)

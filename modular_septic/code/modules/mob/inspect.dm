@@ -38,7 +38,7 @@
 	ghost_image.layer = INSPECTION_IMAGE_LAYER
 	animate(ghost_image, alpha = 0, time = inspected.inspect_duration)
 	client.images |= ghost_image
-	addtimer(CALLBACK(src, .proc/remove_ghost_image, ghost_image), inspect_duration)
+	addtimer(CALLBACK(src, PROC_REF(remove_ghost_image), ghost_image), inspect_duration)
 	changeNext_move(CLICK_CD_INSPECT)
 
 /mob/proc/remove_ghost_image(image/ghost_image)

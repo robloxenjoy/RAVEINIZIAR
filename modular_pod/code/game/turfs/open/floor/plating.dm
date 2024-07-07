@@ -1393,7 +1393,7 @@
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_WOOD
 	resistance_flags = FLAMMABLE
-
+/*
 /turf/open/openspace/attackby(obj/item/C, mob/user, params)
 	. = ..()
 /*
@@ -1409,7 +1409,7 @@
 		else
 			to_chat(user, span_warning("You need four logs to build a floor!"))
 		return
-
+*/
 /turf/open/floor/plating/polovich/logsgreen/two
 	name = "Wooden Floor"
 	desc = "This is green. Cursed."

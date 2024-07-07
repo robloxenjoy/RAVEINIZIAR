@@ -39,7 +39,7 @@
 		parrying_penalty_timer = null
 	//add incoming modification
 	parrying_penalty += incoming
-	parrying_penalty_timer = addtimer(CALLBACK(src, .proc/remove_parrying_penalty), duration, TIMER_STOPPABLE)
+	parrying_penalty_timer = addtimer(CALLBACK(src, PROC_REF(remove_parrying_penalty)), duration, TIMER_STOPPABLE)
 
 /mob/living/carbon/human/proc/remove_parrying_penalty()
 	parrying_penalty = 0
@@ -112,7 +112,7 @@
 		dodging_penalty_timer = null
 	//add incoming modification
 	dodging_penalty += incoming
-	dodging_penalty_timer = addtimer(CALLBACK(src, .proc/remove_dodging_penalty), duration, TIMER_STOPPABLE)
+	dodging_penalty_timer = addtimer(CALLBACK(src, PROC_REF(remove_dodging_penalty)), duration, TIMER_STOPPABLE)
 
 /mob/living/carbon/human/proc/remove_dodging_penalty()
 	dodging_penalty = 0

@@ -59,7 +59,7 @@
 	plane = ABOVE_GAME_PLANE
 	layer = GASFIRE_LAYER
 	blend_mode = BLEND_ADD
-	light_system = MOVABLE_LIGHT
+	light_system = STATIC_LIGHT
 	light_range = LIGHT_RANGE_FIRE
 	light_power = 1
 	light_color = LIGHT_COLOR_FIRE

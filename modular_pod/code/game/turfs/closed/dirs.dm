@@ -72,7 +72,7 @@
 /turf/podpol/wall/Destroy()
 	if(cantbreak)
 		return
-	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
+//	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
 //	for(var/turf/podpol/wall/F in oview(1, personal_turf))
 //		F.update_icon_pod()
 
@@ -85,6 +85,7 @@
 	density = TRUE
 	layer = CLOSED_TURF_LAYER
 	opacity = TRUE
+	clingable = TRUE
 	var/cantbreak = FALSE
 	var/powerwall = 10
 	var/hardness = 40
@@ -178,12 +179,12 @@
 					user.adjustFatigueLoss(8)
 					W.damageItem(10)
 					user.sound_hint()
-//					var/flags = NONE
-//					var/old_type = type
-//					if(defer_change)
-//						flags = CHANGETURF_DEFER_CHANGE
-//					var/turf/open/mined = ScrapeAway(null, flags)
-//					addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, AfterChange), flags, old_type), 1, TIMER_UNIQUE)
+					var/flags = NONE
+					var/old_type = type
+					if(defer_change)
+						flags = CHANGETURF_DEFER_CHANGE
+					var/turf/open/mined = ScrapeAway(null, flags)
+					addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, AfterChange), flags, old_type), 1, TIMER_UNIQUE)
 					playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 //					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)

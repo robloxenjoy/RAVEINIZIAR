@@ -27,8 +27,11 @@
 	set name = "Move Upwards"
 	set category = null
 
+
+	return
+/*
 	if(HAS_TRAIT_FROM(src, TRAIT_MOVE_FLOATING, CLINGING_TRAIT))
-		to_chat(src, span_warning("Can't do that while climbing."))
+		to_chat(src, span_warning("Не могу пока лезу."))
 		return
 
 	var/turf/current_turf = get_turf(src)
@@ -36,22 +39,25 @@
 	var/ventcrawling_mob = HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING)
 
 	if(above_turf && !ventcrawling_mob && (can_zFall(above_turf, 1, current_turf, DOWN) && (above_turf.can_zFall(src, 1, current_turf))))
-		to_chat(src, span_warning("I can't. I will fall back down."))
+		to_chat(src, span_warning("Не могу."))
 		return
 
 	if(zMove(UP, TRUE, ventcrawling_mob))
 		to_chat(src, span_notice("Поднимаюсь вверх."))
-
+*/
 /// Moves a mob down a z level
 /mob/verb/down()
 	set name = "Move Downwards"
 	set category = null
 
+	return
+/*
 	if(HAS_TRAIT_FROM(src, TRAIT_MOVE_FLOATING, CLINGING_TRAIT))
-		to_chat(src, span_warning("Can't do that while climbing."))
+		to_chat(src, span_warning("Не могу пока лезу."))
 		return
 
 	var/ventcrawling_mob = HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING)
 
 	if(zMove(DOWN, TRUE, ventcrawling_mob))
 		to_chat(src, span_notice("Опускаюсь вниз."))
+*/

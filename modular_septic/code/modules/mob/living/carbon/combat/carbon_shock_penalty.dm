@@ -8,7 +8,7 @@
 	//pick the bigger value between what we already are suffering and the incoming modification
 	shock_penalty = max(incoming, shock_penalty)
 	attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/shock_penalty, TRUE, list(STAT_DEXTERITY = -shock_penalty, STAT_INTELLIGENCE = -shock_penalty))
-	shock_penalty_timer = addtimer(CALLBACK(src, .proc/remove_shock_penalty), duration, TIMER_STOPPABLE)
+	shock_penalty_timer = addtimer(CALLBACK(src, PROC_REF(remove_shock_penalty)), duration, TIMER_STOPPABLE)
 
 /mob/living/carbon/proc/remove_shock_penalty()
 	attributes?.remove_attribute_modifier(/datum/attribute_modifier/shock_penalty)

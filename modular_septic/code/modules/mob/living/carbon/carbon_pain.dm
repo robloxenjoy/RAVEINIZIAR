@@ -73,7 +73,7 @@
 			//Immobilize for a second
 			Immobilize(1 SECONDS)
 			//After immobilize runs out, fall down
-			addtimer(CALLBACK(src, .proc/Knockdown, 4 SECONDS), 1 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(Knockdown), 4 SECONDS), 1 SECONDS)
 
 	var/maxbpshock = 0
 	var/obj/item/bodypart/damaged_bodypart

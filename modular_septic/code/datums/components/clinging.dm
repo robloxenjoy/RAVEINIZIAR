@@ -30,7 +30,7 @@
 	ADD_TRAIT(carbon_parent, TRAIT_IMMOBILIZED, CLINGING_TRAIT)
 	ADD_TRAIT(carbon_parent, TRAIT_NO_FLOATING_ANIM, CLINGING_TRAIT)
 	ADD_TRAIT(carbon_parent, TRAIT_MOVE_FLOATING, CLINGING_TRAIT)
-	to_chat(carbon_parent, span_notice("I cling onto [clinging_to]."))
+	to_chat(carbon_parent, span_notice("Я цепляюсь за [clinging_to]."))
 	SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
 
 /datum/component/clinging/Destroy(force, silent)
@@ -100,7 +100,7 @@
 	//User to turf adjacent to user and clinger = Move to turf
 	else if(isturf(over) && over.Adjacent(user) && over.Adjacent(clinging_to))
 		. = COMPONENT_NO_MOUSEDROP
-		INVOKE_ASYNC(src, .proc/try_going_sideways, over)
+		INVOKE_ASYNC(src, PROC_REF(try_going_sideways), over)
 
 /datum/component/clinging/proc/grab_mousedrop_onto(atom/source, atom/over, mob/living/carbon/user)
 	SIGNAL_HANDLER
@@ -130,10 +130,10 @@
 		clinging_to = over
 		RegisterClinging()
 		RegisterSignal(carbon_parent, COMSIG_ATOM_DIR_CHANGE, PROC_REF(deny_dir_change))
-		to_chat(carbon_parent, span_notice("I cling onto [over]."))
+		to_chat(carbon_parent, span_notice("Я хватаюсь за [over]."))
 		SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
 	else
-		to_chat(carbon_parent, span_notice("I can't cling to that."))
+		to_chat(carbon_parent, span_notice("Я не могу схватиться за это."))
 
 /datum/component/clinging/proc/try_going_sideways(atom/over)
 	var/mob/living/carbon/carbon_parent = parent
@@ -150,7 +150,7 @@
 	var/turf/over_turf = get_turf(over)
 	var/dir = get_dir(carbon_parent, over_turf)
 	if(carbon_parent.Move(over_turf, dir))
-		to_chat(carbon_parent, span_notice("I shuffle myself to [over_turf]."))
+		to_chat(carbon_parent, span_notice("Я забираюсь на [over_turf]."))
 	else
 		to_chat(carbon_parent, span_warning(fail_msg()))
 		carbon_parent.playsound_local(get_turf(carbon_parent), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
@@ -164,11 +164,11 @@
 	if(istype(ceiling))
 		new_clinger = get_step(ceiling, dir)
 	else
-		to_chat(carbon_parent, span_warning("I am already as high as i can go."))
+		to_chat(carbon_parent, span_warning("Я уже слишком высоко."))
 		return
 	//We can't get there anyways
 	if(!carbon_parent.canZMove(UP, ceiling))
-		to_chat(carbon_parent, span_warning("I can't go up."))
+		to_chat(carbon_parent, span_warning("Я не могу подняться."))
 		return
 	if(!istype(new_clinger))
 		new_clinger = null
@@ -184,7 +184,7 @@
 		if(isopenturf(old_clinger) && !old_clinger.can_zFall(carbon_parent, 1, get_step_multiz(old_clinger, DOWN)) )
 			new_clinger = old_clinger
 	if(!istype(new_clinger) || (!SEND_SIGNAL(new_clinger, COMSIG_CLINGABLE_CHECK, carbon_parent) && !isopenturf(new_clinger)) )
-		to_chat(carbon_parent, span_warning("I have nothing to latch onto above me."))
+		to_chat(carbon_parent, span_warning("Не могу сверху ни за что схватиться."))
 		return
 	var/time = max(0, 50 - (GET_MOB_ATTRIBUTE_VALUE(carbon_parent, STAT_DEXTERITY)+GET_MOB_SKILL_VALUE(carbon_parent, SKILL_ACROBATICS)))
 	cling_valid = TRUE
@@ -211,13 +211,13 @@
 	//(Probably) Open turf available, try to move to it
 	if(landing_spot?.Adjacent(carbon_parent) && carbon_parent.Move(landing_spot, dir))
 		carbon_parent.Move(clinging_to, dir)
-		to_chat(carbon_parent, span_notice("I climb onto [clinging_to]."))
+		to_chat(carbon_parent, span_notice("Я лезу на [clinging_to]."))
 		SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
 		qdel(src)
 	//Cling to (probably) closed turf instead
 	else if(new_clinger?.Adjacent(carbon_parent))
 		SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
-		to_chat(carbon_parent, span_notice("I cling onto [clinging_to]."))
+		to_chat(carbon_parent, span_notice("Я лезу на [clinging_to]."))
 		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 		RegisterClinging()
 
@@ -229,7 +229,7 @@
 	if(istype(floor))
 		new_clinger = get_step(floor, dir)
 	else
-		to_chat(carbon_parent, span_warning("I am already as low as i can go."))
+		to_chat(carbon_parent, span_warning("Я уже слишком низко."))
 		return
 	if(!istype(new_clinger))
 		new_clinger = null
@@ -243,10 +243,10 @@
 				break
 	//We can't get there anyways
 	if(!carbon_parent.canZMove(DOWN, floor))
-		to_chat(carbon_parent, span_warning("I can't go down."))
+		to_chat(carbon_parent, span_warning("Я не могу спуститься."))
 		return
 	if(!istype(new_clinger) || !(SEND_SIGNAL(new_clinger, COMSIG_CLINGABLE_CHECK, carbon_parent)))
-		to_chat(carbon_parent, span_warning("I don't have much to hold onto..."))
+		to_chat(carbon_parent, span_warning("Особо не за что схватиться..."))
 	var/time = max(0, 45 - (GET_MOB_ATTRIBUTE_VALUE(carbon_parent, STAT_DEXTERITY)+GET_MOB_SKILL_VALUE(carbon_parent, SKILL_ACROBATICS)))
 	cling_valid = TRUE
 	RegisterSignal(clinging_to, COMSIG_CLICK, PROC_REF(cancel_cling))
@@ -275,12 +275,12 @@
 	clinging_to = new_clinger
 	//(Probably) Open turf, try to move to it
 	if(landing_spot?.Adjacent(carbon_parent) && carbon_parent.Move(landing_spot, dir))
-		to_chat(carbon_parent, span_notice("I land onto [landing_spot]."))
+		to_chat(carbon_parent, span_notice("Я спускаюсь на [landing_spot]."))
 		qdel(src)
 	//Cling instead
 	else if(new_clinger?.Adjacent(carbon_parent))
 		SEND_SIGNAL(clinging_to, COMSIG_CLINGABLE_CLING_SOUNDING)
-		to_chat(carbon_parent, span_notice("I cling onto [clinging_to]."))
+		to_chat(carbon_parent, span_notice("Я хватаюсь за [clinging_to]."))
 		RegisterSignal(carbon_parent, COMSIG_MOVABLE_MOVED, PROC_REF(parent_moved))
 		RegisterClinging()
 
@@ -312,7 +312,7 @@
 /datum/component/clinging/proc/grab_examine(datum/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
 
-	examine_list += span_notice("Currently clinging to [clinging_to].")
+	examine_list += span_notice("Сейчас схвачен за [clinging_to].")
 
 /obj/item/clinging_grab
 	name = "clinging"

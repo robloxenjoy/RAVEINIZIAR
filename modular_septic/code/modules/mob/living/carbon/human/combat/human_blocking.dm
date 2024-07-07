@@ -45,7 +45,7 @@
 		blocking_penalty_timer = null
 	//add incoming modification
 	blocking_penalty += incoming
-	blocking_penalty_timer = addtimer(CALLBACK(src, .proc/remove_blocking_penalty), duration, TIMER_STOPPABLE)
+	blocking_penalty_timer = addtimer(CALLBACK(src, PROC_REF(remove_blocking_penalty)), duration, TIMER_STOPPABLE)
 
 /mob/living/carbon/human/proc/remove_blocking_penalty()
 	blocking_penalty = 0

@@ -37,16 +37,16 @@
 	SIGNAL_HANDLER
 
 	if(GET_MOB_SKILL_VALUE(user, clinging_skill) < clinging_requirement)
-		to_chat(user, span_warning("I don't know how to cling to that."))
+		to_chat(user, span_warning("Я не знаю как за это схватиться."))
 		return
 	else if(user.usable_hands < user.default_num_hands)
-		to_chat(user, span_warning("I need [user.default_num_hands] hands to cling to [source]."))
+		to_chat(user, span_warning("Мне нужно [user.default_num_hands] рук чтобы схватиться за [source]."))
 		return
 	else if(user.get_active_held_item() || user.get_inactive_held_item())
-		to_chat(user, span_warning("I need all of my hands free."))
+		to_chat(user, span_warning("Мне нужны пустые руки."))
 		return
 	else if(user.body_position == LYING_DOWN)
-		to_chat(user, span_warning("I need to stand up."))
+		to_chat(user, span_warning("Встать мне нужно."))
 		return
 	else if(HAS_TRAIT(user, TRAIT_MOVE_VENTCRAWLING))
 		to_chat(user, span_warning("Not while ventcrawling."))

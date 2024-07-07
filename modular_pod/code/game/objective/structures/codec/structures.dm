@@ -129,8 +129,8 @@
 	max_integrity = 800
 	integrity_failure = 0.1
 	pass_flags = LETPASSTHROW
-	plane = ABOVE_GAME_PLANE
-	layer = FLY_LAYER
+//	plane = ABOVE_GAME_PLANE
+	layer = BELOW_MOB_LAYER
 	density = TRUE
 	anchored = TRUE
 	opacity = FALSE

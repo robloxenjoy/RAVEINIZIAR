@@ -191,7 +191,7 @@
 	jump_grunt()
 	sound_hint()
 	changeNext_move(CLICK_CD_MELEE)
-	safe_throw_at(jump_target, range, throw_speed, src, FALSE, callback = CALLBACK(src, .proc/jump_callback))
+	safe_throw_at(jump_target, range, throw_speed, src, FALSE, callback = CALLBACK(src, PROC_REF(jump_callback)))
 
 /mob/living/carbon/proc/jump_callback()
 	sound_hint()

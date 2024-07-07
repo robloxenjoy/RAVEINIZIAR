@@ -19,7 +19,7 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, thrown_atom, skipcatch, hitpush, blocked, throwingdatum)
 	if(density)
 		sound_hint()
-		addtimer(CALLBACK(src, .proc/hitby_react, thrown_atom, throwingdatum.speed), 2)
+		addtimer(CALLBACK(src, PROC_REF(hitby_react), thrown_atom, throwingdatum.speed), 2)
 
 /atom/hitby_react(atom/movable/thrown_atom, speed = 0)
 	if(QDELETED(thrown_atom) || !isturf(thrown_atom.loc) || thrown_atom.anchored)
