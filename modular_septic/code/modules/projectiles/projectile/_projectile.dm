@@ -249,6 +249,8 @@
 			if(last_range)
 				range++
 				last_range = FALSE
+			else
+				on_range()
 		else
 			on_range()
 
