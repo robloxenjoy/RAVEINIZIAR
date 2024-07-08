@@ -237,7 +237,7 @@
 
 	return BULLET_ACT_HIT
 
-/obj/projectile/Range(atom/target)
+/obj/projectile/Range()
 	range--
 	if(wound_bonus != CANT_WOUND)
 		wound_bonus += wound_falloff_tile
@@ -246,7 +246,7 @@
 		embedding["embed_chance"] += embed_falloff_tile
 	if(range <= 0 && loc)
 		if(last_range)
-			if(loc != target.loc)
+			if(loc != original.loc)
 				range++
 				last_range = FALSE
 		else

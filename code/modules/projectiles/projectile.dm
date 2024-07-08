@@ -694,7 +694,7 @@
 			return
 		var/turf/target = locate(clamp(starting + xo, 1, world.maxx), clamp(starting + yo, 1, world.maxy), starting.z)
 		set_angle(get_angle(src, target))
-		if(isliving(target))
+		if(isliving(original))
 			last_range = TRUE
 	original_angle = Angle
 	if(!nondirectional_sprite)
@@ -714,7 +714,7 @@
 			return
 	if(!(datum_flags & DF_ISPROCESSING))
 		START_PROCESSING(SSprojectiles, src)
-	pixel_move(1, FALSE, direct_target) //move it now!
+	pixel_move(1, FALSE) //move it now!
 
 /obj/projectile/proc/set_angle(new_angle) //wrapper for overrides.
 	Angle = new_angle
@@ -820,7 +820,7 @@
 		if(CHECK_TICK && QDELETED(src))
 			return
 
-/obj/projectile/proc/pixel_move(trajectory_multiplier, hitscanning = FALSE, atom/target)
+/obj/projectile/proc/pixel_move(trajectory_multiplier, hitscanning = FALSE)
 	if(!loc || !trajectory)
 		return
 	last_projectile_move = world.time
@@ -858,7 +858,7 @@
 		pixel_x = trajectory.return_px() - trajectory.mpx * trajectory_multiplier * SSprojectiles.global_iterations_per_move
 		pixel_y = trajectory.return_py() - trajectory.mpy * trajectory_multiplier * SSprojectiles.global_iterations_per_move
 		animate(src, pixel_x = trajectory.return_px(), pixel_y = trajectory.return_py(), time = 1, flags = ANIMATION_END_NOW)
-	Range(target)
+	Range()
 
 /obj/projectile/proc/process_homing() //may need speeding up in the future performance wise.
 	if(!homing_target)
@@ -888,14 +888,18 @@
 
 	var/turf/curloc = get_turf(source)
 	var/turf/targloc = get_turf(target)
+	if(isnull(source_loc))
+		stack_trace("WARNING: Projectile [type] fired from nullspace.")
+		qdel(src)
+		return FALSE
 	trajectory_ignore_forcemove = TRUE
-	forceMove(get_turf(source))
+	forceMove(source)
 	trajectory_ignore_forcemove = FALSE
 	starting = curloc
 	pixel_x = source.pixel_x
 	pixel_y = source.pixel_y
-//	original = target
-	target = targloc
+	original = target
+//	target = targloc
 	if(targloc || !length(modifiers))
 		yo = targloc.y - curloc.y
 		xo = targloc.x - curloc.x
