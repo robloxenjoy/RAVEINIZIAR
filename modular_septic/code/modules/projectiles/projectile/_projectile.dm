@@ -29,7 +29,7 @@
 
 	var/can_hit_turfs = FALSE
 	var/z_levelism = null
-	var/last_range = FALSE
+	var/last_range = TRUE
 
 	/// Stored visible message
 //	var/hit_text = ""
