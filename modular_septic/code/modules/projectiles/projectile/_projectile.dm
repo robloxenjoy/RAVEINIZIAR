@@ -29,6 +29,7 @@
 
 	var/can_hit_turfs = FALSE
 	var/z_levelism = null
+	var/last_range = TRUE
 
 	/// Stored visible message
 //	var/hit_text = ""
@@ -244,7 +245,11 @@
 	if(embedding)
 		embedding["embed_chance"] += embed_falloff_tile
 	if(range <= 0 && loc)
-		on_range()
+		if(last_range)
+			range++
+			last_range = FALSE
+		else
+			on_range()
 
 /obj/projectile/on_range()
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_RANGE_OUT)
