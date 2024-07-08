@@ -982,3 +982,40 @@
 	ex_heavy = 3
 	ex_light = 4
 	ex_flame = 3
+
+/obj/structure/mineexplosive/mineplit
+	name = "Установленная Мина"
+	desc = "НЕ ЛЕЗЬ."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "mineplit"
+	density = FALSE
+	anchored = TRUE
+	opacity = FALSE
+	istrap = TRUE
+	shrapnel_type = /obj/projectile/bullet/shrapnel/mine
+	shrapnel_radius = 4
+	ex_heavy = 4
+	ex_light = 2
+	ex_flame = 3
+
+/obj/structure/mineexplosive/mineplit/ComponentInitialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(detonated),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/mineexplosive/mineplit/attackby(obj/item/W, mob/living/carbon/user, params)
+	return
+
+/obj/structure/mineexplosive/mineplit/proc/detonated(mob/living/lanced_by)
+	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+		shrapnel_initialized = TRUE
+		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+	SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
+	if(ex_dev || ex_heavy || ex_light || ex_flame)
+		var/turf/explosionturf = get_turf(src)
+		explosionturf.pollute_turf(/datum/pollutant/dust, 200)
+		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+		if(!QDELETED(src))
+			qdel(src)
