@@ -677,9 +677,10 @@
 		set_angle(angle)
 	if(spread)
 		set_angle(Angle + ((rand() - 0.5) * spread))
-
-	if(firer.look_now & LOOKING_UP)
-		src.z = firer.z+1
+	if(isliving(firer))
+		var/mob/living/zlevelman = firer
+		if(zlevelman.look_now & LOOKING_UP)
+			src.z = firer.z+1
 //		var/newTurf = get_turf(H.shadow)
 //		if(!(locate(/obj/structure/catwalk) in newTurf)) // Can't shoot through catwalks
 //			loc = newTurf
@@ -888,7 +889,7 @@
 
 	var/turf/curloc = get_turf(source)
 	var/turf/targloc = get_turf(target)
-	if(isnull(source_loc))
+	if(isnull(curloc))
 		stack_trace("WARNING: Projectile [type] fired from nullspace.")
 		qdel(src)
 		return FALSE
