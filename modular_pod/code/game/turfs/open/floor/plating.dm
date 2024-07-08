@@ -170,6 +170,7 @@
 					var/obj/item/minesetuplita/T = W
 					var/obj/structure/mineexplosive/mineplit/yes = new(get_turf(src))
 					qdel(T)
+					playsound(get_turf(src), 'modular_pod/sound/eff/setup_mine.ogg', 80 , FALSE, FALSE)
 					user.visible_message(span_meatymeat("[user] устанавливает [yes]."), span_meatymeat("Я устанавливаю [yes]."), span_hear("Я слышу постройку."))
 					user.changeNext_move(5)
 					sound_hint()

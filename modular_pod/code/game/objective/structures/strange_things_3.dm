@@ -602,7 +602,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)", "Кирка (50)", "Установщик Проволоки (40)", "Установщик Мины (80)")
+	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)", "Кирка (50)", "Установщик Проволоки (40)", "Установщик Мины (80)", "Установщик Нажимной Мины (70)")
 	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -654,6 +654,14 @@
 				return
 			new /obj/item/minesetup(get_turf(user))
 			pref_source.bobux_amount -= 80
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Установщик Нажимной Мины (70)")
+			if(pref_source.bobux_amount < 70)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/minesetuplita(get_turf(user))
+			pref_source.bobux_amount -= 70
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
