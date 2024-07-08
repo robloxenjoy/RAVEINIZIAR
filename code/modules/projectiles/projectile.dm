@@ -677,6 +677,15 @@
 		set_angle(angle)
 	if(spread)
 		set_angle(Angle + ((rand() - 0.5) * spread))
+
+	if(firer.look_now & LOOKING_UP)
+		src.z = firer.z+1
+//		var/newTurf = get_turf(H.shadow)
+//		if(!(locate(/obj/structure/catwalk) in newTurf)) // Can't shoot through catwalks
+//			loc = newTurf
+//			height = HEIGHT_HIGH // We are shooting from below, this protects resting players at the expense of windows
+//			original = get_turf(original) // Aim at turfs instead of mobs, to ensure we don't hit players
+
 	var/turf/starting = get_turf(src)
 	if(isnull(Angle)) //Try to resolve through offsets if there's no angle set.
 		if(isnull(xo) || isnull(yo))
@@ -685,6 +694,8 @@
 			return
 		var/turf/target = locate(clamp(starting + xo, 1, world.maxx), clamp(starting + yo, 1, world.maxy), starting.z)
 		set_angle(get_angle(src, target))
+		if(isliving(target))
+			last_range = TRUE
 	original_angle = Angle
 	if(!nondirectional_sprite)
 		var/matrix/matrix = new
@@ -703,7 +714,7 @@
 			return
 	if(!(datum_flags & DF_ISPROCESSING))
 		START_PROCESSING(SSprojectiles, src)
-	pixel_move(1, FALSE) //move it now!
+	pixel_move(1, FALSE, direct_target) //move it now!
 
 /obj/projectile/proc/set_angle(new_angle) //wrapper for overrides.
 	Angle = new_angle
@@ -809,7 +820,7 @@
 		if(CHECK_TICK && QDELETED(src))
 			return
 
-/obj/projectile/proc/pixel_move(trajectory_multiplier, hitscanning = FALSE)
+/obj/projectile/proc/pixel_move(trajectory_multiplier, hitscanning = FALSE, atom/target)
 	if(!loc || !trajectory)
 		return
 	last_projectile_move = world.time
@@ -847,7 +858,7 @@
 		pixel_x = trajectory.return_px() - trajectory.mpx * trajectory_multiplier * SSprojectiles.global_iterations_per_move
 		pixel_y = trajectory.return_py() - trajectory.mpy * trajectory_multiplier * SSprojectiles.global_iterations_per_move
 		animate(src, pixel_x = trajectory.return_px(), pixel_y = trajectory.return_py(), time = 1, flags = ANIMATION_END_NOW)
-	Range()
+	Range(target)
 
 /obj/projectile/proc/process_homing() //may need speeding up in the future performance wise.
 	if(!homing_target)

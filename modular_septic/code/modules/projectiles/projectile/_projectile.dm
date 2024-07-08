@@ -29,7 +29,7 @@
 
 	var/can_hit_turfs = FALSE
 	var/z_levelism = null
-	var/last_range = TRUE
+	var/last_range = FALSE
 
 	/// Stored visible message
 //	var/hit_text = ""
@@ -237,7 +237,7 @@
 
 	return BULLET_ACT_HIT
 
-/obj/projectile/Range()
+/obj/projectile/Range(atom/target)
 	range--
 	if(wound_bonus != CANT_WOUND)
 		wound_bonus += wound_falloff_tile
@@ -246,8 +246,9 @@
 		embedding["embed_chance"] += embed_falloff_tile
 	if(range <= 0 && loc)
 		if(last_range)
-			range++
-			last_range = FALSE
+			if(loc != target.loc)
+				range++
+				last_range = FALSE
 		else
 			on_range()
 
