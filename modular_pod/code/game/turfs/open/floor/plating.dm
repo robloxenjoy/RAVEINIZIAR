@@ -157,6 +157,28 @@
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return
 
+			if(istype(W, /obj/item/minesetuplita))
+				if(istype(loc, /area/maintenance/polovich/forest/inner))
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
+				if((locate(/obj/structure/) in get_turf(src)) || (locate(/obj/machinery/) in get_turf(src)))
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
+				if(do_after(user, 2 SECONDS, target=src))
+					var/obj/item/minesetuplita/T = W
+					var/obj/structure/mineexplosive/mineplit/yes = new(get_turf(src))
+					qdel(T)
+					user.visible_message(span_meatymeat("[user] устанавливает [yes]."), span_meatymeat("Я устанавливаю [yes]."), span_hear("Я слышу постройку."))
+					user.changeNext_move(5)
+					sound_hint()
+					return
+				else
+					to_chat(user, span_danger(xbox_rage_msg()))
+					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+					return
+
 			if(W.get_sharpness())
 				user.visible_message(span_notice("[user] размахивает с помощью [W]."),span_notice("Я размахиваю с помощью [W]."), span_hear("Я слышу взмах."))
 				user.changeNext_move(W.attack_delay)

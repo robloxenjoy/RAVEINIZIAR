@@ -936,6 +936,26 @@
 	to_chat(user, span_notice("Я достаю детонатор."))
 	user.changeNext_move(CLICK_CD_MELEE)
 
+/obj/item/minesetuplita
+	name = "Установщик Мины"
+	desc = "После установки, на такую будет достаточно наступить."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "mineplit_thing"
+	inhand_icon_state = null
+	worn_icon = null
+	worn_icon_state = null
+	w_class = WEIGHT_CLASS_BULKY
+	wound_bonus = 1
+	bare_wound_bonus = 3
+	min_force = 1
+	force = 8
+	throwforce = 5
+	carry_weight = 3 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("бьёт")
+	attack_verb_simple = list("бить")
+	var/install_mine = /obj/structure/mineexplosive/mineplit
+
 /obj/structure/mineexplosive
 	name = "Установленная Мина"
 	desc = "НЕ ЛЕЗЬ."
