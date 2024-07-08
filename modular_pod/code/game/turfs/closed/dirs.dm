@@ -189,7 +189,7 @@
 //					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)
 					mineturf.pollute_turf(/datum/pollutant/dust, 200)
-					if!QDELETED(mineturf)
+					if(!QDELETED(mineturf))
 						qdel(mineturf)
 
 /turf/podpol/wall/get_projectile_hitsound(obj/projectile/projectile)
