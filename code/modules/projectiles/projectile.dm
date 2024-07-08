@@ -677,10 +677,6 @@
 		set_angle(angle)
 	if(spread)
 		set_angle(Angle + ((rand() - 0.5) * spread))
-	if(isliving(firer))
-		var/mob/living/zlevelman = firer
-		if(zlevelman.look_now & LOOKING_UP)
-			src.z = firer.z+1
 //		var/newTurf = get_turf(H.shadow)
 //		if(!(locate(/obj/structure/catwalk) in newTurf)) // Can't shoot through catwalks
 //			loc = newTurf
@@ -695,13 +691,15 @@
 			return
 		var/turf/target = locate(clamp(starting + xo, 1, world.maxx), clamp(starting + yo, 1, world.maxy), starting.z)
 		set_angle(get_angle(src, target))
-		if(isliving(original))
-			last_range = TRUE
 	original_angle = Angle
 	if(!nondirectional_sprite)
 		var/matrix/matrix = new
 		matrix.Turn(Angle)
 		transform = matrix
+	if(isliving(firer))
+		var/mob/living/zlevelman = firer
+		if(zlevelman.look_now & LOOKING_UP)
+			src.z = firer.z+1
 	trajectory_ignore_forcemove = TRUE
 	forceMove(starting)
 	trajectory_ignore_forcemove = FALSE
