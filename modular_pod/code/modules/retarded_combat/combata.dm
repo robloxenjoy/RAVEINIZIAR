@@ -49,6 +49,7 @@
 			edge_protection = owner.get_edge_protection(affected)
 			if(edge_protection <= 0)
 				src.open_incision(owner)
+				src.open_incision(owner)
 				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Надрез!")]"))
 				for(var/obj/item/organ/bone/bonee as anything in getorganslotlist(ORGAN_SLOT_BONE))
 					if(bonee.is_broken())
