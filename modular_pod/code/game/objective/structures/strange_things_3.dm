@@ -937,7 +937,7 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 
 /obj/structure/mineexplosive
-	name = "Мина"
+	name = "Установленная Мина"
 	desc = "НЕ ЛЕЗЬ."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "installed"

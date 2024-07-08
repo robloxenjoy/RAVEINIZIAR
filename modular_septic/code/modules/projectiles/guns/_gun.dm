@@ -383,7 +383,7 @@
 			if(pointblank)
 				if(ismob(target))
 					user.visible_message(span_danger("<b>[user]</b> стреляет [src] в <b>[target] в упор</b>!"), \
-									span_danger("Я стреляю [src] в <b>[target] в упор</b>!"), \
+									span_danger("<b>[user]</b> стреляет [src] в <b>[target] в упор</b>!"), \
 									span_hear("Я слышу выстрел!"), COMBAT_MESSAGE_RANGE, target)
 					to_chat(target, span_userdanger("<b>[user]</b> стреляет [src] в меня в упор!"))
 				else
