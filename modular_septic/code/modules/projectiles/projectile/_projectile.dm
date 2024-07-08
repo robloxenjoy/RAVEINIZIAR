@@ -244,13 +244,10 @@
 		bare_wound_bonus = max(0, bare_wound_bonus + wound_falloff_tile)
 	if(embedding)
 		embedding["embed_chance"] += embed_falloff_tile
-	if(range <= 0)
-		if(!loc)
-			if(last_range)
-				range++
-				last_range = FALSE
-			else
-				on_range()
+	if(range <= 0 && loc)
+		if(last_range)
+			range++
+			last_range = FALSE
 		else
 			on_range()
 
