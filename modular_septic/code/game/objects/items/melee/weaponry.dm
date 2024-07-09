@@ -356,7 +356,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	min_force = 10
-	force = 16
+	force = 18
 	throwforce = 15
 	min_force_strength = 1
 	force_strength = 1.6
@@ -432,6 +432,36 @@
 	slot_flags = ITEM_SLOT_BELT
 	skill_melee = SKILL_IMPACT_WEAPON
 	worn_icon_state = "classic_baton"
+
+/obj/item/melee/bita/rebar
+	name = "Арматура"
+	desc = "Очень привлекательно."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "rebar"
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	inhand_icon_state = "rebar"
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
+	hitsound = list('modular_pod/sound/eff/weapon/blunty1.ogg', 'modular_pod/sound/eff/weapon/blunty2.ogg', 'modular_pod/sound/eff/weapon/blunty3.ogg')
+	min_force = 11
+	force = 15
+	throwforce = 13
+	min_force_strength = 1.1
+	force_strength = 1.4
+	wound_bonus = 8
+	bare_wound_bonus = 6
+	armor_damage_modifier = 1
+	havedurability = TRUE
+	durability = 250
+	carry_weight = 2 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	skill_melee = SKILL_IMPACT_WEAPON
+	worn_icon_state = "classic_baton"
+
+/obj/item/melee/bita/rebar/Initialize(mapload)
+	. = ..()
+	icon_state = "[icon_state][rand(1, 2)]"
 
 /obj/item/melee/bita/obsidian
 	name = "Obsidian Fragment"

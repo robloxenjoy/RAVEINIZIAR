@@ -217,7 +217,8 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot
-	name = "12 gauge buckshot"
+	name = "Картечь"
+	desc = "12 Калибр."
 	icon_state = "12gauge-1"
 	base_icon_state = "12gauge"
 //	world_icon_state = "gshell"
@@ -226,6 +227,12 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/loaded
+	start_empty = FALSE
+
+/obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/notfull
+	max_ammo = 2
+
+/obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/notfull/loaded
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/bolas

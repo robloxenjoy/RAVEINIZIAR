@@ -451,6 +451,8 @@
 				guns_find(user)
 			if(thing == "Броня")
 				armor_find(user)
+			if(thing == "Амуниция")
+				ammo_find(user)
 			if(thing == "Другое")
 				other_find(user)
 
@@ -596,6 +598,34 @@
 				return
 			new /obj/item/clothing/mask/gas/ballisticarmor(get_turf(user))
 			pref_source.bobux_amount -= 40
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		else
+			return
+
+/obj/structure/kaotikmachine/proc/ammo_find(mob/living/carbon/user)
+	var/list/otherlist = list("2 Картечи (20)")
+	var/thingy = input(user, "Что за амуницию я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/datum/preferences/pref_source = user.client?.prefs
+	if(!thingy)
+		return
+	if(get_dist(src, user) >= 2)
+		return
+	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
+		to_chat(user, span_meatymeat("Нужны каотики!"))
+		return
+/*
+	if(GLOB.world_deaths_crazy < 15)
+		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
+		return
+*/
+	switch(thingy)
+		if("2 Картечи (20)")
+			if(pref_source.bobux_amount < 20)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/notfull/loaded(get_turf(user))
+			pref_source.bobux_amount -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
@@ -751,7 +781,7 @@
 	. = ..()
 	if(.)
 		return
-	if(do_after(user, 3 SECONDS, target=src))
+	if(do_after(user, 2 SECONDS, target=src))
 		to_chat(user, span_meatymeat("Я ощущаю какой-то пиздец!"))
 		user.fully_heal(TRUE)
 
