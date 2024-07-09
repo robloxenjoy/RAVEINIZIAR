@@ -1,24 +1,26 @@
 ///Dangerous fires release this from the waste they're burning
 /datum/pollutant/carbon_air_pollution
-	name = "Carbon Air Pollution"
-	pollutant_flags = POLLUTANT_BREATHE_ACT
+	name = "Углеродное Загрязнение"
+	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	color = "#b49993"
+	thickness = 2
 
 /datum/pollutant/carbon_air_pollution/breathe_act(mob/living/carbon/victim, amount)
 	if(amount <= 5)
 		return
-	victim.adjustToxLoss(1)
+	victim.adjustToxLoss(1.5)
 	if(prob(amount))
 		victim.losebreath += 3
 		victim.agony_gasp()
 
 ///Dust from mining drills
 /datum/pollutant/dust
-	name = "Dust"
+	name = "Пыль"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	thickness = 2
 	color = "#FFED9C"
 	filter_wear = 0.25
+	scent = "пыль"
 
 /datum/pollutant/dust/breathe_act(mob/living/carbon/victim, amount)
 	if(amount <= 5)

@@ -11,6 +11,6 @@
 /obj/projectile/bullet/a40mm/on_hit(atom/target, blocked = FALSE)
 	..()
 	var/turf/explosionturf = get_turf(target)
-	explosionturf.pollute_turf(/datum/pollutant/dust, 200)
+	explosionturf.pollute_turf(/datum/pollutant/dust, 300)
 	explosion(target, devastation_range = -1, light_impact_range = 2, flame_range = 3, flash_range = 1, adminlog = FALSE, explosion_cause = src)
 	return BULLET_ACT_HIT

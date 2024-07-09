@@ -121,17 +121,17 @@
 		if(LAZYACCESS(modifiers, RIGHT_CLICK))
 			switch(user.combat_style)
 				if(CS_WEAK)
-					damage *= 0.2
+					damage *= 0.1
 					attack_fatigue_cost *= 0.25
 				if(CS_AIMED)
-					attack_skill_modifier += 5
+					attack_skill_modifier += 8
 					attack_delay *= 1.25
 					human_user.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
 					human_user.update_blocking_cooldown(BLOCKING_COOLDOWN_DURATION)
 					human_user.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
 				if(CS_FURY)
 					attack_skill_modifier -= 3
-					attack_delay *= 0.8
+					attack_delay *= 0.5
 				if(CS_STRONG)
 					damage *= 1.5
 					attack_fatigue_cost *= 1.5

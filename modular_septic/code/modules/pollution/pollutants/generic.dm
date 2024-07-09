@@ -7,9 +7,10 @@
 	scent = "дым"
 
 /datum/pollutant/smoke/breathe_act(mob/living/carbon/victim, amount)
-	if(amount <= 30)
+	if(amount <= 20)
 		return
 	if(prob(20))
+		victim.losebreath += 2
 		victim.emote("cough")
 
 /datum/pollutant/smoke/cannabis
