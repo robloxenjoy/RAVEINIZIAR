@@ -36,7 +36,7 @@
 //	ADD_TRAIT(src, TRAIT_FLOORED, FATIGUE)
 //	setFatigueLoss(FATIGUE_CRIT_THRESHOLD + 20, FALSE)
 	setFatigueLoss(90, FALSE)
-	Stun(8 SECONDS)
+	Stun(5 SECONDS)
 	fatigue_grunt()
 	//rip
 	if(ishuman(src))

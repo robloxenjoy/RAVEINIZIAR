@@ -44,7 +44,7 @@
 		SKILL_PICKPOCKET
 */
 //	var/list/rolled = roll3d6(user,SKILL_STEAL,null)
-	var/time = (5 SECONDS - ((GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET)/2)) + 1 SECONDS)
+	var/time = (4 SECONDS - ((GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET)/3)) + 1 SECONDS)
 //	var/obj/whatwillitsteal = null
 	if(do_after(src, time, target=C))
 		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)

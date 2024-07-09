@@ -227,6 +227,8 @@
 //							var/obj/item/organ/brain/brain = character.getorganslot(ORGAN_SLOT_BRAIN)
 //							if(brain)
 	//							(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
+							for(var/obj/item/organ/genital/genital in character.internal_organs)
+								genital.build_from_dna(character.dna, genital.mutantpart_key)
 							for(var/obj/item/organ/plushp in character.internal_organs)
 								plushp.maxHealth += GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE)
 							for(var/obj/item/bodypart/plusbodyhp as anything in character.bodyparts)
@@ -245,8 +247,6 @@
 									if("Самый Конченный")
 										to_chat(character, span_yellowteamradio("Я Самый Конченный!"))
 
-		//					for(var/obj/item/organ/genital/genital in character.internal_organs)
-		//						genital.build_from_dna(character.dna, genital.mutantpart_key)
 							character.height = height
 							character.dna.features["body_size"] = BODY_SIZE_NORMAL
 							character.dna.update_body_size()
