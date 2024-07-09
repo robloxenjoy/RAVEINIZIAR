@@ -23,4 +23,4 @@
 	loop_checks = FALSE
 #endif
 
-#define SPECIALMAP
+//#define SPECIALMAP

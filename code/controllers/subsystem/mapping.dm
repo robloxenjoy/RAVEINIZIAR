@@ -267,7 +267,7 @@ Used by the AI doomsday and the self-destruct nuke.
 	station_start = world.maxz + 1
 	INIT_ANNOUNCE("Loading [config.map_name]...")
 	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
-
+/*
 	var/list/otherZ = list()
 
 	#ifndef SPECIALMAP
@@ -277,7 +277,7 @@ Used by the AI doomsday and the self-destruct nuke.
 	if(otherZ.len)
 		for(var/datum/map_config/OtherZ in otherZ)
 			LoadGroup(FailedZs, OtherZ.map_name, OtherZ.map_path, OtherZ.map_file, OtherZ.traits, ZTRAITS_PODPOL)
-
+*/
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
