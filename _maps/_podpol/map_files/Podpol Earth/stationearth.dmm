@@ -1,7 +1,7 @@
 "ai" = (/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
 "am" = (/obj/effect/decal/metalpodpol,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
 "aH" = (/obj/structure/codec/bulb/green{dir = 1},/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest)
-"aK" = (/turf/open/space/basic,/area/maintenance/polovich/forest/inner)
+"aK" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest/inner)
 "aL" = (/turf/open/floor/plating/polovich/way/uzstone,/area/maintenance/polovich/forest)
 "aV" = (/obj/structure/stairs/east,/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
 "br" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
