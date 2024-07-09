@@ -21,6 +21,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	overfloor_placed = FALSE
 	underfloor_accessibility = UNDERFLOOR_INTERACTABLE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	var/can_cover_up = TRUE
 	var/can_build_on = TRUE
 
@@ -29,6 +30,7 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 
 /turf/open/openspace/norm
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	baseturfs = /turf/open/openspace/norm
 
 /turf/open/openspace/airless/planetary
 	planetary_atmos = TRUE

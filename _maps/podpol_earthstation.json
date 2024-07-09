@@ -20,21 +20,21 @@
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/open/openspace/norm"
 		},
 		{
 			"Down": -1,
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/open/openspace/norm"
 		},
 		{
 			"Down": -1,
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace"
+			"Baseturf": "/turf/open/openspace/norm"
 		},
 		{
 			"Down": -1,
