@@ -2,12 +2,7 @@
 	"version": 1,
 	"map_name": "Podpol StationEarth",
 	"map_path": "_podpol/map_files/Podpol Earth",
-	"map_file": [
-		"stationearthZ4.dmm",
-		"stationearthZ3.dmm",
-		"stationearthZ2.dmm",
-		"stationearthZ1.dmm"
-	],
+	"map_file": "stationearth.dmm",
 	"station_name": "Планета Пиздеца",
 	"respawn_allowed": true,
 	"space_ruin_levels": 0,
