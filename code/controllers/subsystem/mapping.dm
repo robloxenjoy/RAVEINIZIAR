@@ -131,7 +131,7 @@ SUBSYSTEM_DEF(mapping)
 	// Set up Z-level transitions.
 	setup_map_transitions()
 	generate_station_area_list()
-	initialize_reserved_level(transit.z_value)
+//	initialize_reserved_level(transit.z_value)
 	SSticker.OnRoundstart(CALLBACK(src, .proc/spawn_maintenance_loot))
 	return ..()
 
