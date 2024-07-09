@@ -131,7 +131,7 @@
 					human_user.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
 				if(CS_FURY)
 					attack_skill_modifier -= 3
-					attack_delay *= 0.5
+					attack_delay *= 0.4
 				if(CS_STRONG)
 					damage *= 1.5
 					attack_fatigue_cost *= 1.5
