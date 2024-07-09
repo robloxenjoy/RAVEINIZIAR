@@ -3,7 +3,8 @@
 INITIALIZE_IMMEDIATE(/mob/dead)
 
 /mob/dead
-	sight = SEE_TURFS | SEE_MOBS | SEE_OBJS | SEE_SELF
+//	sight = SEE_TURFS | SEE_MOBS | SEE_OBJS | SEE_SELF
+	sight = 0
 	move_resist = INFINITY
 	throwforce = 0
 
