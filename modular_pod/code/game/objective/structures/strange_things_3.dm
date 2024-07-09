@@ -442,7 +442,7 @@
 		return
 	if(!lockeda)
 		if(user.client?.prefs)
-			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Броня", "Другое")
+			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Броня", "Амуниция", "Другое")
 			if(!thing)
 				return
 			if(thing == "Холодное оружие")

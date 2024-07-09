@@ -313,7 +313,6 @@
 	state_flags |= RESUPPLY_READY
 	playsound(src, 'modular_septic/sound/efn/captagon/heroin_fill.ogg', 65, FALSE)
 
-
 /obj/machinery/resupply_puta/proc/donehere(mob/user)
 	state_flags |= RESUPPLY_READY
 	update_appearance(UPDATE_ICON)

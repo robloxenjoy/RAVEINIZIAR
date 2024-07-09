@@ -223,7 +223,7 @@
 	base_icon_state = "12gauge"
 //	world_icon_state = "gshell"
 	max_ammo = 8
-	caliber = CALIBER_SHOTGUN
+	caliber = CALIBER_BUCKSHOT
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/loaded
