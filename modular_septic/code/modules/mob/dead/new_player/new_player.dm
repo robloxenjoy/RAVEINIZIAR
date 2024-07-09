@@ -301,7 +301,8 @@
 	uniform = /obj/item/clothing/under/codec/purp/black
 	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/melee/bita/cep/iron
+//	belt = /obj/item/melee/bita/cep/iron
+	r_hand = /obj/item/melee/bita/hammer/sledge
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	back = /obj/item/melee/shieldo/buckler/wooden
 

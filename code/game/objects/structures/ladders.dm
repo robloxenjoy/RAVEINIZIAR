@@ -76,7 +76,7 @@
 		ladder.add_fingerprint(user)
 		if(!do_after(user, travel_time, target = src))
 			return
-		show_fluff_message(going_up, user)
+//		show_fluff_message(going_up, user)
 
 
 	var/turf/T = get_turf(ladder)
