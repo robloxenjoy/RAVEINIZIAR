@@ -1616,7 +1616,7 @@
 		SKILL_RAPIER = list(-1, 1),
 		SKILL_SHORTSWORD = list(-1, 1),
 		SKILL_LONGSWORD = list(-1, 1),
-		SKILL_FLAIL = list(-1, 1),
+		SKILL_IMPACT_WEAPON_TWOHANDED = list(-1, 1),
 		SKILL_THROWING = list(-5, 2),
 		SKILL_PICKPOCKET = list(-3, 2),
 		SKILL_LOCKPICKING = list(-2, 2),
@@ -1645,10 +1645,10 @@
 
 /datum/attribute_holder/sheet/job/svogod
 	attribute_variance = list(
-		STAT_STRENGTH = list(1, 4),
-		STAT_ENDURANCE = list(1, 5),
-		STAT_DEXTERITY = list(1, 3),
-		STAT_INTELLIGENCE = list(1, 3),
+		STAT_STRENGTH = list(2, 4),
+		STAT_ENDURANCE = list(2, 5),
+		STAT_DEXTERITY = list(2, 3),
+		STAT_INTELLIGENCE = list(2, 3),
 		SKILL_BRAWLING = list(2, 5),
 		SKILL_WRESTLING = list(2, 5),
 		SKILL_SMG = list(-1, 1),
@@ -1658,6 +1658,7 @@
 		SKILL_RAPIER = list(-1, 1),
 		SKILL_SHORTSWORD = list(-1, 1),
 		SKILL_LONGSWORD = list(-1, 1),
+		SKILL_IMPACT_WEAPON_TWOHANDED = list(-1, 1),
 		SKILL_FLAIL = list(-1, 1),
 		SKILL_SPEAR = list(-1, 1),
 		SKILL_THROWING = list(-5, 2),

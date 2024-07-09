@@ -369,6 +369,44 @@
 	tetris_width = 32
 	tetris_height = 32
 
+/obj/item/melee/bita/hammer/sledge
+	name = "Кувалда"
+	desc = "Ну нихуя себе."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	icon_state = "sledge"
+	inhand_icon_state = "sledge"
+	worn_icon = null
+	worn_icon_state = null
+	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
+	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
+	pickup_sound = 'modular_septic/sound/effects/pickupdefault.ogg'
+	hitsound = list('modular_pod/sound/eff/weapon/big1.ogg', 'modular_pod/sound/eff/weapon/big2.ogg', 'modular_pod/sound/eff/weapon/big3.ogg')
+	havedurability = TRUE
+	durability = 300
+	carry_weight = 5 KILOGRAMS
+	skill_melee = SKILL_IMPACT_WEAPON_TWOHANDED
+	w_class = WEIGHT_CLASS_HUGE
+	slot_flags = null
+	min_force = 17
+	force = 29
+	throwforce = 20
+	min_force_strength = 1
+	force_strength = 1.6
+	wound_bonus = 13
+	bare_wound_bonus = 13
+	armor_damage_modifier = 1
+	edge_protection_penetration = 3
+	subtractible_armour_penetration = 3
+	attack_fatigue_cost = 13
+	attack_delay = 40
+	throw_speed = 2
+	throw_range = 8
+	attack_verb_continuous = list("отбивает", "ударяет", "вмазывает", "хуярит", "въёбывает")
+	attack_verb_simple = list("отбить", "ударить", "вмазать", "хуярить", "въебать")
+	tetris_width = 32
+	tetris_height = 32
+
 /obj/item/melee/bita/macecircle
 	name = "Steel Mace"
 	desc = "One-handed steel mace."
