@@ -111,7 +111,7 @@
 "MY" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/cave)
 "Ne" = (/turf/open/floor/plating/polovich/way/monumental{dir = 8},/area/maintenance/polovich/forest/cave)
 "No" = (/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest)
-"NJ" = (/turf/open/space/basic,/area/maintenance/polovich/forest)
+"NJ" = (/turf/open/space/basic,/area/space)
 "NM" = (/turf/open/floor/plating/polovich/way/station/mystic/crazy/back,/area/maintenance/polovich/forest)
 "OA" = (/turf/podpol/wall/shroom,/area/maintenance/polovich/forest)
 "OE" = (/obj/structure/codec/bulb/green{dir = 4; light_range = 2},/obj/structure/toilet,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
