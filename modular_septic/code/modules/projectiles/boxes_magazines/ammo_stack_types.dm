@@ -223,7 +223,7 @@
 	base_icon_state = "12gauge"
 //	world_icon_state = "gshell"
 	max_ammo = 8
-	caliber = CALIBER_BUCKSHOT
+	caliber = CALIBER_SHOTGUN
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/loaded
@@ -273,9 +273,10 @@
 
 /obj/item/ammo_box/magazine/ammo_stack/batteries/loaded
 	start_empty = FALSE
-
+/*
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/loaded
 	start_empty = FALSE
+*/

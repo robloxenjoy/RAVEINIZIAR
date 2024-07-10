@@ -11,9 +11,8 @@
 "dt" = (/turf/podpol/wall/caver,/area/maintenance/polovich/forest/inner)
 "dx" = (/obj/structure/codec/bulb/green{dir = 1},/turf/open/floor/carpet/blackk,/area/maintenance/polovich/forest/inner)
 "dW" = (/obj/machinery/codec/door/konch{autolock = 1},/turf/open/floor/plating/polovich/way/fish,/area/maintenance/polovich/forest/inner)
-"ee" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "el" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/inner)
-"er" = (/obj/structure/codec/bulb/green,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
+"eD" = (/obj/structure/railing{dir = 1},/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "ge" = (/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "ho" = (/turf/open/floor/plating/polovich/way/station/hotfloor,/area/maintenance/polovich/forest/inner)
 "hr" = (/obj/structure/sign/poster/official/dick_gum,/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/inner)
@@ -21,6 +20,7 @@
 "hz" = (/turf/open/floor/plating/polovich/way/monumental,/area/maintenance/polovich/forest/cave)
 "hH" = (/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
 "hL" = (/turf/open/floor/plating/polovich/way/station/mystic/crazy,/area/maintenance/polovich/forest/inner)
+"hM" = (/obj/structure/codec/bulb/green,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
 "hQ" = (/obj/structure/wayto/podpol,/turf/open/floor/plating/polovich/way/hotstone4,/area/maintenance/polovich/forest)
 "jd" = (/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/inner)
 "jY" = (/obj/structure/chair/sofa/right,/obj/structure/codec/bulb/green{dir = 1},/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
@@ -29,6 +29,7 @@
 "kA" = (/turf/open/floor/plating/polovich/way/kaos/ei,/area/maintenance/polovich/forest/inner)
 "kJ" = (/turf/open/floor/plating/polovich/way/kaos/ni,/area/maintenance/polovich/forest/inner)
 "kM" = (/obj/machinery/codec/door/konch{autolock = 1},/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
+"lB" = (/obj/structure/codec/bulb/green,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/inner)
 "lR" = (/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/forest/inner)
 "lT" = (/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
 "mg" = (/obj/effect/landmark/start/new_player,/turf/open/floor/plating/polovich/way/kaos/se,/area/maintenance/polovich/forest/inner)
@@ -39,6 +40,7 @@
 "nQ" = (/turf/podpol/wall/caver,/area/maintenance/polovich/forest/cave)
 "nX" = (/obj/machinery/codec/door/kapno/father,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
 "od" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest/inner)
+"oB" = (/obj/structure/railing{dir = 8},/obj/structure/barbwire{dir = 8},/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "oP" = (/turf/open/floor/plating/polovich/way/deadmeat_full,/area/maintenance/polovich/forest/inner)
 "pd" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "pq" = (/turf/open/floor/plating/polovich/way/monumental{dir = 4},/area/maintenance/polovich/forest/cave)
@@ -75,6 +77,7 @@
 "Az" = (/obj/structure/barbwire{dir = 4},/obj/structure/railing{dir = 8},/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "AI" = (/obj/effect/spawner/random/structure/maphelp/fire/inferno/ten/magic,/turf/open/floor/plating/polovich/way/cavero,/area/maintenance/polovich/forest/cave)
 "Cm" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest/cave)
+"CB" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
 "DG" = (/obj/effect/landing/svogod,/turf/open/floor/plating/polovich/way/cavero,/area/maintenance/polovich/forest/cave)
 "DQ" = (/turf/open/floor/plating/polovich/way/kaos/th,/area/maintenance/polovich/forest/inner)
 "DS" = (/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
@@ -93,18 +96,15 @@
 "JI" = (/obj/structure/blockrole{allow_role = "Капнобатай"},/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
 "JY" = (/obj/effect/decal/metalpodpol,/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "Kj" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/morphine,/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
-"Ko" = (/obj/structure/codec/bulb/green,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/inner)
 "Lu" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/morphine,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "Mb" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
 "Ml" = (/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
-"MI" = (/obj/effect/decal/metalpodpol,/obj/machinery/codec/door/kapno/father{autolock = 1; id_tag = "kapnodvor"},/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "MN" = (/obj/structure/chair/podpolsit,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
 "MU" = (/turf/open/floor/plating/polovich/way/fish,/area/maintenance/polovich/forest)
 "MY" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/cave)
 "Ne" = (/turf/open/floor/plating/polovich/way/monumental{dir = 8},/area/maintenance/polovich/forest/cave)
 "No" = (/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest)
 "NM" = (/turf/open/floor/plating/polovich/way/station/mystic/crazy/back,/area/maintenance/polovich/forest)
-"Oj" = (/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/cave)
 "OA" = (/turf/podpol/wall/shroom,/area/maintenance/polovich/forest)
 "OE" = (/obj/structure/codec/bulb/green{dir = 4; light_range = 2},/obj/structure/toilet,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
 "OI" = (/obj/structure/sign/poster/official/no_erp,/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest/inner)
@@ -113,7 +113,6 @@
 "Pa" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
 "Pl" = (/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/inner)
 "PB" = (/obj/structure/barbwire,/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
-"Qd" = (/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
 "Qm" = (/obj/structure/railing,/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "Qp" = (/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest)
 "QG" = (/obj/structure/medica,/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/inner)
@@ -121,8 +120,9 @@
 "Rz" = (/turf/podpol/wall/stal,/area/maintenance/polovich/forest/inner)
 "RT" = (/turf/podpol/wall/shroom,/area/maintenance/polovich/forest/cave)
 "RX" = (/obj/effect/landing/kapno,/turf/open/floor/plating/polovich/way/stoner2,/area/maintenance/polovich/forest/inner)
+"Sb" = (/obj/effect/decal/metalpodpol,/obj/machinery/codec/door/kapno/father{autolock = 1; id_tag = "kapnodvor"},/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "Si" = (/obj/structure/chair/sofa/left,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
-"Tt" = (/obj/structure/railing{dir = 8},/obj/structure/barbwire{dir = 8},/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
+"TP" = (/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/cave)
 "UH" = (/obj/structure/kaotikmachine,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
 "UO" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/copium,/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "UX" = (/obj/structure/barbwire{dir = 4},/turf/open/floor/plating/polovich/way/hotstone4,/area/maintenance/polovich/forest)
@@ -198,14 +198,14 @@ nQnQnQnQnQqVqVgegegegegegegegegegegegegegegegegegegegegegegeqVnQnQnQnQnQnQnQnQnQ
 CmCmCmCmCmCmqVqVqVgegegegegegegegegegegegegegegegegegegegegeqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQzgzgzgzgzgnQnQnQnQnQnQzgzgzgzgzgzgzgzgzgzgnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 elelQGelelCmysysysysysysgegegegegegegegegegegegegegegegegegegeqVqVqVqVqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQzgzgzgzgzgnQnQnQnQzgzgzgzgzgzgzgzgzgzgzgzgzgnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 elqhjdjdelMYuUuUuUuUuUysgegegegegegegegegegegegegegegegegegegegegegegeqVqVnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgnQnQnQnQnQnQnQnQzgzgzgzgzgzgzgnQnQnQnQnQzgzgzgzgzgzgnQnQnQMYMYMYMYMYMYMYMYMYMYMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
-elmPjdjdKoOjDSerDSDSuUysgegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVnQnQnQnQnQnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgzgnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgnQnQnQzgzgzgzgzgzgzgnQnQnQMYxJxJlTlTlTlTlTXHxJMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
+elmPjdjdlBTPDShMDSDSuUysgegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVnQnQnQnQnQnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgzgnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgnQnQnQzgzgzgzgzgzgzgnQnQnQMYxJxJlTlTlTlTlTXHxJMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 eljdjdjdelMYMYuUuUDSuUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVnQnQnQnQnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgzgzgzgnQnQnQnQnQnQzgzgzgzgzgzgzgzgzgzgzgzgzgzgzgzgzgzgnQnQnQMYhHhHYElTMNlTYEhHhHMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
-eleljdelelCmCmysuUQduUysysgegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVnQnQnQnQnQnQzgzgzgnQnQnQnQnQzgzgzgzgnQnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgzgzgzgzgzgzgzgnQnQnQMYhHNepqhHNepqhHNepqMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
+eleljdelelCmCmysuUCBuUysysgegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVnQnQnQnQnQnQzgzgzgnQnQnQnQnQzgzgzgzgnQnQnQnQnQnQnQnQzgzgzgzgzgzgzgzgzgzgzgzgzgzgzgnQnQnQMYhHNepqhHNepqhHNepqMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 CmodsHdtCmCmnQCmuUDSuUuUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVvSzgzgzgnQnQnQnQnQnQnQnQzgzgzgzgnQnQnQnQnQnQnQnQnQzgzgnQnQnQnQzgzgzgzgzgzgnQnQnQMYhHEMhzhHEMhzhHEMhzMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 nQodjddtCmnQnQCmuUDSDSuUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegevSvSvSvSqVnQnQnQnQnQnQnQnQzgzgzgzgzgnQnQnQnQnQnQnQzgzgzgnQnQnQnQzgzgzgzgzgzgzgnQnQMYlTlTlTlTlThHhHhHhHMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
-nQodsHdtCmnQnQCmMYuUQduUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegevSqVqVqVnQnQnQnQnQzgzgzgzgzgzgzgzgnQnQnQnQnQzgzgzgnQnQnQnQnQzgzgzgzgzgzgzgnQnQMYhHhHhHlTlTZoZoZoZoMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
+nQodsHdtCmnQnQCmMYuUCBuUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegevSqVqVqVnQnQnQnQnQzgzgzgzgzgzgzgzgnQnQnQnQnQzgzgzgnQnQnQnQnQzgzgzgzgzgzgzgnQnQMYhHhHhHlTlTZoZoZoZoMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 nQodjddtCmnQnQCmCmMYDSuUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVnQnQnQnQzgzgnQnQnQzgzgnQnQnQnQnQzgzgzgzgnQnQnQnQnQnQnQzgzgzgzgnQnQnQMYhHhHhHlTlTZoZoZoZoMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
-nQodsHdtCmnQnQnQCmMYOjuUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVnQzgzgzgnQnQnQnQnQnQnQzgzgzgzgzgzgnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQMYMYMYMYMYMYMYMYMYMYMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
+nQodsHdtCmnQnQnQCmMYTPuUysgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVnQzgzgzgnQnQnQnQnQnQnQzgzgzgzgzgzgnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQMYMYMYMYMYMYMYMYMYMYMYnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 elodkyododelelelelelkyeleluUuUuUQmQmQmQmQmQmgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVzgzgnQnQnQnQnQnQnQzgzgzgzgzgnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 elcXcXtkelcXcXjYSicXcXtkHIMUMUEOMUgegegegesMsfgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVvSvSvSqVnQnQnQnQnQnQzgzgzgnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
 elcXcXcXelWPWPpFpFWPWPcXHIMUMUAzgeQpgeQpgesMsfgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegegevSvSvSqVnQnQnQnQnQnQnQzgzgnQnQnQnQzgzgzgzgzgzgnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQnQ
@@ -369,11 +369,11 @@ AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAy
 AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNoqVgegegegegegegegegegegegecmsfgegesfgegesfxEXVXVXVXVXVXVXVXVgeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
 AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNocvgegegegegegegegegegegegecmsfgegesfgegesfxEXVmzmzmzmzNMmzmzXVqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
 AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNoqVgegegegegegegegegegegegecmsfgegesfgegepXxEXVRbtdXVXVmzXVXVXVqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
-AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAygegegegegegegegegegegegegeTtsfgegepXXVpXpXxEXVRbRbRbRbmzRbRbgeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
-AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyJYJYJYJYJYJYJYJYJYJYJYJYJYMIJYJYJYXVXVXVmzJImzmzmzmzmzhQmzRbmzqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
-AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAygegegegegegegegegegegegegeTtsfgeXVpXXVpXpXxEXVXVXVXVXVmzRbRbgeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
+AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAygegegegegegegegegegegegegeoBsfgegepXXVpXpXxEXVRbRbRbRbmzRbRbgeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
+AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyJYJYJYJYJYJYJYJYJYJYJYJYJYSbJYJYJYXVXVXVmzJImzmzmzmzmzhQmzRbmzqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
+AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAygegegegegegegegegegegegegeoBsfgeXVpXXVpXpXxEXVXVXVXVXVmzRbRbgeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
 AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNoqVgegegegegegegegegegegegecmsfgegesfgegepXxEgegegeXVXVmzXVgegeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
-AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVqVqVOAOAOAAyAyAyAyOAOAOAAyOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNocvgegegegegegegegegegegegeeeeeeeeeeeeeeeeexExExExExExExExExExEqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
+AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVqVqVOAOAOAAyAyAyAyOAOAOAAyOAOAOAOAOAOAOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNocvgegegegegegegegegegegegeeDeDeDeDeDeDeDeDxExExExExExExExExExEqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
 AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVqVqVqVOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNoqVgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
 AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVqVOAOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyNoqVgegegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
 AyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVqVqVOAOAAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyAyqVgegegegegegegegegegegegegegegegegegegegegegegegegegegegegeqVqVqVqVqVqVqVqVqVqVqVqVqVqVqVqV
