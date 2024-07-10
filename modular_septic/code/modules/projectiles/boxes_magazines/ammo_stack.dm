@@ -91,7 +91,7 @@
 	if(stack_type != ammo_casing.stack_type)
 		to_chat(user, span_warning("Не могу собрать [ammo_casing] с [src]."))
 		return
-	if(ammo_type != ammo_casing.type)
+	if(type != ammo_casing.type)
 		to_chat(user, span_warning("Не могу собрать [ammo_casing] с [src]."))
 		return
 	if(!loaded_projectile || !ammo_casing.loaded_projectile)
