@@ -457,7 +457,7 @@
 				other_find(user)
 
 /obj/structure/kaotikmachine/proc/melee_find(mob/living/carbon/human/user)
-	var/list/meleelist = list("Меч (40)", "Копьё (40)", "Баклер (20)", "Молоток (30)", "Цеп (40)")
+	var/list/meleelist = list("Меч (50)", "Копьё (40)", "Баклер (20)", "Арматура (20)", "Цеп (40)")
 	var/thingy = input(user, "Что за оружие я хочу?", "Я хочу...") as null|anything in sort_list(meleelist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -468,12 +468,12 @@
 		to_chat(user, span_meatymeat("Нужны каотики!"))
 		return
 	switch(thingy)
-		if("Меч (40)")
-			if(pref_source.bobux_amount < 40)
+		if("Меч (50)")
+			if(pref_source.bobux_amount < 50)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
 				return
 			new /obj/item/podpol_weapon/sword/steel(get_turf(user))
-			pref_source.bobux_amount -= 40
+			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Копьё (40)")
@@ -492,12 +492,12 @@
 			pref_source.bobux_amount -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Молоток (30)")
-			if(pref_source.bobux_amount < 30)
+		if("Арматура (20)")
+			if(pref_source.bobux_amount < 20)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
 				return
-			new /obj/item/melee/bita/hammer/heavy(get_turf(user))
-			pref_source.bobux_amount -= 30
+			new /obj/item/melee/bita/rebar(get_turf(user))
+			pref_source.bobux_amount -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Цеп (40)")
