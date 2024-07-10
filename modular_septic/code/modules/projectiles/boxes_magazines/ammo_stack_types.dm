@@ -205,7 +205,8 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun
-	name = "12 gauge slugs"
+	name = "Пуля"
+	desc = "12 Калибр."
 	icon_state = "12gauges-1"
 	base_icon_state = "12gauges"
 //	world_icon_state = "gshells"

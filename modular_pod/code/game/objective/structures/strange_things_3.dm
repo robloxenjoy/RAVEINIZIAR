@@ -604,7 +604,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/ammo_find(mob/living/carbon/user)
-	var/list/otherlist = list("2 Картечи (20)")
+	var/list/otherlist = list("Пули 12 Калибра (40)")
 	var/thingy = input(user, "Что за амуницию я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -620,12 +620,12 @@
 		return
 */
 	switch(thingy)
-		if("2 Картечи (20)")
-			if(pref_source.bobux_amount < 20)
+		if("Пули 12 Калибра (40)")
+			if(pref_source.bobux_amount < 40)
 				to_chat(user, span_meatymeat("Нужны каотики!"))
 				return
-			new /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot/notfull/loaded(get_turf(user))
-			pref_source.bobux_amount -= 20
+			new /obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded(get_turf(user))
+			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else

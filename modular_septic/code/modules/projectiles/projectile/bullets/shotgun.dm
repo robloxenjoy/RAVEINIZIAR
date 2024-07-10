@@ -20,7 +20,7 @@
 	sharpness = NONE
 
 /obj/projectile/bullet/shotgun_slug
-	name = "12g slug"
+	name = "снаряд"
 	damage = 60
 	wound_bonus = 0
 	bare_wound_bonus = 0
