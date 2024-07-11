@@ -23,7 +23,7 @@
 		to_chat(src, span_danger("You have been banned from OOC."))
 		return
 	if(should_not_say)
-		to_chat(src, span_danger("Мне не нужно разговаривать."))
+		to_chat(src, span_danger("Тебе не нужно разговаривать, ты еблан."))
 		return
 	if(QDELETED(src))
 		return

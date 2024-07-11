@@ -896,6 +896,11 @@
 	canSmoothWith = null
 	frame = null
 
+/obj/structure/table/oldwood/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(!QDELETED(src))
+			qdel(src)
+
 /obj/structure/table/fine
 	name = "Table"
 	desc = "Fine."

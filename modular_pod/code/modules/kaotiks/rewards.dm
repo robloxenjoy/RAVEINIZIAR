@@ -326,6 +326,7 @@
 	buy_message = "<b>Пизда!</span>"
 	id = "blackout"
 	cost = 500
+	infinite_buy = TRUE
 
 /datum/bobux_reward/blackout/can_buy(client/noob, silent, fail_message)
 	. = ..()
@@ -349,6 +350,7 @@
 	buy_message = "<b>Отлично-отлично!</span>"
 	id = "lightout"
 	cost = 200
+	infinite_buy = TRUE
 
 /datum/bobux_reward/lightout/can_buy(client/noob, silent, fail_message)
 	. = ..()
@@ -365,6 +367,25 @@
 		A.static_lighting = FALSE
 		A.set_base_lighting(new_alpha = 255)
 		A.remove_area_lighting_objects()
+
+/datum/bobux_reward/changename
+	name = "Сменить Имя"
+	desc = "Пора бы."
+	buy_message = "<b>Новое имя! Мудрый выбор!</span>"
+	id = "changename"
+	cost = 30
+	infinite_buy = TRUE
+
+/datum/bobux_reward/changename/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	if(. && ishuman(noob.mob) && noob.mob.mind)
+		return TRUE
+
+/datum/bobux_reward/changename/on_buy(client/noob)
+	. = ..()
+	var/rolevich = input("Какое имя?", "") as text
+	noob.mob.real_name = rolevich
+	noob.mob.name = rolevich
 
 /*
 /datum/bobux_reward/respawn

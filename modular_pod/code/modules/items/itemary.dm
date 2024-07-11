@@ -503,16 +503,17 @@
 	sharpness = SHARP_POINTY
 	embedding = list("pain_mult" = 10, "rip_time" = 5, "embed_chance" = 60, "jostle_chance" = 5, "pain_stam_pct" = 2, "pain_jostle_mult" = 9, "fall_chance" = 0.1, "ignore_throwspeed_threshold" = TRUE)
 	skill_melee = SKILL_IMPACT_WEAPON
+	readying_flags = READYING_FLAG_JUSTCAUSE
 	carry_weight = 2 KILOGRAMS
-	attack_fatigue_cost = 15
-	attack_delay = 20
+	attack_fatigue_cost = 17
+	attack_delay = 25
 	armor_damage_modifier = 3
 	edge_protection_penetration = 10
 	subtractible_armour_penetration = 50
 //	armour_penetration = 10
 	parrying_flags = BLOCK_FLAG_UNARMED
 	havedurability = TRUE
-	durability = 100
+	durability = 130
 	tetris_width = 32
 	tetris_height = 64
 	slot_flags = ITEM_SLOT_BELT
