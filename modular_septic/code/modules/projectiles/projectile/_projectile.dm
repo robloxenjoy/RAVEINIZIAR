@@ -28,7 +28,6 @@
 	var/hitsound_volume = 80
 
 	var/can_hit_turfs = FALSE
-	var/z_levelism = null
 	var/last_range = TRUE
 
 	/// Stored visible message
@@ -47,6 +46,7 @@
 		return PROJECTILE_PIERCE_PHASE
 	if(projectile_piercing & A.pass_flags_self)
 		return PROJECTILE_PIERCE_HIT
+/*
 	if(isopenspaceturf(A))
 		if(z_levelism)
 			if(z_levelism == TRUE)
@@ -54,6 +54,7 @@
 			else
 				get_step_multiz(src, DOWN)
 			return PROJECTILE_PIERCE_PHASE
+*/
 	if(ismovable(A))
 		var/atom/movable/AM = A
 		if(AM.throwing)

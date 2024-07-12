@@ -1,11 +1,13 @@
 /obj/item/ammo_casing/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", atom/fired_from)
 	if(!loaded_projectile)
 		return
+/*
 	if(target.z != user.z)
 		if(target.z > user.z)
 			loaded_projectile.z_levelism = TRUE
 		if(target.z < user.z)
 			loaded_projectile.z_levelism = FALSE
+*/
 	loaded_projectile.original = target
 	loaded_projectile.firer = user
 	loaded_projectile.fired_from = fired_from
