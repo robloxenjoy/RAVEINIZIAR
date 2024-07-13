@@ -36,7 +36,7 @@
 
 /obj/structure/stalag/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		new ore_type(get_turf(user), ore_amount)
+		new ore_type(get_turf(src), ore_amount)
 		playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.ogg', 90 , FALSE, FALSE)
 	qdel(src)
 
@@ -86,7 +86,7 @@
 	if(.)
 		return
 	user.visible_message(span_notice("[user] стукает [src]."),span_notice("Я стукаю [src]."), span_hear("Я слышу чё-то."))
-	user.changeNext_move(W.attack_delay)
+	user.changeNext_move(10)
 	user.adjustFatigueLoss(5)
 	sound_hint()
 	playsound(loc,'modular_pod/sound/eff/incrementum.ogg', 30, TRUE)
