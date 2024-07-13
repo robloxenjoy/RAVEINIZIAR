@@ -814,14 +814,16 @@
 
 /obj/structure/sign/poster/contraband/codec/purpella/Initialize(mapload)
 	. = ..()
-	lightchoose = rand(1, 3)
+	lightchoose = rand(1, 4)
 	switch(lightchoose)
 		if(1)
-			set_light(3, 2, "#d1a5a0")
+			set_light(2, 2, "#d1a5a0")
 		if(2)
-			set_light(4, 2, "#c680c8")
-		if(2)
-			set_light(5, 2, "#a180ed")
+			set_light(3, 2, "#c680c8")
+		if(3)
+			set_light(4, 2, "#a180ed")
+		if(4)
+			set_light(1, 3, "#894ab6")
 
 /obj/structure/medica
 	name = "Медика"

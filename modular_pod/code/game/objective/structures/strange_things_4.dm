@@ -7,7 +7,7 @@
 	anchored = TRUE
 	opacity = FALSE
 	pass_flags_self = LETPASSTHROW|PASSSTRUCTURE
-	var/mine_hp = 2
+	var/mine_hp = 1
 	var/ore_type = /obj/item/stone
 	var/ore_amount = 1
 
@@ -31,6 +31,7 @@
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(5)
 			W.damageItem(5)
+			playsound(src, 'sound/effects/break_stone.ogg', 50, TRUE)
 			user.sound_hint()
 			deconstruct(FALSE)
 
@@ -51,8 +52,8 @@
 //	layer = FLY_LAYER
 	pass_flags_self = LETPASSTHROW|PASSSTRUCTURE
 	var/ready_smell = TRUE
-	var/smell_type = /datum/pollutant/vomit
-	var/smell_amount = 10
+	var/smell_type = /datum/pollutant/blues
+	var/smell_amount = 15
 
 /obj/structure/gelatine/smelly/on_density(mob/living/carbon/human/rammer)
 	if(ready_smell)
@@ -61,7 +62,7 @@
 		var/turf/my_turf = get_turf(src)
 		my_turf.pollute_turf(smell_type, smell_amount)
 		ready_smell = FALSE
-		addtimer(CALLBACK(src, PROC_REF(readyagain), 10 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(readyagain), 15 SECONDS))
 		playsound(loc,'modular_pod/sound/eff/incrementum.ogg', 30, TRUE)
 
 /obj/structure/gelatine/smelly/proc/readyagain()
@@ -79,7 +80,7 @@
 		var/turf/my_turf = get_turf(src)
 		my_turf.pollute_turf(smell_type, smell_amount)
 		ready_smell = FALSE
-		addtimer(CALLBACK(src, PROC_REF(readyagain), 10 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(readyagain), 15 SECONDS))
 
 /obj/structure/gelatine/smelly/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
@@ -94,4 +95,4 @@
 		var/turf/my_turf = get_turf(src)
 		my_turf.pollute_turf(smell_type, smell_amount)
 		ready_smell = FALSE
-		addtimer(CALLBACK(src, PROC_REF(readyagain), 10 SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(readyagain), 15 SECONDS))

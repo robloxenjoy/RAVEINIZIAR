@@ -210,3 +210,35 @@
 				victim.emote("cry")
 	if(message && prob(20))
 		to_chat(victim, message)
+
+/datum/pollutant/blues
+	name = "Морник"
+	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
+	smell_intensity = 3
+	descriptor = SCENT_DESC_ODOR
+	scent = "морничатина"
+	color = "#3372ff"
+	thickness = 4
+
+/datum/pollutant/blues/breathe_act(mob/living/carbon/victim, amount)
+	var/message
+	switch(amount)
+		if(0 to 10)
+			message = span_warning("Чё за запах?!")
+			if(prob(15))
+				victim.emote("gag")
+			if(prob(10))
+				victim.vomit(rand(40, 50), prob(amount))
+		if(10 to 30)
+			message = span_warning("Я щас блевать буду...")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded)
+			if(prob(25))
+				victim.vomit(rand(50, 60), prob(amount))
+		if(30 to INFINITY)
+			message = span_bolddanger("Этот запах ужасен!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
+			victim.adjustToxLoss(1.5)
+			if(prob(35))
+				victim.vomit(rand(60, 70), prob(amount))
+	if(message && prob(20))
+		to_chat(victim, message)

@@ -260,8 +260,15 @@
 /turf/podpol/wall/caverak/Initialize(mapload)
 	. = ..()
 	if(random)
-		if(prob(30))
+		if(prob(25))
 			new /obj/structure/sign/poster/contraband/codec/purpella(get_turf(src))
+
+/turf/podpol/wall/caverak/deconstruct(disassembled = TRUE)
+	. = ..()
+	if(random)
+		var/bla = locate(/obj/structure/sign/poster/contraband/codec/purpella) in get_turf(src)
+		if(bla)
+			qdel(bla)
 
 /turf/podpol/wall/caverak/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"
