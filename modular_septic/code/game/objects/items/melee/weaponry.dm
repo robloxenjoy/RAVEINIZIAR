@@ -591,8 +591,8 @@
 	force = 24
 	min_force_strength = 1
 	force_strength = 1.4
-	min_throwforce = 5
-	throwforce = 8
+	min_throwforce = 7
+	throwforce = 10
 	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 7
@@ -641,8 +641,6 @@
 			wound_bonus = 7
 			bare_wound_bonus = 2
 			attack_fatigue_cost = 8
-			min_throwforce = 5
-			throwforce = 8
 			throwforce_strength = 1.5
 			attack_delay = 20
 			current_attack_intent = BASH_MODE

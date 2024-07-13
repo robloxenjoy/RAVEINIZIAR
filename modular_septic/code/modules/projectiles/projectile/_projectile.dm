@@ -246,8 +246,6 @@
 	if(embedding)
 		embedding["embed_chance"] += embed_falloff_tile
 	if(range <= 0 && loc)
-		if(isopenspaceturf(loc))
-			src.z--
 		if(last_range)
 			if(loc != original.loc)
 				range++
@@ -261,6 +259,8 @@
 //		var/turf/turf_loc = get_turf(src)
 //		if(istype(turf_loc))
 //			visible_message(span_danger("[src] hits [turf_loc]!"))
+	if(isopenspaceturf(loc))
+		src.z--
 	if(isturf(loc))
 		process_hit(loc, loc, loc)
 	if(!QDELETED(src))
