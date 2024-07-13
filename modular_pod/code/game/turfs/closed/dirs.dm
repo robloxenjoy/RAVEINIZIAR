@@ -263,7 +263,7 @@
 		if(prob(25))
 			new /obj/structure/sign/poster/contraband/codec/purpella(get_turf(src))
 
-/turf/podpol/wall/caverak/deconstruct(disassembled = TRUE)
+/turf/podpol/wall/caverak/AfterChange()
 	. = ..()
 	if(random)
 		var/bla = locate(/obj/structure/sign/poster/contraband/codec/purpella) in get_turf(src)

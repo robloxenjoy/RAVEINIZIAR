@@ -840,6 +840,10 @@
 		if(locate(/obj/) in get_turf(src))
 			return
 		new /obj/structure/gelatine/smelly(get_turf(src))
+	if(prob(1))
+		if(locate(/obj/) in get_turf(src))
+			return
+		new /obj/structure/mineexplosive/mineplit(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
