@@ -1141,6 +1141,8 @@
 
 /obj/structure/mineexplosive/mineplit/proc/detonated(datum/source, mob/living/lanced_by)
 	SIGNAL_HANDLER
+	if(lanced_by.throwing || lanced_by.movement_type & (FLYING|FLOATING))
+		return
 	if(lanced_by.truerole == friendo)
 		return
 	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)

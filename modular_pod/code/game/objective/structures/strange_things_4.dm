@@ -13,6 +13,7 @@
 
 /obj/structure/stalag/Initialize(mapload)
 	. = ..()
+	AddElement(/datum/element/climbable)
 	icon_state = "stalag[rand(1, 2)]"
 
 /obj/structure/stalag/attackby(obj/item/W, mob/living/carbon/user, params)
@@ -54,6 +55,10 @@
 	var/ready_smell = TRUE
 	var/smell_type = /datum/pollutant/blues
 	var/smell_amount = 25
+
+/obj/structure/gelatine/smelly/Initialize()
+	. = ..()
+	AddElement(/datum/element/climbable)
 
 /obj/structure/gelatine/smelly/on_density(mob/living/carbon/human/rammer)
 	if(ready_smell)

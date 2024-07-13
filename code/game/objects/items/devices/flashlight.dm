@@ -278,10 +278,9 @@
 // FLARES
 
 /obj/item/flashlight/flare
-	name = "flare"
-	desc = "A red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'."
+	name = "Вспышник"
+	desc = "Красота."
 	w_class = WEIGHT_CLASS_SMALL
-	light_range = 7 // Pretty bright.
 	icon_state = "flare"
 	inhand_icon_state = "flare"
 	worn_icon_state = "flare"
@@ -292,7 +291,9 @@
 	var/produce_heat = 1500
 	heat = 1000
 	light_color = LIGHT_COLOR_FLARE
-	light_system = MOVABLE_LIGHT
+	light_range = 4
+	light_power = 2
+	light_system = STATIC_LIGHT
 	grind_results = list(/datum/reagent/sulfur = 15)
 
 /obj/item/flashlight/flare/Initialize(mapload)
@@ -309,7 +310,7 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/flare/ignition_effect(atom/A, mob/user)
-	. = fuel && on ? span_notice("[user] lights [A] with [src] like a real badass.") : ""
+	. = fuel && on ? span_notice("[user] поджигает [A] с помощью [src].") : ""
 
 /obj/item/flashlight/flare/proc/turn_off()
 	on = FALSE
@@ -332,19 +333,19 @@
 
 	// Usual checks
 	if(fuel <= 0)
-		to_chat(user, span_warning("[src] is out of fuel!"))
+		to_chat(user, span_warning("[src] заканчиватеся!"))
 		return
 	if(on)
-		to_chat(user, span_warning("[src] is already on!"))
+		to_chat(user, span_warning("[src] уже горит!"))
 		return
 
 	. = ..()
-	// All good, turn it on.
-	if(.)
-		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
-		force = on_damage
-		damtype = BURN
-		START_PROCESSING(SSobj, src)
+//	// All good, turn it on.
+//	if(.)
+//		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
+//		force = on_damage
+//		damtype = BURN
+//		START_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/flare/get_temperature()
 	return on * heat

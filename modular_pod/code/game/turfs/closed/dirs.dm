@@ -262,7 +262,7 @@
 	if(random)
 		if(prob(25))
 			new /obj/structure/sign/poster/contraband/codec/purpella(get_turf(src))
-
+/*
 /turf/podpol/wall/caverak/AfterChange()
 	. = ..()
 	if(random)
@@ -270,8 +270,7 @@
 			if(istype(O, /obj/structure/sign/poster/contraband/codec/purpella))
 				var/obj/structure/sign/poster/contraband/codec/purpella/P = O
 				qdel(P)
-
-
+*/
 /turf/podpol/wall/caverak/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"
 
