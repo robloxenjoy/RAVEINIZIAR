@@ -1130,15 +1130,16 @@
 	return
 
 /obj/structure/mineexplosive/mineplit/proc/detonated(mob/living/lanced_by)
-	if(lanced_by.truerole != friendo)
-		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
-			shrapnel_initialized = TRUE
-			AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
-		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
-		if(ex_dev || ex_heavy || ex_light || ex_flame)
-			var/turf/explosionturf = get_turf(src)
-			if(explosionturf)
-				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-			if(!QDELETED(src))
-				qdel(src)
+	if(lanced_by.truerole == friendo)
+		return
+	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+		shrapnel_initialized = TRUE
+		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+	SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
+	if(ex_dev || ex_heavy || ex_light || ex_flame)
+		var/turf/explosionturf = get_turf(src)
+		if(explosionturf)
+			explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+		if(!QDELETED(src))
+			qdel(src)
