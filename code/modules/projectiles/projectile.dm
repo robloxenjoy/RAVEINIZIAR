@@ -753,8 +753,6 @@
 		store_hitscan_collision(point_cache)
 	return TRUE
 
-
-
 /obj/projectile/forceMove(atom/target)
 	if(!isloc(target) || !isloc(loc) || !z)
 		return ..()

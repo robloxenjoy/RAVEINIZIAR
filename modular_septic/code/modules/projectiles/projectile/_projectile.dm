@@ -246,13 +246,13 @@
 	if(embedding)
 		embedding["embed_chance"] += embed_falloff_tile
 	if(range <= 0 && loc)
+		if(isopenspaceturf(loc))
+			src.z--
 		if(last_range)
 			if(loc != original.loc)
 				range++
 				last_range = FALSE
 		else
-			if(isopenspaceturf(loc))
-				src.z--
 			on_range()
 
 /obj/projectile/on_range()
