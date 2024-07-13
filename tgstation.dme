@@ -4064,6 +4064,7 @@
 #include "modular_pod\code\game\objective\structures\strange_things.dm"
 #include "modular_pod\code\game\objective\structures\strange_things_2.dm"
 #include "modular_pod\code\game\objective\structures\strange_things_3.dm"
+#include "modular_pod\code\game\objective\structures\strange_things_4.dm"
 #include "modular_pod\code\game\objective\structures\codec\structures.dm"
 #include "modular_pod\code\game\turfs\closed\dirs.dm"
 #include "modular_pod\code\game\turfs\closed\walls.dm"

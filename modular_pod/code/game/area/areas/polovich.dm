@@ -74,10 +74,10 @@
 	lighting_out = FALSE
 
 /area/maintenance/polovich/forest/cave
-	name = "Polovich Earth"
+	name = "Caveira"
+	icon_state = "caveira"
 	static_lighting = TRUE
 	base_lighting_alpha = 1
-	icon_state = "polovich_inner"
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 	ambientsounds = list('modular_pod/sound/ambi_sounds_in/caver1.ogg', 'modular_pod/sound/ambi_sounds_in/caver2.ogg', 'modular_pod/sound/ambi_sounds_in/caver3.ogg', 'modular_pod/sound/ambi_sounds_in/caver4.ogg', 'modular_pod/sound/ambi_sounds_in/caver5.ogg', 'modular_pod/sound/ambi_sounds_in/caver6.ogg')

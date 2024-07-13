@@ -253,6 +253,19 @@
 /turf/podpol/wall/caver/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"
 
+/turf/podpol/wall/caverak
+	icon = 'modular_pod/icons/turf/closed/cavera.dmi'
+	var/random = TRUE
+
+/turf/podpol/wall/caverak/Initialize(mapload)
+	. = ..()
+	if(random)
+		if(prob(30))
+			new /obj/structure/sign/poster/contraband/codec/purpella(get_turf(src))
+
+/turf/podpol/wall/caverak/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"
+
 /*
 /turf/open/floor/plating/polovich/way/evilcaver
 	name = "Грязь"

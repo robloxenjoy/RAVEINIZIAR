@@ -804,6 +804,25 @@
 		if(2)
 			set_light(4, 2, "#3c00ff")
 
+/obj/structure/sign/poster/contraband/codec/purpella
+	name = "Пурпэлыа"
+	desc = "Небольшой налёт."
+	icon = 'modular_pod/icons/turf/closed/cavera.dmi'
+	icon_state = "purpela"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	var/lightchoose
+
+/obj/structure/sign/poster/contraband/codec/purpella/Initialize(mapload)
+	. = ..()
+	lightchoose = rand(1, 3)
+	switch(lightchoose)
+		if(1)
+			set_light(3, 2, "#d1a5a0")
+		if(2)
+			set_light(4, 2, "#c680c8")
+		if(2)
+			set_light(5, 2, "#a180ed")
+
 /obj/structure/medica
 	name = "Медика"
 	desc = "Чтобы Медика вылечила меня, достаточно всего лишь..."
@@ -1098,6 +1117,7 @@
 	ex_heavy = 4
 	ex_light = 2
 	ex_flame = 3
+	var/friendo
 
 /obj/structure/mineexplosive/mineplit/ComponentInitialize()
 	. = ..()
@@ -1110,14 +1130,15 @@
 	return
 
 /obj/structure/mineexplosive/mineplit/proc/detonated(mob/living/lanced_by)
-	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
-		shrapnel_initialized = TRUE
-		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
-	SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
-	if(ex_dev || ex_heavy || ex_light || ex_flame)
-		var/turf/explosionturf = get_turf(src)
-		if(explosionturf)
-			explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-		if(!QDELETED(src))
-			qdel(src)
+	if(lanced_by.truerole != friendo)
+		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+			shrapnel_initialized = TRUE
+			AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
+		if(ex_dev || ex_heavy || ex_light || ex_flame)
+			var/turf/explosionturf = get_turf(src)
+			if(explosionturf)
+				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+			if(!QDELETED(src))
+				qdel(src)

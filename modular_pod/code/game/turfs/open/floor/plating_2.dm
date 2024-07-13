@@ -832,7 +832,14 @@
 	. = ..()
 	if(prob(20))
 		new /obj/effect/decal/grassgood(get_turf(src))
-
+	if(prob(20))
+		if(locate(/obj/) in get_turf(src))
+			return
+		new /obj/structure/stalag(get_turf(src))
+	if(prob(10))
+		if(locate(/obj/) in get_turf(src))
+			return
+		new /obj/structure/gelatine/smelly(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
@@ -843,6 +850,13 @@
 		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
 			if(prob(30))
 				generat.ChangeTurf(/turf/open/floor/plating/polovich/way/cavero1, null, CHANGETURF_IGNORE_AIR)
+	if(prob(40))
+		var/near_t = range(1, src)
+		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
+			if(locate(/obj/) in get_turf(generat))
+				return
+			if(prob(70))
+				generat.ChangeTurf(/turf/podpol/wall/caverak, null, CHANGETURF_IGNORE_AIR)
 
 /turf/open/floor/plating/polovich/way/blackstoner2
 	name = "Пол"
