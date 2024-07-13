@@ -2,7 +2,7 @@
 	"version": 1,
 	"map_name": "Ceivara",
 	"map_path": "_podpol/map_files/ceivara",
-	"map_file": "ceirvara.dmm",
+	"map_file": "ceivara.dmm",
 	"station_name": "Планета Пиздеца",
 	"respawn_allowed": true,
 	"space_ruin_levels": 0,
