@@ -832,6 +832,8 @@
 	. = ..()
 	if(prob(20))
 		new /obj/effect/decal/grassgood(get_turf(src))
+	if(prob(10))
+		new /obj/effect/decal/shroomworms(get_turf(src))
 	if(prob(15))
 		if(locate(/obj/) in get_turf(src))
 			return

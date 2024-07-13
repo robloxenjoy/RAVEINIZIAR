@@ -169,8 +169,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		power_equip = TRUE
 		power_environ = TRUE
 
-		if(static_lighting)
-			luminosity = 0
+//		if(static_lighting)
+//			luminosity = 0
 
 	. = ..()
 

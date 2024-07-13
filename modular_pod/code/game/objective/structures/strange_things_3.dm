@@ -252,6 +252,14 @@
 	if(prob(50))
 		icon_state = "grass2"
 
+/obj/effect/decal/shroomworms
+	name = "Хуйня"
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "shroomworms"
+	layer = TURF_PLATING_DECAL_LAYER
+	alpha = 255
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
 /obj/structure/flora/ausbushes/cactus
 	name = "Кактус"
 	desc = "Сука колючий. Воды бы набрать с него."

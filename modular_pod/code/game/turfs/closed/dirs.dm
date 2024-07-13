@@ -266,9 +266,11 @@
 /turf/podpol/wall/caverak/AfterChange()
 	. = ..()
 	if(random)
-		var/bla = locate(/obj/structure/sign/poster/contraband/codec/purpella) in get_turf(src)
-		if(bla)
-			qdel(bla)
+		for(var/obj/O in src.contents) //Eject contents!
+			if(istype(O, /obj/structure/sign/poster/contraband/codec/purpella))
+				var/obj/structure/sign/poster/contraband/codec/purpella/P = O
+				qdel(P)
+
 
 /turf/podpol/wall/caverak/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"

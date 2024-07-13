@@ -53,7 +53,7 @@
 	pass_flags_self = LETPASSTHROW|PASSSTRUCTURE
 	var/ready_smell = TRUE
 	var/smell_type = /datum/pollutant/blues
-	var/smell_amount = 15
+	var/smell_amount = 25
 
 /obj/structure/gelatine/smelly/on_density(mob/living/carbon/human/rammer)
 	if(ready_smell)
