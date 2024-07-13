@@ -251,6 +251,8 @@
 				range++
 				last_range = FALSE
 		else
+			if(isopenspaceturf(loc))
+				src.z--
 			on_range()
 
 /obj/projectile/on_range()
@@ -260,8 +262,6 @@
 //		if(istype(turf_loc))
 //			visible_message(span_danger("[src] hits [turf_loc]!"))
 	if(isturf(loc))
-		if(isopenspaceturf(loc))
-			get_step_multiz(src, DOWN)
 		process_hit(loc, loc, loc)
 	if(!QDELETED(src))
 		qdel(src)

@@ -147,8 +147,9 @@
 					var/obj/structure/mineexplosive/based/yes = new(get_turf(src))
 //					new yes(get_turf(src))
 					yes.mineid = T.id_mine
+					user.visible_message(span_meatymeat("[user] устанавливает [T]."), span_meatymeat("Я устанавливаю [T]."), span_hear("Я слышу постройку."))
 					qdel(T)
-					user.visible_message(span_meatymeat("[user] устанавливает [yes]."), span_meatymeat("Я устанавливаю [yes]."), span_hear("Я слышу постройку."))
+					playsound(get_turf(src), 'modular_pod/sound/eff/setup_mine.ogg', 80 , FALSE, FALSE)
 					user.changeNext_move(5)
 					sound_hint()
 					return
@@ -169,9 +170,9 @@
 				if(do_after(user, 2 SECONDS, target=src))
 					var/obj/item/minesetuplita/T = W
 					var/obj/structure/mineexplosive/mineplit/yes = new(get_turf(src))
+					user.visible_message(span_meatymeat("[user] устанавливает [T]."), span_meatymeat("Я устанавливаю [T]."), span_hear("Я слышу постройку."))
 					qdel(T)
 					playsound(get_turf(src), 'modular_pod/sound/eff/setup_mine.ogg', 80 , FALSE, FALSE)
-					user.visible_message(span_meatymeat("[user] устанавливает [yes]."), span_meatymeat("Я устанавливаю [yes]."), span_hear("Я слышу постройку."))
 					user.changeNext_move(5)
 					sound_hint()
 					return
