@@ -247,8 +247,9 @@
 		embedding["embed_chance"] += embed_falloff_tile
 	if(range <= 0 && loc)
 		if(last_range)
-			range++
-			last_range = FALSE
+			if(loc != original.loc)
+				range++
+				last_range = FALSE
 		else
 			on_range()
 
