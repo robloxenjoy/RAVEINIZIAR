@@ -1117,7 +1117,7 @@
 	ex_heavy = 4
 	ex_light = 2
 	ex_flame = 3
-	var/friendo
+	var/friendo = null
 
 /obj/structure/mineexplosive/mineplit/ComponentInitialize()
 	. = ..()
