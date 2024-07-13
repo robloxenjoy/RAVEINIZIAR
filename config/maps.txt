@@ -65,6 +65,10 @@ map podpol_earth
 endmap
 
 map podpol_earthstation
+	votable
+endmap
+
+map ceivara
 	default
 	votable
 endmap
