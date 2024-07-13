@@ -477,8 +477,6 @@
 		return pick(considering)
 	// 5. turf
 	if(can_hit_target(T, T == original, TRUE, T == bumped))
-		if(isopenspaceturf(T))
-			get_step_multiz(src, DOWN)
 		return T
 	// 6. nothing
 		// (returns null)

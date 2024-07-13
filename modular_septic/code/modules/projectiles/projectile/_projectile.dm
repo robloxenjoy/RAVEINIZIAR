@@ -259,6 +259,8 @@
 //		if(istype(turf_loc))
 //			visible_message(span_danger("[src] hits [turf_loc]!"))
 	if(isturf(loc))
+		if(isopenspaceturf(loc))
+			get_step_multiz(src, DOWN)
 		process_hit(loc, loc, loc)
 	if(!QDELETED(src))
 		qdel(src)
