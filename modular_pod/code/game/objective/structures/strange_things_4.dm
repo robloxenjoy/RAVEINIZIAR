@@ -44,7 +44,7 @@
 	name = "Желе"
 	desc = "Воняет."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "stalag1"
+	icon_state = "jelly"
 	density = TRUE
 	anchored = TRUE
 	opacity = FALSE
