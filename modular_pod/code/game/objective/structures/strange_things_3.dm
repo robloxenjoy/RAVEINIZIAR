@@ -150,6 +150,7 @@
 	icon_state = "boombox"
 //	var/datum/looping_sound/musicloop/soundloop
 	var/playc = FALSE
+	var/list/rangers = list()
 
 //obj/item/musicshit/boombox/Initialize(mapload)
 //	. = ..()
