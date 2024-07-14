@@ -1122,7 +1122,7 @@
 		else
 			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
 			normal_way = FALSE
-			detonate()
+			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/structure/mineexplosive, detonate))
 	return
 
 /obj/structure/mineexplosive/proc/detonate(mob/living/lanced_by)
@@ -1200,7 +1200,7 @@
 		else
 			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
 			normal_way = FALSE
-			detonated()
+			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/structure/mineexplosive/mineplit, detonated))
 	return
 
 /obj/structure/mineexplosive/mineplit/proc/detonated(datum/source, mob/living/lanced_by)
