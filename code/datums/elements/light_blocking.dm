@@ -4,18 +4,16 @@
 /datum/element/light_blocking
 	element_flags = ELEMENT_DETACH
 
-
 /datum/element/light_blocking/Attach(datum/target)
 	. = ..()
 	if(!ismovable(target))
 		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/on_target_move)
+	RegisterSignal(target, COMSIG_MOVABLE_MOVED, PROC_REF(on_target_move))
 	var/atom/movable/movable_target = target
 	if(!isturf(movable_target.loc))
 		return
 	for(var/turf/turf_loc as anything in movable_target.locs)
 		turf_loc.add_opacity_source(target)
-
 
 /datum/element/light_blocking/Detach(datum/target)
 	. = ..()
@@ -25,7 +23,6 @@
 		return
 	for(var/turf/turf_loc as anything in movable_target.locs)
 		turf_loc.remove_opacity_source(target)
-
 
 ///Updates old and new turf loc opacities.
 /datum/element/light_blocking/proc/on_target_move(atom/movable/source, atom/old_loc, dir, forced, list/old_locs)

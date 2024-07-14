@@ -40,7 +40,7 @@
 	update_brightness(user)
 	update_action_buttons()
 	return 1
-
+/*
 /obj/item/flashlight/suicide_act(mob/living/carbon/human/user)
 	if (user.is_blind())
 		user.visible_message(span_suicide("[user] is putting [src] close to [user.p_their()] eyes and turning it on... but [user.p_theyre()] blind!"))
@@ -174,7 +174,7 @@
 
 	else
 		return ..()
-
+*/
 /obj/item/flashlight/pen
 	name = "penlight"
 	desc = "A pen-sized light, used by medical staff. It can also be used to create a hologram to alert people of incoming medical assistance."

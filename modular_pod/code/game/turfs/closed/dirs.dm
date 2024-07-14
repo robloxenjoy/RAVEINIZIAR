@@ -115,6 +115,8 @@
 /turf/podpol/wall/ex_act(severity, target)
 	if(cantbreak)
 		return
+	if(have_water)
+		chem_splash(loc, 1, list(reagents))
 /*
 	if(target == src)
 //		qdel(src)
@@ -201,6 +203,8 @@
 					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)
 					mineturf.pollute_turf(/datum/pollutant/dust, 200)
+					if(have_water)
+						chem_splash(loc, 1, list(reagents))
 //					if(!QDELETED(mineturf))
 //						qdel(mineturf)
 
