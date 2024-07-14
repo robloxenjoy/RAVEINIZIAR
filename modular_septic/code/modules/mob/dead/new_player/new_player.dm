@@ -189,11 +189,11 @@
 									character.right_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
 									organ_eyes.old_eye_color = eye_coloring
 									character.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
-
+/*
 							for(var/obj/item/organ/genital/genital in character.internal_organs)
 								genital.Remove(character)
 								qdel(genital)
-
+*/
 							mind.active = FALSE
 							mind.transfer_to(character)
 							mind.set_original_character(character)

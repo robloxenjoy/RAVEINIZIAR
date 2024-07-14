@@ -148,16 +148,16 @@
 	desc = "А это уже другое дело."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "boombox"
-	var/datum/looping_sound/musicloop/soundloop
+//	var/datum/looping_sound/musicloop/soundloop
 	var/playc = FALSE
 
-/obj/item/musicshit/boombox/Initialize(mapload)
-	. = ..()
-	soundloop = new(src,  FALSE)
+//obj/item/musicshit/boombox/Initialize(mapload)
+//	. = ..()
+//	soundloop = new(src,  FALSE)
 
-/obj/item/musicshit/boombox/Destroy()
-	QDEL_NULL(soundloop)
-	. = ..()
+//obj/item/musicshit/boombox/Destroy()
+//	QDEL_NULL(soundloop)
+//	. = ..()
 
 /obj/item/musicshit/boombox/attack_self(mob/user)
 	. = ..()
@@ -165,28 +165,26 @@
 		return
 	if(playc)
 		playc = FALSE
-		soundloop.stop()
-//		STOP_PROCESSING(SSobj, src)
+		STOP_PROCESSING(SSobj, src)
 	else
 		playc = TRUE
-		soundloop.start()
+		START_PROCESSING(SSobj, src)
 	user.changeNext_move(CLICK_CD_MELEE)
-//		START_PROCESSING(SSobj, src)
 
-/*
 /obj/item/musicshit/boombox/process()
 	if(playc)
-		for(var/mob/M in range(10, src))
-			if(!M || !M.client)
+		for(var/mob/M in range(10,src))
+			if(!M.client)
 				continue
-			playsound(get_turf(src), 'modular_pod/sound/mus/boombox.ogg', volume = 60, falloff_exponent = 11, falloff_distance = 3, channel = CHANNEL_JUKEBOX, use_reverb = TRUE)
-			playc = TRUE
-	else
-		for(var/mob/L in range(10, src))
-			if(!L || !L.client)
-				continue
-			L.stop_sound_channel(CHANNEL_JUKEBOX)
-*/
+			if(!(M in rangers))
+				rangers[M] = TRUE
+				M.playsound_local(get_turf(M), 'modular_pod/sound/mus/boombox.ogg', volume = 60, channel = CHANNEL_JUKEBOX, falloff_exponent = 11, falloff_distance = 3, use_reverb = TRUE)
+		for(var/mob/L in rangers)
+			if(get_dist(src,L) > 13)
+				rangers -= L
+				if(!L || !L.client)
+					continue
+				L.stop_sound_channel(CHANNEL_JUKEBOX)
 
 /obj/structure/chair/podpolsit
 	name = "Трон"
