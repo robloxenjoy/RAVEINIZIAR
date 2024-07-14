@@ -192,7 +192,8 @@
 					user.adjustFatigueLoss(8)
 					W.damageItem(10)
 					user.sound_hint()
-
+					if(have_water)
+						chem_splash(loc, 1, list(reagents))
 					var/flags = NONE
 					var/old_type = type
 					if(defer_change)
@@ -203,8 +204,6 @@
 					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)
 					mineturf.pollute_turf(/datum/pollutant/dust, 200)
-					if(have_water)
-						chem_splash(loc, 1, list(reagents))
 //					if(!QDELETED(mineturf))
 //						qdel(mineturf)
 
