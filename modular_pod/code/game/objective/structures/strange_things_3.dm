@@ -167,6 +167,11 @@
 	if(playc)
 		playc = FALSE
 		STOP_PROCESSING(SSobj, src)
+		for(var/mob/living/L in rangers)
+			if(!L || !L.client)
+				continue
+			L.stop_sound_channel(CHANNEL_JUKEBOX)
+		rangers = list()
 	else
 		playc = TRUE
 		START_PROCESSING(SSobj, src)
@@ -1120,8 +1125,10 @@
 			work = FALSE
 		else
 			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
-			normal_way = FALSE
-			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/structure/mineexplosive, detonate))
+			return
+		sound_hint()
+//			normal_way = FALSE
+//			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/structure/mineexplosive, detonate))
 	return
 
 /obj/structure/mineexplosive/proc/detonate(mob/living/lanced_by)
@@ -1198,8 +1205,8 @@
 			work = FALSE
 		else
 			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
-			normal_way = FALSE
-			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/structure/mineexplosive/mineplit, detonated))
+			return
+		sound_hint()
 	return
 
 /obj/structure/mineexplosive/mineplit/proc/detonated(datum/source, mob/living/lanced_by)
