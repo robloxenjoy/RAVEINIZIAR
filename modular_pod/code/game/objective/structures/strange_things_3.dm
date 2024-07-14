@@ -1136,10 +1136,11 @@
 		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
 		if(ex_dev || ex_heavy || ex_light || ex_flame)
 			var/turf/explosionturf = get_turf(src)
-			explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-			if(!QDELETED(src))
-				qdel(src)
+			if(explosionturf)
+				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+				explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+				if(!QDELETED(src))
+					qdel(src)
 	else
 		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
 			shrapnel_initialized = TRUE
@@ -1147,10 +1148,11 @@
 		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
 		if(ex_dev || ex_heavy || ex_light || ex_flame)
 			var/turf/explosionturf = get_turf(src)
-			explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-			if(!QDELETED(src))
-				qdel(src)
+			if(explosionturf)
+				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+				explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+				if(!QDELETED(src))
+					qdel(src)
 
 /obj/structure/mineexplosive/based
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mine
@@ -1218,9 +1220,9 @@
 			var/turf/explosionturf = get_turf(src)
 			if(explosionturf)
 				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-			if(!QDELETED(src))
-				qdel(src)
+				explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+				if(!QDELETED(src))
+					qdel(src)
 	else
 		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
 			shrapnel_initialized = TRUE
@@ -1230,9 +1232,9 @@
 			var/turf/explosionturf = get_turf(src)
 			if(explosionturf)
 				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-			if(!QDELETED(src))
-				qdel(src)
+				explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+				if(!QDELETED(src))
+					qdel(src)
 
 /obj/item/minedisarmer
 	name = "Дизармер"
