@@ -1110,17 +1110,17 @@
 	if(istype(W, /obj/item/minedisarmer))
 		if(!work)
 			return
-		user.visible_message(span_meatymeat("[H] пытается обезвредить [src]!"))
+		user.visible_message(span_meatymeat("[user] пытается обезвредить [src]!"))
 		sound_hint()
 		if(!do_after(user, 4 SECONDS, target = src))
 			to_chat(user, span_danger(xbox_rage_msg()))
 			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		var/epic_success = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
 		if(epic_success >= DICE_SUCCESS)
-			user.visible_message(span_meatymeat("[H] обезвреживает [src]!"))
+			user.visible_message(span_meatymeat("[user] обезвреживает [src]!"))
 			work = FALSE
 		else
-			user.visible_message(span_meatymeat("[H] проваливает попытку обезвредить [src]!"))
+			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
 			normal_way = FALSE
 			detonate()
 	return
@@ -1186,17 +1186,17 @@
 	if(istype(W, /obj/item/minedisarmer))
 		if(!work)
 			return
-		user.visible_message(span_meatymeat("[H] пытается обезвредить [src]!"))
+		user.visible_message(span_meatymeat("[user] пытается обезвредить [src]!"))
 		sound_hint()
 		if(!do_after(user, 4 SECONDS, target = src))
 			to_chat(user, span_danger(xbox_rage_msg()))
 			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		var/epic_success = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
 		if(epic_success >= DICE_SUCCESS)
-			user.visible_message(span_meatymeat("[H] обезвреживает [src]!"))
+			user.visible_message(span_meatymeat("[user] обезвреживает [src]!"))
 			work = FALSE
 		else
-			user.visible_message(span_meatymeat("[H] проваливает попытку обезвредить [src]!"))
+			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
 			normal_way = FALSE
 			detonated()
 	return
