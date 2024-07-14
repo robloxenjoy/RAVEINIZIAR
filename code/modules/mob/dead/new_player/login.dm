@@ -61,7 +61,7 @@
 			return
 
 	to_chat(src, span_bigdanger("В OOC кнопка Играть - разберёшься."))
-	to_chat(src, span_bigdanger("Дискорд сервер - https://discord.gg/zX7RCNqzvm"))
+	to_chat(src, span_bigdanger("Дискорд сервер - https://discord.gg/Ha4b7n2E5w"))
 	if(GLOB.world_deaths_crazy > 0)
 		to_chat(src, span_dead("Смертей в мире: [GLOB.world_deaths_crazy]"))
 
