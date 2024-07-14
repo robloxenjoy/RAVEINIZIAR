@@ -84,10 +84,6 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/havedurability = FALSE
 	var/durability = 150
 
-	//rusting of item
-	var/canrust = FALSE
-	var/rustbegin = 3500
-
 	//AXE?
 	var/isAxe = FALSE
 
@@ -411,67 +407,6 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		playsound(src.loc, 'modular_pod/sound/eff/broken.ogg', 100, TRUE)
 		src.visible_message(span_notice("[src] ломается."), span_notice("[src] ломается."), span_hear("Слышу чё-то."))
 		qdel(src)
-
-/obj/item/proc/rustItem(var/power_rust)
-	var/modifier = 1
-	switch(power_rust)
-		if("HARD")
-			modifier += 150
-		if("SOFT")
-			modifier = 5
-		if("MEDIUM")
-			modifier += 50
-	if(rustbegin > 0)
-		rustbegin -= modifier
-	if(rustbegin <= 0)
-		rustbegin = 0
-		playsound(src.loc, 'modular_septic/sound/effects/rusted.ogg', 100, TRUE)
-		src.visible_message(span_notice("[src] become rusty."), span_notice("[src] become rusty."), span_hear("You hear a strange sound."))
-		src.rusted()
-
-/obj/item/proc/rusted()
-	if(!canrust)
-		return
-
-	canrust = FALSE
-	STOP_PROCESSING(SSobj, src)
-	switch(force)
-		if(9 to 13)
-			force -= 5
-		if(14 to 17)
-			force -= 6
-		if(18 to 24)
-			force -= 7
-		if(25 to INFINITY)
-			force -= 8
-
-	switch(durability)
-		if(70 to 90)
-			durability -= 30
-		if(91 to 110)
-			durability -= 40
-		if(111 to 130)
-			durability -= 50
-		if(131 to INFINITY)
-			durability -= 65
-
-	var/index = "[REF(icon)]-[icon_state]"
-	var/static/list/rust_icons = list()
-	var/icon/rust_icon = rust_icons[index]
-	if(!rust_icon)
-		rust_icon = icon(icon, icon_state, , 1)
-		rust_icon.Blend("#ffffff", ICON_ADD)
-		rust_icon.Blend(icon('modular_septic/icons/effects/item_damage.dmi', "itemrust"), ICON_MULTIPLY)
-		rust_icon.Blend("#4f2411", ICON_MULTIPLY)
-		rust_icon = fcopy_rsc(rust_icon)
-		rust_icons[index] = rust_icon
-	. += rust_icon
-
-/obj/item/process(delta_time)
-	if(canrust)
-		rustbegin -= delta_time
-		if(HAS_BLOOD_DNA(src))
-			rustbegin -= delta_time * 3
 
 /obj/item/reagent_containers/attackby(obj/item/W, mob/user)
 	. = ..()

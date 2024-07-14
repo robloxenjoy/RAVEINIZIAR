@@ -1126,6 +1126,7 @@
 		else
 			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
 			return
+		user.changeNext_move(CLICK_CD_MELEE)
 		sound_hint()
 //			normal_way = FALSE
 //			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/structure/mineexplosive, detonate))
@@ -1206,6 +1207,7 @@
 		else
 			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
 			return
+		user.changeNext_move(CLICK_CD_MELEE)
 		sound_hint()
 	return
 
