@@ -665,7 +665,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/traps_find(mob/living/carbon/user)
-	var/list/otherlist = list("Установщик Проволоки (40)", "Установщик Мины (80)", "Установщик Нажимной Мины (70)")
+	var/list/otherlist = list("Установщик Проволоки (40)", "Установщик Мины (80)", "Установщик Нажимной Мины (70)", "Дизармер (30)")
 	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -701,6 +701,14 @@
 				return
 			new /obj/item/minesetuplita(get_turf(user))
 			pref_source.bobux_amount -= 70
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Дизармер (30)")
+			if(pref_source.bobux_amount < 30)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/minedisarmer(get_turf(user))
+			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
@@ -1008,7 +1016,7 @@
 
 /obj/item/minesetup
 	name = "Установщик Мины"
-	desc = "Ещё нужен детонатор. Он, вроде как, внутри."
+	desc = "Модель Bajas, 3. Ещё нужен детонатор. Он, вроде как, внутри."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mine"
 	inhand_icon_state = null
@@ -1048,7 +1056,7 @@
 
 /obj/item/minesetuplita
 	name = "Установщик Мины"
-	desc = "После установки, на такую будет достаточно наступить."
+	desc = "Модель Repeater. После установки, на такую будет достаточно наступить."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mineplit_thing"
 	inhand_icon_state = null
@@ -1076,6 +1084,8 @@
 	opacity = FALSE
 	istrap = TRUE
 	var/mineid = null
+	var/work = TRUE
+	var/normal_way = TRUE
 	var/ex_dev = 0
 	///how big of a heavy explosion radius on prime
 	var/ex_heavy = 0
@@ -1091,20 +1101,56 @@
 	/// Did we add the component responsible for spawning sharpnel to this?
 	var/shrapnel_initialized
 
+/obj/structure/mineexplosive/examine(mob/user)
+	. = ..()
+	if(!work)
+		. += span_notice("Мина не работает, эх.")
+
 /obj/structure/mineexplosive/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/minedisarmer))
+		if(!work)
+			return
+		user.visible_message(span_meatymeat("[H] пытается обезвредить [src]!"))
+		sound_hint()
+		if(!do_after(user, 4 SECONDS, target = src))
+			to_chat(user, span_danger(xbox_rage_msg()))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		var/epic_success = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
+		if(epic_success >= DICE_SUCCESS)
+			user.visible_message(span_meatymeat("[H] обезвреживает [src]!"))
+			work = FALSE
+		else
+			user.visible_message(span_meatymeat("[H] проваливает попытку обезвредить [src]!"))
+			normal_way = FALSE
+			detonate()
 	return
 
 /obj/structure/mineexplosive/proc/detonate(mob/living/lanced_by)
-	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
-		shrapnel_initialized = TRUE
-		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
-	SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
-	if(ex_dev || ex_heavy || ex_light || ex_flame)
-		var/turf/explosionturf = get_turf(src)
-		explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-		if(!QDELETED(src))
-			qdel(src)
+	SIGNAL_HANDLER
+	if(normal_way)
+		if(!work)
+			return
+		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+			shrapnel_initialized = TRUE
+			AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
+		if(ex_dev || ex_heavy || ex_light || ex_flame)
+			var/turf/explosionturf = get_turf(src)
+			explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+			if(!QDELETED(src))
+				qdel(src)
+	else
+		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+			shrapnel_initialized = TRUE
+			AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
+		if(ex_dev || ex_heavy || ex_light || ex_flame)
+			var/turf/explosionturf = get_turf(src)
+			explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+			if(!QDELETED(src))
+				qdel(src)
 
 /obj/structure/mineexplosive/based
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mine
@@ -1137,22 +1183,72 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/mineexplosive/mineplit/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/minedisarmer))
+		if(!work)
+			return
+		user.visible_message(span_meatymeat("[H] пытается обезвредить [src]!"))
+		sound_hint()
+		if(!do_after(user, 4 SECONDS, target = src))
+			to_chat(user, span_danger(xbox_rage_msg()))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		var/epic_success = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
+		if(epic_success >= DICE_SUCCESS)
+			user.visible_message(span_meatymeat("[H] обезвреживает [src]!"))
+			work = FALSE
+		else
+			user.visible_message(span_meatymeat("[H] проваливает попытку обезвредить [src]!"))
+			normal_way = FALSE
+			detonated()
 	return
 
 /obj/structure/mineexplosive/mineplit/proc/detonated(datum/source, mob/living/lanced_by)
 	SIGNAL_HANDLER
-	if(lanced_by.throwing || lanced_by.movement_type & (FLYING|FLOATING))
-		return
-	if(lanced_by.truerole == friendo)
-		return
-	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
-		shrapnel_initialized = TRUE
-		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
-	SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
-	if(ex_dev || ex_heavy || ex_light || ex_flame)
-		var/turf/explosionturf = get_turf(src)
-		if(explosionturf)
-			explosionturf.pollute_turf(/datum/pollutant/dust, 350)
-		explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
-		if(!QDELETED(src))
-			qdel(src)
+	if(normal_way)
+		if(!work)
+			return
+		if(lanced_by.throwing || lanced_by.movement_type & (FLYING|FLOATING))
+			return
+		if(lanced_by.truerole == friendo)
+			return
+		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+			shrapnel_initialized = TRUE
+			AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
+		if(ex_dev || ex_heavy || ex_light || ex_flame)
+			var/turf/explosionturf = get_turf(src)
+			if(explosionturf)
+				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+			if(!QDELETED(src))
+				qdel(src)
+	else
+		if(shrapnel_type && shrapnel_radius && !shrapnel_initialized)
+			shrapnel_initialized = TRUE
+			AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_radius)
+		SEND_SIGNAL(src, COMSIG_CRAZYMINE_TRIGGERED, lanced_by)
+		if(ex_dev || ex_heavy || ex_light || ex_flame)
+			var/turf/explosionturf = get_turf(src)
+			if(explosionturf)
+				explosionturf.pollute_turf(/datum/pollutant/dust, 350)
+			explosion(src, ex_dev, ex_heavy, ex_light, ex_flame)
+			if(!QDELETED(src))
+				qdel(src)
+
+/obj/item/minedisarmer
+	name = "Дизармер"
+	desc = "Мины не помеха!"
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "disarmer"
+	inhand_icon_state = null
+	worn_icon = null
+	worn_icon_state = null
+	w_class = WEIGHT_CLASS_SMALL
+	wound_bonus = 1
+	bare_wound_bonus = 3
+	min_force = 1
+	force = 4
+	throwforce = 3
+	carry_weight = 1 KILOGRAMS
+	slot_flags = ITEM_SLOT_BELT
+	attack_verb_continuous = list("бьёт")
+	attack_verb_simple = list("бить")

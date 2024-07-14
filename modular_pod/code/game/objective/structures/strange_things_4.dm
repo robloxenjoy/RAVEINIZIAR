@@ -26,6 +26,12 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.ogg', 90 , FALSE, FALSE)
 			user.sound_hint()
 			mine_hp -= 1
+			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
+			if(diceroll >= DICE_SUCCESS)
+				user.visible_message(span_notice("[user] добывает руду."),span_notice("Я добываю руду."), span_hear("Я слышу звуки раскопок."))
+				new ore_type(get_turf(user), ore_amount)
+				user.client.prefs.adjust_bobux(1, "<span class='bobux'>Я добыл руду! +1 Каотик!</span>")
+				user.flash_kaosgain()
 	else
 		if(W.can_dig)
 			user.visible_message(span_notice("[user] разрушает [src] с помощью [W]."),span_notice("Я разрушаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))

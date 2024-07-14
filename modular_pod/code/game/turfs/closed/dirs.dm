@@ -9,11 +9,18 @@
 	var/state2 = "wall2"
 	baseturfs = /turf/open/floor/plating/polovich/codec/dirt/mud
 	var/personal_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
+	var/have_water = FALSE
+	var/wall_volume = 150
+	var/type_liquid = /datum/reagent/water
 
 /turf/podpol/Initialize(mapload)
 	. = ..()
 	if(wallis)
 		update_icon_pod()
+	if(have_water)
+		create_reagents(wall_volume)
+		if(type_liquid)
+			reagents.add_reagent(type_liquid, wall_volume)
 
 /turf/podpol/proc/update_icon_pod()
 	icon_state = state2
@@ -72,6 +79,8 @@
 /turf/podpol/wall/Destroy()
 	if(cantbreak)
 		return
+	if(have_water)
+		chem_splash(loc, 1, list(reagents))
 //	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
 //	for(var/turf/podpol/wall/F in oview(1, personal_turf))
 //		F.update_icon_pod()
@@ -164,6 +173,8 @@
 					if(diceroll >= DICE_SUCCESS)
 						user.visible_message(span_notice("[user] добывает руду."),span_notice("Я добываю руду."), span_hear("Я слышу звуки раскопок."))
 						new ore_type(get_turf(user), ore_amount)
+						user.client.prefs.adjust_bobux(1, "<span class='bobux'>Я добыл руду! +1 Каотик!</span>")
+						user.flash_kaosgain()
 					if(diceroll == DICE_CRIT_FAILURE)
 						var/dicerolll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
 						if(dicerolll == DICE_CRIT_FAILURE)
@@ -258,10 +269,13 @@
 	var/random = TRUE
 
 /turf/podpol/wall/caverak/Initialize(mapload)
-	. = ..()
 	if(random)
-		if(prob(25))
+		if(prob(27))
 			new /obj/structure/sign/poster/contraband/codec/purpella(get_turf(src))
+		if(prob(50))
+			have_water = TRUE
+	. = ..()
+
 /*
 /turf/podpol/wall/caverak/AfterChange()
 	. = ..()
