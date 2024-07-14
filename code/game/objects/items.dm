@@ -251,9 +251,6 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(!durability)
 			durability = rand(100,150)
 
-	if(canrust)
-		START_PROCESSING(SSobj, src)
-
 	add_weapon_description()
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_ITEM, src)
