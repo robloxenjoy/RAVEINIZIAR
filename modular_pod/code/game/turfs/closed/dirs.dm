@@ -10,7 +10,7 @@
 	baseturfs = /turf/open/floor/plating/polovich/codec/dirt/mud
 	var/personal_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
 	var/have_water = FALSE
-	var/wall_volume = 150
+	var/wall_volume = 200
 	var/type_liquid = /datum/reagent/water
 
 /turf/podpol/Initialize(mapload)
@@ -187,13 +187,14 @@
 		else
 			if(user.a_intent == INTENT_HARM)
 				if(W.can_dig)
+					var/crazysplash = FALSE
+					if(have_water)
+						crazysplash = TRUE
 					user.visible_message(span_notice("[user] разрушает [src] с помощью [W]."),span_notice("Я разрушаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(8)
 					W.damageItem(10)
 					user.sound_hint()
-					if(have_water)
-						chem_splash(loc, 1, list(reagents))
 					var/flags = NONE
 					var/old_type = type
 					if(defer_change)
@@ -204,6 +205,8 @@
 					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)
 					mineturf.pollute_turf(/datum/pollutant/dust, 200)
+					if(crazysplash)
+						chem_splash(get_turf(src), 1, list(reagents))
 //					if(!QDELETED(mineturf))
 //						qdel(mineturf)
 
