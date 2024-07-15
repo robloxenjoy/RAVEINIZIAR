@@ -1079,6 +1079,8 @@
 			if(damage_dealt > edge_protection)
 				if((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
 					if(brute > 10)
+						var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
+						if(brain)
 							var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 							if(diceroll <= DICE_FAILURE)
 								brain.applyOrganDamage(brute * 1.3)
