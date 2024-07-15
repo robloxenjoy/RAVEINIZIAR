@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/ammo_stack/c38
-	name = "38 rounds"
+	name = "Патроны .38"
 	icon_state = "c38-1"
 	base_icon_state = "c38"
 //	world_icon_state = "s-casing"

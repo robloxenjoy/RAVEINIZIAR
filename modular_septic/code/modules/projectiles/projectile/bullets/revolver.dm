@@ -7,7 +7,7 @@
 	wound_falloff_tile = 0
 
 /obj/projectile/bullet/c38
-	name = ".38 suspicious +P bullet"
+	name = "Пуля .38"
 	damage = 28
 	wound_bonus = 0
 	bare_wound_bonus = 0
@@ -23,7 +23,7 @@
 	ricochet_chance = 20
 
 /obj/projectile/bullet/c38/pluspee
-	name = ".38 suspicious bullet"
+	name = "Пуля .38 +П"
 	damage = 34
 	wound_bonus = 2
 	bare_wound_bonus = 0

@@ -1079,9 +1079,11 @@
 			if(damage_dealt > edge_protection)
 				if((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
 					if(brute > 10)
-						var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
-						if(brain)
-							brain.applyOrganDamage(brute/1.1)
+							var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+							if(diceroll <= DICE_FAILURE)
+								brain.applyOrganDamage(brute * 1.3)
+							else
+								brain.applyOrganDamage(brute/1.1)
 	if(body_zone in list(BODY_ZONE_PRECISE_FACE, BODY_ZONE_HEAD))
 		if(blocked != 100)
 			var/damage_dealt = brute - (brute * (blocked/100)) - reduced
@@ -1090,7 +1092,11 @@
 					if(brute >= 15)
 						var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 						if(brain)
-							brain.applyOrganDamage(brute/1.3)
+							var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+							if(diceroll <= DICE_FAILURE)
+								brain.applyOrganDamage(brute * 1.1)
+							else
+								brain.applyOrganDamage(brute/1.3)
 
 	special_gore(owner, src, brute, sharpness)
 

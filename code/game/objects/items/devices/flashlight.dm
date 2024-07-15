@@ -340,12 +340,12 @@
 		return
 
 	. = ..()
-//	// All good, turn it on.
-//	if(.)
-//		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
+	// All good, turn it on.
+	if(.)
+		user.visible_message(span_notice("[user] вспыхивает [src]."), span_notice("Я вспыхиваю [src]!"))
 //		force = on_damage
 //		damtype = BURN
-//		START_PROCESSING(SSobj, src)
+		START_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/flare/get_temperature()
 	return on * heat
