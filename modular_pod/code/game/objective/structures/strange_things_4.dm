@@ -156,7 +156,7 @@
 			speak(bad_words)
 			playsound(get_turf(src), 'modular_pod/sound/eff/babycry.ogg', 100 , FALSE, FALSE)
 			user.overlay_fullscreen("childy", /atom/movable/screen/fullscreen/childy, 1)
-			addtimer(CALLBACK(mob_to_teleport, TYPE_PROC_REF(/mob/, clear_fullscreen), "childy"), 3 SECONDS)
+			addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/, clear_fullscreen), "childy"), 3 SECONDS)
 		else
 			alpha = 0
 
