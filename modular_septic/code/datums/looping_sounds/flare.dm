@@ -3,7 +3,7 @@
 		'modular_septic/sound/effects/flare_loop.ogg' = 1,
 	)
 	mid_length = 1 SECONDS
-	volume = 28
+	volume = 15
 	direct = FALSE
 
 //childfuck
