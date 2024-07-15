@@ -60,11 +60,15 @@
 	pass_flags_self = LETPASSTHROW|PASSSTRUCTURE
 	var/ready_smell = TRUE
 	var/smell_type = /datum/pollutant/blues
-	var/smell_amount = 25
+	var/smell_amount = 30
 
 /obj/structure/gelatine/smelly/Initialize()
 	. = ..()
 	AddElement(/datum/element/climbable)
+	if(prob(50))
+		smell_type = /datum/pollutant/blues
+	else
+		smell_type = /datum/pollutant/redoz
 
 /obj/structure/gelatine/smelly/on_density(mob/living/carbon/human/rammer)
 	if(ready_smell)

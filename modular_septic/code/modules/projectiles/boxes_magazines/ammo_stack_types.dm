@@ -5,6 +5,7 @@
 //	world_icon_state = "s-casing"
 	caliber = CALIBER_38
 	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 12
 
 /obj/item/ammo_box/magazine/ammo_stack/c38/loaded
 	start_empty = FALSE

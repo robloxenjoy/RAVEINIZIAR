@@ -149,3 +149,32 @@
 	scent = "vanilla"
 	color = "#edc595"
 	thickness = 3
+
+/datum/pollutant/blues
+	name = "Морник"
+	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
+	smell_intensity = 3
+	descriptor = SCENT_DESC_ODOR
+	scent = "морничатина"
+	color = "#3372ff"
+	thickness = 4
+
+/datum/pollutant/blues/breathe_act(mob/living/carbon/victim, amount)
+	var/message
+	switch(amount)
+		if(0 to 3)
+			message = span_warning("Такой вот запах.")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/sleeptime_gas)
+			if(prob(50))
+				victim.heal_overall_damage(brute = 2 * amount)
+		if(3 to 9)
+			message = span_warning("Хорошенький запах!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/sleeptime_gas/harsh)
+			if(prob(70))
+				victim.heal_overall_damage(brute = 3 * amount)
+		if(9 to INFINITY)
+			message = span_bolddanger("Этот запах... Лечит меня.")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/sleeptime_gas/harsh)
+			victim.heal_overall_damage(brute = 4 * amount)
+	if(message && prob(20))
+		to_chat(victim, message)

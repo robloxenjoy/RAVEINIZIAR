@@ -29,7 +29,7 @@
 	hydration_req = 0.25
 
 	var/sight_flags = 0
-	var/see_in_dark = 2
+	var/see_in_dark = 0
 	var/tint = 0
 	/// Set to a hex code to override a mob's eye color
 	var/eye_color = ""

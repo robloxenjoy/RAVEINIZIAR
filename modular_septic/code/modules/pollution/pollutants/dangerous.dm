@@ -211,34 +211,38 @@
 	if(message && prob(20))
 		to_chat(victim, message)
 
-/datum/pollutant/blues
-	name = "Морник"
+/datum/pollutant/redoz
+	name = "Рэдоз"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
-	scent = "морничатина"
-	color = "#3372ff"
+	scent = "рэдозка"
+	color = "#ff0000"
 	thickness = 4
 
-/datum/pollutant/blues/breathe_act(mob/living/carbon/victim, amount)
+/datum/pollutant/redoz/breathe_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
-		if(0 to 10)
+		if(0 to 3)
 			message = span_warning("Чё за запах?!")
-			if(prob(15))
-				victim.emote("gag")
-			if(prob(10))
-				victim.vomit(rand(40, 50), prob(amount))
-		if(10 to 30)
-			message = span_warning("Я щас блевать буду...")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded)
-			if(prob(25))
-				victim.vomit(rand(50, 60), prob(amount))
-		if(30 to INFINITY)
-			message = span_bolddanger("Этот запах ужасен!")
+			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
+			victim.adjustToxLoss(2)
+			if(prob(60))
+				victim.vomit(40, blood = prob(amount), stun = FALSE, vomit_type = VOMIT_TOXIC, purge_ratio = 1)
+		if(3 to 10)
+			message = span_warning("Этот запах страшен!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
-			victim.adjustToxLoss(1.5)
-			if(prob(35))
-				victim.vomit(rand(60, 70), prob(amount))
-	if(message && prob(20))
+			victim.apply_status_effect(/datum/status_effect/incredible_gas)
+			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
+			victim.adjustToxLoss(4)
+			if(prob(75))
+				victim.vomit(50, blood = prob(amount*3), stun = TRUE, vomit_type = VOMIT_TOXIC, purge_ratio = 1)
+		if(10 to INFINITY)
+			message = span_bolddanger("Этот запах ЕБАНУТО ОПАСЕН!")
+			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
+			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 8)
+			victim.adjustToxLoss(8)
+			victim.vomit(70, blood = TRUE, stun = TRUE, vomit_type = VOMIT_TOXIC, purge_ratio = 1)
+	if(message && prob(40))
 		to_chat(victim, message)

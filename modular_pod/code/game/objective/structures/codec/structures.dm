@@ -442,6 +442,9 @@
 	key_worthy = TRUE
 	id_tag = "kapnoroom"
 
+/obj/item/key/podpol/woody
+	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
+
 /obj/item/key/podpol/woody/kapnokey
 	name = "Ключ"
 	desc = "К комнатке отца Капнобатаев."
