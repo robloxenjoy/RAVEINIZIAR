@@ -151,7 +151,8 @@
 	colour = "red"
 
 /datum/client_colour/glass_colour/green
-	colour = "#aaffaa"
+	colour = "#00ff00"
+	priority = PRIORITY_NORMAL
 
 /datum/client_colour/glass_colour/lightgreen
 	colour = "#ccffcc"
