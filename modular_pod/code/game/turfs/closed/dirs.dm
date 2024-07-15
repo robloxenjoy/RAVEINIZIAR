@@ -206,7 +206,7 @@
 					var/turf/mineturf = get_turf(src)
 					mineturf.pollute_turf(/datum/pollutant/dust, 200)
 					if(crazysplash)
-						chem_splash(get_turf(src), 1, list(reagents))
+						chem_splash(get_turf(mineturf), 2, list(reagents))
 //					if(!QDELETED(mineturf))
 //						qdel(mineturf)
 
