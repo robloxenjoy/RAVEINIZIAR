@@ -97,7 +97,7 @@
 
 /obj/structure/codec/bulb/green
 	name = "Лампочка"
-	desc = "Как будет не светит, а наоборот."
+	desc = "Как будто не светит, а наоборот."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_green"
 	base_icon_state = "bulb_green"
