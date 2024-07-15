@@ -838,7 +838,7 @@
 		if(locate(/obj/) in get_turf(src))
 			return
 		new /obj/structure/stalag(get_turf(src))
-	if(prob(10))
+	if(prob(8))
 		if(locate(/obj/) in get_turf(src))
 			return
 		new /obj/structure/gelatine/smelly(get_turf(src))
