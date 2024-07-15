@@ -154,7 +154,7 @@
 	name = "Морник"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
-	descriptor = SCENT_DESC_ODOR
+	descriptor = SCENT_DESC_SMELL
 	scent = "морничатина"
 	color = "#3372ff"
 	thickness = 4
