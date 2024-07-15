@@ -42,11 +42,9 @@
 	//Suffocation
 	if(losebreath >= 1) //You've missed a breath, take oxy damage
 		losebreath--
-		if(prob(30))
+		if(prob(45))
 			if(turf_loc?.liquids)
-				if(prob(50))
-					agony_gargle()
-				else
+				if((body_position == LYING_DOWN && turf_loc.liquids.liquid_state >= LIQUID_STATE_WAIST) || (body_position == STANDING_UP && turf_loc.liquids.liquid_state >= LIQUID_STATE_FULLTILE))
 					liquid_choke()
 			else
 				agony_gasp()
