@@ -9,18 +9,11 @@
 	var/state2 = "wall2"
 	baseturfs = /turf/open/floor/plating/polovich/codec/dirt/mud
 	var/personal_turf = /turf/open/floor/plating/polovich/codec/dirt/mud
-	var/have_water = FALSE
-	var/wall_volume = 200
-	var/type_liquid = /datum/reagent/water
 
 /turf/podpol/Initialize(mapload)
 	. = ..()
 	if(wallis)
 		update_icon_pod()
-	if(have_water)
-		create_reagents(wall_volume)
-		if(type_liquid)
-			reagents.add_reagent(type_liquid, wall_volume)
 
 /turf/podpol/proc/update_icon_pod()
 	icon_state = state2
@@ -115,8 +108,6 @@
 /turf/podpol/wall/ex_act(severity, target)
 	if(cantbreak)
 		return
-	if(have_water)
-		chem_splash(loc, 1, list(reagents))
 /*
 	if(target == src)
 //		qdel(src)
@@ -187,9 +178,6 @@
 		else
 			if(user.a_intent == INTENT_HARM)
 				if(W.can_dig)
-					var/crazysplash = FALSE
-					if(have_water)
-						crazysplash = TRUE
 					user.visible_message(span_notice("[user] разрушает [src] с помощью [W]."),span_notice("Я разрушаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(8)
@@ -205,8 +193,6 @@
 					mined.update_visuals()
 					var/turf/mineturf = get_turf(src)
 					mineturf.pollute_turf(/datum/pollutant/dust, 200)
-					if(crazysplash)
-						chem_splash(get_turf(mineturf), 2, list(reagents))
 //					if(!QDELETED(mineturf))
 //						qdel(mineturf)
 
@@ -278,8 +264,6 @@
 	if(random)
 		if(prob(27))
 			new /obj/structure/sign/poster/contraband/codec/purpella(get_turf(src))
-		if(prob(50))
-			have_water = TRUE
 	. = ..()
 
 /*

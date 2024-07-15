@@ -6,6 +6,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon = DEFAULT_BODYPART_ICON
 	icon_state = ""
+	drop_sound = "modular_pod/sound/eff/flesh_slap_second.ogg"
 
 	/// So it isn't hidden behind objects when on the floor
 	layer = BELOW_MOB_LAYER
