@@ -72,8 +72,6 @@
 /turf/podpol/wall/Destroy()
 	if(cantbreak)
 		return
-	if(have_water)
-		chem_splash(loc, 1, list(reagents))
 //	ChangeTurf(personal_turf, null, CHANGETURF_IGNORE_AIR)
 //	for(var/turf/podpol/wall/F in oview(1, personal_turf))
 //		F.update_icon_pod()
