@@ -117,12 +117,12 @@
 	desc = "Не обижай!"
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "worm"
-	plane = ABOVE_GAME_PLANE
-	layer = FLY_LAYER
+	density = TRUE
+	anchored = TRUE
 	var/hide = FALSE
 	var/hpp = 5
 	var/last_words = 0
-	var/words_delay = 3500
+	var/words_delay = 2000
 	var/words_list = list("Не бей!", "Я умею прятаться от мамы и папы.", "Могу научить прятаться от папы и мамы!")
 
 /obj/structure/beast/worm/proc/speak(message)
@@ -138,15 +138,14 @@
 		last_words = world.time
 
 /obj/structure/beast/worm/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
 	if(istype(I, /obj/item/food/grown/granat))
 		user.visible_message(span_notice("[user] кормит [src] с помощью [I]."),span_notice("Я кормлю [src] с помощью [I]."), span_hear("Я слышу странности."))
 		if(do_after(user, 5 SECONDS, target = src))
 			to_chat(user, span_notice("Я накормил [src] с помощью [I]."))
 			sound_hint()
 			playsound(get_turf(src), 'modular_pod/sound/eff/eat.ogg', 100 , FALSE, FALSE)
-			user.alpha = 10
-			var/thankyou_words = pick("Нормальный гранат.", "Люблю этот гранат.")
+			user.alpha = 50
+			var/thankyou_words = pick("Как вкусно. Откуда ты знаешь, что это мой любимый фрукт?", "Люблю этот гранат.")
 			speak(thankyou_words)
 			qdel(I)
 	else

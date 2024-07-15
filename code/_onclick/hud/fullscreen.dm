@@ -89,7 +89,7 @@
 	plane = SPLASHSCREEN_PLANE
 
 /atom/movable/screen/fullscreen/childy
-	icon_state = "childy"
+	icon_state = "childy1"
 	show_when_dead = TRUE
 	layer = CURSE_LAYER
 	plane = SPLASHSCREEN_PLANE
