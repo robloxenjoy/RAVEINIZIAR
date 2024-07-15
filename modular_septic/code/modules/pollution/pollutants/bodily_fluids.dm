@@ -14,7 +14,7 @@
 		if(10 to INFINITY)
 			message = span_warning("Я насыщаюсь кровью...")
 			victim.adjust_bloodvolume(5)
-	if(message && prob(20))
+	if(message && prob(70))
 		to_chat(victim, message)
 
 ///Vomit
@@ -47,7 +47,7 @@
 			victim.adjustToxLoss(1.5)
 			if(prob(35))
 				victim.vomit(rand(60, 70), prob(amount))
-	if(message && prob(20))
+	if(message && prob(70))
 		to_chat(victim, message)
 
 ///Cum
@@ -90,7 +90,7 @@
 			victim.adjustToxLoss(1.5)
 			if(prob(35))
 				victim.vomit(rand(40, 50), prob(amount))
-	if(message && prob(20))
+	if(message && prob(70))
 		to_chat(victim, message)
 
 /datum/pollutant/shit
@@ -123,5 +123,5 @@
 			victim.adjustToxLoss(2.5)
 			if(prob(45))
 				victim.vomit(rand(30, 50), prob(amount))
-	if(message && prob(20))
+	if(message && prob(70))
 		to_chat(victim, message)

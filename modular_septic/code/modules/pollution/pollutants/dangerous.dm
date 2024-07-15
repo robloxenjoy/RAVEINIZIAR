@@ -244,5 +244,5 @@
 			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 8)
 			victim.adjustToxLoss(8)
 			victim.vomit(70, blood = TRUE, stun = TRUE, vomit_type = VOMIT_TOXIC, purge_ratio = 1)
-	if(message && prob(40))
+	if(message && prob(70))
 		to_chat(victim, message)

@@ -176,5 +176,5 @@
 			message = span_bolddanger("Этот запах... Лечит меня.")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/sleeptime_gas/harsh)
 			victim.heal_overall_damage(brute = 4 * amount)
-	if(message && prob(20))
+	if(message && prob(70))
 		to_chat(victim, message)
