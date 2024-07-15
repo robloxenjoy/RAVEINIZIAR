@@ -195,7 +195,7 @@
 			if(tac_reloads)
 				eject_magazine(user, FALSE, new_magazine)
 			else
-				to_chat(user, span_notice("Тут уже[magazine_wording] в [src]."))
+				to_chat(user, span_notice("Тут уже [magazine_wording] в [src]."))
 		return
 	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if(bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)

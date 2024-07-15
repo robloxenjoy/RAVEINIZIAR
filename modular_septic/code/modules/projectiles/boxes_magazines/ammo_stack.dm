@@ -1,7 +1,7 @@
 //The ammo stack object itself
 /obj/item/ammo_box/magazine/ammo_stack
-	name = "ammo stack"
-	desc = "A stack of ammo."
+	name = "Сборище Патронов"
+	desc = "Прикольно."
 	icon = 'modular_septic/icons/obj/items/ammo/ammo_stacks.dmi'
 	icon_state = "c9mm"
 	base_icon_state = "c9mm"
