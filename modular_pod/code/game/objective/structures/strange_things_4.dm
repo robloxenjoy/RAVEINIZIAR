@@ -111,3 +111,69 @@
 		my_turf.pollute_turf(smell_type, smell_amount)
 		ready_smell = FALSE
 		addtimer(CALLBACK(src, PROC_REF(readyagain), 15 SECONDS))
+
+/obj/structure/beast/worm
+	name = "Малыш"
+	desc = "Не обижай!"
+	icon = 'modular_pod/icons/obj/things/things_2.dmi'
+	icon_state = "worm"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	var/hide = FALSE
+	var/hpp = 5
+	var/last_words = 0
+	var/words_delay = 3500
+	var/words_list = list("Не бей!", "Я умею прятаться от мамы и папы.", "Могу научить прятаться от папы и мамы!")
+
+/obj/structure/beast/worm/proc/speak(message)
+	say(message)
+
+/obj/structure/beast/worm/Initialize()
+	. = ..()
+	if(last_words + words_delay <= world.time && prob(50))
+		var/words = pick(words_list)
+		speak(words)
+		sound_hint()
+		playsound(src, 'modular_pod/sound/eff/good_voice.ogg', 55, FALSE)
+		last_words = world.time
+
+/obj/structure/beast/worm/attackby(obj/item/I, mob/living/user, params)
+	. = ..()
+	if(istype(I, /obj/item/food/grown/granat))
+		user.visible_message(span_notice("[user] кормит [src] с помощью [I]."),span_notice("Я кормлю [src] с помощью [I]."), span_hear("Я слышу странности."))
+		if(do_after(user, 5 SECONDS, target = src))
+			to_chat(user, span_notice("Я накормил [src] с помощью [I]."))
+			sound_hint()
+			playsound(get_turf(src), 'modular_pod/sound/eff/eat.ogg', 100 , FALSE, FALSE)
+			user.alpha = 10
+			var/thankyou_words = pick("Нормальный гранат.", "Люблю этот гранат.")
+			speak(thankyou_words)
+			qdel(I)
+	else
+		if(hpp > 0)
+			hpp--
+			var/bad_words = pick("НЕ ОБИЖАЙ!", "НЕ БЕЙ!")
+			speak(bad_words)
+			playsound(get_turf(src), 'modular_pod/sound/eff/babycry.ogg', 100 , FALSE, FALSE)
+			user.overlay_fullscreen("childy", /atom/movable/screen/fullscreen/childy, 1)
+			addtimer(CALLBACK(mob_to_teleport, TYPE_PROC_REF(/mob/, clear_fullscreen), "childy"), 3 SECONDS)
+		else
+			alpha = 0
+
+/obj/structure/beast/worm/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'sound/effects/attackblob.ogg', 100, TRUE)
+			else
+				playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+		if(BURN)
+			if(damage_amount)
+				playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+/*
+/obj/structure/beast/worm/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		new /obj/effect/decal/cleanable/spacespot(get_turf(src))
+		playsound(src,'modular_pod/sound/eff/death.ogg', 50, TRUE)
+	qdel(src)
+*/

@@ -88,6 +88,12 @@
 	layer = CURSE_LAYER
 	plane = SPLASHSCREEN_PLANE
 
+/atom/movable/screen/fullscreen/childy
+	icon_state = "childy"
+	show_when_dead = TRUE
+	layer = CURSE_LAYER
+	plane = SPLASHSCREEN_PLANE
+
 /atom/movable/screen/fullscreen/foge
 	icon = 'modular_septic/icons/hud/fov_15x15.dmi'
 	icon_state = "poor"

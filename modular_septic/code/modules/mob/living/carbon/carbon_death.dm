@@ -31,23 +31,28 @@
 //			return
 		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>Я мёртв! -10 Каотиков!</span>")
 		GLOB.world_deaths_crazy += 1
+		for(var/mob/living/carbon/human/H in world)
+			if(H != src)
+				if(src in view(H))
+					if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
+						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
+					else
+						if(pod_faction == H.pod_faction)
+							SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
+					if(pod_faction != H.pod_faction)
+						var/somany = kaotiks_body
+						H.client?.prefs?.adjust_bobux(somany, "<span class='bobux'>Я видел умирающего врага! +[somany] каотиков!</span>")
+						H.flash_kaosgain()
+				else
+					if(pod_faction != H.pod_faction)
+						var/somany = kaotiks_body/2
+						H.client?.prefs?.adjust_bobux(somany)
+
 	if(is_merc_job(src))
 		GLOB.mercenary_list -= 1
 //	client?.prefs?.adjust_bobux(-1)
 //	if(!iswillet(src))
-	for(var/mob/living/carbon/human/H in range(src))
-		if(H != src && (src in view(H)))
-			if(has_died)
-				return
-			if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
-				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
-			else
-				if(pod_faction == H.pod_faction)
-					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
-				else
-					var/somany = kaotiks_body
-					H.client?.prefs?.adjust_bobux(somany, "<span class='bobux'>Я видел умирающего врага! +[somany] каотиков!</span>")
-					H.flash_kaosgain()
+//					H.flash_kaosgain()
 //					H.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have seen a death of human! +10 kaotiks!</span>")
 
 //				if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) < ATTRIBUTE_MIDDLING)

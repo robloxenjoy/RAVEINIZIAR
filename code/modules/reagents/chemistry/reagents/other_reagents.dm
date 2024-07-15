@@ -2001,13 +2001,11 @@
 	taste_description = "acid"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
-
 /datum/reagent/acetone_oxide/expose_mob(mob/living/exposed_mob, methods=TOUCH, reac_volume)//Splashing people kills people!
 	. = ..()
 	if(methods & TOUCH)
 		exposed_mob.adjustFireLoss(2, FALSE) // burns,
 		exposed_mob.adjust_fire_stacks((reac_volume / 10))
-
 
 /datum/reagent/phenol
 	name = "Phenol"
