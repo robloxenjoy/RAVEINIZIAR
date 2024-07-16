@@ -166,18 +166,18 @@
 	if(!isinhands)
 		. += emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
 
-/obj/item/clothing/glasses/night/equipped(mob/living/user, slot)
+/obj/item/clothing/glasses/night/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_EYES)
 		if(!HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
 			ADD_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
 			user.update_glasses_color(src, TRUE)
 
-/obj/item/clothing/glasses/night/dropped(mob/living/user)
+/obj/item/clothing/glasses/night/dropped(mob/living/carbon/human/user)
 	. = ..()
 	if(HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
 		REMOVE_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
-		user.update_glasses_color(src, TRUE)
+		user.update_glasses_color(src, FALSE)
 
 /*
 /obj/item/clothing/glasses/science/suicide_act(mob/living/carbon/user)
