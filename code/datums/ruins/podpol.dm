@@ -2,7 +2,7 @@
 	prefix = "_maps/RandomRuins/PodpolRuins/"
 
 /datum/map_template/ruin/podpol/throne
-	name = "Throne"
+	name = "Трон"
 	id = "podpol-throne"
 	allow_duplicates = FALSE
 	cost = 0

@@ -171,11 +171,13 @@
 	if(slot == ITEM_SLOT_EYES)
 		if(!HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
 			ADD_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
+			user.update_glasses_color(src, TRUE)
 
 /obj/item/clothing/glasses/night/dropped(mob/living/user)
 	. = ..()
 	if(HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
 		REMOVE_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
+		user.update_glasses_color(src, TRUE)
 
 /*
 /obj/item/clothing/glasses/science/suicide_act(mob/living/carbon/user)
