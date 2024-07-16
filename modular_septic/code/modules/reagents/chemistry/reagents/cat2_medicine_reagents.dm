@@ -378,3 +378,29 @@
 	var/datum/component/irradiated/hisashi_ouchi = M.GetComponent(/datum/component/irradiated)
 	if(hisashi_ouchi)
 		hisashi_ouchi.rads = clamp(CEILING(hisashi_ouchi.rads - (RADIATION_CLEANING_POWER/20)*delta_time, 1), 0, RADIATION_MAXIMUM_RADS)
+
+/datum/reagent/medicine/c2/garnet
+	name = "Гранат"
+	description = "Чай гранатовый."
+	color = "#80001780"
+	ph = 3.8
+	reagent_state = LIQUID
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 0
+	taste_description = "кисло"
+	failed_chem = null
+	inverse_chem = null
+	impure_chem = null
+
+/datum/reagent/medicine/c2/garnet/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	var/list/damaged_organs = list()
+	for(var/obj/item/organ/organ as anything in M.internal_organs)
+		if(organ.damage && !CHECK_BITFIELD(organ.organ_flags, ORGAN_NO_VIOLENT_DAMAGE))
+			damaged_organs += organ
+	if(LAZYLEN(damaged_organs))
+		var/obj/item/organ/organ = pick(damaged_organs)
+		organ.applyOrganDamage(-3 * 0.5 * delta_time)
+	M.heal_overall_damage(brute = 5 * REM * delta_time)
+	return TRUE

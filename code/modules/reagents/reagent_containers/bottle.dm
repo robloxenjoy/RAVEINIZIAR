@@ -1,5 +1,20 @@
 //Not to be confused with /obj/item/reagent_containers/food/drinks/bottle
 
+/obj/item/reagent_containers/food/drinks/bottle/thermos
+	name = "Термос"
+	desc = "Классно же."
+	icon = 'icons/obj/drinks.dmi'
+	icon_state = "thermos"
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = "colocup"
+	list_reagents = list(/datum/reagent/medicine/c2/garnet = 30, /datum/reagent/water = 10)
+	possible_transfer_amounts = list(5, 10, 25, 40)
+	volume = 40
+	amount_per_transfer_from_this = 10
+	isGlass = FALSE
+	foodtype = NONE
+
 /obj/item/reagent_containers/glass/bottle
 	name = "Бутылёк"
 	desc = "Маленький бутылёк."

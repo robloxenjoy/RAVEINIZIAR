@@ -716,7 +716,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/tools_find(mob/living/carbon/user)
-	var/list/otherlist = list("Кирка (50)", "Дизармер (30)")
+	var/list/otherlist = list("Кирка (50)", "Дизармер (30)", "Гранатовый Чай (30)")
 	var/thingy = input(user, "Что за инструмент я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -741,6 +741,14 @@
 				return
 			new /obj/item/melee/hehe/pickaxe/iron(get_turf(user))
 			pref_source.bobux_amount -= 50
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Покупка сделана!"))
+		if("Гранатовый Чай (30)")
+			if(pref_source.bobux_amount < 30)
+				to_chat(user, span_meatymeat("Нужны каотики!"))
+				return
+			new /obj/item/reagent_containers/food/drinks/bottle/thermos(get_turf(user))
+			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
