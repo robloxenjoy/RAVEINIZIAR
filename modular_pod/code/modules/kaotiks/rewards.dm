@@ -417,7 +417,7 @@
 			continue
 		if(A.droning_sound != DRONING_MUZON)
 			continue
-		if((istype(A, /area/maintenance/polovich/forest)) || (istype(A, /area/maintenance/polovich/forest/can_ruin)))
+		if(istype(A, /area/maintenance/polovich/forest) || istype(A, /area/maintenance/polovich/forest/can_ruin))
 			A.droning_sound = DRONING_POLOVICHSTAN
 		if(istype(A, /area/maintenance/polovich/forest/cave/))
 			A.droning_sound = DRONING_CAVER
