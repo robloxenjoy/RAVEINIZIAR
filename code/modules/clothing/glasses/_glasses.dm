@@ -158,7 +158,7 @@
 	inhand_icon_state = "glasses"
 	darkness_view = 2
 	flash_protect = FLASH_PROTECTION_SENSITIVE
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/night/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
