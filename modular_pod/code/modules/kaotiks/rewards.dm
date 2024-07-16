@@ -384,16 +384,16 @@
 /datum/bobux_reward/activate_muzon/on_buy(client/noob)
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Музон!</span>")
-	for(var/area/maintenance/polovich/forest/A in world)
-		if(A.ino)
-			continue
-		if(A.droning_sound != DRONING_MUZON)
-			A.droning_sound = DRONING_MUZON
-		for(var/mob/living/carbon/human/H in world)
-			if(H.client)
-				var/area/areal = get_area(H)
-				SSdroning.play_area_sound(areal, H?.client)
-		SSdroning.crazymuzon = TRUE
+//	for(var/area/maintenance/polovich/forest/A in world)
+//		if(A.ino)
+//			continue
+//		if(A.droning_sound != DRONING_MUZON)
+//			A.droning_sound = DRONING_MUZON
+	SSdroning.crazymuzon = TRUE
+	for(var/mob/living/carbon/human/H in world)
+		if(H.client)
+			var/area/areal = get_area(H)
+			SSdroning.play_area_sound(areal, H?.client)
 
 /datum/bobux_reward/remove_muzon
 	name = "Убрать Музон"
@@ -411,16 +411,17 @@
 /datum/bobux_reward/remove_muzon/on_buy(client/noob)
 	..()
 	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] убирает Музон!</span>")
-	for(var/area/maintenance/polovich/forest/A in world)
-		if(A.ino)
-			continue
+//	for(var/area/maintenance/polovich/forest/A in world)
+//		if(A.ino)
+//			continue
 //		if(A.droning_sound != DRONING_MUZON)
 //			continue
-		A.droning_sound = initial(A.droning_sound)
-		for(var/mob/living/carbon/human/H in world)
-			if(H.client)
-				var/area/areal = get_area(H)
-				SSdroning.play_area_sound(areal, H?.client)
+//		A.droning_sound = initial(A.droning_sound)
+	SSdroning.crazymuzon = FALSE
+	for(var/mob/living/carbon/human/H in world)
+		if(H.client)
+			var/area/areal = get_area(H)
+			SSdroning.play_area_sound(areal, H?.client)
 
 /datum/bobux_reward/changename
 	name = "Сменить Имя"

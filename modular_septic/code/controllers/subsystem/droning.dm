@@ -137,6 +137,8 @@ SUBSYSTEM_DEF(droning)
 //	victim.mob.transition = TRUE
 	if(shouldskip)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
+		if(crazymuzon)
+			droning.file = DRONING_MUZON
 		if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
 			droning.file = 'modular_septic/sound/insanity/lean.ogg'
 //		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
@@ -160,6 +162,8 @@ SUBSYSTEM_DEF(droning)
 		listener.droning_sound = null
 		listener.last_droning_sound = null
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
+		if(crazymuzon)
+			droning.file = DRONING_MUZON
 		listener.droning_sound = droning
 		listener.last_droning_sound = area_player.droning_sound
 		SEND_SOUND(listener, droning)
