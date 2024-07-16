@@ -205,6 +205,7 @@ Used by the AI doomsday and the self-destruct nuke.
 	ruins_templates = SSmapping.ruins_templates
 	space_ruins_templates = SSmapping.space_ruins_templates
 	podpol_ruins_templates = SSmapping.podpol_ruins_templates
+	podpol_surface_ruins_templates = SSmapping.podpol_surface_ruins_templates
 	lava_ruins_templates = SSmapping.lava_ruins_templates
 	ice_ruins_templates = SSmapping.ice_ruins_templates
 	ice_ruins_underground_templates = SSmapping.ice_ruins_underground_templates
