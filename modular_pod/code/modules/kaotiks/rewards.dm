@@ -332,7 +332,7 @@
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(A.static_lighting)
-			return
+			return FALSE
 
 /datum/bobux_reward/blackout/on_buy(client/noob)
 	..()
@@ -356,7 +356,7 @@
 	. = ..()
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(!A.static_lighting)
-			return
+			return FALSE
 
 /datum/bobux_reward/lightout/on_buy(client/noob)
 	..()
@@ -379,7 +379,7 @@
 /datum/bobux_reward/activate_muzon/can_buy(client/noob, silent, fail_message)
 	. = ..()
 	if(SSdroning.crazymuzon)
-		return
+		return FALSE
 
 /datum/bobux_reward/activate_muzon/on_buy(client/noob)
 	..()
@@ -406,7 +406,7 @@
 /datum/bobux_reward/remove_muzon/can_buy(client/noob, silent, fail_message)
 	. = ..()
 	if(!SSdroning.crazymuzon)
-		return
+		return FALSE
 
 /datum/bobux_reward/remove_muzon/on_buy(client/noob)
 	..()
