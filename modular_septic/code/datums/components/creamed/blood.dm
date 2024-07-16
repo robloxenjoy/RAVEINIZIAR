@@ -1,7 +1,7 @@
 GLOBAL_LIST_INIT(bloodyable, typecacheof(list(/mob/living/carbon/human)))
 
 /datum/component/creamed/blood
-	cover_lips = span_bloody("blood")
+	cover_lips = span_bloody("кровью")
 
 /datum/component/creamed/blood/return_creamable_list()
 	return GLOB.bloodyable

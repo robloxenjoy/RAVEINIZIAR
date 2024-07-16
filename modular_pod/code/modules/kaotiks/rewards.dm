@@ -97,19 +97,19 @@
 	. = ..()
 	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik/melee)
 
-/datum/bobux_reward/combat_boost/range
+/datum/bobux_reward/range_boost
 	name = "Улучшить боевой настрой"
 	desc = "Увеличивает навыки дальнего боя."
 	buy_message = "<b>Я становлюсь лучше в дальнем бою!</span>"
-	id = "combatboost"
+	id = "rangeboost"
 	cost = 100
 
-/datum/bobux_reward/combat_boost/range/can_buy(client/noob, silent, fail_message)
+/datum/bobux_reward/range_boost/can_buy(client/noob, silent, fail_message)
 	. = ..()
 	if(. && ishuman(noob.mob) && noob.mob.mind)
 		return TRUE
 
-/datum/bobux_reward/combat_boost/range/on_buy(client/noob)
+/datum/bobux_reward/range_boost/range/on_buy(client/noob)
 	. = ..()
 	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik/range)
 

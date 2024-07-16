@@ -1,0 +1,11 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"o" = (/turf/podpol/wall/caver,/area/template_noop)
+"C" = (/turf/open/floor/plating/polovich/way/legend,/area/template_noop)
+
+(1,1,1) = {"
+aoaaa
+aoooo
+aoCoa
+ooooa
+aaaoa
+"}

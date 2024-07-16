@@ -16,6 +16,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/ruins_templates = list()
 	var/list/space_ruins_templates = list()
 	var/list/podpol_ruins_templates = list()
+	var/list/podpol_surface_ruins_templates = list()
 	var/list/lava_ruins_templates = list()
 	var/list/ice_ruins_templates = list()
 	var/list/ice_ruins_underground_templates = list()
@@ -115,6 +116,10 @@ SUBSYSTEM_DEF(mapping)
 		// needs to be whitelisted for underground too so place_below ruins work
 		seedRuins(podpol_ruins, CONFIG_GET(number/icemoon_budget), list(/area/maintenance/polovich/forest/cave/can_ruin), podpol_ruins_templates)
 
+	var/list/podpol_surface_ruins = levels_by_trait(ZTRAIT_PODPOL_SURFACE_RUINS)
+	if (podpol_surface_ruins.len)
+		// needs to be whitelisted for underground too so place_below ruins work
+		seedRuins(podpol_surface_ruins, CONFIG_GET(number/icemoon_budget), list(/area/maintenance/polovich/forest/can_ruin), podpol_surface_ruins_templates)
 //		for (var/ice_z in ice_ruins)
 //			spawn_rivers(ice_z, 4, /turf/open/openspace/icemoon, /area/icemoon/surface/outdoors/unexplored/rivers)
 
@@ -457,6 +462,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 			space_ruins_templates[R.name] = R
 		else if(istype(R, /datum/map_template/ruin/podpol))
 			podpol_ruins_templates[R.name] = R
+		else if(istype(R, /datum/map_template/ruin/podpolsurface))
+			podpol_surface_ruins_templates[R.name] = R
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	var/list/unbuyable = generateMapList("unbuyableshuttles.txt")

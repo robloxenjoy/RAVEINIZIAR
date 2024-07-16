@@ -1,0 +1,17 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/turf/podpol/wall/darkyw,/area/template_noop)
+"f" = (/obj/structure/codec/window/green,/turf/open/floor/plating/polovich/way/painwood,/area/template_noop)
+"m" = (/obj/structure/codec/bulb/green,/turf/template_noop,/area/template_noop)
+"w" = (/obj/structure/closet/crate/wooden/crazy,/turf/open/floor/plating/polovich/way/painstone,/area/template_noop)
+"U" = (/obj/structure/codec/bulb/green{dir = 1},/turf/template_noop,/area/template_noop)
+"V" = (/turf/open/floor/plating/polovich/way/painwood,/area/template_noop)
+
+(1,1,1) = {"
+aaaamaa
+abbfbba
+abVVVba
+afVwVfa
+abVVVba
+abbfbba
+aaUaaaa
+"}

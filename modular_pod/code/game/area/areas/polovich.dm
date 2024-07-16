@@ -63,6 +63,10 @@
 		if(istype(boarder) && boarder.client)
 			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
 
+/area/maintenance/polovich/forest/can_ruin
+	area_flags = UNIQUE_AREA | NO_ALERTS
+	icon_state = "polovich_special"
+
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
 	base_lighting_alpha = 1

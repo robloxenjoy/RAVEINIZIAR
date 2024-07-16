@@ -1,0 +1,10 @@
+"a" = (/turf/podpol/wall/shroom,/area/template_noop)
+"q" = (/turf/template_noop,/area/template_noop)
+
+(1,1,1) = {"
+qqaqq
+aaaaq
+qqaqq
+qaaaa
+qqaqq
+"}

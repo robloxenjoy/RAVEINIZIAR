@@ -20,3 +20,15 @@
 	new /obj/item/pneumatic_cannon/pie(src)
 	new /obj/item/food/pie/cream(src)
 	new /obj/item/storage/crayons(src)
+
+/obj/structure/closet/crate/wooden/crazy
+
+/obj/structure/closet/crate/wooden/crazy/PopulateContents()
+	..()
+	if(prob(50))
+		if(prob(50))
+			new /obj/item/ammo_box/magazine/ammo_stack/c38/loaded(src)
+		else
+			new /obj/item/grenade/gas/incredible_gas(src)
+	else
+		new /obj/item/shit(src)

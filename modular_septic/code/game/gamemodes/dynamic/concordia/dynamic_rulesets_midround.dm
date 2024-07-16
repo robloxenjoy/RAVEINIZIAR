@@ -183,7 +183,7 @@
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
 	required_candidates = 1
 	weight = 7
-	cost = 10
+	cost = 10000000
 	requirements = list(10,10,10,10,10,10,10,10,10,10)
 	repeatable = TRUE
 
@@ -208,7 +208,7 @@
 		log_game("DYNAMIC: Random chance to roll autotraitor failed, it was a [mode.threat_level]% chance.")
 		return FALSE
 */
-	return ..()
+//	return ..()
 
 /datum/dynamic_ruleset/midround/concordia/autotraitor/trim_candidates()
 	..()

@@ -20,7 +20,8 @@
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace/norm"
+			"Baseturf": "/turf/open/openspace/norm",
+			"Podpol Ruins Surface": true
 		},
 		{
 			"Down": -1,

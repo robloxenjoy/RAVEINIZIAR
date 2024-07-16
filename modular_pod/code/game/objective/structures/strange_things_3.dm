@@ -895,7 +895,15 @@
 	light_color = "#75a743"
 
 /obj/structure/medica/attackby(obj/item/W, mob/living/carbon/user, params)
-	return
+	if(istype(W, /obj/item/grab))
+		var/mob/living/GR = user.pulling
+		if(GR == null)
+			return
+		if(do_after(user, 2 SECONDS, target=src))
+			to_chat(GR, span_meatymeat("Я ощущаю какой-то пиздец!"))
+			GR.fully_heal(TRUE)
+	else
+		return
 
 /obj/structure/medica/attack_hand(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
