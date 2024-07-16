@@ -192,6 +192,8 @@
 	var/has_failure_chance = TRUE
 
 /datum/dynamic_ruleset/midround/concordia/autotraitor/acceptable(population = 0, threat = 0)
+	return FALSE
+/*
 	var/player_count = GLOB.alive_player_list.len
 	var/antag_count = GLOB.current_living_antags.len
 	var/max_traitors = round(player_count / 10) + 1
@@ -205,7 +207,7 @@
 	if (has_failure_chance && !prob(mode.threat_level))
 		log_game("DYNAMIC: Random chance to roll autotraitor failed, it was a [mode.threat_level]% chance.")
 		return FALSE
-
+*/
 	return ..()
 
 /datum/dynamic_ruleset/midround/concordia/autotraitor/trim_candidates()

@@ -1,0 +1,38 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"l" = (/turf/open/floor/plating/polovich/way/uzstone,/area/maintenance/polovich/forest/cave)
+"p" = (/turf/open/floor/plating/polovich/way/stone,/area/template_noop)
+"t" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/cave)
+"v" = (/turf/open/floor/plating/polovich/way/cavero,/area/maintenance/polovich/forest/cave)
+"z" = (/turf/open/floor/plating/polovich/way/monumental{dir = 8},/area/maintenance/polovich/forest/cave)
+"C" = (/turf/open/floor/plating/polovich/way/monumental,/area/maintenance/polovich/forest/cave)
+"J" = (/obj/structure/column/power,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
+"L" = (/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
+"M" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/shotgun/bolas,/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
+"P" = (/turf/open/floor/plating/polovich/way/monumental{dir = 1},/area/maintenance/polovich/forest/cave)
+"Q" = (/obj/structure/chair/podpolsit,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
+"T" = (/obj/structure/closet/crate,/obj/item/clothing/head/helmet/codec/def_yel,/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
+"W" = (/turf/open/floor/plating/polovich/way/monumental{dir = 4},/area/maintenance/polovich/forest/cave)
+"X" = (/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaapppppppppppppaaaa
+aaaptttttttttttpaaaa
+aaaptMMLLLLLTMtpaaaa
+aaaptXXJLQLJXXtpaaaa
+aaaptXzWXzWXzWtpaaaa
+aaaptXPCXPCXPCtpaaaa
+aaaptLLLLLXXXXtpaaaa
+aaaptXXXLLlllltpaaaa
+aaaptXXXLLlllltpaaaa
+aaaptvvvvvvvvvtpaaaa
+aaapppppppppppppaaaa
+aaaaappppppppppaaaaa
+aaaaaaapppppppaaaaaa
+aaaaappppppppaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+"}

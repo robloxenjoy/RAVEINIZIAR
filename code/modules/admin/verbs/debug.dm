@@ -727,6 +727,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	names += "---- Space Ruins ----"
 	for(var/name in SSmapping.space_ruins_templates)
 		names[name] = list(SSmapping.space_ruins_templates[name], ZTRAIT_SPACE_RUINS, list(/area/space))
+	names += "---- Podpol Ruins ----"
+	for(var/name in SSmapping.podpol_ruins_templates)
+		names[name] = list(SSmapping.podpol_ruins_templates[name], ZTRAIT_PODPOL_RUINS, list(/area/maintenance/polovich/forest/cave))
 	names += "---- Lava Ruins ----"
 	for(var/name in SSmapping.lava_ruins_templates)
 		names[name] = list(SSmapping.lava_ruins_templates[name], ZTRAIT_LAVA_RUINS, list(/area/lavaland/surface/outdoors/unexplored))

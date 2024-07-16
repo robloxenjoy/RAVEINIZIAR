@@ -27,13 +27,15 @@
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace/norm"
+			"Baseturf": "/turf/open/openspace/norm",
+			"Podpol Ruins": true
 		},
 		{
 			"Down": -1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/closed/wall/purple/nocling"
+			"Baseturf": "/turf/closed/wall/purple/nocling",
+			"Podpol Ruins": true
 		}
 	],
 	"minetype": "none"
