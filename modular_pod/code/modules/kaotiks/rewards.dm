@@ -414,8 +414,8 @@
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(A.ino)
 			continue
-		if(A.droning_sound != DRONING_MUZON)
-			continue
+//		if(A.droning_sound != DRONING_MUZON)
+//			continue
 		A.droning_sound = initial(A.droning_sound)
 		for(var/mob/living/carbon/human/H in world)
 			if(H.client)
