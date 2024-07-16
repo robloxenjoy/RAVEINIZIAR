@@ -447,7 +447,7 @@
 	worn_icon_state = "shard"
 	w_class = WEIGHT_CLASS_TINY
 	inhand_icon_state = null
-	worn_icon = null
+//	worn_icon = null
 
 /obj/item/key/podpol/woody/kapnokey
 	name = "Ключ"
