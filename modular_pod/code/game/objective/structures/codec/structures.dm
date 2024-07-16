@@ -444,24 +444,28 @@
 
 /obj/item/key/podpol/woody
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/key/podpol/woody/kapnokey
 	name = "Ключ"
 	desc = "К комнатке отца Капнобатаев."
 	icon_state = "key_father"
 	id_tag = "kapnoroom"
+	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
 
 /obj/item/key/podpol/woody/kapnodvorkey
 	name = "Ключ"
 	desc = "К двери двора Капнобатаев."
 	icon_state = "key_father"
 	id_tag = "kapnodvor"
+	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
 
 /obj/item/key/podpol/woody/konchkey
 	name = "Ключ"
 	desc = "К двери двора Капнобатаев."
 	icon_state = "key_konch"
 	id_tag = "konchkey"
+	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
 
 #undef DOOR_CLOSE_WAIT
 
