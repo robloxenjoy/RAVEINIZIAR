@@ -84,6 +84,7 @@
 	ambientsounds_normal = list('modular_pod/sound/loop/caveloop.ogg')
 	droning_sound = DRONING_CAVER
 	lighting_out = FALSE
+	area_flags = UNIQUE_AREA | NO_ALERTS
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
