@@ -36,6 +36,7 @@
 	max_ambience_cooldown = 95 SECONDS
 	var/specialfog = FALSE
 	var/lighting_out = TRUE
+	var/ino = FALSE
 
 /area/maintenance/polovich/forest/Entered(atom/movable/arrived, area/old_area)
 	. = ..()
@@ -76,6 +77,7 @@
 	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
 	droning_sound = null
 	lighting_out = FALSE
+	ino = TRUE
 
 /area/maintenance/polovich/forest/cave
 	name = "Caveira"

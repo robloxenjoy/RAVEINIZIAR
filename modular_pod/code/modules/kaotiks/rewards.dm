@@ -368,6 +368,52 @@
 		A.set_base_lighting(new_alpha = 255)
 		A.remove_area_lighting_objects()
 
+/datum/bobux_reward/activate_muzon
+	name = "Врубить Музон"
+	desc = "Надо послушать!"
+	buy_message = "<b>Пизда!</span>"
+	id = "muzon"
+	cost = 400
+	infinite_buy = TRUE
+
+/datum/bobux_reward/activate_muzon/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	for(var/area/maintenance/polovich/forest/A in world)
+		if(A.droning_sound == DRONING_MUZON)
+			return
+
+/datum/bobux_reward/activate_muzon/on_buy(client/noob)
+	..()
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Музон!</span>")
+	for(var/area/maintenance/polovich/forest/A in world)
+		if(A.ino)
+			continue
+		if(A.droning_sound != DRONING_MUZON)
+			A.droning_sound = DRONING_MUZON
+
+/datum/bobux_reward/remove_muzon
+	name = "Убрать Музон"
+	desc = "Пора всё по-нормальному сделать!"
+	buy_message = "<b>Отлично-отлично!</span>"
+	id = "removemuzon"
+	cost = 200
+	infinite_buy = TRUE
+
+/datum/bobux_reward/remove_muzon/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	for(var/area/maintenance/polovich/forest/A in world)
+		if(A.droning_sound != DRONING_MUZON)
+			return
+
+/datum/bobux_reward/remove_muzon/on_buy(client/noob)
+	..()
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] убирает Музон!</span>")
+	for(var/area/maintenance/polovich/forest/A in world)
+		if(A.ino)
+			continue
+		if(A.droning_sound == DRONING_MUZON)
+			A.droning_sound = initial(A.droning_sound)
+
 /datum/bobux_reward/changename
 	name = "Сменить Имя"
 	desc = "Пора бы."

@@ -37,8 +37,8 @@
 	suffix = "shroom.dmm"
 	description = "Опять эта зараза."
 
-
 /datum/map_template/ruin/podpolsurface
+	name = "Объект"
 	prefix = "_maps/RandomRuins/PodpolSurfaceRuins/"
 
 /datum/map_template/ruin/podpolsurface/mini
