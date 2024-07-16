@@ -416,7 +416,7 @@
 		if(A.ino)
 			continue
 		if(A.droning_sound == DRONING_MUZON)
-			A.droning_sound = previous_droning_sound
+			A.droning_sound = A.previous_droning_sound
 		for(var/mob/living/carbon/human/H in world)
 			if(H.client)
 				var/area/areal = get_area(H)

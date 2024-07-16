@@ -7,13 +7,18 @@
 	var/room_desc
 	// ~DRONING SYSTEM VARIABLES
 	var/droning_sound = DRONING_DEFAULT
-	var/previous_droning_sound = droning_sound
+	var/previous_droning_sound
 	var/droning_vary = 0
 	var/droning_repeat = TRUE
 	var/droning_wait = 0
 	var/droning_volume = 15
 	var/droning_channel = CHANNEL_BUZZ
 	var/droning_frequency = 0
+
+/area/Initialize(mapload)
+	. = ..()
+	if(isnull(previous_droning_sound))
+		previous_droning_sound = droning_sound
 
 /area/Entered(atom/movable/arrived, area/old_area)
 	set waitfor = FALSE
