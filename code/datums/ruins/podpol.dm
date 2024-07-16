@@ -40,6 +40,7 @@
 /datum/map_template/ruin/podpolsurface
 	name = "Объект"
 	prefix = "_maps/RandomRuins/PodpolSurfaceRuins/"
+	description = "Такой вот."
 
 /datum/map_template/ruin/podpolsurface/mini
 	id = "podpol-mini"
@@ -47,7 +48,6 @@
 	cost = 0
 	placement_weight = 2
 	suffix = "mini.dmm"
-	description = null
 
 /datum/map_template/ruin/podpolsurface/mini2
 	id = "podpol-mini2"
@@ -55,7 +55,6 @@
 	cost = 0
 	placement_weight = 2
 	suffix = "mini2.dmm"
-	description = null
 
 /datum/map_template/ruin/podpolsurface/mini3
 	id = "podpol-mini3"
@@ -63,7 +62,6 @@
 	cost = 0
 	placement_weight = 1
 	suffix = "mini3.dmm"
-	description = null
 
 /datum/map_template/ruin/podpolsurface/mini4
 	id = "podpol-mini4"
@@ -71,4 +69,3 @@
 	cost = 0
 	placement_weight = 2
 	suffix = "mini4.dmm"
-	description = null

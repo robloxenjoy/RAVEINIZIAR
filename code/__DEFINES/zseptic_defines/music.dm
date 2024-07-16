@@ -6,7 +6,8 @@
 
 #define DRONING_MUZON list('modular_pod/sound/mus/gocrazy.ogg')
 
-#define DRONING_CAVER list('modular_pod/sound/mus/caver.ogg', 'modular_pod/sound/mus/cavor.ogg')
+//#define DRONING_CAVER list('modular_pod/sound/mus/caver.ogg', 'modular_pod/sound/mus/cavor.ogg')
+#define DRONING_CAVER list('modular_pod/sound/mus/gocrazy.ogg')
 
 #define DRONING_NIGHTVILL
 
