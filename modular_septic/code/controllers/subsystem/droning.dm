@@ -2,6 +2,8 @@
 SUBSYSTEM_DEF(droning)
 	name = "Droning"
 	flags = SS_NO_INIT|SS_NO_FIRE
+
+	var/crazymuzon = FALSE
 /*
 /sound
 	var/transition = 0

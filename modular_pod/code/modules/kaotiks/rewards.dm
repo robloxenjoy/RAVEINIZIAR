@@ -378,9 +378,8 @@
 
 /datum/bobux_reward/activate_muzon/can_buy(client/noob, silent, fail_message)
 	. = ..()
-	for(var/area/maintenance/polovich/forest/A in world)
-		if(A.droning_sound == DRONING_MUZON)
-			return
+	if(SSdroning.crazymuzon)
+		return
 
 /datum/bobux_reward/activate_muzon/on_buy(client/noob)
 	..()
@@ -394,6 +393,7 @@
 			if(H.client)
 				var/area/areal = get_area(H)
 				SSdroning.play_area_sound(areal, H?.client)
+		SSdroning.crazymuzon = TRUE
 
 /datum/bobux_reward/remove_muzon
 	name = "Убрать Музон"
@@ -405,9 +405,8 @@
 
 /datum/bobux_reward/remove_muzon/can_buy(client/noob, silent, fail_message)
 	. = ..()
-	for(var/area/maintenance/polovich/forest/A in world)
-		if(A.droning_sound != DRONING_MUZON)
-			return
+	if(!SSdroning.crazymuzon)
+		return
 
 /datum/bobux_reward/remove_muzon/on_buy(client/noob)
 	..()
@@ -417,10 +416,7 @@
 			continue
 		if(A.droning_sound != DRONING_MUZON)
 			continue
-		if(istype(A, /area/maintenance/polovich/forest) || istype(A, /area/maintenance/polovich/forest/can_ruin))
-			A.droning_sound = DRONING_POLOVICHSTAN
-		if(istype(A, /area/maintenance/polovich/forest/cave/))
-			A.droning_sound = DRONING_CAVER
+		A.droning_sound = initial(A.droning_sound)
 		for(var/mob/living/carbon/human/H in world)
 			if(H.client)
 				var/area/areal = get_area(H)
