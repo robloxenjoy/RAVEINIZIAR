@@ -448,7 +448,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	inhand_icon_state = null
 	worn_icon = null
-	worn_icon_state = null
 
 /obj/item/key/podpol/woody/kapnokey
 	name = "Ключ"
@@ -457,6 +456,7 @@
 	id_tag = "kapnoroom"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
 	inhand_icon_state = null
+	worn_icon_state = "shard"
 
 /obj/item/key/podpol/woody/kapnodvorkey
 	name = "Ключ"
@@ -465,6 +465,7 @@
 	id_tag = "kapnodvor"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
 	inhand_icon_state = null
+	worn_icon_state = "shard"
 
 /obj/item/key/podpol/woody/konchkey
 	name = "Ключ"
@@ -473,6 +474,7 @@
 	id_tag = "konchkey"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
 	inhand_icon_state = null
+	worn_icon_state = "shard"
 
 #undef DOOR_CLOSE_WAIT
 
