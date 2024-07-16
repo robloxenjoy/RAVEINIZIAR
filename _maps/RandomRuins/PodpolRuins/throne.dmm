@@ -1,18 +1,17 @@
 "a" = (/turf/template_noop,/area/template_noop)
-"l" = (/turf/open/floor/plating/polovich/way/uzstone,/area/maintenance/polovich/forest/cave)
+"l" = (/turf/open/floor/plating/polovich/way/uzstone,/area/template_noop)
 "p" = (/turf/open/floor/plating/polovich/way/stone,/area/template_noop)
-"t" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/cave)
-"v" = (/turf/open/floor/plating/polovich/way/cavero,/area/maintenance/polovich/forest/cave)
-"z" = (/turf/open/floor/plating/polovich/way/monumental{dir = 8},/area/maintenance/polovich/forest/cave)
-"C" = (/turf/open/floor/plating/polovich/way/monumental,/area/maintenance/polovich/forest/cave)
-"J" = (/obj/structure/column/power,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
-"L" = (/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
-"M" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/shotgun/bolas,/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
-"P" = (/turf/open/floor/plating/polovich/way/monumental{dir = 1},/area/maintenance/polovich/forest/cave)
-"Q" = (/obj/structure/chair/podpolsit,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/cave)
-"T" = (/obj/structure/closet/crate,/obj/item/clothing/head/helmet/codec/def_yel,/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
-"W" = (/turf/open/floor/plating/polovich/way/monumental{dir = 4},/area/maintenance/polovich/forest/cave)
-"X" = (/turf/open/floor/plating/polovich/way/blackstoner2,/area/maintenance/polovich/forest/cave)
+"t" = (/turf/podpol/wall/grewich,/area/template_noop)
+"z" = (/turf/open/floor/plating/polovich/way/monumental{dir = 8},/area/template_noop)
+"C" = (/turf/open/floor/plating/polovich/way/monumental,/area/template_noop)
+"J" = (/obj/structure/column/power,/turf/open/floor/plating/polovich/way/stoneold,/area/template_noop)
+"L" = (/turf/open/floor/plating/polovich/way/stoneold,/area/template_noop)
+"M" = (/obj/structure/closet/crate,/obj/item/gun/ballistic/shotgun/bolas,/turf/open/floor/plating/polovich/way/blackstoner2,/area/template_noop)
+"P" = (/turf/open/floor/plating/polovich/way/monumental{dir = 1},/area/template_noop)
+"Q" = (/obj/structure/chair/podpolsit,/turf/open/floor/plating/polovich/way/stoneold,/area/template_noop)
+"T" = (/obj/structure/closet/crate,/obj/item/clothing/head/helmet/codec/def_yel,/turf/open/floor/plating/polovich/way/blackstoner2,/area/template_noop)
+"W" = (/turf/open/floor/plating/polovich/way/monumental{dir = 4},/area/template_noop)
+"X" = (/turf/open/floor/plating/polovich/way/blackstoner2,/area/template_noop)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaa
@@ -27,7 +26,7 @@ aaaptXPCXPCXPCtpaaaa
 aaaptLLLLLXXXXtpaaaa
 aaaptXXXLLlllltpaaaa
 aaaptXXXLLlllltpaaaa
-aaaptvvvvvvvvvtpaaaa
+aaaptppppppppptpaaaa
 aaapppppppppppppaaaa
 aaaaappppppppppaaaaa
 aaaaaaapppppppaaaaaa

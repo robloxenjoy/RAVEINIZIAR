@@ -113,7 +113,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/podpol_ruins = levels_by_trait(ZTRAIT_PODPOL_RUINS)
 	if (podpol_ruins.len)
 		// needs to be whitelisted for underground too so place_below ruins work
-		seedRuins(podpol_ruins, CONFIG_GET(number/icemoon_budget), list(/area/maintenance/polovich/forest/cave), podpol_ruins_templates)
+		seedRuins(podpol_ruins, CONFIG_GET(number/icemoon_budget), list(/area/maintenance/polovich/forest/cave/can_ruin), podpol_ruins_templates)
 
 //		for (var/ice_z in ice_ruins)
 //			spawn_rivers(ice_z, 4, /turf/open/openspace/icemoon, /area/icemoon/surface/outdoors/unexplored/rivers)

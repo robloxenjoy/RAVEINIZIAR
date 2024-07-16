@@ -1,0 +1,26 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"p" = (/turf/podpol/wall/caver,/area/template_noop)
+"t" = (/turf/open/floor/plating/polovich/way/uzstone,/area/template_noop)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaappaaaaaa
+aaaaaaaappppppataaaa
+aaaaaapppppppattappa
+aaaaapppppppttttappa
+aaaapppppaattttappaa
+aaaappppaaatttaappaa
+aaaapppaaatttappppaa
+aaapppaaatttaapppaaa
+aaapppaattttappppaaa
+aappppattttaappppaaa
+aappaattttapppppaaaa
+appaattttaapppppaaaa
+apaatttaappppppaaaaa
+aaattaaapppppaaaaaaa
+aaaaaappppppaaaaaaaa
+aaaaappppppaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+"}

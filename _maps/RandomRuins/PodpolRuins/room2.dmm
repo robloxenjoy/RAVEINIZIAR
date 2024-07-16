@@ -1,0 +1,29 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"p" = (/turf/open/floor/plating/polovich/way/wisestone,/area/template_noop)
+"r" = (/obj/structure/closet/crate/wooden,/obj/item/gun/ballistic/automatic/remis/svd,/turf/open/floor/plating/polovich/way/wisestone,/area/template_noop)
+"u" = (/turf/open/floor/plating/polovich/way/stoneold,/area/template_noop)
+"A" = (/obj/effect/spawner/random/structure/maphelp/fire/inferno/ten/magic,/turf/open/floor/plating/polovich/way/wisestone,/area/template_noop)
+"P" = (/turf/podpol/wall/caver,/area/template_noop)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaapaaapaaapaaaa
+aaaaaPPpPPPpPPPpppaa
+aaaapppppppppuppPaaa
+aaaaaPppppppppppPaaa
+aaaaaPpppppppuppppaa
+aaaaaPppppppppppPaaa
+aaaapppupuruAuppppaa
+aaaaaPppppppppppPaaa
+aaaaaPpupppppuppPaaa
+aaaaaPppppppppppPaaa
+aaaaaPpupppppuppPaaa
+aaaaaPpPPPPpPPpPPaaa
+aaaaaapaaaapaapaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+"}

@@ -1,0 +1,22 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/turf/podpol/wall/shroom,/area/template_noop)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaa
+aaaaaaaaaaaabbbba
+aaaaaaaaaaaaababa
+aaabbbbbbbaaababa
+aaaabababaaaababa
+aaaabababaaaaaaba
+aaaabababaabbbbba
+aaaaaababaaaaaaba
+aaaaaaaabaaaaaaaa
+abaaaaaaaaaaabaaa
+abbaaaaaaaababaaa
+abaaaaaaabababaaa
+abbbaaaaabababaaa
+abaaaaaabbbbbbbaa
+abbbbaaaaaaaaaaaa
+abaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaa
+"}

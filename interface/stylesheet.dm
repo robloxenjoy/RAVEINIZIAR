@@ -9,7 +9,7 @@
 var/list/special_fonts_crazy = list('interface/fonts/eurostile-round-extended-medium.ttf')
 
 /client/script = {"<style>
-body					{font-family: "Eurostile Round Extended Medium";}
+body					{color: #46000f; font-family: "Eurostile Round Extended Medium";}
 
 h1, h2, h3, h4, h5, h6	{color: #a4a4a4;	font-family: "Eurostile Round Extended Medium";}
 
