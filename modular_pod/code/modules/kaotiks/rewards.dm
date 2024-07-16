@@ -415,8 +415,12 @@
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(A.ino)
 			continue
-		if(A.droning_sound == DRONING_MUZON)
-			A.droning_sound = A.previous_droning_sound
+		if(A.droning_sound != DRONING_MUZON)
+			continue
+		if((istype(A, /area/maintenance/polovich/forest)) || (istype(A, /area/maintenance/polovich/forest/can_ruin)))
+			A.droning_sound = DRONING_POLOVICHSTAN
+		if(istype(A, /area/maintenance/polovich/forest/cave/))
+			A.droning_sound = DRONING_CAVER
 		for(var/mob/living/carbon/human/H in world)
 			if(H.client)
 				var/area/areal = get_area(H)
