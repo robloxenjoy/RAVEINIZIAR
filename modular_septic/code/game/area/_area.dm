@@ -7,6 +7,7 @@
 	var/room_desc
 	// ~DRONING SYSTEM VARIABLES
 	var/droning_sound = DRONING_DEFAULT
+	var/previous_droning_sound = droning_sound
 	var/droning_vary = 0
 	var/droning_repeat = TRUE
 	var/droning_wait = 0

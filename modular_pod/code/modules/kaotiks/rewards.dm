@@ -98,7 +98,7 @@
 	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik/melee)
 
 /datum/bobux_reward/range_boost
-	name = "Улучшить боевой настрой"
+	name = "Улучшить дальневой настрой"
 	desc = "Увеличивает навыки дальнего боя."
 	buy_message = "<b>Я становлюсь лучше в дальнем бою!</span>"
 	id = "rangeboost"
@@ -109,7 +109,7 @@
 	if(. && ishuman(noob.mob) && noob.mob.mind)
 		return TRUE
 
-/datum/bobux_reward/range_boost/range/on_buy(client/noob)
+/datum/bobux_reward/range_boost/on_buy(client/noob)
 	. = ..()
 	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik/range)
 
@@ -390,6 +390,10 @@
 			continue
 		if(A.droning_sound != DRONING_MUZON)
 			A.droning_sound = DRONING_MUZON
+		for(var/mob/living/carbon/human/H in world)
+			if(H.client)
+				var/area/areal = get_area(H)
+				SSdroning.play_area_sound(areal, H?.client)
 
 /datum/bobux_reward/remove_muzon
 	name = "Убрать Музон"
@@ -412,7 +416,11 @@
 		if(A.ino)
 			continue
 		if(A.droning_sound == DRONING_MUZON)
-			A.droning_sound = initial(A.droning_sound)
+			A.droning_sound = previous_droning_sound
+		for(var/mob/living/carbon/human/H in world)
+			if(H.client)
+				var/area/areal = get_area(H)
+				SSdroning.play_area_sound(areal, H?.client)
 
 /datum/bobux_reward/changename
 	name = "Сменить Имя"
