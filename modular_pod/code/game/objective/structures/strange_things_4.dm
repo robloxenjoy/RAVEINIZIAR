@@ -223,6 +223,9 @@
 				'modular_septic/sound/sexo/bj12.ogg', \
 				'modular_septic/sound/sexo/bj13.ogg')
 
+/obj/structure/beast/goat/proc/speak(message)
+	say(message)
+
 /obj/structure/beast/goat/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/food/grown/granat))
 		user.visible_message(span_notice("[user] кормит [src] с помощью [I]."),span_notice("Я кормлю [src] с помощью [I]."), span_hear("Я слышу странности."))
