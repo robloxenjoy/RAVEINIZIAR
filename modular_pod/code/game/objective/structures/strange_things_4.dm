@@ -199,10 +199,81 @@
 		if(BURN)
 			if(damage_amount)
 				playsound(src, 'sound/items/welder.ogg', 100, TRUE)
-/*
-/obj/structure/beast/worm/deconstruct(disassembled = TRUE)
-	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/effect/decal/cleanable/spacespot(get_turf(src))
-		playsound(src,'modular_pod/sound/eff/death.ogg', 50, TRUE)
-	qdel(src)
-*/
+
+/obj/structure/beast/goat
+	name = "Козёл"
+	desc = "..."
+	icon = 'modular_pod/icons/obj/things/things_2.dmi'
+	icon_state = "goat"
+	density = TRUE
+	anchored = TRUE
+	var/hpp = 5
+	var/soon = 20
+	var/soundss = list('modular_septic/sound/sexo/bj1.ogg', \
+				'modular_septic/sound/sexo/bj2.ogg', \
+				'modular_septic/sound/sexo/bj3.ogg', \
+				'modular_septic/sound/sexo/bj4.ogg', \
+				'modular_septic/sound/sexo/bj5.ogg', \
+				'modular_septic/sound/sexo/bj6.ogg', \
+				'modular_septic/sound/sexo/bj7.ogg', \
+				'modular_septic/sound/sexo/bj8.ogg', \
+				'modular_septic/sound/sexo/bj9.ogg', \
+				'modular_septic/sound/sexo/bj10.ogg', \
+				'modular_septic/sound/sexo/bj11.ogg', \
+				'modular_septic/sound/sexo/bj12.ogg', \
+				'modular_septic/sound/sexo/bj13.ogg')
+
+/obj/structure/beast/goat/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/food/grown/granat))
+		user.visible_message(span_notice("[user] кормит [src] с помощью [I]."),span_notice("Я кормлю [src] с помощью [I]."), span_hear("Я слышу странности."))
+		if(do_after(user, 5 SECONDS, target = src))
+			to_chat(user, span_notice("Я накормил [src] с помощью [I]."))
+			sound_hint()
+			playsound(get_turf(src), 'modular_pod/sound/eff/eat.ogg', 100 , FALSE, FALSE)
+			user.alpha = 50
+			var/thankyou_words = pick("Как вкусно. Откуда ты знаешь, что это мой любимый фрукт?", "Люблю этот гранат.")
+			speak(thankyou_words)
+			qdel(I)
+	else
+		if(hpp > 0)
+			hpp--
+			var/bad_words = pick("НЕ ОБИЖАЙ!", "НЕ БЕЙ!")
+			speak(bad_words)
+			playsound(get_turf(src), 'modular_pod/sound/eff/babycry.ogg', 100 , FALSE, FALSE)
+		else
+			alpha = 0
+
+/obj/structure/beast/goat/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			if(damage_amount)
+				playsound(src, 'sound/effects/attackblob.ogg', 100, TRUE)
+			else
+				playsound(src, 'sound/weapons/tap.ogg', 50, TRUE)
+		if(BURN)
+			if(damage_amount)
+				playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+
+/obj/structure/beast/goat/attack_jaw(mob/living/carbon/human/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	var/obj/item/bodypart/check_jaw = user.get_bodypart(BODY_ZONE_PRECISE_MOUTH)
+	if(!check_jaw)
+		to_chat(user, span_notice("А, у меня же нет челюсти..."))
+		return
+	if(check_jaw?.bodypart_disabled)
+		to_chat(user, span_warning("Моя [check_jaw.name] не в состоянии быть использована."))
+		return
+	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+		if(soon <= 0)
+			playsound(src, 'modular_pod/sound/voice/goat.ogg', 100, TRUE)
+			src.visible_message(span_love("[src] кончает в рот [user]!"))
+			soon = rand(15, 30)
+			user.AddComponent(/datum/component/creamed/cum)
+			sound_hint()
+		else
+			playsound(src, pick(soundss), 80, TRUE)
+			user.visible_message(span_love("[user] сосёт [src]."),span_love("Я сосу [src]."), span_hear("Я слышу странности."))
+			INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/, do_fucking_animation), get_dir(user, src))
+			soon--
