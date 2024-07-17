@@ -10,6 +10,7 @@
 	var/mine_hp = 1
 	var/ore_type = /obj/item/stone
 	var/ore_amount = 1
+	var/proj_pass_rate = 100
 
 /obj/structure/stalag/Initialize(mapload)
 	. = ..()
@@ -48,6 +49,20 @@
 		playsound(get_turf(src), 'modular_pod/sound/eff/hitwallpick.ogg', 90 , FALSE, FALSE)
 	qdel(src)
 
+/obj/structure/stalag/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(locate(/obj/structure/stalag) in get_turf(mover))
+		return TRUE
+	else if(istype(mover, /obj/projectile))
+		if(!anchored)
+			return TRUE
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(proj_pass_rate))
+			return TRUE
+		return FALSE
+
 /obj/structure/gelatine/smelly
 	name = "Желе"
 	desc = "Воняет."
@@ -61,6 +76,7 @@
 	var/ready_smell = TRUE
 	var/smell_type = /datum/pollutant/blues
 	var/smell_amount = 30
+	var/proj_pass_rate = 100
 
 /obj/structure/gelatine/smelly/Initialize()
 	. = ..()
@@ -111,6 +127,20 @@
 		my_turf.pollute_turf(smell_type, smell_amount)
 		ready_smell = FALSE
 		addtimer(CALLBACK(src, PROC_REF(readyagain), 15 SECONDS))
+
+/obj/structure/gelatine/smelly/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(locate(/obj/structure/gelatine/smelly) in get_turf(mover))
+		return TRUE
+	else if(istype(mover, /obj/projectile))
+		if(!anchored)
+			return TRUE
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(proj_pass_rate))
+			return TRUE
+		return FALSE
 
 /obj/structure/beast/worm
 	name = "Малыш"
