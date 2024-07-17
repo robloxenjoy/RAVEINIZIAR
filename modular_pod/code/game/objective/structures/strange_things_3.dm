@@ -901,13 +901,49 @@
 	light_range = 3
 	light_power = 2
 	light_color = "#75a743"
+	var/datum/looping_sound/medika/soundloop
+	var/last_words = 0
+	var/words_delay = 1000
+	var/words_list = list("Я вылечу тебя, и твою душу!", "Ты мой единственный!", "Я всегда тут, просто приходи ко мне.", "Я никогда не предам тебя.")
+
+/obj/structure/medica/proc/speak(message)
+	say(message)
+
+/obj/structure/medica/Initialize(mapload)
+	. = ..()
+	soundloop = new(src, FALSE)
+	soundloop.start()
+
+/obj/structure/medica/Destroy()
+	. = ..()
+	QDEL_NULL(soundloop)
+
+/obj/structure/medica/Initialize()
+	. = ..()
+	if(last_words + words_delay <= world.time && prob(70))
+		var/words = pick(words_list)
+		speak(words)
+		sound_hint()
+		playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
+		last_words = world.time
+
+/obj/structure/medica/attack_jaw(mob/living/carbon/human/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(do_after(user, 4 SECONDS, target=src))
+		user.visible_message(span_notice("[user] чё-то делает с [src]."),span_notice("Я чё-то делаю с [src]."), span_hear("Я слышу странное."))
+		user.changeNext_move(CLICK_CD_MELEE)
+		user.adjustFatigueLoss(10)
+		sound_hint()
+		playsound(src, 'modular_pod/sound/eff/anime-wow-1.ogg', 55, FALSE)
 
 /obj/structure/medica/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(istype(W, /obj/item/grab))
 		var/mob/living/GR = user.pulling
 		if(GR == null)
 			return
-		if(do_after(user, 2 SECONDS, target=src))
+		if(do_after(user, 3 SECONDS, target=src))
 			to_chat(GR, span_meatymeat("Я ощущаю какой-то пиздец!"))
 			GR.fully_heal(TRUE)
 	else

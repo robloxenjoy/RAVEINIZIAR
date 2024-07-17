@@ -49,3 +49,11 @@
 	volume = 32
 	falloff_exponent = 18
 	falloff_distance = 3
+
+/datum/looping_sound/medika
+	mid_sounds = list(
+		'modular_pod/sound/loop/medika.ogg' = 1,
+	)
+	mid_length = 1 SECONDS
+	volume = 20
+	direct = FALSE

@@ -46,14 +46,14 @@
 	id = "podpol-mini"
 	allow_duplicates = TRUE
 	cost = 0
-	placement_weight = 2
+	placement_weight = 1
 	suffix = "mini.dmm"
 
 /datum/map_template/ruin/podpolsurface/mini2
 	id = "podpol-mini2"
 	allow_duplicates = TRUE
 	cost = 0
-	placement_weight = 2
+	placement_weight = 1
 	suffix = "mini2.dmm"
 
 /datum/map_template/ruin/podpolsurface/mini3
@@ -67,5 +67,5 @@
 	id = "podpol-mini4"
 	allow_duplicates = TRUE
 	cost = 0
-	placement_weight = 2
+	placement_weight = 1
 	suffix = "mini4.dmm"

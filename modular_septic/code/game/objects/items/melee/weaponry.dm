@@ -81,7 +81,9 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
 	min_force = 9
 	force = 11
-	throwforce = 13
+	min_throwforce = 10
+	throwforce = 15
+	throwforce_strength = 1.5
 	min_force_strength = 1
 	force_strength = 1.5
 	wound_bonus = 4
@@ -592,7 +594,7 @@
 	min_force_strength = 1
 	force_strength = 1.4
 	min_throwforce = 7
-	throwforce = 10
+	throwforce = 13
 	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 7
