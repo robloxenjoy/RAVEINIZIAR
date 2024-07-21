@@ -44,7 +44,7 @@
 "pd" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/copium,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)
 "pq" = (/turf/open/floor/plating/polovich/way/monumental{dir = 4},/area/maintenance/polovich/forest/cave)
 "pF" = (/obj/structure/table/oldwood,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
-"pQ" = (/obj/structure/closet/crate/wooden,/obj/item/podpol_weapon/sword/sabre,/obj/item/podpol_weapon/sword/sabre,/obj/item/podpol_weapon/sword/sabre,/obj/item/podpol_weapon/sword/sabre,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
+"pQ" = (/obj/structure/closet/crate/wooden,/obj/item/podpol_weapon/sabre,/obj/item/podpol_weapon/sabre,/obj/item/podpol_weapon/sabre,/obj/item/podpol_weapon/sabre,/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest/inner)
 "pX" = (/obj/structure/barbwire{dir = 8},/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest)
 "qh" = (/obj/effect/landing/konch,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/inner)
 "qV" = (/turf/podpol/wall/caver,/area/maintenance/polovich/forest)
