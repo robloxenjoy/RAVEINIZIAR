@@ -846,7 +846,8 @@
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
 	icon_state = "axe_big"
 	inhand_icon_state = "longaxe"
-	current_atk_mode = SLASH_MODE
+	choose_attack_intent = TRUE
+	current_attack_intent = SLASH_MODE
 	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
 	slash_hitsound = list('modular_septic/sound/weapons/melee/heavyysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash3.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash4.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavyysharp_deploy.ogg'
@@ -1041,7 +1042,8 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
-	current_atk_mode = SLASH_MODE
+	choose_attack_intent = TRUE
+	current_attack_intent = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 14
 	force = 19
@@ -1066,7 +1068,7 @@
 	durability = 180
 	tetris_width = 32
 	tetris_height = 96
-	wielded_inhand_state = FALSE
+	wielded_inhand_state_melee = FALSE
 /*
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
 	. = ..()
