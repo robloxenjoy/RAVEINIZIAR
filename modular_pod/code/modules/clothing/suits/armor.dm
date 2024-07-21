@@ -557,7 +557,7 @@
 
 /obj/item/clothing/suit/armor/roba
 	name = "Роба"
-	desc = "Главное, что цвет хороший."
+	desc = "Главное, что цвет хороший. Набита банановыми шкурками."
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
 	icon_state = "kapno"
 	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
@@ -571,11 +571,11 @@
 	body_parts_covered = CHEST|VITALS|GROIN|NECK|LEGS|ARMS
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
-				EDGE_PROTECTION = 1, \
-				CRUSHING = 1, \
-				CUTTING = 1, \
+				EDGE_PROTECTION = 4, \
+				CRUSHING = 4, \
+				CUTTING = 4, \
 				PIERCING = 1, \
-				IMPALING = 1, \
+				IMPALING = 4, \
 				LASER = 1, \
 				ENERGY = 0, \
 				BOMB = 0, \
@@ -583,6 +583,6 @@
 				FIRE = 1, \
 				ACID = 1, \
 				MAGIC = 0, \
-				WOUND = 1, \
-				ORGAN = 1)
+				WOUND = 3, \
+				ORGAN = 3)
 	strip_delay = 90

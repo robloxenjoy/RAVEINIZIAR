@@ -836,14 +836,15 @@
 			force_strength = 2.5
 			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
+*/
 
-/obj/item/changeable_attacks/slashstabbash/axe/big/steel
-	name = "Steel Long Ax"
-	desc = "Large steel two-handed ax with a hook on the butt."
-	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+/obj/item/podpol_weapon/axe/big
+	name = "Секира"
+	desc = "..."
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_righthand.dmi'
-	icon_state = "longaxe"
+	icon_state = "axe_big"
 	inhand_icon_state = "longaxe"
 	current_atk_mode = SLASH_MODE
 	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
@@ -859,7 +860,7 @@
 	bare_wound_bonus = 3
 	force_strength = 3
 	min_throwforce = 5
-	throwforce = 8
+	throwforce = 11
 	throwforce_strength = 1.5
 	parrying_modifier = 1
 	armor_damage_modifier = 1
@@ -870,7 +871,7 @@
 	skill_melee = SKILL_POLEARM
 	carry_weight = 4 KILOGRAMS
 	havedurability = TRUE
-	durability = 200
+	durability = 300
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	tetris_width = 32
 	tetris_height = 96
@@ -881,8 +882,8 @@
 	. = ..()
 	switch(current_atk_mode)
 		if(SLASH_MODE)
-			to_chat(user, span_notice("I'm now stabbing them with a steel hook on the butt of the [src]."))
-			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
+			to_chat(user, span_notice("Теперь я буду в них тыкать задней частью [src]."))
+			user.visible_message(span_danger("[user] переворачивает [src] на другую сторону!"), span_danger("Я переворачиваю [src] на другую сторону!"))
 			hitsound = stab_hitsound
 			embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 19, "jostle_chance" = 8, "pain_stam_pct" = 2, "pain_jostle_mult" = 9, "fall_chance" = 0.2)
 			min_force = 8
@@ -901,25 +902,25 @@
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 		if(STAB_MODE)
-			to_chat(user, span_notice("I'm now bashing them with the steel hilt of the [src]."))
+			to_chat(user, span_notice("Теперь я буду их бить рукоятью [src]."))
 			hitsound = bash_hitsound
 			min_force = 7
-			force = 13
+			force = 11
 			min_force_strength = 0.65
 			force_strength = 1.65
-			wound_bonus = 8
+			wound_bonus = 7
 			bare_wound_bonus = 2
 			attack_fatigue_cost = 8
 			min_throwforce = 5
 			throwforce = 8
 			throwforce_strength = 1.5
-			attack_delay = 45
+			attack_delay = 35
 			armor_damage_modifier = 0
 			current_atk_mode = BASH_MODE
 			sharpness = NONE
 		if(BASH_MODE)
-			to_chat(user, span_notice("I'm now chop them with the heavy blade of the [src]."))
-			user.visible_message(span_danger("[user] flips the [src] to the other side!"), span_danger("You flips the [src] to the other side!"))
+			to_chat(user, span_notice("Теперь я буду их рубить [src]."))
+			user.visible_message(span_danger("[user] переворачивает [src] на другую сторону!"), span_danger("Я переворачиваю [src] на другую сторону!"))
 			hitsound = slash_hitsound
 			embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 15, "jostle_chance" = 9, "pain_stam_pct" = 2, "pain_jostle_mult" = 10, "fall_chance" = 0.2)
 			min_force = 15
@@ -930,13 +931,13 @@
 			bare_wound_bonus = 3
 			armor_damage_modifier = 1
 			min_throwforce = 5
-			throwforce = 8
+			throwforce = 11
 			throwforce_strength = 1.5
 			attack_delay = 40
 			attack_fatigue_cost = 10
 			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
-
+/*
 /obj/item/changeable_attacks/slashbash/axe/small/steel
 	name = "Iron Axe"
 	desc = "Iron axe. Not bad."
@@ -1025,15 +1026,15 @@
 			attack_fatigue_cost = 9
 			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
-
-/obj/item/changeable_attacks/slashstab/sabre/small/steel
-	name = "Steel Saber"
-	desc = "Use this as weapon!"
-	icon_state = "steelsabre"
+*/
+/obj/item/podpol_weapon/sword/sabre
+	name = "Сабля"
+	desc = "В качестве оружия!"
+	icon_state = "sabre"
 	inhand_icon_state = "steelsabre"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
 	worn_icon_state = "steelsabre"
-	icon = 'modular_septic/icons/obj/items/melee/48x32.dmi'
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
 	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.ogg'
@@ -1042,7 +1043,7 @@
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	current_atk_mode = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
-	min_force = 18
+	min_force = 14
 	force = 19
 	min_force_strength = 1
 	force_strength = 1.5
@@ -1062,15 +1063,16 @@
 	attack_delay = 20
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	havedurability = TRUE
-	durability = 160
+	durability = 180
 	tetris_width = 32
 	tetris_height = 96
-	wielded_inhand_state = TRUE
+	wielded_inhand_state = FALSE
 /*
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
 	. = ..()
 	durability = rand(150, 160)
 */
+/*
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/hilt
 	desc = "Use this as weapon! Here is hilt."
 	icon_state = "steelsabrehilt"
@@ -1090,31 +1092,31 @@
 	parrying_modifier = 0.8
 	attack_fatigue_cost = 6
 	attack_delay = 16
-
-/obj/item/changeable_attacks/slashstab/sabre/small/steel/swap_intents(mob/user)
+*/
+/obj/item/podpol_weapon/sword/sabre/swap_intents(mob/user)
 	. = ..()
 	switch(current_atk_mode)
 		if(SLASH_MODE)
-			to_chat(user, span_notice("I'm now stabbing them with the pointy end of the [src]."))
+			to_chat(user, span_notice("Теперь я буду в них вонзать с помощью [src]."))
 			hitsound = stab_hitsound
 			min_force = 16
 			force = 18
 			min_force_strength = 1
-			force_strength = 1.8
+			force_strength = 1.5
 			current_atk_mode = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(STAB_MODE)
-			to_chat(user, span_notice("I'm now slicing them with the thin blade of the [src]."))
+			to_chat(user, span_notice("Теперь я их буду резать с помощью [src]."))
 			hitsound = slash_hitsound
-			min_force = 15
+			min_force = 14
 			force = 19
 			min_force_strength = 1
-			force_strength = 1.8
+			force_strength = 1.5
 			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
-
+/*
 /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 	name = "Steel Sword"
 	desc = "Standard steel sword. Very good."
