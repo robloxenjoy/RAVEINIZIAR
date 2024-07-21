@@ -879,6 +879,8 @@
 	tetris_height = 96
 	slot_flags = null
 	isAxe = TRUE
+	attack_verb_continuous = list("рубит")
+	attack_verb_simple = list("рубить")
 
 /obj/item/podpol_weapon/axe/big/swap_intents(mob/user)
 	. = ..()
@@ -903,6 +905,8 @@
 			attack_delay = 40
 			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
+			attack_verb_continuous = list("вонзает")
+			attack_verb_simple = list("вонзать")
 		if(STAB_MODE)
 			to_chat(user, span_notice("Теперь я буду их бить рукоятью [src]."))
 			hitsound = bash_hitsound
@@ -920,6 +924,8 @@
 			armor_damage_modifier = 0
 			current_attack_intent = BASH_MODE
 			sharpness = NONE
+			attack_verb_continuous = list("бьёт")
+			attack_verb_simple = list("бить")
 		if(BASH_MODE)
 			to_chat(user, span_notice("Теперь я буду их рубить [src]."))
 			user.visible_message(span_danger("[user] переворачивает [src] на другую сторону!"), span_danger("Я переворачиваю [src] на другую сторону!"))
@@ -939,6 +945,8 @@
 			attack_fatigue_cost = 10
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
+			attack_verb_continuous = list("рубит")
+			attack_verb_simple = list("рубить")
 /*
 /obj/item/changeable_attacks/slashbash/axe/small/steel
 	name = "Iron Axe"
