@@ -848,6 +848,7 @@
 	inhand_icon_state = "longaxe"
 	choose_attack_intent = TRUE
 	current_attack_intent = SLASH_MODE
+	hitsound = list('modular_septic/sound/weapons/melee/heavyysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash3.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash4.ogg')
 	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
 	slash_hitsound = list('modular_septic/sound/weapons/melee/heavyysharp_slash1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash3.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_slash4.ogg')
 	pickup_sound = 'modular_septic/sound/weapons/melee/heavyysharp_deploy.ogg'
@@ -1042,6 +1043,7 @@
 	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	hitsound = list('modular_septic/sound/weapons/melee/slasher1.ogg', 'modular_septic/sound/weapons/melee/slasher2.ogg', 'modular_septic/sound/weapons/melee/slasher3.ogg')
 	choose_attack_intent = TRUE
 	current_attack_intent = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
