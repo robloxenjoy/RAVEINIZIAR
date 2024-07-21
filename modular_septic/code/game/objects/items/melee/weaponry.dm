@@ -879,7 +879,7 @@
 	slot_flags = null
 	isAxe = TRUE
 
-/obj/item/changeable_attacks/slashstabbash/axe/big/steel/swap_intents(mob/user)
+/obj/item/podpol_weapon/axe/big/swap_intents(mob/user)
 	. = ..()
 	switch(current_attack_intent)
 		if(SLASH_MODE)
@@ -1028,7 +1028,7 @@
 			current_atk_mode = SLASH_MODE
 			sharpness = SHARP_EDGED
 */
-/obj/item/podpol_weapon/sword/sabre
+/obj/item/podpol_weapon/sabre
 	name = "Сабля"
 	desc = "В качестве оружия!"
 	icon_state = "sabre"
@@ -1069,6 +1069,7 @@
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state_melee = FALSE
+	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
 /*
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
 	. = ..()
@@ -1095,7 +1096,7 @@
 	attack_fatigue_cost = 6
 	attack_delay = 16
 */
-/obj/item/podpol_weapon/sword/sabre/swap_intents(mob/user)
+/obj/item/podpol_weapon/sabre/swap_intents(mob/user)
 	. = ..()
 	switch(current_attack_intent)
 		if(SLASH_MODE)
@@ -1118,6 +1119,7 @@
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+
 /*
 /obj/item/changeable_attacks/slashstabbash/sword/medium/steel
 	name = "Steel Sword"
