@@ -881,7 +881,7 @@
 
 /obj/item/changeable_attacks/slashstabbash/axe/big/steel/swap_intents(mob/user)
 	. = ..()
-	switch(current_atk_mode)
+	switch(current_attack_intent)
 		if(SLASH_MODE)
 			to_chat(user, span_notice("Теперь я буду в них тыкать задней частью [src]."))
 			user.visible_message(span_danger("[user] переворачивает [src] на другую сторону!"), span_danger("Я переворачиваю [src] на другую сторону!"))
@@ -900,7 +900,7 @@
 			throwforce = 8
 			throwforce_strength = 1.5
 			attack_delay = 40
-			current_atk_mode = STAB_MODE
+			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
 		if(STAB_MODE)
 			to_chat(user, span_notice("Теперь я буду их бить рукоятью [src]."))
@@ -917,7 +917,7 @@
 			throwforce_strength = 1.5
 			attack_delay = 35
 			armor_damage_modifier = 0
-			current_atk_mode = BASH_MODE
+			current_attack_intent = BASH_MODE
 			sharpness = NONE
 		if(BASH_MODE)
 			to_chat(user, span_notice("Теперь я буду их рубить [src]."))
@@ -936,7 +936,7 @@
 			throwforce_strength = 1.5
 			attack_delay = 40
 			attack_fatigue_cost = 10
-			current_atk_mode = SLASH_MODE
+			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
 /*
 /obj/item/changeable_attacks/slashbash/axe/small/steel
@@ -1097,7 +1097,7 @@
 */
 /obj/item/podpol_weapon/sword/sabre/swap_intents(mob/user)
 	. = ..()
-	switch(current_atk_mode)
+	switch(current_attack_intent)
 		if(SLASH_MODE)
 			to_chat(user, span_notice("Теперь я буду в них вонзать с помощью [src]."))
 			hitsound = stab_hitsound
@@ -1105,7 +1105,7 @@
 			force = 18
 			min_force_strength = 1
 			force_strength = 1.5
-			current_atk_mode = STAB_MODE
+			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(STAB_MODE)
@@ -1115,7 +1115,7 @@
 			force = 19
 			min_force_strength = 1
 			force_strength = 1.5
-			current_atk_mode = SLASH_MODE
+			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 /*
