@@ -99,8 +99,6 @@
 						paralyzed_limbs++
 				if((paralyzed_limbs >= 4) && (paralyzed_limbs < was_paralyzed_limbs))
 					to_chat(owner, span_green("Я больше не <b>тетраплегик</b>!"))
-			if(active_trauma)
-				QDEL_NULL(active_trauma)
 
 /obj/item/organ/nervesystem/Insert(mob/living/carbon/new_owner, special = FALSE, drop_if_replaced = TRUE, new_zone = null)
 	. = ..()
