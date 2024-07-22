@@ -171,21 +171,21 @@
 	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, PROC_REF(on_eyes_equip))
 	RegisterSignal(src, COMSIG_ITEM_POST_UNEQUIP, PROC_REF(on_eyes_unequip))
 
-/obj/item/clothing/glasses/night/proc/on_eyes_equip(datum/source, mob/equipper, slot)
+/obj/item/clothing/glasses/night/proc/on_eyes_equip(datum/source, mob/living/carbon/human/equipper, slot)
 	SIGNAL_HANDLER
 
 	if(slot != ITEM_SLOT_EYES)
 		return
 	if(!HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
 		ADD_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
-		user.update_glasses_color(src, TRUE)
+		equipper.update_glasses_color(src, TRUE)
 
-/obj/item/clothing/glasses/night/proc/on_eyes_unequip(datum/source, force, atom/newloc, no_move, invdrop, silent)
+/obj/item/clothing/glasses/night/proc/on_eyes_unequip(mob/living/carbon/human/unequipper, force, atom/newloc, no_move, invdrop, silent)
 	SIGNAL_HANDLER
 
-	if(HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
-		REMOVE_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
-		user.update_glasses_color(src, FALSE)
+	if(HAS_TRAIT_FROM(unequipper, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
+		REMOVE_TRAIT(unequipper, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
+		unequipper.update_glasses_color(src, FALSE)
 /*
 /obj/item/clothing/glasses/night/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
