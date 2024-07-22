@@ -49,9 +49,9 @@
 	icon_state = "generic"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
-	verb_say = "beeps"
-	verb_ask = "beeps"
-	verb_exclaim = "beeps"
+	verb_say = "пиздит"
+	verb_ask = "пиздит"
+	verb_exclaim = "пиздит"
 	max_integrity = 300
 	integrity_failure = 0.33
 	armor = list(MELEE = 20, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 50, ACID = 70)

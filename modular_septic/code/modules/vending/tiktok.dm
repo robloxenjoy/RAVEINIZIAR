@@ -51,6 +51,11 @@
 	var/crushersound = list('modular_septic/sound/effects/crusher1.ogg', 'modular_septic/sound/effects/crusher2.ogg', 'modular_septic/sound/effects/crusher3.ogg')
 	COOLDOWN_DECLARE(refuse_cooldown)
 
+/obj/machinery/vending/tiktok/Initialize(mapload)
+	. = ..()
+	if(Radio)
+		QDEL_NULL(Radio)
+
 /obj/machinery/vending/tiktok/attackby(obj/item/I, mob/living/user, params)
 	if(!GLOB.bartering_inputs[I.type])
 		if(COOLDOWN_FINISHED(src, refuse_cooldown))
