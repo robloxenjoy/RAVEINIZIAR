@@ -110,6 +110,7 @@
 #define CLINGING_TRAIT "clinging"
 #define RADIATION_TRAIT "radiation"
 #define NECK_FRACTURE_TRAIT "neck_fracture"
+#define CHEST_FRACTURE_TRAIT "chest_fracture"
 #define AREA_TRAIT "area"
 #define ASYSTOLE_TRAIT "no_pulse"
 #define NEAR_DEATH_TRAIT "near_death"

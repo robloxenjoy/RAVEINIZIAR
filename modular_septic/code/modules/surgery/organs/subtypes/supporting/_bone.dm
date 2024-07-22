@@ -98,8 +98,8 @@
 	. = ..()
 	if(!owner)
 		return
-//	var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM, \
-//											TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_L_LEG)
+	var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM)
+
 	var/obj/item/bodypart/limb = owner.get_bodypart(current_zone)
 	if((amount > 0) && (damage >= low_threshold))
 		if(damage >= medium_threshold)
@@ -121,6 +121,16 @@
 				var/obj/item/bodypart/face/face = owner.get_bodypart_nostump(BODY_ZONE_PRECISE_FACE)
 				if(face)
 					ADD_TRAIT(face, TRAIT_DISFIGURED, BRUTE)
+			if(limb.body_zone == BODY_ZONE_CHEST)
+				var/paralyzed_limbs = 0
+				for(var/tetraplegia in stephenhawking_traits)
+					if(HAS_TRAIT(owner, tetraplegia))
+						paralyzed_limbs++
+				if(paralyzed_limbs < 2)
+					to_chat(owner, span_flashinguserdanger("Я стал <b>ИНВАЛИДОМ</b>!"))
+				for(var/tetraplegia in stephenhawking_traits)
+					ADD_TRAIT(owner, tetraplegia, CHEST_FRACTURE_TRAIT)
+
 			jostle(owner)
 		var/obj/item/bodypart/child
 		if(length(limb.children_zones))
@@ -139,26 +149,24 @@
 				owner.agony_scream()
 			else if((damage >= low_threshold) && (prev_damage < low_threshold))
 				owner.death_scream()
-/*
+
 	else if(amount < 0)
 		if(damage < medium_threshold)
-			if(limb.body_zone == BODY_ZONE_PRECISE_NECK)
+			if(limb.body_zone == BODY_ZONE_CHEST)
 				var/was_paralyzed_limbs = 0
 				for(var/tetraplegia in stephenhawking_traits)
 					if(HAS_TRAIT(owner, tetraplegia))
 						was_paralyzed_limbs++
-				for(var/stephenhawking in list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM, \
-											TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_L_LEG))
-					REMOVE_TRAIT(owner, stephenhawking, NECK_FRACTURE_TRAIT)
+				for(var/stephenhawking in list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM))
+					REMOVE_TRAIT(owner, stephenhawking, CHEST_FRACTURE_TRAIT)
 				var/paralyzed_limbs = 0
 				for(var/tetraplegia in stephenhawking_traits)
 					if(HAS_TRAIT(owner, tetraplegia))
 						paralyzed_limbs++
-				if((paralyzed_limbs >= 4) && (paralyzed_limbs < was_paralyzed_limbs))
-					to_chat(owner, span_green("Я больше не <b>тетраплегик</b>!"))
+				if((paralyzed_limbs >= 2) && (paralyzed_limbs < was_paralyzed_limbs))
+					to_chat(owner, span_green("Я больше не <b>инвалид</b>!"))
 			if(active_trauma)
 				QDEL_NULL(active_trauma)
-*/
 
 /obj/item/organ/bone/Insert(mob/living/carbon/new_owner, special = FALSE, drop_if_replaced = TRUE, new_zone = null)
 	. = ..()
@@ -166,17 +174,16 @@
 	if(!(new_owner.status_flags & BUILDING_ORGANS))
 		limb = new_owner.get_bodypart(current_zone)
 	if(!(new_owner.status_flags & BUILDING_ORGANS) && limb)
-		if((limb.body_zone == BODY_ZONE_PRECISE_NECK) && !limb.getorganslot(ORGAN_SLOT_BONE))
-			var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM, \
-													TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_L_LEG)
+		if((limb.body_zone == BODY_ZONE_CHEST) && !limb.getorganslot(ORGAN_SLOT_BONE))
+			var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM)
 			var/paralyzed_limbs = 0
 			for(var/tetraplegia in stephenhawking_traits)
 				if(HAS_TRAIT(owner, tetraplegia))
 					paralyzed_limbs++
-			if(paralyzed_limbs < 4)
-				to_chat(owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
+			if(paralyzed_limbs < 2)
+				to_chat(owner, span_flashinguserdanger("Я стал <b>ИНВАЛИДОМ</b>!"))
 			for(var/tetraplegia in stephenhawking_traits)
-				ADD_TRAIT(owner, tetraplegia, NECK_FRACTURE_TRAIT)
+				ADD_TRAIT(owner, tetraplegia, CHEST_FRACTURE_TRAIT)
 		if((limb.body_zone in list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE)) && !limb.getorganslot(ORGAN_SLOT_BONE))
 			if(!HAS_TRAIT_FROM(new_owner, TRAIT_DISFIGURED, BRUTE))
 				new_owner.visible_message(span_danger("<b>[owner]</b> лицо превращается в искалеченную массу!"), \
@@ -192,17 +199,16 @@
 		limb = organ_owner.get_bodypart(current_zone)
 	. = ..()
 	if(!(organ_owner.status_flags & BUILDING_ORGANS) && limb)
-		if((limb.body_zone == BODY_ZONE_PRECISE_NECK) && !limb.getorganslot(ORGAN_SLOT_BONE))
-			var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM, \
-													TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_L_LEG)
+		if((limb.body_zone == BODY_ZONE_CHEST) && !limb.getorganslot(ORGAN_SLOT_BONE))
+			var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM)
 			var/paralyzed_limbs = 0
 			for(var/tetraplegia in stephenhawking_traits)
 				if(HAS_TRAIT(organ_owner, tetraplegia))
 					paralyzed_limbs++
-			if(paralyzed_limbs < 4)
-				to_chat(organ_owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
+			if(paralyzed_limbs < 2)
+				to_chat(organ_owner, span_flashinguserdanger("Я стал <b>ИНВАЛИДОМ</b>!"))
 			for(var/tetraplegia in stephenhawking_traits)
-				ADD_TRAIT(organ_owner, tetraplegia, NECK_FRACTURE_TRAIT)
+				ADD_TRAIT(organ_owner, tetraplegia, CHEST_FRACTURE_TRAIT)
 		if((limb.body_zone in list(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE)) && !limb.getorganslot(ORGAN_SLOT_BONE))
 			if(!HAS_TRAIT_FROM(organ_owner, TRAIT_DISFIGURED, BRUTE))
 				organ_owner.visible_message(span_danger("<b>[owner]</b> лицо превращается в искалеченную массу!"), \
@@ -332,8 +338,8 @@
 	if(!limb)
 		return
 	source.custom_pain("Ошеломляющая боль пронзает [name]!", 30, affecting = limb)
-	source.Stumble(3 SECONDS)
-	source.Immobilize(2 SECONDS)
+	source.Stumble(2 SECONDS)
+	source.Immobilize(1 SECONDS)
 	limb.damage_internal_organs(wounding_type = WOUND_PIERCE, amount = (rand(5, 10) * (damage/maxHealth)), forced = TRUE, wound_messages = FALSE)
 	if((source.get_active_hand() == limb) && source.can_feel_pain() && (source.get_chem_effect(CE_PAINKILLER) < 50))
 		source.dropItemToGround(source.get_active_held_item())

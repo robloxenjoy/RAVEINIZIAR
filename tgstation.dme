@@ -5338,6 +5338,7 @@
 #include "modular_septic\code\modules\surgery\organs\subtypes\kidneys.dm"
 #include "modular_septic\code\modules\surgery\organs\subtypes\liver.dm"
 #include "modular_septic\code\modules\surgery\organs\subtypes\lungs.dm"
+#include "modular_septic\code\modules\surgery\organs\subtypes\nerve.dm"
 #include "modular_septic\code\modules\surgery\organs\subtypes\regenerative_core.dm"
 #include "modular_septic\code\modules\surgery\organs\subtypes\spleen.dm"
 #include "modular_septic\code\modules\surgery\organs\subtypes\stomach.dm"
