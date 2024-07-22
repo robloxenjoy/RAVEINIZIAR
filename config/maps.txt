@@ -69,6 +69,10 @@ map podpol_earthstation
 endmap
 
 map ceivara
+	votable
+endmap
+
+map atraka
 	default
 	votable
 endmap
