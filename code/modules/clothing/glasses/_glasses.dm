@@ -166,6 +166,27 @@
 	if(!isinhands)
 		. += emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
 
+/obj/item/clothing/glasses/night/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, PROC_REF(on_eyes_equip))
+	RegisterSignal(src, COMSIG_ITEM_POST_UNEQUIP, PROC_REF(on_eyes_unequip))
+
+/obj/item/clothing/glasses/night/proc/on_eyes_equip(datum/source, mob/equipper, slot)
+	SIGNAL_HANDLER
+
+	if(slot != ITEM_SLOT_EYES)
+		return
+	if(!HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
+		ADD_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
+		user.update_glasses_color(src, TRUE)
+
+/obj/item/clothing/glasses/night/proc/on_eyes_unequip(datum/source, force, atom/newloc, no_move, invdrop, silent)
+	SIGNAL_HANDLER
+
+	if(HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
+		REMOVE_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
+		user.update_glasses_color(src, FALSE)
+/*
 /obj/item/clothing/glasses/night/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot == ITEM_SLOT_EYES)
@@ -179,7 +200,7 @@
 		REMOVE_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
 		user.update_glasses_color(src, FALSE)
 
-/*
+
 /obj/item/clothing/glasses/science/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] is tightening \the [src]'s straps around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return OXYLOSS
