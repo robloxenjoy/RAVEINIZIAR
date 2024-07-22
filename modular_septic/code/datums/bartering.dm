@@ -2,6 +2,33 @@
     var/list/outputs = null
     var/list/inputs = null
 
+/datum/bartering_recipe/garnet
+    outputs = list(
+        /obj/item/craftorshit/thing/blood = 1
+    )
+    inputs = list(
+        /obj/item/food/grown/granat = 3
+    )
+
+/datum/bartering_recipe/sabre
+    outputs = list(
+        /obj/item/podpol_weapon/sabre = 1
+    )
+    inputs = list(
+        /obj/item/craftorshit/thing/blood = 2,
+		 /obj/item/food/grown/granat = 1
+    )
+
+/datum/bartering_recipe/garneta
+    outputs = list(
+        /obj/item/reagent_containers/food/drinks/bottle/thermos = 1
+    )
+    inputs = list(
+		 /obj/item/food/grown/granat = 2,
+		 /obj/item/cactus_needle = 1
+    )
+
+/*
 ///BALLSITICS///
 /datum/bartering_recipe/ppk
     outputs = list(
@@ -260,3 +287,4 @@
     inputs = list(
         /obj/item/shard = 4
     )
+*/

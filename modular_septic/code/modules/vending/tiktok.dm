@@ -1,5 +1,7 @@
 /obj/machinery/vending/tiktok
-	name = "godforsaken machine"
+	name = "Алхим-Объект"
+	desc = "Давай, пробуй."
+/*
 	desc = "A meta-physical line to a Devious, Godforsaken, and Diabolical Corporation. \n\
 	<div class='infobox'> \
 	Input: 1 cable coil + 1 can of beans - Output = PPK \n\
@@ -31,25 +33,25 @@
 	Input: 1 Wooden Chair - Output = 1 Oxygen Tank \n\
 	Input: 4 Glass Shards - Output = 1 Carbonylmethamphetamine \
     </div>"
-	density = FALSE
+*/
+	density = TRUE
 	onstation = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
-	slogan_delay = 600
+//	slogan_delay = 600
 	icon_state = "tiktok"
 	base_icon_state = "tiktok"
 	icon = 'modular_septic/icons/obj/machinery/vending.dmi'
-	product_slogans = "Idiot. FUCKING IDIOT!; Your birth certicificate is an APOLOGY LEGGER from the CLINIC; Shut up, retard.; The King is Coming!!; We are in the last moments of the end of days.; Prophesised to happen before the return of Jesus; The Marshmellow Time was wrong then and it; Salvation from God is a Gift.; The Ultimate sacrifice for all of our sins.; Ultimate Metaphysics: Divine Unity, or the Conjugate Whole"
-	products = list(
-		/obj/item/clothing/suit/armor/vest/alt/discrete = 1,
-	)
-	var/list/tiktoklines = list('modular_septic/sound/effects/singer1.ogg', 'modular_septic/sound/effects/singer2.ogg')
-	var/refuse_sound_cooldown_duration = 1 SECONDS
-	var/barfsound = 'modular_septic/sound/emotes/vomit.ogg'
-	var/crushersound = list('modular_septic/sound/effects/crusher1.ogg', 'modular_septic/sound/effects/crusher2.ogg', 'modular_septic/sound/effects/crusher3.ogg')
-	COOLDOWN_DECLARE(refuse_cooldown)
+//	product_slogans = "Idiot. FUCKING IDIOT!; Your birth certicificate is an APOLOGY LEGGER from the CLINIC; Shut up, retard.; The King is Coming!!; We are in the last moments of the end of days.; Prophesised to happen before the return of Jesus; The Marshmellow Time was wrong then and it; Salvation from God is a Gift.; The Ultimate sacrifice for all of our sins.; Ultimate Metaphysics: Divine Unity, or the Conjugate Whole"
+//	products = list(
+//		/obj/item/clothing/suit/armor/vest/alt/discrete = 1,
+//	)
+//	var/list/tiktoklines = list('modular_septic/sound/effects/singer1.ogg', 'modular_septic/sound/effects/singer2.ogg')
+//	var/refuse_sound_cooldown_duration = 1 SECONDS
+//	var/barfsound = 'modular_septic/sound/emotes/vomit.ogg'
+//	var/crushersound = list('modular_septic/sound/effects/crusher1.ogg', 'modular_septic/sound/effects/crusher2.ogg', 'modular_septic/sound/effects/crusher3.ogg')
+//	COOLDOWN_DECLARE(refuse_cooldown)
 
 /obj/machinery/vending/tiktok/attackby(obj/item/I, mob/living/user, params)
-	. = ..()
 	if(!GLOB.bartering_inputs[I.type])
 		if(COOLDOWN_FINISHED(src, refuse_cooldown))
 			sound_hint()
@@ -59,8 +61,9 @@
 	if(user.transferItemToLoc(I, src))
 		sound_hint()
 		playsound(src, crushersound, 70, vary = FALSE)
-		INVOKE_ASYNC(src, .proc/crushing_animation)
+//		INVOKE_ASYNC(src, .proc/crushing_animation)
 		check_bartering()
+
 
 /obj/machinery/vending/tiktok/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
 	. = ..()
@@ -68,7 +71,7 @@
 		return
 	if(over == loc)
 		vomit_items()
-
+/*
 /obj/machinery/vending/tiktok/process(delta_time)
 	if(machine_stat & BROKEN | NOPOWER)
 		return PROCESS_KILL
@@ -90,6 +93,8 @@
 	add_overlay("[base_icon_state]-eat")
 	sleep(11)
 	cut_overlay("[base_icon_state]-eat")
+
+*/
 
 /obj/machinery/vending/tiktok/proc/check_bartering()
 	var/datum/bartering_recipe/bartering_recipe
@@ -137,14 +142,15 @@
 			for(var/i in 1 to output_amount)
 				new output(loc)
 		playsound(src, 'modular_septic/sound/effects/ring.ogg', 90, TRUE)
-		speak("Take from me.")
+		speak("Возьми это.")
+
 
 /obj/machinery/vending/tiktok/proc/vomit_items()
 	//remis please add a vomiting blorf sound right below this comment
 	playsound(src, barfsound, 65, FALSE)
 	for(var/obj/item/vomited in src)
 		vomited.forceMove(loc)
-
+/*
 //	remove_overlay("[base_icon_state]-eat")
 /obj/machinery/vending/tiktok/directional/north
 	dir = SOUTH
@@ -161,6 +167,7 @@
 /obj/machinery/vending/tiktok/directional/west
 	dir = EAST
 	pixel_x = -32
+*/
 
 /obj/machinery/vending/tiktok/arena
 	name = "Arena-2"

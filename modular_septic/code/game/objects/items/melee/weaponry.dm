@@ -1056,11 +1056,11 @@
 	current_attack_intent = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 	min_force = 14
-	force = 19
+	force = 20
 	min_force_strength = 1
 	force_strength = 1.5
 	min_throwforce = 5
-	throwforce = 8
+	throwforce = 10
 	throwforce_strength = 1.5
 	wound_bonus = 10
 	bare_wound_bonus = 5
@@ -1072,14 +1072,14 @@
 	skill_melee = SKILL_SHORTSWORD
 	carry_weight = 2 KILOGRAMS
 	attack_fatigue_cost = 8
-	attack_delay = 20
+	attack_delay = 18
 	parrying_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
 	havedurability = TRUE
 	durability = 180
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state_melee = FALSE
-	stab_hitsound = list('modular_septic/sound/weapons/melee/heavystabber.ogg')
+	stab_hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 /*
 /obj/item/changeable_attacks/slashstab/sabre/small/steel/Initialize(mapload)
 	. = ..()
@@ -1113,7 +1113,7 @@
 			to_chat(user, span_notice("Теперь я буду в них вонзать с помощью [src]."))
 			hitsound = stab_hitsound
 			min_force = 16
-			force = 18
+			force = 19
 			min_force_strength = 1
 			force_strength = 1.5
 			current_attack_intent = STAB_MODE
@@ -1123,7 +1123,7 @@
 			to_chat(user, span_notice("Теперь я их буду резать с помощью [src]."))
 			hitsound = slash_hitsound
 			min_force = 14
-			force = 19
+			force = 20
 			min_force_strength = 1
 			force_strength = 1.5
 			current_attack_intent = SLASH_MODE
