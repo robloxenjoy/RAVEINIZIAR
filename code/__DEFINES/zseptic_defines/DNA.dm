@@ -62,6 +62,7 @@
 #define NOINTESTINES 42
 #define NOBLADDER 43
 #define NOHORNY 44
+#define NONERVESYSTEM 45
 
 #define MANDATORY_FEATURE_LIST list("mcolor" = "FFFFBB",\
 								"mcolor2" = "FFFFBB",\

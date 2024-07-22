@@ -98,20 +98,12 @@
 	. = ..()
 	if(!owner)
 		return
-	var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM, \
-											TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_L_LEG)
+//	var/static/list/stephenhawking_traits = list(TRAIT_PARALYSIS_R_ARM, TRAIT_PARALYSIS_L_ARM, \
+//											TRAIT_PARALYSIS_R_LEG, TRAIT_PARALYSIS_L_LEG)
 	var/obj/item/bodypart/limb = owner.get_bodypart(current_zone)
 	if((amount > 0) && (damage >= low_threshold))
 		if(damage >= medium_threshold)
 			if(limb.body_zone == BODY_ZONE_PRECISE_NECK)
-				var/paralyzed_limbs = 0
-				for(var/tetraplegia in stephenhawking_traits)
-					if(HAS_TRAIT(owner, tetraplegia))
-						paralyzed_limbs++
-				if(paralyzed_limbs < 4)
-					to_chat(owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
-				for(var/tetraplegia in stephenhawking_traits)
-					ADD_TRAIT(owner, tetraplegia, NECK_FRACTURE_TRAIT)
 				var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
 				if(brain)
 					brain.applyOrganDamage(rand(40, 90))
@@ -147,6 +139,7 @@
 				owner.agony_scream()
 			else if((damage >= low_threshold) && (prev_damage < low_threshold))
 				owner.death_scream()
+/*
 	else if(amount < 0)
 		if(damage < medium_threshold)
 			if(limb.body_zone == BODY_ZONE_PRECISE_NECK)
@@ -165,6 +158,7 @@
 					to_chat(owner, span_green("Я больше не <b>тетраплегик</b>!"))
 			if(active_trauma)
 				QDEL_NULL(active_trauma)
+*/
 
 /obj/item/organ/bone/Insert(mob/living/carbon/new_owner, special = FALSE, drop_if_replaced = TRUE, new_zone = null)
 	. = ..()

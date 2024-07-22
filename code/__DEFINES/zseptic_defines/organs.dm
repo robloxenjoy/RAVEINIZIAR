@@ -107,6 +107,7 @@
 #define ORGAN_SLOT_STOMACH "stomach"
 #define ORGAN_SLOT_STOMACH_AID "stomach aid"
 #define ORGAN_SLOT_INTESTINES "intestines"
+#define ORGAN_SLOT_NERVESYSTEM "нервная система"
 #define ORGAN_SLOT_BLADDER "bladder"
 #define ORGAN_SLOT_CHEST_AUG "chest augment"
 #define ORGAN_SLOT_NECK_AUG "neck augment"
