@@ -45,11 +45,11 @@
 //	products = list(
 //		/obj/item/clothing/suit/armor/vest/alt/discrete = 1,
 //	)
-//	var/list/tiktoklines = list('modular_septic/sound/effects/singer1.ogg', 'modular_septic/sound/effects/singer2.ogg')
-//	var/refuse_sound_cooldown_duration = 1 SECONDS
-//	var/barfsound = 'modular_septic/sound/emotes/vomit.ogg'
-//	var/crushersound = list('modular_septic/sound/effects/crusher1.ogg', 'modular_septic/sound/effects/crusher2.ogg', 'modular_septic/sound/effects/crusher3.ogg')
-//	COOLDOWN_DECLARE(refuse_cooldown)
+	var/list/tiktoklines = list('modular_septic/sound/effects/singer1.ogg', 'modular_septic/sound/effects/singer2.ogg')
+	var/refuse_sound_cooldown_duration = 1 SECONDS
+	var/barfsound = 'modular_septic/sound/emotes/vomit.ogg'
+	var/crushersound = list('modular_septic/sound/effects/crusher1.ogg', 'modular_septic/sound/effects/crusher2.ogg', 'modular_septic/sound/effects/crusher3.ogg')
+	COOLDOWN_DECLARE(refuse_cooldown)
 
 /obj/machinery/vending/tiktok/attackby(obj/item/I, mob/living/user, params)
 	if(!GLOB.bartering_inputs[I.type])
