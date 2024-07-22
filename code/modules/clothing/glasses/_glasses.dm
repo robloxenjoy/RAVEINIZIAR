@@ -176,8 +176,8 @@
 
 	if(slot != ITEM_SLOT_EYES)
 		return
-	if(!HAS_TRAIT_FROM(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
-		ADD_TRAIT(user, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
+	if(!HAS_TRAIT_FROM(equipper, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT))
+		ADD_TRAIT(equipper, TRAIT_SEE_GLASS_COLORS, GLASSES_TRAIT)
 		equipper.update_glasses_color(src, TRUE)
 
 /obj/item/clothing/glasses/night/proc/on_eyes_unequip(mob/living/carbon/human/unequipper, force, atom/newloc, no_move, invdrop, silent)
