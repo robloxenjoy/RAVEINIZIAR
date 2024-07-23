@@ -161,14 +161,16 @@
 				damage *= 1.1
 			//easy to kick people when they are down
 			if((victim.body_position == LYING_DOWN) && (user.body_position != LYING_DOWN))
-				hit_modifier += 5
-				hit_zone_modifier += 5
+				hit_modifier += 8
+				hit_zone_modifier += 8
 			//bad damage!
 			if(user.body_position == LYING_DOWN)
 				damage *= 0.5
+				hit_modifier -= 5
+				hit_zone_modifier -= 5
 			//bro we dead :skull:
 			if(victim.stat >= UNCONSCIOUS)
-				hit_modifier += 15
+				hit_modifier += 20
 		var/diceroll = DICE_FAILURE
 		var/skill_modifier = 0
 		if(weapon.skill_melee)
@@ -629,13 +631,15 @@
 			attack_damage *= 1.1
 		//easy to kick people when they are down
 		if((target.body_position == LYING_DOWN) && (user.body_position != LYING_DOWN))
-			hit_modifier += 5
-			hit_zone_modifier += 5
+			hit_modifier += 8
+			hit_zone_modifier += 8
 		if(user.body_position == LYING_DOWN)
 			attack_damage *= 0.5
+				hit_modifier -= 5
+				hit_zone_modifier -= 5
 		//bro we dead :skull:
 		if(target.stat >= UNCONSCIOUS)
-			hit_modifier += 15
+			hit_modifier += 20
 		//perfection, man
 		if(HAS_TRAIT(user, TRAIT_PERFECT_ATTACKER))
 			hit_modifier = 20

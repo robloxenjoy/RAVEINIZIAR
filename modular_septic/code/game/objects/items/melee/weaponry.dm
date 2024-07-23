@@ -460,6 +460,8 @@
 	slot_flags = ITEM_SLOT_BELT
 	skill_melee = SKILL_IMPACT_WEAPON
 	worn_icon_state = "classic_baton"
+	attack_verb_continuous = list("бьёт")
+	attack_verb_simple = list("бить")
 
 /obj/item/melee/bita/rebar/Initialize(mapload)
 	. = ..()

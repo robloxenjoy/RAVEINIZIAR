@@ -1658,6 +1658,7 @@
 		SKILL_SHORTSWORD = list(-1, 1),
 		SKILL_LONGSWORD = list(-1, 1),
 		SKILL_IMPACT_WEAPON_TWOHANDED = list(-1, 1),
+		SKILL_POLEARM = list(2, 7),
 		SKILL_FLAIL = list(-1, 1),
 		SKILL_SPEAR = list(-1, 1),
 		SKILL_THROWING = list(-5, 2),

@@ -309,6 +309,8 @@
 /datum/outfit/svogod
 	name = "Svogod Uniform"
 
+	r_hand = /obj/item/podpol_weapon/axe/big
+	belt = /obj/item/melee/hehe/pickaxe/iron
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	back = /obj/item/storage/belt/military/itobe/svo
