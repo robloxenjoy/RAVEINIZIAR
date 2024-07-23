@@ -131,7 +131,7 @@
 					human_user.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
 				if(CS_FURY)
 					attack_skill_modifier -= 3
-					attack_delay *= 0.2
+					attack_delay *= 3
 				if(CS_STRONG)
 					damage *= 1.5
 					attack_fatigue_cost *= 1.5
@@ -390,7 +390,7 @@
 					mob/living/carbon/human/target, \
 					datum/martial_art/attacker_style, \
 					list/modifiers)
-	var/attack_delay = CLICK_CD_MELEE
+	var/attack_delay = 18
 	var/attack_fatigue_cost = 6
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		switch(user.combat_style)
@@ -496,8 +496,8 @@
 	var/attack_verb_continuous
 	var/attack_effect
 	var/attack_sharpness
-	var/attack_fatigue_cost = 3
-	var/attack_delay = CLICK_CD_MELEE
+	var/attack_fatigue_cost = 2
+	var/attack_delay = 18
 	var/attack_skill_modifier = 0
 	switch(special_attack)
 		if(SPECIAL_ATK_BITE)
@@ -517,7 +517,7 @@
 			attack_verb_continuous = pick(user.dna.species.kick_verb_continuous)
 			attack_effect = pick(user.dna.species.kick_effect)
 			attack_sharpness = user.dna.species.kick_sharpness
-			attack_fatigue_cost *= 1.8
+			attack_fatigue_cost *= 1.6
 			attack_delay *= 1.8
 		else
 			attack_armor_damage = user.dna.species.attack_armor_damage_modifier

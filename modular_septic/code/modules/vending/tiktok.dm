@@ -56,6 +56,9 @@
 	if(Radio)
 		QDEL_NULL(Radio)
 
+/obj/machinery/vending/tiktok/attack_hand(mob/living/carbon/human/user, list/modifiers)
+	return
+
 /obj/machinery/vending/tiktok/attackby(obj/item/I, mob/living/user, params)
 	if(!GLOB.bartering_inputs[I.type])
 		if(COOLDOWN_FINISHED(src, refuse_cooldown))
@@ -68,7 +71,6 @@
 		playsound(src, crushersound, 70, vary = FALSE)
 //		INVOKE_ASYNC(src, .proc/crushing_animation)
 		check_bartering()
-
 
 /obj/machinery/vending/tiktok/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
 	. = ..()

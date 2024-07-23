@@ -57,3 +57,11 @@
 	mid_length = 1 SECONDS
 	volume = 20
 	direct = FALSE
+
+/datum/looping_sound/medika
+	mid_sounds = list(
+		'modular_pod/sound/loop/fire.ogg' = 1,
+	)
+	mid_length = 3 SECONDS
+	volume = 20
+	direct = FALSE

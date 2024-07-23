@@ -130,6 +130,16 @@
 	light_range = 4
 	light_power = 1
 	light_color = "#e19644"
+	var/datum/looping_sound/firee/soundloop
+
+/obj/structure/lighterfire/Initialize(mapload)
+	. = ..()
+	soundloop = new(src, FALSE)
+	soundloop.start()
+
+/obj/structure/lighterfire/Destroy()
+	. = ..()
+	QDEL_NULL(soundloop)
 
 /obj/structure/lighterfire/New()
 	..()
@@ -483,6 +493,7 @@
 			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Броня", "Амуниция", "Ловушки", "Инструменты", "Другое")
 			if(!thing)
 				return
+			playsound(get_turf(src), 'modular_pod/sound/eff/kaotika.ogg', 90 , FALSE, FALSE)
 			if(thing == "Холодное оружие")
 				melee_find(user)
 			if(thing == "Огнестрельное оружие")
@@ -516,7 +527,7 @@
 				return
 			new /obj/item/podpol_weapon/sword/steel(get_turf(user))
 			pref_source.bobux_amount -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Копьё (40)")
 			if(pref_source.bobux_amount < 40)
@@ -524,7 +535,7 @@
 				return
 			new /obj/item/podpol_weapon/spear/wooden(get_turf(user))
 			pref_source.bobux_amount -= 40
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Баклер (20)")
 			if(pref_source.bobux_amount < 20)
@@ -532,7 +543,7 @@
 				return
 			new /obj/item/melee/shieldo/buckler/wooden(get_turf(user))
 			pref_source.bobux_amount -= 20
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Арматура (20)")
 			if(pref_source.bobux_amount < 20)
@@ -540,7 +551,7 @@
 				return
 			new /obj/item/melee/bita/rebar(get_turf(user))
 			pref_source.bobux_amount -= 20
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Цеп (40)")
 			if(pref_source.bobux_amount < 40)
@@ -548,7 +559,7 @@
 				return
 			new /obj/item/melee/bita/cep/iron(get_turf(user))
 			pref_source.bobux_amount -= 40
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
@@ -574,7 +585,7 @@
 				return
 			new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
 			pref_source.bobux_amount -= 80
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Револьвер Нова (70)")
 			if(pref_source.bobux_amount < 70)
@@ -582,7 +593,7 @@
 				return
 			new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
 			pref_source.bobux_amount -= 70
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
@@ -608,7 +619,7 @@
 				return
 			new /obj/item/clothing/suit/armor/vest/bulletproofer(get_turf(user))
 			pref_source.bobux_amount -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Кольчуга (50)")
 			if(pref_source.bobux_amount < 50)
@@ -616,7 +627,7 @@
 				return
 			new /obj/item/clothing/suit/armor/vest/chainmail/steel(get_turf(user))
 			pref_source.bobux_amount -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Перчатки (30)")
 			if(pref_source.bobux_amount < 30)
@@ -624,7 +635,7 @@
 				return
 			new /obj/item/clothing/gloves/thickleather(get_turf(user))
 			pref_source.bobux_amount -= 30
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Баллистическая Маска (40)")
 			if(pref_source.bobux_amount < 40)
@@ -632,7 +643,7 @@
 				return
 			new /obj/item/clothing/mask/gas/ballisticarmor(get_turf(user))
 			pref_source.bobux_amount -= 40
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
@@ -660,7 +671,7 @@
 				return
 			new /obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded(get_turf(user))
 			pref_source.bobux_amount -= 40
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Пули .38 Калибра (30)")
 			if(pref_source.bobux_amount < 30)
@@ -668,7 +679,7 @@
 				return
 			new /obj/item/ammo_box/magazine/ammo_stack/c38/loaded(get_turf(user))
 			pref_source.bobux_amount -= 30
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
@@ -694,7 +705,7 @@
 				return
 			new /obj/item/barbsetup(get_turf(user))
 			pref_source.bobux_amount -= 40
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Установщик Мины (80)")
 			if(pref_source.bobux_amount < 80)
@@ -702,7 +713,7 @@
 				return
 			new /obj/item/minesetup(get_turf(user))
 			pref_source.bobux_amount -= 80
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Установщик Нажимной Мины (70)")
 			if(pref_source.bobux_amount < 70)
@@ -710,7 +721,7 @@
 				return
 			new /obj/item/minesetuplita(get_turf(user))
 			pref_source.bobux_amount -= 70
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
@@ -733,7 +744,7 @@
 				return
 			new /obj/item/minedisarmer(get_turf(user))
 			pref_source.bobux_amount -= 30
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Кирка (50)")
 			if(pref_source.bobux_amount < 50)
@@ -741,7 +752,7 @@
 				return
 			new /obj/item/melee/hehe/pickaxe/iron(get_turf(user))
 			pref_source.bobux_amount -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Гранатовый Чай (30)")
 			if(pref_source.bobux_amount < 30)
@@ -749,7 +760,7 @@
 				return
 			new /obj/item/reagent_containers/food/drinks/bottle/thermos(get_turf(user))
 			pref_source.bobux_amount -= 30
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
@@ -775,7 +786,7 @@
 				return
 			new /obj/item/grenade/frag(get_turf(user))
 			pref_source.bobux_amount -= 70
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Газовая Граната (50)")
 			if(pref_source.bobux_amount < 50)
@@ -783,7 +794,7 @@
 				return
 			new /obj/item/grenade/gas/incredible_gas(get_turf(user))
 			pref_source.bobux_amount -= 50
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Вспышник (10)")
 			if(pref_source.bobux_amount < 10)
@@ -791,7 +802,7 @@
 				return
 			new /obj/item/flashlight/flare(get_turf(user))
 			pref_source.bobux_amount -= 10
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		if("Ночные Оки (70)")
 			if(pref_source.bobux_amount < 70)
@@ -799,7 +810,7 @@
 				return
 			new /obj/item/clothing/glasses/night(get_turf(user))
 			pref_source.bobux_amount -= 70
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 100 , FALSE, FALSE)
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Покупка сделана!"))
 		else
 			return
@@ -870,7 +881,7 @@
 
 /obj/structure/sign/poster/contraband/codec/purpella
 	name = "Пурпэлыа"
-	desc = "Небольшой налёт."
+	desc = "Налёт."
 	icon = 'modular_pod/icons/turf/closed/cavera.dmi'
 	icon_state = "purpela"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -901,10 +912,13 @@
 	light_range = 3
 	light_power = 2
 	light_color = "#75a743"
+	verb_say = "умиляет"
+	verb_ask = "умиляет"
+	verb_exclaim = "умиляет"
 	var/datum/looping_sound/medika/soundloop
 	var/last_words = 0
 	var/words_delay = 1000
-	var/words_list = list("Я вылечу тебя, и твою душу!", "Ты мой единственный!", "Я всегда тут, просто приходи ко мне.", "Я никогда не предам тебя.")
+	var/words_list = list("Я вылечу тебя, и твою душу!", "Ты мой единственный!", "Я всегда тут, просто приходи ко мне.", "Я никогда не предам тебя.", "Я ведь заждалась тебя...")
 
 /obj/structure/medica/proc/speak(message)
 	say(message)
@@ -918,7 +932,7 @@
 	. = ..()
 	QDEL_NULL(soundloop)
 
-/obj/structure/medica/Initialize()
+/obj/structure/medica/process(delta_time)
 	. = ..()
 	if(last_words + words_delay <= world.time && prob(70))
 		var/words = pick(words_list)
@@ -1030,8 +1044,10 @@
 	if(iscarbon(L))
 		var/mob/living/carbon/C = L
 		var/obj/item/bodypart/affecting = C.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
+		var/armor_block = C.run_armor_check(affecting, MELEE, sharpness = SHARP_EDGED)
+		var/armor_reduce = C.run_subarmor_check(affecting, MELEE, sharpness = SHARP_EDGED)
 		C.visible_message(span_meatymeat("[C] ранится об [src]!"),span_meatymeat("Я ранюсь об [src]!"), span_hear("Я слышу звуки плоти."))
-		C.apply_damage(10, BRUTE, affecting, C.run_armor_check(affecting, MELEE), wound_bonus = 5, sharpness = SHARP_EDGED)
+		C.apply_damage(10, BRUTE, affecting, armor_block, wound_bonus = 5, sharpness = SHARP_EDGED, reduced = armor_reduce)
 		affecting.adjust_germ_level(50)
 		playsound(get_turf(src), 'modular_septic/sound/weapons/melee/sharpy1.ogg', 100 , FALSE, FALSE)
 
@@ -1042,7 +1058,9 @@
 		if(prob(50))
 			H.visible_message(span_meatymeat("[H] пытается вырваться из [src]!"))
 			var/obj/item/bodypart/affecting = H.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
-			H.apply_damage(10, BRUTE, affecting, H.run_armor_check(affecting, MELEE), wound_bonus = 5, sharpness = SHARP_EDGED)
+			var/armor_block = H.run_armor_check(affecting, MELEE, sharpness = SHARP_EDGED)
+			var/armor_reduce = H.run_subarmor_check(affecting, MELEE, sharpness = SHARP_EDGED)
+			H.apply_damage(10, BRUTE, affecting, armor_block, wound_bonus = 5, sharpness = SHARP_EDGED, reduced = armor_reduce)
 			affecting.adjust_germ_level(50)
 			return COMPONENT_ATOM_BLOCK_EXIT
 		else

@@ -87,7 +87,7 @@
 	opacity = TRUE
 	clingable = TRUE
 	var/cantbreak = FALSE
-	var/powerwall = 10
+	var/powerwall = 15
 	var/hardness = 40
 	var/mineable = TRUE
 	var/mine_hp = 3
@@ -137,7 +137,7 @@
 		if(istype(W, /obj/item/grab))
 			var/obj/item/grab/G = W
 			if((G.grasped_part?.body_zone == BODY_ZONE_PRECISE_FACE) || (G.grasped_part?.body_zone == BODY_ZONE_HEAD) || (G.grasped_part?.body_zone == BODY_ZONE_PRECISE_NECK))
-				var/mob/living/GR = user.pulling
+				var/mob/living/carbon/human/GR = user.pulling
 				if(GR == null)
 					return
 				if(GR.body_position == STANDING_UP)
@@ -145,9 +145,12 @@
 					if(head)
 						var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerwall)
 						GR.visible_message(span_pinkdang("[user] бьёт [GR] головой об [src]!"))
-						head.receive_damage(brute = damage, wound_bonus = 2, sharpness = null)
-						user.changeNext_move(CLICK_CD_GRABBING)
-						user.adjustFatigueLoss(10)
+						var/armor_block = GR.run_armor_check(head, MELEE, sharpness = NONE)
+						var/armor_reduce = GR.run_subarmor_check(head, MELEE, sharpness = NONE)
+						GR.apply_damage(brute = damage, BRUTE, head, armor_block, wound_bonus = 3, sharpness = NONE, reduced = armor_reduce)
+//						head.receive_damage(brute = damage, wound_bonus = 3, sharpness = null)
+						user.changeNext_move(17)
+						user.adjustFatigueLoss(6)
 						playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)
 	if(mineable)
 		if(mine_hp > 0)
