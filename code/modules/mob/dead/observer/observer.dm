@@ -299,6 +299,17 @@ Works together with spawning an observer, noted above.
 	if(. && can_reenter_corpse)
 		var/mob/dead/observer/ghost = .
 		ghost.mind.current?.med_hud_set_status()
+	for (var/v in client.verbs)
+		var/procpath/verb_path = v
+		if (!(verb_path in GLOB.stat_panel_verbs))
+			remove_verb(client, verb_path)
+
+	// Then remove those on their mob as well
+	for (var/v in verbs)
+		var/procpath/verb_path = v
+		if (!(verb_path in GLOB.stat_panel_verbs))
+			remove_verb(src, verb_path)
+	add_verb(src, /mob/dead/observer/verb/particlize)
 
 /*
 This is the proc mobs get to turn into a ghost. Forked from ghostize due to compatibility issues.
@@ -585,12 +596,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 /mob/dead/observer/verb/particlize()
-	set category = "Конец"
-	set name = "Возрождение"
+	set category = "End"
+	set name = "Rebirth"
 	set desc = "Are you want?"
 
 	if(stat != DEAD)
-		to_chat(src, span_info("Я всё ещё жив."))
+		to_chat(src, span_info("I am still alive."))
 		return FALSE
 
 	client.ready_char = FALSE

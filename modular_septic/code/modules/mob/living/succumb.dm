@@ -36,16 +36,16 @@
 */
 
 /mob/living/carbon/human/verb/vomited(whispered as null)
-	set name = "Блевать"
-	set category = "Экстра"
+	set name = "Vomit"
+	set category = "Extra"
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
 		vomit(lost_nutrition = 100, blood = FALSE, stun = TRUE, distance = rand(1,2), message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1, button = TRUE)
 
 /mob/living/carbon/human/verb/terrain(whispered as null)
-	set name = "Проверка территории"
-	set category = "Экстра"
+	set name = "Check Territory"
+	set category = "Extra"
 	set desc = "You want?"
 
 	if(stat == CONSCIOUS)
@@ -111,29 +111,29 @@
 	to_chat(src, output_message)
 */
 /mob/living/carbon/human/verb/upp(whispered as null)
-	set name = "Вверх"
-	set category = "Экстра"
+	set name = "Up"
+	set category = "Extra"
 	set desc = "You want?"
 
 	go_somewhere(down = FALSE)
 
 /mob/living/carbon/human/verb/downn(whispered as null)
-	set name = "Вниз"
-	set category = "Экстра"
+	set name = "Down"
+	set category = "Extra"
 	set desc = "You want?"
 
 	go_somewhere(down = TRUE)
 
 /mob/living/carbon/human/verb/sdatsa(whispered as null)
-	set name = "Сдаться"
-	set category = "Экстра"
+	set name = "Die"
+	set category = "Extra"
 	set desc = "You want?"
 
 	if(stat != DEAD)
 		var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
 		if(brain)
 			brain.applyOrganDamage(120)
-			client?.prefs?.adjust_bobux(-5, "<span class='bobux'>Я сдаюсь! -5 Каотиков!</span>")
+			client?.prefs?.adjust_bobux(-5, "<span class='bobux'>I give up! -5 Kaotiks!</span>")
 
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
 	set hidden = TRUE

@@ -1,3 +1,1 @@
-bruhok = #FF3399
-bobcool = #B434EB
-andrej99 = #F5A9B8
+moonmagick = #FF3399

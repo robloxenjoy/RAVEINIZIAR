@@ -23,7 +23,7 @@
 		to_chat(src, span_danger("You have been banned from OOC."))
 		return
 	if(should_not_say)
-		to_chat(src, span_danger("Тебе не нужно разговаривать, ты еблан."))
+		to_chat(src, span_danger("You should not say anything."))
 		return
 	if(QDELETED(src))
 		return
@@ -59,8 +59,8 @@
 	var/keyname = key
 	if(sheet.icon_tag("donator-[ckey]"))
 		keyname = "[sheet.icon_tag("donator-[ckey]")] [keyname]"
-//	if(SSdonators.donator_to_ooc_color[ckey])
-//		keyname = "<font color='[SSdonators.donator_to_ooc_color[ckey]]'>[keyname]</font>"
+	if(SSdonators.donator_to_ooc_color[ckey])
+		keyname = "<font color='[SSdonators.donator_to_ooc_color[ckey]]'>[keyname]</font>"
 	else if(CONFIG_GET(string/ipstack_api_key))
 		switch(country)
 			if("Brazil")
