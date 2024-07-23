@@ -1,6 +1,6 @@
 // Light Machine Gun
 /datum/attribute/skill/light_machine_gun
-	name = "Light Machine Gun "
+	name = "Пулемёты"
 	desc = "Any machine gun fired from the hip or a bipod."
 	icon_state = "marksman"
 	category = SKILL_CATEGORY_RANGED

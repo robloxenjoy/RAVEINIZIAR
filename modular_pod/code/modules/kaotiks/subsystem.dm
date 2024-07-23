@@ -41,6 +41,7 @@ SUBSYSTEM_DEF(bobux)
 /datum/controller/subsystem/bobux/proc/GetDat(client/noob)
 	var/list/dat = list()
 	var/datum/preferences/pref_source = noob.prefs
+	dat += "<center><b>[GLOB.world_deaths_crazy] смертей в мире!</b></center><br>"
 	dat += "<center><b>Меню Каотиков</b></center><br>"
 	dat += "<center>В данный момент у меня <b>[pref_source.bobux_amount]</b> каотиков.</center><br>"
 	dat += "<center><a href='?src=\ref[src];task=close'>Заебись</a></center>"

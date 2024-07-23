@@ -5,7 +5,7 @@
  * Such a weapon cannot parry if you have already attacked with it on your turn.
  */
 /datum/attribute/skill/impact_weapon
-	name = "Impact Weapon"
+	name = "Ударные орудия"
 	desc = "Any short to medium-length one-handed impact weapon, such as an axe, hatchet, pickaxe, mace or knobbed club."
 	icon_state = "axe"
 	category = SKILL_CATEGORY_MELEE
@@ -18,7 +18,7 @@
 	difficulty = SKILL_DIFFICULTY_AVERAGE
 
 /datum/attribute/skill/impact_weapon_twohanded
-	name = "Two-Handed Impact Weapon"
+	name = "Двуручные ударные орудия"
 	desc = "Any long, two-handed impact weapon, such as a baseball bat, battleaxe, maul, or warhammer"
 	icon_state = "axe"
 	category = SKILL_CATEGORY_MELEE

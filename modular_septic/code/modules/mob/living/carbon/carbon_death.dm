@@ -26,7 +26,6 @@
 		var/obj/item/organ/heart/heart = thing
 		heart.Stop()
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "died", /datum/mood_event/died)
-	kill_zoom(src)
 	if(!has_died)
 //		if(iswillet(src))
 //			return

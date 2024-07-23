@@ -1,5 +1,6 @@
 /mob/living/carbon/human/death(gibbed)
 	. = ..()
+	kill_zoom(src)
 	if(!QDELETED(src))
 		update_hud_breath()
 	if(client)

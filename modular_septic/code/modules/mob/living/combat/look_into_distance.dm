@@ -17,6 +17,7 @@
 	SEND_SIGNAL(src, COMSIG_FIXEYE_ENABLE, TRUE, TRUE)
 	SEND_SIGNAL(src, COMSIG_FIXEYE_LOCK)
 	RegisterSignal(src, COMSIG_MOB_LOGOUT, PROC_REF(kill_zoom), override = TRUE)
+	RegisterSignal(src, COMSIG_LIVING_DEATH, PROC_REF(kill_zoom), override = TRUE)
 
 	var/distance = min(get_dist(src, A), 15)
 	var/direction = get_dir(src, A)
@@ -51,6 +52,7 @@
 	SEND_SIGNAL(src, COMSIG_FIXEYE_UNLOCK)
 	SEND_SIGNAL(src, COMSIG_FIXEYE_DISABLE, TRUE, TRUE)
 	UnregisterSignal(src, COMSIG_MOB_LOGOUT)
+	UnregisterSignal(src, COMSIG_LIVING_DEATH)
 	if(client)
 		client.pixel_x = initial(client.pixel_x)
 		client.pixel_y = initial(client.pixel_y)

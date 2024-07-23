@@ -6,7 +6,7 @@
  * Furthermore, you have half the usual penalty for parrying more than once with the same hand.
  */
 /datum/attribute/skill/rapier
-	name = "Rapier"
+	name = "Рапиры"
 	desc = "Any long (over 1 meter), light, thrusting sword."
 	icon_state = "longblade"
 	category = SKILL_CATEGORY_MELEE
@@ -19,7 +19,7 @@
 	difficulty = SKILL_DIFFICULTY_AVERAGE
 
 /datum/attribute/skill/smallsword
-	name = "Smallsword"
+	name = "Маленькие мечи"
 	desc = "Any short (up to 1 meter), light, thrusting sword or one-handed short staff."
 	icon_state = "shortblade"
 	category = SKILL_CATEGORY_MELEE

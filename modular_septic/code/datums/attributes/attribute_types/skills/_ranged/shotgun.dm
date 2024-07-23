@@ -1,6 +1,6 @@
 // Shotgun
 /datum/attribute/skill/shotgun
-	name = "Shotgun"
+	name = "Дробовики"
 	desc = "Any kind of smoothbore long arm that fires multiple projectiles (flechettes, buckshot, etc)."
 	icon_state = "marksman"
 	category = SKILL_CATEGORY_RANGED

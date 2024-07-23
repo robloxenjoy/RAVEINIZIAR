@@ -1,5 +1,5 @@
 /datum/attribute/skill/throwing
-	name = "Throwing"
+	name = "Метание"
 	desc = "Proficiency at throwing items, regardless of their purpose."
 	icon_state = "mercantile"
 	category = SKILL_CATEGORY_RANGED

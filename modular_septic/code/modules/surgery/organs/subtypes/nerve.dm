@@ -10,6 +10,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_PRECISE_NECK
 	organ_efficiency = list(ORGAN_SLOT_NERVESYSTEM = 100)
+	needs_processing = FALSE
 
 	healing_factor = STANDARD_ORGAN_HEALING
 

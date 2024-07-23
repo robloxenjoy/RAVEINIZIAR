@@ -1,6 +1,6 @@
 // SMG
 /datum/attribute/skill/smg
-	name = "Submachine Gun"
+	name = "Пистолеты-пулемёты"
 	desc = "All short, fully automatic weapons that fire pistol-caliber ammunition, including machine pistols."
 	icon_state = "marksman"
 	category = SKILL_CATEGORY_RANGED

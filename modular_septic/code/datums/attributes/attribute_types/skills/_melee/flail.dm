@@ -7,7 +7,7 @@
  * attempts to parry them are at -4.
  */
 /datum/attribute/skill/flail
-	name = "Flail"
+	name = "Цепы"
 	desc = "Any one-handed flail, such as a morningstar or nunchaku."
 	icon_state = "blunt"
 	category = SKILL_CATEGORY_MELEE
@@ -20,7 +20,7 @@
 	difficulty = SKILL_DIFFICULTY_HARD
 
 /datum/attribute/skill/flail_twohanded
-	name = "Two-Handed Flail"
+	name = "Двуручные цепы"
 	desc = "Any two-handed flail."
 	icon_state = "blunt"
 	category = SKILL_CATEGORY_MELEE
