@@ -58,7 +58,7 @@
 	volume = 20
 	direct = FALSE
 
-/datum/looping_sound/medika
+/datum/looping_sound/firee
 	mid_sounds = list(
 		'modular_pod/sound/loop/fire.ogg' = 1,
 	)

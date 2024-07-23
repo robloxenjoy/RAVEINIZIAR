@@ -1,6 +1,6 @@
 /obj/structure/wayto/podpol
-	name = "Подпол"
-	desc = "Что там?"
+	name = "Underfloor"
+	desc = "What's there?"
 	icon = 'modular_pod/icons/obj/things/things_4.dmi'
 	icon_state = "podpol"
 	anchored = TRUE
@@ -26,7 +26,7 @@
 
 /obj/structure/wayto/podpol/proc/use(mob/living/carbon/human/user, going_up = TRUE, is_ghost = FALSE)
 	if(user.truerole != "Капнобатай")
-		to_chat(user, span_notice("Меня там пацаны не примут."))
+		to_chat(user, span_notice("The boys there won't accept me."))
 		return
 	if(!in_range(src, user) || user.incapacitated())
 		return
@@ -61,8 +61,8 @@
 	down = FALSE
 
 /obj/structure/table/goody
-	name = "Стол"
-	desc = "Хорошо. Славно. Классно."
+	name = "Table"
+	desc = "Nice. Cute. Good."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "tablera"
 	smoothing_flags = NONE
@@ -76,14 +76,14 @@
 			qdel(src)
 
 /obj/structure/bed/mattress
-	name = "Матрас"
-	desc = "Главное отоспаться."
+	name = "Mattress"
+	desc = "The main thing is to get enough sleep."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mattress"
 
 /obj/structure/closet/crate/freezer/podozl
-	name = "Холодильник"
-	desc = "В таком состоянии... Каким-то образом охлаждает."
+	name = "Fridge"
+	desc = "In this state... Somehow it cools."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "holodos"
 	open_sound = 'modular_pod/sound/eff/open_holodos.ogg'
@@ -121,10 +121,10 @@
 	color = "#fcffff77"
 
 /obj/structure/lighterfire
-	name = "Бочка"
+	name = "Barrel"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "barrel"
-	desc = "Завораживающе."
+	desc = "Fascinating."
 	density = 1
 	anchored = 1
 	light_range = 4
@@ -154,8 +154,8 @@
 	falloff_distance = 3
 
 /obj/item/musicshit/boombox
-	name = "Бумбокс"
-	desc = "А это уже другое дело."
+	name = "Boombox"
+	desc = "Fucking amazing."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "boombox"
 //	var/datum/looping_sound/musicloop/soundloop
@@ -203,8 +203,8 @@
 				L.stop_sound_channel(CHANNEL_JUKEBOX)
 
 /obj/structure/chair/podpolsit
-	name = "Трон"
-	desc = "Пора узнать, что такое сила."
+	name = "Throne"
+	desc = "It's time to find out what power is."
 	icon = 'modular_pod/icons/obj/things/things_5.dmi'
 	icon_state = "sit"
 	max_integrity = 10000
@@ -219,12 +219,12 @@
 	. = ..()
 	if(iscarbon(M))
 		M.pixel_y += 5
-		M.visible_message(span_notice("[M] усаживается на [src]."),span_notice("Я усаживаюсь на [src]."), span_hear("Я слышу чё-то."))
+		M.visible_message(span_notice("[M] sits down on [src]."),span_notice("I sit down on [src]."), span_hear("I hear something."))
 		if(do_after(M, 3 SECONDS, target=src))
 			if(!M.buckled)
-				to_chat(M, span_meatymeat("Надо на трон сесть!"))
+				to_chat(M, span_meatymeat("We need to sit on the throne!"))
 				return
-			to_chat(M, span_meatymeat("Я ощущаю какой-то пиздец!"))
+			to_chat(M, span_meatymeat("I feel some kind of fucked up!"))
 			M.fully_heal(TRUE)
 
 /obj/structure/chair/podpolsit/post_unbuckle_mob(mob/living/M)
@@ -232,8 +232,8 @@
 		M.pixel_y -= 5
 
 /obj/structure/column/power
-	name = "Статуя"
-	desc = "То, что внушает страх."
+	name = "Statue"
+	desc = "That which inspires fear."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "power"
 	plane = ABOVE_GAME_PLANE
@@ -244,7 +244,7 @@
 	max_integrity = 1000
 
 /obj/effect/decal/metalpodpol
-	name = "Плитка"
+	name = "Metal Tiles"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "metal1"
 	layer = TURF_PLATING_DECAL_LAYER
@@ -270,7 +270,7 @@
 		icon_state = "grass2"
 
 /obj/effect/decal/shroomworms
-	name = "Хуйня"
+	name = "Shroomworms"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "shroomworms"
 	layer = TURF_PLATING_DECAL_LAYER
@@ -278,8 +278,8 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/flora/ausbushes/cactus
-	name = "Кактус"
-	desc = "Сука колючий. Воды бы набрать с него."
+	name = "Cactus"
+	desc = "The bitch is prickly. I would like to get some water from it."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "cactus1"
 	plane = ABOVE_GAME_PLANE
@@ -310,26 +310,26 @@
 			cactus_needle = new /obj/item/cactus_needle(loc)
 			var/embed_attempt = cactus_needle.tryEmbed(target = affecting, forced = TRUE, silent = TRUE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
-				rammer.visible_message(span_pinkdang("Игла застревает в [rammer] [affecting]!"), \
-									span_pinkdang("Игла застревает в [affecting]!"), \
-									span_hear("Я слышу звук плоти."))
+				rammer.visible_message(span_pinkdang("The needle gets stuck in [rammer] [affecting]!"), \
+									span_pinkdang("The needle gets stuck in [affecting]!"), \
+									span_hear("I hear meat."))
 			else
 				qdel(cactus_needle)
-				rammer.visible_message(span_meatymeat("[rammer] укалывается об [src]!"),span_meatymeat("Я укалываюсь об [src]!"), span_hear("Я слышу чё-то."))
+				rammer.visible_message(span_meatymeat("[rammer] pricks himself on [src]!"),span_meatymeat("I prick myself on [src]!"), span_hear("I hear meat."))
 				rammer.apply_damage(10, BRUTE, affecting, rammer.run_armor_check(affecting, MELEE), wound_bonus = 2, sharpness = SHARP_POINTY)
 				affecting.adjust_germ_level(100)
 			if(rammer.get_chem_effect(CE_PAINKILLER) < 30)
-				to_chat(rammer, span_userdanger("ЕБУЧИЕ КАКТУСЫ!"))
+				to_chat(rammer, span_userdanger("FUCK CACTUSES!"))
 				rammer.agony_scream()
 		else
-			to_chat(rammer, span_meatymeat("[src] чуть не уколол меня!"))
+			to_chat(rammer, span_meatymeat("[src] almost pricked me!"))
 
 /obj/structure/flora/ausbushes/cactus/examine(mob/user)
 	. = ..()
 	if(reagents.total_volume > 0)
-		. += span_notice("Кактус не полностью высушен.")
+		. += span_notice("The cactus is not completely dried.")
 	else
-		. += span_notice("Кактус высушен.")
+		. += span_notice("Cactus dried.")
 
 /obj/structure/flora/ausbushes/cactus/attackby(obj/item/W, mob/living/carbon/user, params)
 /*
@@ -350,7 +350,7 @@
 	if(user.a_intent == INTENT_HARM)
 		if(W.sharpness)
 			if(W.force >= 5)
-				user.visible_message(span_notice("[user] срезает [src]."),span_notice("Я срезаю [src]."), span_hear("Я слышу рубку."))
+				user.visible_message(span_notice("[user] cuts [src]."),span_notice("I cut [src]."), span_hear("I hear cutting."))
 				user.changeNext_move(W.attack_delay)
 				user.adjustFatigueLoss(5)
 				sound_hint()
@@ -395,8 +395,8 @@
 		return FALSE
 
 /obj/item/cactus_needle
-	name = "Игла Кактуса"
-	desc = "Наверное, можно... Уколоть кого-нибудь?"
+	name = "Cactus Needle"
+	desc = "Probably, I can... Inject someone?"
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "needle"
 	inhand_icon_state = null
@@ -422,12 +422,12 @@
 	tetris_height = 32
 	canlockpick = TRUE
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb_continuous = list("тыкает", "иголит", "укалывает")
-	attack_verb_simple = list("тыкать", "иголить", "укалывать")
+	attack_verb_continuous = list("stabs", "needles")
+	attack_verb_simple = list("stab", "needle")
 
 /obj/structure/flora/ausbushes/granat
-	name = "Гранат"
-	desc = "Прекрасный фрукт, чудом сохранивший свою пользу."
+	name = "Pomegranate"
+	desc = "A wonderful fruit that has miraculously retained its benefits."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "granat"
 //	plane = ABOVE_GAME_PLANE
@@ -445,7 +445,7 @@
 	if(!do_after(user, 2 SECONDS, target = src))
 		to_chat(user, span_danger(xbox_rage_msg()))
 		return
-	user.visible_message(span_notice("[user] отрывает от [src] кусок."),span_notice("Я отрываю от [src] кусок."), span_hear("Я слышу собирание."))
+	user.visible_message(span_notice("[user] tears off a piece from [src]."),span_notice("I tear off a piece from [src]."), span_hear("I hear collecting."))
 	playsound(loc,'modular_pod/sound/eff/tearthing.ogg', 30, TRUE)
 	var/obj/item/granat = new /obj/item/food/grown/granat(loc)
 	user.put_in_active_hand(granat)
@@ -469,8 +469,8 @@
 	opacity = FALSE
 
 /obj/structure/kaotikmachine
-	name = "Каотическая Машина"
-	desc = "ПОКУПКА СНАРЯГИ!"
+	name = "Kaotik Machine"
+	desc = "BUY EQUIPMENT!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "kaotik_machine"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -490,7 +490,7 @@
 		return
 	if(!lockeda)
 		if(user.client?.prefs)
-			var/thing = input(user, "Чего я хочу?", "Я хочу...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Броня", "Амуниция", "Ловушки", "Инструменты", "Другое")
+			var/thing = input(user, "What do I want?", "I want...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Броня", "Амуниция", "Ловушки", "Инструменты", "Другое")
 			if(!thing)
 				return
 			playsound(get_turf(src), 'modular_pod/sound/eff/kaotika.ogg', 90 , FALSE, FALSE)
@@ -816,7 +816,7 @@
 			return
 
 /obj/structure/kaos/blackwindow
-	name = "Чёрное Зеркало"
+	name = "Black Window"
 	desc = "?"
 	icon = 'modular_pod/icons/turf/floors_4.dmi'
 	icon_state = "blackwindow"
@@ -901,8 +901,8 @@
 			set_light(1, 3, "#894ab6")
 
 /obj/structure/medica
-	name = "Медика"
-	desc = "Чтобы Медика вылечила меня, достаточно всего лишь..."
+	name = "Medika"
+	desc = "All it takes for Medika to cure me is..."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "medica"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -1017,8 +1017,8 @@
 	info = "Я потерялся в этой хуйне. Свет дурманит меня, лучше бы оказался во тьме. Я насчитал уже 30 узоров на этом... На этой... Не знаю что это. Кажись, я понял, что они недооценивают меня, я осознал это. Пора спать."
 */
 /obj/structure/barbwire
-	name = "Колючая Проволока"
-	desc = "НЕ ЛЕЗЬ."
+	name = "Barbed Wire"
+	desc = "DO NOT TOUCH ME."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "barbwire"
 	density = FALSE
@@ -1068,7 +1068,7 @@
 			return
 
 /obj/item/barbsetup
-	name = "Установщик"
+	name = "Installer"
 	desc = "Таким вот можно установить проволоку."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "setupper"
@@ -1088,7 +1088,7 @@
 	var/zaryad = 3
 
 /obj/item/detonatormine
-	name = "Детонатор"
+	name = "Detonator"
 	desc = "Для моей мины."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "detonator"
@@ -1125,7 +1125,7 @@
 //			INVOKE_ASYNC(M, /obj/structure/mineexplosive.proc/detonate)
 
 /obj/item/minesetup
-	name = "Установщик Мины"
+	name = "Mine Installer"
 	desc = "Модель Bajas, 3. Ещё нужен детонатор. Он, вроде как, внутри."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mine"
@@ -1165,7 +1165,7 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 
 /obj/item/minesetuplita
-	name = "Установщик Мины"
+	name = "Mine Installer"
 	desc = "Модель Repeater. После установки, на такую будет достаточно наступить."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mineplit_thing"
@@ -1185,7 +1185,7 @@
 	var/install_mine = /obj/structure/mineexplosive/mineplit
 
 /obj/structure/mineexplosive
-	name = "Установленная Мина"
+	name = "Installed Mine"
 	desc = "НЕ ЛЕЗЬ."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "installed"
@@ -1275,7 +1275,7 @@
 	ex_flame = 3
 
 /obj/structure/mineexplosive/mineplit
-	name = "Установленная Мина"
+	name = "Installed Mine"
 	desc = "НЕ ЛЕЗЬ."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mineplit"
@@ -1301,17 +1301,17 @@
 	if(istype(W, /obj/item/minedisarmer))
 		if(!work)
 			return
-		user.visible_message(span_meatymeat("[user] пытается обезвредить [src]!"))
+		user.visible_message(span_meatymeat("[user] tries to disarm [src]!"))
 		sound_hint()
 		if(!do_after(user, 4 SECONDS, target = src))
 			to_chat(user, span_danger(xbox_rage_msg()))
 			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		var/epic_success = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
 		if(epic_success >= DICE_SUCCESS)
-			user.visible_message(span_meatymeat("[user] обезвреживает [src]!"))
+			user.visible_message(span_meatymeat("[user] disarms [src]!"))
 			work = FALSE
 		else
-			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
+			user.visible_message(span_meatymeat("[user] failed to disarm [src]!"))
 			return
 		user.changeNext_move(CLICK_CD_MELEE)
 		sound_hint()
@@ -1351,7 +1351,7 @@
 					qdel(src)
 
 /obj/item/minedisarmer
-	name = "Дизармер"
+	name = "Disarmer"
 	desc = "Мины не помеха!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "disarmer"

@@ -635,8 +635,8 @@
 			hit_zone_modifier += 8
 		if(user.body_position == LYING_DOWN)
 			attack_damage *= 0.5
-				hit_modifier -= 5
-				hit_zone_modifier -= 5
+			hit_modifier -= 5
+			hit_zone_modifier -= 5
 		//bro we dead :skull:
 		if(target.stat >= UNCONSCIOUS)
 			hit_modifier += 20
