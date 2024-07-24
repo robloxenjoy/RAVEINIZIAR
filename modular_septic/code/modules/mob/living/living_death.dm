@@ -15,7 +15,7 @@
 //				to_chat(M, span_bobux("Я видел смерть фатала! +10 Каотиков!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[src.real_name]", /datum/mood_event/fraggot/killed)
 				if(M.client?.prefs)
-					M.client.prefs.adjust_bobux(150, "<span class='bobux'>Я видел смерть фатала! +150 Каотиков!</span>")
+					M.client.prefs.adjust_bobux(150, "<span class='bobux'>I saw the death of a Fatal! +150 Kaotiks!</span>")
 					M.flash_kaosgain()
 /*
 	if(iswillet(src))

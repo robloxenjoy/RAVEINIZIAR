@@ -19,9 +19,9 @@
 */
 
 /datum/bobux_reward/stat_str
-	name = "+1 СЛ"
-	desc = "Увеличить силу."
-	buy_message = "<b>Я становлюсь СИЛЬНЕЕ БЛЯТЬ!</span>"
+	name = "+1 STR"
+	desc = "Increase strength."
+	buy_message = "<b>I'm getting STRONGER!</span>"
 	id = "strboost"
 	cost = 50
 
@@ -40,9 +40,9 @@
 	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik/str, TRUE, stat_modification)
 
 /datum/bobux_reward/stat_end
-	name = "+1 СТ"
-	desc = "Увеличить здоровье."
-	buy_message = "<b>Я становлюсь ЗДОРОВЕЕ БЛЯТЬ!</span>"
+	name = "+1 END"
+	desc = "Increase endurance."
+	buy_message = "<b>I'm getting HARDER!</span>"
 	id = "endboost"
 	cost = 50
 
@@ -61,9 +61,9 @@
 	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik/end, TRUE, stat_modification)
 
 /datum/bobux_reward/stat_dex
-	name = "+1 ЛВ"
-	desc = "Увеличить ловкость."
-	buy_message = "<b>Я становлюсь ЛОВЧЕ БЛЯТЬ!</span>"
+	name = "+1 DEX"
+	desc = "Increase dexterity."
+	buy_message = "<b>I'm getting FASTER!</span>"
 	id = "dexboost"
 	cost = 50
 
@@ -82,9 +82,9 @@
 	noob.mob.attributes?.add_or_update_variable_attribute_modifier(/datum/attribute_modifier/kaotik/dex, TRUE, stat_modification)
 
 /datum/bobux_reward/combat_boost
-	name = "Улучшить боевой настрой"
-	desc = "Увеличивает навыки ближнего боя."
-	buy_message = "<b>Я становлюсь лучше в ближнем бою!</span>"
+	name = "Improve fighting skill"
+	desc = "Melee skills."
+	buy_message = "<b>I'm getting better at melee combat!</span>"
 	id = "combatboost"
 	cost = 100
 
@@ -98,9 +98,9 @@
 	noob.mob.attributes?.add_sheet(/datum/attribute_holder/sheet/kaotik/melee)
 
 /datum/bobux_reward/range_boost
-	name = "Улучшить дальневой настрой"
-	desc = "Увеличивает навыки дальнего боя."
-	buy_message = "<b>Я становлюсь лучше в дальнем бою!</span>"
+	name = "Improve fighting skill"
+	desc = "Range skills."
+	buy_message = "<b>I'm getting better at ranged combat!</span>"
 	id = "rangeboost"
 	cost = 100
 
@@ -210,16 +210,16 @@
 */
 
 /datum/bobux_reward/market_crash
-	name = "Разрушить каотичную систему"
-	desc = "А чё бы нет?"
-	buy_message = "Я ахуеннен."
+	name = "Destroy Kaotik System"
+	desc = "Why not?"
+	buy_message = "Amazing."
 	id = "market_crash"
 	cost = 700
 	single_use = TRUE
 
 /datum/bobux_reward/market_crash/on_buy(client/noob)
 	. = ..()
-	to_chat(world, "<span class='userdanger'><span class='big bold'>Каотичная Система была разрушена [noob.key]!</span></span>")
+	to_chat(world, "<span class='userdanger'><span class='big bold'>Kaotik System was destroyed by [noob.key]!</span></span>")
 	SSbobux.working = FALSE
 /*
 //	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
@@ -273,8 +273,8 @@
 */
 
 /datum/bobux_reward/farto
-	name = "Пранк Чангуса"
-	desc = "Заставит всех ООПБ!"
+	name = "Chungus Prank"
+	desc = "Make everyone PPFV!"
 	buy_message = "Я сын чангуса!"
 	id = "fart"
 	cost = 200
@@ -289,10 +289,10 @@
 //		return FALSE
 	message_admins("[noob] has made everyone PPFV.")
 	log_admin("[noob] has made everyone PPFV.")
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] заставляет всех ООПБ - обоссаться, обосраться, пердануть и блевануть!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] makes everyone PPFV - piss, poo, fart and vomit!</span>")
 //	var/cumsound = pick('modular_pod/sound/eff/coom.ogg','modular_pod/sound/eff/bobcoomer.ogg')
 //	SEND_SOUND(world, sound(cumsound, volume = 50))
-	to_chat(world, "<span class='reallybig hypnophrase'>Я ООПБ!!!!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>I'M PPFV!!!</span>")
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
 		if(coomer.mind)
 			coomer.emote("fart")
@@ -304,9 +304,9 @@
 //		coomer.handle_user_climax()
 
 /datum/bobux_reward/goodmood
-	name = "Весёлый день"
-	desc = "Сделай всех счастливее!"
-	buy_message = "<b>А я хорош!</span>"
+	name = "Funny Day"
+	desc = "Make everyone more fun!"
+	buy_message = "<b>I'm cute!</span>"
 	id = "funnyday"
 	cost = 100
 	infinite_buy = TRUE
@@ -315,15 +315,15 @@
 	..()
 	message_admins("[noob] has made everyone happier.")
 	log_admin("[noob] has made everyone happier.")
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] делает всех счастливее! Заебись!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] makes everyone happier :3</span>")
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
 		if(coomer.mind)
 			SEND_SIGNAL(coomer, COMSIG_ADD_MOOD_EVENT, "funnyday", /datum/mood_event/koatik)
 
 /datum/bobux_reward/blackout
-	name = "Блэкаут"
-	desc = "Жалкая имитация, но всё ещё страшная!"
-	buy_message = "<b>Пизда!</span>"
+	name = "Blackout"
+	desc = "A pathetic imitation, but still scary!"
+	buy_message = "<b>Fuck!</span>"
 	id = "blackout"
 	cost = 500
 	infinite_buy = TRUE
@@ -336,7 +336,7 @@
 
 /datum/bobux_reward/blackout/on_buy(client/noob)
 	..()
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] обрушивает Блэкаут!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] brings down Blackout!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(!A.lighting_out)
 			continue
@@ -345,9 +345,9 @@
 		A.create_area_lighting_objects()
 
 /datum/bobux_reward/lightout
-	name = "Лайтаут"
-	desc = "Вернуть свет!"
-	buy_message = "<b>Отлично-отлично!</span>"
+	name = "Lightout"
+	desc = "Bring back lighting!"
+	buy_message = "<b>Good-good!</span>"
 	id = "lightout"
 	cost = 200
 	infinite_buy = TRUE
@@ -360,7 +360,7 @@
 
 /datum/bobux_reward/lightout/on_buy(client/noob)
 	..()
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Лайтаут!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] calls Lightout!</span>")
 	for(var/area/maintenance/polovich/forest/A in world)
 		if(!A.lighting_out)
 			continue
@@ -369,9 +369,9 @@
 		A.remove_area_lighting_objects()
 
 /datum/bobux_reward/activate_muzon
-	name = "Врубить Музон"
-	desc = "Надо послушать!"
-	buy_message = "<b>Пизда!</span>"
+	name = "Toggle on Musick"
+	desc = "Need to listen!"
+	buy_message = "<b>Oh awesome!</span>"
 	id = "muzon"
 	cost = 400
 	infinite_buy = TRUE
@@ -383,7 +383,7 @@
 
 /datum/bobux_reward/activate_muzon/on_buy(client/noob)
 	..()
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] вызывает Музон!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] activates Musick!</span>")
 //	for(var/area/maintenance/polovich/forest/A in world)
 //		if(A.ino)
 //			continue
@@ -396,9 +396,9 @@
 			SSdroning.play_area_sound(areal, H?.client)
 
 /datum/bobux_reward/remove_muzon
-	name = "Убрать Музон"
-	desc = "Пора всё по-нормальному сделать!"
-	buy_message = "<b>Отлично-отлично!</span>"
+	name = "Remove Musick"
+	desc = "Fuck this shit!"
+	buy_message = "<b>Fuck musick!</span>"
 	id = "removemuzon"
 	cost = 200
 	infinite_buy = TRUE
@@ -410,7 +410,7 @@
 
 /datum/bobux_reward/remove_muzon/on_buy(client/noob)
 	..()
-	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] убирает Музон!</span>")
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] removes Musick!</span>")
 //	for(var/area/maintenance/polovich/forest/A in world)
 //		if(A.ino)
 //			continue
@@ -424,9 +424,9 @@
 			SSdroning.play_area_sound(areal, H?.client)
 
 /datum/bobux_reward/changename
-	name = "Сменить Имя"
-	desc = "Пора бы."
-	buy_message = "<b>Новое имя! Мудрый выбор!</span>"
+	name = "Change Name"
+	desc = "It's time."
+	buy_message = "<b>Need to make wise choice!</span>"
 	id = "changename"
 	cost = 30
 	infinite_buy = TRUE
@@ -438,7 +438,7 @@
 
 /datum/bobux_reward/changename/on_buy(client/noob)
 	. = ..()
-	var/rolevich = input("Какое имя?", "") as text
+	var/rolevich = input("What is the name?", "") as text
 	noob.mob.real_name = rolevich
 	noob.mob.name = rolevich
 

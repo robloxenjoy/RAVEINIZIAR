@@ -29,7 +29,7 @@
 	if(!has_died)
 //		if(iswillet(src))
 //			return
-		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>Я мёртв! -10 Каотиков!</span>")
+		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>I'm dead! -10 Kaotiks!</span>")
 		GLOB.world_deaths_crazy += 1
 		for(var/mob/living/carbon/human/H in world)
 			if(H != src)
@@ -41,7 +41,7 @@
 							SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
 					if(pod_faction != H.pod_faction)
 						var/somany = kaotiks_body
-						H.client?.prefs?.adjust_bobux(somany, "<span class='bobux'>Я видел умирающего врага! +[somany] каотиков!</span>")
+						H.client?.prefs?.adjust_bobux(somany, "<span class='bobux'>I saw a dying enemy! +[somany] Kaotiks!</span>")
 						H.flash_kaosgain()
 				else
 					if(pod_faction != H.pod_faction)

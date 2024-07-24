@@ -50,7 +50,7 @@
 	//shit on face, yum
 	if(ishuman(eater))
 		eater.AddComponent(/datum/component/creamed/shit)
-		eater.client?.prefs.adjust_bobux(2, "<span class='bobux'>Я откусил говно! +2 Каотика!</span>")
+		eater.client?.prefs.adjust_bobux(2, "<span class='bobux'>I took a bite of shit! +2 Kaotiks!</span>")
 		eater.flash_kaosgain()
 		if(prob(5))
 			eater.gain_extra_effort(1, FALSE)

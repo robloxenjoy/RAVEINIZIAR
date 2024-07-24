@@ -599,7 +599,7 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message(span_notice("[user] пинает [src]."),span_notice("Я пинаю [src]."), span_hear("Я слышу стук."))
+	user.visible_message(span_notice("[user] kicks [src]."),span_notice("I kick [src]."), span_hear("I hear combat."))
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.adjustFatigueLoss(10)
 	playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)
