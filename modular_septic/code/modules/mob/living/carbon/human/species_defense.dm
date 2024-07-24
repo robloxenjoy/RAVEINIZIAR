@@ -746,7 +746,7 @@
 														user)
 											to_chat(user, span_userdanger("Я пытаюсь [attack_verb] <b>[target]</b> [hit_area], но [target] блокирует руками!"))
 											target.changeNext_move(CLICK_CD_GRABBING)
-											target.update_parrying_penalty(PARRYING_PENALTY, PARRYING_PENALTY_COOLDOWN_DURATION)
+											target.update_blocking_penalty(BLOCKING_PENALTY, BLOCKING_PENALTY_COOLDOWN_DURATION)
 											target.adjustFatigueLoss(5)
 											playsound(target.loc, 'modular_pod/sound/eff/punch 2.ogg', 70, TRUE)
 											return FALSE
