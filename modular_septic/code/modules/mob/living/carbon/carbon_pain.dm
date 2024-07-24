@@ -104,11 +104,11 @@
 		var/message
 		switch(CEILING(maxbpshock, 1))
 			if(1 to 10)
-				message = "[damaged_bodypart.name] [burning ? "жжется" : "болит"]."
+				message = "[damaged_bodypart.name] [burning ? "burns" : "hurts"]."
 			if(11 to 90)
-				message = "[damaged_bodypart.name] [burning ? "жжется" : "болит"] сильно!"
+				message = "[damaged_bodypart.name] [burning ? "burns" : "hurts"] a lot!"
 			if(91 to INFINITY)
-				message = "[pick("ЧТО ЗА БОЛЬ!", "О БОЖЕ!", "ЁБ ТВОЮ МАТЬ!")]! [damaged_bodypart.name] [burning ? "как будто горит" : "болит ебануто"]!"
+				message = "[pick("PAIN!", "OH FUCK!", "FUCK YOUR MOTHER!")]! [damaged_bodypart.name] [burning ? "burns" : "hurts"]!"
 		custom_pain(message, maxbpshock, TRUE, damaged_bodypart, TRUE)
 
 	// Damage to internal organs hurts a lot.
@@ -204,10 +204,10 @@
 		 * possibility of a feedback loop from custom_pain() being called with a positive power, incrementing pain on a limb,
 		 * which triggers this proc, which calls custom_pain(), etc. Make sure you call it with nopainloss = TRUE in these cases!
 		 */
-		custom_pain("[pick("Это болит так сильно", "Мне нужно обезболивающее", "О боже, боль")]!", 10, nopainloss = TRUE)
+		custom_pain("[pick("This hurts so much", "I need painkiller", "Oh god, pain")]!", 10, nopainloss = TRUE)
 
 	if((shock_stage >= SHOCK_STAGE_2) && (previous_shock_stage < SHOCK_STAGE_2))
-		visible_message("пульсирует.", visible_message_flags = EMOTE_MESSAGE)
+		visible_message("pulsating.", visible_message_flags = EMOTE_MESSAGE)
 		//Attempt to inject combat cocktail for the first time
 		endorphinate()
 
@@ -220,7 +220,7 @@
 		custom_pain("[pick("The pain is excruciating", "Please, just end the pain", "My whole body is going numb")]!", 40, nopainloss = TRUE)
 
 	if((shock_stage >= SHOCK_STAGE_4) && (previous_shock_stage < SHOCK_STAGE_4))
-		visible_message("становится обмякшим.", visible_message_flags = EMOTE_MESSAGE)
+		visible_message("goes limp.", visible_message_flags = EMOTE_MESSAGE)
 		Immobilize(rand(2, 5) SECONDS)
 		//Attempt to inject combat cocktail a second time
 		endorphinate()

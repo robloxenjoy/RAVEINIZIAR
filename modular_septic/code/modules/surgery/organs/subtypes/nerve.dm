@@ -1,11 +1,11 @@
 /obj/item/organ/nervesystem
-	name = "Нервная Система"
-	desc = "Что-то не так."
+	name = "Nerve System"
+	desc = "Something is wrong."
 	gender = FEMALE
 	icon_state = "nerve"
 	base_icon_state = "nerve"
-	attack_verb_continuous = list("хлестает")
-	attack_verb_simple = list("хлестать")
+	attack_verb_continuous = list("whips")
+	attack_verb_simple = list("whip")
 
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_PRECISE_NECK

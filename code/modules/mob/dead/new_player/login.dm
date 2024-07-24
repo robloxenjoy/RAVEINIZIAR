@@ -60,11 +60,11 @@
 			register_for_interview()
 			return
 
-	to_chat(src, span_bigdanger("В OOC кнопка Играть - разберёшься."))
-	to_chat(src, span_bigdanger("Дискорд сервер - https://discord.gg/Ha4b7n2E5w"))
+	to_chat(src, span_bigdanger("In OOC, the Play button - you'll figure it out."))
+	to_chat(src, span_bigdanger("Discord Server - https://discord.gg/Ha4b7n2E5w"))
 	if(GLOB.world_deaths_crazy > 0)
-		to_chat(src, span_dead("Смертей в мире: [GLOB.world_deaths_crazy]"))
+		to_chat(src, span_dead("Deaths in the world: [GLOB.world_deaths_crazy]"))
 
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
-		to_chat(src, span_warning("Всё начнётся через... [tl > 0 ? "[DisplayTimeText(tl)]" : "скоро"]."))
+		to_chat(src, span_warning("Everything will start in... [tl > 0 ? "[DisplayTimeText(tl)]" : "soon"]."))

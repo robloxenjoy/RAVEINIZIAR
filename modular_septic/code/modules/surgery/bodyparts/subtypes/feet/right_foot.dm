@@ -1,6 +1,6 @@
 /obj/item/bodypart/r_foot
-	name = "Правая Стопа"
-	desc = "Конечность."
+	name = "Right Foot"
+	desc = "Limb."
 	icon_state = "default_human_r_foot"
 	attack_verb_continuous = list("kicks", "stomps")
 	attack_verb_simple = list("kick", "stomp")

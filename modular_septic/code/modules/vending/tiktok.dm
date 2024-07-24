@@ -1,6 +1,6 @@
 /obj/machinery/vending/tiktok
-	name = "Алхим-Объект"
-	desc = "Давай, пробуй."
+	name = "Alchem-Object"
+	desc = "Try this."
 /*
 	desc = "A meta-physical line to a Devious, Godforsaken, and Diabolical Corporation. \n\
 	<div class='infobox'> \

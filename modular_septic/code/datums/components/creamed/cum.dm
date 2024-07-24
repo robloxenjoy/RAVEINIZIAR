@@ -1,7 +1,7 @@
 GLOBAL_LIST_INIT(cumfaceable, typecacheof(list(/mob/living/carbon/human)))
 
 /datum/component/creamed/cum
-	cover_lips = span_cummy("cum")
+	cover_lips = span_cummy("sticky milk")
 	mood_event_key = "cumface"
 	var/bigcummies = FALSE
 
@@ -9,7 +9,7 @@ GLOBAL_LIST_INIT(cumfaceable, typecacheof(list(/mob/living/carbon/human)))
 	. = ..()
 	if(C)
 		bigcummies = TRUE
-		cover_lips = span_cummy("a lot of cum")
+		cover_lips = span_cummy("sticky milk")
 
 /datum/component/creamed/cum/return_creamable_list()
 	return GLOB.cumfaceable

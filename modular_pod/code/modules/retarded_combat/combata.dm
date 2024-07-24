@@ -50,7 +50,7 @@
 			if(edge_protection <= 0)
 				src.open_incision(owner)
 				src.open_incision(owner)
-				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Надрез!")]"))
+				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Incision!")]"))
 				for(var/obj/item/organ/bone/bonee as anything in getorganslotlist(ORGAN_SLOT_BONE))
 					if(bonee.is_broken())
 						playsound(get_turf(owner), 'modular_septic/sound/gore/dissection.ogg', 80, 0)
@@ -73,8 +73,8 @@
 			eyeb.Remove(eyeb.owner)
 			eyeb.organ_flags |= ORGAN_CUT_AWAY
 			qdel(eyeb)
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
-			owner.custom_pain("МОЙ ЛЕВЫЙ ГЛАЗ!", rand(30, 40), affecting = src)
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Eye bursts!")]"))
+			owner.custom_pain("MY LEFT EYE!", rand(30, 40), affecting = src)
 			if(!owner.IsUnconscious() || (owner.get_chem_effect(CE_PAINKILLER) < 50))
 				owner.death_scream()
 
@@ -94,8 +94,8 @@
 			eyeb.Remove(eyeb.owner)
 			eyeb.organ_flags |= ORGAN_CUT_AWAY
 			qdel(eyeb)
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Глаз лопается!")]"))
-			owner.custom_pain("МОЙ ПРАВЫЙ ГЛАЗ!", rand(30, 40), affecting = src)
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Eye bursts!")]"))
+			owner.custom_pain("MY RIGHT EYE!", rand(30, 40), affecting = src)
 			if(!owner.IsUnconscious() || (owner.get_chem_effect(CE_PAINKILLER) < 50))
 				owner.death_scream()
 
@@ -131,7 +131,7 @@
 				spilled = TRUE
 				owner.bleed(20)
 				owner.update_damage_overlays()
-				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Кишки вырваны!")]"))
+				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Guts are spilled!")]"))
 				var/turf/drop_location = owner.drop_location()
 				if(istype(drop_location))
 					gut.forceMove(owner.drop_location())

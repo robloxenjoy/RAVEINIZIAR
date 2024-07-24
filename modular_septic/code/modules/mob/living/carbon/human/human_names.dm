@@ -56,27 +56,27 @@
 	var/visible_gender = p_they()
 	switch(visible_gender)
 		if("he")
-			visible_gender = "Мужчина"
+			visible_gender = "Man"
 		if("she")
 			visible_gender = "Женщина"
 		if("they")
-			visible_gender = "Существо"
+			visible_gender = "Creature"
 		else
-			visible_gender = "Нечто"
+			visible_gender = "Something"
 	return visible_gender
 
 /mob/living/carbon/human/proc/get_age()
 	switch(age)
 		if(80 to INFINITY)
-			return "Древний"
+			return "Ancient"
 		if(65 to 80)
-			return "Дедовский"
+			return "Elder"
 		if(34 to 65)
-			return "Старый"
+			return "Old"
 		if(28 to 33)
-			return "Взрослый"
+			return "Adult"
 		if(18 to 27)
-			return "Молоднявый"
+			return "Young"
 		else
 			return ""
 
@@ -84,15 +84,15 @@
 	var/visible_gender = get_gender()
 	switch(age)
 		if(80 to INFINITY)
-			visible_gender = "Древний [visible_gender]"
+			visible_gender = "Ancient [visible_gender]"
 		if(65 to 80)
-			visible_gender = "Дедовский [visible_gender]"
+			visible_gender = "Elder [visible_gender]"
 		if(34 to 65)
-			visible_gender = "Старый [visible_gender]"
+			visible_gender = "Old [visible_gender]"
 		if(28 to 33)
-			visible_gender = "Взрослый [visible_gender]"
+			visible_gender = "Adult [visible_gender]"
 		if(18 to 27)
-			visible_gender = "Молоднявый [visible_gender]"
+			visible_gender = "Young [visible_gender]"
 		else
 			visible_gender = "[visible_gender]"
 	return lowercase ? lowertext(visible_gender) : visible_gender

@@ -3,49 +3,49 @@
 
 /datum/component/mood/print_mood(mob/user)
 	var/msg = "<span class='infoplain'><div class='infobox'>"
-	msg += span_notice("<EM>Моя память</EM>")
+	msg += span_notice("<EM>My memory</EM>")
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/sanitized_chat_color = sanitize_hexcolor(H.chat_color)
 		var/fancy_name = H.name
 		if(H.chat_color)
 			fancy_name = "<span style='color: [sanitized_chat_color];text-shadow: 0 0 3px [sanitized_chat_color];'>[H.real_name]</span>"
-		msg += span_info("\nЯ помню своё имя, это <b>[fancy_name]</b>.")
-		msg += span_info("\nПо годам, <b>[H.age]</b>.")
+		msg += span_info("\nI remember my name - <b>[fancy_name]</b>.")
+		msg += span_info("\nMy age is <b>[H.age]</b>.")
 		if(H.belief != null)
-			msg += span_info("\nЯ поклоняюсь <b>[H.belief]</b>.")
+			msg += span_info("\nI serve <b>[H.belief]</b>.")
 		if(H.mind.assigned_role)
-			msg += span_info("\nПо роли в этом месте, я <b>[lowertext(H.truerole)]</b>.")
+			msg += span_info("\nI'm <b>[lowertext(H.truerole)]</b>.")
 		for(var/thing in H.mind.antag_datums)
 			var/datum/antagonist/antag = thing
 			msg += span_info("\nI am <span class='red'><span style='text-shadow: 0 0 3px #FF0000'>\a [lowertext(antag.name)]</span></span>.")
 		if((H.handed_flags & AMBIDEXTROUS) || CHECK_MULTIPLE_BITFIELDS(H.handed_flags, RIGHT_HANDED|LEFT_HANDED))
-			msg += span_info("\nЯ <i>амбидекстр</i>.")
+			msg += span_info("\nI'm <i>ambidextrous</i>.")
 		else if(H.handed_flags & RIGHT_HANDED)
-			msg += span_info("\nЯ <i>правша</i>.")
+			msg += span_info("\nI'm <i>right-handed</i>.")
 		else if(H.handed_flags & LEFT_HANDED)
-			msg += span_info("\nЯ <i>левша</i>.")
-		msg += span_info("\nМой пол... <i>Под</i>.")
-		msg += span_info("\nМоя раса <i>[lowertext(H.dna.species.name)]</i>.")
+			msg += span_info("\nI'm <i>left-handed</i>.")
+		msg += span_info("\nMy gender is... <i>I don't know</i>.")
+		msg += span_info("\nMy species is <i>[lowertext(H.dna.species.name)]</i>.")
 		if(!(H.dna.species.exotic_blood))
-			msg += span_info("\nМоя группа крови: <span class='artery'>[H.dna.blood_type]</span>.")
+			msg += span_info("\nMy blood type: <span class='artery'>[H.dna.blood_type]</span>.")
 		else
 			var/datum/reagent/blood_reagent = H.dna.species.exotic_blood
 			var/blood_name = initial(blood_reagent.name)
-			msg += span_info("\nМоя группа крови: <span class='artery'>[blood_name]</span>.")
+			msg += span_info("\nMy blood type: <span class='artery'>[blood_name]</span>.")
 		if(!H.is_literate())
 			msg += span_info("\nЯ гордо неграмотен.")
 		if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
-			msg += span_info("\n<span class='evilblack'>Я НЕНАВИЖУ ЛЮДЕЙ</span>.")
+			msg += span_info("\n<span class='evilblack'>I HATE PEOPLE</span>.")
 		if(length(H.quirks))
-			msg += span_info("\nЯ <i>\"особенный\"</i>:")
+			msg += span_info("\nI'm <i>\"special\"</i>:")
 			for(var/datum/quirk/quirk as anything in H.quirks)
 				if(quirk.mood_desc)
 					msg += span_info("\n<i><b><u>[quirk.name]</u></i></b> - [quirk.mood_desc]</i>")
 				else
 					msg += span_info("\n<i><b><u>[quirk.name]</u></b></i>")
 	msg += "\n<br><hr class='infohr'>"
-	msg += span_notice("\n<EM>Мои ощущения:</EM>") //Short term
+	msg += span_notice("\n<EM>My feelings:</EM>") //Short term
 	var/left_symbols = get_signs_from_number(mood_level - 5, 1)
 	var/right_symbols = get_signs_from_number(mood_level - 5, 0)
 	if(HAS_TRAIT(user, TRAIT_CAPITALIST_MOOD) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CAPITALIST_MOOD)))
@@ -73,7 +73,7 @@
 	else
 		switch(mood_level)
 			if(1)
-				msg += span_boldwarning("\n[left_symbols]Этот путь ебанутен![right_symbols]")
+				msg += span_boldwarning("\n[left_symbols]This way is fucked up![right_symbols]")
 			if(2)
 				msg += span_boldwarning("\n[left_symbols]Я чувствую себя ужасно.[right_symbols]")
 			if(3)
@@ -91,7 +91,7 @@
 			if(9)
 				msg += span_nicegreen("\n[left_symbols]Этот путь прекрасен![right_symbols]")
 			else
-				msg += span_nicegreen("\n[left_symbols]Я в норме.[right_symbols]")
+				msg += span_nicegreen("\n[left_symbols]I'm ok.[right_symbols]")
 	msg += span_notice("\n<EM>Мои мысли:</EM>")//All moodlets
 	if(LAZYLEN(mood_events))
 		var/datum/mood_event/event
@@ -108,11 +108,11 @@
 		var/list/additional_info = list()
 		if(living_user.getFatigueLoss())
 			if(living_user.getFatigueLoss() >= 35)
-				additional_info += span_info("\nЯ измождён.")
+				additional_info += span_info("\nI'm exhausted.")
 			else
-				additional_info += span_info("\nЯ устал.")
+				additional_info += span_info("\nI'm tired.")
 		if(living_user.losebreath)
-			additional_info += span_danger("\nЯ не могу дышать!")
+			additional_info += span_danger("\nI can't breath!")
 		if(HAS_TRAIT(living_user, TRAIT_SELF_AWARE))
 			var/toxloss = living_user.getToxLoss()
 			if(toxloss)
@@ -125,13 +125,13 @@
 			var/oxyloss = living_user.getOxyLoss()
 			if(oxyloss)
 				if(oxyloss >= 10)
-					additional_info += span_danger("\nЯ чувствую головокружение.")
+					additional_info += span_danger("\nI feel dizzy.")
 				else if(oxyloss >= 20)
-					additional_info += span_danger("\nМне нужно больше воздуха.</span>")
+					additional_info += span_danger("\nI need more oxygen.</span>")
 				else if(oxyloss >= 30)
-					additional_info += span_danger("\nЯ задыхаюсь!")
+					additional_info += span_danger("\nI can't breath!")
 		if(LAZYLEN(additional_info))
-			msg += span_notice("\n<b>И ещё мысли:</b>")
+			msg += span_notice("\n<b>And more thoughts:</b>")
 			msg += jointext(additional_info, "")
 	msg += "</div></span>" //div infobox
 	to_chat(user || parent, msg)
@@ -140,9 +140,9 @@
 	var/old_mood = mood_level
 	. = ..()
 	if(mood_level < old_mood)
-		to_chat(parent, span_danger("Моё настроение ухудшается."))
+		to_chat(parent, span_danger("My mood is getting worse."))
 	else if(mood_level > old_mood)
-		to_chat(parent, span_nicegreen("Моё настроение улучшается."))
+		to_chat(parent, span_nicegreen("My mood is improving."))
 	var/mob/living/living_parent = parent
 	if(istype(living_parent))
 		if((old_mood != mood_level) && (living_parent.attributes))

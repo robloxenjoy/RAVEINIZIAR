@@ -145,7 +145,7 @@ SUBSYSTEM_DEF(ticker)
 				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, span_achievementrare("<b>Пора играть.</b>"))
+			to_chat(world, span_achievementrare("<b>It's time to play.</b>"))
 			send2chat("New round starting on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			SEND_SIGNAL(src, COMSIG_TICKER_ENTER_PREGAME)
@@ -206,7 +206,7 @@ SUBSYSTEM_DEF(ticker)
 
 
 /datum/controller/subsystem/ticker/proc/setup()
-	to_chat(world, span_boldannounce("Игрушка то работает."))
+	to_chat(world, span_boldannounce("Game works."))
 	var/init_start = world.timeofday
 
 	mode = new /datum/game_mode/dynamic
@@ -295,7 +295,7 @@ SUBSYSTEM_DEF(ticker)
 	round_start_time = world.time
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, span_achievementrare("<B>Пора играть.</B>"))
+	to_chat(world, span_achievementrare("<B>It's time to play.</B>"))
 	SEND_SOUND(world, sound(SSstation.announcer.get_rand_welcome_sound()))
 
 	current_state = GAME_STATE_PLAYING

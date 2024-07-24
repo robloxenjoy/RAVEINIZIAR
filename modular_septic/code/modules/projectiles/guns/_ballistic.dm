@@ -317,10 +317,10 @@
 		if(BOLT_TYPE_BREAK_ACTION)
 			if(bolt_locked)
 				if(user)
-					to_chat(user, span_notice("I cock  [bolt_wording] [src]."))
+					to_chat(user, span_notice("I cock [bolt_wording] [src]."))
 				chamber_round()
 			else if(user)
-				to_chat(user, span_notice("I unload [bolt_wording] [src]."))
+				to_chat(user, span_notice("I uncock [bolt_wording] [src]."))
 			sound_hint()
 			if(bolt_locked)
 				playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
@@ -367,7 +367,7 @@
 		user.put_in_hand(old_mag, hand_index)
 	old_mag.update_appearance()
 	if(display_message && !tac_load)
-		to_chat(user, span_notice("Я вытаскиваю [magazine_wording] из [src]."))
+		to_chat(user, span_notice("I'm pulling out [magazine_wording] from [src]."))
 	update_appearance()
 
 /obj/item/gun/ballistic/fire_gun(atom/target, mob/living/user, flag, params)
@@ -468,7 +468,7 @@
 		playsound(src, lock_back_sound, bolt_drop_sound_volume, bolt_drop_sound_vary)
 		chamber_round()
 	if(user)
-		to_chat(user, span_notice("Я [cylinder_open ? "открываю" : "закрываю"] [src] [cylinder_wording]"))
+		to_chat(user, span_notice("I [cylinder_open ? "open" : "close"] [src] [cylinder_wording]"))
 	update_appearance()
 
 ///Gives us info about ammo count, open cylinder, etc

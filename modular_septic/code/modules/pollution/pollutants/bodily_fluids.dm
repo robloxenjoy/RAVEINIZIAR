@@ -1,18 +1,18 @@
 ///Splashing blood makes a tiny bit of this
 /datum/pollutant/metallic_scent
-	name = "Металлический аромат"
+	name = "Metallic Scent"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL | POLLUTANT_BREATHE_ACT
 	smell_intensity = 2
 	thickness = 2
 	descriptor = SCENT_DESC_ODOR
-	scent = "что-то металлическое"
+	scent = "something metallic"
 	color = "#bf0057"
 
 /datum/pollutant/metallic_scent/breathe_act(mob/living/carbon/victim, amount)
 	var/message
 	switch(amount)
 		if(10 to INFINITY)
-			message = span_warning("Я насыщаюсь кровью...")
+			message = span_warning("I'm getting filled with blood...")
 			victim.adjust_bloodvolume(5)
 	if(message && prob(70))
 		to_chat(victim, message)
@@ -94,12 +94,12 @@
 		to_chat(victim, message)
 
 /datum/pollutant/shit
-	name = "Говно"
+	name = "Shit"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL | POLLUTANT_BREATHE_ACT
 	smell_intensity = 4
 	thickness = 3
 	descriptor = SCENT_DESC_ODOR
-	scent = "говно"
+	scent = "shit"
 	color = "#30600e"
 	filter_wear = 0.2
 
@@ -107,18 +107,18 @@
 	var/message
 	switch(amount)
 		if(0 to 10)
-			message = span_warning("Чё за запах то?!")
+			message = span_warning("What is this smell?!")
 			if(prob(15))
 				victim.emote("gag")
 			if(prob(10))
 				victim.vomit(rand(15, 20), prob(amount))
 		if(10 to 30)
-			message = span_warning("Этот запах пиздец...")
+			message = span_warning("Fuck, this smell...")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/shit)
 			if(prob(25))
 				victim.vomit(rand(20, 30), prob(amount))
 		if(30 to INFINITY)
-			message = span_bolddanger("ДА ВСЁ БЛЯТЬ! Я НЕ ХОЧУ ЭТО НЮХАТЬ!")
+			message = span_bolddanger("I DON'T WANT TO SNIFF THIS SMELL!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/shit/harsh)
 			victim.adjustToxLoss(2.5)
 			if(prob(45))

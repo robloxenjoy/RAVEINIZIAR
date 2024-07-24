@@ -22,7 +22,7 @@
 		s += "<i>[fluff]</i><br>"
 
 	if(!GLOB.enter_allowed)
-		features += "Закрыто"
+		features += "Closed"
 
 	var/players = length(GLOB.clients)
 
@@ -32,14 +32,14 @@
 		popcaptext = "/[popcap]"
 
 	if(players > 1)
-		features += "[players][popcaptext] игроков"
+		features += "[players][popcaptext] players"
 	else if(players == 1)
-		features += "[players][popcaptext] игрок"
+		features += "[players][popcaptext] player"
 
 	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
 
 	if(hostedby)
-		features += "Сделано <b>[hostedby]</b>"
+		features += "Made by <b>[hostedby]</b>"
 
 	if(LAZYLEN(features))
 		s += "\[[jointext(features, " | ")]"

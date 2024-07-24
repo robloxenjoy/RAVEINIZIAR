@@ -1,6 +1,6 @@
 /obj/item/bodypart/l_hand
-	name = "Левая Кисть"
-	desc = "Конечность."
+	name = "Left Hand"
+	desc = "Limb."
 	icon_state = "default_human_l_hand"
 	attack_verb_continuous = list("slaps", "punches")
 	attack_verb_simple = list("slap", "punch")

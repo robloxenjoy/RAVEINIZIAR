@@ -880,7 +880,7 @@
 
 /turf/open/floor/plating/polovich/way/kaos
 	name = "Хаос"
-	desc = "ПОДFloor. MMO-ROGUELIKE."
+	desc = "UnderFloor. MMO-ROGUELIKE."
 	icon_state = "kaos1"
 	icon = 'modular_pod/icons/turf/floors_4.dmi'
 	footstep = FOOTSTEP_STONE

@@ -6,8 +6,8 @@
 	cylinder_shows_open = TRUE
 	cylinder_shows_ammo_count = TRUE
 	bolt_type = BOLT_TYPE_BREAK_ACTION
-	bolt_wording = "барабан"
-	cylinder_wording = "цилиндр"
+	bolt_wording = "drum"
+	cylinder_wording = "cylinder"
 	safety_flags = NONE
 	initial_caliber = CALIBER_357
 	alternative_caliber = CALIBER_38
@@ -51,7 +51,7 @@
 /obj/item/gun/ballistic/revolver/chamber_examine(mob/user)
 	. = ..()
 	if(can_spin)
-		. += "[cylinder_wording] может быть прокручен."
+		. += "[cylinder_wording] can be spun."
 
 /obj/item/gun/ballistic/revolver/get_ammo(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //mature var names for mature people //What If I'm a child?

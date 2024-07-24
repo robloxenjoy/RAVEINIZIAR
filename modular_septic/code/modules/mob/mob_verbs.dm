@@ -13,7 +13,7 @@
 	if(flags & COMPONENT_NO_EXAMINATE)
 		return
 	else if(flags & COMPONENT_EXAMINATE_BLIND)
-		to_chat(src, span_warning("Там что-то есть но я не могу увидеть!"))
+		to_chat(src, span_warning("There's something there but I can't see it!"))
 		return
 	var/atom/distance_referee = examinify
 	if(isitem(examinify))
@@ -22,7 +22,7 @@
 			distance_referee = examinify_item.stored_in
 	var/too_far_away = !isnull(examinify.maximum_examine_distance) && (get_dist(src, distance_referee) > examinify.maximum_examine_distance)
 	if(!isobserver(src) && too_far_away)
-		to_chat(src, span_warning("Это слишком далеко."))
+		to_chat(src, span_warning("It is too far."))
 		return
 	var/list/result
 	var/examine_more = FALSE
@@ -34,7 +34,7 @@
 			examine_more = TRUE
 			result = examinify.examine_more(src)
 			if(!LAZYLEN(result))
-				result = list(span_notice("<i>Я рассматриваю [examinify] получше, но вроде не нахожу чего-либо интересного...</i>"))
+				result = list(span_notice("<i>I look at the [examinify] better, but I don't seem to find anything interesting...</i>"))
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine(src)

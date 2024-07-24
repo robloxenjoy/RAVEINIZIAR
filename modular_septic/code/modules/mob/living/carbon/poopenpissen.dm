@@ -75,7 +75,7 @@
 	shit(TRUE)
 
 /mob/living/carbon/proc/urinate()
-	set name = "Shit"
+	set name = "Piss"
 	set category = "IC.Hygiene"
 	set desc = "Answer the call of nature."
 

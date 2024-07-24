@@ -168,7 +168,7 @@
 	// voice muffling
 	if(stat == UNCONSCIOUS || stat == HARD_CRIT)
 		if(type & MSG_AUDIBLE) //audio
-			to_chat(src, span_warning("<I>... Я что-то слышу ...</I>"))
+			to_chat(src, span_warning("<I>... I hear something ...</I>"))
 		return
 	to_chat(src, msg, avoid_highlighting = avoid_highlighting)
 

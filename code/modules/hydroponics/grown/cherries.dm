@@ -138,8 +138,8 @@
 
 /obj/item/food/grown/granat
 	seed = /obj/item/seeds/cherry/blue
-	name = "Кусок Граната"
-	desc = "Эта гранатина спелая, вкусная."
+	name = "Pomegranate Piece"
+	desc = "This pomegranate is ripe and delicious."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "granat"
 	bite_consumption_mod = 3
@@ -148,7 +148,7 @@
 	foodtypes = FRUIT
 	grind_results = list(/datum/reagent/consumable/granat = 5)
 	food_reagents = list(/datum/reagent/consumable/granat = 4)
-	tastes = list("гранат" = 1, "сладость" = 1)
+	tastes = list("pomegranate" = 1, "sweet" = 1)
 	wine_power = 50
 	tetris_width = 32
 	tetris_height = 32

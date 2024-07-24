@@ -1122,9 +1122,9 @@
 			stack_trace("Failed to create injury with [brute] brute damage and [wounding_type] wounding type!")
 	if(wound_messages && (reduced || (sharpness && (initial_wounding_type == WOUND_BLUNT))) )
 		if(reduced)
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowpain(" Удар смягчён бронёй!"))
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowpain(" Blow is softened by armor!"))
 		else
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowestpain(" Удар <i>чутка</i> смягчён бронёй!"))
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_lowestpain(" Blow is <i>slightly</i> softened by armor!"))
 
 	// We've dealt the physical damages, if there's room lets apply the stamina damage.
 	if(stamina)
@@ -1333,9 +1333,9 @@
 		victim.applyOrganDamage(damage_amt, silent = (damage_amt >= 10))
 	if(owner)
 		if(damage_amt >= 10)
-			owner.custom_pain("<b>БОЖЕ! [uppertext(victim.name)] БОЛИТ!</b>", rand(25, 35), affecting = src, nopainloss = TRUE)
+			owner.custom_pain("<b>OH! [uppertext(victim.name)] HURTS!</b>", rand(25, 35), affecting = src, nopainloss = TRUE)
 		if(wound_messages)
-			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" <b>Орган повреждён!</b>"))
+			SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" <b>Organ is damaged!</b>"))
 	return TRUE
 
 /// Creates an injury on the bodypart

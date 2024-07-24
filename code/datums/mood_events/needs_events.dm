@@ -1,22 +1,22 @@
 //nutrition
 /datum/mood_event/fat
-	description = "<span class='warning'><B>Я такой	жирный...</B></span>\n" //muh fatshaming
+	description = "<span class='warning'><B>I'm so fat...</B></span>\n" //muh fatshaming
 	mood_change = -6
 
 /datum/mood_event/wellfed
-	description = "<span class='nicegreen'>Был нормально накормлен!</span>\n"
+	description = "<span class='nicegreen'>Was well fed!</span>\n"
 	mood_change = 8
 
 /datum/mood_event/fed
-	description = "<span class='nicegreen'>Был накормлен.</span>\n"
+	description = "<span class='nicegreen'>Was fed.</span>\n"
 	mood_change = 5
 
 /datum/mood_event/hungry
-	description = "<span class='warning'>Захомячить бы что-нибудь.</span>\n"
+	description = "<span class='warning'>Would like to eat something.</span>\n"
 	mood_change = -6
 
 /datum/mood_event/starving
-	description = "<span class='boldwarning'>Дайте еды!</span>\n"
+	description = "<span class='boldwarning'>Give me food!</span>\n"
 	mood_change = -10
 
 //charge
@@ -42,38 +42,38 @@
 
 //Disgust
 /datum/mood_event/gross
-	description = "<span class='warning'>Я видел кое-что отвратное.</span>\n"
+	description = "<span class='warning'>I saw something disgusting.</span>\n"
 	mood_change = -4
 
 /datum/mood_event/verygross
-	description = "<span class='warning'>Я думаю, я блевану...</span>\n"
+	description = "<span class='warning'>I think I'm going to puke...</span>\n"
 	mood_change = -6
 
 /datum/mood_event/disgusted
-	description = "<span class='boldwarning'>Пиздец, это отвратно...</span>\n"
+	description = "<span class='boldwarning'>Fuck, this is disgusting...</span>\n"
 	mood_change = -8
 
 /datum/mood_event/disgust/bad_smell
-	description = "<span class='warning'>Я унюхал что-то ужасное.</span>\n"
+	description = "<span class='warning'>I smelled something terrible.</span>\n"
 	mood_change = -6
 
 /datum/mood_event/disgust/nauseating_stench
-	description = "<span class='warning'>Этот запах пиздец!</span>\n"
+	description = "<span class='warning'>This smell is fucked up!</span>\n"
 	mood_change = -12
 
 //Generic needs events
 /datum/mood_event/favorite_food
-	description = "<span class='nicegreen'>Мне правда понравилось это есть.</span>\n"
+	description = "<span class='nicegreen'>I really enjoyed eating this.</span>\n"
 	mood_change = 5
 	timeout = 4 MINUTES
 
 /datum/mood_event/gross_food
-	description = "<span class='warning'>Мне действительно эта еда не нравится.</span>\n"
+	description = "<span class='warning'>I really don't like this food.</span>\n"
 	mood_change = -2
 	timeout = 4 MINUTES
 
 /datum/mood_event/disgusting_food
-	description = "<span class='warning'>Эта еда была отвратной!</span>\n"
+	description = "<span class='warning'>This food was disgusting!</span>\n"
 	mood_change = -6
 	timeout = 4 MINUTES
 
@@ -83,7 +83,7 @@
 	timeout = 10 MINUTES
 
 /datum/mood_event/nice_shower
-	description = "<span class='nicegreen'>Хорошенько помылся.</span>\n"
+	description = "<span class='nicegreen'>I washed myself thoroughly.</span>\n"
 	mood_change = 4
 	timeout = 5 MINUTES
 

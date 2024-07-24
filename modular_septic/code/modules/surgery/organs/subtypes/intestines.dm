@@ -1,11 +1,11 @@
 /obj/item/organ/intestines
-	name = "Кишки"
-	desc = "Тут еда помирает."
+	name = "Guts"
+	desc = "Food dies here."
 	gender = FEMALE
 	icon_state = "guts"
 	base_icon_state = "guts"
-	attack_verb_continuous = list("протыкает", "срёт")
-	attack_verb_simple = list("проткнуть", "срать")
+	attack_verb_continuous = list("shits")
+	attack_verb_simple = list("shit")
 
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_PRECISE_VITALS

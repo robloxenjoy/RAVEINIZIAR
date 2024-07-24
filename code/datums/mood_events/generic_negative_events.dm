@@ -7,11 +7,11 @@
 	mood_change = -8
 
 /datum/mood_event/on_fire
-	description = "<span class='boldwarning'>Я В ОГНЕ!</span>\n"
+	description = "<span class='boldwarning'>I'M ON FIRE!</span>\n"
 	mood_change = -12
 
 /datum/mood_event/suffocation
-	description = "<span class='boldwarning'>НЕ МОГУ ДЫШАТЬ...</span>\n"
+	description = "<span class='boldwarning'>I CAN'T BREATHE...</span>\n"
 	mood_change = -12
 
 /datum/mood_event/burnt_thumb
@@ -73,7 +73,7 @@
 	timeout = 60 SECONDS
 
 /datum/mood_event/dismembered
-	description = "<span class='boldwarning'>МНЕ НУЖНА БЫЛА ЭТА КОНЕЧНОСТЬ!</span>\n"
+	description = "<span class='boldwarning'>I NEEDED THIS LIMB!</span>\n"
 	mood_change = -10
 	timeout = 8 MINUTES
 
@@ -83,7 +83,7 @@
 	timeout = 2 MINUTES
 
 /datum/mood_event/embedded
-	description = "<span class='boldwarning'>Нужно это вытащить!</span>\n"
+	description = "<span class='boldwarning'>Need to get this out!</span>\n"
 	mood_change = -7
 
 /datum/mood_event/table

@@ -1,7 +1,7 @@
 GLOBAL_LIST_INIT(shitfaceable, typecacheof(list(/mob/living/carbon/human)))
 
 /datum/component/creamed/shit
-	cover_lips = span_shitty("говном")
+	cover_lips = span_shitty("shit")
 	mood_event_key = "shitface"
 
 /datum/component/creamed/shit/return_creamable_list()

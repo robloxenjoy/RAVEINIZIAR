@@ -3,7 +3,7 @@
 	"map_name": "Atraka",
 	"map_path": "_podpol/map_files/atraka",
 	"map_file": "atraka.dmm",
-	"station_name": "Планета Пиздеца",
+	"station_name": "Planet",
 	"respawn_allowed": true,
 	"space_ruin_levels": 0,
 	"space_empty_levels": 0,

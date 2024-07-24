@@ -180,7 +180,7 @@
 /datum/emote/living/groan
 	key = "groan"
 	key_third_person = "groans"
-	message = "groands!"
+	message = "groans!"
 	message_mime = "appears to groan!"
 	emote_type = EMOTE_AUDIBLE
 

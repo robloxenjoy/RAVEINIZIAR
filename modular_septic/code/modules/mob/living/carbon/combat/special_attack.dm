@@ -9,9 +9,9 @@
 		special_attack = SPECIAL_ATK_NONE
 		if(!silent)
 			var/message = "<span class='infoplain'><div class='infobox'>"
-			message += span_largeinfo("Ничего")
+			message += span_largeinfo("Nothing")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("Теперь всё по-нормальному.\n(СКМ не будет выполнять специальные действия)")
+			message += span_info("Теперь всё по-нормальному.\n(MMB не будет выполнять специальные действия)")
 			message += "</div></span>"
 			to_chat(src, message)
 	else
@@ -20,20 +20,20 @@
 			var/message = "<span class='infoplain'><div class='infobox'>"
 			switch(new_attack)
 				if(SPECIAL_ATK_KICK)
-					message += span_largeinfo("Пинок")
+					message += span_largeinfo("Kick")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("Я теперь могу пинать их.\n(СКМ для пинка)")
+					message += span_info("Я теперь могу пинать их.\n(MMB для пинка)")
 				if(SPECIAL_ATK_BITE)
-					message += span_largeinfo("Укус")
+					message += span_largeinfo("Bite")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("Я теперь могу кусать их.\n(СКМ для укуса)")
+					message += span_info("Я теперь могу кусать их.\n(MMB для укуса)")
 				if(SPECIAL_ATK_JUMP)
-					message += span_largeinfo("Прыжок")
+					message += span_largeinfo("Jump")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("Я теперь могу прыгать.\n(СКМ для прыжка)")
+					message += span_info("Я теперь могу прыгать.\n(MMB для прыжка)")
 				if(SPECIAL_ATK_STEAL)
-					message += span_largeinfo("Кража")
+					message += span_largeinfo("Steal")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("Я теперь могу красть.\n(СКМ для кражи)")
+					message += span_info("Я теперь могу красть.\n(MMB для кражи)")
 			message += "</div></span>"
 			to_chat(src, message)

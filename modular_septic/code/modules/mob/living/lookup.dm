@@ -29,7 +29,7 @@
 	var/turf/ceiling = get_step_multiz(src, UP)
 	if(!istype(ceiling)) //We are at the highest z-level
 		if(!silent)
-			to_chat(src, span_warning("Есть потолок."))
+			to_chat(src, span_warning("I can't see through."))
 		end_look_up(TRUE)
 		return
 	else if(!istransparentturf(ceiling)) //There is no turf we can look through above us
@@ -44,10 +44,11 @@
 					break
 		if(!istransparentturf(ceiling))
 			if(!silent)
-				to_chat(src, span_warning("Я не могу смотреть сквозь [ceiling] сверху меня."))
+				to_chat(src, span_warning("I can't see through [ceiling]."))
+			end_look_up(TRUE)
 			return
 	if(!silent)
-		to_chat(src, span_notice("Я начинаю смотреть вверх."))
+		to_chat(src, span_notice("I start to look up."))
 	reset_perspective(ceiling)
 	hud_used?.lookup?.name = "stop looking up"
 	look_now = LOOKING_UP
@@ -62,7 +63,7 @@
 	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	if(!silent)
-		to_chat(src, span_notice("Я прекращаю смотреть вверх."))
+		to_chat(src, span_notice("I stop looking up."))
 
 /mob/living/look_down()
 	if(client.perspective != MOB_PERSPECTIVE) //We are already looking up or down
@@ -83,7 +84,7 @@
 	var/turf/lower_level = get_step_multiz(src, DOWN)
 	if(!lower_level) //We are at the lowest z-level.
 		if(!silent)
-			to_chat(src, span_warning("Я не могу смотреть сквозь пол."))
+			to_chat(src, span_warning("I can't see through the [floor]."))
 		end_look_down(TRUE)
 		return
 	else if(!istransparentturf(floor)) //There is no turf we can look through below us
@@ -100,10 +101,11 @@
 					break
 		if(!istransparentturf(floor))
 			if(!silent)
-				to_chat(src, span_warning("Я не могу смотреть сквозь [floor]."))
+				to_chat(src, span_warning("I can't see through the [floor]."))
+			end_look_down(TRUE)
 			return
 	if(!silent)
-		to_chat(src, span_notice("Я начинаю смотреть вниз."))
+		to_chat(src, span_notice("I start to look down."))
 	reset_perspective(lower_level)
 	hud_used?.lookup?.name = "stop looking down"
 	look_now = LOOKING_DOWN
@@ -118,4 +120,4 @@
 	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	if(!silent)
-		to_chat(src, span_notice("Я прекращаю смотреть вниз."))
+		to_chat(src, span_notice("I stop looking down."))
