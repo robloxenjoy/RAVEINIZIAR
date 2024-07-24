@@ -96,8 +96,8 @@
 
 // NAMBU REVOLVER
 /obj/item/gun/ballistic/revolver/remis/nova
-	name = "Револьвер Нова"
-	desc = "Старый, причудливый."
+	name = "Revolver Nova"
+	desc = "Old and bizarre."
 	icon_state = "newnambu"
 	base_icon_state = "newnambu"
 	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/pistol_lefthand.dmi'

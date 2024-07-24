@@ -54,8 +54,8 @@
 
 /datum/emote/living/cough
 	key = "cough"
-	key_third_person = "кашляет"
-	message = "кашляет!"
+	key_third_person = "coughs"
+	message = "coughs!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE , intentional)
@@ -148,14 +148,14 @@
 
 /datum/emote/living/gag
 	key = "gag"
-	key_third_person = "давится"
-	message = "давится."
+	key_third_person = "gags"
+	message = "gags."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/gasp
 	key = "gasp"
-	key_third_person = "задыхается"
-	message = "задыхается!"
+	key_third_person = "gasps"
+	message = "gasps!"
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = HARD_CRIT
 
@@ -179,8 +179,8 @@
 
 /datum/emote/living/groan
 	key = "groan"
-	key_third_person = "стонет"
-	message = "стонет!"
+	key_third_person = "groans"
+	message = "groands!"
 	message_mime = "appears to groan!"
 	emote_type = EMOTE_AUDIBLE
 
@@ -218,8 +218,8 @@
 
 /datum/emote/living/laugh
 	key = "laugh"
-	key_third_person = "смеётся"
-	message = "смеётся."
+	key_third_person = "laughs"
+	message = "laungs."
 	message_mime = "смеётся тихонько!"
 	emote_type = EMOTE_AUDIBLE
 	audio_cooldown = 5 SECONDS
@@ -255,8 +255,8 @@
 /datum/emote/living/point
 	key = "point"
 	key_third_person = "points"
-	message = "показывает."
-	message_param = "показывает на %t."
+	message = "points."
+	message_param = "points at %t."
 	hands_use_check = TRUE
 
 /datum/emote/living/point/run_emote(mob/user, params, type_override, intentional)
@@ -301,9 +301,9 @@
 	message = "shakes their head."
 
 /datum/emote/living/shiver
-	key = "дрожь"
-	key_third_person = "дрожь"
-	message = "дрожит."
+	key = "shiver"
+	key_third_person = "shivers"
+	message = "shivers."
 
 /datum/emote/living/sigh
 	key = "sigh"
@@ -323,8 +323,8 @@
 
 /datum/emote/living/sneeze
 	key = "sneeze"
-	key_third_person = "чихает"
-	message = "чихает."
+	key_third_person = "sneezes"
+	message = "sneezes."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/smug
@@ -334,14 +334,14 @@
 
 /datum/emote/living/sniff
 	key = "sniff"
-	key_third_person = "принюхивается"
-	message = "принюхивается."
+	key_third_person = "sniffs"
+	message = "sniffs."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/snore
 	key = "snore"
-	key_third_person = "храпит"
-	message = "храпит."
+	key_third_person = "snores"
+	message = "snores."
 	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
@@ -406,8 +406,8 @@
 
 /datum/emote/living/whimper
 	key = "whimper"
-	key_third_person = "хнычет"
-	message = "хнычет."
+	key_third_person = "whimpers"
+	message = "whimpers."
 	message_mime = "appears hurt."
 	emote_type = EMOTE_AUDIBLE
 

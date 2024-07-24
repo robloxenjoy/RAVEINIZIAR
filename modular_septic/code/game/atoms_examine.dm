@@ -27,7 +27,7 @@
 /atom/proc/topic_examine(mob/user)
 	. = list()
 	if(uses_integrity)
-		. += span_notice("<a href='?src=[REF(src)];integrity=1'>Состояние</a>")
+		. += span_notice("<a href='?src=[REF(src)];integrity=1'>Condition</a>")
 	SEND_SIGNAL(src, COMSIG_ATOM_TOPIC_EXAMINE, user, .)
 
 /// Displayed after desc, but before examine child calls

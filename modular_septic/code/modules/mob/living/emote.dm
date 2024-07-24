@@ -27,7 +27,7 @@
 /datum/emote/living/chokeliquid
 	key = "liquidchoke"
 	key_third_person = "chokes"
-	message = "удушается."
+	message = "chokes."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -59,7 +59,7 @@
 /datum/emote/living/fart
 	key = "fart"
 	key_third_person = "farts"
-	message = "пердит."
+	message = "farts."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -149,8 +149,8 @@
 
 /datum/emote/living/carbon/human/scream
 	key = "scream"
-	key_third_person = "кричит"
-	message = "кричит!"
+	key_third_person = "screams"
+	message = "screams!"
 	message_mime = "acts out a scream!"
 	emote_type = EMOTE_AUDIBLE
 //	only_forced_audio = TRUE
@@ -175,7 +175,7 @@
 /datum/emote/living/fallscream
 	key = "fallscream"
 	key_third_person = "fallscreams"
-	message = "кричит!"
+	message = "screams!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	hands_use_check = FALSE
@@ -203,7 +203,7 @@
 /datum/emote/living/agonyscream
 	key = "agonyscream"
 	key_third_person = "agonyscreams"
-	message = "кричит в агонии!"
+	message = "screams in agony!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	hands_use_check = FALSE
@@ -230,7 +230,7 @@
 /datum/emote/living/deathscream
 	key = "deathscream"
 	key_third_person = "deathscreams"
-	message = "кричит!"
+	message = "screams!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = FALSE
 	hands_use_check = FALSE
@@ -251,7 +251,7 @@
 /datum/emote/living/deathrattle
 	key = "deathrattle"
 	key_third_person = "deathrattles"
-	message = "делает ужасный звук."
+	message = "wheezes."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -270,12 +270,12 @@
 		return ..()
 
 /datum/emote/living/deathgasp
-	message = "делает ужасный звук."
+	message = "deathly gasps."
 
 /datum/emote/living/crackaddict
 	key = "crackaddict"
-	key_third_person = "забавится"
-	message = "забавится."
+	key_third_person = "feels joyful"
+	message = "feels joyful."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -302,7 +302,7 @@
 /datum/emote/living/grunt
 	key = "grunt"
 	key_third_person = "grunts"
-	message = "ворчит."
+	message = "grunts."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/grunt/get_sound(mob/living/user)
@@ -343,7 +343,7 @@
 /datum/emote/living/gargle
 	key = "gargle"
 	key_third_person = "gargles"
-	message = "полоскает рот!"
+	message = "gargles!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -393,7 +393,7 @@
 /datum/emote/living/sag
 	key = "sag"
 	key_third_person = "sags"
-	message = "оседает."
+	message = "sags."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -413,7 +413,7 @@
 /datum/emote/living/quietnoise
 	key = "quietnoise"
 	key_third_person = "quietnoises"
-	message = "делает тихий звук."
+	message = "sputters."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -421,7 +421,7 @@
 /datum/emote/living/loudnoise
 	key = "loudnoise"
 	key_third_person = "loudnoises"
-	message = "делает громкий звук!"
+	message = "sputters!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -430,7 +430,7 @@
 /datum/emote/living/sexymoan
 	key = "sexymoan"
 	key_third_person = "sexymoans"
-	message = "стонет!"
+	message = "moans!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -448,7 +448,7 @@
 /datum/emote/living/sexycum
 	key = "sexycum"
 	key_third_person = "sexycums"
-	message = "стонет!"
+	message = "moans!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -506,7 +506,7 @@
 /datum/emote/living/jumpgrunt
 	key = "jumpgrunt"
 	key_third_person = "jumpgrunts"
-	message = "ворчит!"
+	message = "grunts!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -524,7 +524,7 @@
 /datum/emote/living/fatiguegrunt
 	key = "fatiguegrunt"
 	key_third_person = "fatiguegrunts"
-	message = "ворчит!"
+	message = "grunts!"
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -542,7 +542,7 @@
 /datum/emote/living/hem
 	key = "hem"
 	key_third_person = "hems"
-	message = "мычит."
+	message = "hems."
 	emote_type = EMOTE_AUDIBLE
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
@@ -560,7 +560,7 @@
 /datum/emote/living/dance
 	key = "dance"
 	key_third_person = "dances"
-	message = "танцует."
+	message = "dances."
 	muzzle_ignore = TRUE
 	hands_use_check = FALSE
 	cooldown = 2 SECONDS

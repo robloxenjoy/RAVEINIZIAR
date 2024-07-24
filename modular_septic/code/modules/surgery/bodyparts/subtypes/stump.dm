@@ -1,6 +1,6 @@
 /obj/item/bodypart/stump
-	name = "Обрубок"
-	desc = "Откуда-то."
+	name = "Stump"
+	desc = "From somewhere."
 	limb_flags = BODYPART_NO_STUMP
 	limb_efficiency = 0
 	max_damage = 25 //placeholder to avoid runtimes, actually set on inherit_from_limb()
@@ -45,7 +45,7 @@
 	return TRUE
 
 /obj/item/bodypart/stump/proc/inherit_from_limb(obj/item/bodypart/parent)
-	name = "обрубок [parse_zone(parent.body_zone)]"
+	name = "Stump of [parse_zone(parent.body_zone)]"
 	parent_body_zone = parent.parent_body_zone
 	body_zone = parent.body_zone
 	body_part = parent.body_part

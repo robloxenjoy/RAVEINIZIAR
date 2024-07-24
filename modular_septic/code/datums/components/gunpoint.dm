@@ -42,9 +42,9 @@
 	LAZYSET(weapon.target_specific_diceroll, target, diceroll_modifier)
 	RegisterSignal(weapon, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED), PROC_REF(cancel))
 
-	shooter.visible_message(span_danger("<b>[shooter]</b> прицеливает [weapon] в <b>[target]</b>!"), \
-		span_danger("Я прицеливаю [weapon] в <b>[target]</b>!"), ignored_mobs = target)
-	to_chat(target, span_userdanger("<b>[shooter]</b> прицеливает [weapon] в меня!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> aims [weapon] at <b>[target]</b>!"), \
+		span_danger("I aim [weapon] at <b>[target]</b>!"), ignored_mobs = target)
+	to_chat(target, span_userdanger("<b>[shooter]</b> aims [weapon] at me!"))
 	apply_target_overlay()
 	add_memory_in_range(target, 7, MEMORY_GUNPOINT, list(DETAIL_PROTAGONIST = target, DETAIL_DEUTERAGONIST = shooter, DETAIL_WHAT_BY = weapon), story_value = STORY_VALUE_OKAY, memory_flags = MEMORY_CHECK_BLINDNESS)
 
@@ -108,8 +108,8 @@
 			steady_aim_timer = addtimer(CALLBACK(src, PROC_REF(update_stage), 2), GUNPOINT_DELAY_STAGE_2, TIMER_STOPPABLE)
 		if(2)
 			if(!silent && (last_stage < stage))
-				to_chat(parent, span_danger("Я стабилизирую прицел [weapon] на <b>[target]</b>."))
-				to_chat(target, span_userdanger("<b>[parent]</b> стабилизирует прицел [weapon] на мне!"))
+				to_chat(parent, span_danger("I stabilize [weapon] aim on <b>[target]</b>."))
+				to_chat(target, span_userdanger("<b>[parent]</b> stabilizes [weapon] aim on mе!"))
 			diceroll_modifier = GUNPOINT_STAGE_2_MODIFIER
 			if(weapon.stage_two_aim_bonus)
 				diceroll_modifier += weapon.stage_two_aim_bonus
@@ -120,8 +120,8 @@
 			steady_aim_timer = addtimer(CALLBACK(src, PROC_REF(update_stage), 3), GUNPOINT_DELAY_STAGE_3, TIMER_STOPPABLE)
 		if(3)
 			if(!silent && (last_stage < stage))
-				to_chat(parent, span_danger("Я полностью стабилизирую прицел [weapon] на <b>[target]</b>."))
-				to_chat(target, span_userdanger("<b>[parent]</b> полностью стабилизирует прицел [weapon] на мне!"))
+				to_chat(parent, span_danger("I completely stabilized [weapon] aim on <b>[target]</b>."))
+				to_chat(target, span_userdanger("<b>[parent]</b> completely stabilized [weapon] aim on me!"))
 			diceroll_modifier = GUNPOINT_STAGE_3_MODIFIER
 			if(weapon.stage_three_aim_bonus)
 				diceroll_modifier += weapon.stage_three_aim_bonus
@@ -138,9 +138,9 @@
 	point_of_no_return = TRUE
 	unsteady_aim()
 	if(!weapon.can_trigger_gun(shooter) || !weapon.can_shoot() || (weapon.weapon_weight == WEAPON_HEAVY && shooter.get_inactive_held_item()))
-		shooter.visible_message(span_danger("<b>[shooter]</b> мешкается с [weapon]!"), \
-							span_danger("Я мешкаюсь с [weapon] и не получается произвести выстрел в <b>[target]</b>!"), ignored_mobs = target)
-		to_chat(target, span_userdanger("<b>[shooter]</b> мешкается с [weapon] и проваливает попытку произвести выстрел в меня!"))
+		shooter.visible_message(span_danger("<b>[shooter]</b> hesitates with [weapon]!"), \
+							span_danger("I hesitate with [weapon] and it’s impossible shoot at <b>[target]</b>!"), ignored_mobs = target)
+		to_chat(target, span_userdanger("<b>[shooter]</b> hesitates with [weapon] and fails to shoot me!"))
 		qdel(src)
 		return
 
@@ -155,17 +155,17 @@
 	var/mob/living/shooter = parent
 	if(shooter.combat_mode)
 		return
-	shooter.visible_message(span_danger("<b>[shooter]</b> врезается в <b>[bumper]</b> и нарушает прицеливание!"), \
-		span_danger("Я врезаюсь в <b>[bumper]</b> и нарушаю своё прицеливание!"), ignored_mobs = bumper)
-	to_chat(bumper, span_userdanger("<b>[shooter]</b> врезается в меня и нарушает своё прицеливание!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> bumpts at <b>[bumper]</b> and fails aim!"), \
+		span_danger("I bump at <b>[bumper]</b> and fail my aim!"), ignored_mobs = bumper)
+	to_chat(bumper, span_userdanger("<b>[shooter]</b> bumps at me and fails his aim!"))
 	qdel(src)
 
 /datum/component/gunpoint/check_shove(mob/living/carbon/shooter, mob/shooter_again, mob/living/shover, datum/martial_art/attacker_style, modifiers)
 	if(shooter.combat_mode)
 		return
-	shooter.visible_message(span_danger("<b>[shooter]</b> врезается в <b>[shover]</b> и нарушает прицеливание!"), \
-						span_danger("Я врезаюсь в <b>[shover]</b> и нарушаю своё прицеливание!"), ignored_mobs = shover)
-	to_chat(shover, span_userdanger("<b>[shooter]</b> врезается в меня и нарушает своё прицеливание!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> bumps at <b>[shover]</b> and fails aim!"), \
+						span_danger("I bump at <b>[shover]</b> and fail my aim!"), ignored_mobs = shover)
+	to_chat(shover, span_userdanger("<b>[shooter]</b> bumps at me and fails his aim!"))
 	qdel(src)
 
 /datum/component/gunpoint/check_deescalate()
@@ -197,15 +197,15 @@
 	if(shooter.combat_mode)
 		flinch_chance /= 2
 	if(prob(flinch_chance))
-		shooter.visible_message(span_danger("<b>[shooter]</b> вздрагивает!"), \
-			span_danger("Я вздрагиваю!"))
+		shooter.visible_message(span_danger("<b>[shooter]</b> flinches!"), \
+			span_danger("I flinch!"))
 		INVOKE_ASYNC(src, PROC_REF(async_trigger_reaction))
 
 /datum/component/gunpoint/cancel()
 	var/mob/living/shooter = parent
-	shooter.visible_message(span_danger("<b>[shooter]</b> перестаёт целиться в <b>[target]</b>!"), \
-		span_danger("Я перестаю целить [weapon] в <b>[target]</b>."), ignored_mobs = target)
-	to_chat(target, span_userdanger("<b>[shooter]</b> перестаёт целиться в меня!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> cancels his aim to <b>[target]</b>!"), \
+		span_danger("I cancel my [weapon] aim to <b>[target]</b>."), ignored_mobs = target)
+	to_chat(target, span_userdanger("<b>[shooter]</b> cancels his aim on me!"))
 
 	if(weapon.aim_spare_sound)
 		var/picked_sound = pick(weapon.aim_spare_sound)
@@ -223,16 +223,16 @@
 
 /datum/component/gunpoint/proc/unsteady_aim()
 	update_stage(max(0, stage-1))
-	var/final_message = span_warning("Мой прицел немного дестабилизируется.")
+	var/final_message = span_warning("My aim is getting a little destabilized.")
 	switch(stage)
 		if(0)
-			final_message = span_warning("Мой прицел дестабилизируется. Это <b>ужасно</b> теперь.")
+			final_message = span_warning("My aim is destabilizing. It's <b>terrible</b> now.")
 		if(1)
-			final_message = span_warning("Мой прицел дестабилизируется. Это плохо теперь.")
+			final_message = span_warning("My aim is destabilizing. It's bad now.")
 		if(2)
-			final_message = span_notice("Мой прицел дестабилизируется. Это прилично теперь.")
+			final_message = span_notice("My aim is destabilizing. It's nice now.")
 		if(3)
-			final_message = span_notice("Мой прицел дестабилизируется. Это всё ещё <b>прекрасно</b>.")
+			final_message = span_notice("My aim is destabilizing. It's <b>good</b> now.")
 	to_chat(parent, final_message)
 
 /datum/component/gunpoint/proc/apply_target_overlay()

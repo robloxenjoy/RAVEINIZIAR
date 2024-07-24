@@ -1,6 +1,6 @@
 /obj/structure/codec/lampala
-	name = "Лампа"
-	desc = "А нахуя нам видеть это всё?"
+	name = "Lamp"
+	desc = "Why the hell should we see all this?"
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "lampala"
 	plane = GAME_PLANE_BLOOM
@@ -12,8 +12,8 @@
 	light_color = "#faf5e9"
 
 /obj/structure/codec/svetilka
-	name = "Светилище"
-	desc = "Освещает комнату и просвещает твою гнилую душёнку."
+	name = "Lamp"
+	desc = "Lights up the room and enlightens your rotten soul."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "svetilka"
 	plane = GAME_PLANE_BLOOM
@@ -25,8 +25,8 @@
 	light_color = "#f9619f"
 
 /obj/structure/codec/firething
-	name = "Светилище"
-	desc = "Это правда греет?"
+	name = "Lamp"
+	desc = "It's really warm?"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "lighter"
 	plane = GAME_PLANE_BLOOM
@@ -96,8 +96,8 @@
 */
 
 /obj/structure/codec/bulb/green
-	name = "Лампочка"
-	desc = "Как будто не светит, а наоборот."
+	name = "Bulb"
+	desc = "It’s as if it’s not shining, but on the contrary."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_green"
 	base_icon_state = "bulb_green"
@@ -111,8 +111,8 @@
 	light_color = "#cbe395"
 
 /obj/structure/codec/bulb/yellow
-	name = "Лампочка"
-	desc = "Правда ли нам нужен этот свет?"
+	name = "Bulb"
+	desc = "Do we really need this light?"
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_def"
 	base_icon_state = "bulb_def"
@@ -143,15 +143,15 @@
 	var/proj_pass_rate = 100
 
 /obj/structure/codec/window/green
-	name = "Окно"
-	desc = "Может быть это грязь на нём. А может, оно просто зелёное."
+	name = "Window"
+	desc = "Maybe it's dirt on it. Or maybe it's just green."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "window_green-closed"
 	base_icon_state = "window_green"
 
 /obj/structure/codec/window/red
-	name = "Красивое Окно"
-	desc = "На нём не видно крови, но она там есть."
+	name = "Beautiful Window"
+	desc = "You can't see the blood on it, but it's there."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "window_va-closed"
 	base_icon_state = "window_va"
@@ -191,11 +191,11 @@
 		if(user.a_intent == INTENT_GRAB)
 //		playsound(loc, 'sound/effects/curtain.ogg', 50, TRUE)
 			if(!open)
-				user.visible_message(span_notice("[user] открывает [src]."), \
-									span_notice("Я открываю [src]."))
+				user.visible_message(span_notice("[user] opens [src]."), \
+									span_notice("I open [src]."))
 			else
-				user.visible_message(span_notice("[user] закрывает [src]."), \
-						span_notice("Я закрываю [src]."))
+				user.visible_message(span_notice("[user] closes [src]."), \
+						span_notice("I close [src]."))
 			toggle()
 
 /obj/structure/codec/window/attack_hand(mob/living/user, list/modifiers)
@@ -205,8 +205,8 @@
 	if(user.a_intent != INTENT_GRAB)
 		if(open)
 			return
-		user.visible_message(span_notice("[user] стучит по [src]."), \
-			span_notice("Я стучу по [src]."))
+		user.visible_message(span_notice("[user] knocks on [src]."), \
+			span_notice("I knock on [src]."))
 		user.changeNext_move(CLICK_CD_WRENCH)
 		playsound(src, knocksound, 50, TRUE)
 
@@ -234,8 +234,8 @@
 #define DOOR_CLOSE_WAIT 60
 
 /obj/machinery/codec/door
-	name = "Дверь"
-	desc = "Лучше не открывать."
+	name = "Door"
+	desc = "It's better not to open."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "door_blue1"
 	base_icon_state = "door_blue"
@@ -269,7 +269,7 @@
 		return
 	playsound(src, kicksuccess, 90, FALSE, 2)
 	sound_hint()
-	src.visible_message(span_danger("[user] пинает [src]!"))
+	src.visible_message(span_danger("[user] kicks [src]!"))
 //	to_chat(user, span_danger("Я пинаю [src]."))
 	user.changeNext_move(CLICK_CD_WRENCH)
 	if(!locked)
@@ -284,7 +284,7 @@
 		playsound(src, doorDeni, 70, FALSE)
 		sound_hint()
 		COOLDOWN_START(src, open_cooldown, open_cooldown_duration)
-		src.visible_message(span_notice("<b>[user]</b> трясёт ручку [src].</span>"))
+		src.visible_message(span_notice("<b>[user]</b> shakes [src] handle.</span>"))
 		return
 	set_opacity(0)
 	set_density(FALSE)
@@ -336,7 +336,7 @@
 
 /obj/machinery/codec/door/attackby(obj/item/I, mob/living/user, params)
 	if(!COOLDOWN_FINISHED(src, key_cooldown))
-		to_chat(user, span_warning("Нужно успокоиться."))
+		to_chat(user, span_warning("Need to calm down."))
 		return
 	if(!density)
 		return
@@ -347,10 +347,10 @@
 				locked = TRUE
 			else
 				locked = FALSE
-			to_chat(user, span_notice("Я использую [I] на [src]."))
+			to_chat(user, span_notice("I use [I] on [src]."))
 			playsound(src, 'modular_septic/sound/effects/keys_use.ogg', 75, FALSE)
 		else
-			to_chat(user, span_warning("Не то."))
+			to_chat(user, span_warning("Not this."))
 			playsound(src, 'modular_septic/sound/effects/keys_remove.ogg', 75, FALSE)
 		add_fingerprint(user)
 		sound_hint()
@@ -361,15 +361,15 @@
 		for (var/obj/item/key/podpol/KK in I.contents)
 			if(KK.door_allowed(src) && key_worthy)
 				if(locked)
-					visible_message("<span class = 'notice'>[user] отпирает [src].</span>")
+					visible_message("<span class = 'notice'>[user] unlocks [src].</span>")
 					playsound(src, 'modular_septic/sound/effects/keys_use.ogg', 75, FALSE)
 					locked = FALSE
 				else
-					visible_message("<span class = 'notice'>[user] запирает [src].</span>")
+					visible_message("<span class = 'notice'>[user] locks [src].</span>")
 					playsound(src, 'modular_septic/sound/effects/keys_use.ogg', 75, FALSE)
 					locked = TRUE
 			else
-				to_chat(user, span_warning("Не подходит."))
+				to_chat(user, span_warning("Not this."))
 				playsound(src, 'modular_septic/sound/effects/keys_remove.ogg', 75, FALSE)
 	return ..()
 
@@ -409,14 +409,14 @@
 	return
 
 /obj/machinery/codec/door/red
-	name = "Дверь"
-	desc = "ОБЫЧНАЯ!"
+	name = "Door"
+	desc = "DEFAULT!"
 	icon_state = "door_red1"
 	base_icon_state = "door_red"
 
 /obj/machinery/codec/door/kapno
-	name = "Дверь"
-	desc = "Старая! Уебанская!"
+	name = "Door"
+	desc = "Old! Retarded!"
 	icon_state = "door_kapno1"
 	base_icon_state = "door_kapno"
 	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
@@ -425,8 +425,8 @@
 	autoclose = TRUE
 
 /obj/machinery/codec/door/konch
-	name = "Дверь"
-	desc = "Вроде не особо старая! Уебанская!"
+	name = "Door"
+	desc = "Not really old! Retarded!"
 	icon_state = "door_konch1"
 	base_icon_state = "door_konch"
 	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
@@ -450,8 +450,8 @@
 //	worn_icon = null
 
 /obj/item/key/podpol/woody/kapnokey
-	name = "Ключ"
-	desc = "К комнатке отца Капнобатаев."
+	name = "Key"
+	desc = "To the door of the Kapnobataes Father room."
 	icon_state = "key_father"
 	id_tag = "kapnoroom"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
@@ -459,8 +459,8 @@
 	worn_icon_state = "shard"
 
 /obj/item/key/podpol/woody/kapnodvorkey
-	name = "Ключ"
-	desc = "К двери двора Капнобатаев."
+	name = "Key"
+	desc = "To the door of the Kapnobataes courtyard."
 	icon_state = "key_father"
 	id_tag = "kapnodvor"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
@@ -468,8 +468,8 @@
 	worn_icon_state = "shard"
 
 /obj/item/key/podpol/woody/konchkey
-	name = "Ключ"
-	desc = "К двери двора Капнобатаев."
+	name = "Key"
+	desc = "To the door of the Assholes courtyard."
 	icon_state = "key_konch"
 	id_tag = "konchkey"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
@@ -485,8 +485,8 @@
 	icon_state = "poster_o"
 
 /obj/structure/sign/poster/contraband/codec/ring
-	name = "Кольцо"
-	desc = "Это меня пугает!"
+	name = "Ring"
+	desc = "This scares me!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "symb_1"
 	light_range = 3
@@ -494,20 +494,20 @@
 	light_color = "#f89852"
 
 /obj/structure/sign/poster/contraband/codec/strong
-	name = "Лик"
-	desc = "Восславь силу в себе."
+	name = "Face"
+	desc = "Celebrate the strength within you."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "eviln"
 
 /obj/structure/sign/poster/contraband/codec/painting/m
-	name = "Картина"
-	desc = "Любовь."
+	name = "Painting"
+	desc = "Love."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "painting_1"
 
 /obj/structure/newgrille/codec
-	name = "Решётка"
-	desc = "Она здесь не без причины."
+	name = "Grille"
+	desc = "It's here for a reason."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "grille"
 	base_icon_state = "grille"
@@ -569,8 +569,8 @@
 	id = "arena"
 
 /obj/structure/buttona/codec
-	name = "Кнопка"
-	desc = "Интересно."
+	name = "Button"
+	desc = "Interesting."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "buttona"
 	var/cooldown = FALSE
@@ -596,7 +596,7 @@
 	if(cooldown)
 		return
 	cooldown = TRUE
-	visible_message("<span class = 'notice'>[user] нажимает на [src].</span>")
+	visible_message("<span class = 'notice'>[user] clicks on [src].</span>")
 	if(opens_grilles)
 		if(ultra_arena)
 			for(var/obj/structure/buttona/codec/M in (GLOB.buttons_masters - src))

@@ -152,8 +152,8 @@
 		return 1
 
 /obj/item/clothing/glasses/night
-	name = "Ночные Оки"
-	desc = "Теперь я могу видеть!"
+	name = "Night Eyes"
+	desc = "Now I can see!"
 	icon_state = "night"
 	inhand_icon_state = "glasses"
 	darkness_view = 2

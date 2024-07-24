@@ -1,5 +1,5 @@
 /obj/item/digit
-	name = "Палец ноги"
+	name = "Foot Finger"
 	desc = "ЭМ.;"
 	icon = 'modular_septic/icons/obj/items/surgery/bodyparts.dmi'
 	throwforce = 0

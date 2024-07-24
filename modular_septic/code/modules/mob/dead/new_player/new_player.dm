@@ -47,7 +47,7 @@
 	popup.open(FALSE) // 0 is passed to open so that it doesn't use the onclose() proc
 
 /mob/dead/new_player/verb/playthis()
-	set name = "Играть"
+	set name = "Play"
 	set category = "OOC"
 
 	if(!isnewplayer(src))
@@ -57,10 +57,10 @@
 	if(client.ready_char)
 		return
 	if(client.should_not_play)
-		alert("Ой, как жаль... Я не могу продолжать свой путь.")
+		alert("Oh, what a pity... I can't continue my way.")
 		return
 	if(SSticker.current_state < GAME_STATE_PLAYING)
-		alert("Игрушка пока не началась.")
+		alert("The game hasn't started yet.")
 		return
 	client.name_ch = name_generate()
 	if(prob(70))
@@ -68,17 +68,17 @@
 	else
 		client.age_ch = rand(18, 100)
 	client.ready_char = TRUE
-	alert("Я вспомнил кто я!")
+	alert("I remembered who I am!")
 	chooseRole()
 
 /mob/dead/new_player/proc/name_generate()
 	var/special_name
 	var/second_thing = null
 	var/third_thing = null
-	var/first_thing = pick("Харк", "Безбокий", "Мор", "Нок", "Нокс", "Гарретт", "Эльвир", "Арсен", "Харамец", "Анклав", "Флакон", "Торнер", "Вэб", "Хвакс", "Койлер", "Бойд", "Хэкс", "Гекс", "Сакрец")
+	var/first_thing = pick("Hark", "Sideless", "Mor", "Nok", "Nox", "Garrett", "Haramec", "Enclave", "Vial" "Torner", "Web", "Hvax", "Coiler", "Boyd", "Hex", "Sacrec")
 	special_name = "[first_thing]"
 	if(prob(40))
-		second_thing = pick("Мун", "Стоун", "Блэк", "Блок")
+		second_thing = pick("Moon", "Stone", "Black", "Block")
 		special_name = "[first_thing] [second_thing]"
 	if(prob(10))
 		third_thing = pick("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
@@ -93,27 +93,27 @@
 		return
 	if(!client)
 		return
-	var/rolevich = input("Стоп, а какая роль?", "") as text
+	var/rolevich = input("Wait, what role?", "") as text
 	switch(rolevich)
-		if("Капнобатай")
-			client.role_ch = "капнобатай"
-		if("Конченный")
-			client.role_ch = "конченный"
-		if("Бог СВО")
+		if("Kapnobatai")
+			client.role_ch = "kapnobatai"
+		if("Asshole")
+			client.role_ch = "asshole"
+		if("God SMO")
 			if(GLOB.world_deaths_crazy < 20)
-				alert("Недостаточно смертей в мире.")
+				alert("Not enough deaths in the world.")
 				client.ready_char = FALSE
 				return
-			client.role_ch = "бог сво"
+			client.role_ch = "god smo"
 		else
-			alert("Непонятно. Роль обычного капнобатая.")
-			client.role_ch = "капнобатай"
+			alert("Unclear. The role of the common Kapnobatai.")
+			client.role_ch = "kapnobatai"
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
-	var/crazyalert = alert("А может была другая роль?",,"Продолжаем уже!","Да вроде другая...")
+	var/crazyalert = alert("Or maybe there was another role?",,"Let's continue!","Yes, it seems like a different role...")
 	switch(crazyalert)
-		if("Продолжаем уже!")
+		if("Let's continue!")
 			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
 				if(client)
 					if(spawn_point.name == client.role_ch)
@@ -134,48 +134,48 @@
 							var/eye_coloring = pick("#000000", "#1f120f")
 							var/height = HUMAN_HEIGHT_MEDIUM
 							switch(client.role_ch)
-								if("капнобатай")
-									character.truerole = "Капнобатай"
-									character.pod_faction = "капнобатай"
+								if("kapnobatai")
+									character.truerole = "Kapnobatai"
+									character.pod_faction = "kapnobatai"
 									character.hairstyle = "Bedhead 2"
 									character.facial_hairstyle = "Shaved"
 									character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
-								if("конченный")
-									character.truerole = "Конченный"
-									character.pod_faction = "конченный"
+								if("asshole")
+									character.truerole = "Asshole"
+									character.pod_faction = "asshole"
 									character.hairstyle = "Bald"
 									character.facial_hairstyle = "Shaved"
 									eye_coloring = "#c30000"
-								if("бог сво")
-									character.truerole = "Бог СВО"
-									character.pod_faction = "бог сво"
+								if("god smo")
+									character.truerole = "God SMO"
+									character.pod_faction = "god smo"
 									character.hairstyle = "Bedhead 2"
 									character.facial_hairstyle = "Shaved"
 									character.hair_color = pick("#ff0aff")
 									character.kaotiks_body = 100
-									character.real_name = "Бог СВО"
+									character.real_name = "God SMO"
 									character.name = character.real_name
 									character.height = HUMAN_HEIGHT_TALLEST
 							switch(character.truerole)
-								if("Капнобатай")
+								if("Kapnobatai")
 									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
 									character.add_overlay(appearance)
 									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
 									if(prob(10))
 										character.equipOutfit(/datum/outfit/kapnofather)
-										character.special_zvanie = "Отец Капнобатаев"
+										character.special_zvanie = "Kapnobataes Father"
 									else
 										character.equipOutfit(/datum/outfit/kapno)
-								if("Конченный")
+								if("Asshole")
 									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
 									character.add_overlay(appearance)
 									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/konch)
 									if(prob(10))
 										character.equipOutfit(/datum/outfit/mostkonch)
-										character.special_zvanie = "Самый Конченный"
+										character.special_zvanie = "The Most Asshole"
 									else
 										character.equipOutfit(/datum/outfit/konch)
-								if("Бог СВО")
+								if("God SMO")
 									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
 									character.equipOutfit(/datum/outfit/svogod)
 							for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
@@ -203,17 +203,17 @@
 							var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
 							if(!babble)
 								switch(character.truerole)
-									if("Капнобатай")
+									if("Kapnobatai")
 										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
-									if("Конченный")
+									if("Asshole")
 										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
 									else
 										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
 							else
 								switch(character.truerole)
-									if("Капнобатай")
+									if("Kapnobatai")
 										babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
-									if("Конченный")
+									if("Asshole")
 										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
 									else
 										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_agender.ogg'
@@ -235,17 +235,17 @@
 								plusbodyhp.max_damage += GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE)
 								plusbodyhp.max_stamina_damage += GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE)
 							character.gain_extra_effort(1, TRUE)
-							to_chat(character, span_dead("Я продолжаю искать свой верный путь."))
+							to_chat(character, span_dead("I keep looking for my right way."))
 							character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
 							character.cursings()
 	//						character.friendroles()
 
 							if(character.special_zvanie)
 								switch(character.special_zvanie)
-									if("Отец Капнобатаев")
-										to_chat(character, span_yellowteamradio("Я Отец Капнобатаев!"))
-									if("Самый Конченный")
-										to_chat(character, span_yellowteamradio("Я Самый Конченный!"))
+									if("Kapnobataes Father")
+										to_chat(character, span_yellowteamradio("I'm Kapnobataes Father!"))
+									if("The Most Asshole")
+										to_chat(character, span_yellowteamradio("I'm The Most Asshole!"))
 
 							character.height = height
 							character.dna.features["body_size"] = BODY_SIZE_NORMAL
@@ -255,10 +255,10 @@
 							character.regenerate_icons()
 
 						else
-							alert("Больше нет слотов.")
+							alert("No more slots.")
 							client.ready_char = FALSE
 							return FALSE
-		if("Да вроде другая...")
+		if("Yes, it seems like a different role...")
 			client.ready_char = FALSE
 			return FALSE
 

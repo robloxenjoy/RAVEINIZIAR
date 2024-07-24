@@ -1,7 +1,7 @@
 //The ammo stack object itself
 /obj/item/ammo_box/magazine/ammo_stack
-	name = "Сборище Патронов"
-	desc = "Прикольно."
+	name = "Ammo Stack"
+	desc = "Funny."
 	icon = 'modular_septic/icons/obj/items/ammo/ammo_stacks.dmi'
 	icon_state = "c9mm"
 	base_icon_state = "c9mm"
@@ -80,19 +80,19 @@
 		return
 	var/obj/item/ammo_casing/ammo_casing = attacking_item
 	if(!ammo_casing.stack_type)
-		to_chat(user, span_warning("[ammo_casing] не может быть собрано."))
+		to_chat(user, span_warning("[ammo_casing] cannot be collected."))
 		return
 	if(!stack_type)
-		to_chat(user, span_warning("[src] не может быть собрано"))
+		to_chat(user, span_warning("[src] cannto be collected."))
 		return
 	if(caliber != ammo_casing.caliber)
-		to_chat(user, span_warning("Не могу собрать разные калибры."))
+		to_chat(user, span_warning("Can't collect various calibers."))
 		return
 	if(stack_type != ammo_casing.stack_type)
-		to_chat(user, span_warning("Не могу собрать [ammo_casing] с [src]."))
+		to_chat(user, span_warning("Can't collect [ammo_casing] with [src]."))
 		return
 	if(!loaded_projectile || !ammo_casing.loaded_projectile)
-		to_chat(user, span_warning("Не могу собирать пустые гильзы."))
+		to_chat(user, span_warning("Can't collect empty casings."))
 		return
 	var/obj/item/ammo_box/magazine/ammo_stack = new stack_type(drop_location())
 	user.transferItemToLoc(src, ammo_stack, silent = TRUE)
@@ -101,4 +101,4 @@
 	ammo_stack.give_round(ammo_casing)
 	user.put_in_hands(ammo_stack)
 	ammo_stack.update_appearance()
-	to_chat(user, span_notice("[src] собрано с [ammo_casing]."))
+	to_chat(user, span_notice("[src] is collected with [ammo_casing]."))

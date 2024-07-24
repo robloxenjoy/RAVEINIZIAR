@@ -69,8 +69,8 @@
 
 // The legendary
 /obj/item/gun/ballistic/shotgun/doublebarrel/bobox
-	name = "Бобокс"
-	desc = "Легендарная хуйня."
+	name = "Bobox"
+	desc = "Legendary shit."
 	icon = 'modular_septic/icons/obj/items/guns/shotgun.dmi'
 	inhand_icon_state = "bobox"
 	base_icon_state = "bobox"

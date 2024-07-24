@@ -21,8 +21,8 @@
 	variance = 4
 
 /obj/item/ammo_casing/shotgun/buckshot
-	name = "Картечь"
-	desc = "Картечь 12 калибра."
+	name = "12 Gauge Buckshot"
+	desc = "Nice."
 	icon_state = "12gauge"
 	base_icon_state = "12gauge"
 //	world_icon_state = "gshell"

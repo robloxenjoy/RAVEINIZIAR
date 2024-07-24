@@ -1,7 +1,7 @@
 // gangstalker
 /obj/item/ammo_casing/c38
-	name = "Патрон .38"
-	desc = "Такой вот калибр."
+	name = "Bullet .38"
+	desc = "A such caliber."
 	icon_state = "c38"
 	base_icon_state = "c38"
 	bounce_sound = list('modular_septic/sound/weapons/guns/pistol/pistol_shell1.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell2.ogg', 'modular_septic/sound/weapons/guns/pistol/pistol_shell3.ogg')

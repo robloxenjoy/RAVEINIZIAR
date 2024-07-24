@@ -135,7 +135,7 @@ window "outputwindow"
 		is-default = true
 		border = sunken
 		saved-params = ""
-		command = "Говорить"
+		command = "Say"
 
 window "statwindow"
 	elem "statwindow"

@@ -64,8 +64,8 @@
 	strip_delay = 90
 
 /obj/item/clothing/suit/armor/vest/chainmail/steel
-	name = "Кольчуга"
-	desc = "Кольчуга из стальных Уроборос-колец."
+	name = "Chainmail"
+	desc = "Made of steel Ouroboros rings."
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
 	icon_state = "steel_chainmail"
 	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
@@ -118,8 +118,8 @@
 		shuffling.sound_falloff_exponent = 20
 
 /obj/item/clothing/suit/armor/vest/bulletproofer
-	name = "Лёгкий Бронежилет"
-	desc = "Должно защитить от пуль мелкого калибра."
+	name = "Light Bulletproofer"
+	desc = "Should protect against small caliber bullets."
 	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
@@ -518,8 +518,8 @@
 		L.update_inv_oversuit()
 
 /obj/item/clothing/head/helmet/codec/def_yel
-	name = "Шлем"
-	desc = "Валькирия - под таким названием зарегистрирован этот шлем."
+	name = "Helmet"
+	desc = "Valkyrie - this helmet is registered under this name."
 	icon = 'modular_pod/icons/obj/clothing/hats.dmi'
 	icon_state = "yel_bik"
 	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
@@ -556,8 +556,8 @@
 	drop_sound = 'modular_septic/sound/armor/equip/helmet_drop.ogg'
 
 /obj/item/clothing/suit/armor/roba
-	name = "Роба"
-	desc = "Главное, что цвет хороший. Набита банановыми шкурками."
+	name = "Robe"
+	desc = "The main thing is that the color is good. Stuffed with banana skins."
 	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
 	icon_state = "kapno"
 	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'

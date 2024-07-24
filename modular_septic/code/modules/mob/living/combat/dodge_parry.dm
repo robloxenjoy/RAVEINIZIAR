@@ -10,11 +10,11 @@
 			if(DP_DODGE)
 				dodge_parry = DP_PARRY
 				if(!silent)
-					to_chat(src, div_infobox(span_notice("Теперь я буду <b>парировать</b> атаки.")))
+					to_chat(src, div_infobox(span_notice("Now I will <b>parry</b> атаки.")))
 			else
 				dodge_parry = DP_DODGE
 				if(!silent)
-					to_chat(src, div_infobox(span_notice("Теперь я буду <b>уклоняться</b> от атак.")))
+					to_chat(src, div_infobox(span_notice("Now I will <b>dodge</b> attacks.")))
 	else
 		if(dodge_parry == new_dp)
 			return
@@ -22,6 +22,6 @@
 		if(!silent)
 			switch(dodge_parry)
 				if(DP_PARRY)
-					to_chat(src, div_infobox(span_notice("Теперь я буду <b>парировать</b> атаки.")))
+					to_chat(src, div_infobox(span_notice("Now I will <b>parry</b> attacks.")))
 				else
-					to_chat(src, div_infobox(span_notice("Теперь я буду <b>уклоняться</b> от атак.")))
+					to_chat(src, div_infobox(span_notice("Now I will <b>dodge</b> attacks.")))

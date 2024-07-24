@@ -1,5 +1,5 @@
 /obj/structure/railing
-	name = "Забор"
+	name = "Fence"
 	desc = "И против чего это?"
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "railing"

@@ -31,8 +31,8 @@
 	parrying_modifier = null
 
 /obj/item/melee/shieldo/buckler/wooden
-	name = "Деревянный Баклер"
-	desc = "Может спасти мой зад."
+	name = "Wooden Buckler"
+	desc = "Can save my ass."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "buckler"
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
@@ -61,14 +61,14 @@
 	bare_wound_bonus = 4
 	throw_speed = 2
 	throw_range = 10
-	attack_verb_continuous = list("вмазывает", "ударяет")
-	attack_verb_simple = list("вмазать", "ударить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")
 	tetris_width = 64
 	tetris_height = 64
 
 /obj/item/stone
-	name = "Камень"
-	desc = "Твёрдый камушек."
+	name = "Stone"
+	desc = "Wisely and old."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "stone"
 	drop_sound = 'modular_septic/sound/effects/fallmedium.ogg'
@@ -90,8 +90,8 @@
 	bare_wound_bonus = 4
 	throw_speed = 2
 	throw_range = 9
-	attack_verb_continuous = list("ударяет", "хуячит")
-	attack_verb_simple = list("ударить", "хуячить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")
 	tetris_width = 32
 	tetris_height = 32
 
@@ -270,8 +270,8 @@
 	tetris_height = 64
 
 /obj/item/melee/bita/cep/iron
-	name = "Цеп"
-	desc = "Из железа."
+	name = "Flail"
+	desc = "Made of iron."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "flail_iron"
 	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
@@ -300,8 +300,8 @@
 	slot_flags = ITEM_SLOT_BELT
 	worn_icon_state = "classic_baton"
 	skill_melee = SKILL_FLAIL
-	attack_verb_continuous = list("бьёт")
-	attack_verb_simple = list("бить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")
 	tetris_width = 32
 	tetris_height = 64
 
@@ -366,14 +366,14 @@
 	bare_wound_bonus = 8
 	throw_speed = 2
 	throw_range = 10
-	attack_verb_continuous = list("отбивает", "ударяет", "вмазывает", "хуярит", "въёбывает")
-	attack_verb_simple = list("отбить", "ударить", "вмазать", "хуярить", "въебать")
+	attack_verb_continuous = list("hits", "crushes")
+	attack_verb_simple = list("hit", "crush")
 	tetris_width = 32
 	tetris_height = 32
 
 /obj/item/melee/bita/hammer/sledge
-	name = "Кувалда"
-	desc = "Ну нихуя себе."
+	name = "Sledgehammer"
+	desc = "OH FUCK!"
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "sledge"
 	inhand_icon_state = "sledge"
@@ -404,8 +404,8 @@
 	attack_delay = 40
 	throw_speed = 2
 	throw_range = 8
-	attack_verb_continuous = list("отбивает", "ударяет", "вмазывает", "хуярит", "въёбывает")
-	attack_verb_simple = list("отбить", "ударить", "вмазать", "хуярить", "въебать")
+	attack_verb_continuous = list("hits", "beats", "crushes")
+	attack_verb_simple = list("hit", "beat", "crush")
 	tetris_width = 32
 	tetris_height = 32
 
@@ -436,8 +436,8 @@
 	worn_icon_state = "classic_baton"
 
 /obj/item/melee/bita/rebar
-	name = "Арматура"
-	desc = "Очень привлекательно."
+	name = "Rebar"
+	desc = "Very attractive."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "rebar"
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
@@ -460,8 +460,8 @@
 	slot_flags = ITEM_SLOT_BELT
 	skill_melee = SKILL_IMPACT_WEAPON
 	worn_icon_state = "classic_baton"
-	attack_verb_continuous = list("бьёт")
-	attack_verb_simple = list("бить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")
 
 /obj/item/melee/bita/rebar/Initialize(mapload)
 	. = ..()
@@ -573,8 +573,8 @@
 /obj/item/podpol_weapon/sword
 
 /obj/item/podpol_weapon/sword/steel
-	name = "Меч"
-	desc = "Сталь, древняя сила."
+	name = "Sword"
+	desc = "Steel, ancient power."
 	icon_state = "sword"
 	inhand_icon_state = "steelsword"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
@@ -617,14 +617,14 @@
 	tetris_width = 32
 	tetris_height = 96
 	wielded_inhand_state_melee = TRUE
-	attack_verb_continuous = list("режет")
-	attack_verb_simple = list("резать")
+	attack_verb_continuous = list("cuts")
+	attack_verb_simple = list("cut")
 
 /obj/item/podpol_weapon/sword/swap_intents(mob/user)
 	. = ..()
 	switch(current_attack_intent)
 		if(SLASH_MODE)
-			to_chat(user, span_notice("Теперь я буду вонзать в них с помощью [src]."))
+			to_chat(user, span_notice("Now I will stab them with [src]."))
 			hitsound = stab_hitsound
 			min_force = 14
 			force = 19
@@ -633,10 +633,10 @@
 			embedding = list("pain_mult" = 11, "rip_time" = 6, "embed_chance" = 12, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
-			attack_verb_continuous = list("вонзает")
-			attack_verb_simple = list("вонзать")
+			attack_verb_continuous = list("stabs")
+			attack_verb_simple = list("stab")
 		if(STAB_MODE)
-			to_chat(user, span_notice("Теперь я буду бить их рукоятью с помощью [src]."))
+			to_chat(user, span_notice("Now I will hit them with the hilt of [src]."))
 			hitsound = bash_hitsound
 			min_force = 7
 			force = 13
@@ -649,10 +649,10 @@
 			attack_delay = 20
 			current_attack_intent = BASH_MODE
 			sharpness = NONE
-			attack_verb_continuous = list("стукает")
-			attack_verb_simple = list("стукать")
+			attack_verb_continuous = list("hits")
+			attack_verb_simple = list("hit")
 		if(BASH_MODE)
-			to_chat(user, span_notice("Теперь я буду резать их с помощью [src]."))
+			to_chat(user, span_notice("Now I'll cut them with [src]."))
 			hitsound = slash_hitsound
 			min_force = 15
 			force = 24
@@ -661,12 +661,12 @@
 			embedding = list("pain_mult" = 10, "rip_time" = 3, "embed_chance" = 8, "jostle_chance" = 5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
-			attack_verb_continuous = list("режет")
-			attack_verb_simple = list("резать")
+			attack_verb_continuous = list("cuts")
+			attack_verb_simple = list("cut")
 
 /obj/item/podpol_weapon/spear/wooden
-	name = "Копьё"
-	desc = "Сделано из дерева, так что сломается скоро."
+	name = "Spear"
+	desc = "Made of wood so it will break soon."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "wood_spear"
 	inhand_icon_state = "spear_wooden"
@@ -699,8 +699,8 @@
 	sharpness = SHARP_POINTY
 	embedding = list("pain_mult" = 6, "rip_time" = 1.5, "embed_chance" = 38, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 	slot_flags = null
-	attack_verb_continuous = list("тычет", "вонзает")
-	attack_verb_simple = list("тыкать", "вонзать")
+	attack_verb_continuous = list("stabs", "dabs")
+	attack_verb_simple = list("stab", "dab")
 
 /*
 /obj/item/changeable_attacks/sword
@@ -841,7 +841,7 @@
 */
 
 /obj/item/podpol_weapon/axe/big
-	name = "Секира"
+	name = "Poleaxe"
 	desc = "..."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/melee/inhands/sword_lefthand.dmi'
@@ -881,15 +881,15 @@
 	tetris_height = 96
 	slot_flags = null
 	isAxe = TRUE
-	attack_verb_continuous = list("рубит")
-	attack_verb_simple = list("рубить")
+	attack_verb_continuous = list("chops")
+	attack_verb_simple = list("chop")
 
 /obj/item/podpol_weapon/axe/big/swap_intents(mob/user)
 	. = ..()
 	switch(current_attack_intent)
 		if(SLASH_MODE)
-			to_chat(user, span_notice("Теперь я буду в них тыкать задней частью [src]."))
-			user.visible_message(span_danger("[user] переворачивает [src] на другую сторону!"), span_danger("Я переворачиваю [src] на другую сторону!"))
+			to_chat(user, span_notice("Now I'll poke them with backside of [src]."))
+			user.visible_message(span_danger("[user] flips [src] to the other side!"), span_danger("I flip [src] to the other side!"))
 			hitsound = stab_hitsound
 			embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 19, "jostle_chance" = 8, "pain_stam_pct" = 2, "pain_jostle_mult" = 9, "fall_chance" = 0.2)
 			min_force = 8
@@ -907,10 +907,10 @@
 			attack_delay = 40
 			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
-			attack_verb_continuous = list("вонзает")
-			attack_verb_simple = list("вонзать")
+			attack_verb_continuous = list("stabs")
+			attack_verb_simple = list("stab")
 		if(STAB_MODE)
-			to_chat(user, span_notice("Теперь я буду их бить рукоятью [src]."))
+			to_chat(user, span_notice("Now I will hit them with the hilt of [src]."))
 			hitsound = bash_hitsound
 			min_force = 7
 			force = 11
@@ -926,11 +926,11 @@
 			armor_damage_modifier = 0
 			current_attack_intent = BASH_MODE
 			sharpness = NONE
-			attack_verb_continuous = list("бьёт")
-			attack_verb_simple = list("бить")
+			attack_verb_continuous = list("hits")
+			attack_verb_simple = list("hit")
 		if(BASH_MODE)
-			to_chat(user, span_notice("Теперь я буду их рубить [src]."))
-			user.visible_message(span_danger("[user] переворачивает [src] на другую сторону!"), span_danger("Я переворачиваю [src] на другую сторону!"))
+			to_chat(user, span_notice("Now I'll chop them with [src]."))
+			user.visible_message(span_danger("[user] flips [src] to the other side!"), span_danger("I flip [src] to the other side!"))
 			hitsound = slash_hitsound
 			embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 15, "jostle_chance" = 9, "pain_stam_pct" = 2, "pain_jostle_mult" = 10, "fall_chance" = 0.2)
 			min_force = 15
@@ -947,8 +947,8 @@
 			attack_fatigue_cost = 10
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
-			attack_verb_continuous = list("рубит")
-			attack_verb_simple = list("рубить")
+			attack_verb_continuous = list("chops")
+			attack_verb_simple = list("chop")
 /*
 /obj/item/changeable_attacks/slashbash/axe/small/steel
 	name = "Iron Axe"
@@ -1040,8 +1040,8 @@
 			sharpness = SHARP_EDGED
 */
 /obj/item/podpol_weapon/sabre
-	name = "Сабля"
-	desc = "В качестве оружия!"
+	name = "Sabre"
+	desc = "Use as weapon!"
 	icon_state = "sabre"
 	inhand_icon_state = "steelsabre"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'
@@ -1112,7 +1112,7 @@
 	. = ..()
 	switch(current_attack_intent)
 		if(SLASH_MODE)
-			to_chat(user, span_notice("Теперь я буду в них вонзать с помощью [src]."))
+			to_chat(user, span_notice("Now I will stab them with [src]."))
 			hitsound = stab_hitsound
 			min_force = 16
 			force = 19
@@ -1122,7 +1122,7 @@
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 6, "rip_time" = 2, "embed_chance" = 35, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 		if(STAB_MODE)
-			to_chat(user, span_notice("Теперь я их буду резать с помощью [src]."))
+			to_chat(user, span_notice("Now I will cut them with [src]."))
 			hitsound = slash_hitsound
 			min_force = 14
 			force = 20

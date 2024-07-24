@@ -1,5 +1,5 @@
 /obj/item/organ/ears
-	name = "Ухо"
+	name = "Ear"
 	icon_state = "ears"
 	desc = "Как будто кто-то смотрит оттуда."
 

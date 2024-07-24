@@ -1,11 +1,11 @@
 /obj/item/bodypart/r_eyelid
-	name = "Правая Глазница"
-	desc = "Выглядит жутко."
+	name = "Right Eyelid"
+	desc = "Looks creepy."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "eyelid"
 	base_icon_state = "eyelid"
-	attack_verb_continuous = list("вглядывает", "видит")
-	attack_verb_simple = list("вглядывать", "видеть")
+	attack_verb_continuous = list("sees")
+	attack_verb_simple = list("see")
 	parent_body_zone = BODY_ZONE_HEAD
 	body_zone = BODY_ZONE_PRECISE_R_EYE
 	body_part = EYE_RIGHT
@@ -27,8 +27,8 @@
 	scars_covered_by_clothes = FALSE
 	dismemberment_sounds = list('modular_septic/sound/gore/severed.ogg')
 
-	cavity_name = "орбитальная полость"
-	amputation_point_name = "орбита"
+	cavity_name = "orbital cavity"
+	amputation_point_name = "orbite"
 	tendon_type = TENDON_R_EYE
 	artery_type = ARTERY_R_EYE
 

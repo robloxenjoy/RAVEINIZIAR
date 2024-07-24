@@ -373,8 +373,8 @@
 	icon_state = "poster33_legit"
 
 /obj/structure/sign/poster/official/no_erp
-	name = "Капнобатай"
-	desc = "Странноватое ебало мужчины. Довольно древнее фото настоящего капнобатая тех времён..."
+	name = "Kapnobatai"
+	desc = "Strange face of a man. Quite ancient photos of the Kapnobatai of those times..."
 	icon_state = "poster34_legit"
 
 /obj/structure/sign/poster/official/wtf_is_co2

@@ -14,9 +14,9 @@
 /client/verb/display_ping(time as num)
 	set instant = TRUE
 	set name = ".display_ping"
-	to_chat(src, span_notice("Пинг [round(pingfromtime(time),1)]."))
+	to_chat(src, span_notice("Ping [round(pingfromtime(time),1)]."))
 
 /client/verb/ping()
-	set name = "Пинг"
+	set name = "Ping"
 	set category = "OOC"
 	winset(src, null, "command=.display_ping+[world.time+world.tick_lag*TICK_USAGE_REAL/100]")

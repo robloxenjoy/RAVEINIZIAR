@@ -25,7 +25,7 @@
 	return TRUE
 
 /obj/structure/wayto/podpol/proc/use(mob/living/carbon/human/user, going_up = TRUE, is_ghost = FALSE)
-	if(user.truerole != "Капнобатай")
+	if(user.truerole != "Kapnobatai")
 		to_chat(user, span_notice("The boys there won't accept me."))
 		return
 	if(!in_range(src, user) || user.incapacitated())
@@ -490,174 +490,174 @@
 		return
 	if(!lockeda)
 		if(user.client?.prefs)
-			var/thing = input(user, "What do I want?", "I want...") as null|anything in list("Холодное оружие", "Огнестрельное оружие", "Броня", "Амуниция", "Ловушки", "Инструменты", "Другое")
+			var/thing = input(user, "What do I want?", "I want...") as null|anything in list("Melee", "Guns", "Armor", "Ammo", "Traps", "Tools", "Other")
 			if(!thing)
 				return
 			playsound(get_turf(src), 'modular_pod/sound/eff/kaotika.ogg', 90 , FALSE, FALSE)
-			if(thing == "Холодное оружие")
+			if(thing == "Melee")
 				melee_find(user)
-			if(thing == "Огнестрельное оружие")
+			if(thing == "Guns")
 				guns_find(user)
-			if(thing == "Броня")
+			if(thing == "Armor")
 				armor_find(user)
-			if(thing == "Амуниция")
+			if(thing == "Ammo")
 				ammo_find(user)
-			if(thing == "Ловушки")
+			if(thing == "Traps")
 				traps_find(user)
-			if(thing == "Инструменты")
+			if(thing == "Tools")
 				tools_find(user)
-			if(thing == "Другое")
+			if(thing == "Other")
 				other_find(user)
 
 /obj/structure/kaotikmachine/proc/melee_find(mob/living/carbon/human/user)
-	var/list/meleelist = list("Меч (50)", "Копьё (40)", "Баклер (20)", "Арматура (20)", "Цеп (40)")
-	var/thingy = input(user, "Что за оружие я хочу?", "Я хочу...") as null|anything in sort_list(meleelist)
+	var/list/meleelist = list("Sword (50)", "Spear (40)", "Buckler (20)", "Rebar (20)", "Flail (40)")
+	var/thingy = input(user, "What kind of weapon I want?", "I want...") as null|anything in sort_list(meleelist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
-		to_chat(user, span_meatymeat("Нужны каотики!"))
+		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
 	switch(thingy)
-		if("Меч (50)")
+		if("Sword (50)")
 			if(pref_source.bobux_amount < 50)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/podpol_weapon/sword/steel(get_turf(user))
 			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Копьё (40)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Spear (40)")
 			if(pref_source.bobux_amount < 40)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/podpol_weapon/spear/wooden(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Баклер (20)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Buckler (20)")
 			if(pref_source.bobux_amount < 20)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/melee/shieldo/buckler/wooden(get_turf(user))
 			pref_source.bobux_amount -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Арматура (20)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Rebar (20)")
 			if(pref_source.bobux_amount < 20)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/melee/bita/rebar(get_turf(user))
 			pref_source.bobux_amount -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Цеп (40)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Flail (40)")
 			if(pref_source.bobux_amount < 40)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/melee/bita/cep/iron(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
+			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
 
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
-	var/list/gunslist = list("Бобокс (80)", "Револьвер Нова (70)")
-	var/thingy = input(user, "Что за оружие я хочу?", "Я хочу...") as null|anything in sort_list(gunslist)
+	var/list/gunslist = list("Bobox (80)", "Revolver Nova (70)")
+	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
-		to_chat(user, span_meatymeat("Нужны каотики!"))
+		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
 	if(GLOB.world_deaths_crazy < 30)
-		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
+		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 30."))
 		return
 	switch(thingy)
-		if("Бобокс (80)")
+		if("Bobox (80)")
 			if(pref_source.bobux_amount < 80)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
 			pref_source.bobux_amount -= 80
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Револьвер Нова (70)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Revolver Nova (70)")
 			if(pref_source.bobux_amount < 70)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
 			pref_source.bobux_amount -= 70
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
+			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
 
 /obj/structure/kaotikmachine/proc/armor_find(mob/living/carbon/user)
-	var/list/otherlist = list("Лёгкий Бронежилет (50)", "Кольчуга (50)", "Перчатки (30)", "Баллистическая Маска (40)")
-	var/thingy = input(user, "Что за броню я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/list/otherlist = list("Light Bulletproofer (50)", "Chainmail (50)", "Gloves (30)", "Ballistic Mask (40)")
+	var/thingy = input(user, "What kind of armor do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
-		to_chat(user, span_meatymeat("Нужны каотики!"))
+		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
 	if(GLOB.world_deaths_crazy < 20)
-		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
+		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 20."))
 		return
 	switch(thingy)
-		if("Лёгкий Бронежилет (50)")
+		if("Light Bulletproofer (50)")
 			if(pref_source.bobux_amount < 50)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/clothing/suit/armor/vest/bulletproofer(get_turf(user))
 			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Кольчуга (50)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Chainmail (50)")
 			if(pref_source.bobux_amount < 50)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/clothing/suit/armor/vest/chainmail/steel(get_turf(user))
 			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Перчатки (30)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Gloves (30)")
 			if(pref_source.bobux_amount < 30)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/clothing/gloves/thickleather(get_turf(user))
 			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Баллистическая Маска (40)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Ballistic Mask (40)")
 			if(pref_source.bobux_amount < 40)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/clothing/mask/gas/ballisticarmor(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
+			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
 
 /obj/structure/kaotikmachine/proc/ammo_find(mob/living/carbon/user)
-	var/list/otherlist = list("Пули 12 Калибра (40)", "Пули .38 Калибра (30)")
-	var/thingy = input(user, "Что за амуницию я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/list/otherlist = list("12 Gauge bullets (40)", ".38 Bullets (30)")
+	var/thingy = input(user, "What kind of ammo do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
-		to_chat(user, span_meatymeat("Нужны каотики!"))
+		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
 /*
 	if(GLOB.world_deaths_crazy < 15)
@@ -665,153 +665,153 @@
 		return
 */
 	switch(thingy)
-		if("Пули 12 Калибра (40)")
+		if("12 Gauge bullets (40)")
 			if(pref_source.bobux_amount < 40)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Пули .38 Калибра (30)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if(".38 Bullets (30)")
 			if(pref_source.bobux_amount < 30)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/ammo_box/magazine/ammo_stack/c38/loaded(get_turf(user))
 			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
+			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
 
 /obj/structure/kaotikmachine/proc/traps_find(mob/living/carbon/user)
-	var/list/otherlist = list("Установщик Проволоки (40)", "Установщик Мины (80)", "Установщик Нажимной Мины (70)")
-	var/thingy = input(user, "Что за ловушку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/list/otherlist = list("Wire Installer (40)", "Mine Installer (80)", "Pressure Mine Installer (70)")
+	var/thingy = input(user, "What kind of trap do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
-		to_chat(user, span_meatymeat("Нужны каотики!"))
+		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
 //	if(GLOB.world_deaths_crazy < 15)
 //		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
 //		return
 	switch(thingy)
-		if("Установщик Проволоки (40)")
+		if("Wire Installer (40)")
 			if(pref_source.bobux_amount < 40)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/barbsetup(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Установщик Мины (80)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Mine Installer (80)")
 			if(pref_source.bobux_amount < 80)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/minesetup(get_turf(user))
 			pref_source.bobux_amount -= 80
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Установщик Нажимной Мины (70)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Pressure Mine Installer (70)")
 			if(pref_source.bobux_amount < 70)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/minesetuplita(get_turf(user))
 			pref_source.bobux_amount -= 70
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
+			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
 
 /obj/structure/kaotikmachine/proc/tools_find(mob/living/carbon/user)
-	var/list/otherlist = list("Кирка (50)", "Дизармер (30)", "Гранатовый Чай (30)")
-	var/thingy = input(user, "Что за инструмент я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/list/otherlist = list("Pickaxe (50)", "Disarmer (30)", "Pomegranate Tea (30)")
+	var/thingy = input(user, "What kind of tool do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
-		to_chat(user, span_meatymeat("Нужны каотики!"))
+		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
 	switch(thingy)
-		if("Дизармер (30)")
+		if("Disarmer (30)")
 			if(pref_source.bobux_amount < 30)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/minedisarmer(get_turf(user))
 			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Кирка (50)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Pickaxe (50)")
 			if(pref_source.bobux_amount < 50)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/melee/hehe/pickaxe/iron(get_turf(user))
 			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Гранатовый Чай (30)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Pomegranate Tea (30)")
 			if(pref_source.bobux_amount < 30)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/reagent_containers/food/drinks/bottle/thermos(get_turf(user))
 			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
+			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Осколочная Граната (70)", "Газовая Граната (50)", "Вспышник (10)", "Ночные Оки (70)")
-	var/thingy = input(user, "Что за штуку я хочу?", "Я хочу...") as null|anything in sort_list(otherlist)
+	var/list/otherlist = list("Frag Grenade (70)", "Gas Grenade (50)", "Flare (10)", "Night Eyes (70)")
+	var/thingy = input(user, "What kind of thing do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
 		return
 	if(get_dist(src, user) >= 2)
 		return
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
-		to_chat(user, span_meatymeat("Нужны каотики!"))
+		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
 	if(GLOB.world_deaths_crazy < 15)
-		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
+		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 15."))
 		return
 	switch(thingy)
-		if("Осколочная Граната (70)")
+		if("Frag Grenade (70)")
 			if(pref_source.bobux_amount < 70)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/grenade/frag(get_turf(user))
 			pref_source.bobux_amount -= 70
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Газовая Граната (50)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Gas Grenade (50)")
 			if(pref_source.bobux_amount < 50)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/grenade/gas/incredible_gas(get_turf(user))
 			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Вспышник (10)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Flare (10)")
 			if(pref_source.bobux_amount < 10)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/flashlight/flare(get_turf(user))
 			pref_source.bobux_amount -= 10
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
-		if("Ночные Оки (70)")
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Night Eyes (70)")
 			if(pref_source.bobux_amount < 70)
-				to_chat(user, span_meatymeat("Нужны каотики!"))
+				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/clothing/glasses/night(get_turf(user))
 			pref_source.bobux_amount -= 70
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Покупка сделана!"))
+			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
 
@@ -839,8 +839,8 @@
 //			set_light(4, 3, "#b90000")
 
 /obj/structure/blockrole
-	name = "Опа"
-	desc = "Нельзя дальше."
+	name = "Oh"
+	desc = "Can't go any further."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "turboa"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -858,11 +858,11 @@
 	return FALSE
 
 /obj/structure/blockrole/konch
-	allow_role = "Конченный"
+	allow_role = "Asshole"
 
 /obj/structure/sign/poster/contraband/codec/lians
-	name = "Карза"
-	desc = "Сколько жизней спасла..."
+	name = "Karza"
+	desc = "How many lives saved..."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "wallight"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -880,8 +880,8 @@
 			set_light(4, 2, "#3c00ff")
 
 /obj/structure/sign/poster/contraband/codec/purpella
-	name = "Пурпэлыа"
-	desc = "Налёт."
+	name = "Purplea"
+	desc = "Coating."
 	icon = 'modular_pod/icons/turf/closed/cavera.dmi'
 	icon_state = "purpela"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -912,13 +912,13 @@
 	light_range = 3
 	light_power = 2
 	light_color = "#75a743"
-	verb_say = "умиляет"
-	verb_ask = "умиляет"
-	verb_exclaim = "умиляет"
+	verb_say = "cutes"
+	verb_ask = "cutes"
+	verb_exclaim = "cutes"
 	var/datum/looping_sound/medika/soundloop
 	var/last_words = 0
 	var/words_delay = 1000
-	var/words_list = list("Я вылечу тебя, и твою душу!", "Ты мой единственный!", "Я всегда тут, просто приходи ко мне.", "Я никогда не предам тебя.", "Я ведь заждалась тебя...")
+	var/words_list = list("I will heal you, and your soul!", "You are my only one!", "I'm always here, just come to me.", "I will never betray you.", "I've been waiting for you...")
 
 /obj/structure/medica/proc/speak(message)
 	say(message)
@@ -927,10 +927,12 @@
 	. = ..()
 	soundloop = new(src, FALSE)
 	soundloop.start()
+	START_PROCESSING(SSobj, src)
 
 /obj/structure/medica/Destroy()
 	. = ..()
 	QDEL_NULL(soundloop)
+	STOP_PROCESSING(SSobj, src)
 
 /obj/structure/medica/process(delta_time)
 	. = ..()
@@ -946,7 +948,7 @@
 	if(.)
 		return
 	if(do_after(user, 4 SECONDS, target=src))
-		user.visible_message(span_notice("[user] чё-то делает с [src]."),span_notice("Я чё-то делаю с [src]."), span_hear("Я слышу странное."))
+		user.visible_message(span_notice("[user] does something with [src]."),span_notice("I do something with [src]."), span_hear("I hear strange things."))
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.adjustFatigueLoss(10)
 		sound_hint()
@@ -958,7 +960,7 @@
 		if(GR == null)
 			return
 		if(do_after(user, 3 SECONDS, target=src))
-			to_chat(GR, span_meatymeat("Я ощущаю какой-то пиздец!"))
+			to_chat(GR, span_meatymeat("I feel some kind of fucked up!"))
 			GR.fully_heal(TRUE)
 	else
 		return
@@ -968,7 +970,7 @@
 	if(.)
 		return
 	if(do_after(user, 2 SECONDS, target=src))
-		to_chat(user, span_meatymeat("Я ощущаю какой-то пиздец!"))
+		to_chat(user, span_meatymeat("I feel some kind of fucked up!"))
 		user.fully_heal(TRUE)
 
 /*
@@ -1046,7 +1048,7 @@
 		var/obj/item/bodypart/affecting = C.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
 		var/armor_block = C.run_armor_check(affecting, MELEE, sharpness = SHARP_EDGED)
 		var/armor_reduce = C.run_subarmor_check(affecting, MELEE, sharpness = SHARP_EDGED)
-		C.visible_message(span_meatymeat("[C] ранится об [src]!"),span_meatymeat("Я ранюсь об [src]!"), span_hear("Я слышу звуки плоти."))
+		C.visible_message(span_meatymeat("[C] gets hurt by [src]!"),span_meatymeat("I get hurt by [src]!"), span_hear("I hear hurting."))
 		C.apply_damage(10, BRUTE, affecting, armor_block, wound_bonus = 5, sharpness = SHARP_EDGED, reduced = armor_reduce)
 		affecting.adjust_germ_level(50)
 		playsound(get_turf(src), 'modular_septic/sound/weapons/melee/sharpy1.ogg', 100 , FALSE, FALSE)
@@ -1056,7 +1058,7 @@
 	if(ishuman(gone))
 		var/mob/living/carbon/human/H = gone
 		if(prob(50))
-			H.visible_message(span_meatymeat("[H] пытается вырваться из [src]!"))
+			H.visible_message(span_meatymeat("[H] tries to get out of the [src]!"))
 			var/obj/item/bodypart/affecting = H.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
 			var/armor_block = H.run_armor_check(affecting, MELEE, sharpness = SHARP_EDGED)
 			var/armor_reduce = H.run_subarmor_check(affecting, MELEE, sharpness = SHARP_EDGED)
@@ -1064,12 +1066,12 @@
 			affecting.adjust_germ_level(50)
 			return COMPONENT_ATOM_BLOCK_EXIT
 		else
-			H.visible_message(span_meatymeat("[H] вырывается из [src]!"))
+			H.visible_message(span_meatymeat("[H] gets out of the [src]!"))
 			return
 
 /obj/item/barbsetup
 	name = "Installer"
-	desc = "Таким вот можно установить проволоку."
+	desc = "This is how you can install the wire."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "setupper"
 	inhand_icon_state = null
@@ -1083,13 +1085,13 @@
 	throwforce = 5
 	carry_weight = 4 KILOGRAMS
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb_continuous = list("бьёт")
-	attack_verb_simple = list("бить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")
 	var/zaryad = 3
 
 /obj/item/detonatormine
 	name = "Detonator"
-	desc = "Для моей мины."
+	desc = "For my mine."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "detonator"
 	inhand_icon_state = "flashbang"
@@ -1107,8 +1109,8 @@
 	throwforce = 1
 	carry_weight = 0.5 KILOGRAMS
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb_continuous = list("бьёт")
-	attack_verb_simple = list("бить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")
 	var/id_detonator = null
 
 /obj/item/detonatormine/attack_self(mob/user)
@@ -1116,7 +1118,7 @@
 	if(.)
 		return
 	if(id_detonator)
-		user.visible_message(span_meatymeat("[user] нажимает на [src]."))
+		user.visible_message(span_meatymeat("[user] clicks on [src]."))
 		user.changeNext_move(CLICK_CD_MELEE)
 		for(var/obj/structure/mineexplosive/M in world)
 			if(M.mineid != src.id_detonator)
@@ -1126,7 +1128,7 @@
 
 /obj/item/minesetup
 	name = "Mine Installer"
-	desc = "Модель Bajas, 3. Ещё нужен детонатор. Он, вроде как, внутри."
+	desc = "Model Bajas, 3. You also need a detonator. It's like it's inside."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mine"
 	inhand_icon_state = null
@@ -1140,8 +1142,8 @@
 	throwforce = 5
 	carry_weight = 3 KILOGRAMS
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb_continuous = list("бьёт")
-	attack_verb_simple = list("бить")
+	attack_verb_continuous = list("bits")
+	attack_verb_simple = list("hit")
 	var/install_mine = /obj/structure/mineexplosive/based
 	var/detonator = 1
 	var/id_mine = null
@@ -1151,7 +1153,7 @@
 	if(.)
 		return
 	if(!detonator)
-		to_chat(user, span_danger("Нет детонатора внутри!"))
+		to_chat(user, span_danger("No detonator inside!"))
 		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 	GLOB.minenew += 1
@@ -1161,12 +1163,12 @@
 	var/idd = GLOB.minenew
 	id_mine = idd
 	detonatorr.id_detonator = id_mine
-	to_chat(user, span_notice("Я достаю детонатор."))
+	to_chat(user, span_notice("I'm getting the detonator."))
 	user.changeNext_move(CLICK_CD_MELEE)
 
 /obj/item/minesetuplita
 	name = "Mine Installer"
-	desc = "Модель Repeater. После установки, на такую будет достаточно наступить."
+	desc = "Model Repeater. After installation, it will be enough to step on this."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mineplit_thing"
 	inhand_icon_state = null
@@ -1180,13 +1182,13 @@
 	throwforce = 5
 	carry_weight = 3 KILOGRAMS
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb_continuous = list("бьёт")
-	attack_verb_simple = list("бить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")
 	var/install_mine = /obj/structure/mineexplosive/mineplit
 
 /obj/structure/mineexplosive
 	name = "Installed Mine"
-	desc = "НЕ ЛЕЗЬ."
+	desc = "DON'T CLIMB."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "installed"
 	density = FALSE
@@ -1214,23 +1216,23 @@
 /obj/structure/mineexplosive/examine(mob/user)
 	. = ..()
 	if(!work)
-		. += span_notice("Мина не работает, эх.")
+		. += span_notice("Mine doesn't work, eh.")
 
 /obj/structure/mineexplosive/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(istype(W, /obj/item/minedisarmer))
 		if(!work)
 			return
-		user.visible_message(span_meatymeat("[user] пытается обезвредить [src]!"))
+		user.visible_message(span_meatymeat("[user] tries to disarm [src]!"))
 		sound_hint()
 		if(!do_after(user, 4 SECONDS, target = src))
 			to_chat(user, span_danger(xbox_rage_msg()))
 			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		var/epic_success = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_ELECTRONICS), context = DICE_CONTEXT_PHYSICAL)
 		if(epic_success >= DICE_SUCCESS)
-			user.visible_message(span_meatymeat("[user] обезвреживает [src]!"))
+			user.visible_message(span_meatymeat("[user] disarms [src]!"))
 			work = FALSE
 		else
-			user.visible_message(span_meatymeat("[user] проваливает попытку обезвредить [src]!"))
+			user.visible_message(span_meatymeat("[user] failed to disarm [src]!"))
 			return
 		user.changeNext_move(CLICK_CD_MELEE)
 		sound_hint()
@@ -1276,7 +1278,7 @@
 
 /obj/structure/mineexplosive/mineplit
 	name = "Installed Mine"
-	desc = "НЕ ЛЕЗЬ."
+	desc = "DON'T CLIMB."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "mineplit"
 	density = FALSE
@@ -1352,7 +1354,7 @@
 
 /obj/item/minedisarmer
 	name = "Disarmer"
-	desc = "Мины не помеха!"
+	desc = "Mines are not a hindrance!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "disarmer"
 	inhand_icon_state = null
@@ -1366,5 +1368,5 @@
 	throwforce = 3
 	carry_weight = 1 KILOGRAMS
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb_continuous = list("бьёт")
-	attack_verb_simple = list("бить")
+	attack_verb_continuous = list("hits")
+	attack_verb_simple = list("hit")

@@ -74,7 +74,7 @@
 		user.mind?.add_memory(MEMORY_BOMB_PRIMED, list(DETAIL_BOMB_TYPE = src), story_value = STORY_VALUE_OKAY)
 	active = TRUE
 	if(grenade_flags & GRENADE_BUTTONED)
-		to_chat(user, span_warning("Запускаю [src] с помощью кнопки."))
+		to_chat(user, span_warning("Activating [src] with button."))
 	if(!(grenade_flags & GRENADE_PINNED))
 		spoon_grenade()
 	update_appearance(UPDATE_ICON)
@@ -89,8 +89,8 @@
 			if(!active && pin)
 				user.transferItemToLoc(pin, user.loc)
 				user.put_in_hands(pin)
-				user.visible_message(span_red("[user] вытаскивает чеку из [src]!"),
-							span_warning("Я вытаскиваю чеку из [src]."))
+				user.visible_message(span_red("[user] pulls the pin out [src]!"),
+							span_warning("I pull the pin out [src]."))
 				pin = null
 				arm_grenade(user)
 				update_appearance(UPDATE_ICON)
@@ -140,11 +140,11 @@
 		return
 	if(istype(I, /obj/item/pin))
 		if(grenade_spooned)
-			to_chat(user, span_colossus("Стоп, это уже..."))
+			to_chat(user, span_colossus("Wait, it's already..."))
 			user.client?.give_award(/datum/award/achievement/misc/imfucked, user)
 		else if(grenade_flags & GRENADE_PINNED)
 			if(pin)
-				to_chat(user, span_warning("Тут уже чека."))
+				to_chat(user, span_warning("There is a pin."))
 			else if(I.type != initial(pin))
 				var/obj/item/pin/other_pin = I.type
 				to_chat(user, span_warning("This Isn't the right pin, where'd I get a [initial(other_pin.name)]?"))
@@ -152,8 +152,8 @@
 				pin = I
 				user.transferItemToLoc(I, src, TRUE)
 				active = FALSE
-				user.visible_message(span_warning("[user] устанавливает чеку на [src]!"), \
-							span_warning("Я устанавливаю чеку на [src]."))
+				user.visible_message(span_warning("[user] sets the pin on [src]!"), \
+							span_warning("I set the pin on [src]."))
 				playsound(I, 'modular_septic/sound/weapons/grenade_safety.ogg', 65, FALSE)
 				update_appearance(UPDATE_ICON)
 	else if((grenade_flags & GRENADE_FUSED) && I.get_temperature() && !active && !botch_check(user))
@@ -187,8 +187,8 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/pin
-	name = "Чека Гранаты"
-	desc = "Можно вставить обратно."
+	name = "Grenade Pin"
+	desc = "Can be inserted back."
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "pin"
 	drop_sound = 'modular_septic/sound/items/coin_drop.ogg'

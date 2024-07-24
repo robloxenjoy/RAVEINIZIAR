@@ -1,6 +1,6 @@
 /obj/item/bodypart/face
-	name = "Лицо"
-	desc = "Новое. Для тебя."
+	name = "Face"
+	desc = "New. For me."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "face"
 	base_icon_state = "face"
@@ -72,13 +72,13 @@
 	. = ..()
 	if(owner)
 		if((burn_dam >= max_damage) && !HAS_TRAIT_FROM(owner, TRAIT_DISFIGURED, BURN))
-			owner.visible_message(span_danger("<b>[owner] лицо превращается в обгоревшую кашу!</b>"), \
-								span_userdanger("<b>МОЁ ЛИЦО РАСПЛАВИЛОСЬ!</b>"))
+			owner.visible_message(span_danger("<b>[owner] [src] turns into a burnt mess!</b>"), \
+								span_userdanger("<b>MY FACE IS FUCKED!</b>"))
 			ADD_TRAIT(owner, TRAIT_DISFIGURED, BURN)
 			ADD_TRAIT(src, TRAIT_DISFIGURED, BURN)
 		if((brute_dam >= max_damage) && !HAS_TRAIT_FROM(owner, TRAIT_DISFIGURED, BRUTE))
-			owner.visible_message(span_danger("<b>[owner] лицо превращается в изувеченное месиво!</b>"), \
-								span_userdanger("<b>МОЁ ЛИЦО РАЗЪЁБАННО!</b>"))
+			owner.visible_message(span_danger("<b>[owner] [src] turns a mangled mess!</b>"), \
+								span_userdanger("<b>MY FACE IS FUCKED!</b>"))
 			ADD_TRAIT(owner, TRAIT_DISFIGURED, BRUTE)
 			ADD_TRAIT(src, TRAIT_DISFIGURED, BRUTE)
 
@@ -156,7 +156,7 @@
 	if(!owner)
 		name = initial(name)
 		if(real_name)
-			name = "[real_name] лицо"
+			name = "[real_name] face"
 	else
 		name = initial(name)
 
@@ -175,7 +175,7 @@
 
 	real_name = carbon?.real_name
 	if( (carbon && (HAS_TRAIT(carbon, TRAIT_HUSK) || HAS_TRAIT(carbon, TRAIT_DISFIGURED)) ) || HAS_TRAIT(src, TRAIT_HUSK) || HAS_TRAIT(src, TRAIT_DISFIGURED))
-		real_name = "Неизвестный"
+		real_name = "Unknown"
 
 /obj/item/bodypart/face/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	if(!isinhands)

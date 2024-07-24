@@ -34,8 +34,8 @@
 	custom_materials = list(/datum/material/gold = 100, /datum/material/iron = 150, /datum/material/plastic = 250)
 
 /obj/item/clothing/mask/gas/ballisticarmor
-	name = "Баллистическая Маска"
-	desc = "И от пуль блять, и от другой хуеты."
+	name = "Ballistic Mask"
+	desc = "And from fucking bullets, and from other bullshit."
 	icon = 'modular_pod/icons/obj/clothing/masks.dmi'
 	icon_state = "ballistic"
 	worn_icon = 'modular_pod/icons/mob/clothing/mask.dmi'

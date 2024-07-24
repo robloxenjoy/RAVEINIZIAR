@@ -1,6 +1,6 @@
 /obj/item/bodypart/groin
-	name = "Пах"
-	desc = "Больное место."
+	name = "Groin"
+	desc = "Pain location. Stupidity location."
 	icon_state = "default_human_groin"
 	max_damage = 100
 	max_stamina_damage = 100

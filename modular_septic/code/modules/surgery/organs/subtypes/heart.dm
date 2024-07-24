@@ -1,15 +1,15 @@
 /obj/item/organ/heart
-	name = "Сердце"
-	desc = "Следуй ему."
+	name = "Heart"
+	desc = "Follow."
 	icon_state = "heart"
 	zone = BODY_ZONE_CHEST
 	organ_efficiency = list(ORGAN_SLOT_HEART = 100)
 	w_class = WEIGHT_CLASS_SMALL
 
-	low_threshold_passed = span_info("Появляются покалывания боли и затухают в груди...")
-	high_threshold_passed = span_warning("Что-то внутри груди болит, и боль не утихает. Я дышу гораздо быстрее, чем раньше.")
-	now_fixed = span_info("Моё сердце снова бьётся.")
-	high_threshold_cleared = span_info("Боль в груди утихла, и дыхание стало более расслабленным.")
+	low_threshold_passed = span_info("Tingling pain appears and fades in the chest...")
+	high_threshold_passed = span_warning("Something inside my chest hurts, and the pain does not subside. I feel myself much faster than before.")
+	now_fixed = span_info("My heart is beating again.")
+	high_threshold_cleared = span_info("Chest pain subsided and I became more relaxed.")
 
 	attack_verb_continuous = list("beats", "thumps")
 	attack_verb_simple = list("beat", "thump")
@@ -38,7 +38,7 @@
 	. = ..()
 	if(!failed && is_failing() && owner.needs_heart()) // heart broke, stopped beating, death imminent...
 		if(owner.stat == CONSCIOUS)
-			owner.visible_message(span_danger("<b>[owner]</b> цепляется за свою [parse_zone(BODY_ZONE_CHEST)]!"))
+			owner.visible_message(span_danger("<b>[owner]</b> curls up towards his [parse_zone(BODY_ZONE_CHEST)]!"))
 		playsound(owner, convulsion_sound, 95, FALSE)
 		owner.sound_hint()
 		failed = TRUE
@@ -61,8 +61,8 @@
 /obj/item/organ/heart/attack_self(mob/user)
 	. = ..()
 	if(!beating)
-		user.visible_message(span_notice("[user] давит [src] чтобы заставить биться это снова!"), \
-					span_notice("Я давлю на [src] дабы заставить биться это снова."))
+		user.visible_message(span_notice("[user] presses on [src] to make it beat again!"), \
+					span_notice("I press on [src] to make it beat again."))
 		Restart()
 		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned)), 8 SECONDS)
 
@@ -86,7 +86,7 @@
 			if(heart.beating)
 				deathsdoor = FALSE
 		if(deathsdoor)
-			to_chat(owner, span_flashinguserdanger("Всё замирает!"))
+			to_chat(owner, span_flashinguserdanger("Everything fades!"))
 	return TRUE
 
 /obj/item/organ/heart/proc/Restart()
@@ -94,7 +94,7 @@
 	beating = TRUE
 	update_appearance()
 	if(owner && !old_beating)
-		to_chat(owner, span_userdanger("Моё [name] бьётся снова!"))
+		to_chat(owner, span_userdanger("My [name] beats again!"))
 	return TRUE
 
 /obj/item/organ/heart/on_eat_from(eater, feeder)

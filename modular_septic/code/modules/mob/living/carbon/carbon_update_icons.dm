@@ -332,9 +332,9 @@
 	var/mutable_appearance/sign_overlays = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "blank", -ROLES_LAYER)
 	var/image/damage
 	switch(truerole)
-		if("Капнобатай")
+		if("Kapnobatai")
 			damage = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno")
-		if("Конченный")
+		if("Asshole")
 			damage = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch")
 	damage.layer = -ROLES_LAYER
 	sign_overlays.add_overlay(damage)

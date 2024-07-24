@@ -301,8 +301,8 @@
 
 // 7.62x54R Lampiao sniper-rifle
 /obj/item/gun/ballistic/automatic/remis/svd
-	name = "Винтовка СВД"
-	desc = "Дистанция - залог успеха."
+	name = "SVD Rifle"
+	desc = "Distance is the key to success."
 	icon = 'modular_septic/icons/obj/items/guns/64x32.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/guns/inhands/rifle_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/guns/inhands/rifle_righthand.dmi'

@@ -91,7 +91,7 @@
 "HR" = (/obj/structure/medica,/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest/inner)
 "Jk" = (/obj/structure/table/goody,/obj/item/reagent_containers/glass/bottle/porov,/turf/open/floor/plating/polovich/way/specialblue,/area/maintenance/polovich/forest/inner)
 "Jz" = (/obj/effect/spawner/random/structure/maphelp/fire/inferno/ten/magic,/turf/open/floor/plating/polovich/way/hotstone5,/area/maintenance/polovich/forest)
-"JI" = (/obj/structure/blockrole{allow_role = "Капнобатай"},/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
+"JI" = (/obj/structure/blockrole{allow_role = "Kapnobatai"},/turf/open/floor/plating/polovich/way/stone,/area/maintenance/polovich/forest)
 "JY" = (/obj/effect/decal/metalpodpol,/turf/open/floor/plating/polovich/way/muddy,/area/maintenance/polovich/forest)
 "Kj" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/morphine,/obj/structure/codec/bulb/green{dir = 4},/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
 "Lu" = (/obj/structure/closet/crate/freezer/podozl,/obj/item/reagent_containers/syringe/morphine,/turf/open/floor/plating/polovich/way/beautry,/area/maintenance/polovich/forest/inner)

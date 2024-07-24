@@ -25,8 +25,8 @@
 	ex_flame = 3
 
 /obj/item/grenade/frag
-	name = "Осколочная Граната"
-	desc = "Очередное орудие разрушения."
+	name = "Frag Grenade"
+	desc = "Another tool of destruction."
 	icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
 	shrapnel_radius = 7

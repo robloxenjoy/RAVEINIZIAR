@@ -1,6 +1,6 @@
 /// Spilling wounds
 /datum/wound/spill
-	name = "Вырвано"
+	name = "Spilled"
 	sound_effect = list('modular_septic/sound/gore/spill1.ogg', 'modular_septic/sound/gore/spill2.ogg')
 	severity = WOUND_SEVERITY_CRITICAL
 
@@ -9,7 +9,7 @@
 
 /// Brain spill
 /datum/wound/spill/brain
-	name = "Вырванный мозг"
+	name = "Spilled brain"
 	viable_zones = list(BODY_ZONE_HEAD)
 	severity = WOUND_SEVERITY_CRITICAL
 	threshold_minimum = 50
@@ -47,7 +47,7 @@
 		if(sound_effect)
 			playsound(new_limb.owner, pick(sound_effect), 100, TRUE)
 		if(add_descriptive)
-			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_dead(" [span_big(" Мозг вырывается!")]"))
+			SEND_SIGNAL(victim, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_dead(" [span_big(" Brain is spilled!")]"))
 	new_limb.spilled = TRUE
 	victim.bleed(20)
 	INVOKE_ASYNC(src, PROC_REF(debrain_animation), victim)
@@ -79,9 +79,9 @@
 	if(mushy_pea_brain.icon_state == "brain")
 		mushy_pea_brain.icon_state = "brain-mushed"
 		mushy_pea_brain.transform = mushy_pea_brain.transform.Scale(1, 1/0.3)
-		mushy_pea_brain.name = "Кашицеобразный [mushy_pea_brain.name]"
+		mushy_pea_brain.name = "Mushed [mushy_pea_brain.name]"
 		mushy_pea_brain.desc += "\n"
-		mushy_pea_brain.desc += span_dead("<u>[mushy_pea_brain] видал лучшие дни...</u>")
+		mushy_pea_brain.desc += span_dead("<u>[mushy_pea_brain] have seen better days...</u>")
 
 /// Gut spill
 /datum/wound/spill/gut

@@ -1,6 +1,6 @@
 /obj/item/bodypart/mouth
-	name = "Челюсть"
-	desc = "У меня нет рта, но я должен кричать."
+	name = "Jaw"
+	desc = "I have no mouth but I must scream."
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "jaw"
 	base_icon_state = "jaw"
@@ -29,7 +29,7 @@
 	scars_covered_by_clothes = FALSE
 
 	cavity_name = "oral cavity"
-	amputation_point_name = "лицо"
+	amputation_point_name = "face"
 	bone_type = BONE_MOUTH
 	tendon_type = TENDON_MOUTH
 	artery_type = ARTERY_MOUTH

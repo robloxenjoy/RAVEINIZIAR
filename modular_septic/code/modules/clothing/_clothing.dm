@@ -58,23 +58,23 @@
 		return ..()
 
 	if(!LAZYACCESS(damage_by_parts, user.zone_selected))
-		to_chat(user, span_warning("[src] [capitalize(parse_zone(user.zone_selected))] не сломано."))
+		to_chat(user, span_warning("[src] [capitalize(parse_zone(user.zone_selected))] is not broken."))
 		return TRUE
 	var/obj/item/stack/stack = attacking_item
 	if(stack.amount < 1)
-		to_chat(user, span_warning("Недостаточно [stack.name] дабы починить [src]."))
+		to_chat(user, span_warning("Not enough of [stack.name] to repair [src]."))
 		return TRUE
 	var/obj/item/stack/offhand_stack
 	if(repairable_by_offhand)
 		offhand_stack = user.get_inactive_held_item()
 		var/obj/item/stack/ghost_stack = repairable_by_offhand
 		if(!istype(offhand_stack, repairable_by_offhand))
-			to_chat(user, span_warning("Мне также нужно [initial(ghost_stack.name)] дабы починить [src]."))
+			to_chat(user, span_warning("Need [initial(ghost_stack.name)] to repair [src]."))
 			return TRUE
 		if(offhand_stack.amount < 1)
-			to_chat(user, span_warning("Недостаточно [offhand_stack.name] дабы починить [src]."))
+			to_chat(user, span_warning("Not enough of [offhand_stack.name] to repair [src]."))
 			return TRUE
-	to_chat(user, span_notice("Начинаю чинить урон на [src] с помощью [stack]..."))
+	to_chat(user, span_notice("I begin to repair [src] with [stack]..."))
 	if(!do_after(user, 5 SECONDS, src) || !stack.use(1) || (offhand_stack && !offhand_stack.use(1)))
 		to_chat(user, span_warning(fail_msg()))
 		return TRUE
@@ -147,12 +147,12 @@
 		return
 
 	var/zone_name = parse_zone(def_zone)
-	var/break_verb = ((damage_type == BRUTE) ? "ломается" : "сгорает")
+	var/break_verb = ((damage_type == BRUTE) ? "breaks" : "burns")
 
 	if(iscarbon(loc))
 		var/mob/living/carbon/carbon = loc
-		carbon.visible_message(span_danger("[zone_name] на [carbon] [src.name] [break_verb]!"), \
-							span_userdanger("[zone_name] на [src.name] [break_verb]!"), \
+		carbon.visible_message(span_danger("[zone_name] on [carbon] [src.name] [break_verb]!"), \
+							span_userdanger("[zone_name] on [src.name] [break_verb]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 		RegisterSignal(carbon, COMSIG_MOVABLE_MOVED, PROC_REF(bristle), override = TRUE)
 
@@ -168,12 +168,12 @@
 
 	switch(zones_disabled)
 		if(1)
-			name = "Повреждённое [initial(name)]"
+			name = "Damaged [initial(name)]"
 		if(2)
-			name = "Убогое [initial(name)]"
+			name = "Retarded [initial(name)]"
 		// take better care of your shit, dude
 		if(3 to INFINITY)
-			name = "Избитое [initial(name)]"
+			name = "Disabled [initial(name)]"
 
 	update_clothes_damaged_state(CLOTHING_DAMAGED)
 	update_appearance()
@@ -188,7 +188,7 @@
 	damage_by_parts = null
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-		to_chat(user, span_notice("Я чиню урон на [src]."))
+		to_chat(user, span_notice("I'm repairing damage to [src]."))
 	update_appearance()
 
 /obj/item/clothing/bristle(mob/living/wearer)
@@ -216,7 +216,7 @@
 	slot_flags = initial(slot_flags)
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-		to_chat(user, span_notice("Я чиню урон на [src] [parse_zone(def_zone)]."))
+		to_chat(user, span_notice("I'm repairing damage on [src] [parse_zone(def_zone)]."))
 	switch(zones_disabled)
 		if(1)
 			name = "damaged [initial(name)]"

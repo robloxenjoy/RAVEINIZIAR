@@ -1,7 +1,7 @@
 #define DEFAULT_WHO_CELLS_PER_ROW 4
 
 /client/verb/who()
-	set name = "Кто"
+	set name = "Who"
 	set category = "OOC"
 
 	var/amount = 0
@@ -15,7 +15,7 @@
 		else
 			to_chat(src, "<span class='infoplain'>[Player.ckey].</span>")
 			amount += 1
-	to_chat(src, "<span class='infoplain'>Количество: [amount]</span>")
+	to_chat(src, "<span class='infoplain'>Amount: [amount]</span>")
 
 /client/verb/adminwho()
 	set category = null

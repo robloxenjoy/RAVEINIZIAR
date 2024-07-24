@@ -38,12 +38,12 @@
 	if(.)
 		return
 	if(user.a_intent == INTENT_HELP)
-		user.visible_message(span_notice("[user] трогает [src]."),span_notice("Я трогаю [src]."), span_hear("Я слышу чё-то."))
+		user.visible_message(span_notice("[user] touches [src]."),span_notice("I touch [src]."),  span_hear("I hear something."))
 //		user.visible_message("<span class='notice'>\[user] трогает [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 	if(user.a_intent == INTENT_GRAB)
 		if(!special_floor)
-			user.visible_message(span_notice("[user] размахивает рукой."),span_notice("Я размахиваю рукой."), span_hear("Я слышу чё-то."))
+			user.visible_message(span_notice("[user] swings with hand."),span_notice("I swing with hand."), span_hear("I hear something."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 			user.changeNext_move(CLICK_CD_WRENCH)
 			playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
@@ -52,7 +52,7 @@
 		else
 			special_thing(user)
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
-		user.visible_message(span_notice("[user] бьёт [src] рукой."),span_notice("Я бью [src] рукой."), span_hear("Я слышу стук."))
+		user.visible_message(span_notice("[user] hits [src] with hand."),span_notice("I hit [src] with hand."), span_hear("I hear something."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.adjustFatigueLoss(5)
@@ -64,16 +64,16 @@
 	if(.)
 		return
 	if(user.a_intent == INTENT_HELP)
-		user.visible_message(span_notice("[user] трогает [src]."),span_notice("Я трогаю [src]."), span_hear("Я слышу чё-то."))
+		user.visible_message(span_notice("[user] touches [src]."),span_notice("I touch [src]."), span_hear("I hear something."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 	if(user.a_intent == INTENT_GRAB)
-		user.visible_message(span_notice("[user] размахивает рукой."),span_notice("Я размахиваю рукой."), span_hear("Я слышу чё-то."))
+		user.visible_message(span_notice("[user] swings with hand."),span_notice("I swing with hand."), span_hear("I hear something."))
 //		user.visible_message("<span class='notice'>\[user] touches the [src].</span>")
 		user.changeNext_move(CLICK_CD_WRENCH)
 		playsound(get_turf(src), 'modular_pod/sound/eff/swing_small.ogg', 90 , FALSE, FALSE)
 	if((user.a_intent == INTENT_HARM) || (user.a_intent == INTENT_DISARM))
-		user.visible_message(span_notice("[user] бьёт [src] рукой."),span_notice("Я бью [src] рукой."), span_hear("Я слышу стук."))
+		user.visible_message(span_notice("[user] hits [src] with hand."),span_notice("I hit [src] with hand."), span_hear("I hear something."))
 //		user.visible_message("<span class='notice'>\[user] beats the [src].</span>")
 		user.changeNext_move(CLICK_CD_MELEE)
 		user.adjustFatigueLoss(5)
@@ -117,7 +117,7 @@
 				if(do_after(user, 2 SECONDS, target=src))
 					T.zaryad--
 					new /obj/structure/barbwire(get_turf(src))
-					user.visible_message(span_meatymeat("[user] устанавливает [T]."), span_meatymeat("Я устанавливаю [T]."), span_hear("Я слышу постройку."))
+					user.visible_message(span_meatymeat("[user] installs [T]."), span_meatymeat("I install [T]."), span_hear("I hear building."))
 					user.changeNext_move(5)
 					sound_hint()
 					if(T.zaryad <= 0)
@@ -139,7 +139,7 @@
 					return
 				var/obj/item/minesetup/T = W
 				if(T.detonator)
-					to_chat(user, span_danger("Детонатор внутри!"))
+					to_chat(user, span_danger("Detonator is inside!"))
 					user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 					return
 				if(do_after(user, 2 SECONDS, target=src))
@@ -147,7 +147,7 @@
 					var/obj/structure/mineexplosive/based/yes = new(get_turf(src))
 //					new yes(get_turf(src))
 					yes.mineid = T.id_mine
-					user.visible_message(span_meatymeat("[user] устанавливает [T]."), span_meatymeat("Я устанавливаю [T]."), span_hear("Я слышу постройку."))
+					user.visible_message(span_meatymeat("[user] installs [T]."), span_meatymeat("I install [T]."), span_hear("I hear building."))
 					qdel(T)
 					playsound(get_turf(src), 'modular_pod/sound/eff/setup_mine.ogg', 80 , FALSE, FALSE)
 					user.changeNext_move(5)
@@ -171,7 +171,7 @@
 					var/obj/item/minesetuplita/T = W
 					var/obj/structure/mineexplosive/mineplit/yes = new(get_turf(src))
 					yes.friendo = user.truerole
-					user.visible_message(span_meatymeat("[user] устанавливает [T]."), span_meatymeat("Я устанавливаю [T]."), span_hear("Я слышу постройку."))
+					user.visible_message(span_meatymeat("[user] installs [T]."), span_meatymeat("I install [T]."), span_hear("I hear building."))
 					qdel(T)
 					playsound(get_turf(src), 'modular_pod/sound/eff/setup_mine.ogg', 80 , FALSE, FALSE)
 					user.changeNext_move(5)
@@ -183,7 +183,7 @@
 					return
 
 			if(W.get_sharpness())
-				user.visible_message(span_notice("[user] размахивает с помощью [W]."),span_notice("Я размахиваю с помощью [W]."), span_hear("Я слышу взмах."))
+				user.visible_message(span_notice("[user] swings with [W]."),span_notice("I swing with [W]."), span_hear("I hear something."))
 				user.changeNext_move(W.attack_delay)
 				user.adjustFatigueLoss(W.attack_fatigue_cost)
 				sound_hint()
@@ -192,7 +192,7 @@
 				else
 					playsound(get_turf(src), 'modular_pod/sound/eff/swing_big.ogg', 90 , FALSE, FALSE)
 			else
-				user.visible_message(span_notice("[user] бьёт [src] с помощью [W]."),span_notice("Я бью [src] с помощью [W]."), span_hear("Я слышу стук."))
+				user.visible_message(span_notice("[user] hits [src] with [W]."),span_notice("I hit [src] with [W]."), span_hear("I hear something."))
 				user.changeNext_move(W.attack_delay)
 				user.adjustFatigueLoss(W.attack_fatigue_cost)
 				W.damageItem("SOFT")
@@ -230,16 +230,16 @@
 //	var/turf/turf_loc = loc
 	if(get_dist(turf_loc?.liquids,user) <= 1)
 		if(user.wear_mask && user.wear_mask.flags_cover & MASKCOVERSMOUTH)
-			visible_message(user, span_warning("Что-то мешает мне пить!"))
+			visible_message(user, span_warning("Something covers my mouth!"))
 			return
 		var/datum/reagents/temporary_holder = turf_loc.liquids.take_reagents_flat(CHOKE_REAGENTS_INGEST_ON_BREATH_AMOUNT)
 		temporary_holder.trans_to(src, temporary_holder.total_volume, methods = INGEST)
 		qdel(temporary_holder)
-		visible_message(span_notice("[user] пьёт жидкость."))
+		visible_message(span_notice("[user] drinks liquid."))
 		playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), TRUE)
 		return
 	else
-		user.visible_message(span_notice("[user] кусает [src]."),span_notice("Я кусаю [src]."), span_hear("Я слышу чё-то."))
+		user.visible_message(span_notice("[user] bites [src]."),span_notice("I bite [src]."), span_hear("I hear something."))
 		user.changeNext_move(CLICK_CD_BITE)
 		user.adjustFatigueLoss(5)
 		playsound(get_turf(src), 'sound/weapons/bite.ogg', 80 , FALSE, FALSE)
@@ -249,7 +249,7 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message(span_notice("[user] пинает [src]."),span_notice("Я пинаю [src]."), span_hear("Я слышу стук."))
+	user.visible_message(span_notice("[user] kicks [src]."),span_notice("I kick [src]."), span_hear("I hear something."))
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.adjustFatigueLoss(10)
 	playsound(get_turf(src), 'sound/effects/beatfloorhand.ogg', 80 , FALSE, FALSE)

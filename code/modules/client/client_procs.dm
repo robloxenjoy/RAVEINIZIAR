@@ -1043,15 +1043,15 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 					movement_keys[key] = WEST
 				if("South")
 					movement_keys[key] = SOUTH
-				if("Говорить")
-					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=Говорить")
+				if("Say")
+					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=Say")
 				if("OOC")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=ooc")
-				if("Я")
-					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=Я")
+				if("Me")
+					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=Me")
 				//SEPTIC EDIT BEGIN
-				if("Шептать")
-					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=Шептать")
+				if("Whisper")
+					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=Whisper")
 				//SEPTIC EDIT END
 
 /client/proc/change_view(new_size)

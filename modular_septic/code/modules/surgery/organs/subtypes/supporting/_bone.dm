@@ -1,6 +1,6 @@
 /obj/item/organ/bone
-	name = "Кость"
-	desc = "Фосфор, кальций, магний..."
+	name = "Bone"
+	desc = "Phosphorus, calcium, magnesium..."
 	icon_state = "bone"
 	base_icon_state = "bone"
 	drop_sound = 'modular_septic/sound/gore/bone_drop.ogg'

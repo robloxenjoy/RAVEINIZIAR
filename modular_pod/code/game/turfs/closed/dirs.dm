@@ -1,6 +1,6 @@
 /turf/podpol
-	name = "Стена"
-	desc = "Стрёмно!"
+	name = "Wall"
+	desc = "Creepy!"
 	icon = 'icons/wall.dmi'
 	icon_state = "wall"
 	base_icon_state = "wall"
@@ -144,7 +144,7 @@
 					var/obj/item/bodypart/head = GR.get_bodypart_nostump(BODY_ZONE_HEAD)
 					if(head)
 						var/damage = ((GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)/2) + src?.powerwall)
-						GR.visible_message(span_pinkdang("[user] бьёт [GR] головой об [src]!"))
+						GR.visible_message(span_pinkdang("[user] hits [GR] head on [src]!"))
 						var/armor_block = GR.run_armor_check(head, MELEE, sharpness = NONE)
 						var/armor_reduce = GR.run_subarmor_check(head, MELEE, sharpness = NONE)
 						GR.apply_damage(brute = damage, BRUTE, head, armor_block, wound_bonus = 3, sharpness = NONE, reduced = armor_reduce)
@@ -156,7 +156,7 @@
 		if(mine_hp > 0)
 			if(user.a_intent == INTENT_HARM)
 				if(W.can_dig)
-					user.visible_message(span_notice("[user] копает [src] с помощью [W]."),span_notice("Я копаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
+					user.visible_message(span_notice("[user] digs [src] with [W]."),span_notice("Я копаю [src] with [W]."), span_hear("I hear digging."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(8)
 					W.damageItem(10)
@@ -165,21 +165,21 @@
 					mine_hp -= 1
 					var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
 					if(diceroll >= DICE_SUCCESS)
-						user.visible_message(span_notice("[user] добывает руду."),span_notice("Я добываю руду."), span_hear("Я слышу звуки раскопок."))
+						user.visible_message(span_notice("[user] mines ore."),span_notice("I mine ore."), span_hear("I hear digging."))
 						new ore_type(get_turf(user), ore_amount)
-						user.client.prefs.adjust_bobux(1, "<span class='bobux'>Я добыл руду! +1 Каотик!</span>")
+						user.client.prefs.adjust_bobux(1, "<span class='bobux'>I mine ore! +1 Kaotik!</span>")
 						user.flash_kaosgain()
 					if(diceroll == DICE_CRIT_FAILURE)
 						var/dicerolll = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_PERCEPTION), context = DICE_CONTEXT_MENTAL)
 						if(dicerolll == DICE_CRIT_FAILURE)
-							user.visible_message(span_notice("[user] провалился в попытке прокопать [src] с помощью [W]!"),span_notice("Я провалился в попытке прокопать [src] с помощью [W]!"), span_hear("Я слышу звуки раскопок."))
+							user.visible_message(span_notice("[user] failed to dig [src] with [W]!"),span_notice("I failed to dig [src] with [W]!"), span_hear("I hear digging."))
 							user.apply_damage(15, BRUTE, BODY_ZONE_HEAD, user.run_armor_check(BODY_ZONE_HEAD, MELEE), wound_bonus = 5, sharpness = NONE)
 						else
-							user.visible_message(span_notice("[user] тупо копает [src] с помощью [W]."),span_notice("Я тупо копаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок"))
+							user.visible_message(span_notice("[user] stupidly digs [src] with [W]."),span_notice("I stupidly dig [src] with [W]."), span_hear("I hear digging."))
 		else
 			if(user.a_intent == INTENT_HARM)
 				if(W.can_dig)
-					user.visible_message(span_notice("[user] разрушает [src] с помощью [W]."),span_notice("Я разрушаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
+					user.visible_message(span_notice("[user] ruins [src] with [W]."),span_notice("I ruin [src] with [W]."), span_hear("I hear digging."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(8)
 					W.damageItem(10)

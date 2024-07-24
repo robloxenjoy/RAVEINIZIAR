@@ -47,14 +47,14 @@
 			return
 		thrown_thing.z = src.z+1
 	if(ismob(thrown_thing))
-		visible_message(span_danger("<b>[src]</b> кидает <b>[thrown_thing]</b> в [parsed_target][power_throw ? " жёстко!" : "."]"), \
-						span_userdanger("Я кидаю <b>[thrown_thing]</b> в [parsed_target][power_throw ? " жёстко!" : "."]"), \
+		visible_message(span_danger("<b>[src]</b> throws <b>[thrown_thing]</b> at [parsed_target][power_throw ? " hardly!" : "."]"), \
+						span_userdanger("I throw <b>[thrown_thing]</b> at [parsed_target][power_throw ? " hardly!" : "."]"), \
 						ignored_mobs = thrown_thing)
-		to_chat(thrown_thing, span_userdanger("<b>[src]</b> жёстко кидает меня!"))
+		to_chat(thrown_thing, span_userdanger("<b>[src]</b> hardly throws me!"))
 	else
-		visible_message(span_danger("<b>[src]</b> кидает [thrown_thing] в [parsed_target][power_throw ? " жёстко!" : "."]"), \
-						span_userdanger("Я кидаю [thrown_thing] в [parsed_target][power_throw ? " жёстко!" : "."]"))
-	log_message("был кинут [thrown_thing] в [parsed_target][power_throw ? " жёстко" : ""]", LOG_ATTACK)
+		visible_message(span_danger("<b>[src]</b> throws [thrown_thing] at [parsed_target][power_throw ? " hardly!" : "."]"), \
+						span_userdanger("I throw [thrown_thing] at [parsed_target][power_throw ? " hardly!" : "."]"))
+	log_message("was threw [thrown_thing] at [parsed_target][power_throw ? " hardly" : ""]", LOG_ATTACK)
 	sound_hint()
 	src.changeNext_move(CLICK_CD_CLING)
 	src.adjustFatigueLoss(5)

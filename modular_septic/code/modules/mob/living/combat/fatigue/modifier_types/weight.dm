@@ -1,3 +1,3 @@
 /datum/fatigue_modifier/weight
 	variable = TRUE
-	desc = span_alert("Нагрузка.")
+	desc = span_alert("Weight.")

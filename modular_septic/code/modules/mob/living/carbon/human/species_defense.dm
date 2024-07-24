@@ -7,19 +7,19 @@
 						'modular_septic/sound/attack/punch3.ogg')
 	miss_sound = list('modular_septic/sound/attack/punchmiss.ogg')
 	attack_effect = ATTACK_EFFECT_PUNCH
-	attack_verb = "ударить"
-	var/attack_verb_continuous = "ударяет"
+	attack_verb = "hit"
+	var/attack_verb_continuous = "hits"
 	var/attack_sharpness = NONE
 	var/attack_armor_damage_modifier = 0
 	var/kick_effect = ATTACK_EFFECT_KICK
-	var/kick_verb = "пинать"
-	var/kick_verb_continuous = "пинает"
+	var/kick_verb = "kick"
+	var/kick_verb_continuous = "kicks"
 	var/kick_sharpness = NONE
 	var/kick_armor_damage_modifier = 0
 	var/kick_sound = 'modular_septic/sound/attack/kick.ogg'
 	var/bite_effect = ATTACK_EFFECT_BITE
-	var/bite_verb = "кусать"
-	var/bite_verb_continuous = "кусает"
+	var/bite_verb = "bite"
+	var/bite_verb_continuous = "bites"
 	var/bite_sharpness = NONE
 	var/bite_sound = list('modular_septic/sound/attack/bite1.ogg')
 	var/bite_armor_damage_modifier = 0
@@ -189,20 +189,20 @@
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
-			var/attack_message = "атака"
+			var/attack_message = "attack"
 			if(length(weapon.attack_verb_simple))
 				attack_message = pick(weapon.attack_verb_simple)
-			victim.visible_message(span_warning("<b>[victim]</b> блокирует <b>[user]</b> [attack_message] с помощью [weapon]!"), \
-							span_userdanger("Я блокирую <b>[user]</b> [attack_message] с помощью [weapon]!"), \
-							span_hear("Я слышу стук!"), \
+			victim.visible_message(span_warning("<b>[victim]</b> blocks <b>[user]</b> [attack_message] with [weapon]!"), \
+							span_userdanger("I block <b>[user]</b> [attack_message] with [weapon]!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("<b>[victim]</b> блокирует [attack_message]!"))
+			to_chat(user, span_userdanger("<b>[victim]</b> blocks [attack_message]!"))
 			user.sound_hint()
 			if(weapon.durability)
 				weapon.damageItem("MEDIUM")
 			return FALSE
-		if(victim.check_shields(user, damage, "<b>[user]</b> [weapon.name]", "моё [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
+		if(victim.check_shields(user, damage, "<b>[user]</b> [weapon.name]", "my [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
@@ -211,7 +211,7 @@
 			if(weapon.durability)
 				weapon.damageItem("MEDIUM")
 			return FALSE
-		if(victim.check_parry(user, damage, "<b>[user]</b> [weapon.name]", "моё [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
+		if(victim.check_parry(user, damage, "<b>[user]</b> [weapon.name]", "my [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
@@ -220,7 +220,7 @@
 			if(weapon.durability)
 				weapon.damageItem("MEDIUM")
 			return FALSE
-		if(victim.check_dodge(user, damage, "<b>[user]</b> [weapon.name]", "моё [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
+		if(victim.check_dodge(user, damage, "<b>[user]</b> [weapon.name]", "my [weapon.name]", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(victim, used_item = weapon, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
@@ -237,12 +237,12 @@
 		user.sound_hint()
 		var/target_area = parse_zone(check_zone(user.zone_selected))
 		playsound(user, weapon.miss_sound, weapon.get_clamped_volume(), extrarange = weapon.stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
-		user.visible_message(span_danger("<b>[user]</b> пытается [attack_message] <b>[src]</b> [target_area] с помощью [weapon], но промахивается!"), \
-				span_userdanger("Я пытаюсь [attack_message] <b>[src]</b> [target_area] с помощью [weapon], но промахиваюсь!"), \
-				span_hear("Я слышу свист!"), \
+		user.visible_message(span_danger("<b>[user]</b> tries to [attack_message] <b>[src]</b> [target_area] with [weapon], but misses!"), \
+				span_userdanger("I'm trying to [attack_message] <b>[src]</b> [target_area] with [weapon], but miss!"), \
+				span_hear("I hear combat!"), \
 				vision_distance = COMBAT_MESSAGE_RANGE, \
 				ignored_mobs = victim)
-		to_chat(victim, span_userdanger("<b>[user]</b> пытается [attack_message] меня в [target_area] с помощью [weapon], но промахивается!"))
+		to_chat(victim, span_userdanger("<b>[user]</b> tries to [attack_message] me in [target_area] with [weapon], but misses!"))
 		user.changeNext_move(attack_delay)
 		user.adjustFatigueLoss(attack_fatigue_cost)
 		return FALSE
@@ -255,15 +255,15 @@
 
 	var/armor_block = victim.run_armor_check(affecting, \
 					MELEE, \
-					span_notice("Моя броня защищает попадание в [hit_area]!"), \
-					span_warning("Моя броня защищает попадание в [hit_area]!"), \
+					span_notice("My armor blocks the blow to [hit_area]!"), \
+					span_warning("My armor blocks the blow to [hit_area]!"), \
 					weapon.armour_penetration, \
 					weak_against_armour = weapon.weak_against_armour, \
 					sharpness = sharpness)
 	var/armor_reduce = victim.run_subarmor_check(affecting, \
 					MELEE, \
-					span_notice("Моя броня смягает попадание в [hit_area]!"), \
-					span_warning("Моя броня смягчает попадание в [hit_area]!"), \
+					span_notice("My armor softents the blow to [hit_area]!"), \
+					span_warning("My armor softents the blow to [hit_area]!"), \
 					weapon.subtractible_armour_penetration, \
 					weak_against_armour = weapon.weak_against_subtractible_armour, \
 					sharpness = sharpness)
@@ -407,28 +407,28 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
-			target.visible_message(span_warning("<b>[user]</b> толчок заблокирован [target]!"), \
-							span_userdanger("Я блокирую <b>[user]</b> толчок!"), \
-							span_hear("Я слышу блокирование!"), \
+			target.visible_message(span_warning("<b>[user]</b> shove was blocked by [target]!"), \
+							span_userdanger("I block <b>[user]</b> shove!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("Мой толчок в <b>[target]</b> был заблокирован!"))
+			to_chat(user, span_userdanger("My shove to <b>[target]</b> was blocked!"))
 			log_combat(user, target, "attempted to shove, was blocked by")
 			return FALSE
-		if(target.check_shields(user, 10, "<b>[user]</b> толчок", "мой толчок", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
+		if(target.check_shields(user, 10, "<b>[user]</b> shove", "my shove", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(target, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
 			return FALSE
-		if(target.check_parry(user, 10, "<b>[user]</b> толчок", "мой толчок", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
+		if(target.check_parry(user, 10, "<b>[user]</b> shove", "my shove", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(target, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
 			target.adjustFatigueLoss(5)
 			return FALSE
-		if(target.check_dodge(user, 10, "<b>[user]</b> толчок", "мой толчок", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
+		if(target.check_dodge(user, 10, "<b>[user]</b> shove", "my shove", attacking_flags = BLOCK_FLAG_MELEE) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(target, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
@@ -461,16 +461,16 @@
 		var/feign_attack_verb = pick(user.dna.species.attack_verb)
 		//successful feint
 		if(user_diceroll >= target_diceroll)
-			var/feint_message_spectator = "<b>[user]</b> успешно финтует [feign_attack_verb] на <b>[target]</b>]!"
-			var/feint_message_victim = "Что-то финтует атаку на мне!"
-			var/feint_message_attacker = "Я финтую [feign_attack_verb] на чём-то!"
+			var/feint_message_spectator = "<b>[user]</b> feints [feign_attack_verb] on <b>[target]</b>]!"
+			var/feint_message_victim = "Someone feints [feign_attack_verb] on me!"
+			var/feint_message_attacker = "I feint [feign_attack_verb] on someone!"
 			if(user in fov_viewers(2, target))
-				feint_message_attacker = "Я финтую [feign_attack_verb] на <b>[target]</b>!"
+				feint_message_attacker = "I feint [feign_attack_verb] on <b>[target]</b>!"
 			if(target in fov_viewers(2, user))
-				feint_message_victim = "<b>[user]</b> финтет [feign_attack_verb] на мне!"
+				feint_message_victim = "<b>[user]</b> feints [feign_attack_verb] on me!"
 			target.visible_message(span_danger("[feint_message_spectator]"),\
 				span_userdanger("[feint_message_victim]"),
-				span_hear("Я слышу свист!"), \
+				span_hear("I hear combat!"), \
 				vision_distance = COMBAT_MESSAGE_RANGE, \
 				ignored_mobs = user)
 			to_chat(user, span_userdanger("[feint_message_attacker]"))
@@ -479,16 +479,16 @@
 			target.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
 		//failed feint
 		else
-			var/feint_message_spectator = "<b>[user]</b> пытается финтовать [feign_attack_verb] на <b>[target]</b>!"
-			var/feint_message_victim = "Что-то пытается финтовать [feign_attack_verb] на мне!"
-			var/feint_message_attacker = "Я пытаюсь финтовать [feign_attack_verb] на чём-то!"
+			var/feint_message_spectator = "<b>[user]</b> tries to feint [feign_attack_verb] on <b>[target]</b>!"
+			var/feint_message_victim = "Someone is trying to feint [feign_attack_verb] on me!"
+			var/feint_message_attacker = "I'm trying to feint [feign_attack_verb] on someone"
 			if(user in fov_viewers(2, target))
-				feint_message_attacker = "Я пытаюсь финтовать [feign_attack_verb] на <b>[target]</b>!"
+				feint_message_attacker = "I'm trying to feint [feign_attack_verb] on <b>[target]</b>!"
 			if(target in fov_viewers(2, user))
-				feint_message_victim = "<b>[user]</b> пытается финтовать [feign_attack_verb] на мне!"
+				feint_message_victim = "<b>[user]</b> tries to feint [feign_attack_verb] on me!"
 			target.visible_message(span_danger("[feint_message_spectator]"),\
 				span_userdanger("[feint_message_victim]"),
-				span_hear("Я слышу свист!"), \
+				span_hear("I hear combat!"), \
 				vision_distance = COMBAT_MESSAGE_RANGE, \
 				ignored_mobs = user)
 			to_chat(user, span_userdanger("[feint_message_attacker]"))
@@ -564,29 +564,29 @@
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
-			target.visible_message(span_warning("<b>[target]</b> блокирует <b>[user]</b> [attack_verb]!"), \
-							span_userdanger("Я блокирую <b>[user]</b> [attack_verb]!"), \
-							span_hear("Я слышу блокирование!"), \
+			target.visible_message(span_warning("<b>[target]</b> blocks <b>[user]</b> [attack_verb]!"), \
+							span_userdanger("I block <b>[user]</b> [attack_verb]!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
 			if(user != target)
-				to_chat(user, span_userdanger("[target] блокирует мою атаку!"))
+				to_chat(user, span_userdanger("[target] blocks my [attack_verb]!"))
 			log_combat(user, target, "attempted to [attack_verb], was blocked by")
 			return FALSE
-		if(target.check_shields(user, attack_damage, "<b>[user]</b> [attack_verb]", "моё [attack_verb]", BLOCK_FLAG_UNARMED) & COMPONENT_HIT_REACTION_BLOCK)
+		if(target.check_shields(user, attack_damage, "<b>[user]</b> [attack_verb]", "my [attack_verb]", BLOCK_FLAG_UNARMED) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(target, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
 			return FALSE
-		if(target.check_parry(user, attack_damage, "<b>[user]</b> [attack_verb]", "моё [attack_verb]", BLOCK_FLAG_UNARMED) & COMPONENT_HIT_REACTION_BLOCK)
+		if(target.check_parry(user, attack_damage, "<b>[user]</b> [attack_verb]", "my [attack_verb]", BLOCK_FLAG_UNARMED) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(target, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
 			user.sound_hint()
 			target.adjustFatigueLoss(5)
 			return FALSE
-		if(target.check_dodge(user, attack_damage, "<b>[user]</b> [attack_verb]", "моё [attack_verb]", BLOCK_FLAG_UNARMED) & COMPONENT_HIT_REACTION_BLOCK)
+		if(target.check_dodge(user, attack_damage, "<b>[user]</b> [attack_verb]", "my [attack_verb]", BLOCK_FLAG_UNARMED) & COMPONENT_HIT_REACTION_BLOCK)
 //			user.do_attack_animation(target, no_effect = TRUE)
 			user.changeNext_move(attack_delay)
 			user.adjustFatigueLoss(attack_fatigue_cost)
@@ -662,16 +662,16 @@
 	if(!affecting)
 		playsound(target.loc, user.dna.species.miss_sound, 60, TRUE, -1)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] <b>[target]</b> [hit_area], но эта конечность отсутствует!"), \
-							span_userdanger("<b>[user]</b> пытается [attack_verb] меня в [hit_area], но эта конечность отсутствует!"), \
-							span_hear("Я слышу свист!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but this limb is missing!"), \
+							span_userdanger("<b>[user]</b> tries to [attack_verb] me in [hit_area], but this limb is missing!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("Я пытаюсь [attack_verb] <b>[target]</b> [hit_area], но эта конечность отсутствует!"))
+			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but this limb is missing!"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] себя в [hit_area], но эта конечность отсутствует!"), \
-							span_userdanger("Я пытаюсь [attack_verb] себя в [hit_area], но эта конечность отсутствует!!"), \
-							span_hear("Я слышу свист!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] himself in [hit_area], but this limb is missing!"), \
+							span_userdanger("I'm trying to [attack_verb] myself [hit_area], but this limb is missing!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE)
 		log_combat(user, target, "attempted to [attack_verb], limb missing")
 		return FALSE
@@ -679,16 +679,16 @@
 	else if(diceroll == DICE_CRIT_FAILURE)
 		playsound(target.loc, user.dna.species.miss_sound, 60, TRUE, -1)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] <b>[target]</b> [hit_area], но промахивается!"), \
-							span_userdanger("<b>[user]</b> пытается [attack_verb] меня в [hit_area], но промахивается!"), \
-							span_hear("Я hear a swoosh!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but misses!"), \
+							span_userdanger("<b>[user]</b> tries to [attack_verb] me in [hit_area], but misses!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("Я пытаюсь [attack_verb] <b>[target]</b> [hit_area], но промахиваюсь!"))
+			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but miss!"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] себя в [hit_area], но промахивается!"), \
-							span_userdanger("Я пытаюсь [attack_verb] себя в [hit_area], но промахиваюсь!"), \
-							span_hear("Я слышу свист!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] himself in [hit_area], but misses!"), \
+							span_userdanger("I'm trying to [attack_verb] myself in [hit_area], but miss!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE)
 		log_combat(user, target, "attempted to [attack_verb], missed")
 		return FALSE
@@ -713,16 +713,16 @@
 	target.sound_hint()
 	if(attack_damage < 0)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] <b>[target]</b> [hit_area], но безрезультатно!"), \
-							span_userdanger("<b>[user]</b> пытается [attack_verb] меня в [hit_area], но безрезультатно!"), \
-							span_hear("Я слышу свист!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but to no avail!"), \
+							span_userdanger("<b>[user]</b> tries to [attack_verb] me in [hit_area], but to no avail!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("Я пытаюсь [attack_verb] <b>[target]</b> [hit_area], но безрезультатно!"))
+			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but to no avail!"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] себя в [hit_area], но безрезультатно!"), \
-							span_userdanger("Я пытаюсь [attack_verb] в [hit_area], но безрезультатно!"), \
-							span_hear("Я слышу свист!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] himself in [hit_area], but to no avail!"), \
+							span_userdanger("I'm trying to [attack_verb] myself in [hit_area], but to no avail!"), \
+							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE)
 		log_combat(user, target, "attempted to [attack_verb], no effect")
 		return FALSE
@@ -739,12 +739,12 @@
 									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
 										var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
 										if(dicerollll >= DICE_SUCCESS)
-											target.visible_message(span_danger("<b>[user]</b> пытается [attack_verb] <b>[target]</b> [hit_area], но [target] блокирует руками!"), \
-														span_userdanger("<b>[user]</b> пытается [attack_verb] в [hit_area], но я блокирую руками!"), \
-														span_hear("Я слышу стук!"), \
+											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but [target] blocks with his hands!"), \
+														span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I block with my hands!"), \
+														span_hear("I hear combat!"), \
 														COMBAT_MESSAGE_RANGE, \
 														user)
-											to_chat(user, span_userdanger("Я пытаюсь [attack_verb] <b>[target]</b> [hit_area], но [target] блокирует руками!"))
+											to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but [target] blocks with his hands!"))
 											target.changeNext_move(CLICK_CD_GRABBING)
 											target.update_blocking_penalty(BLOCKING_PENALTY, BLOCKING_PENALTY_COOLDOWN_DURATION)
 											target.adjustFatigueLoss(5)
@@ -771,31 +771,31 @@
 	if(def_zone == intended_zone)
 		if(user != target)
 			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
-							span_userdanger("<b>[user]</b> [attack_verb_continuous] меня в [hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+							span_userdanger("<b>[user]</b> [attack_verb_continuous] me in [hit_area]![target.wound_message]"), \
+							span_hear("I hear combat!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
-			to_chat(user, span_userdanger("Я [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
+			to_chat(user, span_userdanger("I [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] себя в [hit_area]![target.wound_message]"), \
-							span_userdanger("Я [attack_verb] себя в [hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] himself in [hit_area]![target.wound_message]"), \
+							span_userdanger("I [attack_verb] myself in [hit_area]![target.wound_message]"), \
+							span_hear("I hear combat!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 	else
 		var/parsed_intended_zone = parse_zone(intended_zone)
 		if(user != target)
 //			if(!lying_attack_check(user))
 //				return
-			target.visible_message(span_danger("<b>[user]</b> целит в [parsed_intended_zone], но [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
-							span_userdanger("<b>[user]</b> целит в [parsed_intended_zone], но [attack_verb_continuous] меня в [hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+			target.visible_message(span_danger("<b>[user]</b> aims to [parsed_intended_zone], but [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
+							span_userdanger("<b>[user]</b> aims to [parsed_intended_zone], but [attack_verb_continuous] me in [hit_area]![target.wound_message]"), \
+							span_hear("I hear combat!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
-			to_chat(user, span_userdanger("Я целю в [parsed_intended_zone], но [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
+			to_chat(user, span_userdanger("I aim to [parsed_intended_zone], but [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
 		else
-			target.visible_message(span_danger("<b>[user]</b> целит в [parsed_intended_zone], но [attack_verb_continuous] себя в [hit_area]![target.wound_message]"), \
-							span_userdanger("Я целю в [parsed_intended_zone], но [attack_verb] себя в [hit_area]![target.wound_message]"), \
-							span_hear("Я слышу звук плоти!"), \
+			target.visible_message(span_danger("<b>[user]</b> aims to [parsed_intended_zone], but [attack_verb_continuous] himself in [hit_area]![target.wound_message]"), \
+							span_userdanger("I aim to [parsed_intended_zone], but [attack_verb] myself in [hit_area]![target.wound_message]"), \
+							span_hear("I hear combat!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
 
@@ -812,12 +812,12 @@
 					grabsound = TRUE, \
 					silent = FALSE)
 	if(target.check_block())
-		target.visible_message(span_warning("<b>[target]</b> блокирует <b>[user]</b> [biting_grab ? "укус" : "хват"]!"), \
-						span_userdanger("Я  блокирую <b>[user]</b> [biting_grab ? "укус" : "хват"]!"), \
-						span_hear("Я слышу блокирование!"), \
+		target.visible_message(span_warning("<b>[target]</b> blocks <b>[user]</b> [biting_grab ? "bite" : "grab"]!"), \
+						span_userdanger("I block <b>[user]</b> [biting_grab ? "bite" : "grab"]!"), \
+						span_hear("I hear combat!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = user)
-		to_chat(user, span_warning("Мой [biting_grab ? "укус" : "хват"] в [target] был заблокирован!"))
+		to_chat(user, span_warning("My [biting_grab ? "bite" : "grab"] to [target] was blocked!"))
 		log_combat(user, target, "attempted to [biting_grab ? "bite" : "grab"], was blocked by")
 		return FALSE
 	if(attacker_style?.grab_act(user, target) == MARTIAL_ATTACK_SUCCESS)
@@ -914,9 +914,9 @@
 			if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_LUCK), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
 				var/turf/open/floor/plating/A = get_turf(victim)
 				victim.apply_damage(A.powerfloor, BRUTE, affected, victim.run_armor_check(affected, MELEE), wound_bonus = A.dangerfloor, sharpness = NONE)
-				victim.visible_message(span_pinkdang("[victim] [affected] ударяется об [A]!"), \
-									span_pinkdang("Оу! [affected] ударяется об [A]!"), \
-									span_hear("Я слышу звук плоти."))
+				victim.visible_message(span_pinkdang("[victim] [affected] hits [A]!"), \
+									span_pinkdang("Oh! My [affected] hits [A]!"), \
+									span_hear("I hear combat."))
 				playsound(get_turf(victim), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)
 	stunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
 	realstunning(victim, user, affected, weapon, damage, damage_flag, damage_type, sharpness, def_zone, intended_zone, modifiers)
@@ -1079,9 +1079,9 @@
 									victim.Stun(1 SECONDS)
 								if(diceroll == DICE_CRIT_FAILURE)
 									victim.Stun(2 SECONDS)
-								victim.visible_message(span_pinkdang("[victim] получает удар в пах от [user]!"), \
-													span_pinkdang("Я получаю удар в пах от [user]!"), \
-													span_hear("Я слышу звук плоти."))
+								victim.visible_message(span_pinkdang("[victim] deals gelding blow from [user]!"), \
+													span_pinkdang("I get gelding blow from [user]!"), \
+													span_hear("I hear combat."))
 								if(victim.stat >= UNCONSCIOUS)
 									return
 								playsound(get_turf(victim), 'modular_pod/sound/voice/PAINBALLS.ogg', 80, 0)
@@ -1107,9 +1107,9 @@
 								victim.vomit(100, FALSE, FALSE)
 							if(diceroll == DICE_CRIT_FAILURE)
 								victim.vomit(100, TRUE, FALSE)
-							victim.visible_message(span_pinkdang("[victim] получает удар по кишкам от [user]!"), \
-												span_pinkdang("Получает удар по кишкам от [user]!"), \
-												span_hear("Я слышу звук плоти."))
+							victim.visible_message(span_pinkdang("[victim] gets gut-busted from [user]!"), \
+												span_pinkdang("I get gut-busted from [user]!"), \
+												span_hear("I hear combat."))
 							if(victim.stat >= UNCONSCIOUS)
 								return
 							playsound(get_turf(victim), 'modular_septic/sound/effects/gutbusted.ogg', 80, 0)
@@ -1203,9 +1203,9 @@
 			var/embed_attempt = weapon.tryEmbed(target = affected, forced = FALSE, silent = FALSE)
 			if(embed_attempt & COMPONENT_EMBED_SUCCESS)
 //				user.changeNext_move(0)
-				victim.visible_message(span_pinkdang("[user] [weapon] застревает в [victim] [affected]!"), \
-									span_pinkdang("[user] [weapon] застревает в [affected]!"), \
-									span_hear("Я слышу звук плоти."))
+				victim.visible_message(span_pinkdang("[user] [weapon] stucks in [victim] [affected]!"), \
+									span_pinkdang("[user] [weapon] stucks in my [affected]!"), \
+									span_hear("I hear combat."))
 				if(get_dist(user, victim) <= 1)
 					victim.grabbedby(user, instant = FALSE, biting_grab = FALSE, forced = TRUE, grabsound = FALSE, silent = TRUE, forced_zone = affected.body_zone)
 				playsound(get_turf(victim), 'modular_septic/sound/gore/stuck2.ogg', 80, 0)

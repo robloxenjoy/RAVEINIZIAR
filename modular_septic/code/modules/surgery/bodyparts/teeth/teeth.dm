@@ -1,8 +1,8 @@
 /// Teeth stack object, used by the jaw limb to do teeth stuff
 /obj/item/stack/teeth
-	name = "Зубы"
-	singular_name = "Зуб"
-	desc = "Видно корни."
+	name = "Teeth"
+	singular_name = "Tooth"
+	desc = "The roots are visible."
 	icon = 'modular_septic/icons/obj/items/surgery/bodyparts.dmi'
 	icon_state = "teeth"
 	base_icon_state = "teeth"

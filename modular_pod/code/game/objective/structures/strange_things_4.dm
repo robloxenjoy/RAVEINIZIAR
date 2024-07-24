@@ -1,6 +1,6 @@
 /obj/structure/stalag
-	name = "Сталагмит"
-	desc = "Ой, мешает."
+	name = "Stalagmite"
+	desc = "Oh, it's in the way."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "stalag1"
 	density = TRUE
@@ -20,7 +20,7 @@
 /obj/structure/stalag/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(mine_hp > 0)
 		if(W.can_dig)
-			user.visible_message(span_notice("[user] копает [src] с помощью [W]."),span_notice("Я копаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
+			user.visible_message(span_notice("[user] digs [src] with [W]."),span_notice("I dig [src] with [W]."), span_hear("I hear digging."))
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(5)
 			W.damageItem(5)
@@ -29,13 +29,13 @@
 			mine_hp -= 1
 			var/diceroll = user.diceroll(GET_MOB_SKILL_VALUE(user, SKILL_MASONRY), context = DICE_CONTEXT_PHYSICAL)
 			if(diceroll >= DICE_SUCCESS)
-				user.visible_message(span_notice("[user] добывает руду."),span_notice("Я добываю руду."), span_hear("Я слышу звуки раскопок."))
+				user.visible_message(span_notice("[user] mines ore."),span_notice("Я добываю руду."), span_hear("I hear digging."))
 				new ore_type(get_turf(user), ore_amount)
-				user.client.prefs.adjust_bobux(1, "<span class='bobux'>Я добыл руду! +1 Каотик!</span>")
+				user.client.prefs.adjust_bobux(1, "<span class='bobux'>I mine ore! +1 Kaotik!</span>")
 				user.flash_kaosgain()
 	else
 		if(W.can_dig)
-			user.visible_message(span_notice("[user] разрушает [src] с помощью [W]."),span_notice("Я разрушаю [src] с помощью [W]."), span_hear("Я слышу звуки раскопок."))
+			user.visible_message(span_notice("[user] ruins [src] with [W]."),span_notice("I ruin [src] with [W]."), span_hear("I hear digging."))
 			user.changeNext_move(W.attack_delay)
 			user.adjustFatigueLoss(5)
 			W.damageItem(5)
@@ -64,8 +64,8 @@
 		return FALSE
 
 /obj/structure/gelatine/smelly
-	name = "Желе"
-	desc = "Воняет."
+	name = "Jelly"
+	desc = "Smells."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "jelly"
 	density = TRUE
@@ -88,7 +88,7 @@
 
 /obj/structure/gelatine/smelly/on_density(mob/living/carbon/human/rammer)
 	if(ready_smell)
-		rammer.visible_message(span_notice("[rammer] прислоняется к [src]."),span_notice("Я прислоняюсь к [src]."), span_hear("Я слышу чё-то."))
+		rammer.visible_message(span_notice("[rammer] leans against [src]."),span_notice("I lean against [src]."), span_hear("I hear something."))
 		sound_hint()
 		var/turf/my_turf = get_turf(src)
 		my_turf.pollute_turf(smell_type, smell_amount)
@@ -102,7 +102,7 @@
 	ready_smell = TRUE
 
 /obj/structure/gelatine/smelly/attackby(obj/item/W, mob/living/carbon/user, params)
-	user.visible_message(span_notice("[user] стукает [src]."),span_notice("Я стукаю [src]."), span_hear("Я слышу чё-то."))
+	user.visible_message(span_notice("[user] hits [src]."),span_notice("I hit [src]."), span_hear("I hear something."))
 	user.changeNext_move(W.attack_delay)
 	user.adjustFatigueLoss(5)
 	sound_hint()
@@ -117,7 +117,7 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message(span_notice("[user] стукает [src]."),span_notice("Я стукаю [src]."), span_hear("Я слышу чё-то."))
+	user.visible_message(span_notice("[user] hits [src]."),span_notice("I hit [src]."), span_hear("I hear something."))
 	user.changeNext_move(10)
 	user.adjustFatigueLoss(5)
 	sound_hint()
@@ -143,8 +143,8 @@
 		return FALSE
 
 /obj/structure/beast/worm
-	name = "Малыш"
-	desc = "Не обижай!"
+	name = "Baby"
+	desc = "Do not hurt!"
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "worm"
 	density = TRUE
@@ -153,7 +153,7 @@
 	var/hpp = 5
 	var/last_words = 0
 	var/words_delay = 2000
-	var/words_list = list("Не бей!", "Я умею прятаться от мамы и папы.", "Могу научить прятаться от папы и мамы!")
+	var/words_list = list("Do not hit me!", "I know how to hide from mom and dad.", "I can teach you how to hide from mom and dad!")
 
 /obj/structure/beast/worm/proc/speak(message)
 	say(message)
@@ -169,19 +169,19 @@
 
 /obj/structure/beast/worm/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/food/grown/granat))
-		user.visible_message(span_notice("[user] кормит [src] с помощью [I]."),span_notice("Я кормлю [src] с помощью [I]."), span_hear("Я слышу странности."))
+		user.visible_message(span_notice("[user] feeds [src] with [I]."),span_notice("I feed[src] with [I]."), span_hear("I hear strange things."))
 		if(do_after(user, 5 SECONDS, target = src))
-			to_chat(user, span_notice("Я накормил [src] с помощью [I]."))
+			to_chat(user, span_notice("I feed [src] with [I]."))
 			sound_hint()
 			playsound(get_turf(src), 'modular_pod/sound/eff/eat.ogg', 100 , FALSE, FALSE)
 			user.alpha = 50
-			var/thankyou_words = pick("Как вкусно. Откуда ты знаешь, что это мой любимый фрукт?", "Люблю этот гранат.")
+			var/thankyou_words = pick("So tasty. How do you know this is my favorite fruit?", "I love this fruit.")
 			speak(thankyou_words)
 			qdel(I)
 	else
 		if(hpp > 0)
 			hpp--
-			var/bad_words = pick("НЕ ОБИЖАЙ!", "НЕ БЕЙ!")
+			var/bad_words = pick("DO NOT HIT ME!", "NO PLEASE!")
 			speak(bad_words)
 			playsound(get_turf(src), 'modular_pod/sound/eff/babycry.ogg', 100 , FALSE, FALSE)
 //			user.overlay_fullscreen("childy", /atom/movable/screen/fullscreen/childy, 1)
@@ -201,7 +201,7 @@
 				playsound(src, 'sound/items/welder.ogg', 100, TRUE)
 
 /obj/structure/beast/goat
-	name = "Козёл"
+	name = "Goat"
 	desc = "..."
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "goat"
@@ -263,20 +263,20 @@
 		return
 	var/obj/item/bodypart/check_jaw = user.get_bodypart(BODY_ZONE_PRECISE_MOUTH)
 	if(!check_jaw)
-		to_chat(user, span_notice("А, у меня же нет челюсти..."))
+		to_chat(user, span_notice("I don't have a jaw..."))
 		return
 	if(check_jaw?.bodypart_disabled)
-		to_chat(user, span_warning("Моя [check_jaw.name] не в состоянии быть использована."))
+		to_chat(user, span_warning("My [check_jaw.name] unable to be used."))
 		return
 	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 		if(soon <= 0)
 			playsound(src, 'modular_pod/sound/voice/goat.ogg', 100, TRUE)
-			src.visible_message(span_love("[src] кончает в рот [user]!"))
+			src.visible_message(span_love("[src] puts something in [user] mouth!"))
 			soon = rand(15, 30)
 			user.AddComponent(/datum/component/creamed/cum)
 			sound_hint()
 		else
 			playsound(src, pick(soundss), 80, TRUE)
-			user.visible_message(span_love("[user] сосёт [src]."),span_love("Я сосу [src]."), span_hear("Я слышу странности."))
+			user.visible_message(span_love("[user] does something for [src]."),span_love("I do something for [src]."), span_hear("I hear strange things."))
 			INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/, do_fucking_animation), get_dir(user, src))
 			soon--

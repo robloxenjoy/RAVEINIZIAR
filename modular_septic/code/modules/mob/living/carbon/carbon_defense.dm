@@ -3,52 +3,52 @@
 		return
 	var/intended_zone = check_zone(user.zone_selected)
 	if(intended_zone == hit_bodypart.body_zone)
-		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "атакует"
-		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атаковать"
+		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "attacks"
+		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attack"
 
 		var/extra_wound_details = ""
 		var/message_hit_area = ""
 		if(hit_area)
-			message_hit_area = " в [hit_area]"
-		var/attack_message_spectator = "<b>[user]</b> [message_verb_continuous] <b>[src]</b>[message_hit_area] с помощью [I][extra_wound_details]![wound_message]"
-		var/attack_message_victim = "Кто-то [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
-		var/attack_message_attacker = "Я [message_verb_simple] кого-то с помощью [I]!"
+			message_hit_area = " in [hit_area]"
+		var/attack_message_spectator = "<b>[user]</b> [message_verb_continuous] <b>[src]</b>[message_hit_area] with [I][extra_wound_details]![wound_message]"
+		var/attack_message_victim = "Someone [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
+		var/attack_message_attacker = "I [message_verb_simple] someone with [I]!"
 		if(user in fov_viewers(2, src))
-			attack_message_attacker = "Я [message_verb_simple] <b>[src]</b>[message_hit_area] с помощью [I]![wound_message]"
+			attack_message_attacker = "Я [message_verb_simple] <b>[src]</b>[message_hit_area] with [I]![wound_message]"
 		if(src in fov_viewers(2, user))
-			attack_message_victim = "<b>[user]</b> [message_verb_continuous] меня[message_hit_area] с помощью [I][extra_wound_details]![wound_message]"
+			attack_message_victim = "<b>[user]</b> [message_verb_continuous] me[message_hit_area] with [I][extra_wound_details]![wound_message]"
 		if(user == src)
-			attack_message_victim = "Я [message_verb_simple] самого себя[message_hit_area] с помощью [I][extra_wound_details]![wound_message]"
+			attack_message_victim = "I [message_verb_simple] myself[message_hit_area] with [I][extra_wound_details]![wound_message]"
 		visible_message(span_danger("[attack_message_spectator]"),\
 			span_userdanger("[attack_message_victim]"),
-			span_hear("Я слышу свист и стук!"), \
+			span_hear("I hear combat!"), \
 			vision_distance = COMBAT_MESSAGE_RANGE, \
 			ignored_mobs = user)
 		if(user != src)
 			to_chat(user, span_userdanger("[attack_message_attacker]"))
 	else
 		var/parsed_intended_zone = parse_zone(intended_zone)
-		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "атакует"
-		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атаковать"
-		var/message_verb_simple_two = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакую"
-		var/message_verb_simple_three = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "атакует"
+		var/message_verb_continuous = length(I.attack_verb_continuous) ? "[pick(I.attack_verb_continuous)]" : "attacks"
+		var/message_verb_simple = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attack"
+		var/message_verb_simple_two = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attack"
+		var/message_verb_simple_three = length(I.attack_verb_simple) ? "[pick(I.attack_verb_simple)]" : "attacks"
 
 		var/extra_wound_details = ""
 		var/message_hit_area = ""
 		if(hit_area)
-			message_hit_area = " в [hit_area]"
-		var/attack_message_spectator = "<b>[user]</b> пытается [message_verb_simple] <b>[src]</b> в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple_three][message_hit_area][extra_wound_details]![wound_message]"
-		var/attack_message_victim = "Кто-то[message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
-		var/attack_message_attacker = "Я [message_verb_simple] кого-то с помощью [I]!"
+			message_hit_area = " in [hit_area]"
+		var/attack_message_spectator = "<b>[user]</b> tries to [message_verb_simple] <b>[src]</b> в [parsed_intended_zone] with [I], but instead [message_verb_simple_three][message_hit_area][extra_wound_details]![wound_message]"
+		var/attack_message_victim = "Someone [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
+		var/attack_message_attacker = "Я [message_verb_simple] кого-то with [I]!"
 		if(user in fov_viewers(2, src))
-			attack_message_attacker = "Я пытаюсь [message_verb_simple] <b>[src]</b> в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple_two][message_hit_area][extra_wound_details]![wound_message]"
+			attack_message_attacker = "I'm trying to [message_verb_simple] <b>[src]</b> in [parsed_intended_zone] with [I], but instead [message_verb_simple_two][message_hit_area][extra_wound_details]![wound_message]"
 		if(src in fov_viewers(2, user))
-			attack_message_victim = "<b>[user]</b> пытается [message_verb_simple] меня в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple][message_hit_area][extra_wound_details]![wound_message]"
+			attack_message_victim = "<b>[user]</b> tries to [message_verb_simple] me in [parsed_intended_zone] with [I], but instead [message_verb_simple][message_hit_area][extra_wound_details]![wound_message]"
 		if(user == src)
-			attack_message_victim = "Я пытаюсь [message_verb_simple] самого себя в [parsed_intended_zone] с помощью [I], но вместо этого, [message_verb_simple][message_hit_area][extra_wound_details]![wound_message]"
+			attack_message_victim = "I'm trying to [message_verb_simple] myself in [parsed_intended_zone] with [I], but instead [message_verb_simple][message_hit_area][extra_wound_details]![wound_message]"
 		visible_message(span_danger("[attack_message_spectator]"),\
 			span_userdanger("[attack_message_victim]"),
-			span_hear("Я слышу свист и стук!"), \
+			span_hear("I hear combat!"), \
 			vision_distance = COMBAT_MESSAGE_RANGE, \
 			ignored_mobs = user)
 		if(user != src)
@@ -159,33 +159,33 @@
 	//disarm succesful
 	if(diceroll >= DICE_SUCCESS)
 		if(weapon_go_fwoosh)
-			visible_message(span_danger("<b>[src]</b> пытается схватить [held_item] у <b>[target]</b>, но [held_item] отлетает!"), \
-						span_userdanger("Я пытаюсь схватить <b>[target]</b> [held_item], но [held_item] отлетает!"), \
-						span_danger("Я слышу хуйню!"), \
+			visible_message(span_danger("<b>[src]</b> tries to disarm [held_item] у <b>[target]</b>, but [held_item] flies off!"), \
+						span_userdanger("I'm trying to disarm <b>[target]</b> [held_item], but [held_item] flies off!"), \
+						span_danger("I hear combat!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = target)
-			to_chat(target, span_userdanger("<b>[src]</b> пытается схватить [held_item], но [held_item] отлетает от меня!"))
+			to_chat(target, span_userdanger("<b>[src]</b> tries to disarm [held_item], but [held_item] flies of!"))
 			if(target.dropItemToGround(held_item))
 				var/turf/target_turf = get_edge_target_turf(held_item, direction)
 				held_item.throw_at(target_turf, held_item.throw_range, held_item.throw_speed, src, FALSE)
 		else
-			visible_message(span_danger("<b>[src]</b> обезоруживает [held_item] от <b>[target]</b>!"), \
-						span_userdanger("Я обезоруживаю [held_item] от <b>[target]</b>!"), \
-						span_danger("Я слышу хуйню!"), \
+			visible_message(span_danger("<b>[src]</b> disarms <b>[target]</b> [held_item]!"), \
+						span_userdanger("I disarm <b>[target]</b> [held_item]!"), \
+						span_danger("I hear combat!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = target)
-			to_chat(target, span_userdanger("<b>[src]</b> обезоруживает [held_item] от меня!"))
+			to_chat(target, span_userdanger("<b>[src]</b> disarms my [held_item]!"))
 			if(target.dropItemToGround(held_item))
 				put_in_active_hand(held_item)
 		return
 	//epic disarm fail
 	else
-		visible_message(span_danger("<b>[src]</b> пытается обезоружить [held_item] от <b>[target]</b>, но мешкается и промахивается!"),
-					span_userdanger("Я пытаюсь обезоружить [held_item] от <b>[target]</b>, но мешкаюсь и промахиваюсь!"),
-					span_danger("Я слышу хуйню!"),
+		visible_message(span_danger("<b>[src]</b> tries to disarm [held_item] <b>[target]</b>, but misses!"),
+					span_userdanger("I'm trying to disarm [held_item] <b>[target]</b>, but misses!"),
+					span_danger("I hear combat!"),
 					vision_distance = COMBAT_MESSAGE_RANGE,
 					ignored_mobs = target)
-		to_chat(target, span_userdanger("<b>[src]</b> пытается обезоружить [held_item] от меня, но мешкается и промахивается!"))
+		to_chat(target, span_userdanger("<b>[src]</b> tries to disarm [held_item], but misses!"))
 		return
 
 /mob/living/carbon/attackby_tertiary(obj/item/weapon, mob/living/user, params)
@@ -209,7 +209,7 @@
 
 /mob/living/carbon/help_shake_act(mob/living/carbon/M)
 	if(on_fire)
-		to_chat(M, span_warning("Я не могу потушить его своими руками!"))
+		to_chat(M, span_warning("I can't put out the fire with my own hands!"))
 		return
 
 	if(M == src && check_self_for_injuries())
@@ -218,14 +218,14 @@
 	//Shake them up
 	if(body_position == LYING_DOWN)
 		if(buckled)
-			to_chat(M, span_warning("Мне нужно отстегнуть <b>[src]</b> чтобы сделать это!"))
+			to_chat(M, span_warning("I need to unbuckle <b>[src]</b> to do this!"))
 			return
-		M.visible_message(span_notice("<b>[M]</b> трясёт <b>[src]</b> дабы поднять его!"), \
-						span_notice("Я трясу <b>[src]</b> дабы поднять его!"), \
-						span_hear("Я слышу чё-то."), \
+		M.visible_message(span_notice("<b>[M]</b> shakes <b>[src]</b> to get him up!"), \
+						span_notice("I shake <b>[src]</b> to get him up!"), \
+						span_hear("I hear helping."), \
 						DEFAULT_MESSAGE_RANGE, \
 						src)
-		to_chat(src, span_notice("<b>[M]</b> трясёт меня дабы поднять!"))
+		to_chat(src, span_notice("<b>[M]</b> shakes me to get me up!"))
 		AdjustStun(-60)
 		AdjustKnockdown(-60)
 		AdjustUnconscious(-60)
@@ -345,23 +345,23 @@
 		shove_power *= (shover.limb_efficiency/LIMB_EFFICIENCY_OPTIMAL)
 
 	if((shove_power <= 0) || (target.combat_mode && (target in fov_viewers(2, src)) && (shove_power < 3)))
-		visible_message(span_danger("<b>[src]</b> пытается толкнуть <b>[target]</b>, но тот восстанавливает баланс!"),
-					span_userdanger("Я пытаюсь толкнуть <b>[target]</b>, но тот восстанавливает баланс!"),
-					span_hear("Я слышу суматоху."),
+		visible_message(span_danger("<b>[src]</b> tries to shove <b>[target]</b>, but he restores balance!"),
+					span_userdanger("I'm trying to shove <b>[target]</b>, but he restores balance!"),
+					span_hear("I hear combat."),
 					vision_distance = COMBAT_MESSAGE_RANGE,
 					ignored_mobs = target)
-		to_chat(target, span_userdanger("<b>[src]</b> пытается толкнуть меня, но я восстанавливаю баланс!"))
+		to_chat(target, span_userdanger("<b>[src]</b> tries to shove me, but I restore balance!"))
 		return
 
 	var/shovedir = get_dir(src, target)
 	var/turf/shove_target = get_edge_target_turf(target, shovedir)
 	var/shove_distance = max(FLOOR(shove_power/2, 1), 1)
-	visible_message(span_danger("<b>[src]</b> толкает <b>[target]</b>!"), \
-				span_userdanger("Я толкаю <b>[target]</b>!"), \
-				span_hear("Я слышу суматоху!"), \
+	visible_message(span_danger("<b>[src]</b> shoves <b>[target]</b>!"), \
+				span_userdanger("I shove <b>[target]</b>!"), \
+				span_hear("I hear combat!"), \
 				vision_distance = COMBAT_MESSAGE_RANGE, \
 				ignored_mobs = target)
-	to_chat(target, span_userdanger("<b>[src]</b> толкает меня!"))
+	to_chat(target, span_userdanger("<b>[src]</b> shoves me!"))
 	target.adjustFatigueLoss(3)
 	target.safe_throw_at(shove_target, shove_distance, 3, src, callback = CALLBACK(target, /mob/living/carbon/proc/handle_knockback, get_turf(target)))
 
@@ -381,19 +381,19 @@
 
 	var/obj/item/bodypart/pulsating_cock = get_bodypart(check_zone(user.zone_selected))
 	if(!pulsating_cock)
-		to_chat(user, span_warning("Не могу прощупать пульс без [parse_zone(user.zone_selected)]."))
+		to_chat(user, span_warning("I can't check pulse without [parse_zone(user.zone_selected)]."))
 		return
 	if(!user.canUseTopic(src, TRUE) || DOING_INTERACTION_WITH_TARGET(user, src))
-		to_chat(user, span_warning("Я не могу проверить пульс."))
+		to_chat(user, span_warning("I can't check pulse."))
 		return
 
 	add_fingerprint(user)
 	if(!self)
-		user.visible_message(span_notice("<b>[user]</b> кладёт свою руку на запястье <b>[src]</b> и начинает считать пульс."),\
-		span_notice("Я начинаю прощупывать пульс <b>[src]</b>..."))
+		user.visible_message(span_notice("<b>[user]</b> puts his hand on <b>[src]</b> wrist and starts counting the pulse."),\
+		span_notice("I start to check the pulse of <b>[src]</b>..."))
 	else
-		user.visible_message(span_notice("<b>[user]</b> начинает прощупывать свой пульс."),\
-		span_notice("Я начинаю прощупывать свой пульс..."))
+		user.visible_message(span_notice("<b>[user]</b> begins to check his pulse."),\
+		span_notice("I start checking my pulse..."))
 
 	for(var/thing in diseases)
 		var/datum/disease/disease = thing
@@ -405,19 +405,19 @@
 			ContactContractDisease(disease)
 
 	if(!do_mob(user, src, 0.5 SECONDS))
-		to_chat(user, span_warning("Я не проверяю пульс."))
+		to_chat(user, span_warning("I don't check my pulse."))
 		return
 
 	if(pulse)
-		to_chat(user, span_notice("Есть пульс! Считаю..."))
+		to_chat(user, span_notice("There is a pulse! I think..."))
 	else
-		to_chat(user, span_danger("Нет пульса!"))
+		to_chat(user, span_danger("No pulse!"))
 		return
 
 	if(do_mob(user, src, 2.5 SECONDS))
-		to_chat(user, span_notice("Пульс около <b>[src.get_pulse(GETPULSE_BASIC)] BPM</b>."))
+		to_chat(user, span_notice("Pulse around <b>[src.get_pulse(GETPULSE_BASIC)] BPM</b>."))
 	else
-		to_chat(user, span_warning("Не проверяю пульс."))
+		to_chat(user, span_warning("I don't check pulse."))
 
 /mob/living/carbon/proc/handle_knockback(turf/starting_turf)
 	var/distance = 0

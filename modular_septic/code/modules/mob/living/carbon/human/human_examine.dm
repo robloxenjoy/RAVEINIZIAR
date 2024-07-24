@@ -17,7 +17,7 @@
 		fancy_name = "<span style='color: [sanitized_chat_color];text-shadow: 0 0 3px [sanitized_chat_color];'>[name]</span>"
 	var/obscure_name = FALSE
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
-	var/obscure_species = (skipface || obscure_name || (name == "Неизвестный"))
+	var/obscure_species = (skipface || obscure_name || (name == "Unknown"))
 	var/obscured = check_obscured_slots()
 	var/distance = get_dist(user, src)
 	if(isliving(user))
@@ -28,21 +28,21 @@
 
 	. = list()
 	if(obscure_species)
-		. += "[icon2html(dna.species.examine_icon, user, "human")] <span class='info'>Ох, это же <EM>[obscure_name ? "Неизвестный" : fancy_name]</EM>, <EM>Человек</EM>!</span>"
+		. += "[icon2html(dna.species.examine_icon, user, "human")] <span class='info'>Oh, this is <EM>[obscure_name ? "Unknown" : fancy_name]</EM>, <EM>Human</EM>!</span>"
 		if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 			if(!(obscured & ITEM_SLOT_NECK))
 				if(!wear_neck)
 					var/necky = get_bodypart_nostump(BODY_ZONE_PRECISE_NECK)
 					if(!LAZYLEN(clothingonpart(necky)))
-						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] ФАТАЛ! ОН ДОЛЖЕН БЫТЬ УБИТ!")
+						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] FATAL! HE SHOULD BE KILLED!")
 	else
-		. += "[icon2html(dna.species.examine_icon, user, dna.species.examine_icon_state)] <span class='info'>Ох, это же <EM>[obscure_name ? "Неизвестный" : fancy_name]</EM>, <EM>[dna.species.name]</EM>!</span>"
+		. += "[icon2html(dna.species.examine_icon, user, dna.species.examine_icon_state)] <span class='info'>oh, this is <EM>[obscure_name ? "Unknown" : fancy_name]</EM>, <EM>[dna.species.name]</EM>!</span>"
 		if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 			if(!(obscured & ITEM_SLOT_NECK))
 				if(!wear_neck)
 					var/necky = get_bodypart_nostump(BODY_ZONE_PRECISE_NECK)
 					if(!LAZYLEN(clothingonpart(necky)))
-						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] ФАТАЛ! ОН ДОЛЖЕН БЫТЬ УБИТ!")
+						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] FATAL! HE SHOULD BE KILLED!")
 	. += "<br><hr class='infohr'>"
 
 	//TODO: Add a social recordkeeping mechanic and datum to keep tracker of who the viewer knows
@@ -52,24 +52,24 @@
 	if(truerole)
 		if(!skipface)
 			if(!special_zvanie)
-				job_message += "Я уверен, он <b>[truerole]</b>."
+				job_message += "I'm sure, he is <b>[truerole]</b>."
 			else
-				job_message += "Я уверен, он <b>[truerole]</b>. Ну и ого, он <span class='yellowteamradio'><b>[special_zvanie]</b></span>"
+				job_message += "I'm sure, he is <b>[truerole]</b>. And wow, he is <span class='yellowteamradio'><b>[special_zvanie]</b></span>"
 		else
-			job_message += "Я не знаю его роли."
+			job_message += "I don't know his role."
 	. += job_message
 
 	var/visible_gender = t_he
 	switch(visible_gender)
 		if("he", "she", "am")
-			visible_gender = "Это [get_aged_gender(TRUE, TRUE)]."
+			visible_gender = "This is [get_aged_gender(TRUE, TRUE)]."
 		if("i")
-			visible_gender = "Это [get_aged_gender(TRUE, TRUE)]."
+			visible_gender = "This is [get_aged_gender(TRUE, TRUE)]."
 		else
 			if(user != src)
-				visible_gender = "Я не знаю его пола."
+				visible_gender = "I don't know his gender."
 			else
-				visible_gender = "Я не знаю свой пол."
+				visible_gender = "I don't know my gender."
 	. += visible_gender
 
 	//lips
@@ -81,15 +81,15 @@
 			if(creampie?.cover_lips)
 				covered_lips += creampie.cover_lips
 		if(HAS_TRAIT(src, TRAIT_SSD_INDICATOR))
-			covered_lips |= "<span style='color: #[COLOR_BLUE_WATER];'>слюнями</span>"
+			covered_lips |= "<span style='color: #[COLOR_BLUE_WATER];'>drool</span>"
 		if(LAZYLEN(covered_lips))
-			. += "Вот блять, его губы покрыты [english_list(covered_lips)]!"
+			. += "Oh, his lips are covered with [english_list(covered_lips)]!"
 		if(belief == "Hadot")
 			. += "У него усы ебанутые."
 
 	//head
 	if(head && !(obscured & ITEM_SLOT_HEAD) && !(head.item_flags & EXAMINE_SKIP) && !(head.item_flags & ABSTRACT))
-		. += "У него <b>[head.get_examine_string(user)]</b> на его голове."
+		. += "He has <b>[head.get_examine_string(user)]</b> on his head."
 
 	//uniform
 	if(w_uniform && !(obscured & ITEM_SLOT_ICLOTHING) && !(w_uniform.item_flags & EXAMINE_SKIP) && !(w_uniform.item_flags & ABSTRACT))
@@ -98,78 +98,78 @@
 		if(istype(w_uniform, /obj/item/clothing/under))
 			var/obj/item/clothing/under/U = w_uniform
 			if(U.attached_accessory && !(U.attached_accessory.item_flags & EXAMINE_SKIP) && !(U.attached_accessory.item_flags & ABSTRACT))
-				accessory_msg += " с <b>[U.attached_accessory.get_examine_string(user, FALSE)]</b>"
+				accessory_msg += " with <b>[U.attached_accessory.get_examine_string(user, FALSE)]</b>"
 
-		. += "У него <b>[w_uniform.get_examine_string(user)]</b>[accessory_msg]."
+		. += "He has <b>[w_uniform.get_examine_string(user)]</b>[accessory_msg]."
 
 	//suit/armor
 	if(wear_suit && !(obscured & ITEM_SLOT_OCLOTHING) && !(wear_suit.item_flags & EXAMINE_SKIP) && !(wear_suit.item_flags & ABSTRACT))
-		. += "У него <b>[wear_suit.get_examine_string(user)]</b>."
+		. += "He has <b>[wear_suit.get_examine_string(user)]</b>."
 
 	//pants
 	if(pants && !(obscured & ITEM_SLOT_PANTS) && !(pants.item_flags & EXAMINE_SKIP) && !(pants.item_flags & ABSTRACT))
-		. += "У него <b>[pants.get_examine_string(user)]</b> на его ногах."
+		. += "He has <b>[pants.get_examine_string(user)]</b> on his legs."
 
 	//oversuit
 	if(oversuit && !(obscured & ITEM_SLOT_OVERSUIT) && !(oversuit.item_flags & EXAMINE_SKIP) && !(oversuit.item_flags & ABSTRACT))
-		. += "У него <b>[oversuit.get_examine_string(user)]</b>."
+		. += "He has <b>[oversuit.get_examine_string(user)]</b>."
 
 	//back
 	if(back && !(obscured & ITEM_SLOT_BACKPACK) && !(back.item_flags & EXAMINE_SKIP) && !(back.item_flags & ABSTRACT))
-		. += "У него <b>[back.get_examine_string(user)]</b> на его спине."
+		. += "He has <b>[back.get_examine_string(user)]</b> on his spine."
 
 	//back 2 storage boogaloo
 	if(s_store && !(obscured & ITEM_SLOT_SUITSTORE) && !(s_store.item_flags & EXAMINE_SKIP) && !(s_store.item_flags & ABSTRACT))
-		. += "У него <b>[s_store.get_examine_string(user)]</b> на его спине."
+		. += "He has <b>[s_store.get_examine_string(user)]</b> on his spine."
 
 	//wrists
 	if(wrists && !(obscured & ITEM_SLOT_WRISTS) && !(wrists.item_flags & EXAMINE_SKIP) && !(wrists.item_flags & ABSTRACT))
-		. += "У него [wrists.get_examine_string(user)] на его запястьях."
+		. += "He has [wrists.get_examine_string(user)] on his wrists."
 
 	//hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT) && !(I.item_flags & EXAMINE_SKIP))
-			. += "Он держит <b>[I.get_examine_string(user)]</b> в его [get_held_index_name(get_held_index_of_item(I))]."
+			. += "He holds <b>[I.get_examine_string(user)]</b> in his [get_held_index_name(get_held_index_of_item(I))]."
 
 	//gloves
 	if(!(obscured & ITEM_SLOT_GLOVES))
 		if(gloves && !(gloves.item_flags & EXAMINE_SKIP) && !(gloves.item_flags & ABSTRACT))
-			. += "У него <b>[gloves.get_examine_string(user)]</b> на его кистях."
+			. += "He has <b>[gloves.get_examine_string(user)]</b> on his hands."
 		else if(!(obscured & ITEM_SLOT_GLOVES) && num_hands)
 			if(blood_in_hands)
-				. += "<span class='warning'>У него <span class='bloody'><b>в крови</b></span> [num_hands > 1 ? "руки" : "рука"]!</span>"
+				. += "<span class='warning'>He has <span class='bloody'><b>bloody</b></span> [num_hands > 1 ? "hands" : "hand"]!</span>"
 			if(shit_in_hands)
-				. += "<span class='warning'>У него <span class='shitty'><b>в говне</b></span> hand[num_hands > 1 ? "руки" : "рука"]!</span>"
+				. += "<span class='warning'>He has <span class='shitty'><b>shitty</b></span> [num_hands > 1 ? "hands" : "hand"]!</span>"
 			if(cum_in_hands)
-				. += "<span class='warning'>У него <span class='cummy'><b>в сперме</b></span> hand[num_hands > 1 ? "руки" : "рука"]!</span>"
+				. += "<span class='warning'>He has <span class='cummy'><b>cummy</b></span> [num_hands > 1 ? "hands" : "hand"]!</span>"
 			if(femcum_in_hands)
-				. += "<span class='warning'>У него <span class='femcummy'><b>в женской сперме</b></span> hand[num_hands > 1 ? "руки" : "рука"]!</span>"
+				. += "<span class='warning'>He has <span class='femcummy'><b>femcummy</b></span> [num_hands > 1 ? "hands" : "hand"]!</span>"
 
 	//handcuffed
 	if(handcuffed && !(obscured & ITEM_SLOT_HANDCUFFED) && !(handcuffed.item_flags & EXAMINE_SKIP))
-		. += "<span class='warning'>Он закован в <b>[handcuffed.get_examine_string(user)]</b>!</span>"
+		. += "<span class='warning'>He is handcuffed with <b>[handcuffed.get_examine_string(user)]</b>!</span>"
 
 	//belt
 	if(belt && !(obscured & ITEM_SLOT_BELT) && !(belt.item_flags & EXAMINE_SKIP))
-		. += "У него <b>[belt.get_examine_string(user)]</b> на его поясе."
+		. += "He has <b>[belt.get_examine_string(user)]</b> on his belt."
 
 	//shoes
 	if(shoes && !(obscured & ITEM_SLOT_FEET)  && !(shoes.item_flags & EXAMINE_SKIP))
-		. += "У него <b>[shoes.get_examine_string(user)]</b> на его стопах."
+		. += "He has <b>[shoes.get_examine_string(user)]</b> on his feet."
 
 	//mask
 	if(wear_mask && !(obscured & ITEM_SLOT_MASK) && !(wear_mask.item_flags & EXAMINE_SKIP))
-		. += "У него [wear_mask.get_examine_string(user)] на его лице."
+		. += "He has [wear_mask.get_examine_string(user)] on his face."
 
 	if(wear_neck && !(obscured & ITEM_SLOT_NECK) && !(wear_neck.item_flags & EXAMINE_SKIP))
-		. += "У него <b>[wear_neck.get_examine_string(user)]</b> на его шее."
+		. += "He has <b>[wear_neck.get_examine_string(user)]</b> on his neck."
 
 	//eyes
 	if(!(obscured & ITEM_SLOT_EYES))
 		if(glasses && !(glasses.item_flags & EXAMINE_SKIP))
-			. += "У него <b>[glasses.get_examine_string(user)]</b> прикрывающие его глаза."
+			. += "He has <b>[glasses.get_examine_string(user)]</b> on his eyes."
 		if(HAS_TRAIT(src, TRAIT_UNNATURAL_RED_GLOWY_EYES))
-			. += "<span class='warning'><B>У него ебанутые глаза!</B></span>"
+			. += "<span class='warning'><B>He has crazy eyes!</B></span>"
 		if(HAS_TRAIT(src, TRAIT_FLUORIDE_STARE))
 			. += "<span class='animated'>У него пространственный взгляд...</B></span>"
 		if(HAS_TRAIT(src, TRAIT_BLOODARN))
@@ -181,15 +181,15 @@
 
 	//left ear
 	if(ears && !(obscured & ITEM_SLOT_LEAR) && !(ears.item_flags & EXAMINE_SKIP))
-		. += "У него <b>[ears.get_examine_string(user)]</b> на его левом ухе."
+		. += "He has <b>[ears.get_examine_string(user)]</b> on his left ear."
 
 	//right ear
 	if(ears_extra && !(obscured & ITEM_SLOT_REAR) && !(ears_extra.item_flags & EXAMINE_SKIP))
-		. += "У него <b>[ears_extra.get_examine_string(user)]</b> на его правом ухе."
+		. += "He has <b>[ears_extra.get_examine_string(user)]</b> on his right ear."
 
 	//ID
 	if(wear_id && !(wear_id.item_flags & EXAMINE_SKIP))
-		. += "У него <b>[wear_id.get_examine_string(user)]</b>."
+		. += "He has <b>[wear_id.get_examine_string(user)]</b>."
 
 	//Status effects
 	var/list/status_examines = status_effect_examines()
@@ -199,20 +199,20 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>У него конвульсии!</B></span>"
+			. += "<span class='warning'><B>He's having convulsions!</B></span>"
 		if(100 to 300)
-			. += "<span class='warning'>Он трясётся.</span>"
+			. += "<span class='warning'>He's shaking.</span>"
 
 	if(pulling)
 		switch(grab_state)
 			if(GRAB_PASSIVE)
-				. += "<span class='notice'>Он тащит [pulling].</span>"
+				. += "<span class='notice'>He's is pulling [pulling].</span>"
 			if(GRAB_AGGRESSIVE)
-				. += "<span class='warning'>Он схватил [pulling].</span>"
+				. += "<span class='warning'>He's grabbed [pulling].</span>"
 			if(GRAB_NECK)
-				. += "<span class='danger'>Он схватил [pulling] за шею!</span>"
+				. += "<span class='danger'>He's grabbed [pulling] by neck!</span>"
 			if(GRAB_KILL)
-				. += "<span class='danger'><b>Он душит [pulling]!</b></span>"
+				. += "<span class='danger'><b>He's strangling [pulling]!</b></span>"
 
 	var/list/msg = list()
 	//stores stumps
@@ -221,7 +221,7 @@
 	var/list/missing = get_missing_limbs()
 	for(var/obj/item/bodypart/bodypart as anything in bodyparts)
 		if(bodypart.is_stump())
-			msg += "<span class='dead'><b>Его [parse_zone(bodypart.body_zone)] просто огрызок!</b></span>"
+			msg += "<span class='dead'><b>His [parse_zone(bodypart.body_zone)] is just a stump!</b></span>"
 			//stumps count as missing
 			missing += bodypart.body_zone
 			stumps += bodypart.body_zone
@@ -232,10 +232,10 @@
 					var/missing_teeth = bodypart.max_teeth - teeth
 					var/number_teeth
 					if(missing_teeth < 2)
-						number_teeth = "зуб"
+						number_teeth = "tooth"
 					else
-						number_teeth = "зубов"
-					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_teeth] [number_teeth]!</span>"
+						number_teeth = "teeth"
+					msg += "<span class='danger'>His [bodypart.name] don't have [missing_teeth] [number_teeth]!</span>"
 		var/max_fingers = bodypart.get_max_digits()
 		if(max_fingers)
 			var/fingers = bodypart.get_digits_amount()
@@ -245,15 +245,15 @@
 					var/missing_fingers = max_fingers - fingers
 					var/number_fingers
 					if(missing_fingers < 2)
-						number_fingers = "палец"
+						number_fingers = "finger"
 					else
-						number_fingers = "пальцев"
-					msg += "<span class='danger'>Его [bodypart.name] не имеет [missing_fingers] [number_fingers]!</span>"
+						number_fingers = "fingers"
+					msg += "<span class='danger'>His [bodypart.name] don't have [missing_fingers] [number_fingers]!</span>"
 	for(var/zone in missing)
 		//redundancy checks
 		if((GLOB.bodyzone_to_parent[zone] && ((GLOB.bodyzone_to_parent[zone] in missing) || (GLOB.bodyzone_to_parent[zone] in stumps))))
 			continue
-		msg += "<span class='dead'><b>Его [parse_zone(zone)] потеряно!</b></span>"
+		msg += "<span class='dead'><b>His [parse_zone(zone)] is lost!</b></span>"
 	var/damage_value = 0
 	if(!((user == src) && (src.hal_screwyhud == SCREWYHUD_HEALTHY))) //fake healthy
 		var/hyperbole = ((user == src) && (hal_screwyhud == SCREWYHUD_CRIT) ? 50 : 0)
@@ -264,12 +264,12 @@
 		damage_value = getBruteLoss() + getFireLoss() + getCloneLoss() + hyperbole + wound_injured
 		switch(damage_value)
 			if(5 to 25)
-				msg += "Он немного повреждён."
+				msg += "He's a little damaged."
 			if(25 to 50)
-				msg += "Он <B>довольно</B> повреждён!"
+				msg += "He's <B>pretty</B> damaged!"
 				get_aroused = FALSE
 			if(50 to INFINITY)
-				msg += "<B>Он же тяжело ранен!</B>"
+				msg += "<B>He's heavily damaged!</B>"
 				get_aroused = FALSE
 /*
 	var/datum/component/irradiated/irradiated = GetComponent(/datum/component/irradiated)
@@ -281,10 +281,10 @@
 		msg += "[t_He] look[p_s()] a little soaked."
 */
 	if(nutrition <= NUTRITION_LEVEL_STARVING)
-		msg += "Он голодает."
+		msg += "He's starving."
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "Он толстый."
+			msg += "He's fat."
 /*
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
@@ -299,9 +299,9 @@
 		apparent_blood_volume -= ALBINO_BLOOD_REDUCTION // enough to knock you down one tier
 	switch(apparent_blood_volume)
 		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-			msg += "<B>Он бледный, как поганка.</B>"
+			msg += "<B>He's pale as whiteshroom.</B>"
 		if(-INFINITY to BLOOD_VOLUME_BAD)
-			msg += "<span class='artery'><B>Его кожа нездорово бледная.</B></span>"
+			msg += "<span class='artery'><B>His skin is unhealthily pale.</B></span>"
 /*
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		msg += "[t_He] [t_is] emitting a gentle blue glow!"
@@ -315,28 +315,28 @@
 	//dirtiness
 	switch(germ_level)
 		if(GERM_LEVEL_FILTHY to GERM_LEVEL_SMASHPLAYER)
-			msg += "Он выглядит грязно!"
+			msg += "He looks dirty!"
 		if(GERM_LEVEL_SMASHPLAYER to INFINITY)
-			msg += "<b>Боже, он воняет!</b>"
+			msg += "<b>God, he stinks!</b>"
 	//strength diff
 	if(user.attributes && (user != src))
 		switch(GET_MOB_SKILL_VALUE_RAW(user, STAT_STRENGTH)-GET_MOB_SKILL_VALUE_RAW(src, STAT_STRENGTH))
 			if(-INFINITY to -3)
-				msg += span_danger("Он намного сильнее меня.")
+				msg += span_danger("He's much stronger than me.")
 			if(-2, -1)
-				msg += "Он сильнее меня."
+				msg += "He's stronger than me."
 			if(0)
-				msg += span_notice("Он по силе как и я.")
+				msg += span_notice("He's as strong as me.")
 			if(1, 2)
-				msg += span_notice("Он слабее меня.")
+				msg += span_notice("He's weaker than me.")
 			if(3 to INFINITY)
-				msg += span_boldnotice("Он намного слабее меня.")
+				msg += span_boldnotice("He's much weaker than me.")
 	if(stat < DEAD)
 		if(src != user)
 			if(drunkenness && !skipface) //Drunkenness
 				switch(drunkenness)
 					if(11 to INFINITY)
-						msg += "Он пьяный."
+						msg += "He's drunk."
 /*
 			var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
 			if(mood)
@@ -357,7 +357,7 @@
 						msg += "<span class='notice'>[t_He] look[p_s()] <b>ecstatic</b>!</span>"
 */
 			if(combat_mode)
-				msg += "Враждебно настроен."
+				msg += "He is angry."
 /*
 			if(getOxyLoss() >= 10)
 				msg += "[t_He] seem[p_s()] winded."
@@ -382,17 +382,17 @@
 */
 		switch(stat)
 			if(DEAD, UNCONSCIOUS, HARD_CRIT)
-				msg += "Он, вроде, без сознания."
+				msg += "He seems to be unconscious."
 			if(SOFT_CRIT)
-				msg += "Он почти в сознании."
+				msg += "He's almost conscious."
 			if(CONSCIOUS)
 				if(HAS_TRAIT(src, TRAIT_DUMB))
-					msg += "У него ебало тупое."
+					msg += "His fucking face is stupid."
 		if(needs_lungs() && (distance <= 2) && (losebreath || undergoing_cardiac_arrest() || undergoing_nervous_system_failure()) )
-			msg += "Он не дышит."
+			msg += "He's not breathing."
 		if(getorganslot(ORGAN_SLOT_BRAIN))
 			if(!key || !client)
-				msg += "<span class='dead'>Он не в себе.</span>"
+				msg += "<span class='dead'>He's not himself.</span>"
 /*
 	var/scar_severity = 0
 	for(var/datum/scar/scar as anything in all_scars)
@@ -416,17 +416,17 @@
 	if(!isnull(trait_exam))
 		. += trait_exam
 	//NOOOOO AHHHHHHHH
-	var/list/slot_to_name = list(ORGAN_SLOT_PENIS = "хуй",\
-								ORGAN_SLOT_TESTICLES = "яйца",\
-								ORGAN_SLOT_VAGINA = "вагина",\
-								ORGAN_SLOT_BREASTS = "сиськи",\
-								ORGAN_SLOT_WOMB = "матка",\
-								ORGAN_SLOT_ANUS = "анус",\
+	var/list/slot_to_name = list(ORGAN_SLOT_PENIS = "dick",\
+								ORGAN_SLOT_TESTICLES = "balls",\
+								ORGAN_SLOT_VAGINA = "vagina",\
+								ORGAN_SLOT_BREASTS = "breasts",\
+								ORGAN_SLOT_WOMB = "womb",\
+								ORGAN_SLOT_ANUS = "anus",\
 								)
 	for(var/genital_slot in slot_to_name)
 		var/list/genitals = getorganslotlist(genital_slot)
 		if(!length(genitals) && should_have_genital(genital_slot) && genital_visible(genital_slot))
-			. += "<span class='danger'>У него нет [slot_to_name[genital_slot]]!</span>"
+			. += "<span class='danger'>He has no [slot_to_name[genital_slot]]!</span>"
 		else
 			for(var/thing in genitals)
 				var/obj/item/organ/genital/genital = thing
@@ -494,7 +494,7 @@
 		if(HAS_TRAIT(living_user, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
-	. = list(span_notice("<i>Я осматриваю <EM>[obscure_name ? "Неизвестный" : fancy_name]</EM> ближе, и замечаю...</i>"), "<br><hr class='infohr'>")
+	. = list(span_notice("<i>I examine <EM>[obscure_name ? "Unknown" : fancy_name]</EM> closer, and I notice...</i>"), "<br><hr class='infohr'>")
 
 	var/box = ""
 	var/distance = get_dist(user, src)
@@ -507,12 +507,12 @@
 		//yes the splint will cover gauze up
 		if(limb.current_splint)
 			hidden = limb.current_splint
-			damaged_bodypart_text += "<span class='info'>Его [limb.name] шинировано с помощью <a href='?src=[REF(limb)];gauze=1;'>[limb.current_splint]</a>.</span>"
+			damaged_bodypart_text += "<span class='info'>His [limb.name] is splinted with <a href='?src=[REF(limb)];gauze=1;'>[limb.current_splint]</a>.</span>"
 			if(limb.current_gauze)
-				damaged_bodypart_text += "<span class='info'>Его [limb.name] затянуто бинтом с помощью [limb.current_gauze].</span>"
+				damaged_bodypart_text += "<span class='info'>His [limb.name] is bandaged with [limb.current_gauze].</span>"
 		else if(limb.current_gauze)
 			hidden = limb.current_gauze
-			damaged_bodypart_text += "<span class='info'>Его [limb.name] затянуто бинтом с помощью <a href='?src=[REF(limb)];gauze=1;'>[limb.current_gauze]</a>.</span>"
+			damaged_bodypart_text += "<span class='info'>His [limb.name] is bandaged with <a href='?src=[REF(limb)];gauze=1;'>[limb.current_gauze]</a>.</span>"
 
 		if(!hidden)
 			for(var/thing in clothing)
@@ -521,7 +521,7 @@
 					hidden = clothes
 					break
 			if(hidden)
-				damaged_bodypart_text += "<span class='info'>[limb.name] прикрыто благодаря [hidden.name]."
+				damaged_bodypart_text += "<span class='info'>[limb.name] is covered thanks to [hidden.name]."
 /*
 		if(limb.etching && !hidden)
 			damaged_bodypart_text += "<span class='warning'>[t_His] [limb.name] has \"[limb.etching]\" etched on it!</span>"
@@ -529,7 +529,7 @@
 		for(var/thing in limb.embedded_objects)
 			var/obj/item/embedded = thing
 			if(embedded.isEmbedHarmless())
-				damaged_bodypart_text += "<span class='info'>У него [icon2html(embedded, user)] [embedded] застряло в его [limb.name]!</span>"
+				damaged_bodypart_text += "<span class='info'>He has [icon2html(embedded, user)] [embedded] stucked in his [limb.name]!</span>"
 
 		for(var/i in limb.wounds)
 			var/datum/wound/iter_wound = i
@@ -543,29 +543,29 @@
 			if(istype(clothing_thing) && (clothing_thing.clothing_flags & THICKMATERIAL))
 				thicc = TRUE
 			if(limb.get_bleed_rate() && !thicc)
-				damaged_bodypart_text += "<span class='warning'>У него кровь сочится из его [hidden.name] около его <span class='meatymeat'>[limb.name]</span>!</span>"
+				damaged_bodypart_text += "<span class='warning'>He has blood oozing from his [hidden.name] near his <span class='meatymeat'>[limb.name]</span>!</span>"
 		else
 			var/hurted = limb.get_injuries_desc()
 			if(hurted)
-				damaged_bodypart_text += "<span class='danger'>У него [hurted] на его <span class='meatymeat'>[limb.name]</span>.</span>"
+				damaged_bodypart_text += "<span class='danger'>He has [hurted] on his <span class='meatymeat'>[limb.name]</span>.</span>"
 
 		if(distance <= 1)
 			if(HAS_TRAIT(limb, TRAIT_ROTTEN))
-				damaged_bodypart_text += "<span class='necrosis'><B><span class='meatymeat'>[limb.name]</span> гангренозно!</B></span>"
+				damaged_bodypart_text += "<span class='necrosis'><B><span class='meatymeat'>[limb.name]</span> is rotten!</B></span>"
 			if(HAS_TRAIT(limb, TRAIT_DEFORMED))
-				damaged_bodypart_text += "<span class='danger'><B><span class='meatymeat'>[limb.name]</span> ужасно деформировано!</B></span>"
+				damaged_bodypart_text += "<span class='danger'><B><span class='meatymeat'>[limb.name]</span> is deformed!</B></span>"
 			if(limb.is_compound_fractured())
-				damaged_bodypart_text += "<span class='danger'><B><U><span class='meatymeat'>[limb.name]</span> довольно вялое и опухшее!</U></B></span>"
+				damaged_bodypart_text += "<span class='danger'><B><U><span class='meatymeat'>[limb.name]</span> is broken!</U></B></span>"
 			else if(limb.is_fractured())
-				damaged_bodypart_text += "<span class='danger'><B><span class='meatymeat'>[limb.name]</span> помятое и опухшее!</B></span>"
+				damaged_bodypart_text += "<span class='danger'><B><span class='meatymeat'>[limb.name]</span> is broken!</B></span>"
 			else if(limb.is_dislocated())
-				damaged_bodypart_text += "<span class='alert'><span class='meatymeat'>[limb.name]</span> выхвинуто!</span>"
+				damaged_bodypart_text += "<span class='alert'><span class='meatymeat'>[limb.name]</span> is dislocated!</span>"
 		else if(HAS_TRAIT(limb, TRAIT_ROTTEN) || HAS_TRAIT(limb, TRAIT_DEFORMED) || limb.is_fractured() || limb.is_dislocated())
-			damaged_bodypart_text += "<span class='alert'>[limb.name] в плохом состоянии.</span>"
+			damaged_bodypart_text += "<span class='alert'>[limb.name] in a bad condition.</span>"
 	if(length(damaged_bodypart_text))
 		box += jointext(damaged_bodypart_text, "\n")
 	else
-		box += "<span class='info'>У него нет заметных ран.</span>"
+		box += "<span class='info'>He has no noticeable wounds.</span>"
 	. += box
 	if(on_examined_check(user, TRUE))
 		user.on_examine_atom(src, TRUE)

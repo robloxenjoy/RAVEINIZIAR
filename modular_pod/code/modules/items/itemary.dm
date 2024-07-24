@@ -484,8 +484,8 @@
 */
 
 /obj/item/melee/hehe/pickaxe/iron
-	name = "Кирка"
-	desc = "КОПАЙ РАБ!"
+	name = "Pickaxe"
+	desc = "DIG, SLAVE!"
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	lefthand_file = 'modular_septic/icons/mob/inhands/remis_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/mob/inhands/remis_righthand.dmi'
@@ -524,8 +524,8 @@
 	tetris_height = 64
 	slot_flags = ITEM_SLOT_BELT
 	can_dig = TRUE
-	attack_verb_continuous = list("вонзает", "копает")
-	attack_verb_simple = list("вонзать", "копать")
+	attack_verb_continuous = list("stabs")
+	attack_verb_simple = list("stab")
 
 /obj/item/pinker_caller
 	name = "PINKER Caller"

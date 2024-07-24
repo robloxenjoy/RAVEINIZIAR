@@ -2,7 +2,7 @@
 
 ///Say verb
 /mob/verb/say_verb(message as text)
-	set name = "Говорить"
+	set name = "Say"
 	set category = "IC"
 	if(GLOB.say_disabled) //This is here to try to identify lag problems
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
@@ -12,7 +12,7 @@
 
 ///Whisper verb
 /mob/verb/whisper_verb(message as text)
-	set name = "Шептать"
+	set name = "Whisper"
 	set category = "IC"
 	if(GLOB.say_disabled) //This is here to try to identify lag problems
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
@@ -25,8 +25,8 @@
 
 ///The me emote verb
 /mob/verb/me_verb(message as text)
-	set name = "Я"
-	set category = "IC"
+	set name = "Me"
+	set category = null
 
 	if(GLOB.say_disabled) //This is here to try to identify lag problems
 		to_chat(usr, span_danger("Speech is currently admin-disabled."))
@@ -34,7 +34,7 @@
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
 
-	usr.emote("Я",1,message,TRUE)
+	usr.emote("Me",1,message,TRUE)
 
 ///Speak as a dead person (ghost etc)
 /mob/proc/say_dead(message)

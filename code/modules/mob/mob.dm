@@ -1405,7 +1405,7 @@
 ///Shows a tgui window with memories
 /mob/verb/memory()
 	set name = "Память"
-	set category = "IC"
+	set category = null
 	set desc = "View your character's memories."
 	if(!mind)
 		var/fail_message = "You have no mind!"

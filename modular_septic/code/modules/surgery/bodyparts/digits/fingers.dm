@@ -1,6 +1,6 @@
 /obj/item/digit/finger
-	name = "Палец"
-	desc = "Один из."
+	name = "Finger"
+	desc = "One of."
 	icon_state = "finger"
 	base_icon_state = "finger"
 	digit_type = "finger"
@@ -13,23 +13,23 @@
 */
 
 /obj/item/digit/finger/thumb
-	name = "Большой палец"
+	name = "Thumb Finger"
 	digit_type = "thumb"
 
 /obj/item/digit/finger/index
-	name = "Указательный палец"
+	name = "Index Finger"
 	digit_type = "index finger"
 
 /obj/item/digit/finger/middle
-	name = "Средний палец"
+	name = "Middle Finger"
 	digit_type = "middle finger"
 
 /obj/item/digit/finger/ring
-	name = "Безымянный палец"
+	name = "Ring Finger"
 	digit_type = "ring finger"
 
 /obj/item/digit/finger/pinky
-	name = "Мизинец"
+	name = "Pinky Finger"
 	digit_type = "pinky finger"
 
 /*

@@ -15,16 +15,16 @@
 			target_diceroll = -18
 		//successful feint
 		if(user_diceroll >= target_diceroll)
-			var/feint_message_spectator = "<b>[user]</b> успешно финтует атаку на <b>[src]</b> с помощью [weapon]!"
-			var/feint_message_victim = "Кто-то финтует атаку на мне!"
-			var/feint_message_attacker = "Я финтую атаку на ком-то с помощью [weapon]!"
+			var/feint_message_spectator = "<b>[user]</b> feins an attack on <b>[src]</b> with [weapon]!"
+			var/feint_message_victim = "Someone feints an attack on me!"
+			var/feint_message_attacker = "I feint an attack on someone with [weapon]!"
 			if(user in fov_viewers(2, src))
-				feint_message_attacker = "Я финтую атаку на <b>[src]</b> с помощью [weapon]!"
+				feint_message_attacker = "I feint an attack on <b>[src]</b> with [weapon]!"
 			if(src in fov_viewers(2, user))
-				feint_message_victim = "<b>[user]</b> финтует атаку на мне с помощью [weapon]!"
+				feint_message_victim = "<b>[user]</b> feints an attack on me with [weapon]!"
 			visible_message(span_danger("[feint_message_spectator]"),\
 				span_userdanger("[feint_message_victim]"),
-				span_hear("Я слышу свист!"), \
+				span_hear("I hear combat!"), \
 				vision_distance = COMBAT_MESSAGE_RANGE, \
 				ignored_mobs = user)
 			to_chat(user, span_userdanger("[feint_message_attacker]"))
@@ -33,16 +33,16 @@
 			update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
 		//failed feint
 		else
-			var/feint_message_spectator = "<b>[user]</b> проваливает финт атаки на <b>[src]</b> с помощью [weapon]!"
-			var/feint_message_victim = "Кто-то проваливает финт атаки на мне!"
-			var/feint_message_attacker = "Я проваливаю финт атаки на ком-то с помощью [weapon]!"
+			var/feint_message_spectator = "<b>[user]</b> fails to feint on <b>[src]</b> with [weapon]!"
+			var/feint_message_victim = "Someone fails to feint an attack on me!"
+			var/feint_message_attacker = "I feint an attack on someone with [weapon]!"
 			if(user in fov_viewers(2, src))
-				feint_message_attacker = "Я проваливаю финт атаки на <b>[src]</b> с помощью [weapon]!"
+				feint_message_attacker = "I feint an attack on <b>[src]</b> with [weapon]!"
 			if(src in fov_viewers(2, user))
-				feint_message_victim = "<b>[user]</b> проваливает финт атаки на мне с помощью [weapon]!"
+				feint_message_victim = "<b>[user]</b> fails to feint an attack on me with [weapon]!"
 			visible_message(span_danger("[feint_message_spectator]"),\
 				span_userdanger("[feint_message_victim]"),
-				span_hear("Я слышу свист!"), \
+				span_hear("I hear combat!"), \
 				vision_distance = COMBAT_MESSAGE_RANGE, \
 				ignored_mobs = user)
 			to_chat(user, span_userdanger("[feint_message_attacker]"))
@@ -120,31 +120,31 @@
 	switch(cpr_type)
 		if(CPR_MOUTH)
 			if(is_mouth_covered())
-				to_chat(src, span_warning("Сначала мне нужен открытый рот!"))
+				to_chat(src, span_warning("My mouth should be opened!"))
 				return FALSE
 
 			if(target.is_mouth_covered())
-				to_chat(src, span_warning("Мне нужно сначала раскрыть его рот!"))
+				to_chat(src, span_warning("His mouth should be opened!"))
 				return FALSE
 
 			if(!jaw)
-				to_chat(src, span_warning("У меня нет рта!"))
+				to_chat(src, span_warning("I have no mouth!"))
 				return FALSE
 
 			if(HAS_TRAIT(src, TRAIT_NOBREATH))
-				to_chat(src, span_warning("Я не могу дышать!"))
+				to_chat(src, span_warning("I can't breath!"))
 				return FALSE
 
 			if(!getorganslot(ORGAN_SLOT_LUNGS))
-				to_chat(src, span_warning("У меня нет лёгких!"))
+				to_chat(src, span_warning("I don't have lungs!"))
 				return FALSE
 
 			if(world.time >= target.last_mtom + M2M_COOLDOWN)
 				var/they_breathe = !HAS_TRAIT(target, TRAIT_NOBREATH)
 				var/obj/item/organ/lungs/they_lung = target.getorganslot(ORGAN_SLOT_LUNGS)
-				visible_message(span_notice("<b>[src]</b> исполняет реанимацию <b>[target]</b>!"), \
-								span_notice("Я исполняю реанимацию <b>[target]</b>."),
-								span_hear("Я слышу чё-то."),
+				visible_message(span_notice("<b>[src]</b> performs resuscitation on <b>[target]</b>!"), \
+								span_notice("I perform resuscitation on <b>[target]</b>."),
+								span_hear("I hear something."),
 								vision_distance = COMBAT_MESSAGE_RANGE,
 								ignored_mobs = target)
 				target.last_mtom = world.time
@@ -155,21 +155,21 @@
 						epinephrine_mod += 5
 					target.adjustOxyLoss(-(medical_skill + epinephrine_mod))
 					target.updatehealth()
-					to_chat(target, span_unconscious("Я чувствую, как глоток свежего воздуха проникает в мои лёгкие... Это приятно..."))
+					to_chat(target, span_unconscious("I feel a breath of fresh air entering my lungs... It's nice..."))
 				else if(they_breathe && !they_lung)
-					to_chat(target, span_unconscious("Я чувствую глоток свежего воздуха... Но мне не легче..."))
+					to_chat(target, span_unconscious("I feel a breath of fresh air... But I don't feel any better..."))
 				else
-					to_chat(target, span_unconscious("Я чувствую глоток свежего воздуха... Это ощущение, которое я не особо распознаю..."))
+					to_chat(target, span_unconscious("I feel a breath of fresh air... It's a feeling that I don't really recognize..."))
 		if(CPR_CHEST)
 			var/mob/living/carbon/human/humie = target
 			if(istype(humie))
 				var/obj/item/clothing/suit = humie.wear_suit
 				var/obj/item/clothing/under = humie.w_uniform
 				if(istype(under) && CHECK_BITFIELD(under.clothing_flags, THICKMATERIAL))
-					to_chat(src, span_warning("Мне нужно сначала снять его [under]!"))
+					to_chat(src, span_warning("I need to take [under] off first!"))
 					return
 				else if(istype(suit) && CHECK_BITFIELD(suit.clothing_flags, THICKMATERIAL))
-					to_chat(src, span_warning("Мне нужно снять его [suit]!"))
+					to_chat(src, span_warning("I need to take [suit] off!"))
 					return
 
 			if(world.time >= target.last_cpr + CPR_COOLDOWN)
@@ -178,13 +178,13 @@
 				var/heart_exposed_mod = 0
 				if(CHECK_MULTIPLE_BITFIELDS(chest.how_open(), SURGERY_INCISED|SURGERY_RETRACTED|SURGERY_BROKEN) && istype(they_heart))
 					heart_exposed_mod += 5
-					visible_message(span_notice("<b>[src]</b> массажирует <b>[target]</b> [they_heart]!"), \
-								span_notice("Я массажирую <b>[target]</b> [they_heart]."), \
+					visible_message(span_notice("<b>[src]</b> massages <b>[target]</b> [they_heart]!"), \
+								span_notice("I massage <b>[target]</b> [they_heart]."), \
 								vision_distance = COMBAT_MESSAGE_RANGE, \
 								ignored_mobs = target)
 				else
-					visible_message(span_notice("<b>[src]</b> исполняет СЛР на <b>[target]</b>!"), \
-								span_notice("Я исполняю СЛР на <b>[target]</b>."), \
+					visible_message(span_notice("<b>[src]</b> performs CPR on <b>[target]</b>!"), \
+								span_notice("I perform CPR on <b>[target]</b>."), \
 								vision_distance = COMBAT_MESSAGE_RANGE, \
 								ignored_mobs = target)
 				if(target.stat >= DEAD || target.undergoing_cardiac_arrest())
@@ -192,11 +192,11 @@
 				target.last_cpr = world.time
 				log_combat(src, target, "CPRed")
 				if(they_beat && they_heart)
-					to_chat(target, span_unconscious("Я чувствую, как мое сердце колотится..."))
+					to_chat(target, span_unconscious("I feel my heart beating..."))
 				else if(they_beat && !they_heart)
-					to_chat(target, span_unconscious("Я чувствую, как у меня колотится в груди... Но мне не легче..."))
+					to_chat(target, span_unconscious("I feel my chest beating... But I don't feel any better..."))
 				else
-					to_chat(target, span_unconscious("Я чувствую, как мне давят на грудь..."))
+					to_chat(target, span_unconscious("I feel pressure on my chest..."))
 				var/epinephrine_mod = 0
 				if(target.reagents?.get_reagent_amount(/datum/reagent/medicine/epinephrine) >= 1)
 					epinephrine_mod +=  3
@@ -210,8 +210,8 @@
 							SETBRAINLOSS(target, 85)
 						if(target.revive())
 							target.grab_ghost(TRUE)
-							target.visible_message(span_warning("<b>[target]</b> вяло спазмирует мышцами."), \
-											span_userdanger("Мои мышцы спазмируются, когда меня возвращают к жизни!"))
+							target.visible_message(span_warning("<b>[target]</b> muscle spasms sluggishly."), \
+											span_userdanger("My muscles spasm as I am brought back to life!"))
 /*
 				else
 					if(diceroll <= DICE_CRIT_FAILURE)

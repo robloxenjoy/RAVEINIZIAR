@@ -1,8 +1,8 @@
 // ОДЁЖКА ВСЯКАЯ
 
 /obj/item/clothing/under/codec/purp
-	name = "Одёжка"
-	desc = "Хорошего качества."
+	name = "Clothes"
+	desc = "Good quality."
 	icon = 'modular_pod/icons/obj/clothing/under/under.dmi'
 	icon_state = "pur"
 	worn_icon = 'modular_pod/icons/mob/clothing/under/under.dmi'
@@ -85,8 +85,8 @@
 // ШТАНИШКИ
 
 /obj/item/clothing/pants/codec/purp
-	name = "Штаны"
-	desc = "Ну ведь, хорошее качество!"
+	name = "Pants"
+	desc = "Good quality!"
 	icon = 'modular_pod/icons/obj/clothing/pants.dmi'
 	icon_state = "pur_pants"
 	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'

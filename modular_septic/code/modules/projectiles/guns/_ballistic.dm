@@ -195,7 +195,7 @@
 			if(tac_reloads)
 				eject_magazine(user, FALSE, new_magazine)
 			else
-				to_chat(user, span_notice("Тут уже [magazine_wording] в [src]."))
+				to_chat(user, span_notice("There is [magazine_wording] in [src]."))
 		return
 	if(istype(A, /obj/item/ammo_casing) || istype(A, /obj/item/ammo_box))
 		if(bolt_type == BOLT_TYPE_NO_BOLT || internal_magazine)
@@ -206,7 +206,7 @@
 				chambered = null
 			var/num_loaded = magazine?.attackby(A, user, params, TRUE)
 			if(num_loaded)
-				to_chat(user, span_notice("Я заряжаю [num_loaded] [cartridge_wording] в [src]."))
+				to_chat(user, span_notice("I load [num_loaded] [cartridge_wording] in [src]."))
 				playsound(src, load_sound, load_sound_volume, load_sound_vary)
 				if(isnull(chambered) && (bolt_type == BOLT_TYPE_NO_BOLT))
 					chamber_round()
@@ -291,7 +291,7 @@
 /obj/item/gun/ballistic/drop_bolt(mob/user)
 	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, bolt_drop_sound_vary)
 	if(user)
-		to_chat(user, span_notice("Я опускаю [bolt_wording] [src]."))
+		to_chat(user, span_notice("I drop [bolt_wording] [src]."))
 	chamber_round()
 	bolt_locked = FALSE
 	update_appearance()
@@ -305,22 +305,22 @@
 			//If it's an open bolt, racking again would do nothing
 			if(!bolt_locked)
 				if(user)
-					to_chat(user, span_notice("[src] [bolt_wording] уже вытащен!"))
+					to_chat(user, span_notice("[src] [bolt_wording] is already out!"))
 				return
 			bolt_locked = FALSE
 			chamber_round(TRUE)
 			if(user)
-				to_chat(user, span_notice("Я вставляю [bolt_wording] [src]."))
+				to_chat(user, span_notice("I load [bolt_wording] [src]."))
 			sound_hint()
 			update_appearance()
 		//Break actions only need racking if they are well, single action revolvers
 		if(BOLT_TYPE_BREAK_ACTION)
 			if(bolt_locked)
 				if(user)
-					to_chat(user, span_notice("Я взвожу [bolt_wording] [src]."))
+					to_chat(user, span_notice("I cock  [bolt_wording] [src]."))
 				chamber_round()
 			else if(user)
-				to_chat(user, span_notice("Я разряжаю [bolt_wording] [src]."))
+				to_chat(user, span_notice("I unload [bolt_wording] [src]."))
 			sound_hint()
 			if(bolt_locked)
 				playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
@@ -330,7 +330,7 @@
 			update_appearance()
 		else
 			if(user)
-				to_chat(user, span_notice("Я вставляю [bolt_wording] [src]."))
+				to_chat(user, span_notice("I load [bolt_wording] [src]."))
 			process_chamber(!chambered, FALSE)
 			sound_hint()
 			if(bolt_type == BOLT_TYPE_LOCKING && !chambered)

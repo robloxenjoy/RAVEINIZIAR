@@ -1,6 +1,6 @@
 /obj/item/organ/brain
-	name = "Мозг"
-	desc = "Компактное скопление нейронов и синапсов."
+	name = "Brain"
+	desc = "Compact cluster of neurons and synapses."
 	icon_state = "brain"
 	throw_speed = 3
 	throw_range = 5
@@ -52,7 +52,7 @@
 	name = initial(name)
 	if(new_owner.mind?.has_antag_datum(/datum/antagonist/changeling) && !no_id_transfer) //congrats, you're trapped in a body you don't control
 		if(brainmob && !(new_owner.stat == DEAD || (HAS_TRAIT(new_owner, TRAIT_DEATHCOMA))))
-			to_chat(brainmob, span_danger("Не могу почувствовать тело! Я просто мозг!"))
+			to_chat(brainmob, span_danger("I can't feel the body! I'm just a brain!"))
 		forceMove(new_owner)
 		return
 
@@ -125,8 +125,8 @@
 		REMOVE_TRAIT(owner, TRAIT_KNOCKEDOUT, CRIT_HEALTH_TRAIT)
 		return
 	if(owner.stat < UNCONSCIOUS)
-		owner.visible_message(span_danger("<b>[owner]</b> начинает биться в конвульсиях!"), \
-							span_userdanger("Я бьюсь в конвульсиях!"))
+		owner.visible_message(span_danger("<b>[owner]</b> starts to convulse!"), \
+							span_userdanger("I'm convulsing!"))
 	ADD_TRAIT(owner, TRAIT_KNOCKEDOUT, CRIT_HEALTH_TRAIT)
 	owner.Jitter(1000)
 	owner.Unconscious(4 SECONDS)
@@ -135,7 +135,7 @@
 	if(!ishuman(owner) || !is_failing())
 		return
 	if(owner.jitteriness >= 300)
-		examine_list += span_flashingdanger(span_big("<b>[owner]</b> бьётся в конвульсиях!"))
+		examine_list += span_flashingdanger(span_big("<b>[owner]</b> convulses!"))
 
 /obj/item/organ/brain/can_heal(delta_time, times_fired)
 	. = TRUE
@@ -196,12 +196,12 @@
 	// Attempt to heal the brain
 	if(is_failing() && tool.is_drainable() && tool.reagents.has_reagent(/datum/reagent/medicine/mannitol))
 		if(brainmob?.health <= HEALTH_THRESHOLD_DEAD) //if the brain is fucked anyway, do nothing
-			to_chat(user, span_warning("[src] слишком повреждён... И я ничего не смогу поделать с этим."))
+			to_chat(user, span_warning("[src] too damaged... And there's nothing I can do about it."))
 			return TRUE
 		if(!tool.reagents.has_reagent(/datum/reagent/medicine/mannitol, 10))
-			to_chat(user, span_warning("Недостаточно для лечения [src]!"))
+			to_chat(user, span_warning("Not enough for healing [src]!"))
 			return TRUE
-		user.visible_message(span_notice("<b>[user]</b> начинается лить жидкость из [tool] на [src]."),
+		user.visible_message(span_notice("<b>[user]</b> начинает лить жидкость из [tool] на [src]."),
 						span_notice("Я начинаю лить жидкость из [tool] на [src]."))
 		if(!do_after(user, 5 SECONDS, src))
 			to_chat(user, span_warning("Я провалился в своей затее!"))
@@ -356,11 +356,11 @@
 			return
 		var/brain_message
 		if(prev_damage < BRAIN_DAMAGE_MILD && damage >= BRAIN_DAMAGE_MILD)
-			brain_message = span_warning("Чувствую головокружение...")
+			brain_message = span_warning("I feel dizzy...")
 		else if(prev_damage < BRAIN_DAMAGE_SEVERE && damage >= BRAIN_DAMAGE_SEVERE)
-			brain_message = span_warning("Я как будто теряю контроль над мыслями!")
+			brain_message = span_warning("It's like I'm losing control of my thoughts!")
 		else if(prev_damage < (BRAIN_DAMAGE_DEATH - 20) && damage >= (BRAIN_DAMAGE_DEATH - 20) && damage < BRAIN_DAMAGE_DEATH)
-			brain_message = span_warning("МОЁ СОЗНАНИЕ МИГАЕТ!")
+			brain_message = span_warning("MY CONSCIOUSNESS IS BLINKING!")
 		if(.)
 			. += "\n[brain_message]"
 		else
@@ -454,7 +454,7 @@
 			LAZYSET(brainmob.status_traits, TRAIT_BADDNA, carbon_transferer.status_traits[TRAIT_BADDNA])
 	if(transferer.mind && transferer.mind.current)
 		transferer.mind.transfer_to(brainmob)
-	to_chat(brainmob, span_notice("Чувствую себя очень странно. Наверное это нормально, ведь я теперь просто мозг, хотя я был им и раньше."))
+	to_chat(brainmob, span_notice("I feel very strange. This is probably normal, because now I’m just a brain, although I was one before."))
 
 ////////////////////////////////////TRAUMAS////////////////////////////////////////
 /obj/item/organ/brain/proc/has_trauma_type(brain_trauma_type = /datum/brain_trauma, resilience = TRAUMA_RESILIENCE_ABSOLUTE)

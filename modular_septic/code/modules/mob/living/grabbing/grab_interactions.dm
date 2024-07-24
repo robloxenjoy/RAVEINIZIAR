@@ -10,30 +10,30 @@
 			continue
 		//You can't double strangle, sorry!
 		else if(other_grab.active && (other_grab.grab_mode == GM_STRANGLE))
-			to_chat(owner, span_danger("Я уже душу [victim]!"))
+			to_chat(owner, span_danger("I'm already strangling [victim]!"))
 			return FALSE
 		//Due to shitcode reasons, i cannot support strangling and taking down simultaneously
 		else if(other_grab.active && (other_grab.grab_mode == GM_TAKEDOWN))
-			to_chat(owner, span_danger("Я слишком сосредоточен на прижатии!"))
+			to_chat(owner, span_danger("I'm too focused on the takedown!"))
 			return FALSE
 	active = !active
 	if(!active)
 		owner.setGrabState(GRAB_AGGRESSIVE)
 		owner.set_pull_offsets(victim, owner.grab_state)
 		victim.sound_hint()
-		victim.visible_message(span_danger("<b>[owner]</b> перестаёт душить <b>[victim]</b>!"), \
-						span_userdanger("<b>[owner]</b> перестаёт душить меня!"), \
+		victim.visible_message(span_danger("<b>[owner]</b> stops strangling <b>[victim]</b>!"), \
+						span_userdanger("<b>[owner]</b> stops strangling me!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = owner)
 	else
-		to_chat(owner, span_danger("Я перестаю душить <b>[victim]</b>!"))
+		to_chat(owner, span_danger("I stop strangling <b>[victim]</b>!"))
 		owner.setGrabState(GRAB_KILL)
 		owner.set_pull_offsets(victim, owner.grab_state)
-		victim.visible_message(span_danger("<b>[owner]</b> начинает душить <b>[victim]</b>!"), \
-						span_userdanger("<b>[owner]</b> начинает душить меня!"), \
+		victim.visible_message(span_danger("<b>[owner]</b> strangles <b>[victim]</b>!"), \
+						span_userdanger("<b>[owner]</b> strangle me!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = owner)
-		to_chat(owner, span_userdanger("Я начинаю душить <b>[victim]</b>!"))
+		to_chat(owner, span_userdanger("I begin to strangle <b>[victim]</b>!"))
 		victim.adjustOxyLoss(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH))
 		actions_done++
 	grab_hud?.update_appearance()
@@ -253,16 +253,16 @@
 	var/epic_success = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
 	if(epic_success >= DICE_SUCCESS)
 		if(owner != victim)
-			victim.visible_message(span_danger("<b>[owner]</b> вырывает <b>[victim]</b> [grasped_part.name]!"), \
-							span_userdanger("<b>[owner]</b> вырывает [grasped_part.name]!"), \
-							span_hear("Я слышу ужасный звук плоти."), \
+			victim.visible_message(span_danger("<b>[owner]</b> tears off <b>[victim]</b> [grasped_part.name]!"), \
+							span_userdanger("<b>[owner]</b> tears off [grasped_part.name]!"), \
+							span_hear("I hear combat."), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = owner)
-			to_chat(owner, span_userdanger("Я вырываю <b>[victim]</b> [grasped_part.name]!"))
+			to_chat(owner, span_userdanger("I tear off <b>[victim]</b> [grasped_part.name]!"))
 		else
-			victim.visible_message(span_danger("<b>[owner]</b> вырывает [grasped_part.name]!"), \
-							span_userdanger("Я вырываю [grasped_part.name]!"), \
-							span_hear("Я слышу ужасный звук плоти."), \
+			victim.visible_message(span_danger("<b>[owner]</b> tears off [grasped_part.name]!"), \
+							span_userdanger("I tear off [grasped_part.name]!"), \
+							span_hear("I hear combat."), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 		var/mob/living/victim_will_get_nulled = victim
 		var/mob/living/carbon/owner_will_get_nulled = owner
@@ -294,16 +294,16 @@
 		update_grab_mode()
 		return FALSE
 	if(owner != victim)
-		victim.visible_message(span_danger("<b>[owner]</b> вырывает <b>[victim]</b> [roped_organ.name]!"), \
-						span_userdanger("<b>[owner]</b> вырывает [roped_organ.name]!"), \
-						span_hear("Я слышу ужасный звук плоти."), \
+		victim.visible_message(span_danger("<b>[owner]</b> tears off <b>[victim]</b> [roped_organ.name]!"), \
+						span_userdanger("<b>[owner]</b> tears off [roped_organ.name]!"), \
+						span_hear("I hear combat."), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = owner)
-		to_chat(owner, span_userdanger("Я вырываю <b>[victim]</b> [roped_organ.name]!"))
+		to_chat(owner, span_userdanger("I tear off <b>[victim]</b> [roped_organ.name]!"))
 	else
-		victim.visible_message(span_danger("<b>[owner]</b> вырывает [roped_organ.name]!"), \
-						span_userdanger("Я вырываю [roped_organ.name]!"), \
-						span_hear("Я слышу ужасный звук плоти."), \
+		victim.visible_message(span_danger("<b>[owner]</b> tears off [roped_organ.name]!"), \
+						span_userdanger("I tear off [roped_organ.name]!"), \
+						span_hear("I hear combat."), \
 						vision_distance = COMBAT_MESSAGE_RANGE)
 	var/mob/living/carbon/carbon_victim = victim
 	owner.adjustFatigueLoss(5)
@@ -334,21 +334,21 @@
 		victim.apply_damage(damage, BRUTE, grasped_part, wound_bonus = deal_wound_bonus, sharpness = owner.dna.species.bite_sharpness)
 //		grasped_part.receive_damage(brute = damage, wound_bonus = deal_wound_bonus, sharpness = owner.dna.species.bite_sharpness)
 		if(owner != victim)
-			victim.visible_message(span_danger("<b>[owner]</b> кусает <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
-							span_userdanger("<b>[owner]</b> кусает [grasped_part.name]![carbon_victim.wound_message]"), \
+			victim.visible_message(span_danger("<b>[owner]</b> bites <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
+							span_userdanger("<b>[owner]</b> bites [grasped_part.name]![carbon_victim.wound_message]"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = owner)
-			to_chat(owner, span_userdanger("Я кусаю <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"))
+			to_chat(owner, span_userdanger("I bite <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"))
 		else
-			victim.visible_message(span_danger("<b>[owner]</b> кусает [grasped_part.name]![carbon_victim.wound_message]"), \
-							span_userdanger("Я кусаю [grasped_part.name]![carbon_victim.wound_message]"), \
+			victim.visible_message(span_danger("<b>[owner]</b> bites [grasped_part.name]![carbon_victim.wound_message]"), \
+							span_userdanger("I bite [grasped_part.name]![carbon_victim.wound_message]"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
 		SEND_SIGNAL(carbon_victim, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
 		actions_done++
 	else
 		if(owner != victim)
-			victim.visible_message(span_danger("<b>[owner]</b> пытается укусить <b>[victim]</b> [grasped_part.name]!"), \
-							span_userdanger("<b>[owner]</b> пытается укусить [grasped_part.name]!"), \
+			victim.visible_message(span_danger("<b>[owner]</b> tries to bite <b>[victim]</b> [grasped_part.name]!"), \
+							span_userdanger("<b>[owner]</b> tries to bite [grasped_part.name]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = owner)
 			to_chat(owner, span_userdanger("Я пытаюсь укусить <b>[victim]</b> [grasped_part.name]!"))

@@ -23,8 +23,8 @@
 	weapon.guard_ready = TRUE
 	RegisterSignal(weapon, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED), PROC_REF(cancel))
 
-	guarder.visible_message(span_danger("<b>[guarder]</b> готовится сторожить!"), \
-		span_danger("Я готовлю атаку!"), ignored_mobs = target)
+	guarder.visible_message(span_danger("<b>[guarder]</b> preparing to guard!"), \
+		span_danger("I'm preparing to guard!"), ignored_mobs = target)
 	apply_target_overlay()
 
 //	guarder.apply_status_effect(STATUS_EFFECT_HOLDUP, guarder)
@@ -67,9 +67,9 @@
 	var/mob/living/shooter = parent
 	if(shooter.combat_mode)
 		return
-	shooter.visible_message(span_danger("<b>[shooter]</b> врезается в <b>[bumper]</b> и нарушает стражу!"), \
-		span_danger("Я врезаюсь в <b>[bumper]</b> и нарушаю свою стражу!"), ignored_mobs = bumper)
-	to_chat(bumper, span_userdanger("<b>[shooter]</b> врезается в меня и нарушает свою стражу!"))
+	shooter.visible_message(span_danger("<b>[shooter]</b> bumps at <b>[bumper]</b> and fails guard!"), \
+		span_danger("I bump at <b>[bumper]</b> and fail my guard!"), ignored_mobs = bumper)
+	to_chat(bumper, span_userdanger("<b>[shooter]</b> bumps at me and fails his guard!"))
 	cancel()
 
 /datum/component/guard/proc/check_deescalate()
@@ -83,8 +83,8 @@
 	SIGNAL_HANDLER
 
 	var/mob/living/guarder = parent
-	guarder.visible_message(span_danger("<b>[guarder]</b> перестаёт сторожить!"), \
-		span_danger("Я перестаю сторожить."), ignored_mobs = target)
+	guarder.visible_message(span_danger("<b>[guarder]</b> cancels guarding!"), \
+		span_danger("I cancel guarding."), ignored_mobs = target)
 	weapon.guard_ready = FALSE
 
 	qdel(src)

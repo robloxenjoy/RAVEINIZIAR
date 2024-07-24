@@ -1,6 +1,6 @@
 /obj/item/bodypart/head
-	name = "Голова"
-	desc = "Всему!"
+	name = "Head"
+	desc = "Destroyed temple."
 	icon_state = "default_human_head"
 	max_damage = 75
 	max_stamina_damage = 75

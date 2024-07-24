@@ -1,6 +1,6 @@
 /obj/item/clothing/shoes/jackboots
-	name = "Сапоги"
-	desc = "Носить до упаду буду."
+	name = "Jackboots"
+	desc = "I'll wear it until it drop."
 	icon = 'modular_septic/icons/obj/clothing/shoes.dmi'
 	icon_state = "jackboots"
 	worn_icon = 'modular_septic/icons/mob/clothing/feet.dmi'

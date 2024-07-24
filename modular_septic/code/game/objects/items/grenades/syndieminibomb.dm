@@ -50,8 +50,8 @@
 	det_time = 1.5 SECONDS
 
 /obj/item/grenade/gas/incredible_gas
-	name = "Газовая Граната"
-	desc = "IG-Type - поблёскивает на корпусе."
+	name = "Gas Grenade"
+	desc = "IG-Type - glitters on the shell."
 	icon = 'modular_septic/icons/obj/items/grenade.dmi'
 	icon_state = "syndicate"
 	base_icon_state = "syndicate"

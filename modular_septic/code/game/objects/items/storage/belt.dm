@@ -3,8 +3,8 @@
 	carry_weight = 1 KILOGRAMS
 
 /obj/item/storage/belt/military/itobe
-	name = "Плечевая Сумка"
-	desc = "ОЧЕНЬ ПОЛЕЗНО."
+	name = "Shoulder Satchel"
+	desc = "SO USEFUL."
 	icon = 'modular_septic/icons/obj/clothing/belts.dmi'
 	icon_state = "itobe_belt"
 	worn_icon = 'modular_septic/icons/mob/clothing/belt.dmi'

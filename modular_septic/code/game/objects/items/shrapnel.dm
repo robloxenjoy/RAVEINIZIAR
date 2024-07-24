@@ -1,6 +1,6 @@
 /obj/item/shrapnel
-	name = "Осколок"
-	desc = "Сначала вошло, потом вышло."
+	name = "Shrapnel"
+	desc = "In, out."
 	icon = 'modular_septic/icons/obj/items/shrapnel.dmi'
 	icon_state = "shrapnel"
 	base_icon_state = "shrapnel"
@@ -13,8 +13,8 @@
 		icon_state = "[base_icon_state][rand(1, state_variation)]"
 
 /obj/item/shrapnel/bullet
-	name = "Пулевой Осколок"
-	desc = "Пуля сначала вошла, а потом вышла."
+	name = "Bullet Shrapnel"
+	desc = "The bullet entered first and then came out."
 	icon = 'modular_septic/icons/obj/items/shrapnel.dmi'
 	icon_state = "bullet_shrapnel"
 	base_icon_state = "bullet_shrapnel"

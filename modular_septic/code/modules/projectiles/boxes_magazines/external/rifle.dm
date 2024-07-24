@@ -98,7 +98,7 @@
 	icon_state = "[base_icon_state]-[ammo_count() ? 24 : 0]"
 
 /obj/item/ammo_box/magazine/a762svd
-	name = "Магазин 7.62"
+	name = "Magazine 7.62"
 	icon = 'modular_septic/icons/obj/items/ammo/rifle.dmi'
 	icon_state = "svd"
 	base_icon_state = "svd"

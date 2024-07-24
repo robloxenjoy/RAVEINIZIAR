@@ -135,7 +135,7 @@
 	crack_addict.crack_addict()
 	crack_addict.attributes?.add_attribute_modifier(/datum/attribute_modifier/crack_addict, TRUE)
 	crack_addict.playsound_local(crack_addict, 'modular_septic/sound/insanity/bass.ogg', 100)
-	to_chat(crack_addict, span_achievementrare("Что-то с мозгом... А состояние мускул меняется."))
+	to_chat(crack_addict, span_achievementrare("Something with the brain... And the state of the muscles is changing."))
 	crack_addict.flash_pain_manic(100)
 	var/client/C = crack_addict.client
 	var/intensity = 12

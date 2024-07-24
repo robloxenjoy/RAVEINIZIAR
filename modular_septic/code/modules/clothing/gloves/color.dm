@@ -44,8 +44,8 @@
 				ORGAN = 3)
 
 /obj/item/clothing/gloves/thickleather
-	name = "Перчатки"
-	desc = "Прочные, сука новые."
+	name = "Gloves"
+	desc = "Durable, damn new."
 	icon = 'modular_pod/icons/obj/clothing/gloves.dmi'
 	icon_state = "thick_gloves"
 	worn_icon = 'modular_septic/icons/mob/clothing/hands.dmi'

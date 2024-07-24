@@ -66,7 +66,7 @@
 	return capitalize(pick(GLOB.denominator_last))
 
 /proc/click_fail_msg()
-	return span_grayd(pick("Я не готов!", "Нет!", "Я сделал всё что возможно!", "Я не могу!", "Не сейчас!", "Да не щас!", "Хотелось бы найти отговорку!", "Вру самому себе!", "Ой, я такой слабый!", "Буду просто жалеть себя, как всегда.", "Ну нет!"))
+	return span_grayd(pick("Not ready!", "No!", "I did everything possible!", "But I can't!", "Not now!", "Stop, fuck!", "I wish I could find an excuse!", "I'm lying to myself!"))
 
 /proc/get_signs_from_number(num, index = 0)
 	var/signs = num

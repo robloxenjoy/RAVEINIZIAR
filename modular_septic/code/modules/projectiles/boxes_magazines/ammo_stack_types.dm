@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/ammo_stack/c38
-	name = "Патроны .38"
+	name = "Bullets .38"
 	icon_state = "c38-1"
 	base_icon_state = "c38"
 //	world_icon_state = "s-casing"
@@ -170,7 +170,7 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/a762svd
-	name = "7.62 патроны"
+	name = "7.62 bullets"
 	icon_state = "c762-1"
 	base_icon_state = "c762"
 //	world_icon_state = "762-casing"
@@ -206,8 +206,8 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun
-	name = "Пуля"
-	desc = "12 Калибр."
+	name = "Bullet"
+	desc = "12 Caliber."
 	icon_state = "12gauges-1"
 	base_icon_state = "12gauges"
 //	world_icon_state = "gshells"
@@ -219,8 +219,8 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot
-	name = "Картечь"
-	desc = "12 Калибр."
+	name = "Buckshot"
+	desc = "Nice."
 	icon_state = "12gauge-1"
 	base_icon_state = "12gauge"
 //	world_icon_state = "gshell"

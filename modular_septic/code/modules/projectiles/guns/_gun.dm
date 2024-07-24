@@ -5,7 +5,7 @@
 	pickup_sound = 'modular_septic/sound/weapons/guns/generic_draw.ogg'
 	dry_fire_sound = 'modular_septic/sound/weapons/guns/empty.ogg'
 	/// Message when we dry fire (applies both to dry firing and failing to fire for other reasons)
-	var/dry_fire_message = span_danger("*клик*")
+	var/dry_fire_message = span_danger("*click*")
 	/// Volume of dry_fire_sound
 	var/dry_fire_sound_volume = 30
 	/// Whether to vary dry_fire_sound or not
@@ -206,7 +206,7 @@
 			return ..()
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, span_notice("Я присоединяю [knife] к [src]."))
+		to_chat(user, span_notice("I attach [knife] to [src]."))
 		bayonet = knife
 		playsound(src, 'modular_septic/sound/weapons/guns/mod_use.ogg', 75, TRUE, vary = FALSE)
 		update_appearance()
@@ -220,7 +220,7 @@
 
 /obj/item/gun/attack_secondary(mob/living/victim, mob/living/user, params)
 	if(user == victim)
-		to_chat(user, span_warning("Я не могу прицеливаться в себя!"))
+		to_chat(user, span_warning("I can't aim at myself!"))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	var/datum/component/gunpoint/existing_gunpoint = user.GetComponent(/datum/component/gunpoint)
 	if(user.GetComponent(/datum/component/gunpoint))
@@ -242,7 +242,7 @@
 	if(!isliving(target))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 	if(user == target)
-		to_chat(user, span_warning("Я не могу прицеливаться в себя!"))
+		to_chat(user, span_warning("I can't aim at myself!"))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 	user.AddComponent(/datum/component/gunpoint, target, src)
@@ -301,7 +301,7 @@
 											if(length(empty_indexes) >= 1)
 												var/dicerollll = targett.diceroll(GET_MOB_ATTRIBUTE_VALUE(targett, STAT_INTELLIGENCE), context = DICE_CONTEXT_MENTAL)
 												if(dicerollll > DICE_FAILURE)
-													user.visible_message(span_pinkdang("[targett] разворачивает [src] [user] в его же голову!"))
+													user.visible_message(span_pinkdang("[targett] flips [src] [user] at [user] head!"))
 													var/shot_head = pick(BODY_ZONE_HEAD)
 													process_fire(user, user, FALSE, params, shot_head)
 
@@ -331,7 +331,7 @@
 	if(clumsy_check)
 		if(istype(user))
 			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, span_userdanger("Я стреляю себе же в стопу с помощью [src]!"))
+				to_chat(user, span_userdanger("I shoot at my foot with [src]!"))
 				var/shot_foot = pick(BODY_ZONE_PRECISE_R_FOOT, BODY_ZONE_PRECISE_L_FOOT)
 				process_fire(user, user, FALSE, params, shot_foot)
 				SEND_SIGNAL(user, COMSIG_MOB_CLUMSY_SHOOT_FOOT)
@@ -386,27 +386,27 @@
 		if(message)
 			if(pointblank)
 				if(ismob(target))
-					user.visible_message(span_danger("<b>[user]</b> стреляет [src] в <b>[target] в упор</b>!"), \
-									span_danger("<b>[user]</b> стреляет [src] в <b>[target] в упор</b>!"), \
-									span_hear("Я слышу выстрел!"), COMBAT_MESSAGE_RANGE, target)
-					to_chat(target, span_userdanger("<b>[user]</b> стреляет [src] в меня в упор!"))
+					user.visible_message(span_danger("<b>[user]</b> shoots [src] at <b>[target] point blank</b>!"), \
+									span_danger("<b>[user]</b> shoots [src] at <b>[target] point blank</b>!"), \
+									span_hear("I hear shooting!"), COMBAT_MESSAGE_RANGE, target)
+					to_chat(target, span_userdanger("<b>[user]</b> shoots [src] at me point blank!"))
 				else
-					user.visible_message(span_danger("<b>[user]</b> стреляет [src] в [target] в упор!"), \
-									span_danger("Я стреляю [src] в [target] в упор!"), \
-									span_hear("Я слышу выстрел!"), COMBAT_MESSAGE_RANGE, target)
+					user.visible_message(span_danger("<b>[user]</b> shoots [src] at [target] point blank!"), \
+									span_danger("I shoot [src] at [target] point blank!"), \
+									span_hear("I hear shooting!"), COMBAT_MESSAGE_RANGE, target)
 				if(pb_knockback > 0 && ismob(target))
 					var/mob/mob_target = target
 					var/atom/throw_target = get_edge_target_turf(mob_target, user.dir)
 					mob_target.throw_at(throw_target, pb_knockback, 2)
 			else
 				if(ismob(target))
-					user.visible_message(span_danger("<b>[user]</b> стреляю [src] в <b>[target]</b>!"), \
-									span_danger("Я стреляю [src] в <b>[target]</b>!"), \
-									span_hear("Я слышу выстрел!"), COMBAT_MESSAGE_RANGE, target)
+					user.visible_message(span_danger("<b>[user]</b> shoots [src] at <b>[target]</b>!"), \
+									span_danger("I shoot [src] at <b>[target]</b>!"), \
+									span_hear("I hear shooting!"), COMBAT_MESSAGE_RANGE, target)
 				else
-					user.visible_message(span_danger("<b>[user]</b> стреляет [src] в [target]!"), \
-									span_danger("Я стреляю [src] в [target]!"), \
-									span_hear("Я слышу выстрел!"), COMBAT_MESSAGE_RANGE, target)
+					user.visible_message(span_danger("<b>[user]</b> shoots [src] at [target]!"), \
+									span_danger("I shoot [src] at [target]!"), \
+									span_hear("I hear shooting!"), COMBAT_MESSAGE_RANGE, target)
 
 	if(weapon_weight >= WEAPON_HEAVY)
 		if(!SEND_SIGNAL(src, COMSIG_TWOHANDED_WIELD_CHECK) && (GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH) < 20))
@@ -474,13 +474,13 @@
 	. = list()
 	switch(weapon_weight)
 		if(WEAPON_HEAVY)
-			. += span_notice("<b>Тяжесть Оружия:</b> Тяжёлое")
+			. += span_notice("<b>Gun Weight:</b> Heavy")
 		if(WEAPON_MEDIUM)
-			. += span_notice("<b>Тяжесть Оружия:</b> Среднее")
+			. += span_notice("<b>Gun Weight:</b> Medium")
 		if(WEAPON_LIGHT)
-			. += span_notice("<b>Тяжесть Оружия:</b> Лёгкое")
+			. += span_notice("<b>Gun Weight:</b> Light")
 		else
-			. += span_notice("<b>Тяжесть Оружия:</b> НЕИЗВЕСТНО")
+			. += span_notice("<b>Gun Weight:</b> I DON'T KNOW")
 
 /obj/item/gun/proc/before_can_shoot_checks(mob/living/user, autofire_start = FALSE)
 	return TRUE
@@ -488,10 +488,10 @@
 /obj/item/gun/proc/safety_examine(mob/user)
 	. = list()
 	if(safety_flags & GUN_SAFETY_HAS_SAFETY)
-		var/safety_text = span_red("ОТКЛЮЧЁН")
+		var/safety_text = span_red("OFF")
 		if(safety_flags & GUN_SAFETY_ENABLED)
-			safety_text = span_green("ВКЛЮЧЁН")
-		. += "предохранитель этого [safety_text]."
+			safety_text = span_green("ON")
+		. += "safety is [safety_text]."
 
 /obj/item/gun/proc/toggle_safety(mob/user)
 	if(!(safety_flags & GUN_SAFETY_HAS_SAFETY))
@@ -505,7 +505,7 @@
 		if(safety_on_sound)
 			playsound(src, safety_on_sound, safety_sound_volume, safety_sound_vary)
 	if(user)
-		to_chat(user, span_notice("Я [safety_flags & GUN_SAFETY_ENABLED ? "включаю" : "выключаю"] предохранитель [src]."))
+		to_chat(user, span_notice("I [safety_flags & GUN_SAFETY_ENABLED ? "toggle on" : "toggle off"] safety of [src]."))
 	sound_hint()
 	update_appearance()
 	user.update_mouse_pointer()
@@ -599,12 +599,12 @@
 		w_class--
 		folded = TRUE
 		playsound(src, fold_close_sound, 80, FALSE)
-		to_chat(user, span_notice("Я складываю приклад [src]."))
+		to_chat(user, span_notice("I unactive stock of [src]."))
 	else
 		w_class++
 		folded = FALSE
 		playsound(src, fold_open_sound, 80, FALSE)
-		to_chat(user, span_notice("Я раскрываю приклад [src]."))
+		to_chat(user, span_notice("I activate stock of [src]."))
 	update_appearance()
 
 /datum/action/item_action/toggle_stock

@@ -1,23 +1,23 @@
 //Sounding rod
 /datum/mood_event/sounding_ua
-	description = span_nicegreen("УУУУУУУУУААА")
+	description = span_nicegreen("UUUUAA.")
 	mood_change = 6
 	timeout = 10 SECONDS
 
 /datum/mood_event/sounding_au
-	description = span_nicegreen("АУУУУУУУУУУУУУ")
+	description = span_nicegreen("AUUUU.")
 	mood_change = 6
 	timeout = 10 SECONDS
 
 //Devious licked
 /datum/mood_event/devious_lick
-	description = span_achievementgood("Я стану популярным в тиктоке!")
+	description = span_achievementgood("I will become popular on tiktok!")
 	mood_change = 6
 	timeout = 5 MINUTES
 
 //I LOVE LEAAAANNNNNN!!!
 /datum/mood_event/lean
-	description = span_purple("А мне нравится морсян.")
+	description = span_purple("I like this lean.")
 	mood_change = 4
 	timeout = 3 MINUTES
 
@@ -31,7 +31,7 @@
 
 //Buried/cremated someone
 /datum/mood_event/proper_burial
-	description = span_nicegreen("Нормально похоронили.")
+	description = span_nicegreen("Buried normally.")
 	mood_change = 2
 	timeout = 15 MINUTES
 
@@ -47,49 +47,49 @@
 
 //Masochist mood
 /datum/mood_event/paingood
-	description = span_nicegreen("Боль очищает разум и душу.")
+	description = span_nicegreen("Pain cleanses the mind and soul.")
 	mood_change = 4
 	timeout = 2 MINUTES
 
 //Antag mood nerf
 /datum/mood_event/focused
-	description = span_nicegreen("Есть поставленная задача!")
+	description = span_nicegreen("There is a task!")
 	mood_change = 2
 	hidden = TRUE
 
 //Cum on face
 /datum/mood_event/creampie/bukkake
-	description = span_nicegreen("Моё лицо <b>разъёбанно</b> в сперме!")
+	description = span_nicegreen("My face is <b>covered</b> in sticky milk!")
 	mood_change = 3
 	timeout = 5 MINUTES
 
 /datum/mood_event/creampie/cummies
-	description = span_nicegreen("Моё лицо покрыто спермой.")
+	description = span_nicegreen("My face is covered in sticky milk.")
 	mood_change = 2
 	timeout = 3 MINUTES
 
 //Femcum on face
 /datum/mood_event/creampie/fembukkake
-	description = span_nicegreen("Моё лицо <b>разъёбанно</b> в сперме!")
+	description = span_nicegreen("My face is <b>covered</b> in sticky milk!")
 	mood_change = 3
 	timeout = 5 MINUTES
 
 /datum/mood_event/creampie/femcummies
-	description = span_nicegreen("Моё лицо покрыто спермой.")
+	description = span_nicegreen("My face is covered in sticky milk.")
 	mood_change = 2
 	timeout = 3 MINUTES
 
 /datum/mood_event/belief/hadot
-	description = span_nicegreen("Теперь я служу Хадоту!")
+	description = span_nicegreen("Now I serve Hadot!")
 	mood_change = 2
 	timeout = 10 MINUTES
 
 /datum/mood_event/belief/gutted
-	description = span_nicegreen("Теперь я служу Гаттеду!")
+	description = span_nicegreen("Now I serve Gutted!")
 	mood_change = 2
 	timeout = 10 MINUTES
 
 /datum/mood_event/koatik
-	description = span_nicegreen("Странная энергия!")
+	description = span_nicegreen("Strange energy!")
 	mood_change = 10
 	timeout = 10 MINUTES

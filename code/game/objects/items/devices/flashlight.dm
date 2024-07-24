@@ -278,8 +278,8 @@
 // FLARES
 
 /obj/item/flashlight/flare
-	name = "Вспышник"
-	desc = "Красота."
+	name = "Flare"
+	desc = "Beauty."
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = "flare"
 	inhand_icon_state = "flare"
@@ -310,7 +310,7 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/flare/ignition_effect(atom/A, mob/user)
-	. = fuel && on ? span_notice("[user] поджигает [A] с помощью [src].") : ""
+	. = fuel && on ? span_notice("[user] activates [A] with [src].") : ""
 
 /obj/item/flashlight/flare/proc/turn_off()
 	on = FALSE
@@ -333,16 +333,16 @@
 
 	// Usual checks
 	if(fuel <= 0)
-		to_chat(user, span_warning("[src] заканчиватеся!"))
+		to_chat(user, span_warning("[src] ends!"))
 		return
 	if(on)
-		to_chat(user, span_warning("[src] уже горит!"))
+		to_chat(user, span_warning("[src] already burning!"))
 		return
 
 	. = ..()
 	// All good, turn it on.
 	if(.)
-		user.visible_message(span_notice("[user] вспыхивает [src]."), span_notice("Я вспыхиваю [src]!"))
+		user.visible_message(span_notice("[user] activates [src]."), span_notice("I activate [src]!"))
 //		force = on_damage
 //		damtype = BURN
 		START_PROCESSING(SSobj, src)

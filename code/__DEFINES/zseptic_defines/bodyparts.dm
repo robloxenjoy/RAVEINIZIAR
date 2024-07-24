@@ -5,30 +5,30 @@
 #define DEFAULT_BODYPART_ICON_ANIMAL 'modular_septic/icons/mob/carbon/animal_parts.dmi'
 
 // ~bodypart damage messages
-#define DEFAULT_NO_BRUTE_MSG "в здравии"
-#define DEFAULT_LIGHT_BRUTE_MSG "помято"
-#define DEFAULT_MEDIUM_BRUTE_MSG "покалечено"
-#define DEFAULT_HEAVY_BRUTE_MSG "ИСКРОМСАНО"
+#define DEFAULT_NO_BRUTE_MSG "normal"
+#define DEFAULT_LIGHT_BRUTE_MSG "bruised"
+#define DEFAULT_MEDIUM_BRUTE_MSG "mutilated"
+#define DEFAULT_HEAVY_BRUTE_MSG "MANGLED"
 
-#define DEFAULT_NO_BURN_MSG "в здравии"
+#define DEFAULT_NO_BURN_MSG "normal"
 #define DEFAULT_LIGHT_BURN_MSG "красновато"
 #define DEFAULT_MEDIUM_BURN_MSG "в волдырях"
-#define DEFAULT_HEAVY_BURN_MSG "ОБУГЛЕНО"
+#define DEFAULT_HEAVY_BURN_MSG "CARBON"
 
-#define DEFAULT_NO_PAIN_MSG "безболезненно"
-#define DEFAULT_LIGHT_PAIN_MSG "боль"
-#define DEFAULT_MEDIUM_PAIN_MSG "БОЛЬ"
-#define DEFAULT_HEAVY_PAIN_MSG "АГОНИЯ"
+#define DEFAULT_NO_PAIN_MSG "unpaiful"
+#define DEFAULT_LIGHT_PAIN_MSG "pain"
+#define DEFAULT_MEDIUM_PAIN_MSG "PAIN"
+#define DEFAULT_HEAVY_PAIN_MSG "AGONY"
 
-#define ROBOTIC_NO_BRUTE_MSG "в здравии"
-#define ROBOTIC_LIGHT_BRUTE_MSG "помято"
-#define ROBOTIC_MEDIUM_BRUTE_MSG "покалечено"
-#define ROBOTIC_HEAVY_BRUTE_MSG "ИСКРОМСАНО"
+#define ROBOTIC_NO_BRUTE_MSG "normal"
+#define ROBOTIC_LIGHT_BRUTE_MSG "bruised"
+#define ROBOTIC_MEDIUM_BRUTE_MSG "mutilated"
+#define ROBOTIC_HEAVY_BRUTE_MSG "MANGLED"
 
-#define ROBOTIC_NO_BURN_MSG "в здравии"
-#define ROBOTIC_LIGHT_BURN_MSG "красновато"
-#define ROBOTIC_MEDIUM_BURN_MSG "кипит"
-#define ROBOTIC_HEAVY_BURN_MSG "ОБУГЛЕНО"
+#define ROBOTIC_NO_BURN_MSG "normal"
+#define ROBOTIC_LIGHT_BURN_MSG "red"
+#define ROBOTIC_MEDIUM_BURN_MSG "boils"
+#define ROBOTIC_HEAVY_BURN_MSG "CARBON"
 
 // ~cyborg limbs
 #define ROBOTIC_BRUTE_DMG_MULTIPLIER 0.9

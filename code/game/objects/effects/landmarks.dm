@@ -18,15 +18,15 @@
 	return ..()
 
 /obj/effect/landing/kapno
-	name = "капнобатай"
+	name = "kapnobatai"
 	spending = 9999
 
 /obj/effect/landing/konch
-	name = "конченный"
+	name = "asshole"
 	spending = 9999
 
 /obj/effect/landing/svogod
-	name = "бог сво"
+	name = "god smo"
 	spending = 1
 
 /obj/effect/landing/oper

@@ -1,8 +1,8 @@
 //Not to be confused with /obj/item/reagent_containers/food/drinks/bottle
 
 /obj/item/reagent_containers/food/drinks/bottle/thermos
-	name = "Термос"
-	desc = "Классно же."
+	name = "Thermos"
+	desc = "Nice."
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "thermos"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -16,8 +16,8 @@
 	foodtype = NONE
 
 /obj/item/reagent_containers/glass/bottle
-	name = "Бутылёк"
-	desc = "Маленький бутылёк."
+	name = "Bottle"
+	desc = "Small and cute."
 	icon_state = "bottle"
 	fill_icon_state = "bottle"
 	inhand_icon_state = "atoxinbottle"

@@ -402,7 +402,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(durability <= 0)
 		durability = 0
 		playsound(src.loc, 'modular_pod/sound/eff/broken.ogg', 100, TRUE)
-		src.visible_message(span_notice("[src] ломается."), span_notice("[src] ломается."), span_hear("Слышу чё-то."))
+		src.visible_message(span_notice("[src] breaks."), span_notice("[src] breaks."), span_hear("I hear something."))
 		qdel(src)
 
 /obj/item/reagent_containers/attackby(obj/item/W, mob/user)

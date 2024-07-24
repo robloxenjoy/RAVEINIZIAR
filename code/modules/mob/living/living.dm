@@ -421,11 +421,11 @@
 	//SEPTIC EDIT BEGIN
 	if(isliving(A))
 		var/mob/living/living_atom = A
-		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> показывает на <span style='color: [living_atom.chat_color];'><b>[living_atom]</b></span>.</span>", \
-						span_notice("Я показываю на <b>[living_atom]</b>."))
+		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> points at <span style='color: [living_atom.chat_color];'><b>[living_atom]</b></span>.</span>", \
+						span_notice("I point at <b>[living_atom]</b>."))
 	else
-		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> показывает на <b>[A]</b>.</span>", \
-						span_notice("Я показываю на <b>[A]</b>."))
+		visible_message("<span class='infoplain'><span style='color: [chat_color];'><b>[src]</b></span> points at <b>[A]</b>.</span>", \
+						span_notice("I point at <b>[A]</b>."))
 	//SEPTIC EDIT END
 	return TRUE
 
@@ -533,24 +533,24 @@
 	if(new_resting)
 		if(body_position == LYING_DOWN)
 			if(!silent)
-				to_chat(src, span_notice("Попытаюсь оставаться лёжа."))
+				to_chat(src, span_notice("I'll try to stay lying down."))
 		else if(HAS_TRAIT(src, TRAIT_FORCED_STANDING) || (buckled && buckled.buckle_lying != NO_BUCKLE_LYING))
 			if(!silent)
-				to_chat(src, span_notice("Лягу как только смогу."))
+				to_chat(src, span_notice("I'll lie down as soon as I can."))
 		else
 			if(!silent)
-				to_chat(src, span_notice("Я ложусь."))
+				to_chat(src, span_notice("I lie down."))
 			set_lying_down()
 	else
 		if(body_position == STANDING_UP)
 			if(!silent)
-				to_chat(src, span_notice("Попытаюсь оставаться стоя."))
+				to_chat(src, span_notice("I'll try to stay standing."))
 		else if(HAS_TRAIT(src, TRAIT_FLOORED) || (buckled && buckled.buckle_lying != NO_BUCKLE_LYING))
 			if(!silent)
-				to_chat(src, span_notice("Встану как только смогу."))
+				to_chat(src, span_notice("I'll get up as soon as I can."))
 		else
 			if(!silent)
-				to_chat(src, span_notice("Я встаю."))
+				to_chat(src, span_notice("I get up."))
 			get_up(instant)
 
 	update_resting()

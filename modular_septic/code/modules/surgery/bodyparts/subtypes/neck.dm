@@ -1,6 +1,6 @@
 /obj/item/bodypart/neck
-	name = "Шея"
-	desc = "Каким образом?"
+	name = "Neck"
+	desc = "But how?"
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	icon_state = "neck"
 	base_icon_state = "neck"
@@ -58,7 +58,7 @@
 		name = initial(name)
 		for(var/obj/item/bodypart/head/nohead in src)
 			if(nohead.face)
-				name = "[nohead.face.real_name] шея"
+				name = "[nohead.face.real_name] neck"
 				break
 	else
 		name = initial(name)

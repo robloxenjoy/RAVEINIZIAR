@@ -13,14 +13,14 @@
 		return FALSE
 
 	if(body_position != STANDING_UP)
-		to_chat(src, span_warning("Мне бы встать."))
+		to_chat(src, span_warning("Need to get up."))
 		return FALSE
 /*
 	if(get_active_hand() != null)
 		return
 */
 	if(!get_empty_held_indexes())
-		to_chat(src, span_warning("Мне бы руками!"))
+		to_chat(src, span_warning("HANDS!"))
 		return FALSE
 
 /*
@@ -31,7 +31,7 @@
 //	var/mob/living/carbon/human/L = user
 //	var/hit_zone = L.zone_selected
 	if(C == src)
-		to_chat(src, span_warning("Нахуя мне самого себя обкрадывать?"))
+		to_chat(src, span_warning("Why the hell should I rob myself?"))
 		return FALSE
 
 //	var/obj/item/bodypart/BP = C.get_bodypart(check_zone(user.zone_selected))
@@ -49,7 +49,7 @@
 	if(do_after(src, time, target=C))
 		var/diceroll = diceroll(GET_MOB_SKILL_VALUE(src, SKILL_PICKPOCKET), context = DICE_CONTEXT_PHYSICAL)
 		if(diceroll == DICE_CRIT_FAILURE)
-			src.visible_message(span_steal("[src] пойман на краже!"),span_steal("Поймался я!"), span_hear("Слышу чё-то."))
+			src.visible_message(span_steal("[src] caught stealing!"),span_steal("I caught stealing!"), span_hear("I hear something."))
 			src.Immobilize(2 SECONDS)
 			src.changeNext_move(CLICK_CD_MELEE)
 			sound_hint()
@@ -57,7 +57,7 @@
 			return
 
 		if(diceroll >= DICE_FAILURE)
-			src.visible_message(span_steal("[src] обкрадывает [target]!"),span_steal("Я обкрадываю [target]!"), span_hear("Слышу чё-то."))
+			src.visible_message(span_steal("[src] robs [target]!"),span_steal("I rob [target]!"), span_hear("I hear something."))
 			src.changeNext_move(CLICK_CD_MELEE)
 			sound_hint()
 			C.unequip_everything()
@@ -166,28 +166,28 @@
 		return FALSE
 	//Not while knocked down
 	if(body_position != STANDING_UP)
-		to_chat(src, span_warning("Мне нужно встать."))
+		to_chat(src, span_warning("I need to get up."))
 		return FALSE
 	//Not while buckled
 	if(buckled)
-		to_chat(src, span_warning("Отстегнуться мне нужно."))
+		to_chat(src, span_warning("I need to unbuckle."))
 		return FALSE
 	var/range = FLOOR(GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH)/(ATTRIBUTE_MIDDLING/2), 1)
 	if(range < 1)
-		to_chat(src, span_warning("Я слишком слаб чтобы сделать такое..."))
+		to_chat(src, span_warning("I'm too weak to do this..."))
 		return FALSE
 	if(next_move > world.time)
 		to_chat(src, click_fail_msg())
 		src.playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return FALSE
 	if(ismob(jump_target))
-		visible_message(span_warning("<b>[src]</b> прыгает в <b>[jump_target]</b>!"), \
-					span_userdanger("Я прыгаю в <b>[jump_target]</b>!"), \
+		visible_message(span_warning("<b>[src]</b> jumps in <b>[jump_target]</b>!"), \
+					span_userdanger("I jump in <b>[jump_target]</b>!"), \
 					ignored_mobs = jump_target)
-		to_chat(jump_target, span_userdanger("<b>[src]</b> прыгает на меня!"))
+		to_chat(jump_target, span_userdanger("<b>[src]</b> jumps on me!"))
 	else
-		visible_message(span_warning("<b>[src]</b> прыгает на [jump_target]!"), \
-					span_userdanger("Я прыгаю на [jump_target]!"))
+		visible_message(span_warning("<b>[src]</b> jumps on [jump_target]!"), \
+					span_userdanger("I jump on [jump_target]!"))
 	jump_grunt()
 	sound_hint()
 	changeNext_move(CLICK_CD_MELEE)
