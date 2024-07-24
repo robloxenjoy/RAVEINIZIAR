@@ -104,6 +104,11 @@
 				alert("Not enough deaths in the world.")
 				client.ready_char = FALSE
 				return
+			var/smo = "[global.config.directory]/smo.txt"
+			if(!ckey in world.file2list(smo))
+				alert("Donate for this role.")
+				client.ready_char = FALSE
+				return
 			client.role_ch = "god smo"
 		else
 			alert("Unclear. The role of the common Kapnobatai.")
