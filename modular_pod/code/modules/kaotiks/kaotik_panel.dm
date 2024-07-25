@@ -44,16 +44,16 @@
 
 /datum/mind/proc/bobux_panel()
 	if(!length(SSbobux.all_bobux_rewards))
-		alert("Not before round-start!", "0 Каотиков")
+		alert("Not before round-start!", "0 Kaotiks")
 		return
 	if(QDELETED(src))
-		alert("Не получается!", "0 Каотиков")
+		alert("Can't!", "0 Kaotiks")
 		return
 	if(!SSbobux.working)
 		return
 	var/datum/preferences/prefs = current?.client?.prefs
 	if(!prefs)
-		alert("Не получается с [key]!", "0 Каотиков")
+		alert("Can't with [key]!", "0 Kaotiks")
 		return
 
 	var/list/bobux_rewards = bobux_bought.Copy()
@@ -63,11 +63,11 @@
 		bobux_rewards |= initial(chungoose.name)
 	var/list/out = list(
 		"<B><span class='bobux'>[key]</span></B><br>\
-		<B>Bobux amount:</B> [prefs.bobux_amount ? prefs.bobux_amount : "Нет Каотиков"]<br>\
+		<B>Bobux amount:</B> [prefs.bobux_amount ? prefs.bobux_amount : "No Kaotiks"]<br>\
 		<a href='?src=[REF(src)];bobux=set'>Set</a> \
 		<a href='?src=[REF(src)];bobux=add'>Add</a> \
 		<a href='?src=[REF(src)];bobux=remove'>Remove</a><br>\
-		<B>Bobux rewards bought:</B> [english_list(bobux_rewards, "Ничего", ", ")].</B>"
+		<B>Bobux rewards bought:</B> [english_list(bobux_rewards, "Nothing", ", ")].</B>"
 		)
 	var/datum/browser/panel = new(usr, "bobuxpanel", "", 300, 400)
 	panel.set_content(out.Join())

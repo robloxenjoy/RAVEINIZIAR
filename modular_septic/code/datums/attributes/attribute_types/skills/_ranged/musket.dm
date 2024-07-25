@@ -1,6 +1,6 @@
 // Musket
 /datum/attribute/skill/musket
-	name = "Мушкеты"
+	name = "Musket"
 	desc = "Any kind of smoothbore long arm (usually, but not always, a black powder weapon) that fires a solid projectile."
 	icon_state = "marksman"
 	category = SKILL_CATEGORY_RANGED

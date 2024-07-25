@@ -1,6 +1,6 @@
 // Bow
 /datum/attribute/skill/bow
-	name = "Луки"
+	name = "Bow"
 	desc = "This is the ability to use the longbow, short bow, and all similar bows. \
 			It also covers the compound bow."
 	icon_state = "marksman"

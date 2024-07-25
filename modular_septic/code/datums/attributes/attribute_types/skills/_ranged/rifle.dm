@@ -1,6 +1,6 @@
 // Rifle
 /datum/attribute/skill/rifle
-	name = "Ружья"
+	name = "Rifle"
 	desc = "Any kind of rifled long arm – assault rifle, hunting rifle, sniper rifle, etc – that fires a solid projectile."
 	icon_state = "marksman"
 	category = SKILL_CATEGORY_RANGED

@@ -1,6 +1,6 @@
 // Gyroc
 /datum/attribute/skill/gyroc
-	name = "Гирок"
+	name = "Gyroc"
 	desc = "Any kind of small arm that fires miniature rockets."
 	icon_state = "marksman"
 	category = SKILL_CATEGORY_RANGED

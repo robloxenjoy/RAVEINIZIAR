@@ -71,9 +71,9 @@
 				ghost.plane = POLLUTION_PLANE
 				src.client.images += ghost
 				if(LAZYLEN(found_obj))
-					to_chat(src, span_steal("Я замечаю что-то."))
+					to_chat(src, span_steal("I notice something."))
 				else
-					to_chat(src, span_steal("Я не замечаю ничего подозрительного."))
+					to_chat(src, span_steal("I don't notice anything suspicious."))
 
 
 		if(diceroll == DICE_CRIT_SUCCESS)
@@ -91,12 +91,12 @@
 				ghost.plane = POLLUTION_PLANE
 				src.client.images += ghost
 				if(LAZYLEN(found_obj))
-					to_chat(src, span_steal("Я замечаю что-то."))
+					to_chat(src, span_steal("I notice something."))
 				else
-					to_chat(src, span_steal("Я не замечаю ничего подозрительного."))
+					to_chat(src, span_steal("I don't notice anything suspicious."))
 
 		if(diceroll <= DICE_FAILURE)
-			to_chat(src, span_steal("Не получается проверить территорию."))
+			to_chat(src, span_steal("Failed at checking the territoy."))
 /*
 /mob/living/carbon/human/verb/job_work(whispered as null)
 	set name = "Роль"

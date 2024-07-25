@@ -75,24 +75,24 @@
 			if(1)
 				msg += span_boldwarning("\n[left_symbols]This way is fucked up![right_symbols]")
 			if(2)
-				msg += span_boldwarning("\n[left_symbols]Я чувствую себя ужасно.[right_symbols]")
+				msg += span_boldwarning("\n[left_symbols]I feel terrible.[right_symbols]")
 			if(3)
-				msg += span_boldwarning("\n[left_symbols]Я чувствую себя плохо.[right_symbols]")
+				msg += span_boldwarning("\n[left_symbols]I feel bad.[right_symbols]")
 			if(4)
-				msg += span_boldwarning("\n[left_symbols]Я чувствую себя чутка грустно.[right_symbols]")
+				msg += span_boldwarning("\n[left_symbols]I feel sad.[right_symbols]")
 			if(5)
-				msg += span_nicegreen("\n[left_symbols]Я в норме.[right_symbols]")
+				msg += span_nicegreen("\n[left_symbols]I'm ok.[right_symbols]")
 			if(6)
-				msg += span_nicegreen("\n[left_symbols]Я чувствую себя в порядке.[right_symbols]")
+				msg += span_nicegreen("\n[left_symbols]I feel alright.[right_symbols]")
 			if(7)
-				msg += span_nicegreen("\n[left_symbols]Я чувствую себя хорошо.[right_symbols]")
+				msg += span_nicegreen("\n[left_symbols]I feel good.[right_symbols]")
 			if(8)
-				msg += span_nicegreen("\n[left_symbols]Я чувствую себя круто.[right_symbols]")
+				msg += span_nicegreen("\n[left_symbols]I feel awesome.[right_symbols]")
 			if(9)
-				msg += span_nicegreen("\n[left_symbols]Этот путь прекрасен![right_symbols]")
+				msg += span_nicegreen("\n[left_symbols]This way is fantastic![right_symbols]")
 			else
 				msg += span_nicegreen("\n[left_symbols]I'm ok.[right_symbols]")
-	msg += span_notice("\n<EM>Мои мысли:</EM>")//All moodlets
+	msg += span_notice("\n<EM>My thoughts:</EM>")//All moodlets
 	if(LAZYLEN(mood_events))
 		var/datum/mood_event/event
 		for(var/i in mood_events)
@@ -102,7 +102,7 @@
 			var/event_desc = replacetext(event.description, "\n", "")
 			msg += "\n[left_symbols][event_desc][right_symbols]"
 	else
-		msg += span_nicegreen("\nОсобой реакции на что-либо у меня нет.")
+		msg += span_nicegreen("\nI don't have any reaction to anything.")
 	var/mob/living/living_user = user
 	if(istype(living_user))
 		var/list/additional_info = list()

@@ -47,24 +47,24 @@
 #define DICE_CONTEXT_DEFAULT DICE_CONTEXT_PHYSICAL
 
 // ~skill categories
-#define SKILL_CATEGORY_GENERAL "Основные навыки"
-#define SKILL_CATEGORY_MELEE "Навыки ближнего боя"
-#define SKILL_CATEGORY_RANGED "Навыки дальнего боя"
-#define SKILL_CATEGORY_BLOCKING "Навыки блокирования"
-#define SKILL_CATEGORY_COMBAT "Навыки боя"
-#define SKILL_CATEGORY_SKULDUGGERY "Навыки надувательства"
-#define SKILL_CATEGORY_MEDICAL "Навыки медицины"
-#define SKILL_CATEGORY_RESEARCH "Навыки исследования"
-#define SKILL_CATEGORY_ENGINEERING "Навыки инженерии"
-#define SKILL_CATEGORY_DOMESTIC "Навыки бытовухи"
-#define SKILL_CATEGORY_DUMB "Навыки долбоебизма"
+#define SKILL_CATEGORY_GENERAL "General Skills"
+#define SKILL_CATEGORY_MELEE "Melee Skills"
+#define SKILL_CATEGORY_RANGED "Ranged Skills"
+#define SKILL_CATEGORY_BLOCKING "Blocking Skills"
+#define SKILL_CATEGORY_COMBAT "Combat Skills"
+#define SKILL_CATEGORY_SKULDUGGERY "Skulduggery Skills"
+#define SKILL_CATEGORY_MEDICAL "Medical Skills"
+#define SKILL_CATEGORY_RESEARCH "Research Skills"
+#define SKILL_CATEGORY_ENGINEERING "Engineering Skills"
+#define SKILL_CATEGORY_DOMESTIC "Domestic Skills"
+#define SKILL_CATEGORY_DUMB "Stupid Skills"
 
 // ~skill difficulties
-#define SKILL_DIFFICULTY_VERY_EASY "Очень легко"
-#define SKILL_DIFFICULTY_EASY "Легко"
-#define SKILL_DIFFICULTY_AVERAGE "Средне"
-#define SKILL_DIFFICULTY_HARD "Трудно"
-#define SKILL_DIFFICULTY_VERY_HARD "Очень трудно"
+#define SKILL_DIFFICULTY_VERY_EASY "Very Easy"
+#define SKILL_DIFFICULTY_EASY "Easy"
+#define SKILL_DIFFICULTY_AVERAGE "Medium"
+#define SKILL_DIFFICULTY_HARD "Hard"
+#define SKILL_DIFFICULTY_VERY_HARD "Very Hard"
 
 // ~path defines
 #define STAT_STRENGTH /datum/attribute/stat/strength

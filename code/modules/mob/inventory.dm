@@ -434,7 +434,7 @@
 		//SEPTIC EDIT END
 			return TRUE
 
-	to_chat(M, span_warning("Не могу это экипировать."))
+	to_chat(M, span_warning("Can't equip this."))
 	return FALSE
 
 
@@ -444,7 +444,7 @@
 
 	var/obj/item/I = get_active_held_item()
 	if(!I)
-		to_chat(src, span_warning("Дабы надеть, ничего не держу!"))
+		to_chat(src, span_warning("In order to put it on, I don’t hold anything!"))
 		return
 	if (temporarilyRemoveItemFromInventory(I) && !QDELETED(I))
 		if(I.equip_to_best_slot(src))

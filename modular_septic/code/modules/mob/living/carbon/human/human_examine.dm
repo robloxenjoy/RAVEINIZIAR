@@ -36,7 +36,7 @@
 					if(!LAZYLEN(clothingonpart(necky)))
 						. += span_flashingdanger("[emoji_parse(":fatal:")] [uppertext(src.name)] FATAL! HE SHOULD BE KILLED!")
 	else
-		. += "[icon2html(dna.species.examine_icon, user, dna.species.examine_icon_state)] <span class='info'>oh, this is <EM>[obscure_name ? "Unknown" : fancy_name]</EM>, <EM>[dna.species.name]</EM>!</span>"
+		. += "[icon2html(dna.species.examine_icon, user, dna.species.examine_icon_state)] <span class='info'>Oh, this is <EM>[obscure_name ? "Unknown" : fancy_name]</EM>, <EM>[dna.species.name]</EM>!</span>"
 		if(HAS_TRAIT(src, TRAIT_FRAGGOT))
 			if(!(obscured & ITEM_SLOT_NECK))
 				if(!wear_neck)

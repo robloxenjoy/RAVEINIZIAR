@@ -1,6 +1,6 @@
 // General combat skills
 /datum/attribute/skill/acrobatics
-	name = "Акробатика"
+	name = "Acrobatics"
 	desc = "Ability at acrobatic maneuvers and climbing obstacles."
 	icon_state = "acrobatics"
 	category = SKILL_CATEGORY_COMBAT
@@ -11,7 +11,7 @@
 	difficulty = SKILL_DIFFICULTY_HARD
 
 /datum/attribute/skill/swimming
-	name = "Плавание"
+	name = "Swimming"
 	desc = "Ability at swimming."
 	icon_state = "acrobatics"
 	category = SKILL_CATEGORY_COMBAT
@@ -23,7 +23,7 @@
 
 // Skulduggery skills
 /datum/attribute/skill/pickpocket
-	name = "Кража"
+	name = "Pickpocketing"
 	desc = "Ability to steal without being noticed."
 	icon_state = "sneak"
 	category = SKILL_CATEGORY_SKULDUGGERY
@@ -34,7 +34,7 @@
 	difficulty = SKILL_DIFFICULTY_HARD
 
 /datum/attribute/skill/lockpick
-	name = "Взлом"
+	name = "Lockpicking"
 	desc = "Ability at breaking mechanical locks open."
 	icon_state = "lockpicking"
 	category = SKILL_CATEGORY_SKULDUGGERY
@@ -45,7 +45,7 @@
 	difficulty = SKILL_DIFFICULTY_AVERAGE
 
 /datum/attribute/skill/forensics
-	name = "Криминалистика"
+	name = "Forensics"
 	desc = "Proficiency at analyzing the clues and tracks of your enemies."
 	icon_state = "illusion"
 	category = SKILL_CATEGORY_SKULDUGGERY
@@ -57,7 +57,7 @@
 
 // Medical skills
 /datum/attribute/skill/medicine
-	name = "Медицина"
+	name = "Medicine"
 	desc = "Proficiency at diagnosis and treatment of physical ailments, and handling of medical instruments."
 	icon_state = "restoration"
 	category = SKILL_CATEGORY_MEDICAL
@@ -68,7 +68,7 @@
 	difficulty = SKILL_DIFFICULTY_EASY
 
 /datum/attribute/skill/surgery
-	name = "Хирургия"
+	name = "Surgery"
 	desc = "Knowledge in anatomy, as well as surgical procedures and tools."
 	icon_state = "alteration"
 	category = SKILL_CATEGORY_MEDICAL
@@ -80,7 +80,7 @@
 
 // Engineering skills
 /datum/attribute/skill/masonry
-	name = "Крафт"
+	name = "Crafting"
 	desc = "Ability to create something."
 	icon_state = "smithing"
 	category = SKILL_CATEGORY_ENGINEERING
@@ -91,7 +91,7 @@
 	difficulty = SKILL_DIFFICULTY_EASY
 
 /datum/attribute/skill/smithing
-	name = "Кузнечное дело"
+	name = "Smithing"
 	desc = "Ability to create weapons, armor and other items out of metal."
 	icon_state = "smithing"
 	category = SKILL_CATEGORY_ENGINEERING
@@ -102,7 +102,7 @@
 	difficulty = SKILL_DIFFICULTY_AVERAGE
 
 /datum/attribute/skill/electronics
-	name = "Электроника"
+	name = "Electronics"
 	desc = "Ability at handling, hacking and repairing electrical machinery and wiring."
 	icon_state = "smithing"
 	category = SKILL_CATEGORY_ENGINEERING
@@ -114,7 +114,7 @@
 
 // Research skills
 /datum/attribute/skill/science
-	name = "Наука"
+	name = "Science"
 	desc = "Comprehension, research, experimentation and creation of complex technology."
 	icon_state = "mysticism"
 	category = SKILL_CATEGORY_RESEARCH
@@ -125,7 +125,7 @@
 	difficulty = SKILL_DIFFICULTY_HARD
 
 /datum/attribute/skill/alchemistry
-	name = "Ал-химия"
+	name = "Al-Chemistry"
 	desc = "Capability at handling chemicals and al-chemical reactions."
 	icon_state = "alchemy"
 	category = SKILL_CATEGORY_RESEARCH
@@ -137,7 +137,7 @@
 
 // Domestic skills
 /datum/attribute/skill/culinary
-	name = "Кулинария"
+	name = "Culinary"
 	desc = "Ability at preparing and cooking food."
 	icon_state = "alchemy"
 	category = SKILL_CATEGORY_DOMESTIC
@@ -149,7 +149,7 @@
 	difficulty = SKILL_DIFFICULTY_AVERAGE
 
 /datum/attribute/skill/agriculture
-	name = "Земледелие"
+	name = "Agriculture"
 	desc = "Ability at planting and harvesting produce."
 	icon_state = "alchemy"
 	category = SKILL_CATEGORY_DOMESTIC
@@ -160,7 +160,7 @@
 	difficulty = SKILL_DIFFICULTY_AVERAGE
 
 /datum/attribute/skill/cleaning
-	name = "Домашний очаг"
+	name = "Housekeeping"
 	desc = "This is the ability to manage a household. It covers both home economics and domestic chores like cleaning."
 	icon_state = "athletics"
 	category = SKILL_CATEGORY_DOMESTIC
@@ -172,7 +172,7 @@
 
 // Dumb meme skills
 /datum/attribute/skill/gaming
-	name = "Гейминг"
+	name = "Gaming"
 	desc = "Ability at getting totally EPIC kill streaks in fortnight. \
 		Applies as competence in both video games, board games and puzzles."
 	icon_state = "unarmored"

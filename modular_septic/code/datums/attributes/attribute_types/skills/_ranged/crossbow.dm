@@ -1,6 +1,6 @@
 // Crossbow
 /datum/attribute/skill/crossbow
-	name = "Арбалеты"
+	name = "Crossbow"
 	desc = "This is the ability to use all types of crossbows, including the pistol crossbow, \
 			repeating crossbow, and compound crossbow."
 	icon_state = "marksman"

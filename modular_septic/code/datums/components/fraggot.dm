@@ -46,7 +46,7 @@
 
 	if(!QDELETED(our_fraggot))
 //		our_fraggot.gib()
-		to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")]ФАТАЛ [our_fraggot.real_name] [our_fraggot.truerole] УМЕР![emoji_parse(":chaos:")]</span></span>")
+		to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")]FATAL [our_fraggot.real_name] [our_fraggot.truerole] DIED![emoji_parse(":chaos:")]</span></span>")
 		SEND_SOUND(world, sound('modular_pod/sound/eff/fataldeath.ogg'))
 //		for(var/mob/living/carbon/human/human in (GLOB.mob_living_list - our_fraggot))
 //			SEND_SIGNAL(human, COMSIG_CLEAR_MOOD_EVENT, "[our_fraggot.real_name]")

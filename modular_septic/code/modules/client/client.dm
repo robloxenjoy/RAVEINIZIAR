@@ -35,7 +35,7 @@
 		else if(country == "Brazil")
 			message_admins(span_adminnotice("[key_name_admin(src)] is a based Brazilian!"))
 	if(mob)
-		broadcast_connection(reconnecting ? "заново присоединяется" : "присоединяется")
+		broadcast_connection(reconnecting ? "joins again" : "joins")
 	political_compass = new()
 	political_compass.owner = src
 	political_compass.load_path()
@@ -55,7 +55,7 @@
 	QDEL_NULL(nobody_wants_to_learn_matrix_math)
 //	QDEL_NULL(particool)
 
-/client/proc/broadcast_connection(connection_string = "присоединяется")
+/client/proc/broadcast_connection(connection_string = "joins")
 	var/bling_bling = prefs?.donator_rank
 	for(var/client/player as anything in GLOB.clients)
 		if(player.prefs)
@@ -63,7 +63,7 @@
 			if(!(prefs.chat_toggles & CHAT_LOGIN_LOGOUT))
 				continue
 		if(bling_bling)
-			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>СЕРВЕР:</span> <b>[key]</b> [connection_string].</span></span>")
+			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>SERVER:</span> <b>[key]</b> [connection_string].</span></span>")
 		else
 			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>СЕРВЕР:</span> <b>[key]</b> [connection_string].</span>")
 
@@ -75,7 +75,7 @@
 			if(!(prefs.chat_toggles & CHAT_LOGIN_LOGOUT))
 				continue
 		if(bling_bling)
-			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>СЕРВЕР:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
+			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>SERVER:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
 		else
 			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>СЕРВЕР:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
 

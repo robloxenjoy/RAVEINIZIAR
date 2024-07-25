@@ -19,31 +19,31 @@
 
 /datum/attribute/skill/description_from_level(level)
 	if(isnull(level))
-		return "вообще не знаю"
+		return "untrained"
 	switch(CEILING(level, 1))
 		if(-INFINITY to 2)
-			return "отвратительно"
+			return "dogshit"
 		if(3,4)
-			return "ужасно"
+			return "worthless"
 		if(5,6)
-			return "лох"
+			return "incompetent"
 		if(7,8)
-			return "неумёха"
+			return "novice"
 		if(9,10)
-			return "новичок"
+			return "unskilled"
 		if(11,12)
-			return "компетентен"
+			return "competent"
 		if(13,14)
-			return "адепт"
+			return "adept"
 		if(15,16)
-			return "опытный"
+			return "experienced"
 		if(17,18)
-			return "эксперт"
+			return "expert"
 		if(19,20)
-			return "мастер"
+			return "master"
 		if(21,22)
-			return "мифический"
+			return "mythical"
 		if(23 to INFINITY)
-			return "легендарный"
+			return "legendary"
 		else
-			return "хуй знает"
+			return "invalid"

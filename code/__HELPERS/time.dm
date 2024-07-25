@@ -87,27 +87,27 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 	if(!second)
 		return "right now"
 	if(second < 60)
-		return "[second] секунд[(second != 1)? "":""]"
+		return "[second] second[(second != 1)? "s":""]"
 	var/minute = FLOOR(second / 60, 1)
 	second = FLOOR(MODULUS(second, 60), round_seconds_to)
 	var/secondT
 	if(second)
-		secondT = " и [second] секунд[(second != 1)? "":""]"
+		secondT = " и [second] second[(second != 1)? "s":""]"
 	if(minute < 60)
-		return "[minute] минут[(minute != 1)? "":""][secondT]"
+		return "[minute] minute[(minute != 1)? "s":""][secondT]"
 	var/hour = FLOOR(minute / 60, 1)
 	minute = MODULUS(minute, 60)
 	var/minuteT
 	if(minute)
-		minuteT = " и [minute] минут[(minute != 1)? "":""]"
+		minuteT = " and [minute] minute[(minute != 1)? "s":""]"
 	if(hour < 24)
-		return "[hour] час[(hour != 1)? "ов":""][minuteT][secondT]"
+		return "[hour] hour[(hour != 1)? "s":""][minuteT][secondT]"
 	var/day = FLOOR(hour / 24, 1)
 	hour = MODULUS(hour, 24)
 	var/hourT
 	if(hour)
-		hourT = " и [hour] час[(hour != 1)? "ов":""]"
-	return "[day] день[(day != 1)? "":""][hourT][minuteT][secondT]"
+		hourT = " and [hour] hour[(hour != 1)? "s":""]"
+	return "[day] day[(day != 1)? "":""][hourT][minuteT][secondT]"
 
 
 /proc/daysSince(realtimev)
