@@ -75,7 +75,7 @@
 	var/special_name
 	var/second_thing = null
 	var/third_thing = null
-	var/first_thing = pick("Hark", "Sideless", "Mor", "Nok", "Nox", "Garrett", "Haramec", "Enclave", "Vial", "Torner", "Web", "Hvax", "Coiler", "Boyd", "Hex", "Sacrec")
+	var/first_thing = pick("Hark", "Sideless", "Mor", "Nok", "Nox", "Garrett", "Haramec", "Enclave", "Vial", "Torner", "Web", "Hvax", "Coiler", "Boyd", "Hex", "Sacrec", "Rave")
 	special_name = "[first_thing]"
 	if(prob(40))
 		second_thing = pick("Moon", "Stone", "Black", "Block")
@@ -252,7 +252,7 @@
 									if("The Most Asshole")
 										to_chat(character, span_yellowteamradio("I'm The Most Asshole!"))
 
-							character.height = height
+//							character.height = height
 							character.dna.features["body_size"] = BODY_SIZE_NORMAL
 							character.dna.update_body_size()
 							character.dna.update_dna_identity()

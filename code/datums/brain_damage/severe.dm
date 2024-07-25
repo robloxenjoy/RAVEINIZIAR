@@ -332,8 +332,8 @@
 	name = "Halitus Deprivation"
 	desc = "Patient is unable to breath."
 	scan_desc = "halitus deprivation"
-	gain_text = span_warning("У меня есть непонятки с дыханием...")
-	lose_text = span_notice("Фух. Теперь я могу дышать.")
+	gain_text = span_warning("I have problems with breathing...")
+	lose_text = span_notice("Now I can breathe.")
 
 /datum/brain_trauma/severe/halitus_deprivation/on_gain()
 	ADD_TRAIT(owner, TRAIT_CANTBREATH, TRAUMA_TRAIT)

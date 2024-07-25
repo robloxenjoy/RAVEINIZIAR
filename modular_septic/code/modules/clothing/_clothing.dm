@@ -195,7 +195,7 @@
 	if(prob(0.2))
 		if(!istype(wearer))
 			return
-		to_chat(wearer, span_warning("Повреждённые куски на [src.name] натираются!"))
+		to_chat(wearer, span_warning("Damaged pieces on [src.name] rubbed!"))
 
 /obj/item/clothing/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
 	if(atom_integrity <= 0)

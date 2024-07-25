@@ -339,8 +339,8 @@
 	tetris_height = 32
 
 /obj/item/melee/bita/hammer/heavy
-	name = "Молот"
-	desc = "Крепкий, уже не молоток."
+	name = "Hammer"
+	desc = "Strong."
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	icon_state = "hammer"
 	inhand_icon_state = "hammer"

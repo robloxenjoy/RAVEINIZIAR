@@ -48,10 +48,10 @@
 		var/mob/M = AM
 		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!supress_message && !(iscarbon(AM) && HAS_TRAIT(src, TRAIT_STRONG_GRABBER)))
-			M.visible_message(span_warning("<b>[src]</b> хватает <b>[M]</b> пассивно!"), \
-							span_userdanger("<b>[src]</b> хватает меня пассивно!"), \
+			M.visible_message(span_warning("<b>[src]</b> grabs <b>[M]</b> passively!"), \
+							span_userdanger("<b>[src]</b> grabs me passively!"), \
 							ignored_mobs = src)
-			to_chat(src, span_notice("Я хватаю <b>[M]</b> пассивно!"))
+			to_chat(src, span_notice("I grab <b>[M]</b> passively!"))
 		M.LAssailant = WEAKREF(src)
 		if(isliving(M))
 			var/mob/living/L = M

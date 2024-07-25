@@ -140,8 +140,8 @@
 	log_combat(user, src, "attacked", weapon)
 //	user.do_attack_animation(src, no_effect = TRUE)
 	playsound(user, weapon.hitsound, weapon.get_clamped_volume(), TRUE, extrarange = weapon.stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)
-	user.visible_message(span_danger("<b>[user]</b> бьёт [src] с помощью [weapon][no_damage ? ", и это не оставляет царапины" : ""]!"), \
-						span_danger("Я бью [src] с помощью [weapon][no_damage ? ", и это не оставляет царапины" : ""]!"), \
+	user.visible_message(span_danger("<b>[user]</b> hits [src] with [weapon][no_damage ? ", and it doesn't leave a scratch" : ""]!"), \
+						span_danger("I hit [src] with [weapon][no_damage ? ", and it doesn't leave a scratch" : ""]!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE)
 	if(attack_delay)
 		user.changeNext_move(attack_delay)

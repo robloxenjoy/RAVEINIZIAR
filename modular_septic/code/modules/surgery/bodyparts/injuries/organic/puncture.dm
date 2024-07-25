@@ -9,19 +9,19 @@
 /datum/injury/puncture/small
 	max_bleeding_stage = 2
 	stages = list(
-		"прокол" = 5,
-		"небольшой прокол" = 2,
-		"малюткин прокол" = 0
+		"puncture" = 5,
+		"middle puncture" = 2,
+		"tiny puncture" = 0
 		)
 
 /datum/injury/puncture/flesh
 	max_bleeding_stage = 2
 	infection_rate = 1.3
 	stages = list(
-		"серьёзный прокол" = 15,
-		"прокол" = 5,
-		"небольшой прокол" = 2,
-		"малюткин прокол" = 0
+		"serious puncture" = 15,
+		"puncture" = 5,
+		"middle puncture" = 2,
+		"tiny puncture" = 0
 		)
 	fade_away_time = INFINITY
 
@@ -29,11 +29,11 @@
 	max_bleeding_stage = 3
 	infection_rate = 1.5
 	stages = list(
-		"дыра" = 30,
-		"серьёзный прокол" = 15,
-		"нормальный протокол" = 10,
-		"прокол" = 5,
-		"малюткин прокол" = 0
+		"hole" = 30,
+		"serious puncture" = 15,
+		"middle puncture" = 10,
+		"puncture" = 5,
+		"tiny puncture" = 0
 		)
 	fade_away_time = INFINITY
 
@@ -41,11 +41,11 @@
 	max_bleeding_stage = 3
 	infection_rate = 2
 	stages = list(
-		"зияющая дыра" = 50,
-		"дыра" = 20,
-		"серьёзный прокол" = 15,
-		"нормальный прокол" = 10,
-		"злой шрам" = 0
+		"gaping hole" = 50,
+		"hole" = 20,
+		"seriois puncture" = 15,
+		"middle puncture" = 10,
+		"evil scar" = 0
 		)
 	fade_away_time = INFINITY
 
@@ -53,10 +53,10 @@
 	max_bleeding_stage = 3
 	infection_rate = 2.5
 	stages = list(
-		"знатная дыра" = 60,
-		"зияющая дыра" = 30,
-		"дыра" = 25,
-		"злой округлый шрам" = 10,
-		"злой шрам" = 0
+		"crazy gaping hole" = 60,
+		"gaping hole" = 30,
+		"hole" = 25,
+		"evil round scar" = 10,
+		"evil scar" = 0
 		)
 	fade_away_time = INFINITY

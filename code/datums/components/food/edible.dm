@@ -53,7 +53,7 @@ Behavior that's still missing from this component that original food items had t
 	volume = 50,
 	eat_time = 10,
 	list/tastes,
-	list/eatverbs = list("ем","жру","кусаю","покусываю","хомячу","уплетаю"),
+	list/eatverbs = list("eat","gobbles up","consume"),
 	bite_consumption = 2,
 	microwaved_type,
 	junkiness,
@@ -123,7 +123,7 @@ Behavior that's still missing from this component that original food items had t
 	volume = 50,
 	eat_time = 10,
 	list/tastes,
-	list/eatverbs = list("ем","жру","кусаю","покусываю","хомячу","уплетаю"),
+	list/eatverbs = list("eat","gobbles up","consume"),
 	bite_consumption = 2,
 	microwaved_type,
 	junkiness,
@@ -157,11 +157,11 @@ Behavior that's still missing from this component that original food items had t
 			if (0)
 				return
 			if(1)
-				examine_list += "[parent] было откусано кем-то!"
+				examine_list += "[parent] was bitten off by someone!"
 			if(2,3)
-				examine_list += "[parent] было откусано [bitecount] раз!"
+				examine_list += "[parent] was bitten off [bitecount] times!"
 			else
-				examine_list += "[parent] было откусано несколько раз!"
+				examine_list += "[parent] was bitten off a some times!"
 
 /datum/component/edible/proc/UseFromHand(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER
@@ -282,28 +282,28 @@ Behavior that's still missing from this component that original food items had t
 		var/message_to_blind_consumer = ""
 
 		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS))
-			to_chat(eater, span_warning("Пока не могу есть!"))
+			to_chat(eater, span_warning("I can't eat yet!"))
 			return
 		else if(fullness > (600 * (1 + eater.overeatduration / (4000 SECONDS)))) // The more you eat - the more you can eat
-			message_to_nearby_audience = span_warning("[eater] не может больше затолкать [parent] в свой рот!")
-			message_to_consumer = span_warning("Я больше не могу есть [parent]!")
+			message_to_nearby_audience = span_warning("[eater] can't push [parent] ih his mouth!")
+			message_to_consumer = span_warning("I can't eat more of [parent]!")
 			message_to_blind_consumer = message_to_consumer
 			eater.show_message(message_to_consumer, MSG_VISUAL, message_to_blind_consumer)
 			eater.visible_message(message_to_nearby_audience, ignored_mobs = eater)
 			//if we're too full, return because we can't eat whatever it is we're trying to eat
 			return
 		else if(fullness > 500)
-			message_to_nearby_audience = span_notice("[eater] нехотя ест [parent].")
-			message_to_consumer = span_notice("Я нехотя [eatverb] [parent].")
+			message_to_nearby_audience = span_notice("[eater] eats reluctantly [parent].")
+			message_to_consumer = span_notice("I [eatverb] reluctantly [parent].")
 		else if(fullness > 150)
-			message_to_nearby_audience = span_notice("[eater] ест [parent].")
-			message_to_consumer = span_notice("Я [eatverb] [parent].")
+			message_to_nearby_audience = span_notice("[eater] eats [parent].")
+			message_to_consumer = span_notice("I [eatverb] [parent].")
 		else if(fullness > 50)
-			message_to_nearby_audience = span_notice("[eater] жадно ест [parent].")
-			message_to_consumer = span_notice("Я жадно [eatverb] [parent].")
+			message_to_nearby_audience = span_notice("[eater] eats greedily [parent].")
+			message_to_consumer = span_notice("I [eatverb] greedily [parent].")
 		else
-			message_to_nearby_audience = span_notice("[eater] жадно ест [parent]!")
-			message_to_consumer = span_notice("Я жадно [eatverb] [parent]!")
+			message_to_nearby_audience = span_notice("[eater] eats greedily [parent]!")
+			message_to_consumer = span_notice("I [eatverb] greedily [parent]!")
 
 		//if we're blind, we want to feel how hungrily we ate that food
 		message_to_blind_consumer = message_to_consumer
@@ -312,22 +312,22 @@ Behavior that's still missing from this component that original food items had t
 
 	else //If you're feeding it to someone else.
 		if(isbrain(eater))
-			to_chat(feeder, span_warning("[eater] не имеет рот!"))
+			to_chat(feeder, span_warning("[eater] has no mouth!"))
 			return
 		if(fullness <= (600 * (1 + eater.overeatduration / (2000 SECONDS))))
-			eater.visible_message(span_danger("[feeder] пытается накормить [eater] [parent]."), \
-									span_userdanger("[feeder] пытается накормить меня [parent]."))
+			eater.visible_message(span_danger("[feeder] trying to feed [eater] [parent]."), \
+									span_userdanger("[feeder] trying to feed me with [parent]."))
 		else
-			eater.visible_message(span_warning("[feeder] не может больше затолкать [parent] в рот [eater]!"), \
-									span_warning("[feeder] не может больше затолкать [parent] в мой рот!"))
+			eater.visible_message(span_warning("[feeder] can't push [parent] in [eater] mouth!"), \
+									span_warning("[feeder] can't push [parent] in my mouth!"))
 			return
 		if(!do_mob(feeder, eater)) //Wait 3 seconds before you can feed
 			return
 		if(IsFoodGone(owner, feeder))
 			return
 		log_combat(feeder, eater, "fed", owner.reagents.log_list())
-		eater.visible_message(span_danger("[feeder] заставляет [eater] есть [parent]!"), \
-									span_userdanger("[feeder] заставляет меня есть [parent]!"))
+		eater.visible_message(span_danger("[feeder] forces [eater] to eat [parent]!"), \
+									span_userdanger("[feeder] forces me to eat [parent]!"))
 
 	TakeBite(eater, feeder)
 
@@ -373,7 +373,7 @@ Behavior that's still missing from this component that original food items had t
 	else if(C.is_mouth_covered(mask_only = 1))
 		covered = "mask"
 	if(covered)
-		to_chat(feeder, span_warning("Сначала мне нужно снять [covered]!"))
+		to_chat(feeder, span_warning("First I need to take off [covered]!"))
 		return FALSE
 	return TRUE
 
@@ -411,15 +411,15 @@ Behavior that's still missing from this component that original food items had t
 
 	switch(food_taste_reaction)
 		if(FOOD_TOXIC)
-			to_chat(H,span_warning("Это чё за хуйня?!"))
+			to_chat(H,span_warning("What is this shit!"))
 			H.adjust_disgust(25 + 30 * fraction)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "toxic_food", /datum/mood_event/disgusting_food)
 		if(FOOD_DISLIKED)
-			to_chat(H,span_notice("Это не очень вкусуно..."))
+			to_chat(H,span_notice("This is not tasty..."))
 			H.adjust_disgust(11 + 15 * fraction)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "gross_food", /datum/mood_event/gross_food)
 		if(FOOD_LIKED)
-			to_chat(H,span_notice("Мне нравится этот вкус!"))
+			to_chat(H,span_notice("I like this food!"))
 			H.adjust_disgust(-5 + -2.5 * fraction)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 			if(istype(parent, /obj/item/food))
@@ -433,7 +433,7 @@ Behavior that's still missing from this component that original food items had t
 
 	on_consume?.Invoke(eater, feeder)
 
-	to_chat(feeder, span_warning("Больше не осталось [parent]!"))
+	to_chat(feeder, span_warning("There's no more left [parent]!"))
 	if(isturf(parent))
 		var/turf/T = parent
 		T.ScrapeAway(1, CHANGETURF_INHERIT_AIR)
@@ -491,7 +491,7 @@ Behavior that's still missing from this component that original food items had t
 	if(foodtypes & edible_flags)
 		var/atom/eaten_food = parent
 		eaten_food.reagents.trans_to(eater, eaten_food.reagents.total_volume, transfered_by = eater)
-		eater.visible_message(span_warning("[src] ест [eaten_food]!"), span_notice("Я ем [eaten_food]."))
+		eater.visible_message(span_warning("[src] eats [eaten_food]!"), span_notice("I eat [eaten_food]."))
 		playsound(get_turf(eater),'sound/items/eatfood.ogg', rand(30,50), TRUE)
 		qdel(eaten_food)
 		return COMPONENT_ATOM_EATEN

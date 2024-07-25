@@ -19,7 +19,7 @@
 
 //	for(var/mob/living/carbon/human/human in (GLOB.mob_living_list))
 	SEND_SOUND(world, sound('modular_pod/sound/eff/kill_her_now_kill_her_now.ogg', volume = 60))
-	to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")][our_fraggot.real_name] [our_fraggot.truerole] ФАТАЛ! УБЕЙТЕ ЭТУ СУЩЕСТВО![emoji_parse(":chaos:")]</span></span>")
+	to_chat(world, "<span class='warning'><span class='big bold'>[emoji_parse(":fatal:")][our_fraggot.real_name] [our_fraggot.truerole] FATAL! KILL THIS CREATURE![emoji_parse(":chaos:")]</span></span>")
 //	RegisterSignal(our_fraggot, COMSIG_PARENT_EXAMINE, .proc/fraggot_examine)
 	RegisterSignal(our_fraggot, COMSIG_LIVING_DEATH, PROC_REF(fraggot_died))
 //	RegisterSignal(our_fraggot, COMSIG_PARENT_PREQDELETED, PROC_REF(fraggot_deleted))

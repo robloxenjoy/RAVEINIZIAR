@@ -269,13 +269,13 @@
 		. += span_info("It has a skillchip embedded in it.")
 	if((brainmob && (brainmob.client || brainmob.get_ghost())) || decoy_override)
 		if(is_failing())
-			. += span_info("Повреждено, но здесь всё ещё есть хоть какая-то энергия...")
+			. += span_info("Damaged, but there's still some energy here...")
 		else if(damage >= BRAIN_DAMAGE_DEATH*0.5)
-			. += span_info("Чутка повреждено, но тут ещё есть искры жизни.")
+			. += span_info("A little damaged, but there are still sparks of life.")
 		else
-			. += span_info("Тут чувствуется искра жизни.")
+			. += span_info("There is a spark of life.")
 	else
-		. += span_info("Это полностью лишено жизни.")
+		. += span_info("It's completely devoid of life.")
 
 /obj/item/organ/brain/Destroy(force)
 	if(brainmob)

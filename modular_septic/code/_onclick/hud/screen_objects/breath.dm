@@ -15,22 +15,22 @@
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		if(HAS_TRAIT_FROM(usr, TRAIT_HOLDING_BREATH, "trynahold"))
-			to_chat(usr, span_userdanger("Я начинаю задерживать своё дыхание."))
+			to_chat(usr, span_userdanger("I'm starting to hold my breath."))
 			return
 		switch(breath_index)
 			if(3)
-				to_chat(usr, div_infobox(span_notice("Я могу нормально дышать.")))
+				to_chat(usr, div_infobox(span_notice("I can breathe normally.")))
 			if(2)
-				to_chat(usr, div_infobox(span_danger("Есть некоторые трудности с дыханием.")))
+				to_chat(usr, div_infobox(span_danger("Have some difficulty breathing.")))
 			if(1, 0)
-				to_chat(usr, div_infobox(span_userdanger("Я не могу дышать!")))
+				to_chat(usr, div_infobox(span_userdanger("I can not breathe!")))
 	else
 		if(HAS_TRAIT_FROM(usr, TRAIT_HOLDING_BREATH, "trynahold"))
 			REMOVE_TRAIT(usr, TRAIT_HOLDING_BREATH, "trynahold")
-			to_chat(usr, span_notice("Я больше не задерживаю дыхание."))
+			to_chat(usr, span_notice("I don't hold my breath anymore."))
 		else
 			ADD_TRAIT(usr, TRAIT_HOLDING_BREATH, "trynahold")
-			to_chat(usr, span_userdanger("Я начинаю задерживать дыхание."))
+			to_chat(usr, span_userdanger("I start to hold my breath."))
 
 /atom/movable/screen/breath/proc/update_breath(new_breath = 3)
 	if(breath_index == new_breath)

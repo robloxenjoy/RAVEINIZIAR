@@ -50,9 +50,9 @@
 	var/grabbing_wording = (bite_grab ? "Bites" : "Grabs")
 	if(grasped_part)
 		if(!bite_grab && LAZYLEN(grasped_part.embedded_objects))
-			. += span_alert("[grabbing_wording] [grasped_part.embedded_objects[1]] застрявший в <b>[victim]</b> [grasped_part.name].")
+			. += span_alert("[grabbing_wording] [grasped_part.embedded_objects[1]] embedded in <b>[victim]</b> [grasped_part.name].")
 		else
-			. += span_alert("[grabbing_wording] <b>[victim]</b> за [parse_zone(grasped_zone)].")
+			. += span_alert("[grabbing_wording] <b>[victim]</b> [parse_zone(grasped_zone)].")
 	else if(victim)
 		. += span_alert("[grabbing_wording] <b>[victim]</b>.")
 	switch(grab_mode)
@@ -78,13 +78,13 @@
 			playsound(victim, 'modular_septic/sound/attack/thudswoosh.ogg', 50, 1, -1)
 			var/grab_wording = (bite_grab ? "кусать" : "держать")
 			if(owner == victim)
-				victim.visible_message(span_warning("<b>[owner]</b> прекращает [grab_wording] себя за [grasped_part.name]!"),\
-											span_notice("Я прекращаю [grab_wording] себя за [grasped_part.name]!"))
+				victim.visible_message(span_warning("<b>[owner]</b> stops [grab_wording] his [grasped_part.name]!"),\
+											span_notice("I stop [grab_wording] my [grasped_part.name]!"))
 			else
-				victim.visible_message(span_danger("<b>[owner]</b> прекращает [grab_wording] <b>[victim]</b>[grasped_part ? " за [grasped_part.name]": ""]!"),\
-										span_userdanger("<b>[owner]</b> прекращает [grab_wording] меня[grasped_part ? " за [grasped_part.name]" : ""]!"),\
+				victim.visible_message(span_danger("<b>[owner]</b> stops [grab_wording] <b>[victim]</b>[grasped_part ? " [grasped_part.name]": ""]!"),\
+										span_userdanger("<b>[owner]</b> stops [grab_wording] [grasped_part ? " my [grasped_part.name]" : "me"]!"),\
 										ignored_mobs = owner)
-				to_chat(owner, span_danger("Я прекращаю [grab_wording] <b>[victim]</b>[grasped_part ? " за [grasped_part.name]" : ""]!"))
+				to_chat(owner, span_danger("I stop [grab_wording] <b>[victim]</b>[grasped_part ? " my [grasped_part.name]" : "me"]!"))
 		//Let's only stop pulling if we have no other hand grasping the victim
 		var/stop_pulling = TRUE
 		var/list/potential_grabs = owner.held_items | owner.get_item_by_slot(ITEM_SLOT_MASK)

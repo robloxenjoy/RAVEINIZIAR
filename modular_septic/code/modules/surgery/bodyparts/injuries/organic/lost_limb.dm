@@ -19,18 +19,18 @@
 				max_bleeding_stage = 3 //clotted stump and above can bleed.
 				infection_rate = 2
 				stages = list(
-					"разорванная культя" = damage_amt*1.3,
-					"окровавленная культя" = damage_amt,
-					"порванная культя" = damage_amt*0.5,
-					"шрамованная культя" = 0
+					"destroyed stump" = damage_amt*1.3,
+					"bloody stump" = damage_amt,
+					"damaged stump" = damage_amt*0.5,
+					"scarred stump" = 0
 				)
 		if(WOUND_BURN)
 			damage_type = WOUND_BURN
 			stages = list(
-				"порванная обугленная культя" = damage_amt*1.3,
-				"обугленная культя" = damage_amt,
-				"надорванная культя" = damage_amt*0.5,
-				"шрамованная культя" = 0
+				"damaged charred stump" = damage_amt*1.3,
+				"charred stump" = damage_amt,
+				"damaged stump" = damage_amt*0.5,
+				"scarred stump" = 0
 				)
 
 	. = ..(damage_amt)

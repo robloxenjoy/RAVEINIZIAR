@@ -59,43 +59,43 @@
 
 /datum/injury/burn/moderate
 	stages = list(
-		"серьёзный ожог" = 10,
-		"ожог" = 5,
-		"небольшой ожог" = 2,
-		"покраснение" = 0
+		"serious burn" = 10,
+		"burn" = 5,
+		"not big burn" = 2,
+		"redness" = 0
 		)
 
 /datum/injury/burn/large
 	stages = list(
-		"большой серьёзный ожог" = 20,
-		"большой ожог" = 15,
-		"ожог" = 5,
-		"небольшой ожог" = 0
+		"big serious burn" = 20,
+		"big burn" = 15,
+		"burn" = 5,
+		"not big burn" = 0
 		)
 	fade_away_time = INFINITY
 
 /datum/injury/burn/severe
 	stages = list(
-		"большой разорванный ожог" = 35,
-		"разорванный ожог" = 30,
-		"серьёзный ожог" = 10,
-		"покраснение" = 0
+		"big damaged burn" = 35,
+		"damaged burn" = 30,
+		"serious burn" = 10,
+		"redness" = 0
 		)
 	fade_away_time = INFINITY
 
 /datum/injury/burn/deep
 	stages = list(
-		"глубокий разорванный ожог" = 45,
-		"глубокий ожог" = 40,
-		"большой разорванный ожог" = 15,
-		"большой ожог" = 0
+		"deep damaged burn" = 45,
+		"deep burn" = 40,
+		"big damaged burn" = 15,
+		"big burn" = 0
 		)
 	fade_away_time = INFINITY
 
 /datum/injury/burn/carbonised
 	stages = list(
-		"глубокая обугленная зона" = 50,
-		"обугленная зона" = 20,
-		"обугленная зонка" = 0
+		"deep charred zone" = 50,
+		"charred zone" = 20,
+		"tiny charred zone" = 0
 		)
 	fade_away_time = INFINITY

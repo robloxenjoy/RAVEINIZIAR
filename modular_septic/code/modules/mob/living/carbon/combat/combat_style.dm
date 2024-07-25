@@ -12,51 +12,51 @@
 	var/message = "<span class='infoplain'><div class='infobox'>"
 	switch(print_style)
 		if(CS_NONE)
-			message += span_largeinfo("Ничего")
+			message += span_largeinfo("Nothing")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ не совершит специальную атаку.")
+			message += span_info("RMB will not make a special attack.")
 		if(CS_FEINT)
-			message += span_largeinfo("Финт")
+			message += span_largeinfo("Feint")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ для совершения финта. \
-								В случае успеха враг преждевременно парирует удар, оставляя его открытым для настоящей атаки.\n\
-								Цена: Независимо от успеха, моя защита остается открытой.")
+			message += span_info("RMB for feint. \
+								If successful, the enemy will parry the blow prematurely, leaving him open to the real attack.\n\
+								Cost: Regardless of success, protection remains open.")
 		if(CS_DUAL)
-			message += span_largeinfo("Дуал")
+			message += span_largeinfo("Dual")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ для атаки второй рукой.\n\
-								Цена: Никакая.")
+			message += span_info("RMB for attacking with the other hand.\n\
+								Cost: Nothing.")
 		if(CS_GUARD)
-			message += span_largeinfo("Стража")
+			message += span_largeinfo("Guard")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ в боевом режиме для стражи ближайшей местности. \
-								Переключение на другую специальную атаку сбросит стражу.\n\
-								Цена: Никакая.")
+			message += span_info("RMB in combat mode for guarding the nearest area. \
+								Switching to another special attack will reset the guard.\n\
+								Cost: Nothing.")
 		if(CS_DEFEND)
-			message += span_largeinfo("Защита")
+			message += span_largeinfo("Defend")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("Возможности уклониться и парировать возвышены.\n\
-								Цена: Ослабление урона.")
+			message += span_info("Dodge and parry capabilities are elevated.\n\
+								Cost: Weaker damage.")
 		if(CS_STRONG)
-			message += span_largeinfo("Сплеча")
+			message += span_largeinfo("Strong")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ для нанесения большего урона чем обычно.\n\
-								Цена: Повышение траты выносливости + защита остаётся открытой.")
+			message += span_info("RMB to deal more damage than usual.\n\
+								Cost: Increased stamina drain + protection remains open.")
 		if(CS_FURY)
-			message += span_largeinfo("Ярость")
+			message += span_largeinfo("Fury")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ для ускоренной атаки.\n\
-								Цена: Повышение шанса проебаться.")
+			message += span_info("RMB for faster attack.\n\
+								Cost: Increased chance of getting failed.")
 		if(CS_AIMED)
-			message += span_largeinfo("Прицелом")
+			message += span_largeinfo("Aimed")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ для прицельной атаки.\n\
-								Цена: Атака медленнее + защита остаётся открытой.")
+			message += span_info("RMB for aimed attack.\n\
+								Cost: Attack slower + protection remains open.")
 		if(CS_WEAK)
-			message += span_largeinfo("Слабо")
+			message += span_largeinfo("Weak")
 			message += "\n<br><hr class='infohr'>\n"
-			message += span_info("ПКМ для ослабленной атаки. \
-								Уменьшение траты выносливости.\n\
-								Цена: УМЕНЬШЕННЫЙ УРОН!")
+			message += span_info("RMB for weaker attack. \
+								Reducing stamina drain.\n\
+								Cost: Nothing.")
 	message += "</div></span>"
 	to_chat(src, message)

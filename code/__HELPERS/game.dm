@@ -630,7 +630,7 @@
 		message = html_encode(message)
 	else
 		message = copytext(message, 2)
-	to_chat(target, span_purple("<span class='oocplain'><b>Повествует: </b>[message]</span>"))
+	to_chat(target, span_purple("<span class='oocplain'><b>Says: </b>[message]</span>"))
 
 /proc/Bresenham3D(x1, y1, z1, x2, y2, z2)
     var/ListOfPoints[0]

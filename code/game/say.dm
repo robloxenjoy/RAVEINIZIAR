@@ -166,7 +166,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		return "2"
 	return "0"
 
-/atom/movable/proc/GetVoice(if_no_voice = "Неизвестный")
+/atom/movable/proc/GetVoice(if_no_voice = "Unknown")
 	return "[src]" //Returns the atom's name, prepended with 'The' if it's not a proper noun
 
 /atom/movable/proc/IsVocal()
@@ -195,7 +195,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 	radio = _radio
 	source = M
 	if(istype(M))
-		name = radio.anonymize ? "Неизвестный" : M.GetVoice()
+		name = radio.anonymize ? "Unknown" : M.GetVoice()
 		verb_say = M.verb_say
 		verb_ask = M.verb_ask
 		verb_exclaim = M.verb_exclaim
@@ -209,7 +209,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 		if(findjob)
 			job = findjob.fields["rank"]
 		else
-			job = "Неизвестный"
+			job = "Unknown"
 	else if(iscarbon(M))  // Carbon nonhuman
 		job = "No ID"
 	else if(isAI(M))  // AI
