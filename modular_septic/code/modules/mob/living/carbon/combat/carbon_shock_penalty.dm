@@ -45,7 +45,7 @@
 				if(rev && prob(incoming_pain * 3))
 					rev.remove_revolutionary(FALSE)
 				if(wound_messages)
-					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] дезориентирован!"))
+					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] disoriented!"))
 			else
 				if(stat >= UNCONSCIOUS)
 					drop_all_held_items()
@@ -56,7 +56,7 @@
 					if(rev && prob(incoming_pain * 3))
 						rev.remove_revolutionary(FALSE)
 					if(wound_messages)
-						SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] desioriented!"))
+						SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] disoriented!"))
 				else
 					drop_all_held_items()
 					flash_screen_flash()
@@ -70,7 +70,7 @@
 					if(rev && prob(incoming_pain * 3))
 						rev.remove_revolutionary(FALSE)
 					if(wound_messages)
-						SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] теряет сознание!"))
+						SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] loses consciousness!"))
 		if(BODY_ZONE_PRECISE_NECK)
 			flash_pain_major()
 			adjustOxyLoss((rand(20, 45)) - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
@@ -111,7 +111,7 @@
 			Daze(3 SECONDS)
 //			blur_eyes(3)
 			if(wound_messages)
-				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] импульсирован!"))
+				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] impulsed!"))
 /*
 		if(BODY_ZONE_PRECISE_GROIN)
 			if(getorganslotefficiency(ORGAN_SLOT_TESTICLES) > ORGAN_FAILING_EFFICIENCY)
