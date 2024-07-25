@@ -449,7 +449,7 @@
 		qdel(A)
 	if(SSpollution.current_run.len)
 		var/datum/pollution/pollution = SSpollution.current_run[SSpollution.current_run.len]
-		current_run.len--
+		SSpollution.current_run.len--
 		pollution.scrub_amount(999, FALSE, TRUE)
 /*
 		A.static_lighting = FALSE
