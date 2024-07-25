@@ -138,7 +138,7 @@
 							character.fully_heal(TRUE)
 
 							var/eye_coloring = pick("#000000", "#1f120f")
-							var/height = HUMAN_HEIGHT_MEDIUM
+//							var/height = HUMAN_HEIGHT_MEDIUM
 							switch(client.role_ch)
 								if("kapnobatai")
 									character.truerole = "Kapnobatai"

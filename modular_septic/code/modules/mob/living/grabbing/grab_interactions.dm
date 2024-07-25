@@ -140,8 +140,8 @@
 		if(QDELETED(src))
 			return
 		if(owner != victim)
-			victim.visible_message(span_danger("<b>[owner]</b> [wrench_dayn] <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
-							span_userdanger("<b>[owner]</b> [wrench_dayn] [grasped_part.name]![carbon_victim.wound_message]"), \
+			victim.visible_message(span_danger("<b>[owner]</b> [wrench_verb_dayn] <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"), \
+							span_userdanger("<b>[owner]</b> [wrench_verb_dayn] [grasped_part.name]![carbon_victim.wound_message]"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = owner)
 			to_chat(owner, span_userdanger("I [wrench_verb] <b>[victim]</b> [grasped_part.name]![carbon_victim.wound_message]"))
