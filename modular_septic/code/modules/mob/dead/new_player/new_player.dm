@@ -167,6 +167,11 @@
 									character.hairstyle = "Bald"
 									character.facial_hairstyle = "Shaved"
 									eye_coloring = "#c30000"
+								if("halbermensch")
+									character.truerole = "Halbermensch"
+									character.pod_faction = null
+									character.hairstyle = "Bald"
+									character.facial_hairstyle = "Shaved"
 								if("god smo")
 									character.truerole = "God SMO"
 									character.pod_faction = "god smo"

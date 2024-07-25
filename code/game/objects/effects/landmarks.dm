@@ -29,6 +29,10 @@
 	name = "god smo"
 	spending = 1
 
+/obj/effect/landing/halber
+	name = "halbermensch"
+	spending = 9999
+
 /obj/effect/landing/oper
 	name = "oper"
 
