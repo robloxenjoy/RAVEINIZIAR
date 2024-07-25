@@ -122,20 +122,20 @@
 		if(BLOOD_VOLUME_EXCESS to BLOOD_VOLUME_MAX_LETHAL)
 			owner.status_flags &= ~BLEEDOUT
 			if(DT_PROB(7.5, delta_time))
-				to_chat(owner, span_userdanger("Кровь рвёт мои артерии!"))
+				to_chat(owner, span_userdanger("Blood is tearing my arteries!"))
 				var/obj/item/bodypart/artery_popper = pick(owner.bodyparts)
 				if(!artery_popper.is_artery_torn())
 					artery_popper.force_wound_upwards(/datum/wound/artery)
 		if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
 			owner.status_flags &= ~BLEEDOUT
 			if(DT_PROB(5, delta_time))
-				to_chat(owner, span_warning("Мои артерии заполнены."))
+				to_chat(owner, span_warning("My arteries are filled."))
 		if(-INFINITY to BLOOD_VOLUME_SURVIVE)
 			if(!(owner.status_flags & BLEEDOUT))
 				owner.status_flags |= BLEEDOUT
-				to_chat(owner, span_userdanger("Мои органы кажутся невероятно тяжелыми!"))
+				to_chat(owner, span_userdanger("My organs feel incredibly heavy!"))
 			else if(DT_PROB(2.5, delta_time))
-				to_chat(owner, span_userdanger("Недостаточно... Крови..."))
+				to_chat(owner, span_userdanger("Not enough... Blood..."))
 		else
 			owner.status_flags &= ~BLEEDOUT
 
@@ -203,7 +203,7 @@
 		owner.heartbeat_sound = BEAT_SLOW
 		SEND_SOUND(owner, slowbeat)
 		if(cardiac_arrest || nervous_failure)
-			to_chat(owner, span_notice("Я чувствую глубинный холод, я не хочу умирать."))
+			to_chat(owner, span_notice("I feel a deep cold, I don't want to die."))
 		return
 	if((owner.heartbeat_sound == BEAT_SLOW) && !cardiac_arrest && !nervous_failure && !(pressure < SOUND_MINIMUM_PRESSURE))
 		owner.stop_sound_channel(CHANNEL_HEARTBEAT)

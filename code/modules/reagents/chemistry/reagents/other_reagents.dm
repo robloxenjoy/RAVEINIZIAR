@@ -1,9 +1,9 @@
 /datum/reagent/blood
 	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
-	name = "Кровь"
+	name = "Blood"
 	color = "#C8000090" // rgb: 200, 0, 0
 	metabolization_rate = 12.5 * REAGENTS_METABOLISM //fast rate so it disappears fast.
-	taste_description = "железо"
+	taste_description = "iron"
 	taste_mult = 1.3
 	glass_icon_state = "glass_red"
 	glass_name = "glass of tomato juice"
