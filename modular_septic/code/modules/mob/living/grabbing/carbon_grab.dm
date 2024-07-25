@@ -89,7 +89,7 @@
 		if(istype(pulling_mob))
 			grabber_strength = GET_MOB_ATTRIBUTE_VALUE(pulling_mob, STAT_STRENGTH)
 		var/resist_diceroll = diceroll(CEILING(GET_MOB_ATTRIBUTE_VALUE(src, STAT_STRENGTH)*2, 1)-grabber_strength, context = DICE_CONTEXT_MENTAL)
-		var/grip_wording = (HAS_TRAIT_FROM(src, TRAIT_BITTEN, WEAKREF(pulledby)) ? "укус" : "хват")
+		var/grip_wording = (HAS_TRAIT_FROM(src, TRAIT_BITTEN, WEAKREF(pulledby)) ? "bite" : "grab")
 		if(resist_diceroll >= DICE_SUCCESS)
 			adjustFatigueLoss(5)
 			visible_message(span_danger("<b>[src]</b> escapes from <b>[pulledby]</b> [grip_wording]!"), \

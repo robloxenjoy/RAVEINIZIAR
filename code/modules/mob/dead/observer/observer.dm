@@ -299,6 +299,7 @@ Works together with spawning an observer, noted above.
 	if(. && can_reenter_corpse)
 		var/mob/dead/observer/ghost = .
 		ghost.mind.current?.med_hud_set_status()
+/*
 	for (var/v in client.verbs)
 		var/procpath/verb_path = v
 		if (!(verb_path in GLOB.stat_panel_verbs))
@@ -309,6 +310,7 @@ Works together with spawning an observer, noted above.
 		var/procpath/verb_path = v
 		if (!(verb_path in GLOB.stat_panel_verbs))
 			remove_verb(src, verb_path)
+*/
 	add_verb(src, /mob/dead/observer/verb/particlize)
 
 /*

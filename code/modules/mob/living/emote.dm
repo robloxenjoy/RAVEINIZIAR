@@ -18,8 +18,8 @@
 
 /datum/emote/living/burp
 	key = "burp"
-	key_third_person = "рыгает"
-	message = "рыгает."
+	key_third_person = "burps"
+	message = "burps."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/choke

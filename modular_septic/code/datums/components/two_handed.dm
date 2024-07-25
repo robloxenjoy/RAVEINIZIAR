@@ -96,7 +96,7 @@
 	if(iscyborg(user))
 		to_chat(user, span_notice("I dedicate your module to [parent]."))
 	else
-		to_chat(user, span_notice("Я хватаю [parent] обеими руками."))
+		to_chat(user, span_notice("I wield [parent]."))
 		playsound(user, wieldnoise, wieldvolume, FALSE)
 		user.changeNext_move(CLICK_CD_MELEE)
 

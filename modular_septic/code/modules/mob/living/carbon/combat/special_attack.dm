@@ -22,7 +22,7 @@
 				if(SPECIAL_ATK_KICK)
 					message += span_largeinfo("Kick")
 					message += "\n<br><hr class='infohr'>\n"
-					message += span_info("Now I can bite.\n(MMB for kick)")
+					message += span_info("Now I can kick.\n(MMB for kick)")
 				if(SPECIAL_ATK_BITE)
 					message += span_largeinfo("Bite")
 					message += "\n<br><hr class='infohr'>\n"

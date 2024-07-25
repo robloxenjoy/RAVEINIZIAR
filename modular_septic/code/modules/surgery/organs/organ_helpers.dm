@@ -175,6 +175,12 @@
 			T.Insert(src)
 		T.setOrganDamage(0)
 
+		var/obj/item/organ/nervesystem/PP = getorganslot(ORGAN_SLOT_NERVESYSTEM)
+		if(!PP)
+			PP = new()
+			PP.Insert(src)
+		PP.setOrganDamage(0)
+
 		var/list/ears = getorganslotlist(ORGAN_SLOT_EARS)
 		if(LAZYLEN(ears) < 2)
 			while(LAZYLEN(ears) < 2)

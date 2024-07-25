@@ -173,12 +173,13 @@
 /// Blood gushing (projectile)
 /mob/living/proc/do_arterygush(direction = SOUTH, min_range = 2, max_range = 3, spread_min = -25, spread_max = 25, splatter_loc = FALSE)
 	var/turf_loc = get_turf(src)
-	if(!((mob_biotypes & MOB_ORGANIC|MOB_HUMANOID) && blood_volume && turf_loc))
-		return
-	if(splatter_loc)
-		add_splatter_floor(turf_loc, FALSE)
-	var/obj/projectile/blood/spray = new(turf_loc, get_blood_dna_list(), TRUE)
-	spray.do_squirt(direction, range = rand(min_range, max_range), spread_min = spread_min, spread_max = spread_max)
+	if(turf_loc)
+		if(!((mob_biotypes & MOB_ORGANIC|MOB_HUMANOID) && blood_volume && turf_loc))
+			return
+		if(splatter_loc)
+			add_splatter_floor(turf_loc, FALSE)
+		var/obj/projectile/blood/spray = new(turf_loc, get_blood_dna_list(), TRUE)
+		spray.do_squirt(direction, range = rand(min_range, max_range), spread_min = spread_min, spread_max = spread_max)
 
 /// Blood volume adjust proc
 /mob/living/proc/adjust_bloodvolume(amount)

@@ -50,7 +50,7 @@ SUBSYSTEM_DEF(bobux)
 		var/datum/bobux_reward/comicao = aaa
 		dat += "<span class='bobux'><b>[comicao.name]</b></span><br>"
 		dat += "[comicao.desc]</span><br>"
-		dat += "<a href='?src=\ref[src];task=buy;id=[comicao.id]'>Biy</a> ([comicao.cost] kaotiks)"
+		dat += "<a href='?src=\ref[src];task=buy;id=[comicao.id]'>Buy</a> ([comicao.cost] kaotiks)"
 		dat += "<hr>"
 	return dat
 

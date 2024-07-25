@@ -203,17 +203,17 @@
 		return
 
 	if(HAS_TRAIT(src, TRAIT_WEAPON_UNREADY))
-		to_chat(user, span_warning("Я готов - [src] нет!"))
+		to_chat(user, span_warning("I'm ready - [src] not!"))
 		return
 
 	var/user_strength = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
 	var/wielded = SEND_SIGNAL(src, COMSIG_TWOHANDED_WIELD_CHECK)
 	if(!wielded)
 		if((readying_flags & READYING_FLAG_HARD_TWO_HANDED) && (user_strength < (minimum_strength * 3)))
-			to_chat(user, span_warning("Я не могу использовать [src] одной рукой!"))
+			to_chat(user, span_warning("I can't use [src] one-handed!"))
 			return
 		else if((readying_flags & READYING_FLAG_SOFT_TWO_HANDED) && (user_strength < (minimum_strength * 1.5)))
-			to_chat(user, span_warning("Я не могу использовать [src] одной рукой!"))
+			to_chat(user, span_warning("I can't use [src] one-handed!"))
 			return
 
 	if(!ishuman(victim))
@@ -277,17 +277,17 @@
 		return
 
 	if(HAS_TRAIT_FROM(src, TRAIT_WEAPON_UNREADY, ATTACKING_TRAIT))
-		to_chat(user, span_danger("Я готов, [src] - нет!"))
+		to_chat(user, span_danger("I'm ready, [src] - not!"))
 		return
 
 	var/user_strength = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
 	var/wielded = SEND_SIGNAL(src, COMSIG_TWOHANDED_WIELD_CHECK)
 	if(!wielded)
 		if((readying_flags & READYING_FLAG_HARD_TWO_HANDED) && (user_strength < (minimum_strength * 3)))
-			to_chat(user, span_warning("Я не могу использовать [src] одной рукой!"))
+			to_chat(user, span_warning("I can't use [src] one-handed!"))
 			return
 		else if((readying_flags & READYING_FLAG_SOFT_TWO_HANDED) && (user_strength < (minimum_strength * 1.5)))
-			to_chat(user, span_warning("Я не могу использовать [src] одной рукой!"))
+			to_chat(user, span_warning("I can't use [src] one-handed!"))
 			return
 
 	var/list/modifiers = params2list(params)
@@ -338,7 +338,7 @@
 		unready_message(user)
 
 /obj/item/proc/unready_message(mob/living/user)
-	to_chat(user, span_danger("[src] прекращает готовность!"))
+	to_chat(user, span_danger("[src] stops readiness!"))
 
 /obj/item/proc/ready_weapon(mob/living/user, silent = FALSE)
 	user.changeNext_move(CLICK_CD_READY_WEAPON)
@@ -347,6 +347,6 @@
 		ready_message(user)
 
 /obj/item/proc/ready_message(mob/living/user)
-	to_chat(user, span_danger("Я готовлю [src]!"))
+	to_chat(user, span_danger("I ready [src]!"))
 	if(ready_sound)
 		playsound(user, ready_sound, 85, TRUE, extrarange = stealthy_audio ? SILENCED_SOUND_EXTRARANGE : -1, falloff_distance = 0)

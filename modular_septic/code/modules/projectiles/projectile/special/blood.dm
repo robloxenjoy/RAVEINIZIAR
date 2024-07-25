@@ -1,5 +1,5 @@
 /obj/projectile/blood
-	name = "Кровавый сгусток"
+	name = "Blood Gush"
 	icon = 'modular_septic/icons/obj/items/guns/projectiles/blood.dmi'
 	icon_state = "hitsplatter1"
 	base_icon_state = "hitsplatter"
@@ -73,7 +73,7 @@
 /obj/projectile/blood/proc/do_squirt(direction = SOUTH, range = 3, spread_min = -25, spread_max = 25)
 	if(!direction)
 		direction = pick(GLOB.alldirs)
-	src.range = range
+//	src.range = range
 	var/target = get_ranged_target_turf(src, direction, range)
 	preparePixelProjectile(target, src, spread = rand(spread_min, spread_max))
 	if(QDELETED(src))
