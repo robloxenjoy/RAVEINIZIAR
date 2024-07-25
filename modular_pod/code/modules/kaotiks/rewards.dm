@@ -367,7 +367,7 @@
 		A.static_lighting = FALSE
 		A.set_base_lighting(new_alpha = 255)
 		A.remove_area_lighting_objects()
-
+/*
 /datum/bobux_reward/activate_muzon
 	name = "Toggle on Musick"
 	desc = "Need to listen!"
@@ -422,6 +422,40 @@
 		if(H.client)
 			var/area/areal = get_area(H)
 			SSdroning.play_area_sound(areal, H?.client)
+*/
+
+/datum/bobux_reward/cleanmap
+	name = "Clear Map"
+	desc = "Delete corpses and pollution!"
+	buy_message = "<b>Good-good!</span>"
+	id = "clear"
+	cost = 500
+	infinite_buy = TRUE
+/*
+/datum/bobux_reward/cleanmap/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	for(var/area/maintenance/polovich/forest/A in world)
+		if(!A.static_lighting)
+			return
+*/
+/datum/bobux_reward/cleanmap/on_buy(client/noob)
+	..()
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] clears the map!</span>")
+	for(var/mob/living/carbon/human/A in world)
+		if(A.stat != DEAD)
+			continue
+		if(QDELETED(A))
+			continue
+		qdel(A)
+	if(SSpollution.current_run.len)
+		var/datum/pollution/pollution = SSpollution.current_run[SSpollution.current_run.len]
+		current_run.len--
+		pollution.scrub_amount(999, FALSE, TRUE)
+/*
+		A.static_lighting = FALSE
+		A.set_base_lighting(new_alpha = 255)
+		A.remove_area_lighting_objects()
+*/
 
 /datum/bobux_reward/changename
 	name = "Change Name"

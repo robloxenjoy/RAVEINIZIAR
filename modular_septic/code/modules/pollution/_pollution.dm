@@ -71,19 +71,19 @@
 	switch(dominant_smell_power)
 		if(0 to POLLUTANT_SMELL_NORMAL)
 			if(sniffer.mob_biotypes & MOB_ROBOTIC)
-				smell_string = "Мои обонятельные рецепторы улавливают следы [dominant_pollutant.scent] в воздухе."
+				smell_string = "My olfactory receptors pick up traces of [dominant_pollutant.scent] in air."
 			else
-				smell_string = "Тонкий [dominant_pollutant.descriptor] [dominant_pollutant.scent] щекочет мой нос."
+				smell_string = "Thin [dominant_pollutant.descriptor] [dominant_pollutant.scent] tickles my nose."
 		if(POLLUTANT_SMELL_NORMAL to POLLUTANT_SMELL_STRONG)
 			if(sniffer.mob_biotypes & MOB_ROBOTIC)
-				smell_string = "Мои обонятельные рецепторы улавливают присутствие [dominant_pollutant.scent] в воздухе."
+				smell_string = "My olfactory receptors detect the presence of [dominant_pollutant.scent] in air."
 			else
-				smell_string = "[dominant_pollutant.descriptor] [dominant_pollutant.scent] заполняет воздух."
+				smell_string = "[dominant_pollutant.descriptor] [dominant_pollutant.scent] fills the air."
 		if(POLLUTANT_SMELL_STRONG to INFINITY)
 			if(sniffer.mob_biotypes & MOB_ROBOTIC)
-				smell_string = "Мои обонятельные рецепторы улавливают интенсивную концентрацию [dominant_pollutant.scent]."
+				smell_string = "My olfactory receptors detect intense concentration of [dominant_pollutant.scent]."
 			else
-				smell_string = "Безошибочный [dominant_pollutant.descriptor] [dominant_pollutant.scent] бомбардирует мои ноздри."
+				smell_string = "Unmistakable [dominant_pollutant.descriptor] [dominant_pollutant.scent] bombards my nostrils."
 
 	switch(dominant_pollutant.descriptor)
 		if(SCENT_DESC_ODOR)
