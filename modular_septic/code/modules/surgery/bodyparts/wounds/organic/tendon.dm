@@ -32,7 +32,7 @@
 			tendon.dissect()
 		else
 			tendon.tear()
-	var/final_descriptive = "Tendon [dissection ? "torn" : "damaged"]!"
+	var/final_descriptive = "Tendon is [dissection ? "torn" : "damaged"]!"
 	// Achilles tendon is pretty significant
 	if(istype(tendon, TENDON_R_FOOT) || istype(tendon, TENDON_L_FOOT) || istype(tendon, TENDON_NECK))
 		final_descriptive = "[tendon] is [dissection ? "torn" : "damaged"]!"

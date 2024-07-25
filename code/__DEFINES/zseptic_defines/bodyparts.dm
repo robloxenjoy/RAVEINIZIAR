@@ -11,8 +11,8 @@
 #define DEFAULT_HEAVY_BRUTE_MSG "MANGLED"
 
 #define DEFAULT_NO_BURN_MSG "normal"
-#define DEFAULT_LIGHT_BURN_MSG "красновато"
-#define DEFAULT_MEDIUM_BURN_MSG "в волдырях"
+#define DEFAULT_LIGHT_BURN_MSG "red"
+#define DEFAULT_MEDIUM_BURN_MSG "boils"
 #define DEFAULT_HEAVY_BURN_MSG "CARBON"
 
 #define DEFAULT_NO_PAIN_MSG "unpaiful"

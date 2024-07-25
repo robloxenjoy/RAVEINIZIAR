@@ -14,7 +14,7 @@
 		var/attack_message_victim = "Someone [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
 		var/attack_message_attacker = "I [message_verb_simple] someone with [I]!"
 		if(user in fov_viewers(2, src))
-			attack_message_attacker = "Я [message_verb_simple] <b>[src]</b>[message_hit_area] with [I]![wound_message]"
+			attack_message_attacker = "I [message_verb_simple] <b>[src]</b>[message_hit_area] with [I]![wound_message]"
 		if(src in fov_viewers(2, user))
 			attack_message_victim = "<b>[user]</b> [message_verb_continuous] me[message_hit_area] with [I][extra_wound_details]![wound_message]"
 		if(user == src)
@@ -39,7 +39,7 @@
 			message_hit_area = " in [hit_area]"
 		var/attack_message_spectator = "<b>[user]</b> tries to [message_verb_simple] <b>[src]</b> в [parsed_intended_zone] with [I], but instead [message_verb_simple_three][message_hit_area][extra_wound_details]![wound_message]"
 		var/attack_message_victim = "Someone [message_verb_continuous][message_hit_area][extra_wound_details]![wound_message]"
-		var/attack_message_attacker = "Я [message_verb_simple] кого-то with [I]!"
+		var/attack_message_attacker = "I [message_verb_simple] кого-то with [I]!"
 		if(user in fov_viewers(2, src))
 			attack_message_attacker = "I'm trying to [message_verb_simple] <b>[src]</b> in [parsed_intended_zone] with [I], but instead [message_verb_simple_two][message_hit_area][extra_wound_details]![wound_message]"
 		if(src in fov_viewers(2, user))

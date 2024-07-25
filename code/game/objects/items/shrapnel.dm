@@ -1,5 +1,5 @@
 /obj/item/shrapnel // frag grenades
-	name = "Осколок"
+	name = "Shrapnel"
 	custom_materials = list(/datum/material/iron=50)
 	weak_against_armour = TRUE
 	icon = 'icons/obj/shards.dmi'
@@ -14,14 +14,14 @@
 	sharpness = NONE
 
 /obj/item/shrapnel/bullet // bullets
-	name = "Осколок"
+	name = "Shrapnel"
 	icon = 'icons/obj/guns/ammo.dmi'
 	icon_state = "s-casing"
 	embedding = null // embedding vars are taken from the projectile itself
 
 
 /obj/projectile/bullet/shrapnel
-	name = "Летящий Осколок"
+	name = "Flying Shard"
 	damage = 14
 	range = 20
 	weak_against_armour = TRUE

@@ -50,8 +50,8 @@
 	weapon.forceMove(victim)
 	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(weaponDeleted))
 	if(!silence_message)
-		victim.visible_message(span_danger("[weapon] [harmful ? "застревает" : "застревает"] [harmful ? "в" : "на"] <b>[victim]</b> [limb.name]!"), \
-					span_userdanger("[weapon] [harmful ? "застревает" : "застревает"] [harmful ? "в" : "на"] [limb.name]!"))
+		victim.visible_message(span_danger("[weapon] [harmful ? "embeds" : "embeds"] [harmful ? "in" : "on"] <b>[victim]</b> [limb.name]!"), \
+					span_userdanger("[weapon] [harmful ? "embeds" : "embeds"] [harmful ? "in" : "on"] [limb.name]!"))
 
 	var/damage = weapon.throwforce
 	if(harmful)
@@ -126,7 +126,7 @@
 				limb.receive_damage(stamina = pain_stam_pct * damage)
 			else
 				limb.receive_damage(brute = (1-pain_stam_pct) * damage, stamina = pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-			to_chat(victim, span_userdanger("[weapon] внутри [limb.name] заставляет болеть!"))
+			to_chat(victim, span_userdanger("[weapon] inside [limb.name] does pain!"))
 
 	if(fall_chance)
 		var/fall_chance_current = DT_PROB_RATE(fall_chance / 100, delta_time) * 100
@@ -147,10 +147,10 @@
 		if(injury)
 			injury.open_injury((1-pain_stam_pct) * damage)
 			limb.receive_damage(stamina=pain_stam_pct * damage)
-			to_chat(victim, span_userdanger("[weapon] внутри [limb.name] [injury.get_desc()] заставляет болеть!"))
+			to_chat(victim, span_userdanger("[weapon] inside [limb.name] [injury.get_desc()] does pain!"))
 		else
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-			to_chat(victim, span_userdanger("[weapon] внутри [limb.name] заставляет болеть!"))
+			to_chat(victim, span_userdanger("[weapon] inside [limb.name] does pain!"))
 
 /datum/component/embedded/weaponDeleted()
 //	var/mob/living/carbon/victim = parent

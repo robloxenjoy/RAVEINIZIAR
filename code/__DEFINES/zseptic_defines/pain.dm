@@ -38,7 +38,7 @@
 /// Divisor used in several pain calculations
 #define PAINKILLER_DIVISOR 4
 
-#define PAIN_KNOCKDOWN_MESSAGE "<span class='bolddanger'>впадает в боль!</span>"
-#define PAIN_KNOCKDOWN_MESSAGE_SELF "<span class='animatedpain'>Я впадаю в боль!</span>"
-#define PAIN_KNOCKOUT_MESSAGE "<span class='bolddanger'>проникается болью!</span>"
-#define PAIN_KNOCKOUT_MESSAGE_SELF "<span class='animatedpain'>О БОЖЕ! БОЛЬ ЖЕ КАКАЯ!</span>"
+#define PAIN_KNOCKDOWN_MESSAGE "<span class='bolddanger'>falls in pain!</span>"
+#define PAIN_KNOCKDOWN_MESSAGE_SELF "<span class='animatedpain'>I fall in pain!</span>"
+#define PAIN_KNOCKOUT_MESSAGE "<span class='bolddanger'>caves in pain!</span>"
+#define PAIN_KNOCKOUT_MESSAGE_SELF "<span class='animatedpain'>OH PAIN! PAIN!</span>"

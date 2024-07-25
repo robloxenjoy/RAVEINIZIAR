@@ -65,7 +65,7 @@
 		if(bling_bling)
 			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>SERVER:</span> <b>[key]</b> [connection_string].</span></span>")
 		else
-			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>СЕРВЕР:</span> <b>[key]</b> [connection_string].</span>")
+			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>SERVER:</span> <b>[key]</b> [connection_string].</span>")
 
 /client/proc/broadcast_epicbunkerfail()
 	var/bling_bling = prefs?.donator_rank
@@ -77,7 +77,7 @@
 		if(bling_bling)
 			to_chat(player, "<span class='oocplain'><span class='bling'><span class='prefix'>SERVER:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
 		else
-			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>СЕРВЕР:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
+			to_chat(player, "<span class='oocplain'><span style='color: [GLOB.connection_ooc_color]; font-weight: bold;'><span class='prefix'>SERVER:</span> Провальная попытка присоединиться. Смеёмся над <b>[key]</b>.</span></span>")
 
 /client/proc/bruh_moment()
 	var/sound/bruh = sound('modular_septic/sound/memeshit/bruh.ogg', FALSE, 0, CHANNEL_LOBBYMUSIC, 100)

@@ -32,7 +32,7 @@
 		return
 	//Oof!
 	if(wound_messages)
-		SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" Серьёзное ранение!"))
+		SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" Major Wound!"))
 //	var/vomiting = FALSE
 	switch(body_zone)
 		if(BODY_ZONE_HEAD, BODY_ZONE_PRECISE_FACE, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_R_EYE, BODY_ZONE_PRECISE_L_EYE)
@@ -56,7 +56,7 @@
 					if(rev && prob(incoming_pain * 3))
 						rev.remove_revolutionary(FALSE)
 					if(wound_messages)
-						SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] дезориентирован!"))
+						SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] desioriented!"))
 				else
 					drop_all_held_items()
 					flash_screen_flash()
@@ -75,7 +75,7 @@
 			flash_pain_major()
 			adjustOxyLoss((rand(20, 45)) - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE))
 			if(wound_messages)
-				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] деоксигенирован!"))
+				SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] deoxygenated!"))
 		if(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_R_ARM)
 			var/obj/item/held_item = get_item_for_held_index(RIGHT_HANDS)
 			if(held_item)
@@ -85,7 +85,7 @@
 				dropItemToGround(held_item)
 				flash_pain_major()
 				if(wound_messages)
-					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] спазмирован!"))
+					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] spasms!"))
 		if(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_L_ARM)
 			var/obj/item/held_item = get_item_for_held_index(LEFT_HANDS)
 			if(held_item)
@@ -95,7 +95,7 @@
 				dropItemToGround(held_item)
 				flash_pain_major()
 				if(wound_messages)
-					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] спазмирован!"))
+					SEND_SIGNAL(src, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" [src] spasms!"))
 /*
 		if(BODY_ZONE_PRECISE_VITALS)
 //			vomiting = prob(80)

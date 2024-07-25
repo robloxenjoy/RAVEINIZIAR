@@ -47,8 +47,8 @@
 			actual_chance -= edge_protection
 			if(!forced && actual_chance <= 0)
 				if(!silent)
-					victim.visible_message(span_danger("[weapon] отпрыгивает от <b>[victim]</b> брони, не застревая!"), \
-										span_notice("[weapon] отпрыгивает от моей брони, не застревая!"), \
+					victim.visible_message(span_danger("[weapon] bounces off <b>[victim]</b> armor!"), \
+										span_notice("[weapon] bounces off my armor!"), \
 										vision_distance = COMBAT_MESSAGE_RANGE)
 				return (COMPONENT_EMBED_FAILURE | COMPONENT_EMBED_STOPPED_BY_ARMOR)
 
@@ -108,7 +108,7 @@
 
 	var/obj/item/payload = new payload_type(get_turf(hit))
 	if(istype(payload, /obj/item/shrapnel/bullet))
-		payload.name = "[projectile.name] осколок"
+		payload.name = "[projectile.name] shrapnel"
 	payload.embedding = projectile.embedding
 	payload.embedding["embed_chance"] = 100 //if we got this far, we passed projectile embed checks
 	payload.updateEmbedding()

@@ -48,12 +48,12 @@
 	var/healthpercent = (atom_integrity/max_integrity) * 100
 	switch(healthpercent)
 		if(50 to 99)
-			return  "Повреждено."
+			return  "Damaged."
 		if(25 to 50)
-			return  "Сильно повреждено."
+			return  "Heavily damaged."
 		if(0 to 25)
 			if(!broken)
-				return  span_warning("Разваливается!")
+				return  span_warning("Destroys!")
 
 /obj/structure/rust_heretic_act()
 	take_damage(500, BRUTE, "melee", 1)

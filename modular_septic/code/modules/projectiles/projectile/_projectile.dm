@@ -216,13 +216,13 @@
 	//		sound_hint()
 			if(final_hitsound)
 				playsound(target, final_hitsound, 5, TRUE, -1)
-			to_chat(target, span_userdanger("Я поражаюсь \ [src]!"))
+			to_chat(target, span_userdanger("I'm hit by \ [src]!"))
 		else
 	//		sound_hint()
 			if(final_hitsound)
 				playsound(target, final_hitsound, final_hitsound_volume, TRUE, -1)
 //			hit_text = span_danger("<b>[living_target]</b> поражается \ [src][organ_hit_text]!")
-			to_chat(target, span_userdanger("Я поражаюсь \ [src]!"))
+			to_chat(target, span_userdanger("I'm hit by \ [src]!"))
 		living_target.on_hit(src)
 
 	var/reagent_note

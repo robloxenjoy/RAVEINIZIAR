@@ -917,11 +917,11 @@
 		var/healthpercent = (atom_integrity/max_integrity) * 100
 		switch(healthpercent)
 			if(50 to 99)
-				. += "Слегка повреждено."
+				. += "Damaged."
 			if(25 to 50)
-				. += "Сильно повреждено."
+				. += "Heavily damaged."
 			if(0 to 25)
-				. += span_warning("Разваливается!")
+				. += span_warning("Destroys!")
 	if(user.research_scanner && component_parts)
 		. += display_parts(user, TRUE)
 

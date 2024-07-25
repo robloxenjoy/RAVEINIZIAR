@@ -100,16 +100,17 @@
 		if("Asshole")
 			client.role_ch = "asshole"
 		if("God SMO")
+			var/smo = "[global.config.directory]/smo.txt"
+			if(ckey in world.file2list(smo))
+				client.role_ch = "god smo"
+			else
+				alert("Donate for this role.")
+				client.ready_char = FALSE
+				return
 			if(GLOB.world_deaths_crazy < 20)
 				alert("Not enough deaths in the world.")
 				client.ready_char = FALSE
 				return
-			var/smo = "[global.config.directory]/smo.txt"
-			if(!ckey in world.file2list(smo))
-				alert("Donate for this role.")
-				client.ready_char = FALSE
-				return
-			client.role_ch = "god smo"
 		else
 			alert("Unclear. The role of the common Kapnobatai.")
 			client.role_ch = "kapnobatai"

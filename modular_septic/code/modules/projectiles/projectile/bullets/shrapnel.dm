@@ -1,5 +1,5 @@
 /obj/projectile/bullet/shrapnel
-	name = "Летящий осколок"
+	name = "Flying Shrapnel"
 	icon_state = "shrapnel"
 	base_icon_state = "shrapnel"
 	damage = 18
@@ -25,7 +25,7 @@
 		icon_state = "[base_icon_state][rand(1, state_variation)]"
 
 /obj/projectile/bullet/shrapnel/mine
-	name = "Летящий осколок"
+	name = "Flying Shrapnel"
 	damage = 20
 	range = 15
 	weak_against_armour = FALSE

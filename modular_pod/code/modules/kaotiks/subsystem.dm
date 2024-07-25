@@ -41,10 +41,10 @@ SUBSYSTEM_DEF(bobux)
 /datum/controller/subsystem/bobux/proc/GetDat(client/noob)
 	var/list/dat = list()
 	var/datum/preferences/pref_source = noob.prefs
-	dat += "<center><b>[GLOB.world_deaths_crazy] deaths in еру world!</b></center><br>"
+	dat += "<center><b>[GLOB.world_deaths_crazy] deaths in the world!</b></center><br>"
 	dat += "<center><b>Kaotiks Menu</b></center><br>"
 	dat += "<center>At the moment I have <b>[pref_source.bobux_amount]</b> kaotiks.</center><br>"
-	dat += "<center><a href='?src=\ref[src];task=close'>Заебись</a></center>"
+	dat += "<center><a href='?src=\ref[src];task=close'>Awesome</a></center>"
 	dat += "<hr>"
 	for(var/aaa in bobux_rewards_buyable)
 		var/datum/bobux_reward/comicao = aaa

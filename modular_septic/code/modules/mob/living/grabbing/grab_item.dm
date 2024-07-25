@@ -76,13 +76,13 @@
 	if(owner)
 		if(victim)
 			playsound(victim, 'modular_septic/sound/attack/thudswoosh.ogg', 50, 1, -1)
-			var/grab_wording = (bite_grab ? "кусать" : "держать")
+			var/grab_wording = (bite_grab ? "biting" : "grabing")
 			if(owner == victim)
 				victim.visible_message(span_warning("<b>[owner]</b> stops [grab_wording] his [grasped_part.name]!"),\
 											span_notice("I stop [grab_wording] my [grasped_part.name]!"))
 			else
 				victim.visible_message(span_danger("<b>[owner]</b> stops [grab_wording] <b>[victim]</b>[grasped_part ? " [grasped_part.name]": ""]!"),\
-										span_userdanger("<b>[owner]</b> stops [grab_wording] [grasped_part ? " my [grasped_part.name]" : "me"]!"),\
+										span_userdanger("<b>[owner]</b> stops [grab_wording] [grasped_part ? "my [grasped_part.name]" : "me"]!"),\
 										ignored_mobs = owner)
 				to_chat(owner, span_danger("I stop [grab_wording] <b>[victim]</b>[grasped_part ? " my [grasped_part.name]" : "me"]!"))
 		//Let's only stop pulling if we have no other hand grasping the victim
