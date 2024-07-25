@@ -46,7 +46,7 @@
 	max_integrity = 200
 	limb_integrity = 200
 	body_parts_covered = FACE | JAW
-	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
+	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS | GAS_FILTERING
 	flags_inv = HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
 	visor_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
 	visor_flags_inv = HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
