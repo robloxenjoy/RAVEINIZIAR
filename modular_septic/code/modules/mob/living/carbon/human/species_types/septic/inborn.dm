@@ -125,8 +125,8 @@
 	mutantkidneys = /obj/item/organ/kidneys/halber
 	mutantheart = /obj/item/organ/heart/halber
 	armor = 5
-	punchdamagelow = 5
-	punchdamagehigh = 14
+	punchdamagelow = 14
+	punchdamagehigh = 18
 	liked_food = RAW | MEAT | GROSS | GRAIN | SEWAGE
 	disliked_food = CLOTH
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT

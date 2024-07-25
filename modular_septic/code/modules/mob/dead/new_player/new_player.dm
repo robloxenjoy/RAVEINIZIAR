@@ -111,6 +111,18 @@
 				alert("Not enough deaths in the world.")
 				client.ready_char = FALSE
 				return
+		if("Halbermensch")
+			var/hal = "[global.config.directory]/hal.txt"
+			if(ckey in world.file2list(hal))
+				client.role_ch = "halbermensch"
+			else
+				alert("Donate for this role.")
+				client.ready_char = FALSE
+				return
+//			if(GLOB.world_deaths_crazy < 20)
+//				alert("Not enough deaths in the world.")
+//				client.ready_char = FALSE
+//				return
 		else
 			alert("Unclear. The role of the common Kapnobatai.")
 			client.role_ch = "kapnobatai"
@@ -126,7 +138,10 @@
 						if(spawn_point.spending > 0)
 							spawn_point.spending--
 							var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
-							character.set_species(/datum/species/human)
+							if(character.truerole == "Halbermensch")
+								character.set_species(/datum/species/halbermensch)
+							else
+								character.set_species(/datum/species/human)
 							character.gender = MALE
 							character.genitals = GENITALS_MALE
 							character.body_type = MALE
@@ -213,6 +228,8 @@
 										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
 									if("Asshole")
 										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
+									if("Halbermensch")
+										character.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
 									else
 										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
 							else
@@ -221,6 +238,8 @@
 										babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
 									if("Asshole")
 										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
+									if("Halbermensch")
+										character.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
 									else
 										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_agender.ogg'
 								babble.volume = BABBLE_DEFAULT_VOLUME
