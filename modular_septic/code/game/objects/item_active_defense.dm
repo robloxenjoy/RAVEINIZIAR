@@ -1,8 +1,8 @@
 //this is a stupid fucking name for a proc but i can't really change it now, can i?
 /obj/item/proc/item_block(mob/living/carbon/human/user, \
 						atom/movable/attacker, \
-						attack_text = "атаку", \
-						user_attack_text = "мою атаку", \
+						attack_text = "attack", \
+						user_attack_text = "my attack", \
 						damage = 0, \
 						attacking_flags = BLOCK_FLAG_MELEE)
 	// cannot block when unready
@@ -22,18 +22,18 @@
 			user.sound_hint()
 			if(durability)
 				damageItem("MEDIUM")
-			user.visible_message(span_danger("<b>[user]</b> блокирует [attack_text] с помощью [src]!"), \
-								span_userdanger("Я блокирую [attack_text] с помощью [src]!"), \
+			user.visible_message(span_danger("<b>[user]</b> blocks [attack_text] with [src]!"), \
+								span_userdanger("I block [attack_text] with [src]!"), \
 								vision_distance = COMBAT_MESSAGE_RANGE, \
 								ignored_mobs = attacker)
-			to_chat(attacker, span_userdanger("<b>[src]</b> блокирует [user_attack_text] с помощью [src]!"))
+			to_chat(attacker, span_userdanger("<b>[src]</b> blocks [user_attack_text] with [src]!"))
 			return COMPONENT_HIT_REACTION_CANCEL | COMPONENT_HIT_REACTION_BLOCK
 		return COMPONENT_HIT_REACTION_CANCEL
 
 /obj/item/proc/item_parry(mob/living/carbon/human/user, \
 						atom/movable/attacker, \
-						attack_text = "атаку", \
-						user_attack_text = "мою атаку", \
+						attack_text = "attack", \
+						user_attack_text = "my attack", \
 						damage = 0, \
 						attacking_flags = BLOCK_FLAG_MELEE)
 	// cannot parry when unready
@@ -62,10 +62,10 @@
 			user.sound_hint()
 			if(durability)
 				damageItem("MEDIUM")
-			user.visible_message(span_danger("<b>[user]</b> парирует [attack_text] с помощью [src]!"), \
-								span_userdanger("Я парирую [attack_text] с помощью [src]!"), \
+			user.visible_message(span_danger("<b>[user]</b> parries [attack_text] with [src]!"), \
+								span_userdanger("I parry [attack_text] with [src]!"), \
 								vision_distance = COMBAT_MESSAGE_RANGE, \
 								ignored_mobs = attacker)
-			to_chat(attacker, span_userdanger("<b>[src]</b> парирует [user_attack_text] с помощью [src]!"))
+			to_chat(attacker, span_userdanger("<b>[src]</b> with [user_attack_text] with [src]!"))
 			return COMPONENT_HIT_REACTION_CANCEL | COMPONENT_HIT_REACTION_BLOCK
 		return COMPONENT_HIT_REACTION_CANCEL
