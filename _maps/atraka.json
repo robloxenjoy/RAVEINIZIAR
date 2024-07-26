@@ -29,6 +29,7 @@
 			"Station": true,
 			"Gravity": true,
 			"Podpol Ruins": true,
+			"Podpol Ruins Surface": true,
 			"Baseturf": "/turf/open/openspace/norm"
 		},
 		{

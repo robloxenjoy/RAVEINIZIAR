@@ -1057,7 +1057,7 @@
 	SIGNAL_HANDLER
 	if(ishuman(gone))
 		var/mob/living/carbon/human/H = gone
-		if(prob(50))
+		if(prob(60))
 			H.visible_message(span_meatymeat("[H] tries to get out of the [src]!"))
 			var/obj/item/bodypart/affecting = H.get_bodypart_nostump(ran_zone(BODY_ZONE_CHEST, 50))
 			var/armor_block = H.run_armor_check(affecting, MELEE, sharpness = SHARP_EDGED)
