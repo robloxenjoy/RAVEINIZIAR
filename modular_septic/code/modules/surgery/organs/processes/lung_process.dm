@@ -29,11 +29,11 @@
 	if(effective_oxygenation < owner.total_oxygen_req)
 		if(DT_PROB(0.5, delta_time))
 			if(owner.body_position != LYING_DOWN)
-				owner.visible_message(span_danger("<b>[owner]</b> падает и гипервентилирует!"), \
-								span_userdanger("Мне нужно больше воздуха!"))
+				owner.visible_message(span_danger("<b>[owner]</b> falls and hyperventilates!"), \
+								span_userdanger("I need more air!"))
 			else
-				owner.visible_message(span_danger("<b>[owner]</b> гипервентилирует!"), \
-					span_userdanger("Мне нужно больше воздуха!"))
+				owner.visible_message(span_danger("<b>[owner]</b> hyperventilates!"), \
+					span_userdanger("I need more air!"))
 			owner.Knockdown(8 SECONDS)
 			INVOKE_ASYNC(src, PROC_REF(gasp_spam), owner)
 		if(DT_PROB(2, delta_time))
