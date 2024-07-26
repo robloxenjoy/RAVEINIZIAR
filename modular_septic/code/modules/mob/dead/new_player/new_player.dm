@@ -112,9 +112,9 @@
 				client.ready_char = FALSE
 				return
 		if("Halbermensch")
-			var/number = GLOB.world_deaths_crazy_next
-			var/second = GLOB.player_list.len * 2
-			if(length(second) > number)
+			var/number = GLOB.world_deaths_crazy / 2
+			var/second = GLOB.new_people_crazy * 2
+			if(second > number)
 				var/hal = "[global.config.directory]/hal.txt"
 				if(ckey in world.file2list(hal))
 					client.role_ch = "halbermensch"
@@ -143,6 +143,7 @@
 				if(client)
 					if(spawn_point.name == client.role_ch)
 						if(spawn_point.spending > 0)
+							GLOB.new_people_crazy += 1
 							if(client.role_ch != "halbermensch")
 								spawn_point.spending--
 								var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
