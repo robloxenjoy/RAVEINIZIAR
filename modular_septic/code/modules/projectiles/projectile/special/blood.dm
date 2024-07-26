@@ -73,7 +73,7 @@
 /obj/projectile/blood/proc/do_squirt(direction = SOUTH, range = 3, spread_min = -25, spread_max = 25)
 	if(!direction)
 		direction = pick(GLOB.alldirs)
-//	src.range = range
+	src.range = 3
 	var/target = get_ranged_target_turf(src, direction, range)
 	preparePixelProjectile(target, src, spread = rand(spread_min, spread_max))
 	if(QDELETED(src))
