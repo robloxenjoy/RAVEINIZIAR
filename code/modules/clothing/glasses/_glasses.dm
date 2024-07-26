@@ -165,13 +165,12 @@
 	. = ..()
 	. += emissive_appearance(icon, "green-emissive", alpha = src.alpha)
 */
-
 /obj/item/clothing/glasses/night/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	. = ..()
 	if(!isinhands)
-//		. += emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
-		var/mutable_appearance/appearance = mutable_appearance(icon = icon_file, icon_state = "green-emissive", alpha = src.alpha, layer = ROLES_LAYER, plane = EMISSIVE_PLANE, appearance_flags | EMISSIVE_APPEARANCE_FLAGS)
-		add_overlay(appearance)
+		. += emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
+//		var/mutable_appearance/appearance = mutable_appearance(icon = icon_file, icon_state = "green-emissive", alpha = src.alpha, layer = ROLES_LAYER, plane = EMISSIVE_PLANE, appearance_flags | EMISSIVE_APPEARANCE_FLAGS)
+//		add_overlay(appearance)
 
 /obj/item/clothing/glasses/night/Initialize(mapload)
 	. = ..()
