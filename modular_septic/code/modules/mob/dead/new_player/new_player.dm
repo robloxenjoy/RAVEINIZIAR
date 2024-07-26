@@ -137,7 +137,10 @@
 					if(spawn_point.name == client.role_ch)
 						if(spawn_point.spending > 0)
 							spawn_point.spending--
-							var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
+							if(character.truerole == "Halbermensch")
+								var/mob/living/carbon/human/species/halbermensch/character = new(pick(spawn_point.loc))
+							else
+								var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
 							character.gender = MALE
 							character.genitals = GENITALS_MALE
 							character.body_type = MALE
@@ -164,6 +167,7 @@
 									character.facial_hairstyle = "Shaved"
 									eye_coloring = "#c30000"
 								if("halbermensch")
+									character.pod_faction = "Halbermensch"
 									character.truerole = "Halbermensch"
 									character.pod_faction = null
 									character.hairstyle = "Bald"
@@ -272,17 +276,12 @@
 										to_chat(character, span_yellowteamradio("I'm Kapnobataes Father!"))
 									if("The Most Asshole")
 										to_chat(character, span_yellowteamradio("I'm The Most Asshole!"))
-
 //							character.height = height
 							character.dna.features["body_size"] = BODY_SIZE_NORMAL
 							character.dna.update_body_size()
 							character.dna.update_dna_identity()
 							character.attributes?.update_attributes()
 							character.regenerate_icons()
-							if(character.truerole == "Halbermensch")
-								character.set_species(/datum/species/halbermensch)
-							else
-								character.set_species(/datum/species/human)
 
 						else
 							alert("No more slots.")
