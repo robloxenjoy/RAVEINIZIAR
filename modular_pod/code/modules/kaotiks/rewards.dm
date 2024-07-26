@@ -448,10 +448,12 @@
 		if(QDELETED(A))
 			continue
 		qdel(A)
-	for(var/datum/pollution/polly in world)
-		polly.scrub_amount(999, FALSE, TRUE)
+	for(var/turf/open/polly in world)
+		if(!polly.pollution)
+			continue
+		polly.pollution.scrub_amount(999, FALSE, TRUE)
 	for(var/atom/movable/liquid/li in world)
-		qdel(li)
+		li.delete_reagents_flat(999)
 /*
 	if(SSpollution.current_run.len)
 		var/datum/pollution/pollution = SSpollution.current_run[SSpollution.current_run.len]
