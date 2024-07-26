@@ -192,8 +192,8 @@
 			var/attack_message = "attack"
 			if(length(weapon.attack_verb_simple))
 				attack_message = pick(weapon.attack_verb_simple)
-			victim.visible_message(span_warning("<b>[victim]</b> blocks <b>[user]</b> [attack_message] with [weapon]!"), \
-							span_userdanger("I block <b>[user]</b> [attack_message] with [weapon]!"), \
+			victim.visible_message(span_warning("<b>[victim]</b> blocks <b>[user]'s</b> [attack_message] with [weapon]!"), \
+							span_userdanger("I block <b>[user]'s</b> [attack_message] with [weapon]!"), \
 							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
@@ -461,11 +461,11 @@
 		var/feign_attack_verb = pick(user.dna.species.attack_verb)
 		//successful feint
 		if(user_diceroll >= target_diceroll)
-			var/feint_message_spectator = "<b>[user]</b> feints [feign_attack_verb] on <b>[target]</b>]!"
+			var/feint_message_spectator = "<b>[user]</b> feints [feign_attack_verb] on <b>[target]'s</b>]!"
 			var/feint_message_victim = "Someone feints [feign_attack_verb] on me!"
 			var/feint_message_attacker = "I feint [feign_attack_verb] on someone!"
 			if(user in fov_viewers(2, target))
-				feint_message_attacker = "I feint [feign_attack_verb] on <b>[target]</b>!"
+				feint_message_attacker = "I feint [feign_attack_verb] on <b>[target]'s</b>!"
 			if(target in fov_viewers(2, user))
 				feint_message_victim = "<b>[user]</b> feints [feign_attack_verb] on me!"
 			target.visible_message(span_danger("[feint_message_spectator]"),\
@@ -479,11 +479,11 @@
 			target.update_dodging_cooldown(DODGING_COOLDOWN_DURATION)
 		//failed feint
 		else
-			var/feint_message_spectator = "<b>[user]</b> tries to feint [feign_attack_verb] on <b>[target]</b>!"
+			var/feint_message_spectator = "<b>[user]</b> tries to feint [feign_attack_verb] on <b>[target]'s</b>!"
 			var/feint_message_victim = "Someone is trying to feint [feign_attack_verb] on me!"
 			var/feint_message_attacker = "I'm trying to feint [feign_attack_verb] on someone"
 			if(user in fov_viewers(2, target))
-				feint_message_attacker = "I'm trying to feint [feign_attack_verb] on <b>[target]</b>!"
+				feint_message_attacker = "I'm trying to feint [feign_attack_verb] on <b>[target]'s</b>!"
 			if(target in fov_viewers(2, user))
 				feint_message_victim = "<b>[user]</b> tries to feint [feign_attack_verb] on me!"
 			target.visible_message(span_danger("[feint_message_spectator]"),\
@@ -662,12 +662,12 @@
 	if(!affecting)
 		playsound(target.loc, user.dna.species.miss_sound, 60, TRUE, -1)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but this limb is missing!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]'s</b> [hit_area], but this limb is missing!"), \
 							span_userdanger("<b>[user]</b> tries to [attack_verb] me in [hit_area], but this limb is missing!"), \
 							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but this limb is missing!"))
+			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]'</b> [hit_area], but this limb is missing!"))
 		else
 			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] himself in [hit_area], but this limb is missing!"), \
 							span_userdanger("I'm trying to [attack_verb] myself [hit_area], but this limb is missing!"), \
@@ -679,12 +679,12 @@
 	else if(diceroll == DICE_CRIT_FAILURE)
 		playsound(target.loc, user.dna.species.miss_sound, 60, TRUE, -1)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but misses!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]'s</b> [hit_area], but misses!"), \
 							span_userdanger("<b>[user]</b> tries to [attack_verb] me in [hit_area], but misses!"), \
 							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but miss!"))
+			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]'s</b> [hit_area], but miss!"))
 		else
 			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] himself in [hit_area], but misses!"), \
 							span_userdanger("I'm trying to [attack_verb] myself in [hit_area], but miss!"), \
@@ -713,12 +713,12 @@
 	target.sound_hint()
 	if(attack_damage < 0)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but to no avail!"), \
+			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]'s</b> [hit_area], but to no avail!"), \
 							span_userdanger("<b>[user]</b> tries to [attack_verb] me in [hit_area], but to no avail!"), \
 							span_hear("I hear combat!"), \
 							COMBAT_MESSAGE_RANGE, \
 							user)
-			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but to no avail!"))
+			to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]'s</b> [hit_area], but to no avail!"))
 		else
 			target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] himself in [hit_area], but to no avail!"), \
 							span_userdanger("I'm trying to [attack_verb] myself in [hit_area], but to no avail!"), \
@@ -739,12 +739,12 @@
 									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
 										var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
 										if(dicerollll >= DICE_SUCCESS)
-											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]</b> [hit_area], but [target] blocks with his hands!"), \
+											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]'s</b> [hit_area], but [target] blocks with his hands!"), \
 														span_userdanger("<b>[user]</b> tries to [attack_verb] my [hit_area], but I block with my hands!"), \
 														span_hear("I hear combat!"), \
 														COMBAT_MESSAGE_RANGE, \
 														user)
-											to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]</b> [hit_area], but [target] blocks with his hands!"))
+											to_chat(user, span_userdanger("I'm trying to [attack_verb] <b>[target]'s</b> [hit_area], but [target] blocks with his hands!"))
 											target.changeNext_move(CLICK_CD_GRABBING)
 //											target.update_blocking_penalty(BLOCKING_PENALTY, BLOCKING_PENALTY_COOLDOWN_DURATION)
 											target.adjustFatigueLoss(5)
@@ -770,12 +770,12 @@
 	post_hit_effects(target, user, affecting, attack_effect, attack_damage, MELEE, user.dna.species.attack_type, NONE, def_zone, intended_zone, modifiers)
 	if(def_zone == intended_zone)
 		if(user != target)
-			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
+			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] <b>[target]'s</b> [hit_area]![target.wound_message]"), \
 							span_userdanger("<b>[user]</b> [attack_verb_continuous] me in [hit_area]![target.wound_message]"), \
 							span_hear("I hear combat!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
-			to_chat(user, span_userdanger("I [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
+			to_chat(user, span_userdanger("I [attack_verb] <b>[target]'s</b> [hit_area]![target.wound_message]"))
 		else
 			target.visible_message(span_danger("<b>[user]</b> [attack_verb_continuous] himself in [hit_area]![target.wound_message]"), \
 							span_userdanger("I [attack_verb] myself in [hit_area]![target.wound_message]"), \
@@ -786,12 +786,12 @@
 		if(user != target)
 //			if(!lying_attack_check(user))
 //				return
-			target.visible_message(span_danger("<b>[user]</b> aims to [parsed_intended_zone], but [attack_verb_continuous] <b>[target]</b> [hit_area]![target.wound_message]"), \
+			target.visible_message(span_danger("<b>[user]</b> aims to [parsed_intended_zone], but [attack_verb_continuous] <b>[target]'s</b> [hit_area]![target.wound_message]"), \
 							span_userdanger("<b>[user]</b> aims to [parsed_intended_zone], but [attack_verb_continuous] me in [hit_area]![target.wound_message]"), \
 							span_hear("I hear combat!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = user)
-			to_chat(user, span_userdanger("I aim to [parsed_intended_zone], but [attack_verb] <b>[target]</b> [hit_area]![target.wound_message]"))
+			to_chat(user, span_userdanger("I aim to [parsed_intended_zone], but [attack_verb] <b>[target]'s</b> [hit_area]![target.wound_message]"))
 		else
 			target.visible_message(span_danger("<b>[user]</b> aims to [parsed_intended_zone], but [attack_verb_continuous] himself in [hit_area]![target.wound_message]"), \
 							span_userdanger("I aim to [parsed_intended_zone], but [attack_verb] myself in [hit_area]![target.wound_message]"), \

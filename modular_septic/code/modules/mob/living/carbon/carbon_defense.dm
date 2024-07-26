@@ -159,8 +159,8 @@
 	//disarm succesful
 	if(diceroll >= DICE_SUCCESS)
 		if(weapon_go_fwoosh)
-			visible_message(span_danger("<b>[src]</b> tries to disarm [held_item] у <b>[target]</b>, but [held_item] flies off!"), \
-						span_userdanger("I'm trying to disarm <b>[target]</b> [held_item], but [held_item] flies off!"), \
+			visible_message(span_danger("<b>[src]</b> tries to disarm <b>[target]'s</b> [held_item], but [held_item] flies off!"), \
+						span_userdanger("I'm trying to disarm <b>[target]'s</b> [held_item], but [held_item] flies off!"), \
 						span_danger("I hear combat!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = target)
@@ -169,8 +169,8 @@
 				var/turf/target_turf = get_edge_target_turf(held_item, direction)
 				held_item.throw_at(target_turf, held_item.throw_range, held_item.throw_speed, src, FALSE)
 		else
-			visible_message(span_danger("<b>[src]</b> disarms <b>[target]</b> [held_item]!"), \
-						span_userdanger("I disarm <b>[target]</b> [held_item]!"), \
+			visible_message(span_danger("<b>[src]</b> disarms <b>[target]'s</b> [held_item]!"), \
+						span_userdanger("I disarm <b>[target]'s</b> [held_item]!"), \
 						span_danger("I hear combat!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = target)
@@ -180,8 +180,8 @@
 		return
 	//epic disarm fail
 	else
-		visible_message(span_danger("<b>[src]</b> tries to disarm [held_item] <b>[target]</b>, but misses!"),
-					span_userdanger("I'm trying to disarm [held_item] <b>[target]</b>, but misses!"),
+		visible_message(span_danger("<b>[src]</b> tries to disarm [held_item] <b>[target]'s</b>, but misses!"),
+					span_userdanger("I'm trying to disarm [held_item] <b>[target]'s</b>, but misses!"),
 					span_danger("I hear combat!"),
 					vision_distance = COMBAT_MESSAGE_RANGE,
 					ignored_mobs = target)
