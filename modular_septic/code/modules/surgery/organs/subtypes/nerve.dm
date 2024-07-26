@@ -44,7 +44,7 @@
 					if(HAS_TRAIT(owner, tetraplegia))
 						paralyzed_limbs++
 				if(paralyzed_limbs < 4)
-					to_chat(owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
+					to_chat(owner, span_flashinguserdanger("I become <b>TETRAPLEGIC</b>!"))
 				for(var/tetraplegia in stephenhawking_traits)
 					ADD_TRAIT(owner, tetraplegia, NECK_FRACTURE_TRAIT)
 //				var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
@@ -115,7 +115,7 @@
 				if(HAS_TRAIT(owner, tetraplegia))
 					paralyzed_limbs++
 			if(paralyzed_limbs < 4)
-				to_chat(owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
+				to_chat(owner, span_flashinguserdanger("I become <b>TETRAPLEGIC</b>!"))
 			for(var/tetraplegia in stephenhawking_traits)
 				ADD_TRAIT(owner, tetraplegia, NECK_FRACTURE_TRAIT)
 /*
@@ -143,7 +143,7 @@
 				if(HAS_TRAIT(organ_owner, tetraplegia))
 					paralyzed_limbs++
 			if(paralyzed_limbs < 4)
-				to_chat(organ_owner, span_flashinguserdanger("Я стал <b>ТЕТРАПЛЕГИКОМ</b>!"))
+				to_chat(organ_owner, span_flashinguserdanger("I become <b>TETRAPLEGIC</b>!"))
 			for(var/tetraplegia in stephenhawking_traits)
 				ADD_TRAIT(organ_owner, tetraplegia, NECK_FRACTURE_TRAIT)
 /*
