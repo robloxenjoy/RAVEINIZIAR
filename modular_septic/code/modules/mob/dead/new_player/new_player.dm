@@ -137,11 +137,11 @@
 					if(spawn_point.name == client.role_ch)
 						if(spawn_point.spending > 0)
 							spawn_point.spending--
-							var/mob/living/carbon/human/character
+							var/mob/living/carbon/human/species/character = new(pick(spawn_point.loc))
 							if(client.role_ch == "halbermensch")
-								var/mob/living/carbon/human/species/halbermensch/character = new(pick(spawn_point.loc))
+								character.race = /datum/species/halbermensch
 							else
-								var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
+								character.race = /datum/species/human
 							character.gender = MALE
 							character.genitals = GENITALS_MALE
 							character.body_type = MALE
