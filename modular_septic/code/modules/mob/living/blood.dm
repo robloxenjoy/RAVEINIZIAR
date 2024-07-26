@@ -179,7 +179,7 @@
 		if(splatter_loc)
 			add_splatter_floor(turf_loc, FALSE)
 		var/obj/projectile/blood/spray = new(turf_loc, get_blood_dna_list(), TRUE)
-		spray.do_squirt(direction, range = rand(min_range, max_range), spread_min = spread_min, spread_max = spread_max)
+		spray.do_squirt(direction, range = 3, spread_min = spread_min, spread_max = spread_max)
 
 /// Blood volume adjust proc
 /mob/living/proc/adjust_bloodvolume(amount)

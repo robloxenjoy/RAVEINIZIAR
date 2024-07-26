@@ -124,7 +124,7 @@
 	mutantliver = /obj/item/organ/liver/halber
 	mutantkidneys = /obj/item/organ/kidneys/halber
 	mutantheart = /obj/item/organ/heart/halber
-	armor = 10
+	armor = 25
 	punchdamagelow = 14
 	punchdamagehigh = 18
 	liked_food = RAW | MEAT | GROSS | GRAIN | SEWAGE

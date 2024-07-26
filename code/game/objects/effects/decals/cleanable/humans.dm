@@ -187,14 +187,14 @@
 	dry()
 
 /obj/effect/decal/cleanable/blood/drip
-	name = "Капля Крови"
-	desc = "Красно-красно."
+	name = "Blood Drip"
+	desc = "So red."
 	icon_state = "drip5" //using drip5 since the others tend to blend in with pipes & wires.
 	random_icon_states = list("drip1","drip2","drip3","drip4","drip5")
 	bloodiness = 0
 	var/drips = 1
-	dryname = "Капля Крови"
-	drydesc = "Красно-красно."
+	name = "Blood Drip"
+	desc = "So red."
 
 /obj/effect/decal/cleanable/blood/drip/can_bloodcrawl_in()
 	return TRUE
@@ -202,8 +202,8 @@
 
 //BLOODY FOOTPRINTS
 /obj/effect/decal/cleanable/blood/footprints
-	name = "Следы"
-	desc = "Кровавые."
+	name = "Blood Footprints"
+	desc = "Bleeder."
 	icon = 'icons/effects/footprints.dmi'
 	icon_state = "blood1"
 	random_icon_states = null
@@ -217,8 +217,8 @@
 	/// List of species that have made footprints here.
 	var/list/species_types = list()
 
-	dryname = "Грязные Следы"
-	drydesc = "Кровавые, грязные следы!"
+	name = "Blood Footprints"
+	desc = "Bleeder."
 
 /obj/effect/decal/cleanable/blood/footprints/Initialize(mapload)
 	. = ..()

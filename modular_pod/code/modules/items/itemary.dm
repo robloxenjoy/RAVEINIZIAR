@@ -64,14 +64,14 @@
 	icon_state = "woodenthing"
 
 /obj/item/craftorshit/thing/steel
-	name = "Стальная Вещь"
-	desc = "Очень, очень странно."
+	name = "Steel Thing"
+	desc = "Very, very strange."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "steelthing"
 
 /obj/item/craftorshit/thing/blood
-	name = "Кровавая Вещь"
-	desc = "Очень, очень странно."
+	name = "Blood Thing"
+	desc = "Very, very strange."
 	icon = 'modular_pod/icons/obj/items/otherobjects.dmi'
 	icon_state = "bloodthing"
 

@@ -50,7 +50,7 @@
 			if(edge_protection <= 0)
 				src.open_incision(owner)
 				src.open_incision(owner)
-				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Incision!")]"))
+//				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_bolddanger(" [span_big("Incision!")]"))
 				for(var/obj/item/organ/bone/bonee as anything in getorganslotlist(ORGAN_SLOT_BONE))
 					if(bonee.is_broken())
 						playsound(get_turf(owner), 'modular_septic/sound/gore/dissection.ogg', 80, 0)

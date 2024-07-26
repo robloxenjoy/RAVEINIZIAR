@@ -130,11 +130,11 @@
 	var/eyes_amount = LAZYLEN(humie_owner.getorganslotlist(ORGAN_SLOT_EYES))
 	switch(failure_time)
 		if(0 to 3 * LIVER_FAILURE_STAGE_SECONDS - 1)
-			examine_list += span_notice("<b>[owner]</b> [eyes_amount > 1 ? "глаза" : "глаз"] немного [eyes_amount > 1 ? "желтоваые" : "желтоватый"].")
+			examine_list += span_notice("<b>[owner]</b> [eyes_amount > 1 ? "eyes" : "eye"] [eyes_amount > 1 ? "are" : "is"] a little [eyes_amount > 1 ? "yellowish" : "yellowish"].")
 		if(3 * LIVER_FAILURE_STAGE_SECONDS to 4 * LIVER_FAILURE_STAGE_SECONDS - 1)
-			examine_list += span_notice("<b>[owner]</b> [eyes_amount > 1 ? "глаза" : "глаз"] довольно [eyes_amount > 1 ? "жёлтые" : "жёлтый"].")
+			examine_list += span_notice("<b>[owner]</b> [eyes_amount > 1 ? "eyes" : "eye"] [eyes_amount > 1 ? "are" : "is"] somewhat [eyes_amount > 1 ? "yellow" : "yellow"].")
 		if(4 * LIVER_FAILURE_STAGE_SECONDS to INFINITY)
-			examine_list += span_danger("<b>[owner]</b> [eyes_amount > 1 ? "глаза" : "глаз"] совсем [eyes_amount > 1 ? "жёлтые" : "жёлтый"].")
+			examine_list += span_danger("<b>[owner]</b> [eyes_amount > 1 ? "eyes" : "eye"]  [eyes_amount > 1 ? "are" : "is"] toally [eyes_amount > 1 ? "yellow" : "yellow"].")
 
 /* Signal handler for the liver gaining the TRAIT_COMEDY_METABOLISM trait
  *

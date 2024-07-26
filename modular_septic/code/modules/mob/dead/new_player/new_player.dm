@@ -185,11 +185,13 @@
 			our.hairstyle = "Bald"
 			our.facial_hairstyle = "Shaved"
 		if("halbermensch")
-			our.pod_faction = "Halbermensch"
+			our.real_name = "Halbermensch"
+			our.pod_faction = null
 			our.truerole = "Halbermensch"
 			our.pod_faction = null
 			our.hairstyle = "Bald"
 			our.facial_hairstyle = "Shaved"
+			our.kaotiks_body = 100
 		if("god smo")
 			our.truerole = "God SMO"
 			our.pod_faction = "god smo"
