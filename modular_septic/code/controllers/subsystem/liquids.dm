@@ -21,9 +21,6 @@ SUBSYSTEM_DEF(liquids)
 
 	var/run_type = SSLIQUIDS_RUN_TYPE_TURFS
 
-	var/last_halb = 0
-	var/halb_delay = 1000
-
 /datum/controller/subsystem/liquids/proc/get_immutable(type)
 	if(!singleton_immutables[type])
 		var/atom/movable/liquid/immutable/new_one = new type()

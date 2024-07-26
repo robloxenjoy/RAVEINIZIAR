@@ -112,7 +112,9 @@
 				client.ready_char = FALSE
 				return
 		if("Halbermensch")
-			if(SSliquids.last_halb + SSliquids.halb_delay <= world.time)
+			var/number = GLOB.world_deaths_crazy_next
+			var/second = GLOB.player_list.len * 2
+			if(length(second) > number)
 				var/hal = "[global.config.directory]/hal.txt"
 				if(ckey in world.file2list(hal))
 					client.role_ch = "halbermensch"
@@ -121,9 +123,9 @@
 					client.ready_char = FALSE
 					return
 			else
-				alert("Cooldown is not over. Wait for [SSliquids.halb_delay] tacts.")
-				client.ready_char = FALSE
-				return
+					alert("Deaths are not balanced.")
+					client.ready_char = FALSE
+					return
 //			if(GLOB.world_deaths_crazy < 20)
 //				alert("Not enough deaths in the world.")
 //				client.ready_char = FALSE
@@ -157,7 +159,6 @@
 								things_two(character)
 								qdel(src)
 								updateshit(character)
-								SSliquids.last_halb = world.time
 						else
 							alert("No more slots.")
 							client.ready_char = FALSE
