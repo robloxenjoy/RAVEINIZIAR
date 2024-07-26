@@ -138,7 +138,7 @@
 						if(spawn_point.spending > 0)
 							spawn_point.spending--
 							var/mob/living/carbon/human/character
-							if(character.truerole == "Halbermensch")
+							if(client.role_ch == "halbermensch")
 								character = /mob/living/carbon/human/species/halbermensch
 								character = new(pick(spawn_point.loc))
 							else
