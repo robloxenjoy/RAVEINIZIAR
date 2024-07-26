@@ -124,9 +124,9 @@
 					boolets++
 			if(boolets > 0)
 				ammo_stack.update_appearance()
-				to_chat(user, span_notice("Я собираю [boolets] патрон. [ammo_stack] теперь [length(ammo_stack.stored_ammo)]."))
+				to_chat(user, span_notice("I collect [boolets]. [ammo_stack] now [length(ammo_stack.stored_ammo)]."))
 			else
-				to_chat(user, span_warning("Не получилось собрать!"))
+				to_chat(user, span_warning("Failed to collect!"))
 		return ..()
 	//SEPTIC EDIT END
 	/* SEPTIC EDIT REMOVAL

@@ -368,7 +368,7 @@
 		if(qdel_on_fail)
 			qdel(W)
 		else if(!disable_warning)
-			to_chat(src, span_warning("Не могу это экипировать."))
+			to_chat(src, span_warning("Can't equip this."))
 		return FALSE
 	equip_to_slot(W, slot, initial, redraw_mob) //This proc should not ever fail.
 	return TRUE
@@ -942,7 +942,7 @@
 /mob/proc/swap_hand()
 	var/obj/item/held_item = get_active_held_item()
 	if(SEND_SIGNAL(src, COMSIG_MOB_SWAP_HANDS, held_item) & COMPONENT_BLOCK_SWAP)
-		to_chat(src, span_warning("Моя другая рука занята [held_item]."))
+		to_chat(src, span_warning("My other hand is busy with [held_item]."))
 		return FALSE
 	return TRUE
 

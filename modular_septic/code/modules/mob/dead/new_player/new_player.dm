@@ -112,11 +112,16 @@
 				client.ready_char = FALSE
 				return
 		if("Halbermensch")
-			var/hal = "[global.config.directory]/hal.txt"
-			if(ckey in world.file2list(hal))
-				client.role_ch = "halbermensch"
+			if(SSliquids.last_halb + SSliquids.halb_delay <= world.time)
+				var/hal = "[global.config.directory]/hal.txt"
+				if(ckey in world.file2list(hal))
+					client.role_ch = "halbermensch"
+				else
+					alert("Donate for this role.")
+					client.ready_char = FALSE
+					return
 			else
-				alert("Donate for this role.")
+				alert("Cooldown is not over. Wait for [SSliquids.halb_delay] tacts.")
 				client.ready_char = FALSE
 				return
 //			if(GLOB.world_deaths_crazy < 20)
@@ -152,6 +157,7 @@
 								things_two(character)
 								qdel(src)
 								updateshit(character)
+								SSliquids.last_halb = world.time
 						else
 							alert("No more slots.")
 							client.ready_char = FALSE
@@ -344,7 +350,7 @@
 	name = "Svogod Uniform"
 
 	r_hand = /obj/item/podpol_weapon/axe/big
-	belt = /obj/item/melee/hehe/pickaxe/iron
+	l_hand = /obj/item/melee/hehe/pickaxe/iron
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	back = /obj/item/storage/belt/military/itobe/svo

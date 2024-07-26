@@ -219,7 +219,7 @@
 /datum/emote/living/laugh
 	key = "laugh"
 	key_third_person = "laughs"
-	message = "laungs."
+	message = "laughs."
 	message_mime = "смеётся тихонько!"
 	emote_type = EMOTE_AUDIBLE
 	audio_cooldown = 5 SECONDS

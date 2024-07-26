@@ -54,14 +54,14 @@
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES | PEPPERPROOF
 //	lowers_pitch = TRUE
 	subarmor = list(SUBARMOR_FLAGS = NONE, \
-				EDGE_PROTECTION = 25, \
-				CRUSHING = 10, \
-				CUTTING = 25, \
-				PIERCING = 50, \
-				IMPALING = 14, \
+				EDGE_PROTECTION = 29, \
+				CRUSHING = 12, \
+				CUTTING = 27, \
+				PIERCING = 54, \
+				IMPALING = 17, \
 				LASER = 1, \
 				ENERGY = 0, \
-				BOMB = 13, \
+				BOMB = 10, \
 				BIO = 0, \
 				FIRE = 2, \
 				ACID = 2, \

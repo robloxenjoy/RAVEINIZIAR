@@ -304,7 +304,7 @@
 				return TRUE
 		else
 			if(L.body_position != STANDING_UP)
-				if(prob(70))
+				if(prob(80))
 					return TRUE
 	return TRUE
 

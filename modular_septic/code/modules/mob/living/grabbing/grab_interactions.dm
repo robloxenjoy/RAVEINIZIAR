@@ -252,6 +252,9 @@
 			return FALSE
 	var/epic_success = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
 	if(epic_success >= DICE_SUCCESS)
+		if(!do_mob(owner, victim, 2 SECONDS))
+			to_chat(owner, span_warning(fail_msg()))
+			return
 		if(owner != victim)
 			victim.visible_message(span_danger("<b>[owner]</b> tears off <b>[victim]</b> [grasped_part.name]!"), \
 							span_userdanger("<b>[owner]</b> tears off [grasped_part.name]!"), \

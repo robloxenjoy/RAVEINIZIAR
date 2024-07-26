@@ -19,11 +19,11 @@
 
 ///Vomit
 /datum/pollutant/vomit
-	name = "Блевотня"
+	name = "vomit"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
-	scent = "блевотина"
+	scent = "vomit"
 	color = "#92cd48"
 	thickness = 3
 
@@ -31,18 +31,18 @@
 	var/message
 	switch(amount)
 		if(0 to 10)
-			message = span_warning("Чё за запах?!")
+			message = span_warning("What a smell!")
 			if(prob(15))
 				victim.emote("gag")
 			if(prob(10))
 				victim.vomit(rand(40, 50), prob(amount))
 		if(10 to 30)
-			message = span_warning("Я щас блевать буду...")
+			message = span_warning("I will vomit...")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded)
 			if(prob(25))
 				victim.vomit(rand(50, 60), prob(amount))
 		if(30 to INFINITY)
-			message = span_bolddanger("Этот запах ужасен!")
+			message = span_bolddanger("So terrible smell!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
 			victim.adjustToxLoss(1.5)
 			if(prob(35))
@@ -56,13 +56,13 @@
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE
 	smell_intensity = 1
 	descriptor = SCENT_DESC_ODOR
-	scent = "сперма"
+	scent = "sperm"
 	color = "#FFFFFF"
 	thickness = 2
 
 ///Piss
 /datum/pollutant/urine
-	name = "Моча"
+	name = "Urine"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
@@ -74,18 +74,18 @@
 	var/message
 	switch(amount)
 		if(0 to 10)
-			message = span_warning("Что это за запах?!")
+			message = span_warning("What a smell!")
 			if(prob(15))
 				victim.emote("gag")
 			if(prob(10))
 				victim.vomit(rand(15, 20), prob(amount))
 		if(10 to 30)
-			message = span_warning("Блять, этот запах...")
+			message = span_warning("I will vomit...")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded)
 			if(prob(25))
 				victim.vomit(rand(20, 40), prob(amount))
 		if(30 to INFINITY)
-			message = span_bolddanger("ЗАПАХ! СУКА, ФУ!")
+			message = span_bolddanger("So terrible smell!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
 			victim.adjustToxLoss(1.5)
 			if(prob(35))
