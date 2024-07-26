@@ -170,7 +170,7 @@
 	. = ..()
 	if(!isinhands)
 //		. += emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
-		var/mutable_appearance/appearance = mutable_appearance(icon_file, "green-emissive", alpha = src.alpha, ROLES_LAYER, EMISSIVE_PLANE, appearance_flags | EMISSIVE_APPEARANCE_FLAGS)
+		var/mutable_appearance/appearance = mutable_appearance(icon = icon_file, icon_state = "green-emissive", alpha = src.alpha, layer = ROLES_LAYER, plane = EMISSIVE_PLANE, appearance_flags | EMISSIVE_APPEARANCE_FLAGS)
 		add_overlay(appearance)
 
 /obj/item/clothing/glasses/night/Initialize(mapload)

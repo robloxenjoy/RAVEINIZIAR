@@ -138,10 +138,6 @@
 						if(spawn_point.spending > 0)
 							spawn_point.spending--
 							var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
-							if(character.truerole == "Halbermensch")
-								character.set_species(/datum/species/halbermensch)
-							else
-								character.set_species(/datum/species/human)
 							character.gender = MALE
 							character.genitals = GENITALS_MALE
 							character.body_type = MALE
@@ -283,6 +279,10 @@
 							character.dna.update_dna_identity()
 							character.attributes?.update_attributes()
 							character.regenerate_icons()
+							if(character.truerole == "Halbermensch")
+								character.set_species(/datum/species/halbermensch)
+							else
+								character.set_species(/datum/species/human)
 
 						else
 							alert("No more slots.")
