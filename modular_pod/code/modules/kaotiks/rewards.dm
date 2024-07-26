@@ -208,7 +208,7 @@
 		noob.prefs?.adjust_bobux(cost)
 		return FALSE
 */
-
+/*
 /datum/bobux_reward/market_crash
 	name = "Destroy Kaotik System"
 	desc = "Why not?"
@@ -221,6 +221,7 @@
 	. = ..()
 	to_chat(world, "<span class='userdanger'><span class='big bold'>Kaotik System was destroyed by [noob.key]!</span></span>")
 	SSbobux.working = FALSE
+*/
 /*
 //	SEND_SOUND(world, sound('modular_skyrat/sound/misc/dumpit.ogg', volume = 50))
 	message_admins("[noob] has destroyed the kaotik system!")
@@ -447,6 +448,10 @@
 		if(QDELETED(A))
 			continue
 		qdel(A)
+	for(var/datum/pollution/polly in world)
+		polly.scrub_amount(999, FALSE, TRUE)
+	for(var/atom/movable/liquid/li in world)
+		qdel(li)
 /*
 	if(SSpollution.current_run.len)
 		var/datum/pollution/pollution = SSpollution.current_run[SSpollution.current_run.len]
