@@ -123,9 +123,9 @@
 					client.ready_char = FALSE
 					return
 			else
-					alert("Deaths are not balanced.")
-					client.ready_char = FALSE
-					return
+				alert("Deaths are not balanced.")
+				client.ready_char = FALSE
+				return
 //			if(GLOB.world_deaths_crazy < 20)
 //				alert("Not enough deaths in the world.")
 //				client.ready_char = FALSE
