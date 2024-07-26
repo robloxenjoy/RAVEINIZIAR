@@ -131,7 +131,7 @@
 	disliked_food = CLOTH
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	say_mod = "defigures"
-	attack_verb = "crashes"
+	attack_verb = "crash"
 	bite_sharpness = SHARP_POINTY
 	attack_sharpness = NONE
 	limbs_icon = 'modular_pod/icons/mob/human/species/human/halbermensch_parts.dmi'
