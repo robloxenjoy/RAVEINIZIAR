@@ -136,154 +136,22 @@
 				if(client)
 					if(spawn_point.name == client.role_ch)
 						if(spawn_point.spending > 0)
-							spawn_point.spending--
-							var/mob/living/carbon/human/species/character = new(pick(spawn_point.loc))
-							if(client.role_ch == "halbermensch")
-								character.race = /datum/species/halbermensch
+							if(client.role_ch != "halbermensch")
+								spawn_point.spending--
+								var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
+								important(character)
+								things(character)
+								things_two(character)
+								qdel(src)
+								updateshit(character)
 							else
-								character.race = /datum/species/human
-							character.gender = MALE
-							character.genitals = GENITALS_MALE
-							character.body_type = MALE
-							character.chat_color = ""
-							character.real_name = client.name_ch
-							character.name = character.real_name
-							character.age = client.age_ch
-							character.handed_flags = DEFAULT_HANDEDNESS
-							character.fully_heal(TRUE)
-
-							var/eye_coloring = pick("#000000", "#1f120f")
-//							var/height = HUMAN_HEIGHT_MEDIUM
-							switch(client.role_ch)
-								if("kapnobatai")
-									character.truerole = "Kapnobatai"
-									character.pod_faction = "kapnobatai"
-									character.hairstyle = "Bedhead 2"
-									character.facial_hairstyle = "Shaved"
-									character.hair_color = pick("#000000", "#1f120f", "#d7d49f")
-								if("asshole")
-									character.truerole = "Asshole"
-									character.pod_faction = "asshole"
-									character.hairstyle = "Bald"
-									character.facial_hairstyle = "Shaved"
-									eye_coloring = "#c30000"
-								if("halbermensch")
-									character.pod_faction = "Halbermensch"
-									character.truerole = "Halbermensch"
-									character.pod_faction = null
-									character.hairstyle = "Bald"
-									character.facial_hairstyle = "Shaved"
-								if("god smo")
-									character.truerole = "God SMO"
-									character.pod_faction = "god smo"
-									character.hairstyle = "Bedhead 2"
-									character.facial_hairstyle = "Shaved"
-									character.hair_color = pick("#ff0aff")
-									character.kaotiks_body = 100
-									character.real_name = "God SMO"
-									character.name = character.real_name
-									character.height = HUMAN_HEIGHT_TALLEST
-							switch(character.truerole)
-								if("Kapnobatai")
-									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
-									character.add_overlay(appearance)
-									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
-									if(prob(10))
-										character.equipOutfit(/datum/outfit/kapnofather)
-										character.special_zvanie = "Kapnobataes Father"
-									else
-										character.equipOutfit(/datum/outfit/kapno)
-								if("Asshole")
-									var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
-									character.add_overlay(appearance)
-									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/konch)
-									if(prob(10))
-										character.equipOutfit(/datum/outfit/mostkonch)
-										character.special_zvanie = "The Most Asshole"
-									else
-										character.equipOutfit(/datum/outfit/konch)
-								if("God SMO")
-									character.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
-									character.equipOutfit(/datum/outfit/svogod)
-							for(var/obj/item/organ/eyes/organ_eyes in character.internal_organs)
-		//						if(initial(organ_eyes.eye_color))
-		//							continue
-								if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
-									character.left_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
-									organ_eyes.old_eye_color = eye_coloring
-									character.dna.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
-								else
-									character.right_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
-									organ_eyes.old_eye_color = eye_coloring
-									character.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
-/*
-							for(var/obj/item/organ/genital/genital in character.internal_organs)
-								genital.Remove(character)
-								qdel(genital)
-*/
-							mind.active = FALSE
-							mind.transfer_to(character)
-							mind.set_original_character(character)
-							character.key = key
-							qdel(src)
-
-							var/datum/component/babble/babble = character.GetComponent(/datum/component/babble)
-							if(!babble)
-								switch(character.truerole)
-									if("Kapnobatai")
-										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
-									if("Asshole")
-										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
-									if("Halbermensch")
-										character.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
-									else
-										character.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
-							else
-								switch(character.truerole)
-									if("Kapnobatai")
-										babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
-									if("Asshole")
-										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
-									if("Halbermensch")
-										character.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
-									else
-										babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_agender.ogg'
-								babble.volume = BABBLE_DEFAULT_VOLUME
-								babble.duration = BABBLE_DEFAULT_DURATION
-
-							character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-							var/area/joined_area = get_area(character.loc)
-							if(joined_area)
-								joined_area.on_joining_game(character)
-//							var/obj/item/organ/brain/brain = character.getorganslot(ORGAN_SLOT_BRAIN)
-//							if(brain)
-	//							(brain.maxHealth = BRAIN_DAMAGE_DEATH + GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE))
-							for(var/obj/item/organ/genital/genital in character.internal_organs)
-								genital.build_from_dna(character.dna, genital.mutantpart_key)
-							for(var/obj/item/organ/plushp in character.internal_organs)
-								plushp.maxHealth += GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE)
-							for(var/obj/item/bodypart/plusbodyhp as anything in character.bodyparts)
-								plusbodyhp.max_damage += GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE)
-								plusbodyhp.max_stamina_damage += GET_MOB_ATTRIBUTE_VALUE(character, STAT_ENDURANCE)
-							character.gain_extra_effort(1, TRUE)
-							to_chat(character, span_dead("I keep looking for my right way."))
-							character.playsound_local(character, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
-							character.cursings()
-	//						character.friendroles()
-
-							if(character.special_zvanie)
-								switch(character.special_zvanie)
-									if("Kapnobataes Father")
-										to_chat(character, span_yellowteamradio("I'm Kapnobataes Father!"))
-									if("The Most Asshole")
-										to_chat(character, span_yellowteamradio("I'm The Most Asshole!"))
-//							character.height = height
-							character.dna.features["body_size"] = BODY_SIZE_NORMAL
-							character.dna.update_body_size()
-							character.dna.update_dna_identity()
-							character.attributes?.update_attributes()
-							character.regenerate_icons()
-
+								spawn_point.spending--
+								var/mob/living/carbon/human/species/halbermensch/character = new(pick(spawn_point.loc))
+								important(character)
+								things(character)
+								things_two(character)
+								qdel(src)
+								updateshit(character)
 						else
 							alert("No more slots.")
 							client.ready_char = FALSE
@@ -291,6 +159,138 @@
 		if("Yes, it seems like a different role...")
 			client.ready_char = FALSE
 			return FALSE
+
+/mob/dead/new_player/proc/important(mob/living/carbon/human/our)
+	our.gender = MALE
+	our.genitals = GENITALS_MALE
+	our.body_type = MALE
+	our.chat_color = ""
+	our.real_name = client.name_ch
+	our.name = our.real_name
+	our.age = client.age_ch
+	our.handed_flags = DEFAULT_HANDEDNESS
+	our.fully_heal(TRUE)
+
+/mob/dead/new_player/proc/things(mob/living/carbon/human/our)
+	var/eye_coloring = pick("#000000", "#1f120f")
+	switch(client.role_ch)
+		if("kapnobatai")
+			our.truerole = "Kapnobatai"
+			our.pod_faction = "kapnobatai"
+			our.hairstyle = "Bedhead 2"
+			our.facial_hairstyle = "Shaved"
+			our.hair_color = pick("#000000", "#1f120f", "#d7d49f")
+		if("asshole")
+			our.truerole = "Asshole"
+			our.pod_faction = "asshole"
+			our.hairstyle = "Bald"
+			our.facial_hairstyle = "Shaved"
+			eye_coloring = "#c30000"
+		if("halbermensch")
+			our.pod_faction = "Halbermensch"
+			our.truerole = "Halbermensch"
+			our.pod_faction = null
+			our.hairstyle = "Bald"
+			our.facial_hairstyle = "Shaved"
+		if("god smo")
+			our.truerole = "God SMO"
+			our.pod_faction = "god smo"
+			our.hairstyle = "Bedhead 2"
+			our.facial_hairstyle = "Shaved"
+			our.hair_color = pick("#ff0aff")
+			our.kaotiks_body = 100
+			our.real_name = "God SMO"
+			our.name = our.real_name
+			our.height = HUMAN_HEIGHT_TALLEST
+	switch(our.truerole)
+		if("Kapnobatai")
+			var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
+			our.add_overlay(appearance)
+			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
+			if(prob(10))
+				our.equipOutfit(/datum/outfit/kapnofather)
+				our.special_zvanie = "Kapnobataes Father"
+			else
+				our.equipOutfit(/datum/outfit/kapno)
+		if("Asshole")
+			var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
+			our.add_overlay(appearance)
+			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/konch)
+			if(prob(10))
+				our.equipOutfit(/datum/outfit/mostkonch)
+				our.special_zvanie = "The Most Asshole"
+			else
+				our.equipOutfit(/datum/outfit/konch)
+		if("God SMO")
+			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
+			our.equipOutfit(/datum/outfit/svogod)
+
+/mob/dead/new_player/proc/updateshit(mob/living/carbon/human/our)
+	var/datum/component/babble/babble = our.GetComponent(/datum/component/babble)
+	if(!babble)
+		switch(our.truerole)
+			if("Kapnobatai")
+				our.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
+			if("Asshole")
+				our.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
+			if("Halbermensch")
+				our.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
+			else
+				our.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
+	else
+		switch(our.truerole)
+			if("Kapnobatai")
+				babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
+			if("Asshole")
+				babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
+			if("Halbermensch")
+				our.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
+			else
+				babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_agender.ogg'
+		babble.volume = BABBLE_DEFAULT_VOLUME
+		babble.duration = BABBLE_DEFAULT_DURATION
+
+	our.stop_sound_channel(CHANNEL_LOBBYMUSIC)
+	var/area/joined_area = get_area(our.loc)
+	if(joined_area)
+		joined_area.on_joining_game(our)
+	for(var/obj/item/organ/genital/genital in our.internal_organs)
+		genital.build_from_dna(our.dna, genital.mutantpart_key)
+	for(var/obj/item/organ/plushp in our.internal_organs)
+		plushp.maxHealth += GET_MOB_ATTRIBUTE_VALUE(our, STAT_ENDURANCE)
+	for(var/obj/item/bodypart/plusbodyhp as anything in our.bodyparts)
+		plusbodyhp.max_damage += GET_MOB_ATTRIBUTE_VALUE(our, STAT_ENDURANCE)
+		plusbodyhp.max_stamina_damage += GET_MOB_ATTRIBUTE_VALUE(our, STAT_ENDURANCE)
+	our.gain_extra_effort(1, TRUE)
+	to_chat(our, span_dead("I keep looking for my right way."))
+	our.playsound_local(our, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
+	our.cursings()
+	if(our.special_zvanie)
+		switch(our.special_zvanie)
+			if("Kapnobataes Father")
+				to_chat(our, span_yellowteamradio("I'm Kapnobataes Father!"))
+			if("The Most Asshole")
+				to_chat(our, span_yellowteamradio("I'm The Most Asshole!"))
+	our.dna.features["body_size"] = BODY_SIZE_NORMAL
+	our.dna.update_body_size()
+	our.dna.update_dna_identity()
+	our.attributes?.update_attributes()
+	our.regenerate_icons()
+
+/mob/dead/new_player/proc/things_two(mob/living/carbon/human/our)
+	for(var/obj/item/organ/eyes/organ_eyes in our.internal_organs)
+		if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
+			our.left_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
+			organ_eyes.old_eye_color = eye_coloring
+			our.dna.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
+		else
+			our.right_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
+			organ_eyes.old_eye_color = eye_coloring
+			our.dna.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
+	mind.active = FALSE
+	mind.transfer_to(our)
+	mind.set_original_character(our)
+	our.key = key
 
 /datum/outfit/kapno
 	name = "Kapno Uniform"
