@@ -172,7 +172,6 @@
 	our.fully_heal(TRUE)
 
 /mob/dead/new_player/proc/things(mob/living/carbon/human/our)
-	var/eye_coloring = pick("#000000", "#1f120f")
 	switch(client.role_ch)
 		if("kapnobatai")
 			our.truerole = "Kapnobatai"
@@ -185,7 +184,6 @@
 			our.pod_faction = "asshole"
 			our.hairstyle = "Bald"
 			our.facial_hairstyle = "Shaved"
-			eye_coloring = "#c30000"
 		if("halbermensch")
 			our.pod_faction = "Halbermensch"
 			our.truerole = "Halbermensch"
@@ -278,6 +276,10 @@
 	our.regenerate_icons()
 
 /mob/dead/new_player/proc/things_two(mob/living/carbon/human/our)
+	var/eye_coloring = pick("#000000", "#1f120f")
+	switch(client.role_ch)
+		if("asshole")
+			eye_coloring = "#c30000"
 	for(var/obj/item/organ/eyes/organ_eyes in our.internal_organs)
 		if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)
 			our.left_eye_color = sanitize_hexcolor(eye_coloring, 6, FALSE)
