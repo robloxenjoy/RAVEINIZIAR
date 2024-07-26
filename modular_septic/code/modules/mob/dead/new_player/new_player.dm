@@ -196,10 +196,9 @@
 			our.real_name = "Halbermensch"
 			our.pod_faction = null
 			our.truerole = "Halbermensch"
-			our.pod_faction = null
 			our.hairstyle = "Bald"
 			our.facial_hairstyle = "Shaved"
-			our.kaotiks_body = 100
+			our.kaotiks_body = 50
 		if("god smo")
 			our.truerole = "God SMO"
 			our.pod_faction = "god smo"

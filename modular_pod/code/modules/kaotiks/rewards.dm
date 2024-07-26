@@ -276,7 +276,7 @@
 /datum/bobux_reward/farto
 	name = "Chungus Prank"
 	desc = "Make everyone PPFV!"
-	buy_message = "Я сын чангуса!"
+	buy_message = "I'm Chungus Son!"
 	id = "fart"
 	cost = 200
 //	single_use = TRUE
@@ -427,7 +427,7 @@
 
 /datum/bobux_reward/cleanmap
 	name = "Clear Map"
-	desc = "Delete corpses!"
+	desc = "Delete corpses and liquids!"
 	buy_message = "<b>Good-good!</span>"
 	id = "clear"
 	cost = 500
@@ -448,10 +448,8 @@
 		if(QDELETED(A))
 			continue
 		qdel(A)
-	for(var/turf/open/polly in world)
-		if(!polly.pollution)
-			continue
-		polly.pollution.scrub_amount(999, FALSE, TRUE)
+	for(var/datum/pollution/pollution/polly in world)
+		polly.scrub_amount(999, FALSE, TRUE)
 	for(var/atom/movable/liquid/li in world)
 		li.delete_reagents_flat(999)
 /*
