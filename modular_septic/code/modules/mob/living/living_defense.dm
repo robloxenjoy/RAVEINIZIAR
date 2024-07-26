@@ -134,8 +134,8 @@
 /mob/living/IgniteMob()
 	if(fire_stacks > 0 && !on_fire)
 		on_fire = TRUE
-		src.visible_message(span_warning("<b>[src]</b> охватывает пламенем!"), \
-						span_userdanger("Я охвачен пламенем!"))
+		src.visible_message(span_warning("<b>[src]</b> engulfed in flames!"), \
+						span_userdanger("I'm engulfed in flames!"))
 		new /obj/effect/dummy/lighting_obj/moblight/fire(src)
 		throw_alert("fire", /atom/movable/screen/alert/fire)
 		update_fire()

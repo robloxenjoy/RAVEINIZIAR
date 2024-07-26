@@ -160,11 +160,19 @@
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
+/*
+/obj/item/clothing/glasses/night/update_overlays()
+	. = ..()
+	. += emissive_appearance(icon, "green-emissive", alpha = src.alpha)
+*/
 
 /obj/item/clothing/glasses/night/worn_overlays(mutable_appearance/standing, isinhands, icon_file)
 	. = ..()
 	if(!isinhands)
-		. += emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
+//		. += emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
+		var/static/image/emissive_overlay
+		emissive_overlay = emissive_appearance(icon_file, "green-emissive", alpha = src.alpha)
+		. += emissive_overlay
 
 /obj/item/clothing/glasses/night/Initialize(mapload)
 	. = ..()

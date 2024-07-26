@@ -193,14 +193,14 @@
 							vision_distance = EYE_CONTACT_RANGE)
 	else
 		if(!ismob(examined))
-			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> интересно смотрит на [examined].")), \
-						span_notice("Я интересно смотрю на <b>[examined]</b>."), \
+			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> strangely looks at [examined].")), \
+						span_notice("I strangely look at <b>[examined]</b>."), \
 						vision_distance = EYE_CONTACT_RANGE)
 		else
 			var/mob/mob_examined = examined
-			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> интересно смотрит на \
+			visible_message(span_emote(span_notice("<span style='color: [chat_color];'><b>[src]</b></span> strangely looks at \
 						<span style='color: [mob_examined.chat_color];'><b>[examined]</b></span>.")), \
-						span_notice("Я интересно смотрю на <b>[examined]</b>."), \
+						span_notice("I strangely look at <b>[examined]</b>."), \
 						vision_distance = EYE_CONTACT_RANGE)
 	if(HAS_TRAIT(src, TRAIT_HORROR_STARE))
 		if(!ismob(examined))

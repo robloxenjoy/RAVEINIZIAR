@@ -1,6 +1,6 @@
 /obj/item/organ/bone/head
-	name = "Череп"
-	desc = "Древне и символично."
+	name = "Skull"
+	desc = "Ancient and symbolic."
 	icon_state = "skull"
 	base_icon_state = "skull"
 	zone = BODY_ZONE_HEAD

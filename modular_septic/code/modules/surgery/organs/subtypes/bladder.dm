@@ -1,9 +1,9 @@
 /obj/item/organ/bladder
-	name = "Мочевой пузырь"
+	name = "Bladder"
 	icon_state = "bladder"
-	desc = "Там, где вода помирает."
-	attack_verb_continuous = list("ссыт")
-	attack_verb_simple = list("ссать")
+	desc = "еWhere the water dies."
+	attack_verb_continuous = list("pisses")
+	attack_verb_simple = list("piss")
 	w_class = WEIGHT_CLASS_SMALL
 
 	zone = BODY_ZONE_PRECISE_GROIN

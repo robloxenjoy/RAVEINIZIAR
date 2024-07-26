@@ -598,6 +598,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 
 /mob/dead/observer/verb/particlize()
+	set hidden = TRUE
 	set category = "End"
 	set name = "Rebirth"
 	set desc = "Are you want?"

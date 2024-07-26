@@ -1,5 +1,5 @@
 /obj/item/organ/anus
-	name = "Анус"
+	name = "Anus"
 	desc = "?"
 	icon = 'modular_septic/icons/obj/items/genitalia/asshole.dmi'
 	icon_state = "anus"

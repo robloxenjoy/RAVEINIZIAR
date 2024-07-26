@@ -1361,7 +1361,7 @@
 			var/datum/injury/compatible_injury = pick(compatible_injuries)
 			compatible_injury.open_injury(damage)
 			if(owner && wound_messages && prob(25 + damage))
-				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_warning(" [compatible_injury.get_desc()] на [src] ухудшается!"))
+				SEND_SIGNAL(owner, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_warning(" [compatible_injury.get_desc()] on [src] worses!"))
 			last_injury = compatible_injury
 			. = compatible_injury
 

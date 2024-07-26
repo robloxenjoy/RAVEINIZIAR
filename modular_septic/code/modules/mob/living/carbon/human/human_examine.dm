@@ -171,7 +171,7 @@
 		if(HAS_TRAIT(src, TRAIT_UNNATURAL_RED_GLOWY_EYES))
 			. += "<span class='warning'><B>He has crazy eyes!</B></span>"
 		if(HAS_TRAIT(src, TRAIT_FLUORIDE_STARE))
-			. += "<span class='animated'>У него пространственный взгляд...</B></span>"
+			. += "<span class='animated'>He has a spatial view...</B></span>"
 		if(HAS_TRAIT(src, TRAIT_BLOODARN))
 			. += "<span class='warning'>У него широкие зрачки.</B></span>"
 		if(HAS_TRAIT(src, TRAIT_HORROR_STARE))

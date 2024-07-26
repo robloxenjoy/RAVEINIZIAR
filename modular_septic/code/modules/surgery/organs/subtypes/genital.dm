@@ -1,6 +1,6 @@
 /obj/item/organ/genital
-	name = "Гениталия"
-	desc = "Один из самых ценных органов."
+	name = "Genital"
+	desc = "One of the most valuable organs."
 	maxHealth = STANDARD_ORGAN_THRESHOLD * 0.5
 	high_threshold = STANDARD_ORGAN_THRESHOLD * 0.4
 	low_threshold = STANDARD_ORGAN_THRESHOLD * 0.1

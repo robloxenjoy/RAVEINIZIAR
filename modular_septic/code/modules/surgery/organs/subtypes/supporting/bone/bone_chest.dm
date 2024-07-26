@@ -1,6 +1,6 @@
 /obj/item/organ/bone/chest
-	name = "Грудная Клетка"
-	desc = "Из рёбер."
+	name = "Ribcage"
+	desc = "Do you like Giger?"
 	icon_state = "ribcage"
 	base_icon_state = "ribcage"
 	zone = BODY_ZONE_CHEST

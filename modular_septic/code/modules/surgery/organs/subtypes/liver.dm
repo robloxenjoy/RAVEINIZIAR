@@ -1,6 +1,6 @@
 /obj/item/organ/liver
-	name = "Печень"
-	desc = "Пей меньше."
+	name = "Liver"
+	desc = "Life."
 	icon_state = "liver"
 	base_icon_state = "liver"
 	zone = BODY_ZONE_CHEST

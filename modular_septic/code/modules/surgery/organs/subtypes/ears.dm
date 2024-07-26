@@ -1,7 +1,7 @@
 /obj/item/organ/ears
 	name = "Ear"
 	icon_state = "ears"
-	desc = "Как будто кто-то смотрит оттуда."
+	desc = "It's like someone is watching from there."
 
 	dna_block = DNA_EARS_BLOCK
 	mutantpart_key = "ears"
