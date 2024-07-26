@@ -1,6 +1,6 @@
 ///Dangerous fires release this from the waste they're burning
 /datum/pollutant/carbon_air_pollution
-	name = "Углеродное Загрязнение"
+	name = "Carbon air pollution"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	color = "#b49993"
 	thickness = 2
@@ -15,12 +15,12 @@
 
 ///Dust from mining drills
 /datum/pollutant/dust
-	name = "Пыль"
+	name = "Dust"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	thickness = 2
 	color = "#FFED9C"
 	filter_wear = 0.25
-	scent = "пыль"
+	scent = "dust"
 
 /datum/pollutant/dust/breathe_act(mob/living/carbon/victim, amount)
 	if(amount <= 5)
@@ -65,12 +65,12 @@
 
 ///IG grenades
 /datum/pollutant/incredible_gas
-	name = "Ебанутый Газ"
+	name = "Incredible gas"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL | POLLUTANT_BREATHE_ACT
 	smell_intensity = 4
 	thickness = 2
 	descriptor = SCENT_DESC_ODOR
-	scent = "смерть и кислота"
+	scent = "death and acid"
 	color = "#00DA00"
 	filter_wear = 1
 
@@ -78,14 +78,14 @@
 	var/message
 	switch(amount)
 		if(0 to 3)
-			message = span_warning("Чё за запах?!")
+			message = span_warning("What is this mell?!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/incredible_gas)
 			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
 			victim.adjustToxLoss(2)
 			if(prob(60))
 				victim.vomit(40, blood = prob(amount), stun = FALSE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
 		if(3 to 10)
-			message = span_warning("Этот запах страшен!")
+			message = span_warning("This smell is terrible!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/incredible_gas/harsh)
 			victim.apply_status_effect(/datum/status_effect/incredible_gas)
 			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 4)
@@ -93,7 +93,7 @@
 			if(prob(75))
 				victim.vomit(50, blood = prob(amount*3), stun = TRUE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
 		if(10 to INFINITY)
-			message = span_bolddanger("Этот запах ЕБАНУТО ОПАСЕН!")
+			message = span_bolddanger("This smell is FUCKING DANGEROUS!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/incredible_gas/harsh)
 			victim.apply_status_effect(/datum/status_effect/incredible_gas)
 			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 8)
@@ -212,11 +212,11 @@
 		to_chat(victim, message)
 
 /datum/pollutant/redoz
-	name = "Рэдоз"
+	name = "Redoz"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
 	descriptor = SCENT_DESC_ODOR
-	scent = "рэдозка"
+	scent = "redoz"
 	color = "#ff0000"
 	thickness = 4
 
@@ -224,14 +224,14 @@
 	var/message
 	switch(amount)
 		if(0 to 3)
-			message = span_warning("Чё за запах?!")
+			message = span_warning("What's that smell?!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded)
 			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 			victim.adjustToxLoss(2)
 			if(prob(60))
 				victim.vomit(40, blood = prob(amount), stun = FALSE, vomit_type = VOMIT_TOXIC, purge_ratio = 1)
 		if(3 to 10)
-			message = span_warning("Этот запах страшен!")
+			message = span_warning("This smell is terrible!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
 			victim.apply_status_effect(/datum/status_effect/incredible_gas)
 			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
@@ -239,7 +239,7 @@
 			if(prob(75))
 				victim.vomit(50, blood = prob(amount*3), stun = TRUE, vomit_type = VOMIT_TOXIC, purge_ratio = 1)
 		if(10 to INFINITY)
-			message = span_bolddanger("Этот запах ЕБАНУТО ОПАСЕН!")
+			message = span_bolddanger("This smell is FUCKING DANGEROUS!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/retarded/harsh)
 			victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 8)
 			victim.adjustToxLoss(8)

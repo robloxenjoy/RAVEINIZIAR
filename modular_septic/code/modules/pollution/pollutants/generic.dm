@@ -1,10 +1,10 @@
 ///Smoke coming from cigarettes and fires
 /datum/pollutant/smoke
-	name = "Дым"
+	name = "Smoke"
 	pollutant_flags = POLLUTANT_APPEARANCE | POLLUTANT_SMELL | POLLUTANT_BREATHE_ACT
 	smell_intensity = 1
 	descriptor = SCENT_DESC_SMELL
-	scent = "дым"
+	scent = "smoke"
 
 /datum/pollutant/smoke/breathe_act(mob/living/carbon/victim, amount)
 	if(amount <= 20)
@@ -151,11 +151,11 @@
 	thickness = 3
 
 /datum/pollutant/blues
-	name = "Морник"
+	name = "Mornik"
 	pollutant_flags = POLLUTANT_SMELL | POLLUTANT_APPEARANCE | POLLUTANT_BREATHE_ACT
 	smell_intensity = 3
 	descriptor = SCENT_DESC_SMELL
-	scent = "морничатина"
+	scent = "mornich"
 	color = "#3372ff"
 	thickness = 4
 
@@ -163,17 +163,17 @@
 	var/message
 	switch(amount)
 		if(0 to 3)
-			message = span_notice("Такой вот запах.")
+			message = span_notice("A such smell.")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/sleeptime_gas)
 			if(prob(50))
 				victim.heal_overall_damage(brute = 2 * amount)
 		if(3 to 9)
-			message = span_notice("Хорошенький запах!")
+			message = span_notice("Nice smell!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/sleeptime_gas/harsh)
 			if(prob(70))
 				victim.heal_overall_damage(brute = 3 * amount)
 		if(9 to INFINITY)
-			message = span_notice("Этот запах... Лечит меня.")
+			message = span_notice("This smell... Heals me.")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/sleeptime_gas/harsh)
 			victim.heal_overall_damage(brute = 4 * amount)
 	if(message && prob(70))
