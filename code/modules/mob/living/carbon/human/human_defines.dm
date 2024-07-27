@@ -38,6 +38,8 @@
 
 	var/age = 30 //Player's age
 	var/belief = null
+	var/belief_progress = 0
+	var/block_belief = FALSE
 	var/elect = 0
 	var/untapped_potential = 0
 

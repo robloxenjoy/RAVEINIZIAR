@@ -223,29 +223,6 @@
 				'modular_septic/sound/sexo/bj12.ogg', \
 				'modular_septic/sound/sexo/bj13.ogg')
 
-/obj/structure/beast/goat/proc/speak(message)
-	say(message)
-
-/obj/structure/beast/goat/attackby(obj/item/I, mob/living/user, params)
-	if(istype(I, /obj/item/food/grown/granat))
-		user.visible_message(span_notice("[user] кормит [src] с помощью [I]."),span_notice("Я кормлю [src] с помощью [I]."), span_hear("Я слышу странности."))
-		if(do_after(user, 5 SECONDS, target = src))
-			to_chat(user, span_notice("Я накормил [src] с помощью [I]."))
-			sound_hint()
-			playsound(get_turf(src), 'modular_pod/sound/eff/eat.ogg', 100 , FALSE, FALSE)
-			user.alpha = 50
-			var/thankyou_words = pick("Как вкусно. Откуда ты знаешь, что это мой любимый фрукт?", "Люблю этот гранат.")
-			speak(thankyou_words)
-			qdel(I)
-	else
-		if(hpp > 0)
-			hpp--
-			var/bad_words = pick("НЕ ОБИЖАЙ!", "НЕ БЕЙ!")
-			speak(bad_words)
-			playsound(get_turf(src), 'modular_pod/sound/eff/babycry.ogg', 100 , FALSE, FALSE)
-		else
-			alpha = 0
-
 /obj/structure/beast/goat/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
@@ -256,6 +233,15 @@
 		if(BURN)
 			if(damage_amount)
 				playsound(src, 'sound/items/welder.ogg', 100, TRUE)
+
+/obj/structure/beast/goat/attackby(obj/item/I, mob/living/user, params)
+	if(I.force > 8)
+		user.changeNext_move(I.attack_delay)
+		playsound(src, 'modular_pod/sound/mobs_yes/paingoat.ogg', 100, TRUE)
+		user.client?.prefs?.adjust_bobux(-100, "<span class='bobux'>Don't touch him! -100 Kaotiks!</span>")
+		user.adjustFatigueLoss(5)
+		I.damageItem(5)
+		sound_hint()
 
 /obj/structure/beast/goat/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
@@ -271,12 +257,26 @@
 	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 		if(soon <= 0)
 			playsound(src, 'modular_pod/sound/voice/goat.ogg', 100, TRUE)
-			src.visible_message(span_love("[src] puts something in [user] mouth!"))
-			soon = rand(15, 30)
+			src.visible_message(span_love("[src] puts something in [user]'s mouth!"))
+			soon = rand(15, 29)
 			user.AddComponent(/datum/component/creamed/cum)
 			sound_hint()
 		else
 			playsound(src, pick(soundss), 80, TRUE)
 			user.visible_message(span_love("[user] does something for [src]."),span_love("I do something for [src]."), span_hear("I hear strange things."))
 			INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/, do_fucking_animation), get_dir(user, src))
+			sound_hint()
 			soon--
+		user.changeNext_move(8)
+		if(!block_belief)
+			if(user.belief_progress < 30)
+				user.belief_progress += 1
+			else
+				user.block_belief = TRUE
+				user.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I have improved my relationship with God! +10 Kaotiks!</span>")
+				var/gift = pick("Nothing", "Pistol")
+				to_chat(user, span_notice("I got what I wanted... [gift]!"))
+				switch(gift)
+					if("Pistol")
+						new /obj/item/gun/ballistic/automatic/pistol/remis/ppk(get_turf(user))
+

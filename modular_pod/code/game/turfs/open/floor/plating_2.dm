@@ -851,6 +851,11 @@
 			if(locate(/obj/) in get_turf(src))
 				return
 			new /obj/structure/beast/worm(get_turf(src))
+	if(prob(1))
+		if(prob(10))
+			if(locate(/obj/) in get_turf(src))
+				return
+			new /obj/structure/beast/goat(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
