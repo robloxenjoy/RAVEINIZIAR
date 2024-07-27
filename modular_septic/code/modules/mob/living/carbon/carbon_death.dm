@@ -31,6 +31,12 @@
 //			return
 		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>I'm dead! -10 Kaotiks!</span>")
 		GLOB.world_deaths_crazy += 1
+		GLOB.new_people_crazy -= 1
+		switch(truerole)
+			if("Kapnobatai")
+				GLOB.kapnoe -= 1
+			if("Asshole")
+				GLOB.aashol-= 1
 //		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2
 		for(var/mob/living/carbon/human/H in world)
 			if(H != src)

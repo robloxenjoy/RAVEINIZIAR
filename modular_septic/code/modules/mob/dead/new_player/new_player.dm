@@ -96,8 +96,18 @@
 	var/rolevich = input("Wait, what role?", "") as text
 	switch(rolevich)
 		if("Kapnobatai")
+			var/numba = GLOB.kapnoe - GLOB.aashol
+			if(numba > 2)
+				alert("Too much of them. Play as Assholes.")
+				client.ready_char = FALSE
+				return
 			client.role_ch = "kapnobatai"
 		if("Asshole")
+			var/numbar = GLOB.aashol - GLOB.kapnoe
+			if(numbar > 2)
+				alert("Too much of them. Play as Kapnobataes.")
+				client.ready_char = FALSE
+				return
 			client.role_ch = "asshole"
 		if("God SMO")
 			var/smo = "[global.config.directory]/smo.txt"
@@ -187,11 +197,13 @@
 			our.hairstyle = "Bedhead 2"
 			our.facial_hairstyle = "Shaved"
 			our.hair_color = pick("#000000", "#1f120f", "#d7d49f")
+			GLOB.kapnoe += 1
 		if("asshole")
 			our.truerole = "Asshole"
 			our.pod_faction = "asshole"
 			our.hairstyle = "Bald"
 			our.facial_hairstyle = "Shaved"
+			GLOB.aashol += 1
 		if("halbermensch")
 			our.real_name = "Halbermensch"
 			our.pod_faction = null
