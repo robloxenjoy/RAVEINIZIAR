@@ -380,7 +380,7 @@
 		hisashi_ouchi.rads = clamp(CEILING(hisashi_ouchi.rads - (RADIATION_CLEANING_POWER/20)*delta_time, 1), 0, RADIATION_MAXIMUM_RADS)
 
 /datum/reagent/medicine/c2/garnet
-	name = "Гранат"
+	name = "Pomegranate"
 	description = "Чай гранатовый."
 	color = "#80001780"
 	ph = 3.8
@@ -388,7 +388,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 0
-	taste_description = "кисло"
+	taste_description = "sour"
 	failed_chem = null
 	inverse_chem = null
 	impure_chem = null

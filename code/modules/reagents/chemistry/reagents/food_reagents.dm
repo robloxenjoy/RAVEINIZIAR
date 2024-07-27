@@ -554,10 +554,10 @@
 	taste_mult = 9
 
 /datum/reagent/consumable/granat
-	name = "Гранатовая мякоть"
-	description = "Вкусная мякоть."
+	name = "Pomegranate"
+	description = "Pulp."
 	color = "#9a000085"
-	taste_description = "сладкая мякоть граната"
+	taste_description = "sweet pomegranate pulp"
 	taste_mult = 8
 
 /datum/reagent/consumable/bluecherryjelly
