@@ -141,8 +141,15 @@
 //				client.ready_char = FALSE
 //				return
 		else
-			alert("Unclear. The role of the common Kapnobatai.")
-			client.role_ch = "kapnobatai"
+			var/numba = GLOB.kapnoe - GLOB.aashol
+			var/numbor = GLOB.aashol - GLOB.kapnoe
+			if(numba <= 1)
+				alert("Unclear. The role of the common Kapnobatai.")
+				client.role_ch = "kapnobatai"
+			else
+				if(numbor <= 1)
+					alert("Unclear. The role of the common Asshole.")
+					client.role_ch = "asshole"
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
