@@ -448,7 +448,7 @@
 		if(QDELETED(A))
 			continue
 		qdel(A)
-	for(var/datum/pollution/pollution/polly in world)
+	for(var/datum/pollution/polly in world)
 		polly.scrub_amount(999, FALSE, TRUE)
 	for(var/atom/movable/liquid/li in world)
 		li.delete_reagents_flat(999)
