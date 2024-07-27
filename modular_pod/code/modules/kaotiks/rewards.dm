@@ -448,7 +448,10 @@
 		if(QDELETED(A))
 			continue
 		qdel(A)
-	for(var/datum/pollution/polly in world)
+	var/list/current_run_cache = SSpollution.current_run
+	if(current_run_cache.len)
+		var/datum/pollution/polly = current_run_cache[current_run_cache.len]
+		current_run_cache.len--
 		polly.scrub_amount(999, FALSE, TRUE)
 	for(var/atom/movable/liquid/li in world)
 		li.delete_reagents_flat(999)
