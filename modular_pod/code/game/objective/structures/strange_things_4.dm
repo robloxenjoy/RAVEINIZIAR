@@ -268,7 +268,7 @@
 			sound_hint()
 			soon--
 		user.changeNext_move(8)
-		if(!block_belief)
+		if(!user.block_belief)
 			if(user.belief_progress < 30)
 				user.belief_progress += 1
 			else
