@@ -449,6 +449,7 @@
 			continue
 		qdel(A)
 	var/list/current_run_cache = SSpollution.current_run
+	current_run_cache = SSpollution.all_polution.Copy()
 	if(current_run_cache.len)
 		var/datum/pollution/polly = current_run_cache[current_run_cache.len]
 		current_run_cache.len--
