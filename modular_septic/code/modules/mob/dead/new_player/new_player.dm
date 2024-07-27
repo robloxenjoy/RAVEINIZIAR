@@ -97,14 +97,14 @@
 	switch(rolevich)
 		if("Kapnobatai")
 			var/numba = GLOB.kapnoe - GLOB.aashol
-			if(numba > 2)
+			if(numba > 1)
 				alert("Too much of them. Play as Assholes.")
 				client.ready_char = FALSE
 				return
 			client.role_ch = "kapnobatai"
 		if("Asshole")
 			var/numbar = GLOB.aashol - GLOB.kapnoe
-			if(numbar > 2)
+			if(numbar > 1)
 				alert("Too much of them. Play as Kapnobataes.")
 				client.ready_char = FALSE
 				return
