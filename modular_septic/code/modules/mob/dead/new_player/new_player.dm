@@ -250,6 +250,11 @@
 		if("God SMO")
 			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
 			our.equipOutfit(/datum/outfit/svogod)
+		if("Halbermensch")
+			if(client?.ckey == "realmt")
+				our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/halbermensch_realmt)
+			else
+				our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/halbermensch)
 
 /mob/dead/new_player/proc/updateshit(mob/living/carbon/human/our)
 	var/datum/component/babble/babble = our.GetComponent(/datum/component/babble)

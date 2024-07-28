@@ -94,7 +94,7 @@
 					ITEM_SLOT_OVERSUIT,
 					ITEM_SLOT_PANTS,
 					ITEM_SLOT_SUITSTORE)
-	attribute_sheet = /datum/attribute_holder/sheet/job/halbermensch
+//	attribute_sheet = /datum/attribute_holder/sheet/job/halbermensch
 	inherent_biotypes = MOB_ORGANIC | MOB_BEAST
 	mutant_bodyparts = list()
 	bodypart_overides = list(

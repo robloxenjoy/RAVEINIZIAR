@@ -27,20 +27,26 @@
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace/norm"
+			"Baseturf": "/turf/open/openspace/norm",
+			"Podpol Ruins": true,
+			"Podpol Ruins Surface": true
 		},
 		{
 			"Down": -1,
 			"Up": 1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/open/openspace/norm"
+			"Baseturf": "/turf/open/openspace/norm",
+			"Podpol Ruins": true,
+			"Podpol Ruins Surface": true
 		},
 		{
 			"Down": -1,
 			"Station": true,
 			"Gravity": true,
-			"Baseturf": "/turf/closed/wall/purple/nocling"
+			"Baseturf": "/turf/closed/wall/purple/nocling",
+			"Podpol Ruins": true,
+			"Podpol Ruins Surface": true
 		}
 	],
 	"minetype": "none"
