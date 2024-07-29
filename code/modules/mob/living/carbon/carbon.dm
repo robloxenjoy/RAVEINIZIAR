@@ -142,8 +142,8 @@
 			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 			victim.Paralyze(2 SECONDS)
 			Paralyze(2 SECONDS)
-			visible_message(span_danger("[src] врезается в [victim][extra_speed ? " реально жёстко" : ""], опрокидывая обоих!"),\
-				span_userdanger("Я врезаюсь в [victim][extra_speed ? " реально жёстко" : ""]!"))
+			visible_message(span_danger("[src] crashes in [victim][extra_speed ? " really hard" : ""], knocking them both over!"),\
+				span_userdanger("I crash in [victim][extra_speed ? " really hard" : ""]!"))
 		playsound(src,'sound/weapons/punch1.ogg',50,TRUE)
 
 
@@ -457,13 +457,13 @@
 
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
-			visible_message(span_danger("[src] выблёвывает всё на себя!"), \
-							span_userdanger("Я выблёвываю всё на себя!"))
+			visible_message(span_danger("[src] throws everything up on himself!"), \
+							span_userdanger("I'm throwing it all up on myself!"))
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomitself)
 		distance = 0
 	else
 		if(message)
-			visible_message(span_danger("[src] блюёт!"), span_userdanger("Я блюю!"))
+			visible_message(span_danger("[src] vomits!"), span_userdanger("I vomit!"))
 			if(!isflyperson(src))
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
 
@@ -501,8 +501,8 @@
  * * amount: int The amount of reagent
  */
 /mob/living/carbon/proc/expel_ingested(atom/bite, amount)
-	visible_message(span_danger("[src] выблёвывает всё на себя!"), \
-					span_userdanger("Я больеш не могу держать [bite] без желудка!"))
+	visible_message(span_danger("[src] throws everything up on himself!"), \
+					span_userdanger("I can't hold [bite] without stomach!"))
 
 	var/turf/floor = get_turf(src)
 	var/obj/effect/decal/cleanable/vomit/spew = new(floor, get_static_viruses())

@@ -66,6 +66,6 @@
 								span_userdanger("I parry [attack_text] with [src]!"), \
 								vision_distance = COMBAT_MESSAGE_RANGE, \
 								ignored_mobs = attacker)
-			to_chat(attacker, span_userdanger("<b>[src]</b> with [user_attack_text] with [src]!"))
+			to_chat(attacker, span_userdanger("<b>[src]</b> parries [user_attack_text] with [src]!"))
 			return COMPONENT_HIT_REACTION_CANCEL | COMPONENT_HIT_REACTION_BLOCK
 		return COMPONENT_HIT_REACTION_CANCEL
