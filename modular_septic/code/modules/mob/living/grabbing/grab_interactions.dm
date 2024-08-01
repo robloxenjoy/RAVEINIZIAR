@@ -162,11 +162,11 @@
 		else
 			owner.changeNext_move(CLICK_CD_STRANGLE)
 		if(owner != victim)
-			victim.visible_message(span_danger("<b>[owner]</b> tries to [wrench_verb_singular] <b>[victim]</b> [grasped_part.name]!"), \
+			victim.visible_message(span_danger("<b>[owner]</b> tries to [wrench_verb_singular] <b>[victim]'s</b> [grasped_part.name]!"), \
 							span_userdanger("<b>[owner]</b> tries to [wrench_verb_singular] [grasped_part.name]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = owner)
-			to_chat(owner, span_userdanger("I'm trying to [wrench_verb_singular] <b>[victim]</b> [grasped_part.name]!"))
+			to_chat(owner, span_userdanger("I'm trying to [wrench_verb_singular] <b>[victim]'s</b> [grasped_part.name]!"))
 		else
 			victim.visible_message(span_danger("<b>[owner]</b> tries to [wrench_verb_singular] [grasped_part.name]!"), \
 							span_userdanger("I'm trying to [wrench_verb_singular] [grasped_part.name]!"), \
@@ -179,11 +179,11 @@
 /obj/item/grab/proc/relocate_limb()
 	var/mob/living/carbon/carbon_victim = victim
 	if(owner != victim)
-		victim.visible_message(span_danger("<b>[owner]</b> tries to relocate <b>[victim]</b> [grasped_part.name]!"), \
+		victim.visible_message(span_danger("<b>[owner]</b> tries to relocate <b>[victim]'s</b> [grasped_part.name]!"), \
 						span_userdanger("<b>[owner]</b> tries to relocate [grasped_part.name]!"), \
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = owner)
-		to_chat(owner, span_userdanger("I'm trying to relocate <b>[victim]</b> [grasped_part.name]!"))
+		to_chat(owner, span_userdanger("I'm trying to relocate <b>[victim]'s</b> [grasped_part.name]!"))
 	else
 		victim.visible_message(span_danger("<b>[owner]</b> tries to relocate [grasped_part.name]!"), \
 						span_userdanger("I'm trying to relocate [grasped_part.name]!"), \

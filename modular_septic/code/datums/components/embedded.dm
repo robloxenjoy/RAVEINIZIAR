@@ -189,13 +189,13 @@
 /datum/component/embedded/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, mob/living/remover)
 	var/time_taken = rip_time * weapon.w_class * (victim == remover ? 2 : 1)
 	if(remover == victim)
-		remover.visible_message(span_warning("<b>[remover]</b> пытается вырвать [weapon] из [limb.name]."), \
-				span_userdanger("Я пытаюсь вырвать [weapon] из [limb.name]..."))
+		remover.visible_message(span_warning("<b>[remover]</b> tries to rip [weapon] out from [limb.name]."), \
+				span_userdanger("I'm trying to rip [weapon] out from [limb.name]..."))
 	else
-		victim.visible_message(span_warning("<b>[remover]</b> пытается вырвать [weapon] из <b>[victim]</b> [limb.name]."), \
-				span_userdanger("<b>[remover]</b> пытается вырвать [weapon] из [limb.name]!"), \
+		victim.visible_message(span_warning("<b>[remover]</b> tries to rip [weapon] out from <b>[victim]'s</b> [limb.name]."), \
+				span_userdanger("<b>[remover]</b> tries to rip [weapon] out from [limb.name]!"), \
 				ignored_mobs = remover)
-		to_chat(remover, span_userdanger("Я пытаюсь вырвать [weapon] из <b>[victim]</b> [limb.name]..."))
+		to_chat(remover, span_userdanger("I'm trying to rip [weapon] out from <b>[victim]'s</b> [limb.name]..."))
 	if(!do_mob(user = remover, target = victim, time = time_taken))
 		return
 	if(!weapon || !limb || (weapon.loc != victim) || !(weapon in limb.embedded_objects))
@@ -213,17 +213,17 @@
 								sharpness = SHARP_EDGED)
 		victim.agony_scream()
 	if(remover == victim)
-		victim.visible_message(span_notice("<b>[remover]</b> вырывает [weapon] из [limb.name]!"), \
-				span_userdanger("Я вырываю [weapon] из [limb.name]."))
+		victim.visible_message(span_notice("<b>[remover]</b> rips [weapon] out from [limb.name]!"), \
+				span_userdanger("I rip [weapon] out from [limb.name]."))
 	else
-		victim.visible_message(span_notice("<b>[remover]</b> вырывает [weapon] из <b>[limb.owner]</b> [limb.name]!"), \
-				span_userdanger("<b>[remover]</b> вырывает [weapon] из [limb.name]."), \
+		victim.visible_message(span_notice("<b>[remover]</b> rips [weapon] out from <b>[limb.owner]'s</b> [limb.name]!"), \
+				span_userdanger("<b>[remover]</b> rips [weapon] out from [limb.name]."), \
 				ignored_mobs = remover)
-		to_chat(remover, span_notice("Я вырываю [weapon] из <b>[victim]</b> [limb.name]!"))
+		to_chat(remover, span_notice("I rip [weapon] out from <b>[victim]'s</b> [limb.name]!"))
 	playsound(victim, 'modular_septic/sound/gore/pullout.ogg', 83, 0)
 	remover.changeNext_move(CLICK_CD_CLING)
 	remover.adjustFatigueLoss(5)
-	victim.visible_message(span_notice("[victim] вырывает [weapon] из [limb.name]!"), span_notice("Я вырываю [weapon] из [limb.name]."))
+	victim.visible_message(span_notice("[victim] rips [weapon] out from [limb.name]!"), span_notice("I rip [weapon] out from [limb.name]."))
 	safeRemove(remover)
 
 /datum/component/embedded/fallOut()
@@ -236,7 +236,7 @@
 			limb.receive_damage(stamina = pain_stam_pct * damage)
 		else
 			limb.receive_damage(brute = (1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND)
-	victim.visible_message(span_danger("[weapon] выпадывает из [victim.name] [limb.name]!"), span_userdanger("[weapon] выпадывает из [limb.name]!"))
+	victim.visible_message(span_danger("[weapon] falls out from [victim.name]'s [limb.name]!"), span_userdanger("[weapon] falls out from [limb.name]!"))
 	safeRemove()
 
 /datum/component/embedded/safeRemove(mob/to_hands)
@@ -249,7 +249,8 @@
 	if(!weapon.unembedded(victim, limb))
 		weapon.forceMove(victim.loc)
 		if(to_hands)
-			INVOKE_ASYNC(to_hands, TYPE_PROC_REF(/mob, put_in_hands), weapon)
+			victim.put_in_hands(weapon)
+//			INVOKE_ASYNC(to_hands, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 //			INVOKE_ASYNC(to_hands, /mob.proc/put_in_active_hand, weapon)
 //			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hand, weapon, active_hand)
 //		var/obj/item/bodypart/part_will_get_nulled = grasped_part
