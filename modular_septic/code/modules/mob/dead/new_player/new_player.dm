@@ -327,6 +327,11 @@
 	mind.set_original_character(our)
 	our.key = key
 
+/datum/outfit/kapno/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(50))
+		suit = /obj/item/clothing/suit/armor/roba
+
 /datum/outfit/kapno
 	name = "Kapno Uniform"
 
@@ -334,7 +339,11 @@
 	uniform = /obj/item/clothing/under/codec/purp
 	pants = /obj/item/clothing/pants/codec/purp
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/roba
+
+/datum/outfit/kapnofather/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(50))
+		suit = /obj/item/clothing/suit/armor/roba
 
 /datum/outfit/kapnofather
 	name = "Kapnofather Uniform"
@@ -343,18 +352,22 @@
 	r_pocket = /obj/item/key/podpol/woody/kapnokey
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
 	belt = /obj/item/podpol_weapon/sword/steel
-	suit = /obj/item/clothing/suit/armor/roba
 	oversuit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	pants = /obj/item/clothing/pants/codec/purp/red
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet/codec/def_yel
+
+/datum/outfit/konch/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(50))
+		suit = /obj/item/clothing/suit/armor/sexcoat
 
 /datum/outfit/konch
 	name = "Konch Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/konchkey
 	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
-	uniform = /obj/item/clothing/under/codec/purp/black
+	uniform = /obj/item/clothing/under/codec/maika
 	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots
 
@@ -363,7 +376,7 @@
 
 	mask = /obj/item/clothing/mask/gas/ballisticarmor
 	l_pocket = /obj/item/key/podpol/woody/konchkey
-	uniform = /obj/item/clothing/under/codec/purp/black
+	uniform = /obj/item/clothing/under/codec/maika
 	pants = /obj/item/clothing/pants/codec/purp/black
 	shoes = /obj/item/clothing/shoes/jackboots
 //	belt = /obj/item/melee/bita/cep/iron

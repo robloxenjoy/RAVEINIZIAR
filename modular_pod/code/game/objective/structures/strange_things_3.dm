@@ -649,7 +649,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/ammo_find(mob/living/carbon/user)
-	var/list/otherlist = list("12 Gauge bullets (40)", ".38 Bullets (30)")
+	var/list/otherlist = list("Buckshot (40)", ".38 Bullets (30)")
 	var/thingy = input(user, "What kind of ammo do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -665,11 +665,11 @@
 		return
 */
 	switch(thingy)
-		if("12 Gauge bullets (40)")
+		if("Buckshot (40)")
 			if(pref_source.bobux_amount < 40)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
-			new /obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded(get_turf(user))
+			new /obj/item/ammo_box/magazine/ammo_stack/shotgunbuckshot/loaded(get_turf(user))
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))

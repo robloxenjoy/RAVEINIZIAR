@@ -29,6 +29,16 @@
 	pellets = 8
 	variance = 4.5
 
+/obj/item/ammo_casing/shotgunbuckshot
+	name = "12 Gauge Buckshot"
+	desc = "Nice."
+	icon_state = "12gauge"
+	base_icon_state = "12gauge"
+//	world_icon_state = "gshell"
+	pellets = 8
+	variance = 4.5
+	caliber = CALIBER_SHOTGUN
+
 /obj/item/ammo_casing/shotgun/beanbag
 	icon_state = "12gauge"
 	base_icon_state = "12gauge"

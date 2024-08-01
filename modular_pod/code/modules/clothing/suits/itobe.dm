@@ -111,3 +111,20 @@
 
 /obj/item/clothing/pants/codec/purp/red
 	color = "#933400"
+
+/obj/item/clothing/under/codec/maika
+	name = "Clothes"
+	desc = "Bad quality."
+	icon = 'modular_pod/icons/obj/clothing/under/under.dmi'
+	icon_state = "maika"
+	worn_icon = 'modular_pod/icons/mob/clothing/under/under.dmi'
+	worn_icon_state = "maika"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "soldat"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = list(MELEE = 1, BULLET = 1, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 2, ACID = 2, WOUND = 1)
+	carry_weight = 300 GRAMS
+	can_adjust = FALSE
+	body_parts_covered = CHEST|VITALS|ARMS|GROIN

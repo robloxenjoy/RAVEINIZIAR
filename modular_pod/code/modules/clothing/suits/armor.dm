@@ -586,3 +586,35 @@
 				WOUND = 3, \
 				ORGAN = 3)
 	strip_delay = 90
+
+/obj/item/clothing/suit/armor/sexcoat
+	name = "Coat"
+	desc = "This kind of thing comes to those who feel very bad."
+	icon = 'modular_pod/icons/obj/clothing/suits.dmi'
+	icon_state = "coat"
+	worn_icon = 'modular_pod/icons/mob/clothing/suit.dmi'
+	worn_icon_state = "coat"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	max_integrity = 180
+	integrity_failure = 0.1
+	limb_integrity = 150
+	body_parts_covered = CHEST|VITALS|GROIN|NECK|LEGS|ARMS
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 4, \
+				CRUSHING = 4, \
+				CUTTING = 4, \
+				PIERCING = 1, \
+				IMPALING = 4, \
+				LASER = 1, \
+				ENERGY = 0, \
+				BOMB = 0, \
+				BIO = 0, \
+				FIRE = 1, \
+				ACID = 1, \
+				MAGIC = 0, \
+				WOUND = 3, \
+				ORGAN = 3)
+	strip_delay = 90

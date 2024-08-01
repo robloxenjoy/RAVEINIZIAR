@@ -23,11 +23,20 @@
 	name = "combat shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 6
-
+/*
 /obj/item/ammo_box/magazine/internal/cylinder/bobox
 	name = "bobox double-barrel shotgun internal magazine"
 //	ammo_type = /obj/item/ammo_casing/shotgun/flechette
 	ammo_type =  /obj/item/ammo_casing/shotgun
+	max_ammo = 2
+	multiload = FALSE
+	caliber = CALIBER_SHOTGUN
+*/
+
+/obj/item/ammo_box/magazine/internal/cylinder/bobox
+	name = "bobox double-barrel shotgun internal magazine"
+//	ammo_type = /obj/item/ammo_casing/shotgun/flechette
+	ammo_type =  /obj/item/ammo_casing/shotgunbuckshot
 	max_ammo = 2
 	multiload = FALSE
 	caliber = CALIBER_SHOTGUN
