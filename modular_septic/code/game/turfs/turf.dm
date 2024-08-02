@@ -50,7 +50,7 @@
 			dropping.forceMove(src)
 		return
 
-
+/*
 /turf/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	var/mob/living/living_user = user
@@ -60,6 +60,7 @@
 				return
 			user.visible_message(span_warning("<b>[user]</b> crawls on [src]."), \
 								span_warning("I crawl on [src]."))
+*/
 
 /*
 /obj/structure/stairs/attack_hand(mob/user, list/modifiers)

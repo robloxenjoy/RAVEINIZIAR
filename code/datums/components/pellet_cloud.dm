@@ -258,7 +258,7 @@
 	LAZYADDASSOC(targets_hit[target], "hits", 1)
 	LAZYSET(targets_hit[target], "no damage", no_damage)
 	if(targets_hit[target]["hits"] == 1)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/on_target_qdel, override=TRUE)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
 	UnregisterSignal(P, list(COMSIG_PARENT_QDELETING, COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PROJECTILE_SELF_ON_HIT))
 	//SEPTIC EDIT BEGIN
 	UnregisterSignal(P, COMSIG_PELLET_CLOUD_EMBEDDED)
@@ -293,12 +293,12 @@
 	P.suppressed = SUPPRESSED_VERY // set the projectiles to make no message so we can do our own aggregate message
 	P.preparePixelProjectile(target, parent)
 	//SEPTIC EDIT BEGIN
-	RegisterSignal(P, COMSIG_PELLET_CLOUD_EMBEDDED, .proc/projectile_embedded)
-	RegisterSignal(P, COMSIG_PELLET_CLOUD_STOPPED_BY_ARMOR, .proc/projectile_stopped_by_armor)
-	RegisterSignal(P, COMSIG_PELLET_CLOUD_WENT_THROUGH, .proc/projectile_went_through)
+	RegisterSignal(P, COMSIG_PELLET_CLOUD_EMBEDDED, PROC_REF(projectile_embedded))
+	RegisterSignal(P, COMSIG_PELLET_CLOUD_STOPPED_BY_ARMOR, PROC_REF(projectile_stopped_by_armor))
+	RegisterSignal(P, COMSIG_PELLET_CLOUD_WENT_THROUGH, PROC_REF(projectile_went_through))
 	//SEPTIC EDIT END
-	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/pellet_hit)
-	RegisterSignal(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), .proc/pellet_range)
+	RegisterSignal(P, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
+	RegisterSignal(P, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 	pellets += P
 	P.fire()
 	if(landmine_victim)
@@ -348,10 +348,10 @@
 	if(ismob(nade.loc))
 		shooter = nade.loc
 	LAZYINITLIST(bodies)
-	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/grenade_dropped)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/grenade_moved)
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(grenade_dropped))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(grenade_moved))
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXITED =.proc/grenade_uncrossed,
+		COMSIG_ATOM_EXITED = PROC_REF(grenade_uncrossed),
 	)
 	AddComponent(/datum/component/connect_loc_behalf, parent, loc_connections)
 
@@ -368,7 +368,7 @@
 
 	LAZYCLEARLIST(bodies)
 	for(var/mob/living/L in get_turf(parent))
-		RegisterSignal(L, COMSIG_PARENT_QDELETING, .proc/on_target_qdel, override=TRUE)
+		RegisterSignal(L, COMSIG_PARENT_QDELETING, PROC_REF(on_target_qdel), override=TRUE)
 		bodies += L
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it

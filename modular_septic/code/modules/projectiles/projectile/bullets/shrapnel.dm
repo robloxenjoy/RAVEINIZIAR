@@ -3,7 +3,7 @@
 	icon_state = "shrapnel"
 	base_icon_state = "shrapnel"
 	damage = 18
-	range = 15
+	range = 20
 	weak_against_armour = TRUE
 	dismemberment = 0
 	ricochets_max = 1
@@ -27,7 +27,7 @@
 /obj/projectile/bullet/shrapnel/mine
 	name = "Flying Shrapnel"
 	damage = 20
-	range = 15
+	range = 20
 	weak_against_armour = FALSE
 	dismemberment = 0
 	ricochets_max = 1

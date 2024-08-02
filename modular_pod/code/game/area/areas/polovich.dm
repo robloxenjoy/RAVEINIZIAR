@@ -27,7 +27,7 @@
 	power_light = FALSE
 	outdoors = TRUE
 	static_lighting = FALSE
-	base_lighting_alpha = 255
+//	base_lighting_alpha = 255
 //	area_has_base_lighting = TRUE
 	area_flags = NO_ALERTS
 	droning_sound = DRONING_POLOVICHSTAN
@@ -69,7 +69,7 @@
 	icon_state = "polovich_special"
 
 /area/maintenance/polovich/forest/inner
-	static_lighting = TRUE
+	static_lighting = FALSE
 	base_lighting_alpha = 1
 	icon_state = "polovich_inner"
 	min_ambience_cooldown = 50 SECONDS
@@ -82,7 +82,7 @@
 /area/maintenance/polovich/forest/cave
 	name = "Caveira"
 	icon_state = "caveira"
-	static_lighting = TRUE
+	static_lighting = FALSE
 	base_lighting_alpha = 1
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS

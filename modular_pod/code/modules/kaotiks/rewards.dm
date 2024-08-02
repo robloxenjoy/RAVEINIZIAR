@@ -320,7 +320,7 @@
 	for(var/mob/living/carbon/human/coomer in GLOB.mob_living_list)
 		if(coomer.mind)
 			SEND_SIGNAL(coomer, COMSIG_ADD_MOOD_EVENT, "funnyday", /datum/mood_event/koatik)
-
+/*
 /datum/bobux_reward/blackout
 	name = "Blackout"
 	desc = "A pathetic imitation, but still scary!"
@@ -368,6 +368,7 @@
 		A.static_lighting = FALSE
 		A.set_base_lighting(new_alpha = 255)
 		A.remove_area_lighting_objects()
+*/
 /*
 /datum/bobux_reward/activate_muzon
 	name = "Toggle on Musick"
