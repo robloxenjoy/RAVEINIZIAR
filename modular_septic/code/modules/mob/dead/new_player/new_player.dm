@@ -193,7 +193,8 @@
 	our.real_name = client.name_ch
 	our.name = our.real_name
 	our.age = client.age_ch
-	our.handed_flags = DEFAULT_HANDEDNESS
+	var/hander = pick(RIGHT_HANDED, LEFT_HANDED, AMBIDEXTROUS)
+	our.handed_flags = hander
 	our.fully_heal(TRUE)
 
 /mob/dead/new_player/proc/things(mob/living/carbon/human/our)
