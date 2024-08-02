@@ -257,7 +257,7 @@
 		icon_state = "metal2"
 
 /obj/effect/decal/grassgood
-	name = "Травка"
+	name = "Grass"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "grass1"
 	layer = TURF_PLATING_DECAL_LAYER
@@ -268,6 +268,18 @@
 	. = ..()
 	if(prob(50))
 		icon_state = "grass2"
+
+/obj/effect/decal/grassbad
+	name = "Grass"
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "plant1"
+	layer = TURF_PLATING_DECAL_LAYER
+	alpha = 255
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/obj/effect/decal/grassbad/Initialize(mapload)
+	. = ..()
+	icon_state = pick("plant2", "plant1", "plant3")
 
 /obj/effect/decal/shroomworms
 	name = "Shroomworms"

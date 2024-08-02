@@ -352,9 +352,35 @@
 	heavyfootstep = FOOTSTEP_STONE
 	powerfloor = 18
 
+/turf/open/floor/plating/polovich/way/lapark
+	name = "Floor"
+	icon_state = "lapark"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/stanar
+	name = "Floor"
+	icon_state = "stanar"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 18
+
 /turf/open/floor/plating/polovich/way/slimebegin
 	name = "Зелень"
 	icon_state = "slimebegin"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+
+/turf/open/floor/plating/polovich/way/blackas
+	name = "Dirt"
+	icon_state = "blackas"
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
@@ -442,12 +468,16 @@
 				for(var/turf/open/floor/plating/polovich/way/muddy/generat in get_turf(near_tt))
 					if(locate(/obj/) in get_turf(near_tt))
 						continue
-					if(prob(90))
+					if(prob(93))
 						new /obj/structure/flora/ausbushes/cactus(get_turf(near_tt))
 		if(prob(5))
 			if(locate(/obj/) in get_turf(src))
 				return
 			new /obj/structure/flora/ausbushes/granat(get_turf(src))
+		if(prob(10))
+			if(locate(/obj/) in get_turf(src))
+				return
+			new /obj/effect/decal/grassbad(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/muddy/generat in near_t)
@@ -714,6 +744,16 @@
 /turf/open/floor/plating/polovich/way/exoticwood2
 	name = "Floor"
 	icon_state = "exoticwood2"
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/shrooma
+	name = "Shroom"
+	icon_state = "shrooma"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
