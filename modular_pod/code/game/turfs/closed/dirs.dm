@@ -147,7 +147,7 @@
 						GR.visible_message(span_pinkdang("[user] hits [GR] head on [src]!"))
 						var/armor_block = GR.run_armor_check(head, MELEE, sharpness = NONE)
 						var/armor_reduce = GR.run_subarmor_check(head, MELEE, sharpness = NONE)
-						GR.apply_damage(brute = damage, BRUTE, head, armor_block, wound_bonus = 3, sharpness = NONE, reduced = armor_reduce)
+						GR.apply_damage(damage, BRUTE, head, armor_block, wound_bonus = 3, sharpness = NONE, reduced = armor_reduce)
 //						head.receive_damage(brute = damage, wound_bonus = 3, sharpness = null)
 						user.changeNext_move(17)
 						user.adjustFatigueLoss(6)
