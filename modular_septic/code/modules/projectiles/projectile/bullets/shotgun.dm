@@ -20,7 +20,7 @@
 	sharpness = NONE
 
 /obj/projectile/bullet/shotgun_slug
-	name = "снаряд"
+	name = "slug"
 	damage = 60
 	wound_bonus = 0
 	bare_wound_bonus = 0
@@ -42,7 +42,7 @@
 	subtractible_armour_penetration = 20
 
 /obj/projectile/bullet/pellet/shotgun_buckshot
-	name = "12G дробь"
+	name = "buckshot"
 	damage = 16
 	wound_bonus = 5
 	bare_wound_bonus = 5

@@ -239,7 +239,7 @@
 	victim.visible_message(span_danger("[weapon] falls out from [victim.name]'s [limb.name]!"), span_userdanger("[weapon] falls out from [limb.name]!"))
 	safeRemove()
 
-/datum/component/embedded/safeRemove(mob/to_hands)
+/datum/component/embedded/safeRemove(mob/living/carbon/to_hands)
 	var/mob/living/carbon/victim = parent
 	LAZYREMOVE(limb.embedded_objects, weapon)
 	if(injury)
@@ -249,7 +249,7 @@
 	if(!weapon.unembedded(victim, limb))
 		weapon.forceMove(victim.loc)
 		if(to_hands)
-			victim.put_in_hands(weapon)
+			to_hands.put_in_hands(weapon)
 //			INVOKE_ASYNC(to_hands, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 //			INVOKE_ASYNC(to_hands, /mob.proc/put_in_active_hand, weapon)
 //			INVOKE_ASYNC(to_hands, /mob.proc/put_in_hand, weapon, active_hand)

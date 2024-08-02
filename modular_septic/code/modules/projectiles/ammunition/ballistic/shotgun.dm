@@ -38,6 +38,8 @@
 	pellets = 8
 	variance = 4.5
 	caliber = CALIBER_SHOTGUN
+	stack_type = /obj/item/ammo_box/magazine/ammo_stack/shotgunbuckshot
+	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot
 
 /obj/item/ammo_casing/shotgun/beanbag
 	icon_state = "12gauge"
