@@ -2,7 +2,7 @@
 
 #define isliquid(O) istype(O, /atom/movable/liquid)
 
-#define isopenspaceturf(O) (istype(O, /turf/open/openspace))
+#define isopenspaceturf(O) (istype(O, /turf/open/openspace/norm))
 
 #define islowwallturf(O) (istype(O, /turf/open/floor/low_wall))
 
