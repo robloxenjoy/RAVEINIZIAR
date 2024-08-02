@@ -20,7 +20,7 @@
 						var/armor_block = GR.run_armor_check(head, MELEE, sharpness = NONE)
 						var/armor_reduce = GR.run_subarmor_check(head, MELEE, sharpness = NONE)
 						GR.apply_damage(damage, BRUTE, head, armor_block, wound_bonus = 3, sharpness = NONE, reduced = armor_reduce)
-						GR.visible_message(span_pinkdang("[user] hits [GR] head on [src]!"))
+						GR.visible_message(span_pinkdang("[user] hits [GR]'s head on [src]!"))
 						user.changeNext_move(17)
 						user.adjustFatigueLoss(6)
 						playsound(get_turf(GR), 'modular_pod/sound/eff/punch 1.ogg', 80, 0)
