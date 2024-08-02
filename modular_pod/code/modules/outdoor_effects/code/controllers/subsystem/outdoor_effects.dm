@@ -50,14 +50,14 @@
  color = "#000000"
  start = 22 HOURS
 
-GLOBAL_VAR_INIT(GLOBAL_LIGHT_RANGE, 5)
+GLOBAL_VAR_INIT(GLOBAL_LIGHT_RANGE, 4)
 GLOBAL_LIST_EMPTY(SUNLIGHT_QUEUE_WORK)   /* turfs to be stateChecked */
 GLOBAL_LIST_EMPTY(SUNLIGHT_QUEUE_UPDATE) /* turfs to have their colors updated via corners (filter out the unroofed dudes) */
 GLOBAL_LIST_EMPTY(SUNLIGHT_QUEUE_CORNER) /* turfs to have their color/lights/etc updated */
 
 SUBSYSTEM_DEF(outdoor_effects)
 	name = "Sunlight"
-	wait = 20
+	wait = 10
 	priority = 2
 	flags = SS_TICKER
 	init_order = INIT_ORDER_OUTDOOR_EFFECTS
