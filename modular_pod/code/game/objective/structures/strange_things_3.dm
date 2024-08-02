@@ -929,7 +929,7 @@
 	. = ..()
 	soundloop = new(src, FALSE)
 	soundloop.start()
-	last_words = world.time + rand(0, worlds_delay)
+	last_words = world.time + rand(0, words_delay)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/medica/Destroy()
