@@ -1,6 +1,6 @@
 //BLOOD
 /datum/reagent/blood
-	taste_description = "нечто металлическое"
+	taste_description = "something metallic"
 
 /datum/reagent/blood/expose_obj(obj/exposed_obj, reac_volume)
 	. = ..()
@@ -25,7 +25,7 @@
 /datum/reagent/consumable/piss
 	name = "Моча"
 	description = "Жидкий человеческий отход."
-	taste_description = "плохое пиво"
+	taste_description = "bad beer"
 	reagent_state = LIQUID
 	color = COLOR_YELLOW_PISS
 	liquid_evaporation_rate = 7
@@ -226,7 +226,7 @@
 /datum/reagent/consumable/vomit
 	name = "Рвота"
 	description = "Чё-то зелёное и ужасное."
-	taste_description = "блевотня"
+	taste_description = "vomit"
 	reagent_state = LIQUID
 	color = "#92cd4880"
 	liquid_evaporation_rate = 3
@@ -256,7 +256,7 @@
 /datum/reagent/consumable/vomit/purple
 	name = "Рвота"
 	description = "Чё-то фиолетовое и ужасное."
-	taste_description = "блевотня"
+	taste_description = "vomit"
 	reagent_state = LIQUID
 	color = "#af5eb180"
 	liquid_evaporation_rate = 3
@@ -279,7 +279,7 @@
 /datum/reagent/consumable/vomit/toxic
 	name = "Рвота"
 	description = "Чё-то зелёное и ужасное."
-	taste_description = "блевотня"
+	taste_description = "vomit"
 	reagent_state = LIQUID
 	color = "#92cd4880"
 	liquid_evaporation_rate = 3

@@ -440,7 +440,7 @@
 /mob/living/carbon/human/update_inv_belt()
 	remove_overlay(BELT_LAYER)
 
-	if(client && hud_used)
+	if(client && hud_used?.inv_slots[TOBITSHIFT(ITEM_SLOT_BELT) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BELT) + 1]
 		inv.update_appearance()
 

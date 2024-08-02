@@ -921,12 +921,15 @@
 	var/words_list = list("I will heal you, and your soul!", "You are my only one!", "I'm always here, just come to me.", "I will never betray you.", "I've been waiting for you...")
 
 /obj/structure/medica/proc/speak(message)
+	if(!message)
+		return
 	say(message)
 
 /obj/structure/medica/Initialize(mapload)
 	. = ..()
 	soundloop = new(src, FALSE)
 	soundloop.start()
+	last_words = world.time + rand(0, worlds_delay)
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/medica/Destroy()
