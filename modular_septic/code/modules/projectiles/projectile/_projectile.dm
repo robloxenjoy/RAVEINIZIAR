@@ -260,10 +260,10 @@
 //		if(istype(turf_loc))
 //			visible_message(span_danger("[src] hits [turf_loc]!"))
 	if(isopenspaceturf(loc))
-		var/turf/below_turf = SSmapping.get_turf_below(get_turf(src))
-		src.forceMove(below_turf)
-//		src.z--
-		trajectory.initialize_location(tile_z = src.z)
+//		var/turf/below_turf = SSmapping.get_turf_below(get_turf(src))
+//		src.forceMove(below_turf)
+		src.z--
+//		trajectory.initialize_location(tile_z = src.z)
 	if(isturf(loc))
 		process_hit(loc, loc, loc)
 	if(!QDELETED(src))
