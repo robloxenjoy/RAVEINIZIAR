@@ -128,3 +128,19 @@
 	carry_weight = 300 GRAMS
 	can_adjust = FALSE
 	body_parts_covered = CHEST|VITALS|ARMS|GROIN
+
+/obj/item/clothing/pants/codec/panta
+	name = "Pants"
+	desc = "Bad quality!"
+	icon = 'modular_pod/icons/obj/clothing/pants.dmi'
+	icon_state = "panta"
+	worn_icon = 'modular_pod/icons/mob/clothing/pants.dmi'
+	worn_icon_state = "panta"
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	max_integrity = 100
+	integrity_failure = 0.1
+	limb_integrity = 90
+	repairable_by = /obj/item/stack/ballistic
+	carry_weight = 400 GRAMS
+	armor = list(MELEE = 1, BULLET = 1, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 2, ACID = 2, WOUND = 1)

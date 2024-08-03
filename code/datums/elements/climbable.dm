@@ -57,8 +57,8 @@
 	if(!can_climb(climbed_thing, user))
 		return
 	climbed_thing.add_fingerprint(user)
-	user.visible_message(span_warning("[user] начинает лезть на [climbed_thing]."), \
-								span_notice("Я начинаю лезть на [climbed_thing]..."))
+	user.visible_message(span_warning("[user] starts to climb on [climbed_thing]."), \
+								span_notice("I'm starting to climb on [climbed_thing]..."))
 	var/adjusted_climb_time = climb_time
 	var/adjusted_climb_stun = climb_stun
 	if(HAS_TRAIT(user, TRAIT_HANDS_BLOCKED)) //climbing takes twice as long without help from the hands.
@@ -73,13 +73,13 @@
 		if(QDELETED(climbed_thing)) //Checking if structure has been destroyed
 			return
 		if(do_climb(climbed_thing, user, params))
-			user.visible_message(span_warning("[user] лезет на [climbed_thing]."), \
-								span_notice("Я лезу на [climbed_thing]."))
+			user.visible_message(span_warning("[user] climbs on [climbed_thing]."), \
+								span_notice("I'm climbing on [climbed_thing]."))
 			log_combat(user, climbed_thing, "climbed onto")
 			if(adjusted_climb_stun)
 				user.Stun(adjusted_climb_stun)
 		else
-			to_chat(user, span_warning("Провалил попытку лезки на [climbed_thing]."))
+			to_chat(user, span_warning("Failed to climb on [climbed_thing]."))
 	LAZYREMOVEASSOC(current_climbers, climbed_thing, user)
 
 

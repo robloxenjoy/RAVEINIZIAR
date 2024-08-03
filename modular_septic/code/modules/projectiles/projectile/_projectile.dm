@@ -263,7 +263,7 @@
 //		var/turf/below_turf = SSmapping.get_turf_below(get_turf(src))
 //		src.forceMove(below_turf)
 		src.z--
-		pixel_move(1, FALSE) //move it now!
+//		pixel_move(1, FALSE) //move it now!
 //		trajectory.initialize_location(tile_z = src.z)
 	if(isturf(loc))
 		process_hit(loc, loc, loc)

@@ -169,7 +169,7 @@
 
 /obj/structure/beast/worm/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/food/grown/granat))
-		user.visible_message(span_notice("[user] feeds [src] with [I]."),span_notice("I feed[src] with [I]."), span_hear("I hear strange things."))
+		user.visible_message(span_notice("[user] feeds [src] with [I]."),span_notice("I feed [src] with [I]."), span_hear("I hear strange things."))
 		if(do_after(user, 5 SECONDS, target = src))
 			to_chat(user, span_notice("I feed [src] with [I]."))
 			sound_hint()
