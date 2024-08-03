@@ -1562,7 +1562,7 @@
 /datum/attribute_holder/sheet/job/kapno
 	attribute_variance = list(
 		STAT_STRENGTH = list(-2, 3),
-		STAT_ENDURANCE = list(-2, 3),
+//		STAT_ENDURANCE = list(-2, 3),
 		STAT_DEXTERITY = list(-2, 3),
 		STAT_INTELLIGENCE = list(-2, 3),
 		SKILL_BRAWLING = list(-1, 2),
@@ -1603,7 +1603,7 @@
 /datum/attribute_holder/sheet/job/konch
 	attribute_variance = list(
 		STAT_STRENGTH = list(-2, 3),
-		STAT_ENDURANCE = list(-2, 3),
+//		STAT_ENDURANCE = list(-2, 3),
 		STAT_DEXTERITY = list(-2, 3),
 		STAT_INTELLIGENCE = list(-2, 3),
 		SKILL_BRAWLING = list(-1, 2),
@@ -1645,7 +1645,7 @@
 /datum/attribute_holder/sheet/job/svogod
 	attribute_variance = list(
 		STAT_STRENGTH = list(2, 5),
-		STAT_ENDURANCE = list(2, 5),
+//		STAT_ENDURANCE = list(2, 5),
 		STAT_DEXTERITY = list(2, 5),
 		STAT_INTELLIGENCE = list(2, 5),
 		SKILL_BRAWLING = list(2, 5),

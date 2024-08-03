@@ -129,7 +129,7 @@
 /datum/attribute_holder/sheet/job/halbermensch
     attribute_variance = list(
 		STAT_STRENGTH = list(6, 10),
-		STAT_ENDURANCE = list(6, 10),
+//		STAT_ENDURANCE = list(6, 10),
 		STAT_DEXTERITY = list(-1, 2),
 		STAT_INTELLIGENCE = list(1, 2),
 		SKILL_BRAWLING = list(5, 10),

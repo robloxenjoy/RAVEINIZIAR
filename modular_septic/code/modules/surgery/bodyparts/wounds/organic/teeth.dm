@@ -12,7 +12,7 @@
 	severity = WOUND_SEVERITY_TRIVIAL
 	viable_zones = ALL_BODYPARTS
 
-	threshold_minimum = 30
+	threshold_minimum = 33
 	wound_type = WOUND_TEETH
 	wound_flags = (WOUND_SOUND_HINTS)
 
@@ -27,7 +27,7 @@
 	. = ..()
 	if(!.)
 		return
-	var/random_number_chungas = (rand(1,4))
+	var/random_number_chungas = (rand(1,3))
 	var/final_descriptive
 	if(random_number_chungas > 1)
 		final_descriptive = "Teeth are knocked out!"
