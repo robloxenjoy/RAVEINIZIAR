@@ -232,7 +232,7 @@
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "trap_spikes"
 	resistance_flags = FIRE_PROOF
-	max_integrity = 50
+	max_integrity = 100
 	density = FALSE
 	anchored = TRUE
 	var/activated = FALSE
@@ -241,7 +241,7 @@
 	. = ..()
 	update_appearance()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/dont_step,
+		COMSIG_ATOM_ENTERED = PROC_REF(dont_step),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -250,7 +250,7 @@
 	if(!isturf(loc) || !isliving(AM))
 		return
 	var/mob/living/L = AM
-	if(!thrown_at && L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
+	if(L.throwing || L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
 		return
 
 	activated = TRUE
@@ -266,17 +266,17 @@
 		if(C.body_position == STANDING_UP)
 			var/obj/item/bodypart/l_foot/lfoot = C.get_bodypart_nostump(BODY_ZONE_PRECISE_L_FOOT)
 			if(lfoot)
-				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_L_FOOT, wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage(rand(35, 45), BRUTE, BODY_ZONE_PRECISE_L_FOOT, wound_bonus = 5, sharpness = SHARP_POINTY)
 			var/obj/item/bodypart/r_foot/rfoot = C.get_bodypart_nostump(BODY_ZONE_PRECISE_R_FOOT)
 			if(rfoot)
-				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_R_FOOT, wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage(rand(35, 45), BRUTE, BODY_ZONE_PRECISE_R_FOOT, wound_bonus = 5, sharpness = SHARP_POINTY)
 		else
 			var/obj/item/bodypart/chest/cchest = C.get_bodypart_nostump(BODY_ZONE_CHEST)
 			if(cchest)
-				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_CHEST, wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage(rand(35, 45), BRUTE, BODY_ZONE_CHEST, wound_bonus = 5, sharpness = SHARP_POINTY)
 			var/obj/item/bodypart/vitals/vvitals = C.get_bodypart_nostump(BODY_ZONE_PRECISE_VITALS)
 			if(vvitals)
-				C.apply_damage((rand(35, 45) - GET_MOB_ATTRIBUTE_VALUE(C, STAT_ENDURANCE)), BRUTE, BODY_ZONE_PRECISE_VITALS, wound_bonus = 5, sharpness = SHARP_POINTY)
+				C.apply_damage(rand(35, 45), BRUTE, BODY_ZONE_PRECISE_VITALS, wound_bonus = 5, sharpness = SHARP_POINTY)
 	activated = FALSE
 	playsound(get_turf(src), 'modular_pod/sound/eff/close_trap.ogg', 100 , FALSE, FALSE)
 

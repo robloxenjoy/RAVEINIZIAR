@@ -928,8 +928,6 @@
 	verb_ask = "cutes"
 	verb_exclaim = "cutes"
 	var/datum/looping_sound/medika/soundloop
-	var/last_words = 0
-	var/words_delay = 1000
 	var/words_list = list("I will heal you, and your soul!", "You are my only one!", "I'm always here, just come to me.", "I will never betray you.", "I've been waiting for you...")
 
 /obj/structure/medica/proc/speak(message)
@@ -941,22 +939,10 @@
 	. = ..()
 	soundloop = new(src, FALSE)
 	soundloop.start()
-	last_words = world.time + rand(0, words_delay)
-	START_PROCESSING(SSobj, src)
 
 /obj/structure/medica/Destroy()
 	. = ..()
 	QDEL_NULL(soundloop)
-	STOP_PROCESSING(SSobj, src)
-
-/obj/structure/medica/process(delta_time)
-	. = ..()
-	if(last_words + words_delay <= world.time && prob(70))
-		var/words = pick(words_list)
-		speak(words)
-		sound_hint()
-		playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
-		last_words = world.time
 
 /obj/structure/medica/attack_jaw(mob/living/carbon/human/user, list/modifiers)
 	. = ..()
@@ -977,6 +963,10 @@
 		if(do_after(user, 3 SECONDS, target=src))
 			to_chat(GR, span_meatymeat("I feel some kind of fucked up!"))
 			GR.fully_heal(TRUE)
+			var/words = pick(words_list)
+			speak(words)
+			sound_hint()
+			playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
 	else
 		return
 

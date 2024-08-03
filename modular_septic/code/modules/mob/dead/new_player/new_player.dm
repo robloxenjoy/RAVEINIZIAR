@@ -369,7 +369,7 @@
 	l_pocket = /obj/item/key/podpol/woody/konchkey
 	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
 	uniform = /obj/item/clothing/under/codec/maika
-	pants = /obj/item/clothing/pants/codec/purp/black
+	pants = /obj/item/clothing/pants/codec/panta
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/mostkonch
@@ -378,7 +378,7 @@
 	mask = /obj/item/clothing/mask/gas/ballisticarmor
 	l_pocket = /obj/item/key/podpol/woody/konchkey
 	uniform = /obj/item/clothing/under/codec/maika
-	pants = /obj/item/clothing/pants/codec/purp/black
+	pants = /obj/item/clothing/pants/codec/panta
 	shoes = /obj/item/clothing/shoes/jackboots
 //	belt = /obj/item/melee/bita/cep/iron
 	r_hand = /obj/item/melee/bita/hammer/sledge
