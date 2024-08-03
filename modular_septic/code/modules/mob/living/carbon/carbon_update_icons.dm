@@ -309,7 +309,23 @@
 	overlays_standing[ARTERY_LAYER] = arteries
 
 	apply_overlay(ARTERY_LAYER)
+/*
+/mob/living/carbon/proc/update_incision_overlays()
+	remove_overlay(INCISION_LAYER)
 
+	var/mutable_appearance/arteries = mutable_appearance('modular_septic/icons/mob/human/overlays/artery.dmi', "blank", -INCISION_LAYER)
+	for(var/obj/item/bodypart/bodypart as anything in bodyparts)
+		if(bodypart.is_stump() || !bodypart.is_organic_limb() || !bodypart.get_bleed_rate(TRUE))
+			continue
+		var/image/artery
+		if(bodypart.is_artery_torn())
+			artery = image('modular_septic/icons/mob/human/overlays/artery.dmi', "[bodypart.body_zone]_artery1")
+			artery.layer = -INCISION_LAYER
+			arteries.add_overlay(artery)
+	overlays_standing[INCISION_LAYER] = arteries
+
+	apply_overlay(INCISION_LAYER)
+*/
 /mob/living/carbon/proc/update_gore_overlays()
 	remove_overlay(GORE_LAYER)
 

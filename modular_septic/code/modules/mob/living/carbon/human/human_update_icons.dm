@@ -826,6 +826,9 @@
 /mob/living/carbon/human/update_artery_overlays()
 	return dna?.species?.handle_artery_overlays(src)
 
+//mob/living/carbon/human/update_incision_overlays()
+//	return dna?.species?.handle_incision_overlays(src)
+
 /mob/living/carbon/human/update_gore_overlays()
 	return dna?.species?.handle_gore_overlays(src)
 
