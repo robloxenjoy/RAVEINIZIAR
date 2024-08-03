@@ -1311,7 +1311,7 @@
 
 	var/organ_hit_chance = 30 * (damage_amt/organ_damage_minimum)
 	// Bones getting in the way aaaaah
-	var/modifier = 1
+	var/modifier = 0.5
 	var/list/bones = list()
 	bones |= getorganslotlist(ORGAN_SLOT_BONE)
 	if(LAZYLEN(extra_parts))
