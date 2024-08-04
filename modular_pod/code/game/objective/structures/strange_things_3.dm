@@ -975,8 +975,8 @@
 	if(.)
 		return
 	if(do_after(user, 2 SECONDS, target=src))
-		to_chat(yser, span_meatymeat("I feel some kind of fucked up!"))
-		yser.fully_heal(TRUE)
+		to_chat(user, span_meatymeat("I feel some kind of fucked up!"))
+		user.fully_heal(TRUE)
 		var/words = pick(words_list)
 		speak(words)
 		sound_hint()
