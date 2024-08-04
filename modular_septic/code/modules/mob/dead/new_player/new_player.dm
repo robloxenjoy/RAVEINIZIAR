@@ -124,7 +124,7 @@
 		if("Halbermensch")
 			var/number = GLOB.world_deaths_crazy / 2
 			var/second = GLOB.new_people_crazy * 2
-			if(second > number)
+			if(second < number)
 				var/hal = "[global.config.directory]/hal.txt"
 				if(ckey in world.file2list(hal))
 					client.role_ch = "halbermensch"
