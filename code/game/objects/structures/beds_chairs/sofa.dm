@@ -1,5 +1,5 @@
 /obj/structure/chair/sofa
-	name = "Кресло"
+	name = "Sofa"
 	icon_state = "sofamiddle"
 	icon = 'icons/obj/sofa.dmi'
 	buildstackamount = 1
@@ -44,8 +44,8 @@
 
 // Original icon ported from Eris(?) and updated to work here.
 /obj/structure/chair/sofa/corp
-	name = "Кресло"
-	desc = "Заебца."
+	name = "Sofa"
+	desc = "Amazing."
 	icon_state = "corp_sofamiddle"
 
 /obj/structure/chair/sofa/corp/left
