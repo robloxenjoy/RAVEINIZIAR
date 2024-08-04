@@ -252,7 +252,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	toggles = sanitize_integer(toggles, 0, (2**24)-1, initial(toggles))
 	clientfps = sanitize_integer(clientfps, 0, 1000, 40)
 	parallax = sanitize_integer(parallax, PARALLAX_INSANE, PARALLAX_DISABLE, null)
-	ambientocclusion = sanitize_integer(ambientocclusion, FALSE, TRUE, initial(ambientocclusion))
+	ambientocclusion = sanitize_integer(ambientocclusion, TRUE, TRUE, TRUE)
 	screentip_pref	= sanitize_integer(screentip_pref, FALSE, TRUE, initial(screentip_pref))
 	itemoutline_pref = sanitize_integer(itemoutline_pref, FALSE, TRUE, initial(itemoutline_pref))
 	auto_fit_viewport = sanitize_integer(auto_fit_viewport, FALSE, TRUE, initial(auto_fit_viewport))

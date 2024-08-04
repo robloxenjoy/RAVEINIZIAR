@@ -3,7 +3,7 @@
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
 	savefile_key = "ambientocclusion"
 	savefile_identifier = PREFERENCE_PLAYER
-	default_value = FALSE
+	default_value = TRUE
 
 /datum/preference/toggle/ambient_occlusion/apply_to_client(client/client, value)
 	var/atom/movable/screen/plane_master/game_world/plane_master = locate() in client?.screen

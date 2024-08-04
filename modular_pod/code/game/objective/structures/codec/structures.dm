@@ -3,7 +3,7 @@
 	desc = "Why the hell should we see all this?"
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "lampala"
-	plane = GAME_PLANE_BLOOM
+//	plane = GAME_PLANE_BLOOM
 	layer = FLY_LAYER
 	density = TRUE
 	anchored = TRUE
@@ -16,7 +16,7 @@
 	desc = "Lights up the room and enlightens your rotten soul."
 	icon = 'modular_pod/icons/obj/things/things.dmi'
 	icon_state = "svetilka"
-	plane = GAME_PLANE_BLOOM
+//	plane = GAME_PLANE_BLOOM
 	layer = FLY_LAYER
 	density = TRUE
 	anchored = TRUE
@@ -29,7 +29,7 @@
 	desc = "It's really warm?"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "lighter"
-	plane = GAME_PLANE_BLOOM
+//	plane = GAME_PLANE_BLOOM
 	layer = FLY_LAYER
 	density = TRUE
 	anchored = TRUE

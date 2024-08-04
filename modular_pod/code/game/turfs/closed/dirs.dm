@@ -77,7 +77,7 @@
 //		F.update_icon_pod()
 
 /turf/podpol/wall
-	plane = GAME_PLANE
+//	plane = GAME_PLANE
 	inspect_icon_state = "wall"
 	max_integrity = 500
 	blocks_air = TRUE

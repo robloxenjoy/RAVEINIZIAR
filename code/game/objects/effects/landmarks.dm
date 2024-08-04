@@ -3,7 +3,7 @@
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "spawnerr"
 	anchored = TRUE
-	plane = GAME_PLANE
+//	plane = GAME_PLANE
 	layer = TURF_LAYER
 	invisibility = INVISIBILITY_ABSTRACT
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -50,7 +50,7 @@
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "spawnerr"
 	anchored = TRUE
-	plane = GAME_PLANE
+//	plane = GAME_PLANE
 	layer = TURF_LAYER
 	invisibility = INVISIBILITY_ABSTRACT
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -79,7 +79,7 @@
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x2"
 	anchored = TRUE
-	plane = GAME_PLANE
+//	plane = GAME_PLANE
 	layer = TURF_LAYER
 	invisibility = INVISIBILITY_ABSTRACT
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
