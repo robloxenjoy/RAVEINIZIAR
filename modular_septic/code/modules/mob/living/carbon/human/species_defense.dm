@@ -1079,7 +1079,7 @@
 									victim.Stun(1 SECONDS)
 								if(diceroll == DICE_CRIT_FAILURE)
 									victim.Stun(2 SECONDS)
-								victim.visible_message(span_pinkdang("[victim] deals gelding blow from [user]!"), \
+								victim.visible_message(span_pinkdang("[victim] get gelding blow from [user]!"), \
 													span_pinkdang("I get gelding blow from [user]!"), \
 													span_hear("I hear combat."))
 								if(victim.stat >= UNCONSCIOUS)
