@@ -1,2 +1,3 @@
 moonmagick = #FF3399
 nukechicken64 = #89ff42
+nunleft = #3b2900

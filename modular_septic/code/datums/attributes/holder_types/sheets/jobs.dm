@@ -1583,7 +1583,6 @@
 		SKILL_BUCKLER = list(-2, 2),
 		SKILL_KNIFE = list(-1, 2),
 		SKILL_FORENSICS = list(-2, 1),
-
 	)
 	raw_attribute_list = list(
 		SKILL_BRAWLING = -1,
