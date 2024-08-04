@@ -975,8 +975,12 @@
 	if(.)
 		return
 	if(do_after(user, 2 SECONDS, target=src))
-		to_chat(user, span_meatymeat("I feel some kind of fucked up!"))
-		user.fully_heal(TRUE)
+			to_chat(GR, span_meatymeat("I feel some kind of fucked up!"))
+			GR.fully_heal(TRUE)
+			var/words = pick(words_list)
+			speak(words)
+			sound_hint()
+			playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
 
 /*
 /obj/item/paperpodpol
