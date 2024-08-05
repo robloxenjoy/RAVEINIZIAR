@@ -12,7 +12,7 @@
 
 /datum/time_of_day/dawndawn
  name = "Beforedawn"
- color = "#00000c"
+ color = "#00002f"
  start = 1 HOURS //1:00:00 AM
 
 /datum/time_of_day/dawn
@@ -33,12 +33,12 @@
 /datum/time_of_day/sunset
  name = "Sunset"
  color = "#ff6b46"
- start = 19 HOURS //7:00:00 PM
+ start = 18 HOURS //7:00:00 PM
 
 /datum/time_of_day/dusk
  name = "Dusk"
  color = "#2a1f33"
- start = 19.5 HOURS //7:30:00 PM
+ start = 19.7 HOURS //7:30:00 PM
 
 /datum/time_of_day/night
  name = "Night"
@@ -47,7 +47,7 @@
 
 /datum/time_of_day/midnight
  name = "Midnight"
- color = "#000000"
+ color = "#000032"
  start = 22 HOURS
 
 GLOBAL_VAR_INIT(GLOBAL_LIGHT_RANGE, 4)
