@@ -29,7 +29,7 @@
 	desc = "Another tool of destruction."
 	icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
-	shrapnel_radius = 7
+	shrapnel_radius = 6
 	ex_heavy = 4
 	ex_light = 4
 	ex_flame = 2
