@@ -149,7 +149,7 @@
 
 /obj/item/storage/box/c12buckshot/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/ammo_box/magazine/ammo_stack/shotgun/loaded = 2)
+		/obj/item/ammo_box/magazine/ammo_stack/shotgunbuckshot/loaded = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/c12slugs
