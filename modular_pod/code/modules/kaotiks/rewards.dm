@@ -369,7 +369,7 @@
 		A.set_base_lighting(new_alpha = 255)
 		A.remove_area_lighting_objects()
 */
-/*
+
 /datum/bobux_reward/activate_muzon
 	name = "Toggle on Musick"
 	desc = "Need to listen!"
@@ -424,7 +424,6 @@
 		if(H.client)
 			var/area/areal = get_area(H)
 			SSdroning.play_area_sound(areal, H?.client)
-*/
 
 /datum/bobux_reward/cleanmap
 	name = "Clear Map"

@@ -4,7 +4,7 @@
 
 #define DRONING_POLOVICHSTAN list('modular_pod/sound/mus/titan.ogg', 'modular_pod/sound/mus/alien.ogg')
 
-#define DRONING_MUZON list('modular_pod/sound/mus/gocrazy.ogg')
+#define DRONING_MUZON list('modular_pod/sound/mus/muzon.ogg')
 
 //#define DRONING_CAVER list('modular_pod/sound/mus/caver.ogg', 'modular_pod/sound/mus/cavor.ogg')
 #define DRONING_CAVER list('modular_pod/sound/mus/gocrazy.ogg')
