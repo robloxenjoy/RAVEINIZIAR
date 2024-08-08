@@ -81,7 +81,7 @@
 	name = "Fog"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "foga"
-	layer = ABOVE_MOB_LAYER
+	layer = FLY_LAYER
 //	plane = GAME_PLANE_WINDOW
 	density = FALSE
 	anchored = TRUE
