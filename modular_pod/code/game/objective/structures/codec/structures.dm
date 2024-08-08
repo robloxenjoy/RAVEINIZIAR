@@ -449,6 +449,9 @@
 	inhand_icon_state = null
 //	worn_icon = null
 
+/obj/item/key
+	plane = FRILL_PLANE_WINDOW
+
 /obj/item/key/podpol/woody/kapnokey
 	name = "Key"
 	desc = "To the door of the Ladax Father room."

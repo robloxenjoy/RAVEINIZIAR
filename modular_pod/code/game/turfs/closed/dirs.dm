@@ -84,6 +84,7 @@
 	pass_flags_self = PASSCLOSEDTURF
 	density = TRUE
 	layer = CLOSED_TURF_LAYER
+	plane = FRILL_PLANE_WINDOW
 	opacity = TRUE
 	clingable = TRUE
 	var/cantbreak = FALSE

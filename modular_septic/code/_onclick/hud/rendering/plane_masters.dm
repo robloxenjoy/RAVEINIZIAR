@@ -40,6 +40,10 @@
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
 	. = ..()
 	remove_filter("AO")
+	if(istype(mymob))
+		add_filter("AO", 1, AMBIENT_OCCLUSION)
+/*
+	remove_filter("AO")
 	remove_filter("AO2")
 	remove_filter("AO3")
 	remove_filter("AO4")
@@ -48,6 +52,7 @@
 		add_filter("AO2", 2, GENERAL_AMBIENT_OCCLUSION2)
 		add_filter("AO3", 3, GENERAL_AMBIENT_OCCLUSION3)
 		add_filter("AO4", 4, GENERAL_AMBIENT_OCCLUSION4)
+*/
 
 /atom/movable/screen/plane_master/game_world_bloom
 	name = "game world bloom plane master"
@@ -210,6 +215,10 @@
 /atom/movable/screen/plane_master/runechat/backdrop(mob/mymob)
 	. = ..()
 	remove_filter("AO")
+	if(istype(mymob))
+		add_filter("AO", 1, AMBIENT_OCCLUSION)
+/*
+	remove_filter("AO")
 	remove_filter("AO2")
 	remove_filter("AO3")
 	remove_filter("AO4")
@@ -218,7 +227,7 @@
 		add_filter("AO2", 2, GENERAL_AMBIENT_OCCLUSION2)
 		add_filter("AO3", 3, GENERAL_AMBIENT_OCCLUSION3)
 		add_filter("AO4", 4, GENERAL_AMBIENT_OCCLUSION4)
-
+*/
 /atom/movable/screen/plane_master/sound_hint
 	name = "sound hint plane"
 	plane = SOUND_HINT_PLANE

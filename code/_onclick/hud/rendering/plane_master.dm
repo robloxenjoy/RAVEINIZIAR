@@ -64,8 +64,12 @@
 	. = ..()
 	remove_filter("AO")
 	if(istype(mymob))
+		add_filter("AO", 1, AMBIENT_OCCLUSION)
+/*
+	remove_filter("AO")
+	if(istype(mymob))
 		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 4, color = "#04080FAA"))
-
+*/
 /atom/movable/screen/plane_master/massive_obj
 	name = "massive object plane master"
 	plane = MASSIVE_OBJ_PLANE
