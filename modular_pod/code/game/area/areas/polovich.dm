@@ -39,6 +39,7 @@
 	var/specialfog = FALSE
 	var/lighting_out = TRUE
 	var/ino = FALSE
+	var/specialcolor = FALSE
 
 /area/maintenance/polovich/forest/Initialize(mapload)
 	. = ..()
@@ -53,7 +54,7 @@
 		var/mob/living/living_arrived = arrived
 		if(istype(living_arrived) && living_arrived.client)
 			living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
-	if(fogger)
+	if(specialcolor)
 		var/mob/living/living_arrived = arrived
 		if(istype(living_arrived) && living_arrived.client)
 			living_arrived.add_client_colour(/datum/client_colour/surface)
@@ -64,9 +65,10 @@
 		var/mob/living/living_gone = gone
 		if(istype(living_gone))
 			living_gone.clear_fullscreen("redfog")
-	var/mob/living/living_arrived = gone
-	if(istype(living_arrived) && living_arrived.client)
-		living_arrived.remove_client_colour(/datum/client_colour/surface)
+	if(specialcolor)
+		var/mob/living/living_arrived = gone
+		if(istype(living_arrived) && living_arrived.client)
+			living_arrived.remove_client_colour(/datum/client_colour/surface)
 
 /area/maintenance/polovich/forest/on_joining_game(mob/living/boarder)
 	. = ..()

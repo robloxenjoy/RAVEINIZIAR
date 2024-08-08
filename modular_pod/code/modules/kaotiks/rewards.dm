@@ -496,7 +496,7 @@
 /datum/bobux_reward/changename
 	name = "Change Name"
 	desc = "It's time."
-	buy_message = "<b>Need to make wise choice!</span>"
+	buy_message = "<b>Need to do wise choice!</span>"
 	id = "changename"
 	cost = 30
 	infinite_buy = TRUE
