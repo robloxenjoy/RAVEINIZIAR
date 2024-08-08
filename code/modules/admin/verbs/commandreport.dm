@@ -7,7 +7,7 @@
 #define SYNDICATE_PRESET "The Syndicate"
 */
 //SEPTIC EDIT BEGIN
-#define CENTCOM_PRESET "Single"
+#define CENTCOM_PRESET "World"
 #define SYNDICATE_PRESET "DREAMATTACK"
 //SEPTIC EDIT END
 #define WIZARD_PRESET "The Wizard Federation"

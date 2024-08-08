@@ -25,7 +25,7 @@ GLOBAL_VAR(command_name)
 	var/name = "Central Command"
 	*/
 	//SEPTIC EDIT BEGIN
-	var/name = "Single"
+	var/name = "World"
 	//SEPTIC EDIT END
 
 	GLOB.command_name = name
