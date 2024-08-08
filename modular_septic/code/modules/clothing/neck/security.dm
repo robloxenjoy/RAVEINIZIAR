@@ -151,6 +151,44 @@
 				WOUND = 5, \
 				ORGAN = 3)
 
+/obj/item/clothing/neck/chainer
+	name = "Chainer"
+	desc = "It is made of iron rings."
+	icon = 'modular_pod/icons/obj/clothing/neck.dmi'
+	icon_state = "chaineck"
+	worn_icon = 'modular_pod/icons/mob/clothing/neck.dmi'
+	worn_icon_state = "chaineck"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "ordinator_cloak"
+	strip_delay = 40
+	body_parts_covered = NECK
+	cold_protection = NECK
+	heat_protection = NECK
+	slot_flags = ITEM_SLOT_NECK
+	armor_broken_sound = "light"
+	armor_damaged_sound = "light"
+	armor = null
+	max_integrity = 400
+	integrity_failure = 0.1
+	limb_integrity = 350
+	carry_weight = 1.2 KILOGRAMS
+	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
+				EDGE_PROTECTION = 50, \
+				CRUSHING = 4, \
+				CUTTING = 20, \
+				PIERCING = 9, \
+				IMPALING = 7, \
+				LASER = 1, \
+				ENERGY = 0, \
+				BOMB = 8, \
+				BIO = 0, \
+				FIRE = 2, \
+				ACID = 2, \
+				MAGIC = 0, \
+				WOUND = 4, \
+				ORGAN = 2)
+
 /obj/item/clothing/neck/gorget/steel
 	name = "Steel Gorget"
 	desc = "This should protect you from neck attacks, in theory."

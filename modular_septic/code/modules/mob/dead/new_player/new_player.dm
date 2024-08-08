@@ -338,6 +338,8 @@
 	..()
 	if(prob(50))
 		suit = /obj/item/clothing/suit/armor/roba
+	if(prob(50))
+		head = /obj/item/clothing/head/headbanda/greener
 
 /datum/outfit/kapno
 	name = "Kapno Uniform"
@@ -363,11 +365,14 @@
 	pants = /obj/item/clothing/pants/codec/purp/red
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet/codec/def_yel
+	neck = /obj/item/clothing/neck/chainer
 
 /datum/outfit/konch/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(prob(50))
 		suit = /obj/item/clothing/suit/armor/sexcoat
+	if(prob(50))
+		head = /obj/item/clothing/head/headbanda
 
 /datum/outfit/konch
 	name = "Konch Uniform"
@@ -391,6 +396,12 @@
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
 	back = /obj/item/melee/shieldo/buckler/wooden
 
+/datum/outfit/mostkonch/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(50))
+		mask = null
+		head = /obj/item/clothing/head/helmet/ironhelmos
+
 /datum/outfit/svogod
 	name = "Svogod Uniform"
 
@@ -399,4 +410,5 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	back = /obj/item/storage/belt/military/itobe/svo
+	neck = /obj/item/clothing/neck/chainer
 	suit_store = /obj/item/gun/ballistic/automatic/remis/svd

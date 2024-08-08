@@ -598,8 +598,8 @@
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
 		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
-	if(GLOB.world_deaths_crazy < 30)
-		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 30."))
+	if(GLOB.world_deaths_crazy < 20)
+		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 20."))
 		return
 	switch(thingy)
 		if("Bobox (70)")
@@ -632,8 +632,8 @@
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
 		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
-	if(GLOB.world_deaths_crazy < 20)
-		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 20."))
+	if(GLOB.world_deaths_crazy < 10)
+		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 10."))
 		return
 	switch(thingy)
 		if("Light Bulletproofer (50)")
@@ -799,8 +799,8 @@
 	if((!pref_source.bobux_amount) || (pref_source.bobux_amount <= 0))
 		to_chat(user, span_meatymeat("Need kaotiks!"))
 		return
-	if(GLOB.world_deaths_crazy < 15)
-		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 15."))
+	if(GLOB.world_deaths_crazy < 10)
+		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 10."))
 		return
 	switch(thingy)
 		if("Frag Grenade (60)")

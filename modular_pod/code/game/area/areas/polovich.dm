@@ -120,6 +120,7 @@
 	min_ambience_cooldown = 50 SECONDS
 	max_ambience_cooldown = 75 SECONDS
 //	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
+	ambientsounds = null
 	droning_sound = DRONING_INNER
 	ambientsounds_normal = null
 	lighting_out = FALSE

@@ -180,11 +180,11 @@ SUBSYSTEM_DEF(droning)
 /datum/controller/subsystem/droning/proc/play_loop(area/area_entered, client/dreamer)
 	if(!area_entered || !dreamer)
 		return
-	var/retard = null
+//	var/retard = null
+	kill_loop(dreamer)
 	if(area_entered.ambientsounds_normal)
-		kill_loop(dreamer)
-		retard = area_entered.ambientsounds_normal
-		var/sound/loop_sound = sound(pick(retard), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
+//		retard = area_entered.ambientsounds_normal
+		var/sound/loop_sound = sound(pick(area_entered.ambientsounds_normal), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
 		SEND_SOUND(dreamer, loop_sound)
 		dreamer.loop_sound = TRUE
 	else
