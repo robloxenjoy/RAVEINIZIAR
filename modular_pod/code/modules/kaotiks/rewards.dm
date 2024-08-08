@@ -492,6 +492,7 @@
 		qdel(A)
 	for(var/area/maintenance/polovich/forest/B in world)
 		B.fogger = FALSE
+		B.specialfog = FALSE
 
 /datum/bobux_reward/changename
 	name = "Change Name"
