@@ -67,6 +67,7 @@
 /area/maintenance/polovich/forest/can_ruin
 	area_flags = UNIQUE_AREA | NO_ALERTS
 	icon_state = "polovich_special"
+	ambientsounds_normal = list('modular_pod/sound/loop/surface.ogg')
 
 /obj/effect/foga
 	name = "Fog"
@@ -82,7 +83,7 @@
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
-/area/maintenance/polovich/forest/can_ruin/fog/New()
+/area/maintenance/polovich/forest/can_ruin/fog/Initialize(mapload)
 	. = ..()
 	for(var/turf/T in src)
 //		T.temperature = COLDDIRT
