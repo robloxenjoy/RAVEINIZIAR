@@ -73,6 +73,10 @@ map ceivara
 endmap
 
 map atraka
+	votable
+endmap
+
+map baqqusta
 	default
 	votable
 endmap
