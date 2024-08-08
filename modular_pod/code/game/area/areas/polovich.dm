@@ -82,7 +82,7 @@
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "foga"
 	layer = FLY_LAYER
-//	plane = GAME_PLANE_WINDOW
+	plane = ABOVE_GAME_PLANE
 	density = FALSE
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

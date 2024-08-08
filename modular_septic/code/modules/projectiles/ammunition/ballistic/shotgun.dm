@@ -25,6 +25,7 @@
 	desc = "Nice."
 	icon_state = "12gauge"
 	base_icon_state = "12gauge"
+	firing_effect_type = /obj/effect/temp_visual/firing_effect
 //	world_icon_state = "gshell"
 	pellets = 8
 	variance = 4.5
