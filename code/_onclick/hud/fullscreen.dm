@@ -99,7 +99,7 @@
 	icon_state = "poor_screen"
 	layer = 10
 	plane = FULLSCREEN_PLANE
-	alpha = 200
+	alpha = 170
 //	color = "#ffd1a4"
 
 /atom/movable/screen/fullscreen/foge/Initialize(mapload)

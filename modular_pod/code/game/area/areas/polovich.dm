@@ -145,6 +145,8 @@
 /area/maintenance/polovich/forest/cave/can_ruin
 	area_flags = UNIQUE_AREA | NO_ALERTS
 	icon_state = "caveira_special"
+	fogger = FALSE
+	specialfog = FALSE
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
