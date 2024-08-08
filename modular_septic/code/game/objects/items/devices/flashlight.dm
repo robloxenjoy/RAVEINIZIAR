@@ -22,15 +22,15 @@
 
 /obj/item/flashlight/flare/attack_self(mob/user)
 	if(fuel <= 0)
-		to_chat(user, span_warning("[src] закончился!"))
+		to_chat(user, span_warning("[src] ends!"))
 		return
 	if(on)
-		to_chat(user, span_warning("[src] уже горит!"))
+		to_chat(user, span_warning("[src] is on fire!"))
 		return
 
 	. = ..()
 	if(.)
-		user.visible_message(span_notice("[user] вспыхивает [src]."), span_notice("Я вспыхиваю [src]!"))
+		user.visible_message(span_notice("[user] activates [src]."), span_notice("I activate [src]!"))
 		playsound(src, 'modular_septic/sound/effects/flare_start.ogg', 90, FALSE)
 		soundloop.start()
 		force = on_damage

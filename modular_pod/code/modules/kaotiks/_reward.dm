@@ -31,7 +31,7 @@
 
 //check to see if the stupid bich can even buy this thing
 //accounts for bobux cost but you can slap other requirements here
-/datum/bobux_reward/proc/can_buy(client/noob, silent = FALSE, fail_message = "Недостаточно каотиков чтобы купить NAME!")
+/datum/bobux_reward/proc/can_buy(client/noob, silent = FALSE, fail_message = "Not enough kaotiks to buy NAME!")
 	if(ismob(noob))
 		var/mob/M = noob
 		noob = M.client

@@ -120,23 +120,27 @@
 	. = ..()
 	if(flora)
 		if(prob(15))
-			if(locate(/obj/) in get_turf(src))
-				return
+			for(var/obj/M in get_turf(src))
+				if(M && !M.can_spawn_various_shit)
+					return
 			if(prob(70))
 				new /obj/structure/flora/ausbushes/cactus(get_turf(src))
 				var/near_tt = range(1, src)
 				for(var/turf/open/floor/plating/polovich/way/for2 in get_turf(near_tt))
-					if(locate(/obj/) in get_turf(near_tt))
-						continue
+					for(var/obj/M in get_turf(near_tt))
+						if(M && !M.can_spawn_various_shit)
+							continue
 					if(prob(93))
 						new /obj/structure/flora/ausbushes/cactus(get_turf(near_tt))
 		if(prob(5))
-			if(locate(/obj/) in get_turf(src))
-				return
+			for(var/obj/M in get_turf(src))
+				if(M && !M.can_spawn_various_shit)
+					return
 			new /obj/structure/flora/ausbushes/granat(get_turf(src))
 		if(prob(10))
-			if(locate(/obj/) in get_turf(src))
-				return
+			for(var/obj/M in get_turf(src))
+				if(M && !M.can_spawn_various_shit)
+					return
 			new /obj/effect/decal/grassnice(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)

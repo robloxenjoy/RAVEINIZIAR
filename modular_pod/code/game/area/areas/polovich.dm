@@ -80,6 +80,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	opacity = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	can_spawn_various_shit = TRUE
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
