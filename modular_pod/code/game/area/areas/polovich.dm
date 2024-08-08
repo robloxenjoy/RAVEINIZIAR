@@ -68,6 +68,26 @@
 	area_flags = UNIQUE_AREA | NO_ALERTS
 	icon_state = "polovich_special"
 
+/obj/effect/foga
+	name = "Fog"
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "foga"
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+	density = FALSE
+	anchored = TRUE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	opacity = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/area/maintenance/polovich/forest/can_ruin/fog
+
+/area/maintenance/polovich/forest/can_ruin/fog/New()
+	. = ..()
+	for(var/turf/T in src)
+//		T.temperature = COLDDIRT
+		new /obj/effect/foga(T)
+
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
 	base_lighting_alpha = 1

@@ -137,7 +137,7 @@
 		if(prob(10))
 			if(locate(/obj/) in get_turf(src))
 				return
-			new /obj/effect/decal/grassbad(get_turf(src))
+			new /obj/effect/decal/grassnice(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/for2 in near_t)

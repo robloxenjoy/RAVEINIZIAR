@@ -281,6 +281,18 @@
 	. = ..()
 	icon_state = pick("plant2", "plant1", "plant3")
 
+/obj/effect/decal/grassnice
+	name = "Grass"
+	icon = 'modular_pod/icons/obj/things/things.dmi'
+	icon_state = "planty_1"
+	layer = TURF_PLATING_DECAL_LAYER
+	alpha = 255
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/obj/effect/decal/grassnice/Initialize(mapload)
+	. = ..()
+	icon_state = pick("planty_1", "planty_2", "planty_3", "planty_4")
+
 /obj/effect/decal/shroomworms
 	name = "Shroomworms"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
@@ -294,8 +306,8 @@
 	desc = "The bitch is prickly. I would like to get some water from it."
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "cactus1"
-	plane = ABOVE_GAME_PLANE
-	layer = FLY_LAYER
+//	plane = ABOVE_GAME_PLANE
+//	layer = FLY_LAYER
 	resistance_flags = FLAMMABLE
 	density = TRUE
 	anchored = TRUE
@@ -304,10 +316,9 @@
 
 /obj/structure/flora/ausbushes/cactus/Initialize(mapload)
 	. = ..()
-	create_reagents(50, INJECTABLE | DRAINABLE)
-	reagents.add_reagent(/datum/reagent/water, 50)
-	if(prob(50))
-		icon_state = "cactus2"
+	create_reagents(70, INJECTABLE | DRAINABLE)
+	reagents.add_reagent(/datum/reagent/water, 70)
+	icon_state = pick("cactus1", "cactus2", "cactus3")
 
 /obj/structure/flora/ausbushes/cactus/on_density(mob/living/carbon/human/rammer)
 	var/obj/item/bodypart/affecting = rammer.get_bodypart(ran_zone(BODY_ZONE_CHEST, 50))
@@ -339,9 +350,9 @@
 /obj/structure/flora/ausbushes/cactus/examine(mob/user)
 	. = ..()
 	if(reagents.total_volume > 0)
-		. += span_notice("The cactus is not completely dried.")
+		. += span_notice("The cactus is not dried.")
 	else
-		. += span_notice("Cactus dried.")
+		. += span_notice("Cactus is dried.")
 
 /obj/structure/flora/ausbushes/cactus/attackby(obj/item/W, mob/living/carbon/user, params)
 /*
