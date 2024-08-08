@@ -38,7 +38,7 @@
 		to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
 	if(SSmapping.config?.map_lore)
 		var/map_loree = SSmapping.config?.map_lore
-		to_chat(src, div_infobox(span_adminooc([map_loree])))
+		to_chat(src, div_infobox(span_adminooc("[map_loree]")))
 //		to_chat(src, "<div class=\"motd\">[map_loree]</div>", handle_whitespace=FALSE)
 
 	if(GLOB.admin_notice)
