@@ -4,7 +4,7 @@
 	/// This datum essentially controls a completely separate section of the HUD
 	var/datum/peeper/peeper
 
-	var/atom/movable/screen/fullscreen/fog_blocker/fog_blocker
+//	var/atom/movable/screen/fullscreen/fog_blocker/fog_blocker
 	var/atom/movable/screen/fullscreen/noise/noise
 	var/atom/movable/screen/fullscreen/pain_flash/pain_flash
 	var/atom/movable/screen/sadness/sadness
@@ -55,10 +55,10 @@
 	screenoverlays |= sadness
 	pain_flash = new()
 	pain_flash.hud = src
-	fog_blocker = new()
-	fog_blocker.hud = src
+//	fog_blocker = new()
+//	fog_blocker.hud = src
 	screenoverlays |= pain_flash
-	screenoverlays |= fog_blocker
+//	screenoverlays |= fog_blocker
 	if(ispath(peeper))
 		peeper = new peeper(src)
 		peeper?.show_peeper(owner)
@@ -74,8 +74,8 @@
 		screenmob.client?.screen |= sadness
 	if(fov_holder)
 		screenmob.client?.screen |= fov_holder
-	if(fog_blocker)
-		screenmob.client?.screen |= fog_blocker
+//	if(fog_blocker)
+//		screenmob.client?.screen |= fog_blocker
 	if((screenmob == mymob) && peeper)
 		add_verb(screenmob, /mob/proc/open_peeper)
 		add_verb(screenmob, /mob/proc/close_peeper)

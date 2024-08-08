@@ -38,6 +38,7 @@
 	pellets = 8
 	variance = 4.5
 	caliber = CALIBER_SHOTGUN
+	firing_effect_type = /obj/effect/temp_visual/firing_effect
 	stack_type = /obj/item/ammo_box/magazine/ammo_stack/shotgunbuckshot
 	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot
 
