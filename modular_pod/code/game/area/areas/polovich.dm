@@ -34,9 +34,18 @@
 	ambientsounds = list('modular_pod/sound/ambi_sounds_out/attackers.ogg', 'modular_pod/sound/ambi_sounds_out/swing.ogg', 'modular_pod/sound/ambi_sounds_out/going.ogg')
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
+	ambientsounds_normal = list('modular_pod/sound/loop/surface.ogg')
+	var/fogger = TRUE
 	var/specialfog = FALSE
 	var/lighting_out = TRUE
 	var/ino = FALSE
+
+/area/maintenance/polovich/forest/Initialize(mapload)
+	. = ..()
+	if(fogger)
+		for(var/turf/T in src)
+	//		T.temperature = COLDDIRT
+			new /obj/effect/foga(T)
 
 /area/maintenance/polovich/forest/Entered(atom/movable/arrived, area/old_area)
 	. = ..()
@@ -67,7 +76,6 @@
 /area/maintenance/polovich/forest/can_ruin
 	area_flags = UNIQUE_AREA | NO_ALERTS
 	icon_state = "polovich_special"
-	ambientsounds_normal = list('modular_pod/sound/loop/surface.ogg')
 
 /obj/effect/foga
 	name = "Fog"
@@ -84,11 +92,13 @@
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
+/*
 /area/maintenance/polovich/forest/can_ruin/fog/Initialize(mapload)
 	. = ..()
 	for(var/turf/T in src)
 //		T.temperature = COLDDIRT
 		new /obj/effect/foga(T)
+*/
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
