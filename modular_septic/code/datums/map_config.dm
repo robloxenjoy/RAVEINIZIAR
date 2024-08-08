@@ -8,9 +8,9 @@
 	/// Cave z levels that don't spawn ruins
 	var/cave_empty_levels = 0
 	/// Short text box explaining the lore for the currnet map
-	var/map_lore = "FUCK!"
+	var/map_lore = null
 	/// Alternative command name for this map only
-	var/command_name = "ГОЛОС"
+	var/command_name = "VOICE"
 	/// This is only used by test maps, if true everyone spawns nakey
 	var/everyone_is_fucking_naked = FALSE
 	/// Combat maps get a skill modifier for every job

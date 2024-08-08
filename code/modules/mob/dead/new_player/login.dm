@@ -36,9 +36,10 @@
 	var/motd = global.config.motd
 	if(motd)
 		to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
-	var/opis = global.config.opis
-	if(opis)
-		to_chat(src, "<div class=\"motd\">[opis]</div>", handle_whitespace=FALSE)
+	if(SSmapping.config?.map_lore)
+		var/map_loree = SSmapping.config?.map_lore
+		to_chat(src, div_infobox(span_adminooc([map_loree])))
+//		to_chat(src, "<div class=\"motd\">[map_loree]</div>", handle_whitespace=FALSE)
 
 	if(GLOB.admin_notice)
 		to_chat(src, span_notice("<b>Admin Notice:</b>\n \t [GLOB.admin_notice]"))

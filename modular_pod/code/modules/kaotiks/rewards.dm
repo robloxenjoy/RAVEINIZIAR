@@ -428,7 +428,7 @@
 
 /datum/bobux_reward/cleanmap
 	name = "Clear Map"
-	desc = "Delete corpses and liquids!"
+	desc = "Delete corpses and liquids and blood trails!"
 	buy_message = "<b>Good-good!</span>"
 	id = "clear"
 	cost = 500
@@ -449,6 +449,10 @@
 		if(QDELETED(A))
 			continue
 		qdel(A)
+	for(var/obj/effect/decal/cleanable/trail_holder/B in world)
+		if(QDELETED(B))
+			continue
+		qdel(B)
 /*
 	var/list/current_run_cache = SSpollution.current_run
 	current_run_cache = SSpollution.active_pollution.Copy()

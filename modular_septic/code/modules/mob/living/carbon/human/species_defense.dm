@@ -300,7 +300,7 @@
 			//Makes the weapon bloody, not the person
 			weapon.add_mob_blood(victim)
 			//blood spatter!
-			if(prob(damage * 2))
+			if(prob(damage * 1.5))
 				var/turf/location = victim.loc
 				if(istype(location))
 					victim.do_hitsplatter(get_dir(user, victim), min_range = 0, max_range = 2, splatter_loc = pick(FALSE, TRUE))

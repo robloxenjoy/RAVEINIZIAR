@@ -1,6 +1,7 @@
 {
 	"version": 1,
 	"map_name": "Baqqusta",
+	"map_lore": "",
 	"map_path": "_podpol/map_files/baqqusta",
 	"map_file": "baqqusta.dmm",
 	"station_name": "Planet",
