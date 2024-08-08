@@ -2,7 +2,7 @@
 	/// Almost every living mob should have an attribute holder
 	attributes = /datum/attribute_holder
 	/// Almost every living mob should have a frill blocker
-	frill_blocker = /atom/movable/blocker/frill/living
+	frill_blocker = null
 	/// What icon the mob uses for SSD bubbles
 	var/ssd_bubble_icon = "default"
 	/// Chem effects

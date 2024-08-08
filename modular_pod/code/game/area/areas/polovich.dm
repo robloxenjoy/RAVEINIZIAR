@@ -81,7 +81,7 @@
 	name = "Fog"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "foga"
-	layer = FLY_LAYER
+	layer = ABOVE_MOB_LAYER
 	plane = GAME_PLANE_WINDOW
 	density = FALSE
 	anchored = TRUE
@@ -98,7 +98,6 @@
 		for(var/turf/T in src)
 	//		T.temperature = COLDDIRT
 			new /obj/effect/foga(T)
-
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE

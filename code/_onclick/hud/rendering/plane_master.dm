@@ -64,7 +64,7 @@
 	. = ..()
 	remove_filter("AO")
 	if(istype(mymob))
-		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 3, offset = 1, color = rgb(4, 8, 16, 90)))
+		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 3, offset = 1, color = "#000006AA"))
 /*
 	remove_filter("AO")
 	if(istype(mymob))
@@ -207,7 +207,7 @@
 	. = ..()
 	remove_filter("AO")
 	if(istype(mymob))
-		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 3, offset = 1, color = rgb(4, 8, 16, 90)))
+		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 3, offset = 1, color = "#000006AA"))
 
 /atom/movable/screen/plane_master/gravpulse
 	name = "gravpulse plane"
