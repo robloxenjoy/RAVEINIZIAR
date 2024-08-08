@@ -25,7 +25,6 @@
 "qU" = (/obj/structure/closet/crate,/obj/item/flashlight/flare,/obj/item/flashlight/flare,/obj/item/flashlight/flare,/obj/item/flashlight/flare,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
 "qV" = (/obj/structure/closet/crate,/obj/item/flashlight/flare,/obj/item/flashlight/flare,/obj/item/flashlight/flare,/obj/item/flashlight/flare,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest/inner)
 "rn" = (/obj/structure/medica,/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest/inner)
-"ta" = (/obj/structure/barbwire,/turf/open/floor/plating/polovich/way/for2,/area/maintenance/polovich/forest)
 "ud" = (/obj/structure/codec/svetilka,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/cave/can_ruin)
 "uN" = (/obj/structure/stairs/south,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest/inner)
 "vj" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/inner)
@@ -40,6 +39,7 @@
 "zl" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest)
 "zo" = (/obj/structure/codec/bulb/green,/turf/open/floor/plating/polovich/way/exoticwood2,/area/maintenance/polovich/forest/can_ruin)
 "zx" = (/obj/effect/landing/halber,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/cave/can_ruin)
+"AA" = (/obj/structure/barbwire,/turf/open/floor/plating/polovich/way/for2,/area/maintenance/polovich/forest)
 "AK" = (/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest/inner)
 "BX" = (/turf/podpol/wall/caver,/area/maintenance/polovich/forest/can_ruin)
 "Cc" = (/obj/effect/decal/metalpodpol,/obj/effect/decal/metalpodpol,/turf/open/floor/plating/polovich/way/for2,/area/maintenance/polovich/forest)
@@ -168,10 +168,10 @@ BXBXBXBXwXwXwXwXwXNkNkNkNkNkNkNkNkNkNkwXwXBXBXwXwXwXwXwXbDwXwXwXBXBXwXwXwXNkNkNk
 BXBXBXBXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXBXBXwXwXwXwXwXbDwXwXwXBXBXwXwXwXNkNkNkNkNkNkNkNkNkNkNkNkwXwXwXwXwXwXBXBXBXBXBX
 BXBXhqhqQDwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXPjPjwXwXwXwXwXbDwXwXwXPjPjwXwXwXNkNkNkNkNkNkNkNkNkNkNkNkwXwXwXwXwXQDhqhqBXBXBX
 BXhqhqBXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXwXbDwXwXwXwXwXwXwXwXNkNkNkNkNkNkNkNkNkNkNkNkwXwXwXwXBXBXBXhqhqBXBX
-BXhqBXBXBXBXwXBXwXwXwXwXBXwXwXwXwXwXwXwXwXwXwXwXwXtatawXbDwXwXwXwXwXwXwXwXNkNkNkNkNkNkNkNkBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
-BXhqBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXRwtawXbDwXtaBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
-BXhqBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXtawXbDwXtaRwBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
-BXhqBXBXNkNkNkNkNkBXBXBXBXBXBXBXBXBXBXwXwXwXwXwXwXwXwXwXbDwXtatawXwXwXwXwXwXwXwXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
+BXhqBXBXBXBXwXBXwXwXwXwXBXwXwXwXwXwXwXwXwXwXwXwXwXAAAAwXbDwXwXwXwXwXwXwXwXNkNkNkNkNkNkNkNkBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
+BXhqBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXRwAAwXbDwXAABXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
+BXhqBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXAAwXbDwXAARwBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
+BXhqBXBXNkNkNkNkNkBXBXBXBXBXBXBXBXBXBXwXwXwXwXwXwXwXwXwXbDwXAAAAwXwXwXwXwXwXwXwXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXhqBXBX
 BXhqBXBXwXwXwXNkNkNkNkNkNkNkBXBXBXBXwXwXwXPjPjwXwXwXwXwXbDwXwXwXwXwXPjPjwXwXwXwXNkNkNkNkNkNkNkNkNkwXwXwXwXwXwXBXBXhqBXBX
 BXhqhqBXwXwXwXNkNkNkNkNkNkNkNkwXwXwXwXwXwXBXBXwXwXwXwXwXbDwXwXwXwXwXBXBXwXwXwXwXNkNkNkNkNkNkNkNkNkwXwXwXwXwXwXBXhqhqBXBX
 BXBXhqhqwXwXwXNkNkNkNkNkNkNkNkwXwXwXwXwXwXBXBXwXwXwXwXwXbDwXwXwXwXwXBXBXwXwXwXwXNkNkNkNkNkNkNkNkNkwXwXwXwXwXQDhqhqBXBXBX
