@@ -28,7 +28,7 @@
 "ud" = (/obj/structure/codec/svetilka,/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/cave/can_ruin)
 "uN" = (/obj/structure/stairs/south,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest/inner)
 "vj" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/inner)
-"vw" = (/obj/structure/blockrole{allow_role = "Kapnobatai"},/obj/machinery/codec/door/kapno,/turf/open/floor/plating/polovich/way/exoticwood2,/area/maintenance/polovich/forest/inner)
+"vw" = (/obj/structure/blockrole{allow_role = "Ladax"},/obj/machinery/codec/door/kapno,/turf/open/floor/plating/polovich/way/exoticwood2,/area/maintenance/polovich/forest/inner)
 "wq" = (/turf/open/floor/plating/polovich/way/kaos,/area/maintenance/polovich/forest)
 "wQ" = (/turf/podpol/wall/caverak,/area/maintenance/polovich/forest/cave/can_ruin)
 "xd" = (/obj/structure/railing{dir = 4},/turf/open/floor/plating/polovich/way/legend,/area/maintenance/polovich/forest/can_ruin)
@@ -44,7 +44,7 @@
 "Cw" = (/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/forest)
 "DA" = (/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/cave/can_ruin)
 "DS" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest/can_ruin)
-"DY" = (/obj/structure/blockrole{allow_role = "Kapnobatai"},/turf/open/floor/plating/polovich/way/exoticwood2,/area/maintenance/polovich/forest/can_ruin)
+"DY" = (/obj/structure/blockrole{allow_role = "Ladax"},/turf/open/floor/plating/polovich/way/exoticwood2,/area/maintenance/polovich/forest/can_ruin)
 "EF" = (/obj/structure/blockrole/konch,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/can_ruin)
 "Fv" = (/turf/open/floor/plating/polovich/way/goldenwise,/area/maintenance/polovich/forest/can_ruin/fog)
 "FE" = (/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
@@ -74,7 +74,7 @@
 "WP" = (/turf/open/floor/plating/polovich/way/kaos/ni,/area/maintenance/polovich/forest)
 "WQ" = (/turf/open/floor/plating/polovich/way/cavero,/area/maintenance/polovich/forest/cave/can_ruin)
 "Yw" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest/inner)
-"Zd" = (/obj/structure/blockrole{allow_role = "Kapnobatai"},/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
+"Zd" = (/obj/structure/blockrole{allow_role = "Ladax"},/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
 
 (1,1,1) = {"
 wQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ

@@ -25,7 +25,7 @@
 	return TRUE
 
 /obj/structure/wayto/podpol/proc/use(mob/living/carbon/human/user, going_up = TRUE, is_ghost = FALSE)
-	if(user.truerole != "Kapnobatai")
+	if(user.truerole != "Ladax")
 		to_chat(user, span_notice("The boys there won't accept me."))
 		return
 	if(!in_range(src, user) || user.incapacitated())
@@ -881,7 +881,7 @@
 	return FALSE
 
 /obj/structure/blockrole/konch
-	allow_role = "Asshole"
+	allow_role = "Kador"
 
 /obj/structure/sign/poster/contraband/codec/lians
 	name = "Karza"

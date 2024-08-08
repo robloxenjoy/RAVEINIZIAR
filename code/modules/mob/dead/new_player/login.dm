@@ -36,6 +36,9 @@
 	var/motd = global.config.motd
 	if(motd)
 		to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
+	var/opis = global.config.opis
+	if(opis)
+		to_chat(src, "<div class=\"motd\">[opis]</div>", handle_whitespace=FALSE)
 
 	if(GLOB.admin_notice)
 		to_chat(src, span_notice("<b>Admin Notice:</b>\n \t [GLOB.admin_notice]"))

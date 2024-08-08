@@ -451,7 +451,7 @@
 
 /obj/item/key/podpol/woody/kapnokey
 	name = "Key"
-	desc = "To the door of the Kapnobataes Father room."
+	desc = "To the door of the Ladax Father room."
 	icon_state = "key_father"
 	id_tag = "kapnoroom"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
@@ -460,7 +460,7 @@
 
 /obj/item/key/podpol/woody/kapnodvorkey
 	name = "Key"
-	desc = "To the door of the Kapnobataes courtyard."
+	desc = "To the door of the Ladax courtyard."
 	icon_state = "key_father"
 	id_tag = "kapnodvor"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
@@ -469,7 +469,7 @@
 
 /obj/item/key/podpol/woody/konchkey
 	name = "Key"
-	desc = "To the door of the Assholes courtyard."
+	desc = "To the door of the Kador courtyard."
 	icon_state = "key_konch"
 	id_tag = "konchkey"
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID

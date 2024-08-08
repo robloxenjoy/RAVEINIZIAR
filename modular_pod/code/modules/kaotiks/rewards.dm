@@ -466,6 +466,28 @@
 		pollution.scrub_amount(999, FALSE, TRUE)
 */
 
+/datum/bobux_reward/fogmove
+	name = "Fogmove"
+	desc = "The fog must go away."
+	buy_message = "<b>FUCK YOU FOG!</span>"
+	id = "movefog"
+	cost = 500
+	single_use = TRUE
+/*
+/datum/bobux_reward/fogmove/can_buy(client/noob, silent, fail_message)
+	. = ..()
+	for(var/obj/effect/foga/A in world)
+		if(A.static_lighting)
+			return
+*/
+/datum/bobux_reward/fogmove/on_buy(client/noob)
+	..()
+	to_chat(world, "<span class='reallybig hypnophrase'>[noob.key] drives out the fog!</span>")
+	for(var/obj/effect/foga/A in world)
+		if(QDELETED(A))
+			continue
+		qdel(A)
+
 /datum/bobux_reward/changename
 	name = "Change Name"
 	desc = "It's time."

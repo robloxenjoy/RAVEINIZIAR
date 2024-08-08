@@ -33,9 +33,9 @@
 		GLOB.world_deaths_crazy += 1
 		GLOB.new_people_crazy -= 1
 		switch(truerole)
-			if("Kapnobatai")
+			if("Ladax")
 				GLOB.kapnoe -= 1
-			if("Asshole")
+			if("Kador")
 				GLOB.aashol-= 1
 //		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2
 		for(var/mob/living/carbon/human/H in world)

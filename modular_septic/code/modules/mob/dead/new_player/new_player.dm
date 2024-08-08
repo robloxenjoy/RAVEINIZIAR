@@ -95,20 +95,20 @@
 		return
 	var/rolevich = input("Wait, what role?", "") as text
 	switch(rolevich)
-		if("Kapnobatai")
+		if("Ladax")
 			var/numba = GLOB.kapnoe - GLOB.aashol
 			if(numba > 1)
-				alert("Too much of them. Play as Assholes.")
+				alert("Too much of them. Play as Kador.")
 				client.ready_char = FALSE
 				return
-			client.role_ch = "kapnobatai"
-		if("Asshole")
+			client.role_ch = "ladax"
+		if("Kador")
 			var/numbar = GLOB.aashol - GLOB.kapnoe
 			if(numbar > 1)
-				alert("Too much of them. Play as Kapnobataes.")
+				alert("Too much of them. Play as Ladax.")
 				client.ready_char = FALSE
 				return
-			client.role_ch = "asshole"
+			client.role_ch = "kador"
 		if("God SMO")
 			var/smo = "[global.config.directory]/smo.txt"
 			if(ckey in world.file2list(smo))
@@ -144,12 +144,12 @@
 			var/numba = GLOB.kapnoe - GLOB.aashol
 			var/numbor = GLOB.aashol - GLOB.kapnoe
 			if(numba <= 1)
-				alert("Unclear. The role of the common Kapnobatai.")
-				client.role_ch = "kapnobatai"
+				alert("Unclear. The role of the common Ladax.")
+				client.role_ch = "ladax"
 			else
 				if(numbor <= 1)
-					alert("Unclear. The role of the common Asshole.")
-					client.role_ch = "asshole"
+					alert("Unclear. The role of the common Kador.")
+					client.role_ch = "kador"
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
@@ -199,16 +199,16 @@
 
 /mob/dead/new_player/proc/things(mob/living/carbon/human/our)
 	switch(client.role_ch)
-		if("kapnobatai")
-			our.truerole = "Kapnobatai"
-			our.pod_faction = "kapnobatai"
+		if("ladax")
+			our.truerole = "Ladax"
+			our.pod_faction = "ladax"
 			our.hairstyle = "Bedhead 2"
 			our.facial_hairstyle = "Shaved"
 			our.hair_color = pick("#000000", "#1f120f", "#d7d49f")
 			GLOB.kapnoe += 1
-		if("asshole")
-			our.truerole = "Asshole"
-			our.pod_faction = "asshole"
+		if("kador")
+			our.truerole = "Kador"
+			our.pod_faction = "kador"
 			our.hairstyle = "Bald"
 			our.facial_hairstyle = "Shaved"
 			GLOB.aashol += 1
@@ -230,22 +230,22 @@
 			our.name = our.real_name
 			our.height = HUMAN_HEIGHT_TALLEST
 	switch(our.truerole)
-		if("Kapnobatai")
+		if("Ladax")
 			var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "kapno", ROLES_LAYER)
 			our.add_overlay(appearance)
 			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/kapno)
 			if(prob(10))
 				our.equipOutfit(/datum/outfit/kapnofather)
-				our.special_zvanie = "Kapnobataes Father"
+				our.special_zvanie = "Ladax Father"
 			else
 				our.equipOutfit(/datum/outfit/kapno)
-		if("Asshole")
+		if("Kador")
 			var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
 			our.add_overlay(appearance)
 			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/konch)
 			if(prob(10))
 				our.equipOutfit(/datum/outfit/mostkonch)
-				our.special_zvanie = "The Most Asshole"
+				our.special_zvanie = "Worst Kador"
 			else
 				our.equipOutfit(/datum/outfit/konch)
 		if("God SMO")
@@ -261,9 +261,9 @@
 	var/datum/component/babble/babble = our.GetComponent(/datum/component/babble)
 	if(!babble)
 		switch(our.truerole)
-			if("Kapnobatai")
+			if("Ladax")
 				our.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/plimpus.ogg')
-			if("Asshole")
+			if("Kador")
 				our.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_male.ogg')
 			if("Halbermensch")
 				our.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
@@ -271,9 +271,9 @@
 				our.AddComponent(/datum/component/babble, 'modular_septic/sound/voice/babble/babble_agender.ogg')
 	else
 		switch(our.truerole)
-			if("Kapnobatai")
+			if("Ladax")
 				babble.babble_sound_override = 'modular_septic/sound/voice/babble/plimpus.ogg'
-			if("Asshole")
+			if("Kador")
 				babble.babble_sound_override = 'modular_septic/sound/voice/babble/babble_male.ogg'
 			if("Halbermensch")
 				our.AddComponent(/datum/component/babble, 'modular_pod/sound/mobs_yes/babble/halber.ogg')
@@ -299,10 +299,10 @@
 	our.cursings()
 	if(our.special_zvanie)
 		switch(our.special_zvanie)
-			if("Kapnobataes Father")
-				to_chat(our, span_yellowteamradio("I'm Kapnobataes Father!"))
-			if("The Most Asshole")
-				to_chat(our, span_yellowteamradio("I'm The Most Asshole!"))
+			if("Ladax Father")
+				to_chat(our, span_yellowteamradio("I'm Ladax Father!"))
+			if("Worst Kador")
+				to_chat(our, span_yellowteamradio("I'm Worst Kador!"))
 	our.dna.features["body_size"] = BODY_SIZE_NORMAL
 	our.dna.update_body_size()
 	our.dna.update_dna_identity()
@@ -312,7 +312,7 @@
 /mob/dead/new_player/proc/things_two(mob/living/carbon/human/our)
 	var/eye_coloring = pick("#000000", "#1f120f")
 	switch(client.role_ch)
-		if("asshole")
+		if("kador")
 			eye_coloring = "#c30000"
 	for(var/obj/item/organ/eyes/organ_eyes in our.internal_organs)
 		if(organ_eyes.current_zone == BODY_ZONE_PRECISE_L_EYE)

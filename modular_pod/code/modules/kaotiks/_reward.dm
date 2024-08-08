@@ -16,7 +16,7 @@
 	. = TRUE
 	if(single_use)
 		if(used_up)
-			to_chat(noob, "<span class='warning'>Эта штучка не может быть куплена!</span>")
+			to_chat(noob, "<span class='warning'>I can't buy this thinq!</span>")
 			return FALSE
 		used_up = TRUE
 	if(ismob(noob))
@@ -38,10 +38,10 @@
 	if(!noob || !noob.prefs)
 		return FALSE
 	if(type in noob.mob?.mind?.bobux_bought)
-		to_chat(noob, "<span clas='warning'>Я уже купил эту штучку!</span>")
+		to_chat(noob, "<span clas='warning'>I already bought this thinq!</span>")
 		return FALSE
 	if(!SSbobux.working)
-		to_chat(noob, "<span clas='warning'>Каотичная Система развалена!</span>")
+		to_chat(noob, "<span clas='warning'>Chaotic Sytem is destroyed!</span>")
 		return FALSE
 	if((noob?.prefs?.bobux_amount >= cost) && !unbuyable)
 		return TRUE
