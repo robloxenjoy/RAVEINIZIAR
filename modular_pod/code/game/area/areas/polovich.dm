@@ -36,7 +36,7 @@
 	max_ambience_cooldown = 95 SECONDS
 	ambientsounds_normal = list('modular_pod/sound/loop/surface.ogg')
 	var/fogger = TRUE
-	var/specialfog = TRUE
+	var/specialfog = FALSE
 	var/lighting_out = TRUE
 	var/ino = FALSE
 	var/specialcolor = FALSE

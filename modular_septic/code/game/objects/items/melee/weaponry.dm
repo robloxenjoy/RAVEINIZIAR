@@ -547,11 +547,11 @@
 	if(choose_attack_intent)
 		switch(current_attack_intent)
 			if(SLASH_ATTACKING)
-				. += span_notice("Сейчас порезом.")
+				. += span_notice("Now slash attack.")
 			if(STAB_ATTACKING)
-				. += span_notice("Сейчас вонзанием.")
+				. += span_notice("Now stab attack.")
 			if(BASH_ATTACKING)
-				. += span_notice("Сейчас отбитием.")
+				. += span_notice("Now bash attack.")
 
 /obj/item/attack_self(mob/user, modifiers)
 	. = ..()
@@ -1064,8 +1064,8 @@
 	min_throwforce = 5
 	throwforce = 10
 	throwforce_strength = 1.5
-	wound_bonus = 10
-	bare_wound_bonus = 5
+	wound_bonus = 1
+	bare_wound_bonus = 10
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
