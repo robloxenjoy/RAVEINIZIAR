@@ -490,6 +490,8 @@
 		if(QDELETED(A))
 			continue
 		qdel(A)
+	for(var/area/maintenance/polovich/forest/B in world)
+		B.fogger = FALSE
 
 /datum/bobux_reward/changename
 	name = "Change Name"

@@ -187,6 +187,10 @@
 /datum/client_colour/full_black
 	colour = "#000000"
 
+/datum/client_colour/surface
+	colour = "#aaaaff"
+	priority = PRIORITY_LOW
+
 /datum/client_colour/full_black_absolute
 	priority = PRIORITY_ABSOLUTE
 	colour = "#000000"

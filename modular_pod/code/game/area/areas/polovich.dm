@@ -53,6 +53,10 @@
 		var/mob/living/living_arrived = arrived
 		if(istype(living_arrived) && living_arrived.client)
 			living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
+	if(fogger)
+		var/mob/living/living_arrived = arrived
+		if(istype(living_arrived) && living_arrived.client)
+			living_arrived.add_client_colour(/datum/client_colour/surface)
 
 /area/maintenance/polovich/forest/Exited(atom/movable/gone, direction)
 	. = ..()
@@ -60,6 +64,9 @@
 		var/mob/living/living_gone = gone
 		if(istype(living_gone))
 			living_gone.clear_fullscreen("redfog")
+	var/mob/living/living_arrived = arrived
+	if(istype(living_arrived) && living_arrived.client)
+		living_arrived.remove_client_colour(/datum/client_colour/surface)
 
 /area/maintenance/polovich/forest/on_joining_game(mob/living/boarder)
 	. = ..()
