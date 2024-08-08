@@ -82,6 +82,7 @@
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "foga"
 	layer = FLY_LAYER
+	plane = GAME_PLANE_WINDOW
 	density = FALSE
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -90,7 +91,6 @@
 	can_spawn_various_shit = TRUE
 
 /area/maintenance/polovich/forest/can_ruin/fog
-
 
 /area/maintenance/polovich/forest/can_ruin/fog/Initialize(mapload)
 	. = ..()
