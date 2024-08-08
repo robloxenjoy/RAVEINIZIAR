@@ -41,7 +41,7 @@
 	. = ..()
 	remove_filter("AO")
 	if(istype(mymob))
-		add_filter("AO", 1, AMBIENT_OCCLUSION)
+		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 3, color = "#04080FAA"))
 /*
 	remove_filter("AO")
 	remove_filter("AO2")
@@ -216,7 +216,7 @@
 	. = ..()
 	remove_filter("AO")
 	if(istype(mymob))
-		add_filter("AO", 1, AMBIENT_OCCLUSION)
+		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 3, color = "#04080FAA"))
 /*
 	remove_filter("AO")
 	remove_filter("AO2")
