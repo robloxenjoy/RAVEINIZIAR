@@ -37,6 +37,10 @@
 				GLOB.kapnoe -= 1
 			if("Kador")
 				GLOB.aashol-= 1
+		if(GLOB.world_deaths_crazy > 250)
+			priority_announce("THE WAR IS OVER!", "WORLD", has_important_message = TRUE)
+			SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+			SSticker.force_ending = 1
 //		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2
 		for(var/mob/living/carbon/human/H in world)
 			if(H != src)

@@ -918,7 +918,7 @@
 	if(prob(45))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
-			for(var/obj/M in get_turf(src))
+			for(var/obj/M in get_turf(generat))
 				if(M && !M.can_spawn_various_shit)
 					return
 			if(prob(75))
