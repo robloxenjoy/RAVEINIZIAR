@@ -31,14 +31,25 @@
 //			return
 		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>I'm dead! -10 Kaotiks!</span>")
 		GLOB.world_deaths_crazy += 1
+		switch(GLOB.world_deaths_crazy)
+			if(10 to 10)
+				priority_announce("ARMOR AND OTHER ARE AVAILABLE FOR PURCHASE!", "WORLD", has_important_message = TRUE)
+				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+			if(20 to 20)
+				priority_announce("GUNS ARE AVAILABLE FOR PURCHASE!", "WORLD", has_important_message = TRUE)
+				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+			if(30 to 30)
+				priority_announce("SECOND WAR PHASE BEGINS!", "WORLD", has_important_message = TRUE)
+				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+				GLOB.phase_of_war = "Second"
 		GLOB.new_people_crazy -= 1
 		switch(truerole)
 			if("Ladax")
 				GLOB.kapnoe -= 1
 			if("Kador")
 				GLOB.aashol-= 1
-		if(GLOB.world_deaths_crazy > 250)
-			priority_announce("THE WAR IS OVER!", "WORLD", has_important_message = TRUE)
+		if(GLOB.world_deaths_crazy >= 250)
+			priority_announce("THE WAR IS OVER! VICTORY REMAINS A MYSTERY...", "WORLD", has_important_message = TRUE)
 			SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 			SSticker.force_ending = 1
 //		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2

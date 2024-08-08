@@ -238,7 +238,14 @@
 				our.equipOutfit(/datum/outfit/kapnofather)
 				our.special_zvanie = "Ladax Father"
 			else
-				our.equipOutfit(/datum/outfit/kapno)
+				switch(GLOB.phase_of_war)
+					if("Second")
+						if(prob(10))
+							our.equipOutfit(/datum/outfit/kapnosec)
+						else
+							our.equipOutfit(/datum/outfit/kapno)
+					if("First")
+						our.equipOutfit(/datum/outfit/kapno)
 		if("Kador")
 			var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
 			our.add_overlay(appearance)
@@ -247,7 +254,15 @@
 				our.equipOutfit(/datum/outfit/mostkonch)
 				our.special_zvanie = "Worst Kador"
 			else
-				our.equipOutfit(/datum/outfit/konch)
+				switch(GLOB.phase_of_war)
+					if("Second")
+						if(prob(10))
+							our.equipOutfit(/datum/outfit/konchsec)
+						else
+							our.equipOutfit(/datum/outfit/konch)
+					if("First")
+						our.equipOutfit(/datum/outfit/konch)
+
 		if("God SMO")
 			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
 			our.equipOutfit(/datum/outfit/svogod)
@@ -341,6 +356,22 @@
 	if(prob(50))
 		head = /obj/item/clothing/head/headbanda/greener
 
+/datum/outfit/kapnosec/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(50))
+		suit = /obj/item/clothing/suit/armor/roba
+	if(prob(50))
+		head = /obj/item/clothing/head/headbanda/greener
+
+/datum/outfit/kapnosec
+	name = "Kapno Uniform"
+
+	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
+	uniform = /obj/item/clothing/under/codec/purp
+	pants = /obj/item/clothing/pants/codec/purp
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/gun/ballistic/revolver/remis/nova
+
 /datum/outfit/kapno
 	name = "Kapno Uniform"
 
@@ -373,6 +404,23 @@
 		suit = /obj/item/clothing/suit/armor/sexcoat
 	if(prob(50))
 		head = /obj/item/clothing/head/headbanda
+
+/datum/outfit/konchsec/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(50))
+		suit = /obj/item/clothing/suit/armor/sexcoat
+	if(prob(50))
+		head = /obj/item/clothing/head/headbanda
+
+/datum/outfit/konchsec
+	name = "Konch Uniform"
+
+	l_pocket = /obj/item/key/podpol/woody/konchkey
+	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
+	uniform = /obj/item/clothing/under/codec/maika
+	pants = /obj/item/clothing/pants/codec/panta
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/gun/ballistic/shotgun/doublebarrel/bobox
 
 /datum/outfit/konch
 	name = "Konch Uniform"

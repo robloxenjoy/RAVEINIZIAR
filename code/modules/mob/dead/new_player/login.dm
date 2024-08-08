@@ -67,6 +67,7 @@
 	to_chat(src, span_bigdanger("In OOC, the Play button - you'll figure it out."))
 	to_chat(src, span_bigdanger("Discord Server - https://discord.gg/Ha4b7n2E5w"))
 	if(GLOB.world_deaths_crazy > 0)
+		to_chat(src, span_dead("War Phase: [GLOB.phase_of_war]"))
 		to_chat(src, span_dead("Deaths in the world: [GLOB.world_deaths_crazy]"))
 
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)

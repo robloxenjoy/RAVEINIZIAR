@@ -41,6 +41,7 @@ SUBSYSTEM_DEF(bobux)
 /datum/controller/subsystem/bobux/proc/GetDat(client/noob)
 	var/list/dat = list()
 	var/datum/preferences/pref_source = noob.prefs
+	dat += "<center><b>War Phase: [GLOB.phase_of_war]</b></center><br>"
 	dat += "<center><b>[GLOB.world_deaths_crazy] deaths in the world!</b></center><br>"
 	dat += "<center><b>Kaotiks Menu</b></center><br>"
 	dat += "<center>At the moment I have <b>[pref_source.bobux_amount]</b> kaotiks.</center><br>"
