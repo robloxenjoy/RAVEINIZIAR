@@ -64,7 +64,7 @@
 		var/mob/living/living_gone = gone
 		if(istype(living_gone))
 			living_gone.clear_fullscreen("redfog")
-	var/mob/living/living_arrived = arrived
+	var/mob/living/living_arrived = gone
 	if(istype(living_arrived) && living_arrived.client)
 		living_arrived.remove_client_colour(/datum/client_colour/surface)
 
