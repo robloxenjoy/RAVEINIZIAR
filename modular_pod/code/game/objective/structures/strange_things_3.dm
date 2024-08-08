@@ -588,7 +588,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
-	var/list/gunslist = list("Bobox (80)", "Revolver Nova (70)")
+	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)")
 	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -602,20 +602,20 @@
 		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 30."))
 		return
 	switch(thingy)
-		if("Bobox (80)")
-			if(pref_source.bobux_amount < 80)
-				to_chat(user, span_meatymeat("Need kaotiks!"))
-				return
-			new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
-			pref_source.bobux_amount -= 80
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Revolver Nova (70)")
+		if("Bobox (70)")
 			if(pref_source.bobux_amount < 70)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
-			new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
+			new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
 			pref_source.bobux_amount -= 70
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Revolver Nova (60)")
+			if(pref_source.bobux_amount < 60)
+				to_chat(user, span_meatymeat("Need kaotiks!"))
+				return
+			new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
+			pref_source.bobux_amount -= 60
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		else
@@ -672,7 +672,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/ammo_find(mob/living/carbon/user)
-	var/list/otherlist = list("Buckshot (40)", ".38 Bullets (30)")
+	var/list/otherlist = list("Buckshot (30)", ".38 Bullets (20)")
 	var/thingy = input(user, "What kind of ammo do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -688,20 +688,20 @@
 		return
 */
 	switch(thingy)
-		if("Buckshot (40)")
-			if(pref_source.bobux_amount < 40)
-				to_chat(user, span_meatymeat("Need kaotiks!"))
-				return
-			new /obj/item/ammo_box/magazine/ammo_stack/shotgunbuckshot/loaded(get_turf(user))
-			pref_source.bobux_amount -= 40
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Purchase done!"))
-		if(".38 Bullets (30)")
+		if("Buckshot (30)")
 			if(pref_source.bobux_amount < 30)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
-			new /obj/item/ammo_box/magazine/ammo_stack/c38/loaded(get_turf(user))
+			new /obj/item/ammo_box/magazine/ammo_stack/shotgunbuckshot/loaded(get_turf(user))
 			pref_source.bobux_amount -= 30
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if(".38 Bullets (20)")
+			if(pref_source.bobux_amount < 20)
+				to_chat(user, span_meatymeat("Need kaotiks!"))
+				return
+			new /obj/item/ammo_box/magazine/ammo_stack/c38/loaded(get_turf(user))
+			pref_source.bobux_amount -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		else
@@ -789,7 +789,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Frag Grenade (70)", "Gas Grenade (50)", "Flare (10)", "Night Eyes (70)")
+	var/list/otherlist = list("Frag Grenade (60)", "Gas Grenade (40)", "Flare (10)", "Night Eyes (70)")
 	var/thingy = input(user, "What kind of thing do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -803,20 +803,20 @@
 		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 15."))
 		return
 	switch(thingy)
-		if("Frag Grenade (70)")
-			if(pref_source.bobux_amount < 70)
+		if("Frag Grenade (60)")
+			if(pref_source.bobux_amount < 60)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/grenade/frag(get_turf(user))
-			pref_source.bobux_amount -= 70
+			pref_source.bobux_amount -= 60
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Gas Grenade (50)")
-			if(pref_source.bobux_amount < 50)
+		if("Gas Grenade (40)")
+			if(pref_source.bobux_amount < 40)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/grenade/gas/incredible_gas(get_turf(user))
-			pref_source.bobux_amount -= 50
+			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		if("Flare (10)")

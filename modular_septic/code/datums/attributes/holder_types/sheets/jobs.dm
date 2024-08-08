@@ -1577,12 +1577,12 @@
 		SKILL_THROWING = list(-5, 2),
 		SKILL_PICKPOCKET = list(-3, 2),
 		SKILL_LOCKPICKING = list(-2, 2),
-		SKILL_SCIENCE = list(-2, 2),
 		SKILL_ACROBATICS = list(2, 3),
 		SKILL_IMPACT_WEAPON = list(-2, 2),
 		SKILL_BUCKLER = list(-2, 2),
 		SKILL_KNIFE = list(-1, 2),
 		SKILL_FORENSICS = list(-2, 1),
+		SKILL_ELECTRONICS = list(-2, 1),
 	)
 	raw_attribute_list = list(
 		SKILL_BRAWLING = -1,
@@ -1595,7 +1595,6 @@
 		SKILL_THROWING = 3,
 		SKILL_PICKPOCKET = -2,
 		SKILL_LOCKPICKING = -2,
-		SKILL_SCIENCE = -3,
 		SKILL_ACROBATICS = -3,
 	)
 
@@ -1618,13 +1617,12 @@
 		SKILL_THROWING = list(-5, 2),
 		SKILL_PICKPOCKET = list(-3, 2),
 		SKILL_LOCKPICKING = list(-2, 2),
-		SKILL_SCIENCE = list(-2, 2),
 		SKILL_ACROBATICS = list(2, 3),
 		SKILL_IMPACT_WEAPON = list(-2, 2),
 		SKILL_BUCKLER = list(-2, 2),
 		SKILL_KNIFE = list(-1, 2),
 		SKILL_FORENSICS = list(-2, 1),
-
+		SKILL_ELECTRONICS = list(-2, 1),
 	)
 	raw_attribute_list = list(
 		SKILL_BRAWLING = -1,
@@ -1637,7 +1635,6 @@
 		SKILL_THROWING = 3,
 		SKILL_PICKPOCKET = -2,
 		SKILL_LOCKPICKING = -2,
-		SKILL_SCIENCE = -3,
 		SKILL_ACROBATICS = -3,
 	)
 
@@ -1663,13 +1660,11 @@
 		SKILL_THROWING = list(-5, 2),
 		SKILL_PICKPOCKET = list(-3, 2),
 		SKILL_LOCKPICKING = list(-2, 2),
-		SKILL_SCIENCE = list(-2, 2),
 		SKILL_ACROBATICS = list(2, 3),
 		SKILL_IMPACT_WEAPON = list(-2, 2),
 		SKILL_BUCKLER = list(-2, 2),
 		SKILL_KNIFE = list(-1, 2),
 		SKILL_FORENSICS = list(-2, 1),
-
 	)
 	raw_attribute_list = list(
 		SKILL_BRAWLING = -1,
@@ -1682,6 +1677,5 @@
 		SKILL_THROWING = 3,
 		SKILL_PICKPOCKET = -2,
 		SKILL_LOCKPICKING = -2,
-		SKILL_SCIENCE = -3,
 		SKILL_ACROBATICS = -3,
 	)
