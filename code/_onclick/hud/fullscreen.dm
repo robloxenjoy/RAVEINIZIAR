@@ -96,11 +96,15 @@
 
 /atom/movable/screen/fullscreen/foge
 	icon = 'modular_septic/icons/hud/fov_15x15.dmi'
-	icon_state = "poor"
+	icon_state = "poor_screen"
 	layer = 10
 	plane = FULLSCREEN_PLANE
 	alpha = 170
 //	color = "#ffd1a4"
+
+/atom/movable/screen/fullscreen/foge/Initialize(mapload)
+	. = ..()
+	color = "#515265"
 
 /atom/movable/screen/fullscreen/foge/earth
 	icon_state = "poor_earth"

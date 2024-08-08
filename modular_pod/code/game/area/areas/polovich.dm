@@ -53,7 +53,7 @@
 	if(specialfog)
 		var/mob/living/living_arrived = arrived
 		if(istype(living_arrived) && living_arrived.client)
-			living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
+			living_arrived.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 	if(specialcolor)
 		var/mob/living/living_arrived = arrived
 		if(istype(living_arrived) && living_arrived.client)
@@ -74,13 +74,13 @@
 	. = ..()
 	if(specialfog)
 		if(istype(boarder) && boarder.client)
-			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
+			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 
 /area/maintenance/polovich/forest/reconnect_game(mob/living/boarder)
 	. = ..()
 	if(specialfog)
 		if(istype(boarder) && boarder.client)
-			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge/earth)
+			boarder.overlay_fullscreen("redfog", /atom/movable/screen/fullscreen/foge)
 
 /area/maintenance/polovich/forest/can_ruin
 	area_flags = UNIQUE_AREA | NO_ALERTS
@@ -89,7 +89,7 @@
 /obj/effect/foga
 	name = "Fog"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "foga"
+	icon_state = "foga1"
 	layer = FLY_LAYER
 	plane = ABOVE_GAME_PLANE
 	density = FALSE
@@ -98,6 +98,11 @@
 	opacity = FALSE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	can_spawn_various_shit = TRUE
+
+/obj/effect/foga/Initialize(mapload)
+	. = ..()
+	icon_state = pick("foga1", "foga2", "foga3")
+	color = pick("#515265", "#515285", "#54656c", "#4e5157")
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
