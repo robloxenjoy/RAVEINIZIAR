@@ -102,7 +102,7 @@
 /obj/effect/foga/Initialize(mapload)
 	. = ..()
 	icon_state = pick("foga1", "foga2", "foga3")
-	color = pick("#515265", "#515285", "#54656c", "#4e5157")
+	color = pick("#7b7f9b", "#919699", "#748a9c")
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
@@ -125,6 +125,7 @@
 	lighting_out = FALSE
 	ino = TRUE
 	fogger = FALSE
+	specialfog = FALSE
 
 /area/maintenance/polovich/forest/cave
 	name = "Caveira"
@@ -139,6 +140,7 @@
 	lighting_out = FALSE
 	area_flags = NO_ALERTS
 	fogger = FALSE
+	specialfog = FALSE
 
 /area/maintenance/polovich/forest/cave/can_ruin
 	area_flags = UNIQUE_AREA | NO_ALERTS
