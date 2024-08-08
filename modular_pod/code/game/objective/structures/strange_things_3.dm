@@ -1291,7 +1291,7 @@
 
 /obj/structure/mineexplosive/based
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mine
-	shrapnel_radius = 6
+	shrapnel_radius = 4
 	ex_heavy = 3
 	ex_light = 4
 	ex_flame = 3
@@ -1306,7 +1306,7 @@
 	opacity = FALSE
 	istrap = TRUE
 	shrapnel_type = /obj/projectile/bullet/shrapnel/mine
-	shrapnel_radius = 6
+	shrapnel_radius = 4
 	ex_heavy = 4
 	ex_light = 2
 	ex_flame = 3
