@@ -77,6 +77,13 @@
 	area_flags = UNIQUE_AREA | NO_ALERTS
 	icon_state = "polovich_special"
 
+/area/maintenance/polovich/forest/can_ruin/Initialize(mapload)
+	. = ..()
+	if(fogger)
+		for(var/turf/T in src)
+	//		T.temperature = COLDDIRT
+			new /obj/effect/foga(T)
+
 /obj/effect/foga
 	name = "Fog"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
@@ -92,13 +99,14 @@
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
-/*
+
 /area/maintenance/polovich/forest/can_ruin/fog/Initialize(mapload)
 	. = ..()
-	for(var/turf/T in src)
-//		T.temperature = COLDDIRT
-		new /obj/effect/foga(T)
-*/
+	if(fogger)
+		for(var/turf/T in src)
+	//		T.temperature = COLDDIRT
+			new /obj/effect/foga(T)
+
 
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
