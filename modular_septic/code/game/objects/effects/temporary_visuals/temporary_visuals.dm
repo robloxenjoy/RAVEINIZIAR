@@ -14,9 +14,9 @@
 /obj/effect/temp_visual/firing_effect/energy
 	light_range = 2
 	light_power = 2
-	light_color = #ff0006
+	light_color = "#ff0006"
 
 /obj/effect/temp_visual/firing_effect/energyblue
 	light_range = 2
 	light_power = 2
-	light_color = #0000ff
+	light_color = "#0000ff"
