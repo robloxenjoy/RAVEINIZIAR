@@ -142,16 +142,16 @@
 	timeout = 2 MINUTES
 
 /datum/mood_event/jittery
-	description = "<span class='warning'>Я нервничаю!</span>\n"
+	description = "<span class='warning'>I'm nervous!</span>\n"
 	mood_change = -2
 
 /datum/mood_event/vomit
-	description = "<span class='warning'>Я блеванул. Ужас.</span>\n"
+	description = "<span class='warning'>I vomited.</span>\n"
 	mood_change = -2
 	timeout = 2 MINUTES
 
 /datum/mood_event/vomitself
-	description = "<span class='warning'>Я выблевал всё на себя. Какой кошмар.</span>\n"
+	description = "<span class='warning'>I puked on myself.</span>\n"
 	mood_change = -4
 	timeout = 3 MINUTES
 

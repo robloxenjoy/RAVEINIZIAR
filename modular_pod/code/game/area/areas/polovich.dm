@@ -77,13 +77,6 @@
 	area_flags = UNIQUE_AREA | NO_ALERTS
 	icon_state = "polovich_special"
 
-/area/maintenance/polovich/forest/can_ruin/Initialize(mapload)
-	. = ..()
-	if(fogger)
-		for(var/turf/T in src)
-	//		T.temperature = COLDDIRT
-			new /obj/effect/foga(T)
-
 /obj/effect/foga
 	name = "Fog"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
@@ -118,6 +111,7 @@
 	droning_sound = null
 	lighting_out = FALSE
 	ino = TRUE
+	fogger = FALSE
 
 /area/maintenance/polovich/forest/cave
 	name = "Caveira"
@@ -131,6 +125,7 @@
 	droning_sound = DRONING_CAVER
 	lighting_out = FALSE
 	area_flags = NO_ALERTS
+	fogger = FALSE
 
 /area/maintenance/polovich/forest/cave/can_ruin
 	area_flags = UNIQUE_AREA | NO_ALERTS
