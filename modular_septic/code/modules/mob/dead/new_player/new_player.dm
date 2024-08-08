@@ -122,6 +122,19 @@
 				client.ready_char = FALSE
 				return
 		if("Halbermensch")
+			if(GLOB.phase_of_war == "Third")
+				var/hal = "[global.config.directory]/hal.txt"
+				if(ckey in world.file2list(hal))
+					client.role_ch = "halbermensch"
+				else
+					alert("Donate for this role.")
+					client.ready_char = FALSE
+					return
+			else
+				alert("We need Third Phase.")
+				client.ready_char = FALSE
+				return
+/*
 			var/number = GLOB.world_deaths_crazy / 2
 			var/second = GLOB.new_people_crazy * 2
 			if(second < number)
@@ -133,9 +146,11 @@
 					client.ready_char = FALSE
 					return
 			else
+
 				alert("Deaths are not balanced.")
 				client.ready_char = FALSE
 				return
+*/
 //			if(GLOB.world_deaths_crazy < 20)
 //				alert("Not enough deaths in the world.")
 //				client.ready_char = FALSE
@@ -239,7 +254,7 @@
 				our.special_zvanie = "Ladax Father"
 			else
 				switch(GLOB.phase_of_war)
-					if("Second")
+					if("Second" || "Third")
 						if(prob(10))
 							our.equipOutfit(/datum/outfit/kapnosec)
 						else
@@ -255,7 +270,7 @@
 				our.special_zvanie = "Worst Kador"
 			else
 				switch(GLOB.phase_of_war)
-					if("Second")
+					if("Second" || "Third")
 						if(prob(10))
 							our.equipOutfit(/datum/outfit/konchsec)
 						else

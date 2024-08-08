@@ -42,6 +42,10 @@
 				priority_announce("SECOND WAR PHASE BEGINS!", "WORLD", has_important_message = TRUE)
 				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 				GLOB.phase_of_war = "Second"
+			if(50 to 50)
+				priority_announce("THIRD WAR PHASE BEGINS!", "WORLD", has_important_message = TRUE)
+				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+				GLOB.phase_of_war = "Third"
 		GLOB.new_people_crazy -= 1
 		switch(truerole)
 			if("Ladax")
