@@ -23,6 +23,21 @@
 	light_range = 4
 	light_power = 1
 	light_color = "#f9619f"
+	var/proj_pass_rate = 100
+
+/obj/structure/codec/svetilka/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(locate(/obj/structure/codec/svetilka) in get_turf(mover))
+		return TRUE
+	else if(istype(mover, /obj/projectile))
+		if(!anchored)
+			return TRUE
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(proj_pass_rate))
+			return TRUE
+		return FALSE
 
 /obj/structure/codec/firething
 	name = "Lamp"
