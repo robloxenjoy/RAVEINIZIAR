@@ -182,7 +182,7 @@ SUBSYSTEM_DEF(droning)
 		return
 //	var/retard = null
 	kill_loop(dreamer)
-	if(area_entered.ambientsounds_normal)
+	if(LAZYLEN(area_entered.ambientsounds_normal))
 //		retard = area_entered.ambientsounds_normal
 		var/sound/loop_sound = sound(pick(area_entered.ambientsounds_normal), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
 		SEND_SOUND(dreamer, loop_sound)

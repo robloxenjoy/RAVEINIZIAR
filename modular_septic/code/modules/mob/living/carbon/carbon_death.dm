@@ -47,18 +47,11 @@
 					priority_announce("THIRD WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 					GLOB.phase_of_war = "Third"
-		GLOB.new_people_crazy -= 1
-		switch(truerole)
-			if("Ladax")
-				GLOB.kapnoe -= 1
-			if("Kador")
-				GLOB.aashol-= 1
-		if(SSmapping.config?.war_gamemode)
-			if(GLOB.world_deaths_crazy >= 250)
-				priority_announce("THE WAR IS OVER! VICTORY REMAINS A MYSTERY...", "Chaos", has_important_message = TRUE)
-				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
-				SSticker.force_ending = 1
-//		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2
+				if(250 to INFINITY)
+					priority_announce("THE WAR IS OVER! VICTORY REMAINS A MYSTERY...", "Chaos", has_important_message = TRUE)
+					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+					SSticker.force_ending = 1
+
 			for(var/mob/living/carbon/human/H in world)
 				if(H != src)
 					if(src in view(H))
@@ -86,6 +79,14 @@
 								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
 							else
 								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
+
+		GLOB.new_people_crazy -= 1
+		switch(truerole)
+			if("Ladax")
+				GLOB.kapnoe -= 1
+			if("Kador")
+				GLOB.aashol-= 1
+//		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2
 
 	if(is_merc_job(src))
 		GLOB.mercenary_list -= 1

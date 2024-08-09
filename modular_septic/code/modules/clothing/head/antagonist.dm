@@ -85,6 +85,7 @@
 	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
 	inhand_icon_state = "ordinator_mask"
 	worn_icon_state = "headband"
+	dynamic_hair_suffix = ""
 	max_integrity = 160
 	limb_integrity = 100
 //	repairable_by = /obj/item/stack/ballistic/plate
