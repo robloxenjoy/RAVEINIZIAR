@@ -526,9 +526,10 @@
 	worn_icon_state = "yel_bik"
 	max_integrity = 400
 	limb_integrity = 400
+	dynamic_hair_suffix = ""
 	body_parts_covered = HEAD|FACE|EYES|JAW
-	flags_inv = HIDEHAIR|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
-	flags_cover = HEADCOVERSEYES | PEPPERPROOF
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	repairable_by = /obj/item/stack/ballistic/plate
 	repairable_by_offhand = null
 	integrity_failure = 0.1
@@ -562,11 +563,12 @@
 	icon_state = "iron_helm"
 	worn_icon = 'modular_pod/icons/mob/clothing/head.dmi'
 	worn_icon_state = "iron_helm"
+	dynamic_hair_suffix = ""
 	max_integrity = 500
 	limb_integrity = 500
 	body_parts_covered = HEAD|FACE|EYES|JAW
-	flags_inv = HIDEHAIR|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
-	flags_cover = HEADCOVERSEYES | PEPPERPROOF
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	repairable_by = /obj/item/stack/ballistic/plate
 	repairable_by_offhand = null
 	integrity_failure = 0.1
