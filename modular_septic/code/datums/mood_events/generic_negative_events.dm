@@ -12,12 +12,12 @@
 
 //Cringe filter
 /datum/mood_event/cringe
-	description = span_boldwarning("I'm such an idiot.")
+	description = span_boldwarning("I'm such an idiot. I wanted to say something idiotic.")
 	mood_change = -4
 	timeout = 5 MINUTES
 
 /datum/mood_event/ultracringe
-	description = span_boldwarning("What the fuck am I?!")
+	description = span_boldwarning("What the fuck am I?! I wanted to say something idiotic.")
 	mood_change = -8
 	timeout = 15 MINUTES
 

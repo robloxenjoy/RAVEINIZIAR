@@ -110,15 +110,16 @@
 				return
 			client.role_ch = "kador"
 		if("God SMO")
-			var/smo = "[global.config.directory]/smo.txt"
-			if(ckey in world.file2list(smo))
-				client.role_ch = "god smo"
+			if(GLOB.phase_of_war == "Third")
+				var/smo = "[global.config.directory]/smo.txt"
+				if(ckey in world.file2list(smo))
+					client.role_ch = "god smo"
+				else
+					alert("Donate for this role.")
+					client.ready_char = FALSE
+					return
 			else
-				alert("Donate for this role.")
-				client.ready_char = FALSE
-				return
-			if(GLOB.world_deaths_crazy < 20)
-				alert("Not enough deaths in the world.")
+				alert("We need Third Phase.")
 				client.ready_char = FALSE
 				return
 		if("Halbermensch")
