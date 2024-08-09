@@ -95,7 +95,8 @@
 	armor_damaged_sound = "light"
 	carry_weight = 200 GRAMS
 	body_parts_covered = HEAD
-//	flags_inv = HIDEEARS
+	flags_cover = null
+	flags_inv = null
 
 /obj/item/clothing/head/headbanda/greener
 	icon_state = "headband_green"

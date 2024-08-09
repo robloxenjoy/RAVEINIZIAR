@@ -58,7 +58,7 @@
 		if("he")
 			visible_gender = "Man"
 		if("she")
-			visible_gender = "Женщина"
+			visible_gender = "Woman"
 		if("they")
 			visible_gender = "Creature"
 		else

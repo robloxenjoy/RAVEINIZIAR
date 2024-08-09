@@ -155,13 +155,13 @@
 		return
 	if(singular_name)
 		if(get_amount()>1)
-			. += "тут [get_amount()] [singular_name] собрано."
+			. += "Here [get_amount()] [singular_name] collected."
 		else
-			. += "Тут [get_amount()] [singular_name] собран."
+			. += "Here [get_amount()] [singular_name] collected."
 	else if(get_amount()>1)
-		. += "Тут [get_amount()] собрано."
+		. += "Here [get_amount()] collected."
 	else
-		. += "Тут [get_amount()] собран."
+		. += "Here [get_amount()] collected."
 //	. += span_notice("<b>Right-click</b> with an empty hand to take a custom amount.")
 
 /obj/item/stack/proc/get_amount()
@@ -549,7 +549,7 @@
 	if(can_merge(W))
 		var/obj/item/stack/S = W
 		if(merge(S))
-			to_chat(user, span_notice("[S.name] тепеь [S.get_amount()] [S.singular_name]."))
+			to_chat(user, span_notice("[S.name] now is [S.get_amount()] [S.singular_name]."))
 	else
 		. = ..()
 

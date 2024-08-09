@@ -80,6 +80,12 @@
 			log_admin("Current map ([map_name]) is a combat map.")
 			message_admins("Current map ([map_name]) is a combat map.")
 
+	if("war_gamemode" in json)
+		war_gamemode = json["war_gamemode"]
+		if(war_gamemode)
+			log_admin("Current map ([map_name]) is a war_gamemode.")
+			message_admins("Current map ([map_name]) is a war_gamemode.")
+
 	if("respawn_allowed" in json)
 		respawn_allowed = json["respawn_allowed"]
 		if(respawn_allowed)
