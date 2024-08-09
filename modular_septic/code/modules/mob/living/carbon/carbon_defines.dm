@@ -101,4 +101,4 @@
 	/// Last time we got a major wound
 	var/last_major_wound = 0
 
-	var/pod_faction = "уёбышь"
+	var/pod_faction = "idiot"
