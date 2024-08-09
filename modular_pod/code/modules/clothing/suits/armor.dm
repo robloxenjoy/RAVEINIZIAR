@@ -608,6 +608,7 @@
 	max_integrity = 180
 	integrity_failure = 0.1
 	limb_integrity = 150
+	flags_inv = HIDEJUMPSUIT
 	body_parts_covered = CHEST|VITALS|GROIN|NECK|LEGS|ARMS
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_OVERSUIT
 	subarmor = list(SUBARMOR_FLAGS = SUBARMOR_FLEXIBLE, \
