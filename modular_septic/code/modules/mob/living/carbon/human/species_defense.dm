@@ -953,12 +953,11 @@
 			protection = victim.get_edge_protection(affected)
 			resultt = (protection - weapon.edge_protection_penetration)
 			if(damage > resultt)
-				var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-					if(user_end >= 3)
-						victim.Immobilize(2 SECONDS)
-					else
-						victim.Immobilize(1 SECONDS)
+				var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+				if(diceroll == DICE_FAILURE)
+					victim.Immobilize(1 SECONDS)
+				if(diceroll == DICE_CRIT_FAILURE)
+					victim.Immobilize(2 SECONDS)
 	return TRUE
 
 /datum/species/proc/realstunning(mob/living/carbon/human/victim, \
@@ -982,12 +981,11 @@
 			protection = victim.get_edge_protection(affected)
 			resultt = (protection - weapon.edge_protection_penetration)
 			if(damage > resultt)
-				var/user_str = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-					if(user_str >= 3)
-						victim.Stun(2 SECONDS)
-					else
-						victim.Stun(1 SECONDS)
+				var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+				if(diceroll == DICE_FAILURE)
+					victim.Stun(1 SECONDS)
+				if(diceroll == DICE_CRIT_FAILURE)
+					victim.Stun(2 SECONDS)
 	return TRUE
 
 /datum/species/proc/stumbling(mob/living/carbon/human/victim, \
@@ -1011,12 +1009,11 @@
 			protection = victim.get_edge_protection(affected)
 			resultt = (protection - weapon.edge_protection_penetration)
 			if(damage > resultt)
-				var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)
-				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-					if(user_end >= 3)
-						victim.Stumble(3 SECONDS)
-					else
-						victim.Stumble(1 SECONDS)
+				var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_DEXTERITY)+1, context = DICE_CONTEXT_MENTAL)
+				if(diceroll == DICE_FAILURE)
+					victim.Stumble(2 SECONDS)
+				if(diceroll == DICE_CRIT_FAILURE)
+					victim.Stumble(3 SECONDS)
 	return TRUE
 
 /datum/species/proc/confusioner(mob/living/carbon/human/victim, \
@@ -1040,12 +1037,11 @@
 			protection = victim.get_edge_protection(affected)
 			resultt = (protection - weapon.edge_protection_penetration)
 			if(damage > resultt)
-				var/user_end = GET_MOB_ATTRIBUTE_VALUE(user, STAT_ENDURANCE)
-				if(victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_MENTAL) <= DICE_FAILURE)
-					if(user_end >= 3)
-						victim.add_confusion(3)
-					else
-						victim.add_confusion(1)
+				var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE)+1, context = DICE_CONTEXT_MENTAL)
+				if(diceroll == DICE_FAILURE)
+					victim.add_confusion(2)
+				if(diceroll == DICE_CRIT_FAILURE)
+					victim.add_confusion(3)
 	return TRUE
 
 /datum/species/proc/goodhits(mob/living/carbon/human/victim, \
@@ -1076,11 +1072,11 @@
 								victim.Stumble(10 SECONDS)
 								var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 								if(diceroll == DICE_FAILURE)
-									victim.Stun(1 SECONDS)
-								if(diceroll == DICE_CRIT_FAILURE)
 									victim.Stun(2 SECONDS)
-								victim.visible_message(span_pinkdang("[victim] get gelding blow from [user]!"), \
-													span_pinkdang("I get gelding blow from [user]!"), \
+								if(diceroll == DICE_CRIT_FAILURE)
+									victim.Stun(3 SECONDS)
+								victim.visible_message(span_pinkdang("[victim] gets gelding blowed by [user]!"), \
+													span_pinkdang("I get gelding blowed by [user]!"), \
 													span_hear("I hear combat."))
 								if(victim.stat >= UNCONSCIOUS)
 									return
@@ -1104,11 +1100,11 @@
 									victim.shit(FALSE)
 							var/diceroll = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 							if(diceroll == DICE_FAILURE)
-								victim.vomit(100, FALSE, FALSE)
+								victim.vomit(100, FALSE, TRUE)
 							if(diceroll == DICE_CRIT_FAILURE)
-								victim.vomit(100, TRUE, FALSE)
-							victim.visible_message(span_pinkdang("[victim] gets gut-busted from [user]!"), \
-												span_pinkdang("I get gut-busted from [user]!"), \
+								victim.vomit(100, TRUE, TRUE)
+							victim.visible_message(span_pinkdang("[victim] gets gut-busted by [user]!"), \
+												span_pinkdang("I get gut-busted by [user]!"), \
 												span_hear("I hear combat."))
 							if(victim.stat >= UNCONSCIOUS)
 								return
@@ -1192,9 +1188,9 @@
 						list/modifiers)
 	if(!istype(weapon) || !length(weapon.embedding))
 		return FALSE
-	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH)+1, context = DICE_CONTEXT_PHYSICAL)
+	var/user_result = user.diceroll(GET_MOB_ATTRIBUTE_VALUE(user, STAT_STRENGTH), context = DICE_CONTEXT_PHYSICAL)
 	var/victim_result = victim.diceroll(GET_MOB_ATTRIBUTE_VALUE(victim, STAT_ENDURANCE), context = DICE_CONTEXT_PHYSICAL)
-	if((user_result > DICE_FAILURE) && (victim_result <= DICE_FAILURE))
+	if((user_result > DICE_FAILURE) || (victim_result <= DICE_FAILURE))
 		var/edge_protection = 0
 		var/resultt = 0
 		edge_protection = victim.get_edge_protection(affected)
