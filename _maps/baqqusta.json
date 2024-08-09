@@ -6,6 +6,7 @@
 	"map_file": "baqqusta.dmm",
 	"station_name": "Planet",
 	"respawn_allowed": true,
+	"war_gamemode": true,
 	"space_ruin_levels": 0,
 	"space_empty_levels": 0,
 	"surface_ruin_levels": 0,

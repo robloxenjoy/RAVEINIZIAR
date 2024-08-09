@@ -15,6 +15,8 @@
 	var/everyone_is_fucking_naked = FALSE
 	/// Combat maps get a skill modifier for every job
 	var/combat_map = FALSE
+	/// Combat maps get a skill modifier for every job
+	var/war_gamemode = FALSE
 	/// Custom overflow role, currently only used by combat test map
 	var/overflow_role
 	/// This is used for test maps, to allow people to respawn.

@@ -248,6 +248,7 @@
 
 /datum/quirk/hypersensitive
 	name = "Hypersensitive"
+	mob_trait = TRAIT_HYPERSENT
 	desc = "For better or worse, everything seems to affect your mood more than it should."
 	icon = "flushed"
 	value = -2
@@ -317,7 +318,7 @@
 	hardcore_value = 5
 
 /datum/quirk/nyctophobia/add()
-	RegisterSignal(quirk_holder, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+	RegisterSignal(quirk_holder, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 
 /datum/quirk/nyctophobia/remove()
 	UnregisterSignal(quirk_holder, COMSIG_MOVABLE_MOVED)
@@ -626,6 +627,7 @@
 	medical_record_text = "Patient has a history of hard drugs."
 	hardcore_value = 4
 	processing_quirk = TRUE
+	mob_trait = TRAIT_JUNKER
 	var/drug_list = list(/datum/reagent/drug/blastoff, /datum/reagent/drug/krokodil, /datum/reagent/medicine/morphine, /datum/reagent/drug/happiness, /datum/reagent/drug/methamphetamine) //List of possible IDs
 	var/datum/reagent/reagent_type //!If this is defined, reagent_id will be unused and the defined reagent type will be instead.
 	var/datum/reagent/reagent_instance //! actual instanced version of the reagent
@@ -636,6 +638,7 @@
 	var/process_interval = 30 SECONDS //! how frequently the quirk processes
 	var/next_process = 0 //! ticker for processing
 	var/drug_flavour_text = "Better hope you don't run out..."
+	var/specialgive = FALSE
 
 /datum/quirk/item_quirk/junkie/add_unique()
 	var/mob/living/carbon/human/human_holder = quirk_holder
@@ -648,40 +651,41 @@
 	for(var/addiction in reagent_instance.addiction_types)
 		human_holder.last_mind?.add_addiction_points(addiction, 1000)
 
-	var/current_turf = get_turf(quirk_holder)
+	if(specialgive)
+		var/current_turf = get_turf(quirk_holder)
 
-	if(!drug_container_type)
-		drug_container_type = /obj/item/storage/pill_bottle
+		if(!drug_container_type)
+			drug_container_type = /obj/item/storage/pill_bottle
 
-	var/obj/item/drug_instance = new drug_container_type(current_turf)
-	if(istype(drug_instance, /obj/item/storage/pill_bottle))
-		var/pill_state = "pill[rand(1,20)]"
-		for(var/i in 1 to 7)
-			var/obj/item/reagent_containers/pill/pill = new(drug_instance)
-			pill.icon_state = pill_state
-			pill.reagents.add_reagent(reagent_type, 3)
+		var/obj/item/drug_instance = new drug_container_type(current_turf)
+		if(istype(drug_instance, /obj/item/storage/pill_bottle))
+			var/pill_state = "pill[rand(1,20)]"
+			for(var/i in 1 to 7)
+				var/obj/item/reagent_containers/pill/pill = new(drug_instance)
+				pill.icon_state = pill_state
+				pill.reagents.add_reagent(reagent_type, 3)
 
-	give_item_to_holder(
-		drug_instance,
-		list(
-			LOCATION_LPOCKET = ITEM_SLOT_LPOCKET,
-			LOCATION_RPOCKET = ITEM_SLOT_RPOCKET,
-			LOCATION_BACKPACK = ITEM_SLOT_BACKPACK,
-			LOCATION_HANDS = ITEM_SLOT_HANDS,
-		),
-		flavour_text = drug_flavour_text,
-	)
-
-	if(accessory_type)
 		give_item_to_holder(
-		accessory_type,
-		list(
-			LOCATION_LPOCKET = ITEM_SLOT_LPOCKET,
-			LOCATION_RPOCKET = ITEM_SLOT_RPOCKET,
-			LOCATION_BACKPACK = ITEM_SLOT_BACKPACK,
-			LOCATION_HANDS = ITEM_SLOT_HANDS,
+			drug_instance,
+			list(
+				LOCATION_LPOCKET = ITEM_SLOT_LPOCKET,
+				LOCATION_RPOCKET = ITEM_SLOT_RPOCKET,
+				LOCATION_BACKPACK = ITEM_SLOT_BACKPACK,
+				LOCATION_HANDS = ITEM_SLOT_HANDS,
+			),
+			flavour_text = drug_flavour_text,
 		)
-	)
+
+		if(accessory_type)
+			give_item_to_holder(
+			accessory_type,
+			list(
+				LOCATION_LPOCKET = ITEM_SLOT_LPOCKET,
+				LOCATION_RPOCKET = ITEM_SLOT_RPOCKET,
+				LOCATION_BACKPACK = ITEM_SLOT_BACKPACK,
+				LOCATION_HANDS = ITEM_SLOT_HANDS,
+			)
+		)
 
 /datum/quirk/item_quirk/junkie/remove()
 	if(quirk_holder && reagent_instance)

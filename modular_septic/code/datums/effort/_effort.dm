@@ -21,7 +21,7 @@
 		return FALSE
 	if(cost)
 		if(cost > user.extra_effort)
-			to_chat(user, span_warning("Недостаточно усилий."))
+			to_chat(user, span_warning("Not enough efforts."))
 			return FALSE
 		user.lose_extra_effort(cost, silent)
 	if(!silent)

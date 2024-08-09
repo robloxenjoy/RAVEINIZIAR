@@ -182,6 +182,7 @@
 								important(character)
 								things(character)
 								things_two(character)
+								hello_special_trait(character)
 								qdel(src)
 								updateshit(character)
 							else
@@ -363,6 +364,10 @@
 	mind.transfer_to(our)
 	mind.set_original_character(our)
 	our.key = key
+
+/mob/dead/new_player/proc/hello_special_trait(mob/living/carbon/human/our)
+	var/my_trait = pick(TRAIT_DEPRESSION, TRAIT_PAINLOVER, TRAIT_JUNKER, TRAIT_HYPERSENT)
+	ADD_TRAIT(our, my_trait, "special_trait")
 
 /datum/outfit/kapno/pre_equip(mob/living/carbon/human/H)
 	..()

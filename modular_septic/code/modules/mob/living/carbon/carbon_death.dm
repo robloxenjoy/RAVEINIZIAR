@@ -31,48 +31,62 @@
 //			return
 		client?.prefs?.adjust_bobux(-10, "<span class='bobux'>I'm dead! -10 Kaotiks!</span>")
 		GLOB.world_deaths_crazy += 1
-		switch(GLOB.world_deaths_crazy)
-			if(10 to 10)
-				priority_announce("ARMOR AND OTHER ARE AVAILABLE FOR PURCHASE!", "Chaos", has_important_message = TRUE)
-				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
-			if(20 to 20)
-				priority_announce("GUNS ARE AVAILABLE FOR PURCHASE!", "Chaos", has_important_message = TRUE)
-				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
-			if(30 to 30)
-				priority_announce("SECOND WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
-				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
-				GLOB.phase_of_war = "Second"
-			if(50 to 50)
-				priority_announce("THIRD WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
-				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
-				GLOB.phase_of_war = "Third"
+		if(SSmapping.config?.war_gamemode)
+			switch(GLOB.world_deaths_crazy)
+				if(10 to 10)
+					priority_announce("ARMOR AND OTHER ARE AVAILABLE FOR PURCHASE!", "Chaos", has_important_message = TRUE)
+					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+				if(20 to 20)
+					priority_announce("GUNS ARE AVAILABLE FOR PURCHASE!", "Chaos", has_important_message = TRUE)
+					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+				if(30 to 30)
+					priority_announce("SECOND WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
+					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+					GLOB.phase_of_war = "Second"
+				if(50 to 50)
+					priority_announce("THIRD WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
+					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+					GLOB.phase_of_war = "Third"
 		GLOB.new_people_crazy -= 1
 		switch(truerole)
 			if("Ladax")
 				GLOB.kapnoe -= 1
 			if("Kador")
 				GLOB.aashol-= 1
-		if(GLOB.world_deaths_crazy >= 250)
-			priority_announce("THE WAR IS OVER! VICTORY REMAINS A MYSTERY...", "Chaos", has_important_message = TRUE)
-			SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
-			SSticker.force_ending = 1
+		if(SSmapping.config?.war_gamemode)
+			if(GLOB.world_deaths_crazy >= 250)
+				priority_announce("THE WAR IS OVER! VICTORY REMAINS A MYSTERY...", "Chaos", has_important_message = TRUE)
+				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+				SSticker.force_ending = 1
 //		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2
-		for(var/mob/living/carbon/human/H in world)
-			if(H != src)
-				if(src in view(H))
-					if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
-						SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
+		if(SSmapping.config?.war_gamemode)
+			for(var/mob/living/carbon/human/H in world)
+				if(H != src)
+					if(src in view(H))
+						if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
+							SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
+						else
+							if(pod_faction == H.pod_faction)
+								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
+						if(pod_faction != H.pod_faction)
+							var/somany = kaotiks_body
+							H.client?.prefs?.adjust_bobux(somany, "<span class='bobux'>I saw a dying enemy! +[somany] Kaotiks!</span>")
+							H.flash_kaosgain()
 					else
-						if(pod_faction == H.pod_faction)
-							SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/friend)
-					if(pod_faction != H.pod_faction)
-						var/somany = kaotiks_body
-						H.client?.prefs?.adjust_bobux(somany, "<span class='bobux'>I saw a dying enemy! +[somany] Kaotiks!</span>")
-						H.flash_kaosgain()
-				else
-					if(pod_faction != H.pod_faction)
-						var/somany = kaotiks_body/2
-						H.client?.prefs?.adjust_bobux(somany)
+						if(pod_faction != H.pod_faction)
+							var/somany = kaotiks_body/2
+							H.client?.prefs?.adjust_bobux(somany)
+		else
+			for(var/mob/living/carbon/human/H in world)
+				if(H != src)
+					if(src in view(H))
+						if(HAS_TRAIT(H, TRAIT_MISANTHROPE))
+							SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/good)
+						else
+							if(GET_MOB_SKILL_VALUE(H, SKILL_MEDICINE) < ATTRIBUTE_MIDDLING)
+								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead)
+							else
+								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_dead", /datum/mood_event/saw_dead/lesser)
 
 	if(is_merc_job(src))
 		GLOB.mercenary_list -= 1

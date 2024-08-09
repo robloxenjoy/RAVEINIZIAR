@@ -475,6 +475,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_ALCOHOL_TOLERANCE "alcohol_tolerance"
 #define TRAIT_AGEUSIA "ageusia"
 #define TRAIT_HEAVY_SLEEPER "heavy_sleeper"
+#define TRAIT_HYPERSENT "hyper_sent"
 #define TRAIT_NIGHT_VISION "night_vision"
 #define TRAIT_LIGHT_STEP "light_step"
 #define TRAIT_SPIRITUAL "spiritual"
@@ -499,6 +500,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_EXTROVERT "extrovert"
 #define TRAIT_INTROVERT "introvert"
 #define TRAIT_ANXIOUS "anxious"
+#define TRAIT_JUNKER "junker"
 #define TRAIT_INSANITY "insanity"
 /// Gives you the Shifty Eyes quirk, rarely making people who examine you think you examined them back even when you didn't
 #define TRAIT_SHIFTY_EYES "shifty_eyes"
