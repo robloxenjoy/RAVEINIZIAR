@@ -330,7 +330,7 @@
 		if("Ladax")
 			our.playsound_local(our, 'modular_pod/sound/eff/ladax.ogg', 90, FALSE)
 		if("Kador")
-			our.playsound_local(our, 'modular_pod/sound/eff/kador.ogg', 80, FALSE)
+			our.playsound_local(our, 'modular_pod/sound/eff/kador.ogg', 70, FALSE)
 		else
 			our.playsound_local(our, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
 	our.cursings()
