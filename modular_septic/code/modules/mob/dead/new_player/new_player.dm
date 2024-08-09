@@ -366,7 +366,7 @@
 	our.key = key
 
 /mob/dead/new_player/proc/hello_special_trait(mob/living/carbon/human/our)
-	var/my_trait = pick(TRAIT_DEPRESSION, TRAIT_PAINLOVER, TRAIT_JUNKER, TRAIT_HYPERSENT)
+	var/my_trait = pick(TRAIT_DEPRESSION, TRAIT_PAINLOVER, TRAIT_JUNKER, TRAIT_HYPERSENT, TRAIT_MISANTHROPE)
 	ADD_TRAIT(our, my_trait, "special_trait")
 
 /datum/outfit/kapno/pre_equip(mob/living/carbon/human/H)
