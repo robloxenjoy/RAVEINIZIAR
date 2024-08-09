@@ -1070,8 +1070,10 @@
 			owner.update_shock_penalty(shock_penalty)
 		var/final_crippling_threshold = CEILING((owner_endurance/ATTRIBUTE_MIDDLING) * crippling_threshold, 1)
 		if((pain >= final_crippling_threshold) || (get_damage() > limb_integrity/1.5))
-			owner.major_wound_effects(pain, body_zone, wound_messages)
-			update_cripple()
+			var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+			if(diceroll <= DICE_FAILURE)
+				owner.major_wound_effects(pain, body_zone, wound_messages)
+				update_cripple()
 
 	if(body_zone in list(BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_PRECISE_L_EYE, BODY_ZONE_PRECISE_R_EYE))
 		if(blocked != 100)

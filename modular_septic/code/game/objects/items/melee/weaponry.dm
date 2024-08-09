@@ -697,7 +697,7 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 	sharpness = SHARP_POINTY
-	embedding = list("pain_mult" = 6, "rip_time" = 1.5, "embed_chance" = 38, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+	embedding = list("pain_mult" = 6, "rip_time" = 1.5, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
 	slot_flags = null
 	attack_verb_continuous = list("stabs", "dabs")
 	attack_verb_simple = list("stab", "dab")
