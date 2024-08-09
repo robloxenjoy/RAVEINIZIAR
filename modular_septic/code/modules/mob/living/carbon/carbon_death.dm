@@ -59,7 +59,6 @@
 				SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 				SSticker.force_ending = 1
 //		GLOB.world_deaths_crazy_next = GLOB.world_deaths_crazy / 2
-		if(SSmapping.config?.war_gamemode)
 			for(var/mob/living/carbon/human/H in world)
 				if(H != src)
 					if(src in view(H))
