@@ -131,6 +131,21 @@
 	light_power = 1
 	light_color = "#e19644"
 	var/datum/looping_sound/firee/soundloop
+	var/proj_pass_rate = 100
+
+/obj/structure/lighterfire/CanAllowThrough(atom/movable/mover, border_dir)//So bullets will fly over and stuff.
+	. = ..()
+	if(locate(/obj/structure/lighterfire) in get_turf(mover))
+		return TRUE
+	else if(istype(mover, /obj/projectile))
+		if(!anchored)
+			return TRUE
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(proj_pass_rate))
+			return TRUE
+		return FALSE
 
 /obj/structure/lighterfire/Initialize(mapload)
 	. = ..()
