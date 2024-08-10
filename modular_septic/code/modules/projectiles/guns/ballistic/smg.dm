@@ -156,7 +156,7 @@
 	fire_sound = 'modular_septic/sound/weapons/guns/smg/thump.ogg'
 	far_fire_sound = 'mojave/sound/ms13weapons/distant_shots/12mm_smg.ogg'
 	suppressed_sound = 'modular_septic/sound/weapons/guns/smg/thump_silenced.ogg'
-	mag_type =	/obj/item/ammo_box/magazine/thump45
+	mag_type = /obj/item/ammo_box/magazine/thump45
 	weapon_weight = WEAPON_MEDIUM
 	bolt_type = BOLT_TYPE_LOCKING
 	force = 10
