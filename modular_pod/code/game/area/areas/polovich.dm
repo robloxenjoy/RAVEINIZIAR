@@ -91,8 +91,8 @@
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "foga1"
 	layer = FLY_LAYER
-//	plane = ABOVE_GAME_PLANE
-	plane = FLOOR_PLANE
+	plane = GAME_PLANE
+//	plane = FLOOR_PLANE
 	density = FALSE
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -104,7 +104,7 @@
 	. = ..()
 	icon_state = pick("foga1", "foga2", "foga3")
 	color = pick("#7b7f9b", "#919699", "#748a9c")
-	alpha = rand(240, 255)
+	alpha = rand(200, 255)
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
