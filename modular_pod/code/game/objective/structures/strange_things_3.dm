@@ -603,7 +603,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
-	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "Bolsa (100)", "Cesno Thump (150)")
+	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "SMG Bolsa (100)", "SMG Cesno Thump (150)")
 	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -633,7 +633,7 @@
 			pref_source.bobux_amount -= 60
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Bolsa (100)")
+		if("SMG Bolsa (100)")
 			if(pref_source.bobux_amount < 100)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
@@ -644,7 +644,7 @@
 			pref_source.bobux_amount -= 100
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Cesno Thump (150)")
+		if("SMG Cesno Thump (150)")
 			if(pref_source.bobux_amount < 150)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
