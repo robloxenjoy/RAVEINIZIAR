@@ -842,7 +842,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Frag Grenade (60)", "Gas Grenade (40)", "Flare (10)", "Night Eyes (70)")
+	var/list/otherlist = list("Frag Grenade (60)", "Gas Grenade (40)", "Flare (10)", "Night Eyes (70)", "Shoulder Satchel (50)")
 	var/thingy = input(user, "What kind of thing do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -886,6 +886,14 @@
 				return
 			new /obj/item/clothing/glasses/night(get_turf(user))
 			pref_source.bobux_amount -= 70
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Shoulder Satchel (50)")
+			if(pref_source.bobux_amount < 50)
+				to_chat(user, span_meatymeat("Need kaotiks!"))
+				return
+			new /obj/item/storage/belt/military/itobe(get_turf(user))
+			pref_source.bobux_amount -= 50
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		else
