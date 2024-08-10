@@ -103,6 +103,7 @@
 	. = ..()
 	icon_state = pick("foga1", "foga2", "foga3")
 	color = pick("#7b7f9b", "#919699", "#748a9c")
+	alpha = rand(140, 255)
 
 /area/maintenance/polovich/forest/can_ruin/fog
 
