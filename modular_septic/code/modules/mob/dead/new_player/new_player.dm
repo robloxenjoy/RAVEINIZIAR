@@ -447,7 +447,7 @@
 	name = "Konch Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/konchkey
-	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
+//	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
 	uniform = /obj/item/clothing/under/codec/maika
 	pants = /obj/item/clothing/pants/codec/panta
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -457,7 +457,7 @@
 	name = "Konch Uniform"
 
 	l_pocket = /obj/item/key/podpol/woody/konchkey
-	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
+//	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
 	uniform = /obj/item/clothing/under/codec/maika
 	pants = /obj/item/clothing/pants/codec/panta
 	shoes = /obj/item/clothing/shoes/jackboots

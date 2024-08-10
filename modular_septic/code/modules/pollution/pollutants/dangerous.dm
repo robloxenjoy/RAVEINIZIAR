@@ -80,7 +80,7 @@
 		if(0 to 3)
 			message = span_warning("What is this mell?!")
 			SEND_SIGNAL(victim, COMSIG_ADD_MOOD_EVENT, "pollution", /datum/mood_event/incredible_gas)
-			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
+			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 3)
 			victim.adjustToxLoss(2)
 			if(prob(60))
 				victim.vomit(40, blood = prob(amount), stun = FALSE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
@@ -99,7 +99,7 @@
 			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS, 8)
 			victim.adjustToxLoss(8)
 			victim.vomit(70, blood = TRUE, stun = TRUE, vomit_type = VOMIT_PURPLE, purge_ratio = 1)
-	if(message && prob(40))
+	if(message && prob(50))
 		to_chat(victim, message)
 
 ///UP grenades
