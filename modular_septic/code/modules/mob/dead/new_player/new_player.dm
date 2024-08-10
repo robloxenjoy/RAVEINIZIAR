@@ -256,13 +256,18 @@
 				our.special_zvanie = "Ladax Father"
 			else
 				switch(GLOB.phase_of_war)
-					if("Second" || "Third")
+					if("First")
+						our.equipOutfit(/datum/outfit/kapno)
+					if("Second")
 						if(prob(10))
 							our.equipOutfit(/datum/outfit/kapnosec)
 						else
 							our.equipOutfit(/datum/outfit/kapno)
-					if("First")
-						our.equipOutfit(/datum/outfit/kapno)
+					if("Third")
+						if(prob(10))
+							our.equipOutfit(/datum/outfit/kapnosec)
+						else
+							our.equipOutfit(/datum/outfit/kapno)
 		if("Kador")
 			var/mutable_appearance/appearance = mutable_appearance('modular_septic/icons/mob/human/overlays/signs.dmi', "konch", ROLES_LAYER)
 			our.add_overlay(appearance)
@@ -272,13 +277,18 @@
 				our.special_zvanie = "Worst Kador"
 			else
 				switch(GLOB.phase_of_war)
-					if("Second" || "Third")
+					if("First")
+						our.equipOutfit(/datum/outfit/konch)
+					if("Second")
 						if(prob(10))
 							our.equipOutfit(/datum/outfit/konchsec)
 						else
 							our.equipOutfit(/datum/outfit/konch)
-					if("First")
-						our.equipOutfit(/datum/outfit/konch)
+					if("Third")
+						if(prob(10))
+							our.equipOutfit(/datum/outfit/konchsec)
+						else
+							our.equipOutfit(/datum/outfit/konch)
 
 		if("God SMO")
 			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)

@@ -278,7 +278,7 @@
 	desc = "Make everyone PPFV!"
 	buy_message = "I'm Chungus Son!"
 	id = "fart"
-	cost = 200
+	cost = 500
 //	single_use = TRUE
 	infinite_buy = TRUE
 
