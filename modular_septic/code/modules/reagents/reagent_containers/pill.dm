@@ -3,21 +3,21 @@
 		return FALSE
 
 	if(M == user)
-		M.visible_message(span_notice("[user] пытается [apply_method] [src]."))
+		M.visible_message(span_notice("[user] tries to [apply_method] [src]."))
 		if(self_delay)
 			if(!do_mob(user, M, self_delay))
 				return FALSE
-		to_chat(M, span_notice("Я [apply_method] [src]."))
+		to_chat(M, span_notice("I'm trying to [apply_method] [src]."))
 		playsound(src, 'modular_septic/sound/effects/pill_swallow.ogg', volume, TRUE, vary = FALSE)
 
 	else
-		M.visible_message(span_danger("[user] пытается заставить [M] [apply_method] [src]."), \
-							span_userdanger("[user] пытается заставить меня [apply_method] [src]."))
+		M.visible_message(span_danger("[user] tries to force [M] [apply_method] [src]."), \
+							span_userdanger("[user] tries to force me to [apply_method] [src]."))
 		if(!do_mob(user, M, CHEM_INTERACT_DELAY(3 SECONDS, user)))
 			return FALSE
-		M.visible_message(span_danger("[user] заставляет [apply_method] [M] [src]."), \
+		M.visible_message(span_danger("[user] forces to [apply_method] [M] [src]."), \
 							playsound(src, 'modular_septic/sound/effects/pill_swallow.ogg', volume, TRUE, vary = FALSE), \
-							span_userdanger("[user] заставляет [apply_method] [src]."))
+							span_userdanger("[user] forces to [apply_method] [src]."))
 
 	return on_consumption(M, user)
 
@@ -37,7 +37,7 @@
 	icon = 'modular_septic/icons/obj/items/firstaid.dmi'
 	icon_state = "pep-pill"
 	list_reagents = list(/datum/reagent/drug/carbonylmethamphetamine = 20)
-	apply_method = "жевать"
+	apply_method = "chew"
 
 /obj/item/reagent_containers/pill/crocin
 	name = "crocin pill"
