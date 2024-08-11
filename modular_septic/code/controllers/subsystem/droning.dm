@@ -168,9 +168,9 @@ SUBSYSTEM_DEF(droning)
 			sound_killer.status = SOUND_UPDATE
 			SEND_SOUND(listener, sound_killer)
 			sleep(1)
-		kill_droning(listener)
-//		listener.droning_sound = null
-//		listener.last_droning_sound = null
+//		kill_droning(listener)
+		listener.droning_sound = null
+		listener.last_droning_sound = null
 		var/sound/droning = sound(soundar, area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
 		listener.droning_sound = droning
 		listener.last_droning_sound = soundar
@@ -198,7 +198,10 @@ SUBSYSTEM_DEF(droning)
 		new_droning |= sounda
 		if(last_droning ~= new_droning)
 			return
-		kill_loop(dreamer)
+//		kill_loop(dreamer)
+		dreamer.mob.stop_sound_channel(CHANNEL_MUSIC)
+		dreamer.loop_sound = FALSE
+		dreamer.last_loop = null
 		var/sound/loop_sound = sound(sounda, repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
 		SEND_SOUND(dreamer, loop_sound)
 		dreamer.loop_sound = TRUE
