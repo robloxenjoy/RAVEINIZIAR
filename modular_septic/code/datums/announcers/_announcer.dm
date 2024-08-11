@@ -1,7 +1,7 @@
 /datum/centcom_announcer
 	welcome_sounds = list('modular_pod/sound/mus/start.ogg')
 	///Roundshift end audio
-	var/goodbye_sounds = list('modular_pod/sound/mus/hrumka.ogg')
+	var/goodbye_sounds = list('modular_pod/sound/eff/DSBOSPN.ogg')
 
 /datum/centcom_announcer/proc/combat_map_preset()
 	command_report_sounds = list('modular_pod/sound/mus/announce.ogg')

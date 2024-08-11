@@ -47,9 +47,10 @@
 					priority_announce("THIRD WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 					GLOB.phase_of_war = "Third"
-				if(200 to INFINITY)
+				if(1 to INFINITY)
 					priority_announce("THE WAR IS OVER! VICTORY REMAINS A MYSTERY...", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
+					SEND_SOUND(world, sound('modular_pod/sound/mus/sadend.ogg'))
 					SSticker.force_ending = 1
 
 			for(var/mob/living/carbon/human/H in world)

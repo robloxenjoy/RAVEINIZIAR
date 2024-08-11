@@ -168,6 +168,9 @@
 				damage *= 0.5
 				hit_modifier -= 5
 				hit_zone_modifier -= 5
+			if(user.combat_mode)
+				hit_modifier += 2
+				hit_zone_modifier += 2
 			//bro we dead :skull:
 			if(victim.stat >= UNCONSCIOUS)
 				hit_modifier += 20
@@ -637,6 +640,9 @@
 			attack_damage *= 0.5
 			hit_modifier -= 5
 			hit_zone_modifier -= 5
+		if(user.combat_mode)
+			hit_modifier += 2
+			hit_zone_modifier += 2
 		//bro we dead :skull:
 		if(target.stat >= UNCONSCIOUS)
 			hit_modifier += 20
@@ -736,7 +742,9 @@
 							if(target != user)
 								var/empty_indexes = target.get_empty_held_indexes()
 								if(length(empty_indexes) >= 2)
-									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
+//									if(attack_damage <= (GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)))
+									var/attack_domag = attack_damage / 1.5
+									if((GET_MOB_ATTRIBUTE_VALUE(target, STAT_ENDURANCE)) >= attack_domag)
 										var/dicerollll = target.diceroll(GET_MOB_SKILL_VALUE(target, SKILL_BRAWLING), context = DICE_CONTEXT_PHYSICAL)
 										if(dicerollll >= DICE_SUCCESS)
 											target.visible_message(span_danger("<b>[user]</b> tries to [attack_verb] <b>[target]'s</b> [hit_area], but [target] blocks with his hands!"), \

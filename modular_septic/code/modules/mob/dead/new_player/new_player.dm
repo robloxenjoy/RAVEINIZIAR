@@ -338,10 +338,10 @@
 	our.gain_extra_effort(1, TRUE)
 	switch(our.truerole)
 		if("Ladax")
-				to_chat(our, span_dead("On a physical level I feel like I want to kill the Kadors."))
+			to_chat(our, span_dead("On a physical level I feel like I want to kill the Kadors."))
 			our.playsound_local(our, 'modular_pod/sound/eff/ladax.ogg', 90, FALSE)
 		if("Kador")
-				to_chat(our, span_dead("On a physical level I feel like I want to kill the Ladaxes."))
+			to_chat(our, span_dead("On a physical level I feel like I want to kill the Ladaxes."))
 			our.playsound_local(our, 'modular_pod/sound/eff/kador.ogg', 60, FALSE)
 		else
 			our.playsound_local(our, 'modular_pod/sound/eff/podpol_hello.ogg', 90, FALSE)
