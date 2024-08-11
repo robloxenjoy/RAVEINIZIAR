@@ -149,7 +149,7 @@
 //			var/mood_malus = min(1, mood_level - 5)
 //			living_parent.attributes.add_or_update_variable_diceroll_modifier(/datum/diceroll_modifier/mood, mood_malus)
 		if(living_parent.hud_used?.sadness)
-			var/mood_malus = min(1, mood_level - 5)
+//			var/mood_malus = min(1, mood_level - 5)
 			switch(mood_level)
 				if(4)
 					living_parent.hud_used.sadness.alpha = 32
