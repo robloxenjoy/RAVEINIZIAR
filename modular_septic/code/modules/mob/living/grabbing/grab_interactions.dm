@@ -18,6 +18,7 @@
 			return FALSE
 	active = !active
 	if(!active)
+		to_chat(owner, span_danger("I stop strangling <b>[victim]</b>!"))
 		owner.setGrabState(GRAB_AGGRESSIVE)
 		owner.set_pull_offsets(victim, owner.grab_state)
 		victim.sound_hint()
@@ -26,7 +27,6 @@
 						vision_distance = COMBAT_MESSAGE_RANGE, \
 						ignored_mobs = owner)
 	else
-		to_chat(owner, span_danger("I stop strangling <b>[victim]</b>!"))
 		owner.setGrabState(GRAB_KILL)
 		owner.set_pull_offsets(victim, owner.grab_state)
 		victim.visible_message(span_danger("<b>[owner]</b> strangles <b>[victim]</b>!"), \
