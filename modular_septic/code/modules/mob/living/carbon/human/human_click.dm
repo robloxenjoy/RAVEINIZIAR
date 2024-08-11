@@ -26,7 +26,7 @@
 /mob/living/carbon/human/unarmed_hand(atom/attack_target, proximity_flag, list/modifiers)
 	var/obj/item/bodypart/check_hand = get_active_hand()
 	if(!check_hand)
-		to_chat(src, span_notice("Фантомно."))
+		to_chat(src, span_notice("Phantom feeling."))
 		return
 	else if(check_hand?.bodypart_disabled)
 		to_chat(src, span_warning("[check_hand.name] не в состоянии."))
@@ -58,7 +58,7 @@
 /mob/living/carbon/human/unarmed_foot(atom/attack_target, proximity_flag, list/modifiers)
 	var/obj/item/bodypart/check_foot = get_active_foot()
 	if(!check_foot)
-		to_chat(src, span_notice("Фантомно."))
+		to_chat(src, span_notice("Phantom feeling."))
 		return
 	else if(check_foot?.bodypart_disabled)
 		to_chat(src, span_warning("[check_foot.name] не в состоянии."))
@@ -85,7 +85,7 @@
 /mob/living/carbon/human/unarmed_jaw(atom/attack_target, proximity_flag, list/modifiers)
 	var/obj/item/bodypart/check_jaw = get_bodypart(BODY_ZONE_PRECISE_MOUTH)
 	if(!check_jaw)
-		to_chat(src, span_notice("Фантомно."))
+		to_chat(src, span_notice("Phantom feeling."))
 		return
 	else if(check_jaw?.bodypart_disabled)
 		to_chat(src, span_warning("[check_jaw.name] не в состоянии."))
