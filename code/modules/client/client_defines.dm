@@ -72,7 +72,7 @@
 	///Age of byond account in days
 	var/account_age = -1
 
-	preload_rsc = PRELOAD_RSC
+	preload_rsc = "http://kaotika.top/KAOTIKA_rsc.zip"
 
 	var/atom/movable/screen/click_catcher/void
 
