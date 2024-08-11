@@ -65,15 +65,15 @@
 		owner.metabolism_efficiency = 1
 	else if(owner.nutrition > NUTRITION_LEVEL_FED && owner.satiety > 80)
 		if(owner.metabolism_efficiency != 1.25)
-			to_chat(owner, span_notice("Я чувствую себя бодрым."))
+			to_chat(owner, span_notice("I feel energized."))
 		owner.metabolism_efficiency = 1.25
 	else if(owner.nutrition < (NUTRITION_LEVEL_STARVING + 50))
 		if(owner.metabolism_efficiency != 0.8)
-			to_chat(owner, span_notice("Я чувствую себя вялым."))
+			to_chat(owner, span_notice("I feel sluggish."))
 		owner.metabolism_efficiency = 0.8
 	else
 		if(owner.metabolism_efficiency == 1.25)
-			to_chat(owner, span_notice("Я больше не чувствую себя бодрым."))
+			to_chat(owner, span_notice("I don't feel energized anymore."))
 		owner.metabolism_efficiency = 1
 
 	//Hunger slowdown for if mood isn't enabled

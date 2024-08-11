@@ -147,18 +147,26 @@
 	if(istype(living_parent))
 		if((old_mood != mood_level) && (living_parent.attributes))
 			var/mood_malus = min(1, mood_level - 5)
-			living_parent.attributes.add_or_update_variable_diceroll_modifier(/datum/diceroll_modifier/mood, mood_malus)
+//			living_parent.attributes.add_or_update_variable_diceroll_modifier(/datum/diceroll_modifier/mood, mood_malus)
 		if(living_parent.hud_used?.sadness)
 			switch(mood_level)
 				if(4)
 					living_parent.hud_used.sadness.alpha = 32
 				if(3)
 					living_parent.hud_used.sadness.alpha = 64
+					if(!living_parent.attributes?.has_attribute_modifier(/datum/diceroll_modifier/verybadmood))
+						living_parent.attributes.add_or_update_variable_diceroll_modifier(/datum/diceroll_modifier/verybadmood, mood_malus)
 				if(2)
 					living_parent.hud_used.sadness.alpha = 128
+					if(!living_parent.attributes?.has_attribute_modifier(/datum/diceroll_modifier/verybadmood))
+						living_parent.attributes.add_or_update_variable_diceroll_modifier(/datum/diceroll_modifier/verybadmood, mood_malus)
 				if(1)
 					living_parent.hud_used.sadness.alpha = 160
+					if(!living_parent.attributes?.has_attribute_modifier(/datum/diceroll_modifier/verybadmood))
+						living_parent.attributes.add_or_update_variable_diceroll_modifier(/datum/diceroll_modifier/verybadmood, mood_malus)
 				else
+					if(living_parent.attributes?.has_attribute_modifier(/datum/diceroll_modifier/verybadmood))
+						living_parent.attributes?.remove_attribute_modifier(/datum/diceroll_modifier/verybadmood)
 					living_parent.hud_used.sadness.alpha = 0
 
 /datum/component/mood/setSanity(amount, minimum=SANITY_INSANE, maximum=SANITY_GREAT, override = FALSE)
