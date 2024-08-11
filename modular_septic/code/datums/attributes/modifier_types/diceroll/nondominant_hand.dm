@@ -9,3 +9,10 @@
 	applicable_contexts = list(
 		DICE_CONTEXT_PHYSICAL = TRUE,
 	)
+
+/datum/diceroll_modifier/verybadmood
+	modification = -2
+	applicable_contexts = list(
+		DICE_CONTEXT_PHYSICAL = TRUE,
+		DICE_CONTEXT_MENTAL = TRUE,
+	)

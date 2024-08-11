@@ -155,22 +155,19 @@
 					living_parent.hud_used.sadness.alpha = 32
 				if(3)
 					living_parent.hud_used.sadness.alpha = 64
-					if(!living_parent.attributes?.has_attribute_modifier(/datum/attribute_modifier/verybadmood))
-						living_parent.attributes?.add_attribute_modifier(/datum/attribute_modifier/verybadmood, TRUE)
-						living_parent.attributes?.update_attributes()
 				if(2)
 					living_parent.hud_used.sadness.alpha = 128
-					if(!living_parent.attributes?.has_attribute_modifier(/datum/attribute_modifier/verybadmood))
-						living_parent.attributes?.add_attribute_modifier(/datum/attribute_modifier/verybadmood, TRUE)
+					if(!living_parent.attributes?.has_diceroll_modifier(/datum/diceroll_modifier/verybadmood))
+						living_parent.attributes?.add_diceroll_modifier(/datum/diceroll_modifier/verybadmood, TRUE)
 						living_parent.attributes?.update_attributes()
 				if(1)
 					living_parent.hud_used.sadness.alpha = 160
-					if(!living_parent.attributes?.has_attribute_modifier(/datum/attribute_modifier/verybadmood))
-						living_parent.attributes?.add_attribute_modifier(/datum/attribute_modifier/verybadmood, TRUE)
+					if(!living_parent.attributes?.has_diceroll_modifier(/datum/diceroll_modifier/verybadmood))
+						living_parent.attributes?.add_diceroll_modifier(/datum/diceroll_modifier/verybadmood, TRUE)
 						living_parent.attributes?.update_attributes()
 				else
-					if(living_parent.attributes?.has_attribute_modifier(/datum/attribute_modifier/verybadmood))
-						living_parent.attributes?.remove_attribute_modifier(/datum/attribute_modifier/verybadmood)
+					if(living_parent.attributes?.has_diceroll_modifier(/datum/diceroll_modifier/verybadmood))
+						living_parent.attributes?.remove_diceroll_modifier(/datum/diceroll_modifier/verybadmood)
 					living_parent.hud_used.sadness.alpha = 0
 
 /datum/component/mood/setSanity(amount, minimum=SANITY_INSANE, maximum=SANITY_GREAT, override = FALSE)

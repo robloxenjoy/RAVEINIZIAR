@@ -189,9 +189,9 @@ SUBSYSTEM_DEF(droning)
 	if(!area_entered || !dreamer)
 		return
 //	var/retard = null
-	if(LAZYLEN(area_entered.ambientsounds_normal))
+	if(area_entered.ambientsounds_normal)
 //		retard = area_entered.ambientsounds_normal
-		var/sounda = pick(area_entered.ambientsounds_normal)
+		var/sounda = area_entered.ambientsounds_normal
 		var/list/last_droning = list()
 		last_droning |= dreamer.last_loop
 		var/list/new_droning = list()

@@ -34,7 +34,7 @@
 	ambientsounds = list('modular_pod/sound/ambi_sounds_out/attackers.ogg', 'modular_pod/sound/ambi_sounds_out/swing.ogg', 'modular_pod/sound/ambi_sounds_out/going.ogg')
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
-	ambientsounds_normal = list('modular_pod/sound/loop/surface.ogg')
+	ambientsounds_normal = 'modular_pod/sound/loop/surface.ogg'
 	var/fogger = TRUE
 	var/specialfog = FALSE
 	var/lighting_out = TRUE
@@ -138,7 +138,7 @@
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
 	ambientsounds = list('modular_pod/sound/ambi_sounds_in/caver1.ogg', 'modular_pod/sound/ambi_sounds_in/caver2.ogg', 'modular_pod/sound/ambi_sounds_in/caver3.ogg', 'modular_pod/sound/ambi_sounds_in/caver4.ogg', 'modular_pod/sound/ambi_sounds_in/caver5.ogg', 'modular_pod/sound/ambi_sounds_in/caver6.ogg')
-	ambientsounds_normal = list('modular_pod/sound/loop/caveloop.ogg')
+	ambientsounds_normal = 'modular_pod/sound/loop/caveloop.ogg'
 	droning_sound = DRONING_CAVER
 	lighting_out = FALSE
 	area_flags = NO_ALERTS
