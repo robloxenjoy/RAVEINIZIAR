@@ -27,7 +27,7 @@
 	log_combat(user, target, "attempted to inject", src, addition="which had [contained]")
 
 	if(!reagents.total_volume)
-		to_chat(user, span_warning("[src] пусто!"))
+		to_chat(user, span_warning("[src] is empty!"))
 		return
 
 	if(!isliving(target) && !target.is_injectable(user))
@@ -90,7 +90,7 @@
 			to_chat(user, span_warning("Не могу взять кровь у [living_target]!"))
 	else
 		if(!target.reagents.total_volume)
-			to_chat(user, span_warning("[target] пусто!"))
+			to_chat(user, span_warning("[target] is empty!"))
 			return SECONDARY_ATTACK_CONTINUE_CHAIN
 
 		if(!target.is_drawable(user))

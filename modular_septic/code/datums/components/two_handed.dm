@@ -48,22 +48,22 @@
 		return
 	if(ismonkey(user))
 		if(require_twohands)
-			to_chat(user, span_notice("Слишком громоздко чтобы держать в одной руке!"))
+			to_chat(user, span_notice("Too bulky to hold in one hand!"))
 			user.dropItemToGround(parent, force=TRUE)
 		else
-			to_chat(user, span_notice("Хммм..."))
+			to_chat(user, span_notice("Hmmm..."))
 		return
 	if(user.get_inactive_held_item())
 		if(require_twohands)
-			to_chat(user, span_notice("Слишком громоздко чтобы держать в одной руке!"))
+			to_chat(user, span_notice("Too bulky to hold in one hand!"))
 			user.dropItemToGround(parent, force=TRUE)
 		else
-			to_chat(user, span_warning("Нужно чтобы другая рука была пустой!"))
+			to_chat(user, span_warning("The other hand needs to be empty!"))
 		return
 	if(user.usable_hands < 2)
 		if(require_twohands)
 			user.dropItemToGround(parent, force=TRUE)
-		to_chat(user, span_warning("У меня недостаточно рабочих рук."))
+		to_chat(user, span_warning("I don't have enough good hands."))
 		return
 
 	// wield update status
@@ -107,7 +107,7 @@
 	// Let's reserve the other hand
 	offhand_item = new(user)
 //	offhand_item.name = "[parent_item.name] - offhand"
-	offhand_item.desc = "Второй хват на [parent_item]."
+	offhand_item.desc = "Second grip on [parent_item]."
 	offhand_item.wielded = TRUE
 	offhand_item.layer = parent_item.layer - 0.05
 	RegisterSignal(offhand_item, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
@@ -169,7 +169,7 @@
 			else if(require_twohands)
 				to_chat(user, span_notice("I drop [parent]."))
 			else
-				to_chat(user, span_notice("Теперь я держу [parent] одной рукой."))
+				to_chat(user, span_notice("Now I'm holding [parent] with one hand."))
 
 	// Play sound if set
 //	if(unwieldsound)

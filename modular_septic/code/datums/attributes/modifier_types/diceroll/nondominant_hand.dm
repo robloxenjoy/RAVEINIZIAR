@@ -16,3 +16,6 @@
 		DICE_CONTEXT_PHYSICAL = TRUE,
 		DICE_CONTEXT_MENTAL = TRUE,
 	)
+
+/datum/diceroll_modifier/verybadmood/applies_to(datum/attribute_holder/holder, context)
+	return TRUE

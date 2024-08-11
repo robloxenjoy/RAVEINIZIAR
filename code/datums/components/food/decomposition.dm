@@ -114,7 +114,7 @@
 	if(produce_ants)
 		new /obj/effect/decal/cleanable/ants(decomp.loc)
 	new decomp_result(decomp.loc)
-	decomp.visible_message("<span class='necrosis'>[decomp] сгнивает окончательно!</span>")
+	decomp.visible_message("<span class='necrosis'>[decomp] completely rots!</span>")
 	qdel(decomp)
 	return
 

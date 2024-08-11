@@ -659,9 +659,9 @@
 				. += "Nothing."
 		else if(reagents.flags & AMOUNT_VISIBLE)
 			if(reagents.total_volume)
-				. += span_notice("Тут осталось [reagents.total_volume] юнитов.")
+				. += span_notice("[reagents.total_volume] units left here.")
 			else
-				. += span_danger("Тут пусто хуюсто.")
+				. += span_danger("There is empty.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 /**

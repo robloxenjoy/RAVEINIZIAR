@@ -18,19 +18,19 @@
 /obj/item/reagent_containers/food/drinks/attack(mob/living/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, span_warning("[src] пусто!"))
+		to_chat(user, span_warning("[src] is empty!"))
 		return FALSE
 
 	if(!canconsume(M, user))
 		return FALSE
 
 	if (!is_drainable())
-		to_chat(user, span_warning("[src] не отрыто!"))
+		to_chat(user, span_warning("[src] is not opened!"))
 		return FALSE
 
 	if(M == user)
-		user.visible_message(span_notice("[user] пьёт [src]."), \
-			span_notice("Я пью [src]."))
+		user.visible_message(span_notice("[user] drinks [src]."), \
+			span_notice("I drink [src]."))
 		if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 			M.changeNext_move(CLICK_CD_MELEE * 0.5) //chug! chug! chug!
 
@@ -79,11 +79,11 @@
 
 	if(target.is_refillable() && is_drainable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("[src] пусто."))
+			to_chat(user, span_warning("[src] is empty."))
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, span_warning("[target] полно."))
+			to_chat(user, span_warning("[target] is full."))
 			return
 
 		var/refill = reagents.get_master_reagent_id()

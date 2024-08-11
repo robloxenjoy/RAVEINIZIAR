@@ -492,11 +492,11 @@
 			if(istype(our_turf) && is_station_level(our_turf.z))
 				SSblackbox.record_feedback("tally", "station_mess_created", 1, casing.name)
 		if(num_unloaded)
-			to_chat(user, span_notice("Я разряжаю [num_unloaded] [cartridge_wording] из [src]."))
+			to_chat(user, span_notice("I unload [num_unloaded] [cartridge_wording] из [src]."))
 			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
 			update_appearance()
 		else
-			to_chat(user, span_warning("[src] пуст!"))
+			to_chat(user, span_warning("[src] is empty!"))
 		return
 	if(bolt_type == BOLT_TYPE_NO_BOLT)
 		chambered = null
@@ -509,11 +509,11 @@
 			if(our_turf && is_station_level(our_turf.z))
 				SSblackbox.record_feedback("tally", "station_mess_created", 1, casing.name)
 		if(num_unloaded)
-			to_chat(user, span_notice("Я разряжаю [num_unloaded] [cartridge_wording] из [src]."))
+			to_chat(user, span_notice("I unload [num_unloaded] [cartridge_wording] из [src]."))
 			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
 			update_appearance()
 		else
-			to_chat(user, span_warning("[src] пуст!"))
+			to_chat(user, span_warning("[src] is empty!"))
 		return
 	//SEPTIC EDIT END
 	if(bolt_type == BOLT_TYPE_LOCKING && bolt_locked)
