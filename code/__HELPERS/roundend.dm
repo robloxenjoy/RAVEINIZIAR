@@ -228,20 +228,20 @@
 	if(world.time - SSticker.round_start_time <= 300 SECONDS)
 		speed_round = TRUE
 
-	for(var/client/C in GLOB.clients)
-		if(!C?.credits)
-			C?.RollCredits()
+//	for(var/client/C in GLOB.clients)
+//		if(!C?.credits)
+//			C?.RollCredits()
 //		C?.playtitlemusic(40)
 //		SEND_SOUND(world, sound('modular_pod/sound/mus/sadend.ogg'))
-		if(speed_round)
-			C?.give_award(/datum/award/achievement/misc/speed_round, C?.mob)
-		HandleRandomHardcoreScore(C)
+//		if(speed_round)
+//			C?.give_award(/datum/award/achievement/misc/speed_round, C?.mob)
+//		HandleRandomHardcoreScore(C)
 
-	var/popcount = gather_roundend_feedback()
-	display_report(popcount)
+//	var/popcount = gather_roundend_feedback()
+//	display_report(popcount)
 
 	CHECK_TICK
-
+/*
 	// Add AntagHUD to everyone, see who was really evil the whole time!
 	for(var/datum/atom_hud/antag/H in GLOB.huds)
 		for(var/m in GLOB.player_list)
@@ -249,9 +249,9 @@
 			H.add_hud_to(M)
 
 	CHECK_TICK
-
+*/
 	//Set news report and mode result
-	mode.set_round_result()
+//	mode.set_round_result()
 
 	send2adminchat("Server", "Round just ended.")
 

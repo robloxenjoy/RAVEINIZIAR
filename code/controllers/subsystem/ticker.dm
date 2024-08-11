@@ -201,7 +201,7 @@ SUBSYSTEM_DEF(ticker)
 				toggle_ooc(TRUE) // Turn it on
 				toggle_dooc(TRUE)
 				declare_completion(force_ending)
-				check_maprotate()
+//				check_maprotate()
 				Master.SetRunLevel(RUNLEVEL_POSTGAME)
 
 
@@ -711,6 +711,7 @@ SUBSYSTEM_DEF(ticker)
 
 	log_game(span_boldannounce("Rebooting World. [reason]"))
 
+	to_chat(world, span_cultlarge("The round is over. Humanity continues to exist."))
 	world.Reboot()
 
 /datum/controller/subsystem/ticker/Shutdown()

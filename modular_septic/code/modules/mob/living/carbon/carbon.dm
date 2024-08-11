@@ -63,7 +63,7 @@
 	. = ..()
 
 //Heal stuff
-/mob/living/carbon/fully_heal(admin_revive)
+/mob/living/carbon/fully_heal(admin_revive, hungerthirst)
 	. = ..()
 	var/datum/component/irradiated/uranium_fever = GetComponent(/datum/component/irradiated)
 	if(uranium_fever)
@@ -75,6 +75,9 @@
 	setFatigueLoss(0)
 	setPainLoss(0)
 	setShockStage(0)
+	if(hungerthirst)
+		set_nutrition(NUTRITION_LEVEL_FED + 50)
+		set_hydration(HYDRATION_LEVEL_START_MAX)
 	for(var/obj/item/organ/organ in internal_organs)
 		organ.set_germ_level(GERM_LEVEL_STERILE)
 		organ.organ_flags &= ~(ORGAN_DEAD|ORGAN_DESTROYED|ORGAN_CUT_AWAY|ORGAN_SYNTHETIC_EMP)

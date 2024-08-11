@@ -139,8 +139,8 @@ SUBSYSTEM_DEF(droning)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
 		if(crazymuzon)
 			droning.file = DRONING_MUZON
-		if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
-			droning.file = 'modular_septic/sound/insanity/lean.ogg'
+//		if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
+//			droning.file = 'modular_septic/sound/insanity/lean.ogg'
 //		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
 //			droning.file = 'modular_pod/sound/mus/radioakt.ogg'
 		listener.droning_sound = droning
@@ -148,6 +148,8 @@ SUBSYSTEM_DEF(droning)
 		SEND_SOUND(listener, droning)
 	else
 		var/soundar = pick(area_player.droning_sound)
+		if(crazymuzon)
+			soundar = DRONING_MUZON
 		var/list/last_droning = list()
 		last_droning |= listener.last_droning_sound
 		var/list/new_droning = list()
@@ -169,10 +171,8 @@ SUBSYSTEM_DEF(droning)
 		listener.droning_sound = null
 //		listener.last_droning_sound = null
 		var/sound/droning = sound(soundar, area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
-		if(crazymuzon)
-			droning.file = DRONING_MUZON
 		listener.droning_sound = droning
-		listener.last_droning_sound = area_player.droning_sound
+		listener.last_droning_sound = soundar
 		SEND_SOUND(listener, droning)
 
 /datum/controller/subsystem/droning/proc/kill_droning(client/victim)
@@ -201,6 +201,7 @@ SUBSYSTEM_DEF(droning)
 		var/sound/loop_sound = sound(sounda, repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
 		SEND_SOUND(dreamer, loop_sound)
 		dreamer.loop_sound = TRUE
+		dreamer.last_loop = sounda
 	else
 		if(dreamer?.loop_sound)
 			kill_loop(dreamer)

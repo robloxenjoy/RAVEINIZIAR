@@ -1034,7 +1034,7 @@
 			return
 		if(do_after(user, 3 SECONDS, target=src))
 			to_chat(GR, span_meatymeat("I feel some kind of fucked up!"))
-			GR.fully_heal(TRUE)
+			GR.fully_heal(TRUE, FALSE)
 			var/words = pick(words_list)
 			speak(words)
 			sound_hint()
@@ -1048,7 +1048,7 @@
 		return
 	if(do_after(user, 2 SECONDS, target=src))
 		to_chat(user, span_meatymeat("I feel some kind of fucked up!"))
-		user.fully_heal(TRUE)
+		user.fully_heal(TRUE, FALSE)
 		var/words = pick(words_list)
 		speak(words)
 		sound_hint()

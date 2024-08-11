@@ -755,7 +755,7 @@
 
 //proc used to completely heal a mob.
 //admin_revive = TRUE is used in other procs, for example mob/living/carbon/fully_heal()
-/mob/living/proc/fully_heal(admin_revive = FALSE)
+/mob/living/proc/fully_heal(admin_revive = FALSE, hungerthirst = TRUE)
 	restore_blood()
 	setToxLoss(0, 0) //zero as second argument not automatically call updatehealth().
 	setOxyLoss(0, 0)
@@ -763,7 +763,9 @@
 	remove_CC()
 	set_disgust(0)
 	losebreath = 0
-	set_nutrition(NUTRITION_LEVEL_FED + 50)
+	if(hungerthirst)
+		set_nutrition(NUTRITION_LEVEL_FED + 50)
+		set_hydration(HYDRATION_LEVEL_START_MAX)
 	bodytemperature = get_body_temp_normal(apply_change=FALSE)
 	set_blindness(0)
 	set_blurriness(0)
