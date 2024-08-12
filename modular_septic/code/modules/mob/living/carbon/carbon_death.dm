@@ -39,11 +39,11 @@
 				if(20 to 20)
 					priority_announce("GUNS ARE AVAILABLE FOR PURCHASE!", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
-				if(30 to 30)
+				if(40 to 40)
 					priority_announce("SECOND WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 					GLOB.phase_of_war = "Second"
-				if(50 to 50)
+				if(100 to 100)
 					priority_announce("THIRD WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 					GLOB.phase_of_war = "Third"

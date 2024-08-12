@@ -34,7 +34,7 @@
 	ambientsounds = list('modular_pod/sound/ambi_sounds_out/attackers.ogg', 'modular_pod/sound/ambi_sounds_out/swing.ogg', 'modular_pod/sound/ambi_sounds_out/going.ogg')
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
-	ambientsounds_normal = 'modular_pod/sound/loop/surface.ogg'
+//	ambientsounds_normal = 'modular_pod/sound/loop/surface.ogg'
 	var/fogger = TRUE
 	var/specialfog = FALSE
 	var/lighting_out = TRUE

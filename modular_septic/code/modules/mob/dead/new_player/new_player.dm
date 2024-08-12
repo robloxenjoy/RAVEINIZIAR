@@ -97,20 +97,20 @@
 	switch(rolevich)
 		if("Ladax")
 			var/numba = GLOB.kapnoe - GLOB.aashol
-			if(numba > 1)
+			if(numba >= 1)
 				alert("Too much of them. Play as Kador.")
 				client.ready_char = FALSE
 				return
 			client.role_ch = "ladax"
 		if("Kador")
 			var/numbar = GLOB.aashol - GLOB.kapnoe
-			if(numbar > 1)
+			if(numbar >= 1)
 				alert("Too much of them. Play as Ladax.")
 				client.ready_char = FALSE
 				return
 			client.role_ch = "kador"
 		if("God SMO")
-			if(GLOB.phase_of_war == "Third")
+			if(GLOB.phase_of_war == "Second")
 				var/smo = "[global.config.directory]/smo.txt"
 				if(ckey in world.file2list(smo))
 					client.role_ch = "god smo"
@@ -119,11 +119,11 @@
 					client.ready_char = FALSE
 					return
 			else
-				alert("We need Third Phase.")
+				alert("We need Second Phase.")
 				client.ready_char = FALSE
 				return
 		if("Halbermensch")
-			if(GLOB.phase_of_war == "Third")
+			if(GLOB.phase_of_war == "Second")
 				var/hal = "[global.config.directory]/hal.txt"
 				if(ckey in world.file2list(hal))
 					client.role_ch = "halbermensch"
@@ -132,7 +132,7 @@
 					client.ready_char = FALSE
 					return
 			else
-				alert("We need Third Phase.")
+				alert("We need Second Phase.")
 				client.ready_char = FALSE
 				return
 /*

@@ -169,6 +169,9 @@
 /mob/living/set_combat_mode(new_mode, silent)
 	if(combat_mode == new_mode)
 		return
+	if(!do_after(src, 1 SECONDS, target = src))
+		to_chat(src, span_danger(xbox_rage_msg()))
+		playsound_local(get_turf(src), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 	. = combat_mode
 	combat_mode = new_mode
 	if(hud_used?.action_intent)

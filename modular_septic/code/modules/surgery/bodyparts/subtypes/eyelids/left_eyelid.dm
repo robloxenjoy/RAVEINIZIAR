@@ -17,8 +17,8 @@
 	maxdam_wound_penalty = 5
 	stam_heal_tick = 1
 
-	melee_hit_modifier = -5
-	melee_hit_zone_modifier = -3
+	melee_hit_modifier = -6
+	melee_hit_zone_modifier = -4
 
 	max_cavity_item_size = WEIGHT_CLASS_TINY
 	max_cavity_volume = 2

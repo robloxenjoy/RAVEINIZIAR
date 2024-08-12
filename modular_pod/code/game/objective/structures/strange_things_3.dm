@@ -603,7 +603,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
-	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "SMG Bolsa (100)", "SMG Cesno Thump (150)")
+	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "SMG Bolsa (120)", "SMG Cesno Thump (200)")
 	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -633,26 +633,26 @@
 			pref_source.bobux_amount -= 60
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-		if("SMG Bolsa (100)")
-			if(pref_source.bobux_amount < 100)
+		if("SMG Bolsa (120)")
+			if(pref_source.bobux_amount < 120)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			if(GLOB.phase_of_war != "Third")
 				to_chat(user, span_meatymeat("We need Third War Phase!"))
 				return
 			new /obj/item/gun/ballistic/automatic/remis/smg/bolsa(get_turf(user))
-			pref_source.bobux_amount -= 100
+			pref_source.bobux_amount -= 120
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-		if("SMG Cesno Thump (150)")
-			if(pref_source.bobux_amount < 150)
+		if("SMG Cesno Thump (200)")
+			if(pref_source.bobux_amount < 200)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			if(GLOB.phase_of_war != "Third")
 				to_chat(user, span_meatymeat("We need Third War Phase!"))
 				return
 			new /obj/item/gun/ballistic/automatic/remis/smg/thump(get_turf(user))
-			pref_source.bobux_amount -= 150
+			pref_source.bobux_amount -= 200
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		else
@@ -761,7 +761,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/traps_find(mob/living/carbon/user)
-	var/list/otherlist = list("Wire Installer (40)", "Mine Installer (80)", "Pressure Mine Installer (70)")
+	var/list/otherlist = list("Barbed Wire Installer (40)", "Mine Installer (80)", "Pressure Mine Installer (70)")
 	var/thingy = input(user, "What kind of trap do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -775,7 +775,7 @@
 //		to_chat(user, span_meatymeat("Недостаточно смертей в мире!"))
 //		return
 	switch(thingy)
-		if("Wire Installer (40)")
+		if("Barbed Wire Installer (40)")
 			if(pref_source.bobux_amount < 40)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
@@ -842,7 +842,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/other_find(mob/living/carbon/user)
-	var/list/otherlist = list("Frag Grenade (60)", "Gas Grenade (40)", "Flare (10)", "Night Eyes (70)", "Shoulder Satchel (50)")
+	var/list/otherlist = list("Frag Grenade (40)", "Gas Grenade (40)", "Flare (10)", "Night Eyes (70)", "Shoulder Satchel (50)")
 	var/thingy = input(user, "What kind of thing do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -856,12 +856,12 @@
 		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 10."))
 		return
 	switch(thingy)
-		if("Frag Grenade (60)")
-			if(pref_source.bobux_amount < 60)
+		if("Frag Grenade (40)")
+			if(pref_source.bobux_amount < 40)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/grenade/frag(get_turf(user))
-			pref_source.bobux_amount -= 60
+			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		if("Gas Grenade (40)")

@@ -225,7 +225,7 @@
 	return TRUE
 
 /datum/reagent/medicine/epinephrine/overdose_start(mob/living/M)
-	to_chat(M, span_userdanger("Я АДРЕНАЛИНОВЫЙ НАРКОМАН!"))
+	to_chat(M, span_userdanger("I'M AN ADRENALINE JUNKIE!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/adrenaline_junkie)
 	M.add_chem_effect(CE_TOXIN, 2, "[type]")
 	M.increase_chem_effect(CE_PULSE, 1, "[type]")
