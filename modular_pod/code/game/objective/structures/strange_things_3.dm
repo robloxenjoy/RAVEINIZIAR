@@ -938,7 +938,8 @@
 	if(ishuman(mover))
 		var/mob/living/carbon/human/H = mover
 		if(H.truerole == allow_role)
-			return TRUE
+			if(do_after(H, 1 SECONDS, target=src))
+				return TRUE
 	return FALSE
 
 /obj/structure/blockrole/konch

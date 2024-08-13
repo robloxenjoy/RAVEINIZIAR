@@ -899,12 +899,14 @@
 				if(M && !M.can_spawn_various_shit)
 					return
 			new /obj/structure/beast/worm(get_turf(src))
+/*
 	if(prob(1))
 		if(prob(10))
 			for(var/obj/M in get_turf(src))
 				if(M && !M.can_spawn_various_shit)
 					return
 			new /obj/structure/beast/goat(get_turf(src))
+*/
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/cavero/generat in near_t)
