@@ -221,15 +221,21 @@
 			if(distance <= 13)
 				if(listening_mob.listen_juke)
 					return
+				if(!listening_mob || !listening_mob.client)
+					continue
 				listening_mob.listen_juke = TRUE
 //				listening_mob.playsound_local(turf_source, 'modular_pod/sound/mus/boombox.ogg', 60, CHANNEL_JUKEBOX, 11, 3, TRUE)
-				listening_mob.playsound_local(turf_source, 'modular_pod/sound/mus/boombox.ogg', 60, channel = CHANNEL_JUKEBOX, use_reverb = TRUE, repeater = TRUE)
+//				listening_mob.playsound_local(turf_source, 'modular_pod/sound/mus/boombox.ogg', 60, channel = CHANNEL_JUKEBOX, use_reverb = TRUE, repeater = TRUE)
+				playsound(src, 'modular_pod/sound/mus/boombox.ogg', 60, channel = CHANNEL_JUKEBOX, use_reverb = TRUE, repeater = TRUE, ignore_walls = TRUE)
 			else
-				listening_mob.listen_juke = TRUE
+				listening_mob.listen_juke = FALSE
+				rangers -= listening_mob
+				if(!listening_mob || !listening_mob.client)
+					continue
 				listening_mob.stop_sound_channel(CHANNEL_JUKEBOX)
 	else
 		for(var/mob/living/listening_mob as anything in rangers)
-			listening_mob.listen_juke = TRUE
+			listening_mob.listen_juke = FALSE
 			rangers -= listening_mob
 			if(!listening_mob || !listening_mob.client)
 				continue
