@@ -659,3 +659,49 @@
 				WOUND = 3, \
 				ORGAN = 3)
 	strip_delay = 90
+
+/obj/item/clothing/suit/armor/powerarmor
+	name = "Powerarmor"
+	desc = "What can they do against you?"
+	icon = 'modular_pod/icons/obj/clothing/back.dmi'
+	icon_state = "powerarmor"
+	worn_icon = 'modular_pod/icons/mob/clothing/back.dmi'
+	worn_icon_state = "powerarmor"
+	armor_broken_sound = "heavy"
+	armor_damaged_sound = "heavy"
+	max_integrity = 800
+	integrity_failure = 0.04
+	limb_integrity = 750
+	repairable_by = /obj/item/stack/ballistic/plate
+	slot_flags = ITEM_SLOT_SUITSTORE
+	dynamic_hair_suffix = ""
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDESNOUT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	slowdown = 2
+	subarmor = list(SUBARMOR_FLAGS = NONE, \
+				EDGE_PROTECTION = 90, \
+				CRUSHING = 88, \
+				CUTTING = 98, \
+				PIERCING = 80, \
+				IMPALING = 98, \
+				LASER = 90, \
+				ENERGY = 90, \
+				BOMB = 70, \
+				BIO = 0, \
+				FIRE = 90, \
+				ACID = 90, \
+				MAGIC = 0, \
+				WOUND = 90, \
+				ORGAN = 90)
+	carry_weight = 10 KILOGRAMS
+	body_parts_covered = NECK|CHEST|VITALS|GROIN|HEAD|EYES|FACE|JAW|ARMS|LEGS|HANDS|FEET
+
+/obj/item/clothing/suit/armor/powerarmor/Initialize(mapload)
+	. = ..()
+	var/datum/component/shuffling/shuffling = GetComponent(/datum/component/shuffling)
+	if(shuffling)
+		shuffling.override_squeak_sounds = list('modular_septic/sound/armor/heavygear_stereo1.ogg'=1,
+												'modular_septic/sound/armor/heavygear_stereo2.ogg'=1,
+												'modular_septic/sound/armor/heavygear_stereo3.ogg'=1)
+		shuffling.volume = 70
+		shuffling.sound_falloff_exponent = 20

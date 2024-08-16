@@ -220,6 +220,26 @@
 /turf/podpol/wall/steel/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
 
+/turf/podpol/wall/woodar
+	icon = 'modular_pod/icons/turf/closed/woodar.dmi'
+
+/turf/podpol/wall/woodar/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_wood[rand(1,5)].ogg"
+
+/turf/podpol/wall/rostik
+	icon = 'modular_pod/icons/turf/closed/rusty.dmi'
+	cantbreak = FALSE
+	mineable = TRUE
+
+/turf/podpol/wall/rostik/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
+
+/turf/podpol/wall/stonaa
+	icon = 'modular_pod/icons/turf/closed/stonaa.dmi'
+
+/turf/podpol/wall/stonaa/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"
+
 /turf/podpol/wall/stal
 	icon = 'modular_pod/icons/turf/closed/stal.dmi'
 	cantbreak = TRUE

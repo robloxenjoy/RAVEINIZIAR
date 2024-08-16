@@ -21,6 +21,7 @@
 	var/unrack_sound_volume = 40
 	/// Whether unracking sound should vary
 	var/unrack_sound_vary = TRUE
+	var/tac_load = FALSE
 
 /obj/item/suppressor
 	name = "suppressor"
