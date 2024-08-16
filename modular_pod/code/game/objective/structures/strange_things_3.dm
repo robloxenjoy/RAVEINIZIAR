@@ -227,7 +227,7 @@
 //				listening_mob.playsound_local(turf_source, 'modular_pod/sound/mus/boombox.ogg', 60, CHANNEL_JUKEBOX, 11, 3, TRUE)
 //				listening_mob.playsound_local(turf_source, 'modular_pod/sound/mus/boombox.ogg', 60, channel = CHANNEL_JUKEBOX, use_reverb = TRUE, repeater = TRUE)
 //				playsound(src, 'modular_pod/sound/mus/boombox.ogg', 60, channel = CHANNEL_JUKEBOX, use_reverb = TRUE, repeater = TRUE, ignore_walls = TRUE, vary = FALSE, falloff_exponent = 13, falloff_distance = 7, extra)
-				playsound(src, 'modular_pod/sound/mus/boombox.ogg', 60, vary = FALSE, extra_range = 1, falloff_exponent = 13, falloff_distance = 4, channel = CHANNEL_JUKEBOX)
+				playsound(src, 'modular_pod/sound/mus/boombox.ogg', volume = 60, vary = FALSE, extra_range = 1, falloff_exponent = 13, falloff_distance = 4, channel = CHANNEL_JUKEBOX)
 			else
 				listening_mob.listen_juke = FALSE
 				rangers -= listening_mob
