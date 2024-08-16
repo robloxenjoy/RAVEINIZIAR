@@ -115,7 +115,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 	S.wait = 0 //No queue
 	S.channel = channel || SSsounds.random_available_channel()
 	S.volume = vol
-	S.repeater = repeat
+	S.repeat = repeater
 
 	if(vary)
 		if(frequency)
