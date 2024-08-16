@@ -34,6 +34,7 @@
 	ambientsounds = list('modular_pod/sound/ambi_sounds_out/attackers.ogg', 'modular_pod/sound/ambi_sounds_out/swing.ogg', 'modular_pod/sound/ambi_sounds_out/going.ogg')
 	min_ambience_cooldown = 60 SECONDS
 	max_ambience_cooldown = 95 SECONDS
+	sound_environment = SOUND_ENVIRONMENT_NONE
 //	ambientsounds_normal = 'modular_pod/sound/loop/surface.ogg'
 	var/fogger = TRUE
 	var/specialfog = FALSE
@@ -144,6 +145,7 @@
 	area_flags = NO_ALERTS
 	fogger = FALSE
 	specialfog = FALSE
+	sound_environment = SOUND_ENVIRONMENT_CAVE
 
 /area/maintenance/polovich/forest/cave/can_ruin
 	area_flags = UNIQUE_AREA | NO_ALERTS

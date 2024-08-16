@@ -394,6 +394,8 @@
 		obscured |= ITEM_SLOT_PANTS
 	if(hidden_slots & HIDEOVERSUIT)
 		obscured |= ITEM_SLOT_OVERSUIT
+	if(hidden_slots & HIDESUIT)
+		obscured |= ITEM_SLOT_OCLOTHING
 	if(hidden_slots & HIDEJUMPSUIT)
 		obscured |= ITEM_SLOT_ICLOTHING
 	if(hidden_slots & HIDESHOES)

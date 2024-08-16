@@ -30,3 +30,4 @@
 
 	var/has_died = FALSE
 	var/look_now = NONE
+	var/listen_juke = FALSE

@@ -98,6 +98,8 @@
 			if(embed_attempt & COMPONENT_EMBED_STOPPED_BY_ARMOR)
 //				SEND_SIGNAL(target, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" <i>\The [name] [p_are()] stopped by armor!</i>"))
 				mode = PROJECTILE_PIERCE_NONE
+				if(shrapnel_type)
+					new shrapnel_type(get_turf(T))
 //			else if(embed_attempt & COMPONENT_EMBED_WENT_THROUGH)
 //				SEND_SIGNAL(target, COMSIG_CARBON_ADD_TO_WOUND_MESSAGE, span_danger(" <i>\The [name] go[p_es()] through!</i>"))
 

@@ -187,8 +187,6 @@
 
 /obj/item/musicshit/boombox/attack_self(mob/user)
 	. = ..()
-	if(.)
-		return
 	if(playc)
 		playc = FALSE
 		STOP_PROCESSING(SSobj, src)
@@ -204,18 +202,38 @@
 
 /obj/item/musicshit/boombox/process()
 	if(playc)
-		for(var/mob/M in range(10,src))
-			if(!M.client)
+		var/turf/turf_source = get_turf(src)
+		if(!turf_source)
+			return
+		var/source_z = turf_source.z
+		var/turf/above_turf = SSmapping.get_turf_above(turf_source)
+		var/turf/below_turf = SSmapping.get_turf_below(turf_source)
+		rangers += SSmobs.clients_by_zlevel[source_z]
+		rangers += SSmobs.dead_players_by_zlevel[source_z]
+		if(above_turf && istransparentturf(above_turf))
+			rangers += SSmobs.clients_by_zlevel[above_turf.z]
+			rangers += SSmobs.dead_players_by_zlevel[above_turf.z]
+		if(below_turf && istransparentturf(turf_source))
+			rangers += SSmobs.clients_by_zlevel[below_turf.z]
+			rangers += SSmobs.dead_players_by_zlevel[below_turf.z]
+		for(var/mob/living/listening_mob as anything in rangers)
+			var/distance = get_dist(listening_mob, turf_source)
+			if(distance <= 13)
+				if(listening_mob.listen_juke)
+					return
+				listening_mob.listen_juke = TRUE
+//				listening_mob.playsound_local(turf_source, 'modular_pod/sound/mus/boombox.ogg', 60, CHANNEL_JUKEBOX, 11, 3, TRUE)
+				listening_mob.playsound_local(turf_source, 'modular_pod/sound/mus/boombox.ogg', 60, channel = CHANNEL_JUKEBOX, use_reverb = TRUE, repeater = TRUE)
+			else
+				listening_mob.listen_juke = TRUE
+				listening_mob.stop_sound_channel(CHANNEL_JUKEBOX)
+	else
+		for(var/mob/living/listening_mob as anything in rangers)
+			listening_mob.listen_juke = TRUE
+			rangers -= listening_mob
+			if(!listening_mob || !listening_mob.client)
 				continue
-			if(!(M in rangers))
-				rangers[M] = TRUE
-				M.playsound_local(get_turf(M), 'modular_pod/sound/mus/boombox.ogg', volume = 60, channel = CHANNEL_JUKEBOX, falloff_exponent = 11, falloff_distance = 3, use_reverb = TRUE)
-		for(var/mob/L in rangers)
-			if(get_dist(src,L) > 13)
-				rangers -= L
-				if(!L || !L.client)
-					continue
-				L.stop_sound_channel(CHANNEL_JUKEBOX)
+			listening_mob.stop_sound_channel(CHANNEL_JUKEBOX)
 
 /obj/structure/chair/podpolsit
 	name = "Throne"

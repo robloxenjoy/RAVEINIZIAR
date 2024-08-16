@@ -87,6 +87,7 @@
 	heavyfootstep = FOOTSTEP_SAND
 	var/finished = FALSE
 	icon = 'modular_pod/icons/content_5.dmi'
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/way/for4/Initialize(mapload)
 	. = ..()
@@ -109,6 +110,7 @@
 	var/finished = FALSE
 	var/flora = TRUE
 	icon = 'modular_pod/icons/content_5.dmi'
+	slowdown = 1
 
 /*
 /turf/open/floor/plating/polovich/way/muddy/Initialize(mapload)
@@ -176,6 +178,7 @@
 	heavyfootstep = FOOTSTEP_MEAT
 	var/finished = FALSE
 	icon = 'modular_pod/icons/content_5.dmi'
+	slowdown = 1
 
 /turf/open/floor/plating/polovich/way/for1/Initialize(mapload)
 	. = ..()
@@ -205,3 +208,4 @@
 	heavyfootstep = FOOTSTEP_SAND
 	var/finished = FALSE
 	icon = 'modular_pod/icons/content_5.dmi'
+	slowdown = 1

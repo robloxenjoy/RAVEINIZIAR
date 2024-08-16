@@ -111,7 +111,7 @@
 				return FALSE
 			if(spilled)
 				return FALSE
-			if(limb_integrity < (max_damage/2))
+			if(limb_integrity < (max_damage/1.5))
 				return FALSE
 			var/gaping_wound = FALSE
 			for(var/datum/injury/injury as anything in injuries)
