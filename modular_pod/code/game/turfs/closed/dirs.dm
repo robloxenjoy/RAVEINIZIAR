@@ -156,7 +156,7 @@
 		if(mine_hp > 0)
 			if(user.a_intent == INTENT_HARM)
 				if(W.can_dig)
-					user.visible_message(span_notice("[user] digs [src] with [W]."),span_notice("Я копаю [src] with [W]."), span_hear("I hear digging."))
+					user.visible_message(span_notice("[user] digs [src] with [W]."),span_notice("I dig [src] with [W]."), span_hear("I hear digging."))
 					user.changeNext_move(W.attack_delay)
 					user.adjustFatigueLoss(8)
 					W.damageItem(10)

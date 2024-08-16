@@ -128,68 +128,39 @@ SUBSYSTEM_DEF(droning)
 	dreamer.droning_sound = combat_music
 	dreamer.last_droning_sound = combat_music.file
 
-/datum/controller/subsystem/droning/proc/last_phase(area/area_player, client/listener)
+/datum/controller/subsystem/droning/proc/last_phase(area/area_player, client/listener, shouldskip = FALSE)
 	if(!area_player || !listener)
 		return
-	var/shouldskip = FALSE
 	if(!listener?.droning_sound)
 		shouldskip = TRUE
-//	victim.mob.transition = TRUE
 	if(shouldskip)
 		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
 		if(crazymuzon)
 			droning.file = DRONING_MUZON
-//		if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
-//			droning.file = 'modular_septic/sound/insanity/lean.ogg'
-//		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
-//			droning.file = 'modular_pod/sound/mus/radioakt.ogg'
 		listener.droning_sound = droning
 		listener.last_droning_sound = area_player.droning_sound
 		SEND_SOUND(listener, droning)
 	else
-		kill_droning(listener)
-		listener.droning_sound = null
-		listener.last_droning_sound = null
-		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
-		if(crazymuzon)
-			droning.file = DRONING_MUZON
-//		if(HAS_TRAIT(listener.mob, TRAIT_LEAN))
-//			droning.file = 'modular_septic/sound/insanity/lean.ogg'
-//		if(HAS_TRAIT(listener.mob, TRAIT_BLOODARN))
-//			droning.file = 'modular_pod/sound/mus/radioakt.ogg'
-		listener.droning_sound = droning
-		listener.last_droning_sound = area_player.droning_sound
-		SEND_SOUND(listener, droning)
-/*
-		var/soundar = pick(area_player.droning_sound)
-		if(crazymuzon)
-			soundar = DRONING_MUZON
-		var/list/last_droning = list()
-		last_droning |= listener.last_droning_sound
-		var/list/new_droning = list()
-		new_droning |= soundar
-		if(last_droning ~= new_droning)
-			return
 		var/sound/sound_killer = sound()
 		sound_killer.channel = listener.droning_sound.channel
 		sound_killer.volume = area_player.droning_volume
 		while(sound_killer.volume > 0)
 			if(sound_killer.volume <= 0)
 				break
-//			sound_killer.volume = max(sound_killer.volume - 2, 0)
 			sound_killer.volume = max(sound_killer.volume - 5, 0)
-//			SEND_SOUND(listener, sound_killer)
 			sound_killer.status = SOUND_UPDATE
 			SEND_SOUND(listener, sound_killer)
 			sleep(1)
-//		kill_droning(listener)
 		listener.droning_sound = null
 		listener.last_droning_sound = null
-		var/sound/droning = sound(soundar, area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
+		var/sound/droning = sound(pick(area_player.droning_sound), area_player.droning_repeat, area_player.droning_wait, area_player.droning_channel, area_player.droning_volume)
+
+		if(crazymuzon)
+			droning.file = DRONING_MUZON
+
 		listener.droning_sound = droning
-		listener.last_droning_sound = soundar
+		listener.last_droning_sound = area_player.droning_sound
 		SEND_SOUND(listener, droning)
-*/
 
 /datum/controller/subsystem/droning/proc/kill_droning(client/victim)
 	if(!victim?.droning_sound)
@@ -203,45 +174,24 @@ SUBSYSTEM_DEF(droning)
 /datum/controller/subsystem/droning/proc/play_loop(area/area_entered, client/dreamer)
 	if(!area_entered || !dreamer)
 		return
-//	var/retard = null
-	if(area_entered.ambientsounds_normal)
-//		retard = area_entered.ambientsounds_normal
-		var/sounda = area_entered.ambientsounds_normal
-		var/list/last_droning = list()
-		last_droning |= dreamer.last_loop
-		var/list/new_droning = list()
-		new_droning |= sounda
-		if(last_droning ~= new_droning)
-			return
-//		kill_loop(dreamer)
-		dreamer.mob.stop_sound_channel(CHANNEL_MUSIC)
-		dreamer.loop_sound = FALSE
-		dreamer.last_loop = null
-		var/sound/loop_sound = sound(sounda, repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
-		SEND_SOUND(dreamer, loop_sound)
-		dreamer.loop_sound = TRUE
-		dreamer.last_loop = sounda
-	else
-		if(dreamer?.loop_sound)
-			kill_loop(dreamer)
+	//kill the previous looping
+//	kill_loop(dreamer)
 
-/*
 	var/retard = null
-	if(area_entered.loopniqqa)
-		if(GLOB.tod == "night")
-			if(area_entered.ambientnight)
-				retard = area_entered.ambientnight
-		else
-			if(area_entered.ambientsounds)
-				retard = area_entered.ambientsounds
-*/
+	if(area_entered.ambientsounds_normal)
+		retard = area_entered.ambientsounds_normal
+
+	if(!retard)
+		return
+	var/sound/loop_sound = sound(pick(retard), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
+	SEND_SOUND(dreamer, loop_sound)
+	dreamer.loop_sound = TRUE
 
 /datum/controller/subsystem/droning/proc/kill_loop(client/victim)
 	if(!victim?.loop_sound)
 		return
 	victim?.mob.stop_sound_channel(CHANNEL_MUSIC)
 	victim?.loop_sound = FALSE
-	victim?.last_loop = null
 
 //	victim.mob.transition = FALSE
 

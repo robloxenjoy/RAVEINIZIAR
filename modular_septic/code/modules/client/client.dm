@@ -50,7 +50,6 @@
 	ready_char = FALSE
 	QDEL_NULL(droning_sound)
 	last_droning_sound = null
-	last_loop = null
 	QDEL_NULL(political_compass)
 	QDEL_NULL(attribute_editor)
 	QDEL_NULL(nobody_wants_to_learn_matrix_math)
