@@ -209,3 +209,107 @@
 	var/finished = FALSE
 	icon = 'modular_pod/icons/content_5.dmi'
 	slowdown = 1
+
+
+
+
+// PRISON
+
+
+/turf/open/floor/plating/polovich/way/stolfl
+	icon_state = "stolfl"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/stolfl/Initialize(mapload)
+	. = ..()
+	dir = rand(0,4)
+
+/turf/open/floor/plating/polovich/way/spider
+	icon_state = "spider"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/spadero
+	icon_state = "spadero"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/dreamer
+	icon_state = "dreamer"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_STONE
+	clawfootstep = FOOTSTEP_STONE
+	heavyfootstep = FOOTSTEP_STONE
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/pryt
+	icon_state = "pryt"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/stola
+	icon_state = "stola"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_METAL
+	barefootstep = FOOTSTEP_METAL
+	clawfootstep = FOOTSTEP_METAL
+	heavyfootstep = FOOTSTEP_METAL
+	powerfloor = 18
+
+/turf/open/floor/plating/polovich/way/qiwi
+	name = "Qiwi"
+	icon_state = "qiwi"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_CRUMBLE
+	barefootstep = FOOTSTEP_CRUMBLE
+	clawfootstep = FOOTSTEP_CRUMBLE
+	heavyfootstep = FOOTSTEP_CRUMBLE
+	slowdown = 1
+
+/turf/open/floor/plating/polovich/way/ditraa
+	name = "Dirt"
+	icon_state = "ditraa"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_SAND
+	icon = 'modular_pod/icons/content_6.dmi'
+	slowdown = 1
+
+/turf/open/floor/plating/polovich/way/murda
+	name = "Mud"
+	icon_state = "murda"
+	footstep = FOOTSTEP_MEAT
+	barefootstep = FOOTSTEP_MEAT
+	clawfootstep = FOOTSTEP_MEAT
+	heavyfootstep = FOOTSTEP_MEAT
+	icon = 'modular_pod/icons/content_6.dmi'
+	slowdown = 1
+
+/turf/open/floor/plating/polovich/way/wiider
+	icon_state = "wiider"
+	icon = 'modular_pod/icons/content_6.dmi'
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_WOOD
+	resistance_flags = FLAMMABLE
+	powerfloor = 18

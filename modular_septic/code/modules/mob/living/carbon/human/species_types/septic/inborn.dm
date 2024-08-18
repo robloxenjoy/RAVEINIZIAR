@@ -34,8 +34,10 @@
 	sexes = FALSE
 	species_traits = list(
 		NO_UNDERWEAR,
-		AGENDER,
-		NOEYESPRITES,
+		EYECOLOR,
+		LIPS,
+		HAS_FLESH,
+		HAS_BONE,
 	)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -143,6 +145,7 @@
 	id = SPECIES_PIGHUMAN
 	default_color = "4B4B4B"
 	species_traits = list(
+		NO_UNDERWEAR,
 		EYECOLOR,
 		LIPS,
 		HAS_FLESH,

@@ -220,6 +220,13 @@
 /turf/podpol/wall/steel/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
 
+/turf/podpol/wall/gray
+	icon = 'modular_pod/icons/turf/closed/gray.dmi'
+	mine_hp = 10
+
+/turf/podpol/wall/gray/get_projectile_hitsound(obj/projectile/projectile)
+	return "modular_septic/sound/bullet/projectile_impact/ric_metal[rand(1,5)].ogg"
+
 /turf/podpol/wall/woodar
 	icon = 'modular_pod/icons/turf/closed/woodar.dmi'
 
@@ -236,6 +243,7 @@
 
 /turf/podpol/wall/stonaa
 	icon = 'modular_pod/icons/turf/closed/stonaa.dmi'
+	mine_hp = 5
 
 /turf/podpol/wall/stonaa/get_projectile_hitsound(obj/projectile/projectile)
 	return "modular_septic/sound/bullet/projectile_impact/ric_stone[rand(1,3)].ogg"

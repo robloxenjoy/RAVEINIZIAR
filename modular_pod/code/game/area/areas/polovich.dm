@@ -37,7 +37,7 @@
 	sound_environment = SOUND_ENVIRONMENT_NONE
 //	ambientsounds_normal = 'modular_pod/sound/loop/surface.ogg'
 	var/fogger = TRUE
-	var/specialfog = FALSE
+	var/specialfog = TRUE
 	var/lighting_out = TRUE
 	var/ino = FALSE
 	var/specialcolor = FALSE
@@ -152,6 +152,36 @@
 	icon_state = "caveira_special"
 	fogger = FALSE
 	specialfog = FALSE
+
+/area/maintenance/polovich/forest/prison
+	icon_state = "polovich_inner"
+	min_ambience_cooldown = 50 SECONDS
+	max_ambience_cooldown = 75 SECONDS
+	static_lighting = TRUE
+	base_lighting_alpha = 1
+//	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
+	ambientsounds = null
+	droning_sound = DRONING_INNER
+	ambientsounds_normal = null
+	lighting_out = FALSE
+	ino = TRUE
+	fogger = FALSE
+	specialfog = FALSE
+	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
+
+/area/maintenance/polovich/forest/prisonoutsee
+	icon_state = "polovich"
+	min_ambience_cooldown = 50 SECONDS
+	max_ambience_cooldown = 75 SECONDS
+//	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
+	ambientsounds = null
+	droning_sound = DRONING_INNER
+	ambientsounds_normal = null
+	lighting_out = FALSE
+	ino = TRUE
+	fogger = FALSE
+	specialfog = FALSE
+	sound_environment = SOUND_ENVIRONMENT_NONE
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
