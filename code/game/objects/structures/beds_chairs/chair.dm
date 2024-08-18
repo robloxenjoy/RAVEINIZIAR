@@ -1,6 +1,6 @@
 /obj/structure/chair
-	name = "chair"
-	desc = "Чтобы посидеть."
+	name = "Chair"
+	desc = "For sitting."
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chair"
 	anchored = TRUE
@@ -270,7 +270,7 @@
 //Stool
 
 /obj/structure/chair/stool
-	name = "stool"
+	name = "Stool"
 	desc = "Apply butt."
 	icon_state = "stool"
 	can_buckle = FALSE

@@ -146,6 +146,7 @@
 //		musics |= DRONING_COMBAT
 		musics |= DRONING_POLOVICHSTAN
 		musics |= DRONING_CAVER
+		musics |= DRONING_PRISON
 		musics |= DRONING_MUZON
 		musics |= DRONING_INNER
 		music_files = musics

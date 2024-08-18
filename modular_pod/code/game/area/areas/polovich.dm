@@ -162,7 +162,7 @@
 	base_lighting_alpha = 1
 //	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
 	ambientsounds = null
-	droning_sound = DRONING_INNER
+	droning_sound = DRONING_PRISON
 	ambientsounds_normal = null
 	lighting_out = FALSE
 	ino = TRUE
@@ -177,7 +177,7 @@
 	max_ambience_cooldown = 75 SECONDS
 //	ambientsounds = list('modular_pod/sound/ambi_sounds_in/italy.ogg', 'modular_pod/sound/ambi_sounds_in/italy2.ogg', 'modular_pod/sound/ambi_sounds_in/italy3.ogg')
 	ambientsounds = null
-	droning_sound = DRONING_INNER
+	droning_sound = DRONING_PRISON
 	ambientsounds_normal = null
 	lighting_out = FALSE
 	ino = TRUE

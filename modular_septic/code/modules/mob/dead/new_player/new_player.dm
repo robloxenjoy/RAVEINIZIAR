@@ -241,6 +241,11 @@
 			our.hairstyle = "Bald"
 			our.facial_hairstyle = "Shaved"
 			GLOB.aashol += 1
+		if("prisoner")
+			our.truerole = "Prisoner"
+			our.pod_faction = "prisoner"
+			our.hairstyle = "Bald"
+			our.facial_hairstyle = "Shaved"
 		if("halbermensch")
 			our.real_name = "Halbermensch"
 			our.pod_faction = null
@@ -301,7 +306,9 @@
 							our.equipOutfit(/datum/outfit/konchsec)
 						else
 							our.equipOutfit(/datum/outfit/konch)
-
+		if("Prisoner")
+			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/prisoner)
+			our.equipOutfit(/datum/outfit/prizoner)
 		if("God SMO")
 			our.attributes?.add_sheet(/datum/attribute_holder/sheet/job/svogod)
 			our.equipOutfit(/datum/outfit/svogod)
@@ -504,3 +511,10 @@
 	back = /obj/item/storage/belt/military/itobe/svo
 	neck = /obj/item/clothing/neck/chainer
 	suit_store = /obj/item/gun/ballistic/automatic/remis/svd
+
+/datum/outfit/prizoner
+	name = "Prizoner Uniform"
+
+	uniform = /obj/item/clothing/under/codec/purp
+	pants = /obj/item/clothing/pants/codec/purp
+	shoes = /obj/item/clothing/shoes/jackboots

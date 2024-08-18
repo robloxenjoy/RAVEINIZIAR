@@ -1679,3 +1679,31 @@
 		SKILL_LOCKPICKING = -2,
 		SKILL_ACROBATICS = -3,
 	)
+
+/datum/attribute_holder/sheet/job/prizoner
+	attribute_variance = list(
+		STAT_STRENGTH = list(-2, 1),
+//		STAT_ENDURANCE = list(2, 5),
+		STAT_DEXTERITY = list(-2, 1),
+		STAT_INTELLIGENCE = list(-2, 1),
+		SKILL_BRAWLING = list(-2, 2),
+		SKILL_WRESTLING = list(-2, 2),
+		SKILL_PISTOL = list(-2, 1),
+		SKILL_THROWING = list(-5, 2),
+		SKILL_PICKPOCKET = list(-3, 2),
+		SKILL_LOCKPICKING = list(-2, 2),
+		SKILL_ACROBATICS = list(-2, 3),
+		SKILL_IMPACT_WEAPON = list(-2, 2),
+		SKILL_BUCKLER = list(-2, 2),
+		SKILL_KNIFE = list(-1, 2),
+		SKILL_FORENSICS = list(-2, 1),
+	)
+	raw_attribute_list = list(
+		SKILL_BRAWLING = -1,
+		SKILL_WRESTLING = -1,
+		SKILL_IMPACT_WEAPON = 3,
+		SKILL_THROWING = 3,
+		SKILL_PICKPOCKET = -2,
+		SKILL_LOCKPICKING = -2,
+		SKILL_ACROBATICS = -3,
+	)

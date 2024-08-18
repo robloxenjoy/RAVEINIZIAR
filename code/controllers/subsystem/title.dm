@@ -30,17 +30,20 @@ SUBSYSTEM_DEF(title)
 //	if(length(title_screens))
 //		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
 	var/lobbyworld
-	if(prob(70))
+	if(SSmapping.config?.prison_gamemode)
 		lobbyworld = "normal"
 		file_path = "icons/misc/podpolobby.dmi"
 	else
-		lobbyworld = "crazy"
-		file_path = "icons/misc/podpolobby_crazy.dmi"
+		lobbyworld = "prison"
+		file_path = "icons/misc/podpolobby.dmi"
+//	else
+//		lobbyworld = "crazy"
+//		file_path = "icons/misc/podpolobby_crazy.dmi"
 
 	if(lobbyworld == "normal")
 		SSticker.login_music = 'modular_septic/muzon.ogg'
 	else
-		SSticker.login_music = 'modular_septic/muzon.ogg'
+		SSticker.login_music = 'modular_septic/muzon_prison.ogg'
 
 //	if(file_path == "[global.config.directory]/title_screens/images/podpolcrazy.dmi")
 //		SSticker.login_music = "[global.config.directory]/title_music/sounds/crazy.ogg"

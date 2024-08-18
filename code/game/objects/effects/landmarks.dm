@@ -25,6 +25,10 @@
 	name = "kador"
 	spending = 9999
 
+/obj/effect/landing/prisoner
+	name = "prisoner"
+	spending = 9999
+
 /obj/effect/landing/svogod
 	name = "god smo"
 	spending = 1
