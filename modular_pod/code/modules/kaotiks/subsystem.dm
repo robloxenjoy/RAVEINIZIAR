@@ -74,14 +74,15 @@ SUBSYSTEM_DEF(bobux)
 	switch(href_list["task"])
 		if("close")
 			usr << browse(null, "window=kaotik_window")
-		if(!SSmapping.config?.prison_gamemode)
-			if("buy")
-				var/id = href_list["id"]
-				var/datum/bobux_reward/noob
-				for(var/fuck in bobux_rewards_buyable)
-					var/datum/bobux_reward/ronaldo = fuck
-					if(ronaldo.id == id)
-						noob = ronaldo
-						break
+		if("buy")
+			if(SSmapping.config?.prison_gamemode)
+				return
+			var/id = href_list["id"]
+			var/datum/bobux_reward/noob
+			for(var/fuck in bobux_rewards_buyable)
+				var/datum/bobux_reward/ronaldo = fuck
+				if(ronaldo.id == id)
+					noob = ronaldo
+					break
 			if(noob)
 				noob.buy(usr)

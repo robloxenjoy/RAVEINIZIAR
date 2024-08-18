@@ -80,3 +80,7 @@ map baqqusta
 	default
 	votable
 endmap
+
+map ribcagenegative
+	votable
+endmap

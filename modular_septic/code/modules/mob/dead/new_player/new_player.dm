@@ -177,17 +177,17 @@
 	var/crazyalert = alert("Or maybe there was another role?",,"Let's continue!","Yes, it seems like a different role...")
 	switch(crazyalert)
 		if("Let's continue!")
-			var/list/spawn_locs = list()
 			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
-				if(isturf(spawn_point.loc))
-					spawn_locs += spawn_point.loc
-				if(!spawn_locs)
-					alert("In fact, something bad is happening there...")
-					client.ready_char = FALSE
-					return FALSE
 				if(client)
 					if(spawn_point.name == client.role_ch)
 						if(spawn_point.spending > 0)
+							var/list/spawn_locs = list()
+							if(isturf(spawn_point.loc))
+								spawn_locs += spawn_point.loc
+							if(!spawn_locs)
+								alert("In fact, something bad is happening there...")
+								client.ready_char = FALSE
+								return FALSE
 							GLOB.new_people_crazy += 1
 							if(client.role_ch != "halbermensch")
 								spawn_point.spending--

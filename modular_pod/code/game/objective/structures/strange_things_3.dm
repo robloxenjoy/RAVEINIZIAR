@@ -948,14 +948,15 @@
 
 /obj/structure/torgovka/attackby(obj/item/W, mob/living/carbon/user, params)
 	if(W.sellkaotiks > 0)
-		var/datum/preferences/pref_source = user.client?.prefs
+//		var/datum/preferences/pref_source = user.client?.prefs
 //		pref_source.bobux_amount += W.sellkaotiks
 		user.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I sold [W]! +[W.sellkaotiks] Kaotiks!</span>")
 //		to_chat(GR, span_meatymeat("I'm selling [W]!"))
 		sound_hint()
 		playsound(src, 'modular_pod/sound/eff/torgovka.ogg', 70, FALSE)
+		qdel(W)
 	else
-		to_chat(GR, span_meatymeat("I can't sell this!"))
+		to_chat(user, span_meatymeat("I can't sell this!"))
 		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
 		return
 

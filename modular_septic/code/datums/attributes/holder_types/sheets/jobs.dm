@@ -1680,7 +1680,7 @@
 		SKILL_ACROBATICS = -3,
 	)
 
-/datum/attribute_holder/sheet/job/prizoner
+/datum/attribute_holder/sheet/job/prisoner
 	attribute_variance = list(
 		STAT_STRENGTH = list(-2, 1),
 //		STAT_ENDURANCE = list(2, 5),
