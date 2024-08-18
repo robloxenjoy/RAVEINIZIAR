@@ -6,6 +6,7 @@
 	"map_file": "ribcagenegative.dmm",
 	"station_name": "Prison",
 	"respawn_allowed": true,
+	"war_gamemode": false,
 	"prison_gamemode": true,
 	"space_ruin_levels": 0,
 	"space_empty_levels": 0,
