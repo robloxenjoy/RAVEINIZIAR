@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(title)
 //	if(length(title_screens))
 //		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
 	var/lobbyworld
-	if(SSmapping.config?.prison_gamemode)
+	if(!SSmapping.config?.prison_gamemode)
 		lobbyworld = "normal"
 		file_path = "icons/misc/podpolobby.dmi"
 	else

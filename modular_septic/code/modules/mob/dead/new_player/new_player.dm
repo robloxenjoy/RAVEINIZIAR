@@ -167,7 +167,7 @@
 					if(numbor <= 1)
 						alert("Unclear. The role of the common Kador.")
 						client.role_ch = "kador"
-	if(SSmapping.config?.prison_gamemode)
+	else if(SSmapping.config?.prison_gamemode)
 		switch(rolevich)
 			if("Prisoner")
 				client.role_ch = "prisoner"

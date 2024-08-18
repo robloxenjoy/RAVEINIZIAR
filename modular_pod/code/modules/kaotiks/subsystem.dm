@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(bobux)
 			crazynuma = "++"
 		if(5)
 			crazynuma = "+++"
-	dat += "<center><b>My rank: [crazynuma]</b></center><br>"
+	dat += "<center>My rank: <b>[crazynuma]</b></center><br>"
 	dat += "<center>My kaotiks: <b>[pref_source.bobux_amount]</b></center><br>"
 	dat += "<center><a href='?src=\ref[src];task=close'>Awesome</a></center>"
 	dat += "<hr>"
