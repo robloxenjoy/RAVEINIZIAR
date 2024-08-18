@@ -79,6 +79,7 @@ h1.alert, h2.alert		{color: #5a005a;}
 .bigdanger				{color: #c51e1e; font-size: 140%;}
 .steal					{color: #3a1b4e;}
 .bobux					{color: #e86e0a; font-size: 3;}
+.rank					{color: #228b22; font-size: 2;}
 .danger					{color: #8c3000;}
 .cyanicdream			{color: #1ad06f;}
 .infection				{color: #77c72b;}

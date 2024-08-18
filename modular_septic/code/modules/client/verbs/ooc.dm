@@ -57,6 +57,18 @@
 
 	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/chat)
 	var/keyname = key
+	var/crazynuma
+	switch(prefs.rank_crazy)
+		if(1)
+			crazynuma = "-"
+		if(2)
+			crazynuma = "*"
+		if(3)
+			crazynuma = "+"
+		if(4)
+			crazynuma = "++"
+		if(5)
+			crazynuma = "+++"
 	if(sheet.icon_tag("donator-[ckey]"))
 		keyname = "[sheet.icon_tag("donator-[ckey]")] [keyname]"
 	if(SSdonators.donator_to_ooc_color[ckey])
@@ -79,8 +91,8 @@
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
 			keyname = "<font color='[ooccolor ? ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")] [keyname]</font>"
-	if(prefs.hearted)
-		keyname = "[sheet.icon_tag("emoji-heart")] [keyname]"
+//	if(prefs.hearted)
+//		keyname = "[sheet.icon_tag("emoji-heart")] [keyname]"
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/player as anything in GLOB.clients)
 		if(player.prefs?.chat_toggles & CHAT_OOC)
@@ -89,16 +101,16 @@
 			if(holder)
 				if(!holder.fakekey || player.holder)
 					if(check_rights_for(src, R_ADMIN))
-						to_chat(player, span_adminooc("[CONFIG_GET(flag/allow_admin_ooccolor) && ooccolor ? "<font color=[ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span>"))
+						to_chat(player, span_adminooc("[CONFIG_GET(flag/allow_admin_ooccolor) && ooccolor ? "<font color=[ooccolor]>" :"" ]<span class='prefix'>OOC:</span> ([crazynuma]) <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span>"))
 					else
-						to_chat(player, span_adminobserverooc("<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span>"))
+						to_chat(player, span_adminobserverooc("<span class='prefix'>OOC:</span> ([crazynuma]) <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span>"))
 				else
 					if(GLOB.OOC_COLOR)
-						to_chat(player, span_ooc("<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>"))
+						to_chat(player, span_ooc("<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> ([crazynuma]) <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>"))
 					else
-						to_chat(player, span_ooc("<span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span>"))
+						to_chat(player, span_ooc("<span class='prefix'>OOC:</span> ([crazynuma]) <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span>"))
 			else if(!(key in player.prefs.ignoring))
 				if(GLOB.OOC_COLOR)
-					to_chat(player, span_ooc("<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>"))
+					to_chat(player, span_ooc("<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> ([crazynuma]) <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>"))
 				else
-					to_chat(player, span_ooc("<span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span>"))
+					to_chat(player, span_ooc("<span class='prefix'>OOC:</span> ([crazynuma]) <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span>"))

@@ -492,9 +492,9 @@
 	desc = "Rib-like rods."
 	icon_state = "door_jail1"
 	base_icon_state = "door_jail"
-	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
-	doorClose = 'modular_septic/sound/doors/wood/door_wooden_close.ogg'
-	doorDeni = 'modular_septic/sound/doors/wood/door_wooden_try.ogg'
+	doorOpen = 'modular_pod/sound/eff/open_jo.ogg'
+	doorClose = 'modular_pod/sound/eff/close_jo.ogg'
+	doorDeni = 'modular_pod/sound/eff/tryjail.ogg'
 	autoclose = TRUE
 	locked = TRUE
 	key_worthy = TRUE
@@ -533,6 +533,17 @@
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
 	inhand_icon_state = null
 	worn_icon_state = "shard"
+
+/obj/item/key/podpol/steel
+	name = "Key"
+	desc = "To the cage door."
+	icon = 'modular_pod/icons/content_6.dmi'
+	icon_state = "jailkey"
+	id_tag = "jail"
+	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
+	worn_icon_state = "shard"
+	w_class = WEIGHT_CLASS_TINY
+	inhand_icon_state = null
 
 #undef DOOR_CLOSE_WAIT
 

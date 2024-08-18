@@ -99,7 +99,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 20
 	STR.set_holdable(list(
-		/obj/item/key/podpol/woody,
+		/obj/item/key/podpol,
 		/obj/item/keycard/akt,
 		))
 

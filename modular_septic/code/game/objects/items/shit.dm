@@ -51,6 +51,7 @@
 	//shit on face, yum
 	if(ishuman(eater))
 		eater.AddComponent(/datum/component/creamed/shit)
+		eater.client?.prefs.adjust_rank(-1, "<span class='rank'>This is disrespectful to my life! -1 Rank Level!</span>")
 		eater.client?.prefs.adjust_bobux(2, "<span class='bobux'>I took a bite of shit! +2 Kaotiks!</span>")
 		eater.flash_kaosgain()
 		if(prob(5))

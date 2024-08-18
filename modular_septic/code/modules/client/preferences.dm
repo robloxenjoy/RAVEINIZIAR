@@ -18,6 +18,7 @@
 	/// Our currently chosen birthsign type
 	var/datum/cultural_info/birthsign/birthsign
 	var/bobux_amount = 0
+	var/rank_crazy = 2
 
 /datum/preferences/New(client/C)
 	//handle giving all the fucking antagonists by default
@@ -289,6 +290,20 @@
 	bobux_amount += amount
 	if(parent && message)
 		to_chat(parent, "<span class='bobux'>[message]</span>")
+//	if(amount > 0)
+//		if(parent)
+//			if(isobserver(parent))
+//				return
+//			parent.mob.flash_kaosgain()
+	save_preferences()
+	return TRUE
+
+/datum/preferences/proc/adjust_rank(amount, message)
+	if(((rank_crazy += amount) <= 0) || ((rank_crazy += amount) > 5))
+		return
+	rank_crazy += amount
+	if(parent && message)
+		to_chat(parent, "<span class='rank'>[message]</span>")
 //	if(amount > 0)
 //		if(parent)
 //			if(isobserver(parent))

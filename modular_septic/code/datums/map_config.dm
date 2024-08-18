@@ -17,6 +17,7 @@
 	var/combat_map = FALSE
 
 	var/war_gamemode = FALSE
+	var/prison_gamemode = FALSE
 	/// Custom overflow role, currently only used by combat test map
 	var/overflow_role
 	/// This is used for test maps, to allow people to respawn.
@@ -84,6 +85,7 @@
 		war_gamemode = json["war_gamemode"]
 */
 	war_gamemode = json["war_gamemode"] != FALSE
+	prison_gamemode = json["prison_gamemode"] != FALSE
 
 	if("respawn_allowed" in json)
 		respawn_allowed = json["respawn_allowed"]

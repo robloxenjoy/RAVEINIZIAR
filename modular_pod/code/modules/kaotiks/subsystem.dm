@@ -41,10 +41,24 @@ SUBSYSTEM_DEF(bobux)
 /datum/controller/subsystem/bobux/proc/GetDat(client/noob)
 	var/list/dat = list()
 	var/datum/preferences/pref_source = noob.prefs
-	dat += "<center><b>War Phase: [GLOB.phase_of_war]</b></center><br>"
+	if(SSmapping.config?.war_gamemode)
+		dat += "<center><b>War Phase: [GLOB.phase_of_war]</b></center><br>"
 	dat += "<center><b>[GLOB.world_deaths_crazy] deaths in the world!</b></center><br>"
 	dat += "<center><b>Kaotiks Menu</b></center><br>"
-	dat += "<center>At the moment I have <b>[pref_source.bobux_amount]</b> kaotiks.</center><br>"
+	var/crazynuma
+	switch(pref_source.rank_crazy)
+		if(1)
+			crazynuma = "-"
+		if(2)
+			crazynuma = "*"
+		if(3)
+			crazynuma = "+"
+		if(4)
+			crazynuma = "++"
+		if(5)
+			crazynuma = "+++"
+	dat += "<center><b>My rank: [crazynuma]</b></center><br>"
+	dat += "<center>My kaotiks: <b>[pref_source.bobux_amount]</b></center><br>"
 	dat += "<center><a href='?src=\ref[src];task=close'>Awesome</a></center>"
 	dat += "<hr>"
 	for(var/aaa in bobux_rewards_buyable)
@@ -60,13 +74,14 @@ SUBSYSTEM_DEF(bobux)
 	switch(href_list["task"])
 		if("close")
 			usr << browse(null, "window=kaotik_window")
-		if("buy")
-			var/id = href_list["id"]
-			var/datum/bobux_reward/noob
-			for(var/fuck in bobux_rewards_buyable)
-				var/datum/bobux_reward/ronaldo = fuck
-				if(ronaldo.id == id)
-					noob = ronaldo
-					break
+		if(!SSmapping.config?.prison_gamemode)
+			if("buy")
+				var/id = href_list["id"]
+				var/datum/bobux_reward/noob
+				for(var/fuck in bobux_rewards_buyable)
+					var/datum/bobux_reward/ronaldo = fuck
+					if(ronaldo.id == id)
+						noob = ronaldo
+						break
 			if(noob)
 				noob.buy(usr)

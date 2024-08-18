@@ -94,92 +94,104 @@
 	if(!client)
 		return
 	var/rolevich = input("Wait, what role?", "") as text
-	switch(rolevich)
-		if("Ladax")
-			var/numba = GLOB.kapnoe - GLOB.aashol
-			if(numba >= 1)
-				alert("Too much of them. Play as Kador.")
-				client.ready_char = FALSE
-				return
-			client.role_ch = "ladax"
-		if("Kador")
-			var/numbar = GLOB.aashol - GLOB.kapnoe
-			if(numbar >= 1)
-				alert("Too much of them. Play as Ladax.")
-				client.ready_char = FALSE
-				return
-			client.role_ch = "kador"
-		if("God SMO")
-			if(GLOB.phase_of_war == "Second")
-				var/smo = "[global.config.directory]/smo.txt"
-				if(ckey in world.file2list(smo))
-					client.role_ch = "god smo"
-				else
-					alert("Donate for this role.")
+	if(SSmapping.config?.war_gamemode)
+		switch(rolevich)
+			if("Ladax")
+				var/numba = GLOB.kapnoe - GLOB.aashol
+				if(numba >= 1)
+					alert("Too much of them. Play as Kador.")
 					client.ready_char = FALSE
 					return
-			else
-				alert("We need Second Phase.")
-				client.ready_char = FALSE
-				return
-		if("Halbermensch")
-			if(GLOB.phase_of_war == "Second")
-				var/hal = "[global.config.directory]/hal.txt"
-				if(ckey in world.file2list(hal))
-					client.role_ch = "halbermensch"
-				else
-					alert("Donate for this role.")
-					client.ready_char = FALSE
-					return
-			else
-				alert("We need Second Phase.")
-				client.ready_char = FALSE
-				return
-/*
-			var/number = GLOB.world_deaths_crazy / 2
-			var/second = GLOB.new_people_crazy * 2
-			if(second < number)
-				var/hal = "[global.config.directory]/hal.txt"
-				if(ckey in world.file2list(hal))
-					client.role_ch = "halbermensch"
-				else
-					alert("Donate for this role.")
-					client.ready_char = FALSE
-					return
-			else
-
-				alert("Deaths are not balanced.")
-				client.ready_char = FALSE
-				return
-*/
-//			if(GLOB.world_deaths_crazy < 20)
-//				alert("Not enough deaths in the world.")
-//				client.ready_char = FALSE
-//				return
-		else
-			var/numba = GLOB.kapnoe - GLOB.aashol
-			var/numbor = GLOB.aashol - GLOB.kapnoe
-			if(numba <= 1)
-				alert("Unclear. The role of the common Ladax.")
 				client.role_ch = "ladax"
+			if("Kador")
+				var/numbar = GLOB.aashol - GLOB.kapnoe
+				if(numbar >= 1)
+					alert("Too much of them. Play as Ladax.")
+					client.ready_char = FALSE
+					return
+				client.role_ch = "kador"
+			if("God SMO")
+				if(GLOB.phase_of_war == "Second")
+					var/smo = "[global.config.directory]/smo.txt"
+					if(ckey in world.file2list(smo))
+						client.role_ch = "god smo"
+					else
+						alert("Donate for this role.")
+						client.ready_char = FALSE
+						return
+				else
+					alert("We need Second Phase.")
+					client.ready_char = FALSE
+					return
+			if("Halbermensch")
+				if(GLOB.phase_of_war == "Second")
+					var/hal = "[global.config.directory]/hal.txt"
+					if(ckey in world.file2list(hal))
+						client.role_ch = "halbermensch"
+					else
+						alert("Donate for this role.")
+						client.ready_char = FALSE
+						return
+				else
+					alert("We need Second Phase.")
+					client.ready_char = FALSE
+					return
+	/*
+				var/number = GLOB.world_deaths_crazy / 2
+				var/second = GLOB.new_people_crazy * 2
+				if(second < number)
+					var/hal = "[global.config.directory]/hal.txt"
+					if(ckey in world.file2list(hal))
+						client.role_ch = "halbermensch"
+					else
+						alert("Donate for this role.")
+						client.ready_char = FALSE
+						return
+				else
+
+					alert("Deaths are not balanced.")
+					client.ready_char = FALSE
+					return
+	*/
+	//			if(GLOB.world_deaths_crazy < 20)
+	//				alert("Not enough deaths in the world.")
+	//				client.ready_char = FALSE
+	//				return
 			else
-				if(numbor <= 1)
-					alert("Unclear. The role of the common Kador.")
-					client.role_ch = "kador"
+				var/numba = GLOB.kapnoe - GLOB.aashol
+				var/numbor = GLOB.aashol - GLOB.kapnoe
+				if(numba <= 1)
+					alert("Unclear. The role of the common Ladax.")
+					client.role_ch = "ladax"
+				else
+					if(numbor <= 1)
+						alert("Unclear. The role of the common Kador.")
+						client.role_ch = "kador"
+	if(SSmapping.config?.prison_gamemode)
+		switch(rolevich)
+			if("Prisoner")
+				client.role_ch = "prisoner"
 	dolboEbism()
 
 /mob/dead/new_player/proc/dolboEbism()
 	var/crazyalert = alert("Or maybe there was another role?",,"Let's continue!","Yes, it seems like a different role...")
 	switch(crazyalert)
 		if("Let's continue!")
+			var/list/spawn_locs = list()
 			for(var/obj/effect/landing/spawn_point as anything in GLOB.jobber_list)
+				if(isturf(spawn_point.loc))
+					spawn_locs += spawn_point.loc
+				if(!spawn_locs)
+					alert("In fact, something bad is happening there...")
+					client.ready_char = FALSE
+					return FALSE
 				if(client)
 					if(spawn_point.name == client.role_ch)
 						if(spawn_point.spending > 0)
 							GLOB.new_people_crazy += 1
 							if(client.role_ch != "halbermensch")
 								spawn_point.spending--
-								var/mob/living/carbon/human/character = new(pick(spawn_point.loc))
+								var/mob/living/carbon/human/character = new((pick(spawn_locs)))
 								important(character)
 								things(character)
 								things_two(character)
@@ -188,7 +200,7 @@
 								updateshit(character)
 							else
 								spawn_point.spending--
-								var/mob/living/carbon/human/species/halbermensch/character = new(pick(spawn_point.loc))
+								var/mob/living/carbon/human/species/halbermensch/character = new((pick(spawn_locs)))
 								important(character)
 								things(character)
 								things_two(character)

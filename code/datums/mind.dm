@@ -660,7 +660,33 @@
 					prefs.adjust_bobux(choice, (secondchoice ? "<span class='bobux'>[secondchoice]</span>" : null))
 					message_admins("[key_name_admin(usr)] set [current]'s kaotiks to[choice]. Message: [secondchoice ? secondchoice : "None."]")
 					log_admin("[key_name(usr)] set [current]'s kaotiks to [choice]. Message: [secondchoice ? secondchoice : "None."]")
-		bobux_panel()
+	else if(href_list["rank"])
+		var/datum/preferences/prefs = current?.client?.prefs
+		var/type = href_list["rank"]
+		switch(type)
+			if("add")
+				var/choice = abs(input(usr, "How much add?", "Бесконечность", 0) as num)
+				if(choice)
+					var/secondchoice = input(usr, "Display a message to the target?") as text|null
+					prefs.adjust_rank(choice, (secondchoice ? "<span class='rank'>[secondchoice]</span>" : null))
+					message_admins("[key_name_admin(usr)] gave [current] [choice] rank. Message: [secondchoice ? secondchoice : "None."]")
+					log_admin("[key_name(usr)] gave [current] [choice] rank. Message: [secondchoice ? secondchoice : "None."]")
+			if("remove")
+				var/choice = -abs(input(usr, "How much remove?", "Бесконечность", 0) as num)
+				if(choice)
+					var/secondchoice = input(usr, "Display a message to the target?") as text|null
+					prefs.adjust_rank(choice, (secondchoice ? "<span class='rank'>[secondchoice]</span>" : null))
+					message_admins("[key_name_admin(usr)] removed [choice] rank from [current]. Message: [secondchoice ? secondchoice : "None."]")
+					log_admin("[key_name(usr)] removed [choice] rank from [current]. Message: [secondchoice ? secondchoice : "None."]")
+			if("set")
+				var/choice =  input(usr, "How to set?", "Бесконечность", 0) as num
+				if(choice)
+					var/secondchoice = input(usr, "Display a message to the target?") as text|null
+					choice = (choice - prefs.rank_crazy)
+					prefs.adjust_rank(choice, (secondchoice ? "<span class='rank'>[secondchoice]</span>" : null))
+					message_admins("[key_name_admin(usr)] set [current]'s rank to[choice]. Message: [secondchoice ? secondchoice : "None."]")
+					log_admin("[key_name(usr)] set [current]'s rank to [choice]. Message: [secondchoice ? secondchoice : "None."]")
+		rank_panel()
 		return
 
 	else if (href_list["obj_announce"])

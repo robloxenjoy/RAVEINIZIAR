@@ -154,6 +154,7 @@
 	specialfog = FALSE
 
 /area/maintenance/polovich/forest/prison
+	name = "Prison"
 	icon_state = "polovich_inner"
 	min_ambience_cooldown = 50 SECONDS
 	max_ambience_cooldown = 75 SECONDS
@@ -170,6 +171,7 @@
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
 
 /area/maintenance/polovich/forest/prisonoutsee
+	name = "Prison Out"
 	icon_state = "polovich"
 	min_ambience_cooldown = 50 SECONDS
 	max_ambience_cooldown = 75 SECONDS
@@ -182,6 +184,22 @@
 	fogger = FALSE
 	specialfog = FALSE
 	sound_environment = SOUND_ENVIRONMENT_NONE
+
+/area/maintenance/polovich/forest/cavegumak
+	name = "Gumak"
+	icon_state = "caveira"
+	static_lighting = TRUE
+	base_lighting_alpha = 1
+	min_ambience_cooldown = 60 SECONDS
+	max_ambience_cooldown = 95 SECONDS
+//	ambientsounds = list('modular_pod/sound/ambi_sounds_in/caver1.ogg', 'modular_pod/sound/ambi_sounds_in/caver2.ogg', 'modular_pod/sound/ambi_sounds_in/caver3.ogg', 'modular_pod/sound/ambi_sounds_in/caver4.ogg', 'modular_pod/sound/ambi_sounds_in/caver5.ogg', 'modular_pod/sound/ambi_sounds_in/caver6.ogg')
+	ambientsounds_normal = 'modular_pod/sound/loop/gumak.ogg'
+	droning_sound = null
+	lighting_out = FALSE
+	area_flags = NO_ALERTS
+	fogger = FALSE
+	specialfog = FALSE
+	sound_environment = SOUND_ENVIRONMENT_CAVE
 
 /area/maintenance/polovich/forest/forestspawn
 	name = "Polovich Forest Spawn"
