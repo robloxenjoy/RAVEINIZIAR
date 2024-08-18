@@ -167,9 +167,12 @@
 					if(numbor <= 1)
 						alert("Unclear. The role of the common Kador.")
 						client.role_ch = "kador"
-	else if(SSmapping.config?.prison_gamemode)
+	else
 		switch(rolevich)
 			if("Prisoner")
+				client.role_ch = "prisoner"
+			else
+				alert("Unclear. The role of the common Prisoner.")
 				client.role_ch = "prisoner"
 	dolboEbism()
 
