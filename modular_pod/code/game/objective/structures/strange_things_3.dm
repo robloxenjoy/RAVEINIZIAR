@@ -483,6 +483,7 @@
 	durability = 10
 	tetris_width = 16
 	tetris_height = 32
+	sellkaotiks = 10
 	canlockpick = TRUE
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb_continuous = list("stabs", "needles")
@@ -934,6 +935,29 @@
 			to_chat(user, span_meatymeat("Purchase done!"))
 		else
 			return
+
+/obj/structure/torgovka
+	name = "Trader"
+	desc = "Sell ​​into me."
+	icon = 'modular_pod/icons/obj/things/things_3.dmi'
+	icon_state = "torgovka"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	anchored = 1
+	density = 1
+	obj_flags = NONE
+
+/obj/structure/torgovka/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(W.sellkaotiks > 0)
+		var/datum/preferences/pref_source = user.client?.prefs
+//		pref_source.bobux_amount += W.sellkaotiks
+		user.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I sold [W]! +[W.sellkaotiks] Kaotiks!</span>")
+//		to_chat(GR, span_meatymeat("I'm selling [W]!"))
+		sound_hint()
+		playsound(src, 'modular_pod/sound/eff/torgovka.ogg', 70, FALSE)
+	else
+		to_chat(GR, span_meatymeat("I can't sell this!"))
+		user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		return
 
 /obj/structure/kaos/blackwindow
 	name = "Black Window"

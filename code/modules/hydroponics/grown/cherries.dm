@@ -150,6 +150,7 @@
 	food_reagents = list(/datum/reagent/consumable/granat = 4)
 	tastes = list("pomegranate" = 1, "sweet" = 1)
 	wine_power = 50
+	sellkaotiks = 3
 	tetris_width = 32
 	tetris_height = 32
 

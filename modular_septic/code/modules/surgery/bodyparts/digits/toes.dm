@@ -1,6 +1,6 @@
 /obj/item/digit/toe
 	name = "Foot Finger"
-	desc = "Toes on hands, fingers on toes."
+	desc = "Toes on hands, fingers on feet."
 	icon_state = "toe"
 	base_icon_state = "toe"
 	digit_type = "toe"

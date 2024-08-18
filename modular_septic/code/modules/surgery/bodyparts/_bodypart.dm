@@ -3,6 +3,7 @@
 	desc = "Why is it detached..."
 	force = 5
 	throwforce = 5
+	sellkaotiks = 10
 	w_class = WEIGHT_CLASS_SMALL
 	icon = DEFAULT_BODYPART_ICON
 	icon_state = ""

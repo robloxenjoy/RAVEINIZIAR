@@ -3,6 +3,7 @@
 	icon_state = "c9mm"
 	base_icon_state = "c9mm"
 	carry_weight = 20 GRAMS
+	sellkaotiks = 1
 //	plane = GAME_PLANE_WINDOW
 	/// World icon for this bullet
 //	var/world_icon = 'modular_septic/icons/obj/items/ammo/casings_world.dmi'

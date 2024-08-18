@@ -90,6 +90,7 @@
 	bare_wound_bonus = 4
 	throw_speed = 2
 	throw_range = 9
+	sellkaotiks = 2
 	attack_verb_continuous = list("hits")
 	attack_verb_simple = list("hit")
 	tetris_width = 32

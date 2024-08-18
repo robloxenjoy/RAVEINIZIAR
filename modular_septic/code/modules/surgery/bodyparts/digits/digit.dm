@@ -4,6 +4,7 @@
 	icon = 'modular_septic/icons/obj/items/surgery/bodyparts.dmi'
 	throwforce = 0
 	force = 0
+	sellkaotiks = 5
 	w_class = WEIGHT_CLASS_TINY
 	/// Icon when not in inventory
 //	var/world_icon = 'modular_septic/icons/obj/items/surgery/bodyparts_world.dmi'

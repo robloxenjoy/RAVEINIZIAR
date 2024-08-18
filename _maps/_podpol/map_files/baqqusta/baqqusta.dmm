@@ -47,6 +47,7 @@
 "DA" = (/turf/open/floor/plating/polovich/way/vomitdirt2,/area/maintenance/polovich/forest/cave/can_ruin)
 "DS" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest/can_ruin)
 "DY" = (/obj/structure/blockrole{allow_role = "Ladax"},/turf/open/floor/plating/polovich/way/exoticwood2,/area/maintenance/polovich/forest/can_ruin)
+"EB" = (/obj/structure/torgovka,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
 "EF" = (/obj/structure/blockrole/konch,/turf/open/floor/plating/polovich/way/dirt,/area/maintenance/polovich/forest/can_ruin)
 "Fv" = (/turf/open/floor/plating/polovich/way/goldenwise,/area/maintenance/polovich/forest)
 "FE" = (/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
@@ -56,6 +57,7 @@
 "Jp" = (/turf/open/floor/plating/polovich/way/legend,/area/maintenance/polovich/forest/can_ruin)
 "Ku" = (/obj/structure/closet/crate,/obj/item/melee/hehe/pickaxe/iron,/obj/item/melee/hehe/pickaxe/iron,/obj/item/melee/hehe/pickaxe/iron,/obj/item/melee/hehe/pickaxe/iron,/turf/open/floor/plating/polovich/way/korvutic,/area/maintenance/polovich/forest/inner)
 "Ld" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest/inner)
+"Mg" = (/obj/structure/torgovka,/turf/open/floor/carpet/purplee,/area/maintenance/polovich/forest/inner)
 "Mn" = (/turf/open/floor/plating/polovich/way/hotstone4,/area/maintenance/polovich/forest)
 "Nk" = (/turf/open/floor/plating/polovich/way/for2,/area/maintenance/polovich/forest/can_ruin)
 "Np" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest/can_ruin)
@@ -143,7 +145,7 @@ lWCwCwlWCwCwCwCwlWCwCwjTCwCwlWCwCwCwlWCwCwlWzlwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQwQ
 (1,1,2) = {"
 BXBXBXBXBXBXBXBXBXBXBXBXBXvjvjvjvjvjvjvjYwYwYwYwajYwYwYwYwYwajYwYwYwYwvjvjvjvjvjBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBX
 BXBXhqhqhqPMhqhqhqhqPMhqhqPASlSlSlcOSlSlYwSlSlcOSlSlSlcOSlSlSlcOSlSlYwSlSlSlvjvjBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBX
-BXBXhqBXBXBXBXBXBXBXhqBXBXvjSlSlSlSlSlSlIpSlSlSlSlSlSlyYSlSlSlSlSlSlYwSlSlgLvjvjBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBX
+BXBXhqBXBXBXBXBXBXBXhqBXBXvjSlSlMgSlSlSlIpSlSlSlSlSlSlyYSlSlSlSlSlSlYwSlSlgLvjvjBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBXBX
 BXBXpSBXBXBXBXBXBXBXEFBXBXvjTLSlSlSlSlgLYwTLSlSlSlSlSlSlSlSlSlSlSlSlIpSlSlSlvjvjBXBXwXwXNkNkNkNkNkNkNkNkNkNkNkBXBXBXBXBX
 BXBXhqBXBXwXwXwXwXFvFvFvBXvjSlaWmOqVqcSlYwSlSlSlSlSlSlSlSlSlSlSlSlgLYwSlSlSlvjvjBXwXwXwXNkNkNkNkNkNkNkNkNkNkNkBXBXBXBXBX
 BXBXhqEFFvFvwXwXwXwXFvwXBXvjvjvjvjvjvjvjYwSlSlSlSlSlSluNSlSlSlSlSlSlYwSlSlgLvjvjwXwXwXwXNkNkNkNkNkNkNkNkNkNkNkBXBXBXBXBX
@@ -197,7 +199,7 @@ BXBXBXBXNkNkNkNkwXwXwXwXwXwXwXwXwXwXwXwXwXwXYwZdYwYwYwYwYwYwYwZdYwYwYwYwYwYwYwZd
 BXBXBXBXNkNkNkNkwXwXwXwXwXwXwXwXwXwXwXwXwXBXYwFEAKKuqUdToeFEAKFEAKcbFEStFEcbAKFEYwBXwXwXwXwXwXwXwXwXwXwXwXwXwXBXBXBXBXBX
 BXBXBXBXNkNkNkNkwXwXwXwXwXwXwXwXwXwXwXwXBXBXYwSOAKmLFEFEFESOAKSOrnFEFEFEFEFErnSOYwBXwXwXwXwXwXwXwXwXwXwXwXwXwXBXBXBXBXBX
 BXBXBXBXNkNkNkNkwXwXwXwXFvwXwXwXwXwXwXwXBXBXYwFEAKFEFEFEFEFEAKFEAKFEFEmRFEFEAKFEYwBXBXBXBXwXwXwXwXFvwXwXwXwXwXBXBXBXBXBX
-BXBXBXBXNkNkNkNkwXwXwXFvFvFvwXBXBXBXBXBXBXBXYwFEAKmLFEFEFESOAKFEAKFEFEFEFEFEAKFEYwBXBXBXBXwXwXwXFvFvFvwXwXwXwXBXBXBXBXBX
+BXBXBXBXNkNkNkNkwXwXwXFvFvFvwXBXBXBXBXBXBXBXYwFEAKmLFEEBFESOAKFEAKFEFEFEFEFEAKFEYwBXBXBXBXwXwXwXFvFvFvwXwXwXwXBXBXBXBXBX
 BXBXBXBXBXBXBXBXBXBXBXDSDYBXBXBXBXBXBXBXBXBXYwFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEYwBXBXBXBXBXBXBXBXDYDSBXBXBXBXBXBXBXBXBX
 BXBXBXBXBXBXBXBXBXBXBXDShfhfhfzohfhfhfzohfhfvwFEUJFEFEFEFEFEUJFEUJFEFEFEFEFEUJFEvwhfhfzohfhfhfzohfhfDSBXBXBXBXBXBXBXBXBX
 BXBXBXBXBXBXBXBXBXBXBXDSDSDSDSDSDSDSDSDSDSDSYwAKAKAKAKAKAKAKAKAKAKAKAKAKAKAKAKAKYwDSDSDSDSDSDSDSDSDSDSBXBXBXBXBXBXBXBXBX

@@ -3,6 +3,7 @@
 	icon = 'modular_septic/icons/obj/items/surgery.dmi'
 	force = 0
 	throwforce = 0
+	sellkaotiks = 5
 	w_class = WEIGHT_CLASS_NORMAL
 	drop_sound = "modular_pod/sound/eff/flesh_slap.ogg"
 

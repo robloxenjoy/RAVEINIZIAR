@@ -7,6 +7,7 @@
 	germ_level = GERM_LEVEL_MAXIMUM
 	//crewmates be putting out massive turds
 	carry_weight = 85 GRAMS
+	sellkaotiks = 5
 	var/static/list/crossed_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
