@@ -182,6 +182,8 @@ SUBSYSTEM_DEF(droning)
 		retard = area_entered.ambientsounds_normal
 
 	if(!retard)
+		if(dreamer?.loop_sound)
+			kill_loop(dreamer)
 		return
 	var/sound/loop_sound = sound(pick(retard), repeat = TRUE, wait = 0, channel = CHANNEL_MUSIC, volume = 30)
 	SEND_SOUND(dreamer, loop_sound)
