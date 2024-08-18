@@ -1,5 +1,6 @@
 "a" = (/turf/podpol/wall/shroom,/area/maintenance/polovich/forest)
 "b" = (/turf/open/floor/plating/polovich/way/kaos,/area/maintenance/polovich/forest)
+"d" = (/obj/structure/sign/numbers{icon_state = "0-4"},/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
 "f" = (/obj/structure/sign/poster/official/space_cops,/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
 "k" = (/obj/structure/kaos/blackwindow,/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/forest)
 "l" = (/turf/open/floor/plating/polovich/way/kaos/th,/area/maintenance/polovich/forest)
@@ -7,15 +8,23 @@
 "r" = (/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/forest)
 "s" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/plating/polovich/way/stanar,/area/maintenance/polovich/forest/prison)
 "u" = (/turf/podpol/wall/steel,/area/maintenance/polovich/forest)
+"v" = (/obj/structure/sign/numbers{icon_state = "0-3"},/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
+"x" = (/obj/machinery/codec/door/jail,/turf/open/floor/plating/polovich/way/stanar,/area/maintenance/polovich/forest/prison)
 "B" = (/obj/effect/landmark/start/new_player,/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/forest)
 "C" = (/turf/open/floor/plating/polovich/way/legend,/area/maintenance/polovich/forest/prison)
+"D" = (/obj/structure/sign/numbers{icon_state = "0-5"},/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
 "E" = (/obj/structure/bed/mattress,/turf/open/floor/plating/polovich/way/stanar,/area/maintenance/polovich/forest/prison)
 "I" = (/turf/open/floor/plating/polovich/way/kaos/ei,/area/maintenance/polovich/forest)
+"K" = (/obj/structure/sign/numbers{icon_state = "0-7"},/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
 "L" = (/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
+"N" = (/obj/structure/sign/numbers{icon_state = "0-8"},/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
 "O" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
 "Q" = (/turf/open/floor/plating/polovich/way/kaos/ni,/area/maintenance/polovich/forest)
 "R" = (/turf/open/floor/plating/polovich/way/stanar,/area/maintenance/polovich/forest/prison)
+"S" = (/obj/structure/sign/numbers,/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
 "V" = (/turf/open/floor/plating/polovich/way/stoner,/area/maintenance/polovich/forest/prison)
+"Y" = (/obj/structure/sign/numbers{icon_state = "0-2"},/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
+"Z" = (/obj/structure/sign/numbers{icon_state = "0-6"},/turf/podpol/wall/stonaa,/area/maintenance/polovich/forest/prison)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -135,23 +144,23 @@ aaaaaaaaaaaaaaaLVVVLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaLVVVLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaLVVVLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaLVVVLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaLVVVLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaLVVVLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLLLLLLVVVLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLqRRRLVVVLRRRELaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLRRRRRVVVRRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaLVVCLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaLVVCLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLLLLLLVVCLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLqRRRSVVVDRRRELaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLRRRRxVVVxRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaLREsRLVVVLRsRqLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaLLLLLLVVVLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLqRRRLVVVLRRERLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLRRRRRVVVRRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLERsRLVVVLRsRqLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLLLLLLVVVLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLqRRRLVVVLRRRELaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLERRRRVVVRRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLqRRRYVVVZRRERLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLRRRRxVVVxRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLERsRLCVVLRsRqLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLLLLLLCCVLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLqRRRvCVVKRRRELaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLERRRxVVVxRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaLRRsRfVVVLRsRqLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaLLLLLLVVCLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLqRRRLVCCLRRRqLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaLRRRRRCCCRRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLqRRRdVCCNRRRqLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaLRRRRxCCCxRRRRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaLERsRLCCVLRsRELaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaLLLLLLLLLLLLLLLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

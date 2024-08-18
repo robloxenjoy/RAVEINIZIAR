@@ -1,5 +1,5 @@
 /obj/structure/sign/numbers
-	name = "numbers..."
+	name = "Numbers"
 	desc = "Crusted, mesmerizingly lonely and endless numbers reminding you of how many times you've awoken to this very sight. \
 		The way ahead feels lonely. I still feel as though I am me."
 	icon = 'modular_septic/icons/obj/structures/numbers.dmi'

@@ -487,6 +487,19 @@
 	key_worthy = TRUE
 	id_tag = "kapnoroom"
 
+/obj/machinery/codec/door/jail
+	name = "Jaildoor"
+	desc = "Rib-like rods."
+	icon_state = "door_jail1"
+	base_icon_state = "door_jail"
+	doorOpen = 'modular_septic/sound/doors/wood/door_wooden_open.ogg'
+	doorClose = 'modular_septic/sound/doors/wood/door_wooden_close.ogg'
+	doorDeni = 'modular_septic/sound/doors/wood/door_wooden_try.ogg'
+	autoclose = TRUE
+	locked = TRUE
+	key_worthy = TRUE
+	id_tag = "jail"
+
 /obj/item/key/podpol/woody
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID
 	worn_icon_state = "shard"

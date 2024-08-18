@@ -37,7 +37,7 @@
 	sound_environment = SOUND_ENVIRONMENT_NONE
 //	ambientsounds_normal = 'modular_pod/sound/loop/surface.ogg'
 	var/fogger = TRUE
-	var/specialfog = TRUE
+	var/specialfog = FALSE
 	var/lighting_out = TRUE
 	var/ino = FALSE
 	var/specialcolor = FALSE

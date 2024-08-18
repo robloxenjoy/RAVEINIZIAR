@@ -280,3 +280,28 @@
 					if("Pistol")
 						new /obj/item/gun/ballistic/automatic/pistol/remis/ppk(get_turf(user))
 
+/obj/structure/flager/prison
+	name = "Flag"
+	desc = "Prison flag. The ribcage is shown here."
+	icon = 'modular_pod/icons/obj/things/things_5.dmi'
+	icon_state = "prison"
+	max_integrity = 1000
+	layer = FLY_LAYER
+	density = TRUE
+	anchored = TRUE
+	opacity = FALSE
+	var/proj_pass_rate = 100
+
+/obj/structure/flager/prison/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(locate(/obj/structure/flager/prison) in get_turf(mover))
+		return TRUE
+	else if(istype(mover, /obj/projectile))
+		if(!anchored)
+			return TRUE
+		var/obj/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return TRUE
+		if(prob(proj_pass_rate))
+			return TRUE
+		return FALSE
