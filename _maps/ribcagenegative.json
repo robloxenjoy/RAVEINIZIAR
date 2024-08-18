@@ -1,0 +1,49 @@
+{
+	"version": 1,
+	"map_name": "Ribcage",
+	"map_lore": "This is a prison of scum. Will I be the one who gets out of here, or the one who prevents the escape?",
+	"map_path": "_podpol/map_files/prison/ribcage_negative",
+	"map_file": "ribcagenegative.dmm",
+	"station_name": "Prison",
+	"respawn_allowed": true,
+	"prison_gamemode": true,
+	"space_ruin_levels": 0,
+	"space_empty_levels": 0,
+	"surface_ruin_levels": 0,
+	"surface_empty_levels": 0,
+	"cave_ruin_levels": 0,
+	"cave_empty_levels": 0,
+	"shuttles": {
+		"cargo": "cargo_baluarte",
+		"emergency": "emergency_delta"
+	},
+	"traits": [
+		{
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace/norm"
+		},
+		{
+			"Down": -1,
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace/norm"
+		},
+		{
+			"Down": -1,
+			"Up": 1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/open/openspace/norm"
+		},
+		{
+			"Down": -1,
+			"Station": true,
+			"Gravity": true,
+			"Baseturf": "/turf/closed/wall/purple/nocling"
+		}
+	],
+	"minetype": "none"
+}

@@ -631,6 +631,11 @@
 		icon_state = "[base_icon_state]-[open ? "open" : "closed"]"
 	return ..()
 
+/obj/structure/newgrille/codec/darker
+	icon = 'modular_pod/icons/content_6.dmi'
+	icon_state = "darkg"
+	base_icon_state = "darkg"
+
 /obj/structure/newgrille/codec/arena
 	electro = TRUE
 	special_openeda = TRUE
