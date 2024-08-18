@@ -128,6 +128,36 @@
 /obj/structure/codec/bulb/yellow
 	name = "Bulb"
 	desc = "Do we really need this light?"
+	icon = 'modular_pod/icons/content_6.dmi'
+	icon_state = "bulb_belo"
+	base_icon_state = "bulb_belo"
+//	plane = GAME_PLANE_BLOOM
+//	layer = FLY_LAYER
+	density = FALSE
+	anchored = TRUE
+	max_integrity = 100
+	light_range = 3
+	light_power = 1
+	light_color = "#e3cf91"
+
+/obj/structure/codec/bulb/pank
+	name = "Bulb"
+	desc = "Do we really need this light?"
+	icon = 'modular_pod/icons/content_6.dmi'
+	icon_state = "bulb_pank"
+	base_icon_state = "bulb_pank"
+//	plane = GAME_PLANE_BLOOM
+//	layer = FLY_LAYER
+	density = FALSE
+	anchored = TRUE
+	max_integrity = 100
+	light_range = 3
+	light_power = 1
+	light_color = "#e0c0bb"
+
+/obj/structure/codec/bulb/belo
+	name = "Bulb"
+	desc = "Do we really need this light?"
 	icon = 'modular_pod/icons/obj/things/things_2.dmi'
 	icon_state = "bulb_def"
 	base_icon_state = "bulb_def"
@@ -138,7 +168,7 @@
 	max_integrity = 100
 	light_range = 3
 	light_power = 1
-	light_color = "#e3cf91"
+	light_color = "#e0e1df"
 
 /obj/structure/codec/window
 	max_integrity = 800

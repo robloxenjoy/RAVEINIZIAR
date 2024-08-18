@@ -1,10 +1,11 @@
 /obj/structure/toilet
-	name = "Туалет"
-	desc = "Новенький."
+	name = "Toilet"
+	desc = "Based."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "toilet00"
 	density = FALSE
 	anchored = TRUE
+	var/openize = TRUE
 	var/open = FALSE //if the lid is up
 	var/cistern = 0 //if the cistern bit is open
 	var/w_items = 0 //the combined w_class of all the items in the cistern
@@ -17,11 +18,11 @@
 	open = round(rand(0, 1))
 	update_appearance()
 
-
 /obj/structure/toilet/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
 	if(.)
 		return
+/*
 	if(swirlie)
 		user.changeNext_move(CLICK_CD_MELEE)
 		playsound(src.loc, "swing_hit", 25, TRUE)
@@ -61,8 +62,8 @@
 					GM.adjustBruteLoss(5)
 		else
 			to_chat(user, span_warning("You need a tighter grip!"))
-
-	else if(cistern && !open && user.CanReach(src))
+*/
+	if(cistern && !open && user.CanReach(src))
 		if(!contents.len)
 			to_chat(user, span_notice("The cistern is empty."))
 		else
@@ -74,8 +75,9 @@
 			to_chat(user, span_notice("You find [I] in the cistern."))
 			w_items -= I.w_class
 	else
-		open = !open
-		update_appearance()
+		if(openize)
+			open = !open
+			update_appearance()
 
 
 /obj/structure/toilet/update_icon_state()
@@ -143,6 +145,12 @@
 		RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 		to_chat(user, span_notice("You fill [RG] from [src]. Gross."))
 	. = ..()
+
+/obj/structure/toilet/verybad
+	icon = 'modular_pod/icons/content_6.dmi'
+	icon_state = "badtoilet"
+	openize = FALSE
+	open = TRUE
 
 /obj/structure/toilet/secret
 	var/obj/item/secret
