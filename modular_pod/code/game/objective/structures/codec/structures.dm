@@ -499,6 +499,8 @@
 	locked = TRUE
 	key_worthy = TRUE
 	id_tag = "jail"
+	visible = FALSE
+	opacity = FALSE
 
 /obj/item/key/podpol/woody
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS | ITEM_SLOT_BELT | ITEM_SLOT_ID

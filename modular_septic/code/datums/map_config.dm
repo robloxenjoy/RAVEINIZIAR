@@ -84,8 +84,11 @@
 	if("war_gamemode" in json)
 		war_gamemode = json["war_gamemode"]
 */
-	war_gamemode = json["war_gamemode"] != FALSE
-	prison_gamemode = json["prison_gamemode"] != FALSE
+	if("war_gamemode" in json)
+		war_gamemode = json["war_gamemode"]
+
+	if("prison_gamemode" in json)
+		prison_gamemode = json["prison_gamemode"]
 
 	if("respawn_allowed" in json)
 		respawn_allowed = json["respawn_allowed"]

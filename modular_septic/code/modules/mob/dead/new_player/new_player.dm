@@ -93,8 +93,8 @@
 		return
 	if(!client)
 		return
-	var/rolevich = input("Wait, what role?", "") as text
 	if(SSmapping.config?.war_gamemode)
+		var/rolevich = input("Wait, what role?", "") as text
 		switch(rolevich)
 			if("Ladax")
 				var/numba = GLOB.kapnoe - GLOB.aashol
@@ -168,6 +168,7 @@
 						alert("Unclear. The role of the common Kador.")
 						client.role_ch = "kador"
 	else
+		var/rolevich = input("Wait, what role?", "") as text
 		switch(rolevich)
 			if("Prisoner")
 				client.role_ch = "prisoner"
