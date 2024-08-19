@@ -148,7 +148,7 @@
 
 /obj/structure/toilet/verybad
 	icon = 'modular_pod/icons/content_6.dmi'
-	icon_state = "badtoilet"
+	icon_state = "badtoilet00"
 	openize = FALSE
 	open = TRUE
 

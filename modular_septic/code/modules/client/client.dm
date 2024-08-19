@@ -36,6 +36,9 @@
 			message_admins(span_adminnotice("[key_name_admin(src)] is a based Brazilian!"))
 	if(mob)
 		broadcast_connection(reconnecting ? "joins again" : "joins")
+	var/datum/preferences/pref_source = prefs
+	if(!pref_source.rank_crazy)
+		pref_source.rank_crazy = 2
 	political_compass = new()
 	political_compass.owner = src
 	political_compass.load_path()
