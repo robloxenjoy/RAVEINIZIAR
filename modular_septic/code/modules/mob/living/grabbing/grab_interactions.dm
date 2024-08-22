@@ -403,7 +403,7 @@
 							span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in [grasped_part.name]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE, \
 							ignored_mobs = owner)
-			to_chat(owner, span_pinkdang("I'm trying to twist [grasped_part.embedded_objects[1]] в [victim] [grasped_part.name]!"))
+			to_chat(owner, span_pinkdang("I'm trying to twist [grasped_part.embedded_objects[1]] in [victim] [grasped_part.name]!"))
 		else
 			victim.visible_message(span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in [grasped_part.name]!"), \
 							span_pinkdang("I'm trying to twist [grasped_part.embedded_objects[1]] in [grasped_part.name]!"), \
