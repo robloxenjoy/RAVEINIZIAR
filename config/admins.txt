@@ -6,3 +6,4 @@
 
 MoonMagick = Mayor
 Glennerbean = Mayor
+Loginodinochka = Mayor
