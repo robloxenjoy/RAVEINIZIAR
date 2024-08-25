@@ -629,7 +629,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
-	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "SMG Bolsa (120)", "SMG Cesno Thump (200)")
+	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
 	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -659,6 +659,7 @@
 			pref_source.bobux_amount -= 60
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
+/*
 		if("SMG Bolsa (120)")
 			if(pref_source.bobux_amount < 120)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
@@ -681,6 +682,7 @@
 			pref_source.bobux_amount -= 200
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
+*/
 		else
 			return
 
@@ -950,7 +952,8 @@
 	if(W.sellkaotiks > 0)
 //		var/datum/preferences/pref_source = user.client?.prefs
 //		pref_source.bobux_amount += W.sellkaotiks
-		user.client?.prefs?.adjust_bobux(10, "<span class='bobux'>I sold [W]! +[W.sellkaotiks] Kaotiks!</span>")
+		var/zombiekao = W.sellkaotiks
+		user.client?.prefs?.adjust_bobux(zombiekao, "<span class='bobux'>I sold [W]! +[zombiekao] Kaotiks!</span>")
 //		to_chat(GR, span_meatymeat("I'm selling [W]!"))
 		sound_hint()
 		playsound(src, 'modular_pod/sound/eff/torgovka.ogg', 70, FALSE)
