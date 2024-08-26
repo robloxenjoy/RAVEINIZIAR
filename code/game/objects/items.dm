@@ -430,7 +430,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 						W.current_fucked_reagents = W.max_reagents
 					var/crazy = (R.volume - ohfuck)
 					reagents.remove_reagent(R.type, crazy)
-					user.visible_message(span_danger("[user] окунает [W] в [src]!"), span_danger("Я окунаю [W] в [src]!"))
+					user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("I dip [W] in [src]!"))
 				else
 					if(R.type == W.poisoned_type)
 						W.current_fucked_reagents += R.volume
@@ -440,7 +440,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 							W.current_fucked_reagents = W.max_reagents
 						var/crazy = (R.volume - ohfuck)
 						reagents.remove_reagent(R.type, crazy)
-						user.visible_message(span_danger("[user] окунает [W] в [src]!"), span_danger("Я окунаю [W] в [src]!"))
+						user.visible_message(span_danger("[user] dips [W] in [src]!"), span_danger("I dip [W] in [src]!"))
 
 /*
 					W.poisoned_type += R.type

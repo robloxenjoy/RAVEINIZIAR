@@ -96,7 +96,7 @@
 				CRUSHING = 4, \
 				CUTTING = 35, \
 				PIERCING = 10, \
-				IMPALING = 12, \
+				IMPALING = 7, \
 				LASER = 1, \
 				ENERGY = 0, \
 				BOMB = 8, \
@@ -139,8 +139,8 @@
 				EDGE_PROTECTION = 10, \
 				CRUSHING = 5, \
 				CUTTING = 10, \
-				PIERCING = 70, \
-				IMPALING = 10, \
+				PIERCING = 10, \
+				IMPALING = 70, \
 				LASER = 7, \
 				ENERGY = 0, \
 				BOMB = 8, \
@@ -616,7 +616,7 @@
 				CRUSHING = 4, \
 				CUTTING = 4, \
 				PIERCING = 1, \
-				IMPALING = 4, \
+				IMPALING = 1, \
 				LASER = 1, \
 				ENERGY = 0, \
 				BOMB = 0, \
@@ -648,7 +648,7 @@
 				CRUSHING = 4, \
 				CUTTING = 4, \
 				PIERCING = 1, \
-				IMPALING = 4, \
+				IMPALING = 1, \
 				LASER = 1, \
 				ENERGY = 0, \
 				BOMB = 0, \
@@ -682,8 +682,8 @@
 				EDGE_PROTECTION = 90, \
 				CRUSHING = 95, \
 				CUTTING = 98, \
-				PIERCING = 88, \
-				IMPALING = 98, \
+				PIERCING = 98, \
+				IMPALING = 88, \
 				LASER = 90, \
 				ENERGY = 90, \
 				BOMB = 70, \

@@ -75,7 +75,7 @@
 	var/special_name
 	var/second_thing = null
 	var/third_thing = null
-	var/first_thing = pick("Hark", "Sideless", "Mor", "Nok", "Nox", "Garrett", "Haramec", "Enclave", "Vial", "Torner", "Web", "Hvax", "Coiler", "Boyd", "Hex", "Sacrec", "Rave")
+	var/first_thing = pick("Hark", "Sideless", "Moan", "Hax", "Nok", "Nox", "Garrett", "Haramec", "Enclave", "Vial", "Torner", "Web", "Hvax", "Coiler", "Boyd", "Hex", "Sacrec", "Rave")
 	special_name = "[first_thing]"
 	if(prob(40))
 		second_thing = pick("Moon", "Stone", "Black", "Block")
@@ -401,7 +401,7 @@
 	our.key = key
 
 /mob/dead/new_player/proc/hello_special_trait(mob/living/carbon/human/our)
-	var/my_trait = pick(TRAIT_DEPRESSION, TRAIT_PAINLOVER, TRAIT_JUNKER, TRAIT_HYPERSENT, TRAIT_MISANTHROPE)
+	var/my_trait = pick(TRAIT_DEPRESSION, TRAIT_PAINLOVER, TRAIT_HYPERSENT, TRAIT_MISANTHROPE)
 	ADD_TRAIT(our, my_trait, "special_trait")
 
 /datum/outfit/kapno/pre_equip(mob/living/carbon/human/H)

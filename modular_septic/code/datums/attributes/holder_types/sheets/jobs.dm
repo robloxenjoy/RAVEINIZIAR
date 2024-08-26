@@ -1561,10 +1561,10 @@
 
 /datum/attribute_holder/sheet/job/kapno
 	attribute_variance = list(
-		STAT_STRENGTH = list(-2, 3),
+		STAT_STRENGTH = list(-3, 3),
 //		STAT_ENDURANCE = list(-2, 3),
-		STAT_DEXTERITY = list(-2, 3),
-		STAT_INTELLIGENCE = list(-2, 3),
+		STAT_DEXTERITY = list(-3, 3),
+		STAT_INTELLIGENCE = list(-3, 3),
 		SKILL_BRAWLING = list(-1, 2),
 		SKILL_WRESTLING = list(-1, 2),
 		SKILL_SMG = list(-1, 1),
@@ -1581,6 +1581,7 @@
 		SKILL_IMPACT_WEAPON = list(-2, 2),
 		SKILL_BUCKLER = list(-2, 2),
 		SKILL_KNIFE = list(-1, 2),
+		SKILL_FLAIL = list(-2, 2),
 		SKILL_FORENSICS = list(-2, 1),
 		SKILL_ELECTRONICS = list(-2, 1),
 	)
@@ -1600,10 +1601,10 @@
 
 /datum/attribute_holder/sheet/job/konch
 	attribute_variance = list(
-		STAT_STRENGTH = list(-2, 3),
+		STAT_STRENGTH = list(-3, 3),
 //		STAT_ENDURANCE = list(-2, 3),
-		STAT_DEXTERITY = list(-2, 3),
-		STAT_INTELLIGENCE = list(-2, 3),
+		STAT_DEXTERITY = list(-3, 3),
+		STAT_INTELLIGENCE = list(-3, 3),
 		SKILL_BRAWLING = list(-1, 2),
 		SKILL_WRESTLING = list(-1, 2),
 		SKILL_SMG = list(-1, 1),
@@ -1620,6 +1621,7 @@
 		SKILL_ACROBATICS = list(2, 3),
 		SKILL_IMPACT_WEAPON = list(-2, 2),
 		SKILL_BUCKLER = list(-2, 2),
+		SKILL_FLAIL = list(-2, 2),
 		SKILL_KNIFE = list(-1, 2),
 		SKILL_FORENSICS = list(-2, 1),
 		SKILL_ELECTRONICS = list(-2, 1),

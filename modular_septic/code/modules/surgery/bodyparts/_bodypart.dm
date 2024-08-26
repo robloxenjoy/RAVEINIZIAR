@@ -1017,7 +1017,7 @@
 	if(sharpness && (wounding_type == WOUND_BLUNT) && (wounding_dmg > edge_protection))
 		if(sharpness & SHARP_EDGED)
 			wounding_type = WOUND_SLASH
-		else if (sharpness & SHARP_POINTY)
+		else if ((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
 			wounding_type = WOUND_PIERCE
 
 	// Use this later to dismember proper
@@ -1080,28 +1080,49 @@
 		if(blocked != 100)
 			var/damage_dealt = brute - (brute * (blocked/100)) - reduced
 			if(damage_dealt > edge_protection)
-				if((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
-					if(brute > 10)
-						var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
-						if(brain)
-							var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
-							if(diceroll <= DICE_FAILURE)
-								brain.applyOrganDamage(brute * 1.3)
-							else
-								brain.applyOrganDamage(brute/1.1)
+				switch(sharpness)
+					if(SHARP_POINTY)
+						if(brute > 10)
+							var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
+							if(brain)
+								var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+								if(diceroll <= DICE_FAILURE)
+									brain.applyOrganDamage(brute * 1.3)
+								else
+									brain.applyOrganDamage(brute/1.1)
+					if(SHARP_IMPALING)
+						if(brute > 10)
+							var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
+							if(brain)
+								var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+								if(diceroll <= DICE_FAILURE)
+									brain.applyOrganDamage(brute * 2.2)
+								else
+									brain.applyOrganDamage(brute * 2)
+
 	if(body_zone in list(BODY_ZONE_PRECISE_FACE, BODY_ZONE_HEAD))
 		if(blocked != 100)
 			var/damage_dealt = brute - (brute * (blocked/100)) - reduced
 			if(damage_dealt > edge_protection)
-				if((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
-					if(brute >= 15)
-						var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
-						if(brain)
-							var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
-							if(diceroll <= DICE_FAILURE)
-								brain.applyOrganDamage(brute * 1.1)
-							else
-								brain.applyOrganDamage(brute/1.3)
+				switch(sharpness)
+					if(SHARP_POINTY)
+						if(brute >= 15)
+							var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
+							if(brain)
+								var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+								if(diceroll <= DICE_FAILURE)
+									brain.applyOrganDamage(brute * 1.1)
+								else
+									brain.applyOrganDamage(brute/1.3)
+					if(SHARP_IMPALING)
+						if(brute >= 15)
+							var/obj/item/organ/brain/brain = owner.getorganslot(ORGAN_SLOT_BRAIN)
+							if(brain)
+								var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
+								if(diceroll <= DICE_FAILURE)
+									brain.applyOrganDamage(brute * 2.2)
+								else
+									brain.applyOrganDamage(brute * 2)
 
 	special_gore(owner, src, brute, sharpness)
 
@@ -1400,7 +1421,7 @@
 	if(wounding_type == WOUND_BLUNT && sharpness)
 		if(sharpness & SHARP_EDGED)
 			wounding_type = WOUND_SLASH
-		else if(sharpness & SHARP_POINTY)
+		else if((sharpness & SHARP_POINTY) || (sharpness & SHARP_IMPALING))
 			wounding_type = WOUND_PIERCE
 
 	//Handling for bone only/flesh only/flesh and bone targets

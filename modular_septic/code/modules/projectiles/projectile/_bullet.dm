@@ -12,7 +12,7 @@
 	ricochets_max = 2
 	ricochet_chance = 20
 	ricochet_incidence_leeway = 45
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_IMPALING
 
 /obj/projectile/bullet/on_hit(atom/target, blocked, pierce_hit, reduced, edge_protection)
 	. = ..()
