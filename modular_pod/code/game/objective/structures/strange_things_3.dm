@@ -687,7 +687,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/armor_find(mob/living/carbon/user)
-	var/list/otherlist = list("Light Bulletproofer (50)", "Chainmail (50)", "Gloves (30)", "Ballistic Mask (40)", "Powerarmor (1500)")
+	var/list/otherlist = list("Light Bulletproofer (50)", "Chainmail (50)", "Gloves (30)", "Jackboots (30)", "Ballistic Mask (40)", "Powerarmor (1500)")
 	var/thingy = input(user, "What kind of armor do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -722,6 +722,14 @@
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/clothing/gloves/thickleather(get_turf(user))
+			pref_source.bobux_amount -= 30
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Jackboots (30)")
+			if(pref_source.bobux_amount < 30)
+				to_chat(user, span_meatymeat("Need kaotiks!"))
+				return
+			new /obj/item/clothing/shoes/jackboots(get_turf(user))
 			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))

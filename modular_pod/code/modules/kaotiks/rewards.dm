@@ -468,7 +468,7 @@
 		SSpollution.current_run.len--
 		pollution.scrub_amount(999, FALSE, TRUE)
 */
-
+/*
 /datum/bobux_reward/fogmove
 	name = "Fogmove"
 	desc = "The fog must go away."
@@ -493,7 +493,7 @@
 	for(var/area/maintenance/polovich/forest/B in world)
 		B.fogger = FALSE
 		B.specialfog = FALSE
-
+*/
 /datum/bobux_reward/changename
 	name = "Change Name"
 	desc = "It's time."

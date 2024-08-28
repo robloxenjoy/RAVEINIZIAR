@@ -57,8 +57,8 @@
 				EDGE_PROTECTION = 29, \
 				CRUSHING = 12, \
 				CUTTING = 27, \
-				PIERCING = 54, \
-				IMPALING = 17, \
+				PIERCING = 17, \
+				IMPALING = 54, \
 				LASER = 1, \
 				ENERGY = 0, \
 				BOMB = 10, \

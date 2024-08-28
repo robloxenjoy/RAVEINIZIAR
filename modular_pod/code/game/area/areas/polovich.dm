@@ -41,14 +41,14 @@
 	var/lighting_out = TRUE
 	var/ino = FALSE
 	var/specialcolor = FALSE
-
+/*
 /area/maintenance/polovich/forest/Initialize(mapload)
 	. = ..()
 	if(fogger)
 		for(var/turf/T in src)
 	//		T.temperature = COLDDIRT
 			new /obj/effect/foga(T)
-
+*/
 /area/maintenance/polovich/forest/Entered(atom/movable/arrived, area/old_area)
 	. = ..()
 	if(specialfog)
@@ -90,7 +90,7 @@
 /obj/effect/foga
 	name = "Fog"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "foga1"
+	icon_state = "fogar1"
 	layer = FLY_LAYER
 	plane = ABOVE_GAME_PLANE
 //	plane = FLOOR_PLANE
@@ -103,19 +103,19 @@
 
 /obj/effect/foga/Initialize(mapload)
 	. = ..()
-	icon_state = pick("foga1", "foga2", "foga3")
+	icon_state = pick("fogar1")
 	color = pick("#7b7f9b", "#919699", "#748a9c")
 	alpha = rand(200, 255)
 
 /area/maintenance/polovich/forest/can_ruin/fog
-
+/*
 /area/maintenance/polovich/forest/can_ruin/fog/Initialize(mapload)
 	. = ..()
 	if(fogger)
 		for(var/turf/T in src)
 	//		T.temperature = COLDDIRT
 			new /obj/effect/foga(T)
-
+*/
 /area/maintenance/polovich/forest/inner
 	static_lighting = TRUE
 	base_lighting_alpha = 1

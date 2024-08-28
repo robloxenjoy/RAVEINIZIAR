@@ -280,12 +280,12 @@
 					if("First")
 						our.equipOutfit(/datum/outfit/kapno)
 					if("Second")
-						if(prob(10))
+						if(prob(20))
 							our.equipOutfit(/datum/outfit/kapnosec)
 						else
 							our.equipOutfit(/datum/outfit/kapno)
 					if("Third")
-						if(prob(10))
+						if(prob(20))
 							our.equipOutfit(/datum/outfit/kapnosec)
 						else
 							our.equipOutfit(/datum/outfit/kapno)
@@ -301,12 +301,12 @@
 					if("First")
 						our.equipOutfit(/datum/outfit/konch)
 					if("Second")
-						if(prob(10))
+						if(prob(20))
 							our.equipOutfit(/datum/outfit/konchsec)
 						else
 							our.equipOutfit(/datum/outfit/konch)
 					if("Third")
-						if(prob(10))
+						if(prob(20))
 							our.equipOutfit(/datum/outfit/konchsec)
 						else
 							our.equipOutfit(/datum/outfit/konch)
@@ -424,7 +424,7 @@
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
 	uniform = /obj/item/clothing/under/codec/purp
 	pants = /obj/item/clothing/pants/codec/purp
-	shoes = /obj/item/clothing/shoes/jackboots
+//	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/gun/ballistic/revolver/remis/nova
 
 /datum/outfit/kapno
@@ -433,7 +433,7 @@
 	l_pocket = /obj/item/key/podpol/woody/kapnodvorkey
 	uniform = /obj/item/clothing/under/codec/purp
 	pants = /obj/item/clothing/pants/codec/purp
-	shoes = /obj/item/clothing/shoes/jackboots
+//	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/kapnofather/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -449,7 +449,7 @@
 	belt = /obj/item/podpol_weapon/sword/steel
 	oversuit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	pants = /obj/item/clothing/pants/codec/purp/red
-	shoes = /obj/item/clothing/shoes/jackboots
+//	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet/codec/def_yel
 	neck = /obj/item/clothing/neck/chainer
 
@@ -474,7 +474,7 @@
 //	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
 	uniform = /obj/item/clothing/under/codec/maika
 	pants = /obj/item/clothing/pants/codec/panta
-	shoes = /obj/item/clothing/shoes/jackboots
+//	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/gun/ballistic/shotgun/doublebarrel/bobox
 
 /datum/outfit/konch
@@ -484,7 +484,7 @@
 //	r_pocket = /obj/item/reagent_containers/pill/carbonylmethamphetamine
 	uniform = /obj/item/clothing/under/codec/maika
 	pants = /obj/item/clothing/pants/codec/panta
-	shoes = /obj/item/clothing/shoes/jackboots
+//	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/mostkonch
 	name = "Mostkonch Uniform"
@@ -493,7 +493,7 @@
 	l_pocket = /obj/item/key/podpol/woody/konchkey
 	uniform = /obj/item/clothing/under/codec/maika
 	pants = /obj/item/clothing/pants/codec/panta
-	shoes = /obj/item/clothing/shoes/jackboots
+//	shoes = /obj/item/clothing/shoes/jackboots
 //	belt = /obj/item/melee/bita/cep/iron
 	r_hand = /obj/item/melee/bita/hammer/sledge
 	suit = /obj/item/clothing/suit/armor/vest/chainmail/steel
@@ -510,7 +510,7 @@
 
 	r_hand = /obj/item/podpol_weapon/axe/big
 	l_hand = /obj/item/melee/hehe/pickaxe/iron
-	shoes = /obj/item/clothing/shoes/jackboots
+//	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/bulletproofer
 	back = /obj/item/storage/belt/military/itobe/svo
 	neck = /obj/item/clothing/neck/chainer
