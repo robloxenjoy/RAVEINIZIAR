@@ -166,7 +166,7 @@
 
 //	var/list/all_the_turfs_were_gonna_lacerate = RANGE_TURFS(radius, A) - RANGE_TURFS(radius-1, A)
 	var/list/target_turfs = getcircle(A, radius)
-	num_pellets = all_the_turfs_were_gonna_lacerate.len + pellet_delta
+	num_pellets = target_turfs.len + pellet_delta
 
 	for(var/T in target_turfs)
 		var/turf/shootat_turf = T

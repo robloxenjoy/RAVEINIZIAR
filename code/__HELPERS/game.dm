@@ -83,6 +83,9 @@
 		max(list_x),
 		max(list_y))
 
+/proc/between(var/low, var/middle, var/high)
+	return max(min(middle, high), low)
+
 #define LOCATE_COORDS(X, Y, Z) locate(between(1, X, world.maxx), between(1, Y, world.maxy), Z)
 /proc/getcircle(turf/center, var/radius) //Uses a fast Bresenham rasterization algorithm to return the turfs in a thin circle.
 	if(!radius) return list(center)
