@@ -270,7 +270,7 @@
 		return ..()
 
 /datum/emote/living/deathgasp
-	message = "deathly gasps."
+	message = "mortally gasps."
 
 /datum/emote/living/crackaddict
 	key = "crackaddict"

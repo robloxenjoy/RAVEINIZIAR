@@ -43,11 +43,11 @@
 					priority_announce("SECOND WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 					GLOB.phase_of_war = "Second"
-				if(100 to 100)
+				if(70 to 70)
 					priority_announce("THIRD WAR PHASE BEGINS!", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 					GLOB.phase_of_war = "Third"
-				if(200 to 200)
+				if(120 to 120)
 					priority_announce("THE WAR IS OVER! VICTORY REMAINS A MYSTERY...", "Chaos", has_important_message = TRUE)
 					SEND_SOUND(world, sound('modular_pod/sound/mus/announce.ogg'))
 					SEND_SOUND(world, sound('modular_pod/sound/mus/sadend.ogg'))
