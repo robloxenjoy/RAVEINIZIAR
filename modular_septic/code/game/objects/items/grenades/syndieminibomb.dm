@@ -45,7 +45,7 @@
 	icon_state = "frag"
 	base_icon_state = "frag"
 	shrapnel_type = /obj/projectile/bullet/shrapnel
-	shrapnel_radius = 4
+	shrapnel_radius = 6
 	grenade_flags = GRENADE_PINNED|GRENADE_VISIBLE_PIN|GRENADE_VISIBLE_SPOON
 	det_time = 1.5 SECONDS
 
@@ -226,7 +226,7 @@
 	icon_state = "ted2"
 	base_icon_state = "ted2"
 	shrapnel_type = /obj/projectile/bullet/shrapnel/ted
-	shrapnel_radius = 5
+	shrapnel_radius = 6
 	ex_heavy = 0
 	ex_light = 4
 	ex_flame = 5

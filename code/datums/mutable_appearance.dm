@@ -3,12 +3,13 @@
 // Unless you need the overlay/underlay to have a different direction than the base object. Then you have to use an image due to a bug.
 
 // Mutable appearances are children of images, just so you know.
-
-/mutable_appearance/New()
+/*
+/mutable_appearance/New(mutable_appearance/to_copy)
 	..()
-	plane = FLOAT_PLANE // No clue why this is 0 by default yet images are on FLOAT_PLANE
+	if(!to_copy)
+		plane = FLOAT_PLANE // No clue why this is 0 by default yet images are on FLOAT_PLANE
 						// And yes this does have to be in the constructor, BYOND ignores it if you set it as a normal var
-
+*/
 /// Helper similar to image()
 /proc/mutable_appearance(icon, icon_state = "", layer = FLOAT_LAYER, plane = FLOAT_PLANE, alpha = 255, appearance_flags = NONE)
 	var/mutable_appearance/MA = new()
