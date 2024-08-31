@@ -858,7 +858,7 @@
 	miss_sound = list('modular_septic/sound/weapons/melee/heavyysharp_swish1.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish2.ogg', 'modular_septic/sound/weapons/melee/heavyysharp_swish3.ogg')
 	drop_sound = list('modular_septic/sound/weapons/melee/bladedrop1.ogg', 'modular_septic/sound/weapons/melee/bladedrop2.ogg')
 	embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 15, "jostle_chance" = 9, "pain_stam_pct" = 2, "pain_jostle_mult" = 10, "fall_chance" = 0.2)
-	min_force = 15
+	min_force = 19
 	force = 35
 	min_force_strength = 1.5
 	wound_bonus = 10
@@ -934,7 +934,7 @@
 			user.visible_message(span_danger("[user] flips [src] to the other side!"), span_danger("I flip [src] to the other side!"))
 			hitsound = slash_hitsound
 			embedding = list("pain_mult" = 5, "rip_time" = 7, "embed_chance" = 15, "jostle_chance" = 9, "pain_stam_pct" = 2, "pain_jostle_mult" = 10, "fall_chance" = 0.2)
-			min_force = 15
+			min_force = 19
 			force = 35
 			min_force_strength = 1.5
 			force_strength = 3
