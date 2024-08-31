@@ -75,10 +75,10 @@
 	var/special_name
 	var/second_thing = null
 	var/third_thing = null
-	var/first_thing = pick("Hark", "Sideless", "Moan", "Hax", "Nok", "Nox", "Garrett", "Haramec", "Enclave", "Vial", "Torner", "Web", "Hvax", "Coiler", "Boyd", "Hex", "Sacrec", "Rave")
+	var/first_thing = pick("Hark", "Sideless", "Moan", "Hax", "Morx", "Nok", "Nox", "Garrett", "Haramec", "Enclave", "Vial", "Torner", "Web", "Hvax", "Coiler", "Boyd", "Hex", "Sacrec", "Rave")
 	special_name = "[first_thing]"
 	if(prob(40))
-		second_thing = pick("Moon", "Stone", "Black", "Block")
+		second_thing = pick("Moon", "Stone", "Black")
 		special_name = "[first_thing] [second_thing]"
 	if(prob(10))
 		third_thing = pick("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
