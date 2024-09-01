@@ -33,7 +33,7 @@
 					"pain_mult"=0, \
 					"pain_jostle_mult"=10, \
 					"rip_time"=40)
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_IMPALING
 
 /obj/projectile/bullet/shotgun_slug/ap
 	name = "12g armor-piercing slug"
@@ -55,7 +55,7 @@
 					"pain_mult"=0, \
 					"pain_jostle_mult"=6,
 					"rip_time"=25)
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_IMPALING
 
 /obj/projectile/bullet/pellet/shotgun_flechette
 	name = "12g flechette"
@@ -91,7 +91,7 @@
 					"pain_mult"=0, \
 					"pain_jostle_mult"=10, \
 					"rip_time"=40)
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_IMPALING
 
 /obj/projectile/bullet/pellet/shotgun_bolas/buckshot
 	name = "4g pellet"
@@ -107,4 +107,4 @@
 					"pain_mult"=0, \
 					"pain_jostle_mult"=6,
 					"rip_time"=25)
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_IMPALING
