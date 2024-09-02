@@ -6,8 +6,8 @@
 	beauty = -50
 
 /obj/effect/decal/cleanable/ash
-	name = "Пепел"
-	desc = "Что-то сгорело."
+	name = "Ash"
+	desc = "It was fire."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
 	mergeable_decal = FALSE
