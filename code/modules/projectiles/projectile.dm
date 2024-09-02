@@ -696,17 +696,17 @@
 		var/matrix/matrix = new
 		matrix.Turn(Angle)
 		transform = matrix
-	var/zup = starting.z
+	var/zlela = src.z
 	if(isliving(firer))
 		var/mob/living/zlevelman = firer
 		if(zlevelman.look_now & LOOKING_UP)
-			zup++
+			zlela++
 //			src.z = zlevelman.z+1
 
 	trajectory_ignore_forcemove = TRUE
 	forceMove(starting)
 	trajectory_ignore_forcemove = FALSE
-	trajectory = new(starting.x, starting.y, zup, pixel_x, pixel_y, Angle, SSprojectiles.global_pixel_speed)
+	trajectory = new(starting.x, starting.y, zlela, pixel_x, pixel_y, Angle, SSprojectiles.global_pixel_speed)
 	last_projectile_move = world.time
 	fired = TRUE
 	SEND_SIGNAL(src, COMSIG_PROJECTILE_FIRE)
