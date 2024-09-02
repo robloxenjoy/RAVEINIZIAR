@@ -696,7 +696,9 @@
 		var/matrix/matrix = new
 		matrix.Turn(Angle)
 		transform = matrix
+	var/zlola = starting.z
 	var/zlela = src.z
+	zlela = zlola
 	if(isliving(firer))
 		var/mob/living/zlevelman = firer
 		if(zlevelman.look_now & LOOKING_UP)
