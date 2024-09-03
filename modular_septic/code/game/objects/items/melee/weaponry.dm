@@ -27,7 +27,7 @@
 /obj/item/melee/shieldo
 	skill_blocking = SKILL_SHIELD
 	blocking_flags = BLOCK_FLAG_MELEE | BLOCK_FLAG_UNARMED | BLOCK_FLAG_THROWN
-	blocking_modifier = 1
+	blocking_modifier = 1.2
 	parrying_modifier = null
 
 /obj/item/melee/shieldo/buckler/wooden
@@ -1132,6 +1132,73 @@
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 7, "rip_time" = 3, "embed_chance" = 45, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+
+/obj/item/podpol_weapon/steelknife
+	name = "Knife"
+	desc = "Use as weapon!"
+	icon_state = "knife_steel"
+	worn_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon_state = "knife"
+	inhand_icon_state = "steelknife"
+	icon = 'modular_pod/icons/obj/items/weapons.dmi'
+	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
+	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
+	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
+	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
+	hitsound = list('modular_septic/sound/weapons/melee/slasher1.ogg', 'modular_septic/sound/weapons/melee/slasher2.ogg', 'modular_septic/sound/weapons/melee/slasher3.ogg')
+	choose_attack_intent = TRUE
+	current_attack_intent = SLASH_MODE
+	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 20, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
+	min_force = 7
+	force = 14
+	min_force_strength = 1
+	force_strength = 1.1
+	min_throwforce = 5
+	throwforce = 11
+	throwforce_strength = 1.1
+	wound_bonus = 1
+	bare_wound_bonus = 1
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	sharpness = SHARP_EDGED
+	skill_melee = SKILL_KNIFE
+	carry_weight = 2 KILOGRAMS
+	attack_fatigue_cost = 7
+	attack_delay = 17
+	parrying_flags = BLOCK_FLAG_UNARMED
+	havedurability = TRUE
+	durability = 190
+	tetris_width = 32
+	tetris_height = 96
+	wielded_inhand_state_melee = FALSE
+	stab_hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
+
+/obj/item/podpol_weapon/steelknife/swap_intents(mob/user)
+	. = ..()
+	switch(current_attack_intent)
+		if(SLASH_MODE)
+			to_chat(user, span_notice("Now I will stab them with [src]."))
+			hitsound = stab_hitsound
+			min_force = 7
+			force = 14
+			min_force_strength = 1
+			force_strength = 1.1
+			current_attack_intent = STAB_MODE
+			sharpness = SHARP_POINTY
+			embedding = list("pain_mult" = 8, "rip_time" = 2, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
+		if(STAB_MODE)
+			to_chat(user, span_notice("Now I will cut them with [src]."))
+			hitsound = slash_hitsound
+			min_force = 7
+			force = 14
+			min_force_strength = 1
+			force_strength = 1.1
+			current_attack_intent = SLASH_MODE
+			sharpness = SHARP_EDGED
+			embedding = list("pain_mult" = 6, "rip_time" = 3, "embed_chance" = 20, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
 
 /*
 /obj/item/changeable_attacks/slashstabbash/sword/medium/steel

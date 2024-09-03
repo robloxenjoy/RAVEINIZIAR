@@ -574,7 +574,7 @@
 				other_find(user)
 
 /obj/structure/kaotikmachine/proc/melee_find(mob/living/carbon/human/user)
-	var/list/meleelist = list("Sword (50)", "Spear (40)", "Buckler (20)", "Rebar (20)", "Flail (40)")
+	var/list/meleelist = list("Sword (50)", "Spear (40)", "Buckler (40)", "Rebar (30)", "Flail (40)", "Knife (20)")
 	var/thingy = input(user, "What kind of weapon I want?", "I want...") as null|anything in sort_list(meleelist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -601,20 +601,20 @@
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Buckler (20)")
-			if(pref_source.bobux_amount < 20)
+		if("Buckler (40)")
+			if(pref_source.bobux_amount < 40)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/melee/shieldo/buckler/wooden(get_turf(user))
-			pref_source.bobux_amount -= 20
+			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Rebar (20)")
-			if(pref_source.bobux_amount < 20)
+		if("Rebar (30)")
+			if(pref_source.bobux_amount < 30)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
 			new /obj/item/melee/bita/rebar(get_turf(user))
-			pref_source.bobux_amount -= 20
+			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		if("Flail (40)")
@@ -623,6 +623,14 @@
 				return
 			new /obj/item/melee/bita/cep/iron(get_turf(user))
 			pref_source.bobux_amount -= 40
+			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+			to_chat(user, span_meatymeat("Purchase done!"))
+		if("Knife (20)")
+			if(pref_source.bobux_amount < 20)
+				to_chat(user, span_meatymeat("Need kaotiks!"))
+				return
+			new /obj/item/podpol_weapon/steelknife(get_turf(user))
+			pref_source.bobux_amount -= 20
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		else
@@ -1225,6 +1233,21 @@
 			H.visible_message(span_meatymeat("[H] gets out of the [src]!"))
 			return
 
+/obj/structure/barbwire/attackby(obj/item/W, mob/living/carbon/user, params)
+	if(istype(W, /obj/item/minedisarmer))
+		user.visible_message(span_meatymeat("[user] tries to disarm [src]!"))
+		sound_hint()
+		user.changeNext_move(CLICK_CD_MELEE)
+		if(!do_after(user, 4 SECONDS, target = src))
+			to_chat(user, span_danger(xbox_rage_msg()))
+			user.playsound_local(get_turf(user), 'modular_pod/sound/eff/difficult1.ogg', 15, FALSE)
+		user.visible_message(span_meatymeat("[user] disarms [src]!"))
+		qdel(src)
+		user.changeNext_move(CLICK_CD_MELEE)
+		sound_hint()
+	else
+		return
+
 /obj/item/barbsetup
 	name = "Installer"
 	desc = "This is how you can install the wire."
@@ -1510,7 +1533,7 @@
 
 /obj/item/minedisarmer
 	name = "Disarmer"
-	desc = "Mines are not a hindrance!"
+	desc = "Mines and barbed wires are not a hindrance!"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
 	icon_state = "disarmer"
 	inhand_icon_state = null
