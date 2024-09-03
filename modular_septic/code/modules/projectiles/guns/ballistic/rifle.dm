@@ -378,7 +378,7 @@
 	tetris_height = 128
 
 /obj/item/gun/ballistic/rifle/boltaction/remis/federson
-	name = "\improper Federson \"Osaco Chuckster\" bolt-action rifle"
+	name = "\improper Federson"
 	desc = "A bolt-action rifle capable of piercing through armor, and making accurate shots even at a range. It's cursed by having It's own cartridge unfortunately, .276 Federson."
 	icon_state = "pedersen"
 	base_icon_state = "pedersen"

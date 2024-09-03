@@ -194,7 +194,7 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/a276
-	name = "276 Federson rounds"
+	name = ".276 Federson rounds"
 	icon_state = "c762-1"
 	base_icon_state = "c762"
 //	world_icon_state = "762-casing"
@@ -206,7 +206,7 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun
-	name = "Bullet"
+	name = "Bullets"
 	desc = "12 Caliber."
 	icon_state = "12gauges-1"
 	base_icon_state = "12gauges"
@@ -219,7 +219,7 @@
 	start_empty = FALSE
 
 /obj/item/ammo_box/magazine/ammo_stack/shotgun/buckshot
-	name = "Buckshot"
+	name = "Buckshots"
 	desc = "Nice."
 	icon_state = "12gauge-1"
 	base_icon_state = "12gauge"
