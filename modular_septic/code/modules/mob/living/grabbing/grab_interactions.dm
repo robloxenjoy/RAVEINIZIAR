@@ -309,12 +309,13 @@
 						span_hear("I hear combat."), \
 						vision_distance = COMBAT_MESSAGE_RANGE)
 	var/mob/living/carbon/carbon_victim = victim
+	if(gut_rope)
+		qdel(gut_rope)
+	carbon_victim.gut_cut()
+	update_grab_mode()
 	owner.adjustFatigueLoss(5)
 	owner.changeNext_move(CLICK_CD_WRENCH)
 	playsound(victim, 'modular_pod/sound/eff/outshit.ogg', 80, FALSE)
-	qdel(gut_rope)
-	carbon_victim.gut_cut()
-	update_grab_mode()
 	return TRUE
 
 /obj/item/grab/proc/bite_limb()
