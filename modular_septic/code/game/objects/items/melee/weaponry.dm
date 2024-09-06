@@ -1143,11 +1143,12 @@
 	icon = 'modular_pod/icons/obj/items/weapons.dmi'
 	lefthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_septic/icons/obj/items/inhands/items_and_weapons_righthand.dmi'
-	equip_sound = 'modular_septic/sound/weapons/melee/sheathblade.ogg'
-	pickup_sound = 'modular_septic/sound/weapons/melee/drawblade.ogg'
+	equip_sound = 'modular_septic/sound/weapons/melee/bladesmallsheath.ogg'
+	pickup_sound = 'modular_septic/sound/weapons/melee/bladesmalldraw.ogg'
 	miss_sound = list('modular_septic/sound/weapons/melee/swingblade.ogg')
 	drop_sound = 'modular_septic/sound/effects/fallsmall.ogg'
 	hitsound = list('modular_septic/sound/weapons/melee/slasher1.ogg', 'modular_septic/sound/weapons/melee/slasher2.ogg', 'modular_septic/sound/weapons/melee/slasher3.ogg')
+	stab_hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 	choose_attack_intent = TRUE
 	current_attack_intent = SLASH_MODE
 	embedding = list("pain_mult" = 7, "rip_time" = 2, "embed_chance" = 20, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
