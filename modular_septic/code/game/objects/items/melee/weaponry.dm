@@ -1174,6 +1174,7 @@
 	durability = 190
 	tetris_width = 32
 	tetris_height = 96
+	organ_bonus = 0
 	wielded_inhand_state_melee = FALSE
 	stab_hitsound = list('modular_pod/sound/eff/weapon/stab_hit.ogg')
 
@@ -1187,6 +1188,7 @@
 			force = 14
 			min_force_strength = 1
 			force_strength = 1.1
+			organ_bonus = 0
 			current_attack_intent = STAB_MODE
 			sharpness = SHARP_POINTY
 			embedding = list("pain_mult" = 8, "rip_time" = 2, "embed_chance" = 25, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 0.5, "ignore_throwspeed_threshold" = TRUE)
@@ -1197,6 +1199,7 @@
 			force = 14
 			min_force_strength = 1
 			force_strength = 1.1
+			organ_bonus = -2
 			current_attack_intent = SLASH_MODE
 			sharpness = SHARP_EDGED
 			embedding = list("pain_mult" = 6, "rip_time" = 3, "embed_chance" = 20, "jostle_chance" = 3.5, "pain_stam_pct" = 0.5, "pain_jostle_mult" = 6, "fall_chance" = 1, "ignore_throwspeed_threshold" = TRUE)
