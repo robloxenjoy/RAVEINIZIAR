@@ -29,7 +29,7 @@
 		to_chat(src, span_notice("Phantom feeling."))
 		return
 	else if(check_hand?.bodypart_disabled)
-		to_chat(src, span_warning("[check_hand.name] не в состоянии."))
+		to_chat(src, span_warning("[check_hand.name] is not able."))
 		return
 	else if(proximity_flag)
 		for(var/thing in check_hand.getorganslot(ORGAN_SLOT_BONE))
@@ -61,10 +61,10 @@
 		to_chat(src, span_notice("Phantom feeling."))
 		return
 	else if(check_foot?.bodypart_disabled)
-		to_chat(src, span_warning("[check_foot.name] не в состоянии."))
+		to_chat(src, span_warning("[check_foot.name] is not able."))
 		return
 	else if(attack_target == src)
-		to_chat(src, span_warning("Не могу себя пнуть. Жаль."))
+		to_chat(src, span_warning("I can't kick myself."))
 		return
 	else if(proximity_flag)
 		for(var/thing in check_foot.getorganslot(ORGAN_SLOT_BONE))
@@ -88,7 +88,7 @@
 		to_chat(src, span_notice("Phantom feeling."))
 		return
 	else if(check_jaw?.bodypart_disabled)
-		to_chat(src, span_warning("[check_jaw.name] не в состоянии."))
+		to_chat(src, span_warning("[check_jaw.name] is not able."))
 		return
 	else if(proximity_flag)
 		for(var/thing in check_jaw.getorganslot(ORGAN_SLOT_BONE))
@@ -97,7 +97,7 @@
 				return
 
 	if(is_mouth_covered())
-		to_chat(src, span_warning("Рот прикрыт."))
+		to_chat(src, span_warning("Mouth is covered."))
 		return
 
 	//This signal is needed to prevent gloves of the north star + hulk
