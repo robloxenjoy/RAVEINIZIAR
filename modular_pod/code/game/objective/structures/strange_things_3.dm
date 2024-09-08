@@ -1134,13 +1134,14 @@
 		var/mob/living/GR = user.pulling
 		if(GR == null)
 			return
-		if(do_after(user, 3 SECONDS, target=src))
-			to_chat(GR, span_meatymeat("I feel some kind of fucked up!"))
-			GR.fully_heal(TRUE, FALSE)
-			var/words = pick(words_list)
-			speak(words)
-			sound_hint()
-			playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
+		if(stat != DEAD)
+			if(do_after(user, 3 SECONDS, target=src))
+				to_chat(GR, span_meatymeat("I feel some kind of fucked up!"))
+				GR.fully_heal(TRUE, FALSE)
+				var/words = pick(words_list)
+				speak(words)
+				sound_hint()
+				playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
 	else
 		return
 
@@ -1148,13 +1149,14 @@
 	. = ..()
 	if(.)
 		return
-	if(do_after(user, 2 SECONDS, target=src))
-		to_chat(user, span_meatymeat("I feel some kind of fucked up!"))
-		user.fully_heal(TRUE, FALSE)
-		var/words = pick(words_list)
-		speak(words)
-		sound_hint()
-		playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
+	if(stat != DEAD)
+		if(do_after(user, 2 SECONDS, target=src))
+			to_chat(user, span_meatymeat("I feel some kind of fucked up!"))
+			user.fully_heal(TRUE, FALSE)
+			var/words = pick(words_list)
+			speak(words)
+			sound_hint()
+			playsound(src, 'modular_pod/sound/voice/my.ogg', 55, FALSE)
 
 /*
 /obj/item/paperpodpol
