@@ -1134,7 +1134,7 @@
 		var/mob/living/GR = user.pulling
 		if(GR == null)
 			return
-		if(stat != DEAD)
+		if(user.stat != DEAD)
 			if(do_after(user, 3 SECONDS, target=src))
 				to_chat(GR, span_meatymeat("I feel some kind of fucked up!"))
 				GR.fully_heal(TRUE, FALSE)
@@ -1149,7 +1149,7 @@
 	. = ..()
 	if(.)
 		return
-	if(stat != DEAD)
+	if(user.stat != DEAD)
 		if(do_after(user, 2 SECONDS, target=src))
 			to_chat(user, span_meatymeat("I feel some kind of fucked up!"))
 			user.fully_heal(TRUE, FALSE)
