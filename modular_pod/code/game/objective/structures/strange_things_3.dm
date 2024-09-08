@@ -668,6 +668,9 @@
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
 		if("Federson (130)")
+			if(GLOB.phase_of_war != "Third")
+				to_chat(user, span_meatymeat("We need Third War Phase!"))
+				return
 			if(pref_source.bobux_amount < 130)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
 				return
