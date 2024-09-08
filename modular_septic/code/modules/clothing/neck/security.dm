@@ -113,6 +113,31 @@
 				ACID = 50, \
 				WOUND = 1)
 
+/obj/item/clothing/neck/halb_cloak
+	name = "Cloak"
+	desc = "Great cloak! Great!"
+	icon = 'modular_pod/icons/obj/clothing/back.dmi'
+	icon_state = "cloak_halb"
+	worn_icon = 'modular_pod/icons/mob/clothing/back.dmi'
+	worn_icon_state = "cloak_halb"
+	lefthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_lefthand.dmi'
+	righthand_file = 'modular_septic/icons/mob/inhands/clothing/clothing_righthand.dmi'
+	inhand_icon_state = "ordinator_cloak"
+	strip_delay = 20
+	body_parts_covered = NECK|CHEST|ARMS
+	cold_protection = NECK|CHEST|ARMS
+	heat_protection = NECK|CHEST|ARMS
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_SUITSTORE
+	armor = list(MELEE = 3, \
+				BULLET = 3, \
+				LASER = 0, \
+				ENERGY = 10, \
+				BOMB = 0, \
+				BIO = 0, \
+				FIRE = 25, \
+				ACID = 50, \
+				WOUND = 1)
+
 /obj/item/clothing/neck/clodcoater
 	name = "Leather Clodcoater"
 	desc = "This should protect you from minimal neck attacks, in theory."
