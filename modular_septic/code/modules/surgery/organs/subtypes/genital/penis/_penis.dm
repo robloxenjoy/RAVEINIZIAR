@@ -1,6 +1,6 @@
 /obj/item/organ/genital/penis
-	name = "Член"
-	desc = "Какого хуя."
+	name = "Penis"
+	desc = "Dick."
 	icon = 'modular_septic/icons/obj/items/genitalia/knob.dmi'
 	icon_state = "penis"
 	base_icon_state = "penis"
@@ -15,6 +15,7 @@
 	greyscale_config = /datum/greyscale_config/penis
 	skintoned_colors = "#fcccb3"
 	genital_size = PENIS_DEFAULT_GIRTH
+	sellkaotiks = 10
 	var/genital_girth = PENIS_DEFAULT_GIRTH
 	var/genital_sheath = SHEATH_NONE
 	var/circumcised = FALSE
