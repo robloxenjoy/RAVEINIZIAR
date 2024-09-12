@@ -107,11 +107,10 @@
 			for(var/obj/M in get_turf(src))
 				if(M && !M.can_spawn_various_shit)
 					return
-			if(prob(40))
+			if(prob(70))
 				new /obj/structure/barbwire(get_turf(src))
-			else
-				if(prob(20))
-					new /obj/structure/mineexplosive/mineplit(get_turf(src))
+			if(prob(50))
+				new /obj/structure/mineexplosive/mineplit(get_turf(src))
 //			dir = rand(0,4)
 
 /turf/open/floor/plating/polovich/way/for2
@@ -164,11 +163,10 @@
 			for(var/obj/M in get_turf(src))
 				if(M && !M.can_spawn_various_shit)
 					return
-			if(prob(40))
+			if(prob(70))
 				new /obj/structure/barbwire(get_turf(src))
-			else
-				if(prob(20))
-					new /obj/structure/mineexplosive/mineplit(get_turf(src))
+			if(prob(50))
+				new /obj/structure/mineexplosive/mineplit(get_turf(src))
 	if(prob(40))
 		var/near_t = range(1, src)
 		for(var/turf/open/floor/plating/polovich/way/for2/generat in near_t)
@@ -202,11 +200,10 @@
 			for(var/obj/M in get_turf(src))
 				if(M && !M.can_spawn_various_shit)
 					return
-			if(prob(40))
+			if(prob(70))
 				new /obj/structure/barbwire(get_turf(src))
-			else
-				if(prob(20))
-					new /obj/structure/mineexplosive/mineplit(get_turf(src))
+			if(prob(50))
+				new /obj/structure/mineexplosive/mineplit(get_turf(src))
 
 /turf/open/floor/plating/polovich/way/for1
 	name = "Mud"
@@ -243,11 +240,10 @@
 			for(var/obj/M in get_turf(src))
 				if(M && !M.can_spawn_various_shit)
 					return
-			if(prob(40))
+			if(prob(70))
 				new /obj/structure/barbwire(get_turf(src))
-			else
-				if(prob(20))
-					new /obj/structure/mineexplosive/mineplit(get_turf(src))
+			if(prob(50))
+				new /obj/structure/mineexplosive/mineplit(get_turf(src))
 
 /turf/open/floor/plating/polovich/way/for5
 	name = "Dirt"
@@ -268,11 +264,10 @@
 			for(var/obj/M in get_turf(src))
 				if(M && !M.can_spawn_various_shit)
 					return
-			if(prob(40))
+			if(prob(70))
 				new /obj/structure/barbwire(get_turf(src))
-			else
-				if(prob(20))
-					new /obj/structure/mineexplosive/mineplit(get_turf(src))
+			if(prob(50))
+				new /obj/structure/mineexplosive/mineplit(get_turf(src))
 
 
 // PRISON
