@@ -654,8 +654,8 @@
 	if(GLOB.world_deaths_crazy < 20)
 		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 20."))
 		return
-	switch(thingy)
-		if(SSantagonists.gay_guns)
+	if(SSantagonists.gay_guns)
+		switch(thingy)
 			if("Bobox (20)")
 				if(pref_source.bobux_amount < 20)
 					to_chat(user, span_meatymeat("Need kaotiks!"))
@@ -705,7 +705,10 @@
 				pref_source.bobux_amount -= 90
 				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 				to_chat(user, span_meatymeat("Purchase done!"))
-		else
+			else
+				return
+	else
+		switch(thingy)
 			if("Bobox (70)")
 				if(pref_source.bobux_amount < 70)
 					to_chat(user, span_meatymeat("Need kaotiks!"))
@@ -733,32 +736,8 @@
 				pref_source.bobux_amount -= 130
 				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 				to_chat(user, span_meatymeat("Purchase done!"))
-/*
-		if("SMG Bolsa (120)")
-			if(pref_source.bobux_amount < 120)
-				to_chat(user, span_meatymeat("Need kaotiks!"))
+			else
 				return
-			if(GLOB.phase_of_war != "Third")
-				to_chat(user, span_meatymeat("We need Third War Phase!"))
-				return
-			new /obj/item/gun/ballistic/automatic/remis/smg/bolsa(get_turf(user))
-			pref_source.bobux_amount -= 120
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Purchase done!"))
-		if("SMG Cesno Thump (200)")
-			if(pref_source.bobux_amount < 200)
-				to_chat(user, span_meatymeat("Need kaotiks!"))
-				return
-			if(GLOB.phase_of_war != "Third")
-				to_chat(user, span_meatymeat("We need Third War Phase!"))
-				return
-			new /obj/item/gun/ballistic/automatic/remis/smg/thump(get_turf(user))
-			pref_source.bobux_amount -= 200
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Purchase done!"))
-*/
-		else
-			return
 
 /obj/structure/kaotikmachine/proc/armor_find(mob/living/carbon/user)
 	var/list/otherlist = list("Light Bulletproofer (50)", "Chainmail (50)", "Gloves (30)", "Jackboots (30)", "Ballistic Mask (40)", "Powerarmor (1500)")
