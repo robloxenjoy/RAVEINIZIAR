@@ -31,11 +31,11 @@
 
 /obj/effect/landing/svogod
 	name = "god smo"
-	spending = 1
+	spending = 2
 
 /obj/effect/landing/halber
 	name = "halbermensch"
-	spending = 9999
+	spending = 5
 
 /obj/effect/landing/oper
 	name = "oper"
