@@ -90,7 +90,7 @@
 /obj/effect/foga
 	name = "Fog"
 	icon = 'modular_pod/icons/obj/things/things_3.dmi'
-	icon_state = "fogar1"
+	icon_state = "foga1"
 	layer = FLY_LAYER
 	plane = ABOVE_GAME_PLANE
 //	plane = FLOOR_PLANE
@@ -103,7 +103,7 @@
 
 /obj/effect/foga/Initialize(mapload)
 	. = ..()
-	icon_state = pick("fogar1")
+	icon_state = pick("foga1", "foga2", "foga3", "foga4")
 	color = pick("#7b7f9b", "#919699", "#748a9c")
 	alpha = rand(200, 255)
 
