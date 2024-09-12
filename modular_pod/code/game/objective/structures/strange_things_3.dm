@@ -637,7 +637,10 @@
 			return
 
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
-	var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "Federson (130)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
+	if(SSantagonists.gay_guns)
+		var/list/gunslist = list("Bobox (20)", "Revolver Nova (10)", "Federson (40)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
+	else
+		var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "Federson (130)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
 	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -651,33 +654,62 @@
 		to_chat(user, span_meatymeat("Not enough deaths in the world! Need 20."))
 		return
 	switch(thingy)
-		if("Bobox (70)")
-			if(pref_source.bobux_amount < 70)
-				to_chat(user, span_meatymeat("Need kaotiks!"))
-				return
-			new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
-			pref_source.bobux_amount -= 70
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Revolver Nova (60)")
-			if(pref_source.bobux_amount < 60)
-				to_chat(user, span_meatymeat("Need kaotiks!"))
-				return
-			new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
-			pref_source.bobux_amount -= 60
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Purchase done!"))
-		if("Federson (130)")
-			if(GLOB.phase_of_war != "Third")
-				to_chat(user, span_meatymeat("We need Third War Phase!"))
-				return
-			if(pref_source.bobux_amount < 130)
-				to_chat(user, span_meatymeat("Need kaotiks!"))
-				return
-			new /obj/item/gun/ballistic/rifle/boltaction/remis/federson(get_turf(user))
-			pref_source.bobux_amount -= 130
-			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
-			to_chat(user, span_meatymeat("Purchase done!"))
+		if(SSantagonists.gay_guns)
+			if("Bobox (20)")
+				if(pref_source.bobux_amount < 20)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
+					return
+				new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
+				pref_source.bobux_amount -= 20
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+				to_chat(user, span_meatymeat("Purchase done!"))
+			if("Revolver Nova (10)")
+				if(pref_source.bobux_amount < 10)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
+					return
+				new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
+				pref_source.bobux_amount -= 10
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+				to_chat(user, span_meatymeat("Purchase done!"))
+			if("Federson (40)")
+				if(GLOB.phase_of_war != "Third")
+					to_chat(user, span_meatymeat("We need Third War Phase!"))
+					return
+				if(pref_source.bobux_amount < 40)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
+					return
+				new /obj/item/gun/ballistic/rifle/boltaction/remis/federson(get_turf(user))
+				pref_source.bobux_amount -= 40
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+				to_chat(user, span_meatymeat("Purchase done!"))
+		else
+			if("Bobox (70)")
+				if(pref_source.bobux_amount < 70)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
+					return
+				new /obj/item/gun/ballistic/shotgun/doublebarrel/bobox(get_turf(user))
+				pref_source.bobux_amount -= 70
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+				to_chat(user, span_meatymeat("Purchase done!"))
+			if("Revolver Nova (60)")
+				if(pref_source.bobux_amount < 60)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
+					return
+				new /obj/item/gun/ballistic/revolver/remis/nova(get_turf(user))
+				pref_source.bobux_amount -= 60
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+				to_chat(user, span_meatymeat("Purchase done!"))
+			if("Federson (130)")
+				if(GLOB.phase_of_war != "Third")
+					to_chat(user, span_meatymeat("We need Third War Phase!"))
+					return
+				if(pref_source.bobux_amount < 130)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
+					return
+				new /obj/item/gun/ballistic/rifle/boltaction/remis/federson(get_turf(user))
+				pref_source.bobux_amount -= 130
+				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
+				to_chat(user, span_meatymeat("Purchase done!"))
 /*
 		if("SMG Bolsa (120)")
 			if(pref_source.bobux_amount < 120)

@@ -41,8 +41,16 @@ SUBSYSTEM_DEF(bobux)
 /datum/controller/subsystem/bobux/proc/GetDat(client/noob)
 	var/list/dat = list()
 	var/datum/preferences/pref_source = noob.prefs
+	var/crazyguns = "No"
+	var/crazyfog = "No"
+	if(SSantagonists.gay_guns)
+		crazyguns = "Yes"
+	if(SSantagonists.fog_world)
+		crazyfog = "Yes"
 	if(SSmapping.config?.war_gamemode)
 		dat += "<center><b>War Phase: [GLOB.phase_of_war]</b></center><br>"
+	dat += "<center><b>Guns event : [crazyguns]</b></center><br>"
+	dat += "<center><b>Fog event: [crazyfog]</b></center><br>"
 	dat += "<center><b>[GLOB.world_deaths_crazy] deaths in the world!</b></center><br>"
 	dat += "<center><b>Kaotiks Menu</b></center><br>"
 	var/crazynuma
