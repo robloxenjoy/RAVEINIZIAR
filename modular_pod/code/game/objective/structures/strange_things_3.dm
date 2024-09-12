@@ -637,10 +637,11 @@
 			return
 
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
+	var/list/gunslist = list()
 	if(SSantagonists.gay_guns)
-		var/list/gunslist = list("Bobox (20)", "Revolver Nova (10)", "Federson (40)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
+		gunslist = list("Bobox (20)", "Revolver Nova (10)", "Federson (40)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
 	else
-		var/list/gunslist = list("Bobox (70)", "Revolver Nova (60)", "Federson (130)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
+		gunslist = list("Bobox (70)", "Revolver Nova (60)", "Federson (130)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
 	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
