@@ -16,7 +16,7 @@ SUBSYSTEM_DEF(antagonists)
 		fog_world = TRUE
 	if(prob(50))
 		gay_guns = TRUE
-	if(prob(100))
+	if(prob(50))
 		crazy_traps = TRUE
 	if(fog_world)
 		for(var/area/maintenance/polovich/forest/C in world)
