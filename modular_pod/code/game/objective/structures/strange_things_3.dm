@@ -673,8 +673,8 @@
 				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 				to_chat(user, span_meatymeat("Purchase done!"))
 			if("Federson (40)")
-				if(GLOB.phase_of_war != "Third")
-					to_chat(user, span_meatymeat("We need Third War Phase!"))
+				if(GLOB.phase_of_war != "Second")
+					to_chat(user, span_meatymeat("We need Second War Phase!"))
 					return
 				if(pref_source.bobux_amount < 40)
 					to_chat(user, span_meatymeat("Need kaotiks!"))
@@ -684,22 +684,22 @@
 				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 				to_chat(user, span_meatymeat("Purchase done!"))
 			if("SMG Bolsa (80)")
-				if(pref_source.bobux_amount < 80)
-					to_chat(user, span_meatymeat("Need kaotiks!"))
-					return
 				if(GLOB.phase_of_war != "Third")
 					to_chat(user, span_meatymeat("We need Third War Phase!"))
+					return
+				if(pref_source.bobux_amount < 80)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
 					return
 				new /obj/item/gun/ballistic/automatic/remis/smg/bolsa(get_turf(user))
 				pref_source.bobux_amount -= 80
 				playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 				to_chat(user, span_meatymeat("Purchase done!"))
 			if("SMG Cesno Thump (90)")
-				if(pref_source.bobux_amount < 90)
-					to_chat(user, span_meatymeat("Need kaotiks!"))
-					return
 				if(GLOB.phase_of_war != "Third")
 					to_chat(user, span_meatymeat("We need Third War Phase!"))
+					return
+				if(pref_source.bobux_amount < 90)
+					to_chat(user, span_meatymeat("Need kaotiks!"))
 					return
 				new /obj/item/gun/ballistic/automatic/remis/smg/thump(get_turf(user))
 				pref_source.bobux_amount -= 90

@@ -1,3 +1,6 @@
+/turf/open/floor/plating/polovich
+	var/trapturf = FALSE
+
 /turf/open/floor/plating/polovich/way/station
 	name = "Пол"
 	icon = 'modular_pod/icons/turf/floors_4.dmi'
@@ -86,6 +89,7 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
 	var/finished = FALSE
+	trapturf = TRUE
 	icon = 'modular_pod/icons/content_5.dmi'
 	slowdown = 1
 
@@ -109,6 +113,7 @@
 	heavyfootstep = FOOTSTEP_SAND
 	var/finished = FALSE
 	var/flora = TRUE
+	trapturf = TRUE
 	icon = 'modular_pod/icons/content_5.dmi'
 	slowdown = 1
 
@@ -167,6 +172,7 @@
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
 	var/finished = FALSE
+	trapturf = TRUE
 	icon = 'modular_pod/icons/content_5.dmi'
 
 /turf/open/floor/plating/polovich/way/for1
@@ -177,6 +183,7 @@
 	clawfootstep = FOOTSTEP_MEAT
 	heavyfootstep = FOOTSTEP_MEAT
 	var/finished = FALSE
+	trapturf = TRUE
 	icon = 'modular_pod/icons/content_5.dmi'
 	slowdown = 1
 
@@ -207,13 +214,15 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_SAND
 	var/finished = FALSE
+	trapturf = TRUE
 	icon = 'modular_pod/icons/content_5.dmi'
 	slowdown = 1
 
 
 
-
 // PRISON
+
+
 
 
 /turf/open/floor/plating/polovich/way/stolfl
