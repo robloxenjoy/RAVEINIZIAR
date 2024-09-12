@@ -639,7 +639,7 @@
 /obj/structure/kaotikmachine/proc/guns_find(mob/living/carbon/user)
 	var/list/gunslist = list()
 	if(SSantagonists.gay_guns)
-		gunslist = list("Bobox (20)", "Revolver Nova (10)", "Federson (40)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
+		gunslist = list("Bobox (20)", "Revolver Nova (10)", "Federson (40)", "SMG Bolsa (80)", "SMG Cesno Thump (90)")
 	else
 		gunslist = list("Bobox (70)", "Revolver Nova (60)", "Federson (130)"/*, "SMG Bolsa (120)", "SMG Cesno Thump (200)"*/)
 	var/thingy = input(user, "What kind of gun do I want?", "I want...") as null|anything in sort_list(gunslist)
@@ -808,7 +808,7 @@
 			return
 
 /obj/structure/kaotikmachine/proc/ammo_find(mob/living/carbon/user)
-	var/list/otherlist = list("Buckshot (30)", ".38 Bullets (20)", ".276 Bullets (40)"/*, "9mm Magazine (30)", ".45 Magazine (30)"*/)
+	var/list/otherlist = list("Buckshot (30)", ".38 Bullets (20)", ".276 Bullets (40)", "9mm Magazine (30)", ".45 Magazine (30)")
 	var/thingy = input(user, "What kind of ammo do I want?", "I want...") as null|anything in sort_list(otherlist)
 	var/datum/preferences/pref_source = user.client?.prefs
 	if(!thingy)
@@ -848,7 +848,6 @@
 			pref_source.bobux_amount -= 40
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-/*
 		if("9mm Magazine (30)")
 			if(pref_source.bobux_amount < 30)
 				to_chat(user, span_meatymeat("Need kaotiks!"))
@@ -865,7 +864,6 @@
 			pref_source.bobux_amount -= 30
 			playsound(get_turf(src), 'modular_pod/sound/eff/crystalHERE.ogg', 90 , FALSE, FALSE)
 			to_chat(user, span_meatymeat("Purchase done!"))
-*/
 		else
 			return
 
