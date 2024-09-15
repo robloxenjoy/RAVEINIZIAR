@@ -475,7 +475,9 @@ MINUTE_CLICK_LIMIT 400
 ## i.e. CHAT_ANNOUNCE_NEW_GAME chat_channel_tag
 
 ## Send a message with the station name starting a new game.
-#CHAT_ANNOUNCE_NEW_GAME
+#CHAT_ANNOUNCE_NEW_GAME DMAPI TAG HERE
+
+#CHANNEL_ANNOUNCE_NEW_GAME_MESSAGE MESSAGE HERE
 
 ## Ping users who use the `notify` command when a new game starts.
 #CHAT_NEW_GAME_NOTIFICATIONS
