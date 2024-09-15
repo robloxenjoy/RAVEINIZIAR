@@ -460,6 +460,9 @@
 /datum/config_entry/string/chat_announce_new_game
 	default = null
 
+/datum/config_entry/string/channel_announce_new_game_message
+	default = null
+
 /datum/config_entry/string/chat_new_game_notifications
 	default = null
 
