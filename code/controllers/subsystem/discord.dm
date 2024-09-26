@@ -53,23 +53,23 @@ SUBSYSTEM_DEF(discord)
 	var/enabled = FALSE
 
 /datum/controller/subsystem/discord/Initialize(start_timeofday)
-	// Check for if we are using TGS, otherwise return and disabless firing
+	common_words = world.file2list("strings/1000_most_common.txt")
+	reverify_cache = list()
+	// Check for if we are using TGS, otherwise return and disables firing
 	if(world.TgsAvailable())
-		enabled = 1 // Allows other procs to use this (Account linking, etc)
+		enabled = TRUE // Allows other procs to use this (Account linking, etc)
 	else
-		can_fire = 0 // We dont want excess firing
+		can_fire = FALSE // We dont want excess firing
 		return ..() // Cancel
 
 	try
 		people_to_notify = json_decode(file2text(notify_file))
 	catch
-		pass() // The list can just stay as its defualt (blank). Pass() exists because it needs a catch
-	var/notifymsg = ""
-	for(var/id in people_to_notify)
-		// I would use jointext here, but I dont think you can two-side glue with it, and I would have to strip characters otherwise
-		notifymsg += "<@[id]> " // 22 charaters per notify, 90 notifies per message, so I am not making a failsafe because 90 people arent going to notify at once
+		pass() // The list can just stay as its default (blank). Pass() exists because it needs a catch
+	var/notifymsg = jointext(people_to_notify, ", ")
 	if(notifymsg)
-		send2chat(new /datum/tgs_message_content("[notifymsg]"), CONFIG_GET(string/chat_announce_new_game)) // Sends the message to the discord, using same config option as the roundstart notification
+		notifymsg += ", a new round is starting!"
+		send2chat(trim(notifymsg), CONFIG_GET(string/chat_new_game_notifications)) // Sends the message to the discord, using same config option as the roundstart notification
 	fdel(notify_file) // Deletes the file
 	return ..()
 
