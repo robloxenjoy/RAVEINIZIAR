@@ -157,7 +157,7 @@
 	require_comms_key = TRUE
 
 /datum/world_topic/news_report/Run(list/input)
-	minor_announce(input["message"], "Breaking Update From [input["message_sender"]]")
+	return
 
 /datum/world_topic/adminmsg
 	keyword = "adminmsg"
