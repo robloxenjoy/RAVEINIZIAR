@@ -118,7 +118,7 @@
 			else
 				take_bodypart_damage((ATTRIBUTE_MASTER - GET_MOB_ATTRIBUTE_VALUE(src, STAT_ENDURANCE)) * 3)
 	SEND_SIGNAL(src, COMSIG_CARBON_CLEAR_WOUND_MESSAGE)
-
+/*
 /mob/living/carbon/human/proc/go_somewhere(down = FALSE)
 	if(incapacitated())
 		return
@@ -210,3 +210,4 @@
 			if(DICE_CRIT_FAILURE)
 				src.adjustFatigueLoss(15 + encumbrance_penalty)
 				to_chat(src, span_notice("У меня не получается всплыть."))
+*/

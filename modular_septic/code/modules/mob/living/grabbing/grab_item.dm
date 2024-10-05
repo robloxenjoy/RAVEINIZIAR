@@ -76,7 +76,7 @@
 	if(owner)
 		if(victim)
 			playsound(victim, 'modular_septic/sound/attack/thudswoosh.ogg', 50, 1, -1)
-			var/grab_wording = (bite_grab ? "biting" : "grabing")
+			var/grab_wording = (bite_grab ? "biting" : "grabbing")
 			if(owner == victim)
 				victim.visible_message(span_warning("<b>[owner]</b> stops [grab_wording] his [grasped_part.name]!"),\
 											span_notice("I stop [grab_wording] my [grasped_part.name]!"))

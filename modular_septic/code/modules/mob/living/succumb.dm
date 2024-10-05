@@ -110,8 +110,9 @@
 	var/output_message = "<span class='infoplain'><div class='infobox'>[src.mind?.assigned_role.job_work]</div></span>"
 	to_chat(src, output_message)
 */
+/*
 /mob/living/carbon/human/verb/upp(whispered as null)
-	set name = "Up"
+/	set name = "Up"
 	set category = "Extra"
 	set desc = "You want?"
 
@@ -123,7 +124,7 @@
 	set desc = "You want?"
 
 	go_somewhere(down = TRUE)
-
+*/
 /mob/living/carbon/human/verb/sdatsa(whispered as null)
 	set name = "Die"
 	set category = "Extra"
