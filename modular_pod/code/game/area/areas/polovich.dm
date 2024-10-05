@@ -15,6 +15,29 @@
 	if(current_area)
 		SSdroning.area_entered(current_area, client)
 */
+
+/area/maintenance/polovich/lobby
+	name = "Lobby"
+//	base_lighting_alpha = 255
+//	power_light = FALSE
+//	power_equip = FALSE
+//	power_environ = FALSE
+	requires_power = FALSE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	outdoors = TRUE
+	static_lighting = TRUE
+//	base_lighting_alpha = 255
+//	area_has_base_lighting = TRUE
+	area_flags = NO_ALERTS
+	droning_sound = DRONING_POLOVICHSTAN
+//	ambientsounds = list('modular_pod/sound/ambi_sounds_out/attackers.ogg', 'modular_pod/sound/ambi_sounds_out/swing.ogg', 'modular_pod/sound/ambi_sounds_out/going.ogg')
+	min_ambience_cooldown = 60 SECONDS
+	max_ambience_cooldown = 95 SECONDS
+	sound_environment = SOUND_ENVIRONMENT_NONE
+	var/crazy = TRUE
+
 /area/maintenance/polovich/forest
 	name = "Polovich Earth"
 //	base_lighting_alpha = 255

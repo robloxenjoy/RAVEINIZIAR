@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(title)
 	var/icon/icon
 	var/icon/previous_icon
 	var/turf/closed/indestructible/splashscreen/splash_turf
+	var/blue_mode = FALSE
 
 /datum/controller/subsystem/title/Initialize()
 	if(file_path && icon)
@@ -36,6 +37,7 @@ SUBSYSTEM_DEF(title)
 	else
 		lobbyworld = "prison"
 		file_path = "icons/misc/podpolobby.dmi"
+
 //	else
 //		lobbyworld = "crazy"
 //		file_path = "icons/misc/podpolobby_crazy.dmi"

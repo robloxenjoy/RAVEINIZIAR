@@ -1096,9 +1096,9 @@
 							if(brain)
 								var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 								if(diceroll <= DICE_FAILURE)
-									brain.applyOrganDamage(brute * 2.2)
+									brain.applyOrganDamage(brute * 5)
 								else
-									brain.applyOrganDamage(brute * 2)
+									brain.applyOrganDamage(brute * 4)
 
 	if(body_zone in list(BODY_ZONE_PRECISE_FACE, BODY_ZONE_HEAD))
 		if(blocked != 100)
@@ -1120,9 +1120,9 @@
 							if(brain)
 								var/diceroll = owner.diceroll(GET_MOB_ATTRIBUTE_VALUE(owner, STAT_ENDURANCE), context = DICE_CONTEXT_MENTAL)
 								if(diceroll <= DICE_FAILURE)
-									brain.applyOrganDamage(brute * 2.2)
+									brain.applyOrganDamage(brute * 4)
 								else
-									brain.applyOrganDamage(brute * 2)
+									brain.applyOrganDamage(brute * 3)
 
 	special_gore(owner, src, brute, sharpness)
 

@@ -4,7 +4,8 @@ SUBSYSTEM_DEF(antagonists)
 
 	var/fog_world = FALSE
 	var/gay_guns = FALSE
-	var/crazy_traps = FALSE
+	var/blue_mode = FALSE
+//	var/crazy_traps = FALSE
 
 /datum/controller/subsystem/antagonists/Initialize(start_timeofday)
 	. = ..()
@@ -16,10 +17,20 @@ SUBSYSTEM_DEF(antagonists)
 		fog_world = TRUE
 	if(prob(50))
 		gay_guns = TRUE
-	if(prob(50))
-		crazy_traps = TRUE
+	if(prob(60))
+		blue_mode = TRUE
+//	if(prob(50))
+//		crazy_traps = TRUE
 	if(fog_world)
 		for(var/area/maintenance/polovich/forest/C in world)
 			if(C.fogger)
 				for(var/turf/T in C)
 					new /obj/effect/foga(T)
+	if(blue_mode)
+		SSticker.login_music = 'modular_septic/xtal.ogg'
+		for(var/area/maintenance/polovich/lobby/C in world)
+			if(C.crazy)
+				for(var/turf/T in C)
+					T.color = pick("#00abd2", "#0090f5")
+				for(var/obj/structure/kaos/blackwindow/window in C)
+					window.set_light(8, 4, "#0000b9")
