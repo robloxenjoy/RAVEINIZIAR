@@ -1,0 +1,175 @@
+"a" = (/turf/open/openspace/norm,/area/maintenance/polovich/forest)
+"b" = (/obj/structure/codec/bulb/belo{dir = 8},/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
+"c" = (/obj/structure/kaos/blackwindow,/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/lobby)
+"d" = (/obj/effect/landing/konch,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"e" = (/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest)
+"f" = (/turf/open/floor/plating/polovich/way/nightbricks,/area/maintenance/polovich/forest)
+"g" = (/obj/structure/codec/bulb/yellow{dir = 1},/turf/open/floor/plating/polovich/way/fish2,/area/maintenance/polovich/forest/inner)
+"h" = (/obj/structure/codec/bulb/yellow{dir = 4},/turf/open/floor/plating/polovich/way/fish2,/area/maintenance/polovich/forest/inner)
+"i" = (/turf/open/floor/plating/polovich/way/kaos/ei,/area/maintenance/polovich/lobby)
+"j" = (/turf/podpol/wall/rostik,/area/maintenance/polovich/forest)
+"k" = (/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest/inner)
+"l" = (/obj/structure/blockrole/konch,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest/inner)
+"m" = (/obj/effect/landmark/start/new_player,/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/lobby)
+"n" = (/turf/podpol/wall/steel,/area/maintenance/polovich/lobby)
+"o" = (/obj/structure/codec/bulb/pank,/turf/open/floor/plating/polovich/way/stoner,/area/maintenance/polovich/forest/inner)
+"p" = (/obj/structure/medica,/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/inner)
+"q" = (/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
+"r" = (/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
+"s" = (/obj/structure/barbwire,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
+"t" = (/turf/open/floor/plating/polovich/way/fish2,/area/maintenance/polovich/forest/inner)
+"u" = (/obj/structure/codec/bulb/pank,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"v" = (/obj/structure/codec/bulb/belo,/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
+"w" = (/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"x" = (/obj/structure/codec/bulb/pank{dir = 1},/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"y" = (/obj/structure/blockrole/konch,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"z" = (/obj/structure/torgovka,/turf/open/floor/plating/polovich/way/fish2,/area/maintenance/polovich/forest/inner)
+"A" = (/obj/structure/codec/bulb/pank{dir = 8},/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"B" = (/obj/effect/spawner/liquid/shallow/flood,/turf/open/floor/plating/polovich/way/waterfloor,/area/maintenance/polovich/forest)
+"C" = (/turf/open/floor/plating/polovich/way/kaos,/area/maintenance/polovich/lobby)
+"D" = (/obj/effect/landing/kapno,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
+"E" = (/obj/structure/blockrole/konch{allow_role = "Ladax"},/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
+"F" = (/turf/podpol/wall/caver,/area/maintenance/polovich/forest)
+"G" = (/turf/open/floor/plating/polovich/way/kaos/ni,/area/maintenance/polovich/lobby)
+"H" = (/turf/open/floor/plating/polovich/way/wiider,/area/maintenance/polovich/forest)
+"I" = (/obj/structure/stairs/north,/turf/open/floor/plating/polovich/way/exoticwood,/area/maintenance/polovich/forest/inner)
+"J" = (/turf/open/floor/plating/polovich/way/kaos/fi,/area/maintenance/polovich/lobby)
+"K" = (/obj/structure/codec/bulb/yellow,/turf/open/floor/plating/polovich/way/fish2,/area/maintenance/polovich/forest/inner)
+"M" = (/obj/structure/medica,/turf/podpol/wall/darkyw,/area/maintenance/polovich/forest/inner)
+"N" = (/turf/open/floor/plating/polovich/way/kaos/th,/area/maintenance/polovich/lobby)
+"O" = (/obj/structure/kaotikmachine,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"P" = (/obj/structure/lighterfire,/turf/open/floor/plating/polovich/way/wiider,/area/maintenance/polovich/forest)
+"Q" = (/turf/podpol/wall/grewich,/area/maintenance/polovich/forest/inner)
+"R" = (/obj/structure/codec/bulb/yellow{dir = 8},/turf/open/floor/plating/polovich/way/fish2,/area/maintenance/polovich/forest/inner)
+"S" = (/turf/open/floor/plating/polovich/way/stoner,/area/maintenance/polovich/forest/inner)
+"T" = (/obj/structure/codec/bulb/belo{dir = 1},/turf/open/floor/plating/polovich/way/soft,/area/maintenance/polovich/forest)
+"V" = (/obj/structure/stairs/east,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+"W" = (/obj/structure/kaotikmachine,/turf/open/floor/plating/polovich/way/fish2,/area/maintenance/polovich/forest/inner)
+"Y" = (/obj/structure/torgovka,/turf/open/floor/plating/polovich/way/stoneold,/area/maintenance/polovich/forest/inner)
+
+(1,1,1) = {"
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+nnnnnnnnnnnnnnnnnnnnnnnBBBBBBBBBBBBBBBBB
+cNJcJJJJcJJNJJcJJJcJNcnBBBBBBBBBBBBBBBBB
+JNCNCCCCNCCCCCNCCCNCNJnBBBBBBBBBBBBBBBBB
+JNCNCCCCCCCCCCCCCCNCNJnBBBBBBBBBBBBBBBBB
+JNCNCCCiiiGJGiiiCCNCNJnBBBBBBBBBBBBBBBBB
+JCCNCCCiciGJGiciCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCiiJGcGJiiCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCGGGJJJGGGCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCJJcJmJcJJCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCGGGJJJGGGCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCiiJGcGJiiCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCiciGJGiciCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCiiiGJGiiiCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCCCCCCCCCCCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCCNCCCCCNCCCNCCJnBBBBBBBBBBBBBBBBB
+JCCNCCCCNCCNCCNCCCNCCJnBBBBBBBBBBBBBBBBB
+cJJcJJJJcJJNJJcJJJcJJcnBBBBBBBBBBBBBBBBB
+"}
+(1,1,2) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+kkkkkkkkkkkaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+kwOwSxwwxwkaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+kAwwSwwwwwkaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+kwwwSwwwuwkaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+MwdwSwwwkkkeeeeeeeeeeeeeeeeeeeeeeaaaaaaa
+kwwwSwwwyVkeeeeeeeeeeeeeeeeeeeeeeaaaaaaa
+kAwwSwwwkkkeeeeeeeeeeeeeeeeeeeeeeaaaaaaa
+kSSoSwwwxwkaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+kSwkSwwwYwkaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+kSwxSwwwwwkaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+kSSoSSSSoSkaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+kkkkkllkkkkaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajbqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajqqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajsqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajbqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajqqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajsqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajbqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajqqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajsqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+aaaajbqjaaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaa
+FFFFjqqjFFFFFFFFFFFFFFFaaaaaaaeeeaaaaaaa
+FFFFjsqjFFFFFFFFFFFFFFFaaaaaaaeeeaaaaaaa
+FFFFjbqjFFFFFFFFFFFFFFFaaaaaaaeeeaaaaaaa
+FFFFjqqjFFFFFFFFFFFFFFFaaaaaaaeeeaaaaaaa
+FFFjjsqjjjFFFFFFFFFFFFFaaaaaaaeeeaaaaaaa
+FFFjTqqTqjjjjjjjjjjjjjjjjjjjaaeeeaaaaaaa
+FFFjqqvqqqTsqTsqTsqTsqTsqTqjaaeeeaaaaaaa
+FFFjqqjqqqqqqqqqqqqqqqqqqqqjaaeeeQQQQQQQ
+FFFjqqqqqjjjjjjjjjjjjjjjQEEQQQQIQQtttttQ
+FFFjqvqvqjFFFFFFFFFFFFFFQrrtthQEQRtttttQ
+FFFjjjjjjjFFFFFFFFFFFFFFQRttttrrrttztthQ
+FFFFFFFFFFFFFFFFFFFFFFFFQtttKtrrrtttKttQ
+FFFFFFFFFFFFFFFFFFFFFFFFQtttQtrDrtttQttQ
+FFFFFFFFFFFFFFFFFFFFFFFFQtttgtttttttgttQ
+FFFFFFFFFFFFFFFFFFFFFFFFQRtttttttttttthQ
+FFFFFFFFFFFFFFFFFFFFFFFFQtttttttttWttttQ
+FFFFFFFFFFFFFFFFFFFFFFFFQQQQQQQpQQQQQQQQ
+"}
+(1,1,3) = {"
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaaaaaaaaaaaF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaaaaaaaaaaaF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaaaaaaaaaaaF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaaaaaaaaaaaF
+FeeeeeeeeeHHHHHHHHHHHHHHHHHHHHHHHaaaaaaF
+FeeeeeeeeaHHHHHHHHHHHHHHHHHHHHHHHaaaaaaF
+FeeeeeeeeeHHHHHHHHHHHHHHHHHHHHHHHaaaaaaF
+FeeeeeeeeeeaaaaPaaaaPaaaPaaaPaHHHaaaaaaF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FeeeeeeeeeeaaaaaaaaaaaaaaaaaaPHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaPHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaPHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FaaaffffaaaaaaaaaaaaaaaaaaaaaaHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFaaaaaaaHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFaaaaaaPHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFaaaaaaaHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFaaaaaaaHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFaaaaaaaHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFeeeeeaPHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFeeeeeaaHHHaaaaaaF
+FFFFFFFFFFFFFFFFFFFFFFFeeeeeaeeHeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeaeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeeeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeeeeeeeeF
+FFFFFFFFFFFFFFFFFFFFFFFFFFeeeeeeeeeeeeFF
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+"}

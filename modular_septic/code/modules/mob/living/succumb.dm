@@ -133,7 +133,7 @@
 		var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
 		if(brain)
 			brain.applyOrganDamage(120)
-			client?.prefs?.adjust_bobux(-5, "<span class='bobux'>I give up! -5 Kaotiks!</span>")
+//			client?.prefs?.adjust_bobux(-5, "<span class='bobux'>I give up! -5 Kaotiks!</span>")
 
 /mob/living/carbon/human/proc/becomeboar(whispered as null)
 	set hidden = TRUE

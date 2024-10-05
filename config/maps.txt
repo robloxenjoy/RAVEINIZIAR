@@ -65,22 +65,22 @@ map podpol_earth
 endmap
 
 map podpol_earthstation
-	votable
 endmap
 
 map ceivara
-	votable
 endmap
 
 map atraka
-	votable
 endmap
 
 map baqqusta
+	votable
+endmap
+
+map littlebridge
 	default
 	votable
 endmap
 
 map ribcagenegative
-	votable
 endmap
