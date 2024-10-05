@@ -127,10 +127,10 @@
 	var/num = 0
 	if(!(i % 2))
 		num = i-2
-		hand += "правая рука"
+		hand += "right hand"
 	else
 		num = i-1
-		hand += "левая рука"
+		hand += "left hand"
 	num -= (num*0.5)
 	if(num > 1) //"upper left hand #1" seems weird, but "upper left hand #2" is A-ok
 		hand += " #[num]"
