@@ -409,7 +409,7 @@
 			victim.visible_message(span_pinkdang("[owner] tries to twist [grasped_part.embedded_objects[1]] in [grasped_part.name]!"), \
 							span_pinkdang("I'm trying to twist [grasped_part.embedded_objects[1]] in [grasped_part.name]!"), \
 							vision_distance = COMBAT_MESSAGE_RANGE)
-	grasped_part.add_pain(15)
+	grasped_part.add_pain(rand(15, 30))
 	owner.changeNext_move(CLICK_CD_CLING)
 	owner.adjustFatigueLoss(10)
 	playsound(victim, 'modular_septic/sound/gore/twisting.ogg', 80, FALSE)
